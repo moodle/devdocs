@@ -13,7 +13,7 @@ All Moodle JavaScript can use the same Mustache templates and translated strings
 
 This guide covers how to get started with JavaScript in Moodle, and introduces key concepts and features including module format and structure, including your code, using templates, using translation features, tooling, and handling events.
 
-:::{note}
+:::note
 You may see the terms `ES6` and `ES2015` used interchangably.
 ES2015 is the 6th generation of the Ecma Script specification.
 ES2015 respresents a big change from previous versions of the Ecma Script
@@ -64,7 +64,7 @@ block_newsitems/local/modal/confirmation
 core_user/local/participants/selectors
 ```
 
-:::{tip}
+:::tip
 When structuring a new module you may find it clearer to create a main entry-point module with related modules stored in
 a subdirectory.
 
@@ -103,7 +103,7 @@ Your module will probably also have one or more dependencies which you will `imp
 As you start to build out the structure of your code you will start to export more functions, as well as Objects,
 Classes, and other data structures.
 
-:::{note}
+:::note
 This guide isn't intended to teach you how to write JavaScript.
 If you are new to JavaScript, you may want to start with the [MDN JavaScript
 basics guide][guides-javascript-mdn-javascript_getting_started].
@@ -284,7 +284,7 @@ directly linked to the content of one of your templates.
 All JavaScript in Mustache templates must be places in a `{{#js}}` tag.
 This tag ensures that all JavaScript is called in a consistent and reliable way.
 
-:::{caution}
+:::caution
 You shouldn't add too much JavaScript directly to a template.
 JavaScript placed directly into Templates isn't transpiled for consistent use in all browsers and it isn't passed through minification processes.
 Some browser-specific features won't be available.
@@ -309,7 +309,7 @@ This simplest form of this is:
 
 Any time that this template is rendered and placed on the page the `mod_forum/discussion` module will be fetched and the `init()` function called on it.
 
-:::{admonition} Since Moodle 4.0
+:::note Since Moodle 4.0
 Moodle no longer supports Internet Explorer. It's now safe to use {term}`Arrow functions<Arrow functions>`.
 :::
 
@@ -331,7 +331,7 @@ require([‘mod_forum/discussion’], function(Discussion) {
 In this example you have added a new `id` to the `div` element.
 You then fetch the DOM Element using this id and pass it into the `init` function.
 
-:::{note}
+:::note
 The `{{uniqid}}` tag gives a new unique string for each rendered template including all its children.
 It isn't a true unique id and must be combined with other information in the template to make it unique.
 :::
@@ -379,7 +379,7 @@ export const init = ({courseid, category}) => {
 };
 ```
 
-:::{caution}
+:::caution
 A limit applies to the length of the parameters passed in the third argument.
 If data is already available elsewhere in the DOM, you shoudl avoid passing it as a parameter.
 :::
@@ -428,7 +428,7 @@ The easiest way to pass data is to use data attributes.
           creating that Promise
 ```
 
-:::{important}
+:::important
 You shouldn't use the `done`, `fail`, or `always` functions on Promises.
 These are a jQuery feature which isn't present in the Native Promise implementation.
 :::
@@ -488,7 +488,7 @@ Most of the Moodle JavaScript tooling requires [NodeJS](tools-nodejs).
 
 [Grunt] is a command-line tool used to compile JavaScript, and CSS, and to lint JavaScript, CSS, and Behat tests.
 
-:::{tip}
+:::tip
 Rather than running `grunt` on the entire Moodle source every time you make changes, you can use `grunt watch`
 in the background to build just the files you change as you write them.
 :::
@@ -509,7 +509,7 @@ grunt
 
 ## Glossary
 
-:::{glossary}
+:::glossary
 Arrow functions
 
   An arrow function is a shorthand way of writing a regular function.
