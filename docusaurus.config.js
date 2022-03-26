@@ -25,6 +25,9 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          remarkPlugins: [
+              require('./src/remark/trackerLinks'),
+          ],
         },
         blog: {
           showReadingTime: true,
