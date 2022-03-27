@@ -8,8 +8,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Moodle Developer Documentation',
   tagline: 'Dinosaurs are cool',
-  url: 'https://develop.moodle.org',
-  baseUrl: '/',
+  //url: 'https://develop.moodle.org',
+  //baseUrl: '/',
+  url: 'https://andrewnicols.github.io',
+  baseUrl: '/dinodevdocs/',
+  trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -23,14 +26,14 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/moodlehq/devdocs/edit/main/',
+          editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
           remarkPlugins: [
               require('./src/remark/trackerLinks'),
           ],
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/moodlehq/devdocs/edit/main/',
+          editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
