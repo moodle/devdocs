@@ -1,16 +1,13 @@
 ---
 title: NodeJS
 ---
-(tools-nodejs)=
 
 Moodle development tools require the installation and use of [NodeJS](https://nodejs.org/en/), which is a JavaScript runtime environment available for most operating systems.
 
 ```{include} ../_templates/node_version.md
 ```
 
-Use of [NVM](tool-nodejs-nvm) for installation of NodeJS is highly recommended over direct installation.
-
-(tool-nodejs-nvm)=
+Use of [NVM](#node-version-manager) for installation of NodeJS is highly recommended over direct installation.
 
 ## Node Version Manager
 

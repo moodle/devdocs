@@ -59,7 +59,7 @@ const config = {
             label: 'Tutorial',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/docs/community', label: 'Community', position: 'left'},
+          //{to: '/docs/community', label: 'Community', position: 'left'},
           {
             href: 'https://github.com/moodle/moodle',
             label: 'GitHub',
