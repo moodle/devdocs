@@ -111,13 +111,10 @@ basics guide][guides-javascript-mdn-javascript_getting_started].
 
 A module which calls to the browser `console.log` function would look like:
 
-```{code-block} javascript
-:linenos: true
-
- // mod/example/lib/amd/src/helloworld.js
- export const init = () => {
-     window.console.log('Hello, world!');
- };
+```js title="mod/example/lib/amd/src/helloworld.js"
+export const init = () => {
+    window.console.log('Hello, world!');
+};
 ```
 
 In this example a new variable called `init` is created and exported using
@@ -136,15 +133,12 @@ this.
 
 To add a `click` listener to the entire body you would write:
 
-```{code-block} javascript
-:linenos: true
-
- // mod/example/lib/amd/src/helloworld.js
- export const init = () => {
-     document.addEventListener('click', e => {
-         window.console.log(e.target);
-     });
- };
+```js title="mod/example/lib/amd/src/helloworld.js"
+export const init = () => {
+    document.addEventListener('click', e => {
+        window.console.log(e.target);
+    });
+};
 ```
 
 In this example any time that a user clicks anywhere on the document the item
@@ -156,32 +150,26 @@ some Elements in the page.
 If you wanted to display a browser alert every time a user clicks on a button,
 you might have a template like the following example:
 
-```{code-block} mustache
-:linenos: true
-
- {{! mod/example/templates/helloworld.mustache }}
+```mustache title="mod/example/templates/helloworld.mustache"
  <button data-action="mod_example/helloworld-update_button">Click me</button>
 ```
 
 You can write a listener which looks for clicks to this button:
 
-```{code-block} javascript
-:linenos: true
+```js title="mod/example/lib/amd/src/helloworld.js"
+const Selectors = {
+    actions: {
+        showAlertButton: '[data-action="mod_example/helloworld-update_button"]',
+    },
+};
 
- // mod/example/lib/amd/src/helloworld.js
- const Selectors = {
-     actions: {
-         showAlertButton: '[data-action="mod_example/helloworld-update_button"]',
-     },
- };
-
- export const init = () => {
-     document.addEventListener('click', e => {
-         if (e.target.closest(Selectors.actions.showAlertButton)) {
-             window.alert("Thank you for clicking on the button");
-         }
-     });
- };
+export const init = () => {
+    document.addEventListener('click', e => {
+        if (e.target.closest(Selectors.actions.showAlertButton)) {
+            window.alert("Thank you for clicking on the button");
+        }
+    });
+};
 ```
 
 This example shows several conventions that are used in Moodle:
@@ -206,10 +194,7 @@ Instead of having one event listener for every button in your page, you can
 have one event listener which checks which button was pressed.
 If you have a template like the following:
 
-```{code-block} mustache
-:linenos: true
-
- {{! mod/example/templates/helloworld.mustache }}
+```mustache title="mod/example/templates/helloworld.mustache"
  <div>
      <button data-action="mod_example/helloworld-update_button">Click me</button>
      <button data-action="mod_example/helloworld-big_red_button">Do not click me</button>
@@ -219,39 +204,33 @@ If you have a template like the following:
 Then you can write one event listener which looks at all buttons on the page.
 For example:
 
-```{code-block} javascript
-:linenos: true
-
- // mod/example/lib/amd/src/local/helloworld/selectors.js
- export default {
-     actions: {
-         showAlertButton: '[data-action="mod_example/helloworld-update_button"],
-         bigRedButton: '[data-action="mod_example/helloworld-big_red_button"],
-     },
- };
+```js title="mod/example/lib/amd/src/local/helloworld/selectors.js"
+export default {
+    actions: {
+        showAlertButton: '[data-action="mod_example/helloworld-update_button"],
+        bigRedButton: '[data-action="mod_example/helloworld-big_red_button"],
+    },
+};
 ```
 
-```{code-block} javascript
-:linenos: true
+```js title="mod/example/lib/amd/src/helloworld.js"
+import Selectors from './local/helloworld/selectors';
 
- // mod/example/lib/amd/src/helloworld.js
- import Selectors from './local/helloworld/selectors';
+const registerEventListeners = () => {
+    document.addEventListener('click', e => {
+        if (e.target.closest(Selectors.actions.showAlertButton)) {
+            window.alert("Thank you for clicking on the button");
+        }
 
- const registerEventListeners = () => {
-     document.addEventListener('click', e => {
-         if (e.target.closest(Selectors.actions.showAlertButton)) {
-             window.alert("Thank you for clicking on the button");
-         }
+        if (e.target.closest(Selectors.actions.bigRedButton)) {
+            window.alert("You shouldn't have clicked on that one!");
+        }
+    });
+};
 
-         if (e.target.closest(Selectors.actions.bigRedButton)) {
-             window.alert("You shouldn't have clicked on that one!");
-         }
-     });
- };
-
- export const init = () => {
-     registerEventListeners();
- };
+export const init = () => {
+    registerEventListeners();
+};
 ```
 
 You will notice several key differences in this example when compared with the previous one:
@@ -292,19 +271,16 @@ Some browser-specific features won't be available.
 
 This simplest form of this is:
 
-```{code-block} mustache
-:linenos: true
+```mustache title mod/forum/templates/discussion.mustache
+<div>
+    <!—- Your template content goes here. —->
+</div>
 
- {{! mod/forum/templates/discussion.mustache }}
- <div>
-     <!—- Your template content goes here. —->
- </div>
-
- {{#js}}
- require(['mod_forum/discussion'], function(Discussion) {
-     Discussion.init();
- });
- {{/js}}
+{{#js}}
+require(['mod_forum/discussion'], function(Discussion) {
+    Discussion.init();
+});
+{{/js}}
 ```
 
 Any time that this template is rendered and placed on the page the `mod_forum/discussion` module will be fetched and the `init()` function called on it.
@@ -372,7 +348,7 @@ $PAGE->requires->js_call_amd(‘mod_forum/discussion’, ‘init’, [[
 ]]);
 ```
 
-```javascript
+```js
 export const init = ({courseid, category}) => {
     window.console.log(courseid);
     window.console.log(category);
@@ -435,7 +411,7 @@ These are a jQuery feature which isn't present in the Native Promise implementat
 
 ### Examples
 
-```javascript
+```js
 const getModal = questionBody => {
     return ModalFactory.create({
         title: getString('mytitle', 'mod_example'),

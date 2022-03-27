@@ -23,17 +23,14 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/moodlehq/devdocs/edit/main/',
           remarkPlugins: [
               require('./src/remark/trackerLinks'),
           ],
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/moodlehq/devdocs/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -49,18 +46,19 @@ const config = {
         title: 'Moodle',
         logo: {
           alt: 'Moodle',
-          src: 'img/logo.svg',
+          src: 'img/Moodle_M_icon.svg',
         },
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'gettingstarted/quickstart',
             position: 'left',
             label: 'Tutorial',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/docs/community', label: 'Community', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/moodle/moodle',
             label: 'GitHub',
             position: 'right',
           },
@@ -82,16 +80,12 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'General Developer Forum',
+                href: 'https://moodle.org/mod/forum/view.php?id=55',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/moodle',
               },
             ],
           },
@@ -104,7 +98,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/moodlehq',
               },
             ],
           },
@@ -116,7 +110,9 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: [
            'php',
+            'handlebars',
         ],
+          lineNumbers: true
       },
     }),
 };
