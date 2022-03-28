@@ -10,9 +10,9 @@ Moodle has a huge community with users and contributors across the globe.
 
 ## Developer chat
 
-The Official Moodle Developer chat is currently hosted using (Telegram Messenger)[https://telegram.org].
+The Official Moodle Developer chat is currently hosted using [Telegram Messenger](https://telegram.org).
 
-You can be a part of the conversation by joining the (#moodledev)[https://telegram.me/moodledev] channel. 
+You can be a part of the conversation by joining the [#moodledev](https://telegram.me/moodledev) channel. 
 
 ### Developer chat policies
 

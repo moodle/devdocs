@@ -4,8 +4,7 @@ title: NodeJS
 
 Moodle development tools require the installation and use of [NodeJS](https://nodejs.org/en/), which is a JavaScript runtime environment available for most operating systems.
 
-```{include} ../_templates/node_version.md
-```
+Moodle requires version 16.14 of NodeJS, which is otherwise known as `lts/gallium`.
 
 Use of [NVM](#node-version-manager) for installation of NodeJS is highly recommended over direct installation.
 
