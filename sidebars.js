@@ -28,6 +28,4 @@ const sidebars = {
    */
 };
 
-console.log(sidebars);
-
 module.exports = sidebars;
