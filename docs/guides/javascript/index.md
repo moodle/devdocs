@@ -2,8 +2,9 @@
 title: JavaScript
 ---
 
-import Tabs from '@theme/Tabs';
+import CodeBlock from '@theme/CodeBlock';
 import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs';
 
 Moodle makes heavy use of JavaScript to improve the experience for its users.
 
@@ -273,7 +274,7 @@ Some browser-specific features won't be available.
 
 This simplest form of this is:
 
-```mustache title mod/forum/templates/discussion.mustache
+```mustache title=mod/forum/templates/discussion.mustache
 <div>
     <!—- Your template content goes here. —->
 </div>
@@ -294,7 +295,7 @@ Moodle no longer supports Internet Explorer. It's now safe to use {term}`Arrow f
 Often you may want to link the JavaScript to a specific `DOMElement` in the template.
 You can use the `{{uniqid}}` Mustache tag to give that DOM Element a unique ID and then pass that into the Module.
 
-```mustache
+```mustache title=mod/forum/templates/discussion.mustache
 <div id=“mod_forum-discussion-wrapper-{{uniqid}}”>
     <!—- Your template content goes here. —->
 </div>
@@ -343,6 +344,9 @@ $PAGE->requires->js_call_amd(‘mod_forum/discussion’, ‘init’, [$course->i
 
 If you pass a multi-dimensional array as the third argument, then you can use Array destructuring within the JavaScript to get named values.
 
+<Tabs>
+<TabItem value="php-js_call_admin-args" label="PHP">
+
 ```php
 $PAGE->requires->js_call_amd(‘mod_forum/discussion’, ‘init’, [[
     ‘courseid’ => $course->id,
@@ -350,12 +354,19 @@ $PAGE->requires->js_call_amd(‘mod_forum/discussion’, ‘init’, [[
 ]]);
 ```
 
+</TabItem>
+<TabItem value="js-js_call_admin-args" label="JavaScript">
+
 ```js
 export const init = ({courseid, category}) => {
     window.console.log(courseid);
     window.console.log(category);
 };
 ```
+
+</TabItem>
+</Tabs>
+
 
 :::caution
 A limit applies to the length of the parameters passed in the third argument.
@@ -413,20 +424,9 @@ These are a jQuery feature which isn't present in the Native Promise implementat
 
 ### Examples
 
-```js
-const getModal = questionBody => {
-    return ModalFactory.create({
-        title: getString('mytitle', 'mod_example'),
-        body: renderTemplate('mod_example/example_body', questionBody),
-        removeOnClose: true,
-    })
-    .then(modal => {
-        modal.show();
+import GetModal from '!!raw-loader!./_examples/promises/getModal';
 
-        return modal;
-    });
-};
-```
+<CodeBlock language="js" title="Create a modal in a function">{GetModal}</CodeBlock>
 
 ## Working with Strings
 
@@ -436,12 +436,9 @@ The `core/str` module has two main functions, which both return Promises contain
 
 Strings are fetched on request from Moodle, and are then cached in LocalStorage.
 
-## Example
+import WorkingWithStrings from '!!raw-loader!./_examples/str';
 
-```{literalinclude} _examples/str.js
-:language: javascript
-:linenos:
-```
+<CodeBlock language="js" title="Example">{WorkingWithStrings}</CodeBlock>
 
 ## Templates
 
