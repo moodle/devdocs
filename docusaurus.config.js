@@ -4,10 +4,17 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const VersionsArchived = require('./versionsArchived.json');
+const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(
+  0,
+  5,
+);
+
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Moodle Developer Documentation',
-  tagline: 'Dinosaurs are cool',
+  title: 'Moodle',
+  tagline: 'Official Developer Documentation',
   //url: 'https://develop.moodle.org',
   //baseUrl: '/',
   url: 'https://andrewnicols.github.io',
@@ -16,7 +23,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'moodlehq', // Usually your GitHub org/user name.
+  organizationName: 'moodle', // Usually your GitHub org/user name.
   projectName: 'devdocs', // Usually your repo name.
 
   presets: [
@@ -56,10 +63,33 @@ const config = {
             type: 'doc',
             docId: 'gettingstarted/quickstart',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Guides',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
-          //{to: '/docs/community', label: 'Community', position: 'left'},
+          {to: '/community', label: 'Community', position: 'left'},
+
+          // Right.
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
+            dropdownItemsAfter: [
+              ...ArchivedVersionsDropdownItems.map(
+                ([versionName, versionUrl]) => ({
+                  label: versionName,
+                  href: versionUrl,
+                }),
+              ),
+              {
+                href: 'https://docs.moodle.org/dev/',
+                label: 'Legacy documentation',
+              },
+              {
+                to: '/versions',
+                label: 'All versions',
+              },
+            ],
+          },
           {
             href: 'https://github.com/moodle/moodle',
             label: 'GitHub',
@@ -67,6 +97,11 @@ const config = {
           },
         ],
       },
+
+      // Customisation for the left sidebar:
+      autoCollapseSidebarCategories: true,
+      hideableSidebar: true,
+
       footer: {
         style: 'dark',
         links: [
@@ -74,8 +109,12 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'User docs',
+                href: 'https://docs.moodle.org/',
+              },
+              {
+                label: 'Legacy docs',
+                href: 'https://docs.moodle.org/dev/',
               },
             ],
           },
