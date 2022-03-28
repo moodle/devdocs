@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdevdocs=self.webpackChunkdevdocs||[]).push([[1117],{3638:function(e){e.exports=JSON.parse('{"permalink":"/dinodevdocs/blog/tags/hola","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
