@@ -1,15 +1,15 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+require('dotenv').config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'Moodle',
     tagline: 'Official Developer Documentation',
     //url: 'https://develop.moodle.org',
-    //baseUrl: '/',
-    url: 'https://andrewnicols.github.io',
-    baseUrl: '/dinodevdocs/',
+    url: process.env?.url || 'https://andrewnicols.github.io',
+    baseUrl: process.env?.baseUrl || '/',
     trailingSlash: false,
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
