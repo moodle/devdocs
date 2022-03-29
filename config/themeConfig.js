@@ -58,6 +58,7 @@ const themeConfig = {
 
     footer: require('./footer.js'),
     prism: require('./prism.js'),
+    imageZoom: require('./imageZoom.js'),
 };
 
 module.export = themeConfig;

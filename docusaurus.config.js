@@ -42,6 +42,9 @@ const config = {
 
     themeConfig: require('./config/themeConfig.js'),
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    plugins: [
+        'plugin-image-zoom',
+    ],
 };
 
 module.exports = config;
