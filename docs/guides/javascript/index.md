@@ -2,9 +2,7 @@
 title: JavaScript
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import TabItem from '@theme/TabItem';
-import Tabs from '@theme/Tabs';
+import { Since, CodeBlock, TabItem, Tabs } from '@site/src/components';
 
 Moodle makes heavy use of JavaScript to improve the experience for its users.
 
@@ -289,7 +287,11 @@ require(['mod_forum/discussion'], function(Discussion) {
 Any time that this template is rendered and placed on the page the `mod_forum/discussion` module will be fetched and the `init()` function called on it.
 
 :::note Since Moodle 4.0
-Moodle no longer supports Internet Explorer. It's now safe to use {term}`Arrow functions<Arrow functions>`.
+Moodle no longer supports Internet Explorer. It's now safe to use Arrow functions.
+<!--
+TODO:
+Moodle no longer supports Internet Explorer. It's now safe to use <Term reference="arrowFunctions">Arrow functions</Term>.
+-->
 :::
 
 Often you may want to link the JavaScript to a specific `DOMElement` in the template.
@@ -452,6 +454,30 @@ import WorkingWithStrings from '!!raw-loader!./_examples/str';
 
 ## Prefetch
 
+<Since versions={[ 3.9 ]} />
+
+Assets including strings, and templates, can be pre-fetched shortly after the page loads to improve the perceived performance of the page when consuming those components.
+
+```todo
+Link to jsdocs here
+```
+
+```js title="Example of fetching a string and template"
+import Prefetch from 'core/prefetch';
+
+// Prefetch the string 'discussion' from the 'mod_forum' component.
+Prefetch.prefetchString('discussion', 'mod_forum');
+
+// Prefetch the strings yes, no, and maybe from the 'core' component.
+Prefetch.prefetchStrings('core', ['yes', 'no', 'maybe']);
+
+// Prefetch the templates 'core/toast'.
+Prefetch.prefetchTemplate('core/toast');
+
+// Prefetch the templates 'core/toast' and 'core/modal'.
+Prefetch.prefetchTemplates(['core/toast', 'core/modal']);
+```
+
 ## Tools
 
 Moodle uses common and popular tools to ensure code quality, and to improve the
@@ -501,29 +527,6 @@ grunt
 </Tabs>
 
 ### ESLint
-
-## Glossary
-
-:::glossary
-Arrow functions
-
-  An arrow function is a shorthand way of writing a regular function.
-  These have several small but important differences to regular functions which make them easier to use in most
-  cases, but unsuitable in some others.
-
-  They're not suitable for use in code which isn't transpiled as Internet Explorer doesn't offer any support for
-  them.
-
-  For more information see the [MDN documentation for Arrow function expressions][guides_javascript-mdn-arrow_functions].
-:::
-
-% ------------------------------------------------------------------------
-% Links used on the current page go here.
-% All links must be namespaced in the format:
-%
-%     `guides_javascript-[domain_or_acronym]-[specialty]`
-%
-% These links should be kept sorted alphabetically
 
 [grunt]: https://gruntjs.com/
 [guides-javascript-mdn-javascript_getting_started]: https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web
