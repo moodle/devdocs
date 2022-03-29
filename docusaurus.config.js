@@ -40,7 +40,18 @@ const config = {
         ],
     ],
 
-    themeConfig: require('./config/themeConfig.js'),
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    themeConfig: ({
+        navbar: require('./config/navbar.js'),
+
+        // Customisation for the left sidebar:
+        autoCollapseSidebarCategories: true,
+        hideableSidebar: true,
+
+        footer: require('./config/footer.js'),
+        prism: require('./config/prism.js'),
+        imageZoom: require('./config/imageZoom.js'),
+    }),
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     plugins: [
         'plugin-image-zoom',
