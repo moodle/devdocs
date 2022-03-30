@@ -212,7 +212,3 @@ Decisions will be posted on the issue and that issue will be closed, allowing an
 Walks-though of the process for contributors:
 * By Dan Poltawski, Integrator: http://www.slideshare.net/poltawski/how-to-guarantee-your-change-is-integrated-to-moodle-core, https://www.youtube.com/watch?v=836WtnM2YpM
 * By Tim Hunt, contributor: http://tjhunt.blogspot.co.uk/2012/03/fixing-bug-in-moodle-core-mechanics.html and https://www.youtube.com/watch?v=gPPA3h7OGQU and https://youtu.be/Hu8ne0NCRAg?t=11659
-[[Category:Processes]]
-[[Category:Quality Assurance]]
-[[Category:Git]]
-[[Category:Core development]]
