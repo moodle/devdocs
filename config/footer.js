@@ -1,3 +1,8 @@
+const copyright = `
+Copyright © ${new Date().getFullYear()} Moodle Pty Ltd. Built with Docusaurus.
+This page is licensed under a <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons Attribution-NoDerivatives 4.0 International License</a>.
+`;
+
 module.exports = {
     style: 'dark',
     links: [
@@ -41,5 +46,5 @@ module.exports = {
             ],
         },
     ],
-    copyright: `Copyright © ${new Date().getFullYear()} Moodle Pty Ltd. Built with Docusaurus.`,
+    copyright,
 };
