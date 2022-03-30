@@ -27,6 +27,7 @@ const config = {
                     editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
                     remarkPlugins: [
                         require('./src/remark/trackerLinks'),
+                        require('./src/remark/legacyDocLinks'),
                     ],
                 },
                 blog: {
