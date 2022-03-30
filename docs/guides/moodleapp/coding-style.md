@@ -1,8 +1,9 @@
 ---
 title: Moodle App Coding Style
+sidebar_position: 2
 ---
 
-This document outlines the exceptions to the [Coding style](#) and [JavaScript Coding Style](#) which apply to the Moodle App and also includes rules for other technologies that are used in the app, like Typescript and Angular.
+This document outlines the exceptions to the [[Coding style]] and [[JavaScript Coding Style]] which apply to the Moodle App and also includes rules for other technologies that are used in the app, like Typescript and Angular.
 
 Unless otherwise specified, developers should follow the indications included on those documents.
 
