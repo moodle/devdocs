@@ -1,5 +1,6 @@
 ---
-title: Moodle Community
+title: Support channels
+slug: /channels
 ---
 
 # The Moodle Community
@@ -18,30 +19,30 @@ You can be a part of the conversation by joining the [#moodledev](https://telegr
 
 **Don't use the chat to get support for using Moodle**
 
-&nbsp;There are moodle.org forums for that, or talk to a Moodle Partner
+There are moodle.org forums for that, or talk to a Moodle Partner
 
 **Be nice**
 
-&nbsp;Help us maintain a great developer community:
+Help us maintain a great developer community:
 * Be respectful to others' viewpoints.
 * Give and accept the constructive feedback and eventually criticism, too.
 * Be honest, but not offensive.
 
 **Speak English in the chat.**
 
-&nbsp;Moodle is a global project with worldwide community and English - even on elementary level - works best for us.
+Moodle is a global project with worldwide community and English - even on elementary level - works best for us.
 
 **Use your real name in the chat.**
 
-&nbsp;Keep it consistent with your moodle.org profile and Git commits.
+Keep it consistent with your moodle.org profile and Git commits.
 
 **Keep topics and discussions focused.**
 
-&nbsp;Everything you post in the chat, hits several hundreds of other people instantly. Let us not disturb each other.
+Everything you post in the chat, hits several hundreds of other people instantly. Let us not disturb each other.
 
 **Avoid funny animated gifs, memes and stickers.**
 
-&nbsp;There are better places online for sharing them.
+There are better places online for sharing them.
 
 **Advertising is generally not allowed, although certain exceptions may be made.**
 

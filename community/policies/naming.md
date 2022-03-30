@@ -1,5 +1,7 @@
 ---
 title: Naming conventions
+tags:
+  - Policies
 ---
 
 ## Components

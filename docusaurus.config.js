@@ -56,6 +56,22 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     plugins: [
         'plugin-image-zoom',
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'community',
+                path: 'community',
+                routeBasePath: 'community',
+                sidebarPath: require.resolve('./sidebars/community.js'),
+                editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
+                remarkPlugins: [
+                    require('./src/remark/trackerLinks'),
+                    require('./src/remark/legacyDocLinks'),
+                ],
+                editCurrentVersion: true,
+            },
+        ],
+
     ],
 };
 

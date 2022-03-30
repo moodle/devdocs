@@ -1,8 +1,15 @@
 ---
 title: Development process
+description: A summary of the various development processes used in Moodle development.
+tags:
+  - Processes
+  - Quality Assurance
+  - Core development
+  - Git
 ---
 
 This document summarises the various development processes used in developing Moodle. There are four main processes that overlap.
+
 ## Integration workflow in the tracker
 The Moodle tracker keeps track of the status of all bug fixes and new features. 
 
