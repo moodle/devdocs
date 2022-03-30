@@ -9,7 +9,7 @@ const config = {
     tagline: 'Official Developer Documentation',
     //url: 'https://develop.moodle.org',
     url: process.env?.url || 'https://andrewnicols.github.io',
-    baseUrl: process.env?.baseUrl || '/',
+    baseUrl: process.env?.baseUrl || '/dinodevdocs/',
     trailingSlash: false,
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
