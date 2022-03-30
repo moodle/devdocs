@@ -90,7 +90,7 @@ At Moodle HQ, development takes place in sprints. The sprints are two or three-w
 ### Events during cycle
 During each cycle there are a periods and events that occur between and around sprints.
 
-[[Image:Dev sprint calendar.png|800px]]
+![The Development sprint calendar](./sprintcalendar.png)
 ; *Planning and bug fixing*
 : A period during which the Roadmap is explored, specs are written and prototypes are created. Regressions in the recent release are fixed as they arise.
 ; *End sync period*
