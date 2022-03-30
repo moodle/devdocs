@@ -20,7 +20,7 @@ While many of the developers work for Moodle.com, a large number are part of the
 ### CiBoT
 CiBoT is not a person but a bot who monitors the tracker and performs the [[Automated code review]] when issue is submitted for Peer review or when developer added _cime_ label.
 ### Component leads
-[https://tracker.moodle.org/projects/MDL?selectedItem=com.atlassian.jira.jira-projects-plugin:components-page Component leads] are developers with some responsibility for particular components (plugins or modules) in Moodle. They have authority to decide that a particular fix is suitable and complete enough to be considered for integration in Moodle core and should be called upon to complete peer reviews for code in their components. Note that, apart from that, every component also has some [[Component Leads|HQ Component leads]] that will specifically work on associated issues, triaging, monitoring, reviewing, fixing them.
+[Component leads](https://tracker.moodle.org/projects/MDL?selectedItem=com.atlassian.jira.jira-projects-plugin:components-page) are developers with some responsibility for particular components (plugins or modules) in Moodle. They have authority to decide that a particular fix is suitable and complete enough to be considered for integration in Moodle core and should be called upon to complete peer reviews for code in their components. Note that, apart from that, every component also has some [[Component Leads|HQ Component leads]] that will specifically work on associated issues, triaging, monitoring, reviewing, fixing them.
 
 ### Component leads reviewers
 Component Lead Reviewers are Component Leads who have the added responsibility of performing a second and final review of a selection of issues within their component.
@@ -43,7 +43,7 @@ On Thursday each week, production maintainers merge all the issues that passed t
 ## Stable maintenance cycles
 Moodle releases regular updates of the stable version of the software to fix bugs and other issues. Releases like 2.2.1, 2.2.2, 2.2.3 etc only include fixes based on the latest major release (2.2) and never any significant new features or database changes.
 
-At Moodle HQ there are teams of developers using the [http://www.scrum.org/ Scrum framework] to work on these issues (as well as new features for [[#Major_release_cycles|major releases]]). 
+At Moodle HQ there are teams of developers using the [Scrum framework](http://www.scrum.org/) to work on these issues (as well as new features for [[#Major_release_cycles|major releases]]). 
 
 ### Minor release (point release) timing
 After [[#Major_release_cycles|major releases]] there will be minor releases.
@@ -114,7 +114,7 @@ Developers create a detailed spec (here in the developer docs) outlining their g
 
 Developers should also create an issue in the tracker (linking to your docs) to keep track of the project status.
 ### Community consultation
-Get the community involved in looking at the spec to see if it meets their needs and to get further feedback. Please post in the [http://moodle.org/mod/forum/view.php?id=8052 Future major features forum] on moodle.org. You could also blog/tweet about it etc.
+Get the community involved in looking at the spec to see if it meets their needs and to get further feedback. Please post in the [Future major features forum](http://moodle.org/mod/forum/view.php?id=8052) on moodle.org. You could also blog/tweet about it etc.
 
 Community developers proposing a new feature will want to talk with HQ core developers to make sure the ideas make sense, and possibly get some review on database design, architecture and so on.
 ### Develop the code using Git
@@ -134,7 +134,7 @@ Component leads should put issues, which affect code in their components, up for
 
 All other developers, including people who are component leads but working outside their component, should have their issues peer reviewed before they are sent to integration.
 ### Peer review
-The [http://tracker.moodle.org/browse/MDL#selectedTab=com.atlassian.jira.plugin.system.project%3Acomponents-panel component lead] should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
+The [component lead](http://tracker.moodle.org/browse/MDL#selectedTab=com.atlassian.jira.plugin.system.project%3Acomponents-panel)) should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
 
 Process and the list of things to check are described in [[Peer reviewing]].
 
@@ -144,7 +144,7 @@ The developer is responsible for acting on the feedback from the peer reviewer. 
 Submitting an issue to integration is much the same as for any Moodle code. In some cases the Component Lead may perform a Component Lead Review instead of the integration team. See [[Integration Review]] and the information about the integration workflow above.
 
 ## Fixing a bug
-Bug fixes, and minor features or enhancements should go through the following process. (The only exception is English language string typo fixes or suggested improvements, which may be contributed to the en_fix language pack on the [http://lang.moodle.org/ Moodle translation site].)
+Bug fixes, and minor features or enhancements should go through the following process. (The only exception is English language string typo fixes or suggested improvements, which may be contributed to the en_fix language pack on the [Moodle translation site](http://lang.moodle.org/).)
 ### Make sure there is a tracker issue
 Every change must have an issue in the tracker. If you are fixing a bug, there is probably one there already, but if not, create one. [[Tracker tips|Tips for searching tracker]].
 ### Decide which branches the fix is required on
@@ -154,7 +154,7 @@ Develop your fix and push the change to an open git repository, for example on g
 
 It is essential that your code follows the [[Coding|Moodle Coding Guide]].
 
-You will need to push one commit for each branch the fix needs to be applied to. Often people use branch names like MDL-12345-31_brief_name so it is clear what each branch is. [http://kernel.org/pub/software/scm/git/docs/git-cherry-pick.html git cherry-pick] can help with replicating the fix onto different branches.
+You will need to push one commit for each branch the fix needs to be applied to. Often people use branch names like MDL-12345-31_brief_name so it is clear what each branch is. [git cherry-pick](http://kernel.org/pub/software/scm/git/docs/git-cherry-pick.html) can help with replicating the fix onto different branches.
 
 Consider setting up [[Travis integration]] with your repository so tests will be automatically run for you whenever you push work on your fix.
 ### Submit your code for peer review
@@ -172,7 +172,7 @@ After your first fix is integrated you will be added to developers group and wil
 
 If you've set up [[Travis integration]], the issue will automatically show the Travis build status for the branch(es) you've submitted for peer review.
 ### Peer review
-The [https://tracker.moodle.org/projects/MDL?selectedItem=com.atlassian.jira.jira-projects-plugin:components-page component lead] should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
+The [component lead](https://tracker.moodle.org/projects/MDL?selectedItem=com.atlassian.jira.jira-projects-plugin:components-page) should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
 
 Process and the list of things to check are described in [[Peer reviewing]].
 ### Submit your code for integration
@@ -198,7 +198,7 @@ Where _remote_branch_ is the name of your remote branch, for example 'wip-mdl-12
 Occasionally within Moodle we run into policy issues where a high-level decision needs to be made about how things are to be done.
 
 In these cases the process is as follows:
-* Create an issue in the tracker with a [https://tracker.moodle.org/browse/MDL/component/12733 Policy component] and put "POLICY:" as a prefix on the summary.
+* Create an issue in the tracker with a [Policy component](https://tracker.moodle.org/browse/MDL/component/12733) and put "POLICY:" as a prefix on the summary.
 * In the description describe the problem clearly as well as all the options. If it's long then make a page here in Moodle Dev Docs and link to it.
 * Do not use this issue for code. If there are issues that depend on this policy decision, then add tracker links to them as dependencies.
 * Feel free to encourage people to come and talk about the policy to support various points of view. The more evidence we have (from everyone in the community) the better.
@@ -208,7 +208,7 @@ Decisions will be posted on the issue and that issue will be closed, allowing an
 ## See also
 * [[Release process]]
 * [[Deprecation]]
-* [http://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11350 Integration dashboard]
+* [Integration dashboard](http://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11350)
 Walks-though of the process for contributors:
 * By Dan Poltawski, Integrator: http://www.slideshare.net/poltawski/how-to-guarantee-your-change-is-integrated-to-moodle-core, https://www.youtube.com/watch?v=836WtnM2YpM
 * By Tim Hunt, contributor: http://tjhunt.blogspot.co.uk/2012/03/fixing-bug-in-moodle-core-mechanics.html and https://www.youtube.com/watch?v=gPPA3h7OGQU and https://youtu.be/Hu8ne0NCRAg?t=11659

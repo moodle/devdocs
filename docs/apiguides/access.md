@@ -179,7 +179,7 @@ This method returns list of users with given capability, it ignores enrolment st
 - [[Roles and modules]]
 - [[NEWMODULE Adding capabilities]]
 - [[New permissions evaluation in 2.0]]
-- [https://moodle.org/mod/forum/discuss.php?d=257611 (Forums) How to check if current user is student?]
+- [(Forums) How to check if current user is student?](https://moodle.org/mod/forum/discuss.php?d=257611)
 
 [[Category:API]]
 
