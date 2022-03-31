@@ -18,7 +18,9 @@ Unless otherwise specified, this Coding Style document **will defer to [PSR-12](
 
 Where a **de-facto Moodle standard*** is encountered but is undocumented, an appropriate **MDLSITE** issue should be raised to have the standard either documented within this Coding style guide, or rejected and the PSR recommendations adopted instead.
 
-&#42; *"de-facto Moodle standard"* is any coding style which is commonly and typically used in Moodle
+:::info
+*"de-facto Moodle standard"* is any coding style which is commonly and typically used in Moodle
+:::
 
 ### Goals
 
@@ -32,7 +34,9 @@ Abstract goals we strive for:
 
 When considering the goals above, each situation requires an examination of the circumstances and balancing of various trade-offs.
 
-Note that much of the existing Moodle code may not follow all of these guidelines - we continue to upgrade this code when we see it.
+:::note
+Much of the existing Moodle code may not follow all of these guidelines - we continue to upgrade this code when we see it.
+:::
 
 For details about using the Moodle API to get things done, see the [[Coding|coding guidelines]].
 
@@ -41,7 +45,7 @@ For details about using the Moodle API to get things done, see the [[Coding|codi
 There are a couple of different tools available to help you in writing code that conforms to this guide.
 
 ; Code checker (integrates with [eclipse/phpstorm](https://github.com/moodlehq/moodle-local_codechecker/blob/master/README.md#ide-integration)): https://moodle.org/plugins/view.php?plugin=local_codechecker
-; Moodle PHPdoc checker : https://moodle.org/plugins/local_moodlecheck
+; Moodle PHPdoc checker: https://moodle.org/plugins/local_moodlecheck
 
 It is worth using both tools to check the code you are writing as they both perform slightly different checks.
 If you can get your code to pass both then you are well on the way to making friends with those who will be reviewing your work.
@@ -62,8 +66,7 @@ Use an indent of **4 spaces** with no tab characters. Editors should be configur
 
 **Do not** indent the main script level:
 
-GOOD:
-```php
+```php title="An example of correct indentation at the main script level"
 <?php
 require('config.php');
 $a = required_param('a', PARAM_INT);
@@ -74,8 +77,7 @@ if ($a > 10) {
 }
 ```
 
-BAD:
-```php
+```php title="An example of incorrect indentation at the main script level"
 <?php
     require('config.php');
     $a = required_param('a', PARAM_INT);
@@ -205,7 +207,9 @@ $plugininfo['preferences'][$plugin] = [
     'string' => $modulenamestr,
 ];
 ```
-Note the last item has a trailing comma left there which allows to extend the list of items later with a cleaner diff. For the same reason, it is better not to align the assignment operators.
+:::note
+The last item has a trailing comma left there which allows to extend the list of items later with a cleaner diff. For the same reason, it is better not to align the assignment operators.
+:::
 
 #### Wrapping arrays passed as function parameter
 This is just an example of combining some of the examples above.
@@ -223,13 +227,15 @@ $url = new moodle_url('/course/loginas.php', [
 - There must be no whitespace characters (spaces or tabs) at the end of any line.
 - There must be no extra blank lines at the end of a file; every file should end with a single LF character.
 
--Note: This is consistent with the conventions of [PSR-12](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-12-extended-coding-style-guide.md#22-files).*
+:::note
+This is consistent with the conventions of [PSR-12](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-12-extended-coding-style-guide.md#22-files).
+:::
 
 ## Naming Conventions
 
 ### Filenames
 
-Filenames should :
+Filenames should:
 - be whole english words
 - be as short as possible
 - use lowercase letters only
@@ -262,7 +268,9 @@ $row->field = 'something';
 $DB->insert_record('table', $row);
 ```
 
--Before Moodle 2.0, we used to define a class **object** extending stdClass, and use new object(); This has now been deprecated. Please use stdClass instead.*
+:::info
+Before Moodle 2.0, we used to define a class **object** extending stdClass, and use new object(); This has now been deprecated. Please use stdClass instead.*
+:::
 
 ### Functions and Methods
 
@@ -272,7 +280,9 @@ Verbosity is encouraged: function names should be as illustrative as is practica
 
 The uses of type hints and return type declarations is required in PHP in all possible locations for all new code. There will be necessary exclusions, such as code extending existing non-compliant code and implementing things where it is not available. Progressive approach will be applied.
 
-Note there is no space between the function name and the following (brackets). There is also no whitespace between the nullable character (question mark - ?) and params or return types or between the function closing brackets and the colon.
+:::note
+There is no space between the function name and the following (brackets). There is also no whitespace between the nullable character (question mark - ?) and params or return types or between the function closing brackets and the colon.
+:::
 
 ```php
 function report_participation_get_overviews(string $action, ?int userid): ?array {
@@ -335,8 +345,8 @@ Use lower case for **true**, **false** and **null**.
 ### Namespaces
 
 Formal namespaces are required for any new classes in Moodle. The following exceptions apply:
-# There is no requirement to move existing non-namespaced classes to a namespace; and
-# Where an existing mechanism exists for loading a class, and that mechanism does not support the use of a namespaced class, the existing [[Frankenstyle]] prefix on the class name will be allowed.
+1. There is no requirement to move existing non-namespaced classes to a namespace; and
+1. Where an existing mechanism exists for loading a class, and that mechanism does not support the use of a namespaced class, the existing [[Frankenstyle]] prefix on the class name will be allowed.
 
 The use of a [[Frankenstyle#Class names|Frankenstyle prefix on class names]] is deprecated and should only be used in the above exceptions.
 
@@ -367,9 +377,9 @@ class core_user_example {
 ```
 
 The use of namespaces must conform to the following rules:
-# Classes belonging to a namespace must be created in a classes directory inside a plugin (e.g. mod/forum/classes), or for core code, in lib/classes or subsystemdir/classes.
-# The classname and filename for all namespaced classes must conform to the [[Automatic class loading|automatic class loading]] rules. The use of formal PHP namespaces in all new code is required.
-# Use at most one namespace declaration per file.
+1. Classes belonging to a namespace must be created in a classes directory inside a plugin (e.g. mod/forum/classes), or for core code, in lib/classes or subsystemdir/classes.
+1. The classname and filename for all namespaced classes must conform to the [[Automatic class loading|automatic class loading]] rules. The use of formal PHP namespaces in all new code is required.
+1. Use at most one namespace declaration per file.
 
 GOOD:
 ```php
@@ -403,7 +413,7 @@ class eat {
 
 The namespace declaration may be preceded with a doc block.
 
-The [[Coding style#Classes|class naming]] rules also apply to the names for each level of namespace.
+The [class naming](#classes) rules also apply to the names for each level of namespace.
 
 The namespace declaration must be the first non-comment line in the file, followed by one blank line, followed by the (optional)
 "use" statements, one per line, followed by one blank line.
@@ -629,8 +639,8 @@ The dot operator may be used without any space to either side (as shown in the a
 Language strings should "Always look like this" and "Never Like This Example".
 
 Capitals should only be used when:
-# starting a sentence, or
-# starting a proper name, like Moodle.
+1. starting a sentence, or
+1. starting a proper name, like Moodle.
 
 #### Structure
 
@@ -669,7 +679,8 @@ $myarray = [1, 2, 3, 'Stuff', 'Here',
     $a, $b, $c, 56.44, $d, 500];
 ```
 
-Note that the example above also can be written as follows:<br/>
+:::note
+The example above also can be written as follows:<br/>
 (with special attention to the last line having a trailing comma to extend the list of items later with a cleaner diff)
 
 ```php
@@ -678,6 +689,7 @@ $myarray = [
     $a, $b, $c, 56.44, $d, 500,
 ];
 ```
+:::
 
 In any case, brackets and newlines need to be balanced, irrespectively of the number of elements per line.
 
@@ -697,12 +709,12 @@ $myarray = [
 ### Class declarations
 
 - Classes must be named according to Moodle's naming conventions.
-- Classes must go under their respective "component/classes" dir to get the benefits of autoloading and [[Coding style#Namespaces|namespacing]]. There aren't such luxuries out from there.
+- Classes must go under their respective "component/classes" dir to get the benefits of autoloading and [namespacing](#namespaces). There aren't such luxuries out from there.
 - Each php file will contain only one class (or interface, or trait...). Unless it's part of old APIs where multi-artifact files were allowed.
 - The brace should always be written on the line beside the class name.
 - Every class must have a documentation block that conforms to the PHPDocumentor standard.
 - All code in a class must be indented with 4 spaces.
-- Placing additional code ("side-effects") in class files is only permitted to require artifacts not provided via autoloading (old classes or libs out from the "classes" directories and not loaded by Moodle's bootstrap). In those cases, the use of the [[Coding style#Require_.2F_include|MOODLE_INTERNAL check]] will be required.
+- Placing additional code ("side-effects") in class files is only permitted to require artifacts not provided via autoloading (old classes or libs out from the "classes" directories and not loaded by Moodle's bootstrap). In those cases, the use of the [`MOODLE_INTERNAL` check](#require--include) will be required.
 
 : An example:
 
@@ -721,7 +733,10 @@ class sample_class {
     // must be indented 4 spaces.
 }
 ```
-Note the classes PHPDoc style is defined with more detail in the [[Coding style#Classes_3|Documentation and comments / Classes]] section in this document.
+
+:::note
+The classes PHPDoc style is defined with more detail in the [Documentation and comments / Classes](#phpdoc-classes) section in this document.
+:::
 
 ### Class member variables
 
@@ -847,10 +862,12 @@ $toload = (empty($CFG->navshowallcourses))?self::LOAD_ROOT_CATEGORIES:self::LOAD
 $coefstring = ($coefstring==* or $coefstring=='aggregationcoefextrasum') ? 'aggregationcoefextrasum' : 'aggregationcoef';
 ```
 
-<nowiki>**</nowiki> Note that, since PHP 7.0, many of those "isset()" ternaries can be changed to use the new shorthand [https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.null-coalesce-op null coalescing operator] so, the above is equivalent to:
+:::note
+Since PHP 7.0, many of those `isset()` ternaries can be changed to use the new shorthand [null coalescing operator](https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.null-coalesce-op) so, the above is equivalent to:
 ```php
 $username = $user->username ?? *;
 ```
+:::
 
 ## Require / include
 
@@ -860,7 +877,7 @@ Each file that is accessed via browser should start by including the main config
 require(__DIR__ . '/../../config.php');
 ```
 
-Any other include/require should use a path starting with <tt>__DIR__</tt> or an absolute path starting with <tt>$CFG->dirroot</tt> or <tt>$CFG->libdir</tt>. Relative includes starting with "../" can [https://www.php.net/manual/en/function.include.php sometimes behave strangely under PHP], so should not be used. Our [[CLI scripts]] must not use relative config.php paths starting with "../".
+Any other include/require should use a path starting with <tt>__DIR__</tt> or an absolute path starting with <tt>$CFG->dirroot</tt> or <tt>$CFG->libdir</tt>. Relative includes starting with "../" can [sometimes behave strangely under PHP](https://www.php.net/manual/en/function.include.php), so should not be used. Our [[CLI scripts]] must not use relative config.php paths starting with "../".
 
 For library files in normal usage, require_once should be used (this is different from config.php which should always use 'require' as above). Examples:
 ```php
@@ -955,8 +972,8 @@ If a function uses die or exit, please add this tag to the docblock to help deve
 
 The access can be used to specify access control for an element
 
-# Should only be used when the method definition does not already specify access control.
-# In the case of functions, specifying public access is redundant and so should be avoided.
+1. Should only be used when the method definition does not already specify access control.
+1. In the case of functions, specifying public access is redundant and so should be avoided.
 
   @access private
 
@@ -964,10 +981,10 @@ The access can be used to specify access control for an element
 
 The package tag should always be used to label php files with the correct [[Frankenstyle]] component name.  Full rules are explained on that page, but in summary:
 
-# If the file is part of any component plugin, then use the plugin component name (eg **mod_quiz** or **gradereport_xls**)
-# If the file is part of a core subsystem then it will be core_xxxx where xxxx is the name defined in get_core_subsystems().  (eg **core_enrol** or **core_group**)
-# If the file is one of the select few files in core that are not part of a subsystem (such as lib/moodlelib.php) then it just as a package of **core**.
-# Each file can only be part of ONE package.
+1. If the file is part of any component plugin, then use the plugin component name (eg **mod_quiz** or **gradereport_xls**)
+1. If the file is part of a core subsystem then it will be core_xxxx where xxxx is the name defined in get_core_subsystems().  (eg **core_enrol** or **core_group**)
+1. If the file is one of the select few files in core that are not part of a subsystem (such as lib/moodlelib.php) then it just as a package of **core**.
+1. Each file can only be part of ONE package.
 
 (We do not have standards for @subpackage at all.  You can use within your @package how you like.)
 
@@ -1044,12 +1061,12 @@ There are some tags that are only allowed within some contexts and not globally.
 
 All files that contain PHP code should contain, without any blank line after the php open tag, a full GPL copyright statement at the top, plus a SEPARATE docblock right under it containing a:
 
-# short one-line description of the file
-# longer description of the file
-# @package tag (required)
-# @category tag (only when everything in the file is related to one of the [[Core APIs]])
-# @copyright (required)
-# @license (required)
+1. short one-line description of the file
+1. longer description of the file
+1. @package tag (required)
+1. @category tag (only when everything in the file is related to one of the [[Core APIs]])
+1. @copyright (required)
+1. @license (required)
 
 For files containing only one artifact, the file phpdc block is optional as long as the artifact (class, interface, trait...) is documented. Read the following "Classes" section about that case.
 
@@ -1083,7 +1100,7 @@ For files containing only one artifact, the file phpdc block is optional as long
  */
 ```
 
-### Classes
+### Classes {#phpdoc-classes}
 
 All classes must have a complete docblock like this:
 
@@ -1221,17 +1238,15 @@ function forum_get_ratings_mean($postid, $scale, $ratings = null) {
         }
 ```
 
-GOOD:
-```php
+```php title="An example of correct single-line comment styling"
 // Comment explaining this piece of code.
 ```
-BAD:
-```php
+
+```php title="Example of incorrect commenting"
 /*  Comment explaining this piece of code. */
 # Comment explaining this piece of code.
 // comment explaining this piece of code (without capital letter and punctuation)
 ```
-
 
 If your comment is due to some MDL issue, please feel free to include the correct MDL-12345 in your comment.  This makes it easier to track down decisions and discussions about things.
 
@@ -1247,7 +1262,7 @@ If you have a big task that is nearly done, apart a few TODOs, and you really wa
 
 There is a nice "todo checker" reporting tool, restricted to admins and available via web @ [lib/tests/other/todochecker.php](https://github.com/moodle/moodle/blob/master/lib/tests/other/todochecker.php).
 
-Finally, don't forget to add any MDL-l2345 used by your TODOs (and @todos too, unless part of the [[Deprecation|deprecation process]], those are handled apart) to the "Review TODOs Epic" : MDL-47779 (requires login to see the issues)
+Finally, don't forget to add any MDL-l2345 used by your TODOs (and @todos too, unless part of the [[Deprecation|deprecation process]], those are handled apart) to the "Review TODOs Epic": MDL-47779 (requires login to see the issues)
 
 ### CVS keywords
 
@@ -1259,7 +1274,9 @@ Use exceptions to report errors, especially in library code.
 
 Throwing an exception has almost exactly the same effect as calling print_error(), but it is more flexible. For example, the caller can choose to catch the exception and handle it in some way. It also makes it easier to write unit tests.
 
-Note that, since 2021, it has been [agreed to deprecate print_error()](https://tracker.moodle.org/browse/MDL-69936) and, instead, to throw moodle_exception() is the correct way to proceed.
+:::note
+Since 2021, it has been [agreed to deprecate `print_error()`](https://tracker.moodle.org/browse/MDL-69936) and, instead, to `throw moodle_exception()` is the correct way to proceed.
+:::
 
 Any exception that is not caught will trigger an appropriate call to print_error, to report the problem to the user. Exceptions "error codes" will be translated only when they are meant to be shown to final users.
 
@@ -1274,18 +1291,18 @@ To get the full list of exception types, search for the regular expression 'clas
 Where appropriate, you should create new subclasses of moodle_exception for use in your code.
 
 A few notable exception types:
-; moodle_exception : base class for exceptions in Moodle. Use this when a more specific type is not appropriate.
-; coding_exception : thrown when the problem seems to be caused by a developer's mistake. Often thrown by core code that interacts with plugins. If you throw an exception of this type, try to make the error message helpful to the plugin author, so they know how to fix their code.
-; dml_exception (and subclasses) : thrown when a database query fails.
-; file_exception : thrown by the File API.
+; moodle_exception: base class for exceptions in Moodle. Use this when a more specific type is not appropriate.
+; coding_exception: thrown when the problem seems to be caused by a developer's mistake. Often thrown by core code that interacts with plugins. If you throw an exception of this type, try to make the error message helpful to the plugin author, so they know how to fix their code.
+; dml_exception (and subclasses): thrown when a database query fails.
+; file_exception: thrown by the File API.
 
 ## Dangerous functions and constructs
 PHP includes multiple questionable features that are highly discouraged because they are very often source of serious security problems.
 
-# do not use *eval()* function - language packs are exception (to be solved in future).
-# do not use *preg_replace()* with /e modifier - use callbacks in order to prevent unintended PHP execution.
-# do not use backticks for shell command execution.
-# do not use *goto*, neither the operator neither labels - use other programming techniques to control the execution flow.
+1. do not use *eval()* function - language packs are exception (to be solved in future).
+1. do not use *preg_replace()* with /e modifier - use callbacks in order to prevent unintended PHP execution.
+1. do not use backticks for shell command execution.
+1. do not use *goto*, neither the operator neither labels - use other programming techniques to control the execution flow.
 
 ## Policy about coding-style only fixes
 
@@ -1293,9 +1310,9 @@ Way before this coding-style guide was defined and agreed, a lot of code had bee
 
 In any case, in order to normalize the (progressive, non-critical) transition, a policy issue (MDL-43233) was created and agreed about. And these are the rules to apply to coding-style only changes:
 
-# Related coding-style changes (same lines, a variable within a method/function, adjacent comments...) within a real issue are allowed.
-# Unrelated coding-style changes (other methods, blocks of code, comments...) within a real issue are only accepted for master and in a separate commit.
-# Coding-style only issues are only accepted for master along the first 2 months of every cycle.
+1. Related coding-style changes (same lines, a variable within a method/function, adjacent comments...) within a real issue are allowed.
+1. Unrelated coding-style changes (other methods, blocks of code, comments...) within a real issue are only accepted for master and in a separate commit.
+1. Coding-style only issues are only accepted for master along the first 2 months of every cycle.
 
 ## Git commits
 
@@ -1327,9 +1344,9 @@ For more guidance, see [[Commit cheat sheet]]
 
 This document was drawn from the following sources:
 
-# The original [Coding guidelines](https://docs.moodle.org/en/index.php?title=Development:Coding&oldid=976) page
-# The [Zend guidelines](http://framework.zend.com/manual/en/coding-standard.html) and
-# Feedback from all core Moodle developers
+1. The original [Coding guidelines](https://docs.moodle.org/en/index.php?title=Development:Coding&oldid=976) page
+1. The [Zend guidelines](http://framework.zend.com/manual/en/coding-standard.html) and
+1. Feedback from all core Moodle developers
 
 ## See also
 
