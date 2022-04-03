@@ -43,6 +43,10 @@ const sidebars = {
                     dirName: 'apiguides',
                 },
             ],
+            link: {
+                type: 'doc',
+                id: 'apiguides',
+            },
         },
         {
             label: 'Tooling',

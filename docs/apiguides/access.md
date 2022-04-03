@@ -1,5 +1,7 @@
 ---
 title: Access API
+tags:
+  - Access
 ---
 
 The Access API gives you functions so you can determine what the current user is allowed to do. It also allows plugins to extend Moodle with new capabilities.
@@ -180,6 +182,3 @@ This method returns list of users with given capability, it ignores enrolment st
 - [[NEWMODULE Adding capabilities]]
 - [[New permissions evaluation in 2.0]]
 - [(Forums) How to check if current user is student?](https://moodle.org/mod/forum/discuss.php?d=257611)
-
-[[Category:API]]
-
