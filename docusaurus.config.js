@@ -40,10 +40,7 @@ const config = {
                         require('./src/remark/legacyDocLinks'),
                     ],
                 },
-                blog: {
-                    showReadingTime: true,
-                    editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
-                },
+                blog: false,
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
