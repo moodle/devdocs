@@ -17,7 +17,6 @@ const navbar = {
             position: 'left',
             label: 'Guides',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {to: '/community', label: 'Community', position: 'left'},
 
         // Right.
