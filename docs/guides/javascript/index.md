@@ -151,7 +151,7 @@ some Elements in the page.
 If you wanted to display a browser alert every time a user clicks on a button,
 you might have a template like the following example:
 
-```mustache title="mod/example/templates/helloworld.mustache"
+```handlebars title="mod/example/templates/helloworld.mustache"
  <button data-action="mod_example/helloworld-update_button">Click me</button>
 ```
 
@@ -195,7 +195,7 @@ Instead of having one event listener for every button in your page, you can
 have one event listener which checks which button was pressed.
 If you have a template like the following:
 
-```mustache title="mod/example/templates/helloworld.mustache"
+```handlebars title="mod/example/templates/helloworld.mustache"
  <div>
      <button data-action="mod_example/helloworld-update_button">Click me</button>
      <button data-action="mod_example/helloworld-big_red_button">Do not click me</button>
@@ -272,7 +272,7 @@ Some browser-specific features won't be available.
 
 This simplest form of this is:
 
-```mustache title=mod/forum/templates/discussion.mustache
+```handlebars title=mod/forum/templates/discussion.mustache
 <div>
     <!—- Your template content goes here. —->
 </div>
@@ -297,7 +297,7 @@ Moodle no longer supports Internet Explorer. It's now safe to use <Term referenc
 Often you may want to link the JavaScript to a specific `DOMElement` in the template.
 You can use the `{{uniqid}}` Mustache tag to give that DOM Element a unique ID and then pass that into the Module.
 
-```mustache title=mod/forum/templates/discussion.mustache
+```handlebars title=mod/forum/templates/discussion.mustache
 <div id=“mod_forum-discussion-wrapper-{{uniqid}}”>
     <!—- Your template content goes here. —->
 </div>
