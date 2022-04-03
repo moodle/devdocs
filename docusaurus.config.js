@@ -16,6 +16,14 @@ const config = {
     favicon: 'img/favicon.ico',
     organizationName: 'moodle', // Usually your GitHub org/user name.
     projectName: 'devdocs', // Usually your repo name.
+    i18n: {
+        locales: [
+            'en',
+            'en-AU',
+            'en-GB',
+        ],
+        defaultLocale: 'en-AU',
+    },
 
     presets: [
         [
@@ -25,6 +33,8 @@ const config = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
+                    showLastUpdateAuthor: true,
+                    showLastUpdateTime: true,
                     remarkPlugins: [
                         require('./src/remark/trackerLinks'),
                         require('./src/remark/legacyDocLinks'),
@@ -64,6 +74,8 @@ const config = {
                 routeBasePath: 'community',
                 sidebarPath: require.resolve('./sidebars/community.js'),
                 editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
+                showLastUpdateAuthor: true,
+                showLastUpdateTime: true,
                 remarkPlugins: [
                     require('./src/remark/trackerLinks'),
                     require('./src/remark/legacyDocLinks'),
