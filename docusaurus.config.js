@@ -3,6 +3,18 @@
 
 require('dotenv').config();
 
+const Versions = require('./versions.json');
+const versionConfig = Object.fromEntries(Versions.map(version => {
+    return [version, {
+        label: version,
+        banner: 'none',
+    }];
+}));
+versionConfig['current'] = {
+    label: 'master',
+    banner: 'none',
+};
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'Moodle',
@@ -39,6 +51,19 @@ const config = {
                         require('./src/remark/trackerLinks'),
                         require('./src/remark/legacyDocLinks'),
                     ],
+                    lastVersion: 'current',
+                    versions: versionConfig,
+                    /*
+                    versions: {
+                        current: {
+                            label: 'master',
+                            banner: 'none',
+                        },
+                        "4.0": {
+                            banner: 'none',
+                        },
+                    },
+                    */
                 },
                 blog: false,
                 theme: {

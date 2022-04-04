@@ -43,8 +43,8 @@ export default function Version(): JSX.Element {
   const currentVersion = versions.find(
     (version) => version.name === 'current',
   )!;
-  const pastVersions = versions.filter(
-    (version) => version !== latestVersion && version.name !== 'current',
+  const stableVersions = versions.filter(
+    version => version.name !== 'current',
   );
   const repoUrl = `https://github.com/${organizationName}/${projectName}`;
 
@@ -63,7 +63,7 @@ export default function Version(): JSX.Element {
           <div className="margin-bottom--lg">
             <Heading as="h3" id="next">
               <Translate id="versionsPage.current.title">
-                Currently supported versions of Moodle (Stable)
+                The next version of Moodle (master)
               </Translate>
             </Heading>
             <p>
@@ -91,6 +91,39 @@ export default function Version(): JSX.Element {
             </table>
           </div>
         )}
+
+        <div className="margin-bottom--lg">
+          <Heading as="h3" id="next">
+            <Translate id="versionsPage.current.title">
+              Currently supported versions of Moodle (Stable)
+            </Translate>
+          </Heading>
+          <p>
+            <Translate id="versionsPage.current.description">
+              Here you can find the documentation for current released
+              versions.
+            </Translate>
+          </p>
+          <table>
+            <tbody>
+              {stableVersions.map((version) => (
+                <tr>
+                  <th>{version.label}</th>
+                  <td>
+                    <Link to={version.path}>
+                      <DocumentationLabel />
+                    </Link>
+                  </td>
+                  <td>
+                    <Link to={version.path + "/release-notes"}>
+                      <ReleaseNotesLabel />
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
         {currentVersion !== latestVersion && (
           <div className="margin-bottom--lg">
@@ -125,7 +158,7 @@ export default function Version(): JSX.Element {
           </div>
         )}
 
-        {(pastVersions.length > 0 || VersionsArchivedList.length > 0) && (
+        {(VersionsArchivedList.length > 0) && (
           <div className="margin-bottom--lg">
             <Heading as="h3" id="archive">
               <Translate id="versionsPage.archived.title">
@@ -140,21 +173,6 @@ export default function Version(): JSX.Element {
             </p>
             <table>
               <tbody>
-                {pastVersions.map((version) => (
-                  <tr key={version.name}>
-                    <th>{version.label}</th>
-                    <td>
-                      <Link to={version.path}>
-                        <DocumentationLabel />
-                      </Link>
-                    </td>
-                    <td>
-                      <Link href={`${repoUrl}/releases/tag/v${version.name}`}>
-                        <ReleaseNotesLabel />
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
                 {VersionsArchivedList.map(([versionName, versionUrl]) => (
                   <tr key={versionName}>
                     <th>{versionName}</th>
@@ -164,7 +182,7 @@ export default function Version(): JSX.Element {
                       </Link>
                     </td>
                     <td>
-                      <Link href={`${repoUrl}/releases/tag/v${versionName}`}>
+                      <Link href={`${repoUrl}/releases-notes`}>
                         <ReleaseNotesLabel />
                       </Link>
                     </td>

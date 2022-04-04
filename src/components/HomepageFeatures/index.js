@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
-    link: '/docs/next/gettingstarted/quickstart',
+    link: '/docs/gettingstarted/quickstart',
     title: 'Quick start',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
@@ -27,7 +27,7 @@ const FeatureList = [
     ),
   },
   {
-    link: '/docs/next/apiguides',
+    link: '/docs/apiguides',
     title: 'Read our API Guides',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
