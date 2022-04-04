@@ -30,9 +30,7 @@ const config = {
     projectName: 'devdocs', // Usually your repo name.
     i18n: {
         locales: [
-            'en',
             'en-AU',
-            'en-GB',
         ],
         defaultLocale: 'en-AU',
     },
