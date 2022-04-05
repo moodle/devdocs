@@ -1,0 +1,26 @@
+{
+  "name": "Moodle Developer Resources",
+  "short_name": "Moodle Developers",
+  "theme_color": "#242526",
+  "background_color": "#d06300",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./index.html",
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://andrewnicols.github.io/dinodevdocs/manifest.json"
+    }
+  ],
+  "icons": [
+    {
+      "src": "img/icons/orange_m.svg",
+      "sizes": "any",
+      "type": "svg"
+    }
+  ],
+  "categories": [
+    "education",
+    "books"
+  ]
+}
