@@ -15,6 +15,12 @@ versionConfig['current'] = {
     banner: 'none',
 };
 
+// Share the remarkPlugins between all presets.
+const remarkPlugins = [
+    require('./src/remark/trackerLinks'),
+    require('./src/remark/legacyDocLinks'),
+];
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'Moodle',
@@ -45,10 +51,7 @@ const config = {
                     editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
                     showLastUpdateAuthor: true,
                     showLastUpdateTime: true,
-                    remarkPlugins: [
-                        require('./src/remark/trackerLinks'),
-                        require('./src/remark/legacyDocLinks'),
-                    ],
+                    remarkPlugins,
                     lastVersion: 'current',
                     versions: versionConfig,
                     /*
@@ -96,10 +99,7 @@ const config = {
                 editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
                 showLastUpdateAuthor: true,
                 showLastUpdateTime: true,
-                remarkPlugins: [
-                    require('./src/remark/trackerLinks'),
-                    require('./src/remark/legacyDocLinks'),
-                ],
+                remarkPlugins,
                 editCurrentVersion: true,
             },
         ],
