@@ -25,7 +25,7 @@ const remarkPlugins = [
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'Moodle',
-    tagline: 'Official Developer Documentation',
+    tagline: '(Un)official Developer Resources',
     //url: 'https://develop.moodle.org',
     url: process.env?.url || 'https://andrewnicols.github.io',
     baseUrl: process.env?.baseUrl || '/dinodevdocs/',

@@ -7,8 +7,10 @@ const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(
 const navbar = {
     title: 'Moodle',
     logo: {
-        alt: 'Moodle',
+        alt: '',
         src: 'img/Moodle_M_icon.svg',
+        height: '32px',
+        width: '32px',
     },
     items: [
         {
