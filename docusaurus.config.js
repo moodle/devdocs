@@ -19,6 +19,7 @@ versionConfig['current'] = {
 const remarkPlugins = [
     require('./src/remark/trackerLinks'),
     require('./src/remark/legacyDocLinks'),
+    require('mdx-mermaid'),
 ];
 
 /** @type {import('@docusaurus/types').Config} */
