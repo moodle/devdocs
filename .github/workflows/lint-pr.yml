@@ -1,0 +1,24 @@
+name: "Lint for Pull Requests"
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**/*.md'
+      - 'general/**/*.md'
+      - .markdownlint.yaml
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.0.0
+        with:
+          node-version: "16"
+
+      - name: Lint markdown files
+        run: |
+          npx markdownlint-cli '*.md' -i LICENSE.md -i CODE_OF_CONDUCT.md -i README.me
