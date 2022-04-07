@@ -89,6 +89,9 @@ const config = {
     }),
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     plugins: [
+        [require.resolve("@cmfcmf/docusaurus-search-local"), {
+            indexBlog: false,
+        }],
         'plugin-image-zoom',
         [
             '@docusaurus/plugin-content-docs',
