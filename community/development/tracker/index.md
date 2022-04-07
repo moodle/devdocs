@@ -1,5 +1,5 @@
 ---
-title: Tracker introduction
+title: Introduction
 description: A summary of the most common actions in Moodle tracker.
 tags:
   - Processes

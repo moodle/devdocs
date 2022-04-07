@@ -1,7 +1,7 @@
 ---
 title: Developer meetings
 description: Information about past and upcoming developer meetings
-slug: /meetings
+slug: /development/meetings
 tags:
   - Core development
 ---
@@ -47,7 +47,7 @@ Next meeting: [[Developer meeting April 2022]]
 - [[Developer meeting November 2018]]
 - [[Developer meeting July 2018]]
 
-### 2017 
+### 2017
 - [https://devpad.moodle.org/p/mootus17 Miami DevJam November 2017]
 - [[Mannheim DevJam June 2017]]
 - [[London hackfest April 2017]]
