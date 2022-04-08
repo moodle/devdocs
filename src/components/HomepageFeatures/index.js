@@ -17,12 +17,12 @@ const FeatureList = [
     ),
   },
   {
-    link: '/community/policies/codingstyle',
-    title: 'Coding style',
+    link: '/general/development/policies/codingstyle',
+    title: 'Coding standards',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-       Read and learn about our coding standards
+       Learn about our coding standards, styles, and conventions.
       </>
     ),
   },
@@ -35,6 +35,16 @@ const FeatureList = [
         Want to learn more about our APIs?
         <br/>
         Learn about them through our series of deep-dive guides, complete with examples and explanations.
+      </>
+    ),
+  },
+  {
+    link: '/general/community',
+    title: 'Join our community',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        Discover our community, and learn about our mission, and our roadmap.
       </>
     ),
   },

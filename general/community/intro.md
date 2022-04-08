@@ -1,6 +1,6 @@
 ---
 title: Overview
-slug: /
+slug: /community
 tags:
   - Quality Assurance
   - Processes

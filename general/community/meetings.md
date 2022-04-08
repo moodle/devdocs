@@ -1,7 +1,6 @@
 ---
 title: Developer meetings
 description: Information about past and upcoming developer meetings
-slug: /development/meetings
 tags:
   - Core development
 ---
@@ -121,4 +120,4 @@ Next meeting: [[Developer meeting April 2022]]
 
 ## See also
 
-- [Roadmap](./roadmap.md)
+- [Roadmap](../community/roadmap.md)
