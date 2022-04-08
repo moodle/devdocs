@@ -1,14 +1,41 @@
-# Website
+# Moodle Developer Resoruces
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+[![Lint](https://github.com/andrewnicols/dinodevdocs/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/andrewnicols/dinodevdocs/actions/workflows/markdown-lint.yml)
+[![Build](https://github.com/andrewnicols/dinodevdocs/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/andrewnicols/dinodevdocs/actions/workflows/pages/pages-build-deployment)
+[![Deployment](https://github.com/andrewnicols/dinodevdocs/actions/workflows/deploy.yml/badge.svg)](https://github.com/andrewnicols/dinodevdocs/actions/workflows/deploy.yml)
 
-### Installation
+## Introduction
+
+This repository includes the source for the Moodle Developer Resources - a
+collection of resources aimed at making your life as a Moodle Developer easier.
+
+## Contributing
+
+These resources are written by developers, for developers. We value your input
+and your help in adding to them.
+
+There are many ways that you can help, from reporting inaccuracies, and missing
+documentation, to making small corrections and, of course, creating new
+resources for others to make use of.
+
+If you plan to contribute, then you may wish to setup a local development
+environment to make it easier to do so.
+
+## Local development environment
+
+The Moodle Developer Resources are compiled using the
+[Docusaurus](https://docusauris.io) tooling, which can be easily installed with
+[Yarn](https://yarnpkg.com/getting-started/install).
+
+Once installed, you should invoke yarn:
 
 ```
 $ yarn
 ```
 
-### Local Development
+This will install all of the dependencies needed to run the development server.
+
+Finally you can start the server with:
 
 ```
 $ yarn start
@@ -16,26 +43,70 @@ $ yarn start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
+There are some other commands that you may find useful:
+
+### Linting your content
+
+One of the many powerful features of Markdown is its ability to be
+programmatically checked for a range of bugs and stylistic errors.
+
+Every time a commit is pushed to source repository it is passed through several
+linting tools which it must pass before it can be merged.
+
+You can lint your code before pushing it using yarn:
 
 ```
-$ yarn build
+yarn lint
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+This will run the `markdownlint` CLI tool across all of the documentation
+directories and report any issues it comes across.
 
-### Deployment
+Some examples of these issues include:
 
-Using SSH:
+- header levels which do not increase incrementally
+- multiple level 1 headers (`h1`)
+- use of hard tabs instead of spaces
+- the presence of trailing spaces at the end of a line
+
+These are usually easy to solve and, in many cases, can be fixed automatically.
+
+### Stylistic checks
+
+The Moodle Developer Resources try to follow the [Microsoft writing style
+guide](https://docs.microsoft.com/en-us/style-guide).
+
+This is a free writing style and terminology guide aimed at authors of
+technology-related documentation. Adopting this writing-style guide is intended
+to make all of the documentation clearer, more consistent, and easier to
+understand for developers who are not native English speakers.
+
+A number of key rules have been adopted, and others are treated as
+recommendations which you can follow where appropriate.
+
+You can run the style checks on your content using yarn:
+
+### Building your content
+
+During development you will almost certainly want to use the yarn development
+server, however you will sometimes need to build the content to use certain
+features.
+
+This is easily achieved with yarn:
 
 ```
-$ USE_SSH=true yarn deploy
+yarn build
 ```
 
-Not using SSH:
+This command will compile all of the documentation into static HTML files
+complete with all appropriate resources.
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
+As part of this build, the validity of all internal links will be checked. For
+this reason we strongly recommend building the content locally before submitting
+a pull request as broken internal links will lead to a build failure
+immediately.
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+You may also need to configure the build to view it locally. This can be
+achieved using a `.env` file in the project root.
+For more information on the format of the `.env` file, see the documentation in
+the `.env.default` file.
