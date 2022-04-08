@@ -48,7 +48,7 @@ const config = {
             /** @type {import('@docusaurus/preset-classic').Options} */
             ({
                 docs: {
-                    sidebarPath: require.resolve('./sidebars.js'),
+                    sidebarPath: require.resolve('./sidebars/docs.js'),
                     editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
                     showLastUpdateAuthor: true,
                     showLastUpdateTime: true,
@@ -96,10 +96,10 @@ const config = {
         [
             '@docusaurus/plugin-content-docs',
             {
-                id: 'community',
-                path: 'community',
-                routeBasePath: 'community',
-                sidebarPath: require.resolve('./sidebars/community.js'),
+                id: 'general',
+                path: 'general',
+                routeBasePath: 'general',
+                sidebarPath: require.resolve('./sidebars/general.js'),
                 editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
                 showLastUpdateAuthor: true,
                 showLastUpdateTime: true,
