@@ -11,11 +11,11 @@ tags:
 This document summarises the various development processes used in developing Moodle. There are four main processes that overlap.
 
 ## Integration workflow in the tracker
-The Moodle tracker keeps track of the status of all bug fixes and new features. 
+The Moodle tracker keeps track of the status of all bug fixes and new features.
 
 We use a workflow that ensures that new code receives multiple reviews by different people before it is included into the core Moodle code.
 
-![A summary of the Moodle Development Process flow](./workflow.jpg)
+![A summary of the Moodle Development Process flow](./process/_files/workflow.jpg)
 
 A number of roles make this work:
 ### Users
@@ -50,7 +50,7 @@ On Thursday each week, production maintainers merge all the issues that passed t
 ## Stable maintenance cycles
 Moodle releases regular updates of the stable version of the software to fix bugs and other issues. Releases like 2.2.1, 2.2.2, 2.2.3 etc only include fixes based on the latest major release (2.2) and never any significant new features or database changes.
 
-At Moodle HQ there are teams of developers using the [Scrum framework](http://www.scrum.org/) to work on these issues (as well as new features for [[#Major_release_cycles|major releases]]). 
+At Moodle HQ there are teams of developers using the [Scrum framework](http://www.scrum.org/) to work on these issues (as well as new features for [[#Major_release_cycles|major releases]]).
 
 ### Minor release (point release) timing
 After [[#Major_release_cycles|major releases]] there will be minor releases.
@@ -77,7 +77,7 @@ Since Moodle 2.0, we have a policy of release major versions (eg 2.1, 2.2) every
 
 Each release can be different, but generally the cycles work as follows.
 ### Define roadmap
-The roadmap is prioritised based on user research, stakeholder inputs, community wishes, third-party developments and important issues within the existing code. 
+The roadmap is prioritised based on user research, stakeholder inputs, community wishes, third-party developments and important issues within the existing code.
 
 Sometimes new features might be based on earlier features, sometimes they may be something developed by a third party that needs to be evaluated and sometimes it might be something completely new.
 ### Planning and development
@@ -97,7 +97,7 @@ At Moodle HQ, development takes place in sprints. The sprints are two or three-w
 ### Events during cycle
 During each cycle there are a periods and events that occur between and around sprints.
 
-![The Development sprint calendar](./sprintcalendar.png)
+![The Development sprint calendar](./process/_files/sprintcalendar.png)
 ; *Planning and bug fixing*
 : A period during which the Roadmap is explored, specs are written and prototypes are created. Regressions in the recent release are fixed as they arise.
 ; *End sync period*
@@ -113,11 +113,11 @@ During each cycle there are a periods and events that occur between and around s
 ## New feature development
 Major new features in Moodle usually should go through the following process.
 ### Specification
-The User Experience (UX) team members create detailed wireframes and features and goals for the new feature, based on iterative user research, design sprints, user testing and co-design as part of the product team. 
+The User Experience (UX) team members create detailed wireframes and features and goals for the new feature, based on iterative user research, design sprints, user testing and co-design as part of the product team.
 
 For bigger features there should be a clear overall vision for the outcomes that are to achieved. During implementation design may continue to iterate based on new findings.
 
-Developers create a detailed spec (here in the developer docs) outlining their goals for the development and their design for meeting those goals. 
+Developers create a detailed spec (here in the developer docs) outlining their goals for the development and their design for meeting those goals.
 
 Developers should also create an issue in the tracker (linking to your docs) to keep track of the project status.
 ### Community consultation
@@ -141,9 +141,9 @@ Component leads should put issues, which affect code in their components, up for
 
 All other developers, including people who are component leads but working outside their component, should have their issues peer reviewed before they are sent to integration.
 ### Peer review
-The [component lead](http://tracker.moodle.org/browse/MDL#selectedTab=com.atlassian.jira.plugin.system.project%3Acomponents-panel)) should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
+The [[HQ component leads]] should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
 
-Process and the list of things to check are described in [[Peer reviewing]].
+Process and the list of things to check are described in [Peer reviewing](process/peer-review).
 
 ### Submit the code for integration
 The developer is responsible for acting on the feedback from the peer reviewer. If changes have been made and the developer is satisfied that this has accommodated the feedback from the peer reviewer, then the developer can submit the issue for integration. If there have been significant changes after the peer review, or if the peer reviewer has raised concerns about the approach taken, then the developer should offer the issue up for peer review again, most often to the same peer reviewer, but not necessarily.
@@ -179,9 +179,9 @@ After your first fix is integrated you will be added to developers group and wil
 
 If you've set up [[Travis integration]], the issue will automatically show the Travis build status for the branch(es) you've submitted for peer review.
 ### Peer review
-The [component lead](https://tracker.moodle.org/projects/MDL?selectedItem=com.atlassian.jira.jira-projects-plugin:components-page) should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
+The [[HQ component leads]] should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
 
-Process and the list of things to check are described in [[Peer reviewing]].
+Process and the list of things to check are described in [Peer reviewing](process/peer-review).
 ### Submit your code for integration
 It will then be reviewed the following week by one of the integration team and either integrated or rejected. Once integrated, the fix will be tested, and then included in the next weekly release. For details see [[Integration Review]].
 ## Security issues
