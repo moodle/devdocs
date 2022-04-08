@@ -41,6 +41,10 @@ const sidebars = {
                             dirName: 'development/tracker',
                         },
                     ],
+                    link: {
+                        type: 'doc',
+                        id: 'development/tracker',
+                    },
                 },
             ],
             link: {

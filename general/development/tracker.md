@@ -29,15 +29,15 @@ Before creating a new issue, please try searching to check whether it has been r
 2. If the search returns lots of results, click the 'Updated' column heading so that the most recent issues are displayed first.
 3. To refine your search, select 'Moodle' as the project and perhaps add Component as another criteria and enter one or more. You can also click the Updated column heading to show most recently updated issues at the top of the search results.
 
-See also [Tracker tips](https://docs.moodle.org/dev/Tracker_tips).
+See also [Tracker tips](./tracker/tips).
 
 
 ## Reporting an issue
 
 *First check whether the issue has already been reported by searching (see above).*
 
-* If you find an issue which appears to relate to your issue, feel free to add a comment providing further information.
-* Otherwise, please report the issue by clicking the 'Create Issue' link at the top right of the page.
+- If you find an issue which appears to relate to your issue, feel free to add a comment providing further information.
+- Otherwise, please report the issue by clicking the 'Create Issue' link at the top right of the page.
 
 :::important
 
@@ -57,7 +57,7 @@ For new Moodle issues...
 
 To receive email notification of updates to any issue, you can add yourself as a watcher.
 
-* Click the 'Watch' link on the right of the issue page.
+- Click the 'Watch' link on the right of the issue page.
 
 :::note
 
@@ -69,21 +69,21 @@ If you report an issue, you will automatically receive email notification of upd
 ## Helping determine development priorities
 You can help determine Moodle development priorities by voting for issues that you'd most like to see fixed.
 
-* Click the 'Vote' link on the right of the issue page.
+- Click the 'Vote' link on the right of the issue page.
 
 ## What makes a good tracker issue?
 
 When you create a tracker issue, you are effectively asking someone to change Moodle for you. The easier you can make it for that someone to understand your problem, the more likely it is they will be able to fix it. Here are some things that can help:
 
-* Give step-by-step instructions, so someone else can follow along on their Moodle site and see exactly what you are talking about:
-  * include full steps to reproduce the problem, starting with login as (student/teacher etc)...
-  * include what you expected to happen.
-  * include what actually happens for you.
-* If there is an error message (can you turn on [debugging](http://docs.moodle.org/en/Debugging)?) copy and paste the full text of the error message.
-* Clearly separate fact from speculation in what you write.
-* A picture can be worth a thousand words. Consider taking a screen-grab of the problem.
-* One report one bug / feature request per issue.
-* Remember to search to see if the issue you are reporting is already there. If it is, vote or comment instead.
+- Give step-by-step instructions, so someone else can follow along on their Moodle site and see exactly what you are talking about:
+  - include full steps to reproduce the problem, starting with login as (student/teacher etc)...
+  - include what you expected to happen.
+  - include what actually happens for you.
+- If there is an error message (can you turn on [Debugging](http://docs.moodle.org/en/Debugging)?) copy and paste the full text of the error message.
+- Clearly separate fact from speculation in what you write.
+- A picture can be worth a thousand words. Consider taking a screen-grab of the problem.
+- One report one bug / feature request per issue.
+- Remember to search to see if the issue you are reporting is already there. If it is, vote or comment instead.
 
 :::tip
 
@@ -101,5 +101,5 @@ If you find that a bug is still affecting a stable version of Moodle, despite th
 
 ## See also
 
-* [Tracker tips](https://docs.moodle.org/dev/Tracker_tips)
-* [New feature ideas](https://docs.moodle.org/dev/New_feature_ideas)
+- [Tracker tips](./tracker/tips)
+- [[New feature ideas]]
