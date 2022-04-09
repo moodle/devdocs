@@ -9,11 +9,13 @@ Five database types are supported, and several versions of PHP.
 ## PHP
 
 Moodle 4.0 supports the following PHP versions:
+
 - 7.3
 - 7.4
 - 8.0
 
 The following PHP extensions are required (most of which are installed and enabled by default in most PHP installations):
+
 - [iConv],
 - [mbstring],
 - [curl],
@@ -35,6 +37,7 @@ The following PHP extensions are required (most of which are installed and enabl
 ## Relational Database
 
 The following relational database servers are supported. The relevant PHP extension will also be required.
+
 - [MariaDB][mariadb] (version 10.2.29 or higher) with the [MySQLi PHP Extension][php.mysqli]
 - [MySQL][mysql] (version 5.7 or higher) with the [MySQLi PHP Extension][php.mysqli]
 - [Postgresql][postgres] (version 10 or higher) with the [pgsql PHP Extension][php.pgsql]

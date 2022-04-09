@@ -326,7 +326,7 @@ A lot of this content is being migrated to use Mustache Templates which are the 
 Where content is generated in PHP you will need to include your JavaScript at the same time.
 
 Although several older ways to include JavaScript from PHP, it`s strongly
-recommended that all new JavaScript only use the `js_call_amd` function on the
+recommended that all new JavaScript only use the`js_call_amd` function on the
 `page_requirements_manager`.
 This has a similar format to the version used in Templates:
 
@@ -369,7 +369,6 @@ export const init = ({courseid, category}) => {
 </TabItem>
 </Tabs>
 
-
 :::caution
 A limit applies to the length of the parameters passed in the third argument.
 If data is already available elsewhere in the DOM, you shoudl avoid passing it as a parameter.
@@ -383,9 +382,9 @@ like full Objects.
 
 Moodle provides several ways to achieve this:
 
-* you can pass a small amount of data into the module initialisation, but this is no longer recommended
-* you can store this data in the DOM as a data attribute which is fetched in your code
-* a Moodle Web Service can be used to fetch more complex data structures dynamically
+- you can pass a small amount of data into the module initialisation, but this is no longer recommended
+- you can store this data in the DOM as a data attribute which is fetched in your code
+- a Moodle Web Service can be used to fetch more complex data structures dynamically
 
 ### Using data attributes
 
@@ -507,7 +506,6 @@ npm -g install grunt-cli
 </Tabs>
 
 #### Using grunt
-
 
 <Tabs>
 <TabItem value="npx_grunt" label="NPX">

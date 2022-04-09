@@ -35,6 +35,7 @@ All users that did not log-in yet automatically get the default role defined in 
 Capabilities are defined by `$capabilities` array defined in `db/access.php` files. The name of the capability consists of `plugintype/pluginname:capabilityname`.
 
 For example:
+
 ```php title="mod/folder/db/access.php"
 $capabilities = [
     'mod/folder:managefiles' => [
@@ -61,6 +62,7 @@ Where the meaning of array keys is:
 It is necessary to bump up plugin version number after any change in db/access.php, so that the upgrade scripts can make the necessary changes to the database.  To run the upgrade scripts, log in to Moodle as administrator, navigate to the site home page, and follow the instructions.  (If you need to test the upgrade script without changing the plugin version, it is also possible to set back the version number in the mdl_block or mdl_modules table in the database.)
 
 The capability names are defined in plugin language files, the name of the string consists of "pluginname:capabilityname", in the example above it would be:
+
 ```php title="mod/folder/lang/en/folder.php"
 $string['folder:managefiles'] = 'Manage files in folder module';
 ```
@@ -72,6 +74,7 @@ $string['folder:managefiles'] = 'Manage files in folder module';
 In plugins context instances are usually only instantiated because they are instantiated and deleted automatically by the system.
 
 Fetching by object id:
+
 ```php
 $systemcontext = context_system::instance();
 $usercontext = context_user::instance($user->id);
@@ -82,11 +85,13 @@ $contextblock = context_block::instance($this->instance->id);
 ```
 
 Fetching by context id:
+
 ```php
 $context = context::instance_by_id($contextid);
 ```
 
 Notes:
+
 - by default exception is thrown if context can not be created
 - deleted users do not have contexts any more
 
@@ -95,7 +100,9 @@ Notes:
 When implementing access control always ask "Does the user have capability to do something?". It is incorrect to ask "Does the user have a role somewhere?".
 
 #### has_capability()
+
 `has_capability()` is the most important function:
+
 ```php
 function has_capability(
     string $capability,
@@ -106,6 +113,7 @@ function has_capability(
 ```
 
 Check whether a user has a particular capability in a given context. For example:
+
 ```php
 $context = context_module::instance($cm->id);
 if (has_capability('mod/folder:managefiles', $context)) {
@@ -116,6 +124,7 @@ if (has_capability('mod/folder:managefiles', $context)) {
 By default checks the capabilities of the current user, but you can pass a different userid. By default will return true for admin users, it is not recommended to use false here.
 
 #### require_capability()
+
 Function require_capability() is very similar, it is throwing access control exception if user does not have the capability.
 
 ```php
@@ -145,6 +154,7 @@ function is_viewing(context $context, $user = null, $withcapability = _)
 Each plugin script should include require_login() or require_course_login() after setting up PAGE->url.
 
 This function does following:
+
 - it verifies that user is logged in before accessing any course or activities (not-logged-in users can not enter any courses).
 - user is logged in as gu
 - verify access to hidden courses and activities
@@ -165,6 +175,7 @@ It is strongly discouraged to use is_siteadmin() in activity modules, please use
 #### `is_guest()`, `is_viewing()` and `is_enrolled()`
 
 In order to access course data one of these functions must return true for user:
+
 - `is_enrolled()` - user has active record in user_enrolments table
 - `is_viewing()` - user has 'moodle/course:view' capability (may access course, but is not considered to be participant)
 - `is_guest()` - user was given temporary guest access by some enrolment plugin
@@ -174,6 +185,7 @@ In order to access course data one of these functions must return true for user:
 This method returns list of users with given capability, it ignores enrolment status and should be used only above the course context.
 
 ## See also
+
 - [[Core APIs]]
 - [[Roles]]
 - [[Role archetypes]]
