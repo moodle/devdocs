@@ -50,8 +50,6 @@ const config = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars/docs.js'),
                     editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
-                    showLastUpdateAuthor: true,
-                    showLastUpdateTime: true,
                     remarkPlugins,
                     lastVersion: 'current',
                     versions: versionConfig,
@@ -101,8 +99,6 @@ const config = {
                 routeBasePath: 'general',
                 sidebarPath: require.resolve('./sidebars/general.js'),
                 editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
-                showLastUpdateAuthor: true,
-                showLastUpdateTime: true,
                 remarkPlugins,
                 editCurrentVersion: true,
             },
