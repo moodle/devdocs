@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Bug in Moodle LMS?
+    url: https://tracker.moodle.org/
+    about: Found a problem with Moodle LMS? Report it to the Moodle tracker

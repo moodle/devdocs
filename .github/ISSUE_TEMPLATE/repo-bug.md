@@ -1,0 +1,32 @@
+---
+name: Error in system
+about: Report a problem with the documentation system
+title: [repo] Problem with documentation system
+labels: repo, help wanted, bug
+assignees: ''
+body:
+- type: markdown
+  attributes:
+    value: |
+      Thank you for your bug report. Please give us a bit more detail about the issue so that we can look into it.
+- type: input
+  id: page
+  attributes:
+    label: What is the URL of the page where you experience the error?
+  validations:
+    required: true
+- type: textarea
+  id: problem
+  attributes:
+    label: What is the issue with this page?
+  validations:
+    required: true
+- type: dropdown
+  id: canHelp
+  attributes:
+    label: Are you able to provide a patch for this?
+    options:
+      - No (Default)
+      - Yes - I have one prepared
+      - Yes - I will create one
+
