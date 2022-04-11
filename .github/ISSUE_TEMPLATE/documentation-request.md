@@ -1,0 +1,33 @@
+---
+name: New Documentation Request
+about: Request that some new documentation be created
+title: [docs] Create documentation for [Feature]
+labels: documentation, help wanted, enhancement
+assignees: ''
+body:
+- type: markdown
+  attributes:
+    value: |
+      Thank you for requesting documentation. Please give us a bit more detail about what you think is missing.
+- type: textarea
+  id: whatIsIt
+  attributes:
+    label: What is the Moodle feature that needs documenting?
+  validations:
+    required: true
+- type: dropdown
+  id: isVersioned
+  attributes:
+    label: Is this documentation specific to a Moodle version?
+    options:
+      - Unsure (Default)
+      - Yes
+      - No
+- type: dropdown
+  id: canHelp
+  attributes:
+    label: Are you able to provide a patch for this?
+    options:
+      - No (Default)
+      - Yes - I have one prepared
+      - Yes - I will create one
