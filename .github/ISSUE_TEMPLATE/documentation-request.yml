@@ -1,9 +1,7 @@
----
-name: New Documentation Request
-about: Request that some new documentation be created
-title: [docs] Create documentation for [Feature]
+name: "New Documentation Request"
+description: "Request that some new documentation be created"
+title: "[docs] Create documentation for [Feature]"
 labels: documentation, help wanted, enhancement
-assignees: ''
 body:
 - type: markdown
   attributes:
@@ -20,14 +18,14 @@ body:
   attributes:
     label: Is this documentation specific to a Moodle version?
     options:
-      - Unsure (Default)
-      - Yes
-      - No
+      - "Unsure (Default)"
+      - "Yes"
+      - "No"
 - type: dropdown
   id: canHelp
   attributes:
     label: Are you able to provide a patch for this?
     options:
-      - No (Default)
-      - Yes - I have one prepared
-      - Yes - I will create one
+      - "No (Default)"
+      - "Yes - I have one prepared"
+      - "Yes - I will create one"

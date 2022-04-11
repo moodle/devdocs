@@ -1,9 +1,7 @@
----
-name: Error in documentation
-about: Report a problem with some existing documentation
-title: [docs] Error in [pagename]
+name: "Error in documentation"
+description: "Report a problem with some existing documentation"
+title: "[docs] Error in [pagename]"
 labels: documentation, help wanted, bug
-assignees: ''
 body:
 - type: markdown
   attributes:
