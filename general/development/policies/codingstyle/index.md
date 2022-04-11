@@ -439,7 +439,7 @@ function report_participation_get_overviews(string $action, ?int userid): ?array
 
 </ValidExample>
 
-There is an exception for [[Activity modules|activity modules]] that still use only plugin name as the prefix for legacy reasons.
+There is an exception for [activity modules](/docs/apis/plugintypes/mod) modules|activity modules]] that still use only plugin name as the prefix for legacy reasons.
 
 <ValidExample>
 

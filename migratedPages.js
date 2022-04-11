@@ -10,6 +10,7 @@ const obsoleteDocs = [
  */
 const migratedDocs = {
     "Access_API": "/docs/apis/access.md",
+    "Activity_modules": "/docs/apis/plugintypes/mod.md",
     "Coding_style": "/general/development/policies/codingstyle/index.md",
     "Communication_between_components": "/general/development/policies/component-communication/index.md",
     "Developer_meeting_February_2022": "/general/community/meetings/202202.md",
