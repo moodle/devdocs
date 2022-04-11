@@ -580,9 +580,11 @@ class core_user_example {
 The use of namespaces must conform to the following rules:
 
 1. Classes belonging to a namespace must be created in a classes directory, for example:
-  - in the `mod_forum` plugin classes should be placed in `mod/forum/classes`;
-  - for core code, classes should be placed in `lib/classes`; or
-  - for a core subsystem, classes should be placed in `subsystemdir/classes`.
+
+- in the `mod_forum` plugin classes should be placed in `mod/forum/classes`;
+- for core code, classes should be placed in `lib/classes`; or
+- for a core subsystem, classes should be placed in `subsystemdir/classes`.
+
 1. The classname and filename for all namespaced classes must conform to the [[Automatic class loading|automatic class loading]] rules. The use of formal PHP namespaces is **required** in all new code.
 1. Use at most one namespace declaration per file.
 
@@ -751,16 +753,14 @@ Nested namespaces are used when the class implements some core API or when the p
 
 The first level, when used, **MUST** be _either_:
 
-- a full component name (for example `\mod_forum`).
-  All classes using namespaces in a plugin *MUST* be contained in this level 1
-  namespace; or
+- a full component name (for example `\mod_forum`). All classes using namespaces in a plugin *MUST* be contained in this level 1 namespace; or
 - `\core` for all core apis
 
 #### Rules for level2
 
 The second level, when used, **MUST** be _either_:
 
-- The short name of a [core API](/docs/apiguides). 
+- The short name of a [core API](/docs/apis).
   The classes in this namespace must either implement or use the API in some way; or
 - `\local` for any other classes in a component, if the maintainer wants to organise them further (note that for most components, it's probably enough to have all their own classes in the root level1 namespace only).
 
@@ -995,7 +995,6 @@ $myarray = [1, 2, 3, 'Stuff', 'Here',
 The example above also can be written as follows:<br/>
 (with special attention to the last line having a trailing comma to extend the list of items later with a cleaner diff)
 
-
 <ValidExample>
 
 ```php
@@ -1143,7 +1142,6 @@ Always use the `else if` variant
 
 :::
 
-
 Always use braces (even if the block is one line and PHP doesn't require it). The opening brace of a block is always placed on the same line as its corresponding statement or declaration.
 
 <ValidExample>
@@ -1209,6 +1207,7 @@ Whitespace must be used around the operators to make it clear where the operatio
 $username = isset($user->username) ? $user->username : *; **
 $users = is_array($users) ? $users : [$users];
 ```
+
 </ValidExample>
 
 <InvalidExample>
@@ -1367,6 +1366,7 @@ The `@var` tag is used to document class properties.
 ```
   @var [[#Types|type]] Description.
 ```
+
 </ValidExample>
 
 Exceptionally, when none of the available [[#Types|types]] define the returned value, inline @var phpdocs (within the body of the methods) providing type hinting are allowed to the returned type. Don't abuse!
@@ -1380,6 +1380,7 @@ If a function uses die or exit, please add this tag to the docblock to help deve
 ```
   @uses exit
 ```
+
 </ValidExample>
 
 ##### `@access`
@@ -1394,6 +1395,7 @@ The access can be used to specify access control for an element
 ```
   @access private
 ```
+
 </ValidExample>
 
 ##### `@package`

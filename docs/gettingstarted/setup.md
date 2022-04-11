@@ -5,6 +5,7 @@ title: Setup and installation
 ## Technical requirements
 
 Before installing Moodle you must:
+
 - Install [PHP 7.3.0][php] or higher, and the following PHP extensions (most of which are installed and enabled by default in most PHP installations):
  [iConv],
  [mbstring],

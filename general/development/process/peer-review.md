@@ -81,7 +81,6 @@ Ensure that any new User Interface feature in Moodle 4.0 or later which matches 
 - Has appropriate descriptions
 - Respects all Moodle-supplied themes
 
-
 ### Language
 
 To achieve appropriate internationalisation of Moodle, language strings must be managed correctly.
@@ -122,6 +121,7 @@ Ensure that:
 - **Behat tests pass** for related areas where changes have been made, especially when it involved UI changes.
 
 ### Security
+
 The user community relies on Moodle being responsibly secure.
 
 Ensure that:
@@ -135,6 +135,7 @@ Ensure that:
   - The issue will not be integrated until just before the next minor version release.
 
 ### Privacy
+
 The user community relies on Moodle keeping user's privacy.
 
 Ensure that:
@@ -166,8 +167,8 @@ Ensure that:
   - What they did to mitigate performance impact, or why they thought it wasn't an issue.
   - Why they made certain trade-offs.
 
-
 ### Documentation
+
 Work does not stop when code is integrated.
 
 Ensure that:
@@ -185,6 +186,7 @@ Ensure that:
 - Also, verify that the components for the issue are correctly set, so maintainers (subscribed by default) will be mailed about issues early in the process.
 
 ### Git
+
 Ensure that:
 
 - The commit matches the [Coding style](/general/development/policies/codingstyle)
@@ -192,6 +194,7 @@ Ensure that:
 - The original author of the work provided as a patch has been given credit within the commit (as author of in the commit message if changes were made).
 
 ### Third party code
+
 Does the change contain [third party code](https://docs.moodle.org/dev/Plugin_with_third_party_libraries)? If so, ensure that:
 
 - The code is licensed under a [GPL compatible license](http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses%7C).
@@ -201,8 +204,8 @@ Does the change contain [third party code](https://docs.moodle.org/dev/Plugin_wi
 - Does not duplicate the functionality of any existing api or third party library in core.
 - Any modifications to third party code are recorded in readme_moodle.txt
 
-
 ### Sanity check
+
 Ensure that:
 
 - The code seems to solve the described problem completely within its reported scope (and further issues have been created to resolve remaining parts or further refactoring);
@@ -213,6 +216,7 @@ Ensure that:
 - There are comments on tracker explaining why current approach was taken and why other options (especially large issues). If not comment asking them to explain
 
 ### Icons
+
 Are new icons being introduced? If so, ensure that:
 
 - The icons abide by our icon guidelines with regards to size, design and format
@@ -220,6 +224,7 @@ Are new icons being introduced? If so, ensure that:
 - The icons are in a pix folder that makes sense
 
 ### The Moodle mobile app
+
 The Moodle app supports most of the student-related Moodle functionality. It is important to think about how a change in that type of functionality might affect it.
 
 Ensure that:
@@ -231,6 +236,7 @@ Ensure that:
 - The testing instructions include testing steps for the Moodle App
 
 ### Accessibility
+
 We aim for Moodle to be accessible to everyone, especially to people with disabilities. When peer-reviewing a patch that introduces changes on the frontend, it would be good to do a quick accessibility check on the page or on the UI elements affected by the patch.
 
 Some quick checks that can be done to check for accessibility:
@@ -257,7 +263,6 @@ During peer reviews, please mark this category with either of the following (whi
 - **N** - When accessibility has been checked but accessibility issues were found.
 - **N/A** - When an accessibility check is not applicable for the patch.
 - **S** - To indicate that an accessibility check might be needed but has been skipped by the peer reviewer.
-
 
 ## Process
 
@@ -295,7 +300,6 @@ Please indicate If you are willing to continue working on this issue and complet
 
 Can you help with peer reviewing? If so, please see the [list of issues waiting for peer review](https://tracker.moodle.org/issues/?filter=13607).
 
-
 ### Peer review for development by HQ or a known common contributor
 
 When code comes from a HQ developer or external developer who has been contributing significantly to Moodle and is well acquainted with Moodle standards, peer review is limited to checking the code according to the Checklist below.
@@ -317,7 +321,6 @@ There could be situations when the patch is incomplete, does not fix the origina
 If the issue has passed peer review but the integrator or tester has raised some questions about it, then normally the developer who created the patch would be expected to respond. If they do no respond quickly enough, then the peer reviewer is expected to step in and take responsibility for the change they reviewed.
 
 Once the issue is ready for integration, you can submit it to integration on behalf of the developer. Most external developers (those who are not in the jira-developers group) do not have permission to submit their own issues to integration so cannot do it themselves.
-
 
 #### Replies templates
 
@@ -348,4 +351,5 @@ Please let me know If you are willing to continue working on this issue and comp
 ```
 
 ## See also
+
 - [Code checker plugin](http://moodle.org/plugins/view.php?plugin=local_codechecker)

@@ -8,6 +8,7 @@ This page describes why Moodle is used for educational research and what researc
 ## How Moodle Supports Research
 
 There are a number of reasons Moodle is chosen as a platform for educational research.
+
 - **Aligned with academic ethos**<br/>The open source nature of Moodle, as a software project and community, fits well with the transparency needed in academic research.
 - **Extensible for research**<br/>Because Moodle can be customised, it can be used for experiments and data gathering, which would not be as easily conducted in other systems. A plugin created for research on one instance can be shared and used on another system easily.
 - **Common framework**<br/> Because Moodle is freely available and more featured than other Learning Management Systems, it is often chosen as a framework for collaborative research across institutions/organisations. Research conducted on one instance of Moodle, with or without customisations, can be easily replicated on another instance.
@@ -20,6 +21,7 @@ There are a number of reasons Moodle is chosen as a platform for educational res
 ## Moodle research publications
 
 The [Moodle Research Library](http://research.moodle.net) exists as a repository for published research related to Moodle. The repository contains research outputs relevant to the Moodle project and the works of Moodle's community of users.
+
 - Journal articles
 - Conference proceedings papers
 - Papers written to complement MoodleMoot presentations
@@ -39,6 +41,7 @@ Moodle community members come together to share research activities in a person 
 - [Moodle Inspire](https://moodle.org/project_inspire) provides a framework to conduct academic research within Moodle
 
 ## See also
+
 - [[:en:Learning_analytics|Learning analytics]]
 - [[:en:Logging|Logging]]
 - [[Learning_Analytics_Specification|Learning Analytics API specification]]

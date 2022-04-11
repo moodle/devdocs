@@ -47,7 +47,6 @@ Now you can enter queries in the Jira Query Language (JQL). Use as many AND, OR 
 | `issue in linkedIssues("MDL-12345","duplicated by")` | Returns all the issues directly and indirectly duplicated by 'MDL-12345'. i.e. if there is 'MDL-12222'  duplicated by 'MDL-12345'   and 'MDL-11111'  duplicated by 'MDL-12222', both 'MDL-11111' and 'MDL-12222' will be returned as search results. |
 | [`issue in favouriteIssues()`](https://tracker.moodle.org/issues/?jql=issue%20in%20favouriteIssues%28%29) | issues that you marked as favourite |
 
-
 More documentation on [https://confluence.atlassian.com/jirasoftwareserver071/advanced-searching-800707146.html Advanced searching]
 
 ## Using filters
@@ -68,6 +67,7 @@ Now you will be notified daily about new issues in Assignment component. You can
 Watchers automatically receive notifications about the updates of the issues they are watching. Using filter subscription you can either monitor issues that you are not watching or monitor issues that are in particular state and were not updated.
 
 ### Useful queries
+
 - [Issues reported by me not against current versions](https://tracker.moodle.org/issues/?jql=project%20%3D%20mdl%20and%20resolution%20%3D%20unresolved%20and%20type%20in%20%28bug%29%20and%20%22Affected%20Branches%22%20!~%20MOODLE_310_STABLE%20and%20%22Affected%20Branches%22%20!~%20MOODLE_311_STABLE%20and%20reporter%20%3D%20currentUser%28%29) - make sure that you keep track of your own issues!
 - [Untriaged issues in my components](https://tracker.moodle.org/issues/?jql=component%20in%20%28componentsLeadByUser%28%29%29%20AND%20resolution%20%3D%20Unresolved%20AND%20updatedDate%20%3E%20-14d%20AND%20project%20%3D%20MDL%20AND%20%28%20labels%20is%20EMPTY%20OR%20labels%20not%20in%20%28triaged%2C%20triaging_in_progress%29%29%20ORDER%20BY%20updatedDate%20ASC) (works only for component leads)
 - [Waiting for peer review for 21 days](https://tracker.moodle.org/issues/?jql=status%20changed%20to%20%22Waiting%20for%20peer%20review%22%20before%20startofday(-21)%20and%20status%20%3D%20%22Waiting%20for%20peer%20review%22)

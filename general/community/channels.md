@@ -3,19 +3,19 @@ title: Support channels
 slug: /channels
 ---
 
-# The Moodle Community
+## The Moodle Community
 
 Moodle has a huge community with users and contributors across the globe.
 
-## Community forums
+### Community forums
 
-## Developer chat
+### Developer chat
 
 The Official Moodle Developer chat is currently hosted using [Telegram Messenger](https://telegram.org).
 
-You can be a part of the conversation by joining the [#moodledev](https://telegram.me/moodledev) channel. 
+You can be a part of the conversation by joining the [#moodledev](https://telegram.me/moodledev) channel.
 
-### Developer chat policies
+#### Developer chat policies
 
 **Don't use the chat to get support for using Moodle**
 
@@ -24,9 +24,10 @@ There are moodle.org forums for that, or talk to a Moodle Partner
 **Be nice**
 
 Help us maintain a great developer community:
-* Be respectful to others' viewpoints.
-* Give and accept the constructive feedback and eventually criticism, too.
-* Be honest, but not offensive.
+
+- Be respectful to others' viewpoints.
+- Give and accept the constructive feedback and eventually criticism, too.
+- Be honest, but not offensive.
 
 **Speak English in the chat.**
 
@@ -45,4 +46,3 @@ Everything you post in the chat, hits several hundreds of other people instantly
 There are better places online for sharing them.
 
 **Advertising is generally not allowed, although certain exceptions may be made.**
-
