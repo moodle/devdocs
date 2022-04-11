@@ -250,5 +250,5 @@ The [[Question API]] (which can be divided into the Question bank API and the Qu
 
 - [[Plugins]] - plugin types also have their own APIs
 - [[Callbacks]] - list of all callbacks in Moodle
-- [[Coding style]] - general information about writing PHP code for Moodle
+- [Coding style](/general/development/policies/codingstyle) - general information about writing PHP code for Moodle
 - [[Session locks]]
