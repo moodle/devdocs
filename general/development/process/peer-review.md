@@ -1,10 +1,9 @@
 ---
-title: Peer reviewing
+title: Peer review
 description: All the information related to the peer-reviewing process during the Moodle development.
 tags:
   - Processes
   - Core development
-  - Git
   - Peer-review
 ---
 
