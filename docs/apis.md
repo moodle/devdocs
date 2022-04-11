@@ -10,7 +10,7 @@ They are essential when writing [[Plugins|Moodle plugins]].
 These APIs are critical and will be used by nearly every Moodle plugin.
 
 ### Access API (access)
-The [Access API](./apiguides/access) gives you functions so you can determine what the current user is allowed to do, and it allows modules to extend Moodle with new capabilities.
+The [Access API](./apis/access) gives you functions so you can determine what the current user is allowed to do, and it allows modules to extend Moodle with new capabilities.
 
 ### Data manipulation API (dml)
 The [[Data manipulation API]] allows you to read/write to databases in a consistent and safe way.
