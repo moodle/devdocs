@@ -31,8 +31,19 @@ const sidebars = {
                     label: 'Process',
                     type: 'category',
                     items: [
-                        'development/process/peer-review',
-                        'development/process/integration-review',
+                            'development/process/peer-review',
+                            'development/process/integration-review',
+                            'development/process/testing',
+                            {
+                                type: 'doc',
+                                id: 'development/process/testing-integrated-issues',
+                                className: 'docusaurus-hidden',
+                            },
+                            {
+                                type: 'doc',
+                                id: 'development/process/qatesting',
+                                className: 'docusaurus-hidden',
+                            },
                     ],
                     link: {
                         type: 'doc',
