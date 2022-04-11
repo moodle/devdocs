@@ -1,9 +1,7 @@
----
-name: Maintenance task / chore
-about: Report a maintenance task
-title: [chore] [description]
+name: "Maintenance task / chore"
+description: "Report a maintenance task"
+title: "[chore] [description]"
 labels: repo, help wanted, chore
-assignees: ''
 body:
 - type: markdown
   attributes:

@@ -1,16 +1,14 @@
----
-name: Documentation Migration request
-about: Document the migration of documentation from the legacy site to the new one
-title: [docs] Migrate [Old doc title] to [New docs title]
+name: "Documentation Migration request"
+description: "Document the migration of documentation from the legacy site to the new one"
+title: "[docs] Migrate [Old doc title] to [New docs title]"
 labels: documentation, migration
-assignees: ''
 body:
 - type: markdown
   attributes:
     value: |
       Thank you for suggesting a migration. Please give us a bit more detail about which path needs to be moved.
 - type: input
-  id: Old URL
+  id: oldUrl
   attributes:
     label: The URL of the page on https://docs.moodle.org/dev/
     placeholder: https://docs.moodle.org/dev/...
@@ -21,9 +19,9 @@ body:
   attributes:
     label: Is this documentation specific to a Moodle version?
     options:
-      - Unsure (Default)
-      - Yes
-      - No
+      - "Unsure (Default)"
+      - "Yes"
+      - "No"
 - type: textarea
   id: newLocation
   attributes:

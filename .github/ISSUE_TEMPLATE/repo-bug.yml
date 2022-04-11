@@ -1,9 +1,7 @@
----
-name: Error in system
-about: Report a problem with the documentation system
-title: [repo] Problem with documentation system
+name: "Error in system"
+description: "Report a problem with the documentation system"
+title: "[repo] Problem with documentation system"
 labels: repo, help wanted, bug
-assignees: ''
 body:
 - type: markdown
   attributes:
