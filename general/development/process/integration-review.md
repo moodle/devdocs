@@ -91,12 +91,12 @@ The integrators adhere to the following schedule: (links here should convert the
 
 All the flow of issues to current integration is automatically controlled by the [Manage queues on normal job](https://ci.moodle.org/view/Tracker/job/TR%20-%20Manage%20queues%20on%20normal/) that keeps the current queue fed with issues, moves important ones and priotitises long awaiting issues. Issues are picked in strict integration order.
 
-- Monday to Thursday until [12:00 (UTC+8)](http://time.unitarium.com/utc/4): Integration and [Testing](https://docs.moodle.org/dev/Testing_of_integrated_issues#The_testing_process) happen. Note that 24h before the cutoff it's possible to pick issues out of order towards queues reduction.
+- Monday to Thursday until [12:00 (UTC+8)](http://time.unitarium.com/utc/4): Integration and [Testing](/general/development/process/testing-integrated-issues#the-testing-process) happen. Note that 24h before the cutoff it's possible to pick issues out of order towards queues reduction.
 - Thursday after 12:00 (UTC+8): Integrators duties during this time are to monitor, facilitate and 'problem solve' the testing process.
 - Friday: Testing should be completed before (the sooner the better) 12:00 (UTC+8) at which time remaining testing failures will be reverted/rewritten and reopened. The release process follows.
 - Friday after [12:00 (UTC+8)](http://time.unitarium.com/utc/4): Should be kept free from integration. Integration systems are maintained during this time.
 
-Note that under the strict schedule above, it is specially important **to be as responsive as possible**, both when the issue is being integrated and when [testing](https://docs.moodle.org/dev/Testing_of_integrated_issues#Expectation_from_tester). Any significant delay by any of the actors involved will result in the issue being moved out from current integration.
+Note that under the strict schedule above, it is specially important **to be as responsive as possible**, both when the issue is being integrated and when [testing](/general/development/process/testing-integrated-issues#expectation-from-tester). Any significant delay by any of the actors involved will result in the issue being moved out from current integration.
 
 ### During continuous integration/Freeze/QA period
 
@@ -112,8 +112,8 @@ Throughout:
 So, basically, once under continuous integration, we do organize work as follows:
 
 - Continuous officially begins. Everybody is on integration. Until end of on-sync period.
-- Monday: Integration and [testing](https://docs.moodle.org/dev/Testing_of_integrated_issues#Differences_in_test_process_during_continuous_integration_periods) happens.
-- Tuesday: Integration happens until [12:00 (UTC+8)](http://time.unitarium.com/utc/4), afterwards we try to [achieve 100% 'Test Passed'](https://docs.moodle.org/dev/Testing_of_integrated_issues#Differences_in_test_process_during_continuous_integration_periods) and stop integrating any untested changes until a master release is produced.
+- Monday: Integration and [testing](/general/development/process/testing-integrated-issues#differences-in-test-process-during-continuous-integration-periods) happens.
+- Tuesday: Integration happens until [12:00 (UTC+8)](http://time.unitarium.com/utc/4), afterwards we try to [achieve 100% 'Test Passed'](/general/development/process/testing-integrated-issues#differences-in-test-process-during-continuous-integration-periods) and stop integrating any untested changes until a master release is produced.
 - Wednesday: [Assuming a master release has been rolled] Integration and testing continues
 - Thursday: Integration and testing continues
 - Friday: Integration happens until [12:00 (UTC+8)](http://time.unitarium.com/utc/4), afterwards we try to achieve 100% 'Test Passed' and stop integrating any untested changes until a master release is produced. Note that 24h before the cutoff it's possible to pick issues out of order towards queues reduction.

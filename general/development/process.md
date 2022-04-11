@@ -55,7 +55,7 @@ During each week the testers look at all the issues in the testing queue, trying
 
 If they find problems they reject the issue and integrators may remove it from the integration repository and push it back to the developer for further work.
 
-See [[Testing of integrated issues]] for more details.
+See [Testing of integrated issues](/general/development/process/testing-integrated-issues) for more details.
 
 ### Production maintainers
 
@@ -113,11 +113,11 @@ The process of [[#New_feature_development|new feature development]] is described
 
 During development, as new code is integrated, automated testing conducted at the [[PHPUnit|code]] and [[Acceptance_testing|interface]] levels, to make sure there are no regressions caused by new features.
 
-In the last month before the release, a feature freeze is called (no new features can be added) and volunteer testers from the Moodle community perform manual QA testing of Moodle features. The current set of functional tests is listed in {tracker}`MDLQA-1`. The list of tests is extended as new features are added, though we're also trying to reduce the number as more automated [[Acceptance_testing|acceptance tests]] are developed.
+In the last month before the release, a feature freeze is called (no new features can be added) and volunteer testers from the Moodle community perform manual [QA testing](/general/development/process/qatesting) of Moodle features. The current set of functional tests is listed in {tracker}`MDLQA-1`. The list of tests is extended as new features are added, though we're also trying to reduce the number as more automated [[Acceptance_testing|acceptance tests]] are developed.
 
 There is also a set of tests for manually testing any major theme changes - {tracker}`MDLQA-11592`.
 
-For more details, see [[Testing]].
+For more details, see [Testing](/general/development/process/testing).
 
 ### Sprints
 
@@ -128,18 +128,24 @@ At Moodle HQ, development takes place in sprints. The sprints are two or three-w
 During each cycle there are a periods and events that occur between and around sprints.
 
 ![The Development sprint calendar](./process/_files/sprintcalendar.png)
-; *Planning and bug fixing*
-: A period during which the Roadmap is explored, specs are written and prototypes are created. Regressions in the recent release are fixed as they arise.
-; *End sync period*
-: During the [[Integration Review#On-sync period|on-sync period]], the recent release and master versions are kept synchronised. No new code is added during this period, which ensures regressions are fixed rapidly. This also allows for planning and provides relief for developers after a release.
-; *Personal projects*
-: Affecting full-time HQ developers only, this period allows for individual creations to be explored and provides a break from sprints.
-; *Code freeze*
-: A point after which no new code (only fixes to existing code) is accepted until beyond the release. This stabilisation allows for QA testing.
-; *QA, bug fixing, continuous integration*
-: A period after the code freeze where quality assurance testing takes place. No new code is added, which means developers are able to respond rapidly to bugs found. Integration becomes [[Integration Review#During continuous integration/Freeze/QA period|continuous]], meaning that failed QA tests can be re-run within days rather than having to wait for the weekly release.
-; *Release candidate*
-: A point prior to the full release where a candidate is made public for wider testing.
+
+**Planning and bug fixing** <br/>
+A period during which the Roadmap is explored, specs are written and prototypes are created. Regressions in the recent release are fixed as they arise.
+
+**End sync period** <br/>
+During the [[Integration Review#On-sync period|on-sync period]], the recent release and master versions are kept synchronised. No new code is added during this period, which ensures regressions are fixed rapidly. This also allows for planning and provides relief for developers after a release.
+
+**Personal projects** <br/>
+Affecting full-time HQ developers only, this period allows for individual creations to be explored and provides a break from sprints.
+
+**Code freeze** <br/>
+A point after which no new code (only fixes to existing code) is accepted until beyond the release. This stabilisation allows for [QA testing](/general/development/process/qatesting).
+
+**QA, bug fixing, continuous integration** <br/>
+A period after the code freeze where quality assurance testing takes place. No new code is added, which means developers are able to respond rapidly to bugs found. Integration becomes [[Integration Review#During continuous integration/Freeze/QA period|continuous]], meaning that failed QA tests can be re-run within days rather than having to wait for the weekly release.
+
+**Release candidate** <br/>
+A point prior to the full release where a candidate is made public for wider testing.
 
 ## New feature development
 
