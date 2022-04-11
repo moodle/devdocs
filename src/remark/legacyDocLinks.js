@@ -1,17 +1,50 @@
 const visit = require('unist-util-visit');
+const {isObsolete, isMigrated, getMigrationLink} = require('../../migratedPages');
 
 const plugin = (options) => {
-    const transformer = async (ast) => {
-        visit(ast, 'linkReference', updateLink);
+    const transformer = async (ast, vfile) => {
+        visit(ast, 'linkReference', updateLink(vfile));
     };
     return transformer;
 };
 
-const getLinkFromString = string => {
+const getLinkFromString = (vfile, string) => {
     let [linkComponent] = string.split('|');
 
     // Links never have spaces in them.
     linkComponent = linkComponent.replaceAll(' ', '_');
+
+    // Split on the bookmark (if present).
+    let [pageComponent, bookmarkComponent] = linkComponent.split('#');
+
+    if (pageComponent) {
+        if (isMigrated(pageComponent)) {
+            if (bookmarkComponent) {
+                bookmarkComponent = `#${bookmarkComponent.replaceAll('_', '-')}`;
+            } else {
+                bookmarkComponent = '';
+            }
+            const migrationLink = getMigrationLink(pageComponent, vfile.path);
+            const replacement = `[${getDescriptionFromString(string)}](${migrationLink}${bookmarkComponent})`;
+
+            let message = `---\n`;
+            message += `- Use of legacy docs link found for migrated doc\n`;
+            message += `- File:  \t ${vfile.path}\n`;
+            message += `- Found: \t [[${string}]]\n`;
+            message += `- Replacement: \t ${replacement}\n`;
+            message += `---\n`;
+            console.warn(message);
+
+            return migrationLink + bookmarkComponent;
+        } else if (isObsolete(pageComponent)) {
+            let message = `---\n`;
+            message += `- Use of obsoleted legacy doc link found for migrated doc\n`;
+            message += `- File:  \t ${vfile.path}\n`;
+            message += `- Found: \t [[${string}]]\n`;
+            message += `---\n`;
+            console.warn(message);
+        }
+    }
 
     if (linkComponent.substring(0, 1) === '#') {
         // This is a relative link in the same page.
@@ -53,7 +86,7 @@ const getDescriptionFromString = string => {
  * @param {Number} index
  * @param {Tree} parent
  */
-const updateLink = (node, index, parent) => {
+const updateLink = (vfile) => (node, index, parent) => {
     if (parent.children[index - 1]?.type !== 'text') {
         return null;
     }
@@ -72,7 +105,7 @@ const updateLink = (node, index, parent) => {
 
     const linkNode = {
         type: 'link',
-        url: getLinkFromString(node.label),
+        url: getLinkFromString(vfile, node.label),
         children: [{
             type: 'text',
             value: getDescriptionFromString(node.label),
