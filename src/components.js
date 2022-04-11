@@ -1,3 +1,5 @@
+import AcademyLink from './components/AcademyLink';
+
 import Since from './components/Since';
 import DeprecatedSince from './components/DeprecatedSince';
 import ValidExample from './components/ValidExample';
@@ -8,6 +10,8 @@ import TabItem from '@theme/TabItem';
 import Tabs from '@theme/Tabs';
 
 export {
+    AcademyLink,
+
     Since,
     DeprecatedSince,
 
