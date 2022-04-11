@@ -27,7 +27,7 @@ const FeatureList = [
     ),
   },
   {
-    link: '/docs/apiguides',
+    link: '/docs/apis',
     title: 'Read our API Guides',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
