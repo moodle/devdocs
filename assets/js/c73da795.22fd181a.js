@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdevdocs=self.webpackChunkdevdocs||[]).push([[6191],{3238:function(s){s.exports=JSON.parse('{"name":"API","permalink":"/dinodevdocs/docs/tags/api","docs":[{"id":"apis/plugintypes/mod","title":"Activity modules","description":"Introduction","permalink":"/dinodevdocs/docs/apis/plugintypes/mod"}],"allTagsPath":"/dinodevdocs/docs/tags"}')}}]);
