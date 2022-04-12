@@ -4,6 +4,8 @@ tags:
   - Access
 ---
 
+import AcademyLink from '@site/src/components/AcademyLink';
+
 The Access API gives you functions so you can determine what the current user is allowed to do. It also allows plugins to extend Moodle with new capabilities.
 
 ## Overview
@@ -29,6 +31,12 @@ Roles can be overridden by contexts further down the tree.
 User access is calculated from the combination of roles which are assigned to each user.
 
 All users that did not log-in yet automatically get the default role defined in `$CFG->notloggedinroleid`, it is not possible to assign any other role to this non-existent user id. There is one special guest user account that is used when user logs in using the guest login button or when guest autologin is enabled. Again you can not assign any roles to the guest account directly, this account gets the `$CFG->guestroleid` automatically. All other authenticated users get the default user role specified in `$CFG->defaultuserroleid` and in the frontpage context the role specified in `$CFG->defaultfrontpageroleid`.
+
+
+<AcademyLink
+  subject="Contexts and the Roles API"
+  courseName="securityEssentials"
+/>
 
 ## How to define new capabilities in plugins
 
