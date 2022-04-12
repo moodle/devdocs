@@ -32,7 +32,7 @@ useful:
 - Find anything confusing? Help us fix it
 - Help migrate something from docs.moodle.org/dev to our new repo
 - Document the documentation process
-- Look at our requeted features
+- Look at our requested features
 ```
 
 ### Issues

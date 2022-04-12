@@ -4,6 +4,7 @@ tags:
   - Access
 ---
 
+
 import AcademyLink from '@site/src/components/AcademyLink';
 
 The Access API gives you functions so you can determine what the current user is allowed to do. It also allows plugins to extend Moodle with new capabilities.
@@ -64,7 +65,7 @@ Where the meaning of array keys is:
 | `captype`              | _read_ or _write_ capability type, for security reasons system prevents all write capabilities for guest account and not-logged-in users                                                                                                                                                                                                                          |
 | `contextlevel`         | specified as context level constant. Declares the typical context level where this capability is checked. This capability can be checked with contexts that are at a lower level (e.g. 'moodle/site:accessallgroups'                                                                                                                                              | could be checked with CONTEXT_MODULE). |
 | `archetypes`           | specifies defaults for roles with standard archetypes, this is used in installs, upgrades and when resetting roles (it is recommended to use only CAP_ALLOW here).  Archetypes are defined in mdl_role table.  See also [[Role archetypes]].                                                                                                                      |
-| `clonepermissionsfrom` | when you are adding a new capability, you can tell Moodle to copy the permissions for each role from the current settings for another capabilty. This may give better defaults than just using archetypes for administrators who have heavily customised their roles configuration. The full syntax is: <tt>'clonepermissionsfrom' => 'moodle/quiz:attempt',</tt> |
+| `clonepermissionsfrom` | when you are adding a new capability, you can tell Moodle to copy the permissions for each role from the current settings for another capability. This may give better defaults than just using archetypes for administrators who have heavily customised their roles configuration. The full syntax is: <tt>'clonepermissionsfrom' => 'moodle/quiz:attempt',</tt> |
 
 It is necessary to bump up plugin version number after any change in db/access.php, so that the upgrade scripts can make the necessary changes to the database.  To run the upgrade scripts, log in to Moodle as administrator, navigate to the site home page, and follow the instructions.  (If you need to test the upgrade script without changing the plugin version, it is also possible to set back the version number in the mdl_block or mdl_modules table in the database.)
 
