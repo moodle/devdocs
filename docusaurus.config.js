@@ -1,16 +1,29 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+/**
+ * Copyright (c) Moodle Pty Ltd.
+ *
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 require('dotenv').config();
 
 const Versions = require('./versions.json');
-const versionConfig = Object.fromEntries(Versions.map(version => {
-    return [version, {
-        label: version,
-        banner: 'none',
-    }];
-}));
-versionConfig['current'] = {
+
+const versionConfig = Object.fromEntries(Versions.map((version) => [version, {
+    label: version,
+    banner: 'none',
+}]));
+versionConfig.current = {
     label: 'master',
     banner: 'none',
 };
@@ -26,7 +39,7 @@ const remarkPlugins = [
 const config = {
     title: 'Moodle',
     tagline: '(Un)official Developer Resources',
-    //url: 'https://develop.moodle.org',
+    // url: 'https://develop.moodle.org',
     url: process.env?.url || 'https://andrewnicols.github.io',
     baseUrl: process.env?.baseUrl || '/dinodevdocs/',
     trailingSlash: false,
@@ -89,7 +102,7 @@ const config = {
     }),
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     plugins: [
-        [require.resolve("@cmfcmf/docusaurus-search-local"), {
+        [require.resolve('@cmfcmf/docusaurus-search-local'), {
             indexBlog: false,
         }],
         'plugin-image-zoom',

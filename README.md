@@ -1,4 +1,4 @@
-# Moodle Developer Resoruces
+# Moodle Developer Resources
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/andrewlyons/dinodevdocs/)
 [![Lint](https://github.com/andrewnicols/dinodevdocs/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/andrewnicols/dinodevdocs/actions/workflows/markdown-lint.yml)

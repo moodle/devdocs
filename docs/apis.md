@@ -170,6 +170,7 @@ This allows compliance with regulation such as the General Data Protection Regul
 
 The [[Rating API]] lets you create AJAX rating interfaces so that users can rate items in your plugin. In an activity module, you may choose to aggregate ratings to form grades.
 
+<!-- cspell:ignore reportbuilder -->
 ### Report builder API (reportbuilder)
 
 The [[Report builder API]] allows you to create reports in your plugin, as well as providing custom reporting data which users can use to build their own reports.
@@ -202,6 +203,7 @@ The testing API contains the Unit test API ([[PHPUnit]]) and Acceptance test API
 
 This is a rather informal grouping of miscellaneous [[User-related APIs]] relating to sorting and searching lists of users.
 
+<!-- cspell:ignore webservice -->
 ### Web services API (webservice)
 
 The [[Web services API]] allows you to expose particular functions (usually external functions) as web services.
@@ -248,6 +250,7 @@ The [[Question API]] (which can be divided into the Question bank API and the Qu
 
 ## See also
 
+<!-- cspell:ignore codingstyle -->
 - [[Plugins]] - plugin types also have their own APIs
 - [[Callbacks]] - list of all callbacks in Moodle
 - [Coding style](/general/development/policies/codingstyle) - general information about writing PHP code for Moodle
