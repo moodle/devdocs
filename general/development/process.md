@@ -199,7 +199,7 @@ Bug fixes, and minor features or enhancements should go through the following pr
 
 ### Make sure there is a tracker issue
 
-Every change must have an issue in the tracker. If you are fixing a bug, there is probably one there already, but if not, create one. [[Tracker tips|Tips for searching tracker]].
+Every change must have an issue in the tracker. If you are fixing a bug, there is probably one there already, but if not, create one. [Tips for searching tracker](./tracker/tips/index.md).
 
 ### Decide which branches the fix is required on
 
@@ -253,7 +253,7 @@ Issues identified as [[Security|security issues]] are resolved in a slightly dif
     - If a developer has shared a solution as Git branches via Github, they should be asked to provide the solutions as [[How_to_create_a_patch|stand-alone patches]] attached to the issue and to [[#How to remove a branch from Github|remove the solution from Github]].
   - contain details about the security problem in the commit message.
     - Instead use generic terms like, "improve", "better handling of"
-- The solution will not be integrated until the week before a [[Process#Stable_maintenance_cycles|minor release]] following the normal [[Release process|Release process]]. In short, the issue will be incorporated into the integration version, rebased, tested and made ready for release as a normal issue would, but not until as late as possible.
+- The solution will not be integrated until the week before a [minor release](#Stable-maintenance-cycles) following the normal [[Release process|Release process]]. In short, the issue will be incorporated into the integration version, rebased, tested and made ready for release as a normal issue would, but not until as late as possible.
 - Details of security issues will be shared with registered admins with the minor release.
 - Details of security issues will not be publicly announced until one week after a minor release to allow admins to update.
 Note that not all the labelled (minor) security issues are always handled following the procedure above. It's possible that, after discussion, it's decided a given issue is not a real Moodle security problem (say external disclosures/potential attacks using Moodle as vector, not as target, discussions revealing some private details). Those issues will be processed as normal issues, generating the needed user documentation if necessary and will be part of the habitual weekly releases.
