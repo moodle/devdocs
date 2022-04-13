@@ -22,10 +22,10 @@ const migratedDocs = {
     "Overview": "/general/community/intro.md",
     "Peer_reviewing": "/general/development/process/peer-review.md",
     "Process": "/general/development/process.md",
-    "QA_testing": "/general/development/process/qatesting.md",
+    "QA_testing": "/general/development/process/testing/qa.md",
     "Roadmap": "/general/community/roadmap.md",
     "Testing": "/general/development/process/testing.md",
-    "Testing_of_integrated_issues": "/general/development/process/testing-integrated-issues.md",
+    "Testing_of_integrated_issues": "/general/development/process/testing/integrated-issues.md",
     "Tracker_intro": "/general/development/tracker.md",
     "Tracker_tips": "/general/development/tracker/tips.md",
 };

@@ -9,38 +9,42 @@ tags:
 ---
 
 Testing is an important part of the [Moodle development process](/general/development/process).
-Testing day depends on hte integration period (normal vs continuous).
-Tester's first priority should be to finish testing on the day they have been assigned. Tester should update testing status or add comments in tracker, so that status of testing is known to iTeam.
+Depending on the integration period (normal or continuous) testing can take place at different times.
+Your first priority as a tester should be to finish testing on the day they have been assigned. You should update the testing status so that the testing status is clear.
 
 ## The testing process
 
 :::note
 
-1. All tests are allocated during the week to testers by iTeam. Tests are run usually by the external testers team but sometimes they can be assigned to HQ developers too.
+1. Tests are allocated during the week by the Integration Team. Tests are usually performed by a dedicated team of test engineers but sometimes they may be assigned to HQ developers too.
 2. HQ developers should check mail or search tracker to see which issues are assigned to them for testing.
 
 :::
 
 1. Pull latest integration from [git://git.moodle.org/integration.git](git://git.moodle.org/integration.git)
-2. Test issue by following **Testing instructions**
+2. Test issue by following the **Testing instructions**
 3. Select `Pass test` or `Fail test` as appropriate, adding a short description of what was tested if not obvious
-4. If you find you cannot finish testing a particular pull request, click `Stop testing` and let iTeam know about it.
-5. Failed tests will wait for assignee to respond. If the patch is provided late and there is constrained to find tester then issue will be reopened.
+4. If you find you cannot finish testing a particular issue, click `Stop testing` and let the Integration team know about it.
+5. When a test is failed the assignee is usually contacted and asked to respond or provide a fix. If the patch is provided late and there is no time to find a new tester then the issue will be reopened.
 6. Once the fail fix is integrated, it goes back to **complete re-testing**.
-7. It's responsibility of tester to test the issue again, provided fix patch is not from tester. If tester provides fix patch then tester will be
+7. It's the responsibility of the tester to test the issue again, unless the patch is from tester. If the tester provides fix patch then test will be re-assigned.
 changed.
-8. Tester who passes the issue will be set as tester for the issue.
+8. The tester who passes the issue will be set as the tester for the issue.
+
+:::info Failing a test session
 
 For test sessions, if you encounter a failure, please fail the issue add a comment on the issue itself. If everything's good, add a comment in the session and complete the session. You may also comment on the issue and say that testing passes on your part.
 
+:::
+
 ## Expectation from developer and peer-reviewer
 
-Testing instructions are spot-on, clear and easy to perform. Please, follow the [[Testing instructions guide]] recommendations.
+Testing instructions are clear, concise, complete, and accurate. Where possible they should be easy to perform. Please follow the [[Testing instructions guide]] recommendations.
 
-## Expectation from iTeam
+## Expectations of the Integration team
 
 - Tests should be allocated when the issue is integrated.
-- The iTeam may need to help/re-assign tests if developers are having problems.
+- The integration team may need to help/re-assign tests if developers are having problems.
 
 ## Expectation from tester
 
@@ -49,7 +53,7 @@ Testing instructions are spot-on, clear and easy to perform. Please, follow the 
 - Testers should try to finish testing as early as possible as they are assigned, so when tests fail, the issue assignee has as much time as possible to resolve it.
 - When a test fails, or new (related) regression found then fail test.
 - If tester is not sure of results or need explanation on testing instructions, then tester can either fail test with comments, or contact the assignee individually to raise the problem.
-- Testers should let the iTeam know ASAP if they are facing any problems, need help or may not be able to complete their allocated tests
+- Testers should let the integration team know ASAP if they are facing any problems, need help or may not be able to complete their allocated tests
 - For any reason (big test, not enough time, not started testing yet), if a test is dragged to next day then the tester should leave comment on tracker, updating the status of testing and adding the expected time needed to finish testing.
 - When a test is passed, it is recommended to add some extra information that confirms that all works as expected. This could be a browser screenshot, terminal output...
 - **All UI tests should be tested on currently supported themes**.
@@ -61,7 +65,7 @@ Testing instructions are spot-on, clear and easy to perform. Please, follow the 
 
 ## Differences in test process during continuous integration periods
 
-During [continuous integration](/general/development/process/integration-review#during-continuous-integrationfreezeqa-period) we change our schedule to produce and release fixes to bugs more quickly than the usual weekly cycle. Our
+During [continuous integration](/general/development/process/integration-review#during-continuous-integrationfreezeqa-period) the schedule is changed to allow faster iteration and for bug fixes to be applied more reapidly than the usual weekly cycle. The goal during this period is ...
 goal during this period is to release a new version of master multiple times per week. We try to keep the process more flexible during this time in order that developers who have less pressing issues than others can take the load off those concentrating on big fixes. It works best if we work together to help each other out.
 
 :::warning
@@ -80,9 +84,15 @@ To obtain the code from the integration.git repository, follow the instructions 
 
 as the very first command.
 
+:::tip
+
+Alternatively, you can also use [Moodle Development Kit (MDK)](https://docs.moodle.org/dev/Moodle_Development_kit), and add the option `--integration` to install a Moodle instance based on integration.git.
+
+:::
+
 ### Changing theme to another one
 
-Ensure you have following setting in the config (it allows changing theme from url).
+Ensure you have following setting in the config (it allows you to change the theme in the URL).
 
 ```php
    $CFG->allowthemechangeonurl = true;
@@ -92,8 +102,8 @@ For changing to a theme named "yay" add **?theme=yay** to the url.
 
 ## Notes
 
-- If issues requires an Oracle and MSSQL installations for testing, and you don't have one, then please let iTeam know about this.
-- Any update should be added as comment on MDL issue being tested.
-- If testers pass or fail an issue by mistake, then please request iTeam to reopen it for testing.
+- If the issue requires an Oracle or MSSQL installation for testing, and you don't have one, [docker](/docs/gettingstarted/quickstart#docker) may help you.
+- Any update should be added as a comment on the tracker issue being tested.
+- If testers pass or fail an issue by mistake, then please request the integration team to reopen it for testing.
 - Testers should not be involved in the bugfixing or review process.
 - If an issue cannot be fixed within a sprint and has to be reopened, the fix for sprint version should be removed and an appropriate backlog version set.

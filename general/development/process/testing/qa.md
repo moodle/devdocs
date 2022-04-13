@@ -10,7 +10,7 @@ tags:
 
 **Quality Assurance** tests look at the functionality of Moodle from a user's point of view.
 
-Real users systematically try each feature in Moodle and test that it works in the current version of the Moodle code. These tests are repeated in series of cycles, around 4 - 6 weeks before a major release, once all major features have landed.
+Real users systematically try each feature in Moodle and ensure that it works in the current version of the Moodle code. These tests are repeated in a series of cycles, around 4 - 6 weeks before each major release, once all major features have landed.
 
 ## Getting involved
 
@@ -30,7 +30,7 @@ Would you like to help with QA testing? If so, please make sure you have created
    - `Fail` - Something doesn't work, or you obtain debugging messages. Add comment describing the step that doesn't work. If in doubt whether to pass a test, give it a fail and add a comment describing your doubts.
    - `Obsolete` - Test is no longer relevant in the current Moodle version. Add comment explaining why.
 
-:::caution Attention
+:::info Out of date tests
 
 If you notice that the test description is out-of-date, add a comment mentioning that it needs updating. Alternatively, if you'd like to help with updating the test yourself, see below.
 
@@ -47,17 +47,19 @@ If there is anything you are unsure of, such as whether to mark a test as failed
 
 The [Moodle QA Testing Site](https://qa.moodledemo.net/) is updated daily at around 13:00 UTC with the latest bug fixes to enable you to re-run QA tests.
 
-:::danger Important
+Credentials for Teacher and student accounts are provided on the login page.
 
-To prevent the site being used for sending spam, **no emails are sent from it**. Thus, tests involving email cannot be run using the Moodle QA Testing Site. (If such tests are attempted, an email debug message is displayed. This is not a bug but rather expected behaviour.)
+:::info E-mail on the QA site
+
+No e-mail will be sent from the QA server. Tests involving e-mail **cannot** be performed on the Moodle QA Testing Site.
+
+If you perform any test which tries to send e-mail, a debugging message will be displayed.
 
 :::
 
-Teacher and student accounts are provided.
+:::tip Admin access
 
-:::tip
-
-If you would like **admin access** to the Moodle QA Testing Site for running certain tests, please ask in the [Moodle QA Telegram chat room](https://t.me/moodleqa) or the [Testing and QA forum](https://moodle.org/mod/forum/view.php?id=56) for someone to send you the account credentials via private message.
+If you require admin access to the Moodle QA Testing Site for running certain tests, please ask in the [Moodle QA Telegram chat room](https://t.me/moodleqa) or the [Testing and QA forum](https://moodle.org/mod/forum/view.php?id=56) for someone to send you the account credentials via private message.
 
 :::
 
@@ -80,13 +82,14 @@ Adding details for a link to the QA issue
 ## Resetting tests
 
 :::info Note for integrators
-:::
 
 After integrating a fix:
 
 1. `Reset` the MDLQA test, adding a comment.
 2. Remove the `mdlqa` label from the MDL issue.
 3. If the issue doesn't have testing instructions, pass it with message "Will be tested by MDLQA-XXXX".
+
+:::
 
 The tester will then receive email notification that the bug is fixed and will hopefully decide to run the test again soon.
 
@@ -103,6 +106,11 @@ Thus, at this point in the QA cycle, any bugs which also affect existing version
 When entering text into a form, try things like:
 
 - `&` (ampersand), `>` (greater than) or `<` (less than)
+- `0` (the single digit 0)
+- `'` (single quote)
+- special characters
+- very long strings
+- different languages, such as a RTL language
 
 :::tip For example:
 
@@ -110,28 +118,13 @@ When entering text into a form, try things like:
 x < 1 && x > 0
 ```
 
-:::
-
-- `0` (the single digit 0)
-- `'` (single quote)
-
-:::tip For example:
-
 ```
 Fergal.O'Brien@example.com
 ```
 
-:::
-
-- special characters e.g.
-
-:::tip For example:
-
 ```
 café
 ```
-
-or
 
 ```
 囲碁
@@ -139,35 +132,35 @@ or
 
 :::
 
-- very long strings
-- different languages, such as a RTL language
-
 ## New QA tests required
 
 :::info Note for developers
-:::
 
 If an issue fix cannot be covered by automated tests,
 
 1. Add the label `qa_test_required` to the issue.
 2. Add a comment explaining why it can't be covered by automated tests and suggesting which steps of the testing instructions should be included in a QA test e.g. steps 6-10 or all steps.
 
+:::
+
 QA tests will then be written and included in the next QA cycle. For issues with long testing instructions, several QA tests will be written to cover the issue. If appropriate, activities etc. will be set up on the [Moodle QA Testing Site](https://qa.moodledemo.net/) to enable the issue to be easily tested in future.
 
-Similarly, for **new features and improvements** which would benefit from exploratory testing,
+### New features, and improvements
+
+Where a new features or improvements would benefit from exploratory testing, you should:
 
 1. Add the label `qa_test_required` to the issue.
 2. Add a comment mentioning that exploratory testing is required.
 
 :::note
 
-**Exploratory QA tests** will then be written and included in the next QA cycle and then removed.
+When the next QA cycle is prepared, any issue with the `qa_test_required` label will be reviewed and appropriate **exploratory QA tests** written, before the label is then removed.
 
 :::
 
 ## Updating tests
 
-QA tests often become out-of-date due to new developments. If you would like to help with updating tests, you'll need to be a member of the test writers group in the Tracker. Please contact Helen about being added.
+QA tests may become out-of-date due to User Interface changes, feature changes, and new features. If you would like to help with updating tests, you'll need to be a member of the test writers group in the Tracker. Please contact Helen about being added.
 
 To update a QA test original:
 
@@ -182,7 +175,7 @@ If a test in the current QA cycle is marked as failed because it is out-of-date,
 
 ## Writing new tests
 
-Would you like to help with writing new QA tests? If so, as for updating tests, you'll need to be a member of the test writers group in the Tracker. Please contact Helen about being added.
+Would you like to help with writing new QA tests? To write new QA tests you will need to be a member of the test writers group in the Tracker. Please contact Helen about being added.
 
 QA tests are needed for any features which can't be tested with automated testing, such as connecting to an external system, drag and drop functionality or a CLI script. Also if it requires a person to detect if something is 'correct' vs. present/absent on the page.
 

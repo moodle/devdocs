@@ -31,19 +31,28 @@ const sidebars = {
                     label: 'Process',
                     type: 'category',
                     items: [
-                            'development/process/peer-review',
-                            'development/process/integration-review',
-                            'development/process/testing',
-                            {
+                        'development/process/peer-review',
+                        'development/process/integration-review',
+                        {
+                            label: 'Testing',
+                            type: 'category',
+                            items: [
+                                {
+                                    label: 'Integrated issues',
+                                    type: 'doc',
+                                    id: 'development/process/testing/integrated-issues',
+                                },
+                                {
+                                    label: 'Quality Assurance (QA)',
+                                    type: 'doc',
+                                    id: 'development/process/testing/qa',
+                                },
+                            ],
+                            link: {
                                 type: 'doc',
-                                id: 'development/process/testing-integrated-issues',
-                                className: 'docusaurus-hidden',
+                                id: 'development/process/testing',
                             },
-                            {
-                                type: 'doc',
-                                id: 'development/process/qatesting',
-                                className: 'docusaurus-hidden',
-                            },
+                        }
                     ],
                     link: {
                         type: 'doc',
