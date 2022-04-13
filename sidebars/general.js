@@ -33,6 +33,26 @@ const sidebars = {
                     items: [
                         'development/process/peer-review',
                         'development/process/integration-review',
+                        {
+                            label: 'Testing',
+                            type: 'category',
+                            items: [
+                                {
+                                    label: 'Integrated issues',
+                                    type: 'doc',
+                                    id: 'development/process/testing/integrated-issues',
+                                },
+                                {
+                                    label: 'Quality Assurance (QA)',
+                                    type: 'doc',
+                                    id: 'development/process/testing/qa',
+                                },
+                            ],
+                            link: {
+                                type: 'doc',
+                                id: 'development/process/testing',
+                            },
+                        }
                     ],
                     link: {
                         type: 'doc',
