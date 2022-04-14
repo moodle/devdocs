@@ -27,8 +27,8 @@ const config = {
     title: 'Moodle',
     tagline: '(Un)official Developer Resources',
     //url: 'https://develop.moodle.org',
-    url: process.env?.url || 'https://andrewnicols.github.io',
-    baseUrl: process.env?.baseUrl || '/dinodevdocs/',
+    url: process.env?.url || 'https://moodle.github.io',
+    baseUrl: process.env?.baseUrl || '/devdocs/',
     trailingSlash: false,
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -49,7 +49,7 @@ const config = {
             ({
                 docs: {
                     sidebarPath: require.resolve('./sidebars/docs.js'),
-                    editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
+                    editUrl: 'https://github.com/moodle/devdocs/edit/main/',
                     showLastUpdateAuthor: true,
                     showLastUpdateTime: true,
                     remarkPlugins,
@@ -100,7 +100,7 @@ const config = {
                 path: 'general',
                 routeBasePath: 'general',
                 sidebarPath: require.resolve('./sidebars/general.js'),
-                editUrl: 'https://github.com/andrewnicols/dinodevdocs/edit/main/',
+                editUrl: 'https://github.com/andrewnicols/devdocs/edit/main/',
                 showLastUpdateAuthor: true,
                 showLastUpdateTime: true,
                 remarkPlugins,
