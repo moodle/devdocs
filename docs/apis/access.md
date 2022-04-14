@@ -193,7 +193,7 @@ This method returns list of users with given capability, it ignores enrolment st
 
 ## See also
 
-- [[Core APIs]]
+- [API guides](/docs/apis)
 - [[Roles]]
 - [[Role archetypes]]
 - [[Hardening new Roles system]]

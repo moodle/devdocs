@@ -133,7 +133,7 @@ During each cycle there are a periods and events that occur between and around s
 A period during which the Roadmap is explored, specs are written and prototypes are created. Regressions in the recent release are fixed as they arise.
 
 **End sync period** <br/>
-During the [[Integration Review#On-sync period|on-sync period]], the recent release and master versions are kept synchronised. No new code is added during this period, which ensures regressions are fixed rapidly. This also allows for planning and provides relief for developers after a release.
+During the [on-sync period](/general/development/process/integration-review#on-sync-period), the recent release and master versions are kept synchronised. No new code is added during this period, which ensures regressions are fixed rapidly. This also allows for planning and provides relief for developers after a release.
 
 **Personal projects** <br/>
 Affecting full-time HQ developers only, this period allows for individual creations to be explored and provides a break from sprints.
@@ -142,7 +142,7 @@ Affecting full-time HQ developers only, this period allows for individual creati
 A point after which no new code (only fixes to existing code) is accepted until beyond the release. This stabilisation allows for [QA testing](/general/development/process/testing/qa).
 
 **QA, bug fixing, continuous integration** <br/>
-A period after the code freeze where quality assurance testing takes place. No new code is added, which means developers are able to respond rapidly to bugs found. Integration becomes [[Integration Review#During continuous integration/Freeze/QA period|continuous]], meaning that failed QA tests can be re-run within days rather than having to wait for the weekly release.
+A period after the code freeze where quality assurance testing takes place. No new code is added, which means developers are able to respond rapidly to bugs found. Integration becomes [continuous](/general/development/process/integration-review#during-continuous-integrationfreezeqa-period), meaning that failed QA tests can be re-run within days rather than having to wait for the weekly release.
 
 **Release candidate** <br/>
 A point prior to the full release where a candidate is made public for wider testing.
@@ -197,7 +197,7 @@ Process and the list of things to check are described in [Peer reviewing](proces
 
 The developer is responsible for acting on the feedback from the peer reviewer. If changes have been made and the developer is satisfied that this has accommodated the feedback from the peer reviewer, then the developer can submit the issue for integration. If there have been significant changes after the peer review, or if the peer reviewer has raised concerns about the approach taken, then the developer should offer the issue up for peer review again, most often to the same peer reviewer, but not necessarily.
 
-Submitting an issue to integration is much the same as for any Moodle code. In some cases the Component Lead may perform a Component Lead Review instead of the integration team. See [[Integration Review]] and the information about the integration workflow above.
+Submitting an issue to integration is much the same as for any Moodle code. In some cases the Component Lead may perform a Component Lead Review instead of the integration team. See [Integration Review](/general/development/process/integration-review) and the information about the integration workflow above.
 
 ## Fixing a bug
 
@@ -246,7 +246,7 @@ Process and the list of things to check are described in [Peer reviewing](proces
 
 ### Submit your code for integration
 
-It will then be reviewed the following week by one of the integration team and either integrated or rejected. Once integrated, the fix will be tested, and then included in the next weekly release. For details see [[Integration Review]].
+It will then be reviewed the following week by one of the integration team and either integrated or rejected. Once integrated, the fix will be tested, and then included in the next weekly release. For details see [Integration Review](/general/development/process/integration-review).
 
 ## Security issues
 
