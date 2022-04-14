@@ -1,6 +1,6 @@
 # Moodle Developer Resoruces
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/andrewlyons/dinodevdocs/)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/andrewnicols/dinodevdocs/)
 [![Lint](https://github.com/andrewnicols/dinodevdocs/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/andrewnicols/dinodevdocs/actions/workflows/markdown-lint.yml)
 [![Build](https://github.com/andrewnicols/dinodevdocs/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/andrewnicols/dinodevdocs/actions/workflows/pages/pages-build-deployment)
 [![Deployment](https://github.com/andrewnicols/dinodevdocs/actions/workflows/deploy.yml/badge.svg)](https://github.com/andrewnicols/dinodevdocs/actions/workflows/deploy.yml)
@@ -71,21 +71,6 @@ Some examples of these issues include:
 - the presence of trailing spaces at the end of a line
 
 These are usually easy to solve and, in many cases, can be fixed automatically.
-
-### Stylistic checks
-
-The Moodle Developer Resources try to follow the [Microsoft writing style
-guide](https://docs.microsoft.com/en-us/style-guide).
-
-This is a free writing style and terminology guide aimed at authors of
-technology-related documentation. Adopting this writing-style guide is intended
-to make all of the documentation clearer, more consistent, and easier to
-understand for developers who are not native English speakers.
-
-A number of key rules have been adopted, and others are treated as
-recommendations which you can follow where appropriate.
-
-You can run the style checks on your content using yarn:
 
 ### Building your content
 
