@@ -19,8 +19,21 @@ const navbar = {
             position: 'left',
             label: 'Guides',
         },
-        {to: '/general/community', label: 'Community', position: 'left'},
-        {to: '/general/development', label: 'Process & policies', position: 'left'},
+        {
+            to: '/general/community',
+            label: 'Community',
+            position: 'left'
+        },
+        {
+            to: '/general/development/process',
+            label: 'Process',
+            position: 'left'
+        },
+        {
+            to: '/general/development/policies/codingstyle',
+            label: 'Policies',
+            position: 'left'
+        },
 
         // Right.
         {
