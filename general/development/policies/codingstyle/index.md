@@ -1419,7 +1419,7 @@ The package tag should always be used to label php files with the correct [[Fran
 
 ##### `@category`
 
-We use `@category` only to highlight the public classes, functions or files that are part of one of our [[Core APIs]], or that provide good example implementations of a Core API. The value must be one of the ones on the [[Core APIs]] page.
+We use `@category` only to highlight the public classes, functions or files that are part of one of our [Core APIs](/docs/apis), or that provide good example implementations of a Core API. The value must be one of the ones on the [API guides](/docs/apis) page.
 
 <ValidExample>
 
@@ -1531,7 +1531,7 @@ All files that contain PHP code should contain, without any blank line after the
 1. short one-line description of the file
 1. longer description of the file
 1. `@package` tag (required)
-1. `@category` tag (only when everything in the file is related to one of the [[Core APIs]])
+1. `@category` tag (only when everything in the file is related to one of the [Core APIs](/docs/apis))
 1. `@copyright` (required)
 1. `@license` (required)
 

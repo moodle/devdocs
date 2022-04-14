@@ -130,7 +130,7 @@ A: Anytime one plugin wants to communicate to one other specific plugin - it’s
 
 **Q: How do I know if there is an API I can already use?**
 
-A: Existing callbacks are listed [[Callbacks|here]], major core APIs are listed [[Core_APIs|here]].
+A: Existing callbacks are listed [[Callbacks|here]], major core APIs are listed [here](/docs/apis).
 
 **Q: Can I change the data provided to a component_callback and maintain backwards compatibility.**
 
