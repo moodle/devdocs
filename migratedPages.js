@@ -36,6 +36,7 @@ const migratedDocs = {
     Developer_meetings: "/general/community/meetings.md",
     Integration_Review: "/general/development/process/integration-review.md",
     Mission: "/general/community/mission.md",
+    "Moodle_4.0_release_notes": "/docs/release-notes.md",
     Moodle_App: "/docs/guides/moodleapp/coding-style.md",
     Moodle_App_Coding_Style: "/docs/guides/moodleapp/coding-style.md",
     Moodle_App_Overview: "/docs/guides/moodleapp/overview.md",
