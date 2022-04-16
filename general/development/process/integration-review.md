@@ -29,7 +29,7 @@ Integration (non-technical but philosophical) principles (4-5 words determining 
 1. **safety**: if something does not look safe, stable, it won't land. Be conservative.
 2. **security**: all security issues, if not breaking principle (1) will be integrated/backported to all security-supported versions.
 3. **community**: Anything not useful for the community (or against it) won't be integrated/backported. We can measure the community as 10%HQ, 10%Partners, 10%Core developers, 20%Admins, 20%Teachers, 30%Students - not exact science, just one approximation, you know). Question yourself how the change will affect those groups and ensure positives are bigger always (only affected groups count). All community issues, if not breaking principles (1) and (2) will be integrated.
-4. **typology**: bug fixes will be always integrated/backported to all the supported braches if none of the principles (1), (2) and (3) are violated. Also, partially-unsupported branches can receive some if they are important enough. Improvements and new features go, exclusively, to master only, that's the main reason for short release periods. We *MUST* not make exceptions to this.
+4. **typology**: bug fixes will be always integrated/backported to all the supported branches if none of the principles (1), (2) and (3) are violated. Also, partially-unsupported branches can receive some if they are important enough. Improvements and new features go, exclusively, to master only, that's the main reason for short release periods. We *MUST* not make exceptions to this.
 5. **priority**: issues will be "ordered down" by priority down (where priority is a [mix of various factors](https://tracker.moodle.org/issues/?filter=14000), dynamic). And will be integrated in that order. If something has to be delayed, better if it is low priority. Once again, nothing here can break any of the previous principles.
 6. **tests**: unit tests and acceptance tests will backported as much as possible without breaking (1) and (2). New features required to implement tests will be backported if the API is 100% backwards compatible.
 
@@ -89,7 +89,7 @@ integration by the assignee.
 
 The integrators adhere to the following schedule: (links here should convert the times into your local timezone)
 
-All the flow of issues to current integration is automatically controlled by the [Manage queues on normal job](https://ci.moodle.org/view/Tracker/job/TR%20-%20Manage%20queues%20on%20normal/) that keeps the current queue fed with issues, moves important ones and priotitises long awaiting issues. Issues are picked in strict integration order.
+All the flow of issues to current integration is automatically controlled by the [Manage queues on normal job](https://ci.moodle.org/view/Tracker/job/TR%20-%20Manage%20queues%20on%20normal/) that keeps the current queue fed with issues, moves important ones and prioritises long awaiting issues. Issues are picked in strict integration order.
 
 - Monday to Thursday until [12:00 (UTC+8)](http://time.unitarium.com/utc/4): Integration and [Testing](/general/development/process/testing/integrated-issues#the-testing-process) happen. Note that 24h before the cutoff it's possible to pick issues out of order towards queues reduction.
 - Thursday after 12:00 (UTC+8): Integrators duties during this time are to monitor, facilitate and 'problem solve' the testing process.
@@ -107,7 +107,7 @@ Throughout:
 - Issues are picked on a one by one basis, prioritising [QA blockers](https://docs.moodle.org/dev/QA_testing#Resetting_tests) and master regressions (MUST FIX) issues.
 - After freeze (usually 5 weeks before release) any non bug fix issues are given the `integration_held` label and are explicitly not picked for integration. Still, anybody is able to add a reasoned `unhold_requested` label to those issues in order to get them unblocked by the development managers. Note this does not guarantee the issue to land before release, but just gives it a chance to be integrated like any other issue.
 - Also, coming together with freeze, all the flow of issues to current integration is automatically controlled by the [Manage queues on continuous](https://ci.moodle.org/view/Tracker/job/TR%20-%20Manage%20queues%20on%20continuous/) job that keeps the current queue fed with issues, moves important ones, holds new features and other niceties. Issues are picked in strict integration order.
-- Our goal is to achieve 'releaseability' throughout, so we stop integrating to ensure a release happens
+- Our goal is to achieve 'release-ability' throughout, so we stop integrating to ensure a release happens
 
 So, basically, once under continuous integration, we do organize work as follows:
 
@@ -163,7 +163,7 @@ Our general policy is as follows:
 
 ### Process for requesting a non bug-fix backport
 
-Improvements or new features can be requested to be backported to the stable branches. We urge developers to consider this request carefully. In recent years, Moodle has moved to a short and predicatable time based release schedule and we use a very effective distributed source control system. Both of these process changes should ensure that a change not being backported to the stable branches is not as problematic as it may have used to be.
+Improvements or new features can be requested to be backported to the stable branches. We urge developers to consider this request carefully. In recent years, Moodle has moved to a short and predictable time based release schedule and we use a very effective distributed source control system. Both of these process changes should ensure that a change not being backported to the stable branches is not as problematic as it may have used to be.
 
 Should you feel that a new feature or improvement needs backporting, please follow this process:
 
@@ -188,12 +188,12 @@ You can probably copy the testing instructions from the original issue. If so, m
 
 ### Polite note about bug classification
 
-Many issues can be appropiately classified as borderline bugfix/improvements. We politely request that developers do not try and 'game the system' by clasifying their improvements as bugs intentionally. If your fix is in a grey area, please state your case for it being a bug fix clearly. The integration team will use their discretion where necessary.
+Many issues can be appropriately classified as borderline bug-fix/improvements. We politely request that developers do not try and 'game the system' by classifying their improvements as bugs intentionally. If your fix is in a grey area, please state your case for it being a bug fix clearly. The integration team will use their discretion where necessary.
 
 ### Backport fixes to unsupported branches
 
 - Given the [general policy](#general-policy) above, only supported stable branches are candidates normally.
-- Also security, privacy, dataloss and regressions caused by any of the previous issue types are accepted to be fixed into security-only supported branches.
+- Also security, privacy, data-loss and regressions caused by any of the previous issue types are accepted to be fixed into security-only supported branches.
 :::note
 This doesn't include [`security_benefit` labelled issues](https://docs.moodle.org/dev/Tracker_issue_labels).
 ::::

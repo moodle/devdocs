@@ -15,9 +15,9 @@ All Moodle JavaScript can use the same Mustache templates and translated strings
 This guide covers how to get started with JavaScript in Moodle, and introduces key concepts and features including module format and structure, including your code, using templates, using translation features, tooling, and handling events.
 
 :::note
-You may see the terms `ES6` and `ES2015` used interchangably.
+You may see the terms `ES6` and `ES2015` used interchangeably.
 ES2015 is the 6th generation of the Ecma Script specification.
-ES2015 respresents a big change from previous versions of the Ecma Script
+ES2015 represents a big change from previous versions of the Ecma Script
 specification.
 :::
 

@@ -204,41 +204,18 @@ Scheduled projects for Moodle 3.11 are:
 - Open Badges v2.1 (Badge Connect API) - MDL-71117
 - Brickfield accessibility toolkit integration - MDL-71041
 
-#### Release support timeframes
+#### Release support time-frames
 
 We are extending security support on Moodle 3.9 and Moodle 3.11 to November 2023. We are also extending general bug fix support on Moodle 3.11 by 6 months to November 2022. This will provide additional support and time for sites to make the transition to Moodle 4.0 or Moodle 4.1.
-{| class="wikitable" border="1"
-|-
-! Version
-! (Scheduled) Release date
-! Full support period ends
-! Security support period ends
-|-
-| Moodle 3.9 (LTS)
-| 15 June 2020
-| 10 May 2021
-| 13 Nov 2023 (ext 6M)
-|-
-| Moodle 3.10
-| 9 Nov 2020
-| 8 Nov 2021
-| 9 May 2022
-|-
-| Moodle 3.11
-| 17 May 2021
-| 14 Nov 2022 (ext 6M)
-| 13 Nov 2023 (ext 12M)
-|-
-| Moodle 4.0
-| Apr 2022
-| May 2023
-| Nov 2023
-|-
-| Moodle 4.1 (LTS)
-| Nov 2022
-| Nov 2023
-| Nov 2025
-|}
+
+
+| Version          | (Scheduled) Release date | Full support period ends | Security support period ends |
+| ---              | ---                      | ---                      | ---                          |
+| Moodle 3.9 (LTS) | 15 June 2020             | 10 May 2021              | 13 Nov 2023 (ext 6M)         |
+| Moodle 3.10      | 9 Nov 2020               | 8 Nov 2021               | 9 May 2022                   |
+| Moodle 3.11      | 17 May 2021              | 14 Nov 2022 (ext 6M)     | 13 Nov 2023 (ext 12M)        |
+| Moodle 4.0       | Apr 2022                 | May 2023                 | Nov 2023                     |
+| Moodle 4.1 (LTS) | Nov 2022                 | Nov 2023                 | Nov 2025                     |
 
 ## Past releases
 
