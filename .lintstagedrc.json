@@ -1,4 +1,5 @@
 {
+  "*.css": ["stylelint --allow-empty-input --fix"],
   "*.{js,jsx,ts,tsx,mjs}": ["eslint --fix"],
   "*.md": [
     "markdownlint --fix"
