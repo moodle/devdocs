@@ -27,7 +27,6 @@ const sidebars = {
             items: [
                 'gettingstarted/quickstart',
                 'gettingstarted/requirements',
-                'gettingstarted/setup',
             ],
         },
         {
