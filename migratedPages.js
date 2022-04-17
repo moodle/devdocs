@@ -40,6 +40,7 @@ const migratedDocs = {
     Moodle_App: "/docs/guides/moodleapp/coding-style.md",
     Moodle_App_Coding_Style: "/docs/guides/moodleapp/coding-style.md",
     Moodle_App_Overview: "/docs/guides/moodleapp/overview.md",
+    Moodle_Development_kit: "/general/development/tools/mdk",
     Moodle_research: "/general/community/research.md",
     Overview: "/general/community/intro.md",
     Peer_reviewing: "/general/development/process/peer-review.md",
