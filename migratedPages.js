@@ -29,6 +29,7 @@ const obsoleteDocs = [
 const migratedDocs = {
     Access_API: "/docs/apis/access.md",
     Activity_modules: "/docs/apis/plugintypes/mod.md",
+    CodeSniffer: "/general/development/tools/phpcs",
     Coding_style: "/general/development/policies/codingstyle/index.md",
     Communication_Between_Components: "/general/development/policies/component-communication/index.md",
     Core_APIs: "/docs/apis.md",

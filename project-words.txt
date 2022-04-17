@@ -30,6 +30,7 @@ adminpresets
 behat
 capabilityname
 captype
+codechecker
 codingstyle
 contextcourse
 contextcoursecat
@@ -47,6 +48,7 @@ moodledemo
 moodledev
 opcache
 pgsql
+phpcs
 phpdoc
 phpstorm
 phptags
