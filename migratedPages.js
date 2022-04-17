@@ -86,7 +86,7 @@ const getMigrationLink = (legacyPath, usedIn) => {
     const neitherGeneral = !replacementIsGeneral && !usedInIsGeneral;
 
     if (bothGeneral || neitherGeneral) {
-        return path.relative(replacementFile, relativeUsedIn);
+        return path.relative(relativeUsedIn, replacementFile);
     }
 
     if (replacementFile.endsWith('index.md')) {
