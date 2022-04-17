@@ -1,5 +1,5 @@
 ---
-title: NodeJS
+title: NodeJS and Grunt
 ---
 
 Moodle development tools require the installation and use of [NodeJS](https://nodejs.org/en/), which is a JavaScript runtime environment available for most operating systems.
