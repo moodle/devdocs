@@ -4,6 +4,7 @@ tags:
   - Access
 ---
 
+
 import AcademyLink from '@site/src/components/AcademyLink';
 
 The Access API gives you functions so you can determine what the current user is allowed to do. It also allows plugins to extend Moodle with new capabilities.
@@ -30,7 +31,7 @@ Roles can be overridden by contexts further down the tree.
 
 User access is calculated from the combination of roles which are assigned to each user.
 
-All users that did not log-in yet automatically get the default role defined in `$CFG->notloggedinroleid`, it is not possible to assign any other role to this non-existent user id. There is one special guest user account that is used when user logs in using the guest login button or when guest autologin is enabled. Again you can not assign any roles to the guest account directly, this account gets the `$CFG->guestroleid` automatically. All other authenticated users get the default user role specified in `$CFG->defaultuserroleid` and in the frontpage context the role specified in `$CFG->defaultfrontpageroleid`.
+All users that did not log-in yet automatically get the default role defined in `$CFG->notloggedinroleid`, it is not possible to assign any other role to this non-existent user id. There is one special guest user account that is used when user logs in using the guest login button or when guest auto-login is enabled. Again you can not assign any roles to the guest account directly, this account gets the `$CFG->guestroleid` automatically. All other authenticated users get the default user role specified in `$CFG->defaultuserroleid` and in the frontpage context the role specified in `$CFG->defaultfrontpageroleid`.
 
 <AcademyLink
   subject="Contexts and the Roles API"
@@ -62,9 +63,9 @@ Where the meaning of array keys is:
 | ---                    | ---                                                                                                                                                                                                                                                                                                                                                               |
 | `riskbitmask`          | associated risks. These are explained on [[Hardening new Roles system]].                                                                                                                                                                                                                                                                                          |
 | `captype`              | _read_ or _write_ capability type, for security reasons system prevents all write capabilities for guest account and not-logged-in users                                                                                                                                                                                                                          |
-| `contextlevel`         | specified as context level constant. Declares the typical context level where this capability is checked. This capability can be checked with contexts that are at a lower level (e.g. 'moodle/site:accessallgroups'                                                                                                                                              | could be checked with CONTEXT_MODULE). |
+| `contextlevel`         | specified as context level constant. Declares the typical context level where this capability is checked. This capability can be checked with contexts that are at a lower level (e.g. `moodle/site:accessallgroups`                                                                                                                                              | could be checked with CONTEXT_MODULE). |
 | `archetypes`           | specifies defaults for roles with standard archetypes, this is used in installs, upgrades and when resetting roles (it is recommended to use only CAP_ALLOW here).  Archetypes are defined in mdl_role table.  See also [[Role archetypes]].                                                                                                                      |
-| `clonepermissionsfrom` | when you are adding a new capability, you can tell Moodle to copy the permissions for each role from the current settings for another capabilty. This may give better defaults than just using archetypes for administrators who have heavily customised their roles configuration. The full syntax is: <tt>'clonepermissionsfrom' => 'moodle/quiz:attempt',</tt> |
+| `clonepermissionsfrom` | when you are adding a new capability, you can tell Moodle to copy the permissions for each role from the current settings for another capability. This may give better defaults than just using archetypes for administrators who have heavily customised their roles configuration. The full syntax is: `clonepermissionsfrom` => `moodle/quiz:attempt` |
 
 It is necessary to bump up plugin version number after any change in db/access.php, so that the upgrade scripts can make the necessary changes to the database.  To run the upgrade scripts, log in to Moodle as administrator, navigate to the site home page, and follow the instructions.  (If you need to test the upgrade script without changing the plugin version, it is also possible to set back the version number in the mdl_block or mdl_modules table in the database.)
 
@@ -128,7 +129,7 @@ if (has_capability('mod/folder:managefiles', $context)) {
 }
 ```
 
-By default checks the capabilities of the current user, but you can pass a different userid. By default will return true for admin users, it is not recommended to use false here.
+By default checks the capabilities of the current user, but you can pass a different user id. By default will return true for admin users, it is not recommended to use false here.
 
 #### require_capability()
 

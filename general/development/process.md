@@ -32,7 +32,7 @@ While many of the developers work for Moodle.com, a large number are part of the
 
 ### CiBoT
 
-CiBoT is not a person but a bot who monitors the tracker and performs the [[Automated code review]] when issue is submitted for Peer review or when developer added _cime_ label.
+CiBoT is not a person but a bot who monitors the tracker and performs the [[Automated code review]] when issue is submitted for Peer review or when developer added `cime` label.
 
 ### Component leads
 

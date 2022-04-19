@@ -109,7 +109,7 @@ The key issue is readability.
 
 Aim for 132 characters if it is convenient, it is not recommended to use more than 180 characters.
 
-The exception are string files in the <tt>/lang</tt> directory where lines <tt>$string['id'] = 'value';</tt> should have the value defined as a single string of any length, wrapped by quotes (no concatenation operators, no heredoc and no newdoc syntax). This helps to parse and process these string files without including them as a PHP code.
+The exception are string files in the `/lang` directory where lines `$string['id'] = 'value';` should have the value defined as a single string of any length, wrapped by quotes (no concatenation operators, no heredoc and no newdoc syntax). This helps to parse and process these string files without including them as a PHP code.
 
 #### Wrapping lines
 
@@ -455,7 +455,7 @@ function forum_set_display_mode($mode = 0) {
 
 #### Function Parameters
 
-Parameters are always simple lowercase English words (sometimes more than one, like $initialvalue), and should always have sensible defaults if possible.
+Parameters are always simple lowercase English words (sometimes more than one, like `$initialvalue`), and should always have sensible defaults if possible.
 
 Use `null` as the default value instead of `false` for situations like this where a default value isn't needed.
 
@@ -1122,7 +1122,7 @@ three_arguments(1, 2, 3);
 
 ### Magic methods
 
-Magic methods are heavily discouraged, justification will be required when used. Note: lazyness will not be a valid argument.
+Magic methods are heavily discouraged, justification will be required when used. Note: laziness will not be a valid argument.
 
 (See {tracker}`MDL-52634` for discussion of rationale)
 
@@ -1197,7 +1197,7 @@ foreach ($objects as $key => $thing) {
 
 ### Ternary Operator
 
-The ternary operator is only permitted to be used for **short**, **simple to understand** statements. If the statement can't be understood in one sentance, use an if statement instead.
+The ternary operator is only permitted to be used for **short**, **simple to understand** statements. If the statement can't be understood in one sentence, use an if statement instead.
 
 Whitespace must be used around the operators to make it clear where the operation is taking place.
 
@@ -1241,7 +1241,7 @@ require(__DIR__ . '/../../config.php');
 
 </ValidExample>
 
-Any other include/require should use a path starting with <tt>__DIR__</tt> or an absolute path starting with <tt>$CFG->dirroot</tt> or <tt>$CFG->libdir</tt>. Relative includes starting with "../" can [sometimes behave strangely under PHP](https://www.php.net/manual/en/function.include.php), so should not be used. Our [[CLI scripts]] must not use relative config.php paths starting with "../".
+Any other include/require should use a path starting with `__DIR__` or an absolute path starting with `$CFG->dirroot` or `$CFG->libdir`. Relative includes starting with "../" can [sometimes behave strangely under PHP](https://www.php.net/manual/en/function.include.php), so should not be used. Our [[CLI scripts]] must not use relative config.php paths starting with "../".
 
 For library files in normal usage, require_once should be used (this is different from config.php which should always use 'require' as above). Examples:
 
@@ -1301,8 +1301,8 @@ Some of the tags below (@param, @return, etc.) do require the specification of a
 Also, there are some basic rules about how to use those types:
 
 - We use [short type names](https://www.php.net/manual/en/language.types.type-juggling.php) (bool instead of boolean, int instead of integer).
-- With cases represented as array of given type, it's highly recommended to document them as type[] instead of the simpler and less informative "array" alternative (for example <tt>int[]</tt> or <tt>stdClass[]</tt>).
-- When multiple different types are possible, they must be separated by a vertical bar (pipe) (for example <tt>@return int|false</tt>).
+- With cases represented as array of given type, it's highly recommended to document them as type[] instead of the simpler and less informative "array" alternative (for example `int[]` or `stdClass[]`).
+- When multiple different types are possible, they must be separated by a vertical bar (pipe) (for example `@return int|false`).
 - All primitives and keywords must be lowercase. The case of the complex types and classes must match the original.
 
 #### Tags
@@ -1589,7 +1589,7 @@ class policy_issue {
 
 </ValidExample>
 
-For files containing only one artifact (class, interface, trait, etc.), specifically for all the files within <tt>classes</tt> directories, but also any other file fulfilling the condition anywhere else, it will be enough with the class phpdoc block. The file phpdoc block will be considered optional at all effects, giving to the class one precedence.
+For files containing only one artifact (class, interface, trait, etc.), specifically for all the files within `classes` directories, but also any other file fulfilling the condition anywhere else, it will be enough with the class phpdoc block. The file phpdoc block will be considered optional at all effects, giving to the class one precedence.
 
 The [[#@package|@package]], [[#@copyright|@copyright]] and [[#@license|@license]] tags (and the optional [[#@category|@category]] tag ), as shown in the example above, must be present always in the file (in whichever docblock, but all together).
 
@@ -1776,7 +1776,7 @@ This is especially important if you know an issue still exists in that code that
 
 If you have a big task that is nearly done, apart a few TODOs, and you really want to mark the big task as finished, then you should file new tracker tasks for each TODO and change the TODOs comments to point at the new issue numbers.
 
-There is a nice "todo checker" reporting tool, restricted to admins and available via web @ [lib/tests/other/todochecker.php](https://github.com/moodle/moodle/blob/master/lib/tests/other/todochecker.php).
+There is a nice "to-do checker" reporting tool, restricted to admins and available via web @ [`lib/tests/other/todochecker.php`](https://github.com/moodle/moodle/blob/master/lib/tests/other/todochecker.php).
 
 Finally, don't forget to add any MDL-l2345 used by your TODOs (and @todos too, unless part of the [[Deprecation|deprecation process]], those are handled apart) to the "Review TODOs Epic": MDL-47779 (requires login to see the issues)
 
@@ -1818,10 +1818,10 @@ A few notable exception types:
 
 PHP includes multiple questionable features that are highly discouraged because they are very often source of serious security problems.
 
-1. do not use *eval()* function - language packs are exception (to be solved in future).
-1. do not use *preg_replace()* with /e modifier - use callbacks in order to prevent unintended PHP execution.
+1. do not use `eval()` function - language packs are exception (to be solved in future).
+1. do not use `preg_replace()` with /e modifier - use callbacks in order to prevent unintended PHP execution.
 1. do not use backticks for shell command execution.
-1. do not use *goto*, neither the operator neither labels - use other programming techniques to control the execution flow.
+1. do not use `goto`, neither the operator neither labels - use other programming techniques to control the execution flow.
 
 ## Policy about coding-style only fixes
 

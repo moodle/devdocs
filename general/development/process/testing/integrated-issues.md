@@ -65,7 +65,7 @@ Testing instructions are clear, concise, complete, and accurate. Where possible 
 
 ## Differences in test process during continuous integration periods
 
-During [continuous integration](/general/development/process/integration-review#during-continuous-integrationfreezeqa-period) the schedule is changed to allow faster iteration and for bug fixes to be applied more reapidly than the usual weekly cycle. The goal during this period is ...
+During [continuous integration](/general/development/process/integration-review#during-continuous-integrationfreezeqa-period) the schedule is changed to allow faster iteration and for bug fixes to be applied more rapidly than the usual weekly cycle. The goal during this period is ...
 goal during this period is to release a new version of master multiple times per week. We try to keep the process more flexible during this time in order that developers who have less pressing issues than others can take the load off those concentrating on big fixes. It works best if we work together to help each other out.
 
 :::warning
@@ -105,5 +105,5 @@ For changing to a theme named "yay" add **?theme=yay** to the url.
 - If the issue requires an Oracle or MSSQL installation for testing, and you don't have one, [docker](/docs/gettingstarted/quickstart#docker) may help you.
 - Any update should be added as a comment on the tracker issue being tested.
 - If testers pass or fail an issue by mistake, then please request the integration team to reopen it for testing.
-- Testers should not be involved in the bugfixing or review process.
+- Testers should not be involved in the bug fixing or review process.
 - If an issue cannot be fixed within a sprint and has to be reopened, the fix for sprint version should be removed and an appropriate backlog version set.

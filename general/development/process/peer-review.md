@@ -126,7 +126,7 @@ The user community relies on Moodle being responsibly secure.
 Ensure that:
 
 - User login is checked where an identity is needed;
-- Sesskey values are checked before all write actions where appropriate (some read actions as well);
+- `Sesskey` values are checked before all write actions where appropriate (some read actions as well);
 - Capabilities are checked where roles differ;
 - User inputs are properly escaped (eg the correct param type is used and risky types such as raw are only used where necessary and safe to do so); and
 - If the issue itself is a [[security]] issue, the [security process](https://docs.moodle.org/dev/Process#Security_issues) is being followed.
@@ -174,14 +174,14 @@ Ensure that:
 
 - The PHPdoc comments on all classes, methods and fields are useful. (Comments that just repeat the function name are not helpful! Add value.)
 - Where an API has been changed significantly, the relevant upgrade.txt file has been updated with information.
-- Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but acutally say what should be done instead.
+- Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but actually say what should be done instead.
 - Appropriate [labels](https://docs.moodle.org/dev/Tracker_issue_labels) have been added when there has been a function change, particularly
-  - docs_required (any functional change, usually paired with ui_change),
-  - dev_docs_required (any change to APIs, usually paired with api_change),
-  - ui_change (any functional change, usually paired with docs_required, except ui_change remains permanetly),
-  - api_change (any change to APIs that devs will need to know about, usually paired with dev_docs_required, except api_change remains permanetly),
-  - unit_test_required and acceptance_test_required, when there are api or ui changes needing improved coverage, and
-  - qa_test_required (significant functional change, not covered by unit/acceptance ones).
+  - docs_required (any functional change, usually paired with `ui_change`),
+  - dev_docs_required (any change to APIs, usually paired with `api_change`),
+  - `ui_change` (any functional change, usually paired with docs_required, except ui_change remains permanently),
+  - `api_change` (any change to APIs that devs will need to know about, usually paired with dev_docs_required, except api_change remains permanently),
+  - `unit_test_required` and `acceptance_test_required`, when there are api or ui changes needing improved coverage, and
+  - `qa_test_required` (significant functional change, not covered by unit/acceptance ones).
 - Also, verify that the components for the issue are correctly set, so maintainers (subscribed by default) will be mailed about issues early in the process.
 
 ### Git
@@ -228,7 +228,7 @@ The Moodle app supports most of the student-related Moodle functionality. It is 
 
 Ensure that:
 
-- The issue is labelled with affects_mobileapp when the developer suspects that the changes can affect the app.
+- The issue is labelled with `affects_mobileapp` when the developer suspects that the changes can affect the app.
 - New module settings are returned via the existing Web Services in the module
 - When the code includes a new Web Service that will be necessary for the Moodle app, the new Web Service is included in the mobile service
 - New global settings that affect new features for the app are included in the WebServices returning global settings (tool_mobile_get_config)
