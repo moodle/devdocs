@@ -24,6 +24,10 @@ module.exports = {
             title: 'Docs',
             items: [
                 {
+                    label: 'Developer docs',
+                    to: '/general/documentation',
+                },
+                {
                     label: 'User docs',
                     href: 'https://docs.moodle.org/',
                 },

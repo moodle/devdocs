@@ -102,6 +102,13 @@ const sidebars = {
             ],
         },
     ],
+
+    documentation: [
+        'documentation/index',
+        'documentation/contributing',
+        'documentation/code-of-conduct',
+        'documentation/style-guides',
+    ],
 };
 
 module.exports = sidebars;
