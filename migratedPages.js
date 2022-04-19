@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 
 const obsoleteDocs = [
     "MDLQA-features",
@@ -63,6 +64,16 @@ const getMigratedDoc = legacyPath => {
     return filename;
 };
 
+const getAbsoluteDirectory = (relativePath) => {
+    const absolutePath = path.join(process.env.PWD, relativePath);
+    const pathStat = fs.statSync(absolutePath);
+    if (pathStat.isFile()) {
+        return path.dirname(absolutePath);
+    }
+
+    return absolutePath;
+};
+
 /**
  * Get the path to the new doc relative to the file it was in.
  *
@@ -86,7 +97,15 @@ const getMigrationLink = (legacyPath, usedIn) => {
     const neitherGeneral = !replacementIsGeneral && !usedInIsGeneral;
 
     if (bothGeneral || neitherGeneral) {
-        return path.relative(relativeUsedIn, replacementFile);
+        const absRelativeUsedIn = getAbsoluteDirectory(relativeUsedIn);
+        const absReplacementFile = path.join(process.env.PWD, replacementFile);
+        const relativeLink = path.relative(absRelativeUsedIn, absReplacementFile);
+
+        if (relativeLink.startsWith('.')) {
+            return relativeLink;
+        } else {
+            return `./${relativeLink}`;
+        }
     }
 
     if (replacementFile.endsWith('index.md')) {
