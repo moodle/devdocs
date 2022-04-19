@@ -18,14 +18,15 @@ const path = require('path');
 const fs = require('fs');
 
 const obsoleteDocs = [
-    'MDLQA-features',
     'Setting_up_Eclipse',
     'Setting_up_Netbeans',
+    'MDLQA-features',
 ];
 
 /**
  * A list of documents which have been migrated with their source and destination paths shown.
  */
+/* eslint sort-keys: ["error", "asc", {"natural": true}] */
 const migratedDocs = {
     Access_API: '/docs/apis/access.md',
     Activity_modules: '/docs/apis/plugintypes/mod.md',
@@ -35,6 +36,8 @@ const migratedDocs = {
     Core_APIs: '/docs/apis.md',
     Developer_meeting_February_2022: '/general/community/meetings/202202.md',
     Developer_meetings: '/general/community/meetings.md',
+    File_API: '/docs/apis/files/index.md',
+    File_API_internals: '/docs/apis/files/internals.md',
     Integration_Review: '/general/development/process/integration-review.md',
     Mission: '/general/community/mission.md',
     'Moodle_4.0_release_notes': '/docs/release-notes.md',
@@ -52,7 +55,9 @@ const migratedDocs = {
     Testing_of_integrated_issues: '/general/development/process/testing/integrated-issues.md',
     Tracker_introduction: '/general/development/tracker.md',
     Tracker_tips: '/general/development/tracker/tips.md',
+    Using_the_File_API: '/docs/apis/files/index.md',
 };
+/* eslint-disable sort-keys */
 
 const isObsolete = (legacyPath) => obsoleteDocs.indexOf(legacyPath) !== -1;
 

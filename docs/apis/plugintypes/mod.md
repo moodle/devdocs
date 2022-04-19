@@ -8,8 +8,6 @@ tags:
   - Module
 ---
 
-## Introduction
-
 Activity modules are a fundamental course feature and are usually the primary delivery method for learning content in Moodle.
 
 The plugintype of an Activity module is `mod`, and the frankenstyle name of a plugin is therefore `mod_[modname]`.
