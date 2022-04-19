@@ -208,7 +208,6 @@ Scheduled projects for Moodle 3.11 are:
 
 We are extending security support on Moodle 3.9 and Moodle 3.11 to November 2023. We are also extending general bug fix support on Moodle 3.11 by 6 months to November 2022. This will provide additional support and time for sites to make the transition to Moodle 4.0 or Moodle 4.1.
 
-
 | Version          | (Scheduled) Release date | Full support period ends | Security support period ends |
 | ---              | ---                      | ---                      | ---                          |
 | Moodle 3.9 (LTS) | 15 June 2020             | 10 May 2021              | 13 Nov 2023 (ext 6M)         |
