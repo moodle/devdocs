@@ -1878,6 +1878,6 @@ This document was drawn from the following sources:
 - [[CSS_Coding_Style|CSS Coding Style]]
 - [[SQL coding style]]
 - [[Coding]]
-- [[CodeSniffer]]
+- [CodeSniffer](../../policies/codingstyle/index.md)
 - [Code Checker plugin](https://moodle.org/plugins/local_codechecker)
 - [[Accessibility#Moodle-related_accessibility_coding_guidelines|Accessibility coding guidelines]]

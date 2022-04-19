@@ -29,6 +29,7 @@ const obsoleteDocs = [
 const migratedDocs = {
     Access_API: "/docs/apis/access.md",
     Activity_modules: "/docs/apis/plugintypes/mod.md",
+    CodeSniffer: "/general/development/tools/phpcs",
     Coding_style: "/general/development/policies/codingstyle/index.md",
     Communication_Between_Components: "/general/development/policies/component-communication/index.md",
     Core_APIs: "/docs/apis.md",
@@ -40,6 +41,7 @@ const migratedDocs = {
     Moodle_App: "/docs/guides/moodleapp/coding-style.md",
     Moodle_App_Coding_Style: "/docs/guides/moodleapp/coding-style.md",
     Moodle_App_Overview: "/docs/guides/moodleapp/overview.md",
+    Moodle_Development_kit: "/general/development/tools/mdk",
     Moodle_research: "/general/community/research.md",
     Overview: "/general/community/intro.md",
     Peer_reviewing: "/general/development/process/peer-review.md",

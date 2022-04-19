@@ -51,6 +51,11 @@ const navbar = {
             label: 'Policies',
             position: 'left'
         },
+        {
+            to: '/general/development/tools',
+            label: 'Tools',
+            position: 'left'
+        },
 
         // Right.
         {

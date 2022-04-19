@@ -37,6 +37,7 @@ const sidebars = {
         },
         'community/research',
     ],
+
     process: [
         {
             label: 'Process',
@@ -90,6 +91,7 @@ const sidebars = {
             },
         },
     ],
+
     policies: [
         {
             label: 'Policies',
@@ -108,6 +110,22 @@ const sidebars = {
         'documentation/contributing',
         'documentation/code-of-conduct',
         'documentation/style-guides',
+    ],
+
+    tools: [
+        {
+            label: 'Tools',
+            type: 'category',
+            items: [
+                'development/tools/mdk',
+                'development/tools/phpcs',
+                'development/tools/nodejs',
+            ],
+            link: {
+                type: 'doc',
+                id: 'development/tools/index',
+            },
+        },
     ],
 };
 
