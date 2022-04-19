@@ -68,7 +68,10 @@ const sidebars = {
             value: '<hr>',
         },
 
-        'release-notes',
+        {
+            type: 'doc',
+            id: 'release-notes',
+        },
     ],
 };
 

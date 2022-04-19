@@ -15,7 +15,7 @@
     "test": "jest",
     "lint": "markdownlint 'docs/**/*.md' 'general/**/*.md' '*.md'",
     "prepare": "husky install",
-    "spell": "cspell ** docs/**/* general/**/*"
+    "spell": "cspell '*.md' '**/*.md' 'docs/*.md' 'docs/**/*.md' 'general/*.md' 'general/**/*.md'"
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^0.10.0",

@@ -42,14 +42,14 @@ const config = {
         },
     ],
     ignorePaths: [
-        'docusaurus.config.js',
-        'migratedPages.js',
+        '*.js',
         'CHANGELOG.md',
         'package.json',
         'yarn.lock',
         'project-words.txt',
         'versioned_docs',
         '*.min.*',
+        'src/*',
     ],
     ignoreRegExpList: [
         // Both Email and Urls are in the list of Predefined regexps.
