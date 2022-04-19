@@ -1,4 +1,4 @@
-# Moodle Developer Resoruces
+# Moodle Developer Resources
 
 <p align="center">
   <!--<a href="CONTRIBUTING.md#pull-requests"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>-->

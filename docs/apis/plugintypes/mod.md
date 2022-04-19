@@ -18,7 +18,7 @@ All activity module plugins are located in the `/mod/` folder of Moodle.
 
 :::note
 
-The term `[modname]` is used as a placeholder in this documentation and should be replaced with the name of your activty module.
+The term `[modname]` is used as a placeholder in this documentation and should be replaced with the name of your activity module.
 
 :::
 
@@ -225,14 +225,14 @@ Rather than creating, or editing, this file directly you should always use the [
 Moodle requires that you create a table for your plugin whose name exactly matches the plugin name. For example, the `certificate` activity module _must_ have a database table named `certificate`. Certain fields within this table are
 also _required_:
 
-| Field name   | Properties              | Keys / Indexes                    | Notes                                                                                     |
-| ---          | ---                     | ---                               | ---                                                                                       |
-| id           | `INT(10), auto sequence | primary key for the table         |                                                                                           |
-| course       | `INT(10)`               | foreign key to the `course` table |                                                                                           |
-| name         | `CHAR(255)`             |                                   | Holds the user-specified name of the activity instance                                    |
-| timemodified | `INT(10)`               |                                   | The timestamp of when the activity was last modified                                      |
-| intro        | `TEXT`                  |                                   | A standard field to hold the user-defined activity description (see `FEAUTURE_MOD_INTRO`) |
-| introformat  | `INT(4)`                |                                   | A standard field to hold the format of the field                                          |
+| Field name     | Properties               | Keys / Indexes                    | Notes                                                                                    |
+| ---            | ---                      | ---                               | ---                                                                                      |
+| `id`           | `INT(10), auto sequence` | primary key for the table         |                                                                                          |
+| `course`       | `INT(10)`                | foreign key to the `course` table |                                                                                          |
+| `name`         | `CHAR(255)`              |                                   | Holds the user-specified name of the activity instance                                   |
+| `timemodified` | `INT(10)`                |                                   | The timestamp of when the activity was last modified                                     |
+| `intro`        | `TEXT`                   |                                   | A standard field to hold the user-defined activity description (see `FEATURE_MOD_INTRO`) |
+| `introformat`  | `INT(4)`                 |                                   | A standard field to hold the format of the field                                         |
 
 #### `upgrade.php` - Upgrade steps
 
@@ -376,7 +376,7 @@ class mod_certificate_mod_form extends moodleform_mod {
 }
 ```
 
-The above example does not contain the full file, just enough to provide you with an idea. First we create a text element called 'name' that is required, this is obviously the name of the instance. I then created another element that stores whether a user wishes to display the unique code issued to a user when they receive the certificate or not with a default value of 0 and a help button explaining what this setting does. The function standard_coursemodule_elements adds the elements common to all modules, such as the conditional fields. The add_action_buttons function adds the submit and cancel buttons to the form. This data will be passed to either `[modname]_add_instance` or `[modname]_update_instance` depending on whether you are adding a new instance or updating a current one. You can also add validation to this form, just like any other form in Moodle. For more information on how to create forms in Moodle see [[Form_API]].
+The above example does not contain the full file, just enough to provide you with an idea. First we create a text element called 'name' that is required, this is obviously the name of the instance. I then created another element that stores whether a user wishes to display the unique code issued to a user when they receive the certificate or not with a default value of 0 and a help button explaining what this setting does. The function `standard_coursemodule_elements` adds the elements common to all modules, such as the conditional fields. The add_action_buttons function adds the submit and cancel buttons to the form. This data will be passed to either `[modname]_add_instance` or `[modname]_update_instance` depending on whether you are adding a new instance or updating a current one. You can also add validation to this form, just like any other form in Moodle. For more information on how to create forms in Moodle see [[Form_API]].
 
 ### `index.php` - Instance list
 

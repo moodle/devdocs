@@ -15,8 +15,8 @@ Examples of the quick searches:
 
 | Quick search | Advanced search equivalent | Description ||
 | --- | --- | --- |
-| `MDL Unresolved Bug abra cadabra` ![](./trackerquicksearch.png) | Find all unresolved Bugs in Moodle project that contain words abra cadabra | project = MDL AND issuetype = Bug AND resolution = Unresolved AND text ~ "abra cadabra" ![](./advancedsearch.png) |
-| `my Unresolved` | resolution = Unresolved AND assignee = currentUser() | Find all ongoing issues assigned to me |
+| `MDL Unresolved Bug abra cadabra` ![](./trackerquicksearch.png) | Find all unresolved Bugs in Moodle project that contain words `abra cadabra` | `project = MDL AND issuetype = Bug AND resolution = Unresolved AND text ~ "abra cadabra"` ![](./advancedsearch.png) |
+| `my Unresolved` | `resolution = Unresolved AND assignee = currentUser()` | Find all ongoing issues assigned to me |
 
 Quick search can pick up many other keywords, see more information on page [Using quick search](https://confluence.atlassian.com/display/JIRA062/Using+Quick+Search)
 
@@ -32,7 +32,7 @@ Now you can enter queries in the Jira Query Language (JQL). Use as many AND, OR 
 | `type in (Improvement, "New Feature")` | |
 | `votes > 50` | |
 | `component in (Assignment, Gradebook)` | where component is either Assignment or Gradebook |
-| `component = Assignment AND component = Gradebook` | where both Assignement and Gradebook are listed as components |
+| `component = Assignment AND component = Gradebook` | where both Assignment and Gradebook are listed as components |
 | `labels = patch` | issues containing particular label |
 | `labels is empty OR labels not in (triaged, triaging_in_progress)` | issues NOT containing particular label(s) |
 |  [`updatedDate > -7d`](https://tracker.moodle.org/issues/?jql=updatedDate%20%3E%20-7d) | updated in the last week |
