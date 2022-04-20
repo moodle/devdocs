@@ -47,4 +47,3 @@ Moodle community members come together to share research activities in a person 
 - [[Learning_Analytics_Specification|Learning Analytics API specification]]
 - [[Events API|Events specification]]
 - [[Logging_2|Logging specification]]
-- [[reportbuilder/API|Report Builder API specification]]

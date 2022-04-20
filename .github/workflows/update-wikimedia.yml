@@ -1,0 +1,58 @@
+name: Update WikiMedia with list of migrated pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        required: false
+        description: 'Set the debug mode'
+
+jobs:
+  run:
+    name: Update obsoletions and migrations with Wikimedia
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run update script
+        run: yar update-wikimedia
+
+      - uses: EndBug/add-and-commit@v9
+        env:
+          WIKIMEDIA_USER: ${{ secrets.WIKIMEDIA_USER }}
+          WIKIMEDIA_PASSWORD: ${{ secrets.WIKIMEDIA_PASSWORD }}
+          WIKIMEDIA_DEBUG: ${{ github.event.inputs.debug }}
+        with:
+          # The arguments for the `git add` command (see the paragraph below for more info)
+          # Default: '.'
+          add: 'data'
+
+          # The name of the user that will be displayed as the author of the commit.
+          # Default: depends on the default_author input
+          author_name: Wikimedia Dispatcher
+
+          # The email of the user that will be displayed as the author of the commit.
+          # Default: depends on the default_author input
+          author_email: docs@moodle.org
+
+          # The way the action should handle pathspec errors from the add and remove commands. Three options are available:
+          # - ignore -> errors will be logged but the step won't fail
+          # - exitImmediately -> the action will stop right away, and the step will fail
+          # - exitAtEnd -> the action will go on, every pathspec error will be logged at the end, the step will fail.
+          # Default: ignore
+          # pathspec_error_handling: ignore
+
+          # Whether to push the commit and, if any, its tags to the repo. It can also be used to set the git push arguments (see the paragraph below for more info)
+          # Default: true
+          # push: false

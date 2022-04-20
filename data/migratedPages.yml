@@ -1,0 +1,83 @@
+---
+Access_API:
+- filePath: "/docs/apis/access.md"
+  slug: "/docs/apis/access"
+Activity_modules:
+- filePath: "/docs/apis/plugintypes/mod.md"
+  slug: "/docs/apis/plugintypes/mod"
+CodeSniffer:
+- filePath: "/general/development/tools/phpcs.md"
+  slug: "/general/development/tools/phpcs"
+Coding_style:
+- filePath: "/general/development/policies/codingstyle/index.md"
+  slug: "/general/development/policies/codingstyle"
+Communication_Between_Components:
+- filePath: "/general/development/policies/component-communication/index.md"
+  slug: "/general/development/policies/component-communication"
+Core_APIs:
+- filePath: "/docs/apis.md"
+  slug: "/docs/apis"
+Developer_meeting_February_2022:
+- filePath: "/general/community/meetings/202202.md"
+  slug: "/general/community/meetings/202202"
+Developer_meetings:
+- filePath: "/general/community/meetings.md"
+  slug: "/general/community/meetings"
+File_API:
+- filePath: "/docs/apis/files/index.md"
+  slug: "/docs/apis/files"
+File_API_internals:
+- filePath: "/docs/apis/files/internals.md"
+  slug: "/docs/apis/files/internals"
+Integration_Review:
+- filePath: "/general/development/process/integration-review.md"
+  slug: "/general/development/process/integration-review"
+Mission:
+- filePath: "/general/community/mission.md"
+  slug: "/general/community/mission"
+Moodle_4.0_release_notes:
+- filePath: "/docs/release-notes.md"
+  slug: "/docs/release-notes"
+Moodle_App:
+- filePath: "/docs/guides/moodleapp/index.md"
+  slug: "/docs/guides/moodleapp"
+Moodle_App_Coding_Style:
+- filePath: "/docs/guides/moodleapp/coding-style.md"
+  slug: "/docs/guides/moodleapp/coding-style"
+Moodle_App_Overview:
+- filePath: "/docs/guides/moodleapp/overview.md"
+  slug: "/docs/guides/moodleapp/overview"
+Moodle_Development_kit:
+- filePath: "/general/development/tools/mdk.md"
+  slug: "/general/development/tools/mdk"
+Moodle_research:
+- filePath: "/general/community/research.md"
+  slug: "/general/community/research"
+Overview:
+- filePath: "/general/community/intro.md"
+  slug: "/general/community"
+Peer_reviewing:
+- filePath: "/general/development/process/peer-review.md"
+  slug: "/general/development/process/peer-review"
+Process:
+- filePath: "/general/development/process.md"
+  slug: "/general/development/process"
+QA_testing:
+- filePath: "/general/development/process/testing/qa.md"
+  slug: "/general/development/process/testing/qa"
+Roadmap:
+- filePath: "/general/community/roadmap.md"
+  slug: "/general/community/roadmap"
+Testing:
+- filePath: "/general/development/process/testing.md"
+  slug: "/general/development/process/testing"
+Testing_of_integrated_issues:
+- filePath: "/general/development/process/testing/integrated-issues.md"
+  slug: "/general/development/process/testing/integrated-issues"
+Tracker_introduction:
+- filePath: "/general/development/tracker.md"
+  slug: "/general/development/tracker"
+Tracker_tips:
+- filePath: "/general/development/tracker/tips.md"
+  slug: "/general/development/tracker/tips"
+
