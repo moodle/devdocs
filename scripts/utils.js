@@ -19,7 +19,7 @@ const Bot = require('nodemw'); // cspell:ignore nodemw
 const path = require('path');
 const winston = require('winston');
 const yaml = require('js-yaml');
-const { readFile } = require('fs/promises');
+const { readFile, writeFile } = require('fs/promises');
 
 /**
  * Get the fetchDoc function with a logger and client applied.
@@ -180,7 +180,34 @@ const getUpdateMigratedPages = (logger) => (client) => async () => {
     }
 };
 
+const guessSlug = (filePath) => {
+    const normalisedPath = path.join('/', path.relative(process.env.PWD, filePath));
+
+    if (normalisedPath.endsWith('/index.md')) {
+        return normalisedPath.replace(/\/index.md$/, '/');
+    }
+
+    return normalisedPath.replace(/\.md$/, '');
+};
+
+const addMigratedPage = async (legacyPath, filePath, slug) => {
+    const migratedPageData = yaml.load(await readFile(getMigrationPagePath(), 'utf8'));
+    migratedPageData[legacyPath] = [{
+        filePath: path.join('/', path.relative(process.env.PWD, filePath)),
+        slug,
+    }];
+
+    const updatedPageData = Object.fromEntries(Array.from(Object.entries(migratedPageData)).sort());
+
+    await writeFile(getMigrationPagePath(), yaml.dump(updatedPageData, {
+        noArrayIndent: true,
+        forceQuotes: true,
+        quotingType: '"',
+    }), 'utf8');
+};
+
 module.exports = {
+    addMigratedPage,
     getClient,
     getFetchDoc,
     getGetMigratedPageIds,
@@ -191,4 +218,5 @@ module.exports = {
     getObsoletePagePath,
     getNormalizedPath,
     getUpdateMigratedPages,
+    guessSlug,
 };

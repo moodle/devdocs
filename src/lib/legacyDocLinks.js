@@ -53,22 +53,35 @@ const getObsoleteMessage = (vfile, string) => `---
 - Found: \t [[${string}]]
 ---`;
 
-const getLinkFromString = (vfile, string) => {
-    let [linkComponent] = string.split('|');
-
+const getPageComponent = (string) => {
+    // Split the string to fetch everything before the | and normalise.
     // Links never have spaces in them.
-    linkComponent = linkComponent.replaceAll(' ', '_');
+    const linkComponent = string.split('|')[0].replaceAll(' ', '_');
 
     // Split on the bookmark (if present).
-    let [pageComponent, bookmarkComponent] = linkComponent.split('#');
+    return linkComponent.split('#')[0] ?? null;
+};
+
+const getPageBookmark = (string) => {
+    const linkComponent = string.split('|')[0];
+    const [, bookmark] = linkComponent.split('#');
+
+    if (bookmark) {
+        return `#${bookmark.replaceAll(' ', '-')}`;
+    }
+
+    return '';
+};
+
+const getLinkFromString = (vfile, string) => {
+    const linkComponent = string.split('|')[0];
+
+    // Split on the bookmark (if present).
+    const pageComponent = getPageComponent(string);
 
     if (pageComponent) {
+        const bookmarkComponent = getPageBookmark(string);
         if (isMigrated(pageComponent)) {
-            if (bookmarkComponent) {
-                bookmarkComponent = `#${bookmarkComponent.replaceAll('_', '-')}`;
-            } else {
-                bookmarkComponent = '';
-            }
             const migrationLink = getMigrationLink(pageComponent, vfile.path);
             const replacement = `[${getDescriptionFromString(string)}](${migrationLink}${bookmarkComponent})`;
 
@@ -83,11 +96,34 @@ const getLinkFromString = (vfile, string) => {
     if (linkComponent.substring(0, 1) === '#') {
         // This is a relative link in the same page.
         // Update it to meet the correct format.
-        return linkComponent.toLowerCase().replaceAll('_', '-');
+        return getPageBookmark(string);
     }
 
     // Point to a link on the old docs site.
     return `https://docs.moodle.org/dev/${linkComponent}`;
+};
+
+const replaceWithLink = (parent, index, url, description) => {
+    const linkNode = {
+        type: 'link',
+        url,
+        children: [{
+            type: 'text',
+            value: description,
+        }],
+    };
+
+    // Remove the [ before the link (which is not seen as a link).
+    parent.children[index - 1].value = parent.children[index - 1].value.slice(0, -1);
+
+    // Splice in the shiny new link.
+    parent.children.splice(index, 1, linkNode);
+
+    // Remove the ] after the link.
+    parent.children[index + 1].value = parent.children[index + 1].value.slice(1);
+
+    return null;
+
 };
 
 /**
@@ -100,8 +136,9 @@ const getLinkFromString = (vfile, string) => {
  * @param {Tree} node
  * @param {Number} index
  * @param {Tree} parent
+ * @param {bool} migratedOnly
  */
-const updateLink = (vfile) => (node, index, parent) => {
+const updateLink = (vfile, migratedOnly = false) => (node, index, parent) => {
     if (parent.children[index - 1]?.type !== 'text') {
         return null;
     }
@@ -118,20 +155,43 @@ const updateLink = (vfile) => (node, index, parent) => {
         return null;
     }
 
-    const linkNode = {
-        type: 'link',
-        url: getLinkFromString(vfile, node.label),
-        children: [{
-            type: 'text',
-            value: getDescriptionFromString(node.label),
-        }],
-    };
+    const isInterWikiLink = node.label.startsWith(':');
 
-    parent.children[index - 1].value = parent.children[index - 1].value.slice(0, -1);
-    parent.children.splice(index, 1, linkNode);
-    parent.children[index + 1].value = parent.children[index + 1].value.slice(1);
+    if (isInterWikiLink) {
+        const interWikiLink = getPageComponent(node.label).replaceAll(':', '/');
+
+        replaceWithLink(
+            parent,
+            index,
+            `https://docs.moodle.org/${interWikiLink}`,
+            getDescriptionFromString(node.label),
+        );
+
+        return null;
+    }
+
+    // This is an internal wiki link.
+    if (migratedOnly) {
+        const pageComponent = getPageComponent(node.label);
+        if (pageComponent) {
+            if (!isMigrated(pageComponent)) {
+                return null;
+            }
+        }
+    }
+
+    replaceWithLink(
+        parent,
+        index,
+        getLinkFromString(vfile, node.label),
+        getDescriptionFromString(node.label),
+    );
 
     return null;
+};
+
+const updateMarkdown = async (ast, vfile) => {
+    visit(ast, 'linkReference', updateLink(vfile, true));
 };
 
 const transformer = async (ast, vfile) => {
@@ -140,4 +200,5 @@ const transformer = async (ast, vfile) => {
 
 module.exports = {
     transformer,
+    updateMarkdown,
 };
