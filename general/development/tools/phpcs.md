@@ -20,10 +20,10 @@ If you use the globally installed standard, then you should use the global copy 
 
 ### Global installation
 
-The easiest way to install the ruleset is by using [Composer](https://getcomposer.org/). By installing the [Moodle Code Sniffer rules](https://packagist.org/packages/moodlehq/moodle-cs) package using the `-g` global flag, Composer will install both the Moodle ruleset, and the CodeSniffer package.
+The easiest way to install the ruleset is by using [Composer](https://getcomposer.org/). By installing the [Moodle Code Sniffer rules](https://packagist.org/packages/moodlehq/moodle-cs) package using the global flag, Composer will install both the Moodle ruleset, and the CodeSniffer package.
 
 ```console
-$ composer install -g moodlehq/moodle-cs
+$ composer global require moodlehq/moodle-cs
 ```
 
 If you primarily work with Moodle then you may wish to set the Moodle standard as your default PHPCodeSniffer standard. You can do so using the `--config-set` option to `phpcs`:
