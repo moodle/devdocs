@@ -27,12 +27,12 @@ jobs:
 
       - name: Run update script
         run: yarn update-wikimedia
-
-      - uses: EndBug/add-and-commit@v9
         env:
           WIKIMEDIA_USER: ${{ secrets.WIKIMEDIA_USER }}
           WIKIMEDIA_PASSWORD: ${{ secrets.WIKIMEDIA_PASSWORD }}
           WIKIMEDIA_DEBUG: ${{ github.event.inputs.debug }}
+
+      - uses: EndBug/add-and-commit@v9
         with:
           # The arguments for the `git add` command (see the paragraph below for more info)
           # Default: '.'
