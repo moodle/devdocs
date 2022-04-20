@@ -16,48 +16,15 @@
  */
 const path = require('path');
 const fs = require('fs');
+const yaml = require('js-yaml');
 
-const obsoleteDocs = [
-    'Setting_up_Eclipse',
-    'Setting_up_Netbeans',
-    'MDLQA-features',
-];
+const obsoleteDocs = require('./data/obsoletePages.json');
 
 /**
  * A list of documents which have been migrated with their source and destination paths shown.
  */
-/* eslint sort-keys: ["error", "asc", {"natural": true}] */
-const migratedDocs = {
-    Access_API: '/docs/apis/access.md',
-    Activity_modules: '/docs/apis/plugintypes/mod.md',
-    CodeSniffer: '/general/development/tools/phpcs',
-    Coding_style: '/general/development/policies/codingstyle/index.md',
-    Communication_Between_Components: '/general/development/policies/component-communication/index.md',
-    Core_APIs: '/docs/apis.md',
-    Developer_meeting_February_2022: '/general/community/meetings/202202.md',
-    Developer_meetings: '/general/community/meetings.md',
-    File_API: '/docs/apis/files/index.md',
-    File_API_internals: '/docs/apis/files/internals.md',
-    Integration_Review: '/general/development/process/integration-review.md',
-    Mission: '/general/community/mission.md',
-    'Moodle_4.0_release_notes': '/docs/release-notes.md',
-    Moodle_App: '/docs/guides/moodleapp/coding-style.md',
-    Moodle_App_Coding_Style: '/docs/guides/moodleapp/coding-style.md',
-    Moodle_App_Overview: '/docs/guides/moodleapp/overview.md',
-    Moodle_Development_kit: '/general/development/tools/mdk.md',
-    Moodle_research: '/general/community/research.md',
-    Overview: '/general/community/intro.md',
-    Peer_reviewing: '/general/development/process/peer-review.md',
-    Process: '/general/development/process.md',
-    QA_testing: '/general/development/process/testing/qa.md',
-    Roadmap: '/general/community/roadmap.md',
-    Testing: '/general/development/process/testing.md',
-    Testing_of_integrated_issues: '/general/development/process/testing/integrated-issues.md',
-    Tracker_introduction: '/general/development/tracker.md',
-    Tracker_tips: '/general/development/tracker/tips.md',
-    Using_the_File_API: '/docs/apis/files/index.md',
-};
-/* eslint-disable sort-keys */
+/* eslint-disable-next-line no-restricted-properties */
+const migratedDocs = yaml.load(fs.readFileSync('./data/migratedPages.yml', 'utf8'));
 
 const isObsolete = (legacyPath) => obsoleteDocs.indexOf(legacyPath) !== -1;
 
@@ -79,7 +46,7 @@ const getMigratedDoc = (legacyPath) => {
         return null;
     }
 
-    const filename = migratedDocs[legacyPath];
+    const filename = migratedDocs[legacyPath].slug;
 
     if (filename.startsWith('/')) {
         return filename.substr(1);
