@@ -29,7 +29,7 @@ jobs:
         run: yarn update-wikimedia
         env:
           WIKIMEDIA_USER: ${{ secrets.WIKIMEDIA_USER }}
-          WIKIMEDIA_PASSWORD: ${{ secrets.WIKIMEDIA_PASSWORD }}
+          WIKIMEDIA_SECRET: ${{ secrets.WIKIMEDIA_PASSWORD }}
           WIKIMEDIA_DEBUG: ${{ github.event.inputs.debug }}
 
       - uses: EndBug/add-and-commit@v9
