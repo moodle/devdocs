@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdevdocs=self.webpackChunkdevdocs||[]).push([[5051],{3186:function(s){s.exports=JSON.parse('{"name":"API","permalink":"/devdocs/docs/tags/api","docs":[{"id":"apis/plugintypes/mod","title":"Activity modules","description":"Introduction","permalink":"/devdocs/docs/apis/plugintypes/mod"}],"allTagsPath":"/devdocs/docs/tags"}')}}]);
