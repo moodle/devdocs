@@ -20,7 +20,7 @@ The [[Data manipulation API]] allows you to read/write to databases in a consist
 
 ### File API (files)
 
-The [[File API]] controls the storage of files in connection to various plugins.
+The [File API](./apis/files/index.md) controls the storage of files in connection to various plugins.
 
 ### Form API (form)
 
