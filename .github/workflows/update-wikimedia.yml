@@ -26,7 +26,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Run update script
-        run: yar update-wikimedia
+        run: yarn update-wikimedia
 
       - uses: EndBug/add-and-commit@v9
         env:
