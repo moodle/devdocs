@@ -1,6 +1,9 @@
 Access_API:
 - filePath: "/docs/apis/access.md"
   slug: "/docs/apis/access"
+Accessibility:
+- filePath: "/general/development/policies/accessibility.md"
+  slug: "/general/development/policies/accessibility"
 Activity_modules:
 - filePath: "/docs/apis/plugintypes/mod.md"
   slug: "/docs/apis/plugintypes/mod"

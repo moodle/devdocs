@@ -1880,4 +1880,4 @@ This document was drawn from the following sources:
 - [[Coding]]
 - [CodeSniffer](../../policies/codingstyle/index.md)
 - [Code Checker plugin](https://moodle.org/plugins/local_codechecker)
-- [[Accessibility#Moodle-related_accessibility_coding_guidelines|Accessibility coding guidelines]]
+- [Accessibility coding guidelines](./accessibility#Moodle-related-accessibility-coding-guidelines)

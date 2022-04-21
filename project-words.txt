@@ -28,11 +28,13 @@ POSIX
 TODO
 Triaged
 Untriaged
+WCAG
 XMLDB
 adminpresets
 behat
 capabilityname
 captype
+clsx
 codechecker
 codingstyle
 contextcourse
