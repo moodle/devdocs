@@ -42,11 +42,11 @@ const isMigrated = (legacyPath) => (typeof migratedDocs[legacyPath] !== 'undefin
  * @returns {string}
  */
 const getMigratedDoc = (legacyPath) => {
-    if (!isMigrated) {
+    if (!isMigrated(legacyPath)) {
         return null;
     }
 
-    const filename = migratedDocs[legacyPath].slug;
+    const filename = migratedDocs[legacyPath][0].slug;
 
     if (filename.startsWith('/')) {
         return filename.substr(1);

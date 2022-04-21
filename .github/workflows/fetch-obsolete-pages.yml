@@ -1,0 +1,45 @@
+name: Fetch the list of obsolete pages from Wikimedia
+
+on:
+  # Run on cron, daily at 5:30am UTC.
+  schedule:
+    - cron: '30 5 * * *'
+
+  # Run on request.
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        required: false
+        description: 'Set the debug mode'
+
+jobs:
+  run:
+    name: Update obsoletions and migrations with Wikimedia
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run update script
+        run: yarn wikimedia-sync fetch-obsolete
+        env:
+          DEBUG: ${{ github.event.inputs.debug }}
+          WIKIMEDIA_DEBUG: ${{ github.event.inputs.debug }}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          add-paths: |
+            data/*.json
+          commit-message: [repo] Update list of obsolete pages
+          title: [repo] Update list of obsolete pages
+          branch: obsolete-legacy-page-list
+          signoff: false
+          delete-branch: true
