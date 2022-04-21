@@ -49,6 +49,9 @@ File_API_internals:
 Integration_Review:
 - filePath: "/general/development/process/integration-review.md"
   slug: "/general/development/process/integration-review"
+Local_plugins:
+- filePath: "/docs/apis/plugintypes/local/index.mdx"
+  slug: "/docs/apis/plugintypes/local"
 Mission:
 - filePath: "/general/community/mission.md"
   slug: "/general/community/mission"
