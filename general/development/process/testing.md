@@ -22,7 +22,7 @@ Code is tested as part of reviewing at some key parts of the [Moodle development
 
 :::info More info
 
-We recommend that you follow the [[Testing instructions guide]] to help you write clear manual testing instructions.
+We recommend that you follow the [Testing instructions guide](./testing/guide) to help you write clear manual testing instructions.
 
 :::
 

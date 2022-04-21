@@ -55,6 +55,11 @@ const sidebars = {
                     type: 'category',
                     items: [
                         {
+                            label: 'Instructions guide',
+                            type: 'doc',
+                            id: 'development/process/testing/guide',
+                        },
+                        {
                             label: 'Integrated issues',
                             type: 'doc',
                             id: 'development/process/testing/integrated-issues',
@@ -69,7 +74,7 @@ const sidebars = {
                         type: 'doc',
                         id: 'development/process/testing',
                     },
-                }
+                },
             ],
             link: {
                 type: 'doc',
