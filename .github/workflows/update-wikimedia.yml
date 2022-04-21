@@ -14,7 +14,7 @@ on:
 jobs:
   run:
     # Only run on the canonical repository.
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    if: github.repository == 'moodle/devdocs'
     name: Push migated pages to Wikimedia
     runs-on: ubuntu-latest
     steps:
