@@ -187,7 +187,7 @@ To create a new QA test:
 2. If not, in {tracker MDLQA-1} from the More menu select 'Create sub-task'.
 3. Enter a summary such as 'A teacher can ...'.
 4. Select 'Original' as affected version and select appropriate components.
-5. In the description field add the test steps (usually between 3 and 10), similar to the issue's [testing instructions](https://docs.moodle.org/dev/Testing_instructions_guide), starting with 'Log in as a teacher...' or similar. It's a good idea to try doing the steps yourself as you write the test.
+5. In the description field add the test steps (usually between 3 and 10), similar to the issue's [testing instructions](./guide), starting with 'Log in as a teacher...' or similar. It's a good idea to try doing the steps yourself as you write the test.
 6. Start some steps with 'Verify that ...' or similar.
 7. Click the Create button.
 8. Go to the MDL issue and create a ‘has a QA test’ link to the new QA test, adding a comment “This feature is now covered by the QA test MDLQA....”.

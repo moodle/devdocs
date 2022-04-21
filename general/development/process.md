@@ -181,7 +181,7 @@ Click on _Request peer review_ button in the tracker.
 
 You need to fill in the information about your public git repository and which branches the fixes are on. Make sure you are listed as Assignee.
 
-This would be a good time to fill in the testing instructions (read the [[Testing instructions guide|instructions guide]]) for how to verify your fix is correct. You may also wish to add a comment in the bug.
+This would be a good time to fill in the testing instructions (read the [instructions guide](./process/testing/guide)) for how to verify your fix is correct. You may also wish to add a comment in the bug.
 
 Component leads should put issues, which affect code in their components, up for peer review to allow interested parties to provide feedback. However, if it is not reviewed in a week, a component lead may send the issue to integration. If integrators consider that the issue has not been given proper chance for peer review (for example is extremely large or complex) it can be decided to move the issue back in the process.
 
@@ -231,7 +231,7 @@ The following information is necessary for this:
   - repository URL
   - branch name(s)
   - diff URL
-- [[Testing instructions guide|Testing instructions]] for how to verify your fix is correct.
+- [Testing instructions](./process/testing/guide) for how to verify your fix is correct.
 If you have never contributed to Moodle and don't see a button _Request peer review_, just comment on the issue with the above information. The component lead or another user with sufficient privileges will then send the issue up for peer review for you.
 
 After your first fix is integrated you will be added to developers group and will be able to send issues for peer review yourself. In this case make sure you are listed as Assignee and click on _Request peer review_ button in the tracker.

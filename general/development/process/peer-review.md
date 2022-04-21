@@ -110,7 +110,7 @@ It is the developer's responsibility to test code before integration. Issues sho
 Ensure that:
 
 - There are specific testing instructions that state how, as well as what, to test. Please ensure that the testing instructions:
-  - Are in the [correct format](https://docs.moodle.org/dev/Testing_instructions_guide);
+  - Are in the [correct format](./testing/guide);
   - Are clear; and
   - Are concise;
   - They consider other perspectives of other users perhaps not considered by original developers e.g. Moodle mobile app users

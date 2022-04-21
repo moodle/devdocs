@@ -1,4 +1,3 @@
----
 Access_API:
 - filePath: "/docs/apis/access.md"
   slug: "/docs/apis/access"
@@ -71,6 +70,9 @@ Roadmap:
 Testing:
 - filePath: "/general/development/process/testing.md"
   slug: "/general/development/process/testing"
+Testing_instructions_guide:
+- filePath: "/general/development/process/testing/guide.md"
+  slug: "/general/development/process/testing/guide"
 Testing_of_integrated_issues:
 - filePath: "/general/development/process/testing/integrated-issues.md"
   slug: "/general/development/process/testing/integrated-issues"
@@ -80,4 +82,3 @@ Tracker_introduction:
 Tracker_tips:
 - filePath: "/general/development/tracker/tips.md"
   slug: "/general/development/tracker/tips"
-

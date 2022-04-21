@@ -39,7 +39,7 @@ For test sessions, if you encounter a failure, please fail the issue add a comme
 
 ## Expectation from developer and peer-reviewer
 
-Testing instructions are clear, concise, complete, and accurate. Where possible they should be easy to perform. Please follow the [[Testing instructions guide]] recommendations.
+Testing instructions are clear, concise, complete, and accurate. Where possible they should be easy to perform. Please follow the [Testing instructions guide](./guide) recommendations.
 
 ## Expectations of the Integration team
 
