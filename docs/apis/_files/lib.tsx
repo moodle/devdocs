@@ -14,30 +14,31 @@
  * You should have received a copy of the GNU General Public License
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
-import AcademyLink from './components/AcademyLink';
-
-import Since from './components/Since';
-import DeprecatedSince from './components/DeprecatedSince';
-import ValidExample from './components/ValidExample';
-import InvalidExample from './components/InvalidExample';
-import PluginFileSummary from './components/PluginFileSummary';
-
-import CodeBlock from '@theme/CodeBlock';
-import TabItem from '@theme/TabItem';
-import Tabs from '@theme/Tabs';
-
-export {
-    AcademyLink,
-
-    Since,
-    DeprecatedSince,
-
-    ValidExample,
-    InvalidExample,
-
+import React from 'react';
+import {
+    fillDefaultProps,
+    getDescription,
+    getExample,
     PluginFileSummary,
+} from '../../_utils';
+import type { Props } from '../../_utils';
+import DefaultDescription from './lib.mdx';
 
-    CodeBlock,
-    TabItem,
-    Tabs,
+export default (initialProps: Props): PluginFileSummary => {
+    const props = fillDefaultProps({
+        filepath: '/lib.php',
+        legacy: true,
+        required: false,
+        summary: 'Global plugin functions',
+        examplePurpose: 'Plugin functions',
+        ...initialProps,
+    });
+
+    return (
+        <PluginFileSummary
+            {...props}
+            description={getDescription(props, DefaultDescription)}
+            examples={getExample(props, null)}
+        />
+    );
 };

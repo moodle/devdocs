@@ -1,0 +1,49 @@
+name: Update Moodle Metadata
+
+on:
+  # Run on cron, every Sunday at 5:30am UTC.
+  schedule:
+    - cron: '30 5 * * 0'
+
+  # Run on request.
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        required: false
+        description: 'Set the debug mode'
+
+jobs:
+  run:
+    # Only run on the canonical repository.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    name: Fetch the list of components from Moodle
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout DevDocs repo
+        uses: actions/checkout@v3
+        with:
+          path: devdocs
+
+      - name: Checkout Moodle
+        uses: actions/checkout@v3
+        with:
+          path: moodle
+
+      # Note: This will turn into something nicer once we store more metadata about versions and support multiple
+      # Moodle versions.
+      - name: Copy component data
+        run: |
+          cp moodle/lib/components.json devdocs/data/master/
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          working-directory: devdocs
+          add-paths: |
+            data/*.json
+          commit-message: "[repo] Update Moodle Component metadata"
+          title: "[repo] Update Moodle Component metadata"
+          branch: moodle-components
+          signoff: false
+          delete-branch: true

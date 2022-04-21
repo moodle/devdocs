@@ -8,7 +8,7 @@ Accessibility:
 - filePath: "/general/development/policies/accessibility.md"
   slug: "/general/development/policies/accessibility"
 Activity_modules:
-- filePath: "/docs/apis/plugintypes/mod.md"
+- filePath: "/docs/apis/plugintypes/mod/index.mdx"
   slug: "/docs/apis/plugintypes/mod"
 Bug_triage:
 - filePath: "/general/development/process/triage.md"
@@ -103,6 +103,9 @@ Overview:
 Peer_reviewing:
 - filePath: "/general/development/process/peer-review.md"
   slug: "/general/development/process/peer-review"
+Plugin_files:
+- filePath: "/docs/apis/plugintypes/commonfiles.md"
+  slug: "/docs/apis/plugintypes/commonfiles"
 Process:
 - filePath: "/general/development/process.md"
   slug: "/general/development/process"
