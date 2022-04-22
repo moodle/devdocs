@@ -51,20 +51,45 @@ More documentation on [https://confluence.atlassian.com/jirasoftwareserver071/ad
 
 ## Using filters
 
-To create a filter click on "Save as" button above the search:
+### Creating a filter
 
+1. In tracker, select **Issues** > **Search for Issues**.
+2. Create a search and run the search query by pressing **Enter** or clicking the **Search** button to the right of the search box. For example, this is the query for untriaged issues in your component:
+
+    ```
+    component in (Assignment) AND resolution = Unresolved AND (labels is EMPTY OR labels not in (triaged)) ORDER BY created DESC
+    ```
+
+3. When the search query results are displayed, click the **Save as** button and give it an appropriate name. For instance, for the previous query you can use "Untriaged Assignment issues".
 ![](./savefilter1.png)
+4. Now you can quickly access your filters but also you can subscribe to it, Click on **Details**:
+![](./savefilter2.png)
+5. You can also add **New subscription** if you want to be notified periodically about new issues in any of the filters you've created.
+![](./savefilter3.png)
 
-Now you can quickly access your filters but also you can subscribe to it, Click on "Details":
+:::tip Manage filters and subscriptions
 
-![](./savefilter3.jpeg)
+You can manage your filters and subscriptions on [Manage filters](https://tracker.moodle.org/secure/ManageFilters.jspa) page.
 
-and then on "New subscription":
-
-![](./savefilter4.png)
-
-Now you will be notified daily about new issues in Assignment component. You can manage your filters and subscriptions on [Manage filters](https://tracker.moodle.org/secure/ManageFilters.jspa) page.
 Watchers automatically receive notifications about the updates of the issues they are watching. Using filter subscription you can either monitor issues that you are not watching or monitor issues that are in particular state and were not updated.
+
+:::
+
+### Adding a filter in a gadget to your dashboard
+
+1. In tracker, click **Dashboards** > **Manage Dashboards** and access to any of your dashboards or create one.
+2. Click **Add gadget**.
+3. Find the **Filter Results** gadget.
+4. Click **Add it Now**.
+5. Click **Finished**.
+6. In the **Saved Filter** input, search for and select your newly created filter.
+7. Click **Save**.
+
+:::info
+
+If you're using the previous query for untriaged assignment issues, the most recent untriaged issues should appear in reverse-date order.
+
+:::
 
 ### Useful queries
 

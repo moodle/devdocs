@@ -77,7 +77,7 @@ See the [[Releases#General_release_calendar|General release calendar]] for detai
 
 ### Issue triage
 
-[[Bug_triage|Issue triage]] involves evaluating new issues, making sure that they are recorded correctly. One of the most important jobs triagers do is to identify issues that should be fixed in the stable branch. These are set with a priority ranging from _Trivial_ up to _Blocker_ and other features are checked.
+[Issue triage](./process/triage) involves evaluating new issues, making sure that they are recorded correctly. One of the most important jobs triagers do is to identify issues that should be fixed in the stable branch. These are set with a priority ranging from _Trivial_ up to _Blocker_ and other features are checked.
 
 At Moodle HQ there are currently teams working on stable issues (mostly bugs reported by users) and improvements and new features (Partners, Moodle Association, user suggestions and Martin Dougiamas).
 

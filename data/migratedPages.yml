@@ -1,10 +1,12 @@
----
 Access_API:
 - filePath: "/docs/apis/access.md"
   slug: "/docs/apis/access"
 Activity_modules:
 - filePath: "/docs/apis/plugintypes/mod.md"
   slug: "/docs/apis/plugintypes/mod"
+Bug_triage:
+- filePath: "/general/development/process/triage.md"
+  slug: "/general/development/process/triage"
 CodeSniffer:
 - filePath: "/general/development/tools/phpcs.md"
   slug: "/general/development/tools/phpcs"
@@ -80,4 +82,3 @@ Tracker_introduction:
 Tracker_tips:
 - filePath: "/general/development/tracker/tips.md"
   slug: "/general/development/tracker/tips"
-
