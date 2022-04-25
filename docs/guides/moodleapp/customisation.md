@@ -1,5 +1,6 @@
 ---
 title: Moodle App Customisation
+sidebar_label: Customisation
 sidebar_position: 3
 tags:
   - Moodle App

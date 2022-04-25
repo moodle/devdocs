@@ -1,5 +1,7 @@
 ---
 title: Moodle App
+tags:
+  - Moodle App
 ---
 
 Welcome to the Moodle App developer documentation!

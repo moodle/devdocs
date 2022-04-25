@@ -1,6 +1,9 @@
 ---
 title: Moodle App Overview
+sidebar_label: Overview
 sidebar_position: 1
+tags:
+  - Moodle App
 ---
 
 The Moodle App is a mobile application that helps users make the best of their Moodle sites on handheld devices. It has some additional features like offline access, and a dedicated interface adapted to mobile. It's focused on student functionality, so you won’t find all the features you have on the web for teachers and admins. You can learn more about the features available in [the user documentation](https://docs.moodle.org/).
