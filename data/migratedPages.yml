@@ -43,9 +43,15 @@ Moodle_App:
 Moodle_App_Coding_Style:
 - filePath: "/docs/guides/moodleapp/coding-style.md"
   slug: "/docs/guides/moodleapp/coding-style"
+Moodle_App_Customisation:
+- filePath: "/docs/guides/moodleapp/customisation.md"
+  slug: "/docs/guides/moodleapp/customisation"
 Moodle_App_Overview:
 - filePath: "/docs/guides/moodleapp/overview.md"
   slug: "/docs/guides/moodleapp/overview"
+Moodle_App_Remote_Themes:
+- filePath: "/docs/guides/moodleapp/remote-themes.md"
+  slug: "/docs/guides/moodleapp/remote-themes"
 Moodle_Development_kit:
 - filePath: "/general/development/tools/mdk.md"
   slug: "/general/development/tools/mdk"

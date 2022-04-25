@@ -1,6 +1,9 @@
 ---
 title: Moodle App Overview
+sidebar_label: Overview
 sidebar_position: 1
+tags:
+  - Moodle App
 ---
 
 The Moodle App is a mobile application that helps users make the best of their Moodle sites on handheld devices. It has some additional features like offline access, and a dedicated interface adapted to mobile. It's focused on student functionality, so you won’t find all the features you have on the web for teachers and admins. You can learn more about the features available in [the user documentation](https://docs.moodle.org/).
@@ -57,7 +60,7 @@ Now that you are familiar with the basic concepts, you understand how the applic
 
 - Do you want to contribute to the core? Read the [[Moodle App Development Guide]]
 - Do you want to adapt a plugin to mobile? Read the [[Moodle App Plugins Development Guide]].
-- Do you want to customise your site in the app? Read the [[Moodle App Customisation]] page.
+- Do you want to customise your site in the app? Read the [Moodle App Customisation](./customisation) page.
 - Do you want to make a custom app? Read the [[Custom Moodle Apps]] page.
 
 If you have any further questions, check out the [FAQ](#). If there's anything you want to share, you can do it in [the forum](https://moodle.org/mod/forum/view.php?id=7798) or [the Telegram developer room](#). You can also report any bugs that you find in [the tracker](https://tracker.moodle.org/browse/MOBILE).
