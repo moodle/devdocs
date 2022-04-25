@@ -43,6 +43,9 @@ Moodle_App:
 Moodle_App_Coding_Style:
 - filePath: "/docs/guides/moodleapp/coding-style.md"
   slug: "/docs/guides/moodleapp/coding-style"
+Moodle_App_Customisation:
+- filePath: "/docs/guides/moodleapp/customisation.md"
+  slug: "/docs/guides/moodleapp/customisation"
 Moodle_App_Overview:
 - filePath: "/docs/guides/moodleapp/overview.md"
   slug: "/docs/guides/moodleapp/overview"
