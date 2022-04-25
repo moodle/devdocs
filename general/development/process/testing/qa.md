@@ -160,7 +160,7 @@ When the next QA cycle is prepared, any issue with the `qa_test_required` label 
 
 ## Updating tests
 
-QA tests may become out-of-date due to User Interface changes, feature changes, and new features. If you would like to help with updating tests, you'll need to be a member of the test writers group in the Tracker. Please contact Helen about being added.
+QA tests may become out-of-date due to User Interface changes, feature changes, and new features. If you would like to help with updating tests, you'll need to be a member of the test writers group in the Tracker.
 
 To update a QA test original:
 
@@ -175,7 +175,7 @@ If a test in the current QA cycle is marked as failed because it is out-of-date,
 
 ## Writing new tests
 
-Would you like to help with writing new QA tests? To write new QA tests you will need to be a member of the test writers group in the Tracker. Please contact Helen about being added.
+Would you like to help with writing new QA tests? To write new QA tests you will need to be a member of the test writers group in the Tracker.
 
 QA tests are needed for any features which can't be tested with automated testing, such as connecting to an external system, drag and drop functionality or a CLI script. Also if it requires a person to detect if something is 'correct' vs. present/absent on the page.
 
