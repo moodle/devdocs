@@ -82,6 +82,9 @@ Testing_instructions_guide:
 Testing_of_integrated_issues:
 - filePath: "/general/development/process/testing/integrated-issues.md"
   slug: "/general/development/process/testing/integrated-issues"
+Tracker_guide:
+- filePath: "/general/development/tracker/guide.md"
+  slug: "/general/development/tracker/guide"
 Tracker_introduction:
 - filePath: "/general/development/tracker.md"
   slug: "/general/development/tracker"
