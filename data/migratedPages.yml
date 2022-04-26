@@ -115,6 +115,9 @@ Process:
 QA_testing:
 - filePath: "/general/development/process/testing/qa.md"
   slug: "/general/development/process/testing/qa"
+Question_bank_plugins:
+- filePath: "/docs/apis/plugintypes/qbank/index.mdx"
+  slug: "docs/apis/plugintypes/qbank"
 Roadmap:
 - filePath: "/general/community/roadmap.md"
   slug: "/general/community/roadmap"
