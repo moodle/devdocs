@@ -1,7 +1,7 @@
 ---
 title: Moodle App Remote themes
 sidebar_label: Remote themes
-sidebar_position: 4
+sidebar_position: 1
 tags:
   - Moodle App
 ---
@@ -16,7 +16,7 @@ The styles will remain enabled in the login page, but any other page that is not
 
 First of all, Remote themes are only available for sites that purchased a Premium subscription for the Moodle App. You can check the different plans in [the Apps Portal](https://apps.moodle.com). If you want, you can follow the instructions in this document without purchasing a subscription and it will work in your development environment.
 
-In order to create your own theme, we recommend that you use the app from [master.apps.moodledemo.net](https://master.apps.moodledemo.net) and check the styles using the browser inspector. You can use any Chromium-based browser, but you should launch it with some special arguments. You can read more about that in the [[Using the Moodle App in a browser]] page. If you need to test a different version of the app, you can also use [integration.apps.moodledemo.net](https://integration.apps.moodledemo.net) for the latest development version or [[Moodle App Docker images|the Docker images]] for anything more specific.
+In order to create your own theme, we recommend that you use the app from [master.apps.moodledemo.net](https://master.apps.moodledemo.net) and check the styles using the browser inspector. You can use any Chromium-based browser, but you should launch it with some special arguments. You can read more about that in the [Using the Moodle App in a browser](../development/app-in-browser) page. If you need to test a different version of the app, you can also use [integration.apps.moodledemo.net](https://integration.apps.moodledemo.net) for the latest development version or [the Docker images](../development/docker-images) for anything more specific.
 
 Once you have everything ready, you can configure your theme by going to "Site administration > Mobile app > Mobile appearance" in your site and setting the `mobilecssurl` field to a url pointing to a CSS file. This file can be placed inside your Moodle installation in your custom theme, inside a local plugin, or hosted elsewhere.
 
@@ -226,7 +226,7 @@ You can learn more about the shadow DOM in the following resources:
 
 ### Supporting older versions of the app
 
-If you need to support different versions of the app, or you're upgrading your theme from an older version, you should read the [[Moodle App Remote themes Upgrade Guide]].
+If you need to support different versions of the app, or you're upgrading your theme from an older version, you should read the [Moodle App Remote themes upgrade guide](./remote-themes-upgrade-guide).
 
 ## Common customisations
 

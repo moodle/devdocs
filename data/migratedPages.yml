@@ -1,3 +1,6 @@
+Acceptance_testing_for_the_Moodle_App:
+- filePath: "/docs/guides/moodleapp/development/testing/acceptance-testing.md"
+  slug: "/docs/guides/moodleapp/development/testing/acceptance-testing"
 Access_API:
 - filePath: "/docs/apis/access.md"
   slug: "/docs/apis/access"
@@ -22,6 +25,12 @@ Communication_Between_Components:
 Core_APIs:
 - filePath: "/docs/apis.md"
   slug: "/docs/apis"
+Custom_Moodle_Apps:
+- filePath: "/docs/guides/moodleapp/customisation/custom-apps.md"
+  slug: "/docs/guides/moodleapp/customisation/custom-apps"
+Debugging_network_requests_in_the_Moodle_App:
+- filePath: "/docs/guides/moodleapp/development/network-debug.md"
+  slug: "/docs/guides/moodleapp/development/network-debug"
 Developer_meeting_February_2022:
 - filePath: "/general/community/meetings/202202.md"
   slug: "/general/community/meetings/202202"
@@ -46,18 +55,42 @@ Moodle_4.0_release_notes:
 Moodle_App:
 - filePath: "/docs/guides/moodleapp/index.md"
   slug: "/docs/guides/moodleapp"
+Moodle_App_Accessibility:
+- filePath: "/docs/guides/moodleapp/accessibility.md"
+  slug: "/docs/guides/moodleapp/accessibility"
 Moodle_App_Coding_Style:
-- filePath: "/docs/guides/moodleapp/coding-style.md"
-  slug: "/docs/guides/moodleapp/coding-style"
+- filePath: "/docs/guides/moodleapp/development/coding-style.md"
+  slug: "/docs/guides/moodleapp/development/coding-style"
 Moodle_App_Customisation:
-- filePath: "/docs/guides/moodleapp/customisation.md"
+- filePath: "/docs/guides/moodleapp/customisation/index.md"
   slug: "/docs/guides/moodleapp/customisation"
+Moodle_App_Deep_Linking:
+- filePath: "/docs/guides/moodleapp/development/deep-linking.md"
+  slug: "/docs/guides/moodleapp/development/deep-linking"
+Moodle_App_Development_Process:
+- filePath: "/docs/guides/moodleapp/development/development-process.md"
+  slug: "/docs/guides/moodleapp/development/development-process"
+Moodle_App_Docker_Images:
+- filePath: "/docs/guides/moodleapp/development/docker-images.md"
+  slug: "/docs/guides/moodleapp/development/docker-images"
 Moodle_App_Overview:
 - filePath: "/docs/guides/moodleapp/overview.md"
   slug: "/docs/guides/moodleapp/overview"
+Moodle_App_Release_Process:
+- filePath: "/docs/guides/moodleapp/development/release-process.md"
+  slug: "/docs/guides/moodleapp/development/release-process"
 Moodle_App_Remote_Themes:
-- filePath: "/docs/guides/moodleapp/remote-themes.md"
-  slug: "/docs/guides/moodleapp/remote-themes"
+- filePath: "/docs/guides/moodleapp/customisation/remote-themes.md"
+  slug: "/docs/guides/moodleapp/customisation/remote-themes"
+Moodle_App_Remote_Themes_Upgrade_Guide:
+- filePath: "/docs/guides/moodleapp/customisation/remote-themes-upgrade-guide.md"
+  slug: "/docs/guides/moodleapp/customisation/remote-themes-upgrade-guide"
+Moodle_App_Scripts:_gulp_push:
+- filePath: "/docs/guides/moodleapp/development/scripts/gulp-push.md"
+  slug: "/docs/guides/moodleapp/development/scripts/gulp-push"
+Moodle_App_Translation:
+- filePath: "/docs/guides/moodleapp/translation.md"
+  slug: "/docs/guides/moodleapp/translation"
 Moodle_Development_kit:
 - filePath: "/general/development/tools/mdk.md"
   slug: "/general/development/tools/mdk"
@@ -79,6 +112,12 @@ QA_testing:
 Roadmap:
 - filePath: "/general/community/roadmap.md"
   slug: "/general/community/roadmap"
+Sending_custom_Push_Notifications_to_the_Moodle_App:
+- filePath: "/docs/guides/moodleapp/development/custom-push-notifications.md"
+  slug: "/docs/guides/moodleapp/development/custom-push-notifications"
+Setting_up_your_development_environment_for_the_Moodle_App:
+- filePath: "/docs/guides/moodleapp/development/setup.md"
+  slug: "/docs/guides/moodleapp/development/setup"
 Testing:
 - filePath: "/general/development/process/testing.md"
   slug: "/general/development/process/testing"
@@ -97,3 +136,9 @@ Tracker_introduction:
 Tracker_tips:
 - filePath: "/general/development/tracker/tips.md"
   slug: "/general/development/tracker/tips"
+Unit_testing_for_the_Moodle_App:
+- filePath: "/docs/guides/moodleapp/development/testing/unit-testing.md"
+  slug: "/docs/guides/moodleapp/development/testing/unit-testing"
+Using_the_Moodle_App_in_a_browser:
+- filePath: "/docs/guides/moodleapp/development/app-in-browser.md"
+  slug: "/docs/guides/moodleapp/development/app-in-browser"
