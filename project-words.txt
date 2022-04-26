@@ -43,6 +43,7 @@ contextcourse
 contextcoursecat
 contextlevel
 contextmodule
+contribfriendly
 devdocs
 editingteacher
 euskara

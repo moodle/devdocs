@@ -88,6 +88,9 @@ Moodle_App_Development_Process:
 Moodle_App_Docker_Images:
 - filePath: "/docs/guides/moodleapp/development/docker-images.md"
   slug: "/docs/guides/moodleapp/development/docker-images"
+Moodle_App_FAQ:
+- filePath: "/docs/guides/moodleapp/faq.md"
+  slug: "/docs/guides/moodleapp/faq"
 Moodle_App_Overview:
 - filePath: "/docs/guides/moodleapp/overview.md"
   slug: "/docs/guides/moodleapp/overview"
