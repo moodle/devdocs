@@ -54,6 +54,7 @@ function getSinceLabel(type, versionNumber, issueNumber) {
         <Chip
             key={`chip-${type}${normalisedVersionNumber}`}
             label={label}
+            clickable={!!issueNumber}
         />
     );
 
