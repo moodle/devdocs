@@ -74,6 +74,8 @@ MD033:
     - dl
     - dt
     - em
+    - figure
+    - figcaption
     - h4
     - h5
     - img
