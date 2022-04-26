@@ -19,8 +19,73 @@ import React from 'react';
 import { Stack, Chip } from '@mui/material';
 import Link from '@docusaurus/Link';
 
+function getVersionNumber(versionNumber) {
+    if (typeof versionNumber === 'number' && Number.isInteger(versionNumber)) {
+        return versionNumber.toFixed(1);
+    }
+
+    return versionNumber;
+}
+
+function getTypeLabel(type) {
+    if (type === 'since') {
+        return 'Since';
+    }
+
+    if (type === 'deprecated') {
+        return 'Deprecated';
+    }
+
+    throw new Error(`Unknown <Since> type: '${type}'`);
+}
+
+function getSinceLabel(type, versionNumber, issueNumber) {
+    const normalisedVersionNumber = getVersionNumber(versionNumber);
+
+    const label = (
+        <span>
+            {getTypeLabel(type)}
+            {' '}
+            {normalisedVersionNumber}
+        </span>
+    );
+
+    const chip = (
+        <Chip
+            key={`chip-${type}${normalisedVersionNumber}`}
+            label={label}
+        />
+    );
+
+    if (issueNumber) {
+        return (
+            <Link
+                to={`https://tracker.moodle.org/browse/${issueNumber}`}
+                key={`link-${type}${normalisedVersionNumber}`}
+            >
+                {chip}
+            </Link>
+        );
+    }
+
+    return chip;
+}
+
+function getBadges({
+    issueNumber = null,
+    type = 'since',
+    versions = [],
+    version = null,
+}) {
+    if (version) {
+        return getSinceLabel(type, version, issueNumber);
+    }
+
+    return versions.map((ver) => getSinceLabel(type, ver, issueNumber));
+}
+
 export default function Since(props) {
-    const badges = props.versions.map((version) => getSinceLabel(version, props.issueNumber));
+    const badges = getBadges(props);
 
     return (
         <Stack
@@ -31,43 +96,4 @@ export default function Since(props) {
             {badges}
         </Stack>
     );
-}
-
-function getVersionNumber(versionNumber) {
-    if (typeof versionNumber === 'number' && Number.isInteger(versionNumber)) {
-        return versionNumber.toFixed(1);
-    }
-
-    return versionNumber;
-}
-
-function getSinceLabel(versionNumber, issueNumber) {
-    const normalisedVersionNumber = getVersionNumber(versionNumber);
-
-    const label = (
-        <span>
-            Since
-            {' '}
-            {normalisedVersionNumber}
-        </span>
-    );
-
-    const chip = (
-        <Chip
-            key={`Since${normalisedVersionNumber}`}
-            label={label}
-        />
-    );
-
-    if (issueNumber) {
-        return (
-            <Link
-                to={`https://tracker.moodle.org/browse/${issueNumber}`}
-            >
-                {chip}
-            </Link>
-        );
-    }
-
-    return chip;
 }
