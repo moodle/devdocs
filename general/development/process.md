@@ -28,7 +28,7 @@ Users report bugs and make feature requests directly in the tracker, by creating
 
 Developers work on the issues in the tracker to specify solutions and write code that implements these solutions. They will often ask other developers to _peer review_ their code in the early stages to avoid problems later on.
 
-While many of the developers work for Moodle.com, a large number are part of the global development community around Moodle. If you're interested in becoming a recognised developer, see [[Tracker_guide#Tracker_groups_and_permissions|Tracker groups and permissions]].
+While many of the developers work for Moodle.com, a large number are part of the global development community around Moodle. If you're interested in becoming a recognised developer, see [Tracker groups and permissions](./tracker/guide#tracker-groups-and-permissions).
 
 ### CiBoT
 
