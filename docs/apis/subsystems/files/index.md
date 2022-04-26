@@ -434,7 +434,7 @@ if ($file) {
 
 ## See also
 
-- [Core APIs](../../apis.md)
+- [Core APIs](../../../apis.md)
 - [File API internals](./internals.md) how the File API works internally.
 - [[Using the File API in Moodle forms]]
 - [[Repository API]]

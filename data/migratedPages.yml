@@ -2,8 +2,8 @@ Acceptance_testing_for_the_Moodle_App:
 - filePath: "/docs/guides/moodleapp/development/testing/acceptance-testing.md"
   slug: "/docs/guides/moodleapp/development/testing/acceptance-testing"
 Access_API:
-- filePath: "/docs/apis/access.md"
-  slug: "/docs/apis/access"
+- filePath: "/docs/apis/subsystems/access.md"
+  slug: "/docs/apis/subsystems/access"
 Accessibility:
 - filePath: "/general/development/policies/accessibility.md"
   slug: "/general/development/policies/accessibility"
@@ -41,11 +41,11 @@ Developer_meetings:
 - filePath: "/general/community/meetings.md"
   slug: "/general/community/meetings"
 File_API:
-- filePath: "/docs/apis/files/index.md"
-  slug: "/docs/apis/files"
+- filePath: "/docs/apis/subsystems/files/index.md"
+  slug: "/docs/subsystems/apis/files"
 File_API_internals:
-- filePath: "/docs/apis/files/internals.md"
-  slug: "/docs/apis/files/internals"
+- filePath: "/docs/apis/subsystems/files/internals.md"
+  slug: "/docs/apis/subsystems/files/internals"
 Integration_Review:
 - filePath: "/general/development/process/integration-review.md"
   slug: "/general/development/process/integration-review"

@@ -12,7 +12,7 @@ These APIs are critical and will be used by nearly every Moodle plugin.
 
 ### Access API (access)
 
-The [Access API](./apis/access) gives you functions so you can determine what the current user is allowed to do, and it allows modules to extend Moodle with new capabilities.
+The [Access API](./apis/subsystems/access) gives you functions so you can determine what the current user is allowed to do, and it allows modules to extend Moodle with new capabilities.
 
 ### Data manipulation API (dml)
 
@@ -20,7 +20,7 @@ The [[Data manipulation API]] allows you to read/write to databases in a consist
 
 ### File API (files)
 
-The [File API](./apis/files/index.md) controls the storage of files in connection to various plugins.
+The [File API](./apis/subsystems/files/index.md) controls the storage of files in connection to various plugins.
 
 ### Form API (form)
 
