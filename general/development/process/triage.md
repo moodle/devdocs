@@ -164,6 +164,6 @@ In the [Tracker tips and tricks](../tracker/tips#creating-a-filter) page you'll 
 
 ## See also
 
-- [[Tracker guide]]
+- [Tracker guide](/general/development/tracker/guide)
 - [Process](./)
-- [Tracker tips](../tracker/tips)
+- [Tracker tips](/general/development/tracker/tips)
