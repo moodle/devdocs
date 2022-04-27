@@ -44,6 +44,11 @@ const sidebars = {
             type: 'category',
             items: [
                 {
+                    label: 'Triage',
+                    type: 'doc',
+                    id: 'development/process/triage',
+                },
+                {
                     label: 'Development',
                     type: 'doc',
                     id: 'development/index',
