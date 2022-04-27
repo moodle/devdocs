@@ -21,7 +21,7 @@ import Since from './components/Since';
 import DeprecatedSince from './components/DeprecatedSince';
 import ValidExample from './components/ValidExample';
 import InvalidExample from './components/InvalidExample';
-import PluginFileSummary from './components/PluginFileSummary';
+import ComponentFileSummary from './components/ComponentFileSummary';
 
 import CodeBlock from '@theme/CodeBlock';
 import TabItem from '@theme/TabItem';
@@ -36,7 +36,7 @@ export {
     ValidExample,
     InvalidExample,
 
-    PluginFileSummary,
+    ComponentFileSummary,
 
     CodeBlock,
     TabItem,

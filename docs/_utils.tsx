@@ -15,7 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import { PluginFileSummary as PluginFileSummaryGeneric } from '@site/src/components';
+import { ComponentFileSummary as ComponentFileSummaryGeneric } from '@site/src/components';
 import { getExample } from '@site/src/moodleBridge';
 
 import type { Props } from '@site/src/moodleBridge';
@@ -63,7 +63,7 @@ export const getDescription = ({
     );
 };
 
-export const PluginFileSummary = (initialProps: Props): ReactFragment => {
+export const ComponentFileSummary = (initialProps: Props): ReactFragment => {
     const props = fillDefaultProps({
         examplePurpose: initialProps?.summary ?? null,
         ...initialProps,
@@ -75,5 +75,5 @@ export const PluginFileSummary = (initialProps: Props): ReactFragment => {
         props.example = getExample(props, props?.defaultExample ?? null);
     }
 
-    return PluginFileSummaryGeneric(props);
+    return ComponentFileSummaryGeneric(props);
 };

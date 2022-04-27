@@ -15,7 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import { PluginFileSummary } from '../../../../_utils';
+import { ComponentFileSummary } from '../../../../_utils';
 import type { Props } from '../../../../_utils';
 import DefaultDescription from './mod_form-php.mdx';
 
@@ -47,8 +47,8 @@ class mod_certificate_mod_form extends moodleform_mod {
     }
 `;
 
-export default (initialProps: Props): PluginFileSummary => (
-    <PluginFileSummary
+export default (initialProps: Props): ComponentFileSummary => (
+    <ComponentFileSummary
         required
         defaultDescription={DefaultDescription}
         defaultExample={defaultExample}

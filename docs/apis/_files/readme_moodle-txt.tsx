@@ -15,12 +15,12 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import { PluginFileSummary } from '../../_utils';
+import { ComponentFileSummary } from '../../_utils';
 import type { Props } from '../../_utils';
 import DefaultDescription from './readme_moodle-txt.mdx';
 
-export default (initialProps: Props): PluginFileSummary => (
-    <PluginFileSummary
+export default (initialProps: Props): ComponentFileSummary => (
+    <ComponentFileSummary
         recommended
         filepath="/*/readme_moodle.txt"
         defaultDescription={DefaultDescription}

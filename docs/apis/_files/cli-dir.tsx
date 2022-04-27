@@ -15,7 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import { PluginFileSummary } from '../../_utils';
+import { ComponentFileSummary } from '../../_utils';
 import type { Props } from '../../_utils';
 import DefaultDescription from './cli-dir.mdx';
 
@@ -27,8 +27,8 @@ require_once("{$CFG->libdir}/clilib.php");
 // Your CLI features go here.
 `;
 
-export default (initialProps: Props): PluginFileSummary => (
-    <PluginFileSummary
+export default (initialProps: Props): ComponentFileSummary => (
+    <ComponentFileSummary
         filepath="/cli/"
         summary="CLI scripts"
         exampleFilepath="/cli/example.php"

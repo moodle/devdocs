@@ -111,7 +111,7 @@ function getExamples(props) {
     return null;
 }
 
-export default function PluginFileSummary(props) {
+export default function ComponentFileSummary(props) {
     const {
         filepath,
         summary,
