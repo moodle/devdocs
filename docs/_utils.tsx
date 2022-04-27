@@ -15,14 +15,13 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import { PluginFileSummary } from '@site/src/components';
+import { PluginFileSummary as PluginFileSummaryGeneric } from '@site/src/components';
 import { getExample } from '@site/src/moodleBridge';
 
 import type { Props } from '@site/src/moodleBridge';
 
 export {
     getExample,
-    PluginFileSummary,
 };
 
 /**
@@ -47,7 +46,7 @@ export const fillDefaultProps = (props: Props): Props => ({
 export const getDescription = ({
     description = null,
     extraDescription = null,
-}: Props, DefaultDescription?: string|boolean): ReactFragment => {
+}: Props, DefaultDescription?: string | boolean): ReactFragment => {
     if (description) {
         return description;
     }
@@ -62,4 +61,19 @@ export const getDescription = ({
             {extraDescription}
         </>
     );
+};
+
+export const PluginFileSummary = (initialProps: Props): ReactFragment => {
+    const props = fillDefaultProps({
+        examplePurpose: initialProps?.summary ?? null,
+        ...initialProps,
+    });
+
+    props.description = getDescription(props, props?.defaultDescription ?? null);
+
+    if (props?.example || props?.defaultExample) {
+        props.example = getExample(props, props?.defaultExample ?? null);
+    }
+
+    return PluginFileSummaryGeneric(props);
 };

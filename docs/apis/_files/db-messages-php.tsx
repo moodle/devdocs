@@ -15,12 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import {
-    fillDefaultProps,
-    getDescription,
-    getExample,
-    PluginFileSummary,
-} from '../../_utils';
+import { PluginFileSummary } from '../../_utils';
 import type { Props } from '../../_utils';
 import DefaultDescription from './db-messages-php.mdx';
 
@@ -34,20 +29,14 @@ $messageproviders = [
 ];
 `;
 
-export default (initialProps: Props): PluginFileSummary => {
-    const props = fillDefaultProps({
-        filepath: '/db/messages.php',
-        refreshedDuringUpgrade: true,
-        summary: 'Message provider configuration',
-        examplePurpose: 'Message provider configuration',
-        ...initialProps,
-    });
-
-    return (
-        <PluginFileSummary
-            {...props}
-            description={getDescription(props, DefaultDescription)}
-            examples={getExample(props, defaultExample)}
-        />
-    );
-};
+export default (initialProps: Props): PluginFileSummary => (
+    <PluginFileSummary
+        refreshedDuringUpgrade
+        defaultExample={defaultExample}
+        defaultDescription={DefaultDescription}
+        filepath="/db/messages.php"
+        summary="Message provider configuration"
+        examplePurpose="Message provider configuration"
+        {...initialProps}
+    />
+);

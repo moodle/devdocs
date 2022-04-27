@@ -15,28 +15,16 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import {
-    fillDefaultProps,
-    getDescription,
-    getExample,
-    PluginFileSummary,
-} from '../../_utils';
+import { PluginFileSummary } from '../../_utils';
 import type { Props } from '../../_utils';
 import DefaultDescription from './pix-dir.mdx';
 
-export default (initialProps: Props): PluginFileSummary => {
-    const props = fillDefaultProps({
-        refreshedDuringPurge: true,
-        filepath: '/pix/',
-        summary: 'Plugins icons',
-        ...initialProps,
-    });
-
-    return (
-        <PluginFileSummary
-            {...props}
-            description={getDescription(props, DefaultDescription)}
-            examples={getExample(props)}
-        />
-    );
-};
+export default (initialProps: Props): PluginFileSummary => (
+    <PluginFileSummary
+        defaultDescription={DefaultDescription}
+        refreshedDuringPurge
+        filepath="/pix/"
+        summary="Plugins icons"
+        {...initialProps}
+    />
+);

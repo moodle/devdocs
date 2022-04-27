@@ -61,18 +61,18 @@ Some of the important files for the antivirus plugintype are described below. Se
 
 ### settings.php
 
-export const settingsExample = [
-    'if ($ADMIN->fulltree) {',
-    '    $settings->add(',
-    '        new admin_setting_configexecutable(',
-    "            'antivirus_scanmyfile/pathtoscanner',",
-    "            new lang_string('pathtoscanner', 'antivirus_scanmyfile'),",
-    "            new lang_string('configpathtoscanner', 'antivirus_scanmyfile'),",
-    "            ''",
-    '        )',
-    '    );',
-    '}',
-].join('\n');
+export const settingsExample = `
+if ($ADMIN->fulltree) {
+    $settings->add(
+        new admin_setting_configexecutable(
+            'antivirus_scanmyfile/pathtoscanner',",
+            new lang_string('pathtoscanner', 'antivirus_scanmyfile'),",
+            new lang_string('configpathtoscanner', 'antivirus_scanmyfile'),",
+            ''",
+        )
+    );
+}
+`;
 
 <SettingsPHP
     plugintype="antivirus"
@@ -83,11 +83,11 @@ export const settingsExample = [
 
 ### lang/en/antivirus_scanmyfile.php
 
-export const langExample = [
-    "$string['pluginname']= 'ScanMyFile antivirus';",
-    "$string['pathtoscanner'] = 'Path to scanner';",
-    "$string['configpathtoscanner'] = 'Define full path to scanner';",
-].join('\n');
+export const langExample = `
+    $string['pluginname']= 'ScanMyFile antivirus';
+    $string['pathtoscanner'] = 'Path to scanner';
+    $string['configpathtoscanner'] = 'Define full path to scanner';
+`;
 
 <Lang
     plugintype="antivirus"

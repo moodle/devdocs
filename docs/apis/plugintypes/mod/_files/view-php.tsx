@@ -15,36 +15,26 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import { PluginFileSummary } from '@site/src/components';
-import {
-    fillDefaultProps,
-    getDescription,
-    getExample,
-} from '../../../../_utils';
+import { PluginFileSummary } from '../../../../_utils';
 import type { Props } from '../../../../_utils';
 import DefaultDescription from './view-php.mdx';
 
-const defaultExample = `require('../../config.php');
+const defaultExample = `
+require('../../config.php');
 
 $id = required_param('id', PARAM_INT);
 [$course, $cm] = get_course_and_cm_from_cmid($id, '[modname]');
 $instance = $DB->get_record('[modname]', ['id'=> $cm->instance], '*', MUST_EXIST);
 `;
 
-export default (initialProps: Props): PluginFileSummary => {
-    const props = fillDefaultProps({
-        filepath: '/view.php',
-        refreshedDuringPurge: true,
-        summary: 'Activity view page',
-        examplePurpose: 'Activity view page',
-        ...initialProps,
-    });
-
-    return (
-        <PluginFileSummary
-            {...props}
-            description={getDescription(props, DefaultDescription)}
-            examples={getExample(props, defaultExample)}
-        />
-    );
-};
+export default (initialProps: Props): PluginFileSummary => (
+    <PluginFileSummary
+        refreshedDuringPurge
+        filepath="/view.php"
+        summary="Activity view page"
+        examplePurpose="Activity view page"
+        defaultDescription={DefaultDescription}
+        defaultExample={defaultExample}
+        {...initialProps}
+    />
+);

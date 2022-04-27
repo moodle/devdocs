@@ -15,12 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import {
-    fillDefaultProps,
-    getDescription,
-    getExample,
-    PluginFileSummary,
-} from '../../_utils';
+import { PluginFileSummary } from '../../_utils';
 import type { Props } from '../../_utils';
 import DefaultDescription from './amd-dir.mdx';
 
@@ -32,23 +27,16 @@ export const updateThings = (thingData) => {
 };
 `;
 
-export default (initialProps: Props): PluginFileSummary => {
-    const props = fillDefaultProps({
-        filepath: '/amd/src/example.js',
-        filetype: 'js',
-        summary: 'AMD JavaScript Modules',
-        examplePurpose: 'Example module',
-        modulename: 'example',
-        exampleFilepath: '/amd/src/example.js',
-        ...initialProps,
-    });
-
-    return (
-        <PluginFileSummary
-            {...props}
-            required
-            description={getDescription(props, DefaultDescription)}
-            examples={getExample(props, defaultExample)}
-        />
-    );
-};
+export default (initialProps: Props): PluginFileSummary => (
+    <PluginFileSummary
+        required
+        defaultDescription={DefaultDescription}
+        defaultExample={defaultExample}
+        examplePurpose="Example module"
+        filepath="/amd/src/example.js"
+        filetype="js"
+        modulename="example"
+        summary="AMD JavaScript Modules"
+        {...initialProps}
+    />
+);

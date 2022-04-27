@@ -15,32 +15,21 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import {
-    fillDefaultProps,
-    getDescription,
-    getExample,
-    PluginFileSummary,
-} from '../../_utils';
+import { PluginFileSummary } from '../../_utils';
 import type { Props } from '../../_utils';
 import DefaultDescription from './lang.mdx';
 
 const defaultExample = "$string['pluginname'] = 'The name of my plugin will go here';";
 
-export default (initialProps: Props): PluginFileSummary => {
-    const props = fillDefaultProps({
-        filepath: '/lang/en/plugintype_pluginname.php',
-        refreshedDuringPurge: true,
-        required: true,
-        summary: 'Language files',
-        examplePurpose: 'Languages configuration',
-        ...initialProps,
-    });
-
-    return (
-        <PluginFileSummary
-            {...props}
-            description={getDescription(props, DefaultDescription)}
-            examples={getExample(props, defaultExample)}
-        />
-    );
-};
+export default (initialProps: Props): PluginFileSummary => (
+    <PluginFileSummary
+        filepath="/lang/en/plugintype_pluginname.php"
+        refreshedDuringPurge
+        required
+        summary="Language files"
+        examplePurpose="Languages configuration"
+        defaultDescription={DefaultDescription}
+        defaultExample={defaultExample}
+        {...initialProps}
+    />
+);

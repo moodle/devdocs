@@ -15,27 +15,15 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import {
-    fillDefaultProps,
-    getDescription,
-    getExample,
-    PluginFileSummary,
-} from '../../_utils';
+import { PluginFileSummary } from '../../_utils';
 import type { Props } from '../../_utils';
 import DefaultDescription from './classes-dir.mdx';
 
-export default (initialProps: Props): PluginFileSummary => {
-    const props = fillDefaultProps({
-        filepath: '/classes/',
-        summary: 'Autoloaded classes',
-        ...initialProps,
-    });
-
-    return (
-        <PluginFileSummary
-            {...props}
-            description={getDescription(props, DefaultDescription)}
-            examples={getExample(props, null)}
-        />
-    );
-};
+export default (initialProps: Props): PluginFileSummary => (
+    <PluginFileSummary
+        filepath="/classes/"
+        summary="Autoloaded classes"
+        defaultDescription={DefaultDescription}
+        {...initialProps}
+    />
+);

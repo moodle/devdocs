@@ -15,12 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import { PluginFileSummary } from '@site/src/components';
-import {
-    fillDefaultProps,
-    getDescription,
-    getExample,
-} from '../../../../_utils';
+import { PluginFileSummary } from '../../../../_utils';
 import type { Props } from '../../../../_utils';
 import DefaultDescription from './mod_form-php.mdx';
 
@@ -52,22 +47,16 @@ class mod_certificate_mod_form extends moodleform_mod {
     }
 `;
 
-export default (initialProps: Props): PluginFileSummary => {
-    const props = fillDefaultProps({
-        plugintype: 'mod',
-        pluginname: '[modname]',
-        filepath: '/mod_form.php',
-        required: true,
-        summary: 'Activity creation/editing form',
-        examplePurpose: 'Activity creation/editing form',
-        ...initialProps,
-    });
-
-    return (
-        <PluginFileSummary
-            {...props}
-            description={getDescription(props, DefaultDescription)}
-            examples={getExample(props, defaultExample)}
-        />
-    );
-};
+export default (initialProps: Props): PluginFileSummary => (
+    <PluginFileSummary
+        required
+        defaultDescription={DefaultDescription}
+        defaultExample={defaultExample}
+        examplePurpose="Activity creation/editing form"
+        filepath="/mod_form.php"
+        pluginname="[modname]"
+        plugintype="mod"
+        summary="Activity creation/editing form"
+        {...initialProps}
+    />
+);

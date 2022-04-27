@@ -15,12 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import { PluginFileSummary } from '@site/src/components';
-import {
-    fillDefaultProps,
-    getDescription,
-    getExample,
-} from '../../../../_utils';
+import { PluginFileSummary } from '../../../../_utils';
 import type { Props } from '../../../../_utils';
 import DefaultDescription from './index-php.mdx';
 
@@ -42,22 +37,16 @@ foreach ($modinfo->get_instances_of('[modinfo]') as $instanceid => $cm) {
 }
 `;
 
-export default (initialProps: Props): PluginFileSummary => {
-    const props = fillDefaultProps({
-        plugintype: 'mod',
-        pluginname: '[modname]',
-        filepath: '/index.php',
-        required: true,
-        summary: 'Activity index',
-        examplePurpose: 'Activity index',
-        ...initialProps,
-    });
-
-    return (
-        <PluginFileSummary
-            {...props}
-            description={getDescription(props, DefaultDescription)}
-            examples={getExample(props, defaultExample)}
-        />
-    );
-};
+export default (initialProps: Props): PluginFileSummary => (
+    <PluginFileSummary
+        required
+        defaultDescription={DefaultDescription}
+        defaultExample={defaultExample}
+        plugintype="mod"
+        pluginname="[modname]"
+        filepath="/index.php"
+        summary="Activity index"
+        examplePurpose="Activity index"
+        {...initialProps}
+    />
+);

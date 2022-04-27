@@ -15,25 +15,11 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import {
-    fillDefaultProps,
-    getDescription,
-    getExample,
-    PluginFileSummary,
-} from '../../_utils';
+import { PluginFileSummary } from '../../_utils';
 import type { Props } from '../../_utils';
 import DefaultDescription from './db-upgrade-php.mdx';
 
-export default (initialProps: Props): PluginFileSummary => {
-    const props = fillDefaultProps({
-        filepath: '/db/upgrade.php',
-        summary: 'Upgrade steps',
-        examplePurpose: 'Upgrade steps',
-        recommended: true,
-        ...initialProps,
-    });
-
-    const defaultExample = `
+const defaultExample = `
 function xmldb_certificate_upgrade($oldversion = 0) {
     if ($oldversion < 2012091800) {
         // Add new fields to certificate table.
@@ -56,11 +42,14 @@ function xmldb_certificate_upgrade($oldversion = 0) {
     }
 }`;
 
-    return (
-        <PluginFileSummary
-            {...props}
-            description={getDescription(props, DefaultDescription)}
-            examples={getExample(props, defaultExample)}
-        />
-    );
-};
+export default (initialProps: Props): PluginFileSummary => (
+    <PluginFileSummary
+        recommended
+        defaultDescription={DefaultDescription}
+        defaultExample={defaultExample}
+        filepath="/db/upgrade.php"
+        summary="Upgrade steps"
+        examplePurpose="Upgrade steps"
+        {...initialProps}
+    />
+);

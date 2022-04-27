@@ -15,12 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import {
-    fillDefaultProps,
-    getDescription,
-    getExample,
-    PluginFileSummary,
-} from '../../_utils';
+import { PluginFileSummary } from '../../_utils';
 import type { Props } from '../../_utils';
 import DefaultDescription from './environment-xml.mdx';
 
@@ -35,22 +30,16 @@ const defaultExample = `
   </PLUGIN>
 </COMPATIBILITY_MATRIX>`;
 
-export default (initialProps: Props): PluginFileSummary => {
-    const props = fillDefaultProps({
-        filepath: '/environment.xml',
-        filetype: 'xml',
-        refreshedDuringUpgrade: true,
-        summary: 'Plugin-specific environment requirements',
-        showFileHeader: false,
-        showLicense: false,
-        ...initialProps,
-    });
-
-    return (
-        <PluginFileSummary
-            {...props}
-            description={getDescription(props, DefaultDescription)}
-            examples={getExample(props, defaultExample)}
-        />
-    );
-};
+export default (initialProps: Props): PluginFileSummary => (
+    <PluginFileSummary
+        showFileHeader={false}
+        showLicense={false}
+        refreshedDuringUpgrade
+        filepath="/environment.xml"
+        filetype="xml"
+        summary="Plugin-specific environment requirements"
+        defaultDescription={DefaultDescription}
+        defaultExample={defaultExample}
+        {...initialProps}
+    />
+);

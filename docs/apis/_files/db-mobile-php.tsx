@@ -15,28 +15,16 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import {
-    fillDefaultProps,
-    getDescription,
-    getExample,
-    PluginFileSummary,
-} from '../../_utils';
+import { PluginFileSummary } from '../../_utils';
 import type { Props } from '../../_utils';
 import DefaultDescription from './db-mobile-php.mdx';
 
-export default (initialProps: Props): PluginFileSummary => {
-    const props = fillDefaultProps({
-        filepath: '/db/mobile.php',
-        refreshedDuringUpgrade: true,
-        summary: 'MoodleMobile version of the plugin',
-        ...initialProps,
-    });
-
-    return (
-        <PluginFileSummary
-            {...props}
-            description={getDescription(props, DefaultDescription)}
-            examples={getExample(props, null)}
-        />
-    );
-};
+export default (initialProps: Props): PluginFileSummary => (
+    <PluginFileSummary
+        refreshedDuringUpgrade
+        defaultDescription={DefaultDescription}
+        filepath="/db/mobile.php"
+        summary="MoodleMobile version of the plugin"
+        {...initialProps}
+    />
+);

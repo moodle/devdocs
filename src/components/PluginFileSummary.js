@@ -49,8 +49,8 @@ function getBadges({
         badges.push(getBadge(
             'Upgradable',
             'Changes to this file or directory will be re-applied during a Moodle upgrade. '
-                + 'If you make any changes to it, '
-                + 'you can simply increment the version number and perform a Moodle upgrade.',
+            + 'If you make any changes to it, '
+            + 'you can simply increment the version number and perform a Moodle upgrade.',
             'info',
         ));
     }
@@ -60,7 +60,7 @@ function getBadges({
         badges.push(getBadge(
             'Refreshed on cache purge',
             'The contents of this file or directory are cached. '
-                + 'To see your changes you can simply purge Moodle\'s caches and refresh the page.',
+            + 'To see your changes you can simply purge Moodle\'s caches and refresh the page.',
             'info',
         ));
     }
@@ -85,7 +85,7 @@ function getBadges({
         badges.push(getBadge(
             'Deprecated',
             'Use of this file is deprecated and not recommended.'
-                + 'It may still be provided for older versions of Moodle but is no longer used.',
+            + 'It may still be provided for older versions of Moodle but is no longer used.',
             'error',
         ));
     }
@@ -94,15 +94,15 @@ function getBadges({
 }
 
 function getExamples(props) {
-    const { examples, open = false } = props;
-    if (examples) {
+    const { example, open = false } = props;
+    if (example) {
         return (
             <Grid item xs={12}>
                 <Details
                     summary={<summary>View example</summary>}
                     open={open}
                 >
-                    {examples}
+                    {example}
                 </Details>
             </Grid>
         );

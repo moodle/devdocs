@@ -231,7 +231,7 @@ const getFormattedExample = (props, defaultExample = null) => {
     ].filter((value) => value).map((value) => value.trim()).join('\n\n');
 
     const fileTypeHeader = getFileTypeHeader(props);
-    return [fileTypeHeader, exampleContent].join('\n');
+    return [fileTypeHeader, exampleContent].filter((value) => value).join('\n');
 };
 
 const getLanguage = ({
