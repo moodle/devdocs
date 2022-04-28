@@ -40,6 +40,9 @@ Contributing_a_translation:
 Core_APIs:
 - filePath: "/docs/apis.md"
   slug: "/docs/apis"
+Course_formats:
+- filePath: "/docs/apis/plugintypes/format/index.md"
+  slug: "/docs/apis/plugintypes/format"
 Creating_mobile_course_formats:
 - filePath: "/docs/moodleapp/development/plugins-development-guide/examples/create-course-formats.md"
   slug: "/docs/moodleapp/development/plugins-development-guide/examples/create-course-formats"
