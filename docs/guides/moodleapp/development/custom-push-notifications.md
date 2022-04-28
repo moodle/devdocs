@@ -1,7 +1,7 @@
 ---
 title: Sending custom Push Notifications to the Moodle App
 sidebar_label: Sending custom Push Notifications
-sidebar_position: 6
+sidebar_position: 9
 tags:
   - Moodle App
 ---

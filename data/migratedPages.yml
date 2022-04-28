@@ -28,6 +28,9 @@ Communication_Between_Components:
 Core_APIs:
 - filePath: "/docs/apis.md"
   slug: "/docs/apis"
+Creating_mobile_course_formats:
+- filePath: "/docs/guides/moodleapp/development/create-course-formats.md"
+  slug: "/docs/guides/moodleapp/development/create-course-formats"
 Custom_Moodle_Apps:
 - filePath: "/docs/guides/moodleapp/customisation/custom-apps.md"
   slug: "/docs/guides/moodleapp/customisation/custom-apps"
@@ -82,6 +85,12 @@ Moodle_App_Docker_Images:
 Moodle_App_Overview:
 - filePath: "/docs/guides/moodleapp/overview.md"
   slug: "/docs/guides/moodleapp/overview"
+Moodle_App_Plugins_Development_Guide:
+- filePath: "/docs/guides/moodleapp/development/plugins-development-guide.md"
+  slug: "/docs/guides/moodleapp/development/plugins-development-guide"
+Moodle_App_Plugins_Upgrade_Guide:
+- filePath: "/docs/guides/moodleapp/development/plugins-upgrade-guide.md"
+  slug: "/docs/guides/moodleapp/development/plugins-upgrade-guide"
 Moodle_App_Release_Process:
 - filePath: "/docs/guides/moodleapp/development/release-process.md"
   slug: "/docs/guides/moodleapp/development/release-process"

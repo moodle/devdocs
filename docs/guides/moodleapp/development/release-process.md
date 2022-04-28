@@ -1,7 +1,7 @@
 ---
 title: Moodle App Release process
 sidebar_label: Release process
-sidebar_position: 12
+sidebar_position: 13
 tags:
   - Moodle App
   - Release notes

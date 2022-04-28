@@ -31,7 +31,7 @@ You can learn more about this in the [Moodle App Remote themes](./customisation/
 
 ## Adding support in your plugin for the mobile app
 
-You can create Moodle plugins to change how the app works. You can learn about this in the [[Moodle App Plugins Development Guide]] page.
+You can create Moodle plugins to change how the app works. You can learn about this in the [Moodle App Plugins Development Guide](./development/plugins-development-guide) page.
 
 ## Configuring how the app should work via Moodle site settings
 

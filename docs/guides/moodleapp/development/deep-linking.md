@@ -1,7 +1,7 @@
 ---
 title: Moodle App Deep Linking
 sidebar_label: Deep Linking
-sidebar_position: 7
+sidebar_position: 10
 tags:
  - Moodle App
 ---
