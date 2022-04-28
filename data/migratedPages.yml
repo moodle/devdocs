@@ -2,17 +2,20 @@ Acceptance_testing_for_the_Moodle_App:
 - filePath: "/docs/guides/moodleapp/development/testing/acceptance-testing.md"
   slug: "/docs/guides/moodleapp/development/testing/acceptance-testing"
 Access_API:
-- filePath: "/docs/apis/access.md"
-  slug: "/docs/apis/access"
+- filePath: "/docs/apis/subsystems/access.md"
+  slug: "/docs/apis/subsystems/access"
 Accessibility:
 - filePath: "/general/development/policies/accessibility.md"
   slug: "/general/development/policies/accessibility"
 Activity_modules:
-- filePath: "/docs/apis/plugintypes/mod.md"
+- filePath: "/docs/apis/plugintypes/mod/index.mdx"
   slug: "/docs/apis/plugintypes/mod"
 Bug_triage:
 - filePath: "/general/development/process/triage.md"
   slug: "/general/development/process/triage"
+Antivirus_plugins:
+- filePath: "/docs/apis/plugintypes/antivirus/index.mdx"
+  slug: "/docs/apis/plugintypes/antivirus"
 CodeSniffer:
 - filePath: "/general/development/tools/phpcs.md"
   slug: "/general/development/tools/phpcs"
@@ -38,14 +41,17 @@ Developer_meetings:
 - filePath: "/general/community/meetings.md"
   slug: "/general/community/meetings"
 File_API:
-- filePath: "/docs/apis/files/index.md"
-  slug: "/docs/apis/files"
+- filePath: "/docs/apis/subsystems/files/index.md"
+  slug: "/docs/subsystems/apis/files"
 File_API_internals:
-- filePath: "/docs/apis/files/internals.md"
-  slug: "/docs/apis/files/internals"
+- filePath: "/docs/apis/subsystems/files/internals.md"
+  slug: "/docs/apis/subsystems/files/internals"
 Integration_Review:
 - filePath: "/general/development/process/integration-review.md"
   slug: "/general/development/process/integration-review"
+Local_plugins:
+- filePath: "/docs/apis/plugintypes/local/index.mdx"
+  slug: "/docs/apis/plugintypes/local"
 Mission:
 - filePath: "/general/community/mission.md"
   slug: "/general/community/mission"
@@ -103,12 +109,18 @@ Overview:
 Peer_reviewing:
 - filePath: "/general/development/process/peer-review.md"
   slug: "/general/development/process/peer-review"
+Plugin_files:
+- filePath: "/docs/apis/plugintypes/commonfiles.md"
+  slug: "/docs/apis/plugintypes/commonfiles"
 Process:
 - filePath: "/general/development/process.md"
   slug: "/general/development/process"
 QA_testing:
 - filePath: "/general/development/process/testing/qa.md"
   slug: "/general/development/process/testing/qa"
+Question_bank_plugins:
+- filePath: "/docs/apis/plugintypes/qbank/index.mdx"
+  slug: "docs/apis/plugintypes/qbank"
 Roadmap:
 - filePath: "/general/community/roadmap.md"
   slug: "/general/community/roadmap"

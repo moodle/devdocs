@@ -81,7 +81,7 @@ Once an issue has been created, the following additional fields are able to be c
 
 - [Tracker introduction](./) - less scary version of this page for new users.
 - [Process](../process)
-- [[Bug triage]]
+- [Bug triage](/general/development/process/triage)
 - [[Tracker issue labels]]
 - [Testing of integrated issues](../process/testing/integrated-issues)
 - Using Moodle [How to manipulate Moodle developers](http://moodle.org/mod/forum/discuss.php?d=43952) forum discussion

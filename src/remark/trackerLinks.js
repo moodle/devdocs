@@ -1,3 +1,21 @@
+/**
+ * Copyright (c) Moodle Pty Ltd.
+ *
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 const visit = require('unist-util-visit');
 
 /**
@@ -6,27 +24,14 @@ const visit = require('unist-util-visit');
  * @param {String} issueNumber
  * @returns {Tree}
  */
-const getLinkFromIssueNumber = issueNumber => {
-    return {
-        type: 'link',
-        url: `https://tracker.moodle.org/browse/${issueNumber}`,
-        children: [{
-            type: 'text',
-            value: issueNumber,
-        }],
-    };
-};
-
-
-const plugin = (options) => {
-    const transformer = async (ast) => {
-        visit(ast, 'text', (node, index, parent) => {
-            updateTextLink(node, index, parent);
-            updateInlineLink(node, index, parent);
-        });
-    };
-    return transformer;
-};
+const getLinkFromIssueNumber = (issueNumber) => ({
+    type: 'link',
+    url: `https://tracker.moodle.org/browse/${issueNumber}`,
+    children: [{
+        type: 'text',
+        value: issueNumber,
+    }],
+});
 
 /**
  * Update a text representation of a tracker issue into a link to that issue.
@@ -40,7 +45,7 @@ const plugin = (options) => {
  * @param {Tree} parent
  */
 const updateTextLink = (node, index, parent) => {
-    value = node.value;
+    const { value } = node;
     const tokenStart = value.indexOf('{tracker ');
     if (tokenStart === -1) {
         return null;
@@ -61,6 +66,8 @@ const updateTextLink = (node, index, parent) => {
         type: 'text',
         value: node.value.substring(tokenEnd),
     });
+
+    return null;
 };
 
 /**
@@ -96,6 +103,18 @@ const updateInlineLink = (node, index, parent) => {
         type: 'text',
         value: node.value.substring(0, tokenStart),
     }, link);
-}
+
+    return null;
+};
+
+const plugin = () => {
+    const transformer = async (ast) => {
+        visit(ast, 'text', (node, index, parent) => {
+            updateTextLink(node, index, parent);
+            updateInlineLink(node, index, parent);
+        });
+    };
+    return transformer;
+};
 
 module.exports = plugin;

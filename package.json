@@ -59,6 +59,8 @@
     ]
   },
   "devDependencies": {
+    "@docusaurus/module-type-aliases": "^2.0.0-beta.18",
+    "@tsconfig/docusaurus": "^1.0.5",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "babel-jest": "^27.5.1",
@@ -69,6 +71,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.1.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-mdx": "^1.17.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-regexp": "^1.6.0",

@@ -123,7 +123,6 @@ const replaceWithLink = (parent, index, url, description) => {
     parent.children[index + 1].value = parent.children[index + 1].value.slice(1);
 
     return null;
-
 };
 
 /**

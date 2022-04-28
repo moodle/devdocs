@@ -1,45 +1,27 @@
-import React from 'react';
-import { Stack, Chip } from "@mui/material";
-import Link from '@docusaurus/Link';
+/**
+ * Copyright (c) Moodle Pty Ltd.
+ *
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
-export default function Since(props) {
-  const badges = props.versions.map((version) => getSinceLabel(version, props.issueNumber));
+import Since from './Since';
 
-  return (
-    <Stack
-        direction="row"
-        justifyContent="flex-end"
-        spacing={2}
-      >
-      { badges }
-    </Stack>
-  );
+export default function DeprecatedSince(initialProps) {
+    const props = {
+        type: 'deprecated',
+        ...initialProps,
+    };
+
+    return Since(props);
 }
-
-const getSinceLabel = (versionNumber, issueNumber) => {
-  if (typeof versionNumber === 'number' && Number.isInteger(versionNumber)) {
-    versionNumber = versionNumber.toFixed(1);
-  }
-
-  let label = (
-    <span>Deprecated since {versionNumber}</span>
-  );
-
-  const chip = (
-    <Chip
-        key={`DeprecatedSince${versionNumber}`}
-        label={label}
-        color="warning"
-      />
-  );
-
-  if (issueNumber) {
-    return (
-      <Link
-          to={ "https://tracker.moodle.org/browse/" + issueNumber }
-        >{chip}</Link>
-    );
-  }
-
-  return chip;
-};

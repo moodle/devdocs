@@ -48,6 +48,7 @@ module.exports = {
         'airbnb',
         'plugin:@typescript-eslint/recommended',
         'plugin:regexp/recommended',
+        'plugin:mdx/recommended',
     ],
     settings: {
         'import/resolver': {
