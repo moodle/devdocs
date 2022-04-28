@@ -26,7 +26,7 @@ If you only want to write a plugin, it is not necessary that you set up your env
 
 You can use the app from one of the hosted versions on [master.apps.moodledemo.net](https://master.apps.moodledemo.net) (the latest stable version) and [integration.apps.moodledemo.net](https://integration.apps.moodledemo.net) (the latest development version). If you need any specific environment (hosted versions are deployed with a **production** environment), you can also use [Docker images](./docker-images). And if you need to test your plugin in a native device, you can always use [Moodle HQ's application](https://download.moodle.org/mobile).
 
-This should suffice for developing plugins. However, if you are working on advanced functionality and you need to run the application from the source code, you can find more information in the [[Moodle App Development Guide]].
+This should suffice for developing plugins. However, if you are working on advanced functionality and you need to run the application from the source code, you can find more information in the [Moodle App Development Guide](./development-guide).
 
 ### Development workflow
 
@@ -581,7 +581,7 @@ In the previous section, we learned about some of the existing options for handl
 ### Options only for AddonMessageOutputDelegate
 
 - `displaydata` (mandatory):
-    - `title` — A language string identifier that was included in the `lang` section.
+  - `title` — A language string identifier that was included in the `lang` section.
   - `icon` — The name of an ionic icon. [See icons section](#using-font-icons-with-ion-icon).
 - `priority` (optional) — Priority of the handler. Higher priority is displayed first.
 - `ptrenabled` (optional) — Whether to enable pull-to-refresh gesture to refresh page content.

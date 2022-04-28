@@ -7,7 +7,7 @@ tags:
   - Moodle App
 ---
 
-Unit tests are written in JavaScript using [Jest](https://jestjs.io/). If you want to create a new one, Jest is already configured and you only need to create a file ending with `.test.ts` within the project. If you're going to do so, remember to follow the [[Moodle App Development Guide#Test_files|file location conventions]].
+Unit tests are written in JavaScript using [Jest](https://jestjs.io/). If you want to create a new one, Jest is already configured and you only need to create a file ending with `.test.ts` within the project. If you're going to do so, remember to follow the [file location conventions](../development-guide#test-files).
 
 ## Running tests
 
@@ -71,7 +71,7 @@ Notice how we used the `mock` helper to create a mock that is properly typed as 
 
 ## Testing services
 
-If you are testing some code that uses [[Moodle App Development Guide#Service_Singletons|Service Singletons]], it is likely that you want to mock some of them. You can achieve it by using the `mockSingleton` helper. This method takes a Service Singleton and creates a mock for the instance underneath, mocking the methods and properties that you specify along the way.
+If you are testing some code that uses [Service Singletons](../development-guide#service-singletons), it is likely that you want to mock some of them. You can achieve it by using the `mockSingleton` helper. This method takes a Service Singleton and creates a mock for the instance underneath, mocking the methods and properties that you specify along the way.
 
 For example, let’s say that you have the following test:
 

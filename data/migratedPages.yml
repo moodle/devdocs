@@ -82,6 +82,9 @@ Moodle_App_Customisation:
 Moodle_App_Deep_Linking:
 - filePath: "/docs/guides/moodleapp/development/deep-linking.md"
   slug: "/docs/guides/moodleapp/development/deep-linking"
+Moodle_App_Development_Guide:
+- filePath: "/docs/guides/moodleapp/development/development-guide.md"
+  slug: "/docs/guides/moodleapp/development/development-guide"
 Moodle_App_Development_Process:
 - filePath: "/docs/guides/moodleapp/development/development-process.md"
   slug: "/docs/guides/moodleapp/development/development-process"

@@ -75,7 +75,7 @@ Browsers are not officially supported, but you can use a Chromium-based browser 
 
 Now that you are familiar with the basic concepts, you understand how the application works, and you’ve got your development environment set up; you're ready to embark into the particulars of what you're trying to achieve.
 
-- Do you want to contribute to the core? Read the [[Moodle App Development Guide]].
+- Do you want to contribute to the core? Read the [Moodle App Development Guide](./development/development-guide).
 - Do you want to adapt a plugin to mobile? Read the [Moodle App Plugins Development Guide](./development/plugins-development-guide).
 - Do you want to customise your site in the app? Read the [Moodle App Customisation](./customisation) page.
 - Do you want to make a custom app? Read the [Custom Moodle Apps](./customisation/custom-apps) page.
