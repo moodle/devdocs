@@ -68,14 +68,14 @@ optimisations)
 11. Scalability - if master only - we're looking far future, stable branches may not be lucky to get such improvements.
 12. git authorship is correct vs committer + credits due are mentioned + email addresses
 13. Documentation / PHP Doc / readability
-14. [[Tracker issue labels]] which might need adding. Particularly:
-    1. docs_required / dev_docs_required / release_notes: About which type of documentation is required for the issue.
-    2. ui_change / api_change: About the implications of the change.
-    3. unit_test_required / acceptance_test_required / qa_test_required: About the need to cover the issue with some test.
-    4. affects_mobileapp / affects_workplace / affects_moodlecloud: About issues that may affect other Moodle products and services
+14. [Tracker issue labels](/general/development/tracker/labels) which might need adding. Particularly:
+    1. `docs_required` / `dev_docs_required` / `release_notes`: About which type of documentation is required for the issue.
+    2. `ui_change` / `api_change`: About the implications of the change.
+    3. `unit_test_required` / `acceptance_test_required` / `qa_test_required`: About the need to cover the issue with some test.
+    4. `affects_mobileapp` / `affects_workplace` / `affects_moodlecloud`: About issues that may affect other Moodle products and services
 15. [[Tracker issue versions]] review. Particularly:
     1. Fixed Version after integration - is the versions that the issue is patched for. (A rule here: ["or stables or master"](https://docs.moodle.org/dev/Tracker_issue_versions#Some_general_and_simple_rules)).
-    2. Remove any "Must fix for X.Y" version once the issue is integrated.
+    2. Remove any `Must fix for X.Y` version once the issue is integrated.
 16. Whenever any of the points above or any other detail require extra information or action to be done by the assignee, and the integrator
 considers that they can be fixed without needing to discard/reopen, the issue will be sent to `Waiting for feedback` with all the details to
 complete. Once everything has been fulfilled, always within a reasonable amount of time (still to decide), the issue will be sent back to
@@ -194,9 +194,13 @@ Many issues can be appropriately classified as borderline bug-fix/improvements. 
 
 - Given the [general policy](#general-policy) above, only supported stable branches are candidates normally.
 - Also security, privacy, data-loss and regressions caused by any of the previous issue types are accepted to be fixed into security-only supported branches.
+
 :::note
-This doesn't include [`security_benefit` labelled issues](https://docs.moodle.org/dev/Tracker_issue_labels).
+
+This doesn't include [`security_benefit` labelled issues](/general/development/tracker/labels).
+
 ::::
+
 - Apart from the previous, issues required to keep the testing infrastructure working and passing (travis, behat, phpunit, random failures, new steps availability...) will also be accepted when possible into security-only branches.
 - Finally, backport to unsupported branches only will happen when the issue is a **direct regression caused by a bug fix** introduced by the very latest releases. This applies to both security-only and out-of-support branches.
 

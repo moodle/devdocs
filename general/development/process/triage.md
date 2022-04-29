@@ -55,7 +55,7 @@ When you confirm that the issue is indeed a bug or a reasonable improvement requ
   - The issue is a bug in code that is present in the `master` branch only, in which case the next major version should be used. (The next major version should not be used in conjunction with previous released versions, this won't make sense later.)
   - The issue is a new feature and is unrelated to any existing code in Moodle, in which case the `Future dev` version should be used.
 - **Labels**
-  - Remove functionality tags that some reporters add as labels, only  [[Tracker_issue_labels|standard]] labels or partner-specific labels are used in Moodle
+  - Remove functionality tags that some reporters add as labels, only  [standard labels or partner-specific labels](/general/development/tracker/labels) are used in Moodle
   - Issues with proposed fixes should be labelled with `patch` so that they can be found easily and given attention. When this is the case, consider whether moving the issue to the `Waiting for peer review` state in the workflow might be more appropriate
   - Add the `addon_candidate` label if the functionality can be implemented as a plugin;
   - If you are the component lead or an HQ developer you may also add `triaged` label to indicate that the triage process is completed. Use it only when the issue has actually been added to the backlog
