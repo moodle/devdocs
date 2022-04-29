@@ -18,7 +18,7 @@ A lot of people ask how the development of Moodle operates. This page should giv
 
 ;Component leads: A number of people around the world have volunteered to lead various components in Moodle. This involves maintaining existing code as well as listening to the community and improving that component with new features.
 
-There are many other people contributing to Moodle in many ways. For a full list see the [Moodle developers](http://moodle.org/local/dev/) page on moodle.org.
+There are many other people contributing to Moodle in many ways. For a full list see the [Moodle developers](http://moodle.org/dev/) page on moodle.org.
 
 ## How we develop the Roadmap
 
@@ -28,7 +28,7 @@ Component leads decide on features in individual components so make your case to
 
 ## Moodle versions
 
-Moodle major releases (with big new features) are on a regular 6 month cycle, in  May and November, since Moodle 2.6. Each major release increments the version number by 0.1 (eg 3.4 -> 3.5 -> 3.6)) and starts a new branch of minor releases.
+Moodle major releases (with big new features) are on a regular 6 month cycle, in  May and November, since Moodle 2.6. Each major release increments the version number by 0.1 (eg 3.4 -> 3.5 -> 3.6) and starts a new branch of minor releases.
 
 Minor releases (with bug fixes only) are on a 2 month cycle, unless a security emergency occurs. They will increment the major release by 0.0.1 (eg 3.5 -> 3.5.1 -> 3.5.2).
 
