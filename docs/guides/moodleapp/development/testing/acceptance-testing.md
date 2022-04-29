@@ -330,7 +330,7 @@ In general though, upgrading your current tests should be mostly straightforward
 - Pay special attention to any assertions such as `should not exist` that you have in your tests. These assertions will not fail, because the elements won't be found. But if you get an eventual bug when something is shown that shouldn't, those steps will probably not pick it up because the locators may have changed.
 - If you were running your tests in CI, there is a new dependency even if you're only testing a plugin and not running the application tests. The test definitions have been moved from core to the [local_moodlemobileapp](https://github.com/moodlehq/moodle-local_moodlemobileapp/) plugin, and you should have it installed in your Moodle site running the tests. This was done in order to decouple application code from the core.
 
-If you also need to upgrade your plugin, and not just the tests, check out the [[Moodle App Plugins Upgrade Guide]] page.
+If you also need to upgrade your plugin, and not just the tests, check out the [Moodle App Plugins Upgrade Guide](../plugins-upgrade-guide) page.
 
 ## Troubleshooting
 

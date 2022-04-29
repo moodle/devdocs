@@ -14,7 +14,7 @@ The structure of this page is the following:
 
 Most of your development can happen on a browser, you only need to use an emulator if you have to work on native functionality.
 
-If you are just [[Moodle App Plugins Development Guide|adding mobile support to plugins]], you probably don't need to build the app yourself and you can skip reading this page.
+If you are just [adding mobile support to plugins](./plugins-development-guide), you probably don't need to build the app yourself and you can skip reading this page.
 
 ## Requirements
 

@@ -1,7 +1,7 @@
 ---
 title: Debugging network requests in the Moodle App
 sidebar_label: Debugging network requests
-sidebar_position: 11
+sidebar_position: 12
 tags:
   - Moodle App
 ---

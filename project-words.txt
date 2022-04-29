@@ -3,9 +3,12 @@
 Atto
 Bangma
 Brickfield
+Choicegroup
 Dougiamas
+Gapfill
 IDEs
 IMSCP
+Ionicons
 Koen
 MDL
 MDLQA
@@ -32,6 +35,7 @@ TODO
 Triaged
 Untriaged
 WCAG
+Wordselect
 XMLDB
 adminpresets
 airnotifier
