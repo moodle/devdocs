@@ -1,5 +1,6 @@
 ---
 title: Tracker guide
+sidebar_label: Guide
 tags:
   - Tracker
 ---
@@ -66,7 +67,7 @@ Once an issue has been created, the following additional fields are able to be c
 | **URL**  | If possible, provide a URL address that demonstrates an example of this bug.  |   |
 | **Epic Name**  | A short name given to an issue of type Epic so that linked issues can be grouped by this name. It should only be a few words at most.  | Only applies to issues of type Epic.  |
 | **Epic Link**  | A link to an Epic issue. This can be added by providing the issue ID or Epic name. It is a way of organising related issues as part of a project.  | Only applies to issues that need to be collected together for a project.  |
-| **Labels**  | See [[Tracker issue labels]].  | <ul><li>Labels should be specific values used in filters and searches.</li><li>This is not a field for including generic keywords.</li></ul>  |
+| **Labels**  | See [Tracker issue labels](/general/development/tracker/labels).  | <ul><li>Labels should be specific values used in filters and searches.</li><li>This is not a field for including generic keywords.</li></ul>  |
 | **Pull...**  | Links to a code solution in a Git repository.  | <ul><li>These fields are used by developers.</li><li>There may be multiple solutions if the problem affects multiple Moodle versions.</li></ul>  |
 | **Documentation link**  | URL of related documentation.  | When changes require documentation to be updated, this field should be filled.  |
 | **Comment**  | <ul><li>Notes made by all interested parties.</li><li>A detailed register of all changes that relate to this bug.</li></ul>  |   |
@@ -82,7 +83,7 @@ Once an issue has been created, the following additional fields are able to be c
 - [Tracker introduction](./) - less scary version of this page for new users.
 - [Process](../process)
 - [Bug triage](/general/development/process/triage)
-- [[Tracker issue labels]]
+- [Tracker issue labels](/general/development/tracker/labels)
 - [Testing of integrated issues](../process/testing/integrated-issues)
 - Using Moodle [How to manipulate Moodle developers](http://moodle.org/mod/forum/discuss.php?d=43952) forum discussion
 - Wikipedia [Definition of a bug](http://en.wikipedia.org/wiki/Software_bug)

@@ -175,7 +175,7 @@ Ensure that:
 - The PHPdoc comments on all classes, methods and fields are useful. (Comments that just repeat the function name are not helpful! Add value.)
 - Where an API has been changed significantly, the relevant upgrade.txt file has been updated with information.
 - Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but actually say what should be done instead.
-- Appropriate [labels](https://docs.moodle.org/dev/Tracker_issue_labels) have been added when there has been a function change, particularly
+- Appropriate [labels](/general/development/tracker/labels) have been added when there has been a function change, particularly
   - docs_required (any functional change, usually paired with `ui_change`),
   - dev_docs_required (any change to APIs, usually paired with `api_change`),
   - `ui_change` (any functional change, usually paired with docs_required, except ui_change remains permanently),
@@ -285,7 +285,7 @@ Thanks again for your contribution. I have reviewed the patch:
 I don't have permission to use the peer review buttons on this issue. I hope that someone with sufficient permissions will move the issue forwards soon.
 ```
 
-You should now add the '[ready_for_integration](https://docs.moodle.org/dev/Tracker_issue_labels)' tag to the issue to indicate you have passed the peer review and it can move to the next step.
+You should now add the '[ready_for_integration](/general/development/tracker/labels)' tag to the issue to indicate you have passed the peer review and it can move to the next step.
 
 Feedback to indicate the issue requires further work might look like the following;
 

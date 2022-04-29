@@ -10,12 +10,12 @@ Accessibility:
 Activity_modules:
 - filePath: "/docs/apis/plugintypes/mod/index.mdx"
   slug: "/docs/apis/plugintypes/mod"
-Bug_triage:
-- filePath: "/general/development/process/triage.md"
-  slug: "/general/development/process/triage"
 Antivirus_plugins:
 - filePath: "/docs/apis/plugintypes/antivirus/index.mdx"
   slug: "/docs/apis/plugintypes/antivirus"
+Bug_triage:
+- filePath: "/general/development/process/triage.md"
+  slug: "/general/development/process/triage"
 CodeSniffer:
 - filePath: "/general/development/tools/phpcs.md"
   slug: "/general/development/tools/phpcs"
@@ -154,6 +154,9 @@ Tracker_guide:
 Tracker_introduction:
 - filePath: "/general/development/tracker.md"
   slug: "/general/development/tracker"
+Tracker_issue_labels:
+- filePath: "/general/development/tracker/labels.md"
+  slug: "/general/development/tracker/labels"
 Tracker_tips:
 - filePath: "/general/development/tracker/tips.md"
   slug: "/general/development/tracker/tips"
