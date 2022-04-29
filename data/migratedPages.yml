@@ -25,6 +25,9 @@ Coding_style:
 Communication_Between_Components:
 - filePath: "/general/development/policies/component-communication/index.md"
   slug: "/general/development/policies/component-communication"
+Community_credits:
+- filePath: "/general/community/credits/moodleorg.md"
+  slug: "/general/community/credits/moodleorg"
 Core_APIs:
 - filePath: "/docs/apis.md"
   slug: "/docs/apis"
@@ -43,6 +46,9 @@ Developer_meeting_February_2022:
 Developer_meetings:
 - filePath: "/general/community/meetings.md"
   slug: "/general/community/meetings"
+Documentation_credits:
+- filePath: "/general/community/credits/documentation.md"
+  slug: "/general/community/credits/documentation"
 File_API:
 - filePath: "/docs/apis/subsystems/files/index.md"
   slug: "/docs/subsystems/apis/files"
@@ -109,6 +115,9 @@ Moodle_App_Translation:
 Moodle_Development_kit:
 - filePath: "/general/development/tools/mdk.md"
   slug: "/general/development/tools/mdk"
+Moodle_libraries_credits:
+- filePath: "/general/community/credits/thirdpartylibs.md"
+  slug: "/general/community/credits/thirdpartylibs"
 Moodle_research:
 - filePath: "/general/community/research.md"
   slug: "/general/community/research"
@@ -142,6 +151,9 @@ Setting_up_your_development_environment_for_the_Moodle_App:
 Testing:
 - filePath: "/general/development/process/testing.md"
   slug: "/general/development/process/testing"
+Testing_credits:
+- filePath: "/general/community/credits/testing.md"
+  slug: "/general/community/credits/testing"
 Testing_instructions_guide:
 - filePath: "/general/development/process/testing/guide.md"
   slug: "/general/development/process/testing/guide"
