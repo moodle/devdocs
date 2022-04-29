@@ -370,7 +370,7 @@ export const init = ({courseid, category}) => {
 
 :::caution
 A limit applies to the length of the parameters passed in the third argument.
-If data is already available elsewhere in the DOM, you shoudl avoid passing it as a parameter.
+If data is already available elsewhere in the DOM, you should avoid passing it as a parameter.
 :::
 
 ## Passing data to your Module

@@ -183,7 +183,7 @@ As part of a significant UX and design change, the current focus is on three mai
 
 - [[Moodle_4.0_navigation_improvements|Improved navigation]], search and menus - MDL-69588
 - Making it easier to create and manage courses - MDL-70907
-- Making it easier for students to know what they need to do to complete a course, and know what’s next
+- Making it easier for students to know what they need to do to complete a course, and know what's next
 
 Other projects include:
 

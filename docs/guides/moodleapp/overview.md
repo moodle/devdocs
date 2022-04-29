@@ -6,7 +6,7 @@ tags:
   - Moodle App
 ---
 
-The Moodle App is a mobile application that helps users make the best of their Moodle sites on handheld devices. It has some additional features like offline access, and a dedicated interface adapted to mobile. It's focused on student functionality, so you won’t find all the features you have on the web for teachers and admins. You can learn more about the features available in [the user documentation](https://docs.moodle.org/).
+The Moodle App is a mobile application that helps users make the best of their Moodle sites on handheld devices. It has some additional features like offline access, and a dedicated interface adapted to mobile. It's focused on student functionality, so you won't find all the features you have on the web for teachers and admins. You can learn more about the features available in [the user documentation](https://docs.moodle.org/).
 
 On a technical level, it's a completely different codebase from the Moodle LMS, and interacts with a Moodle site using [[web services]]. You can find the source code of the application in github: [github.com/moodlehq/moodleapp](https://github.com/moodlehq/moodleapp).
 
@@ -16,7 +16,7 @@ Before embarking into any Moodle-specific documentation, we recommend that you a
 
 ### How does it work?
 
-When you are accessing a Moodle site on the web, you are only capable of using one site at a time. In contrast to that, the Moodle App can be used with multiple sites at once. However, you will need to switch sessions to interact with each site, so you won’t be able to use multiple sites simultaneously (but you'll continue receiving push notifications and reminders for all the sites connected in the app).
+When you are accessing a Moodle site on the web, you are only capable of using one site at a time. In contrast to that, the Moodle App can be used with multiple sites at once. However, you will need to switch sessions to interact with each site, so you won't be able to use multiple sites simultaneously (but you'll continue receiving push notifications and reminders for all the sites connected in the app).
 
 This works because the app is not coupled to any specific Moodle site, it acts as a client that will connect with a site after logging in; using the site url and user credentials. Compared to the Moodle LMS, users can always use the latest version of the app even if the site is running an old version. Some features may be missing or change depending on the version of the site, but it will work the same way for the most part.
 
@@ -28,7 +28,7 @@ Keep in mind that the application only works with moodle sites that allow it, an
 
 The code of the application follows an [hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)), with core modules that include the main functionality and addon modules that provide additional features.
 
-Class names are prefixed by their module, so that you can identify whether you’re working with something in core or an addon. For example, `CoreCourseProvider` is a core service implementing course features, while `AddonMessagesProvider` is an addon service related with messaging.
+Class names are prefixed by their module, so that you can identify whether you're working with something in core or an addon. For example, `CoreCourseProvider` is a core service implementing course features, while `AddonMessagesProvider` is an addon service related with messaging.
 
 These modules are defined as [Angular Modules](https://angular.io/guide/architecture-modules), and they are resolved at runtime using [Angular's dependency injection framework](https://angular.io/guide/architecture-services).
 
@@ -40,7 +40,7 @@ The entire communication between the app and a site happens through a layer of [
 
 For performance reasons, the data retrieved from some web services is cached automatically. For example, the list of courses that a user is enrolled in. This is also useful so that the application works offline. However, not everything is cached automatically, and some things like entire courses can be downloaded manually. This is referred to as “prefetching”.
 
-When a user logs out from a site, or their session expires, this data will remain in the device but won’t be accessible without logging in again. In order to remove all the data, they should delete the site from the list of sites the app is connected to.
+When a user logs out from a site, or their session expires, this data will remain in the device but won't be accessible without logging in again. In order to remove all the data, they should delete the site from the list of sites the app is connected to.
 
 In some situations, the cached data can also be refreshed. For example, many screens support the pull-to-refresh gesture, and downloaded data can be refreshed using similar controls to the ones used to prefetch in the first place.
 
@@ -69,7 +69,7 @@ The Moodle App only works with Moodle sites running version 3.1 or newer.
 
 The minimum platforms supported by the application are Android 5.1 (with Webview 61 or higher) and iOS 11.
 
-Browsers are not officially supported, but you can use a Chromium-based browser for development if you don’t need any native functionality. However, there are [some caveats](./development/app-in-browser) you should be aware of.
+Browsers are not officially supported, but you can use a Chromium-based browser for development if you don't need any native functionality. However, there are [some caveats](./development/app-in-browser) you should be aware of.
 
 ## Where to go next
 

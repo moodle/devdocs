@@ -82,7 +82,7 @@ External functions are functions defined in Moodle using the External API. These
 
 Calling external functions from another component in Moodle is no different to calling the php functions directly. This is allowed and encouraged.
 
-One thing to think about when calling external functions from php though is that they are designed to be able to be called from a webservice, and so they will re-do all of the security checks and setup of the page theme and language that you have probably already done in your php page. To make sure this doesn’t cause side-effects (like changing the theme halfway through a page), always use the wrapper in `external_api::call_external_function()` instead of calling the external function directly.
+One thing to think about when calling external functions from php though is that they are designed to be able to be called from a webservice, and so they will re-do all of the security checks and setup of the page theme and language that you have probably already done in your php page. To make sure this doesn't cause side-effects (like changing the theme halfway through a page), always use the wrapper in `external_api::call_external_function()` instead of calling the external function directly.
 
 Additional rules for calling external functions:
 
@@ -120,7 +120,7 @@ The most common way (but not the only way) to implement a callback is using the 
 
 ## FAQ
 
-**Q: So how does plugin X call a function from plugin Y if they don’t depend on each other?**
+**Q: So how does plugin X call a function from plugin Y if they don't depend on each other?**
 
 A: By communicating through a core API.
 

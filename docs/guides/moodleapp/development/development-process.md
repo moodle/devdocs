@@ -16,7 +16,7 @@ In the shaping phase we do an initial high-level design and specifications so we
 
 During the Testing & QA phase, we do intensive testing to check that there are no regressions and, sometimes, we publish Beta versions to check the upcoming new features in advance and provide feedback before the release so that we can make the necessary adjustments.
 
-Once we are confident we have a stable new version that is aligned with our stakeholders’ expectations we move to the Release phase in which the new version of the app is fully rolled-out to users.
+Once we are confident we have a stable new version that is aligned with our stakeholders' expectations we move to the Release phase in which the new version of the app is fully rolled-out to users.
 
 During the evaluation phase we analyse stakeholders' feedback to validate if we met their expectations.
 
@@ -38,7 +38,7 @@ We have different stakeholders (order does not indicate importance):
 
 We use the MoSCoW method. The term MoSCoW itself is an acronym derived from the first letter of each of four prioritisation categories: M - Must have S - Should have C - Could have W - Won't have.
 
-There is some existing criteria for what’s mandatory (MUST) to include in a new release:
+There is some existing criteria for what's mandatory (MUST) to include in a new release:
 
 - New Moodle LMS functionality (affecting students)
 - New Moodle Workplace functionality (affecting students)
@@ -48,9 +48,9 @@ There is some existing criteria for what’s mandatory (MUST) to include in a ne
 - Critical bugs
 - Security issues
 
-For what’s not mandatory, we use additional methods such as “Value versus Complexity” but there is always a subjective evaluation and the Moodle Apps Product Manager is the one making the final decisions.
+For what's not mandatory, we use additional methods such as “Value versus Complexity” but there is always a subjective evaluation and the Moodle Apps Product Manager is the one making the final decisions.
 
-New features and improvements under the “Could have” category can be removed at any time during the implementation phase if we feel we won’t be able to implement them.
+New features and improvements under the “Could have” category can be removed at any time during the implementation phase if we feel we won't be able to implement them.
 
 Only critical issues (bugs or MUST not properly detected such as LMS changes) can be added once the implementation phase has commenced but minor nice-to-have improvements will often be added throughout the release cycle.
 

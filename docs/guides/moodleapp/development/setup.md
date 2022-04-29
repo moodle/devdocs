@@ -30,7 +30,7 @@ You will need to install Git in order to get the source code and upload your cha
 
 ### Install Node.js and Npm
 
-We recommend using a version manager like [nvm](https://github.com/nvm-sh/nvm) to make this easier, you can prepare the correct environment running `nvm install` in the project root. Remember to run this every time you work with the app, or if you’re not working on any other node projects in your computer you can run ``nvm alias default `node -v` `` to make it the default.
+We recommend using a version manager like [nvm](https://github.com/nvm-sh/nvm) to make this easier, you can prepare the correct environment running `nvm install` in the project root. Remember to run this every time you work with the app, or if you're not working on any other node projects in your computer you can run ``nvm alias default `node -v` `` to make it the default.
 
 It may seem simpler and easier to install directly from [nodejs.org](http://nodejs.org), but actually it is more tricky to get that to work. If you have previously installed Node directly, and want to switch to nvm, you need to uninstall node completely before installing nvm - or search for trouble-shooting instructions online.
 
@@ -159,7 +159,7 @@ reboot
 adb install webview.apk
 ```
 
-After doing this, remember to run the emulator in write mode for subsequent sessions, but you don’t need to call the `remount` command every time.
+After doing this, remember to run the emulator in write mode for subsequent sessions, but you don't need to call the `remount` command every time.
 
 ## Troubleshooting
 
