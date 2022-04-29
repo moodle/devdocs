@@ -1,16 +1,20 @@
 # This file contains cspell exceptions to use for Moodle.
 # Please keep this file sorted alphabetically.
-AWST
 Atto
+AWST
 Badgr
 Bangma
+BMA
+Brickfield
 Bugcrowd
-CURLOPT
 Choicegroup
+CURLOPT
 Docsearch
 Docusaurus
 Equella
+Filepool
 Gapfill
+GSOC
 IDEs
 IDOR
 IMSCP
@@ -34,11 +38,11 @@ Notas
 OCI8
 OIDC
 OWASP
+Packagist
 PHPDoc
 PHPDocumentor
-POSIX
-Packagist
 Poppler
+POSIX
 Quicklist
 Recaptcha
 SIGINT
@@ -61,6 +65,7 @@ allowcaching
 assignfeedback
 assignsubmission
 behat
+bigbluebuttonbn
 booktool
 cacheability
 calculatedmulti
@@ -86,6 +91,9 @@ coursefiles
 crtl
 datafield
 dayofweek
+ddimageortext
+ddmarker
+ddwtos
 declarables
 defaulthomepage
 defaultoutputs
@@ -154,6 +162,7 @@ moodledev
 moodleform
 moodleforms
 moodlehq
+moodlemobile
 moodlemobileapp
 moodlenetprofile
 moremenu
@@ -229,7 +238,9 @@ uploadsingle
 uploadusers
 urltolink
 versionname
+videojs
 webdav
+webservice
 webservices
 workshopallocation
 workshopeval

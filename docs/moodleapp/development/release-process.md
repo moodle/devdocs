@@ -32,7 +32,7 @@ tags:
 | 4. | Send the applications to the stores for review. | Integration Lead |
 | 5. | Create a TAG/Release in github ([moodlehq/moodleapp](https://github.com/moodlehq/moodleapp/releases)) with the version number. | Integration Lead |
 | 6. | Mark the issue and the [version](https://tracker.moodle.org/projects/MOBILE?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page) as released in the tracker. | Integration Lead |
-| 7. | Update [release notes](https://docs.moodle.org/dev/Moodle_App_Release_Notes). | Integration Lead |
+| 7. | Update [release notes](/general/app_releases). | Integration Lead |
 
 ## The following days
 
@@ -42,11 +42,11 @@ tags:
 | 2. | Post in moodle.org/news. | Team Lead |
 | 3. | Review the users and developers documentation (check that everything is in order). Review the [docs_required and dev_docs_required_tags](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20labels%20in%20%28docs_required%2C%20dev_docs_required%29). Review the [Mobile features wiki documentation](https://docs.moodle.org/en/Moodle_Mobile_features). | All the team |
 | 4. | Delete the integration and desktop branches and create it again based on master. | Team Lead |
-| 5. | Bump version numbers in the following files in the integration branch: config.xml, src/config.json (appending a -dev to the versionname field to indicate that is a development version), package.json (including mac->bundleVersion) and desktop/assets/windows/AppXManifest.xml. | Integration Lead |
+| 5. | Bump version numbers in the following files in the integration branch: config.xml, src/config.json (appending a -dev to the versionname field to indicate that is a development version), package.json. | Integration Lead |
 | 6. | Unfreeze Cordova plugins and Javascript libraries versions (node modules). | Developer |
 | 7. | Check that the [Docker image](https://cloud.docker.com/u/moodlehq/repository/docker/moodlehq/moodleapp/general) for the new version was successfully built. | Integration Lead |
 | 8. | Update of the [local_moodlemobileapp](https://moodle.org/plugins/view.php?id=997) plugin (as final release) in moodle.org/plugins. | Developer |
 
 ## See also
 
-- [Moodle App Release Notes](https://docs.moodle.org/dev/Moodle_App_Release_Notes)
+- [Moodle App Release Notes](/general/app_releases)

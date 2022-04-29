@@ -1138,6 +1138,9 @@ Moodle_App_Plugins_Development_Guide:
 Moodle_App_Plugins_Upgrade_Guide:
 - filePath: "/docs/moodleapp/upgrading/plugins-upgrade-guide.md"
   slug: "/docs/moodleapp/upgrading/plugins-upgrade-guide"
+Moodle_App_Release_Notes:
+- filePath: "/general/app_releases.md"
+  slug: "/general/app_releases"
 Moodle_App_Release_Process:
 - filePath: "/docs/moodleapp/development/release-process.md"
   slug: "/docs/moodleapp/development/release-process"
@@ -1162,6 +1165,138 @@ Moodle_Penetration_Testing:
 Moodle_libraries_credits:
 - filePath: "/general/community/credits/thirdpartylibs.md"
   slug: "/general/community/credits/thirdpartylibs"
+Moodle_Mobile_1.3_Release_Notes:
+- filePath: "/general/app_releases/v1.x.md"
+  slug: "/general/app_releases/v1.x"
+Moodle_Mobile_1_release_notes:
+- filePath: "/general/app_releases/v1.x.md"
+  slug: "/general/app_releases/v1.x"
+Moodle_Mobile_2.0_release_notes:
+- filePath: "/general/app_releases/v2/v2.0.md"
+  slug: "/general/app_releases/v2/v2.0"
+Moodle_Mobile_2.1_release_notes:
+- filePath: "/general/app_releases/v2/v2.1.md"
+  slug: "/general/app_releases/v2/v2.1"
+Moodle_Mobile_2.2_release_notes:
+- filePath: "/general/app_releases/v2/v2.2.md"
+  slug: "/general/app_releases/v2/v2.2"
+Moodle_Mobile_2.3_release_notes:
+- filePath: "/general/app_releases/v2/v2.3.md"
+  slug: "/general/app_releases/v2/v2.3"
+Moodle_Mobile_2.4_release_notes:
+- filePath: "/general/app_releases/v2/v2.4.md"
+  slug: "/general/app_releases/v2/v2.4"
+Moodle_Mobile_2.5_release_notes:
+- filePath: "/general/app_releases/v2/v2.5.md"
+  slug: "/general/app_releases/v2/v2.5"
+Moodle_Mobile_2.6_release_notes:
+- filePath: "/general/app_releases/v2/v2.6.md"
+  slug: "/general/app_releases/v2/v2.6"
+Moodle_Mobile_2.7_release_notes:
+- filePath: "/general/app_releases/v2/v2.7.md"
+  slug: "/general/app_releases/v2/v2.7"
+Moodle_Mobile_2.8_release_notes:
+- filePath: "/general/app_releases/v2/v2.8.md"
+  slug: "/general/app_releases/v2/v2.8"
+Moodle_Mobile_2.9_release_notes:
+- filePath: "/general/app_releases/v2/v2.9.md"
+  slug: "/general/app_releases/v2/v2.9"
+Moodle_Mobile_3.0.0_release_notes:
+- filePath: "/general/app_releases/v3/v3.0.0.md"
+  slug: "/general/app_releases/v3/v3.0.0"
+Moodle_Mobile_3.1.0_release_notes:
+- filePath: "/general/app_releases/v3/v3.1.0.md"
+  slug: "/general/app_releases/v3/v3.1.0"
+Moodle_Mobile_3.1.1_release_notes:
+- filePath: "/general/app_releases/v3/v3.1.1.md"
+  slug: "/general/app_releases/v3/v3.1.1"
+Moodle_Mobile_3.1.2_release_notes:
+- filePath: "/general/app_releases/v3/v3.1.2.md"
+  slug: "/general/app_releases/v3/v3.1.2"
+Moodle_Mobile_3.1.3_release_notes:
+- filePath: "/general/app_releases/v3/v3.1.3.md"
+  slug: "/general/app_releases/v3/v3.1.3"
+Moodle_Mobile_3.2.0_release_notes:
+- filePath: "/general/app_releases/v3/v3.2.0.md"
+  slug: "/general/app_releases/v3/v3.2.0"
+Moodle_Mobile_3.2.1_release_notes:
+- filePath: "/general/app_releases/v3/v3.2.1.md"
+  slug: "/general/app_releases/v3/v3.2.1"
+Moodle_Mobile_3.3.0_release_notes:
+- filePath: "/general/app_releases/v3/v3.3.0.md"
+  slug: "/general/app_releases/v3/v3.3.0"
+Moodle_Mobile_3.3.1_release_notes:
+- filePath: "/general/app_releases/v3/v3.3.1.md"
+  slug: "/general/app_releases/v3/v3.3.1"
+Moodle_Mobile_3.3.2_release_notes:
+- filePath: "/general/app_releases/v3/v3.3.2.md"
+  slug: "/general/app_releases/v3/v3.3.2"
+Moodle_Mobile_3.4.0_release_notes:
+- filePath: "/general/app_releases/v3/v3.4.0.md"
+  slug: "/general/app_releases/v3/v3.4.0"
+Moodle_Mobile_3.4.1_release_notes:
+- filePath: "/general/app_releases/v3/v3.4.1.md"
+  slug: "/general/app_releases/v3/v3.4.1"
+Moodle_Mobile_3.4.2_release_notes:
+- filePath: "/general/app_releases/v3/v3.4.2.md"
+  slug: "/general/app_releases/v3/v3.4.2"
+Moodle_Mobile_3.5.0_release_notes:
+- filePath: "/general/app_releases/v3/v3.5.0.md"
+  slug: "/general/app_releases/v3/v3.5.0"
+Moodle_Mobile_3.5.1_release_notes:
+- filePath: "/general/app_releases/v3/v3.5.1.md"
+  slug: "/general/app_releases/v3/v3.5.1"
+Moodle_Mobile_3.5.2_release_notes:
+- filePath: "/general/app_releases/v3/v3.5.2.md"
+  slug: "/general/app_releases/v3/v3.5.2"
+Moodle_Mobile_3.6.0_release_notes:
+- filePath: "/general/app_releases/v3/v3.6.0.md"
+  slug: "/general/app_releases/v3/v3.6.0"
+Moodle_Mobile_3.6.1_release_notes:
+- filePath: "/general/app_releases/v3/v3.6.1.md"
+  slug: "/general/app_releases/v3/v3.6.1"
+Moodle_Mobile_3.7.0_release_notes:
+- filePath: "/general/app_releases/v3/v3.7.0.md"
+  slug: "/general/app_releases/v3/v3.7.0"
+Moodle_Mobile_3.7.1_release_notes:
+- filePath: "/general/app_releases/v3/v3.7.1.md"
+  slug: "/general/app_releases/v3/v3.7.1"
+Moodle_Mobile_3.7.2_release_notes:
+- filePath: "/general/app_releases/v3/v3.7.2.md"
+  slug: "/general/app_releases/v3/v3.7.2"
+Moodle_Mobile_3.8.0_release_notes:
+- filePath: "/general/app_releases/v3/v3.8.0.md"
+  slug: "/general/app_releases/v3/v3.8.0"
+Moodle_Mobile_3.8.1_release_notes:
+- filePath: "/general/app_releases/v3/v3.8.1.md"
+  slug: "/general/app_releases/v3/v3.8.1"
+Moodle_Mobile_3.8.2_release_notes:
+- filePath: "/general/app_releases/v3/v3.8.2.md"
+  slug: "/general/app_releases/v3/v3.8.2"
+Moodle_Mobile_3.9.0_release_notes:
+- filePath: "/general/app_releases/v3/v3.9.0.md"
+  slug: "/general/app_releases/v3/v3.9.0"
+Moodle_Mobile_3.9.1_release_notes:
+- filePath: "/general/app_releases/v3/v3.9.1.md"
+  slug: "/general/app_releases/v3/v3.9.1"
+Moodle_Mobile_3.9.2_release_notes:
+- filePath: "/general/app_releases/v3/v3.9.2.md"
+  slug: "/general/app_releases/v3/v3.9.2"
+Moodle_Mobile_3.9.3_release_notes:
+- filePath: "/general/app_releases/v3/v3.9.3.md"
+  slug: "/general/app_releases/v3/v3.9.3"
+Moodle_Mobile_3.9.4_release_notes:
+- filePath: "/general/app_releases/v3/v3.9.4.md"
+  slug: "/general/app_releases/v3/v3.9.4"
+Moodle_Mobile_3.9.5_release_notes:
+- filePath: "/general/app_releases/v3/v3.9.5.md"
+  slug: "/general/app_releases/v3/v3.9.5"
+Moodle_App_4.0.0_release_notes:
+- filePath: "/general/app_releases/v4/v4.0.0.md"
+  slug: "/general/app_releases/v4/v4.0.0"
+Moodle_App_4.0.1_release_notes:
+- filePath: "/general/app_releases/v4/v4.0.1.md"
+  slug: "/general/app_releases/v4/v4.0.1"
 Moodle_research:
 - filePath: "/general/community/research.md"
   slug: "/general/community/research"
