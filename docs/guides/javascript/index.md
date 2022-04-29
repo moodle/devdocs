@@ -40,7 +40,7 @@ JavaScript in Moodle is structured into ES2015 modules which are transpiled into
 Like our PHP classes and Mustache templates, our JavaScript modules each belong to a particular {term}`component`
 and must be named according to our standard [name and namespace conventions](/general/development/policies/naming#javascript).
 
-The naming scheme for Moodle’s JavaScript fits into the pattern:
+The naming scheme for Moodle's JavaScript fits into the pattern:
 
 `[component_name]/[optional/sub/namespace/][modulename]`
 
@@ -319,7 +319,7 @@ It isn't a true unique id and must be combined with other information in the tem
 
 ### Including from PHP
 
-Much of Moodle’s code still creates HTML content in PHP directly.
+Much of Moodle's code still creates HTML content in PHP directly.
 This might be a simple `echo` statement or using the `html_writer` output functions.
 A lot of this content is being migrated to use Mustache Templates which are the recommended approach for new content.
 

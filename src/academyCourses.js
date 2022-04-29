@@ -42,7 +42,7 @@ const courseList = {
             id: 53,
             name: 'Moodle Access and Security Essentials',
             summary: 'A short course looking at access control and security aspects of plugins.',
-            description: 'In this course we look at access control and security aspects of a plugin. Through a set of tutorials, you will learn how to control access to your plugin using Moodle’s Access API. You will learn how to define capabilities in your plugin and how to determine if the user has the permission to access a page. This course also covers common security threats that developers need to be aware of.\n\nThis is the fourth course in the Moodle Developer Basics program.',
+            description: 'In this course we look at access control and security aspects of a plugin. Through a set of tutorials, you will learn how to control access to your plugin using Moodle\'s Access API. You will learn how to define capabilities in your plugin and how to determine if the user has the permission to access a page. This course also covers common security threats that developers need to be aware of.\n\nThis is the fourth course in the Moodle Developer Basics program.',
             tags: [
                 'development',
                 'basic',

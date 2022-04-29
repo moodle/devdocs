@@ -10,7 +10,7 @@ The Moodle Project is designed to have a positive effect on the world by support
 
 To do this, our team at Moodle HQ looks to the world, talks with our community, and creates solutions in the forms of products that fit our values of '''education''', '''openness''', '''respect''', '''integrity''' and '''innovation'''.
 
-This document summarises, for a broad audience, the best current plans on the future technical development of the Moodle’s open source learning platform, consisting of Moodle LMS, Moodle Workplace LMS, MoodleCloud, MoodleNet, Moodle Apps, and Moodle Educator Certificates.
+This document summarises, for a broad audience, the best current plans on the future technical development of the Moodle's open source learning platform, consisting of Moodle LMS, Moodle Workplace LMS, MoodleCloud, MoodleNet, Moodle Apps, and Moodle Educator Certificates.
 
 ### Where this roadmap comes from
 

@@ -126,7 +126,7 @@ A: By communicating through a core API.
 
 **Q: What? Really?**
 
-A: Anytime one plugin wants to communicate to one other specific plugin - it’s better to create a core API and channel all communication through that API. For example `assignment online text` uses the `Editor API` to add a rich text field to the form. It does not directly add an instance of `Atto` to the form. This allows either plugin to be replaced by a different, (hopefully better) plugin without changing the API or the other plugin. Remember, any plugin in Moodle is optional and may be removed in the future.
+A: Anytime one plugin wants to communicate to one other specific plugin - it's better to create a core API and channel all communication through that API. For example `assignment online text` uses the `Editor API` to add a rich text field to the form. It does not directly add an instance of `Atto` to the form. This allows either plugin to be replaced by a different, (hopefully better) plugin without changing the API or the other plugin. Remember, any plugin in Moodle is optional and may be removed in the future.
 
 **Q: How do I know if there is an API I can already use?**
 
