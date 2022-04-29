@@ -325,7 +325,7 @@ Once the issue is ready for integration, you can submit it to integration on beh
 
 ```
 Thanks for providing a patch.
-I have reviewed your code and can confirm that it addresses the reported issue. We would like to include it in core. Moodle values its contributors and tries to give them credit when possible. If you are interested in your name appearing on the https://moodle.org/dev/contributions.php page you can create a git commit that we will then pull into Moodle. You can learn more about Git and how Moodle uses it at [Git for developers|https://docs.moodle.org/dev/Git_for_developers] page. Please let me know if you want to prepare a git branch. Or if you don’t have time to go through the whole process at the moment I can pick your patch myself.
+I have reviewed your code and can confirm that it addresses the reported issue. We would like to include it in core. Moodle values its contributors and tries to give them credit when possible. If you are interested in your name appearing on the https://moodle.org/dev/contributions.php page you can create a git commit that we will then pull into Moodle. You can learn more about Git and how Moodle uses it at [Git for developers|https://docs.moodle.org/dev/Git_for_developers] page. Please let me know if you want to prepare a git branch. Or if you don't have time to go through the whole process at the moment I can pick your patch myself.
 ```
 
 ```

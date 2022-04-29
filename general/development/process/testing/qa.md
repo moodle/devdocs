@@ -195,7 +195,7 @@ To create a new QA test:
 :::note
 
 - Add the label `new`
-- For tests which can’t be run on the QA testing site, such as ones where you need to check an email, label `test_server_required`.
+- For tests which can't be run on the QA testing site, such as ones where you need to check an email, label `test_server_required`.
 - For OAuth 2 tests and any other tests which require a client ID or secret to be entered, label `credentials_required`.
 - For issues which specifically mention in the testing instructions to test in different browsers, use the phrase:
 

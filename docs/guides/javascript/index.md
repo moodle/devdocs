@@ -325,8 +325,8 @@ A lot of this content is being migrated to use Mustache Templates which are the 
 
 Where content is generated in PHP you will need to include your JavaScript at the same time.
 
-Although several older ways to include JavaScript from PHP, it`s strongly
-recommended that all new JavaScript only use the`js_call_amd` function on the
+Although several older ways to include JavaScript from PHP, it's strongly
+recommended that all new JavaScript only use the `js_call_amd` function on the
 `page_requirements_manager`.
 This has a similar format to the version used in Templates:
 
@@ -371,7 +371,7 @@ export const init = ({courseid, category}) => {
 
 :::caution
 A limit applies to the length of the parameters passed in the third argument.
-If data is already available elsewhere in the DOM, you shoudl avoid passing it as a parameter.
+If data is already available elsewhere in the DOM, you should avoid passing it as a parameter.
 :::
 
 ## Passing data to your Module

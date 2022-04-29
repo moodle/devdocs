@@ -5,7 +5,7 @@ sidebar_position: 5
 tags:
   - Moodle App
 ---
-Browsers are not officially supported by the application, but you can use a **Chromium-based** browser for development if you don’t need any native functionality.
+Browsers are not officially supported by the application, but you can use a **Chromium-based** browser for development if you don't need any native functionality.
 
 :::note Notice
 Please notice that it has to be a Chromium-based browser, because the application relies on the [Web SQL Database API](https://caniuse.com/?search=websql) which isn't supported in most browsers. This is a non-standard API, but that's not a problem because this is only used in the browser. Running on a native environment, the application relies on native APIs that are well supported.

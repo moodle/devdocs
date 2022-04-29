@@ -7,7 +7,7 @@ tags:
   - Moodle App
 ---
 
-Unit tests are written in JavaScript using [Jest](https://jestjs.io/). If you want to create a new one, Jest is already configured and you only need to create a file ending with `.test.ts` within the project. If you’re going to do so, remember to follow the [[Moodle App Development Guide#Test_files|file location conventions]].
+Unit tests are written in JavaScript using [Jest](https://jestjs.io/). If you want to create a new one, Jest is already configured and you only need to create a file ending with `.test.ts` within the project. If you're going to do so, remember to follow the [[Moodle App Development Guide#Test_files|file location conventions]].
 
 ## Running tests
 
@@ -52,7 +52,7 @@ class Greeter {
 }
 ```
 
-If you want to write a test for the `sayHello` method, you need an instance of `User`. But maybe you don’t want to use a real user because you want to test the `Greeter` class in isolation.
+If you want to write a test for the `sayHello` method, you need an instance of `User`. But maybe you don't want to use a real user because you want to test the `Greeter` class in isolation.
 
 Using the `mock` helper, you can write the following test:
 
@@ -125,7 +125,7 @@ Most services will be instantiated properly without mocks, but sometimes you may
 
 ## Testing components
 
-Angular components have a strong graphical part, but that doesn’t mean that you can’t test their logic and markup rendering using unit tests with Jest. You can follow [Angular’s best practices for testing components](https://angular.io/guide/testing-components-scenarios), and we also provide a couple of helpers that make things easier.
+Angular components have a strong graphical part, but that doesn't mean that you can't test their logic and markup rendering using unit tests with Jest. You can follow [Angular’s best practices for testing components](https://angular.io/guide/testing-components-scenarios), and we also provide a couple of helpers that make things easier.
 
 Let’s say you want to test the following component that render a list of user names:
 
@@ -146,7 +146,7 @@ export class UsersListComponent {
 }
 ```
 
-If the component is simple enough that you don’t need to provide any inputs, you can use the `renderComponent` helper:
+If the component is simple enough that you don't need to provide any inputs, you can use the `renderComponent` helper:
 
 ```typescript
 it('Renders a header', async () => {
@@ -195,7 +195,7 @@ it('Renders a list of users', async () => {
 
 ## What about integration tests?
 
-Although this guide talks about unit tests, we don’t follow the strict definition of a unit test (which is that a unit test should test a single unit in isolation).
+Although this guide talks about unit tests, we don't follow the strict definition of a unit test (which is that a unit test should test a single unit in isolation).
 
 We often write tests where multiple files (or “units”) are involved, and sometimes that can be desirable because it is closer to how the app will behave in production. Technically, those would be considered integration tests, but you can use the same principles and techniques introduced in this document.
 

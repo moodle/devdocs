@@ -61,7 +61,7 @@ For example, in Android you can use [the Network Profiler](https://developer.and
 
 Here's how to debug web service errors:
 
-1. Ignore requests that don’t start with `token.php` or `server.php`.
+1. Ignore requests that don't start with `token.php` or `server.php`.
 2. Once you have selected a request you want to inspect, open the "Response" tab and check if you see an error.
 3. If you don't understand how to fix the error, you can search in [Moodle Mobile FAQ](https://docs.moodle.org/en/Moodle_Mobile_FAQ) to check if there is a known solution.
 4. If you are unable to find a solution, contact a [Moodle Partner](https://moodle.com/partners/) or post in the [Moodle for mobile forum](https://moodle.org/mod/forum/view.php?id=7798) on moodle.org for non-guaranteed community support.

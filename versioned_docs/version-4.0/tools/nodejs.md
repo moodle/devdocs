@@ -26,7 +26,7 @@ Now using node v16.14.0 (npm v8.3.1)
 
 ## Grunt
 
-As part of it's build stack, Moodle uses the [Grunt](https://gruntjs.com) task runner.
+As part of its build stack, Moodle uses the [Grunt](https://gruntjs.com) task runner.
 
 Grunt is composed of a set of tasks, defined within the Moodle code repository in the `Gruntfile.js` file, and a grunt CLI tool which must also be installed.
 

@@ -10,7 +10,7 @@ This document outlines the exceptions to the [Coding style](/general/development
 
 Unless otherwise specified, developers should follow the indications included on those documents.
 
-Most rules are enforced with [ESLint](https://github.com/typescript-eslint/typescript-eslint) and won’t be mentioned in this document, make sure to integrate a linter in your development environment.
+Most rules are enforced with [ESLint](https://github.com/typescript-eslint/typescript-eslint) and won't be mentioned in this document, make sure to integrate a linter in your development environment.
 
 ## Goals
 
