@@ -8,19 +8,19 @@ tags:
 
 There are two ways to send custom Push Notifications to the Moodle app users:
 
-1. By using Moodle’s Message API implementing a message provider
-2. By directly using the Airnotifier (Moodle’s Push Notification server) APIs
+1. By using Moodle's Message API implementing a message provider
+2. By directly using the Airnotifier (Moodle's Push Notification server) APIs
 
 **The main differences are:**
 
-By using Moodle’s Message API, users (students, teachers, etc..) can opt-out to not receive custom notifications. They can also opt-in to receive them not only on the app but also via email. Messages sent using this API can be delivered to non-app users.
+By using Moodle's Message API, users (students, teachers, etc..) can opt-out to not receive custom notifications. They can also opt-in to receive them not only on the app but also via email. Messages sent using this API can be delivered to non-app users.
 
 Using the Airnotifier API will force the user to receive the notification unless they change their app settings to not receive any notification.
 Messages sent using this API will only get to active app users.
 
 In both cases, please remember that the number of user devices that can receive Push Notifications is dictated by your app [subscription](https://moodle.com/app/).
 
-## Moodle’s Message API
+## Moodle's Message API
 
 Please read the official Moodle documentation, [[Message API]], where it is explained how to create a new message provider within a plugin.
 
@@ -44,8 +44,8 @@ Airnotifier is the name of the Push Notification server used by Moodle. It is po
 
 - `site` (string): Site ID (md5 hash of site URL + username)
 - `siteurl` (string): Site URL (used to identify the site the notification is coming from)
-- `wwwroot` (string): Moodle’s $CFG->wwwroot
-- `component` (string): Moodle’s component that generated the notification
+- `wwwroot` (string): Moodle's $CFG->wwwroot
+- `component` (string): Moodle's component that generated the notification
 - `contexturl` (string): URL the notification is related to
 - `customdata` (JSON encoded object, all fields are optional)
   - `notificationiconurl` (string): Icon to display in the notification (Android only).
@@ -53,7 +53,7 @@ Airnotifier is the name of the Push Notification server used by Moodle. It is po
   - `tokenpluginfile` (string): Token to view the icon if needed.
   - `extendedtext` (string). An extended text (HTML), opened in popup when clicked.
   - `appurl` (string): When notification is clicked, open this URL. It has preference over `contexturl` but it will be ignored if `extendedtext` is set.
-  - `appurlopenin` (string): Where to open the previous URL ‘browser’, ‘in-app’ or any other value.
+  - `appurlopenin` (string): Where to open the previous URL 'browser', 'in-app' or any other value.
 
 ### Sample CURL requests
 
@@ -74,7 +74,7 @@ curl AIRNOTIFIER_URL/api/v2/push -X POST -H "X-AN-APP-NAME: APP_ID" -H "X-AN-APP
 - AIRNOTIFIER_URL: Can be obtained from your Moodle site settings: Site administration > Messaging > Mobile.
 - APP_ID: `commoodlemoodlemobile` for the standard Moodle app, it can also be obtained from Site administration > Messaging > Mobile.
 - AIRNOTIFIER_ACCESS_KEY: Your Airnotifier Access key can be obtained from Site administration > Messaging > Mobile.
-- DEVICE_TOKEN: The user’s receiving the notification device token, for testing purposes you can get it via the app > App settings > About > Click at app version on the footer > Push notification ID.
+- DEVICE_TOKEN: The user's receiving the notification device token, for testing purposes you can get it via the app > App settings > About > Click at app version on the footer > Push notification ID.
 
 In Moodle the push ids are in the user_devices table (`pushid` field), the previous table has to be joined with message_airnotifier_devices to obtain active devices.
 

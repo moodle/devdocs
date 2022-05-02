@@ -257,7 +257,7 @@ All feature and addon folders can contain a lang.json file, as well as the `core
 
 An automatic process will create the rest of the language files on the `assets/lang/` folder based on the Moodle translation platform: [AMOS](https://lang.moodle.org/).
 
-In order to match existing Moodle language strings with the app strings the app contains a file on the scripts folder called `langindex.json`. This file contains an indexed array with the cooked string keys of the app, the value of every item is the module (file name) where to find the string in AMOS. If the value contains a slash ‘/' the text before the slash will correspond to the module (file name) and the text after will correspond to the string key on that file. If it does not contain a slash, the string key will be the last part of the cooked string key (splitting using dots .).
+In order to match existing Moodle language strings with the app strings the app contains a file on the scripts folder called `langindex.json`. This file contains an indexed array with the cooked string keys of the app, the value of every item is the module (file name) where to find the string in AMOS. If the value contains a slash '/' the text before the slash will correspond to the module (file name) and the text after will correspond to the string key on that file. If it does not contain a slash, the string key will be the last part of the cooked string key (splitting using dots .).
 
 ### Test files
 

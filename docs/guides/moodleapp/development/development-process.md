@@ -10,7 +10,7 @@ The development of new features and improvements in the Moodle App is organised 
 
 Discovery - Shaping - Implementation - QA Testing - Release - Evaluation
 
-As a summary of the process we can say that during the discovery phase we do an initial selection of features and improvements to be included in the next release of the app by reviewing the feedback from different stakeholders and the improvements detected by Moodle HQ’s UX team user research.
+As a summary of the process we can say that during the discovery phase we do an initial selection of features and improvements to be included in the next release of the app by reviewing the feedback from different stakeholders and the improvements detected by Moodle HQ's UX team user research.
 
 In the shaping phase we do an initial high-level design and specifications so we can commence with the implementation phase in which the developers, with the help of designers, will implement the selected features.
 
@@ -22,7 +22,7 @@ During the evaluation phase we analyse stakeholders' feedback to validate if we 
 
 ## Discovery
 
-During this first phase we analyse different stakeholders’ needs and then we prioritise them so we can build a short-term roadmap for upcoming app releases.
+During this first phase we analyse different stakeholders' needs and then we prioritise them so we can build a short-term roadmap for upcoming app releases.
 
 We have different stakeholders (order does not indicate importance):
 

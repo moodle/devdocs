@@ -16,7 +16,7 @@ Previous versions of the app used Ionic 3, so the update involved an increase in
 
 You can read the official [Ionic migration documentation](https://ionicframework.com/docs/reference/migration). Even if your plugins are not Ionic applications themselves, you can find information about components and other changes.
 
-One relevant change is that all functions related to modals are now asynchronous. This means that if your plugin is displaying a modal in JavaScript, you’ll probably need to adapt your code.
+One relevant change is that all functions related to modals are now asynchronous. This means that if your plugin is displaying a modal in JavaScript, you'll probably need to adapt your code.
 
 Another important change is that text inside of `<ion-item>` should always be placed inside of an `<ion-label>`, otherwise it might not look good in some cases. For example:
 
@@ -48,7 +48,7 @@ The minimum platform requirements for Cordova and Ionic increased, and so it als
 
 Please notice that you **cannot** use async/await, as they aren't part of ES6 and Android WebView 61 doesn't support them.
 
-One issue that can break your plugin’s JavaScript is extending classes. In Ionic 3, when your plugin extends a class it's actually getting a function. In Ionic 5, your plugin will receive a JavaScript class and can be extended using class syntax:
+One issue that can break your plugin's JavaScript is extending classes. In Ionic 3, when your plugin extends a class it's actually getting a function. In Ionic 5, your plugin will receive a JavaScript class and can be extended using class syntax:
 
 Here's an example to create a subclass of `CoreContentLinksModuleIndexHandler`:
 
@@ -75,11 +75,11 @@ class AddonModCertificateModuleLinkHandler extends this.CoreContentLinksModuleIn
 }
 ```
 
-## Changes in the app’s code
+## Changes in the app's code
 
-We’ve also done some changes to the code of the app. Most of these changes probably don’t affect your plugin, but you should still check this out just in case:
+We've also done some changes to the code of the app. Most of these changes probably don't affect your plugin, but you should still check this out just in case:
 
-- `<core-icon>` is now deprecated, please use `<ion-icon>` instead. Right now you can use font-awesome icons with `ion-icon`. However, it still hasn’t been decided whether font awesome will be used in Moodle 4.0 or not, so font-awesome may be removed from the app in the future.
+- `<core-icon>` is now deprecated, please use `<ion-icon>` instead. Right now you can use font-awesome icons with `ion-icon`. However, it still hasn't been decided whether font awesome will be used in Moodle 4.0 or not, so font-awesome may be removed from the app in the future.
 - To “cross out” an icon using `ion-icon` you need to use `class="icon-slash"` instead of `slash="true"`.
 - The function `syncOnSites` from `CoreSyncBaseProvider` now expects to receive a function with the parameters already bound:
 
@@ -91,18 +91,18 @@ We’ve also done some changes to the code of the app. Most of these changes pro
     syncOnSites('events', this.syncAllEventsFunc.bind(this, force), siteId);
 ```
 
-- All the delegates that previously supplied an injector parameter to its handlers no longer do that. For example, the function `getComponent()` in `CoreUserProfileFieldDelegate` used to receive an injector as a parameter, but now it won’t receive any parameter.
+- All the delegates that previously supplied an injector parameter to its handlers no longer do that. For example, the function `getComponent()` in `CoreUserProfileFieldDelegate` used to receive an injector as a parameter, but now it won't receive any parameter.
 - All the delegates that previously supplied a `NavController` parameter to its handlers no longer do that. For example, the function `openCourse()` in `CoreCourseFormatDelegate` no longer receive the `NavController` parameter.
-- The handlers registered in `CoreCourseOptionsDelegate` now need to return the properties `page` and `pageParams` instead of `component` and `componentData`. Please notice this only affects your plugin if you’re creating the handler yourself using JavaScript code.
-- The handlers registered in `CoreUserDelegate` have changed a bit. Please notice this only affects your plugin if you’re creating the handler yourself using JavaScript code.
+- The handlers registered in `CoreCourseOptionsDelegate` now need to return the properties `page` and `pageParams` instead of `component` and `componentData`. Please notice this only affects your plugin if you're creating the handler yourself using JavaScript code.
+- The handlers registered in `CoreUserDelegate` have changed a bit. Please notice this only affects your plugin if you're creating the handler yourself using JavaScript code.
   - Handlers can now define a `cacheEnabled` property (`false` by default) to cache `isEnabledForUser` calls.
   - In the function `isEnabledForUser`, the `navOptions` and `admOptions` parameters have been removed.
   - `isEnabledForUser` is now optional and defaults to `true`.
   - They can implement a new function called `isEnabledForCourse`; this function will receive the `navOptions` and `admOptions` parameters. If it's not defined, it'll default to `true`.
 - The function `prefetchPackage` in the `CoreCourseActivityPrefetchHandlerBase` has changed. If you were using this class to implement your own prefetch handler you might need to update its code.
-- `CoreInitDelegate` has been deleted. Now the initialisation of the app is done via Angular’s `APP_INITIALIZER`. Please notice that `APP_INITIALIZER` cannot and shouldn’t be used by plugins.
+- `CoreInitDelegate` has been deleted. Now the initialisation of the app is done via Angular's `APP_INITIALIZER`. Please notice that `APP_INITIALIZER` cannot and shouldn't be used by plugins.
 - The function `getAdditionalDownloadableFiles` in question types now needs to return a list of `CoreWSExternalFile`, it no longer accepts a list of strings.
-- Files stored to be uploaded later using `CoreFileUploaderProvider` no longer have an `offline` property, now they’re just instances of `FileEntry`.
+- Files stored to be uploaded later using `CoreFileUploaderProvider` no longer have an `offline` property, now they're just instances of `FileEntry`.
 - `ionViewCanLeave` function has been renamed to `canLeave`.
 - The `onchange` method of the `Network` service is now called `onChange`.
 

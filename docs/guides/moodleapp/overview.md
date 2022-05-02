@@ -20,7 +20,7 @@ When you are accessing a Moodle site on the web, you are only capable of using o
 
 This works because the app is not coupled to any specific Moodle site, it acts as a client that will connect with a site after logging in; using the site url and user credentials. Compared to the Moodle LMS, users can always use the latest version of the app even if the site is running an old version. Some features may be missing or change depending on the version of the site, but it will work the same way for the most part.
 
-The app can also be compiled to work with a single site, or a list of approved sites. Which may be desirable for building custom applications. For most people though, [the official app from MoodleHQ](https://moodle.com/app/) will be sufficient because it’s not restricted to any site.
+The app can also be compiled to work with a single site, or a list of approved sites. Which may be desirable for building custom applications. For most people though, [the official app from MoodleHQ](https://moodle.com/app/) will be sufficient because it's not restricted to any site.
 
 Keep in mind that the application only works with moodle sites that allow it, and this is disabled by default. If you want to allow users to log into your site using the app, make sure to [enable it in the settings](https://docs.moodle.org/en/Moodle_app_guide_for_admins#Enable_mobile_services_on_your_site). If you are not the site owner, reach out to the administrators.
 
@@ -59,7 +59,7 @@ The app has two types of delegates:
 
 ### Site plugins
 
-Moodle plugins can also be adapted to work with the mobile app. Given that more than one site can be used with the app, the plugins that are activated depend on the site the app is connected to. That’s why they are called site plugins.
+Moodle plugins can also be adapted to work with the mobile app. Given that more than one site can be used with the app, the plugins that are activated depend on the site the app is connected to. That's why they are called site plugins.
 
 When the application connects with a site, it will fetch information about which plugins have mobile support and register their functionality using [the delegates system](#delegates-and-handlers). Plugins can be written using only PHP, but javascript is also supported for some advanced use-cases.
 
@@ -73,7 +73,7 @@ Browsers are not officially supported, but you can use a Chromium-based browser 
 
 ## Where to go next
 
-Now that you are familiar with the basic concepts, you understand how the application works, and you’ve got your development environment set up; you're ready to embark into the particulars of what you're trying to achieve.
+Now that you are familiar with the basic concepts, you understand how the application works, and you've got your development environment set up; you're ready to embark into the particulars of what you're trying to achieve.
 
 - Do you want to contribute to the core? Read the [Moodle App Development Guide](./development/development-guide).
 - Do you want to adapt a plugin to mobile? Read the [Moodle App Plugins Development Guide](./development/plugins-development-guide).

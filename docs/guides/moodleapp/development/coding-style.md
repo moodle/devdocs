@@ -36,7 +36,7 @@ Warnings should be treated with the same severity as errors, even if they are al
 
 ### Using async / await
 
-Using async/await is encouraged, but it shouldn’t be mixed with .then/.catch/.finally. Using both can make code difficult to understand. As a rule of thumb, there should only be one style in a given function.
+Using async/await is encouraged, but it shouldn't be mixed with .then/.catch/.finally. Using both can make code difficult to understand. As a rule of thumb, there should only be one style in a given function.
 
 ✔️ Good
 

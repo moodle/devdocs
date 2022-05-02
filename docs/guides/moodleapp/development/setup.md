@@ -36,7 +36,7 @@ It may seem simpler and easier to install directly from [nodejs.org](http://node
 
 ### Install native SDKs
 
-If you intend to run the application in a native device, you will need to install that platform's native SDKs. You can learn how to set up your environment by reading Ionic’s documentation for [Android](https://ionicframework.com/docs/developing/android) and [iOS](https://ionicframework.com/docs/developing/ios).
+If you intend to run the application in a native device, you will need to install that platform's native SDKs. You can learn how to set up your environment by reading Ionic's documentation for [Android](https://ionicframework.com/docs/developing/android) and [iOS](https://ionicframework.com/docs/developing/ios).
 
 ### Windows only: Native build dependencies
 
@@ -135,9 +135,9 @@ The `npm run prod:android` and `npm run prod:ios` commands use AOT compilation b
 
 Most of the time, you should be using an emulator running recent versions of Android, and it should work fine. But sometimes, you may want to use an older version to test a specific behaviour.
 
-If you want to run the application in an Android 5 emulator, you’ll need to upgrade the system webview because emulators come with version 37 preinstalled. Your first idea may be to upgrade the webview using the Google Play store, but it will not work because the webview served by Google Play is `com.google.android.webview` whilst the system webview used in emulators is `com.android.webview`. You can do the following instead.
+If you want to run the application in an Android 5 emulator, you'll need to upgrade the system webview because emulators come with version 37 preinstalled. Your first idea may be to upgrade the webview using the Google Play store, but it will not work because the webview served by Google Play is `com.google.android.webview` whilst the system webview used in emulators is `com.android.webview`. You can do the following instead.
 
-Once you have [created your Android 5 virtual device](https://developer.android.com/studio/run/managing-avds), you’ll need to do download [the apk for Webview 61](https://android.googlesource.com/platform/external/chromium-webview/+/refs/heads/oreo-m3-release/prebuilt/x86_64/) and run the following commands:
+Once you have [created your Android 5 virtual device](https://developer.android.com/studio/run/managing-avds), you'll need to do download [the apk for Webview 61](https://android.googlesource.com/platform/external/chromium-webview/+/refs/heads/oreo-m3-release/prebuilt/x86_64/) and run the following commands:
 
 ```bash
 # Open the folder where the “emulator” script is installed

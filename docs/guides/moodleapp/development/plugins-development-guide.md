@@ -13,9 +13,9 @@ You will have to:
 1. Create a `db/mobile.php` file in your plugin. In this file, you will be able to indicate which areas of the app you want to extend. For example, adding a new option in the main menu, implementing support for a new activity module, including a new option in the course menu, including a new option in the user profile, etc. All the areas supported are described further in this document.
 2. Create new functions in a reserved namespace that will return the content of the new options. The content should be returned rendered as html. This html should use Ionic components so that it looks native, but it can be generated using mustache templates.
 
-Let’s clarify some points:
+Let's clarify some points:
 
-- You don’t need to create new Web Service functions (although you will be able to use them for advanced features). You just need plain php functions that will be placed in a reserved namespace.
+- You don't need to create new Web Service functions (although you will be able to use them for advanced features). You just need plain php functions that will be placed in a reserved namespace.
 - Those functions will be exported via the Web Service function `tool_mobile_get_content`.
 - As arguments of your functions you will always receive the `userid`, some relevant details of the app (like the app version or the current language in the app), and some specific data depending on the type of plugin (`courseid`, `cmid`, ...).
 - The mobile app also implements a list of custom Ionic components and directives that provide dynamic behaviour; like indicating that you are linking a file that can be downloaded, allowing a transition to new pages into the app calling a specific function in the server, submitting form data to the server, etc.
@@ -92,7 +92,7 @@ Congratulations, you have written your first Moodle plugin with moodle support!
 You can read the rest of this page to learn more about mobile plugins and start working on your plugin. Here's some things to keep in mind:
 
 - If you change the `mobile.php` file, you will have to refresh the browser. And remember to [disable the network cache](https://developer.chrome.com/docs/devtools/network/reference/#disable-cache).
-- If you change an existing template or function, you won’t have to refresh the browser. In most cases, doing a PTR (Pull To Refresh) in the page that displays the template will suffice.
+- If you change an existing template or function, you won't have to refresh the browser. In most cases, doing a PTR (Pull To Refresh) in the page that displays the template will suffice.
 - If any of these doesn't show your changes, you may need to [purge all caches](https://docs.moodle.org/en/Developer_tools#Purge_all_caches) to avoid problems with the auto-loading cache.
 - Ultimately, if that doesn't work either, you may have to log out from the site and log in again. If any changes affect plugin installation, you may also need to increase the version in your plugin's `version.php` file and upgrade it in the site.
 
@@ -157,7 +157,7 @@ $addons = [
 
 **Plugin identifier**
 
-A unique name for the plugin, it can be anything (there’s no need to match the module name).
+A unique name for the plugin, it can be anything (there's no need to match the module name).
 
 **Handlers (Different places where the plugin will display content)**
 
@@ -181,7 +181,7 @@ This is the list of functions that need to be called and stored when the user do
 
 In our example, downloading for offline access will mean that we'll execute the functions for getting the certificate and issued certificates passing as parameters the current `userid` (and `courseid` when we are using the mod or course delegate). If we have the result of those functions stored in the app, we'll be able to display the certificate information even if the user is offline.
 
-Offline functions will be mostly used to display information for final users, any further interaction with the view won’t be supported offline (for example, trying to send information when the user is offline).
+Offline functions will be mostly used to display information for final users, any further interaction with the view won't be supported offline (for example, trying to send information when the user is offline).
 
 You can indicate here other Web Services functions, indicating the parameters that they might need from a defined subset (currently `userid` and `courseid`).
 
@@ -199,7 +199,7 @@ There are additional attributes supported by the `mobile.php` list, you can find
 
 ### Step 2. Creating the main function
 
-The main function displays the current issued certificate (or several warnings if it’s not possible to issue a certificate). It also displays a link to view the dates of previously issued certificates.
+The main function displays the current issued certificate (or several warnings if it's not possible to issue a certificate). It also displays a link to view the dates of previously issued certificates.
 
 All the functions must be created in the plugin or subsystem `classes/output` directory, the name of the class must be `mobile`.
 
@@ -296,20 +296,20 @@ The function name is the same as the one used in the `mobile.php` file (`method`
 
 **Function implementation**
 
-In the first part of the function, we check permissions and capabilities (like a `view.php` script would do normally). Then we retrieve the certificate information that’s necessary to display the template.
+In the first part of the function, we check permissions and capabilities (like a `view.php` script would do normally). Then we retrieve the certificate information that's necessary to display the template.
 
 **Function return**
 
 - `templates` — The rendered template (notice that we could return more than one template, but we usually would only need one). By default the app will always render the first template received, the rest of the templates can be used if the plugin defines some JavaScript code.
-- `javascript` — Empty, because we don’t need any in this case.
-- `otherdata` — Empty as well, because we don’t need any additional data to be used by directives or components in the template. This field will be published as an object supporting 2-way data-binding in the template.
+- `javascript` — Empty, because we don't need any in this case.
+- `otherdata` — Empty as well, because we don't need any additional data to be used by directives or components in the template. This field will be published as an object supporting 2-way data-binding in the template.
 - `files` — A list of files that the app should be able to download (for offline usage mostly).
 
 ### Step 3. Creating the template for the main function
 
 This is the most important part of your plugin because it contains the code that will be rendered on the mobile app.
 
-In this template we’ll be using Ionic, together with directives and components specific to the Moodle App.
+In this template we'll be using Ionic, together with directives and components specific to the Moodle App.
 
 All the HTML elements starting with `ion-` are ionic components. Most of the time, the component name is self-explanatory but you may refer to a detailed guide here: <https://ionicframework.com/docs/components/>
 
@@ -374,7 +374,7 @@ Then we display the module description using `core-course-module-description`, w
 
 For displaying the certificate information we create a list of elements, adding a header on top.
 
-The following line using the `translate` filter indicates that the app will translate the `summaryofattempts` string id (here we could’ve used mustache translation but it is usually better to delegate the strings translations to the app). The string id has the following format:
+The following line using the `translate` filter indicates that the app will translate the `summaryofattempts` string id (here we could've used mustache translation but it is usually better to delegate the strings translations to the app). The string id has the following format:
 
 ```text
 plugin.{plugin-identifier}.{string-id}
@@ -694,7 +694,7 @@ Components and directives are Angular concepts; you can learn more about them an
 
 ### Custom core components and directives
 
-These are some useful custom components and directives that are only available in the Moodle App. Please note that this isn’t the full list of custom components and directives, it’s just an extract of the most common ones.
+These are some useful custom components and directives that are only available in the Moodle App. Please note that this isn't the full list of custom components and directives, it's just an extract of the most common ones.
 
 You can find a full list of components and directives in the source code of the app, within [`src/core/components`](https://github.com/moodlehq/moodleapp/tree/master/src/core/components) and [`src/core/directives`](https://github.com/moodlehq/moodleapp/tree/master/src/core/directives).
 
@@ -912,7 +912,7 @@ Data that can be passed to the directive:
 - `preSets` (object) — Extra options for the WS call of the new content: whether to use cache or not, etc. This field was added in v3.6.0.
 - `title` (string) — The title to display with the new content. Only if `samePage` is `false`.
 - `samePage` (boolean) — Optional, defaults to `false`. Whether to display the content in same page or open a new one.
-- `useOtherData` (any) — Whether to include `otherdata` (from the `get_content` WS call) in the arguments for the new `get_content` call. If not supplied, no other data will be added. If supplied but empty (`null`, `false` or an empty string) all the `otherdata` will be added. If it’s an array, it will only copy the properties whose names are in the array. Please notice that doing `[useOtherData]=""` is the same as not supplying it, so nothing will be copied. Also, objects or arrays in `otherdata` will be converted to a JSON encoded string.
+- `useOtherData` (any) — Whether to include `otherdata` (from the `get_content` WS call) in the arguments for the new `get_content` call. If not supplied, no other data will be added. If supplied but empty (`null`, `false` or an empty string) all the `otherdata` will be added. If it's an array, it will only copy the properties whose names are in the array. Please notice that doing `[useOtherData]=""` is the same as not supplying it, so nothing will be copied. Also, objects or arrays in `otherdata` will be converted to a JSON encoded string.
 - `form` (string) — ID or name to identify a form in the template. The form will be obtained from `document.forms`. If supplied and a form is found, the form data will be retrieved and sent to the new `get_content` WS call. If your form contains an `ion-radio`, `ion-checkbox` or `ion-select`, please see [Values of \`ion-radio\`, \`ion-checkbox\` or \`ion-select\` aren't sent to my WS](#values-of-ion-radio-ion-checkbox-or-ion-select-arent-sent-to-my-ws).
 
 Let's see some examples.
@@ -944,7 +944,7 @@ Data that can be passed to the directive:
 - `name` (string) — The name of the WS to call.
 - `params` (object) — The params for the WS call.
 - `preSets` (object) — Extra options for the WS call: whether to use cache or not, etc.
-- `useOtherDataForWS` (any) — Whether to include `otherdata` (from the `get_content` WS call) in the params for the WS call. If not supplied, no other data will be added. If supplied but empty (`null`, `false` or an empty string) all the `otherdata` will be added. If it’s an array, it will only copy the properties whose names are in the array.Please notice that `[useOtherDataForWS]=""` is the same as not supplying it, so nothing will be copied. Also, objects or arrays in `otherdata` will be converted to a JSON encoded string.
+- `useOtherDataForWS` (any) — Whether to include `otherdata` (from the `get_content` WS call) in the params for the WS call. If not supplied, no other data will be added. If supplied but empty (`null`, `false` or an empty string) all the `otherdata` will be added. If it's an array, it will only copy the properties whose names are in the array.Please notice that `[useOtherDataForWS]=""` is the same as not supplying it, so nothing will be copied. Also, objects or arrays in `otherdata` will be converted to a JSON encoded string.
 - `form` (string) — ID or name to identify a form in the template. The form will be obtained from `document.forms`. If supplied and a form is found, the form data will be retrieved and sent to the new `get_content` WS call. If your form contains an `ion-radio`, `ion-checkbox` or `ion-select`, please see [Values of \`ion-radio\`, \`ion-checkbox\` or \`ion-select\` aren't sent to my WS](#values-of-ion-radio-ion-checkbox-or-ion-select-arent-sent-to-my-ws).
 - `confirmMessage` (string) — Message to confirm the action when the user clicks the element. If not supplied, no confirmation will be requested. If supplied but empty, "Are you sure?" will be used.
 - `showError` (boolean) — Optional, defaults to `true`. Whether to show an error message if the WS call fails. This field was added in 3.5.2.
@@ -999,7 +999,7 @@ If you don't need to load some new content when done, please see [core-site-plug
 - `name` (string) — The name of the WS to call.
 - `params` (object) — The parameters for the WS call.
 - `preSets` (object) — Extra options for the WS call: whether to use cache or not, etc.
-- `useOtherDataForWS` (any) — Whether to include `otherdata` (from the `get_content` WS call) in the params for the WS call. If not supplied, no other data will be added. If supplied but empty (`null`, `false` or an empty string) all the `otherdata` will be added. If it’s an array, it will only copy the properties whose names are in the array.  Please notice that `[useOtherDataForWS]=""` is the same as not supplying it, so nothing will be copied. Also, objects or arrays in `otherdata` will be converted to a JSON encoded string.
+- `useOtherDataForWS` (any) — Whether to include `otherdata` (from the `get_content` WS call) in the params for the WS call. If not supplied, no other data will be added. If supplied but empty (`null`, `false` or an empty string) all the `otherdata` will be added. If it's an array, it will only copy the properties whose names are in the array.  Please notice that `[useOtherDataForWS]=""` is the same as not supplying it, so nothing will be copied. Also, objects or arrays in `otherdata` will be converted to a JSON encoded string.
 - `form` (string) — ID or name to identify a form in the template. The form will be obtained from `document.forms`. If supplied and a form is found, the form data will be retrieved and sent to the new `get_content` WS call. If your form contains an `ion-radio`, `ion-checkbox` or `ion-select`, please see [Values of \`ion-radio\`, \`ion-checkbox\` or \`ion-select\` aren't sent to my WS](#values-of-ion-radio-ion-checkbox-or-ion-select-arent-sent-to-my-ws).
 - `confirmMessage` (string) — Message to confirm the action when the user clicks the element. If not supplied, no confirmation will be requested. If supplied but empty, "Are you sure?" will be used.
 - `showError` (boolean) — Optional, defaults to `true`. Whether to show an error message if the WS call fails. This field was added in 3.5.2.
@@ -1064,7 +1064,7 @@ If you want to call a WS when the user clicks on a certain element, please see [
 - `name` (string) — The name of the WS to call.
 - `params` (object) — The parameters for the WS call.
 - `preSets` (object) — Extra options for the WS call: whether to use cache or not, etc.
-- `useOtherDataForWS` (any) — Whether to include `otherdata` (from the `get_content` WS call) in the params for the WS call. If not supplied, no other data will be added. If supplied but empty (`null`, `false` or an empty string) all the `otherdata` will be added. If it’s an array, it will only copy the properties whose names are in the array. Please notice that `[useOtherDataForWS]=""` is the same as not supplying it, so nothing will be copied. Also, objects or arrays in `otherdata` will be converted to a JSON encoded string.
+- `useOtherDataForWS` (any) — Whether to include `otherdata` (from the `get_content` WS call) in the params for the WS call. If not supplied, no other data will be added. If supplied but empty (`null`, `false` or an empty string) all the `otherdata` will be added. If it's an array, it will only copy the properties whose names are in the array. Please notice that `[useOtherDataForWS]=""` is the same as not supplying it, so nothing will be copied. Also, objects or arrays in `otherdata` will be converted to a JSON encoded string.
 - `form` (string) — ID or name to identify a form in the template. The form will be obtained from `document.forms`. If supplied and a form is found, the form data will be retrieved and sent to the new `get_content` WS call. If your form contains an `ion-radio`, `ion-checkbox` or `ion-select`, please see [Values of \`ion-radio\`, \`ion-checkbox\` or \`ion-select\` aren't sent to my WS](#values-of-ion-radio-ion-checkbox-or-ion-select-arent-sent-to-my-ws).
 - `onSuccess` (Function) — A function to call when the WS call is successful (HTTP call successful and no exception returned). This field was added in 3.5.2.
 - `onError` (Function) — A function to call when the WS call fails (HTTP call fails or an exception is returned). This field was added in 3.5.2.
@@ -1474,7 +1474,7 @@ this.CoreContentLinksDelegate.registerHandler(new AddonModFooLinkHandler());
 
 The `CoreCourseModuleDelegate` handler allows you to define a list of offline functions to prefetch a module. However, you might want to create your own prefetch handler to determine what needs to be downloaded. For example, you might need to chain WS calls (pass the result of a WS call to the next one), and this cannot be done using offline functions.
 
-Here’s an example on how to create a prefetch handler using the initialisation JS:
+Here's an example on how to create a prefetch handler using the initialisation JS:
 
 ```javascript
 // Create a class that extends from CoreCourseActivityPrefetchHandlerBase.
@@ -1652,7 +1652,7 @@ The the `getData` function of the default handler will be overridden by the retu
 
 The default handler for `CoreUserProfileFieldDelegate` only has 2 functions: `getComponent` and `getData`. In addition, the JavaScript code can return an extra function named `componentInit` that will be executed when the component returned by `getComponent` is initialised.
 
-Here’s an example on how to support the text user profile field using this API:
+Here's an example on how to support the text user profile field using this API:
 
 ```javascript
 var that = this;

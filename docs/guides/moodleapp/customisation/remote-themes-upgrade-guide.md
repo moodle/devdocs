@@ -12,7 +12,7 @@ We recommend that you keep your old CSS rules for older versions (see [Before st
 
 ## Before starting the migration
 
-1. Remove all styles using ionic classes ending with `-wp` (Windows Phone is not supported, therefore it’s not necessary to specify it).
+1. Remove all styles using ionic classes ending with `-wp` (Windows Phone is not supported, therefore it's not necessary to specify it).
 2. Check [the theme file](https://github.com/moodlehq/moodleapp/blob/master/src/theme/theme.light.scss), where most variables are specified.
 3. As in the previous version, do not use any Saas variables (the ones starting with `$`). But now you can use [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (the ones starting with `--`).
 4. We recommend prepending all CSS rules with `body.ionic5` in order to make them only available for Ionic 5, and prepending the old ones with `body:not(.ionic5)` for the previous versions of the Moodle App (3.9.4, 3.9.3, and so on).
@@ -32,7 +32,7 @@ For other colors, check out [the colors section in the main documentation](./rem
 
 ## Header toolbar
 
-On the header toolbar, we’ve added a bottom border that you can disable.
+On the header toolbar, we've added a bottom border that you can disable.
 
 ### Border width and color (new)
 
@@ -285,7 +285,7 @@ page-core-mainmenu-more {
 }
 ```
 
-To change a color on a particular icon, you’ll have to use the class of each handler. For example, to change the color of the folder icon on the menu item named Files:
+To change a color on a particular icon, you'll have to use the class of each handler. For example, to change the color of the folder icon on the menu item named Files:
 
 ```css title="Ionic 3 legacy code"
 page-core-mainmenu-more .ion-md-folder,
