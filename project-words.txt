@@ -43,7 +43,6 @@ contextcourse
 contextcoursecat
 contextlevel
 contextmodule
-contribfriendly
 declarables
 devdocs
 editingteacher

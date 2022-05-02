@@ -48,9 +48,9 @@ There is some existing criteria for what's mandatory (MUST) to include in a new 
 - Critical bugs
 - Security issues
 
-For what's not mandatory, we use additional methods such as “Value versus Complexity” but there is always a subjective evaluation and the Moodle Apps Product Manager is the one making the final decisions.
+For what's not mandatory, we use additional methods such as "Value versus Complexity" but there is always a subjective evaluation and the Moodle Apps Product Manager is the one making the final decisions.
 
-New features and improvements under the “Could have” category can be removed at any time during the implementation phase if we feel we won't be able to implement them.
+New features and improvements under the "Could have" category can be removed at any time during the implementation phase if we feel we won't be able to implement them.
 
 Only critical issues (bugs or MUST not properly detected such as LMS changes) can be added once the implementation phase has commenced but minor nice-to-have improvements will often be added throughout the release cycle.
 

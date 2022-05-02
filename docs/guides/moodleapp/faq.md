@@ -8,7 +8,7 @@ tags:
 
 ## How can I contribute to the Moodle App?
 
-You can help with [any issue marked with the "contribfriendly" label](https://tracker.moodle.org/browse/MOBILE-3231?jql=project%20%3D%20MOBILE%20AND%20status%20%3D%20Open%20AND%20labels%20%3D%20contribfriendly).
+You can help with [any issue marked with the `contribfriendly` label](https://tracker.moodle.org/browse/MOBILE-3231?jql=project%20%3D%20MOBILE%20AND%20status%20%3D%20Open%20AND%20labels%20%3D%20contribfriendly).
 
 If you want to help with another issue, please let us know first via the tracker, you can a comment in the issue itself.
 

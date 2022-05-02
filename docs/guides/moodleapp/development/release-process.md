@@ -17,7 +17,7 @@ tags:
 | 4. | Announce in the [moodle translation forums](https://lang.moodle.org/mod/forum/view.php?id=5) the new strings available. This will allow translators to add the new strings during the days prior to the release. | Integration Lead |
 | 5. | Add the release notes in the release issue created (search for the [release_notes tag](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20labels%20%3D%20release_notes)). Ask someone from the documentation team or Martin to review the release notes. | Integration Lead |
 | 6. | Contact the marketing team announcing the new release and highlights. | Integration Lead |
-| 7. | Add new QA tests to the “Testing cases” document. New QA tests should be labeled with [qa_test_required](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20resolution%20in%20(Unresolved%2C%20Fixed)%20AND%20labels%20%3D%20qa_test_required%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC). Remove that label once are added to the document. | Tester |
+| 7. | Add new QA tests to the "Testing cases" document. New QA tests should be labeled with [qa_test_required](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20resolution%20in%20(Unresolved%2C%20Fixed)%20AND%20labels%20%3D%20qa_test_required%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC). Remove that label once are added to the document. | Tester |
 | 8. | Run npm audit to ensure all the dependencies are OK. | Developer |
 | 9. | Freeze Cordova plugins and Javascript libraries versions (node modules) in the integration branch. | Developer |
 | 10. | **Start testing** | Tester |

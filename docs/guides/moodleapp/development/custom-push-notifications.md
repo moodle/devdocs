@@ -53,7 +53,7 @@ Airnotifier is the name of the Push Notification server used by Moodle. It is po
   - `tokenpluginfile` (string): Token to view the icon if needed.
   - `extendedtext` (string). An extended text (HTML), opened in popup when clicked.
   - `appurl` (string): When notification is clicked, open this URL. It has preference over `contexturl` but it will be ignored if `extendedtext` is set.
-  - `appurlopenin` (string): Where to open the previous URL 'browser', 'in-app' or any other value.
+  - `appurlopenin` (string): Where to open the previous URL `browser`, `in-app` or any other value.
 
 ### Sample CURL requests
 

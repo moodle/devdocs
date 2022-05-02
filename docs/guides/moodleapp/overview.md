@@ -36,9 +36,9 @@ Pages and navigation are defined using [Angular Router](https://angular.io/guide
 
 ### Web services and caching
 
-The entire communication between the app and a site happens through a layer of [[Web services|web services]]. Each time a user logs into the application, a new session starts and that session is what the concept of a “site” encapsulates in the application. For this reason, you could log multiple times into the same site and from the point of view of the application those would be different sites.
+The entire communication between the app and a site happens through a layer of [[Web services|web services]]. Each time a user logs into the application, a new session starts and that session is what the concept of a "site" encapsulates in the application. For this reason, you could log multiple times into the same site and from the point of view of the application those would be different sites.
 
-For performance reasons, the data retrieved from some web services is cached automatically. For example, the list of courses that a user is enrolled in. This is also useful so that the application works offline. However, not everything is cached automatically, and some things like entire courses can be downloaded manually. This is referred to as “prefetching”.
+For performance reasons, the data retrieved from some web services is cached automatically. For example, the list of courses that a user is enrolled in. This is also useful so that the application works offline. However, not everything is cached automatically, and some things like entire courses can be downloaded manually. This is referred to as "prefetching".
 
 When a user logs out from a site, or their session expires, this data will remain in the device but won't be accessible without logging in again. In order to remove all the data, they should delete the site from the list of sites the app is connected to.
 

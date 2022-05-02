@@ -309,7 +309,7 @@ The application relies heavily on the [Singleton design pattern](https://en.wiki
 
 ### Pure Singletons
 
-Pure singletons, or just “singletons”, are plain Typescript classes whose functionality does not depend on the lifecycle of the application. These normally contain helper or utility methods that enhance existing apis or encapsulate reusable functionality.
+Pure singletons, or just "singletons", are plain Typescript classes whose functionality does not depend on the lifecycle of the application. These normally contain helper or utility methods that enhance existing apis or encapsulate reusable functionality.
 
 Their implementations usually consist of a collection of static methods (so technically they are not singletons, but in practice this is easier to work with).
 

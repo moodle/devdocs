@@ -140,10 +140,10 @@ If you want to run the application in an Android 5 emulator, you'll need to upgr
 Once you have [created your Android 5 virtual device](https://developer.android.com/studio/run/managing-avds), you'll need to do download [the apk for Webview 61](https://android.googlesource.com/platform/external/chromium-webview/+/refs/heads/oreo-m3-release/prebuilt/x86_64/) and run the following commands:
 
 ```bash
-# Open the folder where the “emulator” script is installed
+# Open the folder where the "emulator" script is installed
 cd $(dirname `which emulator`)
 
-# Boot the emulator in write mode (you can get a list of device names running “emulator -list-avds”)
+# Boot the emulator in write mode (you can get a list of device names running "emulator -list-avds")
 emulator @DeviceName -writable-system
 
 # In a different shell, make /system writable
