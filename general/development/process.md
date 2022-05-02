@@ -250,7 +250,7 @@ It will then be reviewed the following week by one of the integration team and e
 
 ## Security issues
 
-Issues identified as [[Security|security issues]] are resolved in a slightly different way, in order to achieve responsible disclosure as described in [[Moodle security procedures]].
+Issues identified as [security issues](/general/development/policies/security) are resolved in a slightly different way, in order to achieve responsible disclosure as described in [[Moodle security procedures]].
 
 - Security issues should be labelled as "Minor" or "Serious" in order control visibility of the issue.
   - An issue reported with a security level of "Could be a security issue" should be evaluated as soon as possible and either set as "Minor" or "Serious" or the security level should be set to "None".

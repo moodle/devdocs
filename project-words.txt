@@ -63,6 +63,7 @@ modname
 moodleapp
 moodledemo
 moodledev
+moodleform
 moodlehq
 moodlemobileapp
 opcache
@@ -77,6 +78,7 @@ plugintype
 riskbitmask
 ruleset
 saas
+sesskey
 siteadmin
 smallmessage
 splitview
