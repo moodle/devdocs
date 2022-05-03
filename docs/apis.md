@@ -203,7 +203,6 @@ The testing API contains the Unit test API ([[PHPUnit]]) and Acceptance test API
 
 This is a rather informal grouping of miscellaneous [[User-related APIs]] relating to sorting and searching lists of users.
 
-<!-- cspell:ignore webservice -->
 ### Web services API (webservice)
 
 The [[Web services API]] allows you to expose particular functions (usually external functions) as web services.

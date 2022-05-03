@@ -36,6 +36,16 @@ const config = {
     ],
     dictionaryDefinitions: [
         {
+            name: 'moodle-components',
+            path: './data/component-spelling.txt',
+            noSuggest: true,
+        },
+        {
+            name: 'moodle-contributors',
+            path: './data/contributor-spelling.txt',
+            noSuggest: true,
+        },
+        {
             name: 'project-words',
             path: './project-words.txt',
             noSuggest: true,
