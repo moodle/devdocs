@@ -8853,7 +8853,7 @@ markdownlint-cli@^0.31.1:
     minimatch "~3.0.5"
     run-con "~1.2.10"
 
-markdownlint-rule-helpers@~0.16.0:
+markdownlint-rule-helpers@^0.16.0, markdownlint-rule-helpers@~0.16.0:
   version "0.16.0"
   resolved "https://registry.yarnpkg.com/markdownlint-rule-helpers/-/markdownlint-rule-helpers-0.16.0.tgz#c327f72782bd2b9475127a240508231f0413a25e"
   integrity sha512-oEacRUVeTJ5D5hW1UYd2qExYI0oELdYK72k1TKGvIeYJIbqQWAz476NAc7LNixSySUhcNl++d02DvX0ccDk9/w==

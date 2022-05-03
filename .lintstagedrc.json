@@ -2,7 +2,7 @@
   "*.css": ["stylelint --allow-empty-input --fix"],
   "*.{js,jsx,ts,tsx,mjs}": ["eslint --fix"],
   "*.md": [
-    "markdownlint --fix",
+    "markdownlint --rules .markdownlint/no-directional-quotation-marks --fix",
     "cspell --no-must-find-files --no-progress"
   ],
   "src/**/*.{js,jsx,ts,tsx,mjs}": [
