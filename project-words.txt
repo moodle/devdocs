@@ -4,6 +4,8 @@ Atto
 Bangma
 Brickfield
 Choicegroup
+Docsearch
+Docusaurus
 Gapfill
 IDEs
 IMSCP

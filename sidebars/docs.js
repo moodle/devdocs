@@ -62,6 +62,11 @@ const sidebars = {
             type: 'doc',
             id: 'release-notes',
         },
+        {
+            label: 'Projects',
+            type: 'link',
+            href: '/general/projects',
+        },
     ],
 };
 

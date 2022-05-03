@@ -1,0 +1,89 @@
+{
+    "title": "JSON schema for the Moodle Project list",
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "$id": "https://moodle.github.io/devdocs/schema/projects.json",
+    "type": "object",
+    "properties": {
+        "projects": {
+            "type": "object",
+            "patternProperties": {
+                ".*": {
+                    "$ref": "#/$defs/project"
+                }
+            },
+            "additionalProperties": false,
+            "unevaluatedProperties": false
+        }
+    },
+    "required": [
+        "projects"
+    ],
+    "$defs": {
+        "person": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the person"
+                },
+                "githubUsername": {
+                    "type": "string",
+                    "description": "The Github username of the person"
+                }
+            },
+            "additionalProperties": false,
+            "unevaluatedProperties": false
+        },
+        "discussionLink": {
+            "type": "object",
+            "properties": {
+                "link": {
+                    "type": "string",
+                    "description": "The link to the discussion"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "A summary title of the discussion"
+                }
+            },
+            "additionalProperties": false,
+            "unevaluatedProperties": false
+        },
+        "project": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "The current status",
+                    "enum": [
+                        "Pending",
+                        "In Progress",
+                        "Complete",
+                        "Abandoned"
+                    ]
+                },
+                "owners": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/person"
+                    }
+                },
+                "discussionLinks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/discussionLink"
+                    }
+                }
+            },
+            "required": [
+                "title",
+                "status"
+            ],
+            "additionalProperties": false,
+            "unevaluatedProperties": false
+        }
+    }
+}

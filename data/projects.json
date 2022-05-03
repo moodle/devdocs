@@ -1,0 +1,25 @@
+{
+    "$schema": "../static/schema/projects.json",
+    "projects": {
+        "docs/migration": {
+            "title": "Dev Docs Migration",
+            "status": "In Progress",
+            "owners": [
+                {
+                    "name": "Andrew Lyons",
+                    "githubUsername": "andrewnicols"
+                },
+                {
+                    "name": "Sara Arjona",
+                    "githubUsername": "sarjona"
+                }
+            ],
+            "discussionLinks": [
+                {
+                    "link": "https://moodle.org/mod/forum/discuss.php?d=433613",
+                    "title": "Announcement"
+                }
+            ]
+        }
+    }
+}
