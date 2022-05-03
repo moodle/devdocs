@@ -41,6 +41,11 @@ const config = {
             noSuggest: true,
         },
         {
+            name: 'moodle-contributors',
+            path: './data/contributor-spelling.txt',
+            noSuggest: true,
+        },
+        {
             name: 'project-words',
             path: './project-words.txt',
             noSuggest: true,
