@@ -36,6 +36,12 @@ jobs:
         run: |
           cp moodle/lib/components.json devdocs/data/master/
 
+      - name: Update component data spelling list
+        run: |
+          yarn component-spellings
+        with:
+          working-directory: devdocs
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
