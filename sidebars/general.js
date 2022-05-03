@@ -101,6 +101,11 @@ const sidebars = {
             },
         },
         {
+            label: 'Moodle App Process',
+            type: 'doc',
+            id: 'development/process-moodleapp',
+        },
+        {
             label: 'Tracker',
             type: 'category',
             items: [
