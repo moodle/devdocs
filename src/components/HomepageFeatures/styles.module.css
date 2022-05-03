@@ -5,21 +5,21 @@
   width: 100%;
 }
 
-.featuresBox {
-    position: relative;
+.features-box {
+  position: relative;
 }
 
-.featureSvg {
+.feature-svg {
   height: 200px;
   width: 200px;
 }
 
-.featureLink {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    content: "";
+.feature-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
 }
