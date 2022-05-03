@@ -16,6 +16,11 @@
  */
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+/** @type {import('@docusaurus/plugin-content-docs/src/types').NormalizedSidebarItem} */
+/** @type import('@site/src').ProjectSummaryData */
+
+const ProjectList = require('../data/projects.json').projects;
+
 const sidebars = {
     community: [
         'community/intro',
@@ -152,5 +157,68 @@ const sidebars = {
         },
     ],
 };
+
+const activeStates = [
+    'In Progress',
+    'Pending',
+];
+
+const completeStates = [
+    'Complete',
+];
+
+const abandonedStates = ['Abandoned'];
+
+const allProjects = Object.entries(ProjectList).map(([key, value]) => {
+    value.key = key;
+    return value;
+});
+
+/**
+ * Fetch all projects matching the list of states.
+ *
+ * @param {Array<string>} states
+ * @returns {Array<ProjectSummaryData>}
+ */
+const getProjectsWithStates = (states) => allProjects.filter((project) => states.indexOf(project.status) !== -1);
+
+/**
+ * Convert a list of rpojects to a list of normalised sidebar item.
+ *
+ * @param {Array<ProjectSummaryData>} projects
+ * @returns {Array<NormalizedSidebarItem>}
+ */
+const convertProjectToSidebarConfig = (projects) => projects.map((project) => ({
+    label: project.title,
+    type: 'doc',
+    id: `projects/${project.key}`,
+}));
+
+sidebars.projects = [{
+    label: 'Projects',
+    type: 'category',
+    items: [
+        {
+            label: 'Active',
+            type: 'category',
+            items: convertProjectToSidebarConfig(getProjectsWithStates(activeStates)),
+            collapsed: false,
+        },
+        {
+            label: 'Complete',
+            type: 'category',
+            items: convertProjectToSidebarConfig(getProjectsWithStates(completeStates)),
+        },
+        {
+            label: 'Abandoned',
+            type: 'category',
+            items: convertProjectToSidebarConfig(getProjectsWithStates(abandonedStates)),
+        },
+    ].filter((sidebar) => sidebar.items.length > 0),
+    link: {
+        type: 'doc',
+        id: 'projects/index',
+    },
+}];
 
 module.exports = sidebars;
