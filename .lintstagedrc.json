@@ -1,7 +1,7 @@
 {
   "*.css": ["stylelint --allow-empty-input --fix"],
   "*.{js,jsx,ts,tsx,mjs}": ["eslint --fix"],
-  "*.md": [
+  "*.{md,mdx}": [
     "markdownlint --fix",
     "cspell --no-must-find-files --no-progress"
   ],
