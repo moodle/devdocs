@@ -32,6 +32,8 @@ const config = {
         'softwareTerms',
         'companies',
         'lorem-ipsum',
+        'moodle-components',
+        'moodle-contributors',
         'project-words',
     ],
     dictionaryDefinitions: [
@@ -42,7 +44,7 @@ const config = {
         },
         {
             name: 'moodle-contributors',
-            path: './data/contributor-spelling.txt',
+            path: './data/moodle-contributors.txt',
             noSuggest: true,
         },
         {
