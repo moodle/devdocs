@@ -43,6 +43,7 @@ contextcourse
 contextcoursecat
 contextlevel
 contextmodule
+declarables
 devdocs
 editingteacher
 euskara
@@ -52,6 +53,8 @@ gradebook
 hackfest
 iframes
 langindex
+mainmenu
+mathjax
 mnet
 modname
 moodleapp
@@ -66,8 +69,10 @@ phpdoc
 phpstorm
 phptags
 phpunit
+pluginable
 pluginname
 plugintype
+privatefiles
 riskbitmask
 ruleset
 saas

@@ -20,7 +20,7 @@ When you are accessing a Moodle site on the web, you are only capable of using o
 
 This works because the app is not coupled to any specific Moodle site, it acts as a client that will connect with a site after logging in; using the site url and user credentials. Compared to the Moodle LMS, users can always use the latest version of the app even if the site is running an old version. Some features may be missing or change depending on the version of the site, but it will work the same way for the most part.
 
-The app can also be compiled to work with a single site, or a list of approved sites. Which may be desirable for building custom applications. For most people though, [the official app from MoodleHQ](https://moodle.com/app/) will be sufficient because it’s not restricted to any site.
+The app can also be compiled to work with a single site, or a list of approved sites. Which may be desirable for building custom applications. For most people though, [the official app from MoodleHQ](https://moodle.com/app/) will be sufficient because it's not restricted to any site.
 
 Keep in mind that the application only works with moodle sites that allow it, and this is disabled by default. If you want to allow users to log into your site using the app, make sure to [enable it in the settings](https://docs.moodle.org/en/Moodle_app_guide_for_admins#Enable_mobile_services_on_your_site). If you are not the site owner, reach out to the administrators.
 
@@ -36,9 +36,9 @@ Pages and navigation are defined using [Angular Router](https://angular.io/guide
 
 ### Web services and caching
 
-The entire communication between the app and a site happens through a layer of [[Web services|web services]]. Each time a user logs into the application, a new session starts and that session is what the concept of a “site” encapsulates in the application. For this reason, you could log multiple times into the same site and from the point of view of the application those would be different sites.
+The entire communication between the app and a site happens through a layer of [[Web services|web services]]. Each time a user logs into the application, a new session starts and that session is what the concept of a "site" encapsulates in the application. For this reason, you could log multiple times into the same site and from the point of view of the application those would be different sites.
 
-For performance reasons, the data retrieved from some web services is cached automatically. For example, the list of courses that a user is enrolled in. This is also useful so that the application works offline. However, not everything is cached automatically, and some things like entire courses can be downloaded manually. This is referred to as “prefetching”.
+For performance reasons, the data retrieved from some web services is cached automatically. For example, the list of courses that a user is enrolled in. This is also useful so that the application works offline. However, not everything is cached automatically, and some things like entire courses can be downloaded manually. This is referred to as "prefetching".
 
 When a user logs out from a site, or their session expires, this data will remain in the device but won't be accessible without logging in again. In order to remove all the data, they should delete the site from the list of sites the app is connected to.
 
@@ -59,7 +59,7 @@ The app has two types of delegates:
 
 ### Site plugins
 
-Moodle plugins can also be adapted to work with the mobile app. Given that more than one site can be used with the app, the plugins that are activated depend on the site the app is connected to. That’s why they are called site plugins.
+Moodle plugins can also be adapted to work with the mobile app. Given that more than one site can be used with the app, the plugins that are activated depend on the site the app is connected to. That's why they are called site plugins.
 
 When the application connects with a site, it will fetch information about which plugins have mobile support and register their functionality using [the delegates system](#delegates-and-handlers). Plugins can be written using only PHP, but javascript is also supported for some advanced use-cases.
 
@@ -73,11 +73,11 @@ Browsers are not officially supported, but you can use a Chromium-based browser 
 
 ## Where to go next
 
-Now that you are familiar with the basic concepts, you understand how the application works, and you’ve got your development environment set up; you're ready to embark into the particulars of what you're trying to achieve.
+Now that you are familiar with the basic concepts, you understand how the application works, and you've got your development environment set up; you're ready to embark into the particulars of what you're trying to achieve.
 
-- Do you want to contribute to the core? Read the [[Moodle App Development Guide]].
+- Do you want to contribute to the core? Read the [Moodle App Development Guide](./development/development-guide).
 - Do you want to adapt a plugin to mobile? Read the [Moodle App Plugins Development Guide](./development/plugins-development-guide).
 - Do you want to customise your site in the app? Read the [Moodle App Customisation](./customisation) page.
 - Do you want to make a custom app? Read the [Custom Moodle Apps](./customisation/custom-apps) page.
 
-If you have any further questions, check out [[Moodle App FAQ|the FAQ]]. If there's anything you want to share, you can do it in [the forum](https://moodle.org/mod/forum/view.php?id=7798) or [[Chat|the Telegram developer room]]. You can also report any bugs that you find in [the tracker](https://tracker.moodle.org/browse/MOBILE).
+If you have any further questions, check out [Moodle App FAQ|the FAQ](./faq). If there's anything you want to share, you can do it in [the forum](https://moodle.org/mod/forum/view.php?id=7798) or [[Chat|the Telegram developer room]]. You can also report any bugs that you find in [the tracker](https://tracker.moodle.org/browse/MOBILE).

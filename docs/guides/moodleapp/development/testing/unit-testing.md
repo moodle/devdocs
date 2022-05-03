@@ -7,7 +7,7 @@ tags:
   - Moodle App
 ---
 
-Unit tests are written in JavaScript using [Jest](https://jestjs.io/). If you want to create a new one, Jest is already configured and you only need to create a file ending with `.test.ts` within the project. If you're going to do so, remember to follow the [[Moodle App Development Guide#Test_files|file location conventions]].
+Unit tests are written in JavaScript using [Jest](https://jestjs.io/). If you want to create a new one, Jest is already configured and you only need to create a file ending with `.test.ts` within the project. If you're going to do so, remember to follow the [file location conventions](../development-guide#test-files).
 
 ## Running tests
 
@@ -17,8 +17,8 @@ You can also watch changes in your codebase to rerun tests using the `npm run te
 
 If you are using VSCode, you can use [the built-in debugger](https://code.visualstudio.com/Docs/editor/debugging) to run your tests and stop at breakpoints. The project comes with two tasks preconfigured:
 
-- “Jest All” will run your entire test suite. It’s the equivalent of running `npm test` from the command line.
-- “Jest Current File” will run the test of the file you have opened in the editor. Like the `--watch` filter, this will be a partial match based on the file name.
+- `Jest All` will run your entire test suite. It's the equivalent of running `npm test` from the command line.
+- `Jest Current File` will run the test of the file you have opened in the editor. Like the `--watch` filter, this will be a partial match based on the file name.
 
 If you are using the default key bindings, these can be re-run automatically pressing the F5 key.
 
@@ -28,7 +28,7 @@ When you are writing tests, a good part of those will be testing plain TypeScrip
 
 If you need to create a mock object, you can use the `mock` helper. This function creates a new object with mock properties and methods. You can use an existing instance, overriding some of its properties and methods if needed, or you can create a new object with only the properties and methods that you want.
 
-For example, let’s say we have the following classes:
+For example, let's say we have the following classes:
 
 ```typescript
 class User {
@@ -67,13 +67,13 @@ it('Greets users', () => {
 });
 ```
 
-Notice how we used the `mock` helper to create a mock that is properly typed as a `User`, we indicated that we want to mock the “greet” method, and we initialised the mock instance to have a name of “John”.
+Notice how we used the `mock` helper to create a mock that is properly typed as a `User`, we indicated that we want to mock the `greet` method, and we initialised the mock instance to have a name of "John".
 
 ## Testing services
 
-If you are testing some code that uses [[Moodle App Development Guide#Service_Singletons|Service Singletons]], it is likely that you want to mock some of them. You can achieve it by using the `mockSingleton` helper. This method takes a Service Singleton and creates a mock for the instance underneath, mocking the methods and properties that you specify along the way.
+If you are testing some code that uses [Service Singletons](../development-guide#service-singletons), it is likely that you want to mock some of them. You can achieve it by using the `mockSingleton` helper. This method takes a Service Singleton and creates a mock for the instance underneath, mocking the methods and properties that you specify along the way.
 
-For example, let’s say that you have the following test:
+For example, let's say that you have the following test:
 
 ```typescript
 it('App provider checks current platform', () => {
@@ -121,13 +121,13 @@ it('Copies data to clipboard', async () => {
 });
 ```
 
-Most services will be instantiated properly without mocks, but sometimes you may see the error “XX is not a function”, or some service property that is undefined. This happens because if it’s not possible to instantiate a service with an empty constructor, it will be provided as an empty object by default. If that happens, you just need to mock the methods and properties that are used in your test. Some basic services like `Platform` and `Network` already come with some basic mocks, but they are not exhaustive.
+Most services will be instantiated properly without mocks, but sometimes you may see the error "XX is not a function", or some service property that is undefined. This happens because if it's not possible to instantiate a service with an empty constructor, it will be provided as an empty object by default. If that happens, you just need to mock the methods and properties that are used in your test. Some basic services like `Platform` and `Network` already come with some basic mocks, but they are not exhaustive.
 
 ## Testing components
 
-Angular components have a strong graphical part, but that doesn't mean that you can't test their logic and markup rendering using unit tests with Jest. You can follow [Angular’s best practices for testing components](https://angular.io/guide/testing-components-scenarios), and we also provide a couple of helpers that make things easier.
+Angular components have a strong graphical part, but that doesn't mean that you can't test their logic and markup rendering using unit tests with Jest. You can follow [Angular's best practices for testing components](https://angular.io/guide/testing-components-scenarios), and we also provide a couple of helpers that make things easier.
 
-Let’s say you want to test the following component that render a list of user names:
+Let's say you want to test the following component that render a list of user names:
 
 ```typescript
 @Component({
@@ -197,6 +197,6 @@ it('Renders a list of users', async () => {
 
 Although this guide talks about unit tests, we don't follow the strict definition of a unit test (which is that a unit test should test a single unit in isolation).
 
-We often write tests where multiple files (or “units”) are involved, and sometimes that can be desirable because it is closer to how the app will behave in production. Technically, those would be considered integration tests, but you can use the same principles and techniques introduced in this document.
+We often write tests where multiple files (or "units") are involved, and sometimes that can be desirable because it is closer to how the app will behave in production. Technically, those would be considered integration tests, but you can use the same principles and techniques introduced in this document.
 
 If you want to write even more realistic tests, that are actually running the complete application and interacting with it like a real user would, you should check out the [Acceptance testing for the Moodle App](./acceptance-testing) page.

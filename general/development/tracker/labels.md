@@ -117,6 +117,9 @@ Used to identify issues that require further clarification of the requirements t
 - [`ready_for_integration`](https://tracker.moodle.org/issues/?filter=21824)<br/>
 Used to identify issues that already have been peer-reviewed but the user lacks permissions (pull-requester) to send the issue to integration. Any pull-requester can, on peer-reviewer's behalf, proceed with the transition. The label is removed once the issue has been transitioned.
 
+- `contribfriendly`<br/>
+Used to identify MOBILE issues that are a good starting point for developers that want to start contributing to the Moodle app.
+
 ## See also
 
 - [Tracker](../tracker)
