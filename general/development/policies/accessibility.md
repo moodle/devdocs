@@ -198,11 +198,11 @@ Moodle aims to comply with the following international legislation where possibl
 
 <!-- cspell:ignore Référentiel -->
 <!-- cspell:ignore Général -->
-<!-- cspell:ignore d’Accessibilité -->
+<!-- cspell:ignore d'Accessibilité -->
 <!-- cspell:ignore des -->
 <!-- cspell:ignore RGAA -->
 
-- [Référentiel Général d’Accessibilité des Administrations - RGAA](https://references.modernisation.gouv.fr/rgaa-accessibilite/)
+- [Référentiel Général d'Accessibilité des Administrations - RGAA](https://references.modernisation.gouv.fr/rgaa-accessibilite/)
 
 ### European Union
 
