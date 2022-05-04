@@ -250,7 +250,7 @@ Every Moodle release, a new version of MDK is also being released in order to pr
    1. Via Homebrew: `brew upgrade moodle-sdk`
 1. Run MDK doctor to fix its `masterBranch` configuration. `mdk doctor --fix --masterbranch`
 1. Run MDK doctor to check the master instances. `mdk doctor --all`
-   1. If you don't see an error saying something like “stable_master is on branch master instead of MOODLE_XX_STABLE”, then you're all good. Otherwise, do a hard reset your master instances:
+   1. If you don't see an error saying something like "stable_master is on branch master instead of MOODLE_XX_STABLE", then you're all good. Otherwise, do a hard reset your master instances:
 
 ```
 mdk update -c

@@ -36,7 +36,7 @@ Working on the Moodle learning platform involves millions of moving parts, and e
 
 The entire user experience from onboarding, into daily teaching/learning and expert customisation of Moodle is the core value of what makes Moodle useful or not in the real world, in fully online and blended modes.
 
-While we’re working on hundreds of smaller, annoying issues, we are also doing some major re-thinking around what an LMS should be in the next decade and beyond as a tool to empower educators and learners.
+While we're working on hundreds of smaller, annoying issues, we are also doing some major re-thinking around what an LMS should be in the next decade and beyond as a tool to empower educators and learners.
 
 #### Enabling all our developers
 
@@ -44,7 +44,7 @@ Our significant community of engaged developers are an amazing group of over 100
 
 We are of course working on ways to make Moodle programming easier and better, with better training and support as well as improved APIs, plugins, integrations and support for modern technologies.
 
-However, a particularly exciting initiative is the new Moodle Plugins Service, due in 2021, which will provide an “app store” experience on which all developers can build financial sustainability for their work, while teachers will have easier access to use hundreds of new plugins in their courses via the web interface, without needing to convince their admins to install code. This will help the entire plugins ecosystem.
+However, a particularly exciting initiative is the new Moodle Plugins Service, due in 2021, which will provide an "app store" experience on which all developers can build financial sustainability for their work, while teachers will have easier access to use hundreds of new plugins in their courses via the web interface, without needing to convince their admins to install code. This will help the entire plugins ecosystem.
 
 #### Better integrations between Moodle products
 
