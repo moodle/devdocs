@@ -145,6 +145,9 @@ QA_testing:
 Question_bank_plugins:
 - filePath: "/docs/apis/plugintypes/qbank/index.mdx"
   slug: "docs/apis/plugintypes/qbank"
+Repository_plugins:
+- filePath: "/docs/apis/plugintypes/repository/index.mdx"
+  slug: "/docs/apis/plugintypes/repository/index.mdx"
 Roadmap:
 - filePath: "/general/community/roadmap.md"
   slug: "/general/community/roadmap"
