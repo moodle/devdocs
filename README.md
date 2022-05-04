@@ -30,7 +30,7 @@ environment to make it easier to do so.
 ## Local development environment
 
 The Moodle Developer Resources are compiled using the
-[Docusaurus](https://docusauris.io) tooling, which can be easily installed with
+[Docusaurus](https://docusaurus.io/) tooling, which can be easily installed with
 [Yarn](https://yarnpkg.com/getting-started/install).
 
 Once installed, you should invoke yarn:
