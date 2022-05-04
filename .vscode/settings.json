@@ -1,4 +1,3 @@
 {
-    "markdownlint.customRules": [
-    ]
+    "stylelint.packageManager": "yarn"
 }
