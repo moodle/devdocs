@@ -148,6 +148,54 @@ Question_bank_plugins:
 Roadmap:
 - filePath: "/general/community/roadmap.md"
   slug: "/general/community/roadmap"
+Security:
+- filePath: "/general/development/policies/codingstyle/security.md"
+  slug: "/general/development/policies/codingstyle/security"
+Security:Brute-forcing_login:
+- filePath: "/general/development/policies/security/bruteforcing-login.md"
+  slug: "/general/development/policies/security/bruteforcing-login"
+Security:Buffer_overruns,_and_other_platform_weaknesses:
+- filePath: "/general/development/policies/security/bufferoverruns.md"
+  slug: "/general/development/policies/security/bufferoverruns"
+Security:Command-line_injection:
+- filePath: "/general/development/policies/security/commandline-injection.md"
+  slug: "/general/development/policies/security/commandline-injection"
+Security:Confidential_information_leakage:
+- filePath: "/general/development/policies/security/info-leakage.md"
+  slug: "/general/development/policies/security/info-leakage"
+Security:Configuration_information_leakage:
+- filePath: "/general/development/policies/security/configinfo-leakage.md"
+  slug: "/general/development/policies/security/configinfo-leakage"
+Security:Cross-site_request_forgery:
+- filePath: "/general/development/policies/security/crosssite-request-forgery.md"
+  slug: "/general/development/policies/security/crosssite-request-forgery"
+Security:Cross-site_scripting:
+- filePath: "/general/development/policies/security/crosssite-scripting.md"
+  slug: "/general/development/policies/security/crosssite-scripting"
+Security:Data-loss:
+- filePath: "/general/development/policies/security/dataloss.md"
+  slug: "/general/development/policies/security/dataloss"
+Security:Denial_of_service:
+- filePath: "/general/development/policies/security/dos.md"
+  slug: "/general/development/policies/security/dos"
+Security:Insecure_configuration_management:
+- filePath: "/general/development/policies/security/insecure-config.md"
+  slug: "/general/development/policies/security/insecure-config"
+Security:SQL_injection:
+- filePath: "/general/development/policies/security/sql-injection.md"
+  slug: "/general/development/policies/security/sql-injection"
+Security:Session_fixation:
+- filePath: "/general/development/policies/security/session-fixation.md"
+  slug: "/general/development/policies/security/session-fixation"
+Security:Social_engineering:
+- filePath: "/general/development/policies/security/socialengineering.md"
+  slug: "/general/development/policies/security/socialengineering"
+Security:Unauthenticated_access:
+- filePath: "/general/development/policies/security/unauthenticated-access.md"
+  slug: "/general/development/policies/security/unauthenticated-access"
+Security:Unauthorised_access:
+- filePath: "/general/development/policies/security/unauthorised-access.md"
+  slug: "/general/development/policies/security/unauthorised-access"
 Sending_custom_Push_Notifications_to_the_Moodle_App:
 - filePath: "/docs/moodleapp/development/custom-push-notifications.md"
   slug: "/docs/moodleapp/development/custom-push-notifications"
