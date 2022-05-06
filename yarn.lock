@@ -4278,9 +4278,9 @@ color-name@^1.0.0, color-name@~1.1.4:
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
 color-string@^1.6.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/color-string/-/color-string-1.9.0.tgz#63b6ebd1bec11999d1df3a79a7569451ac2be8aa"
-  integrity sha512-9Mrz2AQLefkH1UvASKj6v6hj/7eWgjnT/cVsR8CumieLoT+g900exWeNogqtweI8dxloXN9BDQTYro1oWu/5CQ==
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/color-string/-/color-string-1.9.1.tgz#4467f9146f036f855b764dfb5bf8582bf342c7a4"
+  integrity sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg==
   dependencies:
     color-name "^1.0.0"
     simple-swizzle "^0.2.2"
@@ -9259,10 +9259,10 @@ node-version-compare@^1.0.1:
   resolved "https://registry.yarnpkg.com/node-version-compare/-/node-version-compare-1.0.3.tgz#ca6d2005e67822fb4dfa259e08f1f6cfaabe2e81"
   integrity sha512-unO5GpBAh5YqeGULMLpmDT94oanSDMwtZB8KHTKCH/qrGv8bHN0mlDj9xQDAicCYXv2OLnzdi67lidCrcVotVw==
 
-nodemw@^0.16.0:
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/nodemw/-/nodemw-0.16.0.tgz#d9b430929258ec27be5959c46e1022dad57a91a1"
-  integrity sha512-C21O4Bxp1MAbmRvwKzGv4UHWX1qE48dC1OAGrXcnOjPpoJa7efq8DEwEuebgYD1pTWeupn+ozuOaGVT+L/h/4w==
+nodemw@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/nodemw/-/nodemw-0.17.0.tgz#e7c2dbb11c692e36eca1103913e98e2d1afccf98"
+  integrity sha512-Cz5WnBU6dJlhgTOxX3lVJWsVux6ZA1uKBUvcxDbP9vkfN0ppu3wCo2K+7OvfNT7v/moJLyJOm63jyKrWtBTYzA==
   dependencies:
     ansicolors "0.3.x"
     async "^3.2.0"
@@ -12143,9 +12143,9 @@ unbox-primitive@^1.0.1:
     which-boxed-primitive "^1.0.2"
 
 underscore@^1.9.1:
-  version "1.13.2"
-  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.2.tgz#276cea1e8b9722a8dbed0100a407dda572125881"
-  integrity sha512-ekY1NhRzq0B08g4bGuX4wd2jZx5GnKz6mKSqFL4nqBlfyMGiG10gDFhDTMEfYmDL6Jy0FUIZp7wiRB+0BP7J2g==
+  version "1.13.3"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.3.tgz#54bc95f7648c5557897e5e968d0f76bc062c34ee"
+  integrity sha512-QvjkYpiD+dJJraRA8+dGAU4i7aBbb2s0S3jA45TFOvg2VgqvdCDd/3N6CqA8gluk1W91GLoXg5enMUx560QzuA==
 
 unherit@^1.0.4:
   version "1.1.3"

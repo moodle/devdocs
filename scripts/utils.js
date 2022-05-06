@@ -55,6 +55,42 @@ const getGetMigratedPageIds = (logger) => (client) => async (pageTitle) => {
     return articleData;
 };
 
+const getGetPageProtectionState = (logger) => (client) => async (pageTitle) => {
+    logger.debug(`===> Fetching protection state for ${pageTitle}`);
+    const options = {
+        inprop: [
+            'protection',
+        ],
+    };
+    return new Promise((resolve, reject) => {
+        client.getArticleInfo([pageTitle], options, (err, [data]) => {
+            if (err) {
+                reject(err);
+            }
+            resolve({
+                pageTitle,
+                data,
+            });
+        });
+    });
+};
+
+const getProtectPage = (logger) => (client) => async (pageTitle, protections, options) => {
+    logger.debug(`===> Setting protection state for ${pageTitle} to ${protections}`);
+
+    return new Promise((resolve, reject) => {
+        client.protect(pageTitle, protections, options, (err, data) => {
+            if (err) {
+                reject(err);
+            }
+            resolve({
+                pageTitle,
+                data,
+            });
+        });
+    });
+};
+
 const getClient = (remoteHost) => new Bot({
     protocol: 'https',
     server: remoteHost,
@@ -129,10 +165,116 @@ const getObsoletePagePath = () => getNormalizedPath('data', 'obsoletePages.json'
  */
 const getMigrationPagePath = () => getNormalizedPath('data', 'migratedPages.yml');
 
+const getUpdateMigratedPagesProtection = (logger) => (client) => async () => {
+    const migratedPageData = yaml.load(await readFile(getMigrationPagePath(), 'utf8'));
+
+    const getPageProtectionState = (pageTitle) => getGetPageProtectionState(logger)(client)(pageTitle);
+    const protectPage = (pageTitle, protections, reason) => getProtectPage(logger)(client)(
+        pageTitle,
+        protections,
+        {
+            // This is a bot. It does not need to subscribe.
+            watchlist: 'nochange',
+            reason,
+        },
+    );
+
+    /**
+     * Get the intended protection for the current page, modifying the 'edit' level to sysop.
+     * Other protections will be preserved.
+     * If an existing protection exists for edit=sysop, then it will only be modified if the expiry must be updated.
+     * If no change are required, none will be made.
+     *
+     * @param {object[]} current
+     * @returns {object}
+     */
+    const getTargetProtection = (current) => {
+        // There are synonyms for 'infinite' which can be returned by the API.
+        const infiniteNames = [
+            'never',
+            'infinite',
+            'indefinite',
+            'infinity',
+        ];
+
+        const protectionValue = {
+            type: 'edit',
+            level: 'sysop',
+            expiry: 'infinite',
+        };
+
+        let isProtected = false;
+        let changed = false;
+        if (!Array.isArray(current)) {
+            return {
+                changed: true,
+                protection: [protectionValue],
+            };
+        }
+
+        const protection = current.map((protectionItem) => {
+            if (protectionItem.type !== 'edit') {
+                return protectionItem;
+            }
+
+            if (protectionItem.level !== 'sysop') {
+                protectionItem.level = 'sysop';
+                changed = true;
+            }
+
+            if (infiniteNames.indexOf(protectionItem.expiry) === -1) {
+                protectionItem.expiry = 'infinite';
+                changed = true;
+            }
+
+            isProtected = true;
+
+            return protectionItem;
+        });
+
+        if (!isProtected) {
+            changed = true;
+            protection.push(protectionValue);
+        }
+
+        return {
+            protection,
+            changed,
+        };
+    };
+
+    for (const [legacyPage] of Object.entries(migratedPageData)) {
+        logger.debug(`=> Checking ${legacyPage}`);
+
+        const [
+            protectionState,
+        ] = await Promise.all([
+            getPageProtectionState(legacyPage),
+        ]);
+
+        const protectionReason = 'Developer Docs Migration';
+        const { protection, changed } = getTargetProtection(protectionState.data.protection);
+        if (changed) {
+            logger.info(`==> Updating page protection for ${legacyPage}`);
+            protectPage(legacyPage, protection, protectionReason)
+                .then(() => {
+                    logger.debug(`===> Updated ${legacyPage}`);
+                })
+                .catch((...err) => {
+                    logger.error(err);
+                });
+        } else {
+            logger.debug(`===> No need to update protection for ${legacyPage}`);
+        }
+    }
+};
+
 /**
  * Update the migrated page docs in Wikimedia.
  */
 const getUpdateMigratedPages = (logger) => (client) => async () => {
+    const migratedPageData = yaml.load(await readFile(getMigrationPagePath(), 'utf8'));
+
     const getDocIdList = (newDocIds) => {
         if (Array.isArray(newDocIds)) {
             return newDocIds.map((newDoc) => newDoc.slug);
@@ -143,21 +285,18 @@ const getUpdateMigratedPages = (logger) => (client) => async () => {
 
     const getCurrentMigratedIdsForPage = (pageTitle) => getGetMigratedPageIds(logger)(client)(pageTitle);
 
-    const migratedPageData = yaml.load(await readFile(getMigrationPagePath(), 'utf8'));
-
     for (const [legacyPage, newPages] of Object.entries(migratedPageData)) {
-        logger.info(`=> Checking ${legacyPage}`);
+        logger.debug(`=> Checking ${legacyPage}`);
         const newDocIds = getDocIdList(newPages);
 
-        const migratedDocData = (await getCurrentMigratedIdsForPage(legacyPage));
+        const migratedDocData = await getCurrentMigratedIdsForPage(legacyPage);
         const docIds = migratedDocData.newDocIds.sort();
 
         if (JSON.stringify(docIds) === JSON.stringify(newDocIds)) {
-            logger.info(`==> No changes (${docIds.join(', ')})`);
+            logger.debug(`==> No changes for ${legacyPage} (${docIds.join(', ')})`);
         } else {
-            logger.info(`==> Updating ${legacyPage}`);
-            logger.info(`===> Current docIds are: ${docIds.join(', ')}`);
-            logger.info(`===> Setting docIds of ${newDocIds.join(', ')}`);
+            logger.debug(`===> Current docIds for ${legacyPage} are: ${docIds.join(', ')}`);
+            logger.info(`===> Setting docIds for ${legacyPage} to: ${newDocIds.join(', ')}`);
             const newTemplates = newDocIds.map((newDocId) => `{{Template:Migrated|newDocId=${newDocId}}}\n`).join('');
 
             const newContent = newTemplates + migratedDocData.data.replaceAll(
@@ -173,7 +312,7 @@ const getUpdateMigratedPages = (logger) => (client) => async () => {
                     if (err) {
                         throw err;
                     }
-                    logger.info(`===> Updated ${legacyPage} to ${data.newrevid}`);
+                    logger.debug(`===> Updated ${legacyPage} to ${data.newrevid}`);
                 },
             );
         }
@@ -218,5 +357,6 @@ module.exports = {
     getObsoletePagePath,
     getNormalizedPath,
     getUpdateMigratedPages,
+    getUpdateMigratedPagesProtection,
     guessSlug,
 };
