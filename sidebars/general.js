@@ -26,6 +26,7 @@ const sidebars = {
         'community/intro',
         'community/mission',
         'community/roadmap',
+        'community/channels',
         {
             label: 'Meetings',
             type: 'category',
