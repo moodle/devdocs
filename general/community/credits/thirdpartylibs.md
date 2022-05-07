@@ -1222,6 +1222,12 @@ Copyright (c) 2011-2021 The Bootstrap Authors
 
 ## Typo3 Character Set Class
 
+:::danger Outdated
+
+This library is not currently used in Moodle
+
+:::
+
 :::note lib/typo3
 
 Class for conversion between charsets and multibyte-savy operations with strings.
@@ -1263,22 +1269,13 @@ Copyright Brightcove, Inc
 
 <http://videojs.com/>
 
-## Video.js - The Flash tech
+## Video.js - Custom Flash Player
 
-:::note media/player/videojs/amd/src/videojs-flash-lazy.js
+:::danger Outdated
 
-The Flash tech for video.js
-
-**Version**: 2.2.1<br/>
-**License**: Apache
-
-Copyright Brightcove, Inc
+This library is not currently used in Moodle
 
 :::
-
-<https://github.com/videojs/videojs-flash>
-
-## Video.js - Custom Flash Player
 
 :::note media/player/videojs/amd/src/videojs-flash-lazy.js
 
