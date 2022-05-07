@@ -8,7 +8,7 @@ tags:
 
 The Moodle Project is designed to have a positive effect on the world by supporting and empowering the educators who are teaching students in all sectors, in all countries.
 
-To do this, our team at Moodle HQ looks to the world, talks with our community, and creates solutions in the forms of products that fit our values of '''education''', '''openness''', '''respect''', '''integrity''' and '''innovation'''.
+To do this, our team at Moodle HQ looks to the world, talks with our community, and creates solutions in the forms of products that fit our values of **education**, **openness**, **respect**, **integrity** and **innovation**.
 
 This document summarises, for a broad audience, the best current plans on the future technical development of the Moodle's open source learning platform, consisting of Moodle LMS, Moodle Workplace LMS, MoodleCloud, MoodleNet, Moodle Apps, and Moodle Educator Certificates.
 
@@ -30,7 +30,7 @@ Our Roadmap is built via our [[Roadmap process]]. This process is continuously e
 
 ### The big picture
 
-Working on the Moodle learning platform involves millions of moving parts, and every release generally includes hundreds of improvements. However, there are '''four main goals''' that we are focussing on for the next two years:
+Working on the Moodle learning platform involves millions of moving parts, and every release generally includes hundreds of improvements. However, there are **four main goals** that we are focussing on for the next two years:
 
 #### User experience and flow
 
@@ -61,9 +61,9 @@ In particular though, we are committed to helping to promote [<span class="under
 | 2021 | Moodle LMS | Moodle Workplace | Moodle Apps | MoodleCloud | MoodleNet | Moodle Academy |
 | ---  | ---        | ---              | ---         | ---         | ---       | ---            |
 | Q1 | Minor release(s) | Dashboards | | | | |-
-| '''Q2''' | <ul><li>Moodle 3.11<ul><li>Student activity completion (MUA)</li><li>Open Badges v2.1 (Badge Connect API)</li><li>Accessibility toolkit integration</li></ul></li><li>Minor release(s)</li></ul> | | | | | <ul><li>Learn Moodle Teaching Next Level</li><li>Learn Moodle 3.11 Basics (MOOC)</li></ul> |
-| '''Q3'''
-| '''Minor release(s)
+| **Q2** | <ul><li>Moodle 3.11<ul><li>Student activity completion (MUA)</li><li>Open Badges v2.1 (Badge Connect API)</li><li>Accessibility toolkit integration</li></ul></li><li>Minor release(s)</li></ul> | | | | | <ul><li>Learn Moodle Teaching Next Level</li><li>Learn Moodle 3.11 Basics (MOOC)</li></ul> |
+| **Q3**
+| **Minor release(s)
 |
 |
 |
@@ -74,26 +74,26 @@ In particular though, we are committed to helping to promote [<span class="under
 
 - [First Educator courses released](https://moodle.academy/mod/page/view.php?id=57&forceview=1).
 |-
-| '''Q4'''
-| '''Minor release(s)'''
+| **Q4**
+| **Minor release(s)**
 |
 |
-| '''<br />'''
+| **<br />**
 <br />
 |
 |
 - [Further Educator courses released](https://moodle.academy/mod/page/view.php?id=57&forceview=1).
 |-
-| '''2022'''
-| '''Moodle LMS'''
-| '''Moodle Workplace'''
-| '''Moodle Apps'''
-| '''MoodleCloud'''
-| '''MoodleNet'''
-| '''Moodle Academy'''
+| **2022**
+| **Moodle LMS**
+| **Moodle Workplace**
+| **Moodle Apps**
+| **MoodleCloud**
+| **MoodleNet**
+| **Moodle Academy**
 |-
-| '''Q1'''
-|'''Minor releases(s)'''
+| **Q1**
+|**Minor releases(s)**
 |
 |
 |
@@ -101,10 +101,10 @@ In particular though, we are committed to helping to promote [<span class="under
 |
 - [First Developer Beginner courses released](https://moodle.academy/mod/page/view.php?id=59&forceview=1).
 |-
-| '''Q2'''
-|'''Moodle 4.0'''
+| **Q2**
+|**Moodle 4.0**
 
-'''UX improvements'''
+**UX improvements**
 
 - Navigation
 - Course experience
@@ -112,7 +112,7 @@ In particular though, we are committed to helping to promote [<span class="under
 - Other wins (calendar / timeline block)
 - UI consistency via component library
 
-'''New:'''
+**New:**
 
 - LTI 1.3 Advantage Tool / Provider implementation
 - BigBlueButton integration
@@ -121,17 +121,17 @@ In particular though, we are committed to helping to promote [<span class="under
 - Workplace Report Builder integration
 - Site admin presets
 
-'''Minor release(s)'''
-| '''Release 4.0'''
-| '''Release 4.0'''
+**Minor release(s)**
+| **Release 4.0**
+| **Release 4.0**
 
-'''Improved'''
+**Improved**
 Moodle LMS 4.0 compatibility
 
-'''Moodle Workplace 4.0 compatibility'''
+**Moodle Workplace 4.0 compatibility**
 
 Classroom tools with friendly UX
-| '''Release 4.0'''
+| **Release 4.0**
 |
 |
 
@@ -144,31 +144,31 @@ Classroom tools with friendly UX
 
 \* A course in each learning pathway (Educator, Administrator, Developer) will introduce changes in Moodle 4.0.
 |-
-| '''Q3'''
-|'''Minor release(s)'''
+| **Q3**
+|**Minor release(s)**
 |
 |
 |
 |
 |
 |-
-| '''Q4'''
-| '''Moodle 4.1'''
+| **Q4**
+| **Moodle 4.1**
 
-'''UX improvements'''
+**UX improvements**
 
 - Course activities
 - Gradebook
 - Global UX (tables/filters)
 
-'''New'''
+**New**
 
 - Improved integration with MoodleNet and other Moodle sites
 - Improved integration with 3rd party platforms/tools
 - Database improvements (MUA)
 |
-| '''Release 4.1'''
-| '''Release 4.1'''
+| **Release 4.1**
+| **Release 4.1**
 |
 |
 |}

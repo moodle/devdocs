@@ -10,13 +10,14 @@ A lot of people ask how the development of Moodle operates. This page should giv
 
 ## The key players
 
-;Martin Dougiamas: Martin is the founder lead developer of Moodle. Generally he tries to facilitate democracy and meritocracy but occasionally has to make executive decisions on things.
-
-;[Moodle HQ](https://moodle.com/careers/): The team of more than 20 developers who are directly funded by the Moodle project to work full-time on core developments.
-
-;Moodle Partners: Over 50 companies around the world that provide Moodle services. These companies often have their own developers and may contribute to Moodle directly by working on core code or by creating plugins.
-
-;Component leads: A number of people around the world have volunteered to lead various components in Moodle. This involves maintaining existing code as well as listening to the community and improving that component with new features.
+- **Martin Dougiamas**<br/>
+Martin is the founder lead developer of Moodle. Generally he tries to facilitate democracy and meritocracy but occasionally has to make executive decisions on things.
+- **[Moodle HQ](https://moodle.com/careers/)**<br />
+The team of developers who are directly funded by the Moodle project to work full-time on core developments.
+- **Moodle Partners**<br />
+Over 50 companies around the world that provide Moodle services. These companies often have their own developers and may contribute to Moodle directly by working on core code or by creating plugins.
+- **Component leads**<br />
+ A number of people around the world have volunteered to lead various components in Moodle. This involves maintaining existing code as well as listening to the community and improving that component with new features.
 
 There are many other people contributing to Moodle in many ways. For a full list see the [Moodle developers](http://moodle.org/dev/) page on moodle.org.
 
