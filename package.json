@@ -15,9 +15,13 @@
     "wikimedia-sync": "scripts/wikimedia-sync.js",
     "component-spellings": "scripts/component-helper.js spelling",
     "test": "jest",
-    "lint": "markdownlint --rules .markdownlint/no-directional-quotation-marks 'docs/**/*.md' 'general/**/*.md' '*.md'",
+    "mdlint-doc": "markdownlint --rules .markdownlint/no-directional-quotation-marks --rules .markdownlint/no-wikilinks ",
+    "mdlint-all": "yarn mdlint-doc '{docs,general}/**/*.md' '*.md'",
+    "lint": "yarn mdlint-all",
     "prepare": "husky install",
-    "spell": "cspell '*.md' '**/*.md' 'docs/*.md' 'docs/**/*.md' 'general/*.md' 'general/**/*.md'"
+    "spell": "cspell '*.md' '**/*.md' 'docs/*.md' 'docs/**/*.md' 'general/*.md' 'general/**/*.md'",
+    "migrate-doc": "markdownlint --fix --rules .markdownlint/no-wikilinks ",
+    "migrate-all": "yarn migrate-doc '{docs,general}/**/*.md' '*.md'"
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^0.10.0",
