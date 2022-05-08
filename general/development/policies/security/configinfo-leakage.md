@@ -55,4 +55,4 @@ Moodle is naughty. With the standard theme, it is easy to find out exactly which
 ## See also
 
 - [Security](../security)
-- [[Coding]]
+- [Coding](https://docs.moodle.org/dev/Coding)

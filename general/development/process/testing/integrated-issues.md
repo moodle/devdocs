@@ -76,7 +76,7 @@ Priority is given to testing issues to ensure we can release regularly
 
 Moodle uses two Git repositories for its source code. Their names are moodle.git and integration.git and they live at http://git.moodle.org. All submitted patches that were accepted during the integration review go to the integration.git first. Testers use integration.git as the source of the code to test. Patches that survive testing are then promoted to moodle.git and become the part of the official Moodle weekly build.
 
-To obtain the code from the integration.git repository, follow the instructions at [[Git for Administrators page]]. But instead of cloning from git://github.com/moodle/moodle.git, use
+To obtain the code from the integration.git repository, follow the instructions at [Git for Administrators page](https://docs.moodle.org/dev/Git_for_Administrators_page). But instead of cloning from git://github.com/moodle/moodle.git, use
 
 ```git
    git clone git://git.moodle.org/integration.git

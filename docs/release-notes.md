@@ -19,7 +19,7 @@ These are just the minimum supported versions. We recommend keeping all of your 
 - PHP version:
   - minimum PHP 7.3.0 __Note: the minimum PHP version has increased since Moodle 3.10__.
   - PHP 7.4.x is also supported.
-  - [[Moodle and PHP|PHP 8.0 support]] is being implemented (see {tracker}`MDL-70745`) and **not ready for production** yet.
+  - [PHP 8.0 support](https://docs.moodle.org/dev/Moodle_and_PHP) is being implemented (see {tracker}`MDL-70745`) and **not ready for production** yet.
 - PHP extensions:
   - The [`intl`](https://www.php.net/manual/en/book.intl.php) extension is now *required*.
   - The [`exif`](https://www.php.net/manual/en/book.exif.php) extension is now _recommended_.
@@ -456,4 +456,4 @@ For the best experience and optimum security, we recommend that you keep your br
 
 ## See also
 
-- [[Moodle 3.11 release notes]]
+- [Moodle 3.11 release notes](https://docs.moodle.org/dev/Moodle_3.11_release_notes)

@@ -37,7 +37,7 @@ If all the principles are fulfilled, the answer for "should I integrate this?" i
 
 ## Component lead review process
 
-Please see the [[Component Lead Review]] documentation for further information on the CLR process.
+Please see the [Component Lead Review](https://docs.moodle.org/dev/Component_Lead_Review) documentation for further information on the CLR process.
 
 ## Integration Review Process
 
@@ -73,7 +73,7 @@ optimisations)
     2. `ui_change` / `api_change`: About the implications of the change.
     3. `unit_test_required` / `acceptance_test_required` / `qa_test_required`: About the need to cover the issue with some test.
     4. `affects_mobileapp` / `affects_workplace` / `affects_moodlecloud`: About issues that may affect other Moodle products and services
-15. [[Tracker issue versions]] review. Particularly:
+15. [Tracker issue versions](https://docs.moodle.org/dev/Tracker_issue_versions) review. Particularly:
     1. Fixed Version after integration - is the versions that the issue is patched for. (A rule here: ["or stables or master"](https://docs.moodle.org/dev/Tracker_issue_versions#Some_general_and_simple_rules)).
     2. Remove any `Must fix for X.Y` version once the issue is integrated.
 16. Whenever any of the points above or any other detail require extra information or action to be done by the assignee, and the integrator

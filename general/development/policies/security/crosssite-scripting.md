@@ -87,7 +87,7 @@ However, for very complex input, like HTML, doing the cleaning is very tricky, a
 ## What you need to do in your code
 
 - Get input values using `optional_param` or `required_param` with an appropriate `PARAM_*` type, to ensure that only data of the type you expect is accepted.
-- Alternatively, use a [[lib/formslib.php|moodleforms]], with appropriate `->setType` calls in the form definition.
+- Alternatively, use a [moodleforms](https://docs.moodle.org/dev/lib/formslib.php), with appropriate `->setType` calls in the form definition.
 - Clean or escape content appropriately on output.
   - Use `s()` or `p()` to output plain text content (type 1 above).
   - Use `format_string` to output content with minimal HTML like multi-lang spans (type 2 above).
@@ -99,7 +99,7 @@ However, for very complex input, like HTML, doing the cleaning is very tricky, a
 
 :::info
 
-Follow the [[Output functions]] link to get a best understanding of how dynamic data should be sent from Moodle to the browser.
+Follow the [Output functions](https://docs.moodle.org/dev/Output_functions) link to get a best understanding of how dynamic data should be sent from Moodle to the browser.
 
 :::
 
@@ -112,4 +112,4 @@ Follow the [[Output functions]] link to get a best understanding of how dynamic 
 ## See also
 
 - [Security](../security)
-- [[Coding]]
+- [Coding](https://docs.moodle.org/dev/Coding)

@@ -103,7 +103,7 @@ Entries with a file name of `.`represent directories. Directory entries like thi
 
 :::note
 
-The name `files` is used in the plural form, even though it goes against the [[Database|coding guidelines]] because `file` is a reserved word in some SQL dialects.
+The name `files` is used in the plural form, even though it goes against the [coding guidelines](https://docs.moodle.org/dev/Database) because `file` is a reserved word in some SQL dialects.
 
 :::
 
@@ -142,7 +142,7 @@ Each plugin should only ever use the File Storage API to access its __own files_
 Files are typically selected by users and uploaded to Moodle using the File manager, and the file picker.
 
 - The **file manager** is an interface used to view, and delete existing files, and to add new files.
-- The **file picker** is an interface, often accessed using the _file manager_, to select files for upload to Moodle. The file picker makes use of [[Repository API|file repositories]].
+- The **file picker** is an interface, often accessed using the _file manager_, to select files for upload to Moodle. The file picker makes use of [file repositories](https://docs.moodle.org/dev/Repository_API).
 
 ### Form fields
 
@@ -201,7 +201,7 @@ The packer is currently limited to ASCII filenames and individual files are limi
 
 ## See also
 
-- [[Repository API]]
-- [[Portfolio API]]
-- [[Resource module file API migration]]
+- [Repository API](https://docs.moodle.org/dev/Repository_API)
+- [Portfolio API](https://docs.moodle.org/dev/Portfolio_API)
+- [Resource module file API migration](https://docs.moodle.org/dev/Resource_module_file_API_migration)
 - {tracker}`MDL-14589` - File API Meta issue

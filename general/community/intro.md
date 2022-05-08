@@ -23,7 +23,7 @@ There are many other people contributing to Moodle in many ways. For a full list
 
 ## How we develop the Roadmap
 
-The [Roadmap](./roadmap.md) lists the new features being developed for the next major version. This list is derived mostly from the issues with large numbers of votes in the Moodle [[Tracker]], so please vote for what you want!  Other influences include general discussion, surveys and feature requests at Moodle Moots and in the Moodle forums.
+The [Roadmap](./roadmap.md) lists the new features being developed for the next major version. This list is derived mostly from the issues with large numbers of votes in the Moodle [Tracker](https://docs.moodle.org/dev/Tracker), so please vote for what you want!  Other influences include general discussion, surveys and feature requests at Moodle Moots and in the Moodle forums.
 
 Component leads decide on features in individual components so make your case to them!
 
@@ -33,7 +33,7 @@ Moodle major releases (with big new features) are on a regular 6 month cycle, in
 
 Minor releases (with bug fixes only) are on a 2 month cycle, unless a security emergency occurs. They will increment the major release by 0.0.1 (eg 3.5 -> 3.5.1 -> 3.5.2).
 
-The full details of these can be seen in the [[Releases]].
+The full details of these can be seen in the [Releases](https://docs.moodle.org/dev/Releases).
 
 ## Support lifetime
 
@@ -59,17 +59,17 @@ See our [Process](./development/process.md) document for full information on our
 
 ## Coding Standards
 
-Over time we have distilled our best practice in writing code down into our [[Coding|Coding Guide]].  These rules cover the formatting and layout of all our code to make it consistent across the code base. If you plan to write Moodle code, you need to read it thoroughly.
+Over time we have distilled our best practice in writing code down into our [Coding Guide](https://docs.moodle.org/dev/Coding).  These rules cover the formatting and layout of all our code to make it consistent across the code base. If you plan to write Moodle code, you need to read it thoroughly.
 
 ## Plugins and APIs
 
 Although Moodle is open source and you can change anything you want, the best and most maintainable way to extend Moodle is to write a plugin (sometimes called a module). Plugins are a directory of code that can be simply "dropped" in into any Moodle installation and it will be detected, installed and automatically made available as a tool within the Moodle interface.
 
-See our [[Plugins|Plugin documentation]] for full details of the various types of plugin available.
+See our [Plugin documentation](https://docs.moodle.org/dev/Plugins) for full details of the various types of plugin available.
 
 ## See also
 
-- [[Finding your way into the Moodle code]]
-- [[Working with the Community]]
-- [[Plugin contribution]]
+- [Finding your way into the Moodle code](https://docs.moodle.org/dev/Finding_your_way_into_the_Moodle_code)
+- [Working with the Community](https://docs.moodle.org/dev/Working_with_the_Community)
+- [Plugin contribution](https://docs.moodle.org/dev/Plugin_contribution)
 - [How to guarantee your change is integrated to Moodle core](http://www.slideshare.net/poltawski/how-to-guarantee-your-change-is-integrated-to-moodle-core) presentation by Dan Poltawski

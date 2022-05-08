@@ -26,7 +26,7 @@ Feedback from the community is extremely important and you can reach us by
 
 Moodle also has an extensive network of [Moodle Partners](https://moodle.com/partners). Moodle Partners are service providers that are certified by Moodle HQ to provide high quality Moodle services for schools, institutions and organisations. We work closely with our partners to determine the needs of Moodle Users and improve the platform.
 
-Our Roadmap is built via our [[Roadmap process]]. This process is continuously evolving but it always seeks to involve all our key stakeholders - students, teachers, admins, institutions, and of course our partners and supporters.
+Our Roadmap is built via our [Roadmap process](https://docs.moodle.org/dev/Roadmap_process). This process is continuously evolving but it always seeks to involve all our key stakeholders - students, teachers, admins, institutions, and of course our partners and supporters.
 
 ### The big picture
 
@@ -181,7 +181,7 @@ For our very large new releases such as 1.0, 2.0, 3.0 and now 4.0, we often take
 
 As part of a significant UX and design change, the current focus is on three main UX projects:
 
-- [[Moodle_4.0_navigation_improvements|Improved navigation]], search and menus - MDL-69588
+- [Improved navigation](https://docs.moodle.org/dev/Moodle_4.0_navigation_improvements), search and menus - MDL-69588
 - Making it easier to create and manage courses - MDL-70907
 - Making it easier for students to know what they need to do to complete a course, and know what's next
 
@@ -189,8 +189,8 @@ Other projects include:
 
 - LTI 1.3 Advantage Tool / Provider implementation - MDL-69542
 - BigBlueButton integration - MDL-70658
-- a community proposal for the question bank being discussed and shaped by a consortium of universities - [[Question bank improvements for Moodle 4.0]].
-- Integration of the [admin presets](https://moodle.org/plugins/block_admin_presets) tool to enable saving, loading, and sharing of Moodle site configurations - [[Site admin presets]].
+- a community proposal for the question bank being discussed and shaped by a consortium of universities - [Question bank improvements for Moodle 4.0](https://docs.moodle.org/dev/Question_bank_improvements_for_Moodle_4.0).
+- Integration of the [admin presets](https://moodle.org/plugins/block_admin_presets) tool to enable saving, loading, and sharing of Moodle site configurations - [Site admin presets](https://docs.moodle.org/dev/Site_admin_presets).
 
 #### Moodle 3.11
 
@@ -200,7 +200,7 @@ Note that while we will endeavour to include all community contributions in the 
 
 Scheduled projects for Moodle 3.11 are:
 
-- [[Student activity completion]] (MUA) - MDL-70469
+- [Student activity completion](https://docs.moodle.org/dev/Student_activity_completion) (MUA) - MDL-70469
 - Open Badges v2.1 (Badge Connect API) - MDL-71117
 - Brickfield accessibility toolkit integration - MDL-71041
 
@@ -218,11 +218,11 @@ We are extending security support on Moodle 3.9 and Moodle 3.11 to November 2023
 
 ## Past releases
 
-See our [[Releases]] page for information about past releases.
+See our [Releases](https://docs.moodle.org/dev/Releases) page for information about past releases.
 
 After Moodle 2.0 we switched to time-based releases rather than feature-based releases (see our [development process](../development/process.md)). Because of this, the details above on future releases are an indication of current priorities only, and are targeted to be released in the upcoming releases. Anything not ready by the next release date will generally be pushed to the following major release.
 
 ### See also
 
-- [[Releases]] - versions of Moodle that have already been released
-- [[Releases#General_release_calendar|Key dates relating to future releases]]
+- [Releases](https://docs.moodle.org/dev/Releases) - versions of Moodle that have already been released
+- [Key dates relating to future releases](https://docs.moodle.org/dev/Releases#General_release_calendar)
