@@ -24,7 +24,10 @@ const obsoleteDocs = require('./data/obsoletePages.json');
  * A list of documents which have been migrated with their source and destination paths shown.
  */
 /* eslint-disable-next-line no-restricted-properties */
-const migratedDocs = yaml.load(fs.readFileSync('./data/migratedPages.yml', 'utf8'));
+const migratedDocs = yaml.load(fs.readFileSync(path.join(
+    __dirname,
+    'data/migratedPages.yml',
+), 'utf8'));
 
 const isObsolete = (legacyPath) => obsoleteDocs.indexOf(legacyPath) !== -1;
 
@@ -85,29 +88,31 @@ const getMigrationLink = (legacyPath, usedIn) => {
 
     const replacementIsGeneral = replacementFile.startsWith('general/');
     const usedInIsGeneral = relativeUsedIn.startsWith('general/');
-    const bothGeneral = replacementIsGeneral && usedInIsGeneral;
-    const neitherGeneral = !replacementIsGeneral && !usedInIsGeneral;
 
-    if (bothGeneral || neitherGeneral) {
-        const absRelativeUsedIn = getAbsoluteDirectory(relativeUsedIn);
-        const absReplacementFile = path.join(process.env.PWD, replacementFile);
-        const relativeLink = path.relative(absRelativeUsedIn, absReplacementFile);
-
-        if (relativeLink.startsWith('.')) {
-            return relativeLink;
+    const normaliseReplacement = (file) => {
+        if (file.endsWith('index.md')) {
+            return `/${file.replace(/\/index\.md$/, '')}`;
         }
-        return `./${relativeLink}`;
+
+        if (file.endsWith('.md')) {
+            return `/${file.replace(/\.md$/, '')}`;
+        }
+
+        return `/${file}`;
+    };
+
+    if (replacementIsGeneral || usedInIsGeneral) {
+        return normaliseReplacement(`${replacementFile}`);
     }
 
-    if (replacementFile.endsWith('index.md')) {
-        return `/${replacementFile.replace(/\/index\.md$/, '')}`;
-    }
+    const absRelativeUsedIn = getAbsoluteDirectory(relativeUsedIn);
+    const absReplacementFile = path.join(__dirname, replacementFile);
+    const relativeLink = path.relative(absRelativeUsedIn, absReplacementFile);
 
-    if (replacementFile.endsWith('.md')) {
-        return `/${replacementFile.replace(/\.md$/, '')}`;
+    if (relativeLink.startsWith('.')) {
+        return relativeLink;
     }
-
-    return `/${replacementFile}`;
+    return `./${relativeLink}`;
 };
 
 module.exports = {
