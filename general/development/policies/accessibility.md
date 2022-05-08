@@ -78,7 +78,7 @@ See [the WCAG 2.1 requirement for text alternatives](https://www.w3.org/TR/WCAG2
 
 #### Solitary Icons
 
-Icons displayed on their own, as part of a link or as informative content must include accessible text to convey the meaning of the icon. For an image tag, this can be the `"alt"` attribute for the image tag. It can be valid to include both the `"alt"` attribute and the "title" attribute (shown when hovering with the mouse) so that all users can access the textual meaning of the icon.
+Icons displayed on their own, as part of a link or as informative content must include accessible text to convey the meaning of the icon. For an image tag, this can be the "alt" attribute for the image tag. It can be valid to include both the "alt" attribute and the "title" attribute (shown when hovering with the mouse) so that all users can access the textual meaning of the icon.
 
 #### Icons and Text
 
