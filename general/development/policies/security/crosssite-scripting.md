@@ -15,7 +15,7 @@ This page forms part of the [Moodle security guidelines](../security).
 
 ## What is the danger?
 
-Normally, web browsers prevent JavaScript from the server from affecting content that comes from another server. For example, suppose that on your Moodle page (`http://mymooodle.com`, you have an iframe displaying an advert from `http://makemerich.com`. Then, the JavaScript code in the advert cannot access anything on your page.
+Normally, web browsers prevent JavaScript from the server from affecting content that comes from another server. For example, suppose that on your Moodle page (`http://mymooodle.com`), you have an iframe displaying an advert from `http://makemerich.com`. Then, the JavaScript code in the advert cannot access anything on your page.
 
 In Moodle, we actually let users type in HTML, then we display that HTML as part of our web site. Therefore, any JavaScript they manage to include will have full access to everything on the page.
 

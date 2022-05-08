@@ -19,9 +19,9 @@ When you put a web application on the Internet, you are making it available so t
 
 Suppose that in Moodle, the way for an Administrator to delete a user was to click a **Delete** button in their user profile, and then click **Yes** on an confirmation page. Suppose that as a result of that, the Administrator's web browser sends a POST request to `http://example.com/moodle/user/delete.php`, with post data `?id=123\&confirm=1`.
 
-Now suppose that Evil Hacker knows this, and wants to trick the administrator into deleting another user. (If Evil Hacker makes this request themselves, they will see a permission denied error.)
+Now suppose that Evil Hacker knows this, and wants to trick the administrator into deleting another user (If Evil Hacker makes this request themselves, they will see a permission denied error).
 
-All the Hacker Needs to do is to put the link `http://example.com/moodle/user/delete.php?id=123&confirm=1` somewhere where the administrator will click on it. For example, they could send the Administrator an email with a link saying _"Look at this cool YouTube video"_ but where the link actually goes to the delete URL. The Administrator may click on the link without checking where it goes, and when the Administrator clicks that link, user 123 really will be deleted.
+All the Hacker needs to do is to put the link `http://example.com/moodle/user/delete.php?id=123&confirm=1` somewhere where the administrator will click on it. For example, they could send the Administrator an email with a link saying _"Look at this cool YouTube video"_ but where the link actually goes to the delete URL. The Administrator may click on the link without checking where it goes, and when the Administrator clicks that link, user 123 really will be deleted.
 
 Or, more seriously, the student could put a post in a forum that Administrators will read, and in the forum post, put an `<img src="http://example.com/moodle/user/delete.php?id=123&confirm=1" />`. That way, the moment the Administrator reads the forum, user 123 will be deleted.
 
@@ -97,7 +97,7 @@ The frontend includes ever showing the sesskey in the browser URL bar or anywher
 3. If it does change state and is not a `GET` request, for example a post, then it's ok as is.
 4. A sesskey param in a `GET` request it is ok as long as:
     1. It is not the primary HTTP call, that is, it is an AJAX call or a sub request like an iframe.
-    2. This page doesn't load any sub resources on another domain and where the sesskey could leak through the referer header.
+    2. This page doesn't load any sub resources on another domain and where the sesskey could leak through the referrer header.
     3. If the request will ALWAYS do something very quickly and then redirect away. But generally speaking these should be a HTTP post instead. If it takes a long time then it runs the risk of the URL being visible and lengthens the window of opportunity for a leak.
 
 ### Examples of sesskey fixed in core
