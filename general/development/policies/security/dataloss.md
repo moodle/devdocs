@@ -44,4 +44,4 @@ However, it is also possible for users to accidentally destroy lots of data if t
 ## See also
 
 - [Security](../security)
-- [[Coding]]
+- [Coding](https://docs.moodle.org/dev/Coding)

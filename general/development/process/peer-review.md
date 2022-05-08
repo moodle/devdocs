@@ -64,7 +64,7 @@ Ensure that:
 
 ### Component library
 
-Any improvement or new feature that introduces UI features to Moodle core from Moodle 4.0 onwards must be documented within the [[Component library]].
+Any improvement or new feature that introduces UI features to Moodle core from Moodle 4.0 onwards must be documented within the [Component library](https://docs.moodle.org/dev/Component_library).
 
 This applies to any feature introduced or updated from Moodle 4.0 onwards, which:
 
@@ -75,7 +75,7 @@ This applies to any feature introduced or updated from Moodle 4.0 onwards, which
 
 Ensure that any new User Interface feature in Moodle 4.0 or later which matches the above criteria:
 
-- Is documented in the [[Component library]]
+- Is documented in the [Component library](https://docs.moodle.org/dev/Component_library)
 - Includes examples of usage
 - Has appropriate descriptions
 - Respects all Moodle-supplied themes
@@ -87,10 +87,10 @@ To achieve appropriate internationalisation of Moodle, language strings must be 
 Ensure that:
 
 - New language strings are named correctly (all lower case, no camel-case, underscores are permissible in some cases);
-- Help strings are named and formatted as described in [[Help strings]];
+- Help strings are named and formatted as described in [Help strings](https://docs.moodle.org/dev/Help_strings);
 - Language strings are used instead of hard-coded strings for text output;
 - Language strings have not been removed or renamed, had their meaning changed or had their parameters changed in stable branches (permitted only in master); and
-- [[AMOS commands]] have been specified when moving or copying language strings.
+- [AMOS commands](https://docs.moodle.org/dev/AMOS_commands) have been specified when moving or copying language strings.
 
 ### Databases
 
@@ -129,7 +129,7 @@ Ensure that:
 - `Sesskey` values are checked before all write actions where appropriate (some read actions as well);
 - Capabilities are checked where roles differ;
 - User inputs are properly escaped (eg the correct param type is used and risky types such as raw are only used where necessary and safe to do so); and
-- If the issue itself is a [[security]] issue, the [security process](https://docs.moodle.org/dev/Process#Security_issues) is being followed.
+- If the issue itself is a [security](https://docs.moodle.org/dev/security) issue, the [security process](https://docs.moodle.org/dev/Process#Security_issues) is being followed.
   - Ensure that the fix is **not** available in a public repository (ie. a personal Github account); stand-alone patches should be provided instead.
   - The issue will not be integrated until just before the next minor version release.
 
@@ -147,7 +147,7 @@ Ensure that:
 - Provide a way to delete that data.
 
 :::info
-See more info in [[Privacy_API]].
+See more info in [Privacy API](https://docs.moodle.org/dev/Privacy_API).
 :::
 
 ### Performance and clustering
@@ -211,7 +211,7 @@ Ensure that:
 - The code makes sense in relation to the broader codebase (look at the whole function, not just the altered code); and
 - The developer has searched for and fixed other areas that may also have been affected by the same problem.
 - Verify that the related component maintainers, if known, have participated and are aware of the issue (as assignee, or existing comments...). If they have not, please perform a friendly @mention to make them aware about the issue. A list of component leads is available here: https://docs.moodle.org/dev/Component_Leads
-- If any version numbers have been changed in [[version.php]] files, then the changes follow [the rule for updating version numbers in core](https://docs.moodle.org/dev/Moodle_versions#How_to_increment_version_numbers_in_core).
+- If any version numbers have been changed in [version.php](https://docs.moodle.org/dev/version.php) files, then the changes follow [the rule for updating version numbers in core](https://docs.moodle.org/dev/Moodle_versions#How_to_increment_version_numbers_in_core).
 - There are comments on tracker explaining why current approach was taken and why other options (especially large issues). If not comment asking them to explain
 
 ### Icons

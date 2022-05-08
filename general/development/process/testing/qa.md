@@ -22,7 +22,7 @@ Would you like to help with QA testing? If so, please make sure you have created
    - Only assign an issue to yourself which no one else is testing (Assignee = Unassigned).
    - Only assign one issue at a time unless you plan to test a number of related issues within the next 24 hours. In other words, don't assign several issues to yourself then do nothing for several days. ;-)
    - The label `test_server_required` indicates issues that can't be tested on the QA testing site. The label `credentials_required` indicates that credentials such as an OAuth 2 service client ID and secret are required.
-2. Using either the [Moodle QA Testing Site](https://qa.moodledemo.net/) or your own test site running the latest Moodle 4.0dev (available from Git on the integration/master branch git://git.moodle.org/integration.git) with [[debugging]] set to developer, perform each of the steps listed in the test.
+2. Using either the [Moodle QA Testing Site](https://qa.moodledemo.net/) or your own test site running the latest Moodle 4.0dev (available from Git on the integration/master branch git://git.moodle.org/integration.git) with [debugging](https://docs.moodle.org/dev/debugging) set to developer, perform each of the steps listed in the test.
 3. Please *attach screenshots of the steps where you verify or check something*.
 4. If it makes sense, please test using the currently supported themes, Boost and Classic.
 5. Choose an appropriate workflow action:

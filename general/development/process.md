@@ -32,11 +32,11 @@ While many of the developers work for Moodle.com, a large number are part of the
 
 ### CiBoT
 
-CiBoT is not a person but a bot who monitors the tracker and performs the [[Automated code review]] when issue is submitted for Peer review or when developer added `cime` label.
+CiBoT is not a person but a bot who monitors the tracker and performs the [Automated code review](https://docs.moodle.org/dev/Automated_code_review) when issue is submitted for Peer review or when developer added `cime` label.
 
 ### Component leads
 
-[Component leads](https://tracker.moodle.org/projects/MDL?selectedItem=com.atlassian.jira.jira-projects-plugin:components-page) are developers with some responsibility for particular components (plugins or modules) in Moodle. They have authority to decide that a particular fix is suitable and complete enough to be considered for integration in Moodle core and should be called upon to complete peer reviews for code in their components. Note that, apart from that, every component also has some [[Component Leads|HQ Component leads]] that will specifically work on associated issues, triaging, monitoring, reviewing, fixing them.
+[Component leads](https://tracker.moodle.org/projects/MDL?selectedItem=com.atlassian.jira.jira-projects-plugin:components-page) are developers with some responsibility for particular components (plugins or modules) in Moodle. They have authority to decide that a particular fix is suitable and complete enough to be considered for integration in Moodle core and should be called upon to complete peer reviews for code in their components. Note that, apart from that, every component also has some [HQ Component leads](https://docs.moodle.org/dev/Component_Leads) that will specifically work on associated issues, triaging, monitoring, reviewing, fixing them.
 
 ### Component leads reviewers
 
@@ -65,15 +65,15 @@ On Thursday each week, production maintainers merge all the issues that passed t
 
 Moodle releases regular updates of the stable version of the software to fix bugs and other issues. Releases like 2.2.1, 2.2.2, 2.2.3 etc only include fixes based on the latest major release (2.2) and never any significant new features or database changes.
 
-At Moodle HQ there are teams of developers using the [Scrum framework](http://www.scrum.org/) to work on these issues (as well as new features for [[#Major_release_cycles|major releases]]).
+At Moodle HQ there are teams of developers using the [Scrum framework](http://www.scrum.org/) to work on these issues (as well as new features for [major releases](https://docs.moodle.org/dev/#Major_release_cycles)).
 
 ### Minor release (point release) timing
 
-After [[#Major_release_cycles|major releases]] there will be minor releases.
+After [major releases](https://docs.moodle.org/dev/#Major_release_cycles) there will be minor releases.
 
 - x.x.1 will occur approximately two months after each major release (eg. 2.x).
 - There will then be another point release every two months after that.
-See the [[Releases#General_release_calendar|General release calendar]] for details.
+See the [General release calendar](https://docs.moodle.org/dev/Releases#General_release_calendar) for details.
 
 ### Issue triage
 
@@ -93,7 +93,7 @@ Whenever a solution for an issue is finished, it is submitted to the standard in
 
 ## Major release cycles
 
-Since Moodle 2.0, we have a policy of release major versions (eg 2.1, 2.2) every six months in May and November. See the [[Releases#General_release_calendar|General release calendar]] for more details.
+Since Moodle 2.0, we have a policy of release major versions (eg 2.1, 2.2) every six months in May and November. See the [General release calendar](https://docs.moodle.org/dev/Releases#General_release_calendar) for more details.
 
 Each release can be different, but generally the cycles work as follows.
 
@@ -107,13 +107,13 @@ Sometimes new features might be based on earlier features, sometimes they may be
 
 The product teams together with UX, employed at Moodle HQ, work on specifications of major new features throughout the cycle, specifying projects ahead of development time.
 
-The process of [[#New_feature_development|new feature development]] is described below. When specifications are in place, new code is developed during sprints, where designs and implementation are iterated as required, and goes through the standard weekly integration workflow described above.
+The process of [new feature development](https://docs.moodle.org/dev/#New_feature_development) is described below. When specifications are in place, new code is developed during sprints, where designs and implementation are iterated as required, and goes through the standard weekly integration workflow described above.
 
 ### Testing
 
-During development, as new code is integrated, automated testing conducted at the [[PHPUnit|code]] and [[Acceptance_testing|interface]] levels, to make sure there are no regressions caused by new features.
+During development, as new code is integrated, automated testing conducted at the [code](https://docs.moodle.org/dev/PHPUnit) and [interface](https://docs.moodle.org/dev/Acceptance_testing) levels, to make sure there are no regressions caused by new features.
 
-In the last month before the release, a feature freeze is called (no new features can be added) and volunteer testers from the Moodle community perform manual [QA testing](/general/development/process/testing/qa) of Moodle features. The current set of functional tests is listed in {tracker}`MDLQA-1`. The list of tests is extended as new features are added, though we're also trying to reduce the number as more automated [[Acceptance_testing|acceptance tests]] are developed.
+In the last month before the release, a feature freeze is called (no new features can be added) and volunteer testers from the Moodle community perform manual [QA testing](/general/development/process/testing/qa) of Moodle features. The current set of functional tests is listed in {tracker}`MDLQA-1`. The list of tests is extended as new features are added, though we're also trying to reduce the number as more automated [acceptance tests](https://docs.moodle.org/dev/Acceptance_testing) are developed.
 
 There is also a set of tests for manually testing any major theme changes - {tracker}`MDLQA-11592`.
 
@@ -171,9 +171,9 @@ Community developers proposing a new feature will want to talk with HQ core deve
 
 Develop your code on an open Git repository, like github.com. That enables people to see your code and to help you as it develops. Testers and early adopters also have the opportunity to try it early in the process and give you more valuable feedback.
 
-Coverage with automated tests ([[PHPUnit]] or [[Behat|Behat_integration]]) is mandatory for new features.
+Coverage with automated tests ([PHPUnit](https://docs.moodle.org/dev/PHPUnit) or [Behat integration](https://docs.moodle.org/dev/Behat)) is mandatory for new features.
 
-It is essential that your code follows the [[Coding|Moodle Coding Guide]].
+It is essential that your code follows the [Moodle Coding Guide](https://docs.moodle.org/dev/Coding).
 
 ### Submit your code for peer review
 
@@ -189,7 +189,7 @@ All other developers, including people who are component leads but working outsi
 
 ### Peer review
 
-The [[HQ component leads]] should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
+The [HQ component leads](https://docs.moodle.org/dev/HQ_component_leads) should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
 
 Process and the list of things to check are described in [Peer reviewing](process/peer-review).
 
@@ -213,13 +213,13 @@ Bugs should normally be fixed on all the supported stable branches that are affe
 
 ### Develop your change using git
 
-Develop your fix and push the change to an open git repository, for example on github.com. See also [[Git for developers]]
+Develop your fix and push the change to an open git repository, for example on github.com. See also [Git for developers](https://docs.moodle.org/dev/Git_for_developers)
 
-It is essential that your code follows the [[Coding|Moodle Coding Guide]].
+It is essential that your code follows the [Moodle Coding Guide](https://docs.moodle.org/dev/Coding).
 
 You will need to push one commit for each branch the fix needs to be applied to. Often people use branch names like `MDL-12345-31_brief_name` so it is clear what each branch is. [git cherry-pick](http://kernel.org/pub/software/scm/git/docs/git-cherry-pick.html) can help with replicating the fix onto different branches.
 
-Consider setting up [[Travis integration]] with your repository so tests will be automatically run for you whenever you push work on your fix.
+Consider setting up [Travis integration](https://docs.moodle.org/dev/Travis_integration) with your repository so tests will be automatically run for you whenever you push work on your fix.
 
 ### Submit your code for peer review
 
@@ -236,11 +236,11 @@ If you have never contributed to Moodle and don't see a button _Request peer rev
 
 After your first fix is integrated you will be added to developers group and will be able to send issues for peer review yourself. In this case make sure you are listed as Assignee and click on _Request peer review_ button in the tracker.
 
-If you've set up [[Travis integration]], the issue will automatically show the Travis build status for the branch(es) you've submitted for peer review.
+If you've set up [Travis integration](https://docs.moodle.org/dev/Travis_integration), the issue will automatically show the Travis build status for the branch(es) you've submitted for peer review.
 
 ### Peer review
 
-The [[HQ component leads]] should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
+The [HQ component leads](https://docs.moodle.org/dev/HQ_component_leads) should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
 
 Process and the list of things to check are described in [Peer reviewing](process/peer-review).
 
@@ -250,16 +250,16 @@ It will then be reviewed the following week by one of the integration team and e
 
 ## Security issues
 
-Issues identified as [security issues](/general/development/policies/security) are resolved in a slightly different way, in order to achieve responsible disclosure as described in [[Moodle security procedures]].
+Issues identified as [security issues](/general/development/policies/security) are resolved in a slightly different way, in order to achieve responsible disclosure as described in [Moodle security procedures](https://docs.moodle.org/dev/Moodle_security_procedures).
 
 - Security issues should be labelled as "Minor" or "Serious" in order control visibility of the issue.
   - An issue reported with a security level of "Could be a security issue" should be evaluated as soon as possible and either set as "Minor" or "Serious" or the security level should be set to "None".
 - Solutions to security issues should not:
   - be made available in public repositories.
-    - If a developer has shared a solution as Git branches via Github, they should be asked to provide the solutions as [[How_to_create_a_patch|stand-alone patches]] attached to the issue and to [[#How to remove a branch from Github|remove the solution from Github]].
+    - If a developer has shared a solution as Git branches via Github, they should be asked to provide the solutions as [stand-alone patches](https://docs.moodle.org/dev/How_to_create_a_patch) attached to the issue and to [remove the solution from Github](https://docs.moodle.org/dev/#How_to_remove_a_branch_from_Github).
   - contain details about the security problem in the commit message.
     - Instead use generic terms like, "improve", "better handling of"
-- The solution will not be integrated until the week before a [minor release](#Stable-maintenance-cycles) following the normal [[Release process|Release process]]. In short, the issue will be incorporated into the integration version, rebased, tested and made ready for release as a normal issue would, but not until as late as possible.
+- The solution will not be integrated until the week before a [minor release](#Stable-maintenance-cycles) following the normal [Release process](https://docs.moodle.org/dev/Release_process). In short, the issue will be incorporated into the integration version, rebased, tested and made ready for release as a normal issue would, but not until as late as possible.
 - Details of security issues will be shared with registered admins with the minor release.
 - Details of security issues will not be publicly announced until one week after a minor release to allow admins to update.
 Note that not all the labelled (minor) security issues are always handled following the procedure above. It's possible that, after discussion, it's decided a given issue is not a real Moodle security problem (say external disclosures/potential attacks using Moodle as vector, not as target, discussions revealing some private details). Those issues will be processed as normal issues, generating the needed user documentation if necessary and will be part of the habitual weekly releases.
@@ -291,8 +291,8 @@ Decisions will be posted on the issue and that issue will be closed, allowing an
 
 ## See also
 
-- [[Release process]]
-- [[Deprecation]]
+- [Release process](https://docs.moodle.org/dev/Release_process)
+- [Deprecation](https://docs.moodle.org/dev/Deprecation)
 - [Integration dashboard](http://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11350)
 Walks-though of the process for contributors:
 - By Dan Poltawski, Integrator: http://www.slideshare.net/poltawski/how-to-guarantee-your-change-is-integrated-to-moodle-core, https://www.youtube.com/watch?v=836WtnM2YpM

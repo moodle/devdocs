@@ -116,7 +116,7 @@ Additional rules for event observers:
 
 The most common way (but not the only way) to implement a callback is using the `component_callback()` function. This function works by looping over the installed plugins and calling a function from each plugin based on appending the component name to the supplied function name. It then expects the function to be defined either in the plugins lib.php file, or in an autoloaded location (but not in a class!).
 
-[[Callbacks|List of callbacks in Moodle]]
+[List of callbacks in Moodle](https://docs.moodle.org/dev/Callbacks)
 
 ## FAQ
 
@@ -130,7 +130,7 @@ A: Anytime one plugin wants to communicate to one other specific plugin - it's b
 
 **Q: How do I know if there is an API I can already use?**
 
-A: Existing callbacks are listed [[Callbacks|here]], major core APIs are listed [here](/docs/apis).
+A: Existing callbacks are listed [here](https://docs.moodle.org/dev/Callbacks), major core APIs are listed [here](/docs/apis).
 
 **Q: Can I change the data provided to a component_callback and maintain backwards compatibility.**
 
@@ -146,7 +146,7 @@ A: You can grep the code or create a test script that executes `get_plugins_with
 
 **Q: How can I ensure the name for my new callback is unique?**
 
-A: Check [[Callbacks|list of existing callbacks]]. Consider prefixing with the component name the callback is defined in - but existing code does not do this much.
+A: Check [list of existing callbacks](https://docs.moodle.org/dev/Callbacks). Consider prefixing with the component name the callback is defined in - but existing code does not do this much.
 
 **Q: Will my callback function be called even if my plugin is disabled?**
 

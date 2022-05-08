@@ -155,12 +155,12 @@ Moodle is very flexible system, administrators may define multiple roles. Each r
 ### Check permissions
 
 - Before allowing the user to see anything or do anything, call to [`has_capability`](/docs/apis/subsystems/access#has_capability) or [`require_capability`](/docs/apis/subsystems/access#require_capability).
-- Capabilities should be annotated with the appropriate **[[Hardening_new_Roles_system#Basic_risks|risks]]**.
+- Capabilities should be annotated with the appropriate **[risks](https://docs.moodle.org/dev/Hardening_new_Roles_system#Basic_risks)**.
 - If appropriate, restrict what people can see according to **groups**.
 
 ### Don't trust any input from users
 
-- Use **[[lib/formslib.php|moodleforms]]** whenever possible, with an appropriate `setType` method call for each field.
+- Use **[moodleforms](https://docs.moodle.org/dev/lib/formslib.php)** whenever possible, with an appropriate `setType` method call for each field.
 - Before performing actions, use `data_submitted() && confirm_sesskey()` to check sesskey and that you are handling a POST request.
 - Before destroying large amounts of data, add a confirmation step.
 - If not using a moodleform, clean input using `optional_param` or `required_param` with an appropriate `PARAM_...` type.
@@ -179,13 +179,13 @@ Similarly, clean data from other external resources like RSS feeds before use.
 
 :::info More info
 
-We recommend that you follow the [[Output functions]] to get a better understanding of how dynamic data should be sent from Moodle to the browser.
+We recommend that you follow the [Output functions](https://docs.moodle.org/dev/Output_functions) to get a better understanding of how dynamic data should be sent from Moodle to the browser.
 
 :::
 
 ### Escape data before storing it in the database
 
-- Use the [[XMLDB_editor|XMLDB]] library. This takes care of most escaping issues for you.
+- Use the [XMLDB](https://docs.moodle.org/dev/XMLDB_editor) library. This takes care of most escaping issues for you.
 - When you must use custom SQL code, **use place-holders** to insert values into the queries.
   - Before Moodle 2.0, you had to build SQL by concatenating strings. Take particular care, especially with quoting values, to avoid SQL injection vulnerabilities.
 - The `addslashes` method should no longer be use anywhere in Moodle 2.0 onwards.
@@ -216,7 +216,7 @@ We recommend that you follow the [[Output functions]] to get a better understand
 ## See also
 
 - [Security issue process](../process#security-issues)
-- [[Coding]]
+- [Coding](https://docs.moodle.org/dev/Coding)
 - The [2010 CWE/SANS Top 25 Most Dangerous Programming Errors](http://cwe.mitre.org/top25/) - this is a generic list of common security mistakes, produced by a group of security experts. The above Moodle-specific guidelines cover most of these general points.
 - [PHP Security Cheat Sheet](https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet)
 <!--cspell:ignore OWASP -->

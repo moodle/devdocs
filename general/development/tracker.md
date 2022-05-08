@@ -100,4 +100,4 @@ If you find that a bug is still affecting a stable version of Moodle, despite th
 ## See also
 
 - [Tracker tips](./tracker/tips)
-- [[New feature ideas]]
+- [New feature ideas](https://docs.moodle.org/dev/New_feature_ideas)

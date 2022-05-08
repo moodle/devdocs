@@ -124,5 +124,5 @@ CodeSniffer can export its reports in the following formats:
 
 ## See also
 
-1. [[Coding]]
+1. [Coding](https://docs.moodle.org/dev/Coding)
 1. [Coding style](../policies/codingstyle/index.md)
