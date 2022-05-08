@@ -15,7 +15,7 @@
     "wikimedia-sync": "scripts/wikimedia-sync.js",
     "component-spellings": "scripts/component-helper.js spelling",
     "test": "jest",
-    "mdlint-doc": "markdownlint --rules .markdownlint/no-directional-quotation-marks --rules .markdownlint/no-wikilinks --rules .markdownlint/fix-migrated-links",
+    "mdlint-doc": "markdownlint --rules .markdownlint/no-directional-quotation-marks --rules .markdownlint/no-wikilinks --rules .markdownlint/fix-migrated-links --rules .markdownlint/find-obsolete-links",
     "mdlint-all": "yarn mdlint-doc '{docs,general}/**/*.md' '*.md'",
     "lint": "yarn mdlint-all",
     "prepare": "husky install",
