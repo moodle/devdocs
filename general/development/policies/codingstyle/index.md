@@ -20,7 +20,7 @@ Unless otherwise specified, this Coding Style document **will defer to [PSR-12](
 Where a **de-facto Moodle standard** is encountered but is undocumented, an appropriate **MDLSITE** issue should be raised to have the standard either documented within this Coding style guide, or rejected and the PSR recommendations adopted instead.
 
 :::info
-A "de-facto Moodle standard"* is any coding style which is commonly and typically used in Moodle.
+A "de-facto Moodle standard" is any coding style which is commonly and typically used in Moodle.
 :::
 
 ### Goals
