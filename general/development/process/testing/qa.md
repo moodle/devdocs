@@ -254,5 +254,5 @@ Comments on tests from previous QA cycles:
 ## See also
 
 - [QA testing dashboard](https://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11454)
-- [Testing credits](https://docs.moodle.org/dev/Testing_credits)
+- [Testing credits](/general/community/credits/testing)
 - [Useful tips for QA testing](https://moodle.org/mod/forum/discuss.php?d=351302)

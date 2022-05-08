@@ -129,7 +129,7 @@ Ensure that:
 - `Sesskey` values are checked before all write actions where appropriate (some read actions as well);
 - Capabilities are checked where roles differ;
 - User inputs are properly escaped (eg the correct param type is used and risky types such as raw are only used where necessary and safe to do so); and
-- If the issue itself is a [security](https://docs.moodle.org/dev/security) issue, the [security process](https://docs.moodle.org/dev/Process#Security_issues) is being followed.
+- If the issue itself is a [security](https://docs.moodle.org/dev/security) issue, the [security process](/general/development/process#security-issues) is being followed.
   - Ensure that the fix is **not** available in a public repository (ie. a personal Github account); stand-alone patches should be provided instead.
   - The issue will not be integrated until just before the next minor version release.
 

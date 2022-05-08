@@ -86,7 +86,7 @@ as the very first command.
 
 :::tip
 
-Alternatively, you can also use [Moodle Development Kit (MDK)](https://docs.moodle.org/dev/Moodle_Development_kit), and add the option `--integration` to install a Moodle instance based on integration.git.
+Alternatively, you can also use [Moodle Development Kit (MDK)](/general/development/tools/mdk), and add the option `--integration` to install a Moodle instance based on integration.git.
 
 :::
 
