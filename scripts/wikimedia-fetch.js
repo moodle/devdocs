@@ -20,13 +20,8 @@ const { exec } = require('child_process');
 const { program } = require('commander');
 const { writeFile } = require('fs/promises');
 
-/* eslint-disable import/no-extraneous-dependencies */
-const unified = require('unified');
-const parse = require('remark-parse');
-const legacyDocLinks = require('../src/lib/legacyDocLinks');
-const VFile = require('vfile');
-const rehype2remark = require('rehype-remark');
-const stringify = require('remark-stringify');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const inquirer = require('inquirer');
 
 const {
     getFetchDoc,
@@ -43,22 +38,87 @@ const client = getClient(remoteHost);
 const logger = getLogger();
 const fetchDoc = getFetchDoc(logger)(client);
 
-const getFrontpage = (title, content) => {
+// This regular expression matches any Wikimedia Category tag taking the entire line.
+// const categoryRegexp = /^\[\[Category:(?<categoryName>.+?)\]\]$/g;
+const categoryRegexp = /\[\[Category:(?<categoryName>[^\]]*)\]\]/g;
+const getFrontmatterData = (title, content) => {
     const data = {
         title: title.replaceAll('_', ' '),
         tags: [],
     };
 
-    const categoryRegexp = /\[\[Category:(?<categoryName>[^\]]*)\]\]/g;
     data.tags = Array.from(content.matchAll(categoryRegexp))
         .map((result) => result.groups.categoryName.replace(/\|.*$/, ''))
         .filter((result) => !!result);
 
-    const frontpageMatter = yaml.dump(data);
+    return data;
+};
+
+const getFrontmatter = (data) => {
+    const frontmatter = yaml.dump(data);
 
     return `---
-${frontpageMatter}---`;
+${frontmatter}---`;
 };
+
+const checkData = (data) => new Promise((resolve) => {
+    const allQuestions = [{
+        message: 'Enter page title',
+        name: 'title',
+        default: data.title,
+    }];
+
+    const addConfirmTagsQuestion = (questions, tags) => {
+        questions.push({
+            type: 'checkbox',
+            message: 'Confirm tags',
+            name: 'tags',
+            choices: tags.map((tag) => ({
+                name: tag,
+                checked: true,
+            })),
+        });
+
+        return questions;
+    };
+
+    const addAddTagQuestion = (questions) => {
+        questions.push({
+            message: 'Enter another tag',
+            name: 'extraTag',
+            default: '',
+        });
+
+        return questions;
+    };
+
+    if (data.tags.length) {
+        addConfirmTagsQuestion(allQuestions, data.tags);
+    }
+    addAddTagQuestion(allQuestions);
+
+    const ask = (theseQuestions) => {
+        inquirer.prompt(theseQuestions)
+            .then((answers) => {
+                if (answers.title) {
+                    data.title = answers.title;
+                }
+
+                if (answers.tags) {
+                    data.tags = answers.tags;
+                }
+
+                if (answers.extraTag) {
+                    data.tags.push(answers.extraTag);
+                    ask(addAddTagQuestion([]));
+                } else {
+                    resolve(data);
+                }
+            });
+    };
+
+    ask(allQuestions);
+});
 
 program
     .name('wikimedia-fetch')
@@ -70,99 +130,90 @@ program
     .description('Migrate a document to the new path')
     .arguments('<title>', 'Title of doc to migrate')
     .arguments('<newpath>', 'New path')
-    .action(async (title, newPath) => {
+    .option('-i, --no-interactive', 'Run without any prompts')
+    .action(async (title, newPath, options) => {
+        logger.info(`Fetching ${title} to ${newPath}`);
+
         const doc = await fetchDoc(title);
-
-        const frontpageMatter = getFrontpage(title, doc.data);
-
-        const regexedData = doc.data
-            // Convert ordered lists to numbered ordered lists.
-            .replaceAll(/^###/gm, '      1. ')
-            .replaceAll(/^##/gm, '   1. ')
-            .replaceAll(/^#/gm, '1. ')
-
-            // Remove duplicate spaces after the ordered list number.
-            .replaceAll(/^(?<li>\d)+. {2}/gm, '$1. ')
-
-            // Convert bullet lists to -.
-            .replaceAll(/^\* +/gm, '- ')
-
-            // Convert heading in reverse order.
-            .replaceAll(/^==== ?(?<heading>[^=]+)====/gm, '#### $1')
-            .replaceAll(/^=== ?(?<heading>[^=]+)===/gm, '### $1')
-            .replaceAll(/^== ?(?<heading>[^=]+)==/gm, '## $1')
-
-            // Convert Wikimedia bold to markdown strong.
-            .replaceAll(/'''(?<value>[^']*)'''/g, '**$1**')
-
-            // Convert Wikimedia italic to markdown emphasis.
-            .replaceAll(/''(?<value>[^']*)''/g, '__$1__')
-
-            // Convert code blocks to a fenced codeblock.
-            .replaceAll(/^<syntaxhighlight lang="(?<language>[^"]*)">/gm, '```$1')
-            .replaceAll(/^<\/syntaxhighlight>/gm, '```')
-
-            // Remove trailing whitespace.
-            .replace(/ *$/m, '')
-            .replaceAll(/^\[\[Category:.*$/gm, '')
-        ; // eslint-disable-line semi-style
-
         const newFile = getNormalizedPath(newPath);
 
-        // Write it initially as some of the remark plugins use the absolute path.
-        writeFile(newFile, regexedData);
+        logger.info('Guessing frontmatter');
+        let frontMatter = getFrontmatterData(title, doc.data);
 
-        // This section uses remark to convert the file to an AST tree and then pass it through some of the remark
-        // plugins.
-        // This allows us to do things like convert tracker links, update legacy doc links, and warn of obsolete doc
-        // links.
-        const vFile = new VFile({
-            path: newFile,
-            value: regexedData,
-        });
+        // Remove any categories- they were picked up by the frontmatter detector.
+        doc.data = doc.data.replaceAll(categoryRegexp, '');
 
-        const tree = unified()
-            .use(parse)
-            .parse(regexedData);
+        logger.info('');
+        logger.info(getFrontmatter(frontMatter));
 
-        legacyDocLinks.updateMarkdown(tree, vFile);
+        if (options.interactive) {
+            frontMatter = await checkData(frontMatter);
+            logger.info(getFrontmatter(frontMatter));
+        }
 
-        const remarkedContent = unified()
-            .use(rehype2remark)
-            .use(stringify, {
-                bullet: '-',
-                fence: '`',
-                fences: true,
-            })
-            .stringify(tree)
+        const pageContent = `${getFrontmatter(frontMatter)}\n${doc.data}`;
+        await writeFile(newFile, pageContent);
 
-            // Unescape \[[ to [[. This is markdown trying to parse our weird and wonderful wiki links.
-            .replaceAll('\\[[', '[[')
+        const phaseScripts = [
+            // Run codeblocks first because many other rules depend on detecting if the content is in code.
+            '01-codeblocks',
 
-            // Convert any non-interwiki link `[link this is a description]` into a markdown link.
-            // Basically:
-            // - `/\[*?!\[)`        look for any `[` which is not followed by another `[`.
-            //                      This excludes any Wiki links which start with [[.
-            // - `([^ ]+)( )`       The first capture is any character which is not a space, followed by a space.
-            //                      This is the link and a pointless second capture to work around super lineal
-            //                      backtracking exploits.
-            // - `([^\]]+)\](?!\])` The third capture group is any character which is not a `]` followed by another `]`
-            // - `(?![([])/`        And which matches a negative lookahead for either a `(` or a `[` chracter.
-            //                      These are used in some cases for other links - e.g. [Existing desc](link) or
-            //                      [Thumbnail][Description].
-            // eslint-disable-next-line prefer-named-capture-group
-            .replaceAll(/\[(?!\[)([^ ]+)( )([^\]]+)\](?!\])(?![([])/g, '[$3]($1)')
-        ; // eslint-disable-line semi-style
+            // Run lists before headers
+            '02-lists',
+            '03-headers',
 
-        const pageContent = `${frontpageMatter}\n${remarkedContent}`;
-        writeFile(newFile, pageContent);
+            // External links before wikilinks.
+            '04-externallinks',
+            '05-wikilinks',
 
-        // Execute the lint twice as the first time seems to be able to introduce things which can then be fixed in a
-        // second run.
-        exec(`yarn markdownlint --fix ${newFile}`);
-        exec(`yarn markdownlint --fix ${newFile}`);
+            // Bold must be before italic
+            '08-bold',
+            '09-italic',
+
+            // Run a final lint of the global config.
+            // Run it twice becuase some changes lead to other changes.
+            '100-final',
+            '100-final',
+        ];
+
+        logger.info('Passing through transformation lints');
+        for (const phaseName of phaseScripts) {
+            // Use markdownlint-cli2-config to specify these as separate phases.
+            // This is necessary because if two rules operate on the same text, then no fix is made.
+            // The order of these is important because they often do operate on the same line.
+            // For example, we *must* convert all numbered lists before converting markup headers to markdown.
+            const phaseScript = getNormalizedPath(`scripts/migration/phases/${phaseName}/.markdownlint-cli2.cjs`);
+            logger.info(`=> Running migration phase ${phaseName}`);
+            logger.debug(`yarn markdownlint-cli2-config ${phaseScript} ${newFile}`);
+
+            await new Promise((resolve) => {
+                exec(`yarn markdownlint-cli2-config ${phaseScript} ${newFile}`, async (error, stdout, stderr) => {
+                    if (error) {
+                        logger.warn(
+                            `The '${phaseName}' conversion reported warnings that you will need to resolve manually`,
+                        );
+                        logger.warn(stderr);
+                        if (options.interactive) {
+                            logger.warn('If possible, correct this issue before continuing');
+
+                            await inquirer.prompt([{
+                                message: 'Press [enter] to continue.',
+                                name: 'ready',
+                                default: '',
+                            }]);
+                        } else {
+                            logger.warn('----');
+                        }
+                    }
+                    logger.debug(stdout);
+                    resolve();
+                });
+            });
+        }
 
         // Update the migratedPages file.
+        logger.info('=> Adding to migrated page list');
         addMigratedPage(title.replaceAll(/ /g, '_'), newFile, guessSlug(newFile));
     });
+
 program.parse();

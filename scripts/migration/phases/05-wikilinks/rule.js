@@ -23,14 +23,14 @@ const {
     getLineMetadata,
 } = require('markdownlint-rule-helpers');
 
-const getLink = (matches) => {
+const getWikilinkLink = (matches) => {
     const [link] = matches.groups.link.split('|');
 
     return link
         .replaceAll(' ', '_');
 };
 
-const getDescription = (matches) => {
+const getWikilinkDescription = (matches) => {
     const [link, description] = matches.groups.link.split('|');
 
     const value = description || link;
@@ -39,13 +39,43 @@ const getDescription = (matches) => {
         .replaceAll('_', ' ');
 };
 
-const wikilinkSearch = /(?<wikilink>\[\[(?<link>[^\]]*)\]\])/g;
+const replaceWikiLinks = (line, lineNumber, onError) => {
+    const linkSearch = /(?<wikilink>\[\[(?<link>[^\]]*)\]\])/g;
+    let matches = linkSearch.exec(line);
+    if (!matches) {
+        return;
+    }
+    do {
+        const foundWikilink = matches.groups.wikilink;
+        const link = getWikilinkLink(matches);
+        const description = getWikilinkDescription(matches);
+        const column = matches.index + 1;
+        const replacement = `[${description}](https://docs.moodle.org/dev/${link})`;
+        const fixInfo = {
+            editColumn: column,
+            deleteCount: matches.groups.link.length + 4,
+            insertText: replacement,
+        };
+
+        addErrorDetailIf(
+            onError,
+            lineNumber,
+            replacement,
+            foundWikilink,
+            null,
+            line,
+            [matches.index + 1, matches.groups.wikilink.length],
+            fixInfo,
+        );
+        matches = linkSearch.exec(line);
+    } while (matches !== null);
+};
 
 module.exports = {
-    names: ['MDLDOC002', 'no-wikilinks'],
+    names: ['convert-markup-wikilinks'],
     description: 'Do not allow use of MediaWiki [[wikilinks]]',
     tags: ['migration'],
-    function: function MDLDOC002(params, onError) {
+    function: function lint(params, onError) {
         forEachLine(getLineMetadata(params), (line, lineIndex, inCode) => {
             if (inCode) {
                 // Do not make changes to code stanzas.
@@ -53,34 +83,7 @@ module.exports = {
             }
 
             const lineNumber = lineIndex + 1;
-            let matches = wikilinkSearch.exec(line);
-            if (!matches) {
-                return;
-            }
-            do {
-                const foundWikilink = matches.groups.wikilink;
-                const link = getLink(matches);
-                const description = getDescription(matches);
-                const column = matches.index + 1;
-                const replacement = `[${description}](https://docs.moodle.org/dev/${link})`;
-                const fixInfo = {
-                    editColumn: column,
-                    deleteCount: matches.groups.link.length + 4,
-                    insertText: replacement,
-                };
-
-                addErrorDetailIf(
-                    onError,
-                    lineNumber,
-                    replacement,
-                    foundWikilink,
-                    null,
-                    line,
-                    [matches.index + 1, matches.groups.wikilink.length],
-                    fixInfo,
-                );
-                matches = wikilinkSearch.exec(line);
-            } while (matches !== null);
+            replaceWikiLinks(line, lineNumber, onError);
         });
     },
 };
