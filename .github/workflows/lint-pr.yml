@@ -5,7 +5,7 @@ on:
     paths:
       - 'docs/**/*.md'
       - 'general/**/*.md'
-      - .markdownlint.yaml
+      - .markdownlint-cli2.cjs
 
 jobs:
   docs:
@@ -20,5 +20,4 @@ jobs:
           node-version: "16"
 
       - name: Lint markdown files
-        run: |
-          npx markdownlint-cli '*.md' -i LICENSE.md -i CODE_OF_CONDUCT.md -i README.me
+        run: yarn mdlint-all
