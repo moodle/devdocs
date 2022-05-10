@@ -19,5 +19,8 @@ jobs:
         with:
           node-version: "16"
 
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
       - name: Lint markdown files
         run: yarn mdlint-all
