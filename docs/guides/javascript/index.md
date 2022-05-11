@@ -298,13 +298,13 @@ Often you may want to link the JavaScript to a specific `DOMElement` in the temp
 You can use the `{{uniqid}}` Mustache tag to give that DOM Element a unique ID and then pass that into the Module.
 
 ```handlebars title=mod/forum/templates/discussion.mustache
-<div id=“mod_forum-discussion-wrapper-{{uniqid}}”>
+<div id="mod_forum-discussion-wrapper-{{uniqid}}">
     <!—- Your template content goes here. —->
 </div>
 
 {{#js}}
-require([‘mod_forum/discussion’], function(Discussion) {
-    Discussion.init(document.querySelector(“mod_forum-discussion-wrapper-{{uniqid}}”));
+require(['mod_forum/discussion'], function(Discussion) {
+    Discussion.init(document.querySelector("mod_forum-discussion-wrapper-{{uniqid}}"));
 });
 {{/js}}
 ```
@@ -341,7 +341,7 @@ You can also pass arguments to your function by passing an array as the third ar
 
 ```php
 // Call the `init` function on `mod_forum/discussion`.
-$PAGE->requires->js_call_amd(‘mod_forum/discussion’, ‘init’, [$course->id]);
+$PAGE->requires->js_call_amd('mod_forum/discussion', 'init', [$course->id]);
 ```
 
 If you pass a multi-dimensional array as the third argument, then you can use Array destructuring within the JavaScript to get named values.
@@ -350,9 +350,9 @@ If you pass a multi-dimensional array as the third argument, then you can use Ar
 <TabItem value="php-js_call_admin-args" label="PHP">
 
 ```php
-$PAGE->requires->js_call_amd(‘mod_forum/discussion’, ‘init’, [[
-    ‘courseid’ => $course->id,
-    ‘categoryid’ => $course->category,
+$PAGE->requires->js_call_amd('mod_forum/discussion', 'init', [[
+    'courseid' => $course->id,
+    'categoryid' => $course->category,
 ]]);
 ```
 
