@@ -15,12 +15,11 @@
  * You should have received a copy of the GNU General Public License
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
+/* eslint-disable import/no-extraneous-dependencies */
 const yaml = require('js-yaml');
 const { exec } = require('child_process');
 const { program } = require('commander');
 const { writeFile } = require('fs/promises');
-
-// eslint-disable-next-line import/no-extraneous-dependencies
 const inquirer = require('inquirer');
 
 const {
@@ -165,6 +164,10 @@ program
             // External links before wikilinks.
             '04-externallinks',
             '05-wikilinks',
+
+            // Replace MDL-\d+ strings with links to the tracker.
+            // This replaced the wikimedia filter to do the same.
+            '06-trackerlinkfilter',
 
             // Bold must be before italic
             '08-bold',
