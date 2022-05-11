@@ -14,9 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
+import { type ComponentFileSummaryProps } from '@site/src/components/ComponentFileSummary';
 import React from 'react';
 import { ComponentFileSummary } from '../../_utils';
-import type { Props } from '../../_utils';
 import DefaultDescription from './version-php.mdx';
 
 const defaultExample = `defined('MOODLE_INTERNAL') || die();
@@ -35,15 +35,17 @@ $plugin->dependencies = [
 ];
 `;
 
-export default (initialProps: Props): ComponentFileSummary => (
-    <ComponentFileSummary
-        required
-        filepath="/version.php"
-        filetype="php"
-        summary="Version metadata"
-        examplePurpose="Version metadata"
-        defaultDescription={DefaultDescription}
-        defaultExample={defaultExample}
-        {...initialProps}
-    />
-);
+export default function VersionPHP(props: ComponentFileSummaryProps): JSX.Element {
+    return (
+        <ComponentFileSummary
+            required
+            filepath="/version.php"
+            filetype="php"
+            summary="Version metadata"
+            examplePurpose="Version metadata"
+            defaultDescription={DefaultDescription}
+            defaultExample={defaultExample}
+            {...props}
+        />
+    );
+}

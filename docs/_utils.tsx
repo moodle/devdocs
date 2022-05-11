@@ -14,11 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
-import React from 'react';
-import { ComponentFileSummary as ComponentFileSummaryGeneric } from '@site/src/components';
-import { getExample } from '@site/src/moodleBridge';
+import React, { type ReactNode } from 'react';
+import ComponentFileSummaryGeneric, {
+    type ComponentFileSummaryProps,
+} from '@site/src/components/ComponentFileSummary';
+import { MDXProvider } from '@mdx-js/react';
 
-import type { Props } from '@site/src/moodleBridge';
+import { getExample } from '@site/src/moodleBridge';
 
 export {
     getExample,
@@ -29,11 +31,31 @@ export {
  * @param {Props} props
  * @return {Props}
  */
-export const fillDefaultProps = (props: Props): Props => ({
-    fileType: 'php',
+export const fillDefaultProps = (props: ComponentFileSummaryProps): ComponentFileSummaryProps => ({
+    filetype: 'php',
     examplePurpose: props.summary,
     ...props,
 });
+
+const normaliseDescription = (Value: ReactNode | string): null | JSX.Element => {
+    if (typeof Value === 'boolean' || !Value) {
+        return null;
+    }
+
+    if (typeof Value === 'string' || React.isValidElement(Value)) {
+        return (
+            <MDXProvider>
+                {Value}
+            </MDXProvider>
+        );
+    }
+
+    return (
+        <MDXProvider>
+            <Value />
+        </MDXProvider>
+    );
+};
 
 /**
  * Get the preferred description given a standard properties value which contains an optional description,
@@ -46,24 +68,42 @@ export const fillDefaultProps = (props: Props): Props => ({
 export const getDescription = ({
     description = null,
     extraDescription = null,
-}: Props, DefaultDescription?: string | boolean): ReactFragment => {
+    children = null,
+}: ComponentFileSummaryProps, defaultDescription?: ReactNode | string): null | ReactNode | JSX.Element => {
+    if (children) {
+        const Description = normaliseDescription(children);
+        return (
+            <MDXProvider>
+                {Description}
+            </MDXProvider>
+        );
+    }
+
     if (description) {
-        return description;
+        const Description = normaliseDescription(description);
+        return (
+            <MDXProvider>
+                {Description}
+            </MDXProvider>
+        );
     }
 
-    if (description === false) {
-        return null;
+    const Description = normaliseDescription(defaultDescription);
+    const ExtraDescription = normaliseDescription(extraDescription);
+
+    if (Description) {
+        return (
+            <MDXProvider>
+                {Description}
+                {ExtraDescription}
+            </MDXProvider>
+        );
     }
 
-    return (
-        <>
-            <DefaultDescription />
-            {extraDescription}
-        </>
-    );
+    return null;
 };
 
-export const ComponentFileSummary = (initialProps: Props): ReactFragment => {
+export const ComponentFileSummary = (initialProps: ComponentFileSummaryProps): JSX.Element => {
     const props = fillDefaultProps({
         examplePurpose: initialProps?.summary ?? null,
         ...initialProps,
