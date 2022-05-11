@@ -27,6 +27,7 @@ const {
     getClient,
     getObsoletePagePath,
     getUpdateMigratedPages,
+    getUpdateMigratedPagesProtection,
 } = require('./utils');
 
 program
@@ -50,6 +51,7 @@ program
         }
 
         const updateMigratedPages = getUpdateMigratedPages(logger)(client);
+        const updateMigratedPagesProtection = getUpdateMigratedPagesProtection(logger)(client);
 
         logger.info('Logging in');
         try {
@@ -61,7 +63,7 @@ program
         }
 
         logger.info('Starting update of migrated pages in remote site');
-        await updateMigratedPages();
+        await Promise.all([updateMigratedPages(), updateMigratedPagesProtection()]);
         logger.info('Run completed');
     });
 
