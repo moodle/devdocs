@@ -15,26 +15,24 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import * as React from 'react';
+/* eslint-disable react/no-unused-prop-types */
+import React, { type ReactNode } from 'react';
 import Chip from '@mui/material/Chip';
 import Tooltip from '@mui/material/Tooltip';
 import Grid from '@mui/material/Grid';
 import Details from '@theme/Details';
+import { MDXProvider } from '@mdx-js/react';
 
-const getBadge = (title, description, colour = 'info') => {
-    const chip = (
-        <Grid item key={title}>
-            <Tooltip title={description}>
-                <Chip
-                    label={title}
-                    color={colour}
-                />
-            </Tooltip>
-        </Grid>
-    );
-
-    return chip;
-};
+const getBadge = (title, description, colour = 'info'): JSX.Element => (
+    <Grid item key={title}>
+        <Tooltip title={description}>
+            <Chip
+                label={title}
+                color={colour}
+            />
+        </Tooltip>
+    </Grid>
+);
 
 function getBadges({
     required = false,
@@ -42,7 +40,7 @@ function getBadges({
     deprecated = false,
     refreshedDuringUpgrade = false,
     refreshedDuringPurge = false,
-}) {
+}): Array<typeof Grid> {
     const badges = [];
     if (refreshedDuringUpgrade) {
         // This file is re-read during an upgrade and configuration will be re-applied.
@@ -111,7 +109,28 @@ function getExamples(props) {
     return null;
 }
 
-export default function ComponentFileSummary(props) {
+export interface ComponentFileSummaryProps {
+    description?: string | ReactNode,
+    defaultDescription?: string | ReactNode,
+    defaultExample?: string | ReactNode,
+    example?: string | ReactNode | JSX.Element,
+    exampleFilepath?: string,
+    examplePurpose?: string,
+    extraDescription?: string,
+    filepath?: string,
+    filetype?: string,
+    modulename?: string,
+    pluginname?: string,
+    plugintype?: string,
+    showFileHeader?: boolean,
+    showLicense?: boolean,
+    summary?: string,
+    children?: React.ReactNode,
+    required?: boolean,
+    legacy?: boolean,
+}
+
+export default function ComponentFileSummary(props: ComponentFileSummaryProps): JSX.Element {
     const {
         filepath,
         summary,
@@ -131,26 +150,28 @@ export default function ComponentFileSummary(props) {
     })();
 
     return (
-        <Grid container spacing={2}>
-            <Grid item xs={6}>
-                <h4>
-                    {summary}
-                </h4>
-            </Grid>
-            <Grid item xs={6}>
-                <Grid container spacing={2} justifyContent="flex-end">
-                    {badges}
+        <MDXProvider>
+            <Grid container spacing={2}>
+                <Grid item xs={6}>
+                    <h4>
+                        {summary}
+                    </h4>
                 </Grid>
+                <Grid item xs={6}>
+                    <Grid container spacing={2} justifyContent="flex-end">
+                        {badges}
+                    </Grid>
+                </Grid>
+                <Grid item xs={12}>
+                    <h5>
+                        File path:
+                        {' '}
+                        {filepath}
+                    </h5>
+                </Grid>
+                {description}
+                {getExamples(props)}
             </Grid>
-            <Grid item xs={12}>
-                <h5>
-                    File path:
-                    {' '}
-                    {filepath}
-                </h5>
-            </Grid>
-            {description}
-            {getExamples(props)}
-        </Grid>
+        </MDXProvider>
     );
 }
