@@ -22,7 +22,7 @@ Quick search can pick up many other keywords, see more information on page [Usin
 
 ### Advanced search
 
-To get here either enter something in quick search or go to the link [Tracker search page](https://tracker.moodle.org/issues/?jql=) and switch it to “Advanced” mode.
+To get here either enter something in quick search or go to the link [Tracker search page](https://tracker.moodle.org/issues/?jql=) and switch it to "Advanced" mode.
 Now you can enter queries in the Jira Query Language (JQL). Use as many AND, OR and parenthesis as you want. Some examples and interesting subqueries:
 
 | JQL | Description |

@@ -292,7 +292,7 @@ For the best experience and optimum security, we recommend that you keep your br
 - {tracker}`MDL-72118` - Rename "HTML block" to the more easily understood "Text block"
 - {tracker}`MDL-72706` - Change default value of "Hidden sections" course format setting
 - {tracker}`MDL-72115` - Rename "Miscellaneous" category to "Category 1"
-- {tracker}`MDL-72119` - Make “Enable xxxxx” features consistent (hide menus for disabled features)
+- {tracker}`MDL-72119` - Make "Enable xxxxx" features consistent (hide menus for disabled features)
 
 ### For administrators
 

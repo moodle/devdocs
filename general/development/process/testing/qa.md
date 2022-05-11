@@ -190,7 +190,7 @@ To create a new QA test:
 5. In the description field add the test steps (usually between 3 and 10), similar to the issue's [testing instructions](./guide), starting with 'Log in as a teacher...' or similar. It's a good idea to try doing the steps yourself as you write the test.
 6. Start some steps with 'Verify that ...' or similar.
 7. Click the Create button.
-8. Go to the MDL issue and create a ‘has a QA test’ link to the new QA test, adding a comment “This feature is now covered by the QA test MDLQA....”.
+8. Go to the MDL issue and create a 'has a QA test' link to the new QA test, adding a comment "This feature is now covered by the QA test MDLQA....".
 
 :::note
 
@@ -199,7 +199,7 @@ To create a new QA test:
 - For OAuth 2 tests and any other tests which require a client ID or secret to be entered, label `credentials_required`.
 - For issues which specifically mention in the testing instructions to test in different browsers, use the phrase:
 
-> Test in as many browsers as possible and mention in a comment which ones you’ve used.
+> Test in as many browsers as possible and mention in a comment which ones you've used.
 
 - For an exploratory test, begin the test description with:
 

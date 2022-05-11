@@ -27,6 +27,7 @@ module.exports = {
     // Ignore code examples.
         'docs/**/_examples/*',
         'general/**/_examples/*',
+        '!.markdownlint',
     ],
     env: {
         browser: true,
