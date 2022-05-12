@@ -11,7 +11,7 @@ tags:
 
 | **#** | **Task** | **Responsibility** |
 |---|---|---|
-| 1. | Create an issue in the tracker for the release, like: {tracker MOBILE-1248} | Integration Lead |
+| 1. | Create an issue in the tracker for the release, like: [MOBILE-1248](https://tracker.moodle.org/browse/MOBILE-1248) | Integration Lead |
 | 2. | Force an update of the [local_moodlemobileapp](https://moodle.org/plugins/view.php?id=997) plugin (as release candidate) with new strings in moodle.org/plugins (only for Moodle version 2.6). | Dev |
 | 3. | Ask someone from sites or community team to review the new English strings. | Community or Sites team |
 | 4. | Announce in the [moodle translation forums](https://lang.moodle.org/mod/forum/view.php?id=5) the new strings available. This will allow translators to add the new strings during the days prior to the release. | Integration Lead |

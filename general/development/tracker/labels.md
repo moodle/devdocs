@@ -25,7 +25,7 @@ Used to flag issues that are being triaged (sometimes an ongoing process for day
 Used to flag that an issue is a direct result of a [Moodle QA test](/general/development/process/testing/qa), conducted just before major releases. The bug should also be linked to the original MDLQA test, so that developers/integrators can reset the original MDLQA test (for re-testing) when the MDL issue is fixed. Once all the related MDLQA tests are passing the label can be deleted.
 
 - `mdlqa_conversion`<br/>
-Used to flag MDL issues that are converting MDLQA issues to behat features. The bug should also be linked to the MDLQA test being converted. Useful to know what's going and exclude some issues from manual QA. Once the MDL issue has been closed and the MDLQA has been moved to {tracker MDLQA-5249}, the label can be deleted.
+Used to flag MDL issues that are converting MDLQA issues to behat features. The bug should also be linked to the MDLQA test being converted. Useful to know what's going and exclude some issues from manual QA. Once the MDL issue has been closed and the MDLQA has been moved to [MDLQA-5249](https://tracker.moodle.org/browse/MDLQA-5249), the label can be deleted.
 
 - [`unit_test_required`](https://tracker.moodle.org/issues/?jql=labels%20%3D%20unit_test_required)<br/>
 Used to flag issues that should have their own unit tests.
@@ -58,7 +58,7 @@ Used to ask for an issue (having the `integration_held` label) to become unblock
 Used to flag security issues that have been reviewed by integrators already but held from integration repository. These issues must be cleared during point releases.
 
 - `security_benefit`<br/>
-Used to flag issues which help to improve the security of Moodle, but are not directly exploitable security bugs (and therefore do not have a security level assigned). For example, {tracker MDL-66775} and {tracker MDL-65443}.
+Used to flag issues which help to improve the security of Moodle, but are not directly exploitable security bugs (and therefore do not have a security level assigned). For example, [MDL-66775](https://tracker.moodle.org/browse/MDL-66775) and [MDL-65443](https://tracker.moodle.org/browse/MDL-65443).
 
 - `partner`<br/>
 Moodle Partners apply this label to flag issues that are important to their clients. The Moodle HQ dev team takes this label into consideration when setting roadmap and bug fixing priorities.
@@ -103,7 +103,7 @@ Used to identify new tests in the current QA cycle for volunteers from the commu
 Used to identify suggestions for improvements/new features as possible candidates for add-on development. New and willing developers can be directed to these issues for projects.
 
 - `affects_mobileapp`<br/>
-Used to identify MDL issues that may affect the mobile app. It should be used when adding new features to functionalities supported by the app or when doing changes in existing ones. Examples are: {tracker MDL-372} and {tracker MDL-38158}.
+Used to identify MDL issues that may affect the mobile app. It should be used when adding new features to functionalities supported by the app or when doing changes in existing ones. Examples are: [MDL-372](https://tracker.moodle.org/browse/MDL-372) and [MDL-38158](https://tracker.moodle.org/browse/MDL-38158).
 
 - `affects_moodlecloud`<br/>
 Used to identify MDL issues that may affect Moodlecloud.

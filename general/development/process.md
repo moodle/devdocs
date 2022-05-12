@@ -113,9 +113,9 @@ The process of [new feature development](https://docs.moodle.org/dev/#New_featur
 
 During development, as new code is integrated, automated testing conducted at the [code](https://docs.moodle.org/dev/PHPUnit) and [interface](https://docs.moodle.org/dev/Acceptance_testing) levels, to make sure there are no regressions caused by new features.
 
-In the last month before the release, a feature freeze is called (no new features can be added) and volunteer testers from the Moodle community perform manual [QA testing](/general/development/process/testing/qa) of Moodle features. The current set of functional tests is listed in {tracker}`MDLQA-1`. The list of tests is extended as new features are added, though we're also trying to reduce the number as more automated [acceptance tests](https://docs.moodle.org/dev/Acceptance_testing) are developed.
+In the last month before the release, a feature freeze is called (no new features can be added) and volunteer testers from the Moodle community perform manual [QA testing](/general/development/process/testing/qa) of Moodle features. The current set of functional tests is listed in [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1). The list of tests is extended as new features are added, though we're also trying to reduce the number as more automated [acceptance tests](https://docs.moodle.org/dev/Acceptance_testing) are developed.
 
-There is also a set of tests for manually testing any major theme changes - {tracker}`MDLQA-11592`.
+There is also a set of tests for manually testing any major theme changes - [MDLQA-11592](https://tracker.moodle.org/browse/MDLQA-11592).
 
 For more details, see [Testing](/general/development/process/testing).
 

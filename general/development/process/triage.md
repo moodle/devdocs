@@ -13,7 +13,7 @@ Triage initially happens shortly after the issue was reported but it can be repe
 
 ## Get involved
 
-Anyone can do triage in the form of correcting the components and/or affected versions, linking to related issues, and of course commenting asking for clarification, confirming bug, redirecting to the forums, and more. Users in **jira-developers** and **moodle-triage** groups can edit any issue, **jira-users** can comment on any issue or edit issues they reported. Please see {tracker MDLSITE-3592} if you are not a developer but would like to help with the triage process.
+Anyone can do triage in the form of correcting the components and/or affected versions, linking to related issues, and of course commenting asking for clarification, confirming bug, redirecting to the forums, and more. Users in **jira-developers** and **moodle-triage** groups can edit any issue, **jira-users** can comment on any issue or edit issues they reported. Please see [MDLSITE-3592](https://tracker.moodle.org/browse/MDLSITE-3592) if you are not a developer but would like to help with the triage process.
 
 Adding the `triaged` label and placing the issue on the backlog should only be done by the component lead, or an HQ developer. Any user can remove the `triaged` label from the an issue, or replace it with `triaging_in_progress` if they want to request an additional triage.
 
@@ -62,7 +62,7 @@ When you confirm that the issue is indeed a bug or a reasonable improvement requ
 
 :::info
 
-Note that `Fix version` is no longer used during triage. If you are in the `moodle-triage` Jira group, you can use the **Triage and sprint** screen to edit only the aforementioned fields, see {tracker MDLSITE-3592}.
+Note that `Fix version` is no longer used during triage. If you are in the `moodle-triage` Jira group, you can use the **Triage and sprint** screen to edit only the aforementioned fields, see [MDLSITE-3592](https://tracker.moodle.org/browse/MDLSITE-3592).
 
 :::
 

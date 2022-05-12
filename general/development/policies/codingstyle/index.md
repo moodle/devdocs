@@ -774,7 +774,7 @@ chance of conflict with any other plugin or api, now and forever onwards.
 
 :::info
 
-These rules were agreed in {tracker}`MDLSITE-4800`
+These rules were agreed in [MDLSITE-4800](https://tracker.moodle.org/browse/MDLSITE-4800)
 
 :::
 
@@ -1124,7 +1124,7 @@ three_arguments(1, 2, 3);
 
 Magic methods are heavily discouraged, justification will be required when used. Note: laziness will not be a valid argument.
 
-(See {tracker}`MDL-52634` for discussion of rationale)
+(See [MDL-52634](https://tracker.moodle.org/browse/MDL-52634) for discussion of rationale)
 
 ## Control statements
 

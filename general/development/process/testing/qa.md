@@ -69,7 +69,7 @@ So you ran a test and it failed? Congratulations on finding a bug! Please do the
 
 1. Click the `Fail` button at the top of the page.
 2. Add a comment to the QA test stating that there was a problem and that you will report it as a Moodle bug.
-3. Note the MDLQA number; it will be something like {tracker MDLQA-448}.
+3. Note the MDLQA number; it will be something like [MDLQA-448](https://tracker.moodle.org/browse/MDLQA-448).
 4. Try searching for whether the bug has been reported previously, and if not create a new issue for it (as described in [Tracker introduction](/general/development/tracker)).
 5. In the new Moodle (MDL) issue select 'Link' from the 'More actions' dropdown menu.
 Linking to the QA issue in the tracker
@@ -164,7 +164,7 @@ QA tests may become out-of-date due to User Interface changes, feature changes, 
 
 To update a QA test original:
 
-1. Search for the test in {tracker MDLQA-1}.
+1. Search for the test in [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1).
 2. Edit the test description.
 
 :::note
@@ -183,8 +183,8 @@ In addition, new features can benefit from exploratory testing by community volu
 
 To create a new QA test:
 
-1. If appropriate, do a quick search of {tracker MDLQA-1} to check if there is an existing test which can be updated.
-2. If not, in {tracker MDLQA-1} from the More menu select 'Create sub-task'.
+1. If appropriate, do a quick search of [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1) to check if there is an existing test which can be updated.
+2. If not, in [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1) from the More menu select 'Create sub-task'.
 3. Enter a summary such as 'A teacher can ...'.
 4. Select 'Original' as affected version and select appropriate components.
 5. In the description field add the test steps (usually between 3 and 10), similar to the issue's [testing instructions](./guide), starting with 'Log in as a teacher...' or similar. It's a good idea to try doing the steps yourself as you write the test.

@@ -204,4 +204,4 @@ The packer is currently limited to ASCII filenames and individual files are limi
 - [Repository API](https://docs.moodle.org/dev/Repository_API)
 - [Portfolio API](https://docs.moodle.org/dev/Portfolio_API)
 - [Resource module file API migration](https://docs.moodle.org/dev/Resource_module_file_API_migration)
-- {tracker}`MDL-14589` - File API Meta issue
+- [MDL-14589](https://tracker.moodle.org/browse/MDL-14589) - File API Meta issue

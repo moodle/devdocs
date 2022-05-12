@@ -119,7 +119,7 @@ So, basically, once under continuous integration, we do organize work as follows
 - Friday: Integration happens until [12:00 (UTC+8)](http://time.unitarium.com/utc/4), afterwards we try to achieve 100% 'Test Passed' and stop integrating any untested changes until a master release is produced. Note that 24h before the cutoff it's possible to pick issues out of order towards queues reduction.
 
 :::note
-Along this period we always release as many stable weeklies, both supported (always) and security only (when there are changes), as master rolls (on-demand, beta, rc) happen (see {tracker MDLSITE-3470}). Note that those tags are not simply tags but they come with some important implications, aiming to stability, safety and clarity. Integrators will try to remain loyal to them, be warned:
+Along this period we always release as many stable weeklies, both supported (always) and security only (when there are changes), as master rolls (on-demand, beta, rc) happen (see [MDLSITE-3470](https://tracker.moodle.org/browse/MDLSITE-3470)). Note that those tags are not simply tags but they come with some important implications, aiming to stability, safety and clarity. Integrators will try to remain loyal to them, be warned:
 :::
 
 - **Once beta is released**, new features or improvements "unrelated" with the release will be really harder to be accepted. A +4 from developer managers (normally +3 is enough) will be needed to proceed with the issue. Integrators vote will be, always, -1.
@@ -184,7 +184,7 @@ If the backport request is approved, please follow the usual development process
 It would be good practice to also add a line like "This is a backport of MDL-YYYYY." in the amended commit comment.
 :::
 
-You can probably copy the testing instructions from the original issue. If so, make it clear you done this by saying something like "Copied from MDL-66327". Of course, if you can improve the instructions, feel free to edit. {tracker MDL-66614} and {tracker MDL-66327} are probably a reasonably good example fo what should be done.
+You can probably copy the testing instructions from the original issue. If so, make it clear you done this by saying something like "Copied from MDL-66327". Of course, if you can improve the instructions, feel free to edit. [MDL-66614](https://tracker.moodle.org/browse/MDL-66614) and [MDL-66327](https://tracker.moodle.org/browse/MDL-66327) are probably a reasonably good example fo what should be done.
 
 ### Polite note about bug classification
 
