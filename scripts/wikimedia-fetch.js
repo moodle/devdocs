@@ -17,6 +17,7 @@
  */
 /* eslint-disable import/no-extraneous-dependencies */
 const yaml = require('js-yaml');
+const path = require('path');
 const { exec } = require('child_process');
 const { program } = require('commander');
 const { writeFile } = require('fs/promises');
@@ -155,63 +156,135 @@ program
 
         const phaseScripts = [
             // Run codeblocks first because many other rules depend on detecting if the content is in code.
-            '01-codeblocks',
-
+            {
+                type: 'markdownlint',
+                path: '01-codeblocks',
+            },
             // Run lists before headers
-            '02-lists',
-            '03-headers',
+            {
+                type: 'markdownlint',
+                path: '02-lists',
+            },
+            {
+                type: 'markdownlint',
+                path: '03-headers',
+            },
 
             // External links before wikilinks.
-            '04-externallinks',
-            '05-wikilinks',
+            {
+                type: 'markdownlint',
+                path: '04-externallinks',
+            },
+            {
+                type: 'markdownlint',
+                path: '05-wikilinks',
+            },
 
             // Replace MDL-\d+ strings with links to the tracker.
             // This replaced the wikimedia filter to do the same.
-            '06-trackerlinkfilter',
+            {
+                type: 'markdownlint',
+                path: '06-trackerlinkfilter',
+            },
 
             // Bold must be before italic
-            '08-bold',
-            '09-italic',
+            {
+                type: 'markdownlint',
+                path: '08-bold',
+            },
+            {
+                type: 'markdownlint',
+                path: '09-italic',
+            },
+
+            // Update tables.
+            {
+                type: 'script',
+                path: '20-tables/migrate-table.mjs',
+                args: [
+                    newFile,
+                ],
+            },
 
             // Run a final lint of the global config.
             // Run it twice becuase some changes lead to other changes.
-            '100-final',
-            '100-final',
+            {
+                type: 'markdownlint',
+                path: '100-final',
+            },
+            {
+                type: 'markdownlint',
+                path: '100-final',
+            },
         ];
 
         logger.info('Passing through transformation lints');
-        for (const phaseName of phaseScripts) {
-            // Use markdownlint-cli2-config to specify these as separate phases.
-            // This is necessary because if two rules operate on the same text, then no fix is made.
-            // The order of these is important because they often do operate on the same line.
-            // For example, we *must* convert all numbered lists before converting markup headers to markdown.
-            const phaseScript = getNormalizedPath(`scripts/migration/phases/${phaseName}/.markdownlint-cli2.cjs`);
-            logger.info(`=> Running migration phase ${phaseName}`);
-            logger.debug(`yarn markdownlint-cli2-config ${phaseScript} ${newFile}`);
+        for (const phaseData of phaseScripts) {
+            const phasePath = path.resolve(path.join(
+                'scripts/migration/phases',
+                phaseData.path,
+            ));
+            logger.info(`=> Running migration phase ${phaseData.path}`);
+            if (phaseData.type === 'markdownlint') {
+                // Use markdownlint-cli2-config to specify these as separate phases.
+                // This is necessary because if two rules operate on the same text, then no fix is made.
+                // The order of these is important because they often do operate on the same line.
+                // For example, we *must* convert all numbered lists before converting markup headers to markdown.
+                const phaseScript = path.join(phasePath, '.markdownlint-cli2.cjs');
+                logger.debug(`yarn markdownlint-cli2-config ${phaseScript} ${newFile}`);
 
-            await new Promise((resolve) => {
-                exec(`yarn markdownlint-cli2-config ${phaseScript} ${newFile}`, async (error, stdout, stderr) => {
-                    if (error) {
-                        logger.warn(
-                            `The '${phaseName}' conversion reported warnings that you will need to resolve manually`,
-                        );
-                        logger.warn(stderr);
-                        if (options.interactive) {
-                            logger.warn('If possible, correct this issue before continuing');
+                await new Promise((resolve) => {
+                    exec(`yarn markdownlint-cli2-config ${phaseScript} ${newFile}`, async (error, stdout, stderr) => {
+                        if (error) {
+                            logger.warn(
+                                `The '${phaseData.path}' conversion reported warnings `
+                                + 'that you will need to resolve manually',
+                            );
+                            logger.warn(stderr);
+                            if (options.interactive) {
+                                logger.warn('If possible, correct this issue before continuing');
 
-                            await inquirer.prompt([{
-                                message: 'Press [enter] to continue.',
-                                name: 'ready',
-                                default: '',
-                            }]);
-                        } else {
-                            logger.warn('----');
+                                await inquirer.prompt([{
+                                    message: 'Press [enter] to continue.',
+                                    name: 'ready',
+                                    default: '',
+                                }]);
+                            } else {
+                                logger.warn('----');
+                            }
                         }
-                    }
-                    logger.debug(stdout);
-                    resolve();
+                        logger.debug(stdout);
+                        resolve();
+                    });
                 });
-            });
+            }
+
+            if (phaseData.type === 'script') {
+                await new Promise((resolve) => {
+                    exec(`${phasePath} ${phaseData.args.join(' ')}`, async (error, stdout, stderr) => {
+                        if (error) {
+                            logger.warn(
+                                `The '${phaseData.path}' conversion reported warnings `
+                                + 'that you will need to resolve manually',
+                            );
+                            logger.warn(stderr);
+                            if (options.interactive) {
+                                logger.warn('If possible, correct this issue before continuing');
+
+                                await inquirer.prompt([{
+                                    message: 'Press [enter] to continue.',
+                                    name: 'ready',
+                                    default: '',
+                                }]);
+                            } else {
+                                logger.warn('----');
+                            }
+                        }
+                        logger.debug(stdout);
+                        resolve();
+                    });
+                });
+            }
         }
 
         // Update the migratedPages file.
