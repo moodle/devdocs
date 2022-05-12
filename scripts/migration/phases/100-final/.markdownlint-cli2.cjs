@@ -15,8 +15,12 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* cspell:disable */
+// For full details on all of these configuration settings:
+// https://github.com/DavidAnson/markdownlint-cli2#markdownlint-cli2cjs
 
-const { transformer } = require('../lib/legacyDocLinks');
+const config = require('../../../../.markdownlint-cli2.cjs');
 
-module.exports = () => transformer;
+// Force the fix.
+config.fix = true;
+
+module.exports = config;

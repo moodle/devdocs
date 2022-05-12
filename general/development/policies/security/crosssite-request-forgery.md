@@ -52,7 +52,7 @@ Moodle should only process changes in response to a POST request. If that is the
 
 ## What you need to do in your code
 
-Use the [[Form API]] whenever possible for handling HTML forms. This automatically checks the sesskey and request method for you.
+Use the [Form API](https://docs.moodle.org/dev/Form_API) whenever possible for handling HTML forms. This automatically checks the sesskey and request method for you.
 
 There are valid cases when using forms is not appropriate and you need to perform an action based on a parameter submitted via GET request - such as various action links. In this case, you have to manually include the sesskey among submitted parameters, and then make sure the submitted sesskey value is valid.
 
@@ -104,8 +104,8 @@ The frontend includes ever showing the sesskey in the browser URL bar or anywher
 
 Some examples to help guide how to fix these issues:
 
-- {tracker MDL-68292}
-- {tracker MDL-73295}
+- [MDL-68292](https://tracker.moodle.org/browse/MDL-68292)
+- [MDL-73295](https://tracker.moodle.org/browse/MDL-73295)
 
 ## What you need to do as an administrator
 
@@ -114,5 +114,5 @@ Some examples to help guide how to fix these issues:
 ## See also
 
 - [Security](../security)
-- [[Coding]]
+- [Coding](https://docs.moodle.org/dev/Coding)
 - [OWASP Cheat Sheet Series: Cross-Site Request Forgery Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)

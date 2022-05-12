@@ -1,6 +1,8 @@
 {
     "markdownlint.customRules": [
-        "./.markdownlint/no-directional-quotation-marks"
+        "./.markdownlint/no-directional-quotation-marks",
+        "./.markdownlint/fix-migrated-links",
+        "./.markdownlint/find-obsolete-links"
     ],
     "stylelint.packageManager": "yarn"
 }

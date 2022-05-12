@@ -4,6 +4,7 @@ tags:
   - Access
 ---
 
+<!-- cspell:ignore NEWMODULE -->
 
 import AcademyLink from '@site/src/components/AcademyLink';
 
@@ -61,10 +62,10 @@ Where the meaning of array keys is:
 
 | Field                  | Description                                                                                                                                                                                                                                                                                                                                                       |
 | ---                    | ---                                                                                                                                                                                                                                                                                                                                                               |
-| `riskbitmask`          | associated risks. These are explained on [[Hardening new Roles system]].                                                                                                                                                                                                                                                                                          |
+| `riskbitmask`          | associated risks. These are explained on [Hardening new Roles system](https://docs.moodle.org/dev/Hardening_new_Roles_system).                                                                                                                                                                                                                                                                                          |
 | `captype`              | _read_ or _write_ capability type, for security reasons system prevents all write capabilities for guest account and not-logged-in users                                                                                                                                                                                                                          |
 | `contextlevel`         | specified as context level constant. Declares the typical context level where this capability is checked. This capability can be checked with contexts that are at a lower level (e.g. `moodle/site:accessallgroups`                                                                                                                                              | could be checked with CONTEXT_MODULE). |
-| `archetypes`           | specifies defaults for roles with standard archetypes, this is used in installs, upgrades and when resetting roles (it is recommended to use only CAP_ALLOW here).  Archetypes are defined in mdl_role table.  See also [[Role archetypes]].                                                                                                                      |
+| `archetypes`           | specifies defaults for roles with standard archetypes, this is used in installs, upgrades and when resetting roles (it is recommended to use only CAP_ALLOW here).  Archetypes are defined in mdl_role table.  See also [Role archetypes](https://docs.moodle.org/dev/Role_archetypes).                                                                                                                      |
 | `clonepermissionsfrom` | when you are adding a new capability, you can tell Moodle to copy the permissions for each role from the current settings for another capability. This may give better defaults than just using archetypes for administrators who have heavily customised their roles configuration. The full syntax is: `clonepermissionsfrom` => `moodle/quiz:attempt` |
 
 It is necessary to bump up plugin version number after any change in db/access.php, so that the upgrade scripts can make the necessary changes to the database.  To run the upgrade scripts, log in to Moodle as administrator, navigate to the site home page, and follow the instructions.  (If you need to test the upgrade script without changing the plugin version, it is also possible to set back the version number in the mdl_block or mdl_modules table in the database.)
@@ -141,7 +142,7 @@ function require_capability($capability, context $context, $userid = null, $doan
 
 ### Enrolment functions
 
-See [[Enrolment API]].
+See [Enrolment API](https://docs.moodle.org/dev/Enrolment_API).
 
 ### Other related functions
 
@@ -166,7 +167,7 @@ This function does following:
 - it verifies that user is logged in before accessing any course or activities (not-logged-in users can not enter any courses).
 - user is logged in as gu
 - verify access to hidden courses and activities
-- if an activity is specified, verify any [[Availability API|availability restrictions]] for the activity
+- if an activity is specified, verify any [availability restrictions](https://docs.moodle.org/dev/Availability_API) for the activity
 - verify that user is either enrolled or has capability 'moodle/course:view' or some enrol plugin gives them temporary guest access
 - logs access to courses
 
@@ -195,10 +196,10 @@ This method returns list of users with given capability, it ignores enrolment st
 ## See also
 
 - [API guides](/docs/apis)
-- [[Roles]]
-- [[Role archetypes]]
-- [[Hardening new Roles system]]
-- [[Roles and modules]]
-- [[NEWMODULE Adding capabilities]]
-- [[New permissions evaluation in 2.0]]
+- [Roles](https://docs.moodle.org/dev/Roles)
+- [Role archetypes](https://docs.moodle.org/dev/Role_archetypes)
+- [Hardening new Roles system](https://docs.moodle.org/dev/Hardening_new_Roles_system)
+- [Roles and modules](https://docs.moodle.org/dev/Roles_and_modules)
+- [NEWMODULE Adding capabilities](https://docs.moodle.org/dev/NEWMODULE_Adding_capabilities)
+- [New permissions evaluation in 2.0](https://docs.moodle.org/dev/New_permissions_evaluation_in_2.0)
 - [(Forums) How to check if current user is student?](https://moodle.org/mod/forum/discuss.php?d=257611)

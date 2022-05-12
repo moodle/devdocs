@@ -11,7 +11,7 @@ tags:
 
 | **#** | **Task** | **Responsibility** |
 |---|---|---|
-| 1. | Create an issue in the tracker for the release, like: {tracker MOBILE-1248} | Integration Lead |
+| 1. | Create an issue in the tracker for the release, like: [MOBILE-1248](https://tracker.moodle.org/browse/MOBILE-1248) | Integration Lead |
 | 2. | Force an update of the [local_moodlemobileapp](https://moodle.org/plugins/view.php?id=997) plugin (as release candidate) with new strings in moodle.org/plugins (only for Moodle version 2.6). | Dev |
 | 3. | Ask someone from sites or community team to review the new English strings. | Community or Sites team |
 | 4. | Announce in the [moodle translation forums](https://lang.moodle.org/mod/forum/view.php?id=5) the new strings available. This will allow translators to add the new strings during the days prior to the release. | Integration Lead |
@@ -32,7 +32,7 @@ tags:
 | 4. | Send the applications to the stores for review. | Integration Lead |
 | 5. | Create a TAG/Release in github ([moodlehq/moodleapp](https://github.com/moodlehq/moodleapp/releases)) with the version number. | Integration Lead |
 | 6. | Mark the issue and the [version](https://tracker.moodle.org/projects/MOBILE?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page) as released in the tracker. | Integration Lead |
-| 7. | Update [[Moodle App Release Notes|release notes]]. | Integration Lead |
+| 7. | Update [release notes](https://docs.moodle.org/dev/Moodle_App_Release_Notes). | Integration Lead |
 
 ## The following days
 
@@ -49,4 +49,4 @@ tags:
 
 ## See also
 
-- [[Moodle App Release Notes]]
+- [Moodle App Release Notes](https://docs.moodle.org/dev/Moodle_App_Release_Notes)

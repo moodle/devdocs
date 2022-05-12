@@ -7,6 +7,8 @@ tags:
   - Security
 ---
 
+<!-- cspell:ignore OWASP -->
+
 :::note
 
 This page forms part of the [Moodle security guidelines](../security).
@@ -39,5 +41,5 @@ There are admin settings to enforce a minimum level of complexity for passwords,
 ## See also
 
 - [Security](../security)
-- [[Coding]]
+- [Coding](https://docs.moodle.org/dev/Coding)
 - [Brute force attack in OWASP](https://owasp.org/www-community/attacks/Brute_force_attack)

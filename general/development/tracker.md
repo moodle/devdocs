@@ -86,7 +86,7 @@ When you create a tracker issue, you are effectively asking someone to change Mo
 
 :::tip
 
-Here are good examples of bug reports: {tracker MDL-5688}, {tracker MDL-33532}, {tracker MDL-34440}, {tracker MDL-33514}, {tracker MDL-34475} - notice how quickly all of these got fixed!
+Here are good examples of bug reports: [MDL-5688](https://tracker.moodle.org/browse/MDL-5688), [MDL-33532](https://tracker.moodle.org/browse/MDL-33532), [MDL-34440](https://tracker.moodle.org/browse/MDL-34440), [MDL-33514](https://tracker.moodle.org/browse/MDL-33514), [MDL-34475](https://tracker.moodle.org/browse/MDL-34475) - notice how quickly all of these got fixed!
 
 :::
 
@@ -100,4 +100,4 @@ If you find that a bug is still affecting a stable version of Moodle, despite th
 ## See also
 
 - [Tracker tips](./tracker/tips)
-- [[New feature ideas]]
+- [New feature ideas](https://docs.moodle.org/dev/New_feature_ideas)

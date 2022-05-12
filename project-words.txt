@@ -21,6 +21,7 @@ Moodlers
 MySQLi
 Netbeans
 OCI8
+OWASP
 Packagist
 PHPDoc
 PHPDocumentor
@@ -38,6 +39,7 @@ airnotifier
 behat
 capabilityname
 captype
+classname
 clsx
 codechecker
 codingstyle
@@ -63,12 +65,14 @@ moodleapp
 moodledemo
 moodledev
 moodleform
+moodleforms
 moodlehq
 moodlemobileapp
 opcache
 pgsql
 phpcs
 phpdoc
+phpdocs
 phpstorm
 phptags
 phpunit

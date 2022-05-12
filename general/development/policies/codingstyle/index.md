@@ -39,7 +39,7 @@ When considering the goals above, each situation requires an examination of the 
 Much of the existing Moodle code may not follow all of these guidelines - we continue to upgrade this code when we see it.
 :::
 
-For details about using the Moodle API to get things done, see the [[Coding|coding guidelines]].
+For details about using the Moodle API to get things done, see the [coding guidelines](https://docs.moodle.org/dev/Coding).
 
 ### Useful tools
 
@@ -101,7 +101,7 @@ if ($a > 10) {
 
 </InvalidExample>
 
-SQL queries use special indentation, see [[SQL coding style]].
+SQL queries use special indentation, see [SQL coding style](https://docs.moodle.org/dev/SQL_coding_style).
 
 ### Maximum Line Length
 
@@ -417,7 +417,7 @@ This has now been deprecated. Please use `stdClass` or the array instantiation i
 
 ### Functions and Methods
 
-Function names should be simple English lowercase words, and start with the [[Frankenstyle]] prefix and plugin name to avoid conflicts between plugins. Words should be separated by underscores.
+Function names should be simple English lowercase words, and start with the [Frankenstyle](https://docs.moodle.org/dev/Frankenstyle) prefix and plugin name to avoid conflicts between plugins. Words should be separated by underscores.
 
 Verbosity is encouraged: function names should be as illustrative as is practical to enhance understanding.
 
@@ -516,7 +516,7 @@ Core global variables in Moodle are identified using uppercase variables (that i
 
 ### Constants
 
-Constants should always be in upper case, and always start with [[Frankenstyle]] prefix and plugin name (in case of activities the module name only for legacy reasons). They should have words separated by underscores.
+Constants should always be in upper case, and always start with [Frankenstyle](https://docs.moodle.org/dev/Frankenstyle) prefix and plugin name (in case of activities the module name only for legacy reasons). They should have words separated by underscores.
 
 <ValidExample>
 
@@ -536,9 +536,9 @@ Use lower case for **true**, **false** and **null**.
 Formal namespaces are required for any new classes in Moodle. The following exceptions apply:
 
 1. There is no requirement to move existing non-namespaced classes to a namespace; and
-1. Where an existing mechanism exists for loading a class, and that mechanism does not support the use of a namespaced class, the existing [[Frankenstyle]] prefix on the class name will be allowed.
+1. Where an existing mechanism exists for loading a class, and that mechanism does not support the use of a namespaced class, the existing [Frankenstyle](https://docs.moodle.org/dev/Frankenstyle) prefix on the class name will be allowed.
 
-The use of a [[Frankenstyle#Class names|Frankenstyle prefix on class names]] is deprecated and should only be used in the above exceptions.
+The use of a [Frankenstyle prefix on class names](https://docs.moodle.org/dev/Frankenstyle#Class_names) is deprecated and should only be used in the above exceptions.
 
 <ValidExample>
 
@@ -585,7 +585,7 @@ The use of namespaces must conform to the following rules:
 - for core code, classes should be placed in `lib/classes`; or
 - for a core subsystem, classes should be placed in `subsystemdir/classes`.
 
-1. The classname and filename for all namespaced classes must conform to the [[Automatic class loading|automatic class loading]] rules. The use of formal PHP namespaces is **required** in all new code.
+1. The classname and filename for all namespaced classes must conform to the [automatic class loading](https://docs.moodle.org/dev/Automatic_class_loading) rules. The use of formal PHP namespaces is **required** in all new code.
 1. Use at most one namespace declaration per file.
 
 <ValidExample>
@@ -774,7 +774,7 @@ chance of conflict with any other plugin or api, now and forever onwards.
 
 :::info
 
-These rules were agreed in {tracker}`MDLSITE-4800`
+These rules were agreed in [MDLSITE-4800](https://tracker.moodle.org/browse/MDLSITE-4800)
 
 :::
 
@@ -1124,7 +1124,7 @@ three_arguments(1, 2, 3);
 
 Magic methods are heavily discouraged, justification will be required when used. Note: laziness will not be a valid argument.
 
-(See {tracker}`MDL-52634` for discussion of rationale)
+(See [MDL-52634](https://tracker.moodle.org/browse/MDL-52634) for discussion of rationale)
 
 ## Control statements
 
@@ -1241,7 +1241,7 @@ require(__DIR__ . '/../../config.php');
 
 </ValidExample>
 
-Any other include/require should use a path starting with `__DIR__` or an absolute path starting with `$CFG->dirroot` or `$CFG->libdir`. Relative includes starting with "../" can [sometimes behave strangely under PHP](https://www.php.net/manual/en/function.include.php), so should not be used. Our [[CLI scripts]] must not use relative config.php paths starting with "../".
+Any other include/require should use a path starting with `__DIR__` or an absolute path starting with `$CFG->dirroot` or `$CFG->libdir`. Relative includes starting with "../" can [sometimes behave strangely under PHP](https://www.php.net/manual/en/function.include.php), so should not be used. Our [CLI scripts](https://docs.moodle.org/dev/CLI_scripts) must not use relative config.php paths starting with "../".
 
 For library files in normal usage, require_once should be used (this is different from config.php which should always use 'require' as above). Examples:
 
@@ -1369,7 +1369,7 @@ The `@var` tag is used to document class properties.
 
 </ValidExample>
 
-Exceptionally, when none of the available [[#Types|types]] define the returned value, inline @var phpdocs (within the body of the methods) providing type hinting are allowed to the returned type. Don't abuse!
+Exceptionally, when none of the available [types](https://docs.moodle.org/dev/#Types) define the returned value, inline @var phpdocs (within the body of the methods) providing type hinting are allowed to the returned type. Don't abuse!
 
 ##### `@uses`
 
@@ -1400,7 +1400,7 @@ The access can be used to specify access control for an element
 
 ##### `@package`
 
-The package tag should always be used to label php files with the correct [[Frankenstyle]] component name. Full rules are explained on that page, but in summary:
+The package tag should always be used to label php files with the correct [Frankenstyle](https://docs.moodle.org/dev/Frankenstyle) component name. Full rules are explained on that page, but in summary:
 
 1. If the file is part of any component plugin, then use the plugin component name (for example **mod_quiz** or **gradereport_xls**)
 1. If the file is part of a core subsystem then it will be core_xxxx where xxxx is the name defined in get_core_subsystems(). (for example **core_enrol** or **core_group**)
@@ -1516,11 +1516,11 @@ This tag is valid and can be used optionally to indicate the method or function 
 
 There are some tags that are only allowed within some contexts and not globally. More precisely:
 
-- `@Given`, `@When`, `@Then`, within the [[Acceptance testing#Adding steps definitions|behat steps definitions]].
-- `@covers`, `@coversDefaultClass`, `@coversNothing`, `@uses` to better control coverage within [[Writing PHPUnit tests#Generators|unit tests]].
-- `@dataProvider` and `@testWith`, to provide example data and expectations, within [[Writing PHPUnit tests#Generators|unit tests]].
+- `@Given`, `@When`, `@Then`, within the [behat steps definitions](https://docs.moodle.org/dev/Acceptance_testing#Adding_steps_definitions).
+- `@covers`, `@coversDefaultClass`, `@coversNothing`, `@uses` to better control coverage within [unit tests](https://docs.moodle.org/dev/Writing_PHPUnit_tests#Generators).
+- `@dataProvider` and `@testWith`, to provide example data and expectations, within [unit tests](https://docs.moodle.org/dev/Writing_PHPUnit_tests#Generators).
 - `@depends`, to express dependencies between tests, where each producer returned data in passed to consumers. See [`@depends` examples](https://phpunit.readthedocs.io/en/9.5/writing-tests-for-phpunit.html#writing-tests-for-phpunit-examples-stacktest2-php) for more information.
-- `@group`, for easier collecting unit tests together, following the guidelines in the [[PHPUnit#Using_the_.40group_annotation|PHPUnit MoodleDocs]].
+- `@group`, for easier collecting unit tests together, following the guidelines in the [PHPUnit MoodleDocs](https://docs.moodle.org/dev/PHPUnit#Using_the_.40group_annotation).
 - `@requires`, to specify unit test requirements and skip if not fulfilled. See [`@requires` usages](https://phpunit.readthedocs.io/en/9.5/incomplete-and-skipped-tests.html#incomplete-and-skipped-tests-requires-tables-api) for more information.
 - `@runTestsInSeparateProcesses` and `@runInSeparateProcess`, to execute an individual test or a testcase in isolation. To be used only when strictly needed.
 
@@ -1591,7 +1591,7 @@ class policy_issue {
 
 For files containing only one artifact (class, interface, trait, etc.), specifically for all the files within `classes` directories, but also any other file fulfilling the condition anywhere else, it will be enough with the class phpdoc block. The file phpdoc block will be considered optional at all effects, giving to the class one precedence.
 
-The [[#@package|@package]], [[#@copyright|@copyright]] and [[#@license|@license]] tags (and the optional [[#@category|@category]] tag ), as shown in the example above, must be present always in the file (in whichever docblock, but all together).
+The [@package](https://docs.moodle.org/dev/#@package), [@copyright](https://docs.moodle.org/dev/#@copyright) and [@license](https://docs.moodle.org/dev/#@license) tags (and the optional [@category](https://docs.moodle.org/dev/#@category) tag ), as shown in the example above, must be present always in the file (in whichever docblock, but all together).
 
 ### Properties
 
@@ -1778,7 +1778,7 @@ If you have a big task that is nearly done, apart a few TODOs, and you really wa
 
 There is a nice "to-do checker" reporting tool, restricted to admins and available via web @ [`lib/tests/other/todochecker.php`](https://github.com/moodle/moodle/blob/master/lib/tests/other/todochecker.php).
 
-Finally, don't forget to add any MDL-l2345 used by your TODOs (and @todos too, unless part of the [[Deprecation|deprecation process]], those are handled apart) to the "Review TODOs Epic": MDL-47779 (requires login to see the issues)
+Finally, don't forget to add any MDL-l2345 used by your TODOs (and @todos too, unless part of the [deprecation process](https://docs.moodle.org/dev/Deprecation), those are handled apart) to the "Review TODOs Epic": MDL-47779 (requires login to see the issues)
 
 ### CVS keywords
 
@@ -1862,7 +1862,7 @@ Git commits should not:
 - Include many separate revisions to the same lines of code for a single issue
 - Arbitrarily split when part of a atomic set of logical changes
 
-For more guidance, see [[Commit cheat sheet]]
+For more guidance, see [Commit cheat sheet](https://docs.moodle.org/dev/Commit_cheat_sheet)
 
 ## Credits
 
@@ -1874,10 +1874,10 @@ This document was drawn from the following sources:
 
 ## See also
 
-- [[Javascript/Coding_Style|Javascript Coding Style]]
-- [[CSS_Coding_Style|CSS Coding Style]]
-- [[SQL coding style]]
-- [[Coding]]
+- [Javascript Coding Style](https://docs.moodle.org/dev/Javascript/Coding_Style)
+- [CSS Coding Style](https://docs.moodle.org/dev/CSS_Coding_Style)
+- [SQL coding style](https://docs.moodle.org/dev/SQL_coding_style)
+- [Coding](https://docs.moodle.org/dev/Coding)
 - [CodeSniffer](../../policies/codingstyle/index.md)
 - [Code Checker plugin](https://moodle.org/plugins/local_codechecker)
 - [Accessibility coding guidelines](./accessibility#Moodle-related-accessibility-coding-guidelines)

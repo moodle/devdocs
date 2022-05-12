@@ -32,7 +32,7 @@ The [Moodle Research Library](http://research.moodle.net) exists as a repository
 
 Moodle community members come together to share research activities in a person in a number of ways.
 
-- [[Working Groups]]
+- [Working Groups](https://docs.moodle.org/dev/Working_Groups)
 - Moodle Conferences
 -- Moodle Research Conferences were held in [2012](http://research.moodle.net/cgi/search/simple?q=mrc2012) and [2013](http://research.moodle.net/cgi/search/simple?q=mrc2013)
 -- Research is presented at [MoodleMoots](https://moodlemoot.org/) around the world.
@@ -42,8 +42,8 @@ Moodle community members come together to share research activities in a person 
 
 ## See also
 
-- [[:en:Learning_analytics|Learning analytics]]
-- [[:en:Logging|Logging]]
-- [[Learning_Analytics_Specification|Learning Analytics API specification]]
-- [[Events API|Events specification]]
-- [[Logging_2|Logging specification]]
+- [Learning analytics](https://docs.moodle.org/dev/:en:Learning_analytics)
+- [Logging](https://docs.moodle.org/dev/:en:Logging)
+- [Learning Analytics API specification](https://docs.moodle.org/dev/Learning_Analytics_Specification)
+- [Events specification](https://docs.moodle.org/dev/Events_API)
+- [Logging specification](https://docs.moodle.org/dev/Logging_2)

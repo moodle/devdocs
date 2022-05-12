@@ -13,8 +13,8 @@ The File API is used to control, manage, and serve all files uploaded and stored
 
 The following documentation is also related:
 
-- The [[Repository API]] is responsible for the code paths associated with uploading files to Moodle. This includes Repository plugins.
-- [[Using the File API in Moodle forms]]
+- The [Repository API](https://docs.moodle.org/dev/Repository_API) is responsible for the code paths associated with uploading files to Moodle. This includes Repository plugins.
+- [Using the File API in Moodle forms](https://docs.moodle.org/dev/Using_the_File_API_in_Moodle_forms)
 - Additional detail of how this API works is discussed in the [File API internals](./internals.md)
 
 ## File areas
@@ -22,7 +22,7 @@ The following documentation is also related:
 Files are conceptually stored in _file areas_. A file area is uniquely identified by:
 
 - A `contextid`.
-- A full component name (using the [[Frankenstyle]] format), for example `course`, `mod_forum`, `mod_glossary`, `block_html`.
+- A full component name (using the [Frankenstyle](https://docs.moodle.org/dev/Frankenstyle) format), for example `course`, `mod_forum`, `mod_glossary`, `block_html`.
 - A file area type, for example `intro` or `post`.
 - A unique `itemid`. Typically if there is only one of a file area per context, then the `itemid` is `0`, whilst if there can be multiple instances of a file area within a context, then the id of the item it relates to is used. For example in the course introduction text area, there is only one course introduction per course, so the `itemid` is set to `0`, whilst in a forum each forum post is within the same context, and the `itemid` should be the id of the post that it relates to.
 
@@ -227,7 +227,7 @@ function mod_myplugin_pluginfile(
 
 ## Getting files from the user
 
-You will typically use the [[Forms API]] to accept files from users. This topic is detailed in more detail in the [[Using the File API in Moodle forms]] documentation.
+You will typically use the [Forms API](https://docs.moodle.org/dev/Forms_API) to accept files from users. This topic is detailed in more detail in the [Using the File API in Moodle forms](https://docs.moodle.org/dev/Using_the_File_API_in_Moodle_forms) documentation.
 
 ## Common uses of the file API
 
@@ -436,5 +436,5 @@ if ($file) {
 
 - [Core APIs](../../../apis.md)
 - [File API internals](./internals.md) how the File API works internally.
-- [[Using the File API in Moodle forms]]
-- [[Repository API]]
+- [Using the File API in Moodle forms](https://docs.moodle.org/dev/Using_the_File_API_in_Moodle_forms)
+- [Repository API](https://docs.moodle.org/dev/Repository_API)

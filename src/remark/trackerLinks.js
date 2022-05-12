@@ -19,21 +19,6 @@
 const visit = require('unist-util-visit');
 
 /**
- * Get the AST for a link pointing to the Moodle Tracker for the specified issue number.
- *
- * @param {String} issueNumber
- * @returns {Tree}
- */
-const getLinkFromIssueNumber = (issueNumber) => ({
-    type: 'link',
-    url: `https://tracker.moodle.org/browse/${issueNumber}`,
-    children: [{
-        type: 'text',
-        value: issueNumber,
-    }],
-});
-
-/**
  * Update a text representation of a tracker issue into a link to that issue.
  *
  * These are in the format:
@@ -57,14 +42,15 @@ const updateTextLink = (node, index, parent) => {
     const tokenEnd = linkEnd + 1;
     const issueNumber = value.substring(linkStart, linkEnd);
 
-    const link = getLinkFromIssueNumber(issueNumber);
+    const newValue = value.substring(1, tokenStart) + issueNumber + value.substring(tokenEnd);
+    console.warn(
+        `The {tracker ${issueNumber}\` syntax has been deprecated.`
+        + `Please use a [${issueNumber}](https://tracker.moodle.org/browse/${issueNumber})`,
+    );
 
     parent.children.splice(index, 1, {
         type: 'text',
-        value: node.value.substring(0, tokenStart),
-    }, link, {
-        type: 'text',
-        value: node.value.substring(tokenEnd),
+        value: newValue,
     });
 
     return null;
@@ -97,12 +83,17 @@ const updateInlineLink = (node, index, parent) => {
     }
 
     const issueNumber = followingNode.value;
-    const link = getLinkFromIssueNumber(issueNumber);
+
+    const newValue = node.value.substring(0, tokenStart) + issueNumber;
+    console.warn(
+        `The {tracker}\`${issueNumber}\` syntax has been deprecated.`
+        + `Please use a [${newValue}](https://tracker.moodle.org/browse/${newValue})`,
+    );
 
     parent.children.splice(index, 2, {
         type: 'text',
-        value: node.value.substring(0, tokenStart),
-    }, link);
+        value: newValue,
+    });
 
     return null;
 };

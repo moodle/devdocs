@@ -25,13 +25,13 @@ Used to flag issues that are being triaged (sometimes an ongoing process for day
 Used to flag that an issue is a direct result of a [Moodle QA test](/general/development/process/testing/qa), conducted just before major releases. The bug should also be linked to the original MDLQA test, so that developers/integrators can reset the original MDLQA test (for re-testing) when the MDL issue is fixed. Once all the related MDLQA tests are passing the label can be deleted.
 
 - `mdlqa_conversion`<br/>
-Used to flag MDL issues that are converting MDLQA issues to behat features. The bug should also be linked to the MDLQA test being converted. Useful to know what's going and exclude some issues from manual QA. Once the MDL issue has been closed and the MDLQA has been moved to {tracker MDLQA-5249}, the label can be deleted.
+Used to flag MDL issues that are converting MDLQA issues to behat features. The bug should also be linked to the MDLQA test being converted. Useful to know what's going and exclude some issues from manual QA. Once the MDL issue has been closed and the MDLQA has been moved to [MDLQA-5249](https://tracker.moodle.org/browse/MDLQA-5249), the label can be deleted.
 
 - [`unit_test_required`](https://tracker.moodle.org/issues/?jql=labels%20%3D%20unit_test_required)<br/>
 Used to flag issues that should have their own unit tests.
 
 - [`acceptance_test_required`](https://tracker.moodle.org/issues/?jql=labels%20%3D%20acceptance_test_required)<br/>
-Used to flag issues that should be regularly tested using the behat framework [[Acceptance_testing]]. Before a major release these issues will be reviewed and new feature files will be added.
+Used to flag issues that should be regularly tested using the behat framework [Acceptance testing](https://docs.moodle.org/dev/Acceptance_testing). Before a major release these issues will be reviewed and new feature files will be added.
 
 - [`qa_test_required`](https://tracker.moodle.org/issues/?jql=labels%20%3D%20qa_test_required)<br/>
 Used to flag issues that cannot be covered by automated tests. When adding the label, a comment should be also added advising exactly what needs covering in the QA test, for example "steps 6-10 in testing instructions".
@@ -43,7 +43,7 @@ Used to flag issues identified in QA testing which we were not able to fix befor
 Used to flag issues that have created a need for documentation work, such as new pages, changes, or even being added to upcoming release notes. Docs people will look for these issues periodically when working on documentation, removing the label once documentation has been written. For new features in the upcoming version of Moodle, please add documentation to the dev docs (adding a link to it from the tracker issue) or in a comment in the issue, then when the new version wiki is set up (3 weeks prior to release), the info can be transferred.
 
 - `cl_docs_required` ([all](https://tracker.moodle.org/issues/?jql=labels%20in%20(cl_docs_required)) | [yours](https://tracker.moodle.org/issues/?jql=labels%20in%20(cl_docs_required)%20AND%20assignee%20%3D%20currentUser()))<br/>
-Used to flag issues that contain features which need to be documented in the [[Component Library]]. The responsibility of creating/updating Component Library documentation falls to the developer assigned to each relevant issue. Normally the relevant documentation should be included in the issue, but in some cases this will not be the case. When the issue is resolved and component library documentation was not included, a new issue should be created for the Component Library changes, linking using the **Documents** and **is documented by** issue links, and the `cl_docs_required` label should be removed from the issue.
+Used to flag issues that contain features which need to be documented in the [Component Library](https://docs.moodle.org/dev/Component_Library). The responsibility of creating/updating Component Library documentation falls to the developer assigned to each relevant issue. Normally the relevant documentation should be included in the issue, but in some cases this will not be the case. When the issue is resolved and component library documentation was not included, a new issue should be created for the Component Library changes, linking using the **Documents** and **is documented by** issue links, and the `cl_docs_required` label should be removed from the issue.
 
 - `dev_docs_required` ([all](https://tracker.moodle.org/issues/?jql=labels%20in%20(dev_docs_required)) | [yours](https://tracker.moodle.org/issues/?jql=labels%20in%20(dev_docs_required)%20AND%20assignee%20%3D%20currentUser()))<br/>
 Used to flag issues that need to be noted in the dev docs. The responsibility of creating/updating Dev docs falls to the developer assigned to each relevant issue. When the issue is resolved, documentation should be created/updated, an appropriate URL should be added to the **Documentation link** field of the issue and the `dev_docs_required` label should be removed from the issue.
@@ -58,7 +58,7 @@ Used to ask for an issue (having the `integration_held` label) to become unblock
 Used to flag security issues that have been reviewed by integrators already but held from integration repository. These issues must be cleared during point releases.
 
 - `security_benefit`<br/>
-Used to flag issues which help to improve the security of Moodle, but are not directly exploitable security bugs (and therefore do not have a security level assigned). For example, {tracker MDL-66775} and {tracker MDL-65443}.
+Used to flag issues which help to improve the security of Moodle, but are not directly exploitable security bugs (and therefore do not have a security level assigned). For example, [MDL-66775](https://tracker.moodle.org/browse/MDL-66775) and [MDL-65443](https://tracker.moodle.org/browse/MDL-65443).
 
 - `partner`<br/>
 Moodle Partners apply this label to flag issues that are important to their clients. The Moodle HQ dev team takes this label into consideration when setting roadmap and bug fixing priorities.
@@ -67,7 +67,7 @@ Moodle Partners apply this label to flag issues that are important to their clie
 This label indicates that a solution (patch) has been attached to the issue. However, if you can, it may be better to submit the issue for peer review, rather than using this label. This is useful to component leads and Moodle HQ when deciding what to work on next.
 
 - `cime`<br/>
-A developer can add the `cime` label to an issue to request that CiBot perform an [[Automated code review]].
+A developer can add the `cime` label to an issue to request that CiBot perform an [Automated code review](https://docs.moodle.org/dev/Automated_code_review).
 
 - [`performance`](https://tracker.moodle.org/issues/?jql=labels%20%3D%20performance%20AND%20project%20%3D%20MDL)<br/>
 Used to flag any issues that developers think may affect Moodle's performance in some way (positively or negatively).
@@ -103,7 +103,7 @@ Used to identify new tests in the current QA cycle for volunteers from the commu
 Used to identify suggestions for improvements/new features as possible candidates for add-on development. New and willing developers can be directed to these issues for projects.
 
 - `affects_mobileapp`<br/>
-Used to identify MDL issues that may affect the mobile app. It should be used when adding new features to functionalities supported by the app or when doing changes in existing ones. Examples are: {tracker MDL-372} and {tracker MDL-38158}.
+Used to identify MDL issues that may affect the mobile app. It should be used when adding new features to functionalities supported by the app or when doing changes in existing ones. Examples are: [MDL-372](https://tracker.moodle.org/browse/MDL-372) and [MDL-38158](https://tracker.moodle.org/browse/MDL-38158).
 
 - `affects_moodlecloud`<br/>
 Used to identify MDL issues that may affect Moodlecloud.

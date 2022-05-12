@@ -15,6 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* eslint-disable global-require */
 require('dotenv').config();
 
 const Versions = require('./versions.json');
@@ -31,7 +32,6 @@ versionConfig.current = {
 // Share the remarkPlugins between all presets.
 const remarkPlugins = [
     require('./src/remark/trackerLinks'),
-    require('./src/remark/legacyDocLinks'),
     require('mdx-mermaid'),
 ];
 
@@ -39,6 +39,7 @@ const remarkPlugins = [
 const config = {
     title: 'Moodle',
     tagline: '(Un)official Developer Resources',
+    // eslint-disable-next-line spaced-comment
     //url: 'https://develop.moodle.org',
     url: process.env?.url || 'https://moodle.github.io',
     baseUrl: process.env?.baseUrl || '/devdocs/',

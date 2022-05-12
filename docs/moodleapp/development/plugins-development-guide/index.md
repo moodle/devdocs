@@ -118,7 +118,7 @@ You can always implement the whole plugin yourself using JavaScript instead of u
 
 ## Step by step example
 
-In this example, we are going to update an existing plugin, the [Certificate activity module](https://github.com/mdjnelson/moodle-mod_certificate), that previously used a [[Moodle_Mobile_2_(Ionic_1)_Remote_add-ons|Remote add-on]] (a legacy approach to implement mobile plugins).
+In this example, we are going to update an existing plugin, the [Certificate activity module](https://github.com/mdjnelson/moodle-mod_certificate), that previously used a [Remote add-on](https://docs.moodle.org/dev/Moodle_Mobile_2_(Ionic_1)_Remote_add-ons) (a legacy approach to implement mobile plugins).
 
 This is a simple activity module that displays the certificate issued for the current user along with the list of the dates of previously issued certificates. It also stores in the course log that the user viewed a certificate. This module also works offline: when the user downloads the course or activity, the data is pre-fetched and can be viewed offline.
 
@@ -647,7 +647,7 @@ You must use this delegate to support a block. For example, blocks can be displa
 
 You must use this delegate for supporting question types.
 
-You can learn more about this at the [[Creating mobile question types]] page.
+You can learn more about this at the [Creating mobile question types](https://docs.moodle.org/dev/Creating_mobile_question_types) page.
 
 #### `CoreQuestionBehaviourDelegate`
 

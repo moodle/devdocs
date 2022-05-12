@@ -8,7 +8,7 @@ tags:
 
 The Moodle App is a mobile application that helps users make the best of their Moodle sites on handheld devices. It has some additional features like offline access, and a dedicated interface adapted to mobile. It's focused on student functionality, so you won't find all the features you have on the web for teachers and admins. You can learn more about the features available in [the user documentation](https://docs.moodle.org/).
 
-On a technical level, it's a completely different codebase from the Moodle LMS, and interacts with a Moodle site using [[web services]]. You can find the source code of the application in github: [github.com/moodlehq/moodleapp](https://github.com/moodlehq/moodleapp).
+On a technical level, it's a completely different codebase from the Moodle LMS, and interacts with a Moodle site using [web services](https://docs.moodle.org/dev/web_services). You can find the source code of the application in github: [github.com/moodlehq/moodleapp](https://github.com/moodlehq/moodleapp).
 
 Before embarking into any Moodle-specific documentation, we recommend that you are at least familiar with [Angular](https://angular.io/) and [Ionic Framework](https://ionicframework.com/). These are the core technologies used in the application. We'll reference any relevant concepts, but having a basic idea will take you a long way in understanding the Moodle App.
 
@@ -36,7 +36,7 @@ Pages and navigation are defined using [Angular Router](https://angular.io/guide
 
 ### Web services and caching
 
-The entire communication between the app and a site happens through a layer of [[Web services|web services]]. Each time a user logs into the application, a new session starts and that session is what the concept of a "site" encapsulates in the application. For this reason, you could log multiple times into the same site and from the point of view of the application those would be different sites.
+The entire communication between the app and a site happens through a layer of [web services](https://docs.moodle.org/dev/Web_services). Each time a user logs into the application, a new session starts and that session is what the concept of a "site" encapsulates in the application. For this reason, you could log multiple times into the same site and from the point of view of the application those would be different sites.
 
 For performance reasons, the data retrieved from some web services is cached automatically. For example, the list of courses that a user is enrolled in. This is also useful so that the application works offline. However, not everything is cached automatically, and some things like entire courses can be downloaded manually. This is referred to as "prefetching".
 
@@ -80,4 +80,4 @@ Now that you are familiar with the basic concepts, you understand how the applic
 - Do you want to customise your site in the app? Read the [Moodle App Customisation](./customisation) page.
 - Do you want to make a custom app? Read the [Custom Moodle Apps](./customisation/custom-apps) page.
 
-If you have any further questions, check out [Moodle App FAQ|the FAQ](./faq). If there's anything you want to share, you can do it in [the forum](https://moodle.org/mod/forum/view.php?id=7798) or [[Chat|the Telegram developer room]]. You can also report any bugs that you find in [the tracker](https://tracker.moodle.org/browse/MOBILE).
+If you have any further questions, check out [Moodle App FAQ|the FAQ](./faq). If there's anything you want to share, you can do it in [the forum](https://moodle.org/mod/forum/view.php?id=7798) or [the Telegram developer room](https://docs.moodle.org/dev/Chat). You can also report any bugs that you find in [the tracker](https://tracker.moodle.org/browse/MOBILE).

@@ -37,7 +37,7 @@ If all the principles are fulfilled, the answer for "should I integrate this?" i
 
 ## Component lead review process
 
-Please see the [[Component Lead Review]] documentation for further information on the CLR process.
+Please see the [Component Lead Review](https://docs.moodle.org/dev/Component_Lead_Review) documentation for further information on the CLR process.
 
 ## Integration Review Process
 
@@ -73,7 +73,7 @@ optimisations)
     2. `ui_change` / `api_change`: About the implications of the change.
     3. `unit_test_required` / `acceptance_test_required` / `qa_test_required`: About the need to cover the issue with some test.
     4. `affects_mobileapp` / `affects_workplace` / `affects_moodlecloud`: About issues that may affect other Moodle products and services
-15. [[Tracker issue versions]] review. Particularly:
+15. [Tracker issue versions](https://docs.moodle.org/dev/Tracker_issue_versions) review. Particularly:
     1. Fixed Version after integration - is the versions that the issue is patched for. (A rule here: ["or stables or master"](https://docs.moodle.org/dev/Tracker_issue_versions#Some_general_and_simple_rules)).
     2. Remove any `Must fix for X.Y` version once the issue is integrated.
 16. Whenever any of the points above or any other detail require extra information or action to be done by the assignee, and the integrator
@@ -104,7 +104,7 @@ During the continuous integration period (last 6 weeks before release) the integ
 
 Throughout:
 
-- Issues are picked on a one by one basis, prioritising [QA blockers](https://docs.moodle.org/dev/QA_testing#Resetting_tests) and master regressions (MUST FIX) issues.
+- Issues are picked on a one by one basis, prioritising [QA blockers](/general/development/process/testing/qa#resetting-tests) and master regressions (MUST FIX) issues.
 - After freeze (usually 5 weeks before release) any non bug fix issues are given the `integration_held` label and are explicitly not picked for integration. Still, anybody is able to add a reasoned `unhold_requested` label to those issues in order to get them unblocked by the development managers. Note this does not guarantee the issue to land before release, but just gives it a chance to be integrated like any other issue.
 - Also, coming together with freeze, all the flow of issues to current integration is automatically controlled by the [Manage queues on continuous](https://ci.moodle.org/view/Tracker/job/TR%20-%20Manage%20queues%20on%20continuous/) job that keeps the current queue fed with issues, moves important ones, holds new features and other niceties. Issues are picked in strict integration order.
 - Our goal is to achieve 'release-ability' throughout, so we stop integrating to ensure a release happens
@@ -119,7 +119,7 @@ So, basically, once under continuous integration, we do organize work as follows
 - Friday: Integration happens until [12:00 (UTC+8)](http://time.unitarium.com/utc/4), afterwards we try to achieve 100% 'Test Passed' and stop integrating any untested changes until a master release is produced. Note that 24h before the cutoff it's possible to pick issues out of order towards queues reduction.
 
 :::note
-Along this period we always release as many stable weeklies, both supported (always) and security only (when there are changes), as master rolls (on-demand, beta, rc) happen (see {tracker MDLSITE-3470}). Note that those tags are not simply tags but they come with some important implications, aiming to stability, safety and clarity. Integrators will try to remain loyal to them, be warned:
+Along this period we always release as many stable weeklies, both supported (always) and security only (when there are changes), as master rolls (on-demand, beta, rc) happen (see [MDLSITE-3470](https://tracker.moodle.org/browse/MDLSITE-3470)). Note that those tags are not simply tags but they come with some important implications, aiming to stability, safety and clarity. Integrators will try to remain loyal to them, be warned:
 :::
 
 - **Once beta is released**, new features or improvements "unrelated" with the release will be really harder to be accepted. A +4 from developer managers (normally +3 is enough) will be needed to proceed with the issue. Integrators vote will be, always, -1.
@@ -184,7 +184,7 @@ If the backport request is approved, please follow the usual development process
 It would be good practice to also add a line like "This is a backport of MDL-YYYYY." in the amended commit comment.
 :::
 
-You can probably copy the testing instructions from the original issue. If so, make it clear you done this by saying something like "Copied from MDL-66327". Of course, if you can improve the instructions, feel free to edit. {tracker MDL-66614} and {tracker MDL-66327} are probably a reasonably good example fo what should be done.
+You can probably copy the testing instructions from the original issue. If so, make it clear you done this by saying something like "Copied from MDL-66327". Of course, if you can improve the instructions, feel free to edit. [MDL-66614](https://tracker.moodle.org/browse/MDL-66614) and [MDL-66327](https://tracker.moodle.org/browse/MDL-66327) are probably a reasonably good example fo what should be done.
 
 ### Polite note about bug classification
 

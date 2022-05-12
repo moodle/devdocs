@@ -22,7 +22,7 @@ Would you like to help with QA testing? If so, please make sure you have created
    - Only assign an issue to yourself which no one else is testing (Assignee = Unassigned).
    - Only assign one issue at a time unless you plan to test a number of related issues within the next 24 hours. In other words, don't assign several issues to yourself then do nothing for several days. ;-)
    - The label `test_server_required` indicates issues that can't be tested on the QA testing site. The label `credentials_required` indicates that credentials such as an OAuth 2 service client ID and secret are required.
-2. Using either the [Moodle QA Testing Site](https://qa.moodledemo.net/) or your own test site running the latest Moodle 4.0dev (available from Git on the integration/master branch git://git.moodle.org/integration.git) with [[debugging]] set to developer, perform each of the steps listed in the test.
+2. Using either the [Moodle QA Testing Site](https://qa.moodledemo.net/) or your own test site running the latest Moodle 4.0dev (available from Git on the integration/master branch git://git.moodle.org/integration.git) with [debugging](https://docs.moodle.org/dev/debugging) set to developer, perform each of the steps listed in the test.
 3. Please *attach screenshots of the steps where you verify or check something*.
 4. If it makes sense, please test using the currently supported themes, Boost and Classic.
 5. Choose an appropriate workflow action:
@@ -69,7 +69,7 @@ So you ran a test and it failed? Congratulations on finding a bug! Please do the
 
 1. Click the `Fail` button at the top of the page.
 2. Add a comment to the QA test stating that there was a problem and that you will report it as a Moodle bug.
-3. Note the MDLQA number; it will be something like {tracker MDLQA-448}.
+3. Note the MDLQA number; it will be something like [MDLQA-448](https://tracker.moodle.org/browse/MDLQA-448).
 4. Try searching for whether the bug has been reported previously, and if not create a new issue for it (as described in [Tracker introduction](/general/development/tracker)).
 5. In the new Moodle (MDL) issue select 'Link' from the 'More actions' dropdown menu.
 Linking to the QA issue in the tracker
@@ -164,7 +164,7 @@ QA tests may become out-of-date due to User Interface changes, feature changes, 
 
 To update a QA test original:
 
-1. Search for the test in {tracker MDLQA-1}.
+1. Search for the test in [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1).
 2. Edit the test description.
 
 :::note
@@ -183,8 +183,8 @@ In addition, new features can benefit from exploratory testing by community volu
 
 To create a new QA test:
 
-1. If appropriate, do a quick search of {tracker MDLQA-1} to check if there is an existing test which can be updated.
-2. If not, in {tracker MDLQA-1} from the More menu select 'Create sub-task'.
+1. If appropriate, do a quick search of [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1) to check if there is an existing test which can be updated.
+2. If not, in [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1) from the More menu select 'Create sub-task'.
 3. Enter a summary such as 'A teacher can ...'.
 4. Select 'Original' as affected version and select appropriate components.
 5. In the description field add the test steps (usually between 3 and 10), similar to the issue's [testing instructions](./guide), starting with 'Log in as a teacher...' or similar. It's a good idea to try doing the steps yourself as you write the test.
@@ -254,5 +254,5 @@ Comments on tests from previous QA cycles:
 ## See also
 
 - [QA testing dashboard](https://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11454)
-- [Testing credits](https://docs.moodle.org/dev/Testing_credits)
+- [Testing credits](/general/community/credits/testing)
 - [Useful tips for QA testing](https://moodle.org/mod/forum/discuss.php?d=351302)

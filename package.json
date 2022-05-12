@@ -15,7 +15,11 @@
     "wikimedia-sync": "scripts/wikimedia-sync.js",
     "component-spellings": "scripts/component-helper.js spelling",
     "test": "jest",
-    "lint": "markdownlint --rules .markdownlint/no-directional-quotation-marks 'docs/**/*.md' 'general/**/*.md' '*.md'",
+    "mdlint": "markdownlint-cli2",
+    "mdlint-all": "markdownlint-cli2 '{docs,general}/**/*.md' '*.md'",
+    "mdfix": "markdownlint-cli2-fix",
+    "mdfix-all": "markdownlint-cli2-fix '{docs,general}/**/*.md' '*.md'",
+    "lint": "mdlint-all",
     "prepare": "husky install",
     "spell": "cspell '*.md' '**/*.md' 'docs/*.md' 'docs/**/*.md' 'general/*.md' 'general/**/*.md'"
   },
@@ -33,19 +37,13 @@
     "commander": "5",
     "dotenv": "^16.0.0",
     "hast-util-from-parse5": "^5.0.0",
-    "js-yaml": "^4.1.0",
     "mdx-mermaid": "^1.2.2",
     "mermaid": "^8.14.0",
-    "nodemw": "^0.17.0",
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
     "prism-react-renderer": "^1.3.1",
     "raw-loader": "^4.0.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "rehype-remark": "8.1",
-    "remark-stringify": "9",
-    "stylelint": "^14.6.1",
-    "winston": "^3.7.2"
+    "react-dom": "^17.0.2"
   },
   "browserslist": {
     "production": [
@@ -79,13 +77,18 @@
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-regexp": "^1.6.0",
     "husky": "^7.0.4",
+    "inquirer": "^8.2.4",
     "jest": "^27.5.1",
+    "js-yaml": "^4.1.0",
     "lint-staged": "^12.3.7",
-    "markdownlint-cli": "^0.31.1",
+    "markdownlint-cli2": "^0.4.0",
     "markdownlint-rule-helpers": "^0.16.0",
+    "nodemw": "^0.16.0",
+    "stylelint": "^14.6.1",
     "stylelint-config-standard": "^25.0.0",
     "ts-jest": "^27.1.4",
     "typescript": "^4.6.3",
-    "unist-util-inspect": "6.0.0"
+    "unist-util-inspect": "6.0.0",
+    "winston": "^3.7.2"
   }
 }

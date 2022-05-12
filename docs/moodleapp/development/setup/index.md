@@ -57,7 +57,7 @@ sudo gem install cocoapods
 pod setup
 ```
 
-Please note that for compiling the app in Mac you need to open the `Moodle.xcworkspace` file, more information here: {tracker MOBILE-1970}.
+Please note that for compiling the app in Mac you need to open the `Moodle.xcworkspace` file, more information here: [MOBILE-1970](https://tracker.moodle.org/browse/MOBILE-1970).
 
 ### Linux only: `libsecret`
 
