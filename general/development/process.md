@@ -292,7 +292,7 @@ Decisions will be posted on the issue and that issue will be closed, allowing an
 ## See also
 
 - [Release process](https://docs.moodle.org/dev/Release_process)
-- [Deprecation](https://docs.moodle.org/dev/Deprecation)
+- [Deprecation](/general/development/policies/deprecation)
 - [Integration dashboard](http://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11350)
 Walks-though of the process for contributors:
 - By Dan Poltawski, Integrator: http://www.slideshare.net/poltawski/how-to-guarantee-your-change-is-integrated-to-moodle-core, https://www.youtube.com/watch?v=836WtnM2YpM

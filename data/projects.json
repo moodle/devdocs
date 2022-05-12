@@ -20,6 +20,44 @@
                     "title": "Announcement"
                 }
             ]
+        },
+        "api/string-deprecation": {
+            "title": "String deprecation",
+            "status": "Complete",
+            "owners": [
+                {
+                    "name": "Marina Glancy",
+                    "githubUsername": "marinaglancy"
+                }
+            ],
+            "issueLinks": [
+                {
+                    "link": "https://tracker.moodle.org/browse/MDL-46585",
+                    "title": "MDL-46585"
+                }
+            ]
+        },
+        "api/amos": {
+            "title": "Automated Manipulation of Strings (AMOS)",
+            "status": "Complete",
+            "owners": [
+                {
+                    "name": "David Mudrak",
+                    "githubUsername": "mudrd8mz"
+                }
+            ],
+            "discussionLinks": [
+                {
+                    "link": "http://moodle.org/mod/forum/discuss.php?d=118707#p542197",
+                    "title": "Discussion"
+                }
+            ],
+            "issueLinks": [
+                {
+                    "link": "https://tracker.moodle.org/browse/MDL-18797",
+                    "title": "MDL-18797"
+                }
+            ]
         }
     }
 }
