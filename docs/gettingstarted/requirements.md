@@ -16,23 +16,23 @@ Moodle 4.0 supports the following PHP versions:
 
 The following PHP extensions are required (most of which are installed and enabled by default in most PHP installations):
 
-- [`iconv`]: https://www.php.net/book.iconv
-- [`mbstring`]: https://www.php.net/book.mbstring
-- [`curl`]: https://www.php.net/book.curl
-- [`openssl`]: https://www.php.net/book.openssl
-- [`ctype`]: https://www.php.net/book.ctype
-- [`zip`]: https://www.php.net/book.zip
-- [`zlib`]: https://www.php.net/book.zlib
-- [`simplexml`]: https://www.php.net/book.simplexml
-- [`spl`]: https://www.php.net/book.spl
-- [`pcre`]: https://www.php.net/book.pcre
-- [`dom`]: https://www.php.net/book.dom
-- [`xml`]: https://www.php.net/book.xml
-- [`xmlreader`]: https://www.php.net/book.xmlreader
-- [`intl`]: https://www.php.net/book.intl
-- [`json`]: https://www.php.net/book.json
-- [`hash`]: https://www.php.net/book.hash
-- [`fileinfo`]: https://www.php.net/book.fileinfo
+- [`iconv`](https://www.php.net/book.iconv)
+- [`mbstring`](https://www.php.net/book.mbstring)
+- [`curl`](https://www.php.net/book.curl)
+- [`openssl`](https://www.php.net/book.openssl)
+- [`ctype`](https://www.php.net/book.ctype)
+- [`zip`](https://www.php.net/book.zip)
+- [`zlib`](https://www.php.net/book.zlib)
+- [`simplexml`](https://www.php.net/book.simplexml)
+- [`spl`](https://www.php.net/book.spl)
+- [`pcre`](https://www.php.net/book.pcre)
+- [`dom`](https://www.php.net/book.dom)
+- [`xml`](https://www.php.net/book.xml)
+- [`xmlreader`](https://www.php.net/book.xmlreader)
+- [`intl`](https://www.php.net/book.intl)
+- [`json`](https://www.php.net/book.json)
+- [`hash`](https://www.php.net/book.hash)
+- [`fileinfo`](https://www.php.net/book.fileinfo)
 
 ## Relational Database
 
