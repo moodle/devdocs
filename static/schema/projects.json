@@ -1,7 +1,7 @@
 {
     "title": "JSON schema for the Moodle Project list",
-    "$schema": "http://json-schema.org/draft-04/schema",
     "$id": "https://moodle.github.io/devdocs/schema/projects.json",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
     "type": "object",
     "properties": {
         "projects": {
