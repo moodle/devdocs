@@ -117,4 +117,4 @@ Remember the phpDoc parameter type should also be updated to `null`.
 - [String deprecation](/general/projects/api/string-deprecation)
 - [External functions deprecation](https://docs.moodle.org/dev/Adding_a_web_service_to_a_plugin#Deprecation)
 - [Process](/general/development/process)
-- [Release process](https://docs.moodle.org/dev/Release_process)
+- [Release process](/general/development/process/release)

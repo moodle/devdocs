@@ -1,6 +1,7 @@
 # This file contains cspell exceptions to use for Moodle.
 # Please keep this file sorted alphabetically.
 Atto
+AWST
 Bangma
 Brickfield
 Choicegroup

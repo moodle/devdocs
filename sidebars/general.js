@@ -100,6 +100,7 @@ const sidebars = {
                         id: 'development/process/testing',
                     },
                 },
+                'development/process/release',
             ],
             link: {
                 type: 'doc',
