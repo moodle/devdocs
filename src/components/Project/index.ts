@@ -18,7 +18,7 @@
 import Person, { type PersonProps } from '../Person';
 import ProjectData from '@site/data/projects.json';
 
-export declare interface DiscussionLink {
+export declare interface Link {
     title: string,
     link: string,
 }
@@ -28,8 +28,8 @@ export declare interface ProjectSummaryData {
     title: string,
     owners: Array<PersonProps>,
     status: string,
-    issueNumbers?: Array<string>,
-    discussionLinks?: Array<DiscussionLink>,
+    issueLinks?: Array<Link>,
+    discussionLinks?: Array<Link>,
 }
 
 export const getProject = (projectName: string): ProjectSummaryData => {
@@ -39,20 +39,12 @@ export const getProject = (projectName: string): ProjectSummaryData => {
 
     const project = ProjectData.projects[projectName];
 
-    function getIssueNumbers(): Array<string> {
-        if (typeof project.issueNumbers === 'string') {
-            return [project.issueNumbers];
-        }
-
-        return project.issueNumbers;
-    }
-
     return {
         projectName,
         title: project.title,
         owners: project.owners.map((owner: PersonProps) => Person(owner)),
         status: project.status,
-        issueNumbers: getIssueNumbers(),
+        issueLinks: project.issueLinks,
         discussionLinks: project.discussionLinks,
     };
 };

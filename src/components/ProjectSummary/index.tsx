@@ -77,24 +77,23 @@ export default function ProjectSummary(props: ProjectSummaryProps): ReactNode {
                                 </td>
                             </tr>
                         )}
-                    {projectData.issueNumbers?.length > 0
+                    {projectData.issueLinks?.length > 0
                         && (
                             <tr>
                                 <th>Issues</th>
                                 <td>
-                                    {projectData.issueNumbers.map((issueNumber: string) => (
-                                        <div key={issueNumber}>
+                                    {projectData.issueLinks.map(({ link, title }) => (
+                                        <div key={title}>
                                             <Link
-                                                to={`https://tracker.moodle.org/browse/${issueNumber}`}
+                                                to={link}
                                             >
-                                                {issueNumber}
+                                                {title}
                                             </Link>
                                         </div>
                                     ))}
                                 </td>
                             </tr>
                         )}
-
                 </tbody>
             </table>
         );

@@ -13,6 +13,9 @@ Activity_modules:
 Antivirus_plugins:
 - filePath: "/docs/apis/plugintypes/antivirus/index.mdx"
   slug: "/docs/apis/plugintypes/antivirus"
+Automated_Manipulation_of_Strings_2.0:
+- filePath: "/general/projects/api/amos.md"
+  slug: "/general/projects/api/amos"
 Bug_triage:
 - filePath: "/general/development/process/triage.md"
   slug: "/general/development/process/triage"
@@ -40,6 +43,9 @@ Custom_Moodle_Apps:
 Debugging_network_requests_in_the_Moodle_App:
 - filePath: "/docs/moodleapp/development/network-debug.md"
   slug: "/docs/moodleapp/development/network-debug"
+Deprecation:
+- filePath: "/general/development/policies/deprecation.md"
+  slug: "/general/development/policies/deprecation"
 Developer_meeting_February_2022:
 - filePath: "/general/community/meetings/202202.md"
   slug: "/general/community/meetings/202202"
@@ -202,6 +208,9 @@ Sending_custom_Push_Notifications_to_the_Moodle_App:
 Setting_up_your_development_environment_for_the_Moodle_App:
 - filePath: "/docs/moodleapp/development/setup/index.md"
   slug: "/docs/moodleapp/development/setup"
+String_deprecation:
+- filePath: "/general/projects/api/string-deprecation.md"
+  slug: "/general/projects/api/string-deprecation"
 Testing:
 - filePath: "/general/development/process/testing.md"
   slug: "/general/development/process/testing"
