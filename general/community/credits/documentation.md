@@ -16,11 +16,11 @@ Please create an issue in this project if anyone has been missed out to add thei
 
 The following people have made valuable contributions to the Moodle documentation:
 
-Iñaki Arenaza, Dominique Bauer, Luca Bösch, Éric Bugnet, Abel Camacho, Chris Collman, Nicolas Connault, Mary Cooch, Manuel de la Torre, Martin Dougiamas, Mary Evans, Miroslav Fikar, Giuseppe Fiorentino, Helen Foster, Colin Fraser, John Harald Gartland, Gisela Hillenbrand, Tim Hunt, Art Lader, Eloy Lafuente (stronk7), Simey Lameze, Nicolas Martignoni, Howard Miller, Ulrike Montgomery, Jérôme Mouneyrac, David Mudrak, Mark Nelson, Jamie Pratt, Frank Ralf, Emma Richardson, Koen Roggemans, Daniela Rotelli, David Scotson, Petr Škoda (škoďák), Séverin Terrier, Michael Tesar, Randy Thornton, Itamar Tzadok, German Valero, Paul Verrall, Antonio Vicent, Ken Wilson, Mitsuhiro Yoshida
+Iñaki Arenaza, Dominique Bauer, Luca Bösch, Éric Bugnet, Abel Camacho, Chris Collman, Nicolas Connault, Mary Cooch, Manuel de la Torre, Martin Dougiamas, Mary Evans, Miroslav Fikar, Giuseppe Fiorentino, Helen Foster, Colin Fraser, John Harald Gartland, Gisela Hillenbrand, Tim Hunt, Art Lader, Eloy Lafuente (stronk7), Simey Lameze, Nicolas Martignoni, Michael Milette, Howard Miller, Ulrike Montgomery, Jérôme Mouneyrac, David Mudrak, Mark Nelson, Jamie Pratt, Frank Ralf, Emma Richardson, Koen Roggemans, Daniela Rotelli, David Scotson, Petr Škoda (škoďák), Séverin Terrier, Michael Tesar, Randy Thornton, Itamar Tzadok, German Valero, Paul Verrall, Antonio Vicent, Ken Wilson, Mitsuhiro Yoshida
 
 <!-- cspell:enable -->
 
-`List updated 10:53, 15 November 2018 (UTC)`
+`List updated 11:47, 17 May 2022 (UTC)`
 
 ## See also
 
