@@ -117,7 +117,7 @@ const config = {
                 path: 'general',
                 routeBasePath: 'general',
                 sidebarPath: require.resolve('./sidebars/general.js'),
-                editUrl: 'https://github.com/andrewnicols/devdocs/edit/main/',
+                editUrl: 'https://github.com/moodle/devdocs/edit/main/',
                 showLastUpdateAuthor: true,
                 showLastUpdateTime: true,
                 remarkPlugins,
