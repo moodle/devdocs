@@ -161,7 +161,8 @@ config.MD033 = {
         "Since",
         "DeprecatedSince",
         "ValidExample",
-        "InvalidExample"
+        "InvalidExample",
+        "ReactPlayer",
     ]
 };
 
