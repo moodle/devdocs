@@ -145,8 +145,8 @@ This simple, but important constraint, is there to facilitate the integration of
 
 Last, but not less important, a second goal for this on-sync period is:
 
-- The **environmental requirements for next major version** [must be agreed and resolved so they can land to master](https://docs.moodle.org/dev/Release_process#2_weeks_after) early in the process, remaining defined and stable over the next, 6 months of, development cycle.
-As part of the standard [Moodle release process](https://docs.moodle.org/dev/Release_process), at the beginning of the on-sync period, we "unhold" all bugs that were held during the last week before the release because they were unrelated to the release. At the end of the onsync period we "unhold" all new features that were submitted after the code freeze for the the release.
+- The **environmental requirements for next major version** [must be agreed and resolved so they can land to master](./release#2-weeks-after) early in the process, remaining defined and stable over the next, 6 months of, development cycle.
+As part of the standard [Moodle release process](./release), at the beginning of the on-sync period, we "unhold" all bugs that were held during the last week before the release because they were unrelated to the release. At the end of the onsync period we "unhold" all new features that were submitted after the code freeze for the the release.
 
 ## Fixing issues identified during integration review/ testing
 
