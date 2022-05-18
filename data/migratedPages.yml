@@ -154,6 +154,9 @@ Question_bank_plugins:
 Release_process:
 - filePath: "/general/development/process/release.md"
   slug: "/general/development/process/release"
+Repository_plugins:
+- filePath: "/docs/apis/plugintypes/repository/index"
+  slug: "/docs/apis/plugintypes/repository"
 Roadmap:
 - filePath: "/general/community/roadmap.md"
   slug: "/general/community/roadmap"

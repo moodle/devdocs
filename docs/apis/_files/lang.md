@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD041 -->
+
 Each plugin must define a set of language strings with, at a minimum, an English translation. These are specified in the plugin's `lang/en` directory in a file named after the plugin. For example the LDAP authentication plugin:
 
 ```php
@@ -8,19 +10,9 @@ Each plugin must define a set of language strings with, at a minimum, an English
 // Language string location: `auth/ldap/lang/en/auth_ldap.php`
 ```
 
+:::warning
+
 Every plugin _must_ define the name of the plugin, or its `pluginname`.
-
-:::caution Activity modules are different
-
-Activity modules do not use the __frankenstyle__ name as a filename, they use the plugin name. For example the forum activity plugin:
-
-```php
-// Plugin type: `mod`
-// Plugin name: `forum`
-// Frankenstyle plugin name: `mod_forum`
-// Plugin location: `mod/forum`
-// Language string location: `mod/forum/lang/en/forum.php`
-```
 
 :::
 
@@ -30,4 +22,4 @@ The `get_string` API can be used to translate a string identifier back into a tr
 get_string('pluginname', '[plugintype]_[pluginname]');
 ```
 
-- See the [[String API#Adding_language_file_to_plugin|String API]] documentation for more information on language files.
+- See the [String API](https://docs.moodle.org/dev/String_API#Adding_language_file_to_plugin) documentation for more information on language files.

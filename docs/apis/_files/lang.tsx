@@ -17,7 +17,7 @@
 import React from 'react';
 import { ComponentFileSummary } from '../../_utils';
 import type { Props } from '../../_utils';
-import DefaultDescription from './lang.mdx';
+import DefaultDescription from './lang.md';
 
 const defaultExample = "$string['pluginname'] = 'The name of my plugin will go here';";
 
