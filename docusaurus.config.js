@@ -31,6 +31,7 @@ versionConfig.current = {
 
 // Share the remarkPlugins between all presets.
 const remarkPlugins = [
+    require('./src/remark/moodleBanner'),
     require('./src/remark/trackerLinks'),
     require('mdx-mermaid'),
 ];
@@ -69,17 +70,7 @@ const config = {
                     remarkPlugins,
                     lastVersion: 'current',
                     versions: versionConfig,
-                    /*
-                    versions: {
-                        current: {
-                            label: 'master',
-                            banner: 'none',
-                        },
-                        "4.0": {
-                            banner: 'none',
-                        },
-                    },
-                    */
+
                 },
                 blog: false,
                 theme: {
@@ -110,6 +101,7 @@ const config = {
             indexBlog: false,
         }],
         'plugin-image-zoom',
+        require('./src/plugins/moodle-versions.js'),
         [
             '@docusaurus/plugin-content-docs',
             {
