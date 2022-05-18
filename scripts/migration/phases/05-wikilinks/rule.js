@@ -23,6 +23,17 @@ const {
     getLineMetadata,
 } = require('markdownlint-rule-helpers');
 
+const path = require('path');
+
+const getFileName = (matches) => {
+    const [link] = matches.groups.link.split('|');
+    if (link.startsWith('File:')) {
+        return link.replace(/^File:/, '');
+    }
+
+    return null;
+};
+
 const getWikilinkLink = (matches) => {
     const [link] = matches.groups.link.split('|');
 
@@ -52,7 +63,20 @@ const getWikilinkDescription = (matches) => {
         .replaceAll('_', ' ');
 };
 
-const replaceWikiLinks = (line, lineNumber, onError) => {
+const getFixInfo = (matches, filename) => {
+    const imageFilename = getFileName(matches);
+    if (imageFilename) {
+        const description = matches.groups.link.split('|').pop().replace('File:', '');
+        const imageDirName = `./_${path.basename(filename.replace(/\.md.?/, '').replaceAll(' ', '_'))}`;
+        return `![${description}](${imageDirName}/${imageFilename.replaceAll(' ', '_')})`;
+    }
+
+    const description = getWikilinkDescription(matches);
+    const link = getWikilinkLink(matches);
+    return `[${description}](${link})`;
+};
+
+const replaceWikiLinks = (line, lineNumber, onError, filename) => {
     const linkSearch = /(?<wikilink>\[\[(?<link>[^\]]*)\]\])/g;
     let matches = linkSearch.exec(line);
     if (!matches) {
@@ -60,10 +84,9 @@ const replaceWikiLinks = (line, lineNumber, onError) => {
     }
     do {
         const foundWikilink = matches.groups.wikilink;
-        const link = getWikilinkLink(matches);
-        const description = getWikilinkDescription(matches);
+        const replacement = getFixInfo(matches, filename);
         const column = matches.index + 1;
-        const replacement = `[${description}](${link})`;
+
         const fixInfo = {
             editColumn: column,
             deleteCount: matches.groups.link.length + 4,
@@ -96,7 +119,7 @@ module.exports = {
             }
 
             const lineNumber = lineIndex + 1;
-            replaceWikiLinks(line, lineNumber, onError);
+            replaceWikiLinks(line, lineNumber, onError, params.name);
         });
     },
 };
