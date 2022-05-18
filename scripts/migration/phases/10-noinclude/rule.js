@@ -23,11 +23,26 @@ const {
     getLineMetadata,
 } = require('markdownlint-rule-helpers');
 
-const markupHeader = /^(?<marker>=+)(?<header>[^=].*)$/;
+const search = /(?<match><\/?noinclude>)/;
+
+const getFixInfo = (matches) => {
+    if (matches.index === 0) {
+        return {
+            editColumn: matches.index + matches.groups.match.length + 1,
+            deleteCount: 0,
+            insertText: '\n\n',
+        };
+    }
+    return {
+        editColumn: matches.index + 1,
+        deleteCount: 0,
+        insertText: '\n\n',
+    };
+};
 
 module.exports = {
-    names: ['convert-markup-headers'],
-    description: 'Convert markup headers to markdown syntax',
+    names: ['noinclude-own-line'],
+    description: 'The noinclude tag should be on its own line',
     tags: ['migration'],
     function: function lint(params, onError) {
         forEachLine(getLineMetadata(params), (line, lineIndex, inCode) => {
@@ -37,27 +52,23 @@ module.exports = {
 
             const lineNumber = lineIndex + 1;
 
-            const headerMatches = markupHeader.exec(line);
-            if (headerMatches) {
-                const headerLevel = headerMatches.groups.marker.length;
-                const headerMarkup = '#'.repeat(headerLevel);
-                const headerText = headerMatches.groups.header.slice(0, 0 - headerLevel).replace(/=*$/, '');
-
-                const fixInfo = {
-                    editColumn: 1,
-                    deleteCount: line.length,
-                    insertText: `\n${headerMarkup} ${headerText}\n`,
-                };
-
-                addError(
-                    onError,
-                    lineNumber,
-                    headerMatches.input,
-                    headerMatches.input,
-                    [headerMatches.index + 1, headerMatches.input.length],
-                    fixInfo,
-                );
+            const matches = search.exec(line);
+            if (!matches) {
+                return;
             }
+            if (matches.input === matches.groups.match) {
+                return;
+            }
+
+            const fixInfo = getFixInfo(matches);
+            addError(
+                onError,
+                lineNumber,
+                matches.input,
+                matches.input,
+                [matches.index + 1, matches.groups.match.length],
+                fixInfo,
+            );
         });
     },
 };

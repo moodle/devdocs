@@ -26,14 +26,27 @@ const {
 const getWikilinkLink = (matches) => {
     const [link] = matches.groups.link.split('|');
 
-    return link
-        .replaceAll(' ', '_');
+    const normalisedLink = link.replaceAll(' ', '_');
+
+    if (link.indexOf(':') !== -1) {
+        const pages = normalisedLink.split(':');
+        const page = pages.pop();
+        const lang = pages.pop();
+        return `https://docs.moodle.org/${lang}/${page}`;
+    }
+
+    return `https://docs.moodle.org/dev/${normalisedLink}`;
 };
 
 const getWikilinkDescription = (matches) => {
     const [link, description] = matches.groups.link.split('|');
 
     const value = description || link;
+
+    if (link.indexOf(':') !== -1 && !description) {
+        const [, title] = link.split(':', 2);
+        return title.replaceAll('_', ' ');
+    }
 
     return value
         .replaceAll('_', ' ');
@@ -50,7 +63,7 @@ const replaceWikiLinks = (line, lineNumber, onError) => {
         const link = getWikilinkLink(matches);
         const description = getWikilinkDescription(matches);
         const column = matches.index + 1;
-        const replacement = `[${description}](https://docs.moodle.org/dev/${link})`;
+        const replacement = `[${description}](${link})`;
         const fixInfo = {
             editColumn: column,
             deleteCount: matches.groups.link.length + 4,

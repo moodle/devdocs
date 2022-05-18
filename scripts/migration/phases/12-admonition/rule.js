@@ -23,41 +23,42 @@ const {
     getLineMetadata,
 } = require('markdownlint-rule-helpers');
 
-const markupHeader = /^(?<marker>=+)(?<header>[^=].*)$/;
-
 module.exports = {
-    names: ['convert-markup-headers'],
-    description: 'Convert markup headers to markdown syntax',
+    names: ['convert-admonition'],
+    description: 'Convert admonition-like paragraphs to admonitions',
     tags: ['migration'],
     function: function lint(params, onError) {
+        const sameLineNote = /(?<admonition><p class="(?<type>note)">(?<content>.*?)(?=<\/p>)<\/p>)/g;
+        const templateNote = /(?<admonition>\{\{Note\|(?<content>[^}]*)\}\})/;
+
+        const processMatches = (matches, lineNumber) => {
+            if (!matches) {
+                return;
+            }
+            addError(
+                onError,
+                lineNumber,
+                matches.input,
+                matches.input,
+                [matches.index + 1, matches.groups.admonition.length],
+                {
+                    editColumn: matches.index + 1,
+                    deleteCount: matches.groups.admonition.length,
+                    insertText: `\n\n:::${matches.groups?.type || 'note'}\n\n${matches.groups.content}\n\n:::\n\n`,
+                },
+            );
+        };
+
         forEachLine(getLineMetadata(params), (line, lineIndex, inCode) => {
             if (inCode) {
+                // Do not make changes to code stanzas.
                 return;
             }
 
             const lineNumber = lineIndex + 1;
 
-            const headerMatches = markupHeader.exec(line);
-            if (headerMatches) {
-                const headerLevel = headerMatches.groups.marker.length;
-                const headerMarkup = '#'.repeat(headerLevel);
-                const headerText = headerMatches.groups.header.slice(0, 0 - headerLevel).replace(/=*$/, '');
-
-                const fixInfo = {
-                    editColumn: 1,
-                    deleteCount: line.length,
-                    insertText: `\n${headerMarkup} ${headerText}\n`,
-                };
-
-                addError(
-                    onError,
-                    lineNumber,
-                    headerMatches.input,
-                    headerMatches.input,
-                    [headerMatches.index + 1, headerMatches.input.length],
-                    fixInfo,
-                );
-            }
+            processMatches(sameLineNote.exec(line), lineNumber);
+            processMatches(templateNote.exec(line), lineNumber);
         });
     },
 };
