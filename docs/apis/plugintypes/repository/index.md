@@ -63,6 +63,7 @@ Some of the important files for the repository plugintype are described below. S
 
 ### lang/en/repository_pluginname.php
 
+<!-- markdownlint-disable-next-line MD038 -->
 export const langExample = `
 $string['pluginname']= 'Example repository';
 $string['configplugin'] = 'Configuration for Example repository';
@@ -222,7 +223,7 @@ public static function get_type_option_names() {
 
 This function must be declared static
 
-Optional. This is for modifying the Moodle form displaying the plugin settings. [[lib/formslib.php Form Definition]] has details of all the types of elements you can add to the settings form.
+Optional. This is for modifying the Moodle form displaying the plugin settings. The [Form Definition](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition) documentation has details of all the types of elements you can add to the settings form.
 
 <details>
   <summary>View example</summary>
@@ -289,7 +290,7 @@ public static function get_instance_option_names() {
 
 This function must be declared static
 
-Optional. This is for modifying the Moodle form displaying the settings specific to an instance. This is equivalent to **type_config_form($mform, $classname)** but for instances. [[lib/formslib.php Form Definition]] has details of all the types of elements you can add to the settings form.
+Optional. This is for modifying the Moodle form displaying the settings specific to an instance. This is equivalent to **type_config_form($mform, $classname)** but for instances. The [Form Definition](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition) documentation has details of all the types of elements you can add to the settings form.
 
 <details>
   <summary>View example</summary>
@@ -513,7 +514,7 @@ Some repositories contain many files which cannot load in one time, in this case
 
 As a plug-in developer, if you set dynload flag as **true**, you should return files and folders (set children as a null array) in current path only instead of building the whole file tree.
 
-The use of the **object** tag, instead of returning a **list** of files, allows you to embed an external file chooser within the repository panel. See [[Repository plugins embedding external file chooser]] for details about how to do this.
+The use of the **object** tag, instead of returning a **list** of files, allows you to embed an external file chooser within the repository panel. See [Repository plugins embedding external file chooser](https://docs.moodle.org/dev/Repository_plugins_embedding_external_file_chooser) for details about how to do this.
 
 ### User login (optional)
 
@@ -816,7 +817,7 @@ Return true if should be included in a search throughout all repositories (curre
 
 ### Repository support for returning file as alias/shortcut
 
-It is possible to link to the file from external (or internal) repository by reference. In UI it is called “create alias/shortcut”. This creates a row in {files} table but the contents of the file is not stored. Although it may be cached by repository if developer wants to.
+It is possible to link to the file from external (or internal) repository by reference. In UI it is called "create alias/shortcut". This creates a row in {files} table but the contents of the file is not stored. Although it may be cached by repository if developer wants to.
 
 Make sure that function supported_returntypes() returns FILE_REFERENCE among other types.
 
