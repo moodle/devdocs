@@ -16,7 +16,15 @@ The Moodle tracker keeps track of the status of all bug fixes and new features.
 
 We use a workflow that ensures that new code receives multiple reviews by different people before it is included into the core Moodle code.
 
-![A summary of the Moodle Development Process flow](./process/_files/workflow.jpg)
+![A summary of the Moodle Development Process flow](./process/_files/simplified_workflow.png)
+
+- The [triaging](#issue-triage) is done by the Component leads.
+- Anybody can participate in the issue [development](/general/development), by creating a patch for [a bug](#fixing-a-bug), [an improvement](#new-feature-development) or [a security issue](#security-issues).
+- Anybody can also [peer review](./process/peer-review) code developed by other developers.
+- There is a dedicated team in Moodle HQ in charge of the [integration review](./process/integration-review), to ensure consistent quality across the codebase.
+- Every time an issue is integrated, the [testing](./process/testing) instructions are run by a dedicated team of testers.
+
+## Roles
 
 A number of roles make this work:
 
@@ -107,7 +115,7 @@ Sometimes new features might be based on earlier features, sometimes they may be
 
 The product teams together with UX, employed at Moodle HQ, work on specifications of major new features throughout the cycle, specifying projects ahead of development time.
 
-The process of [new feature development](https://docs.moodle.org/dev/#New_feature_development) is described below. When specifications are in place, new code is developed during sprints, where designs and implementation are iterated as required, and goes through the standard weekly integration workflow described above.
+The process of [new feature development](#new-feature-development) is described below. When specifications are in place, new code is developed during sprints, where designs and implementation are iterated as required, and goes through the standard weekly integration workflow described above.
 
 ### Testing
 
@@ -291,6 +299,7 @@ Decisions will be posted on the issue and that issue will be closed, allowing an
 
 ## See also
 
+- [Detailed workflow](./process/_files/workflow.jpg)
 - [Release process](./process/release)
 - [Deprecation](/general/development/policies/deprecation)
 - [Integration dashboard](http://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11350)
