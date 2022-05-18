@@ -19,7 +19,8 @@
     "mdlint-all": "markdownlint-cli2 '{docs,general}/**/*.md' '*.md'",
     "mdfix": "markdownlint-cli2-fix",
     "mdfix-all": "markdownlint-cli2-fix '{docs,general}/**/*.md' '*.md'",
-    "lint": "mdlint-all",
+    "migrate": "scripts/wikimedia-fetch.js migrate",
+    "lint": "yarn mdlint-all",
     "prepare": "husky install",
     "spell": "cspell '*.md' '**/*.md' 'docs/*.md' 'docs/**/*.md' 'general/*.md' 'general/**/*.md'"
   },
