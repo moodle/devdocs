@@ -35,6 +35,7 @@ const config = {
         'moodle-components',
         'moodle-contributors',
         'project-words',
+        'plugin-names',
     ],
     dictionaryDefinitions: [
         {
@@ -45,6 +46,11 @@ const config = {
         {
             name: 'moodle-contributors',
             path: './data/moodle-contributors.txt',
+            noSuggest: true,
+        },
+        {
+            name: 'plugin-names',
+            path: './data/plugin-names.txt',
             noSuggest: true,
         },
         {
