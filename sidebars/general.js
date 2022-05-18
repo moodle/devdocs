@@ -20,6 +20,7 @@
 /** @type import('@site/src').ProjectSummaryData */
 
 const ProjectList = require('../data/projects.json').projects;
+const getReleaseNotes = require('./releaseNotes');
 
 const sidebars = {
     community: [
@@ -176,6 +177,10 @@ const sidebars = {
                 id: 'development/tools/index',
             },
         },
+    ],
+
+    releaseNotes: [
+        getReleaseNotes(),
     ],
 };
 

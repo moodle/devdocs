@@ -21,6 +21,19 @@ module.exports = {
     style: 'dark',
     links: [
         {
+            title: 'Moodle',
+            items: [
+                {
+                    label: 'Release notes',
+                    to: '/general/releases',
+                },
+                {
+                    label: 'Projects',
+                    to: '/general/projects',
+                },
+            ],
+        },
+        {
             title: 'Docs',
             items: [
                 {
