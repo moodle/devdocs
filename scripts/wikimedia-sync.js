@@ -63,7 +63,8 @@ program
         }
 
         logger.info('Starting update of migrated pages in remote site');
-        await Promise.all([updateMigratedPages(), updateMigratedPagesProtection()]);
+        await updateMigratedPages();
+        await updateMigratedPagesProtection();
         logger.info('Run completed');
     });
 
