@@ -73,6 +73,8 @@ We welcome contributions to these developer resources. If you've not contributed
 
 If you have domain-specific knowledge in an area which has outstanding documentation then the [`help wanted`](https://github.com/moodle/devdocs/labels/help%20wanted) search may give you some inspiration.
 
+If you only wish to make a small change, you may want to use the [GitHub Edit interface](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files#editing-files-in-another-users-repository) and to open a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+
 ## Development
 
 Our documentation is built using [Docusaurus](https://docusarus.io), a powerful open source documentation project written in JavaScript.
