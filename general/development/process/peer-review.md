@@ -6,6 +6,9 @@ tags:
   - Core development
   - Peer-review
 ---
+## Peer review list
+
+The list of issues ready for peer review is found in the [Waiting for a peer reviewer](https://tracker.moodle.org/issues/?filter=13607) filter on the Moodle tracker.
 
 ## Checklist
 
