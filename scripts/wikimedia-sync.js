@@ -101,4 +101,36 @@ program
         logger.info('Run completed');
     });
 
+program
+    .command('fetch-todo')
+    .description('Fetch a list of pages which are not marked as obsolete or migrated')
+    .action(async () => {
+        const getAllPages = () => new Promise((resolve, reject) => {
+            logger.info('Fetching all pages');
+            client.getAllPages((err, data) => {
+                if (err) {
+                    reject(new Error(err));
+                }
+                resolve(data.map((pageData) => pageData.title));
+            });
+        });
+
+        const allPages = await getAllPages();
+        const migratedPages = await getPagesTranscluding('Template:Migrated');
+        const obsoletePages = await getPagesTranscluding('Template:obsolete');
+        const todo = allPages.filter((pageName) => {
+            if (migratedPages.includes(pageName)) {
+                return false;
+            }
+
+            if (obsoletePages.includes(pageName)) {
+                return false;
+            }
+
+            return true;
+        });
+        todo.every((pageName) => logger.info(`=> ${pageName}`));
+        logger.info(`== ${todo.length} pages to migrate ==`);
+    });
+
 program.parse();
