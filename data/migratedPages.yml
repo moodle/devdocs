@@ -1,3 +1,6 @@
+AMOS_manual:
+- filePath: "/general/development/process/translation/amos.md"
+  slug: "/general/development/process/translation/amos"
 Acceptance_testing_for_the_Moodle_App:
 - filePath: "/docs/moodleapp/development/testing/acceptance-testing.md"
   slug: "/docs/moodleapp/development/testing/acceptance-testing"
@@ -31,6 +34,9 @@ Communication_Between_Components:
 Community_credits:
 - filePath: "/general/community/credits/moodleorg.md"
   slug: "/general/community/credits/moodleorg"
+Contributing_a_translation:
+- filePath: "/general/development/process/translation/contributing.md"
+  slug: "/general/development/process/translation/contributing"
 Core_APIs:
 - filePath: "/docs/apis.md"
   slug: "/docs/apis"
@@ -64,9 +70,15 @@ File_API_internals:
 Integration_Review:
 - filePath: "/general/development/process/integration-review.md"
   slug: "/general/development/process/integration-review"
+List_of_locales_supported_on_Moodle_community_servers:
+- filePath: "/general/development/process/translation/locales.md"
+  slug: "/general/development/process/translation/locales"
 Local_plugins:
 - filePath: "/docs/apis/plugintypes/local/index.mdx"
   slug: "/docs/apis/plugintypes/local"
+Maintaining_a_language_pack:
+- filePath: "/general/development/process/translation/maintaining.md"
+  slug: "/general/development/process/translation/maintaining"
 Mission:
 - filePath: "/general/community/mission.md"
   slug: "/general/community/mission"
@@ -214,9 +226,15 @@ Sending_custom_Push_Notifications_to_the_Moodle_App:
 Setting_up_your_development_environment_for_the_Moodle_App:
 - filePath: "/docs/moodleapp/development/setup/index.md"
   slug: "/docs/moodleapp/development/setup"
+Starting_a_new_language_pack:
+- filePath: "/general/development/process/translation/langpack/index.md"
+  slug: "/general/development/process/translation/langpack"
 String_deprecation:
 - filePath: "/general/projects/api/string-deprecation.md"
   slug: "/general/projects/api/string-deprecation"
+Table_of_locales:
+- filePath: "/general/development/process/translation/langpack/locales.md"
+  slug: "/general/development/process/translation/langpack/locales"
 Testing:
 - filePath: "/general/development/process/testing.md"
   slug: "/general/development/process/testing"
@@ -241,6 +259,24 @@ Tracker_issue_labels:
 Tracker_tips:
 - filePath: "/general/development/tracker/tips.md"
   slug: "/general/development/tracker/tips"
+Translating_Moodle_Docs:
+- filePath: "/general/development/process/translation/docs.md"
+  slug: "/general/development/process/translation/docs"
+Translating_plugins:
+- filePath: "/general/development/process/translation/plugins.md"
+  slug: "/general/development/process/translation/plugins"
+Translation:
+- filePath: "/general/development/process/translation.md"
+  slug: "/general/development/process/translation"
+Translation_FAQ:
+- filePath: "/general/development/process/translation/faq.md"
+  slug: "/general/development/process/translation/faq"
+Translation_langconfig:
+- filePath: "/general/development/process/translation/langpack/langconfig.md"
+  slug: "/general/development/process/translation/langpack/langconfig"
+Translation_priority:
+- filePath: "/general/development/process/translation/langpack/priority.md"
+  slug: "/general/development/process/translation/langpack/priority"
 Unit_testing_for_the_Moodle_App:
 - filePath: "/docs/moodleapp/development/testing/unit-testing.md"
   slug: "/docs/moodleapp/development/testing/unit-testing"

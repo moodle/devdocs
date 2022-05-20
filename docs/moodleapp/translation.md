@@ -47,7 +47,7 @@ Additionally, you will see a little mobile in the strings used in the app. Hover
 
 ## I am not a language pack maintainer. How can I contribute a translation?
 
-The process is the same as for core Moodle. See [Contributing a translation](https://docs.moodle.org/dev/Contributing_a_translation).
+The process is the same as for core Moodle. See [Contributing a translation](/general/development/process/translation/contributing).
 
 Note: Please contact the maintainer of your language pack as listed in the [Translation credits](http://lang.moodle.org/local/amos/credits.php) to tell them that you are translating the Moodle App. If you don't receive a reply within a reasonable time, contact our Moodle translation coordinator, Koen Roggemans, at [translation@moodle.org](mailto:translation@moodle.org).
 
