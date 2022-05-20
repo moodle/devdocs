@@ -61,6 +61,9 @@ File_API:
 File_API_internals:
 - filePath: "/docs/apis/subsystems/files/internals.md"
   slug: "/docs/apis/subsystems/files/internals"
+Filters:
+- filePath: "/docs/apis/plugintypes/filter/index.md"
+  slug: "/docs/apis/plugintypes/filter/"
 Integration_Review:
 - filePath: "/general/development/process/integration-review.md"
   slug: "/general/development/process/integration-review"
