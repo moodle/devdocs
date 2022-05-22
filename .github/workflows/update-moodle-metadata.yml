@@ -46,10 +46,6 @@ jobs:
       # Moodle versions.
       - name: Copy component data
         run: |
-          pwd
-          ls -Al
-          ls .moodle
-          ls .moodle/lib
           cp .moodle/lib/components.json data/master/
 
       - name: Update component data spelling list
@@ -81,6 +77,5 @@ jobs:
             data/*.json
           commit-message: "[repo] Update Moodle Component metadata"
           title: "[repo] Update Moodle Component metadata"
-          branch: moodle-components
           signoff: false
           delete-branch: true
