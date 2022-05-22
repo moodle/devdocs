@@ -31,9 +31,8 @@ jobs:
           cache: yarn
 
       - name: Install dependencies
+        working-directory: devdocs
         run: yarn install --frozen-lockfile
-        with:
-          working-directory: devdocs
 
       - name: Checkout Moodle
         uses: actions/checkout@v3
@@ -47,10 +46,9 @@ jobs:
           cp moodle/lib/components.json devdocs/data/master/
 
       - name: Update component data spelling list
+        working-directory: devdocs
         run: |
           yarn component-spellings
-        with:
-          working-directory: devdocs
 
       - name: Copy contributor list
         # Get a list of all contributors to Moodle.
