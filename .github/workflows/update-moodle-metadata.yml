@@ -16,7 +16,7 @@ on:
 jobs:
   run:
     # Only run on the canonical repository.
-    if: github.repository == 'moodle/devdocs'
+    # if: github.repository == 'moodle/devdocs'
     name: Fetch the list of components from Moodle
     runs-on: ubuntu-latest
     steps:
@@ -34,6 +34,8 @@ jobs:
       - name: Checkout Moodle
         uses: actions/checkout@v3
         with:
+          repository: moodle/moodle.git
+          ref: master
           path: .moodle
 
       - name: Ignore Moodle
@@ -44,6 +46,10 @@ jobs:
       # Moodle versions.
       - name: Copy component data
         run: |
+          pwd
+          ls -Al
+          ls .moodle
+          ls .moodle/lib
           cp .moodle/lib/components.json data/master/
 
       - name: Update component data spelling list
