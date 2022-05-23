@@ -133,9 +133,7 @@ public function filter($text, array $options = []) {
 
 ## Local configuration
 
-In addition filters can also have different configuration in each context.
-
-For example, the glossary filter could be changed so that in Forum A, you can choose to only link words from a particular glossary, say Glossary A, while in Forum B you choose to link words from Glossary B.
+Filters can use different configuration depending on the context in which they are called. For example, the glossary filter can be configured such that when displayed in Forum A it only links words from a particular glossary, while in Forum B it links words from a different glossary..
 
 To do that sort of thing, the filter plugin must provide a **filterlocalsettings.php** file. In it, you must define a Moodle form that is a subclass of filter_local_settings_form. In addition to the standard formslib methods, you also need to define a save_changes method.
 
