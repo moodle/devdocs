@@ -70,7 +70,7 @@ const config = {
         'src/*',
 
         // Ignore release notes for now.
-        'docs/release-notes.md',
+        'general/releases/*',
     ],
     ignoreRegExpList: [
         // Both Email and Urls are in the list of Predefined regexps.
