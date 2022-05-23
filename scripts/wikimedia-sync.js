@@ -79,7 +79,7 @@ program
         const fetchObsoletePageData = async () => {
             logger.info('Reading list of current obsolete files');
             const obsoletePagePath = getObsoletePagePath();
-            const currentPageTitlesJSON = await readFile(obsoletePagePath);
+            const currentPageTitlesJSON = await readFile(obsoletePagePath, { encoding: 'utf8' });
             const currentPageTitles = JSON.parse(currentPageTitlesJSON);
             logger.info(`=> Found ${currentPageTitles.length} entries`);
 
@@ -88,10 +88,10 @@ program
             logger.info(`=> Found ${updatesPageTitles.length} entries`);
 
             const updatesPageTitlesJSON = JSON.stringify(updatesPageTitles, null, '  ');
-            if (updatesPageTitlesJSON === currentPageTitlesJSON) {
-                logger('==> No changes to fetch - skipping');
+            if (JSON.stringify(updatesPageTitlesJSON) === JSON.stringify(currentPageTitlesJSON)) {
+                logger.info('==> No changes detected.');
             } else {
-                logger.info('==> Changes detected. Updating stored copy');
+                logger.info('==> Changes detected. Updating stored copy.');
                 writeFile(obsoletePagePath, updatesPageTitlesJSON);
             }
         };
