@@ -99,7 +99,7 @@ Filters are applied to all text that is printed with the output functions `forma
 
 ## Filter performance
 
-Is important to note that all active filters will be called to transform every bit of text output using `format_text()`, and possibly also `format_string()`. That means that a filter plugin could cause big performance problems. It is extremely important to uses caches when a filter have to get data out of the database,
+It is important to note that all active filters will be called to transform every bit of text output using `format_text()` (headers and content), and `format_string()` (headers only). As a result a filter plugin can cause big performance problems. It is extremely important to uses caches if your filter must retrieve data from the database, or other similar sources.
 
 If a filter uses a special syntax or it is based on an appearance of a substring in the text, it is recommend to perform a quick and cheap `strpos()` search first prior to executing the full regex-based search and replace.
 
