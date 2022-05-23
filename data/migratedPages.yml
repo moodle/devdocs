@@ -57,7 +57,7 @@ Documentation_credits:
   slug: "/general/community/credits/documentation"
 File_API:
 - filePath: "/docs/apis/subsystems/files/index.md"
-  slug: "/docs/subsystems/apis/files"
+  slug: "/docs/apis/subsystems/files"
 File_API_internals:
 - filePath: "/docs/apis/subsystems/files/internals.md"
   slug: "/docs/apis/subsystems/files/internals"
