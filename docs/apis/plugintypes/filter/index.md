@@ -26,7 +26,7 @@ import {
     ComponentFileSummary,
 } from '../../../_utils';
 
-Filters are a way to automatically transform content before it is output. For example:
+Filters are a way to automatically transform content before it is output. Filters may be used to:
 
 - Render embedded equations to images (the TeX filter)
 - Links to media files can be automatically converted to an embedded players.
