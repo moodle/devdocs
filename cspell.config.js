@@ -69,8 +69,8 @@ const config = {
         '*.min.*',
         'src/*',
 
-        // Ignore release notes for now.
-        'general/releases/*',
+        // Disable spell-checking of legacy release notes.
+        'general/releases/{1,2,3}.*',
     ],
     ignoreRegExpList: [
         // Both Email and Urls are in the list of Predefined regexps.
