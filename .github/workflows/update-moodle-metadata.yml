@@ -74,7 +74,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           add-paths: |
-            data/*.json
+            data/*
           commit-message: "[repo] Update Moodle Component metadata"
           title: "[repo] Update Moodle Component metadata"
           signoff: false
