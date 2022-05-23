@@ -108,7 +108,6 @@ Benjamin
 Bennett
 Benoit
 Berm
-Bernal
 Bezborodov
 Bias
 Bicciolo
@@ -123,7 +122,6 @@ Bonczek
 Boon
 Boone
 Borrow
-Bösch
 Bostelmann
 Botond
 Boulen
@@ -148,6 +146,7 @@ Burk
 Burnett
 Burnett]
 Butler
+Bösch
 C4ne
 Cali
 Cameron
@@ -238,7 +237,6 @@ Delamarre
 Delius
 Demeshev
 Deniz
-Déniz
 Derek
 Derick
 Deshapriya
@@ -250,6 +248,7 @@ Dickman
 Didier
 Dieckmann
 Dikih
+Dinh
 Djunaidi
 Dmitri
 Dmitrii
@@ -266,6 +265,7 @@ Dulk
 Dunand
 Durber
 Dvorovenko
+Déniz
 EVAN
 Ebarvia
 Eberhardt
@@ -287,7 +287,6 @@ Erlachner
 Eugene
 Evan
 Evans
-Fábio
 Fabrice
 Fabriczy
 Faisal
@@ -312,18 +311,18 @@ Fotis
 Fowler
 Francis
 Francois
-François
 Franziska
+François
 Fred
 Frederic
-Frédéric
 Frederik
 Fremaux
 Frode
+Frédéric
 Fujiwara
 Fulton
+Fábio
 GUINOISEAU
-Gaël
 Galiszek
 Gancarz
 Gareth
@@ -336,6 +335,7 @@ Gaudreau
 Gauk
 Gaur
 Gauthier
+Gaël
 Gedik
 Gedion
 GeekSmith
@@ -358,7 +358,6 @@ Gordon
 Goyal
 Grabs
 Graham
-Grähn
 Granlöv
 Grant
 Gray
@@ -370,6 +369,7 @@ Greidanus
 Grigory
 Groshek
 Grzegorz
+Grähn
 Guillaume
 Guillermo
 Guinoiseau
@@ -379,7 +379,6 @@ Gustav
 Haemmerle
 Hager
 Hagey,
-Hämmerle
 Hancox
 Hanusch
 Hardin
@@ -399,10 +398,11 @@ Hendricks
 Henestofel
 Henning
 Hernandez
-Hernández
 Herney
+Hernández
 Herrmann
 Heywood
+Hien
 Hilton
 Hittesh
 Hoang
@@ -412,7 +412,6 @@ Holland
 Holman
 Hoobin
 Howard
-Hübler
 Hugh
 Hughes
 HungTran
@@ -420,15 +419,15 @@ Hunkler
 Hunt
 Huong
 Hutchinson
+Hämmerle
+Hübler
 ISHIKAWA
 Igor
 Ilicic
 Ilya
 Inaki
-Iñaki
 Informática
 Inhofer
-Iñigo
 Ionut
 Irvine
 Irving-Pease
@@ -437,6 +436,8 @@ Issam
 Itamar
 Iurii
 Iyer
+Iñaki
+Iñigo
 Jackson
 Jacob
 Jade
@@ -464,7 +465,6 @@ Jess
 Jesse
 Jetha
 Jinu
-João
 Joby
 Jody
 Joey
@@ -483,6 +483,7 @@ Joseph
 Josh
 Josh.Aston
 Joshua
+João
 Juan
 Juergen
 Juho
@@ -566,7 +567,6 @@ Lentz
 Leon
 Leonid
 Leontiev
-Lévesque
 Levi
 Levy
 Lewis
@@ -583,6 +583,8 @@ Lukas
 Luke
 Lundberg
 Luuk
+Lévesque
+Macgirvin
 Madden
 Magill
 Mahmoud
@@ -609,8 +611,8 @@ Marshall
 Marthaler
 Martignoni
 Martin
-Martín
 Marty
+Martín
 Mary
 Massart
 Mastny
@@ -630,12 +632,11 @@ McQuillan
 Mcneill
 Mehr
 Meisberger
-Melià
 Melihov
 Melissa
+Melià
 Melo
 Melton
-Ménard
 Menéndez
 Merrill
 Metelkin
@@ -660,7 +661,6 @@ Mitxel
 Mohamed
 Mohan
 Moller
-Møller
 Molnar
 Monaco
 Monllao
@@ -679,6 +679,8 @@ Mudrák
 Muras
 Myers
 Myles
+Ménard
+Møller
 Nadav
 Namur
 Narissa
@@ -757,6 +759,7 @@ Penelope
 Penner
 Penny
 Perez
+Pete
 Peter
 Petit-Clair
 Petr
@@ -813,7 +816,6 @@ Renaat
 Reynolds
 Rezaie
 Rezeau
-Rézeau
 Rice
 Riddell
 Riekkinen
@@ -842,6 +844,7 @@ Rushikesh
 Ruslan
 Russell
 Ryan
+Rézeau
 SSRF
 Sachan
 Safat
@@ -860,12 +863,12 @@ Sazonov
 Scaramuccia
 Schach
 Schmadel
+Schrenk
 Schroeder
 Scotson
 ScottVerbeek
 Scribner
 Sebastian
-Sébastien
 Segarra
 Segun
 Septatrix
@@ -930,6 +933,7 @@ Syed
 Syxton
 Szarvas
 Szeremeta
+Sébastien
 Škoda
 Tabares
 Taboubi
@@ -967,7 +971,6 @@ Tomek
 Tomkinson
 Tomo
 Toni
-Tõnis
 Tony
 Topfstedt
 Torres
@@ -989,6 +992,7 @@ Tung
 Turner
 Tyler
 Tzadok
+Tõnis
 Umberto
 University
 Ureña
@@ -1006,7 +1010,6 @@ Vervoort
 Vervoort,
 Vickers
 Victor
-Víctor
 Viduranga
 Vidusov
 Viglinoe
@@ -1022,8 +1025,9 @@ Vitaly
 Vlad
 Vladimir
 Vlasenko
-Vögeli
 Vorona
+Víctor
+Vögeli
 Wagner
 Wahl
 Wale
@@ -1039,6 +1043,7 @@ Wells
 Wesley
 Wharton
 Wheeler
+Whelpton
 Wiese
 Wijaya
 Wijesooriya
@@ -1080,13 +1085,12 @@ Zhigang
 Zhirov
 Ziegenberg
 Zimmer
-Ziółek
 Zito
+Ziółek
 Zoltán
 [Peter
 abgreeve
 acorbier
-adamp
 adamtpaw
 adamtppaw
 adpe
@@ -1125,7 +1129,6 @@ carlesbellver
 carlos
 cataluke
 cescobedo
-clransom
 comete-upn
 compuproggy
 coolbit
@@ -1263,7 +1266,6 @@ papillon326
 papita
 patrickslee
 pau.ferrer-ocana
-pestun
 petcheverry
 peterbulmer
 phoenixfr
@@ -1304,7 +1306,6 @@ spvickers
 stabijoh
 stigbjarne
 stronk7
-tatikamsetti
 thepurpleblob
 thetrinity
 thompson697
@@ -1342,5 +1343,5 @@ yashvardhanpatel07
 zbdd
 zibas
 zpottie
-Škoda
 Łukasz
+Škoda
