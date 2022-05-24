@@ -46,6 +46,9 @@ Debugging_network_requests_in_the_Moodle_App:
 Deprecation:
 - filePath: "/general/development/policies/deprecation.md"
   slug: "/general/development/policies/deprecation"
+Developer_meeting_April_2022:
+- filePath: "/general/community/meetings/202204.md"
+  slug: "/general/community/meetings/202204"
 Developer_meeting_February_2022:
 - filePath: "/general/community/meetings/202202.md"
   slug: "/general/community/meetings/202202"

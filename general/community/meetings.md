@@ -9,13 +9,18 @@ tags:
 
 Developer meetings are open to anyone interested in Moodle development.
 
-Next meeting: [Developer meeting April 2022](https://docs.moodle.org/dev/Developer_meeting_April_2022)
+:::important
+
+Next meeting: [June 2022](./meetings/202206)
+
+:::
 
 ## Past meeting notes
 
 ### 2022
 
-- [February 2022](./meetings/202202)
+- [Developer meeting April 2022](./meetings/202204)
+- [Developer meeting February 2022](./meetings/202202)
 
 ### 2021
 
