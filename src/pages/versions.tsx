@@ -16,7 +16,6 @@
  */
 
 import React from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
@@ -45,9 +44,6 @@ function ReleaseNotesLabel() {
 }
 
 export default function Version(): JSX.Element {
-    const {
-        siteConfig: { organizationName, projectName },
-    } = useDocusaurusContext();
     const versions = useVersions();
     const latestVersion = useLatestVersion();
     const currentVersion = versions.find(
@@ -56,7 +52,6 @@ export default function Version(): JSX.Element {
     const stableVersions = versions.filter(
         (version) => version.name !== 'current',
     );
-    const repoUrl = `https://github.com/${organizationName}/${projectName}`;
 
     return (
         <Layout
@@ -93,7 +88,7 @@ export default function Version(): JSX.Element {
                                         </Link>
                                     </td>
                                     <td>
-                                        <Link to={`${latestVersion.path}/release-notes`}>
+                                        <Link to="/general/releases">
                                             <ReleaseNotesLabel />
                                         </Link>
                                     </td>
@@ -126,7 +121,7 @@ export default function Version(): JSX.Element {
                                         </Link>
                                     </td>
                                     <td>
-                                        <Link to={`${version.path}/release-notes`}>
+                                        <Link to={`/general/releases/${version.name}`}>
                                             <ReleaseNotesLabel />
                                         </Link>
                                     </td>
@@ -159,7 +154,7 @@ export default function Version(): JSX.Element {
                                         </Link>
                                     </td>
                                     <td>
-                                        <Link to={`${currentVersion.path}/release-notes`}>
+                                        <Link to={`/general/releases/${currentVersion.name}`}>
                                             <ReleaseNotesLabel />
                                         </Link>
                                     </td>
@@ -193,7 +188,7 @@ export default function Version(): JSX.Element {
                                             </Link>
                                         </td>
                                         <td>
-                                            <Link href={`${repoUrl}/releases-notes`}>
+                                            <Link href={`/general/releases/${versionName}`}>
                                                 <ReleaseNotesLabel />
                                             </Link>
                                         </td>

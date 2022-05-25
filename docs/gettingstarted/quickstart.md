@@ -1,6 +1,7 @@
 ---
 title: Quick start
 sidebar_position: 1
+documentationDraft: https://github.com/moodle/devdocs/issues/149
 ---
 
 ## A quick start to Moodle development

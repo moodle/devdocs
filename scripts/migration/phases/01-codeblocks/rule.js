@@ -25,6 +25,8 @@ const {
 
 const codeblockStart = /^<syntaxhighlight lang="(?<language>[^"]*)">/g;
 const codeblockEnd = /^<\/syntaxhighlight>/g;
+const codeblockSameLine = /(?<wholematch><syntaxhighlight lang="[^"]*">(?<content>.*)<\/syntaxhighlight>)/;
+const nowikiSameLine = /(?<wholematch><nowiki>(?<content>.*)<\/nowiki>)/;
 
 module.exports = {
     names: ['convert-markup-codeblocks'],
@@ -33,6 +35,24 @@ module.exports = {
     function: function lint(params, onError) {
         forEachLine(getLineMetadata(params), (line, lineIndex) => {
             const lineNumber = lineIndex + 1;
+
+            const codeblockSameLineMatches = codeblockSameLine.exec(line);
+            if (codeblockSameLineMatches) {
+                console.log(codeblockSameLineMatches);
+                addError(
+                    onError,
+                    lineNumber,
+                    codeblockSameLineMatches.input,
+                    codeblockSameLineMatches.input,
+                    [codeblockSameLineMatches.index + 1, codeblockSameLineMatches.groups.wholematch.length],
+                    {
+                        editColumn: codeblockSameLineMatches.index + 1,
+                        deleteCount: codeblockSameLineMatches.groups.wholematch.length,
+                        insertText: `\`${codeblockSameLineMatches.groups.content}\``,
+                    },
+                );
+            }
+
             const codeblockStartMatches = codeblockStart.exec(line);
             if (codeblockStartMatches) {
                 addError(
@@ -63,6 +83,22 @@ module.exports = {
                         editColumn: codeblockEndMatches.index + 1,
                         deleteCount: codeblockEndMatches.input.length,
                         insertText: '```\n',
+                    },
+                );
+            }
+
+            const nowikiSameLineMatches = nowikiSameLine.exec(line);
+            if (nowikiSameLineMatches) {
+                addError(
+                    onError,
+                    lineNumber,
+                    nowikiSameLineMatches.input,
+                    nowikiSameLineMatches.input,
+                    [nowikiSameLineMatches.index + 1, nowikiSameLineMatches.groups.wholematch.length],
+                    {
+                        editColumn: nowikiSameLineMatches.index + 1,
+                        deleteCount: nowikiSameLineMatches.groups.wholematch.length,
+                        insertText: `\`${nowikiSameLineMatches.groups.content}\``,
                     },
                 );
             }

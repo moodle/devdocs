@@ -1809,10 +1809,11 @@ To get the full list of exception types, search for the regular expression 'clas
 Where appropriate, you should create new subclasses of moodle_exception for use in your code.
 
 A few notable exception types:
-; moodle_exception: base class for exceptions in Moodle. Use this when a more specific type is not appropriate.
-; coding_exception: thrown when the problem seems to be caused by a developer's mistake. Often thrown by core code that interacts with plugins. If you throw an exception of this type, try to make the error message helpful to the plugin author, so they know how to fix their code.
-; dml_exception (and subclasses): thrown when a database query fails.
-; file_exception: thrown by the File API.
+
+- `moodle_exception`: base class for exceptions in Moodle. Use this when a more specific type is not appropriate.
+- `coding_exception`: thrown when the problem seems to be caused by a developer's mistake. Often thrown by core code that interacts with plugins. If you throw an exception of this type, try to make the error message helpful to the plugin author, so they know how to fix their code.
+- `dml_exception` (and subclasses): thrown when a database query fails.
+- `file_exception` thrown by the File API.
 
 ## Dangerous functions and constructs
 

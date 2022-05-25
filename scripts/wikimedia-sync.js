@@ -18,8 +18,6 @@
 const { program } = require('commander');
 const { readFile, writeFile } = require('fs/promises');
 
-const remoteHost = 'docs.moodle.org/dev';
-
 const {
     getGetPagesTranscluding,
     getLogger,
@@ -29,6 +27,8 @@ const {
     getUpdateMigratedPages,
     getUpdateMigratedPagesProtection,
 } = require('./utils');
+
+const remoteHost = 'docs.moodle.org/dev';
 
 program
     .name('wikimedia-sync')
