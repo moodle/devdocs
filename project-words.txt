@@ -47,6 +47,7 @@ TODO
 Triaged
 Untriaged
 WCAG
+Xdebug
 XMLDB
 XMPPHP
 accessallgroups

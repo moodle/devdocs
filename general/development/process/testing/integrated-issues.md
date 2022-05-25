@@ -102,7 +102,7 @@ For changing to a theme named "yay" add **?theme=yay** to the url.
 
 ## Notes
 
-- If the issue requires an Oracle or MSSQL installation for testing, and you don't have one, [docker](/docs/gettingstarted/quickstart#docker) may help you.
+- If the issue requires an Oracle or MSSQL installation for testing, and you don't have one, docker may help you.
 - Any update should be added as a comment on the tracker issue being tested.
 - If testers pass or fail an issue by mistake, then please request the integration team to reopen it for testing.
 - Testers should not be involved in the bug fixing or review process.

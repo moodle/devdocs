@@ -26,6 +26,7 @@ const sidebars = {
     community: [
         'community/intro',
         'community/mission',
+        'community/contribute',
         'community/roadmap',
         'community/channels',
         {
@@ -143,7 +144,12 @@ const sidebars = {
         },
     ],
 
-    policies: [
+    coding: [
+        {
+            label: 'Getting started',
+            type: 'doc',
+            id: 'development/gettingstarted',
+        },
         {
             label: 'Policies',
             type: 'category',
@@ -154,16 +160,6 @@ const sidebars = {
                 },
             ],
         },
-    ],
-
-    documentation: [
-        'documentation/index',
-        'documentation/contributing',
-        'documentation/code-of-conduct',
-        'documentation/style-guides',
-    ],
-
-    tools: [
         {
             label: 'Tools',
             type: 'category',
@@ -177,6 +173,13 @@ const sidebars = {
                 id: 'development/tools/index',
             },
         },
+    ],
+
+    documentation: [
+        'documentation/index',
+        'documentation/contributing',
+        'documentation/code-of-conduct',
+        'documentation/style-guides',
     ],
 
     releaseNotes: [

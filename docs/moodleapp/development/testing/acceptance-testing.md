@@ -10,7 +10,7 @@ tags:
 
 In order to run tests that carry out automated functionality testing for the Moodle App, you can write [Acceptance tests](https://docs.moodle.org/dev/Acceptance_testing). This can be useful if you want to test plugins that are compatible with the app, or you're contributing to the app core. Behat tests for the app work the same way as tests for Moodle core, but they are not run as part of a normal Behat execution and there are some differences that we'll go through in this page.
 
-A key point is that these tests are run using the Moodle Behat infrastructure, and don't depend only on the app codebase. Therefore, you will need a Moodle development setup as described in [Setting up development environment](https://docs.moodle.org/dev/Setting_up_development_environment).
+A key point is that these tests are run using the Moodle Behat infrastructure, and don't depend only on the app codebase. Therefore, you will need a Moodle development setup as described in [Setting up development environment](/general/development/gettingstarted).
 
 The main advantages of this approach are:
 
@@ -30,7 +30,7 @@ Nevertheless, if you still have to run the projects in your local machine, you c
 
 ### Configuring the Moodle site
 
-You can learn how to run a Moodle site locally in [Setting up development environment](https://docs.moodle.org/dev/Setting_up_development_environment).
+You can learn how to run a Moodle site locally in [Setting up development environment](/general/development/gettingstarted).
 
 Remember to install the [local_moodlemobileapp](https://github.com/moodlehq/moodle-local_moodlemobileapp/) plugin with the same version that you're using for the mobile app.
 

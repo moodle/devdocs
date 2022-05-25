@@ -1225,6 +1225,9 @@ Security:Unauthorised_access:
 Sending_custom_Push_Notifications_to_the_Moodle_App:
 - filePath: "/docs/moodleapp/development/custom-push-notifications.md"
   slug: "/docs/moodleapp/development/custom-push-notifications"
+Setting_up_development_environment:
+- filePath: "general/development/gettingstarted.md"
+  slug: "general/development/gettingstarted"
 Setting_up_your_development_environment_for_the_Moodle_App:
 - filePath: "/docs/moodleapp/development/setup/index.md"
   slug: "/docs/moodleapp/development/setup"

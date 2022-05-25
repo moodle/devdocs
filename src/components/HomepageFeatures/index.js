@@ -24,7 +24,7 @@ import Link from '@docusaurus/Link';
 
 const FeatureList = [
     {
-        link: '/docs/gettingstarted/quickstart',
+        link: '/general/development/gettingstarted',
         title: 'Quick start',
         Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
         description: (

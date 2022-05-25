@@ -456,7 +456,7 @@ import WorkingWithStrings from '!!raw-loader!./_examples/str';
 Moodle uses common and popular tools to ensure code quality, and to improve the
 end-user experience.
 
-Most of the Moodle JavaScript tooling requires [NodeJS](../tools/nodejs).
+Most of the Moodle JavaScript tooling requires [NodeJS](/general/development/tools/nodejs).
 
 ### Grunt
 
