@@ -61,6 +61,7 @@ const config = {
     ],
     ignorePaths: [
         '*.js',
+        '*.mjs',
         'CHANGELOG.md',
         'package.json',
         'yarn.lock',

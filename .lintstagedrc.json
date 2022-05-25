@@ -8,6 +8,9 @@
   "src/**/*.{js,jsx,ts,tsx,mjs}": [
     "cspell --no-must-find-files --no-progress"
   ],
+  "data/projects.json": [
+    "yarn ajv --spec=draft2019 validate -s static/schema/projects.json -d"
+   ],
   "data/versions.json": [
     "yarn ajv --spec=draft2019 validate -s static/schema/versions.json -d"
   ]
