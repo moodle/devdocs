@@ -101,7 +101,6 @@ const config = {
             indexBlog: false,
         }],
         'plugin-image-zoom',
-        require('./src/plugins/moodle-versions.js'),
         [
             '@docusaurus/plugin-content-docs',
             {

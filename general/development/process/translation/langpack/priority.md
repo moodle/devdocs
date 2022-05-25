@@ -12,7 +12,7 @@ This page gives a letter based priority grade to every file or file group in a l
 
 - It is generally advisable to first translate the most current Moodle branch (version).
 - AMOS will automatically propagate the translations you commit into the applicable lower (older) Moodle versions.
-- It is very desirable to begin translating the upcoming next (DEV) Moodle core version before the [expected release date](https://docs.moodle.org/dev/Releases#General_release_calendar). You can always foresee that some Moodle users will want to start working in the newest Moodle version as soon as it is available; it would be better if is already translated by then.
+- It is very desirable to begin translating the upcoming next (DEV) Moodle core version before the [expected release date](/general/releases#general-release-calendar). You can always foresee that some Moodle users will want to start working in the newest Moodle version as soon as it is available; it would be better if is already translated by then.
 - You can easily check how important it would be to translate older Moodle version by looking at [the Moodle downloads statistics page](https://download.moodle.org/local/downloadmoodleorg/stats.php) for your language pack.
 
 ## Moodle versions translation priority

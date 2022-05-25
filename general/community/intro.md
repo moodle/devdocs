@@ -33,7 +33,7 @@ Moodle major releases (with big new features) are on a regular 6 month cycle, in
 
 Minor releases (with bug fixes only) are on a 2 month cycle, unless a security emergency occurs. They will increment the major release by 0.0.1 (eg 3.5 -> 3.5.1 -> 3.5.2).
 
-The full details of these can be seen in the [Releases](https://docs.moodle.org/dev/Releases).
+The full details of these can be seen in the [Releases](/general/releases).
 
 ## Support lifetime
 

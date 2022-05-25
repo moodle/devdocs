@@ -163,6 +163,7 @@ config.MD033 = {
         "ValidExample",
         "InvalidExample",
         "ReactPlayer",
+        "Link",
     ]
 };
 

@@ -1,0 +1,1808 @@
+{
+    "$schema": "../static/schema/versions.json",
+    "versions": [
+        {
+            "name": "4.1",
+            "releaseDate": "7 November 2022",
+            "generalEndDate": "6 November 2023",
+            "securityEndDate": "3 November 2025",
+            "isLTS": false,
+            "releases": []
+        },
+        {
+            "name": "4.0",
+            "releaseDate": "19 April 2022",
+            "generalEndDate": "8 May 2023",
+            "securityEndDate": "13 November 2023",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "4.0.0",
+                    "releaseDate": "19 April 2022",
+                    "version": 2022041900,
+                    "upgradePath": "https://docs.moodle.org/400/en/Upgrading"
+                },
+                {
+                    "name": "4.0.1",
+                    "releaseDate": "9 May 2022",
+                    "version": 2022041901
+                }
+            ]
+        },
+        {
+            "name": "3.11",
+            "releaseDate": "17 May 2021",
+            "generalEndDate": "14 November 2022",
+            "securityEndDate": "13 November 2023",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "3.11.0",
+                    "releaseDate": "17 May 2021",
+                    "version": 2021051700,
+                    "upgradePath": "https://docs.moodle.org/311/en/Upgrading"
+                },
+                {
+                    "name": "3.11.1",
+                    "releaseDate": "12 July 2021",
+                    "version": 2021051701
+                },
+                {
+                    "name": "3.11.2",
+                    "releaseDate": "29 July 2021",
+                    "version": 2021051702,
+                    "notes": "Emergency minor release"
+                },
+                {
+                    "name": "3.11.3",
+                    "releaseDate": "13 September 2021",
+                    "version": 2021051703
+                },
+                {
+                    "name": "3.11.4",
+                    "releaseDate": "8 November 2021",
+                    "version": 2021051704
+                },
+                {
+                    "name": "3.11.5",
+                    "releaseDate": "17 January 2022",
+                    "version": 2021051705
+                },
+                {
+                    "name": "3.11.6",
+                    "releaseDate": "14 March 2022",
+                    "version": 2021051706
+                },
+                {
+                    "name": "3.11.7",
+                    "releaseDate": "9 May 2022",
+                    "version": 2021051707
+                }
+            ]
+        },
+        {
+            "name": "3.10",
+            "releaseDate": "9 November 2020",
+            "generalEndDate": "8 November 2021",
+            "securityEndDate": "9 May 2022",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "3.10.0",
+                    "releaseDate": "9 November 2020",
+                    "version": 2020110900,
+                    "upgradePath": "https://docs.moodle.org/310/en/Upgrading"
+                },
+                {
+                    "name": "3.10.1",
+                    "releaseDate": "18 January 2021",
+                    "version": 2020110901
+                },
+                {
+                    "name": "3.10.2",
+                    "releaseDate": "8 March 2021",
+                    "version": 2020110902
+                },
+                {
+                    "name": "3.10.3",
+                    "releaseDate": "25 March 2021",
+                    "version": 2020110903
+                },
+                {
+                    "name": "3.10.4",
+                    "releaseDate": "10 May 2021",
+                    "version": 2020110904
+                },
+                {
+                    "name": "3.10.5",
+                    "releaseDate": "12 July 2021",
+                    "version": 2020110905
+                },
+                {
+                    "name": "3.10.6",
+                    "releaseDate": "29 July 2021",
+                    "version": 2020110906,
+                    "notes": "Emergency minor release"
+                },
+                {
+                    "name": "3.10.7",
+                    "releaseDate": "13 September 2021",
+                    "version": 2020110907
+                },
+                {
+                    "name": "3.10.8",
+                    "releaseDate": "8 November 2021",
+                    "version": 2020110908
+                },
+                {
+                    "name": "3.10.9",
+                    "releaseDate": "17 January 2022",
+                    "version": 2020110909
+                },
+                {
+                    "name": "3.10.10",
+                    "releaseDate": "14 March 2022",
+                    "version": 2020110910
+                },
+                {
+                    "name": "3.10.11",
+                    "releaseDate": "9 May 2022",
+                    "version": 2020110911,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "3.9",
+            "releaseDate": "15 June 2020",
+            "generalEndDate": "10 May 2021",
+            "securityEndDate": "13 November 2023",
+            "isLTS": true,
+            "releases": [
+                {
+                    "name": "3.9.0",
+                    "releaseDate": "15 June 2020",
+                    "version": 2020061500,
+                    "upgradePath": "https://docs.moodle.org/39/en/Upgrading"
+                },
+                {
+                    "name": "3.9.1",
+                    "releaseDate": "13 July 2020",
+                    "version": 2020061501
+                },
+                {
+                    "name": "3.9.2",
+                    "releaseDate": "14 September 2020",
+                    "version": 2020061502
+                },
+                {
+                    "name": "3.9.3",
+                    "releaseDate": "9 November 2020",
+                    "version": 2020061503
+                },
+                {
+                    "name": "3.9.4",
+                    "releaseDate": "18 January 2021",
+                    "version": 2020061504
+                },
+                {
+                    "name": "3.9.5",
+                    "releaseDate": "8 March 2021",
+                    "version": 2020061505
+                },
+                {
+                    "name": "3.9.6",
+                    "releaseDate": "25 March 2021",
+                    "version": 2020061506
+                },
+                {
+                    "name": "3.9.7",
+                    "releaseDate": "10 May 2021",
+                    "version": 2020061507
+                },
+                {
+                    "name": "3.9.8",
+                    "releaseDate": "12 July 2021",
+                    "version": 2020061508
+                },
+                {
+                    "name": "3.9.9",
+                    "releaseDate": "29 July 2021",
+                    "version": 2020061509,
+                    "notes": "Emergency minor release"
+                },
+                {
+                    "name": "3.9.10",
+                    "releaseDate": "13 September 2021",
+                    "version": 2020061510
+                },
+                {
+                    "name": "3.9.11",
+                    "releaseDate": "8 November 2021",
+                    "version": 2020061511
+                },
+                {
+                    "name": "3.9.12",
+                    "releaseDate": "17 January 2022",
+                    "version": 2020061512
+                },
+                {
+                    "name": "3.9.13",
+                    "releaseDate": "14 March 2022",
+                    "version": 2020061513
+                },
+                {
+                    "name": "3.9.14",
+                    "releaseDate": "9 May 2022",
+                    "version": 2020061514
+                }
+            ]
+        },
+        {
+            "name": "3.8",
+            "releaseDate": "18 November 2019",
+            "generalEndDate": "9 November 2020",
+            "securityEndDate": "10 May 2021",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "3.8.0",
+                    "releaseDate": "18 November 2019",
+                    "version": 2019111800,
+                    "upgradePath": "https://docs.moodle.org/38/en/Upgrading"
+                },
+                {
+                    "name": "3.8.1",
+                    "releaseDate": "13 January 2020",
+                    "version": 2019111801
+                },
+                {
+                    "name": "3.8.2",
+                    "releaseDate": "9 March 2020",
+                    "version": 2019111802
+                },
+                {
+                    "name": "3.8.3",
+                    "releaseDate": "11 May 2020",
+                    "version": 2019111803
+                },
+                {
+                    "name": "3.8.4",
+                    "releaseDate": "13 July 2020",
+                    "version": 2019111804
+                },
+                {
+                    "name": "3.8.5",
+                    "releaseDate": "14 September 2020",
+                    "version": 2019111805
+                },
+                {
+                    "name": "3.8.6",
+                    "releaseDate": "9 November 2020",
+                    "version": 2019111806
+                },
+                {
+                    "name": "3.8.7",
+                    "releaseDate": "18 January 2021",
+                    "version": 2019111807
+                },
+                {
+                    "name": "3.8.8",
+                    "releaseDate": "8 March 2021",
+                    "version": 2019111808
+                },
+                {
+                    "name": "3.8.9",
+                    "releaseDate": "10 May 2021",
+                    "version": 2019111809,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "3.7",
+            "releaseDate": "20 May 2019",
+            "generalEndDate": "11 May 2020",
+            "securityEndDate": "9 November 2020",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "3.7.0",
+                    "releaseDate": "20 May 2019",
+                    "version": 2019052000,
+                    "upgradePath": "https://docs.moodle.org/37/en/Upgrading"
+                },
+                {
+                    "name": "3.7.1",
+                    "releaseDate": "8 July 2019",
+                    "version": 2019052001
+                },
+                {
+                    "name": "3.7.2",
+                    "releaseDate": "9 September 2019",
+                    "version": 2019052002
+                },
+                {
+                    "name": "3.7.3",
+                    "releaseDate": "11 November 2019",
+                    "version": 2019052003
+                },
+                {
+                    "name": "3.7.4",
+                    "releaseDate": "13 January 2020",
+                    "version": 2019052004
+                },
+                {
+                    "name": "3.7.5",
+                    "releaseDate": "9 March 2020",
+                    "version": 2019052005
+                },
+                {
+                    "name": "3.7.6",
+                    "releaseDate": "11 May 2020",
+                    "version": 2019052006
+                },
+                {
+                    "name": "3.7.7",
+                    "releaseDate": "13 July 2020",
+                    "version": 2019052007
+                },
+                {
+                    "name": "3.7.8",
+                    "releaseDate": "14 September 2020",
+                    "version": 2019052008
+                },
+                {
+                    "name": "3.7.9",
+                    "releaseDate": "9 November 2020",
+                    "version": 2019052009,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "3.6",
+            "releaseDate": "3 December 2018",
+            "generalEndDate": "11 November 2019",
+            "securityEndDate": "11 May 2020",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "3.6.0",
+                    "releaseDate": "3 December 2018",
+                    "version": 2018120300,
+                    "upgradePath": "https://docs.moodle.org/36/en/Upgrading"
+                },
+                {
+                    "name": "3.6.1",
+                    "releaseDate": "5 December 2018",
+                    "version": 2018120301
+                },
+                {
+                    "name": "3.6.2",
+                    "releaseDate": "14 January 2019",
+                    "version": 2018120302
+                },
+                {
+                    "name": "3.6.3",
+                    "releaseDate": "11 March 2019",
+                    "version": 2018120303
+                },
+                {
+                    "name": "3.6.4",
+                    "releaseDate": "13 May 2019",
+                    "version": 2018120304
+                },
+                {
+                    "name": "3.6.5",
+                    "releaseDate": "8th July 2019",
+                    "version": 2018120305
+                },
+                {
+                    "name": "3.6.6",
+                    "releaseDate": "9th September 2019",
+                    "version": 2018120306
+                },
+                {
+                    "name": "3.6.7",
+                    "releaseDate": "11th November 2019",
+                    "version": 2018120307
+                },
+                {
+                    "name": "3.6.8",
+                    "releaseDate": "13th January 2020",
+                    "version": 2018120308
+                },
+                {
+                    "name": "3.6.9",
+                    "releaseDate": "9th March 2020",
+                    "version": 2018120309
+                },
+                {
+                    "name": "3.6.10",
+                    "releaseDate": "11th May 2020",
+                    "version": 2018120310,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "3.5",
+            "releaseDate": "17 May 2018",
+            "generalEndDate": "13 May 2019",
+            "securityEndDate": "10 May 2021",
+            "isLTS": true,
+            "releases": [
+                {
+                    "name": "3.5.0",
+                    "releaseDate": "17 May 2018",
+                    "version": 2018051700,
+                    "upgradePath": "https://docs.moodle.org/35/en/Upgrading"
+                },
+                {
+                    "name": "3.5.1",
+                    "releaseDate": "9 July 2018",
+                    "version": 2018051701
+                },
+                {
+                    "name": "3.5.2",
+                    "releaseDate": "10 September 2018",
+                    "version": 2018051702
+                },
+                {
+                    "name": "3.5.3",
+                    "releaseDate": "12 November 2018",
+                    "version": 2018051703
+                },
+                {
+                    "name": "3.5.4",
+                    "releaseDate": "14 January 2019",
+                    "version": 2018051704
+                },
+                {
+                    "name": "3.5.5",
+                    "releaseDate": "11 March 2019",
+                    "version": 2018051705
+                },
+                {
+                    "name": "3.5.6",
+                    "releaseDate": "13 May 2019",
+                    "version": 2018051706
+                },
+                {
+                    "name": "3.5.7",
+                    "releaseDate": "8 July 2019",
+                    "version": 2018051707
+                },
+                {
+                    "name": "3.5.8",
+                    "releaseDate": "9 September 2019",
+                    "version": 2018051708
+                },
+                {
+                    "name": "3.5.9",
+                    "releaseDate": "11 November 2019",
+                    "version": 2018051709
+                },
+                {
+                    "name": "3.5.10",
+                    "releaseDate": "13 January 2020",
+                    "version": 2018051710
+                },
+                {
+                    "name": "3.5.11",
+                    "releaseDate": "9 March 2020",
+                    "version": 2018051711
+                },
+                {
+                    "name": "3.5.12",
+                    "releaseDate": "11 May 2020",
+                    "version": 2018051712
+                },
+                {
+                    "name": "3.5.13",
+                    "releaseDate": "13 July 2020",
+                    "version": 2018051713
+                },
+                {
+                    "name": "3.5.14",
+                    "releaseDate": "14 September 2020",
+                    "version": 2018051714
+                },
+                {
+                    "name": "3.5.15",
+                    "releaseDate": "9 November 2020",
+                    "version": 2018051715
+                },
+                {
+                    "name": "3.5.16",
+                    "releaseDate": "18 January 2021",
+                    "version": 2018051716
+                },
+                {
+                    "name": "3.5.17",
+                    "releaseDate": "8 March 2021",
+                    "version": 2018051717
+                },
+                {
+                    "name": "3.5.18",
+                    "releaseDate": "10 May 2021",
+                    "version": 2018051718,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "3.4",
+            "releaseDate": "13 November 2017",
+            "generalEndDate": "12 November 2018",
+            "securityEndDate": "13 May 2019",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "3.4.0",
+                    "releaseDate": "13 November 2017",
+                    "version": 2017111300,
+                    "upgradePath": "https://docs.moodle.org/34/en/Upgrading"
+                },
+                {
+                    "name": "3.4.1",
+                    "releaseDate": "15 January 2018",
+                    "version": 2017111301
+                },
+                {
+                    "name": "3.4.2",
+                    "releaseDate": "19 March 2018",
+                    "version": 2017111302
+                },
+                {
+                    "name": "3.4.3",
+                    "releaseDate": "17 May 2018",
+                    "version": 2017111303
+                },
+                {
+                    "name": "3.4.4",
+                    "releaseDate": "9 July 2018",
+                    "version": 2017111304
+                },
+                {
+                    "name": "3.4.5",
+                    "releaseDate": "10 September 2018",
+                    "version": 2017111305
+                },
+                {
+                    "name": "3.4.6",
+                    "releaseDate": "12 November 2018",
+                    "version": 2017111306
+                },
+                {
+                    "name": "3.4.7",
+                    "releaseDate": "14 January 2019",
+                    "version": 2017111307
+                },
+                {
+                    "name": "3.4.8",
+                    "releaseDate": "11 March 2019",
+                    "version": 2017111308
+                },
+                {
+                    "name": "3.4.9",
+                    "releaseDate": "13 May 2019",
+                    "version": 2017111309,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "3.3",
+            "releaseDate": "15 May 2017",
+            "generalEndDate": "17 May 2018",
+            "securityEndDate": "12 November 2018",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "3.3.0",
+                    "releaseDate": "15 May 2017",
+                    "version": 2017051500,
+                    "upgradePath": "https://docs.moodle.org/33/en/Upgrading"
+                },
+                {
+                    "name": "3.3.1",
+                    "releaseDate": "10 July 2017",
+                    "version": 2017051501
+                },
+                {
+                    "name": "3.3.2",
+                    "releaseDate": "11 September 2017",
+                    "version": 2017051502
+                },
+                {
+                    "name": "3.3.3",
+                    "releaseDate": "13 November 2017",
+                    "version": 2017051503
+                },
+                {
+                    "name": "3.3.4",
+                    "releaseDate": "15 January 2018",
+                    "version": 2017051504
+                },
+                {
+                    "name": "3.3.5",
+                    "releaseDate": "19 March 2018",
+                    "version": 2017051505
+                },
+                {
+                    "name": "3.3.6",
+                    "releaseDate": "17 May 2018",
+                    "version": 2017051506
+                },
+                {
+                    "name": "3.3.7",
+                    "releaseDate": "9 July 2018",
+                    "version": 2017051507
+                },
+                {
+                    "name": "3.3.8",
+                    "releaseDate": "10 September 2018",
+                    "version": 2017051508
+                },
+                {
+                    "name": "3.3.9",
+                    "releaseDate": "12 November 2018",
+                    "version": 2017051509,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "3.2",
+            "releaseDate": "5 December 2016",
+            "generalEndDate": "13 November 2017",
+            "securityEndDate": "17 May 2018",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "3.2.0",
+                    "releaseDate": "5 December 2016",
+                    "version": 2016120500,
+                    "upgradePath": "https://docs.moodle.org/32/en/Upgrading"
+                },
+                {
+                    "name": "3.2.1",
+                    "releaseDate": "9 January 2017",
+                    "version": 2016120501
+                },
+                {
+                    "name": "3.2.2",
+                    "releaseDate": "13 March 2017",
+                    "version": 2016120502
+                },
+                {
+                    "name": "3.2.3",
+                    "releaseDate": "8 May 2017",
+                    "version": 2016120503
+                },
+                {
+                    "name": "3.2.4",
+                    "releaseDate": "10 July 2017",
+                    "version": 2016120504
+                },
+                {
+                    "name": "3.2.5",
+                    "releaseDate": "11 September 2017",
+                    "version": 2016120505
+                },
+                {
+                    "name": "3.2.6",
+                    "releaseDate": "13 November 2017",
+                    "version": 2016120506
+                },
+                {
+                    "name": "3.2.7",
+                    "releaseDate": "15 January 2018",
+                    "version": 2016120507
+                },
+                {
+                    "name": "3.2.8",
+                    "releaseDate": "19 March 2018",
+                    "version": 2016120508
+                },
+                {
+                    "name": "3.2.9",
+                    "releaseDate": "17 May 2018",
+                    "version": 2016120509,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "3.1",
+            "releaseDate": "23 May 2016",
+            "generalEndDate": "8 May 2017",
+            "securityEndDate": "13 May 2019",
+            "isLTS": true,
+            "releases": [
+                {
+                    "name": "3.1.0",
+                    "releaseDate": "23 May 2016",
+                    "version": 2016052300,
+                    "upgradePath": "https://docs.moodle.org/31/en/Upgrading"
+                },
+                {
+                    "name": "3.1.1",
+                    "releaseDate": "11 July 2016",
+                    "version": 2016052301
+                },
+                {
+                    "name": "3.1.2",
+                    "releaseDate": "12 September 2016",
+                    "version": 2016052302
+                },
+                {
+                    "name": "3.1.3",
+                    "releaseDate": "14 November 2016",
+                    "version": 2016052303
+                },
+                {
+                    "name": "3.1.4",
+                    "releaseDate": "9 January 2017",
+                    "version": 2016052304
+                },
+                {
+                    "name": "3.1.5",
+                    "releaseDate": "13 March 2017",
+                    "version": 2016052305
+                },
+                {
+                    "name": "3.1.6",
+                    "releaseDate": "8 May 2017",
+                    "version": 2016052306
+                },
+                {
+                    "name": "3.1.7",
+                    "releaseDate": "10 July 2017",
+                    "version": 2016052307
+                },
+                {
+                    "name": "3.1.8",
+                    "releaseDate": "11 September 2017",
+                    "version": 2016052308
+                },
+                {
+                    "name": "3.1.9",
+                    "releaseDate": "13 November 2017",
+                    "version": 2016052309
+                },
+                {
+                    "name": "3.1.10",
+                    "releaseDate": "15 January 2018",
+                    "version": 2016052310
+                },
+                {
+                    "name": "3.1.11",
+                    "releaseDate": "19 March 2018",
+                    "version": 2016052311
+                },
+                {
+                    "name": "3.1.12",
+                    "releaseDate": "17 May 2018",
+                    "version": 2016052312
+                },
+                {
+                    "name": "3.1.13",
+                    "releaseDate": "9 July 2018",
+                    "version": 2016052313
+                },
+                {
+                    "name": "3.1.14",
+                    "releaseDate": "10 September 2018",
+                    "version": 2016052314
+                },
+                {
+                    "name": "3.1.15",
+                    "releaseDate": "12 November 2018",
+                    "version": 2016052315
+                },
+                {
+                    "name": "3.1.16",
+                    "releaseDate": "14 January 2019",
+                    "version": 2016052316
+                },
+                {
+                    "name": "3.1.17",
+                    "releaseDate": "11 March 2019",
+                    "version": 2016052317
+                },
+                {
+                    "name": "3.1.18",
+                    "releaseDate": "13 May 2019",
+                    "version": 2016052318,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "3.0",
+            "releaseDate": "16 November 2015",
+            "generalEndDate": "14 November 2016",
+            "securityEndDate": "8 May 2017",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "3.0.0",
+                    "releaseDate": "16 November 2015",
+                    "version": 2015111600,
+                    "upgradePath": "https://docs.moodle.org/30/en/Upgrading"
+                },
+                {
+                    "name": "3.0.1",
+                    "releaseDate": "21 December 2015",
+                    "version": 2015111601
+                },
+                {
+                    "name": "3.0.2",
+                    "releaseDate": "11 January 2016",
+                    "version": 2015111602
+                },
+                {
+                    "name": "3.0.3",
+                    "releaseDate": "14 March 2016",
+                    "version": 2015111603
+                },
+                {
+                    "name": "3.0.4",
+                    "releaseDate": "9 May 2016",
+                    "version": 2015111604
+                },
+                {
+                    "name": "3.0.5",
+                    "releaseDate": "11 July 2016",
+                    "version": 2015111605
+                },
+                {
+                    "name": "3.0.6",
+                    "releaseDate": "12 September 2016",
+                    "version": 2015111606
+                },
+                {
+                    "name": "3.0.7",
+                    "releaseDate": "14 November 2016",
+                    "version": 2015111607
+                },
+                {
+                    "name": "3.0.8",
+                    "releaseDate": "9 January 2017",
+                    "version": 2015111608
+                },
+                {
+                    "name": "3.0.9",
+                    "releaseDate": "13 March 2017",
+                    "version": 2015111609
+                },
+                {
+                    "name": "3.0.10",
+                    "releaseDate": "8 May 2017",
+                    "version": 2015111610,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "2.9",
+            "releaseDate": "11 May 2015",
+            "generalEndDate": "9 May 2016",
+            "securityEndDate": "14 November 2016",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "2.9.0",
+                    "releaseDate": "11 May 2015",
+                    "version": 2015051100,
+                    "upgradePath": "https://docs.moodle.org/29/en/Upgrading_to_Moodle_2.9"
+                },
+                {
+                    "name": "2.9.1",
+                    "releaseDate": "6 July 2015",
+                    "version": 2015051101
+                },
+                {
+                    "name": "2.9.2",
+                    "releaseDate": "14 September 2015",
+                    "version": 2015051102
+                },
+                {
+                    "name": "2.9.3",
+                    "releaseDate": "9 November 2015",
+                    "version": 2015051103
+                },
+                {
+                    "name": "2.9.4",
+                    "releaseDate": "11 January 2016",
+                    "version": 2015051104
+                },
+                {
+                    "name": "2.9.5",
+                    "releaseDate": "14 March 2016",
+                    "version": 2015051105
+                },
+                {
+                    "name": "2.9.6",
+                    "releaseDate": "9 May 2016",
+                    "version": 2015051106
+                },
+                {
+                    "name": "2.9.7",
+                    "releaseDate": "11 July 2016",
+                    "version": 2015051107
+                },
+                {
+                    "name": "2.9.8",
+                    "releaseDate": "12 September 2016",
+                    "version": 2015051108
+                },
+                {
+                    "name": "2.9.9",
+                    "releaseDate": "14 November 2016",
+                    "version": 2015051109,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "2.8",
+            "releaseDate": "10 November 2014",
+            "generalEndDate": "9 November 2015",
+            "securityEndDate": "9 May 2016",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "2.8.0",
+                    "releaseDate": "10 November 2014",
+                    "version": 2014111000,
+                    "upgradePath": "https://docs.moodle.org/28/en/Upgrading_to_Moodle_2.8"
+                },
+                {
+                    "name": "2.8.1",
+                    "releaseDate": "13 November 2014",
+                    "version": 2014111001
+                },
+                {
+                    "name": "2.8.2",
+                    "releaseDate": "12 January 2015",
+                    "version": 2014111002
+                },
+                {
+                    "name": "2.8.3",
+                    "releaseDate": "2 February 2015",
+                    "version": 2014111003
+                },
+                {
+                    "name": "2.8.4",
+                    "releaseDate": "9 March 2015",
+                    "version": 2014111004,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "2.8.5",
+                    "releaseDate": "10 March 2015",
+                    "version": 2014111005
+                },
+                {
+                    "name": "2.8.6",
+                    "releaseDate": "11 May 2015",
+                    "version": 2014111006
+                },
+                {
+                    "name": "2.8.7",
+                    "releaseDate": "6 July 2015",
+                    "version": 2014111007
+                },
+                {
+                    "name": "2.8.8",
+                    "releaseDate": "14 September 2015",
+                    "version": 2014111008
+                },
+                {
+                    "name": "2.8.9",
+                    "releaseDate": "9 November 2015",
+                    "version": 2014111009
+                },
+                {
+                    "name": "2.8.10",
+                    "releaseDate": "11 January 2016",
+                    "version": 2014111010
+                },
+                {
+                    "name": "2.8.11",
+                    "releaseDate": "14 March 2016",
+                    "version": 2014111011
+                },
+                {
+                    "name": "2.8.12",
+                    "releaseDate": "9 May 2016",
+                    "version": 2014111012,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "2.7",
+            "releaseDate": "12 May 2014",
+            "generalEndDate": "11 May 2015",
+            "securityEndDate": "8 May 2017",
+            "isLTS": true,
+            "releases": [
+                {
+                    "name": "2.7.0",
+                    "releaseDate": "12 May 2014",
+                    "version": 2014051200,
+                    "upgradePath": "https://docs.moodle.org/27/en/Upgrading_to_Moodle_2.7"
+                },
+                {
+                    "name": "2.7.1",
+                    "releaseDate": "14 July 2014",
+                    "version": 2014051201
+                },
+                {
+                    "name": "2.7.2",
+                    "releaseDate": "8 September 2014",
+                    "version": 2014051202
+                },
+                {
+                    "name": "2.7.3",
+                    "releaseDate": "10 November 2014",
+                    "version": 2014051203
+                },
+                {
+                    "name": "2.7.4",
+                    "releaseDate": "12 January 2015",
+                    "version": 2014051204
+                },
+                {
+                    "name": "2.7.5",
+                    "releaseDate": "2 February 2015",
+                    "version": 2014051205
+                },
+                {
+                    "name": "2.7.6",
+                    "releaseDate": "9 March 2015",
+                    "version": 2014051206,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "2.7.7",
+                    "releaseDate": "10 March 2015",
+                    "version": 2014051207
+
+                },
+                {
+                    "name": "2.7.8",
+                    "releaseDate": "11 May 2015",
+                    "version": 2014051208
+                },
+                {
+                    "name": "2.7.9",
+                    "releaseDate": "6 July 2015",
+                    "version": 2014051209
+                },
+                {
+                    "name": "2.7.10",
+                    "releaseDate": "14 September 2015",
+                    "version": 2014051210
+                },
+                {
+                    "name": "2.7.11",
+                    "releaseDate": "9 November 2015",
+                    "version": 2014051211
+                },
+                {
+                    "name": "2.7.12",
+                    "releaseDate": "11 January 2016",
+                    "version": 2014051212
+                },
+                {
+                    "name": "2.7.13",
+                    "releaseDate": "14 March 2016",
+                    "version": 2014051213
+                },
+                {
+                    "name": "2.7.14",
+                    "releaseDate": "9 May 2016",
+                    "version": 2014051214
+                },
+                {
+                    "name": "2.7.15",
+                    "releaseDate": "11 July 2016",
+                    "version": 2014051215
+                },
+                {
+                    "name": "2.7.16",
+                    "releaseDate": "12 September 2016",
+                    "version": 2014051216
+                },
+                {
+                    "name": "2.7.17",
+                    "releaseDate": "14 November 2016",
+                    "version": 2014051217
+                },
+                {
+                    "name": "2.7.18",
+                    "releaseDate": "9 January 2017",
+                    "version": 2014051218
+                },
+                {
+                    "name": "2.7.19",
+                    "releaseDate": "13 March 2017",
+                    "version": 2014051219
+                },
+                {
+                    "name": "2.7.20",
+                    "releaseDate": "8 May 2017",
+                    "version": 2014051220,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "2.6",
+            "releaseDate": "18 November 2013",
+            "generalEndDate": "10 November 2014",
+            "securityEndDate": "11 May 2015",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "2.6.0",
+                    "releaseDate": "18 November 2013",
+                    "version": 2013111800,
+                    "upgradePath": "https://docs.moodle.org/26/en/Upgrading_to_Moodle_2.6"
+                },
+                {
+                    "name": "2.6.1",
+                    "releaseDate": "13 January 2014",
+                    "version": 2013111801
+                },
+                {
+                    "name": "2.6.2",
+                    "releaseDate": "10 March 2014",
+                    "version": 2013111802
+                },
+                {
+                    "name": "2.6.3",
+                    "releaseDate": "12 May 2014",
+                    "version": 2013111803
+                },
+                {
+                    "name": "2.6.4",
+                    "releaseDate": "14 July 2014",
+                    "version": 2013111804
+                },
+                {
+                    "name": "2.6.5",
+                    "releaseDate": "8 September 2014",
+                    "version": 2013111805
+                },
+                {
+                    "name": "2.6.6",
+                    "releaseDate": "10 November 2014",
+                    "version": 2013111806
+                },
+                {
+                    "name": "2.6.7",
+                    "releaseDate": "12 January 2015",
+                    "version": 2013111807
+                },
+                {
+                    "name": "2.6.8",
+                    "releaseDate": "2 February 2015",
+                    "version": 2013111808
+                },
+                {
+                    "name": "2.6.9",
+                    "releaseDate": "9 March 2015",
+                    "version": 2013111809,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "2.6.10",
+                    "releaseDate": "10 March 2015",
+                    "version": 2013111810
+                },
+                {
+                    "name": "2.6.11",
+                    "releaseDate": "11 May 2015",
+                    "version": 2013111811,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "2.5",
+            "releaseDate": "14 May 2013",
+            "generalEndDate": "31 May 2014",
+            "securityEndDate": "10 November 2014",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "2.5.0",
+                    "releaseDate": "14 May 2013",
+                    "version": 2013051400,
+                    "upgradePath": "https://docs.moodle.org/25/en/Upgrading_to_Moodle_2.5"
+                },
+                {
+                    "name": "2.5.1",
+                    "releaseDate": "8 July 2013",
+                    "version": 2013051401
+                },
+                {
+                    "name": "2.5.2",
+                    "releaseDate": "9 September 2013",
+                    "version": 2013051402
+                },
+                {
+                    "name": "2.5.3",
+                    "releaseDate": "11 November 2013",
+                    "version": 2013051403
+                },
+                {
+                    "name": "2.5.4",
+                    "releaseDate": "13 January 2014",
+                    "version": 2013051404
+                },
+                {
+                    "name": "2.5.5",
+                    "releaseDate": "10 March 2014",
+                    "version": 2013051405
+                },
+                {
+                    "name": "2.5.6",
+                    "releaseDate": "12 May 2014",
+                    "version": 2013051406
+                },
+                {
+                    "name": "2.5.7",
+                    "releaseDate": "14 July 2014",
+                    "version": 2013051407
+                },
+                {
+                    "name": "2.5.8",
+                    "releaseDate": "8 September 2014",
+                    "version": 2013051408
+                },
+                {
+                    "name": "2.5.9",
+                    "releaseDate": "10 November 2014",
+                    "version": 2013051409,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "2.4",
+            "releaseDate": "3 December 2012",
+            "generalEndDate": "31 December 2013",
+            "securityEndDate": "30 JUne 2014",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "2.4.0",
+                    "releaseDate": "3 December 2012",
+                    "version": 2012120300,
+                    "upgradePath": "https://docs.moodle.org/24/en/Upgrading_to_Moodle_2.4"
+                },
+                {
+                    "name": "2.4.1",
+                    "releaseDate": "14 January 2013",
+                    "version": 2012120301
+                },
+                {
+                    "name": "2.4.2",
+                    "releaseDate": "11 March 2013",
+                    "version": 2012120302
+                },
+                {
+                    "name": "2.4.3",
+                    "releaseDate": "18 March 2013",
+                    "version": 2012120303
+                },
+                {
+                    "name": "2.4.4",
+                    "releaseDate": "14 May 2013",
+                    "version": 2012120304
+                },
+                {
+                    "name": "2.4.5",
+                    "releaseDate": "8 July 2013",
+                    "version": 2012120305
+                },
+                {
+                    "name": "2.4.6",
+                    "releaseDate": "9 September 2013",
+                    "version": 2012120306
+                },
+                {
+                    "name": "2.4.7",
+                    "releaseDate": "11 November 2013",
+                    "version": 2012120307
+                },
+                {
+                    "name": "2.4.8",
+                    "releaseDate": "13 January 2014",
+                    "version": 2012120308
+                },
+                {
+                    "name": "2.4.9",
+                    "releaseDate": "10 March 2014",
+                    "version": 2012120309
+                },
+                {
+                    "name": "2.4.10",
+                    "releaseDate": "12 May 2014",
+                    "version": 2012120310
+                },
+                {
+                    "name": "2.4.11",
+                    "releaseDate": "14 July 2014",
+                    "version": 2012120311,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "2.3",
+            "releaseDate": "25 June 2012",
+            "generalEndDate": "30 June 2013",
+            "securityEndDate": "31 December 2013",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "2.3.0",
+                    "releaseDate": "25 June 2012",
+                    "version": 2012062500,
+                    "upgradePath": "https://docs.moodle.org/23/en/Upgrading_to_Moodle_2.3"
+                },
+                {
+                    "name": "2.3.1",
+                    "releaseDate": "9 July 2012",
+                    "version": 2012062501
+                },
+                {
+                    "name": "2.3.2",
+                    "releaseDate": "10 September 2012",
+                    "version": 2012062502
+                },
+                {
+                    "name": "2.3.3",
+                    "releaseDate": "12 November 2012",
+                    "version": 2012062503
+                },
+                {
+                    "name": "2.3.4",
+                    "releaseDate": "14 January 2013",
+                    "version": 2012062504
+                },
+                {
+                    "name": "2.3.5",
+                    "releaseDate": "11 March 2013",
+                    "version": 2012062505
+                },
+                {
+                    "name": "2.3.6",
+                    "releaseDate": "18 March 2013",
+                    "version": 2012062506
+                },
+                {
+                    "name": "2.3.7",
+                    "releaseDate": "14 May 2013",
+                    "version": 2012062507
+                },
+                {
+                    "name": "2.3.8",
+                    "releaseDate": "8 July 2013",
+                    "version": 2012062508
+                },
+                {
+                    "name": "2.3.9",
+                    "releaseDate": "9 September 2013",
+                    "version": 2012062509
+                },
+                {
+                    "name": "2.3.10",
+                    "releaseDate": "11 November 2013",
+                    "version": 2012062510
+                },
+                {
+                    "name": "2.3.11",
+                    "releaseDate": "13 January 2014",
+                    "version": 2012062511,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "2.2",
+            "releaseDate": "5 December 2011",
+            "generalEndDate": "31 December 2012",
+            "securityEndDate": "30 June 2013",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "2.2.0",
+                    "releaseDate": "5 December 2011",
+                    "version": 2011120500,
+                    "upgradePath": "https://docs.moodle.org/22/en/Upgrading_to_Moodle_2.2"
+                },
+                {
+                    "name": "2.2.1",
+                    "releaseDate": "9 January 2012",
+                    "version": 2011120501
+                },
+                {
+                    "name": "2.2.2",
+                    "releaseDate": "12 March 2012",
+                    "version": 2011120502
+                },
+                {
+                    "name": "2.2.3",
+                    "releaseDate": "14 May 2012",
+                    "version": 2011120503
+                },
+                {
+                    "name": "2.2.4",
+                    "releaseDate": "9 July 2012",
+                    "version": 2011120504
+                },
+                {
+                    "name": "2.2.5",
+                    "releaseDate": "10 September 2012",
+                    "version": 2011120505
+                },
+                {
+                    "name": "2.2.6",
+                    "releaseDate": "12 November 2012",
+                    "version": 2011120506
+                },
+                {
+                    "name": "2.2.7",
+                    "releaseDate": "14 January 2013",
+                    "version": 2011120507
+                },
+                {
+                    "name": "2.2.8",
+                    "releaseDate": "11 March 2013",
+                    "version": 2011120508
+                },
+                {
+                    "name": "2.2.9",
+                    "releaseDate": "18 March 2013",
+                    "version": 2011120509
+                },
+                {
+                    "name": "2.2.10",
+                    "releaseDate": "14 May 2013",
+                    "version": 2011120510
+                },
+                {
+                    "name": "2.2.11",
+                    "releaseDate": "8 July 2013",
+                    "version": 2011120511,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "2.1",
+            "releaseDate": "1 July 2011",
+            "generalEndDate": "30 June 2012",
+            "securityEndDate": "31 December 2012",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "2.1.0",
+                    "releaseDate": "1 July 2011",
+                    "version": 2011070100,
+                    "upgradePath": "https://docs.moodle.org/21/en/Upgrading_to_Moodle_2.1"
+                },
+                {
+                    "name": "2.1.1",
+                    "releaseDate": "1 August 2011",
+                    "version": 2011070101
+                },
+                {
+                    "name": "2.1.2",
+                    "releaseDate": "10 October 2011",
+                    "version": 2011070102
+                },
+                {
+                    "name": "2.1.3",
+                    "releaseDate": "28 November 2011",
+                    "version": 2011070103
+                },
+                {
+                    "name": "2.1.4",
+                    "releaseDate": "9 January 2012",
+                    "version": 2011070104
+                },
+                {
+                    "name": "2.1.5",
+                    "releaseDate": "12 March 2012",
+                    "version": 2011070105
+                },
+                {
+                    "name": "2.1.6",
+                    "releaseDate": "14 May 2012",
+                    "version": 2011070106
+                },
+                {
+                    "name": "2.1.7",
+                    "releaseDate": "9 July 2012",
+                    "version": 2011070107
+                },
+                {
+                    "name": "2.1.8",
+                    "releaseDate": "10 September 2012",
+                    "version": 2011070108
+                },
+                {
+                    "name": "2.1.9",
+                    "releaseDate": "12 November 2012",
+                    "version": 2011070109
+                },
+                {
+                    "name": "2.1.10",
+                    "releaseDate": "14 January 2013",
+                    "version": 2011070110,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "2.0",
+            "releaseDate": "24 November 2010",
+            "generalEndDate": "31 December 2011",
+            "securityEndDate": "30 June 2012",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "2.0.0",
+                    "releaseDate": "24 November 2010",
+                    "version": 2010112400,
+                    "upgradePath": "https://docs.moodle.org/280/en/Upgrading_to_Moodle_2.0"
+                },
+                {
+                    "name": "2.0.1",
+                    "releaseDate": "25 December 2010",
+                    "version": 2010122500
+                },
+                {
+                    "name": "2.0.2",
+                    "releaseDate": "21 February 2011",
+                    "version": 2011022100
+                },
+                {
+                    "name": "2.0.3",
+                    "releaseDate": "5 May 2011",
+                    "version": 2011033003
+                },
+                {
+                    "name": "2.0.4",
+                    "releaseDate": "1 August 2011",
+                    "version": 2011033004
+                },
+                {
+                    "name": "2.0.5",
+                    "releaseDate": "10 October 2011",
+                    "version": 2011033005
+                },
+                {
+                    "name": "2.0.6",
+                    "releaseDate": "28 November 2011",
+                    "version": 2011033006
+                },
+                {
+                    "name": "2.0.7",
+                    "releaseDate": "9 January 2012",
+                    "version": 2011033007
+                },
+                {
+                    "name": "2.0.8",
+                    "releaseDate": "12 March 2012",
+                    "version": 2011033008
+                },
+                {
+                    "name": "2.0.9",
+                    "releaseDate": "14 May 2012",
+                    "version": 2011033009
+                },
+                {
+                    "name": "2.0.10",
+                    "releaseDate": "9 July 2012",
+                    "version": 2011033010,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "1.9",
+            "releaseDate": "3 March 2008",
+            "generalEndDate": "30 June 2011",
+            "securityEndDate": "30 June 2012",
+            "extendedSecurityEndDate": "31 December 2013",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "1.9.0",
+                    "releaseDate": "3 March 2008",
+                    "version": 2007101509,
+                    "upgradePath": "https://docs.moodle.org/19/en/Upgrading_to_Moodle_1.9"
+                },
+                {
+                    "name": "1.9.1",
+                    "releaseDate": "15 May 2008",
+                    "version": 2007101512
+                },
+                {
+                    "name": "1.9.2",
+                    "releaseDate": "11 July 2008",
+                    "version": 2007101520
+                },
+                {
+                    "name": "1.9.3",
+                    "releaseDate": "15 October 2008",
+                    "version": 2007101530
+                },
+                {
+                    "name": "1.9.4",
+                    "releaseDate": "28 January 2009",
+                    "version": 2007101540
+                },
+                {
+                    "name": "1.9.5",
+                    "releaseDate": "13 May 2009",
+                    "version": 2007101550
+                },
+                {
+                    "name": "1.9.6",
+                    "releaseDate": "21 October 2009",
+                    "version": 2007101560
+                },
+                {
+                    "name": "1.9.7",
+                    "releaseDate": "25 November 2009",
+                    "version": 2007101570
+                },
+                {
+                    "name": "1.9.8",
+                    "releaseDate": "25 March 2010",
+                    "version": 2007101580.00
+                },
+                {
+                    "name": "1.9.9",
+                    "releaseDate": "8 June 2010",
+                    "version": 2007101590.00
+                },
+                {
+                    "name": "1.9.10",
+                    "releaseDate": "25 October 2010",
+                    "version": 2007101591.00
+                },
+                {
+                    "name": "1.9.11",
+                    "releaseDate": "21 February 2011",
+                    "version": 2007101591.02
+                },
+                {
+                    "name": "1.9.12",
+                    "releaseDate": "10 May 2011",
+                    "version": 2007101591.03
+                },
+                {
+                    "name": "1.9.13",
+                    "releaseDate": "1 August 2011",
+                    "version": 2007101591.04
+                },
+                {
+                    "name": "1.9.14",
+                    "releaseDate": "10 October 2011",
+                    "version": 2007101591.06
+                },
+                {
+                    "name": "1.9.15",
+                    "releaseDate": "28 November 2011",
+                    "version": 2007101591.07
+                },
+                {
+                    "name": "1.9.16",
+                    "releaseDate": "9 January 2012",
+                    "version": 2007101591.10
+                },
+                {
+                    "name": "1.9.17",
+                    "releaseDate": "12 March 2012",
+                    "version": 2007101591.12
+                },
+                {
+                    "name": "1.9.18",
+                    "releaseDate": "14 May 2012",
+                    "version": 2007101591.16
+                },
+                {
+                    "name": "1.9.19",
+                    "releaseDate": "9 July 2012",
+                    "version": 2007101592.00,
+                    "notes": "Support has ended"
+                }
+            ]
+        },
+        {
+            "name": "1.8",
+            "releaseDate": "30 March 2007",
+            "generalEndDate": "3 December 2010",
+            "securityEndDate": "3 December 2010",
+            "isLTS": false,
+            "releases": []
+        },
+        {
+            "name": "1.7",
+            "releaseDate": "7 November 2006",
+            "generalEndDate": "28 January 2009",
+            "securityEndDate": "28 January 2009",
+            "isLTS": false,
+            "releases": []
+        },
+        {
+            "name": "1.6",
+            "releaseDate": "20 June 2006",
+            "generalEndDate": "28 January 2009",
+            "securityEndDate": "28 January 2009",
+            "isLTS": false,
+            "releases": []
+        },
+        {
+            "name": "1.5",
+            "releaseDate": "5 June 2005",
+            "generalEndDate": "21 May 2006",
+            "securityEndDate": "21 May 2006",
+            "isLTS": false,
+            "releases": []
+        },
+        {
+            "name": "1.4",
+            "releaseDate": "31 August 2004",
+            "generalEndDate": "7 May 2005",
+            "securityEndDate": "7 May 2005",
+            "isLTS": false,
+            "releases": []
+        },
+        {
+            "name": "1.3",
+            "releaseDate": "25 May 2004",
+            "generalEndDate": "9 September 2004",
+            "securityEndDate": "9 September 2004",
+            "isLTS": false,
+            "releases": []
+        },
+        {
+            "name": "1.2",
+            "releaseDate": "20 March 2004",
+            "generalEndDate": "25 March 2004",
+            "securityEndDate": "25 March 2004",
+            "isLTS": false,
+            "releases": []
+        },
+        {
+            "name": "1.1",
+            "releaseDate": "29 August 2003",
+            "generalEndDate": "11 September 2003",
+            "securityEndDate": "11 September 2003",
+            "isLTS": false,
+            "releases": []
+        },
+        {
+            "name": "1.0",
+            "releaseDate": "20 August 2002",
+            "generalEndDate": "30 May 2003",
+            "securityEndDate": "30 May 2003",
+            "isLTS": false
+        }
+    ]
+}

@@ -63,6 +63,7 @@ program
                     header: [],
                     currentRow: [],
                     body: [],
+                    horizontal: true,
                 };
                 return;
             }
@@ -102,6 +103,9 @@ program
                 const cellData = getCellsFromLine(lineData, '!!');
                 cellData.forEach((cell) => logger.verbose(`  > Found a header cell: '${cell}'`));
                 tableData.header.push(...cellData);
+                if (tableData.body.length) {
+                    tableData.horizontal = false;
+                }
             } else if (line.indexOf('|') === 0) {
                 const lineData = line.replace(/^\| */, '');
                 const cellData = getCellsFromLine(lineData, '||');
@@ -114,10 +118,12 @@ program
             }
         });
 
+        console.log(tableData);
+
         // Process in reverse to make line ordering easier.
         replacements.reverse().forEach(({ tableLines: linesToReplace, tableData: thisTableData }) => {
             const newLines = [''];
-            if (thisTableData.header.length) {
+            if (thisTableData.header.length && thisTableData.horizontal) {
                 newLines.push(`| ${thisTableData.header.join(' | ')} |`);
                 newLines.push(`${'| --- '.repeat(thisTableData.header.length)}|`);
                 thisTableData.body.forEach((row) => {
@@ -134,18 +140,37 @@ program
                 newLines.push('-->');
                 newLines.push('<table><tbody>');
                 thisTableData.body.forEach((row) => {
-                    let html = '<tr>';
-                    row.forEach((cell) => {
-                        html += '<td>';
+                    if (thisTableData.horizontal) {
+                        let html = '<tr>';
+                        row.forEach((cell) => {
+                            html += '<td>';
+                            newLines.push(html);
+                            html = '';
+                            newLines.push('');
+                            newLines.push(cell);
+                            newLines.push('');
+                            html += '</td>';
+                        });
+                        html += '</tr>';
                         newLines.push(html);
-                        html = '';
+                    } else {
+                        let html = '';
+                        newLines.push('<tr><th>');
                         newLines.push('');
-                        newLines.push(cell);
+                        newLines.push(thisTableData.header.shift());
                         newLines.push('');
-                        html += '</td>';
-                    });
-                    html += '</tr>';
-                    newLines.push(html);
+                        html += '</th>';
+                        row.forEach((cell) => {
+                            html += '<td>';
+                            newLines.push(html);
+                            newLines.push('');
+                            newLines.push(cell);
+                            newLines.push('');
+                            html = '</td>';
+                        });
+                        html += '</tr>';
+                        newLines.push(html);
+                    }
                 });
                 newLines.push('</tbody></table>');
             }

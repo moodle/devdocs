@@ -81,7 +81,7 @@ After [major releases](https://docs.moodle.org/dev/#Major_release_cycles) there 
 
 - x.x.1 will occur approximately two months after each major release (eg. 2.x).
 - There will then be another point release every two months after that.
-See the [General release calendar](https://docs.moodle.org/dev/Releases#General_release_calendar) for details.
+See the [General release calendar](/general/releases#general-release-calendar) for details.
 
 ### Issue triage
 
@@ -101,7 +101,7 @@ Whenever a solution for an issue is finished, it is submitted to the standard in
 
 ## Major release cycles
 
-Since Moodle 2.0, we have a policy of release major versions (eg 2.1, 2.2) every six months in May and November. See the [General release calendar](https://docs.moodle.org/dev/Releases#General_release_calendar) for more details.
+Since Moodle 2.0, we have a policy of release major versions (eg 2.1, 2.2) every six months in May and November. See the [General release calendar](/general/releases#general-release-calendar) for more details.
 
 Each release can be different, but generally the cycles work as follows.
 

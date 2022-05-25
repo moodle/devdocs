@@ -20,25 +20,7 @@ import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import Admonition from '@theme/Admonition';
-import { usePluginData } from '@docusaurus/useGlobalData';
-
-const versionRegex = /(?<majorVersion>\d+\.\d+)(?:\.(?<minorVersion>\d+))?/;
-const parseMoodleVersion = (moodleVersion) => {
-    const matches = versionRegex.exec(moodleVersion);
-    if (matches) {
-        return matches.groups;
-    }
-
-    return null;
-};
-
-function isSupported(versionData) {
-    return versionData.now < versionData.generalSupportEnds;
-}
-
-function isSecuritySupported(versionData) {
-    return versionData.now < versionData.securitySupportEnds;
-}
+import { getReleaseStatus, getVersion } from '@site/src/utils/SupportedReleases';
 
 function UnsupportedTitle() {
     return (
@@ -89,14 +71,37 @@ function GeneralSupportExpiredWarning({ versionData }) {
         >
             <strong>
                 <Translate
-                    description="A heading to indicate that the document is a draft"
-                    id="documentation.inProgress.warning"
+                    description="A heading to indicate that the Moodle version is only in security support"
+                    id="documentation.support.securityOnly"
                 >
                     This version of Moodle is no longer supported for general bug fixes.
                 </Translate>
             </strong>
             <br />
             <UpgradeLink />
+        </Admonition>
+    );
+}
+
+function FutureReleaseWarning({ versionData }) {
+    return (
+        <Admonition
+            type="caution"
+            icon={
+                <AutoFixHighIcon fontSize="inherit" />
+            }
+            title={
+                <UnsupportedTitle versionData={versionData} />
+            }
+        >
+            <strong>
+                <Translate
+                    description="A heading to indicate that the document relates to an unreleased Moodle version"
+                    id="documentation.support.unreleased"
+                >
+                    This version of Moodle has not yet been released.
+                </Translate>
+            </strong>
         </Admonition>
     );
 }
@@ -126,13 +131,24 @@ function SecuritySupportExpiredWarning({ versionData }) {
     );
 }
 
-function VersionedSupportWarning({ versionData }) {
-    if (isSupported(versionData)) {
+function VersionedSupportWarning({ versionData, moodleVersion }) {
+    const releaseStatus = getReleaseStatus(versionData, moodleVersion);
+    console.log(releaseStatus);
+
+    if (releaseStatus === 'current') {
         // Still in general support.
         return null;
     }
 
-    if (!isSecuritySupported(versionData)) {
+    if (releaseStatus === 'future' || releaseStatus === 'future-stable') {
+        // Not yet supported.
+        // TODO Add a warning banner.
+        return (
+            <FutureReleaseWarning versionData={versionData} />
+        );
+    }
+
+    if (releaseStatus === 'unsupported') {
         // Not in support at all.
         return (
             <SecuritySupportExpiredWarning versionData={versionData} />
@@ -144,46 +160,24 @@ function VersionedSupportWarning({ versionData }) {
     );
 }
 
-function getVersionData(moodleVersionsData, moodleVersion) {
-    const version = parseMoodleVersion(moodleVersion);
-    if (!version) {
-        return null;
-    }
-
-    if (!moodleVersionsData.versionMetadata[`${version.majorVersion}`]) {
-        return null;
-    }
-
-    const thisVersion = moodleVersionsData.versionMetadata[`${version.majorVersion}`];
-    const versionData = {
-        isLTS: thisVersion.isLTS || false,
-        now: new Date(),
-        releaseDate: new Date(thisVersion.release),
-        generalSupportEnds: new Date(thisVersion.general),
-        securitySupportEnds: new Date(thisVersion.security),
-    };
-
-    return versionData;
-}
-
 export default function VersionInfo({ frontMatter }) {
     const { moodleVersion = null } = frontMatter;
-    const moodleVersionsData = usePluginData('moodle-versions');
 
     if (!moodleVersion) {
         // No version number found.
         return null;
     }
 
-    const versionData = getVersionData(moodleVersionsData, moodleVersion);
+    const versionData = getVersion(moodleVersion);
     if (!versionData) {
-        // No valid version number found.
+        // No valid version data found.
         return null;
     }
 
     return (
         <VersionedSupportWarning
             versionData={versionData}
+            moodleVersion={moodleVersion}
         />
     );
 }
