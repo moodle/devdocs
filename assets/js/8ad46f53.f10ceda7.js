@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdevdocs=self.webpackChunkdevdocs||[]).push([[5484],{2999:function(e){e.exports=JSON.parse('{"name":"Moodle 4.0","permalink":"/devdocs/docs/tags/moodle-4-0","docs":[{"id":"release-notes","title":"Release notes","description":"Release date: 19 April 2022","permalink":"/devdocs/docs/release-notes"}],"allTagsPath":"/devdocs/docs/tags"}')}}]);
