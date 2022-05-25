@@ -15,6 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* eslint-disable import/no-extraneous-dependencies */
 const Bot = require('nodemw'); // cspell:ignore nodemw
 const path = require('path');
 const winston = require('winston');
@@ -40,6 +41,17 @@ const getFetchDoc = (logger) => (client) => (pageTitle) => new Promise((resolve,
             pageTitle,
             data,
         });
+    });
+});
+
+const getGetPagesByPrefix = (logger) => (client) => (prefix) => new Promise((resolve, reject) => {
+    logger.debug(`Fetching all articles with prefix ${prefix}`);
+    client.getPagesByPrefix(prefix, (err, data) => {
+        if (err) {
+            reject(err);
+        }
+
+        resolve(data);
     });
 });
 
@@ -121,6 +133,26 @@ const getGetPagesTranscluding = (logger) => (client) => (templateName) => new Pr
             reject(new Error(err));
         }
         resolve(data.map((pageData) => pageData.title));
+    });
+});
+
+const getGetImageInfo = (logger) => (client) => (filename) => new Promise((resolve, reject) => {
+    logger.info(`Fetching image info for ${filename}`);
+    client.getImageInfo(filename, (err, data) => {
+        if (err) {
+            reject(new Error(err));
+        }
+        resolve(data);
+    });
+});
+
+const getGetImagesFromArticle = (logger) => (client) => (title) => new Promise((resolve, reject) => {
+    logger.info(`Fetching images forpage ${title}`);
+    client.getImagesFromArticle(title, (err, data) => {
+        if (err) {
+            reject(new Error(err));
+        }
+        resolve(data);
     });
 });
 
@@ -350,12 +382,15 @@ module.exports = {
     getClient,
     getFetchDoc,
     getGetMigratedPageIds,
+    getGetImagesFromArticle,
+    getGetImageInfo,
     getGetPagesTranscluding,
     getLogIn,
     getLogger,
     getMigrationPagePath,
     getObsoletePagePath,
     getNormalizedPath,
+    getGetPagesByPrefix,
     getUpdateMigratedPages,
     getUpdateMigratedPagesProtection,
     guessSlug,

@@ -77,8 +77,9 @@ const sidebars = {
         },
 
         {
-            type: 'doc',
-            id: 'release-notes',
+            label: 'Release notes',
+            type: 'link',
+            href: '/general/releases/4.0',
         },
         {
             label: 'Projects',

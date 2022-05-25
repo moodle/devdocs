@@ -35,6 +35,7 @@ const config = {
         'moodle-components',
         'moodle-contributors',
         'project-words',
+        'plugin-names',
     ],
     dictionaryDefinitions: [
         {
@@ -45,6 +46,11 @@ const config = {
         {
             name: 'moodle-contributors',
             path: './data/moodle-contributors.txt',
+            noSuggest: true,
+        },
+        {
+            name: 'plugin-names',
+            path: './data/plugin-names.txt',
             noSuggest: true,
         },
         {
@@ -63,8 +69,8 @@ const config = {
         '*.min.*',
         'src/*',
 
-        // Ignore release notes for now.
-        'docs/release-notes.md',
+        // Disable spell-checking of legacy release notes.
+        'general/releases/{1,2,3}.*',
     ],
     ignoreRegExpList: [
         // Both Email and Urls are in the list of Predefined regexps.

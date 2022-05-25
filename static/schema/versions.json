@@ -1,0 +1,100 @@
+{
+    "title": "JSON schema for the Moodle Release Data",
+    "$id": "https://moodle.github.io/devdocs/schema/versions.json",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "type": "object",
+    "properties": {
+        "versions": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/version"
+            }
+        }
+    },
+    "required": [
+        "versions"
+    ],
+    "$defs": {
+        "version": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "releaseDate": {
+                    "type": "string"
+                },
+                "generalEndDate": {
+                    "type": "string"
+                },
+                "securityEndDate": {
+                    "type": "string"
+                },
+                "extendedSecurityEndDate": {
+                    "type": "string"
+                },
+                "isLTS": {
+                    "type": "boolean"
+                },
+                "releases": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/release"
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "releaseDate",
+                "generalEndDate",
+                "securityEndDate"
+            ],
+            "additionalProperties": false,
+            "unevaluatedProperties": false
+        },
+        "release": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "releaseDate": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "number"
+                },
+                "notes": {
+                    "type": "string"
+                },
+                "upgradePath": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "releaseNoteUrl": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "name",
+                "releaseDate",
+                "version"
+            ],
+            "additionalProperties": false,
+            "unevaluatedProperties": false
+        }
+    }
+}

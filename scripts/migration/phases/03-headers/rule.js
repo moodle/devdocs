@@ -41,7 +41,7 @@ module.exports = {
             if (headerMatches) {
                 const headerLevel = headerMatches.groups.marker.length;
                 const headerMarkup = '#'.repeat(headerLevel);
-                const headerText = headerMatches.groups.header.slice(0, 0 - headerLevel);
+                const headerText = headerMatches.groups.header.slice(0, 0 - headerLevel).replace(/=*$/, '');
 
                 const fixInfo = {
                     editColumn: 1,

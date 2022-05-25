@@ -63,6 +63,7 @@ program
                     header: [],
                     currentRow: [],
                     body: [],
+                    horizontal: true,
                 };
                 return;
             }
@@ -75,7 +76,9 @@ program
 
             if (line.indexOf('|}') === 0) {
                 inTable = false;
-                tableData.body.push(tableData.currentRow);
+                if (tableData.currentRow.length) {
+                    tableData.body.push(tableData.currentRow);
+                }
                 tableData.currentRow = [];
 
                 // Replace the table content.
@@ -100,6 +103,9 @@ program
                 const cellData = getCellsFromLine(lineData, '!!');
                 cellData.forEach((cell) => logger.verbose(`  > Found a header cell: '${cell}'`));
                 tableData.header.push(...cellData);
+                if (tableData.body.length) {
+                    tableData.horizontal = false;
+                }
             } else if (line.indexOf('|') === 0) {
                 const lineData = line.replace(/^\| */, '');
                 const cellData = getCellsFromLine(lineData, '||');
@@ -112,16 +118,62 @@ program
             }
         });
 
+        console.log(tableData);
+
         // Process in reverse to make line ordering easier.
         replacements.reverse().forEach(({ tableLines: linesToReplace, tableData: thisTableData }) => {
-            const newLines = [];
-            if (thisTableData.header) {
+            const newLines = [''];
+            if (thisTableData.header.length && thisTableData.horizontal) {
                 newLines.push(`| ${thisTableData.header.join(' | ')} |`);
                 newLines.push(`${'| --- '.repeat(thisTableData.header.length)}|`);
+                thisTableData.body.forEach((row) => {
+                    newLines.push(`| ${row.join(' | ')} |`);
+                });
+                newLines.push('');
+            } else {
+                // GitHub Formatted Markdown does not support tables without a header.
+                newLines.push('<!--');
+                newLines.push('  Github Flavoured Markdown does not support tables without headers.');
+                newLines.push('  We must use an HTML table here.');
+                newLines.push('  Please note that Spacing in this table is important.');
+                newLines.push('  Markdown must have empty newlines between it and HTML markup.');
+                newLines.push('-->');
+                newLines.push('<table><tbody>');
+                thisTableData.body.forEach((row) => {
+                    if (thisTableData.horizontal) {
+                        let html = '<tr>';
+                        row.forEach((cell) => {
+                            html += '<td>';
+                            newLines.push(html);
+                            html = '';
+                            newLines.push('');
+                            newLines.push(cell);
+                            newLines.push('');
+                            html += '</td>';
+                        });
+                        html += '</tr>';
+                        newLines.push(html);
+                    } else {
+                        let html = '';
+                        newLines.push('<tr><th>');
+                        newLines.push('');
+                        newLines.push(thisTableData.header.shift());
+                        newLines.push('');
+                        html += '</th>';
+                        row.forEach((cell) => {
+                            html += '<td>';
+                            newLines.push(html);
+                            newLines.push('');
+                            newLines.push(cell);
+                            newLines.push('');
+                            html = '</td>';
+                        });
+                        html += '</tr>';
+                        newLines.push(html);
+                    }
+                });
+                newLines.push('</tbody></table>');
             }
-            thisTableData.body.forEach((row) => {
-                newLines.push(`| ${row.join(' | ')} |`);
-            });
 
             lines.splice(linesToReplace[0], linesToReplace.length, ...newLines);
 

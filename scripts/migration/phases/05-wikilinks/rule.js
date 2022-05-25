@@ -23,11 +23,30 @@ const {
     getLineMetadata,
 } = require('markdownlint-rule-helpers');
 
+const path = require('path');
+
+const getFileName = (matches) => {
+    const [link] = matches.groups.link.split('|');
+    if (link.startsWith('File:')) {
+        return link.replace(/^File:/, '');
+    }
+
+    return null;
+};
+
 const getWikilinkLink = (matches) => {
     const [link] = matches.groups.link.split('|');
 
-    return link
-        .replaceAll(' ', '_');
+    const normalisedLink = link.replaceAll(' ', '_');
+
+    if (link.indexOf(':') !== -1) {
+        const pages = normalisedLink.split(':');
+        const page = pages.pop();
+        const lang = pages.pop();
+        return `https://docs.moodle.org/${lang}/${page}`;
+    }
+
+    return `https://docs.moodle.org/dev/${normalisedLink}`;
 };
 
 const getWikilinkDescription = (matches) => {
@@ -35,11 +54,29 @@ const getWikilinkDescription = (matches) => {
 
     const value = description || link;
 
+    if (link.indexOf(':') !== -1 && !description) {
+        const [, title] = link.split(':', 2);
+        return title.replaceAll('_', ' ');
+    }
+
     return value
         .replaceAll('_', ' ');
 };
 
-const replaceWikiLinks = (line, lineNumber, onError) => {
+const getFixInfo = (matches, filename) => {
+    const imageFilename = getFileName(matches);
+    if (imageFilename) {
+        const description = matches.groups.link.split('|').pop().replace('File:', '');
+        const imageDirName = `./_${path.basename(filename.replace(/\.md.?/, '').replaceAll(' ', '_'))}`;
+        return `![${description}](${imageDirName}/${imageFilename.replaceAll(' ', '_')})`;
+    }
+
+    const description = getWikilinkDescription(matches);
+    const link = getWikilinkLink(matches);
+    return `[${description}](${link})`;
+};
+
+const replaceWikiLinks = (line, lineNumber, onError, filename) => {
     const linkSearch = /(?<wikilink>\[\[(?<link>[^\]]*)\]\])/g;
     let matches = linkSearch.exec(line);
     if (!matches) {
@@ -47,10 +84,9 @@ const replaceWikiLinks = (line, lineNumber, onError) => {
     }
     do {
         const foundWikilink = matches.groups.wikilink;
-        const link = getWikilinkLink(matches);
-        const description = getWikilinkDescription(matches);
+        const replacement = getFixInfo(matches, filename);
         const column = matches.index + 1;
-        const replacement = `[${description}](https://docs.moodle.org/dev/${link})`;
+
         const fixInfo = {
             editColumn: column,
             deleteCount: matches.groups.link.length + 4,
@@ -83,7 +119,7 @@ module.exports = {
             }
 
             const lineNumber = lineIndex + 1;
-            replaceWikiLinks(line, lineNumber, onError);
+            replaceWikiLinks(line, lineNumber, onError, params.name);
         });
     },
 };

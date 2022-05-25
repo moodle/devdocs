@@ -1,0 +1,29 @@
+# This file contains a list of plugin names.
+# Please keep this file sorted alphabetically.
+airnotifier
+assignfeedback
+atto
+behat
+bigbluebutton
+bigbluebuttonbn
+boxnet
+brickfield
+cloze
+customlang
+ddimageortext
+ddmarker
+editpdf
+examview
+gradebook
+mnet
+multichoice
+multichoice
+myoverview
+myoverview
+picasa
+questionbank
+scorm
+skydrive
+usertours
+videojs
+wordselect

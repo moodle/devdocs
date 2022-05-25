@@ -23,35 +23,42 @@ const {
     getLineMetadata,
 } = require('markdownlint-rule-helpers');
 
-const markupNumberedList = /^(?<marker># *)/;
+const markupNumberedList = /^(?<whole>(?<marker>#+) *)/;
+const markupBulletedList = /^(?<whole>(?<marker>\*+) *)/;
 
 module.exports = {
     names: ['convert-markup-lists'],
     description: 'Convert markup lists to markdown lists',
     tags: ['migration'],
     function: function lint(params, onError) {
+        const replaceListType = (line, lineNumber, listRegExp, insertText) => {
+            const matches = listRegExp.exec(line);
+            if (!matches) {
+                return;
+            }
+            const linePrefix = '  '.repeat(matches.groups.marker.length - 1);
+            addError(
+                onError,
+                lineNumber,
+                matches.input,
+                matches.input,
+                [matches.index + 1, matches.input.length],
+                {
+                    editColumn: matches.index + 1,
+                    deleteCount: matches.groups.whole.length,
+                    insertText: `${linePrefix}${insertText}`,
+                },
+            );
+        };
+
         forEachLine(getLineMetadata(params), (line, lineIndex, inCode) => {
             if (inCode) {
                 return;
             }
 
             const lineNumber = lineIndex + 1;
-
-            const numberedListMatches = markupNumberedList.exec(line);
-            if (numberedListMatches) {
-                addError(
-                    onError,
-                    lineNumber,
-                    numberedListMatches.input,
-                    numberedListMatches.input,
-                    [numberedListMatches.index + 1, numberedListMatches.input.length],
-                    {
-                        editColumn: numberedListMatches.index + 1,
-                        deleteCount: numberedListMatches.groups.marker.length,
-                        insertText: '1. ',
-                    },
-                );
-            }
+            replaceListType(line, lineNumber, markupNumberedList, '1. ');
+            replaceListType(line, lineNumber, markupBulletedList, '- ');
         });
     },
 };

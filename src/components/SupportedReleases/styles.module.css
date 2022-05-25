@@ -1,0 +1,26 @@
+.release-state-security {
+  background-color: #239cae;
+}
+
+.release-state-future {
+  background-color: #9cbd50;
+}
+
+.release-state-current {
+  background-color: #f98012;
+}
+
+.release-state-future-security {
+  background-color: #316d5e;
+  color: white;
+}
+
+.release-state-past-stables {
+  background-color: #686566;
+  color: white;
+}
+
+.release-state-past-security {
+  background-color: #282828;
+  color: white;
+}

@@ -43,6 +43,10 @@
       "type": "html",
       "value": "<hr>"
     },
-    "release-notes"
+    {
+        "label": "Release notes",
+        "type": "link",
+        "href": "/general/releases/4.0"
+    }
   ]
 }
