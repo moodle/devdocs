@@ -129,6 +129,7 @@ lable
 langindex
 lastaccess
 lastruntime
+locallib
 loglevel
 mainmenu
 manageentries
@@ -185,6 +186,7 @@ protectusernames
 qeupgradehelper
 quizaccess
 randomsamatch
+renamedclasses
 returntype
 riskbitmask
 ruleset
@@ -209,6 +211,7 @@ tasklogs
 temptables
 themers
 thirdparty
+thirdpartylibs
 tinymce
 todos
 toggleall
@@ -232,3 +235,4 @@ workshopform
 wwwroot
 xcodeproj
 xcworkspace
+xmldb

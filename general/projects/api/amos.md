@@ -146,7 +146,7 @@ AMOS BEGIN
 AMOS END
 ```
 
-In this example, there are three instuctions to be done. The line with `MOV` ('move') command instructs AMOS to rename the string 'description' defined in workshop to the new identifier 'intro'. The second command `CPY` ('copy') orders to create new string in the workshop module with the identifier 'submission' and the value of that string shall be taken from the `$string[['submission']` in the module assignment. If such string already exists in any language, `CPY` will not replace it. The third command is used for migrating legacy HTML help files into ordinary strings. It tells AMOS to add `new $string['forumtype_hlp']` in every language, using the content of the help file `forum/forumtype.html` as the initial value.
+In this example, there are three instuctions to be done. The line with `MOV` ('move') command instructs AMOS to rename the string 'description' defined in workshop to the new identifier 'intro'. The second command `CPY` ('copy') orders to create new string in the workshop module with the identifier 'submission' and the value of that string shall be taken from the `$string['submission']` in the module assignment. If such string already exists in any language, `CPY` will not replace it. The third command is used for migrating legacy HTML help files into ordinary strings. It tells AMOS to add `new $string['forumtype_hlp']` in every language, using the content of the help file `forum/forumtype.html` as the initial value.
 
 The script syntax is defined as follows. Note that amosbler keywords are case sensitive so must be upper-case. In pseudo-regexp, the valid AMOS script is defined as:
 

@@ -6,6 +6,9 @@ tags:
 description: Integrate your preferred Antivirus tool to with Moodle to automatically check new file uploads.
 ---
 
+<!-- cspell:ignore scanmyfile -->
+<!-- cspell:ignore clamav -->
+
 import { Since } from '@site/src/components';
 
 <Since
@@ -49,6 +52,7 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
  |   `-- scanner_test.php
  `-- version.php
 ```
+
 </details>
 
 Some of the important files for the antivirus plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
@@ -79,7 +83,6 @@ if ($ADMIN->fulltree) {
     pluginname="scanmyfile"
     example={settingsExample}
 />
-
 
 ### lang/en/antivirus_scanmyfile.php
 
