@@ -19,10 +19,14 @@
     "mdlint-all": "markdownlint-cli2 '{docs,general}/**/*.md' '*.md'",
     "mdfix": "markdownlint-cli2-fix",
     "mdfix-all": "markdownlint-cli2-fix '{docs,general}/**/*.md' '*.md'",
+    "mdxlint": "markdownlint-cli2-config .markdownlint/mdx/.markdownlint-cli2.cjs",
+    "mdxlint-all": "markdownlint-cli2-config .markdownlint/mdx/.markdownlint-cli2.cjs '{docs,general}/**/*.mdx' '*.mdx'",
+    "mdxfix": "markdownlint-cli2-config .markdownlint/mdx/fix/.markdownlint-cli2.cjs",
+    "mdxfix-all": "markdownlint-cli2-config .markdownlint/mdx/fix/.markdownlint-cli2.cjs '{docs,general}/**/*.mdx' '*.mdx'",
     "migrate": "scripts/wikimedia-fetch.js migrate",
     "lint": "yarn mdlint-all",
     "prepare": "husky install",
-    "spell": "cspell '*.md' '**/*.md' 'docs/*.md' 'docs/**/*.md' 'general/*.md' 'general/**/*.md'"
+    "spell": "cspell '*.md' '*.mdx' '**/*.md' '**/*.mdx' 'docs/*.md' 'docs/*.mdx' 'docs/**/*.md' 'docs/**/*.mdx' 'general/*.md' 'general/*.mdx' 'general/**/*.md' 'general/**/*.mdx'"
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^0.10.0",
