@@ -36,6 +36,23 @@ const remarkPlugins = [
     require('mdx-mermaid'),
 ];
 
+const isDeployPreview = !!process.env.NETLIFY && process.env.CONTEXT === 'deploy-preview';
+
+const getBaseUrl = () => {
+    if (typeof process.env.baseUrl !== 'undefined') {
+        // Respect the env.
+        return process.env.baseUrl;
+    }
+
+    if (isDeployPreview) {
+        // Netlify hosts on '/'.
+        return '/';
+    }
+
+    // Default is currently '/devdocs'.
+    return '/devdocs/';
+};
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'Moodle',
@@ -43,7 +60,7 @@ const config = {
     // eslint-disable-next-line spaced-comment
     //url: 'https://develop.moodle.org',
     url: process.env?.url || 'https://moodle.github.io',
-    baseUrl: process.env?.baseUrl || '/devdocs/',
+    baseUrl: getBaseUrl(),
     trailingSlash: false,
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -76,9 +93,11 @@ const config = {
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
-                gtag: {
-                    trackingID: 'G-L9EE8RW5B1',
-                },
+                gtag: !isDeployPreview
+                    ? {
+                        trackingID: 'G-L9EE8RW5B1',
+                    }
+                    : undefined,
             }),
         ],
     ],
@@ -119,7 +138,7 @@ const config = {
         [
             '@docusaurus/plugin-pwa',
             {
-                debug: true,
+                debug: isDeployPreview,
                 offlineModeActivationStrategies: [
                     'appInstalled',
                     'standalone',

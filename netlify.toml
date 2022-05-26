@@ -1,0 +1,11 @@
+[build.environment]
+  NETLIFY_USE_YARN = "true"
+  YARN_VERSION = "1.22.5"
+  NODE_VERSION = "16"
+
+[[plugins]]
+package = "netlify-plugin-cache"
+  [plugins.inputs]
+  paths = [
+    "node_modules/.cache/webpack",
+  ]

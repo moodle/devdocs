@@ -133,7 +133,6 @@ function SecuritySupportExpiredWarning({ versionData }) {
 
 function VersionedSupportWarning({ versionData, moodleVersion }) {
     const releaseStatus = getReleaseStatus(versionData, moodleVersion);
-    console.log(releaseStatus);
 
     if (releaseStatus === 'current') {
         // Still in general support.
