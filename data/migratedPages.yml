@@ -1154,8 +1154,8 @@ Moodle_App_Scripts:_gulp_push:
 - filePath: "/docs/moodleapp/development/scripts/gulp-push.md"
   slug: "/docs/moodleapp/development/scripts/gulp-push"
 Moodle_App_Translation:
-- filePath: "/docs/moodleapp/translation.md"
-  slug: "/docs/moodleapp/translation"
+- filePath: "/general/development/process/translation/moodleapp.md"
+  slug: "/general/development/process/translation/moodleapp"
 Moodle_Development_kit:
 - filePath: "/general/development/tools/mdk.md"
   slug: "/general/development/tools/mdk"
