@@ -41,5 +41,5 @@ There are admin settings to enforce a minimum level of complexity for passwords,
 ## See also
 
 - [Security](../security)
-- [Coding](https://docs.moodle.org/dev/Coding)
+- [Coding](/general/development/policies)
 - [Brute force attack in OWASP](https://owasp.org/www-community/attacks/Brute_force_attack)

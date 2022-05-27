@@ -112,4 +112,4 @@ Follow the [Output functions](https://docs.moodle.org/dev/Output_functions) link
 ## See also
 
 - [Security](../security)
-- [Coding](https://docs.moodle.org/dev/Coding)
+- [Coding](/general/development/policies)

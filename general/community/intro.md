@@ -59,7 +59,7 @@ See our [Process](./development/process.md) document for full information on our
 
 ## Coding Standards
 
-Over time we have distilled our best practice in writing code down into our [Coding Guide](https://docs.moodle.org/dev/Coding).  These rules cover the formatting and layout of all our code to make it consistent across the code base. If you plan to write Moodle code, you need to read it thoroughly.
+Over time we have distilled our best practice in writing code down into our [Coding Guide](/general/development/policies).  These rules cover the formatting and layout of all our code to make it consistent across the code base. If you plan to write Moodle code, you need to read it thoroughly.
 
 ## Plugins and APIs
 

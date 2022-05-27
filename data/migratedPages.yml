@@ -25,6 +25,9 @@ Bug_triage:
 CodeSniffer:
 - filePath: "/general/development/tools/phpcs.md"
   slug: "/general/development/tools/phpcs"
+Coding:
+- filePath: "/general/development/policies.md"
+  slug: "/general/development/policies"
 Coding_style:
 - filePath: "/general/development/policies/codingstyle/index.md"
   slug: "/general/development/policies/codingstyle"
@@ -1193,8 +1196,8 @@ Roadmap:
 - filePath: "/general/community/roadmap.md"
   slug: "/general/community/roadmap"
 Security:
-- filePath: "/general/development/policies/codingstyle/security.md"
-  slug: "/general/development/policies/codingstyle/security"
+- filePath: "/general/development/policies/security.md"
+  slug: "/general/development/policies/security"
 Security:Brute-forcing_login:
 - filePath: "/general/development/policies/security/bruteforcing-login.md"
   slug: "/general/development/policies/security/bruteforcing-login"

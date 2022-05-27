@@ -216,7 +216,7 @@ We recommend that you follow the [Output functions](https://docs.moodle.org/dev/
 ## See also
 
 - [Security issue process](../process#security-issues)
-- [Coding](https://docs.moodle.org/dev/Coding)
+- [Coding](/general/development/policies)
 - The [2010 CWE/SANS Top 25 Most Dangerous Programming Errors](http://cwe.mitre.org/top25/) - this is a generic list of common security mistakes, produced by a group of security experts. The above Moodle-specific guidelines cover most of these general points.
 - [PHP Security Cheat Sheet](https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet)
 <!--cspell:ignore OWASP -->

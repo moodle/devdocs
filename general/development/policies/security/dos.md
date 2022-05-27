@@ -40,5 +40,5 @@ However, most of the really expensive operations in Moodle (for example completi
 ## See also
 
 - [Security](../security)
-- [Coding](https://docs.moodle.org/dev/Coding)
+- [Coding](/general/development/policies)
 - [Denial of service in OWASP](https://owasp.org/www-community/attacks/Denial_of_Service)
