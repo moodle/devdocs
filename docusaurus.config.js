@@ -39,14 +39,14 @@ const remarkPlugins = [
 const isDeployPreview = !!process.env.NETLIFY && process.env.CONTEXT === 'deploy-preview';
 
 const getBaseUrl = () => {
+    if (process.env.NETLIFY) {
+        // Netlify hosts on '/', always.
+        return '/';
+    }
+
     if (typeof process.env.baseUrl !== 'undefined') {
         // Respect the env.
         return process.env.baseUrl;
-    }
-
-    if (isDeployPreview) {
-        // Netlify hosts on '/'.
-        return '/';
     }
 
     // Default is currently '/devdocs'.
