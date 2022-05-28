@@ -23,11 +23,8 @@ const sidebars = {
         'introduction',
         {
             label: 'Getting started',
-            type: 'category',
-            items: [
-                'gettingstarted/quickstart',
-                'gettingstarted/requirements',
-            ],
+            type: 'link',
+            href: '/general/development/gettingstarted',
         },
         {
             label: 'Developer guides',

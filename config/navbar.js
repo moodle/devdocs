@@ -32,29 +32,24 @@ const navbar = {
     items: [
         {
             type: 'doc',
-            docId: 'gettingstarted/quickstart',
+            docId: 'apis',
             position: 'left',
             label: 'Guides',
         },
         {
-            to: '/general/community',
+            to: '/general/community/contribute',
             label: 'Community',
-            position: 'left'
+            position: 'left',
+        },
+        {
+            to: '/general/development/gettingstarted',
+            label: 'Coding',
+            position: 'left',
         },
         {
             to: '/general/development/process',
             label: 'Process',
-            position: 'left'
-        },
-        {
-            to: '/general/development/policies/codingstyle',
-            label: 'Policies',
-            position: 'left'
-        },
-        {
-            to: '/general/development/tools',
-            label: 'Tools',
-            position: 'left'
+            position: 'left',
         },
 
         // Right.
