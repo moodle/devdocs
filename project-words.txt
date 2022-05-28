@@ -4,6 +4,7 @@ AWST
 Atto
 Badgr
 Bangma
+Bugcrowd
 CURLOPT
 Choicegroup
 Docsearch

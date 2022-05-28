@@ -37,7 +37,7 @@ If all the principles are fulfilled, the answer for "should I integrate this?" i
 
 ## Component lead review process
 
-Please see the [Component Lead Review](https://docs.moodle.org/dev/Component_Lead_Review) documentation for further information on the CLR process.
+Please see the [Component Lead Review](/general/development/process/integration/clr) documentation for further information on the CLR process.
 
 ## Integration Review Process
 

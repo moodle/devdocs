@@ -34,6 +34,9 @@ Communication_Between_Components:
 Community_credits:
 - filePath: "/general/community/credits/moodleorg.md"
   slug: "/general/community/credits/moodleorg"
+Component_Lead_Review:
+- filePath: "/general/development/process/integration/clr.md"
+  slug: "/general/development/process/integration/clr"
 Contributing_a_translation:
 - filePath: "/general/development/process/translation/contributing.md"
   slug: "/general/development/process/translation/contributing"
@@ -64,6 +67,9 @@ Developer_meeting_February_2022:
 Developer_meetings:
 - filePath: "/general/community/meetings.md"
   slug: "/general/community/meetings"
+Docs_required_issues_process:
+- filePath: "/general/development/process/release/docsrequiredissues.md"
+  slug: "/general/development/process/release/docsrequiredissues"
 Documentation_credits:
 - filePath: "/general/community/credits/documentation.md"
   slug: "/general/community/credits/documentation"
@@ -1138,12 +1144,21 @@ Moodle_App_Translation:
 Moodle_Development_kit:
 - filePath: "/general/development/tools/mdk.md"
   slug: "/general/development/tools/mdk"
+Moodle_Penetration_Testing:
+- filePath: "/general/development/process/security/penetration-testing.md"
+  slug: "/general/development/process/security/penetration-testing"
 Moodle_libraries_credits:
 - filePath: "/general/community/credits/thirdpartylibs.md"
   slug: "/general/community/credits/thirdpartylibs"
 Moodle_research:
 - filePath: "/general/community/research.md"
   slug: "/general/community/research"
+Moodle_security_procedures:
+- filePath: "/general/development/process/security.md"
+  slug: "/general/development/process/security"
+New_docs_version_process:
+- filePath: "/general/development/process/release/newuserdocs.md"
+  slug: "/general/development/process/release/newuserdocs"
 Overview:
 - filePath: "/general/community/intro.md"
   slug: "/general/community"
