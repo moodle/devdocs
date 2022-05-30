@@ -1,6 +1,6 @@
 ---
 title: Code of conduct
-draft: true
+documentationDraft: true
 ---
 
 Moodle is in the process of updating and modernising its Code of Conduct.

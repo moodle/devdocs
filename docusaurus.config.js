@@ -58,7 +58,7 @@ const config = {
     title: 'Moodle',
     tagline: '(Un)official Developer Resources',
     // eslint-disable-next-line spaced-comment
-    //url: 'https://develop.moodle.org',
+    // url: 'https://develop.moodle.org',
     url: process.env?.url || 'https://moodle.github.io',
     baseUrl: getBaseUrl(),
     trailingSlash: false,
@@ -106,13 +106,16 @@ const config = {
     themeConfig: ({
         navbar: require('./config/navbar.js'),
 
-        // Customisation for the left sidebar:
-        autoCollapseSidebarCategories: true,
-        hideableSidebar: true,
-
         footer: require('./config/footer.js'),
         prism: require('./config/prism.js'),
         imageZoom: require('./config/imageZoom.js'),
+        docs: {
+            sidebar: {
+                // Customisation for the left sidebar:
+                autoCollapseCategories: true,
+                hideable: true,
+            },
+        },
     }),
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     plugins: [

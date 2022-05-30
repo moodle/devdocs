@@ -55,7 +55,7 @@ As you might guess, a large software project like Moodle with hundreds of contri
 
 Over time we have developed a number of well-defined processes for getting code in and out of Moodle and for governing everyone's workflow in a way that is fair and clear.
 
-See our [Process](./development/process.md) document for full information on our development processes, including how you can contribute to the project.
+See our [Process](../development/process.md) document for full information on our development processes, including how you can contribute to the project.
 
 ## Coding Standards
 
