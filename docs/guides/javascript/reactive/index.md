@@ -1,5 +1,9 @@
 ---
 title: Creating a reactive UI
+tags:
+  - Javascript
+  - Library
+  - Frontend
 ---
 
 <!-- cspell:ignore statemanager -->
@@ -113,7 +117,7 @@ Reactive interfaces can be used in many ways, but all of them are supported by 4
 
 ## Parts of a component
 
-- Implement components represent most of the work on building a reactive UI. In general, the Reactive Instance and the State Manager could be used as they are provided, and Mutations contain only the interactions with the server and the state. The components are where all the UI logic is implemented.
+_React Components_ represent most of the work on building a reactive UI. In general, the _Reactive Instance_ and the _State Manager_ can be used as they are provided, and Mutations contain only the interactions with the server and the state. The React Components are where all the UI logic is implemented.
 
 Components can do many things but, in general, they are not hard to implement because they are always structured in the same way and the BaseComponent class does all the hard part for us. There are only a few scenarios where a reactive component can be more complicated than a traditional JS undefined pattern code and, even in those cases, the maintainability is much better.
 
@@ -121,7 +125,7 @@ Let's take a look at the component anatomy.
 
 ### Extending the BaseComponent class
 
-All reactive UIs are object-oriented and all components extend the BaseComponent class. This means that the default component structure is:
+All reactive UIs are object-oriented and all components extend the BaseComponent class. This means that the default component structure is very simple. For example:
 
 <details>
   <summary>View example</summary>
@@ -153,9 +157,9 @@ import {YourComponent} from 'YOUR_PLUGIN/yourcomponent;
 (...)
 
 return new YourComponent({
-     element: document.getElementById(DOM_ELEMENT_ID),
-     reactive: reactiveInstance,
- (... other data your component needs ...)
+    element: document.getElementById(DOM_ELEMENT_ID),
+    reactive: reactiveInstance,
+    (... other data your component needs ...)
 });
 ```
 
@@ -166,7 +170,7 @@ In case no Reactive Instance is passed, the BaseComponent will try to inherit th
 
 ### Initialize a component from a mustache template
 
-Components are easy to embed in mustache files. To do so your class must have a static "init" method that could be called inside the {{#JS}}.
+Components are easy to embed in mustache files. To do so your class must have a static "init" method that could be called inside the `{{#js}}`.
 
 <Tabs>
   <TabItem value="component-view" label="Component class" default>
@@ -199,10 +203,22 @@ require(['YOUR_PLUGIN/local/yourthing/childcomponent'], function(component) {
 {{/js}}
 ```
 
+:::tip Generating unique id attributes
+
+You can use the `{{uniqid}}` Mustache helper within your code to help you generate a unique id for your HTML attributes and target them in your React component.
+
+Please note that the `{{uniqid}}` helper generates a single value each time it is rendered, and you will need to combine it with other data to create a truly unique value. In this example the name of the plugin, and a static element `id` is used to generate a unique value.
+
+:::
+
   </TabItem>
 </Tabs>
 
+:::info
+
 The init method has an id as a first param to find the main DOM Element, but it also has a second one called `selectors`. This second param is an optional (but recommended) param any component can use. We will see how to use the selectors later but they are CSS selectors to find inner DOM elements in the main element. Bypassing as an init-param, any mustache can customize the default CSS selectors, which means the component is more reusable.
+
+:::
 
 ### The Component lifecycle hooks
 
@@ -215,11 +231,13 @@ To understand how a component works you need to understand the component lifecyc
 <Tabs>
   <TabItem value="create" label="create" default>
 
-Before the component is registered into the Reactive Instance. This method is used to define the main component attributes. At this moment the Component cannot interact with the Reactive Instance yet.
+**Called**: Before the component is registered to the Reactive Instance.
+
+This method is used to define the main component attributes. The Component cannot interact with the Reactive Instance yet as instantiation has not yet completed.
 
 #### The `create(descriptor)` hook
 
-The BaserComponent construct method will register the component in the Reactive Instance after some validations. However, it is quite common for components to have private attributes needed for the UI logic. Components can set their own attributes in the `create` hook method.
+The `BaseComponent` construct method will register the component in the Reactive Instance after some validations. It is quite common for components to have private attributes needed for the UI logic. Components can set their own attributes in the `create` hook method.
 
 The method will receive an object called `descriptor` which contains the data structure passed to the constructor. This method can define its own CSS selectors, classes, or any other constant needed, so defining it as the first method in the class is a good practice.
 
@@ -266,15 +284,18 @@ When create is called the component has an `element` attribute because it should
   </TabItem>
   <TabItem value="getWatchers" label="getWatchers">
 
+**Called**: when the Reactive Instance is registering the component.
+
 At the moment the Reactive Instance is registering the component and asking it what parts of the state it is watching. This method returns a list of state changes the component is watching and the methods that will handle those changes, something like an event listener for state changes.
 
 #### The `getWatchers(): array` hook
 
-This hook is called when the Reactive Instance is registering the component. At this moment the component can specify which state changes are watching and what methods will use to listen to those changes.
+At this moment the component can specify which state changes are watching and what methods will use to listen to those changes.
 
-The method should return an array of objects containing:
-watch: the state changes to watch. For example `user.username:update`
-handler: the class method to handle the state change event. For example `this._refreshUsername`.
+The method should return an array of objects containing, with each object containing:
+
+- watch: the state changes to watch. For example `user.username:update`
+- handler: the class method to handle the state change event. For example `this._refreshUsername`.
 
 <details>
   <summary>View examples</summary>
@@ -297,6 +318,7 @@ In case the component only watches changes in a specific element of a state coll
 
 ```js
 getWatchers() {
+    // The this.element is the component's main DOM element passed as a param in the construct method.
     const id = this.element.dataset.id;
     return [
         {watch: `cm[${id}]:created`, handler: this._createCm},
@@ -312,6 +334,8 @@ getWatchers() {
 
 :::note
 
+No need to manually `bind` or use the `call` function!
+
 All the components code is designed to maintain the `this` value constant. This means that handlers don't need any kind of bind because the Reactive Instance will do it before registering the component. The same happens with event listeners.
 
 :::
@@ -321,11 +345,13 @@ See the [Implement state watchers](#implementing-state-watchers) section for mor
   </TabItem>
   <TabItem value="stateReady" label="stateReady">
 
+**Called**: when the state data is initially loaded.
+
 When the reactive instance has the initial state loaded. Is important to note that this method will be called even if the component is registered after the initial state is loaded. For all purposes, this method is the equivalent of a page ready for components.
 
 #### The `stateReady(state)` hook
 
-The Reactive Instance will call this hook on the registered components when the state data is initially loaded. This is one of the most important hooks in the Component lifecycle. At this moment the component will get its state and it can ensure that the Reactive Instance is ready and its watchers are working.
+This is one of the most important hooks in the Component lifecycle. At this moment the component will get its state and it can ensure that the Reactive Instance is ready and its watchers are working.
 
 Even if the component is registered once the initial state is loaded, the Reactive Instance will trigger that method when the Component is fully registered and the page is ready. For all purposes, this method is the equivalent of a page-ready event for components.
 
@@ -334,12 +360,14 @@ Add event listeners to capture user interactions.
 Refresh parts of the main element using the state data.
 Delegate logic to subcomponents.
 
-Go to the section [BaseComponent helpers](#basecomponent-helpers) to learn about some useful methods for simplifying the stateReady code.
+The [BaseComponent helpers](#basecomponent-helpers) section will discuss this in more detail.
 
   </TabItem>
   <TabItem value="destroy" label="destroy">
 
-Before the component is unregistered. After this method is called the Component will no longer watch the state or capture the user interactions, even if the component's main DOM element is still present on the page.
+**Called**: before the component is unregistered.
+
+After this method is called the Component will no longer watch the state or capture the user interactions, even if the component's main DOM element is still present on the page.
 
 #### The `destroy()` hook
 
@@ -1197,7 +1225,7 @@ prepareFields(stateManager, updateName, fields) {
   </div>
 </details>
 
-## Drag&drop helper component
+## Drag & drop helper component
 
 Components can delegate parts of the logic to other components. In case a component wants to implement a draggable element or a drop-zone, it can delegate all the configuration stuff to a `DragDrop` component exported in the `core/reactive` module.
 
