@@ -54,6 +54,10 @@ module.exports = {
             title: 'Community',
             items: [
                 {
+                    label: 'Code of conduct',
+                    to: 'general/documentation/code-of-conduct',
+                },
+                {
                     label: 'General Developer Forum',
                     href: 'https://moodle.org/mod/forum/view.php?id=55',
                 },
@@ -69,6 +73,13 @@ module.exports = {
                 {
                     label: 'GitHub',
                     href: 'https://github.com/moodlehq',
+                },
+                {
+                    html: `
+                    <a href="https://www.netlify.com" target="_blank" rel="noreferrer noopener" aria-label="Deploys by Netlify">
+                        <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+                    </a>
+                    `,
                 },
             ],
         },
