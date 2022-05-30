@@ -13,6 +13,9 @@ Accessibility:
 Activity_modules:
 - filePath: "/docs/apis/plugintypes/mod/index.mdx"
   slug: "/docs/apis/plugintypes/mod"
+Analytics_API:
+- filePath: "/docs/apis/subsystems/analytics/index.md"
+  slug: "/docs/apis/subsystems/analytics/"
 Antivirus_plugins:
 - filePath: "/docs/apis/plugintypes/antivirus/index.mdx"
   slug: "/docs/apis/plugintypes/antivirus"

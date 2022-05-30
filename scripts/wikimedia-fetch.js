@@ -292,6 +292,16 @@ const fetchOneDoc = async (title, newPath, options) => {
         },
     ];
 
+    if (options.interactive) {
+        logger.warn('About to pass through transformation links.');
+
+        await inquirer.prompt([{
+            message: 'Press [enter] to continue.',
+            name: 'ready',
+            default: '',
+        }]);
+    }
+
     logger.info('Passing through transformation lints');
     for (const phaseData of phaseScripts) {
         const phasePath = path.resolve(path.join(
