@@ -178,13 +178,13 @@ Many of the analysis intervals included in Moodle assume that there is a fixed s
 
 ### Machine learning backends
 
-Documentation available in [Machine learning backends](https://docs.moodle.org/dev/Machine_learning_backends).
+Documentation available in [Machine learning backends](../../plugintypes/mlbackend/index.md).
 
 ## Design
 
 The system is designed as a Moodle subsystem and API. It lives in `analytics/`. All analytics base classes are located here.
 
-[Machine learning backends](https://docs.moodle.org/dev/Machine_learning_backends) is a new Moodle plugin type. They are stored in `lib/mlbackend`.
+[Machine learning backends](../../plugintypes/mlbackend/index.md) is a new Moodle plugin type. They are stored in `lib/mlbackend`.
 
 Uses of the analytics API are located in different Moodle components, being core (`lib/classes/analytics`) the component that hosts general purpose uses of the API.
 
@@ -196,7 +196,7 @@ An example of a possible extension would be a plugin with indicators that fetch 
 
 :::note Machine learning backends
 
-This section does not include Machine learning backend interfaces. See [Machine learning backends](https://docs.moodle.org/dev/Machine_learning_backends#Interfaces) for more information on these.
+This section does not include Machine learning backend interfaces. See [Machine learning backends](../../plugintypes/mlbackend/index.md#interfaces) for more information on these.
 
 :::
 
