@@ -64,8 +64,9 @@
 }
 
 h1 {
+  --ifm-h1-font-size: 4.5rem;
+
   font-family: "DM Sans Serif", sans-serif;
-  font-size: 72px;
   color: var(--ifm-color-contrasting);
   font-weight: normal;
 }

@@ -94,13 +94,13 @@ html {
   padding: 1rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .navbar {
     padding: var(--ifm-navbar-padding-vertical) var(--ifm-navbar-padding-horizontal);
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   .navbar-sidebar__brand {
     padding: var(--ifm-menu-link-padding-vertical) var(--ifm-menu-link-padding-horizontal);
   }
@@ -110,5 +110,11 @@ html {
     padding: var(--ifm-menu-link-padding-vertical) var(--ifm-menu-link-padding-horizontal);
     position: absolute;
     right: var(--ifm-menu-link-padding-horizontal);
+  }
+}
+
+@media (max-width: 576px) {
+  :root .markdown h1 {
+    --ifm-h1-font-size: 3rem;
   }
 }
