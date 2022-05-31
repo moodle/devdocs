@@ -111,9 +111,4 @@ html {
     position: absolute;
     right: var(--ifm-menu-link-padding-horizontal);
   }
-
-  .toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-    position: absolute;
-    right: calc(var(--ifm-menu-link-padding-horizontal) * 4);
-  }
 }
