@@ -9,7 +9,7 @@ tags:
 ## 8 weeks prior
 
 | # | Major | Minor | Task | Responsibility |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; |  | Recurring release epics review:<br/><ul><li>Review how previous deprecation epics are going and share about them.</li><li>Review how previous library review epics are going and share about them.</li></ul> | Integration Team | Integration Team |
 | 2. | &#10003; |  | Ensure we are running latest/good behat, phpunit and nodejs (npm) versions. | Integration Team |
 | 3. | &#10003; |  | Confirm external testers daily availability from -6w to release (internally with dev manager and then, externally, with contractors). They start in just 2 weeks! | Integration Team |
@@ -19,14 +19,14 @@ tags:
 ## 7 weeks prior
 
 | # | Major | Minor | Task | Responsibility |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; |  | Full demo of new code and sign-off for internal HQ projects. Decide which projects will be completed by the code freeze. | Head of LMS |
 | 2. | &#10003; |  | Check [closed qa_test_required-labelled issues](https://tracker.moodle.org/issues/?jql=labels%20%3D%20qa_test_required%20AND%20status%20%3D%20Closed) and create new QA tests as required. | Testing Maintainer |
 
 ## 6 weeks prior
 
 | # | Major | Minor | Task | Responsibility |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; |  | The [Continuous Integration](/general/development/process/integration-review#during-continuous-integration.2ffreeze.2fqa-period) period begins. Warn about it everywhere (telegram, exposed posts...).<br/>Rolling (on demand, beta, rc... all them together with stable weeklies) happens often (Tuesday & Friday are the usual days). All the team is on integration 100% since this week and until the end of continuous. | Integration Team |
 | 2. | &#10003; |  | Create the next "X.Y+1" (next dev) version in the Tracker (MDL and CONTRIB), so people can move delayed stuff to next major release if needed. | Integration Team |
 | 3. | &#10003; |  | Warn external developers about the impending code freeze in a post to the [General developer forum](http://moodle.org/mod/forum/view.php?id=55). ([example](https://moodle.org/mod/forum/discuss.php?d=225854)) | Development Manager |
@@ -35,7 +35,7 @@ tags:
 ## 5 weeks prior
 
 | # | Major | Minor | Task | Responsibility |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; |  | Confirm the code freeze by replying to the previous warning in the [General developer forum](http://moodle.org/mod/forum/view.php?id=55). | Development manager |
 | 2. | &#10003; |  | This week, once the freeze has happened at 11:00 UTC:<ul><li>The [Manage queues on normal](https://ci.moodle.org/view/Tracker/job/TR%20-%20Manage%20queues%20on%20normal/) job has to be disabled.</li><li>Immediately after that, the [Move awaiting issues to current integration](https://ci.moodle.org/view/Tracker/job/TR%20-%20Move%20awaiting%20issues%20to%20current%20integration/) job must be enabled and executed, only once, and all the candidate issues already @ integration will come to the current queue. All them did the freeze.</li><li>Once run, disable the job again to avoid executing it by mistake.</li><li>Once the previous job has ended, the [Manage queues on continuous](https://ci.moodle.org/view/Tracker/job/TR%20-%20Manage%20queues%20on%20continuous/) job, in charge of managing the integration queues after freeze, will be enabled (until the end of on-sync). It performs some tasks like moving important (must fix, qa, security...) issues to the current integration queue and also keep if fed by priority when there are few issues remaining. **Don't forget** to configure the `releasedate` date to get it automatically holding issues the last week (instead of moving them to current integration) and also processing issues over the on-sync (after release) period.</li></ul> Irrespectively from any automation, issues can, also, be manually picked for integration until the post-release `On Sync` period ends, usually 2 weeks after release.<br/><br/>Review all the new features and improvements so, everything "unrelated" with the release, is given the `integration_held` label. That means that will be ignored unless there is an [unhold request process](/general/development/process/integration-review#during-continuous-integration.2ffreeze.2fqa-period) started on them.<br/><br/>Dev leaders promptly vote on held issues labelled with `unhold_requested` label and decide whether they can be allowed to break the freeze. | Integration Team |
 | 3. | &#10003; |  | Prepare a fresh installation of the [QA site](http://qa.moodle.net) based on the beta code to make sure the site is not affected by incremental upgrade steps during the development cycle. | QA Master Site Maintainer |
@@ -45,7 +45,7 @@ tags:
 ## 4 weeks prior
 
 | # | Major | Minor | Task | Responsibility |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; |  | Start reviewing fixed issues and add the release_notes label to all issues to be listed in the release notes. | Development Manager |
 | 2. | &#10003; |  | Review requirements for adding user tours for new features in the upcoming release (clone of [MDL-72783](https://tracker.moodle.org/browse/MDL-72783)). Review existing tours and remove very old ones (clone of [MDL-72781](https://tracker.moodle.org/browse/MDL-72781)) | Development Manager |
 | 3. | &#10003; |  | Beta release (The Moodle release tool - `mdlrelease` - manages it): Release normal weeklies but with these changes in the master branch being considered all the time, until we are feature complete (can happen @ -4w - ideally - but also later): <ul><li>`version.php`: Move to `$maturity = MATURITY_BETA` and `$release = 'X.Ybeta (Build:xxxxxxxx)'`</li><li>tag git repo with: `vX.Y.0-beta` (and `MOODLE_XY_BETA` as description and Git tag)</li><li>Automatic: Confirm packages are available under [download.moodle.org](https://download.moodle.org) (and windows).</li><li>Once the beta is available create the `testing matrix for X.Y.0` and share it @ HQ & Dev. chat.</li><li>(Optionally) Announce Beta release in forums (ideally once packages are available).</li></ul> | Integration Team |
@@ -64,7 +64,7 @@ tags:
 ## 3 weeks prior
 
 | # | Major | Minor | Task | Responsibility |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; |  | Ask developers to begin QA tests marked [`external_skipped`](https://tracker.moodle.org/issues/?filter=22055) then [`test_server_required` tests](https://tracker.moodle.org/issues/?filter=22055&jql=filter%20%3D%20%22Current%20QA%20cycle%20filter%22%20AND%20status%20%3D%20Open%20AND%20labels%20%3D%20test_server_required%20) and [`credentials_required` tests](https://tracker.moodle.org/issues/?filter=22055&jql=filter%20%3D%20%22Current%20QA%20cycle%20filter%22%20AND%20status%20%3D%20Open%20AND%20labels%20%3D%20credentials_required). | Development Manager |
 | 2. | &#10003; |  | Create new en and de Moodle Docs version wikis. | Moodle Docs Maintainer |
 | 3. | &#10003; |  | Go through all points listed under 3 weeks prior in [New docs version process](/general/development/process/release/newuserdocs). | Community Manager |
@@ -74,7 +74,7 @@ tags:
 ## 2 weeks prior
 
 | # | Major | Minor | Task | Responsibility |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; |  | Check the number of open QA tests. Depending on the amount of work involved, encourage HQ developers to assist from the start of the week or later in the week in order to achieve the target of 100% pass rate by the end of the week. | Development Manager |
 | 2. | &#10003; |  | Create MDLSITE issue to ensure all [prototype.moodle.net](https://prototype.moodle.net) sites which are no longer relevant (part of release) are removed from [prototype.moodle.net](https://prototype.moodle.net) | Development Manager |
 | 3. | &#10003; | &#10003; | Merge [fixes from `en_fix`](https://tracker.moodle.org/issues/?jql=summary%20~%20%22en_fix%22%20order%20by%20createdDate%20desc) pack and then integrate them. | AMOS Maintainer |
@@ -86,7 +86,7 @@ tags:
 ## 1 week prior
 
 | # | Major | Minor | Task | Responsibility |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; |  | Clone as many filters as needed in the Tracker, modifying them to point to the new, upcoming, branch (keeping same perms, title...). | Integration Team |
 | 2. | &#10003; | &#10003; | Create new minor version X.Y.Z+1 in the Tracker (MDL and CONTRIB). Archive any version > 6 months old, verifying that [there aren't open issues using that version](https://tracker.moodle.org/issues/?jql=project%3DMDL%20AND%20status%20!%3D%20Closed%20AND%20fixVersion%20%3D%20VERSION_TO_ARCHIVE). | Integration Team |
 | 3. | &#10003; |  | Clone [MDL-71583](https://tracker.moodle.org/browse/MDL-71583) and bump all versions, requires and dependencies along all plugins in codebase to planned release dates. | Integration Team |
@@ -100,6 +100,7 @@ tags:
 | 11. | &#10003; |  | Upgrade [moodle.org](https://moodle.org/) to beta release |  |
 | 12. | &#10003; |  | Prepare pull requests for CI Repositories:<ul><li>`MR1`: Create a new version, with unit tests, in Jobs repository ([see example from 3.11 release](https://git.in.moodle.com/integration/nightlyjobs/merge_requests/24))</li><li>`MR2`: Create a new symlink for the version in [moodle-ci-runner](https://github.com/moodlehq/moodle-ci-runner) repository ([see example from 3.11 release](https://github.com/moodlehq/moodle-ci-runner/pull/41))</li><li>`MR3`: Configure CIs to skip language upgrade in [moodle-ci-runner](https://github.com/moodlehq/moodle-ci-runner) repository ([see example from 3.10 release](https://github.com/moodlehq/moodle-ci-runner/pull/35))</li><li>`MR4`: Configure CIs to stop skipping language upgrade in [moodle-ci-runner](https://github.com/moodlehq/moodle-ci-runner) repository for after on-sync ([see example from 3.10 release](https://github.com/moodlehq/moodle-ci-runner/pull/40)) -- **Note**: This change should be based on the previous and only applied when the lang packs corresponding to the version being released are available.</li></ul> | Integration Team |
 | 13. | &#10003; |  | Go through all points listed under 1 week prior in [New docs version process](/general/development/process/release/newuserdocs). | Community Manager |
+| 14. | &#10003; | &#10003; | Update the `BRANCHLIST` and `VERSIONLIST` in the [JSDoc](https://github.com/moodle/jsdoc) and [PHPDoc](https://github.com/moodle/phpdoc) repositories with the list of supported versions. These are built on a Sunday so this should be done in the final week before release. | Integration Team |
 
 ## Releasing
 
@@ -112,7 +113,7 @@ This should happen immediately before the next integration cycle begins on Monda
 :::
 
 | # | Major | Minor | Task | Responsibility |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; | &#10003; | Check list:<ul><li>Make sure there are no real blockers introduced in the last weekly (install, upgrade...).</li><li>Confirm that the latest [`en_fix` changes](https://tracker.moodle.org/issues/?jql=summary%20~%20%22en_fix%22%20order%20by%20createdDate%20desc) have been generated and integrated.</li><li>Verify that [all security issues](https://tracker.moodle.org/issues/?jql=text%20~%20%22%2BPrepare%20%2Bsecurity%20%2Badvisories%20%2Bfriends%22%20ORDER%20BY%20updated%20DESC) have been integrated and there are not leftovers in the security area (but for delayed majors, where some security issues may have been introduced along the delay and they will be postponed to next minors).</li></ul> | Integration Team |
 | 2. | &#10003; | &#10003; | Verify all unit tests and integration tests have passed (check all current CI servers in use). | Integration Team |
 | 3. | &#10003; |  | Verify QA tests have passed. | Integration Team |
@@ -137,7 +138,7 @@ Usually on Monday
 :::
 
 | # | Major | Minor | Task | Responsibility |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; | &#10003; | The execution of `moodle-package-extract-and-postprocess X` script may be needed if the releases **are not going to be published on Monday** but another weekday (X is the weekday, (1-7) starting in Monday).<br/>By default it happens automatically around 09:00 AM Perth/Australia time (check emails then). | Integration Team |
 | 2. | &#10003; | &#10003; | Verify release status, download pages and windows packages. | Integration Team |
 | 3. | &#10003; | &#10003; | If needed, modify the downloads cfg script (`serverscripts`) to decide about branches status, master visibility and windows availability. Push changes, will be auto-deployed in a few minutes. | Integration Team |
@@ -157,7 +158,7 @@ Usually on Monday
 ## 1 week after
 
 | # | Major | Minor | Task | Responsibility |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; | &#10003; | Publish the X.Y+ packages for download.moodle.org (should be automatic once weeklies are packaged).<br/>For major releases, within the on-sync period, master packages will be generated using the prerelease.sh script (`--type on-sync`). That guarantees `XY_STABLE` and `master` versions are kept the same. The last week, when leaving the on-sync period, master package will be generated normally (implicit `--type weekly`), so versions will diverge and dev can continue separately from that point. | Integration Team |
 | 2. | &#10003; | &#10003; | Update the version.php in git to be `X.Y.Z+` during the next weekly integration process | Integration Team |
 | 3. |&#10003; | &#10003; | Create a new release notes page for the next minor versions (using the [release notes template](https://docs.moodle.org/dev/Release_notes_template).) Add note to top of relevant version page about security support. | Development Manager |
@@ -169,7 +170,7 @@ Usually on Monday
 ## 2 weeks after
 
 | # | Major | Minor | Task | Responsibility |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; |  | Once the "On Sync" period ends:<ul><li>Confirm that versions (`XY_STABLE` and `master`) diverged properly the last on-sync week. If not, proceed to it by manually bumping master the version to the current date @ integration.git.</li><li>Disable the ["Manage queues on continuous"](https://ci.moodle.org/view/Tracker/job/TR%20-%20Manage%20queues%20on%20continuous/) job. It has served us well.</li><li>The [`integration_held`](https://tracker.moodle.org/issues/?filter=13669) label will be removed from all issues awaiting integration, so they will be, automatically (see next point), be moved to the current integration queue. Send an `unholding + rebase` message to all those issues.</li><li>Enable the ["Manage queues on normal"](https://ci.moodle.org/view/Tracker/job/TR%20-%20Manage%20queues%20on%20normal/) job. It will control the queues over the coming months, until the next freeze.</li><li>In the [Jenkins CI server](https://ci.moodle.org/) enable all the jobs corresponding to the new branch (`B-XYZ` view) that were created on packaging day.</li></ul> | Integration Team |
 | 2. | &#10003; |  | The discussion about environmental requirements for next X.Y+1 major release ([MDL-71747](https://tracker.moodle.org/browse/MDL-71747)) will end and the issue will be resolved **immediately**. A new issue, about the requirements for the next `X.Y+2` major release will be created at the same time by cloning the previous one and dragging any non-resolved detail (due date = 3w after release). | Integration Team |
 | 3. | &#10003; |  | Ensure [Language pack for master (X.Y+1)](https://download.moodle.org/langpack/X.Y+1/) is available and merge the pull request MR4 for stop skipping the language upgrade in [moodle-ci-runner](https://github.com/moodlehq/moodle-ci-runner) repository. | Integration Team |
@@ -178,7 +179,7 @@ Usually on Monday
 ## 1 month after
 
 | # | Major | Minor | Task | Responsibility |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; |  | Remove, in CI servers, all the jobs and views corresponding to branches which support has ended completely. (there is a [maintenance job](https://ci.moodle.org/view/maintenance/job/MAINT%20-%20Remove%20all%20jobs%20from%20view/) to perform the operation). | Integration Team |
 | 2. | &#10003; |  | Upgrade all the Moodle CI sites to recent major release by configuring the "Moodle CI Auto Upgrade" job in all them. | Integration Team |
 | 3. | &#10003; |  | Confirm that there isn't any remaining [`integration_held`](https://tracker.moodle.org/issues/?filter=13669) issue from latest release, proceeding to un-hold them immediately. Note that there may exist [other "held" issues](https://tracker.moodle.org/issues/?filter=13669&jql=project%20%3D%20MDL%20AND%20labels%20in%20(integration_held)%20ORDER%20BY%20%22Integration%20priority%22%20DESC%2C%20priority%20DESC%2C%20votes%20DESC%2C%20%22Last%20comment%20date%22%20ASC), unrelated with latest release. This process step does not affect them. | Integration Team |
