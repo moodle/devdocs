@@ -199,6 +199,10 @@ const sidebars = {
                     dirName: 'development/policies',
                 },
             ],
+            link: {
+                type: 'doc',
+                id: 'development/policies',
+            },
         },
         {
             label: 'Tools',

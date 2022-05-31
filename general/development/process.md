@@ -181,7 +181,7 @@ Develop your code on an open Git repository, like github.com. That enables peopl
 
 Coverage with automated tests ([PHPUnit](https://docs.moodle.org/dev/PHPUnit) or [Behat integration](https://docs.moodle.org/dev/Behat)) is mandatory for new features.
 
-It is essential that your code follows the [Moodle Coding Guide](https://docs.moodle.org/dev/Coding).
+It is essential that your code follows the [Moodle Coding Guide](/general/development/policies).
 
 ### Submit your code for peer review
 
@@ -223,7 +223,7 @@ Bugs should normally be fixed on all the supported stable branches that are affe
 
 Develop your fix and push the change to an open git repository, for example on github.com. See also [Git for developers](https://docs.moodle.org/dev/Git_for_developers)
 
-It is essential that your code follows the [Moodle Coding Guide](https://docs.moodle.org/dev/Coding).
+It is essential that your code follows the [Moodle Coding Guide](/general/development/policies).
 
 You will need to push one commit for each branch the fix needs to be applied to. Often people use branch names like `MDL-12345-31_brief_name` so it is clear what each branch is. [git cherry-pick](http://kernel.org/pub/software/scm/git/docs/git-cherry-pick.html) can help with replicating the fix onto different branches.
 

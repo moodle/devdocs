@@ -114,5 +114,5 @@ Some examples to help guide how to fix these issues:
 ## See also
 
 - [Security](../security)
-- [Coding](https://docs.moodle.org/dev/Coding)
+- [Coding](/general/development/policies)
 - [OWASP Cheat Sheet Series: Cross-Site Request Forgery Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)

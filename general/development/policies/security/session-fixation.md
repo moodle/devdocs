@@ -31,5 +31,5 @@ This page forms part of the [Moodle security guidelines](../security).
 ## See also
 
 - [Security](../security)
-- [Coding](https://docs.moodle.org/dev/Coding)
+- [Coding](/general/development/policies)
 - [Session fixation in OWASP](https://owasp.org/www-community/attacks/Session_fixation)

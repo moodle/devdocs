@@ -39,7 +39,7 @@ When considering the goals above, each situation requires an examination of the 
 Much of the existing Moodle code may not follow all of these guidelines - we continue to upgrade this code when we see it.
 :::
 
-For details about using the Moodle API to get things done, see the [coding guidelines](https://docs.moodle.org/dev/Coding).
+For details about using the Moodle API to get things done, see the [coding guidelines](/general/development/policies).
 
 ### Useful tools
 
@@ -1878,7 +1878,7 @@ This document was drawn from the following sources:
 - [Javascript Coding Style](https://docs.moodle.org/dev/Javascript/Coding_Style)
 - [CSS Coding Style](https://docs.moodle.org/dev/CSS_Coding_Style)
 - [SQL coding style](https://docs.moodle.org/dev/SQL_coding_style)
-- [Coding](https://docs.moodle.org/dev/Coding)
+- [Coding](/general/development/policies)
 - [CodeSniffer](../../policies/codingstyle/index.md)
 - [Code Checker plugin](https://moodle.org/plugins/local_codechecker)
 - [Accessibility coding guidelines](./accessibility#Moodle-related-accessibility-coding-guidelines)

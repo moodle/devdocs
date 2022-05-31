@@ -57,4 +57,4 @@ Moodle also allows users to be put in groups. Different groups may have access t
 ## See also
 
 - [Security](../security)
-- [Coding](https://docs.moodle.org/dev/Coding)
+- [Coding](/general/development/policies)

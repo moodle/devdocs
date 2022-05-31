@@ -47,4 +47,4 @@ This is not a problem that can be solved with technology.
 ## See also
 
 - [Security](../security)
-- [Coding](https://docs.moodle.org/dev/Coding)
+- [Coding](/general/development/policies)

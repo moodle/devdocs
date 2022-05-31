@@ -35,4 +35,4 @@ Moodle now has enough capabilities that it can be configures to comply with vari
 ## See also
 
 - [Security](../security)
-- [Coding](https://docs.moodle.org/dev/Coding)
+- [Coding](/general/development/policies)

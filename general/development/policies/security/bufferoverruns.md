@@ -36,4 +36,4 @@ There is very little that Moodle can do about this.
 ## See also
 
 - [Security](../security)
-- [Coding](https://docs.moodle.org/dev/Coding)
+- [Coding](/general/development/policies)
