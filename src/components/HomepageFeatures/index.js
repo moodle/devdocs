@@ -25,13 +25,13 @@ import Link from '@docusaurus/Link';
 const FeatureList = [
     {
         link: '/general/development/gettingstarted',
-        title: 'Quick start',
+        title: 'Getting started',
         Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
         description: (
             <>
                 New to Moodle Development?
                 <br />
-                Read our quick start to Moodle Development.
+                Our quick start guide helps you take your first steps.
             </>
         ),
         linkText: 'Get started',
@@ -42,34 +42,54 @@ const FeatureList = [
         Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
         description: (
             <>
-                Learn about our coding standards, styles, and conventions.
+                Read our style guidelines, including coding standards and naming conventions.
             </>
         ),
-        linkText: 'Learn more',
+        linkText: 'View standards',
     },
     {
         link: '/docs/apis',
-        title: 'Read our API Guides',
+        title: 'API guides',
         Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
         description: (
             <>
-                Want to learn more about our APIs?
-                <br />
-                Learn about them through our series of deep-dive guides, complete with examples and explanations.
+                Learn all about Moodle APIs with our deep-dive guides, complete with examples and explanations.
             </>
         ),
-        linkText: 'Read API Guides',
+        linkText: 'Read API guides',
     },
     {
         link: '/general/community',
-        title: 'Join our community',
+        title: 'Developer community',
         Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
         description: (
             <>
-                Discover our community, and learn about our mission, and our roadmap.
+                Join the open source community that makes Moodle.
             </>
         ),
-        linkText: 'Discover Communities',
+        linkText: 'Discover communities',
+    },
+    {
+        link: '/general/releases',
+        title: 'Release notes',
+        Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+        description: (
+            <>
+                Technical specs and new features of Moodle releases, supported versions and more.
+            </>
+        ),
+        linkText: 'Check the release notes',
+    },
+    {
+        link: '/docs/moodleapp',
+        title: 'Moodle App',
+        Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+        description: (
+            <>
+                Interested in app development? Learn how to get started working with the Moodle App.
+            </>
+        ),
+        linkText: 'Learn more',
     },
 ];
 

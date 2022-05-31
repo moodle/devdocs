@@ -28,8 +28,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: 2rem;
-  margin-right: 2rem;
 }
 
 .card {
@@ -51,6 +49,12 @@
 
 .card-content {
   padding: 3rem;
+}
+
+.card-content h2 {
+  vertical-align: middle;
+  padding: 2rem 0;
+  height: 6rem;
 }
 
 .card-description {

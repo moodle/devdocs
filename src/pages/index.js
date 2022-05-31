@@ -27,16 +27,16 @@ function HomepageHeader() {
             <div className={styles['header-content-inner']}>
                 <div className={clsx(styles['header-title'])}>
                     <h1>
-                        Where Moodlers
-                        {' '}
-                        <em>hone their skills</em>
+                        Developer
+                        <br />
+                        <em>Resource centre</em>
                     </h1>
                 </div>
                 <div className={styles['header-right']}>
                     <div className={styles.copy}>
                         <p>
-                            Join hundreds of thousands of educators and trainers on Moodle,
-                            the world’s most customisable and trusted learning management system.
+                            Learn how to build, develop,
+                            and contribute to the world&apos;s most customisable Learning Management System.
                         </p>
                     </div>
                 </div>

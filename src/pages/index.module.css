@@ -8,11 +8,6 @@
   width: 100%;
 }
 
-.header-content-inner {
-  display: flex;
-  justify-content: space-between;
-}
-
 @media screen and (max-width: 996px) {
   .hero-banner {
     padding: 2rem;
@@ -28,29 +23,39 @@
 .header-content {
   padding-bottom: 4rem;
   padding-top: 6rem;
-  width: 100%;
-  margin-left: calc(50% - 610px);
-  max-width: var(--ifm-container-width-xl);
+}
+
+@media (max-width: 767px) {
+  .header-content {
+    padding-bottom: 2rem;
+  }
 }
 
 .header-title {
   flex: 0 0 56%;
 }
 
-.header-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex: 0 0 370px;
-  min-height: 100%;
-  margin-left: 60px;
-  margin-top: 0;
-  position: relative;
-  max-width: 500px;
-}
+@media (min-width: 1024px) {
+  .header-content-inner {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.copy {
-  padding: 2rem;
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 0 0 370px;
+    min-height: 100%;
+    margin-left: 60px;
+    margin-top: 0;
+    position: relative;
+    max-width: 500px;
+  }
+
+  .copy {
+    padding: 2rem;
+  }
 }
 
 @font-face {
@@ -68,4 +73,10 @@ h1 {
 h1 em {
   color: #f98012;
   font-style: normal;
+}
+
+@media (max-width: 1023px) {
+  h1 {
+    max-width: 600px;
+  }
 }

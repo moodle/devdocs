@@ -16,13 +16,18 @@
   --ifm-color-primary-lighter: #d96900;
   --ifm-color-primary-lightest: #f67600;
   --ifm-color-contrasting: #194866;
-  --ifm-font-family-monospace: "Open Sans";
   --ifm-font-family-base: "Open Sans";
   --ifm-navbar-height: 5.5rem;
   --ifm-navbar-padding-horizontal: 5.5rem;
   --ifm-navbar-padding-vertical: 0;
   --ifm-navbar-link-color: #194866;
   --ifm-navbar-link-hover-color: #bd5b00;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --ifm-navbar-sidebar-width: 100vw;
+  }
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -83,4 +88,32 @@ html {
 
 .navbar__link:hover {
   border-bottom-color: var(--ifm-navbar-link-hover-color);
+}
+
+.navbar {
+  padding: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    padding: var(--ifm-navbar-padding-vertical) var(--ifm-navbar-padding-horizontal);
+  }
+}
+
+@media (max-width: 1023px) {
+  .navbar-sidebar__brand {
+    padding: var(--ifm-menu-link-padding-vertical) var(--ifm-menu-link-padding-horizontal);
+  }
+
+  .navbar-sidebar__close,
+  .navbar__toggle {
+    padding: var(--ifm-menu-link-padding-vertical) var(--ifm-menu-link-padding-horizontal);
+    position: absolute;
+    right: var(--ifm-menu-link-padding-horizontal);
+  }
+
+  .toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+    position: absolute;
+    right: calc(var(--ifm-menu-link-padding-horizontal) * 4);
+  }
 }
