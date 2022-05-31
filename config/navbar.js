@@ -22,12 +22,12 @@ const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(
 );
 
 const navbar = {
-    title: 'Moodle',
+    title: '',
     logo: {
         alt: '',
-        src: 'img/Moodle_M_icon.svg',
-        height: '32px',
-        width: '32px',
+        src: 'img/Moodle.svg',
+        height: '35px',
+        width: '138px',
     },
     items: [
         {
@@ -75,7 +75,7 @@ const navbar = {
             ],
         },
         {
-            href: 'https://github.com/moodle/moodle',
+            href: 'https://github.com/moodle',
             label: 'GitHub',
             position: 'right',
         },

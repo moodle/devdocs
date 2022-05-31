@@ -23,7 +23,7 @@ There are many other people contributing to Moodle in many ways. For a full list
 
 ## How we develop the Roadmap
 
-The [Roadmap](./roadmap.md) lists the new features being developed for the next major version. This list is derived mostly from the issues with large numbers of votes in the Moodle [Tracker](https://docs.moodle.org/dev/Tracker), so please vote for what you want!  Other influences include general discussion, surveys and feature requests at Moodle Moots and in the Moodle forums.
+The [Roadmap](./roadmap.md) lists the new features being developed for the next major version. This list is derived mostly from the issues with large numbers of votes in the Moodle [Tracker](/general/development/tracker/guide), so please vote for what you want!  Other influences include general discussion, surveys and feature requests at Moodle Moots and in the Moodle forums.
 
 Component leads decide on features in individual components so make your case to them!
 

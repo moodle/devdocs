@@ -18,25 +18,27 @@
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 function HomepageHeader() {
-    const { siteConfig } = useDocusaurusContext();
     return (
-        <header className={clsx('hero hero--primary', styles['hero-banner'])}>
-            <div className="container">
-                <h1 className="hero__title">{siteConfig.title}</h1>
-                <p className="hero__subtitle">{siteConfig.tagline}</p>
-                <div className={styles.buttons}>
-                    <Link
-                        className="button button--secondary button--lg"
-                        to="/general/development/gettingstarted"
-                    >
-                        Quick start - 5min ⏱️
-                    </Link>
+        <header className={clsx(styles['header-content'], 'container')}>
+            <div className={styles['header-content-inner']}>
+                <div className={clsx(styles['header-title'])}>
+                    <h1>
+                        Where Moodlers
+                        {' '}
+                        <em>hone their skills</em>
+                    </h1>
+                </div>
+                <div className={styles['header-right']}>
+                    <div className={styles.copy}>
+                        <p>
+                            Join hundreds of thousands of educators and trainers on Moodle,
+                            the world’s most customisable and trusted learning management system.
+                        </p>
+                    </div>
                 </div>
             </div>
         </header>

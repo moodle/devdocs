@@ -23,3 +23,123 @@
   z-index: 1;
   content: "";
 }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.card {
+  flex: 0 0 30%;
+  padding: 1rem;
+  max-width: none;
+}
+
+.card .card-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 16rem;
+  border-radius: 1rem;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-content {
+  padding: 3rem;
+}
+
+.card-description {
+  min-height: 6rem;
+}
+
+.card-button {
+  margin-top: 2rem;
+}
+
+.card-button a {
+  background-color: #194866;
+  color: #fff;
+  border: solid 1px #194866;
+  border-radius: 2rem;
+  line-height: 2rem;
+  padding: 1rem 2rem;
+  display: inline-block;
+  text-decoration: none;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s, line-heifght 0.2s;
+  width: auto;
+  font-size: 1.1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.card-button a:hover {
+  background-color: #f98012;
+  border-color: #194866;
+}
+
+.card-corner {
+  shape-outside: circle(30%) margin-box;
+  width: 180px;
+  height: 180px;
+  margin-top: -130px;
+  margin-right: -120px;
+  float: right;
+}
+
+.card-corner svg {
+  fill: var(--ifm-color-primary);
+}
+
+.card-0 .card-inner {
+  background-color: #194866;
+  color: white;
+}
+
+.card-0 .card-corner svg {
+  fill: #69e0ff;
+}
+
+.card-0 .card-button a {
+  border-color: white;
+  color: white;
+}
+
+.card-1 .card-inner {
+  background-color: #fedfc1;
+  color: #545454;
+}
+
+.card-1 .card-corner svg {
+  fill: #bd5b00;
+}
+
+.card-1 .card-button a {
+  border-color: #545454;
+  color: #545454;
+  background-color: transparent;
+}
+
+.card-2 .card-inner {
+  border-color: #69e0ff;
+  background-color: #69e0ff;
+  color: #194866;
+}
+
+.card-2 .card-corner svg {
+  fill: #bd5b00;
+}
+
+.card-3 .card-inner {
+  border-color: #bd5b00;
+  background-color: #bd5b00;
+  color: #fff;
+}
+
+.card-3 .card-corner svg {
+  fill: #fedfc1;
+}

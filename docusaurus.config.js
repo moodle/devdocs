@@ -55,8 +55,8 @@ const getBaseUrl = () => {
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'Moodle',
-    tagline: '(Un)official Developer Resources',
+    title: 'Moodle Developer Resources',
+    tagline: 'Nurturing Moodle Developers',
 
     // url: 'https://develop.moodle.org',
     url: process.env?.URL || 'https://moodledev.io',

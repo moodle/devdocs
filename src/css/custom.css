@@ -1,3 +1,5 @@
+/* stylelint-disable selector-class-pattern */
+
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -13,6 +15,14 @@
   --ifm-color-primary-light: #d06400;
   --ifm-color-primary-lighter: #d96900;
   --ifm-color-primary-lightest: #f67600;
+  --ifm-color-contrasting: #194866;
+  --ifm-font-family-monospace: "Open Sans";
+  --ifm-font-family-base: "Open Sans";
+  --ifm-navbar-height: 5.5rem;
+  --ifm-navbar-padding-horizontal: 5.5rem;
+  --ifm-navbar-padding-vertical: 0;
+  --ifm-navbar-link-color: #194866;
+  --ifm-navbar-link-hover-color: #bd5b00;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -24,6 +34,9 @@
   --ifm-color-primary-light: #f6a65b;
   --ifm-color-primary-lighter: #f6ae69;
   --ifm-color-primary-lightest: #f9c595;
+  --ifm-color-contrasting: var(--ifm-color-primary-lightest);
+  --ifm-navbar-link-color: #f0c505;
+  --ifm-navbar-link-hover-color: #f27e13;
 }
 
 .docusaurus-highlight-code-line {
@@ -39,4 +52,35 @@
 
 .docusaurus-hidden {
   display: none;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/static/font/OpenSans-VariableFont_wdth,wght.woff2") format("woff2");
+}
+
+.navbar__logo {
+  width: 12.5rem;
+}
+
+.navbar__link {
+  border-bottom: solid 2px transparent;
+  border-top: solid 2px transparent;
+  box-sizing: content-box;
+  color: var(--ifmr-navbar-link-color);
+  font-size: 1rem;
+  font-weight: 600;
+  height: 3rem;
+  line-height: 3rem;
+  padding: 1rem 0;
+  transition: border-color 0.2s, color 0.2s, padding 0.2s;
+  margin-right: 2rem;
+}
+
+.navbar__link:hover {
+  border-bottom-color: var(--ifm-navbar-link-hover-color);
 }
