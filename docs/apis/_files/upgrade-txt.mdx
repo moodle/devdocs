@@ -1,0 +1,17 @@
+<!-- markdownlint-disable first-line-heading -->
+Each component and subsystem may make use of an `upgrade.txt` file in the top level folder. A title is used to identify the Moodle version where the change was introduced, and significant changes for that version relating to that component or subsystem are displayed.
+
+When changes are integrated to multiple branches, for example a stable version and the master branch, then the relevant versions used to describe the change in the `upgrade.txt` file should be the next version to be released _for each branch_. The `master` branch should always use the next major version.
+
+For example if a change is applied to the **MOODLE_400_STABLE** during the development of Moodle 4.0.2, and the **master** branch during the development of Moodle 4.1, then the relevant versions will be **4.0.2** and **4.1**.
+
+If a change is only applied to the master branch then only the **4.1** version will be listed.
+
+:::note Exception during parallel development
+
+When Moodle is developing two major versions in parallel, for example Moodle 3.11.0, and Moodle 4.0.0, then the
+version in the earliest of the major version development branches will be used for both branches.
+
+For example, during the development of Moodle 3.11, and Moodle 4.0, which took place in parallel, if a change was integrated to 3.11 and 4.0, then the version specified in both branches would be 3.11.
+
+:::
