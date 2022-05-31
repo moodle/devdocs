@@ -66,7 +66,7 @@ The [Admin presets API](https://docs.moodle.org/dev/AdminPresetsAPI) allows plug
 
 ### Analytics API (analytics)
 
-The [Analytics API](https://docs.moodle.org/dev/Analytics_API) allow you to create prediction models and generate insights.
+The [Analytics API](./apis/subsystems/analytics) allow you to create prediction models and generate insights.
 
 ### Availability API (availability)
 
