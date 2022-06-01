@@ -1,17 +1,13 @@
 ---
-title: Moodle App Translation
-sidebar_label: Translation
-sidebar_position: 3
+title: Translating Moodle App
+sidebar_label: Moodle App
+sidebar_position: 6
 tags:
   - Moodle App
+  - Processes
   - Translation
+  - Language
 ---
-
-:::note TODO
-Move this page next to LMS translation page
-:::
-
-## Moodle App translations
 
 The Moodle App is being translated into more and more languages! Check out [the latest translation stats](https://moodle.org/plugins/translations.php?plugin=local_moodlemobileapp).
 
@@ -66,4 +62,4 @@ This is done to ensure translations are rich enough.
 
 ## How can I translate my plugin?
 
-If you are developing a plugin, you'll have to indicate which strings you want to use in the `lang` configuration option. You can learn more about this in the [Moodle App Plugins development guide](./development/plugins-development-guide).
+If you are developing a plugin, you'll have to indicate which strings you want to use in the `lang` configuration option. You can learn more about this in the [Moodle App Plugins development guide](/docs/moodleapp/development/plugins-development-guide).

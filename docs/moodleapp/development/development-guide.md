@@ -416,4 +416,4 @@ You can learn more about this in the [Acceptance testing for the Moodle App](./t
 - [Moodle App Scripts: gulp push](./scripts/gulp-push)
 - [Moodle App Accessibility](../accessibility)
 - [Moodle App Deep Linking](./deep-linking)
-- [Moodle App Translation](../translation)
+- [Moodle App Translation](/general/development/process/translation/moodleapp)

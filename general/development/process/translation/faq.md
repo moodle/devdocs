@@ -1,7 +1,7 @@
 ---
 title: Translation FAQ
 sidebar_label: FAQ
-sidebar_position: 7
+sidebar_position: 8
 tags:
   - Processes
   - Translation
