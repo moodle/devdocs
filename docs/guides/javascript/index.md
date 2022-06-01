@@ -1,5 +1,15 @@
 ---
 title: JavaScript
+description: A guide to developing JS in Moodle.
+documentationDraft: true
+tags:
+ - Guide
+ - Mustache
+ - ES6
+ - jQuery
+ - AJAX
+ - JS
+ - Architecture
 ---
 
 import { Since, CodeBlock, TabItem, Tabs } from '@site/src/components';
