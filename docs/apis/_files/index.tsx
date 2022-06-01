@@ -40,6 +40,7 @@ import ReadmeMoodleTXT from './readme_moodle-txt';
 import SettingsPHP from './settings-php';
 import StylesCSS from './styles-css';
 import ThirdpartylibsXML from './thirdpartylibs-xml';
+import UpgradeTXT from './upgrade-txt';
 import VersionPHP from './version-php';
 import YUIDir from './yui-dir';
 
@@ -69,6 +70,7 @@ export {
     StylesCSS,
     ThirdpartylibsXML,
     DbUpgradePHP,
+    UpgradeTXT,
     VersionPHP,
     YUIDir,
 };

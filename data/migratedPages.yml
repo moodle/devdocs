@@ -1312,6 +1312,9 @@ Translation_priority:
 Unit_testing_for_the_Moodle_App:
 - filePath: "/docs/moodleapp/development/testing/unit-testing.md"
   slug: "/docs/moodleapp/development/testing/unit-testing"
+Upgrade_notes:
+- filePath: "docs/apis/_files/upgrade-txt.mdx"
+  slug: "docs/apis/commonfiles#upgradetxt"
 Using_the_Moodle_App_in_a_browser:
 - filePath: "/docs/moodleapp/development/setup/app-in-browser.md"
   slug: "/docs/moodleapp/development/setup/app-in-browser"
