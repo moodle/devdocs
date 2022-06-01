@@ -1,6 +1,6 @@
 ---
 title: JavaScript
-description: A guide to developing JS in Moodle.
+description: A guide to developing Javascript in Moodle.
 documentationDraft: true
 tags:
  - Guide
