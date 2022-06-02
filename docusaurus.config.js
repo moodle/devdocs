@@ -44,9 +44,9 @@ const getBaseUrl = () => {
         return '/';
     }
 
-    if (typeof process.env.baseUrl !== 'undefined') {
+    if (typeof process.env.BASEURL !== 'undefined') {
         // Respect the env.
-        return process.env.baseUrl;
+        return process.env.BASEURL;
     }
 
     // Default is currently '/devdocs'.
@@ -57,9 +57,9 @@ const getBaseUrl = () => {
 const config = {
     title: 'Moodle',
     tagline: '(Un)official Developer Resources',
-    // eslint-disable-next-line spaced-comment
+
     // url: 'https://develop.moodle.org',
-    url: process.env?.url || 'https://moodle.github.io',
+    url: process.env?.URL || 'https://moodledev.io',
     baseUrl: getBaseUrl(),
     trailingSlash: false,
     onBrokenLinks: 'throw',
