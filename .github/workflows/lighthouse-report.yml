@@ -28,7 +28,9 @@ jobs:
         with:
           urls: |
             https://deploy-preview-$PR_NUMBER--moodledevdocs.netlify.app/
-            https://deploy-preview-$PR_NUMBER--moodledevdocs.netlify.app/docs/installation
+            https://deploy-preview-$PR_NUMBER--moodledevdocs.netlify.app/docs/apis/commonfiles
+            https://deploy-preview-$PR_NUMBER--moodledevdocs.netlify.app/general/development/gettingstarted
+            https://deploy-preview-$PR_NUMBER--moodledevdocs.netlify.app/general/releases
           configPath: ./.github/workflows/lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
