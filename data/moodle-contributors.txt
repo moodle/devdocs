@@ -561,6 +561,7 @@ Lauri
 Lawson-Perfect
 Leach
 Leblanc
+Lemaire
 Lengyel
 Lennard
 Lentz
@@ -686,6 +687,7 @@ Namur
 Narissa
 Nathan
 Nathanial
+Nathuji
 Nayab
 Naydenov
 Nefedov
@@ -813,6 +815,7 @@ Raymond
 Recio
 Reischmann
 Renaat
+Renaud
 Reynolds
 Rezaie
 Rezeau
@@ -821,6 +824,7 @@ Riddell
 Riekkinen
 Rimas
 Ringer
+Ripal
 Risner
 Ritchey
 Robert
