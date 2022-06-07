@@ -25,15 +25,16 @@ import Link from '@docusaurus/Link';
 const FeatureList = [
     {
         link: '/general/development/gettingstarted',
-        title: 'Quick start',
+        title: 'Getting started',
         Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
         description: (
             <>
                 New to Moodle Development?
                 <br />
-                Read our quick start to Moodle Development.
+                Our quick start guide helps you take your first steps.
             </>
         ),
+        linkText: 'Get started',
     },
     {
         link: '/general/development/policies/codingstyle',
@@ -41,51 +42,82 @@ const FeatureList = [
         Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
         description: (
             <>
-                Learn about our coding standards, styles, and conventions.
+                Read our style guidelines, including coding standards and naming conventions.
             </>
         ),
+        linkText: 'View standards',
     },
     {
         link: '/docs/apis',
-        title: 'Read our API Guides',
+        title: 'API guides',
         Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
         description: (
             <>
-                Want to learn more about our APIs?
-                <br />
-                Learn about them through our series of deep-dive guides, complete with examples and explanations.
+                Learn all about Moodle APIs with our deep-dive guides, complete with examples and explanations.
             </>
         ),
+        linkText: 'Read API guides',
     },
     {
         link: '/general/community',
-        title: 'Join our community',
+        title: 'Developer community',
         Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
         description: (
             <>
-                Discover our community, and learn about our mission, and our roadmap.
+                Join the open source community that makes Moodle.
             </>
         ),
+        linkText: 'Discover communities',
+    },
+    {
+        link: '/general/releases',
+        title: 'Release notes',
+        Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+        description: (
+            <>
+                Technical specs and new features of Moodle releases, supported versions and more.
+            </>
+        ),
+        linkText: 'Check the release notes',
+    },
+    {
+        link: '/docs/moodleapp',
+        title: 'Moodle App',
+        Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+        description: (
+            <>
+                Interested in app development? Learn how to get started working with the Moodle App.
+            </>
+        ),
+        linkText: 'Learn more',
     },
 ];
 
 function Feature({
-    Svg, link, title, description,
+    index, link, title, description, linkText,
 }) {
     return (
-        <div className={clsx('col col--4 ') + styles['features-box']}>
-            <div>
-                <div className="text--center">
-                    <Svg className={styles['feature-svg']} role="img" />
-                </div>
-                <div className="text--center padding-horiz--md">
-                    <Link
-                        to={link}
-                        className={styles['feature-link']}
-                    >
-                        <h3>{title}</h3>
-                    </Link>
-                    <p>{description}</p>
+        <div className={clsx('col col--4 ', styles.card, styles[`card-${index}`])}>
+            <div className={styles['card-inner']}>
+                <div className={styles['card-content']}>
+                    <div className={styles['card-corner']}>
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="50" />
+                        </svg>
+                    </div>
+                    <h2>{title}</h2>
+                    <div className={styles['card-description']}>
+                        {description}
+                    </div>
+                    <div className={styles['card-button']}>
+                        <Link
+                            to={link}
+                        >
+                            <span>
+                                {linkText}
+                            </span>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,10 +128,9 @@ export default function HomepageFeatures() {
     return (
         <section className={styles.features}>
             <div className="container">
-                <h2 className="text--center">Moodle Documentation</h2>
-                <div className="row">
+                <div className={clsx('row', styles.cards)}>
                     {FeatureList.map((props, idx) => (
-                        <Feature key={idx} {...props} />
+                        <Feature key={idx} index={idx} {...props} />
                     ))}
                 </div>
             </div>

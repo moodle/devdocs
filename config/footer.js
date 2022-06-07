@@ -72,7 +72,7 @@ module.exports = {
             items: [
                 {
                     label: 'GitHub',
-                    href: 'https://github.com/moodlehq',
+                    href: 'https://github.com/moodle',
                 },
                 {
                     html: `
