@@ -1,6 +1,5 @@
 $capabilities = [
 
-
     // Enrol anybody.
     'enrol/pluginname:enrol' => [
         'captype' => 'write',
