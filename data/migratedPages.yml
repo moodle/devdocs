@@ -22,6 +22,9 @@ Antivirus_plugins:
 Automated_Manipulation_of_Strings_2.0:
 - filePath: "/general/projects/api/amos.md"
   slug: "/general/projects/api/amos"
+Blocks:
+- filePath: "/docs/apis/plugintypes/blocks/index.md"
+  slug: "/docs/apis/plugintypes/blocks"
 Bug_triage:
 - filePath: "/general/development/process/triage.md"
   slug: "/general/development/process/triage"
