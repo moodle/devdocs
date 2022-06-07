@@ -477,6 +477,16 @@ Prefetch.prefetchTemplate('core/toast');
 Prefetch.prefetchTemplates(['core/toast', 'core/modal']);
 ```
 
+## Reactive state
+
+<Since versions={[ 4.0 ]} />
+
+Reactivity is one of the latest developments patterns incorporated to web development. Frameworks like React, Angular and Vue are competing for being the standard for web applications. However, for now there is not a clear winner on what is the best solution in terms of performance, standarizations and reusability.
+
+While third-party developers are free to use any reactive framework they want, core developments are framework independant. Nevertheless, some part of Moodle implements a basic reactive state pattern by an adhoc library. This library does not represent a full reactive solution but helps implementing resuable and easy to mantain frontend applications.
+
+See the [Creating reactive UI](./javascript/reactive) for more information.
+
 ## Tools
 
 Moodle uses common and popular tools to ensure code quality, and to improve the
