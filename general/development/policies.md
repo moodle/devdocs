@@ -60,7 +60,7 @@ Any single script (in Moodle core or a third party module) can introduce a vulne
 
 It's important that Moodle produces strict, well-formed [HTML 5](http://en.wikipedia.org/wiki/HTML5) code (preferably backwards compatible with XHTML 1.1 if possible), compliant with all common accessibility guidelines (such as [W3C WCAG 2.0](http://www.w3.org/TR/WCAG20/), [ARIA](http://www.w3.org/TR/wai-aria-practices/)).
 
-CSS should be used for layout. Moodle comes with several themes installed. Beginning with version 2.7, only the 'Boost, and 'Classic' themes are included with the base Moodle code.
+CSS should be used for layout. Moodle comes with several themes installed. Beginning with version 3.7, only the 'Boost, and 'Classic' themes are included with the base Moodle code.
 
 :::note Writing your own theme
 
