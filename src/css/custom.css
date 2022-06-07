@@ -66,6 +66,7 @@ html {
 @font-face {
   font-family: "Open Sans";
   src: url("/static/font/OpenSans-VariableFont_wdth,wght.woff2") format("woff2");
+  font-display: swap;
 }
 
 .navbar__logo {

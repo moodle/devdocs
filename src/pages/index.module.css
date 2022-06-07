@@ -61,6 +61,7 @@
 @font-face {
   font-family: "DM Sans Serif";
   src: url("/static/font/DMSerifDisplay-Regular.woff2") format("woff2");
+  font-display: swap;
 }
 
 h1 {
