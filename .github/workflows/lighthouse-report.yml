@@ -16,26 +16,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # v3
+
       - name: Wait for the Netlify Preview
-        uses: jakepartusch/wait-for-netlify-action@7ccf91c9ba3d64aa4389c0d3adcba0a6e77e5421 # v1
+        uses: andrewnicols/wait-for-netlify-preview@v1.0.6
         id: netlify
         with:
-          site_name: moodledevdocs
+          site_id: "3c056055-e1bd-4cfd-8a02-ed35ab7aedfa"
           max_timeout: 600
+          netlify_secret: ${{ secrets.NETLIFY_SECRET }}
+
       - name: Audit URLs using Lighthouse
         id: lighthouse_audit
         uses: treosh/lighthouse-ci-action@b4dfae3eb959c5226e2c5c6afd563d493188bfaf # 9.3.0
         with:
           urls: |
-            https://deploy-preview-$PR_NUMBER--moodledevdocs.netlify.app/
-            https://deploy-preview-$PR_NUMBER--moodledevdocs.netlify.app/docs/apis/commonfiles
-            https://deploy-preview-$PR_NUMBER--moodledevdocs.netlify.app/general/development/gettingstarted
-            https://deploy-preview-$PR_NUMBER--moodledevdocs.netlify.app/general/releases
+            ${{ steps.netlify.deployUrl }}/
+            ${{ steps.netlify.deployUrl }}/docs/apis/commonfiles
+            ${{ steps.netlify.deployUrl }}/general/development/gettingstarted
+            ${{ steps.netlify.deployUrl }}/general/releases
           configPath: ./.github/workflows/lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
         env:
           PR_NUMBER: ${{ github.event.pull_request.number}}
+
       - name: Format lighthouse score
         id: format_lighthouse_score
         uses: actions/github-script@9ac08808f993958e9de277fe43a64532a609130e # v6
