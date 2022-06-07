@@ -142,7 +142,7 @@ function require_capability($capability, context $context, $userid = null, $doan
 
 ### Enrolment functions
 
-See [Enrolment API](https://docs.moodle.org/dev/Enrolment_API).
+See [Enrolment API](./enrol).
 
 ### Other related functions
 

@@ -79,6 +79,12 @@ Docs_required_issues_process:
 Documentation_credits:
 - filePath: "/general/community/credits/documentation.md"
   slug: "/general/community/credits/documentation"
+Enrolment_API:
+- filePath: "/docs/apis/subsystems/enrol.md"
+  slug: "/docs/apis/subsystems/enrol"
+Enrolment_plugins:
+- filePath: "/docs/apis/plugintypes/enrol/index.md"
+  slug: "/docs/apis/plugintypes/enrol/"
 File_API:
 - filePath: "/docs/apis/subsystems/files/index.md"
   slug: "/docs/apis/subsystems/files"

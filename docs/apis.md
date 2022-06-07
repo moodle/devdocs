@@ -106,7 +106,7 @@ The [Editor API](https://docs.moodle.org/dev/Editor_API) is used to control HTML
 
 ### Enrolment API (enrol)
 
-The [Enrolment API](https://docs.moodle.org/dev/Enrolment_API) deals with course participants.
+The [Enrolment API](./apis/subsystems/enrol) deals with course participants.
 
 ### Events API (event)
 
