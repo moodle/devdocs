@@ -176,7 +176,7 @@ However, if for some reason you cannot use the latest version of tool_pluginskel
 3. Rename language files in course/format/pluginname/lang/
 4. Change `$string['pluginname']` in course/format/pluginname/lang/en/format_pluginname.php to the new name.
 5. Rename class name in lib.php to format_pluginname.
-6. Search and replace other occurrences of the old format name, for example in renderer, capabilities names, settings, javascript libraries, etc.
+6. Search and replace other occurrences of the old format name, for example in renderer, capabilities names, settings, JavaScript libraries, etc.
 7. The new format is ready for modification.
 8. After modifying the code, check it with the Code checker.
 
@@ -594,7 +594,7 @@ And third, consider using "local/content" as your main course template, "output\
 
 ## The course editor structure
 
-The core_courseformat provides several javascript modules that will be enabled when a teacher edits the course. Those libraries use a reactive pattern to keep the course updated when some edit action is executed.
+The core_courseformat provides several JavaScript modules that will be enabled when a teacher edits the course. Those libraries use a reactive pattern to keep the course updated when some edit action is executed.
 
 The following diagram represents the data flow of the new architecture:
 

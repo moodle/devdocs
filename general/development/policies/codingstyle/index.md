@@ -1875,7 +1875,7 @@ This document was drawn from the following sources:
 
 ## See also
 
-- [Javascript Coding Style](https://docs.moodle.org/dev/Javascript/Coding_Style)
+- [JavaScript Coding Style](https://docs.moodle.org/dev/Javascript/Coding_Style)
 - [CSS Coding Style](https://docs.moodle.org/dev/CSS_Coding_Style)
 - [SQL coding style](https://docs.moodle.org/dev/SQL_coding_style)
 - [Coding](/general/development/policies)

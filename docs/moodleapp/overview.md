@@ -61,7 +61,7 @@ The app has two types of delegates:
 
 Moodle plugins can also be adapted to work with the mobile app. Given that more than one site can be used with the app, the plugins that are activated depend on the site the app is connected to. That's why they are called site plugins.
 
-When the application connects with a site, it will fetch information about which plugins have mobile support and register their functionality using [the delegates system](#delegates-and-handlers). Plugins can be written using only PHP, but javascript is also supported for some advanced use-cases.
+When the application connects with a site, it will fetch information about which plugins have mobile support and register their functionality using [the delegates system](#delegates-and-handlers). Plugins can be written using only PHP, but JavaScript is also supported for some advanced use-cases.
 
 ## Platform Support
 

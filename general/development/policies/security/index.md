@@ -86,7 +86,7 @@ Teachers are usually creating course content, enrolling students and teaching. T
 - Create and manage activities
 - Access student grades and other personal information
 
-Uploading of files with javascript, flash and other scripted is often considered to be a security risk. Unfortunately we can not remove these risks from teacher roles because even basic SCORM packages consist of HTML and Javascript which needs to use user session.
+Uploading of files with JavaScript, flash and other scripted is often considered to be a security risk. Unfortunately we can not remove these risks from teacher roles because even basic SCORM packages consist of HTML and JavaScript which needs to use user session.
 
 Browser trusts everything coming from one server, it does not know anything about our courses or origin of data. Once the file is uploaded to server it becomes part of the server application. It is not possible to differentiate between wanted and unwanted code stored on the server.
 
@@ -94,7 +94,7 @@ Browser trusts everything coming from one server, it does not know anything abou
 
 All teachers with risky capabilities have to be trusted, it is not possible to give teacher access to students. In theory teachers may use XSS attacks to gain administrator access.
 
-Technically it would be possible to create a system where teachers can not attack other users but it would prevent all Javascript, Flash, SCORM, Java, HTML forms, SVG, etc.
+Technically it would be possible to create a system where teachers can not attack other users but it would prevent all JavaScript, Flash, SCORM, Java, HTML forms, SVG, etc.
 
 :::
 
@@ -109,7 +109,7 @@ Uploaded files must not be opened directly in browser from the same server. Inst
 
 :::info
 
-All student submitted text has to be sanitised before printing the text on any page, this prevent XSS attacks on other users but at the same time prevents Flash, Javascript, SVG and all other HTML scripting. Moodle uses HTML Purifier library for this purpose.
+All student submitted text has to be sanitised before printing the text on any page, this prevent XSS attacks on other users but at the same time prevents Flash, JavaScript, SVG and all other HTML scripting. Moodle uses HTML Purifier library for this purpose.
 
 :::
 

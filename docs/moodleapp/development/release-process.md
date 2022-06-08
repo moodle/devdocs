@@ -19,7 +19,7 @@ tags:
 | 6. | Contact the marketing team announcing the new release and highlights. | Integration Lead |
 | 7. | Add new QA tests to the "Testing cases" document. New QA tests should be labeled with [qa_test_required](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20resolution%20in%20(Unresolved%2C%20Fixed)%20AND%20labels%20%3D%20qa_test_required%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC). Remove that label once are added to the document. | Tester |
 | 8. | Run `npm audit` to ensure all the dependencies are OK and check github vulnerabilities report. | Developer |
-| 9. | Freeze Cordova plugins and Javascript libraries versions (node modules) in the integration branch. | Developer |
+| 9. | Freeze Cordova plugins and JavaScript libraries versions (node modules) in the integration branch. | Developer |
 | 10. | **Start testing** | Tester |
 
 ## The release day
@@ -43,7 +43,7 @@ tags:
 | 3. | Review the users and developers documentation (check that everything is in order). Review the [docs_required and dev_docs_required_tags](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20labels%20in%20%28docs_required%2C%20dev_docs_required%29). Review the [Mobile features wiki documentation](https://docs.moodle.org/en/Moodle_Mobile_features). | All the team |
 | 4. | Delete the integration and desktop branches and create it again based on master. | Team Lead |
 | 5. | Bump version numbers in the following files in the integration branch: `config.xml` (version), `package.json` (version), `moodle.config.json` (versionname) appending a `-dev` to indicate that is a development version). | Integration Lead |
-| 6. | Unfreeze Cordova plugins and Javascript libraries versions (node modules). | Developer |
+| 6. | Unfreeze Cordova plugins and JavaScript libraries versions (node modules). | Developer |
 | 7. | Check that the [Docker image](https://cloud.docker.com/u/moodlehq/repository/docker/moodlehq/moodleapp/general) for the new version was successfully built. | Integration Lead |
 | 8. | Update of the [local_moodlemobileapp](https://moodle.org/plugins/view.php?id=997) plugin (as final release) in moodle.org/plugins. | Developer |
 

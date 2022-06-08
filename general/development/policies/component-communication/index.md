@@ -48,7 +48,7 @@ There are different ways to call code in Moodle. Most of them are listed here an
 
 - Direct php function calls
 - External functions
-- Javascript Modules (AMD)
+- JavaScript Modules (AMD)
 - Templates
 - get_string calls
 - Event observers
@@ -88,9 +88,9 @@ Additional rules for calling external functions:
 
 - Always use the `external_api::call_external_function()` wrapper when calling from php.
 
-### Javascript Modules (AMD)
+### JavaScript Modules (AMD)
 
-It is possible through the Javascript loader to load an AMD module from any component and call its functions. This is a form of inter-component communication and must obey the strict rules for which components AMD modules can be loaded from.
+It is possible through the JavaScript loader to load an AMD module from any component and call its functions. This is a form of inter-component communication and must obey the strict rules for which components AMD modules can be loaded from.
 
 ### get_string
 

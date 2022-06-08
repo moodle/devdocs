@@ -4,7 +4,7 @@ title: Naming conventions
 
 ## Components
 
-## Javascript
+## JavaScript
 
 ## Web services
 

@@ -106,7 +106,7 @@ In some cases, a single component can contain many smaller components. In order 
 
 ### Forms
 
-Moodle forms created with the standard forms library are designed to be accessible. Any custom (for example javascript) form or custom form elements must also be accessible.
+Moodle forms created with the standard forms library are designed to be accessible. Any custom (for example JavaScript) form or custom form elements must also be accessible.
 
 - All form elements must have a label
 - The form must be able to be completed entirely with the keyboard
@@ -133,7 +133,7 @@ See [the WCAG 2.1 success criteria for web page titles](https://www.w3.org/TR/WC
 
 ### Advanced UX Widgets
 
-When it is determined that an advanced interface is required (typically one that relies on javascript), a minimum set of principles need to be applied to make sure that the feature "provides equal functionality and information to all people". Each use case is different, but a minimum set of things to be checked are:
+When it is determined that an advanced interface is required (typically one that relies on JavaScript), a minimum set of principles need to be applied to make sure that the feature "provides equal functionality and information to all people". Each use case is different, but a minimum set of things to be checked are:
 
 - Does this component work entirely when accessed only via the keyboard?
 - Does this component map to any widget from the [ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/) document and if so, does it implement all of the "Keyboard Interaction" and "WAI-ARIA Roles, States and Properties" listed for that widget?

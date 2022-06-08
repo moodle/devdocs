@@ -72,15 +72,15 @@ This helps consistency across browsers in a nicely-degrading way (especially tho
 
 ## JavaScript
 
-New Javascript in Moodle should be written as Vanilla javascript in the ES6 style. The use of jQuery, YUI, and other frameworks is strongly discouraged and will not be accepted into core except when dealing with legacy interfaces which require the use of those objects.
+New JavaScript in Moodle should be written as Vanilla JavaScript in the ES6 style. The use of jQuery, YUI, and other frameworks is strongly discouraged and will not be accepted into core except when dealing with legacy interfaces which require the use of those objects.
 
 In general code should be written to avoid displaying interfaces which are removed, or adding new interfaces as the page loads.
 
-All Javascript must be accessible.
+All JavaScript must be accessible.
 
 :::info
 
-For more about this, see the [Javascript guide](/docs/guides/javascript).
+For more about this, see the [JavaScript guide](/docs/guides/javascript).
 
 :::
 
