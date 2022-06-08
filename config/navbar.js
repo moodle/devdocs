@@ -74,11 +74,6 @@ const navbar = {
                 },
             ],
         },
-        {
-            href: 'https://github.com/moodle',
-            label: 'GitHub',
-            position: 'right',
-        },
     ],
 };
 
