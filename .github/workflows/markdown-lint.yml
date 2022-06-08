@@ -1,4 +1,4 @@
-name: Lint on push (project files)
+name: "CI - Lint on push (project files)"
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: "CI - Deploy the main branch to GitHub Pages"
 
 on:
   push:

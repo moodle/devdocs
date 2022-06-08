@@ -1,4 +1,4 @@
-name: Fetch the list of obsolete pages from Wikimedia
+name: "WikiMedia - Fetch the list of obsolete pages"
 
 on:
   # Run on cron, daily at 5:30am UTC.

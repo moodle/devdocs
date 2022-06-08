@@ -1,4 +1,4 @@
-name: Push the list of migrated pages to Wikimedia
+name: "CI - Push the list of migrated pages to WikiMedia"
 
 on:
   push:
