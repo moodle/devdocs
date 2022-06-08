@@ -16,6 +16,7 @@
  */
 const VersionsArchived = require('../versionsArchived.json');
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(
     0,
     5,
@@ -53,27 +54,27 @@ const navbar = {
         },
 
         // Right.
-        {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
-            dropdownItemsAfter: [
-                ...ArchivedVersionsDropdownItems.map(
-                    ([versionName, versionUrl]) => ({
-                        label: versionName,
-                        href: versionUrl,
-                    }),
-                ),
-                {
-                    href: 'https://docs.moodle.org/dev/',
-                    label: 'Legacy documentation',
-                },
-                {
-                    to: '/versions',
-                    label: 'All versions',
-                },
-            ],
-        },
+        // {
+        //     type: 'docsVersionDropdown',
+        //     position: 'right',
+        //     dropdownActiveClassDisabled: true,
+        //     dropdownItemsAfter: [
+        //         ...ArchivedVersionsDropdownItems.map(
+        //             ([versionName, versionUrl]) => ({
+        //                 label: versionName,
+        //                 href: versionUrl,
+        //             }),
+        //         ),
+        //         {
+        //             href: 'https://docs.moodle.org/dev/',
+        //             label: 'Legacy documentation',
+        //         },
+        //         {
+        //             to: '/versions',
+        //             label: 'All versions',
+        //         },
+        //     ],
+        // },
     ],
 };
 
