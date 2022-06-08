@@ -411,7 +411,7 @@ $DB->insert_record('table', $row);
 :::info
 
 Before Moodle 2.0, Moodle defined a class named `object` extending `stdClass`, and recommended instantiation using `new object();`.
-This has now been deprecated. Please use `stdClass` or the array instantiation instead instead.
+This has now been deprecated. Please use `stdClass` or the array instantiation instead.
 
 :::
 
