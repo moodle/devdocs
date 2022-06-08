@@ -180,7 +180,7 @@ class filter_helloworld extends moodle_text_filter {
 
 ## Filtering dynamic content
 
-It is possible that page content is loaded by ajax after the page is loaded. In certain filter types (for example MathJax) javascript is required to be run on the output of the filter in order to do the final markup. For these types of filters, a javascript event is triggered when new content is added to the page (the content will have already been processed by the filter in php). The javascript for a filter can listen for these event notifications and reprocess the affected dom nodes.
+It is possible that page content is loaded by ajax after the page is loaded. In certain filter types (for example MathJax) JavaScript is required to be run on the output of the filter in order to do the final markup. For these types of filters, a JavaScript event is triggered when new content is added to the page (the content will have already been processed by the filter in php). The JavaScript for a filter can listen for these event notifications and reprocess the affected dom nodes.
 
 The content updated event is registered in the `core_filters/events` module and can be imported as:
 

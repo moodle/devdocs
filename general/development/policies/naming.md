@@ -6,7 +6,7 @@ tags:
 
 ## Components
 
-## Javascript
+## JavaScript
 
 ## Web services
 

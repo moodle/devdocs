@@ -1360,7 +1360,7 @@ this.MyAddonClass
 
 A link handler allows you to decide what to do when a link with a certain URL is clicked. This is useful, for example, to open your plugin page when a link to your plugin is clicked.
 
-After the 4.0 version, the Moodle app automatically creates two link handlers for module plugins, you don't need to create them in your plugin's Javascript code anymore:
+After the 4.0 version, the Moodle app automatically creates two link handlers for module plugins, you don't need to create them in your plugin's JavaScript code anymore:
 
 - A handler to treat links to *mod/pluginname/view.php?id=X*. When this link is clicked, it will open your module in the app.
 - A handler to treat links to *mod/pluginname/index.php?id=X*. When this link is clicked, it will open a page in the app listing all the modules of your type inside a certain course.

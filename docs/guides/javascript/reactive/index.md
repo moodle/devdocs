@@ -1,7 +1,7 @@
 ---
 title: Creating a reactive UI
 tags:
-  - Javascript
+  - JavaScript
   - Library
   - Frontend
 ---
@@ -969,7 +969,7 @@ As can be seen in the example, the mutation does not need to enable or disable t
 
 #### Private methods inside the mutations library
 
-Javascript is famous for not having private methods. This means all the methods inside the mutations library will be accessible by the Reactive Instance. To prevent components from dispatch private methods the Reactive instance "dispatch" method will raise an expectation in some cases.
+JavaScript is famous for not having private methods. This means all the methods inside the mutations library will be accessible by the Reactive Instance. To prevent components from dispatch private methods the Reactive instance "dispatch" method will raise an expectation in some cases.
 
 Mutation names that components cannot dispatch:
 
@@ -1003,7 +1003,7 @@ When this happens, the components' stateReady hooks will be executed and the wat
 
 #### Initial state data limitations
 
-While the Javascript standard does not offer a suitable native solution for fully reactive data structures, implementing a deep reactive object will be a complex task. Depending on the depth of the changes tracked it will require many frontend resources and many lines of code to maintain. That is the main reason why most people use complex reactive frameworks for it.
+While the JavaScript standard does not offer a suitable native solution for fully reactive data structures, implementing a deep reactive object will be a complex task. Depending on the depth of the changes tracked it will require many frontend resources and many lines of code to maintain. That is the main reason why most people use complex reactive frameworks for it.
 
 To keep the state fast and simple, the reactive.js library can only store two kinds of data at the ROOT level:
 

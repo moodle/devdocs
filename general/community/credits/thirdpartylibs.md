@@ -320,7 +320,7 @@ This library is not currently used in Moodle
 
 :::note lib/editor
 
-Javascript/HTML script to put a GUI editor in textareas on Internet Explorer and Mozilla
+JavaScript/HTML script to put a GUI editor in textareas on Internet Explorer and Mozilla
 
 **Version**: 3.0 beta (with modifications)<br/>
 **License**: htmlArea License (based on BSD license)
@@ -763,7 +763,7 @@ This library is not currently used in Moodle
 
 :::note lib/overlib.js
 
-Javascript library to enable DHTML popups, floating windows, events etc
+JavaScript library to enable DHTML popups, floating windows, events etc
 
 **Version**: July 2004<br/>
 **License**: Artistic Open Source License
@@ -779,7 +779,7 @@ Copyright © 1998-2004 Erik Bosrup
 
 :::note media/player/videojs/amd/src/local/ogv/ogv.js
 
-Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.
+JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.
 
 **Version**: 1.8.4<br/>
 **License**: MIT

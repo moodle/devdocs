@@ -48,7 +48,7 @@ To allow the community of Moodle developers to work together, conventions should
 - $_GET, $_POST, $_REQUEST, $_COOKIE, and $_SESSION are never used.
 
 :::tip
-See the [Coding style guide](/general/development/policies/codingstyle) for details. Most of the previous items list are checked automatically by the CiBot (Automated code review). So in this case it's recommended to review the execution results to validate that there aren't errors. However, take into account that for now, CiBot is not checking all file types (it happens, for instance, with the Javascript files).
+See the [Coding style guide](/general/development/policies/codingstyle) for details. Most of the previous items list are checked automatically by the CiBot (Automated code review). So in this case it's recommended to review the execution results to validate that there aren't errors. However, take into account that for now, CiBot is not checking all file types (it happens, for instance, with the JavaScript files).
 :::
 
 ### Output
