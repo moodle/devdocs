@@ -1,5 +1,5 @@
-name: "Error in system"
-description: "Report a problem with the documentation system"
+name: "System bug or error"
+description: "Report a problem with the documentation system, the Docusaurus Framework, scripting, and similar areas."
 title: "[repo] Problem with documentation system"
 labels: repo, help wanted, bug
 body:
@@ -7,16 +7,10 @@ body:
   attributes:
     value: |
       Thank you for your bug report. Please give us a bit more detail about the issue so that we can look into it.
-- type: input
-  id: page
-  attributes:
-    label: What is the URL of the page where you experience the error?
-  validations:
-    required: true
 - type: textarea
   id: problem
   attributes:
-    label: What is the issue with this page?
+    label: What is the issue that you're experiencing?
   validations:
     required: true
 - type: dropdown
