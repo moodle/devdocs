@@ -52,7 +52,7 @@ To avoid making changes one by one, you can do your translations offline (as abo
 
 1. Click **Stage** in the Navigation block.
 1. Choose **Import translated strings from file**.
-1. Dag and drop the file.
+1. Drag and drop the file.
 1. Click the **Import** button.
 
 :::note
