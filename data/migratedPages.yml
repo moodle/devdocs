@@ -1114,6 +1114,12 @@ Moodle_4.0_release_notes:
 Moodle_App:
 - filePath: "/docs/moodleapp.md"
   slug: "/docs/moodleapp"
+Moodle_App_4.0.0_release_notes:
+- filePath: "/general/app_releases/v4/v4.0.0.md"
+  slug: "/general/app_releases/v4/v4.0.0"
+Moodle_App_4.0.1_release_notes:
+- filePath: "/general/app_releases/v4/v4.0.1.md"
+  slug: "/general/app_releases/v4/v4.0.1"
 Moodle_App_Accessibility:
 - filePath: "/docs/moodleapp/accessibility.md"
   slug: "/docs/moodleapp/accessibility"
@@ -1168,12 +1174,6 @@ Moodle_App_Translation:
 Moodle_Development_kit:
 - filePath: "/general/development/tools/mdk.md"
   slug: "/general/development/tools/mdk"
-Moodle_Penetration_Testing:
-- filePath: "/general/development/process/security/penetration-testing.md"
-  slug: "/general/development/process/security/penetration-testing"
-Moodle_libraries_credits:
-- filePath: "/general/community/credits/thirdpartylibs.md"
-  slug: "/general/community/credits/thirdpartylibs"
 Moodle_Mobile_1.3_Release_Notes:
 - filePath: "/general/app_releases/v1.x.md"
   slug: "/general/app_releases/v1.x"
@@ -1300,12 +1300,12 @@ Moodle_Mobile_3.9.4_release_notes:
 Moodle_Mobile_3.9.5_release_notes:
 - filePath: "/general/app_releases/v3/v3.9.5.md"
   slug: "/general/app_releases/v3/v3.9.5"
-Moodle_App_4.0.0_release_notes:
-- filePath: "/general/app_releases/v4/v4.0.0.md"
-  slug: "/general/app_releases/v4/v4.0.0"
-Moodle_App_4.0.1_release_notes:
-- filePath: "/general/app_releases/v4/v4.0.1.md"
-  slug: "/general/app_releases/v4/v4.0.1"
+Moodle_Penetration_Testing:
+- filePath: "/general/development/process/security/penetration-testing.md"
+  slug: "/general/development/process/security/penetration-testing"
+Moodle_libraries_credits:
+- filePath: "/general/community/credits/thirdpartylibs.md"
+  slug: "/general/community/credits/thirdpartylibs"
 Moodle_research:
 - filePath: "/general/community/research.md"
   slug: "/general/community/research"
@@ -1411,6 +1411,9 @@ String_deprecation:
 Table_of_locales:
 - filePath: "/general/development/process/translation/langpack/locales.md"
   slug: "/general/development/process/translation/langpack/locales"
+Templates:
+- filePath: "/docs/guides/templates/index.md"
+  slug: "/docs/guides/templates/"
 Testing:
 - filePath: "/general/development/process/testing.md"
   slug: "/general/development/process/testing"
