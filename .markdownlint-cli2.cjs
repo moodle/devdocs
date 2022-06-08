@@ -209,11 +209,24 @@ config.MD049 = false;
 // MD050 / strong - style - Strong style should be consistent
 config.MD050 = false;
 
+// Moodle casedWords.
+// Used to ensure that casing of some words is correct - for example in Trademarks.
+config.casedWords = {
+    words: {
+        // convert all casing of `javascript` to `JavaScript`, for example Javascript, javascript, javaScript.
+        javascript: 'JavaScript',
+
+        // convert all casing of `java script` to `JavaScript`.
+        'java script': 'JavaScript',
+    },
+};
+
 module.exports = {
     config,
     customRules: [
         path.join(__dirname, '.markdownlint/no-directional-quotation-marks'),
         path.join(__dirname, '.markdownlint/fix-migrated-links'),
         path.join(__dirname, '.markdownlint/find-obsolete-links'),
+        path.join(__dirname, '.markdownlint/cased-words'),
     ]
 };
