@@ -198,6 +198,7 @@ qeupgradehelper
 quizaccess
 randomsamatch
 renamedclasses
+renderable
 returntype
 riskbitmask
 ruleset
@@ -216,9 +217,11 @@ siteidentifier
 sitepolicynotagreed
 smallmessage
 splitview
+strftimedate
 strikethrough
 tablespace
 tasklogs
+templatable
 temptables
 themers
 thirdparty
@@ -232,11 +235,13 @@ unbrowseable
 unenrol
 unenrolling
 unhold
+uniqid
 unoconv
 uploadcourse
 uploadsingle
 uploadusers
 urltolink
+userdate
 versionname
 videojs
 webdav
