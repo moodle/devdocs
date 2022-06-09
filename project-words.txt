@@ -81,6 +81,7 @@ codingstyle
 columnsortorder
 competencyframeworks
 completionstatus
+componentlibrary
 contextcourse
 contextcoursecat
 contextid
@@ -88,6 +89,7 @@ contextlevel
 contextmodule
 coursecatlib
 coursefiles
+courseindex
 crtl
 datafield
 dayofweek
@@ -155,6 +157,7 @@ mform
 misformatted
 missingtype
 mnet
+modicon
 modname
 moodleapp
 moodledemo
