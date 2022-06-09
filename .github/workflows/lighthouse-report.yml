@@ -1,4 +1,4 @@
-name: Lighthouse Report
+name: "CI - Lighthouse website audit Report"
 
 on:
   pull_request_target:
@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   lighthouse-report:
-    name: Lighthouse Report
+    name: Lighthouse website audit Report
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

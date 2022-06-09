@@ -1,10 +1,14 @@
-name: issue-automation
+name: "Issue labeller - New issues should be marked with 'needs-triage'"
 
 on:
   issues:
-    types: [opened]
+    types:
+      - reopened
+      - opened
   pull_request:
-    types: [opened]
+    types:
+      - reopened
+      - opened
 
 jobs:
   automate-issues-labels:

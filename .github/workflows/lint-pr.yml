@@ -1,4 +1,4 @@
-name: "Lint for Pull Requests"
+name: "CI - Lint for Pull Requests"
 
 on:
   pull_request:

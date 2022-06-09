@@ -1,4 +1,4 @@
-name: Update Moodle Metadata
+name: "Scheduled - Update Metadata from Moodle"
 
 on:
   # Run on cron, every Sunday at 5:30am UTC.
