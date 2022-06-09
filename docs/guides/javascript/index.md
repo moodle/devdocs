@@ -29,9 +29,9 @@ for serving and managing dependencies.
 The JavaScript documentation available on the Mozilla Developer Network is one of the best reference documentations
 available. You may find the following references particularly useful:
 
-- [MDN JavaScript guide][guides_javascript-mdn-javascript_guide].
-- [MDN JavaScript Reference][guides_javascript-mdn-javascript_reference].
-- [ES2015+ Cheatsheet][guides_javascript-devhints-es6_cheatsheet]
+- [MDN JavaScript guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
+- [MDN JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference).
+- [ES2015+ Cheat-sheet](https://devhints.io/es6)
 
 ## Modules
 
@@ -96,7 +96,7 @@ directory.
 ## Writing your first module
 
 The convention in Moodle is to have one JavaScript Module which is your initial entrypoint.
-This usually provides a function called `init` which you then [export][guides_javascript-mdn-javascript_reference-export] from the module.
+This usually provides a function called `init` which you then [export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) from the module.
 This `init` function will be called by Moodle.
 
 Your module will probably also have one or more dependencies which you will `import`.
@@ -107,7 +107,7 @@ Classes, and other data structures.
 :::note
 This guide isn't intended to teach you how to write JavaScript.
 If you are new to JavaScript, you may want to start with the [MDN JavaScript
-basics guide][guides-javascript-mdn-javascript_getting_started].
+basics guide](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web).
 :::
 
 A module which calls to the browser `console.log` function would look like:
@@ -119,7 +119,7 @@ export const init = () => {
 ```
 
 In this example a new variable called `init` is created and exported using
-the ES2015 [export][guides_javascript-mdn-javascript_reference-export] keyword.
+the ES2015 [export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) keyword.
 The variable is assigned an arrow function expression which takes no
 arguments, and when executed will call the browser `console.log` function
 with the text `"Hello, world!"`.
@@ -129,7 +129,7 @@ with the text `"Hello, world!"`.
 Usually you will want to perform an action in response to a user
 interacting with the page.
 
-You can use the [document.addEventListener()][guides_javascript-mdn-javascript_reference-addeventlistener] method to do
+You can use the [document.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) method to do
 this.
 
 To add a `click` listener to the entire body you would write:
@@ -237,7 +237,7 @@ export const init = () => {
 You will notice several key differences in this example when compared with the previous one:
 
 - The list of Selectors has been moved to a new Module which is included using
-  the [import][guides_javascript-mdn-javascript_reference-import] keyword.
+  the [import](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import) keyword.
   The new `selectors` module is a dependency of the `helloworld` module.
 - The call to `document.addEventListener` has been moved to a new
   `registerEventListeners` function.
@@ -496,7 +496,7 @@ Most of the Moodle JavaScript tooling requires [NodeJS](/general/development/too
 
 ### Grunt
 
-[Grunt] is a command-line tool used to compile JavaScript, and CSS, and to lint JavaScript, CSS, and Behat tests.
+[Grunt](https://gruntjs.com/) is a command-line tool used to compile JavaScript, and CSS, and to lint JavaScript, CSS, and Behat tests.
 
 :::tip
 Rather than running `grunt` on the entire Moodle source every time you make changes, you can use `grunt watch`
@@ -506,7 +506,7 @@ in the background to build just the files you change as you write them.
 #### Installing grunt
 
 <Tabs>
-<TabItem value="globalgrunt" label="Global">
+<TabItem value="global_grunt" label="Global">
 
 ```console
 npm -g install grunt-cli
@@ -535,13 +535,3 @@ grunt
 </Tabs>
 
 ### ESLint
-
-[grunt]: https://gruntjs.com/
-[guides-javascript-mdn-javascript_getting_started]: https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web
-[guides_javascript-devhints-es6_cheatsheet]: https://devhints.io/es6
-[guides_javascript-mdn-arrow_functions]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
-[guides_javascript-mdn-javascript_guide]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-[guides_javascript-mdn-javascript_reference]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
-[guides_javascript-mdn-javascript_reference-addeventlistener]: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
-[guides_javascript-mdn-javascript_reference-export]: https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export
-[guides_javascript-mdn-javascript_reference-import]: https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import

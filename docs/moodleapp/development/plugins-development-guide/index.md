@@ -1763,7 +1763,7 @@ If you don't want your module to be clickable then you just need to remove `meth
 
 Ionic let pages define some functions that will be called when certain navigation lifecycle events happen. For more info about these functions, see [Ionic's documentation](https://ionicframework.com/docs/api/router-outlet).
 
-You can define these functions in your plugin javascript:
+You can define these functions in your plugin JavaScript:
 
 ```javascript
 this.ionViewWillLeave = function() {
