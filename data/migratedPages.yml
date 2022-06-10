@@ -94,6 +94,9 @@ Debugging_network_requests_in_the_Moodle_App:
 Deprecation:
 - filePath: "/general/development/policies/deprecation.md"
   slug: "/general/development/policies/deprecation"
+Designing_usable_forms:
+- filePath: "/general/development/policies/designing-usable-forms.md"
+  slug: "/general/development/policies/designing-usable-forms"
 Developer_meeting_April_2022:
 - filePath: "/general/community/meetings/202204.md"
   slug: "/general/community/meetings/202204"

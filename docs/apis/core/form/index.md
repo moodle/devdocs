@@ -294,6 +294,6 @@ In some cases you may want to [group elements](https://docs.moodle.org/dev/lib/f
 - [Core APIs](../..)
 - [lib/formslib.php Usage](https://docs.moodle.org/dev/lib/formslib.php_Usage)
 - [lib/formslib.php Form Definition](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition)
-- [Designing usable forms](https://docs.moodle.org/dev/Designing_usable_forms)
+- [Designing usable forms](/general/development/policies/designing-usable-forms)
 - [Fragment](https://docs.moodle.org/dev/Fragment)
 - [MForm Modal](https://docs.moodle.org/dev/MForm_Modal)
