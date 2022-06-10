@@ -283,3 +283,11 @@ wwwroot
 xcodeproj
 xcworkspace
 xmldb
+advcheckbox
+selectyesno
+selectwithlink
+filemanager
+modvisible
+savechanges
+hideif
+formslib
