@@ -128,11 +128,14 @@ Filters:
 - filePath: "/docs/apis/plugintypes/filter/index.md"
   slug: "/docs/apis/plugintypes/filter/"
 Groups:
-- filePath: "/docs/guides/groups.md"
-  slug: "/docs/apis/subsystems/groups"
+- filePath: "/docs/apis/subsystems/group/index.md"
+  slug: "/docs/apis/subsystems/group/"
 Hardening_new_Roles_system:
 - filePath: "/docs/apis/subsystems/roles.md"
   slug: "/docs/apis/subsystems/roles"
+Groups_API:
+- filePath: "/docs/apis/subsystems/group/index.md"
+  slug: "/docs/apis/subsystems/group/"
 Integration_Review:
 - filePath: "/general/development/process/integration-review.md"
   slug: "/general/development/process/integration-review"
