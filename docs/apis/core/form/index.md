@@ -292,7 +292,7 @@ In some cases you may want to [group elements](https://docs.moodle.org/dev/lib/f
 ## See also
 
 - [Core APIs](../..)
-- [lib/formslib.php Usage](https://docs.moodle.org/dev/lib/formslib.php_Usage)
+- [lib/formslib.php Usage](./usage.md)
 - [lib/formslib.php Form Definition](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition)
 - [Designing usable forms](/general/development/policies/designing-usable-forms)
 - [Fragment](https://docs.moodle.org/dev/Fragment)
