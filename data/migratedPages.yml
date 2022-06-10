@@ -1330,6 +1330,9 @@ Overview:
 Peer_reviewing:
 - filePath: "/general/development/process/peer-review.md"
   slug: "/general/development/process/peer-review"
+Plagiarism_API:
+- filePath: "/docs/apis/subsystems/plagiarism.md"
+  slug: "/docs/apis/subsystems/plagiarism"
 Plugin_files:
 - filePath: "/docs/apis/plugintypes/commonfiles.md"
   slug: "/docs/apis/plugintypes/commonfiles"
