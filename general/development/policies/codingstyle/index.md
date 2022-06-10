@@ -101,7 +101,7 @@ if ($a > 10) {
 
 </InvalidExample>
 
-SQL queries use special indentation, see [SQL coding style](https://docs.moodle.org/dev/SQL_coding_style).
+SQL queries use special indentation, see [SQL coding style](/general/development/policies/codingstyle/sql).
 
 ### Maximum Line Length
 
@@ -1877,7 +1877,7 @@ This document was drawn from the following sources:
 
 - [JavaScript Coding Style](https://docs.moodle.org/dev/Javascript/Coding_Style)
 - [CSS Coding Style](https://docs.moodle.org/dev/CSS_Coding_Style)
-- [SQL coding style](https://docs.moodle.org/dev/SQL_coding_style)
+- [SQL coding style](/general/development/policies/codingstyle/sql)
 - [Coding](/general/development/policies)
 - [CodeSniffer](../../policies/codingstyle/index.md)
 - [Code Checker plugin](https://moodle.org/plugins/local_codechecker)
