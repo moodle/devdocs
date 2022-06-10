@@ -289,6 +289,38 @@ public function definition() {
 
 In some cases you may want to [group elements](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#Use_Fieldsets_to_group_Form_Elements) into collections.
 
+## Unit testing
+
+In order to test the processing of submitted form contents in unit tests, the Forms API has a `mock_submit()` function.
+
+This method makes the form behave as if the data supplied to it was submitted by the user via the web interface. The data still passes through all form validation, which means that `get_data() will return all of the parsed values, along with any defaults.
+
+<details>
+<summary>Example usage</summary>
+
+```php
+// Instantiate a form to submit.
+$form = new qtype_multichoice_edit_form(...);
+
+// Fetch the data and then mock the submission of that data.
+$questiondata = test_question_maker::get_question_data('multichoice', 'single');
+$form->mock_submit($questiondata);
+
+// The `get_data()` function will return the validated data, plus any defaults.
+$actualfromform = $form->get_data();
+
+// The resultant data can now be tested against the expected values.
+$expectedfromform = test_question_maker::get_question_form_data('multichoice', 'single');
+$this->assertEquals($expectedfromform, $actualfromform);
+
+// The data can also be saved and tested in the context of the API.
+save_question($actualfromform);
+$actualquestiondata = question_load_questions(array($actualfromform->id));
+$this->assertEquals($questiondata, $actualquestiondata);
+```
+
+</details>
+
 ## See also
 
 - [Core APIs](../..)

@@ -1528,3 +1528,6 @@ Using_the_Moodle_App_in_a_browser:
 lib/formslib.php_Usage:
 - filePath: "/docs/apis/core/form/usage.md"
   slug: "/docs/apis/core/form/usage"
+lib/formslib.php_Testing:
+- filePath: "/docs/apis/core/form/index.md"
+  slug: "/docs/apis/core/form/"
