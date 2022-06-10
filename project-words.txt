@@ -116,6 +116,8 @@ externallib
 favouriting
 fieldname
 filearea
+fileareas
+filemanager
 firstname
 flatfile
 fontawesome
@@ -222,6 +224,7 @@ smallmessage
 splitview
 strftimedate
 strikethrough
+subplugin
 tablespace
 tasklogs
 templatable
@@ -245,6 +248,7 @@ uploadsingle
 uploadusers
 urltolink
 userdate
+userid
 versionname
 videojs
 webdav
