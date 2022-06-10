@@ -22,6 +22,7 @@
   --ifm-navbar-padding-vertical: 0;
   --ifm-navbar-link-color: #194866;
   --ifm-navbar-link-hover-color: #bd5b00;
+  --ifm-background-color: #fff;
 }
 
 @media (max-width: 767px) {
@@ -117,5 +118,29 @@ html {
 @media (max-width: 576px) {
   :root .markdown h1 {
     --ifm-h1-font-size: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer.theme-doc-footer {
+    display: initial;
+  }
+
+  footer.theme-doc-footer .theme-doc-footer-tags-row {
+    display: block;
+    margin-top: 3rem;
+  }
+
+  footer.theme-doc-footer .theme-doc-footer-edit-meta-row {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--ifm-background-color);
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  footer.theme-doc-footer nav.pagination-nav {
+    margin-top: 1.5rem;
   }
 }
