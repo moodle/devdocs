@@ -211,6 +211,7 @@ const sidebars = {
                 'development/tools/mdk',
                 'development/tools/phpcs',
                 'development/tools/nodejs',
+                'development/tools/cibot',
             ],
             link: {
                 type: 'doc',

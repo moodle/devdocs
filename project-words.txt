@@ -8,6 +8,7 @@ BMA
 Brickfield
 Bugcrowd
 Choicegroup
+CiBot
 CURLOPT
 Docsearch
 Docusaurus
@@ -53,6 +54,7 @@ SIGINT
 SIGTERM
 TCPDF
 TODO
+ToBic
 Triaged
 Untriaged
 WCAG
@@ -81,6 +83,7 @@ calculatedmulti
 calculatedsimple
 capabilityname
 captype
+cime
 classname
 clientid
 clob
@@ -252,6 +255,8 @@ tinymce
 todos
 toggleall
 triagers
+triaging
+triaging_in_progress
 truefalse
 unbrowseable
 unenrol

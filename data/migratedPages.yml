@@ -28,6 +28,9 @@ Assign_submission_plugins:
 Automated_Manipulation_of_Strings_2.0:
 - filePath: "/general/projects/api/amos.md"
   slug: "/general/projects/api/amos"
+Automated_code_review:
+- filePath: "/general/development/tools/cibot.md"
+  slug: "/general/development/tools/cibot"
 Blocks:
 - filePath: "/docs/apis/plugintypes/blocks/index.md"
   slug: "/docs/apis/plugintypes/blocks"
