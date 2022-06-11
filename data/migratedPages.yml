@@ -1534,3 +1534,6 @@ lib/formslib.php_Usage:
 lib/formslib.php_repeat_elements:
 - filePath: "/docs/apis/core/form/advanced/repeat-elements.md"
   slug: "/docs/apis/core/form/advanced/repeat-elements"
+lib/formslib.php_setAdvanced:
+- filePath: "/docs/apis/core/form/advanced/advanced-elements.md"
+  slug: "/docs/apis/core/form/advanced/advanced-elements"
