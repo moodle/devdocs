@@ -6,6 +6,7 @@ tags:
   - qbank
   - Quiz
 description: Question type plugins allow you to extend the functionality of the Moodle Question bank.
+documentationDraft: true
 ---
 
 import { Since } from '@site/src/components';
@@ -14,8 +15,6 @@ import { Since } from '@site/src/components';
   version="4.0"
   issueNumber="MDL-70329"
 />
-
-## Introduction
 
 Question type plugins allow you to extend the functionality of the Moodle Question bank, and support features including:
 

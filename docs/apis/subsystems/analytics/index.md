@@ -10,8 +10,6 @@ import { Since } from '@site/src/components';
 
 <!-- cspell:ignore analysables -->
 
-## Summary
-
 The Moodle Analytics API allows Moodle site managers to define _prediction models_ that combine _indicators_ and a _target_.
 
 The _target_ is the event we want to predict. The _indicators_ are what we think will lead to an accurate prediction of the target.
@@ -32,6 +30,8 @@ The _target_ would be whether the student is able to complete the course or not.
 Moodle uses these indicators and the target for each student in a finished course to predict which students are at risk of dropping out in ongoing courses.
 
 :::
+
+## Summary
 
 ### API components
 
