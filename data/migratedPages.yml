@@ -1525,9 +1525,12 @@ Upgrade_notes:
 Using_the_Moodle_App_in_a_browser:
 - filePath: "/docs/moodleapp/development/setup/app-in-browser.md"
   slug: "/docs/moodleapp/development/setup/app-in-browser"
-lib/formslib.php_Usage:
-- filePath: "/docs/apis/core/form/usage.md"
-  slug: "/docs/apis/core/form/usage"
 lib/formslib.php_Testing:
 - filePath: "/docs/apis/core/form/index.md"
   slug: "/docs/apis/core/form/"
+lib/formslib.php_Usage:
+- filePath: "/docs/apis/core/form/usage.md"
+  slug: "/docs/apis/core/form/usage"
+lib/formslib.php_repeat_elements:
+- filePath: "/docs/apis/core/form/advanced/repeat-elements.md"
+  slug: "/docs/apis/core/form/advanced/repeat-elements"
