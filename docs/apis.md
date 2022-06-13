@@ -241,7 +241,7 @@ The [Gradebook API](https://docs.moodle.org/dev/Gradebook_API) allows you to rea
 
 ### Plagiarism API (plagiarism)
 
-The [Plagiarism API](https://docs.moodle.org/dev/Plagiarism_API) allows your activity module to send files and data to external services to have them checked for plagiarism.
+The [Plagiarism API](./apis/subsystems/plagiarism) allows your activity module to send files and data to external services to have them checked for plagiarism.
 
 ### Question API (question)
 
