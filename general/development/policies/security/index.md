@@ -160,7 +160,7 @@ Moodle is very flexible system, administrators may define multiple roles. Each r
 
 ### Don't trust any input from users
 
-- Use **[moodleforms](https://docs.moodle.org/dev/lib/formslib.php)** whenever possible, with an appropriate `setType` method call for each field.
+- Use **[moodleforms](/docs/apis/subsystems/form)** whenever possible, with an appropriate `setType` method call for each field.
 - Before performing actions, use `data_submitted() && confirm_sesskey()` to check sesskey and that you are handling a POST request.
 - Before destroying large amounts of data, add a confirmation step.
 - If not using a moodleform, clean input using `optional_param` or `required_param` with an appropriate `PARAM_...` type.
