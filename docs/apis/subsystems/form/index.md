@@ -18,7 +18,7 @@ Form are created using the Form API. The Form API supports most standard HTML el
 - Facility to add Moodle help buttons to forms.
 - Support for file repository using the [File API](../../subsystems/files/index.md) .
 - Support for many custom Moodle specific and non-specific form elements.
-- Facility for [repeated elements](./advanced/repeat-elements).
+- Facility for [repeated elements](./advanced/repeat-elements.md).
 - Facility for form elements in advanced groups
 
 ## Usage

@@ -131,8 +131,8 @@ Filters:
 - filePath: "/docs/apis/plugintypes/filter/index.md"
   slug: "/docs/apis/plugintypes/filter/"
 Form_API:
-- filePath: "/docs/apis/core/form/index.md"
-  slug: "/docs/apis/core/form/"
+- filePath: "/docs/apis/subsystems/form/index.md"
+  slug: "/docs/apis/subsystems/form/"
 Groups:
 - filePath: "/docs/guides/groups.md"
   slug: "/docs/apis/subsystems/groups"
@@ -1526,14 +1526,14 @@ Using_the_Moodle_App_in_a_browser:
 - filePath: "/docs/moodleapp/development/setup/app-in-browser.md"
   slug: "/docs/moodleapp/development/setup/app-in-browser"
 lib/formslib.php_Testing:
-- filePath: "/docs/apis/core/form/index.md"
-  slug: "/docs/apis/core/form/"
+- filePath: "/docs/apis/subsystems/form/index.md"
+  slug: "/docs/apis/subsystems/form/"
 lib/formslib.php_Usage:
-- filePath: "/docs/apis/core/form/usage.md"
-  slug: "/docs/apis/core/form/usage"
+- filePath: "/docs/apis/subsystems/form/usage.md"
+  slug: "/docs/apis/subsystems/form/usage"
 lib/formslib.php_repeat_elements:
-- filePath: "/docs/apis/core/form/advanced/repeat-elements.md"
-  slug: "/docs/apis/core/form/advanced/repeat-elements"
+- filePath: "/docs/apis/subsystems/form/advanced/repeat-elements.md"
+  slug: "/docs/apis/subsystems/form/advanced/repeat-elements"
 lib/formslib.php_setAdvanced:
-- filePath: "/docs/apis/core/form/advanced/advanced-elements.md"
-  slug: "/docs/apis/core/form/advanced/advanced-elements"
+- filePath: "/docs/apis/subsystems/form/advanced/advanced-elements.md"
+  slug: "/docs/apis/subsystems/form/advanced/advanced-elements"
