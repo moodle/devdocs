@@ -99,7 +99,7 @@ However, for very complex input, like HTML, doing the cleaning is very tricky, a
 
 :::info
 
-Follow the [Output functions](https://docs.moodle.org/dev/Output_functions) link to get a best understanding of how dynamic data should be sent from Moodle to the browser.
+Follow the [Output functions](/docs/apis/subsystems/output#output-functions) link to get a best understanding of how dynamic data should be sent from Moodle to the browser.
 
 :::
 

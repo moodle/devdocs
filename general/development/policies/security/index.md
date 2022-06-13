@@ -179,7 +179,7 @@ Similarly, clean data from other external resources like RSS feeds before use.
 
 :::info More info
 
-We recommend that you follow the [Output functions](https://docs.moodle.org/dev/Output_functions) to get a better understanding of how dynamic data should be sent from Moodle to the browser.
+We recommend that you follow the [Output functions](/docs/apis/subsystems/output#output-functions) to get a better understanding of how dynamic data should be sent from Moodle to the browser.
 
 :::
 

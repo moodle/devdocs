@@ -34,7 +34,7 @@ Filters are a way to automatically transform content before it is output. Filter
 
 Filters are one of the easiest types of plugin to create.
 
-Filters are applied to content passing in to the `format_string()` and `format_text()` functions, which are part of the [Output API](https://docs.moodle.org/dev/Output_functions).
+Filters are applied to content passing in to the `format_string()` and `format_text()` functions, which are part of the [Output API](../subsystems/output).
 
 ## File structure
 
