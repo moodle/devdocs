@@ -23,7 +23,7 @@ Given the template is defined as:
 </div>
 ```
 
-And the values for the placeholder tags `name` and `grade` are provided as a JSON object, referred to as *rendering context* (note the *context* here has nothing to do with Moodle [permission contexts](https://docs.moodle.org/dev/Roles#Context). In Mustache, the term basically represents the data passed to the template).
+And the values for the placeholder tags `name` and `grade` are provided as a JSON object, referred to as *rendering context* (note the *context* here has nothing to do with Moodle [permission contexts](../../apis/subsystems/roles.md#context). In Mustache, the term basically represents the data passed to the template).
 
 ```json
 {

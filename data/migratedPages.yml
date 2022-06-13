@@ -1393,6 +1393,9 @@ Roadmap:
 SQL_coding_style:
 - filePath: "/general/development/policies/codingstyle/sql.md"
   slug: "/general/development/policies/codingstyle/sql"
+Roles:
+- filePath: "/docs/apis/subsystems/roles.md"
+  slug: "/docs/apis/subsystems/roles"
 Security:
 - filePath: "/general/development/policies/security.md"
   slug: "/general/development/policies/security"
