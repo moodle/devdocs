@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdevdocs=self.webpackChunkdevdocs||[]).push([[46645],{39047:function(e){e.exports=JSON.parse('{"label":"Feature","permalink":"/devdocs/docs/tags/feature","allTagsPath":"/devdocs/docs/tags","count":1,"items":[{"id":"guides","title":"Developer guides","description":"Getting started guides to Moodle features","permalink":"/devdocs/docs/guides"}]}')}}]);
