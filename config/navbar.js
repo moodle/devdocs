@@ -32,10 +32,9 @@ const navbar = {
     },
     items: [
         {
-            type: 'doc',
-            docId: 'apis',
-            position: 'left',
+            to: '/docs',
             label: 'Guides',
+            position: 'left',
         },
         {
             to: '/general/community/contribute',

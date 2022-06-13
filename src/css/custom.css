@@ -88,6 +88,7 @@ html {
   margin-right: 2rem;
 }
 
+.navbar__link--active,
 .navbar__link:hover {
   border-bottom-color: var(--ifm-navbar-link-hover-color);
 }

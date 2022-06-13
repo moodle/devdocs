@@ -18,6 +18,8 @@ import {
     TabItem
 } from '@site/src/components';
 
+Block plugins allow you to show supplemental information, and features, within different parts of Moodle.
+
 ## File structure
 
 Blocks plugins are located in the `/blocks` directory.
