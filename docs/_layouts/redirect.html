@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Redirecting to {{ site.newhost }}</title>
     <script>
-      const target = `{{ site.newhost }}${location.href.replace('{{ site.url }}', '')}`;
+      const target = `{{ site.newhost }}${location.href.replace('{{ site.url }}{{ site.baseurl }}', '')}`;
       const addNode = (tagType, values, children) => {
         const element = document.createElement(tagType);
         Object.entries(values).forEach(([name, value]) => {
