@@ -123,7 +123,7 @@ The [External functions API](https://docs.moodle.org/dev/External_functions_API)
 
 ### Favourites API
 
-The [Favourites API](https://docs.moodle.org/dev/Favourites_API) allows you to mark items as favourites for a user and manage these favourites. This is often referred to as 'Starred'.
+The [Favourites API](./apis/subsystems/favourites/index.md) allows you to mark items as favourites for a user and manage these favourites. This is often referred to as 'Starred'.
 
 ### H5P API (h5p)
 
