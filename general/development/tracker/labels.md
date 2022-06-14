@@ -67,7 +67,7 @@ Moodle Partners apply this label to flag issues that are important to their clie
 This label indicates that a solution (patch) has been attached to the issue. However, if you can, it may be better to submit the issue for peer review, rather than using this label. This is useful to component leads and Moodle HQ when deciding what to work on next.
 
 - `cime`<br/>
-A developer can add the `cime` label to an issue to request that CiBot perform an [Automated code review](https://docs.moodle.org/dev/Automated_code_review).
+A developer can add the `cime` label to an issue to request that CiBot perform an [Automated code review](/general/development/tools/cibot).
 
 - [`performance`](https://tracker.moodle.org/issues/?jql=labels%20%3D%20performance%20AND%20project%20%3D%20MDL)<br/>
 Used to flag any issues that developers think may affect Moodle's performance in some way (positively or negatively).

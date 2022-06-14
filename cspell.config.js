@@ -31,11 +31,13 @@ const config = {
         'typescript',
         'softwareTerms',
         'companies',
+        'jira-tags',
         'lorem-ipsum',
         'moodle-components',
         'moodle-contributors',
         'project-words',
         'plugin-names',
+        'tools-names',
     ],
     dictionaryDefinitions: [
         {
@@ -56,6 +58,16 @@ const config = {
         {
             name: 'project-words',
             path: './project-words.txt',
+            noSuggest: true,
+        },
+        {
+            name: 'jira-tags',
+            path: './data/jira-tags.txt',
+            noSuggest: true,
+        },
+        {
+            name: 'tools-names',
+            path: './data/tools-names.txt',
             noSuggest: true,
         },
     ],
