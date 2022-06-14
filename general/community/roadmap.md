@@ -4,7 +4,7 @@ tags:
   - Core development
 ---
 
-This roadmap summarises the best current plans on the future technical development of the Moodle's open source learning platform, consisting of Moodle LMS, Moodle Workplace LMS, MoodleCloud, MoodleNet, Moodle Apps, and Moodle Academy.
+This roadmap summarises the current plans on the future technical development of the Moodle's open source learning platform, consisting of Moodle LMS, Moodle Workplace LMS, MoodleCloud, MoodleNet, Moodle Apps, and Moodle Academy.
 
 ### Where this roadmap comes from
 
