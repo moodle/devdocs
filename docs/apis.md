@@ -40,7 +40,7 @@ The [Page API](https://docs.moodle.org/dev/Page_API) is used to set up the curre
 
 ### Output API (output)
 
-The [Output API](https://docs.moodle.org/dev/Output_API) is used to render the HTML for all parts of the page.
+The [Output API](./apis/subsystems/output) is used to render the HTML for all parts of the page.
 
 ### String API (string)
 

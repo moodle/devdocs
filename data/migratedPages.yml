@@ -1342,6 +1342,12 @@ Moodle_security_procedures:
 New_docs_version_process:
 - filePath: "/general/development/process/release/newuserdocs.md"
   slug: "/general/development/process/release/newuserdocs"
+Output_API:
+- filePath: "/docs/apis/subsystems/output.md"
+  slug: "/docs/apis/subsystems/output"
+Output_functions:
+- filePath: "/docs/apis/subsystems/output.md"
+  slug: "/docs/apis/subsystems/output#output-functions"
 Overview:
 - filePath: "/general/community/intro.md"
   slug: "/general/community"
