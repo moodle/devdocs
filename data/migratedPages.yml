@@ -73,15 +73,15 @@ Custom_Moodle_Apps:
 DDL_functions:
 - filePath: "/docs/apis/core/dml/ddl.md"
   slug: "/docs/apis/core/dml/ddl"
-DML_functions:
-- filePath: "/docs/apis/core/dml/ddl.md"
-  slug: "/docs/apis/core/dml/ddl"
 DML_drivers:
 - filePath: "/docs/apis/core/dml/drivers.md"
   slug: "/docs/apis/core/dml/drivers"
 DML_exceptions:
 - filePath: "/docs/apis/core/dml/exceptions.md"
   slug: "/docs/apis/core/dml/exceptions"
+DML_functions:
+- filePath: "/docs/apis/core/dml/ddl.md"
+  slug: "/docs/apis/core/dml/ddl"
 Data_definition_API:
 - filePath: "/docs/apis/core/dml/ddl.md"
   slug: "/docs/apis/core/dml/ddl"
@@ -1363,6 +1363,9 @@ Plagiarism_API:
 Plugin_files:
 - filePath: "/docs/apis/plugintypes/commonfiles.md"
   slug: "/docs/apis/plugintypes/commonfiles"
+Plugin_types:
+- filePath: "/docs/apis/plugintypes/index.md"
+  slug: "/docs/apis/plugintypes/"
 Process:
 - filePath: "/general/development/process.md"
   slug: "/general/development/process"
