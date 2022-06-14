@@ -16,6 +16,7 @@
  */
 const path = require('path');
 const fs = require('fs');
+/* eslint-disable-next-line import/no-extraneous-dependencies */
 const yaml = require('js-yaml');
 
 const obsoleteDocs = require('./data/obsoletePages.json');
@@ -42,20 +43,25 @@ const isMigrated = (legacyPath) => (typeof migratedDocs[legacyPath] !== 'undefin
  * Get the path to the new doc from a legacy doc path.
  *
  * @param legacyPath {string}
- * @returns {string}
+ * @returns {object}
  */
 const getMigratedDoc = (legacyPath) => {
     if (!isMigrated(legacyPath)) {
         return null;
     }
 
-    const filename = migratedDocs[legacyPath][0].slug;
+    // Fetch the first match.
+    const migratedItem = migratedDocs[legacyPath][0];
 
-    if (filename.startsWith('/')) {
-        return filename.substr(1);
+    let { filePath } = migratedItem;
+    if (filePath.startsWith('/')) {
+        filePath = filePath.substr(1);
     }
 
-    return filename;
+    return {
+        filePath,
+        slug: migratedItem.slug,
+    };
 };
 
 const getAbsoluteDirectory = (relativePath) => {
@@ -86,27 +92,16 @@ const getMigrationLink = (legacyPath, usedIn) => {
 
     const relativeUsedIn = path.relative(process.env.PWD, usedIn);
 
-    const replacementIsGeneral = replacementFile.startsWith('general/');
+    const replacementIsGeneral = replacementFile.filePath.startsWith('general/');
     const usedInIsGeneral = relativeUsedIn.startsWith('general/');
 
-    const normaliseReplacement = (file) => {
-        if (file.endsWith('index.md')) {
-            return `/${file.replace(/\/index\.md$/, '')}`;
-        }
-
-        if (file.endsWith('.md')) {
-            return `/${file.replace(/\.md$/, '')}`;
-        }
-
-        return `/${file}`;
-    };
-
     if (replacementIsGeneral || usedInIsGeneral) {
-        return normaliseReplacement(`${replacementFile}`);
+        // If the file is in /general, always return the slug.
+        return replacementFile.slug;
     }
 
     const absRelativeUsedIn = getAbsoluteDirectory(relativeUsedIn);
-    const absReplacementFile = path.join(__dirname, replacementFile);
+    const absReplacementFile = path.join(__dirname, replacementFile.filePath);
     const relativeLink = path.relative(absRelativeUsedIn, absReplacementFile);
 
     if (relativeLink.startsWith('.')) {
