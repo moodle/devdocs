@@ -55,11 +55,11 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Assignment submission plugins](./assign/submission.md) | assignsubmission | /mod/assign/submission | Different forms of assignment submissions | 2.3+ |
 | [Assignment feedback plugins](./assign/feedback.md) | assignfeedback | /mod/assign/feedback | Different forms of assignment feedbacks | 2.3+ |
 | [Book tools](https://docs.moodle.org/dev/Book_tools) | booktool | /mod/book/tool | Small information-displays or tools that can be moved around pages | 2.1+ |
-| [Course Custom fields](https://docs.moodle.org/dev/Course_Custom_fields) | customfield | /customfield/field | Custom field types, used e. g. in Custom course fields | 3.7+ |
+| [Course Custom fields](https://docs.moodle.org/dev/Course_Custom_fields) | customfield | /customfield/field | Custom field types, used in Custom course fields | 3.7+ |
 | [Database fields](https://docs.moodle.org/dev/Database_fields) | datafield | /mod/data/field | Different types of data that may be added to the Database activity module | 1.6+ |
 | [Database presets](https://docs.moodle.org/dev/Database_presets) | datapreset | /mod/data/preset | Pre-defined templates for the Database activity module | 1.6+ |
 | [LTI sources](https://docs.moodle.org/dev/External_tool_source) | ltisource | /mod/lti/source | LTI providers can be added to external tools easily through the external tools interface see [Documentation on External Tools](https://docs.moodle.org/en/External_tool). This type of plugin is specific to LTI providers that need a plugin that can register custom handlers to process LTI messages | 2.7+ |
-| [File Converters](https://docs.moodle.org/dev/File_Converters) | fileconverter | /files/converter | Allow conversion between different types of user-submitted file. For example from .doc to PDF. | 3.2+ |
+| [File Converters](./fileconverter/index.md) | fileconverter | /files/converter | Allow conversion between different types of user-submitted file. For example from .doc to PDF. | 3.2+ |
 | [LTI services](https://docs.moodle.org/dev/LTI_services) | ltiservice | /mod/lti/service | Allows the implementation of LTI services as described by the IMS LTI specification | 2.8+ |
 | [Machine learning backends](./mlbackend/index.md) | mlbackend | /lib/mlbackend | Prediction processors for analytics API | 3.4+ |
 | [Forum reports](https://docs.moodle.org/dev/Forum_reports) | forumreport | /mod/forum/report | Display various reports in the forum activity | 3.8+ |
@@ -70,7 +70,7 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Workshop allocation methods](https://docs.moodle.org/dev/Workshop_allocation_methods) | workshopallocation | /mod/workshop/allocation | Define ways how submissions are assigned for assessment in the [Workshop](https://docs.moodle.org/dev/Workshop) module | 2.0+ |
 | [Workshop evaluation methods](https://docs.moodle.org/dev/Workshop_evaluation_methods) | workshopeval | /mod/workshop/eval | Implement the calculation of the grade for assessment (grading grade) in the [Workshop](https://docs.moodle.org/dev/Workshop) module | 2.0+ |
 | [Blocks](./blocks/index.md) | block | /blocks | Small information-displays or tools that can be moved around pages | 2.0+ |
-| [Question types](https://docs.moodle.org/dev/Question_types) | qtype | /question/type | Different types of question (e.g. multiple-choice, drag-and-drop) that can be used in quizzes and other activities | 1.6+ |
+| [Question types](https://docs.moodle.org/dev/Question_types) | qtype | /question/type | Different types of question (for example multiple-choice, drag-and-drop) that can be used in quizzes and other activities | 1.6+ |
 | [Question behaviours](https://docs.moodle.org/dev/Question_behaviours) | qbehaviour | /question/behaviour | Control how student interact with questions during an attempt | 2.1+ |
 | [Question import/export formats](https://docs.moodle.org/dev/Question_formats) | qformat | /question/format | Import and export question definitions to/from the question bank | 1.6+ |
 | [Text filters](./filter/index.md) | filter | /filter | Automatically convert, highlight, and transmogrify text posted into Moodle. | 1.4+ |
@@ -92,7 +92,7 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Gradebook export](https://docs.moodle.org/dev/Gradebook_export) | gradeexport | /grade/export | Export grades in various formats | 1.9+ |
 | [Gradebook import](https://docs.moodle.org/dev/Gradebook_import) | gradeimport | /grade/import | Import grades in various formats | 1.9+ |
 | [Gradebook reports](https://docs.moodle.org/dev/Gradebook_reports) | gradereport | /grade/report | Display/edit grades in various layouts and reports | 1.9+ |
-| [Advanced grading methods](https://docs.moodle.org/dev/Grading_methods) | gradingform | /grade/grading/form | Interfaces for actually performing grading in activity modules (eg Rubrics) | 2.2+ |
+| [Advanced grading methods](https://docs.moodle.org/dev/Grading_methods) | gradingform | /grade/grading/form | Interfaces for actually performing grading in activity modules (for example Rubrics) | 2.2+ |
 | [MNet services](https://docs.moodle.org/dev/MNet_services) | mnetservice | /mnet/service | Allows to implement remote services for the [MNet](https://docs.moodle.org/dev/MNet) environment (deprecated, use web services instead) | 2.0+ |
 | [Webservice protocols](https://docs.moodle.org/dev/Webservice_protocols) | webservice | /webservice | Define new protocols for web service communication (such as SOAP, XML-RPC, JSON, REST ...) | 2.0+ |
 | [Repository plugins](./repository/index.md) | repository | /repository | Connect to external sources of files to use in Moodle | 2.0+ |
@@ -104,8 +104,6 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Cache locks](https://docs.moodle.org/dev/Cache_locks) | cachelock | /cache/locks | Cache lock implementations. | 2.4+ |
 | [Themes](https://docs.moodle.org/dev/Themes) | theme | /theme | Change the look of Moodle by changing the the HTML and the CSS. | 2.0+ |
 | [Local plugins](./local/index.mdx) | local | /local | Generic plugins for local customisations | 2.0+ |
-| [Legacy assignment types](https://docs.moodle.org/dev/Assignment_types) | assignment | /mod/assignment/type | Different forms of assignments to be graded by teachers | 1.x - 2.2 |
-| [Legacy admin reports](https://docs.moodle.org/dev/Admin_reports) | report | /admin/report | Provides useful views of data in a Moodle site, for admins only. | Up to 2.1 (for 2.2+ see [Reports](https://docs.moodle.org/dev/Reports)) |
 | [Content bank content types](https://docs.moodle.org/dev/Content_bank_content_types) | contenttype | /contentbank/contenttype | Content types to upload, create or edit in the content bank and use all over the Moodle site | 3.9+ |
 | [H5P libraries](https://docs.moodle.org/dev/H5P_libraries) | h5plib | /h5p/h5plib | Plugin type for the particular versions of the H5P integration library. | 3.9+ |
 | [Question bank plugins](./qbank/index.md) | qbank | /question/bank | Plugin type for extending question bank functionality. | 4.0+ |

@@ -124,6 +124,11 @@ File_API:
 File_API_internals:
 - filePath: "/docs/apis/subsystems/files/internals.md"
   slug: "/docs/apis/subsystems/files/internals"
+File_Converters:
+- filePath: "/docs/apis/plugintypes/fileconverter/index.md"
+  slug: "/docs/apis/plugintypes/fileconverter/"
+- filePath: "/docs/apis/subsystems/files/converter.md"
+  slug: "/docs/apis/subsystems/file/converter/"
 Filters:
 - filePath: "/docs/apis/plugintypes/filter/index.md"
   slug: "/docs/apis/plugintypes/filter/"
