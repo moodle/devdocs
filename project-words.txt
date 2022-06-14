@@ -23,6 +23,7 @@ Ionicons
 JWKS
 MAINNODE
 MDL
+MDLNET
 MDLQA
 MDLSITE
 Moodle
@@ -56,6 +57,7 @@ TODO
 Triaged
 Untriaged
 WCAG
+WPQA
 Xdebug
 XMLDB
 XMPPHP
@@ -81,6 +83,7 @@ calculatedmulti
 calculatedsimple
 capabilityname
 captype
+catched
 classname
 clientid
 clob
@@ -197,6 +200,7 @@ passwordunmask
 pdftoppm
 perfdebug
 pgsql
+phar
 phpcs
 phpdoc
 phpdocs
