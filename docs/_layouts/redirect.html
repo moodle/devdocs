@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting to {{ site.newhost }}</title>
+    <script>
+      const target = `{{ site.newhost }}${location.href.replace('{{ site.url }}', '')}`;
+      const addNode = (tagType, values, children) => {
+        const element = document.createElement(tagType);
+        Object.entries(values).forEach(([name, value]) => {
+          element[name] = value;
+        });
+        if (children) {
+          element.innerHTML = children;
+        }
+
+        document.head.appendChild(element);
+      };
+      addNode('link', {
+        rel: 'canonical',
+        href: target,
+      });
+      addNode('script', {}, `location="${target}";`);
+      addNode('meta', {
+        'http-equiv': 'refresh',
+        content: `0; url=${target}`,
+      });
+      addNode('meta', {
+        name: 'robots',
+        content: 'noindex',
+      });
+      addNode('link', {
+        rel: 'canonical',
+        href: target,
+      });
+      addNode('h1', {}, `Redirecting to ${target}`);
+      addNode('a', {
+        href: target,
+      }, 'Click here if you are not redirected.');
+    </script>
+  </head>
+</html>
