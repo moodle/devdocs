@@ -4,13 +4,7 @@ tags:
   - Core development
 ---
 
-## Introduction
-
-The Moodle Project is designed to have a positive effect on the world by supporting and empowering the educators who are teaching students in all sectors, in all countries.
-
-To do this, our team at Moodle HQ looks to the world, talks with our community, and creates solutions in the forms of products that fit our values of **education**, **openness**, **respect**, **integrity** and **innovation**.
-
-This document summarises, for a broad audience, the best current plans on the future technical development of the Moodle's open source learning platform, consisting of Moodle LMS, Moodle Workplace LMS, MoodleCloud, MoodleNet, Moodle Apps, and Moodle Educator Certificates.
+This roadmap summarises the best current plans on the future technical development of the Moodle's open source learning platform, consisting of Moodle LMS, Moodle Workplace LMS, MoodleCloud, MoodleNet, Moodle Apps, and Moodle Academy.
 
 ### Where this roadmap comes from
 
@@ -24,7 +18,7 @@ Feedback from the community is extremely important and you can reach us by
 - creating new solutions as a plugin in the [Moodle Plugins directory](https://moodle.org/plugins),
 - or meeting us in person at one of our [MoodleMoots](https://moodle.com/events/)
 
-Moodle also has an extensive network of [Moodle Partners](https://moodle.com/partners). Moodle Partners are service providers that are certified by Moodle HQ to provide high quality Moodle services for schools, institutions and organisations. We work closely with our partners to determine the needs of Moodle Users and improve the platform.
+Moodle also has an extensive network of [Certified Moodle Service Providers](https://moodle.com/services), also known as Moodle Partners. Moodle Partners are service providers that are certified by Moodle HQ to provide high quality Moodle services for schools, institutions and organisations. We work closely with our partners to determine the needs of Moodle Users and improve the platform.
 
 Our Roadmap is built via our [Roadmap process](https://docs.moodle.org/dev/Roadmap_process). This process is continuously evolving but it always seeks to involve all our key stakeholders - students, teachers, admins, institutions, and of course our partners and supporters.
 
