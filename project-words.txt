@@ -18,6 +18,7 @@ GSOC
 IDEs
 IDOR
 IMSCP
+InnoDB
 Ionicons
 JWKS
 MAINNODE
@@ -31,6 +32,7 @@ Moodlelib
 Moodlenet
 Moodlers
 Multilang
+MyISAM
 MySQLi
 Netbeans
 Nextcloud
@@ -45,6 +47,8 @@ Poppler
 POSIX
 Quicklist
 Recaptcha
+RDBM
+RDBMS
 SIGINT
 SIGTERM
 TCPDF
@@ -66,6 +70,11 @@ assignfeedback
 assignsubmission
 behat
 bigbluebuttonbn
+bitand
+bitnot
+bitor
+bitwise
+bitxor
 booktool
 cacheability
 calculatedmulti
@@ -74,6 +83,7 @@ capabilityname
 captype
 classname
 clientid
+clob
 clsx
 codechecker
 codingerror
@@ -125,6 +135,7 @@ forceclean
 formchangechecker
 frankenstyle
 frontpage
+fullname
 googledocs
 gradebook
 gradebookservice
@@ -139,9 +150,12 @@ imsenterprise
 incompleted
 inplace
 invalidcoursemodule
+isempty
+isnotempty
 lable
 langindex
 lastaccess
+lastname
 lastruntime
 locallib
 loglevel
@@ -202,6 +216,8 @@ protectusernames
 qeupgradehelper
 quizaccess
 randomsamatch
+recordset
+recordsets
 renamedclasses
 renderable
 returntype
@@ -249,6 +265,7 @@ uploadusers
 urltolink
 userdate
 userid
+varchar
 versionname
 videojs
 webdav

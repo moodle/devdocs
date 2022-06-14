@@ -7,8 +7,6 @@ tags:
 
 <!-- cspell:ignore filestore -->
 
-## Overview
-
 The File API is used to control, manage, and serve all files uploaded and stored within Moodle. This page covers the core File API, which is responsible for storage, retrieval, and serving of files stored in Moodle.
 
 The following documentation is also related:

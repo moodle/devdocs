@@ -109,6 +109,7 @@ const config = {
         footer: require('./config/footer.js'),
         prism: require('./config/prism.js'),
         imageZoom: require('./config/imageZoom.js'),
+        algolia: require('./config/algolia.js'),
         docs: {
             sidebar: {
                 // Customisation for the left sidebar:
@@ -119,9 +120,6 @@ const config = {
     }),
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     plugins: [
-        [require.resolve('@cmfcmf/docusaurus-search-local'), {
-            indexBlog: false,
-        }],
         'plugin-image-zoom',
         [
             '@docusaurus/plugin-content-docs',

@@ -22,11 +22,6 @@ const sidebars = {
     docs: [
         'introduction',
         {
-            label: 'Getting started',
-            type: 'link',
-            href: '/general/development/gettingstarted',
-        },
-        {
             label: 'Developer guides',
             type: 'category',
             items: [
@@ -35,6 +30,10 @@ const sidebars = {
                     dirName: 'guides',
                 },
             ],
+            link: {
+                type: 'doc',
+                id: 'guides',
+            },
         },
         {
             label: 'API guides',
@@ -50,6 +49,13 @@ const sidebars = {
                 id: 'apis',
             },
         },
+
+        {
+            label: 'Developer update',
+            type: 'doc',
+            id: 'devupdate',
+        },
+
         {
             type: 'html',
             value: '<hr>',
@@ -78,11 +84,6 @@ const sidebars = {
             value: '<hr>',
         },
 
-        {
-            label: 'Developer update',
-            type: 'doc',
-            id: 'devupdate',
-        },
         {
             label: 'Release notes',
             type: 'link',

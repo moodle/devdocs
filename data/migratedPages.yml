@@ -67,6 +67,24 @@ Creating_mobile_course_formats:
 Custom_Moodle_Apps:
 - filePath: "/docs/moodleapp/customisation/custom-apps.md"
   slug: "/docs/moodleapp/customisation/custom-apps"
+DDL_functions:
+- filePath: "/docs/apis/core/dml/ddl.md"
+  slug: "/docs/apis/core/dml/ddl"
+DML_functions:
+- filePath: "/docs/apis/core/dml/ddl.md"
+  slug: "/docs/apis/core/dml/ddl"
+DML_drivers:
+- filePath: "/docs/apis/core/dml/drivers.md"
+  slug: "/docs/apis/core/dml/drivers"
+DML_exceptions:
+- filePath: "/docs/apis/core/dml/exceptions.md"
+  slug: "/docs/apis/core/dml/exceptions"
+Data_definition_API:
+- filePath: "/docs/apis/core/dml/ddl.md"
+  slug: "/docs/apis/core/dml/ddl"
+Data_manipulation_API:
+- filePath: "/docs/apis/core/dml/index.md"
+  slug: "/docs/apis/core/dml"
 Debugging_network_requests_in_the_Moodle_App:
 - filePath: "/docs/moodleapp/development/network-debug.md"
   slug: "/docs/moodleapp/development/network-debug"
@@ -1336,6 +1354,9 @@ Overview:
 Peer_reviewing:
 - filePath: "/general/development/process/peer-review.md"
   slug: "/general/development/process/peer-review"
+Plagiarism_API:
+- filePath: "/docs/apis/subsystems/plagiarism.md"
+  slug: "/docs/apis/subsystems/plagiarism"
 Plugin_files:
 - filePath: "/docs/apis/plugintypes/commonfiles.md"
   slug: "/docs/apis/plugintypes/commonfiles"
@@ -1360,6 +1381,9 @@ Repository_plugins:
 Roadmap:
 - filePath: "/general/community/roadmap.md"
   slug: "/general/community/roadmap"
+SQL_coding_style:
+- filePath: "/general/development/policies/codingstyle/sql.md"
+  slug: "/general/development/policies/codingstyle/sql"
 Security:
 - filePath: "/general/development/policies/security.md"
   slug: "/general/development/policies/security"

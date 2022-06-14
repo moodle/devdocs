@@ -16,7 +16,7 @@ The [Access API](./apis/subsystems/access) gives you functions so you can determ
 
 ### Data manipulation API (dml)
 
-The [Data manipulation API](https://docs.moodle.org/dev/Data_manipulation_API) allows you to read/write to databases in a consistent and safe way.
+The [Data manipulation API](./apis/core/dml/index.md) allows you to read/write to databases in a consistent and safe way.
 
 ### File API (files)
 
@@ -98,7 +98,7 @@ The [Competency API](https://docs.moodle.org/dev/Competency_API) allows you to l
 
 ### Data definition API (ddl)
 
-The [Data definition API](https://docs.moodle.org/dev/Data_definition_API) is what you use to create, change and delete tables and fields in the database during upgrades.
+The [Data definition API](./apis/core/dml/ddl) is what you use to create, change and delete tables and fields in the database during upgrades.
 
 ### Editor API
 
@@ -241,7 +241,7 @@ The [Gradebook API](https://docs.moodle.org/dev/Gradebook_API) allows you to rea
 
 ### Plagiarism API (plagiarism)
 
-The [Plagiarism API](https://docs.moodle.org/dev/Plagiarism_API) allows your activity module to send files and data to external services to have them checked for plagiarism.
+The [Plagiarism API](./apis/subsystems/plagiarism) allows your activity module to send files and data to external services to have them checked for plagiarism.
 
 ### Question API (question)
 

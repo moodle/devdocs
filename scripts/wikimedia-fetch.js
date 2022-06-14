@@ -368,6 +368,30 @@ const fetchOneDoc = async (title, newPath, options) => {
                     resolve();
                 });
             });
+
+            await new Promise((resolve) => {
+                exec('yarn mdfix-all', async (error, stdout, stderr) => {
+                    if (error) {
+                        logger.warn('mdlint-all reported warnings that you will need to resolve manually');
+                        logger.warn(stderr);
+                        logger.warn('----');
+                    }
+                    logger.debug(stdout);
+                    resolve();
+                });
+            });
+
+            await new Promise((resolve) => {
+                exec('yarn mdxfix-all', async (error, stdout, stderr) => {
+                    if (error) {
+                        logger.warn('mdlint-all reported warnings that you will need to resolve manually');
+                        logger.warn(stderr);
+                        logger.warn('----');
+                    }
+                    logger.debug(stdout);
+                    resolve();
+                });
+            });
         }
     }
 

@@ -137,7 +137,7 @@ Moodle has a powerful database abstraction layer that we wrote ourselves, called
 
 Is this Oracle statement true?
 
-We have tools and APIs for [defining and modifying tables](https://docs.moodle.org/dev/DDL_functions), and [retrieving and storing data](https://docs.moodle.org/dev/Data_manipulation_API) in the database.
+We have tools and APIs for [defining and modifying tables](/docs/apis/core/dml/ddl), and [retrieving and storing data](/docs/apis/core/dml) in the database.
 
 :::info
 
