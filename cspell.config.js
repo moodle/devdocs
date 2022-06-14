@@ -60,16 +60,6 @@ const config = {
             path: './project-words.txt',
             noSuggest: true,
         },
-        {
-            name: 'jira-tags',
-            path: './data/jira-tags.txt',
-            noSuggest: true,
-        },
-        {
-            name: 'tools-names',
-            path: './data/tools-names.txt',
-            noSuggest: true,
-        },
     ],
     ignorePaths: [
         '*.js',
