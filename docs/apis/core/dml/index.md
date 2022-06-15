@@ -63,7 +63,7 @@ $user = $DB->get_record_sql('SELECT COUNT(*) FROM {user} WHERE deleted = 1 OR su
 - They all must be fulfilled - that is the logical <tt>AND</tt> is used to populate the actual <tt>WHERE</tt> statement
 
 ```php
-$user = $DB->get_record('user', 'firstname'  => 'Martin', 'lastname'  => 'Dougiamas');
+$user = $DB->get_record('user', ['firstname'  => 'Martin', 'lastname'  => 'Dougiamas']);
 ```
 
 ### Placeholders
