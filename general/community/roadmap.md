@@ -50,7 +50,7 @@ Moodle is never used alone, and it is a part of many ecosystems at many levels. 
 
 In particular though, we are committed to helping to promote [<span class="underline">Open EdTech</span>](https://openedtech.global/) and to work closely with qualified Open EdTech products and major stakeholders to design and build an open architecture for a long-term future.
 
-## Roadmap timeline
+## Roadmap timeline (will be updated soon)
 
 <!--
   Github Flavoured Markdown does not support tables without headers.
