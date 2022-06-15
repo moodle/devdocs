@@ -11,7 +11,7 @@ Developer meetings are open to anyone interested in Moodle development.
 
 :::important
 
-Next meeting: [June 2022](./meetings/202206)
+The next meeting is scheduled for August 2022.
 
 :::
 
@@ -19,6 +19,7 @@ Next meeting: [June 2022](./meetings/202206)
 
 ### 2022
 
+- [Developer meeting June 2022](./meetings/202206)
 - [Developer meeting April 2022](./meetings/202204)
 - [Developer meeting February 2022](./meetings/202202)
 
