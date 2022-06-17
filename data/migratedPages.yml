@@ -130,6 +130,9 @@ Filters:
 Groups:
 - filePath: "/docs/guides/groups.md"
   slug: "/docs/apis/subsystems/groups"
+Hardening_new_Roles_system:
+- filePath: "/docs/apis/subsystems/roles.md"
+  slug: "/docs/apis/subsystems/roles"
 Integration_Review:
 - filePath: "/general/development/process/integration-review.md"
   slug: "/general/development/process/integration-review"

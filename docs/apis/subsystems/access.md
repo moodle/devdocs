@@ -62,7 +62,7 @@ Where the meaning of array keys is:
 
 | Field                  | Description                                                                                                                                                                                                                                                                                                                                                       |
 | ---                    | ---                                                                                                                                                                                                                                                                                                                                                               |
-| `riskbitmask`          | associated risks. These are explained on [Hardening new Roles system](https://docs.moodle.org/dev/Hardening_new_Roles_system).                                                                                                                                                                                                                                                                                          |
+| `riskbitmask`          | associated risks. These are explained on [Hardening new Roles system](./roles.md).                                                                                                                                                                                                                                                                                          |
 | `captype`              | _read_ or _write_ capability type, for security reasons system prevents all write capabilities for guest account and not-logged-in users                                                                                                                                                                                                                          |
 | `contextlevel`         | specified as context level constant. Declares the typical context level where this capability is checked. This capability can be checked with contexts that are at a lower level (e.g. `moodle/site:accessallgroups`                                                                                                                                              | could be checked with CONTEXT_MODULE). |
 | `archetypes`           | specifies defaults for roles with standard archetypes, this is used in installs, upgrades and when resetting roles (it is recommended to use only CAP_ALLOW here).  Archetypes are defined in mdl_role table.  See also [Role archetypes](https://docs.moodle.org/dev/Role_archetypes).                                                                                                                      |
@@ -198,7 +198,7 @@ This method returns list of users with given capability, it ignores enrolment st
 - [API guides](/docs/apis)
 - [Roles](/docs/apis/subsystems/roles.md)
 - [Role archetypes](https://docs.moodle.org/dev/Role_archetypes)
-- [Hardening new Roles system](https://docs.moodle.org/dev/Hardening_new_Roles_system)
+- [Hardening new Roles system](./roles.md)
 - [Roles and modules](https://docs.moodle.org/dev/Roles_and_modules)
 - [NEWMODULE Adding capabilities](https://docs.moodle.org/dev/NEWMODULE_Adding_capabilities)
 - [New permissions evaluation in 2.0](https://docs.moodle.org/dev/New_permissions_evaluation_in_2.0)
