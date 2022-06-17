@@ -840,6 +840,16 @@ public function sql_cast_char2real(
 );
 ```
 
+### sql_cast_to_char
+
+<Since version="4.1" />
+
+Return SQL for casting to char of given field/expression.
+
+```php
+public function sql_cast_to_char(string $field);
+```
+
 ### sql_compare_text
 
 Return the query fragment to be used when comparing a TEXT (clob) column with a given string or a VARCHAR field (some RDBMs do not allow for direct comparison).
