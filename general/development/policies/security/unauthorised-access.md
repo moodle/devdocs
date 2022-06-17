@@ -31,7 +31,7 @@ Moodle has a flexible roles system, build around the concepts of
 
 :::info
 
-Follow the [roles](https://docs.moodle.org/dev/Roles) link to get a full description of the roles and capabilities.
+Follow the [Roles](/docs/apis/subsystems/roles) link to get a full description of the roles and capabilities.
 
 :::
 

@@ -196,7 +196,7 @@ This method returns list of users with given capability, it ignores enrolment st
 ## See also
 
 - [API guides](/docs/apis)
-- [Roles](https://docs.moodle.org/dev/Roles)
+- [Roles](/docs/apis/subsystems/roles.md)
 - [Role archetypes](https://docs.moodle.org/dev/Role_archetypes)
 - [Hardening new Roles system](https://docs.moodle.org/dev/Hardening_new_Roles_system)
 - [Roles and modules](https://docs.moodle.org/dev/Roles_and_modules)
