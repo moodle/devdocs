@@ -24,7 +24,7 @@ The [File API](./apis/subsystems/files/index.md) controls the storage of files i
 
 ### Form API (form)
 
-The [Form API](https://docs.moodle.org/dev/Form_API) defines and handles user data via web forms.
+The [Form API](./apis/subsystems/form/index.md) defines and handles user data via web forms.
 
 ### Logging API (log)
 

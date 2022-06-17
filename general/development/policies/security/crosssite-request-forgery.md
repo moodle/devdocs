@@ -52,7 +52,7 @@ Moodle should only process changes in response to a POST request. If that is the
 
 ## What you need to do in your code
 
-Use the [Form API](https://docs.moodle.org/dev/Form_API) whenever possible for handling HTML forms. This automatically checks the sesskey and request method for you.
+Use the [Form API](/docs/apis/subsystems/form) whenever possible for handling HTML forms. This automatically checks the sesskey and request method for you.
 
 There are valid cases when using forms is not appropriate and you need to perform an action based on a parameter submitted via GET request - such as various action links. In this case, you have to manually include the sesskey among submitted parameters, and then make sure the submitted sesskey value is valid.
 

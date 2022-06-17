@@ -221,6 +221,23 @@ config.casedWords = {
     },
 };
 
+config.renamedLinks = {
+    forceRelative: false,
+    renames: [{
+        oldFile: '/docs/apis/core/form/index.md',
+        newFile: '/docs/apis/subsystems/form/index.md',
+    }, {
+        oldFile: '/docs/apis/core/form/usage.md',
+        newFile: '/docs/apis/subsystems/form/usage.md',
+    }, {
+        oldFile: '/docs/apis/core/form/advanced/advanced-elements.md',
+        newFile: '/docs/apis/subsystems/form/advanced/advanced-elements.md',
+    }, {
+        oldFile: '/docs/apis/core/form/advanced/repeat-elements.md',
+        newFile: '/docs/apis/subsystems/form/advanced/repeat-elements.md',
+    }],
+};
+
 module.exports = {
     config,
     customRules: [
@@ -228,5 +245,6 @@ module.exports = {
         path.join(__dirname, '.markdownlint/fix-migrated-links'),
         path.join(__dirname, '.markdownlint/find-obsolete-links'),
         path.join(__dirname, '.markdownlint/cased-words'),
+        path.join(__dirname, '.markdownlint/fix-renamed-links'),
     ]
 };

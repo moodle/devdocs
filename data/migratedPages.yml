@@ -94,6 +94,9 @@ Debugging_network_requests_in_the_Moodle_App:
 Deprecation:
 - filePath: "/general/development/policies/deprecation.md"
   slug: "/general/development/policies/deprecation"
+Designing_usable_forms:
+- filePath: "/general/development/policies/designing-usable-forms.md"
+  slug: "/general/development/policies/designing-usable-forms"
 Developer_meeting_April_2022:
 - filePath: "/general/community/meetings/202204.md"
   slug: "/general/community/meetings/202204"
@@ -127,6 +130,9 @@ File_API_internals:
 Filters:
 - filePath: "/docs/apis/plugintypes/filter/index.md"
   slug: "/docs/apis/plugintypes/filter/"
+Form_API:
+- filePath: "/docs/apis/subsystems/form/index.md"
+  slug: "/docs/apis/subsystems/form/"
 Groups:
 - filePath: "/docs/guides/groups.md"
   slug: "/docs/apis/subsystems/groups"
@@ -1519,3 +1525,15 @@ Upgrade_notes:
 Using_the_Moodle_App_in_a_browser:
 - filePath: "/docs/moodleapp/development/setup/app-in-browser.md"
   slug: "/docs/moodleapp/development/setup/app-in-browser"
+lib/formslib.php_Testing:
+- filePath: "/docs/apis/subsystems/form/index.md"
+  slug: "/docs/apis/subsystems/form/"
+lib/formslib.php_Usage:
+- filePath: "/docs/apis/subsystems/form/usage.md"
+  slug: "/docs/apis/subsystems/form/usage"
+lib/formslib.php_repeat_elements:
+- filePath: "/docs/apis/subsystems/form/advanced/repeat-elements.md"
+  slug: "/docs/apis/subsystems/form/advanced/repeat-elements"
+lib/formslib.php_setAdvanced:
+- filePath: "/docs/apis/subsystems/form/advanced/advanced-elements.md"
+  slug: "/docs/apis/subsystems/form/advanced/advanced-elements"
