@@ -1548,3 +1548,6 @@ lib/formslib.php_repeat_elements:
 lib/formslib.php_setAdvanced:
 - filePath: "/docs/apis/subsystems/form/advanced/advanced-elements.md"
   slug: "/docs/apis/subsystems/form/advanced/advanced-elements"
+version.php:
+- filePath: "/docs/apis/commonfiles/version.php/index.md"
+  slug: "/docs/apis/commonfiles/version.php"

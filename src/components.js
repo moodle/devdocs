@@ -22,6 +22,7 @@ import DeprecatedSince from './components/DeprecatedSince';
 import ValidExample from './components/ValidExample';
 import InvalidExample from './components/InvalidExample';
 import ComponentFileSummary from './components/ComponentFileSummary';
+import LanguageProperty from './components/LanguageProperty';
 
 import CodeBlock from '@theme/CodeBlock';
 import TabItem from '@theme/TabItem';
@@ -41,4 +42,6 @@ export {
     CodeBlock,
     TabItem,
     Tabs,
+
+    LanguageProperty,
 };
