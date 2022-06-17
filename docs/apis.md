@@ -233,7 +233,7 @@ The deprecated [Conditional activities API](https://docs.moodle.org/dev/Conditio
 
 ### Groups API (group)
 
-The [Groups API](https://docs.moodle.org/dev/Groups_API) allows you to check the current activity group mode and set the current group.
+The [Groups API](./apis/subsystems/group) allows you to check the current activity group mode and set the current group.
 
 ### Gradebook API (grade)
 

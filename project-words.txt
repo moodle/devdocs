@@ -102,6 +102,7 @@ contextlevel
 contextmodule
 coursecatlib
 coursefiles
+courseid
 courseindex
 crtl
 datafield
@@ -145,6 +146,10 @@ googledocs
 gradebook
 gradebookservice
 gradeitem
+groupid
+groupingid
+grouplib
+groupmode
 hackfest
 htmleditor
 idnumber
@@ -278,6 +283,7 @@ videojs
 webdav
 webservice
 webservices
+whereparams
 workshopallocation
 workshopeval
 workshopform

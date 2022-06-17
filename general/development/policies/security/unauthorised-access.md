@@ -44,7 +44,7 @@ Moodle also allows users to be put in groups. Different groups may have access t
 - Before allowing the user to see anything or do anything, make a call to has_capability or require_capability, testing the appropriate capability in the appropriate context.
   - Get the appropriate context using a call to `get_context_instance`.
 - For this to work in custom code, you may need to define additional capabilities. For example, `block/myblock:viewsecretthing`. You can define extra capabilities by creating a [db/access.php](/docs/apis/commonfiles#dbaccessphp) file in your plugin.
-- If appropriate, use the [groups API](https://docs.moodle.org/dev/Groups_API) to check group membership, and only show users information from groups they should be able to see.
+- If appropriate, use the [groups API](/docs/apis/subsystems/group/) to check group membership, and only show users information from groups they should be able to see.
   - Note that `require_login` checks basic groups access permissions for you.
 - It is very important to check capabilities when printing UI, but also after data submission before it is processed.
 
