@@ -151,7 +151,7 @@ Any component belongs to one DOM element and is registered in a Reactive Instanc
 
 ```js title="path/to/plugin/amd/src/main.js"
 import {reactiveInstance} from 'YOUR_PLUGIN/reactive';
-import {YourComponent} from 'YOUR_PLUGIN/yourcomponent;
+import YourComponent from 'YOUR_PLUGIN/yourcomponent;
 
 (...)
 
