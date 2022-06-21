@@ -146,25 +146,35 @@ export default class extends BaseComponent {
 
 Any component belongs to one DOM element and is registered in a Reactive Instance. This means that to create a new instance we need to provide at least those two elements. For example:
 
-<details>
-  <summary>View example</summary>
-  <div>
+<Tabs>
+  <TabItem value="init-js-module" label="AMD module" default>
 
 ```js title="path/to/plugin/amd/src/main.js"
 import {reactiveInstance} from 'YOUR_PLUGIN/reactive';
-import {YourComponent} from 'YOUR_PLUGIN/yourcomponent;
+import YourComponent from 'YOUR_PLUGIN/yourcomponent;
 
 (...)
 
-return new YourComponent({
-    element: document.getElementById(DOM_ELEMENT_ID),
-    reactive: reactiveInstance,
-    (... other data your component needs ...)
-});
+export const init = (domElementId) => {
+    return new YourComponent({
+        element: document.getElementById(domElementId),
+        reactive: reactiveInstance,
+        (... other data your component needs ...)
+    });
+}
 ```
 
-  </div>
-</details>
+  </TabItem>
+  <TabItem value="init-php-module" label="PHP code">
+
+```php title="path/to/plugin/amd/src/index.php"
+(...)
+
+$PAGE->requires->js_call_amd('YOUR_PLUGIN/main', 'init', [$domelementid]);
+```
+
+  </TabItem>
+</Tabs>
 
 In case no Reactive Instance is passed, the BaseComponent will try to inherit the instance from a parent DOM element. This way subcomponents can omit that param.
 
@@ -181,7 +191,7 @@ import {reactiveInstance} from 'YOUR_PLUGIN/reactive';
 
 export default class extends BaseComponent {
     static init(target, selectors) {
-        return new Component({
+        return new this({
             element: document.getElementById(target),
             reactive: reactiveInstance,
             selectors,
