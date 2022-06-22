@@ -62,7 +62,7 @@ The underscore character is not supported in activity modules for legacy reasons
 | [File Converters](./fileconverter/index.md) | fileconverter | /files/converter | Allow conversion between different types of user-submitted file. For example from .doc to PDF. | 3.2+ |
 | [LTI services](https://docs.moodle.org/dev/LTI_services) | ltiservice | /mod/lti/service | Allows the implementation of LTI services as described by the IMS LTI specification | 2.8+ |
 | [Machine learning backends](./mlbackend/index.md) | mlbackend | /lib/mlbackend | Prediction processors for analytics API | 3.4+ |
-| [Forum reports](https://docs.moodle.org/dev/Forum_reports) | forumreport | /mod/forum/report | Display various reports in the forum activity | 3.8+ |
+| [Forum reports](./mod_forum/index.md) | forumreport | /mod/forum/report | Display various reports in the forum activity | 3.8+ |
 | [Quiz reports](https://docs.moodle.org/dev/Quiz_reports) | quiz | /mod/quiz/report | Display and analyse the results of quizzes, or just plug miscellaneous behaviour into the quiz module | 1.1+ |
 | [Quiz access rules](https://docs.moodle.org/dev/Quiz_access_rules) | quizaccess | /mod/quiz/accessrule | Add conditions to when or where quizzes can be attempted, for example only from some IP addresses, or student must enter a password first | 2.2+ |
 | [SCORM reports](https://docs.moodle.org/dev/SCORM_reports) | scormreport | /mod/scorm/report | Analysis of SCORM attempts | 2.2+ |
