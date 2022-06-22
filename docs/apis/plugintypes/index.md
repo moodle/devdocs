@@ -54,7 +54,7 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Antivirus plugins](./antivirus/index.mdx) | antivirus | /lib/antivirus | Antivirus scanner plugins provide functionality for virus scanning user uploaded files using third-party virus scanning tools in Moodle. For example: ClamAV. | 3.1+ |
 | [Assignment submission plugins](./assign/submission.md) | assignsubmission | /mod/assign/submission | Different forms of assignment submissions | 2.3+ |
 | [Assignment feedback plugins](./assign/feedback.md) | assignfeedback | /mod/assign/feedback | Different forms of assignment feedbacks | 2.3+ |
-| [Book tools](https://docs.moodle.org/dev/Book_tools) | booktool | /mod/book/tool | Small information-displays or tools that can be moved around pages | 2.1+ |
+| [Book tools](./mod_book/index.md) | booktool | /mod/book/tool | Small information-displays or tools that can be moved around pages | 2.1+ |
 | [Course Custom fields](https://docs.moodle.org/dev/Course_Custom_fields) | customfield | /customfield/field | Custom field types, used in Custom course fields | 3.7+ |
 | [Database fields](https://docs.moodle.org/dev/Database_fields) | datafield | /mod/data/field | Different types of data that may be added to the Database activity module | 1.6+ |
 | [Database presets](https://docs.moodle.org/dev/Database_presets) | datapreset | /mod/data/preset | Pre-defined templates for the Database activity module | 1.6+ |
@@ -62,7 +62,7 @@ The underscore character is not supported in activity modules for legacy reasons
 | [File Converters](./fileconverter/index.md) | fileconverter | /files/converter | Allow conversion between different types of user-submitted file. For example from .doc to PDF. | 3.2+ |
 | [LTI services](https://docs.moodle.org/dev/LTI_services) | ltiservice | /mod/lti/service | Allows the implementation of LTI services as described by the IMS LTI specification | 2.8+ |
 | [Machine learning backends](./mlbackend/index.md) | mlbackend | /lib/mlbackend | Prediction processors for analytics API | 3.4+ |
-| [Forum reports](https://docs.moodle.org/dev/Forum_reports) | forumreport | /mod/forum/report | Display various reports in the forum activity | 3.8+ |
+| [Forum reports](./mod_forum/index.md) | forumreport | /mod/forum/report | Display various reports in the forum activity | 3.8+ |
 | [Quiz reports](https://docs.moodle.org/dev/Quiz_reports) | quiz | /mod/quiz/report | Display and analyse the results of quizzes, or just plug miscellaneous behaviour into the quiz module | 1.1+ |
 | [Quiz access rules](https://docs.moodle.org/dev/Quiz_access_rules) | quizaccess | /mod/quiz/accessrule | Add conditions to when or where quizzes can be attempted, for example only from some IP addresses, or student must enter a password first | 2.2+ |
 | [SCORM reports](https://docs.moodle.org/dev/SCORM_reports) | scormreport | /mod/scorm/report | Analysis of SCORM attempts | 2.2+ |
@@ -76,11 +76,11 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Text filters](./filter/index.md) | filter | /filter | Automatically convert, highlight, and transmogrify text posted into Moodle. | 1.4+ |
 | [Editors](https://docs.moodle.org/dev/Editors) | editor | /lib/editor | Alternative text editors for editing content | 2.0+ |
 | [Atto editor plugins](https://docs.moodle.org/dev/Atto) | atto | /lib/editor/atto/plugins | Extra functionality for the Atto text editor | 2.7+ |
-| [TinyMCE editor plugins](https://docs.moodle.org/dev/TinyMCE_editor_plugins) | tinymce | /lib/editor/tinymce/plugins | Extra functionality for the TinyMCE text editor. | 2.4+ |
+| [TinyMCE editor plugins](./tinymce/index.md) | tinymce | /lib/editor/tinymce/plugins | Extra functionality for the TinyMCE text editor. | 2.4+ |
 | [Enrolment plugins](./enrol/index.md) | enrol | /enrol | Ways to control who is enrolled in courses | 2.0+ |
 | [Authentication plugins](https://docs.moodle.org/dev/Authentication_plugins) | auth | /auth | Allows connection to external sources of authentication | 2.0+ |
 | [Admin tools](https://docs.moodle.org/dev/Admin_tools) | tool | /admin/tool | Provides utility scripts useful for various site administration and maintenance tasks | 2.2+ |
-| [Log stores](https://docs.moodle.org/dev/Log_stores) | logstore | /admin/tool/log/store | Event logs storage back-ends | 2.7+ |
+| [Log stores](./logstore/index.md) | logstore | /admin/tool/log/store | Event logs storage back-ends | 2.7+ |
 | [Availability conditions](https://docs.moodle.org/dev/Availability_conditions) | availability | /availability/condition | Conditions to restrict user access to activities and sections. | 2.7+ |
 | [Calendar types](https://docs.moodle.org/dev/Calendar_types) | calendartype | /calendar/type | Defines how dates are displayed throughout Moodle | 2.6+ |
 | [Messaging consumers](https://docs.moodle.org/dev/Messaging_consumers) | message | /message/output | Represent various targets where messages and notifications can be sent to (email, sms, jabber, ...) | 2.0+ |
