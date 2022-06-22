@@ -26,13 +26,14 @@ tags:
 
 | **#** | **Task** | **Responsibility** |
 |---|---|---|
-| 1. | Fix the version name in `integration:config.xml`, `integration:package.json` and `integration:moodle.config.json` (remove the `-dev`). | Integration Lead |
-| 2. | Integrate the [integration branch onto the master one](https://github.com/moodlehq/moodleapp/compare/master...integration). | Integration Lead |
-| 3. | Do some testing with the production builds before sending the application to the stores (overall testing to see that nothing is broken because of the branch merge done in step 2): <ul><li>Correct definitive version name displayed (and commit)</li><li>AOT compiling worked</li><li>Language strings synchronised from lang.moodle.net</li><li>New language packs added</li></ul> | All the team |
-| 4. | Send the applications to the stores for review. | Integration Lead |
-| 5. | Create a TAG/Release in github ([moodlehq/moodleapp](https://github.com/moodlehq/moodleapp/releases)) with the version number. | Integration Lead |
-| 6. | Mark the issue and the [version](https://tracker.moodle.org/projects/MOBILE?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page) as released in the tracker. | Integration Lead |
-| 7. | Update [release notes](/general/app_releases). | Integration Lead |
+| 1. | Fix the version name in `integration:config.xml`, `integration:package.json` and `integration:moodle.config.json` (remove the `-dev`). | Developer |
+| 2. | Set the right version number for the new Moodle release in `MOODLE_RELEASES`. | Developer |
+| 3. | Integrate the [integration branch onto the master one](https://github.com/moodlehq/moodleapp/compare/master...integration). | Integration Lead |
+| 4. | Do some testing with the production builds before sending the application to the stores (overall testing to see that nothing is broken because of the branch merge done in step 2): <ul><li>Correct definitive version name displayed (and commit)</li><li>AOT compiling worked</li><li>Language strings synchronised from lang.moodle.net</li><li>New language packs added</li></ul> | All the team |
+| 5. | Send the applications to the stores for review. | Integration Lead |
+| 6. | Create a TAG/Release in github ([moodlehq/moodleapp](https://github.com/moodlehq/moodleapp/releases)) with the version number. | Integration Lead |
+| 7. | Mark the issue and the [version](https://tracker.moodle.org/projects/MOBILE?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page) as released in the tracker. | Integration Lead |
+| 8. | Update [release notes](/general/app_releases). | Integration Lead |
 
 ## The following days
 
@@ -46,6 +47,7 @@ tags:
 | 6. | Unfreeze Cordova plugins and JavaScript libraries versions (node modules). | Developer |
 | 7. | Check that the [Docker image](https://cloud.docker.com/u/moodlehq/repository/docker/moodlehq/moodleapp/general) for the new version was successfully built. | Integration Lead |
 | 8. | Update of the [local_moodlemobileapp](https://moodle.org/plugins/view.php?id=997) plugin (as final release) in moodle.org/plugins. | Developer |
+| 8. | Update the `DEFAULT_LASTVERSION` variable on [scripts/lang_functions.sh](https://github.com/moodlehq/moodleapp/blob/master/scripts/lang_functions.sh) | Developer |
 
 ## See also
 
