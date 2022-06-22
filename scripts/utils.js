@@ -339,7 +339,9 @@ const getUpdateMigratedPages = (logger) => (client) => async () => {
                 legacyPage,
                 newContent,
                 'Update migration status and path',
-                true,
+
+                // This is a major edit. minor = false.
+                false,
                 (err, data) => {
                     if (err) {
                         throw err;
