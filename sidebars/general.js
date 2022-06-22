@@ -212,6 +212,7 @@ const sidebars = {
                 'development/tools/phpcs',
                 'development/tools/nodejs',
                 'development/tools/cibot',
+                'development/tools/gha',
             ],
             link: {
                 type: 'doc',

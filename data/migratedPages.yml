@@ -138,6 +138,9 @@ Filters:
 Form_API:
 - filePath: "/docs/apis/subsystems/form/index.md"
   slug: "/docs/apis/subsystems/form/"
+Github_actions_integration:
+- filePath: "/general/development/tools/gha.md"
+  slug: "/general/development/tools/gha"
 Groups:
 - filePath: "/docs/apis/subsystems/group/index.md"
   slug: "/docs/apis/subsystems/group/"
