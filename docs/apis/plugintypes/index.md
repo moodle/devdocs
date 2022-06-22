@@ -54,7 +54,7 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Antivirus plugins](./antivirus/index.mdx) | antivirus | /lib/antivirus | Antivirus scanner plugins provide functionality for virus scanning user uploaded files using third-party virus scanning tools in Moodle. For example: ClamAV. | 3.1+ |
 | [Assignment submission plugins](./assign/submission.md) | assignsubmission | /mod/assign/submission | Different forms of assignment submissions | 2.3+ |
 | [Assignment feedback plugins](./assign/feedback.md) | assignfeedback | /mod/assign/feedback | Different forms of assignment feedbacks | 2.3+ |
-| [Book tools](https://docs.moodle.org/dev/Book_tools) | booktool | /mod/book/tool | Small information-displays or tools that can be moved around pages | 2.1+ |
+| [Book tools](./mod_book/index.md) | booktool | /mod/book/tool | Small information-displays or tools that can be moved around pages | 2.1+ |
 | [Course Custom fields](https://docs.moodle.org/dev/Course_Custom_fields) | customfield | /customfield/field | Custom field types, used in Custom course fields | 3.7+ |
 | [Database fields](https://docs.moodle.org/dev/Database_fields) | datafield | /mod/data/field | Different types of data that may be added to the Database activity module | 1.6+ |
 | [Database presets](https://docs.moodle.org/dev/Database_presets) | datapreset | /mod/data/preset | Pre-defined templates for the Database activity module | 1.6+ |
