@@ -201,6 +201,8 @@ const fetchOneDoc = async (title, newPath, options) => {
 
     const doc = await fetchDoc(title);
     const newFile = getNormalizedPath(newPath);
+    const newFileDir = path.dirname(newFile);
+    await mkdir(newFileDir, { recursive: true });
 
     logger.info('Guessing frontmatter');
     let frontMatter = getFrontmatterData(options, title, doc.data);
