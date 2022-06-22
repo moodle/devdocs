@@ -80,7 +80,7 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Enrolment plugins](./enrol/index.md) | enrol | /enrol | Ways to control who is enrolled in courses | 2.0+ |
 | [Authentication plugins](https://docs.moodle.org/dev/Authentication_plugins) | auth | /auth | Allows connection to external sources of authentication | 2.0+ |
 | [Admin tools](https://docs.moodle.org/dev/Admin_tools) | tool | /admin/tool | Provides utility scripts useful for various site administration and maintenance tasks | 2.2+ |
-| [Log stores](https://docs.moodle.org/dev/Log_stores) | logstore | /admin/tool/log/store | Event logs storage back-ends | 2.7+ |
+| [Log stores](./logstore/index.md) | logstore | /admin/tool/log/store | Event logs storage back-ends | 2.7+ |
 | [Availability conditions](https://docs.moodle.org/dev/Availability_conditions) | availability | /availability/condition | Conditions to restrict user access to activities and sections. | 2.7+ |
 | [Calendar types](https://docs.moodle.org/dev/Calendar_types) | calendartype | /calendar/type | Defines how dates are displayed throughout Moodle | 2.6+ |
 | [Messaging consumers](https://docs.moodle.org/dev/Messaging_consumers) | message | /message/output | Represent various targets where messages and notifications can be sent to (email, sms, jabber, ...) | 2.0+ |
