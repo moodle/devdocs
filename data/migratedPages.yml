@@ -88,6 +88,12 @@ Data_definition_API:
 Data_manipulation_API:
 - filePath: "/docs/apis/core/dml/index.md"
   slug: "/docs/apis/core/dml"
+Database_fields:
+- filePath: "/docs/apis/plugintypes/mod_data/fields.md"
+  slug: "/docs/apis/plugintypes/mod_data/fields"
+Database_presets:
+- filePath: "/docs/apis/plugintypes/mod_data/presets.md"
+  slug: "/docs/apis/plugintypes/mod_data/presets"
 Debugging_network_requests_in_the_Moodle_App:
 - filePath: "/docs/moodleapp/development/network-debug.md"
   slug: "/docs/moodleapp/development/network-debug"
@@ -144,12 +150,12 @@ Github_actions_integration:
 Groups:
 - filePath: "/docs/apis/subsystems/group/index.md"
   slug: "/docs/apis/subsystems/group/"
-Hardening_new_Roles_system:
-- filePath: "/docs/apis/subsystems/roles.md"
-  slug: "/docs/apis/subsystems/roles"
 Groups_API:
 - filePath: "/docs/apis/subsystems/group/index.md"
   slug: "/docs/apis/subsystems/group/"
+Hardening_new_Roles_system:
+- filePath: "/docs/apis/subsystems/roles.md"
+  slug: "/docs/apis/subsystems/roles"
 Integration_Review:
 - filePath: "/general/development/process/integration-review.md"
   slug: "/general/development/process/integration-review"
@@ -1410,12 +1416,12 @@ Repository_plugins:
 Roadmap:
 - filePath: "/general/community/roadmap.md"
   slug: "/general/community/roadmap"
-SQL_coding_style:
-- filePath: "/general/development/policies/codingstyle/sql.md"
-  slug: "/general/development/policies/codingstyle/sql"
 Roles:
 - filePath: "/docs/apis/subsystems/roles.md"
   slug: "/docs/apis/subsystems/roles"
+SQL_coding_style:
+- filePath: "/general/development/policies/codingstyle/sql.md"
+  slug: "/general/development/policies/codingstyle/sql"
 Security:
 - filePath: "/general/development/policies/security.md"
   slug: "/general/development/policies/security"
