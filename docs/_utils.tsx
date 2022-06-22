@@ -24,6 +24,7 @@ import { getExample } from '@site/src/moodleBridge';
 
 export {
     getExample,
+    ComponentFileSummaryProps,
 };
 
 /**

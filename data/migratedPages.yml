@@ -61,6 +61,9 @@ Contributing_a_translation:
 Core_APIs:
 - filePath: "/docs/apis.md"
   slug: "/docs/apis"
+Course_Custom_fields:
+- filePath: "/docs/apis/plugintypes/customfield/index.md"
+  slug: "/docs/apis/plugintypes/customfield/"
 Course_formats:
 - filePath: "/docs/apis/plugintypes/format/index.md"
   slug: "/docs/apis/plugintypes/format"
