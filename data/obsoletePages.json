@@ -205,6 +205,7 @@
   "Stylish",
   "Sub Groups",
   "Switch Button",
+  "T-shirt sizes",
   "Talk:Moodle User Interface Guidelines",
   "Theme changes in 2.0",
   "Theme config file",
@@ -212,6 +213,7 @@
   "Theme reference",
   "Themes 1.9",
   "Themes 2.2 how to clone a Moodle 2.2 theme",
+  "Tim's Gradebook thoughts",
   "TinyMCE Upgrade",
   "Tooltip",
   "Tracking Moodle CVS with git",
@@ -254,6 +256,7 @@
   "WolframAlpha",
   "XHTML",
   "jQuery pre2.9",
+  "lib/formslib.php",
   "reportbuilder",
   "reportbuilder/API"
 ]
