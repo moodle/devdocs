@@ -6,7 +6,7 @@ tags:
   - Moodle App
 ---
 
-This document contains information that developers should know before starting to code on the Mobile App. If you are only interested in developing a site plugin, you should read [the Moodle App Plugins development guide](./plugins-development-guide) instead.
+This document contains information that developers should know before starting to code on the Mobile App. If you are only interested in developing a site plugin, you should read [the Moodle App Plugins development guide](./plugins-development-guide/index.md) instead.
 
 Please notice that this documentation is useful to develop code that will be integrated in the standard app or in a custom app. Developers that want to add mobile support to their Moodle plugins don't need to follow this.
 
@@ -35,9 +35,9 @@ npm install
 npm start
 ```
 
-This will launch the application in a browser, but keep in mind that it only works with chromium-based browsers. You can read more about that in the [Using the Moodle App in a browser](./setup/app-in-browser) page.
+This will launch the application in a browser, but keep in mind that it only works with chromium-based browsers. You can read more about that in the [Using the Moodle App in a browser](./setup/app-in-browser.md) page.
 
-Other than this, there are different things you'll need to do depending on what you are trying to achieve. We'll go over some of them briefly, but if you want to learn more about this or something isn't working as you expect, make sure to check out the full guide on [Setting up your development environment for the Moodle App](./setup).
+Other than this, there are different things you'll need to do depending on what you are trying to achieve. We'll go over some of them briefly, but if you want to learn more about this or something isn't working as you expect, make sure to check out the full guide on [Setting up your development environment for the Moodle App](./setup/index.md).
 
 ### Editing code
 
@@ -55,7 +55,7 @@ If you are working on something related with the user interface, it is useful to
 
 If you are working on something that is pure logic (although it can involve components), you may want to give [unit testing](#unit) a try. If you are [using VSCode to run the tests](https://code.visualstudio.com/Docs/editor/debugging), you can use breakpoints right on your editor. If you are struggling to reproduce an issue in tests, you can also use breakpoints in the browser [using the Sources Panel](https://developer.chrome.com/docs/devtools/javascript/).
 
-If you need to debug how the application is interacting with a Moodle site, you'll need to take a look at the network requests. Most of the time [using the Network Panel](https://developer.chrome.com/docs/devtools/network/) should suffice, but if that isn't working take a look at the [Debugging network requests in the Moodle App](./network-debug) page.
+If you need to debug how the application is interacting with a Moodle site, you'll need to take a look at the network requests. Most of the time [using the Network Panel](https://developer.chrome.com/docs/devtools/network/) should suffice, but if that isn't working take a look at the [Debugging network requests in the Moodle App](./network-debug.md) page.
 
 ### Working with a Moodle site
 
@@ -397,11 +397,11 @@ You can run the entire test suite using the npm test command. If you are using V
 
 You can write standard jest tests for the most part, but something to keep in mind is that the codebase relies heavily on [Service Singletons](#service-singletons). So you will need to mock any instances that are used in the code you're testing.
 
-You can learn more about this in the [Unit testing for the Moodle App](./testing/unit-testing) page.
+You can learn more about this in the [Unit testing for the Moodle App](./testing/unit-testing.md) page.
 
 ### Acceptance
 
-Acceptance tests are written in [Gherkin](https://en.wikipedia.org/wiki/Cucumber_(software)#Gherkin_language) using [Behat](./testing/acceptance-testing). These are run against the full application with a real Moodle site, so they are more heavy-handed and will take longer to run. But they are also much more realistic than unit tests.
+Acceptance tests are written in [Gherkin](https://en.wikipedia.org/wiki/Cucumber_(software)#Gherkin_language) using [Behat](./testing/acceptance-testing.md). These are run against the full application with a real Moodle site, so they are more heavy-handed and will take longer to run. But they are also much more realistic than unit tests.
 
 If you are using [moodle-docker](https://github.com/moodlehq/moodle-docker), you can configure it to [run the tests from your local copy of the application](https://github.com/moodlehq/moodle-docker#use-containers-for-running-behat-tests-for-the-mobile-app). Keep in mind that doing this will run the app on a docker image, and expose the dev server to your machine. So you shouldn't be running `npm start` or any other commands launching a dev server while docker is running, or you'll have two instances running and that can cause some problems.
 
@@ -409,11 +409,11 @@ In order to run your Behat tests, they need to be installed in the Moodle site. 
 
 You can write standard Behat tests for the most part, but there are some steps specific for the Moodle App that you should use instead of the ones for the Moodle LMS.
 
-You can learn more about this in the [Acceptance testing for the Moodle App](./testing/acceptance-testing) page.
+You can learn more about this in the [Acceptance testing for the Moodle App](./testing/acceptance-testing.md) page.
 
 ## See also
 
-- [Moodle App Scripts: gulp push](./scripts/gulp-push)
-- [Moodle App Accessibility](../accessibility)
-- [Moodle App Deep Linking](./deep-linking)
+- [Moodle App Scripts: gulp push](./scripts/gulp-push.md)
+- [Moodle App Accessibility](../accessibility.md)
+- [Moodle App Deep Linking](./deep-linking.md)
 - [Moodle App Translation](/general/development/process/translation/moodleapp)

@@ -5,7 +5,7 @@ tags:
   - Interfaces
   - Capabilities
 ---
-The Roles API is an extension of the [Access API](/docs/apis/subsystems/access.md) and defines a set of actions
+The Roles API is an extension of the [Access API](./access.md) and defines a set of actions
 that a user is allowed to perform on certain system levels. A **capability** defines a single permission
 (like posting to a forum) and a **role** is composed of a set of permissions, for example: a user with the Teacher
 role can add activities to a course, as well as managing course participants and grading course modules, while

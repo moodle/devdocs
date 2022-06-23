@@ -20,7 +20,7 @@ We recommend that you keep your old CSS rules for older versions (see [Before st
 
 ### How to upgrade my theme
 
-You can follow the same process that is documented in the [Moodle App Remote themes](../customisation/remote-themes#how-can-you-create-your-own-theme) page.
+You can follow the same process that is documented in the [Moodle App Remote themes](../customisation/remote-themes.md#how-can-you-create-your-own-theme) page.
 
 Make sure to read it in order to understand how to style your application for newer versions of the app. If you're upgrading your styles, it is likely that the documentation has been updated since you read it.
 
@@ -28,7 +28,7 @@ Make sure to read it in order to understand how to style your application for ne
 
 The main color in the app is Moodle Orange, but you can now change it by using the `--primary` variable. This will probably reduce the CSS you are applying right now, but this only covers the main color.
 
-For other colors, check out [the colors section in the main documentation](../customisation/remote-themes#working-with-colors).
+For other colors, check out [the colors section in the main documentation](../customisation/remote-themes.md#working-with-colors).
 
 ## Header toolbar
 

@@ -7,7 +7,7 @@ tags:
 
 <!-- cspell:ignore unenrolment -->
 
-The enrolment API gives access to the enrolment methods and also to [enrolment plugins](../plugintypes/enrol) instances.
+The enrolment API gives access to the enrolment methods and also to [enrolment plugins](../plugintypes/enrol/index.md) instances.
 
 ## Difference between user enrolment and role assignment
 
@@ -237,4 +237,4 @@ $enrolplugin->delete_instance($instance);
 
 ## See also
 
-- [Enrolment plugins](../plugintypes/enrol)
+- [Enrolment plugins](../plugintypes/enrol/index.md)

@@ -93,7 +93,7 @@ export const langExample = `
 
 ## Test a filter
 
-To enable a filter go to the [filters administration screen](./) and set the filter active to "On".
+To enable a filter go to the [filters administration screen](./index.md) and set the filter active to "On".
 
 Filters are applied to all text that is printed with the output functions `format_text()` and `format_string()`. To see a filter in action, add some content to a label resource. When you look at that course in the course listing, you should see that your filter has transformed the text accordingly.
 

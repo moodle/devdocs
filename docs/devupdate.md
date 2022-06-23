@@ -6,6 +6,8 @@ tags:
 ---
 This page highlights the important changes that are coming in Moodle 4.0 for developers. Including how the UX improvements impact custom themes, relevant API changes, and what you can do as developer to prepare for the 4.0 release.
 
+See [Question bank plugins](./apis/plugintypes/qbank/index.md).
+
 <!-- cspell:ignore settingsnav -->
 
 ## Navigation changes
@@ -136,6 +138,7 @@ With the changes in boost to incorporate the primary and secondary navigation, t
   {{#headercontent}}
      {{> core/activity_header}}
   {{#headercontent}}
+  ```
 
 - It is recommended to transition towards the secondary/tertiary navigation hierarchy to reduce user cognitive load and with a logical separation of components
   - Secondary navigation can be added to the templates by following the example https://github.com/moodle/moodle/blob/master/theme/boost/templates/columns2.mustache#L64-L68 This leverages the secondary navigation class to generate it's content.
@@ -264,7 +267,7 @@ The same thing should apply to question behaviour and question import/export for
 
 ### New plugin type: qbank plugins
 
-This is not something that will cause problems for people upgrading from 3.x. Rather, it is an exciting possibility you can explore once you have survived process of upgrading to 4.0. There is a whole new plugin type which you can create to add new features to the question bank. For example extra columns, new actions and bulk actions, and so on. See [Question bank plugins](/docs/apis/plugintypes/qbank).
+This is not something that will cause problems for people upgrading from 3.x. Rather, it is an exciting possibility you can explore once you have survived process of upgrading to 4.0. There is a whole new plugin type which you can create to add new features to the question bank. For example extra columns, new actions and bulk actions, and so on. See [Question bank plugins](./apis/plugintypes/qbank/index.md).
 
 ### Activities that use questions
 
@@ -321,11 +324,11 @@ echo $renderer->render($widget);
 
 Another important update on course rendering is that now all course structure is rendered using mustache templates instead of the original `html_writer` methods. Now themes are able to override the course format by providing alternative versions of the mustache files. All core course templates are located in `course/format/templates`.
 
-All course format output classes implements the new `named_templatable` interface, which allows the class to define its own template path using the `get_template_name` method. This new interface in combination with [mustache blocks](./guides/templates#blocks) allows the format plugins to provide alternative templates to render the course.
+All course format output classes implements the new `named_templatable` interface, which allows the class to define its own template path using the `get_template_name` method. This new interface in combination with [mustache blocks](./guides/templates/index.md#blocks) allows the format plugins to provide alternative templates to render the course.
 
 :::tip Migrating 3.11 course formats doc
 
-All the new output classes and a guide on how to migrate the current third-party plugins can be found in the [Migrating 3.11 formats](/docs/apis/plugintypes/format/migration) page.
+All the new output classes and a guide on how to migrate the current third-party plugins can be found in the [Migrating 3.11 formats](./apis/plugintypes/format/migration.md) page.
 
 :::
 
@@ -348,7 +351,7 @@ The new course editor uses a component-based reactive pattern to keep track of t
 
 :::tip Reactive library doc
 
-The reactive library documentation, as well as the format plugin migration guide, can be found in the [Moodle 3.11 vs 4.0 course editor architecture](/docs/guides/javascript/reactive) page.
+The reactive library documentation, as well as the format plugin migration guide, can be found in the [Moodle 3.11 vs 4.0 course editor architecture](./guides/javascript/reactive/index.md) page.
 
 :::
 
@@ -953,7 +956,7 @@ There have been a lot of changes made to the course format. Most in the process 
 We recommend the following sections be read carefully:
 
 1. [The course format](#the-course-format-system). There have been a lot of deprecations and reading this section is critical in understanding the changes made.
-1. Consider moving the rendering of your content over to the [template system](./guides/templates).
+1. Consider moving the rendering of your content over to the [template system](./guides/templates/index.md).
 
 ### Other plugins
 

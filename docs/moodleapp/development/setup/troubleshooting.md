@@ -168,7 +168,7 @@ This happens in some environments, the solution is to run `npx cordova platform 
 
 If you get this error when trying to build the Moodle app with XCode, some dependencies might not have installed correctly.
 
-Ensure you have followed the [Mac only: Push notifications](./#mac-only-push-notifications) steps above (particularly opening the .xcworkspace file rather than the .xcodeproj file). Then run the following:
+Ensure you have followed the [Mac only: Push notifications](./index.md#mac-only-push-notifications) steps above (particularly opening the .xcworkspace file rather than the .xcodeproj file). Then run the following:
 
 ```bash
 cd platforms/ios

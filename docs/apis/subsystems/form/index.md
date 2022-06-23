@@ -16,7 +16,7 @@ Form are created using the Form API. The Form API supports most standard HTML el
 - Processes form data securely, with `required_param`, `optional_param`, and session key.
 - Supports client-side validation.
 - Facility to add Moodle help buttons to forms.
-- Support for file repository using the [File API](../../subsystems/files/index.md) .
+- Support for file repository using the [File API](../files/index.md) .
 - Support for many custom Moodle specific and non-specific form elements.
 - Facility for [repeated elements](./advanced/repeat-elements.md).
 - Facility for form elements in advanced groups
@@ -323,7 +323,7 @@ $this->assertEquals($questiondata, $actualquestiondata);
 
 ## See also
 
-- [Core APIs](../..)
+- [Core APIs](../../../apis.md)
 - [lib/formslib.php Usage](./usage.md)
 - [lib/formslib.php Form Definition](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition)
 - [Designing usable forms](/general/development/policies/designing-usable-forms)

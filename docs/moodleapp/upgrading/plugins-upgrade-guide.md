@@ -119,7 +119,7 @@ If you used the app's code as an example to build your plugin, you can do the sa
 - <https://github.com/ndunand/moodle-mod_choicegroup/pull/149>
 - <https://github.com/ndunand/moodle-mod_choicegroup/pull/150>
 
-You can also look at the [Moodle App Plugins development guide](../development/plugins-development-guide), it has been updated to reflect how to write plugins for the latest version of the app.
+You can also look at the [Moodle App Plugins development guide](../development/plugins-development-guide/index.md), it has been updated to reflect how to write plugins for the latest version of the app.
 
 ## Before 3.5
 
@@ -131,5 +131,5 @@ You can read about [Remote add-ons](https://docs.moodle.org/dev/Moodle_Mobile_2_
 
 ## See also
 
-- [Moodle App Remote themes upgrade guide](./remote-themes-upgrade-guide)
-- [Moodle App Acceptance tests upgrade guide](../development/testing/acceptance-testing#upgrading-tests-from-an-older-version)
+- [Moodle App Remote themes upgrade guide](./remote-themes-upgrade-guide.md)
+- [Moodle App Acceptance tests upgrade guide](../development/testing/acceptance-testing.md#upgrading-tests-from-an-older-version)

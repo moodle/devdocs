@@ -36,9 +36,9 @@ Remember to install the [local_moodlemobileapp](https://github.com/moodlehq/mood
 
 ### Configuring the Moodle App
 
-If you are going to modify the application code, you can learn how to run it locally in [Setting up your development environment for the Moodle App](../setup). You only need to run the application in a browser, so you can skip the instructions for Android/iOS. Make sure to launch the application on the testing environment, running `npm run serve:test`.
+If you are going to modify the application code, you can learn how to run it locally in [Setting up your development environment for the Moodle App](../setup/index.md). You only need to run the application in a browser, so you can skip the instructions for Android/iOS. Make sure to launch the application on the testing environment, running `npm run serve:test`.
 
-If you only intend to run the app with the goal of executing Behat tests, you can use [the Docker images for the Mobile App](../setup/docker-images). Again, make sure that you're running them on the testing environment using the `-test` suffix.
+If you only intend to run the app with the goal of executing Behat tests, you can use [the Docker images for the Mobile App](../setup/docker-images.md). Again, make sure that you're running them on the testing environment using the `-test` suffix.
 
 However you set up the environment, if you change the version of the app you'll need to re-run the Behat init command so that your Moodle site knows about it.
 
@@ -282,7 +282,7 @@ Unfortunately, the only way to run this in parallel is to have separate Moodle i
 
 ### Debugging tests
 
-If you insert a pause into your test and open the developer tools, you can debug the application like you would during development. You can learn how to do that in [Using the Moodle App in a browser](../setup/app-in-browser).
+If you insert a pause into your test and open the developer tools, you can debug the application like you would during development. You can learn how to do that in [Using the Moodle App in a browser](../setup/app-in-browser.md).
 
 Additionally, you can see log information in the console about which Behat steps have been carried out so far, and whether Behat is waiting for anything. Here is an example:
 
@@ -330,7 +330,7 @@ In general though, upgrading your current tests should be mostly straightforward
 - Pay special attention to any assertions such as `should not exist` that you have in your tests. These assertions will not fail, because the elements won't be found. But if you get an eventual bug when something is shown that shouldn't, those steps will probably not pick it up because the locators may have changed.
 - If you were running your tests in CI, there is a new dependency even if you're only testing a plugin and not running the application tests. The test definitions have been moved from core to the [local_moodlemobileapp](https://github.com/moodlehq/moodle-local_moodlemobileapp/) plugin, and you should have it installed in your Moodle site running the tests. This was done in order to decouple application code from the core.
 
-If you also need to upgrade your plugin, and not just the tests, check out the [Moodle App Plugins upgrade guide](../../upgrading/plugins-upgrade-guide) page.
+If you also need to upgrade your plugin, and not just the tests, check out the [Moodle App Plugins upgrade guide](../../upgrading/plugins-upgrade-guide.md) page.
 
 ## Troubleshooting
 
@@ -353,7 +353,7 @@ It's ok if the actual `/config.json` url doesn't work, that's actually a remnant
 
 This means either some activity on the course is not adapted to support the moodle app or there is a timeout in the request to your behat site.
 
-To clear the timeout message, open the app in your [development browser](../setup/app-in-browser), open the Inspector, open the Application tab, select Clear storage, press Clear site data, close Inspector, close the tab with mobile site, re-open mobile site in new tab and log in. Then in a separate tab, log in to your behat site (you can find the url in `$CFG->behat_wwwroot` within your `config.php` file) and make sure you can get into the course without seeing the error.
+To clear the timeout message, open the app in your [development browser](../setup/app-in-browser.md), open the Inspector, open the Application tab, select Clear storage, press Clear site data, close Inspector, close the tab with mobile site, re-open mobile site in new tab and log in. Then in a separate tab, log in to your behat site (you can find the url in `$CFG->behat_wwwroot` within your `config.php` file) and make sure you can get into the course without seeing the error.
 
 ### Fatal error: Maximum execution time of 30 seconds exceeded in...
 

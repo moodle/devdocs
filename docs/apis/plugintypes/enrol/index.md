@@ -421,4 +421,4 @@ import MessageLib from '!!raw-loader!./_examples/message_lib.php';
 
 ## See also
 
-- [Enrolment API](/docs/apis/subsystems/enrol)
+- [Enrolment API](../../subsystems/enrol.md)

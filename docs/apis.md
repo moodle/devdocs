@@ -12,7 +12,7 @@ These APIs are critical and will be used by nearly every Moodle plugin.
 
 ### Access API (access)
 
-The [Access API](./apis/subsystems/access) gives you functions so you can determine what the current user is allowed to do, and it allows modules to extend Moodle with new capabilities.
+The [Access API](./apis/subsystems/access.md) gives you functions so you can determine what the current user is allowed to do, and it allows modules to extend Moodle with new capabilities.
 
 ### Data manipulation API (dml)
 
@@ -40,7 +40,7 @@ The [Page API](https://docs.moodle.org/dev/Page_API) is used to set up the curre
 
 ### Output API (output)
 
-The [Output API](./apis/subsystems/output) is used to render the HTML for all parts of the page.
+The [Output API](./apis/subsystems/output.md) is used to render the HTML for all parts of the page.
 
 ### String API (string)
 
@@ -66,7 +66,7 @@ The [Admin presets API](https://docs.moodle.org/dev/AdminPresetsAPI) allows plug
 
 ### Analytics API (analytics)
 
-The [Analytics API](./apis/subsystems/analytics) allow you to create prediction models and generate insights.
+The [Analytics API](./apis/subsystems/analytics/index.md) allow you to create prediction models and generate insights.
 
 ### Availability API (availability)
 
@@ -98,7 +98,7 @@ The [Competency API](https://docs.moodle.org/dev/Competency_API) allows you to l
 
 ### Data definition API (ddl)
 
-The [Data definition API](./apis/core/dml/ddl) is what you use to create, change and delete tables and fields in the database during upgrades.
+The [Data definition API](./apis/core/dml/ddl.md) is what you use to create, change and delete tables and fields in the database during upgrades.
 
 ### Editor API
 
@@ -106,7 +106,7 @@ The [Editor API](./apis/subsystems/editor/index.md) is used to control HTML text
 
 ### Enrolment API (enrol)
 
-The [Enrolment API](./apis/subsystems/enrol) deals with course participants.
+The [Enrolment API](./apis/subsystems/enrol.md) deals with course participants.
 
 ### Events API (event)
 
@@ -233,7 +233,7 @@ The deprecated [Conditional activities API](https://docs.moodle.org/dev/Conditio
 
 ### Groups API (group)
 
-The [Groups API](./apis/subsystems/group) allows you to check the current activity group mode and set the current group.
+The [Groups API](./apis/subsystems/group/index.md) allows you to check the current activity group mode and set the current group.
 
 ### Gradebook API (grade)
 
@@ -241,7 +241,7 @@ The [Gradebook API](https://docs.moodle.org/dev/Gradebook_API) allows you to rea
 
 ### Plagiarism API (plagiarism)
 
-The [Plagiarism API](./apis/subsystems/plagiarism) allows your activity module to send files and data to external services to have them checked for plagiarism.
+The [Plagiarism API](./apis/subsystems/plagiarism.md) allows your activity module to send files and data to external services to have them checked for plagiarism.
 
 ### Question API (question)
 

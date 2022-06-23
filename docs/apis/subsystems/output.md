@@ -11,7 +11,7 @@ The Output API is responsible for visual aspects of Moodle content. This page ex
 
 The following documentation is also related:
 
-- The [Templates](../../guides/templates) used for rendering the output such as HTML or email messages bodies
+- The [Templates](../../guides/templates/index.md) used for rendering the output such as HTML or email messages bodies
 
 ## Page Output Journey
 
@@ -184,7 +184,7 @@ The template used in this plugin is located in the plugins templates folder. The
 </div>
 ```
 
-This is the mustache template for this demo. It uses some bootstrap classes directly to position and style the content on the page. `{{sometext}}` is replaced with the variable from the context when this template is rendered. For more information on templates see [Templates](../../guides/templates).
+This is the mustache template for this demo. It uses some bootstrap classes directly to position and style the content on the page. `{{sometext}}` is replaced with the variable from the context when this template is rendered. For more information on templates see [Templates](../../guides/templates/index.md).
 
 ## Output Functions
 
@@ -278,4 +278,4 @@ In earlier versions of Moodle the third argument was integer `$courseid`. It is 
 
 ## See also
 
-- [Templates](../../guides/templates)
+- [Templates](../../guides/templates/index.md)
