@@ -1398,6 +1398,12 @@ Plugin_files:
 Plugin_types:
 - filePath: "/docs/apis/plugintypes/index.md"
   slug: "/docs/apis/plugintypes/"
+Privacy_API:
+- filePath: "/docs/apis/subsystems/privacy/index.md"
+  slug: "/docs/apis/subsystems/privacy/"
+Privacy_API/Utilities:
+- filePath: "/docs/apis/subsystems/privacy/utils.md"
+  slug: "/docs/apis/subsystems/privacy/utils"
 Process:
 - filePath: "/general/development/process.md"
   slug: "/general/development/process"
@@ -1488,6 +1494,9 @@ Starting_a_new_language_pack:
 String_deprecation:
 - filePath: "/general/projects/api/string-deprecation.md"
   slug: "/general/projects/api/string-deprecation"
+Subject_Access_Request_FAQ:
+- filePath: "/docs/apis/subsystems/privacy/faq.md"
+  slug: "/docs/apis/subsystems/privacy/faq"
 Table_of_locales:
 - filePath: "/general/development/process/translation/langpack/locales.md"
   slug: "/general/development/process/translation/langpack/locales"

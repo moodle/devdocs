@@ -163,7 +163,7 @@ The [Portfolio API](https://docs.moodle.org/dev/Portfolio_API) allows you to add
 
 ### Privacy API (privacy)
 
-The [Privacy API](https://docs.moodle.org/dev/Privacy_API) allows you to describe the personal data that you store, and provides the means for that data to be discovered, exported, and deleted on a per-user basis.
+The [Privacy API](./apis/subsystems/privacy/index.md) allows you to describe the personal data that you store, and provides the means for that data to be discovered, exported, and deleted on a per-user basis.
 This allows compliance with regulation such as the General Data Protection Regulation (GDPR) in Europe.
 
 ### Rating API (rating)

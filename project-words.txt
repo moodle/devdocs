@@ -220,6 +220,7 @@ pluginable
 plugininfo
 pluginname
 plugintype
+plugintypes
 previewquestion
 privatefiles
 protectusernames
@@ -251,6 +252,7 @@ splitview
 strftimedate
 strikethrough
 subplugin
+subplugins
 tablespace
 tasklogs
 templatable
