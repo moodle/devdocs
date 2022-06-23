@@ -1,0 +1,6 @@
+# Netlify Redirects
+# https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file
+
+# Issue #247.
+# Redirect /docs/apis/plugintypes/commonfiles to /docs/apis/commonfiles.
+/docs/apis/plugintypes/commonfiles /docs/apis/commonfiles

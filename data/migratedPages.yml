@@ -1399,8 +1399,8 @@ Plagiarism_API:
 - filePath: "/docs/apis/subsystems/plagiarism.md"
   slug: "/docs/apis/subsystems/plagiarism"
 Plugin_files:
-- filePath: "/docs/apis/plugintypes/commonfiles.md"
-  slug: "/docs/apis/plugintypes/commonfiles"
+- filePath: "/docs/apis/commonfiles.md"
+  slug: "/docs/apis/commonfiles"
 Plugin_types:
 - filePath: "/docs/apis/plugintypes/index.md"
   slug: "/docs/apis/plugintypes/"
