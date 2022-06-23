@@ -168,6 +168,9 @@ List_of_locales_supported_on_Moodle_community_servers:
 Local_plugins:
 - filePath: "/docs/apis/plugintypes/local/index.mdx"
   slug: "/docs/apis/plugintypes/local"
+Lock_API:
+- filePath: "/docs/apis/core/lock/index.md"
+  slug: "/docs/apis/core/lock/"
 Machine_learning_backends:
 - filePath: "/docs/apis/plugintypes/mlbackend/index.md"
   slug: "/docs/apis/plugintypes/mlbackend/"

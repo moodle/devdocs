@@ -131,7 +131,7 @@ The [H5P API](https://docs.moodle.org/dev/H5P_API) allows plugins to make some d
 
 ### Lock API (lock)
 
-The [Lock API](https://docs.moodle.org/dev/Lock_API) lets you synchronise processing between multiple requests, even for separate nodes in a cluster.
+The [Lock API](./apis/core/lock/index.md) lets you synchronise processing between multiple requests, even for separate nodes in a cluster.
 
 ### Message API (message)
 
