@@ -78,7 +78,7 @@ Moodle includes a copy of the PHPCodeSniffer package, and the Moodle ruleset, as
 One way to install this plugin is using `git clone`:
 
 ```console
-git clone git://github.com/moodlehq/moodle-local_codechecker.git local/codechecker
+git clone https://github.com/moodlehq/moodle-local_codechecker.git local/codechecker
 ```
 
 It is recommended that you add the plugin to your _local_ git ignore:
