@@ -150,7 +150,7 @@ Ensure that:
 - Provide a way to delete that data.
 
 :::info
-See more info in [Privacy API](https://docs.moodle.org/dev/Privacy_API).
+See more info in [Privacy API](/docs/apis/subsystems/privacy/).
 :::
 
 ### Performance and clustering

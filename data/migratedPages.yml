@@ -1398,6 +1398,9 @@ Plugin_files:
 Plugin_types:
 - filePath: "/docs/apis/plugintypes/index.md"
   slug: "/docs/apis/plugintypes/"
+Privacy_API:
+- filePath: "/docs/apis/subsystems/privacy/index.md"
+  slug: "/docs/apis/subsystems/privacy/"
 Process:
 - filePath: "/general/development/process.md"
   slug: "/general/development/process"
