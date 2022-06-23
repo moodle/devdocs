@@ -86,7 +86,7 @@ The [Calendar API](https://docs.moodle.org/dev/Calendar_API) allows you to add a
 
 ### Check API (check)
 
-The [Check API](https://docs.moodle.org/dev/Check_API) allows you to add security, performance or health checks to your site.
+The [Check API](./apis/subsystems/check/index.md) allows you to add security, performance or health checks to your site.
 
 ### Comment API (comment)
 
