@@ -974,11 +974,11 @@ class provider implements core_userlist_provider {
 
 ## Tips for development
 
-- While implementing the privacy API into your plugin, there are CLI scripts that can help you to test things on the fly. Just don't forget these are not supposed to replace proper unit tests. See [Privacy API/Utilities](https://docs.moodle.org/dev/Privacy_API/Utilities) for details.
+- While implementing the privacy API into your plugin, there are CLI scripts that can help you to test things on the fly. Just don't forget these are not supposed to replace proper unit tests. See [Privacy API/Utilities](./utils.md) for details.
 - Inherit Unit tests from the `core_privacy\tests\provider_testcase</syntaxhighlight>, not <syntaxhighlight lang="php">advanced_testcase`. Advanced test case doesn't reset the Privacy content_writer between tests!
 
 ## See also
 
 - [Subject Access Request FAQ](./faq.md)
 - [GDPR](https://docs.moodle.org/en/GDPR) in the user documentation
-- [Privacy API/Utilities](https://docs.moodle.org/dev/Privacy_API/Utilities) provides CLI scripts that are helpful during development
+- [Privacy API/Utilities](./utils.md) provides CLI scripts that are helpful during development
