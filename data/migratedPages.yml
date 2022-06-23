@@ -1491,6 +1491,9 @@ Starting_a_new_language_pack:
 String_deprecation:
 - filePath: "/general/projects/api/string-deprecation.md"
   slug: "/general/projects/api/string-deprecation"
+Subject_Access_Request_FAQ:
+- filePath: "/docs/apis/subsystems/privacy/faq.md"
+  slug: "/docs/apis/subsystems/privacy/faq"
 Table_of_locales:
 - filePath: "/general/development/process/translation/langpack/locales.md"
   slug: "/general/development/process/translation/langpack/locales"

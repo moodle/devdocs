@@ -979,6 +979,6 @@ class provider implements core_userlist_provider {
 
 ## See also
 
-- [Subject Access Request FAQ](https://docs.moodle.org/dev/Subject_Access_Request_FAQ)
+- [Subject Access Request FAQ](./faq.md)
 - [GDPR](https://docs.moodle.org/en/GDPR) in the user documentation
 - [Privacy API/Utilities](https://docs.moodle.org/dev/Privacy_API/Utilities) provides CLI scripts that are helpful during development
