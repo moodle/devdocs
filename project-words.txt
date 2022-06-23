@@ -257,6 +257,7 @@ tablespace
 tasklogs
 templatable
 temptables
+texteditor
 themers
 thirdparty
 thirdpartylibs
