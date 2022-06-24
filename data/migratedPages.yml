@@ -1566,6 +1566,9 @@ Upgrade_notes:
 Using_the_Moodle_App_in_a_browser:
 - filePath: "/docs/moodleapp/development/setup/app-in-browser.md"
   slug: "/docs/moodleapp/development/setup/app-in-browser"
+jQuery:
+- filePath: "/docs/guides/javascript/jquery/index.md"
+  slug: "/docs/guides/javascript/jquery/"
 lib/formslib.php_Testing:
 - filePath: "/docs/apis/subsystems/form/index.md"
   slug: "/docs/apis/subsystems/form/"
