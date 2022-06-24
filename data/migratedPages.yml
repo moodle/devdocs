@@ -1410,6 +1410,9 @@ Plugin_files:
 Plugin_types:
 - filePath: "/docs/apis/plugintypes/index.md"
   slug: "/docs/apis/plugintypes/"
+Preference_API:
+- filePath: "/docs/apis/core/preference/index.md"
+  slug: "/docs/apis/core/preference/"
 Privacy_API:
 - filePath: "/docs/apis/subsystems/privacy/index.md"
   slug: "/docs/apis/subsystems/privacy/"

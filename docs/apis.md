@@ -155,7 +155,7 @@ The [Payment API](https://docs.moodle.org/dev/Payment_API) deals with payments.
 
 ### Preference API (preference)
 
-The [Preference API](https://docs.moodle.org/dev/Preference_API) is a simple way to store and retrieve preferences for individual users.
+The [Preference API](./apis/core/preference/index.md) is a simple way to store and retrieve preferences for individual users.
 
 ### Portfolio API (portfolio)
 
