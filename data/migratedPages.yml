@@ -1380,6 +1380,9 @@ Moodle_research:
 Moodle_security_procedures:
 - filePath: "/general/development/process/security.md"
   slug: "/general/development/process/security"
+Navigation_API:
+- filePath: "/docs/apis/core/navigation/index.md"
+  slug: "/docs/apis/core/navigation/"
 New_docs_version_process:
 - filePath: "/general/development/process/release/newuserdocs.md"
   slug: "/general/development/process/release/newuserdocs"

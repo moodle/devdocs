@@ -32,7 +32,7 @@ The [Events API](https://docs.moodle.org/dev/Events_API) allows you to log event
 
 ### Navigation API (navigation)
 
-The [Navigation API](https://docs.moodle.org/dev/Navigation_API) allows you to manipulate the navigation tree to add and remove items as you wish.
+The [Navigation API](./apis/core/navigation/index.md) allows you to manipulate the navigation tree to add and remove items as you wish.
 
 ### Page API (page)
 
