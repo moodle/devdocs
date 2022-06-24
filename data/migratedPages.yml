@@ -1425,6 +1425,9 @@ Release_process:
 Releases:
 - filePath: "/general/releases.md"
   slug: "/general/releases"
+Repository_API:
+- filePath: "/docs/apis/plugintypes/repository/index"
+  slug: "/docs/apis/plugintypes/repository"
 Repository_plugins:
 - filePath: "/docs/apis/plugintypes/repository/index"
   slug: "/docs/apis/plugintypes/repository"
