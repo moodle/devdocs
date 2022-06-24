@@ -69,15 +69,15 @@ The Moodle App only works with Moodle sites running version 3.1 or newer.
 
 The minimum platforms supported by the application are Android 5.1 (with Webview 61 or higher) and iOS 11.
 
-Browsers are not officially supported, but you can use a Chromium-based browser for development if you don't need any native functionality. However, there are [some caveats](./development/setup/app-in-browser) you should be aware of.
+Browsers are not officially supported, but you can use a Chromium-based browser for development if you don't need any native functionality. However, there are [some caveats](./development/setup/app-in-browser.md) you should be aware of.
 
 ## Where to go next
 
 Now that you are familiar with the basic concepts, you understand how the application works, and you've got your development environment set up; you're ready to embark into the particulars of what you're trying to achieve.
 
-- Do you want to contribute to the core? Read the [Moodle App Development guide](./development/development-guide).
-- Do you want to adapt a plugin to mobile? Read the [Moodle App Plugins development guide](./development/plugins-development-guide).
-- Do you want to customise your site in the app? Read the [Moodle App Customisation](./customisation) page.
-- Do you want to make a custom app? Read the [Custom Moodle Apps](./customisation/custom-apps) page.
+- Do you want to contribute to the core? Read the [Moodle App Development guide](./development/development-guide.md).
+- Do you want to adapt a plugin to mobile? Read the [Moodle App Plugins development guide](./development/plugins-development-guide/index.md).
+- Do you want to customise your site in the app? Read the [Moodle App Customisation](./customisation/index.md) page.
+- Do you want to make a custom app? Read the [Custom Moodle Apps](./customisation/custom-apps.md) page.
 
 If you have any further questions, check out [Moodle App FAQ|the FAQ](./faq). If there's anything you want to share, you can do it in [the forum](https://moodle.org/mod/forum/view.php?id=7798) or [the Telegram developer room](https://docs.moodle.org/dev/Chat). You can also report any bugs that you find in [the tracker](https://tracker.moodle.org/browse/MOBILE).

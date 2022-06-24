@@ -71,7 +71,7 @@ Notice how we used the `mock` helper to create a mock that is properly typed as 
 
 ## Testing services
 
-If you are testing some code that uses [Service Singletons](../development-guide#service-singletons), it is likely that you want to mock some of them. You can achieve it by using the `mockSingleton` helper. This method takes a Service Singleton and creates a mock for the instance underneath, mocking the methods and properties that you specify along the way.
+If you are testing some code that uses [Service Singletons](../development-guide.md#service-singletons), it is likely that you want to mock some of them. You can achieve it by using the `mockSingleton` helper. This method takes a Service Singleton and creates a mock for the instance underneath, mocking the methods and properties that you specify along the way.
 
 For example, let's say that you have the following test:
 
@@ -199,4 +199,4 @@ Although this guide talks about unit tests, we don't follow the strict definitio
 
 We often write tests where multiple files (or "units") are involved, and sometimes that can be desirable because it is closer to how the app will behave in production. Technically, those would be considered integration tests, but you can use the same principles and techniques introduced in this document.
 
-If you want to write even more realistic tests, that are actually running the complete application and interacting with it like a real user would, you should check out the [Acceptance testing for the Moodle App](./acceptance-testing) page.
+If you want to write even more realistic tests, that are actually running the complete application and interacting with it like a real user would, you should check out the [Acceptance testing for the Moodle App](./acceptance-testing.md) page.

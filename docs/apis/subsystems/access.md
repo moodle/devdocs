@@ -142,7 +142,7 @@ function require_capability($capability, context $context, $userid = null, $doan
 
 ### Enrolment functions
 
-See [Enrolment API](./enrol).
+See [Enrolment API](./enrol.md).
 
 ### Other related functions
 
@@ -195,8 +195,8 @@ This method returns list of users with given capability, it ignores enrolment st
 
 ## See also
 
-- [API guides](/docs/apis)
-- [Roles](/docs/apis/subsystems/roles.md)
+- [API guides](../../apis.md)
+- [Roles](./roles.md)
 - [Role archetypes](https://docs.moodle.org/dev/Role_archetypes)
 - [Hardening new Roles system](./roles.md)
 - [Roles and modules](https://docs.moodle.org/dev/Roles_and_modules)

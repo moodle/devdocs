@@ -126,7 +126,7 @@ $dbman->drop_index($table, $index, $continue = true, $feedback = true)
 
 ## See also
 
-- [Core APIs](../..)
+- [Core APIs](../../../apis.md)
 - [XMLDB Documentation](https://docs.moodle.org/dev/XMLDB_Documentation): Main page of the whole XMLDB documentation, where all the process is defined and all the related information resides.
 - [XMLDB Defining one XML structure](https://docs.moodle.org/dev/XMLDB_Defining_one_XML_structure): Where you will know a bit more about the underlying XML structure used to define the DB objects, that is used continuously by the functions described in this page.
 - [Installing and upgrading plugin DB tables](https://docs.moodle.org/dev/Installing_and_upgrading_plugin_database_tables)

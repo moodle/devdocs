@@ -40,7 +40,7 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
 
 :::important
 
-Some of the important files are described below. See the [common plugin files](../../commonfiles) documentation for details of other files which may be useful in your plugin.
+Some of the important files are described below. See the [common plugin files](../../commonfiles/index.mdx) documentation for details of other files which may be useful in your plugin.
 
 :::
 

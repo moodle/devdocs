@@ -136,7 +136,7 @@ foreach ($pluginman->get_plugin_types() as $type => $dir) {
 ## See also
 
 - [Guidelines for contributing code](https://docs.moodle.org/dev/Guidelines_for_contributed_code)
-- [Core APIs](..)
+- [Core APIs](../../apis.md)
 - [Frankenstyle](https://docs.moodle.org/dev/Frankenstyle)
 - [Moodle Plugins directory](http://moodle.org/plugins)
 - [Tutorial](https://docs.moodle.org/dev/Tutorial) to help you learn how to write plugins for Moodle from start to finish, while showing you how to navigate the most important developer documentation along the way.

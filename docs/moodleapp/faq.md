@@ -29,11 +29,11 @@ In short, you need to download Chromium from [the official download page](https:
 chromium-browser --allow-file-access-from-files --disable-web-security
 ```
 
-For additional information please, read the [Using the Moodle App in a browser](./development/setup/app-in-browser) page.
+For additional information please, read the [Using the Moodle App in a browser](./development/setup/app-in-browser.md) page.
 
 ## Some features like IMSCP, resource mini sites, local notifications are not working in the browser
 
-Some features must be tested directly in a mobile device. You can do that using the application in the app stores, or you can learn how to compile it yourself in the [Setting up your development environment for the Moodle App](./development/setup#running-the-app-in-android-and-ios) page.
+Some features must be tested directly in a mobile device. You can do that using the application in the app stores, or you can learn how to compile it yourself in the [Setting up your development environment for the Moodle App](./development/setup/index.md#running-the-app-in-android-and-ios) page.
 
 ## What is the difference between a native app and a Mobile specific theme or responsive theme?
 
@@ -44,4 +44,4 @@ You can read about that in the following forum posts:
 
 ## I am having problems running the app from the source code
 
-If you are having issues getting the app to compile, make sure to check out the troubleshooting section of the [Setting up your development environment for the Moodle App](./development/setup#troubleshooting) page.
+If you are having issues getting the app to compile, make sure to check out the troubleshooting section of the [Setting up your development environment for the Moodle App](./development/setup/index.md#troubleshooting) page.
