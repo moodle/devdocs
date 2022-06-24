@@ -11,7 +11,7 @@ The File API is used to control, manage, and serve all files uploaded and stored
 
 The following documentation is also related:
 
-- The [Repository API](https://docs.moodle.org/dev/Repository_API) is responsible for the code paths associated with uploading files to Moodle. This includes Repository plugins.
+- The [Repository API](../../plugintypes/repository/index.md) is responsible for the code paths associated with uploading files to Moodle. This includes Repository plugins.
 - [Using the File API in Moodle forms](https://docs.moodle.org/dev/Using_the_File_API_in_Moodle_forms)
 - Additional detail of how this API works is discussed in the [File API internals](./internals.md)
 
@@ -435,4 +435,4 @@ if ($file) {
 - [Core APIs](../../../apis.md)
 - [File API internals](./internals.md) how the File API works internally.
 - [Using the File API in Moodle forms](https://docs.moodle.org/dev/Using_the_File_API_in_Moodle_forms)
-- [Repository API](https://docs.moodle.org/dev/Repository_API)
+- [Repository API](../../plugintypes/repository/index.md)
