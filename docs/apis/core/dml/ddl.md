@@ -41,7 +41,7 @@ function xmldb_xxxx_upgrade {
 
 :::tip
 
-Always use the [XMLDB Editor](https://docs.moodle.rog/dev/XMLDB_editor) to modify your tables. It is capable of generating the PHP code required to make your definition changes.
+Always use the [XMLDB Editor](https://docs.moodle.org/dev/XMLDB_editor) to modify your tables. It is capable of generating the PHP code required to make your definition changes.
 
 :::
 

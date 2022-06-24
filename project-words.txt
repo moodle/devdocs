@@ -70,6 +70,7 @@ XMPPHP
 accessallgroups
 activeusers
 activitynames
+adminlib
 adminpresets
 airnotifier
 allcountrycodes

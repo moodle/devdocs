@@ -1560,6 +1560,9 @@ Translation_priority:
 Unit_testing_for_the_Moodle_App:
 - filePath: "/docs/moodleapp/development/testing/unit-testing.md"
   slug: "/docs/moodleapp/development/testing/unit-testing"
+Upgrade_API:
+- filePath: "/docs/guides/upgrade/index.md"
+  slug: "/docs/guides/upgrade/"
 Upgrade_notes:
 - filePath: "docs/apis/_files/upgrade-txt.mdx"
   slug: "docs/apis/commonfiles#upgradetxt"

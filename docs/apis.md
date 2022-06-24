@@ -48,7 +48,7 @@ The [String API](https://docs.moodle.org/dev/String_API) is how you get language
 
 ### Upgrade API (upgrade)
 
-The [Upgrade API](https://docs.moodle.org/dev/Upgrade_API) is how your module installs and upgrades itself, by keeping track of its own version.
+The [Upgrade API](./guides/upgrade/index.md) is how your module installs and upgrades itself, by keeping track of its own version.
 
 ### Moodlelib API (core)
 
