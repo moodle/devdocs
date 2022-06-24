@@ -102,7 +102,7 @@ The [Data definition API](./apis/core/dml/ddl) is what you use to create, change
 
 ### Editor API
 
-The [Editor API](https://docs.moodle.org/dev/Editor_API) is used to control HTML text editors.
+The [Editor API](./apis/subsystems/editor/index.md) is used to control HTML text editors.
 
 ### Enrolment API (enrol)
 
