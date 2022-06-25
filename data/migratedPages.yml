@@ -76,6 +76,9 @@ Creating_mobile_course_formats:
 Custom_Moodle_Apps:
 - filePath: "/docs/moodleapp/customisation/custom-apps.md"
   slug: "/docs/moodleapp/customisation/custom-apps"
+Credits:
+- filePath: "/general/community/credits.md"
+  slug: "/general/community/credits"
 DDL_functions:
 - filePath: "/docs/apis/core/dml/ddl.md"
   slug: "/docs/apis/core/dml/ddl"
