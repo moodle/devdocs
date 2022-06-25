@@ -58,6 +58,28 @@
                     "title": "MDL-18797"
                 }
             ]
+        },
+        "code/block-cleanup": {
+            "title": "Block Cleanup",
+            "status": "Complete",
+            "owners": [
+                {
+                    "name": "Sara Arjona",
+                    "githubUsername": "sarjona"
+                }
+            ],
+            "discussionLinks": [
+                {
+                    "link": "https://moodle.org/mod/forum/discuss.php?d=429959",
+                    "title": "Discussion"
+                }
+            ],
+            "issueLinks": [
+                {
+                    "link": "https://tracker.moodle.org/browse/MDL-73299",
+                    "title": "MDL-73299"
+                }
+            ]
         }
     }
 }
