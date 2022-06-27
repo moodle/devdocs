@@ -62,7 +62,7 @@ Over time we have distilled our best practice in writing code down into our [Cod
 
 ## Plugins and APIs
 
-Although Moodle is open source and you can change anything you want, the best and most maintainable way to extend Moodle is to write a plugin (sometimes called a module). A plugin is a directory of code that can be simply "dropped" in into any Moodle installation and it will be detected, installed and automatically made available as a tool within the Moodle interface.
+Although Moodle is open source and you can change anything you want in its core code, the best and most maintainable way to extend Moodle is to write a plugin (sometimes called a module). A plugin is a directory of code that can be simply "dropped" in into any Moodle installation and it will be detected, installed and automatically made available as a tool within the Moodle interface.
 
 See our [Plugin documentation](https://docs.moodle.org/dev/Plugins) for full details of the various types of plugin available.
 
