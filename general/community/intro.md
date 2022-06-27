@@ -6,7 +6,7 @@ tags:
   - Processes
 ---
 
-This page gives an overview of the process of developing Moodle and outlines some of the basic concepts and players to better understand this Developer documentation.
+This page gives an overview of the process of developing Moodle and outlines some of the basic concepts to better understand this Developer documentation.
 
 ## The key players
 
