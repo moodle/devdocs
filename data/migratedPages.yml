@@ -13,6 +13,9 @@ Accessibility:
 Activity_modules:
 - filePath: "/docs/apis/plugintypes/mod/index.mdx"
   slug: "/docs/apis/plugintypes/mod"
+Add_a_block_cleanup:
+- filePath: "/general/projects/code/block-cleanup.md"
+  slug: "/general/projects/code/block-cleanup"
 Analytics_API:
 - filePath: "/docs/apis/subsystems/analytics/index.md"
   slug: "/docs/apis/subsystems/analytics/"

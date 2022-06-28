@@ -813,7 +813,7 @@ In the "Add a block" menu, the list of blocks was really long. A few changes hav
 
 :::info
 
-More information about this project can be found in the [Add a block cleanup](https://docs.moodle.org/dev/Add_a_block_cleanup) project page.
+More information about this project can be found in the [Add a block cleanup](/general/projects/code/block-cleanup) project page.
 
 :::
 
