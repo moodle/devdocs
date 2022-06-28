@@ -1404,6 +1404,9 @@ Output_functions:
 Overview:
 - filePath: "/general/community/intro.md"
   slug: "/general/community"
+PHPUnit:
+- filePath: "/general/development/tools/phpunit.md"
+  slug: "/general/development/tools/phpunit"
 Peer_reviewing:
 - filePath: "/general/development/process/peer-review.md"
   slug: "/general/development/process/peer-review"

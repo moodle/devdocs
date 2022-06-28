@@ -185,7 +185,7 @@ Moodle uses a framework called [PHPUnit](https://github.com/sebastianbergmann/ph
 
 :::info
 
-For more about this, see [PHPUnit](https://docs.moodle.org/dev/PHPUnit).
+For more about this, see [PHPUnit](/general/development/tools/phpunit).
 
 :::
 
