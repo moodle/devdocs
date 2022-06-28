@@ -237,6 +237,9 @@ config.renamedLinks = {
     }, {
         oldFile: '/docs/apis/core/form/advanced/repeat-elements.md',
         newFile: '/docs/apis/subsystems/form/advanced/repeat-elements.md',
+    }, {
+        oldFile: '/general/developer/tools/index.md',
+        newFile: '/general/developer/tools.md',
     }],
 };
 

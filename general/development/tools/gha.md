@@ -3,6 +3,7 @@ title: GitHub Actions integration
 tags:
   - tools
   - GitHub
+sidebar_position: 4
 ---
 
 ## Moodle core
