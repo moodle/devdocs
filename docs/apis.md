@@ -82,7 +82,7 @@ The [The Moodle Universal Cache (MUC)](https://docs.moodle.org/dev/The_Moodle_Un
 
 ### Calendar API (calendar)
 
-The [Calendar API](https://docs.moodle.org/dev/Calendar_API) allows you to add and modify events in the calendar for user, groups, courses, or the whole site.
+The [Calendar API](./apis/subsystems/calendar/index.md) allows you to add and modify events in the calendar for user, groups, courses, or the whole site.
 
 ### Check API (check)
 

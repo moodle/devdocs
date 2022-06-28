@@ -40,6 +40,12 @@ Blocks:
 Bug_triage:
 - filePath: "/general/development/process/triage.md"
   slug: "/general/development/process/triage"
+Calendar_API:
+- filePath: "/docs/apis/subsystems/calendar/index.md"
+  slug: "/docs/apis/subsystems/calendar/"
+Calendar_API_old:
+- filePath: "/docs/apis/subsystems/calendar/old-api/index.md"
+  slug: "/docs/apis/subsystems/calendar/old-api"
 Check_API:
 - filePath: "/docs/apis/subsystems/check/index.md"
   slug: "/docs/apis/subsystems/check/"
@@ -76,12 +82,12 @@ Course_formats:
 Creating_mobile_course_formats:
 - filePath: "/docs/moodleapp/development/plugins-development-guide/examples/create-course-formats.md"
   slug: "/docs/moodleapp/development/plugins-development-guide/examples/create-course-formats"
-Custom_Moodle_Apps:
-- filePath: "/docs/moodleapp/customisation/custom-apps.md"
-  slug: "/docs/moodleapp/customisation/custom-apps"
 Credits:
 - filePath: "/general/community/credits.md"
   slug: "/general/community/credits"
+Custom_Moodle_Apps:
+- filePath: "/docs/moodleapp/customisation/custom-apps.md"
+  slug: "/docs/moodleapp/customisation/custom-apps"
 DDL_functions:
 - filePath: "/docs/apis/core/dml/ddl.md"
   slug: "/docs/apis/core/dml/ddl"
