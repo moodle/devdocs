@@ -79,7 +79,7 @@ Moodle uses two Git repositories for its source code. Their names are moodle.git
 To obtain the code from the integration.git repository, follow the instructions at [Git for Administrators page](https://docs.moodle.org/dev/Git_for_Administrators_page). But instead of cloning from git://github.com/moodle/moodle.git, use
 
 ```git
-   git clone git://git.moodle.org/integration.git
+git clone git://git.moodle.org/integration.git
 ```
 
 as the very first command.

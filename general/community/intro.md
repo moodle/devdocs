@@ -4,6 +4,7 @@ slug: /community
 tags:
   - Quality Assurance
   - Processes
+sidebar_position: 1
 ---
 
 A lot of people ask how the development of Moodle operates. This page should give you a working overview that should help in understanding a lot of other developer documentation.
