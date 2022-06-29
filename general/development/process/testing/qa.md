@@ -1,5 +1,6 @@
 ---
 title: QA testing
+sidebar_label: Quality Assurance (QA)
 description: All the information related to the Qualify Assurance tests during the Moodle development.
 tags:
   - Processes

@@ -3,6 +3,8 @@ title: Bug triage
 tags:
   - Processes
   - Tracker
+sidebar_position: 1
+sidebar_label: Triage
 ---
 
 Triage is a medical term referring to the process of prioritising patients based on the severity of their condition so as to maximise benefit (help as many as possible) when resources are limited.

@@ -20,9 +20,9 @@ We use a workflow that ensures that new code receives multiple reviews by differ
 
 - The [triaging](#issue-triage) is done by the Component leads.
 - Anybody can participate in the issue [development](/general/development), by creating a patch for [a bug](#fixing-a-bug), [an improvement](#new-feature-development) or [a security issue](#security-issues).
-- Anybody can also [peer review](./process/peer-review) code developed by other developers.
-- There is a dedicated team in Moodle HQ in charge of the [integration review](./process/integration-review), to ensure consistent quality across the codebase.
-- Every time an issue is integrated, the [testing](./process/testing) instructions are run by a dedicated team of testers.
+- Anybody can also [peer review](./process/peer-review.md) code developed by other developers.
+- There is a dedicated team in Moodle HQ in charge of the [integration review](./process/integration/index.md), to ensure consistent quality across the codebase.
+- Every time an issue is integrated, the [testing](./process/testing/index.md) instructions are run by a dedicated team of testers.
 
 ## Roles
 
@@ -141,7 +141,7 @@ During each cycle there are a periods and events that occur between and around s
 A period during which the Roadmap is explored, specs are written and prototypes are created. Regressions in the recent release are fixed as they arise.
 
 **End sync period** <br/>
-During the [on-sync period](/general/development/process/integration-review#on-sync-period), the recent release and master versions are kept synchronised. No new code is added during this period, which ensures regressions are fixed rapidly. This also allows for planning and provides relief for developers after a release.
+During the [on-sync period](/general/development/process/integration#on-sync-period), the recent release and master versions are kept synchronised. No new code is added during this period, which ensures regressions are fixed rapidly. This also allows for planning and provides relief for developers after a release.
 
 **Personal projects** <br/>
 Affecting full-time HQ developers only, this period allows for individual creations to be explored and provides a break from sprints.
@@ -150,7 +150,7 @@ Affecting full-time HQ developers only, this period allows for individual creati
 A point after which no new code (only fixes to existing code) is accepted until beyond the release. This stabilisation allows for [QA testing](/general/development/process/testing/qa).
 
 **QA, bug fixing, continuous integration** <br/>
-A period after the code freeze where quality assurance testing takes place. No new code is added, which means developers are able to respond rapidly to bugs found. Integration becomes [continuous](/general/development/process/integration-review#during-continuous-integrationfreezeqa-period), meaning that failed QA tests can be re-run within days rather than having to wait for the weekly release.
+A period after the code freeze where quality assurance testing takes place. No new code is added, which means developers are able to respond rapidly to bugs found. Integration becomes [continuous](/general/development/process/integration#during-continuous-integrationfreezeqa-period), meaning that failed QA tests can be re-run within days rather than having to wait for the weekly release.
 
 **Release candidate** <br/>
 A point prior to the full release where a candidate is made public for wider testing.
@@ -205,7 +205,7 @@ Process and the list of things to check are described in [Peer reviewing](proces
 
 The developer is responsible for acting on the feedback from the peer reviewer. If changes have been made and the developer is satisfied that this has accommodated the feedback from the peer reviewer, then the developer can submit the issue for integration. If there have been significant changes after the peer review, or if the peer reviewer has raised concerns about the approach taken, then the developer should offer the issue up for peer review again, most often to the same peer reviewer, but not necessarily.
 
-Submitting an issue to integration is much the same as for any Moodle code. In some cases the Component Lead may perform a Component Lead Review instead of the integration team. See [Integration Review](/general/development/process/integration-review) and the information about the integration workflow above.
+Submitting an issue to integration is much the same as for any Moodle code. In some cases the Component Lead may perform a Component Lead Review instead of the integration team. See [Integration Review](/general/development/process/integration) and the information about the integration workflow above.
 
 ## Fixing a bug
 
@@ -254,7 +254,7 @@ Process and the list of things to check are described in [Peer reviewing](proces
 
 ### Submit your code for integration
 
-It will then be reviewed the following week by one of the integration team and either integrated or rejected. Once integrated, the fix will be tested, and then included in the next weekly release. For details see [Integration Review](/general/development/process/integration-review).
+It will then be reviewed the following week by one of the integration team and either integrated or rejected. Once integrated, the fix will be tested, and then included in the next weekly release. For details see [Integration Review](/general/development/process/integration).
 
 ## Security issues
 
@@ -267,7 +267,7 @@ Issues identified as [security issues](/general/development/policies/security) a
     - If a developer has shared a solution as Git branches via Github, they should be asked to provide the solutions as [stand-alone patches](https://docs.moodle.org/dev/How_to_create_a_patch) attached to the issue and to [remove the solution from Github](https://docs.moodle.org/dev/#How_to_remove_a_branch_from_Github).
   - contain details about the security problem in the commit message.
     - Instead use generic terms like, "improve", "better handling of"
-- The solution will not be integrated until the week before a [minor release](#Stable-maintenance-cycles) following the normal [Release process](./process/release.md). In short, the issue will be incorporated into the integration version, rebased, tested and made ready for release as a normal issue would, but not until as late as possible.
+- The solution will not be integrated until the week before a [minor release](#Stable-maintenance-cycles) following the normal [Release process](./process/release/index.md). In short, the issue will be incorporated into the integration version, rebased, tested and made ready for release as a normal issue would, but not until as late as possible.
 - Details of security issues will be shared with registered admins with the minor release.
 - Details of security issues will not be publicly announced until one week after a minor release to allow admins to update.
 Note that not all the labelled (minor) security issues are always handled following the procedure above. It's possible that, after discussion, it's decided a given issue is not a real Moodle security problem (say external disclosures/potential attacks using Moodle as vector, not as target, discussions revealing some private details). Those issues will be processed as normal issues, generating the needed user documentation if necessary and will be part of the habitual weekly releases.
