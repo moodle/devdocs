@@ -2,6 +2,7 @@
 title: Credits
 tags:
   - Credits
+sidebar_position: 8
 ---
 A huge thank you to everyone who contributed to Moodle in various ways:
 

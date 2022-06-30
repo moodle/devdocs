@@ -80,7 +80,7 @@ Custom_Moodle_Apps:
 - filePath: "/docs/moodleapp/customisation/custom-apps.md"
   slug: "/docs/moodleapp/customisation/custom-apps"
 Credits:
-- filePath: "/general/community/credits.md"
+- filePath: "/general/community/credits/index.md"
   slug: "/general/community/credits"
 DDL_functions:
 - filePath: "/docs/apis/core/dml/ddl.md"
@@ -122,7 +122,7 @@ Developer_meeting_February_2022:
 - filePath: "/general/community/meetings/202202.md"
   slug: "/general/community/meetings/202202"
 Developer_meetings:
-- filePath: "/general/community/meetings.md"
+- filePath: "/general/community/meetings/index.md"
   slug: "/general/community/meetings"
 Docs_required_issues_process:
 - filePath: "/general/development/process/release/docsrequiredissues.md"

@@ -1,6 +1,7 @@
 ---
 title: Research
 description: Information on why Moodle is used for educational research and what research activities take place in the Moodle community.
+sidebar_position: 7
 ---
 
 This page describes why Moodle is used for educational research and what research activities take place in the Moodle community.

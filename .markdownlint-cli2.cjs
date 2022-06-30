@@ -240,6 +240,12 @@ config.renamedLinks = {
     }, {
         oldFile: '/general/developer/tools/index.md',
         newFile: '/general/developer/tools.md',
+    }, {
+        oldFile: '/general/community/meetings.md',
+        newFile: '/general/community/meetings/index.md',
+    }, {
+        oldFile: '/general/community/credits.md',
+        newFile: '/general/community/credits/index.md',
     }],
 };
 

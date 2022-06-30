@@ -1,6 +1,7 @@
 ---
 title: Support channels
 slug: /channels
+sidebar_position: 5
 ---
 
 Moodle has a huge community with users and contributors across the globe. We recommend checking out your local Moodle Moot, MeetUp, or Moodle User Groups.

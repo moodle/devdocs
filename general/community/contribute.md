@@ -4,6 +4,7 @@ tags:
   - Core development
   - Processes
   - Community
+sidebar_position: 3
 ---
 
 If you want to contribute to Moodle, you can start looking at the following:

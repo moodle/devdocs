@@ -3,6 +3,8 @@ title: Developer meetings
 description: Information about past and upcoming developer meetings
 tags:
   - Core development
+sidebar_position: 6
+sidebar_label: Meetings
 ---
 
 ## Upcoming developer meetings
@@ -144,4 +146,4 @@ The next meeting is scheduled for August 2022.
 
 ## See also
 
-- [Roadmap](../community/roadmap.md)
+- [Roadmap](../roadmap.md)
