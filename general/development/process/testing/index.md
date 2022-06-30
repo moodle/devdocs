@@ -65,9 +65,9 @@ We recommend that you follow [PHPUnit integration](https://docs.moodle.org/dev/P
 
 Moodle uses a framework called Behat to automatically test the user-interface. Tests can be written for each plugin, and for Moodle core.
 
-- To run the existing tests, read [Running acceptance test](https://docs.moodle.org/dev/Running_acceptance_test). You really need to do this first.
-- To write new tests, read [Writing acceptance tests](https://docs.moodle.org/dev/Writing_acceptance_tests).
-- To define new steps that can you used when writing tests, see [Writing new acceptance test step definitions](https://docs.moodle.org/dev/Writing_new_acceptance_test_step_definitions).
+- To run the existing tests, read [Running acceptance test](/general/development/tools/behat/running). You really need to do this first.
+- To write new tests, read [Writing acceptance tests](/general/development/tools/behat/writing).
+- To define new steps that can you used when writing tests, see [Writing new acceptance test step definitions](/general/development/tools/behat/writing#writing-new-acceptance-test-step-definitions).
 
 :::tip
 Because Behat tests work through the Moodle user interface, they are a bit slow. Therefore, you should probably also use PHPUnit to test the detailed edge cases in your code.
