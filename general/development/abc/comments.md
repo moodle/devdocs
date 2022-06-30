@@ -1,5 +1,11 @@
 ---
-title: A better contribution: Comments in code
+title: "A better contribution: Comments in code"
+sidebar_label: Comments in code
+description: The better contribution guide to writing comments in code
+tags:
+  - Getting started
+  - Contributing
+  - Best practices
 ---
 
 import { CodeBlock, ValidExample, InvalidExample } from '@site/src/components';

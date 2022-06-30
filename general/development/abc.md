@@ -1,5 +1,10 @@
 ---
 title: Making a better contribution
+tags:
+  - Getting started
+  - Contributing
+  - Best practices
+documentationDraft: "https://github.com/moodle/devdocs/issues/267"
 ---
 
 These 'ABC' guides provide advice on doing software development better.
@@ -16,7 +21,7 @@ if the other person understood what you meant.
 
 The 'A better contribution' guides:
 
-- [Better comments in code](comments.md).
+- [Better comments in code](./abc/comments.md).
 - Breaking a big change into logical commits
 - Better commit comments
 - Fixup commits to help get big changes through review
