@@ -172,8 +172,8 @@ Hardening_new_Roles_system:
 - filePath: "/docs/apis/subsystems/roles.md"
   slug: "/docs/apis/subsystems/roles"
 Integration_Review:
-- filePath: "/general/development/process/integration-review.md"
-  slug: "/general/development/process/integration-review"
+- filePath: "/general/development/process/integration/index.md"
+  slug: "/general/development/process/integration"
 List_of_locales_supported_on_Moodle_community_servers:
 - filePath: "/general/development/process/translation/locales.md"
   slug: "/general/development/process/translation/locales"
@@ -1438,7 +1438,7 @@ Question_bank_plugins:
 - filePath: "/docs/apis/plugintypes/qbank/index.mdx"
   slug: "docs/apis/plugintypes/qbank"
 Release_process:
-- filePath: "/general/development/process/release.md"
+- filePath: "/general/development/process/release/index.md"
   slug: "/general/development/process/release"
 Releases:
 - filePath: "/general/releases.md"
@@ -1459,7 +1459,7 @@ SQL_coding_style:
 - filePath: "/general/development/policies/codingstyle/sql.md"
   slug: "/general/development/policies/codingstyle/sql"
 Security:
-- filePath: "/general/development/policies/security.md"
+- filePath: "/general/development/policies/security/index.md"
   slug: "/general/development/policies/security"
 Security:Brute-forcing_login:
 - filePath: "/general/development/policies/security/bruteforcing-login.md"
@@ -1531,7 +1531,7 @@ Templates:
 - filePath: "/docs/guides/templates/index.md"
   slug: "/docs/guides/templates/"
 Testing:
-- filePath: "/general/development/process/testing.md"
+- filePath: "/general/development/process/testing/index.md"
   slug: "/general/development/process/testing"
 Testing_credits:
 - filePath: "/general/community/credits/testing.md"
@@ -1561,7 +1561,7 @@ Translating_plugins:
 - filePath: "/general/development/process/translation/plugins.md"
   slug: "/general/development/process/translation/plugins"
 Translation:
-- filePath: "/general/development/process/translation.md"
+- filePath: "/general/development/process/translation/index.md"
   slug: "/general/development/process/translation"
 Translation_FAQ:
 - filePath: "/general/development/process/translation/faq.md"

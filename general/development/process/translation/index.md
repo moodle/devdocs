@@ -3,6 +3,7 @@ title: Translation
 tags:
   - Processes
   - Translation
+sidebar_position: 6
 ---
 ## So you'd like to help with translating Moodle?
 

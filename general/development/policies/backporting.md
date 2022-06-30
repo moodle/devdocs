@@ -64,5 +64,5 @@ A new weekly release will be performed including all the cases above, but [secur
 
 ## See also...
 
-- [Integration review process](/general/development/process/integration-review)
+- [Integration review process](/general/development/process/integration)
 - [Process](/general/development/process)

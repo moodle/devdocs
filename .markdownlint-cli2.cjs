@@ -246,6 +246,21 @@ config.renamedLinks = {
     }, {
         oldFile: '/general/community/credits.md',
         newFile: '/general/community/credits/index.md',
+    }, {
+        oldFile: '/general/development/integration-review.md',
+        newFile: '/general/development/integration/index.md',
+    }, {
+        oldFile: '/general/development/release.md',
+        newFile: '/general/development/release/index.md',
+    }, {
+        oldFile: '/general/development/security.md',
+        newFile: '/general/development/security/index.md',
+    }, {
+        oldFile: '/general/development/testing.md',
+        newFile: '/general/development/testing/index.md',
+    }, {
+        oldFile: '/general/development/translation.md',
+        newFile: '/general/development/translation/index.md',
     }],
 };
 

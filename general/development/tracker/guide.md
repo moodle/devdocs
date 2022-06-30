@@ -56,9 +56,9 @@ Once an issue has been created, the following additional fields are able to be c
 | **Priority**  | <ul><li>**Blocker**<br/>Blocks development or testing, prevents Moodle from running. Applicable to bugs only.</li><li>**Critical**<br/>Crashes server, loss of data, severe memory leak</li><li>**Major**<br/>Major loss of function, incorrect output</li><li>**Minor**<br/>Minor loss of function where workaround is possible</li><li>**Trivial**<br/>Cosmetic problem like misspelt words or misaligned text</li></ul>  | <ul><li>When it is reported, the priority level represents the severity of a bug.</li><li>After being reported, the priority may be promoted by HQ developers and component leads as an issue escalates.</li><li>Other users wishing to influence the priority of issues should do so by voting for the issue.</li><li>The priority of new features and improvements should generally remain at the default (Minor) level.</li></ul>  |
 | **Reporter**  | The person who logs the bug.<br/>This field is automatically filled by Tracker.  |   |
 | **Assignee**  | The person who will fix the issue. The assignee should be set when there is a definite intention to complete the issue.  | <ul><li>Developers or QA Testers can reassign issues.</li><li>Please note that even though a person may be assigned to an issue, this does not mean they are currently working on the issue, although they are likely to in future.</li></ul>  |
-| **Peer reviewer**  | The person who will check the fix at the code level. See [Peer-review](../process/peer-review). |   |
-| **Integrator**  | The person who will integrate the code into the Moodle codebase. See [Integration-review](../process/integration-review). |   |
-| **Tester**  | The person who will test the solution at a functional level, according to the test instructions provided. See [Testing](../process/testing). |   |
+| **Peer reviewer**  | The person who will check the fix at the code level. See [Peer-review](../process/peer-review.md). |   |
+| **Integrator**  | The person who will integrate the code into the Moodle codebase. See [Integration-review](../process/integration/index.md). |   |
+| **Tester**  | The person who will test the solution at a functional level, according to the test instructions provided. See [Testing](../process/testing/index.md). |   |
 | **Environment**  | The operating system, server and/or browser specifications if applicable to this bug.  | Note that the database is specified separately in the database field below.  |
 | **Database**  | If applicable to the bug, identify the database type.  |   |
 | **Testing instructions**  | The steps that a tester should follow to achieve the expected behaviour after the issue has been resolved.  | <ul><li>This may be different to the replication steps reported in the description.</li><li>These instructions are written by the developer working on the issue.</li></ul>  |
@@ -84,6 +84,6 @@ Once an issue has been created, the following additional fields are able to be c
 - [Process](../process)
 - [Bug triage](/general/development/process/triage)
 - [Tracker issue labels](/general/development/tracker/labels)
-- [Testing of integrated issues](../process/testing/integrated-issues)
+- [Testing of integrated issues](../process/testing/integrated-issues.md)
 - Using Moodle [How to manipulate Moodle developers](http://moodle.org/mod/forum/discuss.php?d=43952) forum discussion
 - Wikipedia [Definition of a bug](http://en.wikipedia.org/wiki/Software_bug)

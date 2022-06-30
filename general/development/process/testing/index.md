@@ -6,6 +6,7 @@ tags:
   - Core development
   - Testing
   - Quality assurance
+sidebar_position: 5
 ---
 
 This page is the top level page regarding all testing activities around the Moodle project. Testing is essential to make sure that developed code does what it is meant to do, without causing new problems.

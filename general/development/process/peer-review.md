@@ -5,6 +5,8 @@ tags:
   - Processes
   - Core development
   - Peer-review
+sidebar_position: 3
+
 ---
 ## Peer review list
 

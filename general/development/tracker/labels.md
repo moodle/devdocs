@@ -52,7 +52,7 @@ Used to flag issues that need to be noted in the dev docs. The responsibility of
 Used to flag issues already sent to integration that, for any cause, have been postponed to next cycles. Used only by integrators when there is some dependency or time-period causing one issue not being immediately integrable. Must be cleaned when the held is over.
 
 - `unhold_requested`<br/>
-Used to ask for an issue (having the `integration_held` label) to become unblocked, this flag must be coupled with a reasoned comment. Anybody can use it as far as repeated requests are avoided. Development managers will decide ASAP about giving the issue an integration opportunity or keeping it held. See [During continuous integration.2FFreeze.2FQA period](../process/integration-review#during-continuous-integrationfreezeqa-period).
+Used to ask for an issue (having the `integration_held` label) to become unblocked, this flag must be coupled with a reasoned comment. Anybody can use it as far as repeated requests are avoided. Development managers will decide ASAP about giving the issue an integration opportunity or keeping it held. See [During continuous integration.2FFreeze.2FQA period](../process/integration/index.md#during-continuous-integrationfreezeqa-period).
 
 - `security_held`<br/>
 Used to flag security issues that have been reviewed by integrators already but held from integration repository. These issues must be cleared during point releases.

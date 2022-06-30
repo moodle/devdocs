@@ -5,6 +5,7 @@ tags:
   - Processes
   - Core development
   - Integration
+sidebar_position: 4
 ---
 
 ## Purpose
@@ -50,7 +51,7 @@ accessible domain.)
    4. Cross-DB compatibility
    5. Security
 3. Check purpose - the patch needs to fix the issue reported.
-4. Verify target branches are appropriated. They must match 100% the rules defined for [backporting issues](../policies/backporting.md).
+4. Verify target branches are appropriated. They must match 100% the rules defined for [backporting issues](../../policies/backporting.md).
 5. Ensure backwards compatibility is maintained. As a starting point backwards compatibility must always be maintained. Where backwards
 compatibility is affected it should be:
    1. Well discussed with evidence of justification

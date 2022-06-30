@@ -1,5 +1,6 @@
 ---
 title: Testing instructions guide
+sidebar_label: Instructions guide
 tags:
   - Processes
 ---

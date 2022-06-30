@@ -27,7 +27,7 @@ The purpose of the component lead review is to:
   - The Moodle mobile app
   - Third-party developers
 
-The component lead review process must consider the [Integration principles](/general/development/process/integration-review#integration-principles) at all times.
+The component lead review process must consider the [Integration principles](/general/development/process/integration#integration-principles) at all times.
 
 ## Issues appropriate for CLR
 
@@ -96,7 +96,7 @@ To summarise:
 
 ## Schedule
 
-Component lead reviews may take place at any time, however, the push queue is progressed according to the standard [integration review schedule](/general/development/process/integration-review#schedule).
+Component lead reviews may take place at any time, however, the push queue is progressed according to the standard [integration review schedule](/general/development/process/integration#schedule).
 
 ## Becoming a component lead reviewer
 

@@ -4,3 +4,7 @@
 # Issue #247.
 # Redirect /docs/apis/plugintypes/commonfiles to /docs/apis/commonfiles.
 /docs/apis/plugintypes/commonfiles /docs/apis/commonfiles
+
+# Issue #
+# Redirect integration-review to integration
+/general/development/process/integration-review /general/development/process/integration
