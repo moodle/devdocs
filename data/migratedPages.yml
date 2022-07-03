@@ -1560,6 +1560,9 @@ Subject_Access_Request_FAQ:
 Task_API:
 - filePath: "/docs/apis/subsystems/task/index.md"
   slug: "/docs/apis/subsystems/task/"
+Tag_API:
+    - filePath: "/docs/apis/subsystems/tag/index.md"
+      slug: "/docs/apis/subsystems/tag/"
 Templates:
 - filePath: "/docs/guides/templates/index.md"
   slug: "/docs/guides/templates/"
