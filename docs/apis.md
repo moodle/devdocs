@@ -185,7 +185,7 @@ The [Search API](https://docs.moodle.org/dev/Search_API) allows you to index con
 
 ### Tag API (tag)
 
-The [Tag API](https://docs.moodle.org/dev/Tag_API) allows you to store tags (and a tag cloud) to items in your module.
+The [Tag API](./apis/subsystems/tag/index.md) allows you to store tags (and a tag cloud) to items in your module.
 
 ### Task API (task)
 

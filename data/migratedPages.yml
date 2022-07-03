@@ -76,12 +76,12 @@ Course_formats:
 Creating_mobile_course_formats:
 - filePath: "/docs/moodleapp/development/plugins-development-guide/examples/create-course-formats.md"
   slug: "/docs/moodleapp/development/plugins-development-guide/examples/create-course-formats"
-Custom_Moodle_Apps:
-- filePath: "/docs/moodleapp/customisation/custom-apps.md"
-  slug: "/docs/moodleapp/customisation/custom-apps"
 Credits:
 - filePath: "/general/community/credits/index.md"
   slug: "/general/community/credits"
+Custom_Moodle_Apps:
+- filePath: "/docs/moodleapp/customisation/custom-apps.md"
+  slug: "/docs/moodleapp/customisation/custom-apps"
 DDL_functions:
 - filePath: "/docs/apis/core/dml/ddl.md"
   slug: "/docs/apis/core/dml/ddl"
@@ -1527,6 +1527,9 @@ Subject_Access_Request_FAQ:
 Table_of_locales:
 - filePath: "/general/development/process/translation/langpack/locales.md"
   slug: "/general/development/process/translation/langpack/locales"
+Tag_API:
+- filePath: "/docs/apis/subsystems/tag/index.md"
+  slug: "/docs/apis/subsystems/tag/"
 Templates:
 - filePath: "/docs/guides/templates/index.md"
   slug: "/docs/guides/templates/"
