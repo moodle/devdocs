@@ -35,6 +35,7 @@ Alex
 Alexander
 Alexandre
 Alexandru
+Alexey
 Alexnader
 Alfonso
 Alison
@@ -853,10 +854,12 @@ Russell
 Ryan
 Rézeau
 SSRF
+Saad
 Sachan
 Safat
 Sagar
 Sagie
+Salces
 Salih
 Sammarco
 Sander
