@@ -166,6 +166,7 @@ importhtml
 imsenterprise
 incompleted
 inplace
+intval
 invalidcoursemodule
 isempty
 isnotempty
@@ -280,13 +281,18 @@ unenrol
 unenrolling
 unhold
 uniqid
+unixtime
 unoconv
 uploadcourse
 uploadsingle
 uploadusers
 urltolink
 userdate
+usergetdate
+usergetmidnight
 userid
+usertime
+usertimezone
 varchar
 versionname
 videojs

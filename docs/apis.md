@@ -193,7 +193,7 @@ The [Task API](https://docs.moodle.org/dev/Task_API) lets you run jobs in the ba
 
 ### Time API (time)
 
-The [Time API](https://docs.moodle.org/dev/Time_API) takes care of translating and displaying times between users in the site.
+The [Time API](./apis/subsystems/time/index.md) takes care of translating and displaying times between users in the site.
 
 ### Testing API (test)
 
