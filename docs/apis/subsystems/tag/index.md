@@ -46,9 +46,13 @@ $tagareas = [
 
 You will also need to add language string, for the example above it will be `$string['tagarea_wiki_pages'] = 'Wiki pages';`
 
-There are more options such as specifying the default value for "Standard tags", having a fixed collection or excluding from search. They can be found in comments in [//github.com/moodle/moodle/blob/master/lib/db/tag.php lib/db/tag.php](https://docs.moodle.org/https///github.com/moodle/moodle/blob/master/lib/db/tag.php_lib/db/tag.php)
+:::note
+There are more options such as specifying the default value for "Standard tags", having a fixed collection or excluding from search. They can be found in comments in [lib/db/tag.php](https://github.com/moodle/moodle/blob/master/lib/db/tag.php)
+:::
 
-After making changes to db/tag.php plugin developer must bump the plugin version in **version.php** and run upgrade script. This usually applies to any changes in the db/ folder.
+:::important
+After making changes to db/tag.php, you must bump the plugin version in **version.php** and perform a Moodle upgrade.
+:::
 
 ### Adding tags element to the editing form
 
@@ -76,13 +80,21 @@ $mform->addElement(
  }
  ```
 
+Given the above you can move to the next step.
 2. Save the form data
 
  ```php
  if ($data = $form->get_data()) {
-    // Do some other processing here, if this is a new page (item) you need to insert it in the DB and obtain id.
+    // Do some other processing here,
+    // if this is a new page (item) you need to insert it in the DB and obtain id.
     // $pageid = $data->id;
-    core_tag_tag::set_item_tags('mod_wiki', 'wiki_pages', $pageid, $modulecontext, $data->tags);
+    core_tag_tag::set_item_tags(
+        'mod_wiki',
+        'wiki_pages',
+        $pageid,
+        $modulecontext,
+        $data->tags
+    );
  }
  ```
 
@@ -94,7 +106,6 @@ $mform->addElement(
  $data->tags = core_tag_tag::get_item_tags_array('mod_wiki', 'wiki_pages', $this->page->id);
  $form->set_data($data);
  ```
-
 
 :::tip
 
@@ -109,16 +120,30 @@ Example of displaying of the tags are user interests on the user profile page. U
 Here is the code used by Wiki module to display tags the page is tagged with:
 
 ```php
-echo $OUTPUT->tag_list(core_tag_tag::get_item_tags('mod_wiki', 'wiki_pages', $page->id), null, 'wiki-tags');
+echo $OUTPUT->tag_list(
+    core_tag_tag::get_item_tags(
+        'mod_wiki',
+        'wiki_pages',
+        $page->id
+    ),
+    null,
+    'wiki-tags'
+);
 ```
 
-If you will need to load the tags for a lot of different item ids, when use core_tag_tag::get_items_tags to load them all in a single DB query.
+:::important
+To prevent an performance regression, Use `core_tag_tag::get_items_tags()` to fetch tags against multiple item ids.
+:::
 
 ### Deleting and clearing tags
 
 Cron will automatically remove tag instances that point to non existing items, however it is a good habit to delete tags when the record is deleted.
 
-**Please note:** If you have created a course activity that uses tags you should also remember to delete the tags during a course reset by adding code to the reset course callbacks. First you want to add a checkbox that a user can check if they wish to delete the tags, then code that handles the case when the checkbox has been checked. Example -
+:::note
+If you have created a course activity that uses tags you should also remember to delete the tags during a course reset by adding code to the reset course callbacks. First you want to add a checkbox that a user can check if they wish to delete the tags, then code that handles the case when the checkbox has been checked.
+:::
+
+#### Example
 
 ```php title="What does this example do, and why is it in the "Deleting and clearing tags" section?
 /**
@@ -168,8 +193,11 @@ function book_reset_userdata($data) {
 The functions used to delete the tags are -
 
 ```php
-core_tag_tag::remove_all_item_tags($component, $itemtype, $itemid, $tiuserid = 0) // Removes all tag instances associated with an item.
-core_tag_tag::delete_instances($component, $itemtype = null, $contextid = null) // Removes tag instances in bulk. Here $component is mandatory in this method, either itemtype or contextid or neither or both can be specified.
+// Removes all tag instances associated with an item.
+core_tag_tag::remove_all_item_tags($component, $itemtype, $itemid, $tiuserid = 0);
+ // Removes tag instances in bulk. Here $component is mandatory in this method,
+ // either itemtype or contextid or neither or both can be specified.
+core_tag_tag::delete_instances($component, $itemtype = null, $contextid = null);
 ```
 
 ### Backup and restore
@@ -231,7 +259,9 @@ protected function process_glossary_entry_tag($data) {
 
 ### Search callback
 
-This is the most difficult part of Tag API. When user searches for the items tagged with a specific tag only the items user has access to must be returned. Running an access check on all items can be very costly. Class **core_tag_index_builder** can help with retrieving and caching records, especially inside the courses or activity modules.
+Given a user searches for any items tagged with a specified tag, only the items that the user has access to must be returned.
+
+To limit the performance impact of checking user access against items the following class ``core_tag_index_builder()`` can assist with the retrieval and caching of records, especially within both course and activity modules.
 
 ```php
 function mod_wiki_get_tagged_pages($tag, $exclusivemode = false, $fromctx = 0, $ctx = 0, $rec = 1, $page = 0) {
@@ -283,5 +313,6 @@ Custom plugins may go beyond the standard tags handling and use them without mix
 ## See also
 
 - [Core APIs](../../../apis.md)
+- [Core library tag.php](../../commonfiles/tag.php/index.md)
 - [Tag API before 3.1](https://docs.moodle.org/dev/Tag_API_before_3.1)
 - [Managing tags](https://docs.moodle.org/en/Managing_tags)
