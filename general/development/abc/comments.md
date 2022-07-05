@@ -37,6 +37,8 @@ useful?
  */
 ```
 
+This comment just repeats the name of the variable, but doesn't give any more detail on what you should pass. Does it, for example, expect a raw value, or a letter representation of the grade?
+
 </InvalidExample>
 
 <ValidExample>
@@ -46,5 +48,7 @@ useful?
  * @param $component Frankenstyle component name, e.g. 'mod_forum'
  */
 ```
+
+This comment is better because it describes the format of the parameter, and gives an example.
 
 </ValidExample>
