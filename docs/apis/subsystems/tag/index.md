@@ -11,8 +11,6 @@ tags:
 
 The Tag API allows you to assign labels to information in Moodle. This makes finding this information easier and also facilitates the grouping of similar information. The Tag API allows you to create, modify, delete and search tags in the Moodle system. The main tag related functions can be found in the tag/classes/tag.php file. For a thorough overview of all of the functions available for working with Tags please see methods in core_tag_tag, core_tag_collection and core_tag_area classes, however, the following examples should give you a general understanding of how to get started with tags.
 
-This page describes API in Moodle 3.1 and above, for earlier versions see [Tag API before 3.1](https://docs.moodle.org/dev/Tag_API_before_3.1)
-
 ## Tag API usage
 
 When a user tags something a **tag instance** is created in the database linking the item to the actual **tag**. If the tag did not exist before it is created automatically. Do not confuse these two entities - deleting the tag instance does not normally delete tag, however deleting tag deletes all tag instances associated with it.
@@ -33,17 +31,20 @@ Each tag area is identified by two attributes - component and itemtype. *Itemtyp
 First, developer must define the tag areas in the file **db/tag.php**. This will usually look like:
 
 ```php
-$tagareas = array(
-    array(
-        'itemtype' => 'wiki_pages',  // This must be a name of the database table (without prefix).
-        'component' => 'mod_wiki', // This can be omitted for plugins since it can only be the full frankenstyle name of the plugin.
+$tagareas = [
+    [
+        // The name of the database table (without prefix).
+        'itemtype' => 'wiki_pages',
+        // The full frankenstyle name of the plugin.
+        // Note: This can be omitted for plugins.
+        'component' => 'mod_wiki',
         'callback' => 'mod_wiki_get_tagged_pages',
         'callbackfile' => '/mod/wiki/locallib.php',
-    ),
-);
+    ],
+];
 ```
 
-You will also need to add language string, for the example above it will be **$string[]('tagarea_wiki_pages') = 'Wiki pages';**
+You will also need to add language string, for the example above it will be `$string['tagarea_wiki_pages'] = 'Wiki pages';`
 
 There are more options such as specifying the default value for "Standard tags", having a fixed collection or excluding from search. They can be found in comments in [//github.com/moodle/moodle/blob/master/lib/db/tag.php lib/db/tag.php](https://docs.moodle.org/https///github.com/moodle/moodle/blob/master/lib/db/tag.php_lib/db/tag.php)
 
@@ -56,7 +57,15 @@ After the tag area is defined it should appear on the "Manage tags" page. Now it
 1. Add a 'tags' form element to the editing form:
 
  ```php
- $mform->addElement('tags', 'tags', get_string('tags'), array('itemtype' => 'wiki_pages', 'component' => 'mod_wiki'));
+$mform->addElement(
+    'tags',
+    'tags',
+    get_string('tags'),
+    [
+        'itemtype' => 'wiki_pages',
+        'component' => 'mod_wiki',
+    ]
+);
  ```
 
  This element will automatically check if the tag area is disabled by the manager and will not display anything in this case. However if you want to add a header you need to check if tag area is enabled add this:
@@ -67,7 +76,6 @@ After the tag area is defined it should appear on the "Manage tags" page. Now it
  }
  ```
 
-Foobar
 2. Save the form data
 
  ```php
@@ -87,7 +95,12 @@ Foobar
  $form->set_data($data);
  ```
 
- Always test the code with tag area enabled and disabled.
+
+:::tip
+
+Always test the code with tag area enabled and disabled.
+
+:::
 
 ### Displaying tags next to the item
 
@@ -107,7 +120,7 @@ Cron will automatically remove tag instances that point to non existing items, h
 
 **Please note:** If you have created a course activity that uses tags you should also remember to delete the tags during a course reset by adding code to the reset course callbacks. First you want to add a checkbox that a user can check if they wish to delete the tags, then code that handles the case when the checkbox has been checked. Example -
 
-```php
+```php title="What does this example do, and why is it in the "Deleting and clearing tags" section?
 /**
  * The elements to add the course reset form.
  *
@@ -130,7 +143,7 @@ function book_reset_userdata($data) {
 
     if (!empty($data->reset_book_tags)) {
         // Loop through the books and remove the tags from the chapters.
-        if ($books = $DB->get_records('book', array('course' => $data->courseid))) {
+        if ($books = $DB->get_records('book', ['course' => $data->courseid])) {
             foreach ($books as $book) {
                 if (!$cm = get_coursemodule_from_instance('book', $book->id)) {
                     continue;
