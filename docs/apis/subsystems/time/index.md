@@ -52,25 +52,23 @@ Never add or subtract timestamps for any reason - you will get it wrong (DST is 
 Other functions related to time api can be found in lib/moodlelib.php.
 
 1. Time API's for current user
--. * **make_timestamp** - Given date-time, it produces a GMT timestamp for current user.
--. * **userdate** - Gets formatted string that represents a date in user time (note that the format required by this function is the [strftime()](https://www.php.net/manual/en/function.strftime.php) format, not the more common format used by date())
--. * **usertime** - Given a GMT timestamp (seconds since epoch), offsets it by the timezone.  eg 3pm in India is 3pm GMT - 5.5 * 3600 seconds
--. * **usergetdate** - Given a timestamp in GMT, returns an array that represents the date-time in user time
--. * **usergetmidnight** - Given a date, return the GMT timestamp of the most recent midnight for the current user.
--. * **usertimezone** - Returns current user's timezone
-
+   - **make_timestamp** - Given date-time, it produces a GMT timestamp for current user.
+   - **userdate** - Gets formatted string that represents a date in user time (note that the format required by this function is the [strftime()](https://www.php.net/manual/en/function.strftime.php) format, not the more common format used by date())
+   - **usertime** - Given a GMT timestamp (seconds since epoch), offsets it by the timezone.  eg 3pm in India is 3pm GMT - 5.5 * 3600 seconds
+   - **usergetdate** - Given a timestamp in GMT, returns an array that represents the date-time in user time
+   - **usergetmidnight** - Given a date, return the GMT timestamp of the most recent midnight for the current user.
+   - **usertimezone** - Returns current user's timezone
 1. System Time API
--. * **format_time** - Format a date/time (seconds) as weeks, days, hours etc as needed
--. * **dst_offset_on** - Calculates the Daylight Saving Offset for a given date/time (timestamp)
--. * **find_day_in_month** - Calculates when the day appears in specific month
--. * **days_in_month** - Calculate number of days in a given month
--. * **dayofweek** - Calculate the position in the week of a specific calendar day
-
+   - **format_time** - Format a date/time (seconds) as weeks, days, hours etc as needed
+   - **dst_offset_on** - Calculates the Daylight Saving Offset for a given date/time (timestamp)
+   - **find_day_in_month** - Calculates when the day appears in specific month
+   - **days_in_month** - Calculate number of days in a given month
+   - **dayofweek** - Calculate the position in the week of a specific calendar day
 1. Older legacy date/time functions. Do not use in new code.
--. * **usertime** - Appends the users timezone offset to an integer timestamp
--. * **get_timezone_offset** - Systems's timezone difference from GMT in seconds
--. * **get_user_timezone_offset** - Returns user's timezone difference from GMT in hours
--. * **dst_changes_for_year** -  Calculates the required DST change and returns a Timestamp Array
+   - **usertime** - Appends the users timezone offset to an integer timestamp
+   - **get_timezone_offset** - Systems's timezone difference from GMT in seconds
+   - **get_user_timezone_offset** - Returns user's timezone difference from GMT in hours
+   - **dst_changes_for_year** -  Calculates the required DST change and returns a Timestamp Array
 
 ## Glossary
 
