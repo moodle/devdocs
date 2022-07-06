@@ -7,8 +7,6 @@ tags:
 - Tags
 ---
 
-## Tag API overview
-
 The Tag API allows you to assign labels to information in Moodle. This makes finding this information easier and also facilitates the grouping of similar information. The Tag API allows you to create, modify, delete and search tags in the Moodle system. The main tag related functions can be found in the tag/classes/tag.php file. For a thorough overview of all of the functions available for working with Tags please see methods in core_tag_tag, core_tag_collection and core_tag_area classes, however, the following examples should give you a general understanding of how to get started with tags.
 
 ## Tag API usage
@@ -313,6 +311,7 @@ Custom plugins may go beyond the standard tags handling and use them without mix
 ## See also
 
 - [Core APIs](../../../apis.md)
-- [Core library tag.php](../../commonfiles/tag.php/index.md)
+- [Test: Core library tag.php](../../commonfiles/tag.php/index.md)
+- [Test](../../commonfiles/version.php/index.md)
 - [Tag API before 3.1](https://docs.moodle.org/dev/Tag_API_before_3.1)
 - [Managing tags](https://docs.moodle.org/en/Managing_tags)
