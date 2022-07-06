@@ -5,8 +5,6 @@ tags:
   - Time
 ---
 
-## Overview
-
 Internally Moodle always stores all times in unixtime format (number of seconds since epoch) which is independent of timezones.
 
 The Time API is used to display proper date-time depending on user or site timezones.
@@ -47,7 +45,9 @@ $time->setTime(15, 0, 0);
 $timestamp = $time->getTimestamp();
 ```
 
-Remember! NEVER NEVER NEVER add or subtract timestamps for any reason - you will get it wrong (DST is a killer)!
+:::danger
+Never add or subtract timestamps for any reason - you will get it wrong (DST is a killer)!
+:::
 
 Other functions related to time api can be found in lib/moodlelib.php.
 
@@ -84,7 +84,7 @@ Moodle supports following timezone formats:
 
 ### Location
 
-Timezone depends on [en](https://docs.moodle.org/en/Location) of the user and can be forced upon by administrator.
+Timezone depends on [Location](https://docs.moodle.org/en/Location) of the user and can be forced upon by administrator.
 
 ### DST
 
@@ -94,9 +94,11 @@ DST is abbreviation of **Daylight Saving Time** (also known as "Day light saving
 
 ### Create DateTime with date/time from a unixtime (number of seconds)
 
+```php
 $date = new DateTime();
 $date->setTimestamp(intval($unixtime);
 echo userdate($date->getTimestamp());
+```
 
 ### Time API's for current user
 
@@ -125,7 +127,7 @@ echo userdate($date->getTimestamp(), get_string('strftimedatefullshort', 'core_l
 
 Find the day of the week for the first day in this month.
 
-<pre>
+```php
 $now = new DateTime("now", core_date::get_server_timezone_object());
 
 $year = $now->format('Y');
@@ -134,7 +136,7 @@ $month = $now->format('m');
 $now->setDate($year, $month, 1);
 $dayofweek = $now->format('N');
 echo $dayofweek;
-</pre>
+```
 
 ## See also
 
