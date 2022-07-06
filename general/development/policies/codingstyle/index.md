@@ -1516,7 +1516,7 @@ This tag is valid and can be used optionally to indicate the method or function 
 
 There are some tags that are only allowed within some contexts and not globally. More precisely:
 
-- `@Given`, `@When`, `@Then`, within the [behat steps definitions](https://docs.moodle.org/dev/Acceptance_testing#Adding_steps_definitions).
+- `@Given`, `@When`, `@Then`, within the [behat steps definitions](/general/development/tools/behat/writing#writing-new-acceptance-test-step-definitions).
 - `@covers`, `@coversDefaultClass`, `@coversNothing`, `@uses` to better control coverage within [unit tests](https://docs.moodle.org/dev/Writing_PHPUnit_tests#Generators).
 - `@dataProvider` and `@testWith`, to provide example data and expectations, within [unit tests](https://docs.moodle.org/dev/Writing_PHPUnit_tests#Generators).
 - `@depends`, to express dependencies between tests, where each producer returned data in passed to consumers. See [`@depends` examples](https://phpunit.readthedocs.io/en/9.5/writing-tests-for-phpunit.html#writing-tests-for-phpunit-examples-stacktest2-php) for more information.

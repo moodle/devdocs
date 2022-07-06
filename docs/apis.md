@@ -197,7 +197,7 @@ The [Time API](./apis/subsystems/time/index.md) takes care of translating and di
 
 ### Testing API (test)
 
-The testing API contains the Unit test API ([PHPUnit](https://docs.moodle.org/dev/PHPUnit)) and Acceptance test API ([Acceptance testing](https://docs.moodle.org/dev/Acceptance_testing)). Ideally all new code should have unit tests written FIRST.
+The testing API contains the Unit test API ([PHPUnit](/general/development/tools/phpunit)) and Acceptance test API ([Acceptance testing](/general/development/tools/behat)). Ideally all new code should have unit tests written FIRST.
 
 ### User-related APIs (user)
 

@@ -2,8 +2,11 @@ AMOS_manual:
 - filePath: "/general/development/process/translation/amos.md"
   slug: "/general/development/process/translation/amos"
 Acceptance_testing/Browsers:
-- filePath: "/general/development/tools/behat/browsers.md"
-  slug: "/general/development/tools/behat/browsers"
+- filePath: "/general/development/tools/behat/browsers/index.md"
+  slug: "/general/development/tools/behat/browsers/"
+Acceptance_testing/Browsers/Working_combinations_of_OS+Browser+selenium:
+- filePath: "/general/development/tools/behat/browsers/supportedbrowsers.md"
+  slug: "/general/development/tools/behat/browsers/supportedbrowsers"
 Acceptance_testing_for_the_Moodle_App:
 - filePath: "/docs/moodleapp/development/testing/acceptance-testing.md"
   slug: "/docs/moodleapp/development/testing/acceptance-testing"

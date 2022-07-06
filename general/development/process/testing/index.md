@@ -93,7 +93,7 @@ Every day, an automated build in a test server runs a large number of tests conc
 These tests must pass completely before a new release can be made.
 
 - [Unit tests](https://docs.moodle.org/dev/Unit_tests) using the PHPUnit framework
-- [Acceptance testing](https://docs.moodle.org/dev/Acceptance_testing) using the Behat framework
+- [Acceptance testing](/general/development/tools/behat) using the Behat framework
 - Performance testing using JMeter.
 
 :::note

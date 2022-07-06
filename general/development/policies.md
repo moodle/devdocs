@@ -195,7 +195,7 @@ PHPUnit covers mostly the internal implementation of functions and classes, the 
 
 :::info
 
-For more about this, see [Acceptance testing](https://docs.moodle.org/dev/Acceptance_testing).
+For more about this, see [Acceptance testing](/general/development/tools/behat).
 
 :::
 

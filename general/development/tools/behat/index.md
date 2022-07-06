@@ -10,7 +10,7 @@ Behat is a framework for behavior driven development (BDD) which allows us to sp
 
 ## Objective
 
-The aim of this integration is to allow Moodle components to have its own set of features and step definitions. This allows us to periodically execute sets of tests to detect regressions and Moodle features in different environments (browsers, DBs engines, web servers ...). The Moodle QA tests will be progressively rewritten according to this format to run automatically.
+The aim of this integration is to allow Moodle components to have its own set of features and step definitions. This allows us to periodically execute sets of tests to detect regressions and Moodle features in different environments (browsers, DBs engines, web servers...). The Moodle QA tests will be progressively rewritten according to this format to run automatically.
 
 ## How Behat works
 
@@ -59,13 +59,13 @@ Some terms used:
     Then I should see "Moodle 101: Course Name"
   ```
 
-- **Steps**: Human-readable sentences that describes an action. There are 3 types of steps, "Given" describing the initial context, "When" the event that provokes a change and "Then" where the outcomes should be asserted.
+- **Steps**: Human-readable sentences that describe an action. There are 3 types of steps, `Given` describing the initial context, `When` the event that provokes a change and `Then` where the outcomes should be asserted.
 
   ```gherkin
   I click on the "Add user" button
   ```
 
-- **Steps definitions**: PHP methods referenced by steps when matching it's regular expression. The @Given, @When and @Then tags are descriptive and they are not taken into account when matching steps with steps definitions. The regular expressions placeholders are returned to the PHP method as arguments so methods can use them to tell the browser which button (for example) they want to click.
+- **Steps definitions**: PHP methods referenced by steps when matching its regular expression. The `@Given`, `@When` and `@Then` tags are descriptive and they are not taken into account when matching steps with steps definitions. The regular expressions placeholders are returned to the PHP method as arguments so methods can use them to tell the browser which button (for example) they want to click.
 
   ```php
   /**
@@ -151,6 +151,7 @@ There are two types of tests depending on if their scenario needs a real browser
 
 - Tests with JavaScript requires interaction with a browser through a user simulation tool like Selenium or ZombieJS to be executed; see http://mink.behat.org/#different-browsers-drivers for all available drivers
 - Test that does not requires JavaScript are faster to run but can not test rich applications like Moodle
+
 In most of the cases a JavaScript test would be more appropriate because most of the users uses JavaScript-capable browsers, non-JavaScript tests can be useful to ensure that Moodle maintains its functionality without JavaScript enabled and to ensure there are no big issues, regressions or exceptions in general.
 
 ### Admin tool "Acceptance testing"
@@ -159,11 +160,11 @@ There is an admin tool to run and ease the creation of acceptance tests.
 
 - Web interface: The web interface allows you to list and filter the available steps definitions, a non-technical user can use this interface to write new features (`admin/tool/behat/index.php`)
 - CLI: Command to enable and disable the test environment and to update the `behat.yml` file with the system tests and steps definitions (`admin/tool/behat/cli/util.php` and `admin/tool/behat/cli/init.php` for a quick start)
-![Acceptance_testing_UI_2.5.png](./_index/Acceptance_testing_UI_2.5.png)
+![Acceptance_testing_UI_4.0.png](./_index/Acceptance_testing_UI_4.0.png)
 
 ### Available steps to create tests
 
-There are behat libraries with tons of steps definitions to run all sort of processes and interactions with the browser, some of them overlaps Moodle-specific libraries and tests writers can be confused not only by this also by the amount of steps and vague or too technical steps descriptions. Moodle provides a set of steps definitions written in a common format to make tests writers life easier. New steps definitions must follow this guidelines: https://docs.moodle.org/dev/Acceptance_testing#Adding_steps_definitions
+There are behat libraries with tons of steps definitions to run all sort of processes and interactions with the browser, some of them overlaps Moodle-specific libraries and tests writers can be confused not only by this also by the amount of steps and vague or too technical steps descriptions. Moodle provides a set of steps definitions written in a common format to make tests writers life easier. New steps definitions must follow these [guidelines](/general/development/tools/behat/writing#writing-new-acceptance-test-step-definitions)
 
 ### Behat extension
 
@@ -179,6 +180,6 @@ The aim of this extension is:
 - Add a new formatter method based on progress (the moodle default one) to display info about the moodle site being tested
 All the other particularities of this integration can managed playing with different Behat config parameters.
 
-## See also
+## Translations
 
-- [Behat](https://docs.moodle.org/es/Behat)
+- [es - Behat](https://docs.moodle.org/es/Behat)

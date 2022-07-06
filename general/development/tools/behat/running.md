@@ -1,5 +1,5 @@
 ---
-title: Running acceptance test
+title: Running acceptance tests
 sidebar_position: 1
 tags:
   - Quality Assurance
@@ -14,7 +14,7 @@ This documentation covers how to run Behat tests within Moodle, including requir
 ## Requirements
 
 1. Any recent OS with [supported version of Moodle](/general/releases) installed
-1. A recent browser (We support Firefox, Chrome as standard, but other browsers are possible)
+1. A recent browser (Firefox and Chrome as standard, but [other browsers](/general/development/tools/behat/browsers) are possible)
 1. The WebDriver implementation for your browser
 1. A recent version of Selenium (Optional, but recommended)
 1. A recent Java Runtime Environment (Required if using Selenium)
@@ -702,7 +702,7 @@ Started at 09-05-2021, 06:00
 
 ## See also
 
-- [Acceptance testing for the mobile app](https://docs.moodle.org/dev/Acceptance_testing_for_the_mobile_app)
+- [Acceptance testing for the mobile app](/docs/moodleapp/development/testing/acceptance-testing)
 - Vagrant profile with Moodle and Behat preconfigured: https://github.com/mackensen/moodle-hat
 - Docker containers for Moodle Developers and Behat: https://github.com/moodlehq/moodle-docker
 - Docker environment with Behat preconfigured : https://github.com/tobiga/docker_moodle_environment

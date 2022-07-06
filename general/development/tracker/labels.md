@@ -31,7 +31,7 @@ Used to flag MDL issues that are converting MDLQA issues to behat features. The 
 Used to flag issues that should have their own unit tests.
 
 - [`acceptance_test_required`](https://tracker.moodle.org/issues/?jql=labels%20%3D%20acceptance_test_required)<br/>
-Used to flag issues that should be regularly tested using the behat framework [Acceptance testing](https://docs.moodle.org/dev/Acceptance_testing). Before a major release these issues will be reviewed and new feature files will be added.
+Used to flag issues that should be regularly tested using the behat framework [Acceptance testing](/general/development/tools/behat). Before a major release these issues will be reviewed and new feature files will be added.
 
 - [`qa_test_required`](https://tracker.moodle.org/issues/?jql=labels%20%3D%20qa_test_required)<br/>
 Used to flag issues that cannot be covered by automated tests. When adding the label, a comment should be also added advising exactly what needs covering in the QA test, for example "steps 6-10 in testing instructions".

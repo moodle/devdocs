@@ -1,6 +1,6 @@
 ---
 title: Writing acceptance tests
-sidebar_position: 1
+sidebar_position: 2
 tags:
   - Behat
 ---
@@ -14,7 +14,7 @@ Each test consists of several stages which are categorised by the terms **Given*
 - **Then**: Then steps are used to check that your plugin behaved as expected. They typically check very simple things like if certain elements or text are visible or not. For example after submitting an assignment in the When stage, you may have a step which checks that a notice was shown to state that the submission was successful.
 These three stages match the standard [Four-phase test pattern](http://xunitpatterns.com/Four%20Phase%20Test.html). The fourth phase is 'tear-down' which is performed by Moodle between each test and does not need to be explicitly defined in your test.
 
-:::note
+:::warning
 
 Each test should have only one use of **Given**, **When**, and **Then**.
 See [MDLSITE-3778](https://tracker.moodle.org/browse/MDLSITE-3778) for information and the policy decision on why you should not have multiple Given, When, and Then steps.
@@ -38,12 +38,16 @@ Then I should see "You are not enrolled in this course"
 But I should see "Enrol now"
 ```
 
+:::tip
+
 To initialize and run your tests, please follow the instructions of [Running acceptance test](/general/development/tools/behat/running).
+
+:::
 
 ## Create your own tests
 
 Behat tests are located within the directory tests/behat of your plugin.
-The different tests are defined in files with the ending *.feature.
+The different tests are defined in files with the ending `*.feature`.
 First, you have to define the header of your test:
 
 ```gherkin
@@ -81,7 +85,7 @@ Background:
       | teacher1 | Theo | Teacher | teacher1@example.com |
 ```
 
-This is usually used, to define the different **GIVEN** steps.
+This is usually used, to define the different `Given` steps.
 
 ### Use existing steps
 
@@ -92,7 +96,7 @@ There are different ways how to effectively browse the available existing steps:
 Moodle offers within its administration menu under Site Administration > Development > Acceptance Testing a complete and searchable list of all available step definitions.
 However, make sure you installed the behat test site first!
 
-#### PhpStorm
+#### IDE integration
 
 <!-- cspell:ignore IntelliJ, textareas,  -->
 In PhpStorm or IntelliJ you can install the behat extension. Then you get auto completions within feature files, which helps a lot during behat test development.
@@ -101,16 +105,16 @@ In PhpStorm or IntelliJ you can install the behat extension. Then you get auto c
 
 Most of the steps requires values, there are methods to provide values to steps, the method depends on the step specification.
 
-- **A string/text**; is the most common case, the texts are wrapped between double quotes (" character) you have to replace the info about the expected value for your value; for example something like **I press "BUTTON_STRING"** should become **I press "Save and return to course"**. If you want to add a string which contains a " character, you can escape it with \", for example **I fill the "Name" field with "Alan alias \"the legend\""**. You can identify this steps because they ends with **_STRING**
-- **A number**; some steps requires numbers as values, to be more specific an undetermined number of digits from 0 to 9 (Natural numbers + 0) you can identify them because the expected value info string ends with **_NUMBER**
+- **A string/text** is the most common case, the texts are wrapped between double quotes (`"` character) you have to replace the info about the expected value for your value; for example something like **I press "BUTTON_STRING"** should become **I press "Save and return to course"**. If you want to add a string which contains a " character, you can escape it with \", for example **I fill the "Name" field with "Alan alias \"the legend\""**. You can identify this steps because they ends with **_STRING**
+- **A number** some steps requires numbers as values, to be more specific an undetermined number of digits from 0 to 9 (Natural numbers + 0) you can identify them because the expected value info string ends with **_NUMBER**
 - **A table**; is a relation between values, the most common use of it is to fill forms. The steps which requires tables are easily identifiable because they finish with **:** The steps description gives info about what the table columns must contain, for example **Fills a moodle form with field/value data**. Here you don't need to escape the double quotes if you want to include them as part of the value.
-- **A PyString**; is a multiline string, most commonly used to fill out forms when a newline is required. Like steps with tables, steps which require PyStrings will end with ":"
-- **A field value**; There are many different field types, if an argument requires a field value the expected value will depend on the field type:
+- **A PyString** is a multiline string, most commonly used to fill out forms when a newline is required. Like steps with tables, steps which require PyStrings will end with ":"
+- **A field value** There are many different field types, if an argument requires a field value the expected value will depend on the field type:
   - Text-based fields: It expects the text. This includes textareas, input type text, input type password...
   - Checkbox: It expects 1 to check and for checked and "" to uncheck or for unchecked
   - Select: It expects the option text or the option value. In case you interact with a multi-select you should specify the options separating them with commas. For example: **option1, option2, option3**
   - Radio: The text of the radio option
-- **A selector**; there are steps that can be used with different kinds of elements, for example **I click on "User Name" "link"** or **I click on "User Name" "button"** this is a closed list of elements, they always works together with another argument, where you specify the locator (eg. the link text in a link) In the 'Acceptance testing' interface you can see a drop-down menu to select one of these options:
+- **A selector** there are steps that can be used with different kinds of elements, for example **I click on "User Name" "link"** or **I click on "User Name" "button"** this is a closed list of elements, they always works together with another argument, where you specify the locator (eg. the link text in a link) In the 'Acceptance testing' interface you can see a drop-down menu to select one of these options:
   - field - for searching a field by its id, name, value or label
   - link - for searching a link by its href, id, title, img alt or value
   - button - for searching a button by its name, id, value, img alt or title
@@ -133,7 +137,7 @@ Most of the steps requires values, there are methods to provide values to steps,
   - fieldset - for searching a fieldset by it's id or legend
   - css_element - for searching an element by its CSS selector
   - xpath_element - for searching an element by its XPath
-- **A text selector**; similar to a selector but those are the elements that returns an area of the DOM, they are useful in steps following the format **... in the "Community finder" "block"** where you are clicking or looking for some text inside a specific area. In the 'Acceptance testing' interface you can see a drop-down menu to select one of these options:
+- **A text selector** similar to a selector but those are the elements that returns an area of the DOM, they are useful in steps following the format **... in the "Community finder" "block"** where you are clicking or looking for some text inside a specific area. In the 'Acceptance testing' interface you can see a drop-down menu to select one of these options:
   - dialogue - for searching a dialogue with the specified header text
   - block - for searching a Moodle block by it's English name or it's frankenstyle name
   - section - for searching for a section on a course page by it's title or its written out date (e.g. "1 January - 7 January"). Use "frontpage" "section" for the frontpage section if it has no title (default)
@@ -319,7 +323,7 @@ class behat_local_myplugin_generator extends behat_generator_base {
 }
 ```
 
-The 'datagenerator' value refers to the method in the generator class that we are calling, in this case `create_thing()`. The outer array key is the entity name we will use in the behat step, in this case `Given the following "local_myplugin > things" exist`.
+The `datagenerator` value refers to the method in the generator class that we are calling, in this case `create_thing()`. The outer array key is the entity name we will use in the behat step, in this case `Given the following "local_myplugin > things" exist`.
 
 Now, in your behat test, you can have a step like this, which will generate **2 things**, the first with the name "thing1" and the second with the name "thing2".
 
@@ -376,7 +380,11 @@ To override behat selectors in specific theme, you should create a class `behat_
 
 The ideal that you should strive for, is that each scenario tests just one specific bit of functionality. Therefore, if one test fails, the scenario name should tell you exactly what the bug is. Also, any bug should cause just one scenario to fail, not lots of unrelated ones. If you can achieve this, then the idea is that it minimises the time from seeing a test fail to having fixed the bug that was detected. Of course, this ideal is not always achievable, but in my experience it is worth striving for.
 
+:::tip
+
 Note that this also implies that the Given, When and Then keywords should be used only once per scenario.
+
+:::
 
 ### Set-up (Given) should not use the UI
 
@@ -394,8 +402,6 @@ When defining new Step definitions in your plugin, try to make sure the step nam
 
 ### PHPDoc comments to map scenario steps
 
-PHPDoc style comments before functions can be used to map to your .scenario files. Read more about this here
-
-https://behat.org/en/latest/user_guide/context/definitions.html
+PHPDoc style comments before functions can be used to map to your .scenario files. Read more about this here https://behat.org/en/latest/user_guide/context/definitions.html
 
 When you define more steps in your plugin, make it clear they come from your plugin

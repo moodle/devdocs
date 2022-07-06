@@ -4,7 +4,7 @@ tags:
   - API
 ---
 
-A _Check_ is a runtime test to make sure that something is working well. You can think of Checks as similar and complimentary to the [PHPUnit](https://docs.moodle.org/dev/PHPUnit) and [Acceptance testing](https://docs.moodle.org/dev/Acceptance_testing) but the next layer around them, and performed at run time rather than development, or build time.
+A _Check_ is a runtime test to make sure that something is working well. You can think of Checks as similar and complimentary to the [PHPUnit](/general/development/tools/phpunit.md) and [Acceptance testing](/general/development/tools/behat) but the next layer around them, and performed at run time rather than development, or build time.
 
 Like other forms of testing the tests themselves should be easy to read, to reason about, and to confirm as valid.
 
