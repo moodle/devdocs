@@ -1197,6 +1197,9 @@ Moodle_4.0_developer_update:
 Moodle_4.0_release_notes:
 - filePath: "/general/releases/4.0.md"
   slug: "/general/releases/4.0"
+Moodle_and_PHP:
+- filePath: "/general/development/policies/php.md"
+  slug: "/general/development/php"
 Moodle_App:
 - filePath: "/docs/moodleapp.md"
   slug: "/docs/moodleapp"
