@@ -1,5 +1,6 @@
 ---
 title: Welcome
+sidebar_position: 1
 ---
 
 Welcome to the Moodle Developer Resources, the official developer documentation for Moodle LMS.

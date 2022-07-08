@@ -27,55 +27,7 @@ resources for others to make use of.
 If you plan to contribute, then you may wish to setup a local development
 environment to make it easier to do so.
 
-## Local development environment
-
-The Moodle Developer Resources are compiled using the
-[Docusaurus](https://docusaurus.io/) tooling, which can be easily installed with
-[Yarn](https://yarnpkg.com/getting-started/install).
-
-Once installed, you should invoke yarn:
-
-```
-$ yarn
-```
-
-This will install all of the dependencies needed to run the development server.
-
-Finally you can start the server with:
-
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-There are some other commands that you may find useful:
-
-### Linting your content
-
-One of the many powerful features of Markdown is its ability to be
-programmatically checked for a range of bugs and stylistic errors.
-
-Every time a commit is pushed to source repository it is passed through several
-linting tools which it must pass before it can be merged.
-
-You can lint your code before pushing it using yarn:
-
-```
-yarn lint
-```
-
-This will run the `markdownlint` CLI tool across all of the documentation
-directories and report any issues it comes across.
-
-Some examples of these issues include:
-
-- header levels which do not increase incrementally
-- multiple level 1 headers (`h1`)
-- use of hard tabs instead of spaces
-- the presence of trailing spaces at the end of a line
-
-These are usually easy to solve and, in many cases, can be fixed automatically.
+We highly recommend that you read our [documentation contributions guide](https://moodledev.io/general/documentation/contributing), which includes important information on [getting started](https://moodledev.io/general/documentation/contributing#development).
 
 ### Building your content
 

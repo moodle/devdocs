@@ -1,6 +1,7 @@
 ---
 title: Code of conduct
 documentationDraft: https://github.com/moodle/devdocs/issues/47
+sidebar_position: 2
 ---
 ## Our Pledge
 
