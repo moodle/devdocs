@@ -1144,7 +1144,8 @@ By default, the state manager can process the following actions:
 - `override`: like `put`, this action will create or update a state element but it will remove any other attribute that is not present in the fields.
 - `update`: will update an element with the fields but it will raise an exception if the element is not in the state.
 - `create`: will create a new state element but it will raise an exception if the element is already created.
-- `delete`: it will delete a state element.
+- `remove`: it will delete a state element.
+- `delete`: it will delete a state element but it will raise an exception if the element is not in the state.
 
 ### Implementing custom update types
 
