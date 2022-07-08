@@ -1,7 +1,11 @@
 <!-- markdownlint-disable first-line-heading -->
 Each component and subsystem may make use of an `upgrade.txt` file in the top level folder. A title is used to identify the Moodle version where the change was introduced, and significant changes for that version relating to that component or subsystem are displayed.
 
+#### Change affecting multiple branches
+
 When changes are integrated to multiple branches, for example a stable version and the master branch, then the relevant versions used to describe the change in the `upgrade.txt` file should be the next version to be released _for each branch_. The `master` branch should always use the next major version.
+
+Multiple versions within the section title are not allowed. However, developers may note the Moodle versions that the change applies to within the upgrade note text itself.
 
 For example if a change is applied to the **MOODLE_400_STABLE** during the development of Moodle 4.0.2, and the **master** branch during the development of Moodle 4.1, then the relevant versions will be **4.0.2** and **4.1**.
 
@@ -15,3 +19,53 @@ version in the earliest of the major version development branches will be used f
 For example, during the development of Moodle 3.11, and Moodle 4.0, which took place in parallel, if a change was integrated to 3.11 and 4.0, then the version specified in both branches would be 3.11.
 
 :::
+
+#### upgrade.txt notes examples
+
+##### Change affecting multiple branches
+
+- master (4.1)
+
+```
+== 4.1 ==
+An API change to empower educators!
+```
+
+Mentioning other Moodle versions the change applies to
+
+```
+== 4.1 ==
+An API change to empower educators! (This was fixed in 4.1, 4.0.2, and 3.11.8)
+```
+
+- MOODLE_400_STABLE (4.0.2)
+
+```
+== 4.0.2 ==
+An API change to empower educators!
+```
+
+Mentioning other Moodle versions the change applies to
+
+```
+== 4.0.2 ==
+An API change to empower educators! (This was fixed in 4.1, 4.0.2, and 3.11.8)
+```
+
+##### Parallel development
+
+Given we are in a parallel development situation with MOODLE_311_STABLE (3.11dev) and master (4.0dev), with Moodle 3.11 as the next upcoming major Moodle version.
+
+- master (4.0)
+
+```
+== 3.11 ==
+An API change to empower educators!
+```
+
+- MOODLE_311_STABLE (3.11 dev)
+
+```
+== 3.11 ==
+An API change to empower educators!
+```
