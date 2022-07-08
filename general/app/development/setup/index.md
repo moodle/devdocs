@@ -163,7 +163,7 @@ After doing this, remember to run the emulator in write mode for subsequent sess
 
 ## See also
 
-- [Moodle App Coding Style](/general/development/policies/codingstyle-moodleapp)
+- [Moodle App Coding Style](../../../development/policies/codingstyle-moodleapp.md)
 - [Debugging network requests in the Moodle App](./network-debug)
 - [Moodle Docker](https://github.com/moodlehq/moodle-docker)
 - [Ionic CLI docs](http://ionicframework.com/docs/cli/)

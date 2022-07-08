@@ -62,4 +62,4 @@ This is done to ensure translations are rich enough.
 
 ## How can I translate my plugin?
 
-If you are developing a plugin, you'll have to indicate which strings you want to use in the `lang` configuration option. You can learn more about this in the [Moodle App Plugins development guide](/docs/moodleapp/development/plugins-development-guide).
+If you are developing a plugin, you'll have to indicate which strings you want to use in the `lang` configuration option. You can learn more about this in the [Moodle App Plugins development guide](../../../app/development/plugins-development-guide/index.md).

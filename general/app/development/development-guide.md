@@ -45,7 +45,7 @@ You can use your favorite editor to work on the application.
 
 We recommend using [VSCode](https://code.visualstudio.com/) as it is the one used by the core team and the repository is configured with some specific settings for the Moodle App.
 
-The code follows the [Moodle App Coding Style](/general/development/policies/codingstyle-moodleapp), and many of the style rules are enforced with [ESLint](https://eslint.org/). If you are using VSCode, you can automatically lint your files using the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+The code follows the [Moodle App Coding Style](../../development/policies/codingstyle-moodleapp.md), and many of the style rules are enforced with [ESLint](https://eslint.org/). If you are using VSCode, you can automatically lint your files using the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
 ### Debugging
 
@@ -416,4 +416,4 @@ You can learn more about this in the [Acceptance testing for the Moodle App](./t
 - [Moodle App Scripts: gulp push](./scripts/gulp-push.md)
 - [Moodle App Accessibility](../accessibility.md)
 - [Moodle App Deep Linking](./deep-linking.md)
-- [Moodle App Translation](/general/development/process/translation/moodleapp)
+- [Moodle App Translation](../../development/process/translation/moodleapp.md)

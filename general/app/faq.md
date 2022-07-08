@@ -11,7 +11,7 @@ You can help with [any issue marked with the `contribfriendly` label](https://tr
 
 If you want to help with another issue, please let us know first via the tracker, you can a comment in the issue itself.
 
-You have a detailed description of our development process here: [Moodle App Development Process](/general/development/process-moodleapp).
+You have a detailed description of our development process here: [Moodle App Development Process](../development/process-moodleapp.md).
 
 ## I see this error: "Cannot connect: Verify that your have typed correctly the URL and that your site uses Moodle 2.4 or later"
 

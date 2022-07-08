@@ -702,7 +702,7 @@ Started at 09-05-2021, 06:00
 
 ## See also
 
-- [Acceptance testing for the mobile app](/docs/moodleapp/development/testing/acceptance-testing)
+- [Acceptance testing for the mobile app](../../../app/development/testing/acceptance-testing.md)
 - Vagrant profile with Moodle and Behat preconfigured: https://github.com/mackensen/moodle-hat
 - Docker containers for Moodle Developers and Behat: https://github.com/moodlehq/moodle-docker
 - Docker environment with Behat preconfigured : https://github.com/tobiga/docker_moodle_environment
