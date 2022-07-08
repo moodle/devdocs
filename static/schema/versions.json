@@ -1,6 +1,6 @@
 {
     "title": "JSON schema for the Moodle Release Data",
-    "$id": "https://moodledev.io/devdocs/schema/versions.json",
+    "$id": "https://moodledev.io/schema/versions.json",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "type": "object",
     "properties": {
