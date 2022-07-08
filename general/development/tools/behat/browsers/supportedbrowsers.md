@@ -364,7 +364,12 @@ Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the
 
 </td></tr>
 </tbody></table>
-General note: Many of the combinations below, for Moodle 3.1 and up, should continue working acceptably well for Moodle 3.5 and up. Just the those listed above are actively being used now (CI infrastructure, developers...), hence, verified to be running ok. Feel free to add more relevant working combinations!
+
+:::note
+
+Many of the combinations below, for Moodle 3.1 and up, should continue working acceptably well for Moodle 3.5 and up. Just the those listed above are actively being used now (CI infrastructure, developers...), hence, verified to be running ok. Feel free to add more relevant working combinations!
+
+:::
 
 ## Moodle 3.4
 
