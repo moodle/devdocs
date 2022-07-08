@@ -28,6 +28,7 @@ module.exports = {
         'docs/**/_examples/*',
         'general/**/_examples/*',
         '!.markdownlint',
+        '!.lintstagedrc.mjs',
     ],
     env: {
         browser: true,
