@@ -22,7 +22,7 @@ The core libraries provide the base functionality that all other parts of moodle
 
 Subsystems are groups of related functions and classes that are part of core, but are logically grouped together. Often they are tied to a particular feature in Moodle, and sometimes can be disabled/enabled via a single config setting - but the code is never removed. It is safe to call core subsystems from anywhere in Moodle - but the functions may return an error to indicate that a feature has been disabled. Each core subsystem has a defined location where its code is grouped together. As of Moodle 3.1 there are 66 subsystems in core and the comprehensive list can be found here:
 
-core_component::fetch_subsystems()
+core_component::get_core_subsystems()
 
 ### Plugins
 
