@@ -33,7 +33,7 @@ In line with the responsible disclosure philosophy, please do *not* post about s
 1. Issues submitted via the submission form are received by Bugcrowd's triage team, who perform initial triage on the report.
 1. If the issue is confirmed valid and not a duplicate by the Bugcrowd team, the Moodle security team reviews the issue and evaluates its potential impact on all supported versions of Moodle. If the issue was submitted directly into Tracker rather than via the form, this will be the first step in the process.
 1. Valid issues are then pushed to the [Moodle Tracker](https://tracker.moodle.org) (restricted from public view).
-1. The Moodle security team works with the issue reporter to resolve the problem, following the [Security issue development process](/general/development/process#security-issues) and keeping details of the problem and its solution hidden until a release is made.
+1. The Moodle security team works with the issue reporter to resolve the problem, following the [Security issue development process](../../process.md#security-issues) and keeping details of the problem and its solution hidden until a release is made.
 1. New versions are created and tested.
 1. Meanwhile Moodle requests [CVE identifiers](http://cve.mitre.org/) for the security issue.
 1. New packages are created and made available on [download.moodle.org](https://download.moodle.org/).
@@ -52,8 +52,8 @@ At this time, no paid public bug bounty program is offered.
 
 ## See also
 
-- [Security issue development process](/general/development/process#security-issues)
-- [Moodle Penetration Testing](/general/development/process/security/penetration-testing)
+- [Security issue development process](../../process.md#security-issues)
+- [Moodle Penetration Testing](./penetration-testing.md)
 
 ## Translations
 

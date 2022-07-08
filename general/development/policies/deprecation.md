@@ -36,7 +36,7 @@ Both steps should always happen as earlier as possible in the 6-months period be
 
 ### Step 1. Immediate action
 
-Deprecation affects only the current master version, in other words, the deprecation only becomes effective after the next [major release](/general/releases).
+Deprecation affects only the current master version, in other words, the deprecation only becomes effective after the next [major release](../../releases.md).
 
 - If the function is not a member of a class (in other words, it is an independent function), it should be moved, with its PHPDoc and all comments, to `lib/deprecatedlib.php`, which is included everywhere. If the function is a class member, it will need to be deprecated in its current location.
   - Deprecated behat step definitions should be moved to `lib/tests/behat/behat_deprecated.php`, including a call to `behat_deprecated::deprecated_message()` proposing an alternative to the deprecated method.
@@ -48,7 +48,7 @@ Deprecation affects only the current master version, in other words, the depreca
  ```
 
 - If the deprecated function has been replaced with a new function, ideally the new function should be called from the deprecated function, so that the new functionality is used. This will make maintenance easier moving forward.
-- A `@deprecated` tag should be added to the PHPDoc for the function description so that IDEs describing the function will note that it is deprecated, documenting which version it was deprecated in and the MDL issue associated with it. See the guidelines in [Coding style](/general/development/policies/codingstyle#deprecated-and-todo).
+- A `@deprecated` tag should be added to the PHPDoc for the function description so that IDEs describing the function will note that it is deprecated, documenting which version it was deprecated in and the MDL issue associated with it. See the guidelines in [Coding style](./codingstyle/index.md#deprecated-and-todo).
 - If the function is an external function, then an additional deprecation-specific method needs to be created and set to return true. See the [adding a web service to a plugin](https://docs.moodle.org/dev/Adding_a_web_service_to_a_plugin#Deprecation) docs on that process. You should continue to add the `@deprecated since x.x` tag to the docs of all three of the relevant external methods (parameters, main method, returns) to make it clear to IDEs that the function is deprecated.
 - There will need to be an issue associated with the initial part of the deprecation. A second issue needs to be created to finish the job. The first issue will be linked to second issue. The second issue needs to be a sub-task of an appropriate [deprecation META](https://tracker.moodle.org/issues/?jql=%28summary%20~%20%22meta%22%20or%20type%20%3D%20Epic%29%20AND%20summary%20~%20%22together%20deprecated%22%20order%20by%20created&runQuery=true&clear=true).
 
@@ -114,7 +114,7 @@ Remember the phpDoc parameter type should also be updated to `null`.
 
 ## See also...
 
-- [String deprecation](/general/projects/api/string-deprecation)
+- [String deprecation](../../projects/api/string-deprecation.md)
 - [External functions deprecation](https://docs.moodle.org/dev/Adding_a_web_service_to_a_plugin#Deprecation)
-- [Process](/general/development/process)
-- [Release process](/general/development/process/release)
+- [Process](../process.md)
+- [Release process](../process/release/index.md)

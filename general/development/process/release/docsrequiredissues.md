@@ -6,7 +6,7 @@ tags:
   - Processes
 ---
 
-According to the [Release process](/general/development/process/release#3-weeks-prior), 3 weeks prior to release we need to check [docs_required-labelled issues](https://tracker.moodle.org/issues/?jql=labels%20%3D%20docs_required%20AND%20status%20%3D%20Closed) and write new documentation, removing the label and commenting in the issue when the work is done.
+According to the [Release process](./index.md#3-weeks-prior), 3 weeks prior to release we need to check [docs_required-labelled issues](https://tracker.moodle.org/issues/?jql=labels%20%3D%20docs_required%20AND%20status%20%3D%20Closed) and write new documentation, removing the label and commenting in the issue when the work is done.
 
 Ideally, shortly after release, say within 4 weeks, the number of `docs_required` labelled issues for the versions being released should be zero.
 

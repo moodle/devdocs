@@ -28,7 +28,7 @@ First of all, identify the issues that should be closed or placed under investig
 - **Is the issue a request for support/help?** If so, the reporter should be directed to the forums to seek help and the issue should be closed as `Not a bug`. Sometimes improvement requests can be phrased as a question, though; if this is the case, ask the reporter to reword the description to describe an improvement.
 - **Has the reporter mistaken the Moodle Tracker with their own support desk?** Sometimes people mistake the Moodle Tracker as a place to request help about their own Moodle instance, often about logging in. We need to refer the user to their instance administrators and close the issue as `Not a bug`.
 - **Has the issue been reported previously?** If so, link to a duplicate issue and close the newly reported issue as a `Duplicate` with no fix version set. Encourage the reporter to search before reporting. If a newer issue has a patch or more voters/watchers, consider closing the older issue. Checking for duplicates first will save you having to check the rest of the issue. See [Tracker tips](../tracker/tips) for help with effective search of tracker.
-- **Does the problem only affect unsupported versions?** If so, the issue should be closed using `Fixed` (preferred as it sounds better) when the issue is resolved in current versions, or `Not a bug` when the issue has disappeared due to changes leading to current versions. See the [Releases](/general/releases) page to for the list of currently supported versions
+- **Does the problem only affect unsupported versions?** If so, the issue should be closed using `Fixed` (preferred as it sounds better) when the issue is resolved in current versions, or `Not a bug` when the issue has disappeared due to changes leading to current versions. See the [Releases](../../releases.md) page to for the list of currently supported versions
 - **Did the problem arise because of a mistake or lack of documentation?** If it appears that the reporter does not understand a particular feature in Moodle and the documentation is lacking, ask the reporter where would they expect to find documentation about it. Then simply edit the relevant pages in the documentation wiki and close the issue. If the required change is significant, add the `Documentation` component and the `docs_required` label.
 - **Is the problem a language string change?** Language string problems can be corrected by [contributing a translation](https://docs.moodle.org/dev/Contributing_a_translation) or by contacting the language pack maintainer as listed in the [Translation credits](https://lang.moodle.org/local/amos/credits.php). English language string typo fixes and suggested improvements can be [contributed to the English (fixes) (en fix) language pack](https://docs.moodle.org/dev/Improving_English_language_strings) or given the component `Language` for fixing by the Language component lead. Such issues should be closed in the Tracker using `Deferred`.
 - **Is it a usability issue?** If so, add the component `Usability` in addition to the component(s) specifying the area of Moodle.
@@ -57,7 +57,7 @@ When you confirm that the issue is indeed a bug or a reasonable improvement requ
   - The issue is a bug in code that is present in the `master` branch only, in which case the next major version should be used. (The next major version should not be used in conjunction with previous released versions, this won't make sense later.)
   - The issue is a new feature and is unrelated to any existing code in Moodle, in which case the `Future dev` version should be used.
 - **Labels**
-  - Remove functionality tags that some reporters add as labels, only  [standard labels or partner-specific labels](/general/development/tracker/labels) are used in Moodle
+  - Remove functionality tags that some reporters add as labels, only  [standard labels or partner-specific labels](../tracker/labels.md) are used in Moodle
   - Issues with proposed fixes should be labelled with `patch` so that they can be found easily and given attention. When this is the case, consider whether moving the issue to the `Waiting for peer review` state in the workflow might be more appropriate
   - Add the `addon_candidate` label if the functionality can be implemented as a plugin;
   - If you are the component lead or an HQ developer you may also add `triaged` label to indicate that the triage process is completed. Use it only when the issue has actually been added to the backlog
@@ -166,6 +166,6 @@ In the [Tracker tips and tricks](../tracker/tips#creating-a-filter) page you'll 
 
 ## See also
 
-- [Tracker guide](/general/development/tracker/guide)
+- [Tracker guide](../tracker/guide.md)
 - [Process](./)
-- [Tracker tips](/general/development/tracker/tips)
+- [Tracker tips](../tracker/tips/index.md)

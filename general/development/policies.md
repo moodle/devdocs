@@ -34,13 +34,13 @@ For more about this, see [Moodle plugins](https://docs.moodle.org/dev/Plugins) a
 
 ## Coding style
 
-Consistent [coding style](/general/development/policies/codingstyle) is important in any development project, and particularly so when many developers are involved. A standard style helps to ensure that the code is easier to read and understand, which helps overall quality.
+Consistent [coding style](./policies/codingstyle/index.md) is important in any development project, and particularly so when many developers are involved. A standard style helps to ensure that the code is easier to read and understand, which helps overall quality.
 
 Writing your code in this way is an important step to having your code accepted by the Moodle community.
 
 :::info
 
-For more about this, see the [Moodle coding style](/general/development/policies/codingstyle).
+For more about this, see the [Moodle coding style](./policies/codingstyle/index.md).
 
 :::
 
@@ -52,7 +52,7 @@ It's also a script running on people's servers, so Moodle needs to be a responsi
 
 :::info
 
-Any single script (in Moodle core or a third party module) can introduce a vulnerability to thousands of sites, so it's important that all developers strictly follow our [Moodle security guidelines](/general/development/policies/security).
+Any single script (in Moodle core or a third party module) can introduce a vulnerability to thousands of sites, so it's important that all developers strictly follow our [Moodle security guidelines](./policies/security/index.md).
 
 :::
 
@@ -102,7 +102,7 @@ Moodle should work well for the widest possible range of people.
 
 :::info
 
-For more about this, see [Moodle Accessibility](/general/development/policies/accessibility).
+For more about this, see [Moodle Accessibility](./policies/accessibility.md).
 
 :::
 
@@ -147,7 +147,7 @@ For more about this, see the [Moodle Database](https://docs.moodle.org/dev/Datab
 
 ## Events
 
-In Moodle it is possible to register observers for events. An observer is notified when an event happens and receives the data related to that event. An observer can only act on the information in the event. It cannot modify the data for the event or prevent the action from occurring. The component containing the observer is communicating with the component that declared the event class. The normal rules for [inter-component communication](/general/development/policies/component-communication#event-observers) apply.
+In Moodle it is possible to register observers for events. An observer is notified when an event happens and receives the data related to that event. An observer can only act on the information in the event. It cannot modify the data for the event or prevent the action from occurring. The component containing the observer is communicating with the component that declared the event class. The normal rules for [inter-component communication](./policies/component-communication/index.md#event-observers) apply.
 
 :::info
 
@@ -171,7 +171,7 @@ All issues integrated into the core codebase are tested both during Integration,
 
 :::info
 
-Moodle has guidelines on [how to write clear testing instructions](/general/development/process/testing/guide) which we recommend you read and follow.
+Moodle has guidelines on [how to write clear testing instructions](./process/testing/guide.md) which we recommend you read and follow.
 
 :::
 
@@ -185,7 +185,7 @@ Moodle uses a framework called [PHPUnit](https://github.com/sebastianbergmann/ph
 
 :::info
 
-For more about this, see [PHPUnit](/general/development/tools/phpunit).
+For more about this, see [PHPUnit](./tools/phpunit.md).
 
 :::
 
@@ -195,7 +195,7 @@ PHPUnit covers mostly the internal implementation of functions and classes, the 
 
 :::info
 
-For more about this, see [Acceptance testing](/general/development/tools/behat).
+For more about this, see [Acceptance testing](./tools/behat/index.md).
 
 :::
 

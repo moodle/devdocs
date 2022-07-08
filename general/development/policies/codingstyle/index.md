@@ -39,7 +39,7 @@ When considering the goals above, each situation requires an examination of the 
 Much of the existing Moodle code may not follow all of these guidelines - we continue to upgrade this code when we see it.
 :::
 
-For details about using the Moodle API to get things done, see the [coding guidelines](/general/development/policies).
+For details about using the Moodle API to get things done, see the [coding guidelines](../../policies.md).
 
 ### Useful tools
 
@@ -101,7 +101,7 @@ if ($a > 10) {
 
 </InvalidExample>
 
-SQL queries use special indentation, see [SQL coding style](/general/development/policies/codingstyle/sql).
+SQL queries use special indentation, see [SQL coding style](./sql.md).
 
 ### Maximum Line Length
 
@@ -1516,11 +1516,11 @@ This tag is valid and can be used optionally to indicate the method or function 
 
 There are some tags that are only allowed within some contexts and not globally. More precisely:
 
-- `@Given`, `@When`, `@Then`, within the [behat steps definitions](/general/development/tools/behat/writing#writing-new-acceptance-test-step-definitions).
+- `@Given`, `@When`, `@Then`, within the [behat steps definitions](../../tools/behat/writing.md#writing-new-acceptance-test-step-definitions).
 - `@covers`, `@coversDefaultClass`, `@coversNothing`, `@uses` to better control coverage within [unit tests](https://docs.moodle.org/dev/Writing_PHPUnit_tests#Generators).
 - `@dataProvider` and `@testWith`, to provide example data and expectations, within [unit tests](https://docs.moodle.org/dev/Writing_PHPUnit_tests#Generators).
 - `@depends`, to express dependencies between tests, where each producer returned data in passed to consumers. See [`@depends` examples](https://phpunit.readthedocs.io/en/9.5/writing-tests-for-phpunit.html#writing-tests-for-phpunit-examples-stacktest2-php) for more information.
-- `@group`, for easier collecting unit tests together, following the guidelines in the [PHPUnit MoodleDocs](/general/development/tools/phpunit#using-the-group-annotation).
+- `@group`, for easier collecting unit tests together, following the guidelines in the [PHPUnit MoodleDocs](../../tools/phpunit.md#using-the-group-annotation).
 - `@requires`, to specify unit test requirements and skip if not fulfilled. See [`@requires` usages](https://phpunit.readthedocs.io/en/9.5/incomplete-and-skipped-tests.html#incomplete-and-skipped-tests-requires-tables-api) for more information.
 - `@runTestsInSeparateProcesses` and `@runInSeparateProcess`, to execute an individual test or a testcase in isolation. To be used only when strictly needed.
 
@@ -1778,7 +1778,7 @@ If you have a big task that is nearly done, apart a few TODOs, and you really wa
 
 There is a nice "to-do checker" reporting tool, restricted to admins and available via web @ [`lib/tests/other/todochecker.php`](https://github.com/moodle/moodle/blob/master/lib/tests/other/todochecker.php).
 
-Finally, don't forget to add any MDL-12345 used by your TODOs (and @todos too, unless part of the [deprecation process](/general/development/policies/deprecation), those are handled apart) to the "Review TODOs Epic": MDL-47779 (requires login to see the issues)
+Finally, don't forget to add any MDL-12345 used by your TODOs (and @todos too, unless part of the [deprecation process](../deprecation.md), those are handled apart) to the "Review TODOs Epic": MDL-47779 (requires login to see the issues)
 
 ### CVS keywords
 
@@ -1877,8 +1877,8 @@ This document was drawn from the following sources:
 
 - [JavaScript Coding Style](https://docs.moodle.org/dev/Javascript/Coding_Style)
 - [CSS Coding Style](https://docs.moodle.org/dev/CSS_Coding_Style)
-- [SQL coding style](/general/development/policies/codingstyle/sql)
-- [Coding](/general/development/policies)
+- [SQL coding style](./sql.md)
+- [Coding](../../policies.md)
 - [CodeSniffer](../../policies/codingstyle/index.md)
 - [Code Checker plugin](https://moodle.org/plugins/local_codechecker)
 - [Accessibility coding guidelines](./accessibility#Moodle-related-accessibility-coding-guidelines)

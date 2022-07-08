@@ -41,4 +41,4 @@ This is not really a problem that can be solved from within Moodle code. However
 ## See also
 
 - [Security](../security)
-- [Coding](/general/development/policies)
+- [Coding](../../policies.md)

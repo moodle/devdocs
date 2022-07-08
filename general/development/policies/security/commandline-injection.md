@@ -37,4 +37,4 @@ However, when there is no other option, it is the standard approach of cleaning 
 ## See also
 
 - [Security](../security)
-- [Coding](/general/development/policies)
+- [Coding](../../policies.md)

@@ -38,7 +38,7 @@ If all the principles are fulfilled, the answer for "should I integrate this?" i
 
 ## Component lead review process
 
-Please see the [Component Lead Review](/general/development/process/integration/clr) documentation for further information on the CLR process.
+Please see the [Component Lead Review](./clr.md) documentation for further information on the CLR process.
 
 ## Integration Review Process
 
@@ -69,7 +69,7 @@ optimisations)
 11. Scalability - if master only - we're looking far future, stable branches may not be lucky to get such improvements.
 12. git authorship is correct vs committer + credits due are mentioned + email addresses
 13. Documentation / PHP Doc / readability
-14. [Tracker issue labels](/general/development/tracker/labels) which might need adding. Particularly:
+14. [Tracker issue labels](../../tracker/labels.md) which might need adding. Particularly:
     1. `docs_required` / `dev_docs_required` / `release_notes`: About which type of documentation is required for the issue.
     2. `ui_change` / `api_change`: About the implications of the change.
     3. `unit_test_required` / `acceptance_test_required` / `qa_test_required`: About the need to cover the issue with some test.
@@ -92,12 +92,12 @@ The integrators adhere to the following schedule: (links here should convert the
 
 All the flow of issues to current integration is automatically controlled by the [Manage queues on normal job](https://ci.moodle.org/view/Tracker/job/TR%20-%20Manage%20queues%20on%20normal/) that keeps the current queue fed with issues, moves important ones and prioritises long awaiting issues. Issues are picked in strict integration order.
 
-- Monday to Thursday until [12:00 (UTC+8)](http://time.unitarium.com/utc/4): Integration and [Testing](/general/development/process/testing/integrated-issues#the-testing-process) happen. Note that 24h before the cutoff it's possible to pick issues out of order towards queues reduction.
+- Monday to Thursday until [12:00 (UTC+8)](http://time.unitarium.com/utc/4): Integration and [Testing](../testing/integrated-issues.md#the-testing-process) happen. Note that 24h before the cutoff it's possible to pick issues out of order towards queues reduction.
 - Thursday after 12:00 (UTC+8): Integrators duties during this time are to monitor, facilitate and 'problem solve' the testing process.
 - Friday: Testing should be completed before (the sooner the better) 12:00 (UTC+8) at which time remaining testing failures will be reverted/rewritten and reopened. The release process follows.
 - Friday after [12:00 (UTC+8)](http://time.unitarium.com/utc/4): Should be kept free from integration. Integration systems are maintained during this time.
 
-Note that under the strict schedule above, it is specially important **to be as responsive as possible**, both when the issue is being integrated and when [testing](/general/development/process/testing/integrated-issues#expectation-from-tester). Any significant delay by any of the actors involved will result in the issue being moved out from current integration.
+Note that under the strict schedule above, it is specially important **to be as responsive as possible**, both when the issue is being integrated and when [testing](../testing/integrated-issues.md#expectation-from-tester). Any significant delay by any of the actors involved will result in the issue being moved out from current integration.
 
 ### During continuous integration/Freeze/QA period
 
@@ -105,7 +105,7 @@ During the continuous integration period (last 6 weeks before release) the integ
 
 Throughout:
 
-- Issues are picked on a one by one basis, prioritising [QA blockers](/general/development/process/testing/qa#resetting-tests) and master regressions (MUST FIX) issues.
+- Issues are picked on a one by one basis, prioritising [QA blockers](../testing/qa.md#resetting-tests) and master regressions (MUST FIX) issues.
 - After freeze (usually 5 weeks before release) any non bug fix issues are given the `integration_held` label and are explicitly not picked for integration. Still, anybody is able to add a reasoned `unhold_requested` label to those issues in order to get them unblocked by the development managers. Note this does not guarantee the issue to land before release, but just gives it a chance to be integrated like any other issue.
 - Also, coming together with freeze, all the flow of issues to current integration is automatically controlled by the [Manage queues on continuous](https://ci.moodle.org/view/Tracker/job/TR%20-%20Manage%20queues%20on%20continuous/) job that keeps the current queue fed with issues, moves important ones, holds new features and other niceties. Issues are picked in strict integration order.
 - Our goal is to achieve 'release-ability' throughout, so we stop integrating to ensure a release happens
@@ -113,8 +113,8 @@ Throughout:
 So, basically, once under continuous integration, we do organize work as follows:
 
 - Continuous officially begins. Everybody is on integration. Until end of on-sync period.
-- Monday: Integration and [testing](/general/development/process/testing/integrated-issues#differences-in-test-process-during-continuous-integration-periods) happens.
-- Tuesday: Integration happens until [12:00 (UTC+8)](http://time.unitarium.com/utc/4), afterwards we try to [achieve 100% 'Test Passed'](/general/development/process/testing/integrated-issues#differences-in-test-process-during-continuous-integration-periods) and stop integrating any untested changes until a master release is produced.
+- Monday: Integration and [testing](../testing/integrated-issues.md#differences-in-test-process-during-continuous-integration-periods) happens.
+- Tuesday: Integration happens until [12:00 (UTC+8)](http://time.unitarium.com/utc/4), afterwards we try to [achieve 100% 'Test Passed'](../testing/integrated-issues.md#differences-in-test-process-during-continuous-integration-periods) and stop integrating any untested changes until a master release is produced.
 - Wednesday: [Assuming a master release has been rolled] Integration and testing continues
 - Thursday: Integration and testing continues
 - Friday: Integration happens until [12:00 (UTC+8)](http://time.unitarium.com/utc/4), afterwards we try to achieve 100% 'Test Passed' and stop integrating any untested changes until a master release is produced. Note that 24h before the cutoff it's possible to pick issues out of order towards queues reduction.
@@ -160,5 +160,5 @@ As a general rule, this means that if your issue has entered the 'in integration
 The Integration team will sometimes recommend squashing commits when things do not look natural (and may offer to do this for you), especially when there are "fix-commits" in the history happening before integration. You will not be forced to squash your changes because our policy is: *"If you want your history of commits to look like bad, it's your history."*.
 
 :::tip
-You should pay close attention to [Git_commits](/general/development/policies/codingstyle#git-commits) and intend to *"Tell a perfect, cleaned up version of the history. As if the code was written perfectly first time."*.
+You should pay close attention to [Git_commits](../../policies/codingstyle/index.md#git-commits) and intend to *"Tell a perfect, cleaned up version of the history. As if the code was written perfectly first time."*.
 :::

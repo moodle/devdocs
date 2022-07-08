@@ -58,4 +58,4 @@ There are no strict rules for subquery indentation, the deciding factor is good 
 
 - [Data manipulation API](/docs/apis/core/dml)
 - [Database](https://docs.moodle.org/dev/Database)
-- [Coding style](/general/development/policies/codingstyle)
+- [Coding style](./index.md)

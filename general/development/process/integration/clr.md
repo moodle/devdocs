@@ -27,7 +27,7 @@ The purpose of the component lead review is to:
   - The Moodle mobile app
   - Third-party developers
 
-The component lead review process must consider the [Integration principles](/general/development/process/integration#integration-principles) at all times.
+The component lead review process must consider the [Integration principles](./index.md#integration-principles) at all times.
 
 ## Issues appropriate for CLR
 
@@ -61,14 +61,14 @@ The Component lead review process requires you to:
        1. with regards Cross-DB compatibility
        1. security
 1. Check the purpose of the change - the patch needs to fix the issue reported.
-1. Verify that target branches are appropriate -- they must match 100% the rules defined for [backporting issues](/general/development/policies/backporting).
+1. Verify that target branches are appropriate -- they must match 100% the rules defined for [backporting issues](../../policies/backporting.md).
 1. Ensure backwards compatibility is maintained. As a starting point backwards compatibility must always be maintained. Where backwards compatibility is affected it should be:
    1. Well discussed with evidence of justification
    1. Documented and communicated to the community
 1. Ensure backwards compatibility with the Moodle mobile app. Especially in areas where the Moodle app uses pre-rendered content from the site (like Quiz or Lesson)
 1. Verify that components are correct and check the right people have been involved (for example, component maintainers)
 1. Tests - must be written to guide tester to verify the fix is working.
-   1. Manual tests should adhere to the [testing guidelines](/general/development/process/testing/guide)
+   1. Manual tests should adhere to the [testing guidelines](../testing/guide.md)
    1. Unit tests - very much preferred if applicable
    1. Behat tests - preferred if relevant
 1. Check performance - we have to look at maintaining optimum code here, as far as simple patches that can affect performance. (simple optimisations)
@@ -96,7 +96,7 @@ To summarise:
 
 ## Schedule
 
-Component lead reviews may take place at any time, however, the push queue is progressed according to the standard [integration review schedule](/general/development/process/integration#schedule).
+Component lead reviews may take place at any time, however, the push queue is progressed according to the standard [integration review schedule](./index.md#schedule).
 
 ## Becoming a component lead reviewer
 

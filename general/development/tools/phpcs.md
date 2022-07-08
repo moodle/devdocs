@@ -15,7 +15,7 @@ This document describes the various code sniffing tools that Moodle recommends, 
 
 [PHPCodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) is a tool used to analyse PHP code using a set of rules. In many cases these rules can be used to automatically fix the errors they identify.
 
-Moodle has published a ruleset intended to meet the [Moodle Coding Style](/general/development/policies/codingstyle), and identify any parts of the code do not conform to this style.
+Moodle has published a ruleset intended to meet the [Moodle Coding Style](../policies/codingstyle/index.md), and identify any parts of the code do not conform to this style.
 
 ## Installation
 
@@ -31,7 +31,7 @@ composer global require moodlehq/moodle-cs
 
 A PHPCS configuration is included in the Moodle codebase and ensures that the correct phpcs ruleset is always used for the Moodle codebase.
 
-This can be further extended by generating an additional configuration to ignore all third-party libraries using the `grunt ignorefiles` command. See [grunt](/general/development/tools/nodejs#grunt) for further information on using Grunt.
+This can be further extended by generating an additional configuration to ignore all third-party libraries using the `grunt ignorefiles` command. See [grunt](./nodejs.md#grunt) for further information on using Grunt.
 
 #### Community plugins, and older Moodle versions
 
@@ -176,5 +176,5 @@ CodeSniffer can export its reports in the following formats:
 
 ## See also
 
-1. [Coding](/general/development/policies)
-1. [Coding style](/general/development/policies/codingstyle)
+1. [Coding](../policies.md)
+1. [Coding style](../policies/codingstyle/index.md)

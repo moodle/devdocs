@@ -50,6 +50,6 @@ Many penetration tests highlight the use of the `?sesskey=xxx` HTTP param as an 
 
 :::info
 
-Learn more about how the sesskey works in Moodle in the [Cross-site request forgery](/general/development/policies/security/crosssite-request-forgery#session-key) page.
+Learn more about how the sesskey works in Moodle in the [Cross-site request forgery](../../policies/security/crosssite-request-forgery.md#session-key) page.
 
 :::

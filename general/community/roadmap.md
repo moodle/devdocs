@@ -143,14 +143,14 @@ We are extending security support on Moodle 3.9 and Moodle 3.11 to November 2023
 
 ## Past releases
 
-See our [Releases](/general/releases) page for information about past releases.
+See our [Releases](../releases.md) page for information about past releases.
 
-After Moodle 2.0 we switched to time-based releases rather than feature-based releases (see our [development process](/general/development/process)). Because of this, the details above on future releases are an indication of current priorities only, and are targeted to be released in the upcoming releases. Anything not ready by the next release date will generally be pushed to the following major release.
+After Moodle 2.0 we switched to time-based releases rather than feature-based releases (see our [development process](../development/process.md)). Because of this, the details above on future releases are an indication of current priorities only, and are targeted to be released in the upcoming releases. Anything not ready by the next release date will generally be pushed to the following major release.
 
 ### See also
 
-- [Releases](/general/releases) - versions of Moodle that have already been released
-- [Key dates relating to future releases](/general/releases/#general-release-calendar)
+- [Releases](../releases.md) - versions of Moodle that have already been released
+- [Key dates relating to future releases](../releases#general-release-calendar)
 
 ## Translations
 

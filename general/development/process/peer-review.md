@@ -50,7 +50,7 @@ To allow the community of Moodle developers to work together, conventions should
 - $_GET, $_POST, $_REQUEST, $_COOKIE, and $_SESSION are never used.
 
 :::tip
-See the [Coding style guide](/general/development/policies/codingstyle) for details. Most of the previous items list are checked automatically by the CiBot (Automated code review). So in this case it's recommended to review the execution results to validate that there aren't errors. However, take into account that for now, CiBot is not checking all file types (it happens, for instance, with the JavaScript files).
+See the [Coding style guide](../policies/codingstyle/index.md) for details. Most of the previous items list are checked automatically by the CiBot (Automated code review). So in this case it's recommended to review the execution results to validate that there aren't errors. However, take into account that for now, CiBot is not checking all file types (it happens, for instance, with the JavaScript files).
 :::
 
 ### Output
@@ -134,7 +134,7 @@ Ensure that:
 - `Sesskey` values are checked before all write actions where appropriate (some read actions as well);
 - Capabilities are checked where roles differ;
 - User inputs are properly escaped (eg the correct param type is used and risky types such as raw are only used where necessary and safe to do so); and
-- If the issue itself is a [security](https://docs.moodle.org/dev/security) issue, the [security process](/general/development/process#security-issues) is being followed.
+- If the issue itself is a [security](https://docs.moodle.org/dev/security) issue, the [security process](../process.md#security-issues) is being followed.
   - Ensure that the fix is **not** available in a public repository (ie. a personal Github account); stand-alone patches should be provided instead.
   - The issue will not be integrated until just before the next minor version release.
 
@@ -180,7 +180,7 @@ Ensure that:
 - The PHPdoc comments on all classes, methods and fields are useful. (Comments that just repeat the function name are not helpful! Add value.)
 - Where an API has been changed significantly, the relevant upgrade.txt file has been updated with information.
 - Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but actually say what should be done instead.
-- Appropriate [labels](/general/development/tracker/labels) have been added when there has been a function change, particularly
+- Appropriate [labels](../tracker/labels.md) have been added when there has been a function change, particularly
   - docs_required (any functional change, usually paired with `ui_change`),
   - dev_docs_required (any change to APIs, usually paired with `api_change`),
   - `ui_change` (any functional change, usually paired with docs_required, except ui_change remains permanently),
@@ -193,7 +193,7 @@ Ensure that:
 
 Ensure that:
 
-- The commit matches the [Coding style](/general/development/policies/codingstyle)
+- The commit matches the [Coding style](../policies/codingstyle/index.md)
 - The Git history is clean and the work has been rebased to logical commits; and
 - The original author of the work provided as a patch has been given credit within the commit (as author of in the commit message if changes were made).
 
@@ -290,7 +290,7 @@ Thanks again for your contribution. I have reviewed the patch:
 I don't have permission to use the peer review buttons on this issue. I hope that someone with sufficient permissions will move the issue forwards soon.
 ```
 
-You should now add the '[ready_for_integration](/general/development/tracker/labels)' tag to the issue to indicate you have passed the peer review and it can move to the next step.
+You should now add the '[ready_for_integration](../tracker/labels.md)' tag to the issue to indicate you have passed the peer review and it can move to the next step.
 
 Feedback to indicate the issue requires further work might look like the following;
 

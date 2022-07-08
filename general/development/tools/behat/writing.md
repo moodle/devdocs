@@ -40,7 +40,7 @@ But I should see "Enrol now"
 
 :::tip
 
-To initialize and run your tests, please follow the instructions of [Running acceptance test](/general/development/tools/behat/running).
+To initialize and run your tests, please follow the instructions of [Running acceptance test](./running.md).
 
 :::
 
@@ -252,7 +252,7 @@ When I set the following fields to these values:
 
 ### Writing your own steps
 
-Sometimes, you will need to set up data that is specific to your plugin, or perform steps that are specific to your plugin's UI. In this case it may be necessary to [write new step definitions](/general/development/tools/behat/writing#writing-new-acceptance-test-step-definitions), but the short version is that you define new steps as PHP methods with a special annotation inside a class called `behat_plugintype_plugingname` inside `tests/behat/behat_plugintype_plugingname.php` in your plugin.
+Sometimes, you will need to set up data that is specific to your plugin, or perform steps that are specific to your plugin's UI. In this case it may be necessary to [write new step definitions](./writing.md#writing-new-acceptance-test-step-definitions), but the short version is that you define new steps as PHP methods with a special annotation inside a class called `behat_plugintype_plugingname` inside `tests/behat/behat_plugintype_plugingname.php` in your plugin.
 
 As well as creating completely new steps, you can also extend some of the standard steps:
 

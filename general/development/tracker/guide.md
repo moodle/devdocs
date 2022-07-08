@@ -21,7 +21,7 @@ There are a number of groups used to define the potential of users in Tracker. H
 | Name  | Jira group  | Potential   | How to become one   |
 |---|---|---|---|
 | **Users**  | jira-users  | Users can create new issues, comment on issues, vote for issues, link issues, attach files, create sub-tasks and watch issues.  | Anyone who creates a tracker account becomes a member of the Users group.   |
-| **Moodle Security**  | moodle-security  | Trusted developers and administrators who need to work on security issues that are hidden from normal users. See [Moodle security procedures](/general/development/process/security).  | This is generally limited to developers at Moodle HQ and Partner organisations. People wishing join the Moodle Security group should email [security@moodle.org](mailto:security@moodle.org) with the reasons for your request.  |
+| **Moodle Security**  | moodle-security  | Trusted developers and administrators who need to work on security issues that are hidden from normal users. See [Moodle security procedures](../process/security/index.md).  | This is generally limited to developers at Moodle HQ and Partner organisations. People wishing join the Moodle Security group should email [security@moodle.org](mailto:security@moodle.org) with the reasons for your request.  |
 | **Developers**  | jira-developers   | Developers can edit issues and assign issues to themselves. They are also able to request peer reviews. They cannot submit code directly for integration review, but an HQ staff member or component lead can do this after a satisfactory peer review. See [Process](../process). | People wishing to join the Developers group should be able to demonstrate a history of contributing patches to issues.<br/><br/>When a developer's first patch is integrated, tested and the issue is closed, they are added to the group and set as issue assignee.<br/><br/>If that doesn't happen automatically, please send an email to [integration@moodle.com](mailto:integration@moodle.com) with your tracker username and links to issues where you have contributed patches.  |
 | **Integration requesters**  | pull-requesters  | Developers can send issues for integration review. See [Process](../process).  | This role is reserved for Moodle HQ developers and component leads.  |
 | **Integration testers**  | pull-testers  | Users that can tests issues under integration and pass/fail them. See [Process](../process).  | Usually reserved for HQ developers and external testers.  |
@@ -40,7 +40,7 @@ You can browse a project without being logged in to Tracker, however you will be
 |---|---|---|
 | **Project** | <ul><li>**Moodle**<br/>For an issue relating to the Moodle codebase.</li><li>**Moodle Community Sites**<br/>For an issue on tracker.moodle.org, docs.moodle.org, demo.moodle.org, download.moodle.org, moodle.org, etc.</li><li>**Non-core contributed modules**<br/>For an issue with a contributed plugin.</li></ul><br/>There are a few more projects, but these are the main ones. | Tracker is used for multiple projects. |
 | **Issue Type**  | <ul><li>**Bug**<br/>A problem which impairs or prevents Moodle from functioning correctly.</li><li>**Improvement**<br/>An enhancement to an existing Moodle feature.</li><li>**New Feature**<br/>A new Moodle feature which has yet to be developed.</li><li>**Task**<br/>A task that needs to be completed, usually apart from coding.</li><li>**Sub-Task**<br/>Part of a greater task</li></ul> |  |
-| **Summary** | A brief, concise description of the problem. | When the issue is about applying an existing solution to another, usually older, branch (namely "[backport](/general/development/policies/backporting)"), please use the summary of the existing solution plus its issue number (i.e. "Fix forum alignment (backport of [MDL-99999](https://tracker.moodle.org/browse/MDL-99999))"). |
+| **Summary** | A brief, concise description of the problem. | When the issue is about applying an existing solution to another, usually older, branch (namely "[backport](../policies/backporting.md)"), please use the summary of the existing solution plus its issue number (i.e. "Fix forum alignment (backport of [MDL-99999](https://tracker.moodle.org/browse/MDL-99999))"). |
 | **Description**  | A full and complete description of the issue including:<br/><ul><li>replication steps,</li><li>the expected result,</li><li>the actual result,</li><li>any error messages shown with [debugging](https://docs.moodle.org//en/Debugging) turned on, and</li><li>any other relevant information.</li></ul> |  |
 | **Affects Version/s** | <ul><li>For bugs: the latest released version in which the bug is found</li><li>For improvements: the latest released version</li><li>For new features: Use 'Future dev'</li></ul> |  |
 | **Component/s** | The area(s) in Moodle which is affected by the issue. | Select `Unknown` if you are unsure. |
@@ -67,7 +67,7 @@ Once an issue has been created, the following additional fields are able to be c
 | **URL**  | If possible, provide a URL address that demonstrates an example of this bug.  |   |
 | **Epic Name**  | A short name given to an issue of type Epic so that linked issues can be grouped by this name. It should only be a few words at most.  | Only applies to issues of type Epic.  |
 | **Epic Link**  | A link to an Epic issue. This can be added by providing the issue ID or Epic name. It is a way of organising related issues as part of a project.  | Only applies to issues that need to be collected together for a project.  |
-| **Labels**  | See [Tracker issue labels](/general/development/tracker/labels).  | <ul><li>Labels should be specific values used in filters and searches.</li><li>This is not a field for including generic keywords.</li></ul>  |
+| **Labels**  | See [Tracker issue labels](./labels.md).  | <ul><li>Labels should be specific values used in filters and searches.</li><li>This is not a field for including generic keywords.</li></ul>  |
 | **Pull...**  | Links to a code solution in a Git repository.  | <ul><li>These fields are used by developers.</li><li>There may be multiple solutions if the problem affects multiple Moodle versions.</li></ul>  |
 | **Documentation link**  | URL of related documentation.  | When changes require documentation to be updated, this field should be filled.  |
 | **Comment**  | <ul><li>Notes made by all interested parties.</li><li>A detailed register of all changes that relate to this bug.</li></ul>  |   |
@@ -82,8 +82,8 @@ Once an issue has been created, the following additional fields are able to be c
 
 - [Tracker introduction](./) - less scary version of this page for new users.
 - [Process](../process)
-- [Bug triage](/general/development/process/triage)
-- [Tracker issue labels](/general/development/tracker/labels)
+- [Bug triage](../process/triage.md)
+- [Tracker issue labels](./labels.md)
 - [Testing of integrated issues](../process/testing/integrated-issues.md)
 - Using Moodle [How to manipulate Moodle developers](http://moodle.org/mod/forum/discuss.php?d=43952) forum discussion
 - Wikipedia [Definition of a bug](http://en.wikipedia.org/wiki/Software_bug)

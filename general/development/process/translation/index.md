@@ -19,7 +19,7 @@ If you'd like to help translate more than just a few strings, please contact the
 
 ## Wish to take on responsibility for a language pack?
 
-Please see [Maintaining a language pack](/general/development/process/translation/maintaining) and the [AMOS manual](./translation/amos)  for further information about the AMOS translation toolkit.
+Please see [Maintaining a language pack](./maintaining.md) and the [AMOS manual](./translation/amos)  for further information about the AMOS translation toolkit.
 
 ## Is Moodle not yet translated into your language?
 

@@ -11,7 +11,7 @@ tags:
 
 import { Since } from '@site/src/components';
 
-New PHP versions are [released every year](https://www.php.net/supported-versions.php) and come with important improvements and changes compared with previous versions. Moodle tries to support them as soon as possible, always matching them with our own [scheduled release plans](/general/releases).
+New PHP versions are [released every year](https://www.php.net/supported-versions.php) and come with important improvements and changes compared with previous versions. Moodle tries to support them as soon as possible, always matching them with our own [scheduled release plans](../../releases.md).
 
 ## Policy statement
 
@@ -91,4 +91,4 @@ PHP 7.0 **can be used with** Moodle 3.0.1, Moodle 3.1 and later releases. It is 
 
 ## See also
 
-- [Releases](/general/releases) - For details about all the Moodle releases.
+- [Releases](../../releases.md) - For details about all the Moodle releases.

@@ -18,7 +18,7 @@ This section aims to explain the basics about BDD and Behat and a quick view of 
 
 :::note
 
-Note that all those examples are not necessarily real nor part of the suite, they are meant to help understand the concepts, see [Acceptance testing](/general/development/tools/behat/running) for real examples
+Note that all those examples are not necessarily real nor part of the suite, they are meant to help understand the concepts, see [Acceptance testing](./running.md) for real examples
 
 :::
 
@@ -131,7 +131,7 @@ It follows the approach chosen with PHPUnit:
 
 ### Alternative environment
 
-Acceptance testing implies interaction with the browser like real users does, so it requires the site to be accessible via URL. The Moodle integration creates a new moodle site installation in parallel to the production one to run the tests in a sandbox without affecting the production environment, switching the regular `$CFG->wwwroot`, `$CFG->dataroot` and `$CFG->prefix` to alternatives, which should be only accessible from localhost or internal networks. Info about how to run the tests in [Running acceptance test](/general/development/tools/behat/running).
+Acceptance testing implies interaction with the browser like real users does, so it requires the site to be accessible via URL. The Moodle integration creates a new moodle site installation in parallel to the production one to run the tests in a sandbox without affecting the production environment, switching the regular `$CFG->wwwroot`, `$CFG->dataroot` and `$CFG->prefix` to alternatives, which should be only accessible from localhost or internal networks. Info about how to run the tests in [Running acceptance test](./running.md).
 
 <!-- cspell:ignore saucelabs, subcontexts -->
 This default configuration is useful when developing in a local host, but to run the tests automatically with Jenkins, travis, other CI systems or with saucelabs we provide a few extra settings.
@@ -164,7 +164,7 @@ There is an admin tool to run and ease the creation of acceptance tests.
 
 ### Available steps to create tests
 
-There are behat libraries with tons of steps definitions to run all sort of processes and interactions with the browser, some of them overlaps Moodle-specific libraries and tests writers can be confused not only by this also by the amount of steps and vague or too technical steps descriptions. Moodle provides a set of steps definitions written in a common format to make tests writers life easier. New steps definitions must follow these [guidelines](/general/development/tools/behat/writing#writing-new-acceptance-test-step-definitions)
+There are behat libraries with tons of steps definitions to run all sort of processes and interactions with the browser, some of them overlaps Moodle-specific libraries and tests writers can be confused not only by this also by the amount of steps and vague or too technical steps descriptions. Moodle provides a set of steps definitions written in a common format to make tests writers life easier. New steps definitions must follow these [guidelines](./writing.md#writing-new-acceptance-test-step-definitions)
 
 ### Behat extension
 
