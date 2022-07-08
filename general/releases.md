@@ -21,7 +21,7 @@ The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/
 
 <SupportedReleases />
 
-![Release graph summarising the currently supported Moodle releases in a visual form](_releases/401_release_graph.png)
+![Release graph summarising the currently supported Moodle releases in a visual form](_releases/402_release_graph.png)
 
 <details>
     <summary>Release graph key</summary>
