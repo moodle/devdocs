@@ -1,17 +1,56 @@
 <!-- markdownlint-disable first-line-heading -->
-Each component and subsystem may make use of an `upgrade.txt` file in the top level folder. A title is used to identify the Moodle version where the change was introduced, and significant changes for that version relating to that component or subsystem are displayed.
+Each component and subsystem may make use of an `upgrade.txt` file in the top level folder. A section title is used to identify the Moodle version where the change was introduced, and significant changes for that version relating to that component or subsystem are noted.
 
-When changes are integrated to multiple branches, for example a stable version and the master branch, then the relevant versions used to describe the change in the `upgrade.txt` file should be the next version to be released _for each branch_. The `master` branch should always use the next major version.
+For example, given an API change is applied for the upcoming Moodle version 4.1 which is still in the **master** branch (4.1dev), the version number on the `upgrade.txt`'s section title will be set to **4.1**.
 
-For example if a change is applied to the **MOODLE_400_STABLE** during the development of Moodle 4.0.2, and the **master** branch during the development of Moodle 4.1, then the relevant versions will be **4.0.2** and **4.1**.
+```txt title="Example 1: Change applied to the master branch"
+== 4.1 ==
+An API change to empower educators!
+```
 
-If a change is only applied to the master branch then only the **4.1** version will be listed.
+#### Changes applied to multiple branches
 
-:::note Exception during parallel development
+When changes are integrated to multiple branches, for example a stable version and the master branch, then the relevant versions used to describe the change in the `upgrade.txt` file should be the next version to be released _for each branch_. The **master** branch should always use the next major version.
+
+For example, if a change is applied to the **MOODLE_400_STABLE** during the development of Moodle 4.0.2, and the **master** branch during the development of Moodle 4.1, then the relevant versions will be **4.0.2** and **4.1**, respectively. The section title for the **master** branch will be the same as the one in Example 1. The section title for the **MOODLE_400_STABLE** branch will indicate the next upcoming minor version (4.0.2 in this case):
+
+```txt title="Example 2: Patch applied to master and MOODLE_400_STABLE"
+== 4.0.2 ==
+An API change to empower educators!
+```
+
+#### Mentioning other Moodle versions the change applies to
+
+Multiple versions within the section title are **not** allowed. However, developers may note the Moodle versions that the change applies to within the upgrade note text itself.
+
+```txt title="Example 3a: master (4.1dev)"
+== 4.1 ==
+An API change to empower educators! (This was fixed in 4.1 and 4.0.2)
+```
+
+```txt title="Example 3b: MOODLE_400_STABLE"
+== 4.0.2 ==
+An API change to empower educators! (This was fixed in 4.1 and 4.0.2)
+```
+
+```txt title="Example 3c: (INCORRECT) Multiple versions on the section title"
+== 4.1, 4.0.2 ==
+An API change to empower educators!
+```
+
+#### Exception during parallel development
 
 When Moodle is developing two major versions in parallel, for example Moodle 3.11.0, and Moodle 4.0.0, then the
 version in the earliest of the major version development branches will be used for both branches.
 
-For example, during the development of Moodle 3.11, and Moodle 4.0, which took place in parallel, if a change was integrated to 3.11 and 4.0, then the version specified in both branches would be 3.11.
+For example, given we are in a parallel development situation with **MOODLE_311_STABLE** (3.11dev) and **master** (4.0dev), with Moodle 3.11 as the next upcoming major Moodle version. If an API change is applied to **MOODLE_311_STABLE**, the version number on the section title will be **3.11** for both **master** and **MOODLE_400_STABLE** branches.
 
-:::
+```txt title="Example 4a: master (4.0dev)"
+== 3.11 ==
+An API change to empower educators!
+```
+
+```txt title="Example 4b: MOODLE_311_STABLE (3.11dev)"
+== 3.11 ==
+An API change to empower educators!
+```
