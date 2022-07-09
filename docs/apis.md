@@ -189,7 +189,7 @@ The [Tag API](https://docs.moodle.org/dev/Tag_API) allows you to store tags (and
 
 ### Task API (task)
 
-The [Task API](https://docs.moodle.org/dev/Task_API) lets you run jobs in the background. Either once off, or on a regular schedule.
+The [Task API](./apis/subsystems/task/index.md) lets you run jobs in the background. Either once off, or on a regular schedule.
 
 ### Time API (time)
 
