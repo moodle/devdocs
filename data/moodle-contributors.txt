@@ -218,6 +218,7 @@ Dang
 Dani
 Daniel
 Daniele
+Daniil
 Danny
 Daren
 Darko
@@ -293,6 +294,7 @@ Evans
 Fabrice
 Fabriczy
 Faisal
+Fajnberg
 Falcon
 Falcón
 Faller
@@ -1317,6 +1319,7 @@ skaldrom
 skodak
 spvickers
 stabijoh
+stevando
 stigbjarne
 stronk7
 thepurpleblob
