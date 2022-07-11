@@ -34,7 +34,13 @@ function ReleaseInfo(releaseName: string, key: string): JSX.Element {
         );
     }
 
-    return null;
+    // No release information found.
+    // Assume that it's in the future rather than ignoring it completely.
+    return (
+        <>
+            not yet released
+        </>
+    );
 }
 
 export function ReleaseDate({ releaseName }: ReleaseInfoProps): JSX.Element {
@@ -46,12 +52,7 @@ export function ReleaseVersion({ releaseName }: ReleaseInfoProps): JSX.Element {
 }
 
 export function ReleaseNoteIntro({ releaseName }: ReleaseInfoProps): JSX.Element {
-    const versionInfo = getRelease(releaseName);
-    if (!versionInfo) {
-        return null;
-    }
-
-    const trackerReleaseNumber = versionInfo.name.endsWith('.0') ? versionInfo.name.slice(0, -2) : versionInfo.name;
+    const trackerReleaseNumber = releaseName.endsWith('.0') ? releaseName.slice(0, -2) : releaseName;
 
     return (
         <>
