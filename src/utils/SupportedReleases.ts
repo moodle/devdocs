@@ -139,3 +139,15 @@ export const getVersion = (versionName: string): majorVersionData => {
     const majorVersion = `${major}.${release}`;
     return getAllVersions().find((version) => version.name === majorVersion);
 };
+
+export const getRelease = (versionName: string): versionInfo | null => {
+    const [major, release] = versionName.split('.');
+    const majorVersionName = `${major}.${release}`;
+    const majorVersion = getAllVersions().find((version) => version.name === majorVersionName);
+
+    if (!majorVersion) {
+        return null;
+    }
+
+    return majorVersion.releases.find((versionInfo) => versionInfo.name === versionName);
+};
