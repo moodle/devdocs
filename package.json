@@ -15,6 +15,7 @@
     "wikimedia-sync": "scripts/wikimedia-sync.js",
     "component-spellings": "scripts/component-helper.js spelling",
     "test": "jest",
+    "fix": "yarn mdfix-all; yarn mdxfix-all; yarn spell",
     "mdlint": "markdownlint-cli2",
     "mdlint-all": "markdownlint-cli2 '{docs,general}/**/*.md' '*.md'",
     "mdfix": "markdownlint-cli2-fix",
@@ -24,7 +25,7 @@
     "mdxfix": "markdownlint-cli2-config .markdownlint/mdx/fix/.markdownlint-cli2.cjs",
     "mdxfix-all": "markdownlint-cli2-config .markdownlint/mdx/fix/.markdownlint-cli2.cjs '{docs,general}/**/*.mdx' '*.mdx'",
     "migrate": "scripts/wikimedia-fetch.js migrate",
-    "lint": "yarn mdlint-all",
+    "lint": "yarn mdlint-all; yarn mdxlint-all; yarn spell",
     "prepare": "husky install",
     "spell": "cspell '*.md' '*.mdx' '**/*.md' '**/*.mdx' 'docs/*.md' 'docs/*.mdx' 'docs/**/*.md' 'docs/**/*.mdx' 'general/*.md' 'general/*.mdx' 'general/**/*.md' 'general/**/*.mdx'"
   },
