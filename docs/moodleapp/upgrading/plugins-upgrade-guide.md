@@ -125,7 +125,7 @@ You can also look at the [Moodle App Plugins development guide](../development/p
 
 Before 3.5, the app was written using Ionic 1 and Moodle plugins could add mobile support by writing an Angular JS/Ionic module, compiling it to a zip, and including it in the plugin.
 
-Nowadays, you need to install the [Moodle App Additional Features](https://docs.moodle.org/dev/Moodle_App_Additional_Features) plugin to make these plugins compatible with the latest versions of Moodle.
+Nowadays, you need to install the [Moodle App Additional Features](https://docs.moodle.org/en/Moodle_app_additional_features) plugin to make these plugins compatible with the latest versions of Moodle.
 
 You can read about [Remote add-ons](https://docs.moodle.org/dev/Moodle_Mobile_2_(Ionic_1)_Remote_add-ons) for more details.
 
