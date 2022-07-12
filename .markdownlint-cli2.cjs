@@ -224,43 +224,17 @@ config.casedWords = {
 config.renamedLinks = {
     forceRelative: [
         'docs',
+        'general',
     ],
+    // Note: The following is an example of a migrated file.
+    // Normally you will not need to commit changes to this file after moving a file as all changes will be made at the
+    // time of the move.
+    // An exception to this will be made for heavily references files if there are frequent pull requests referencing
+    // the page.
+    // Note: You may also want to update the redirects in `static/_redirects`.
     renames: [{
         oldFile: '/docs/apis/core/form/index.md',
         newFile: '/docs/apis/subsystems/form/index.md',
-    }, {
-        oldFile: '/docs/apis/core/form/usage.md',
-        newFile: '/docs/apis/subsystems/form/usage.md',
-    }, {
-        oldFile: '/docs/apis/core/form/advanced/advanced-elements.md',
-        newFile: '/docs/apis/subsystems/form/advanced/advanced-elements.md',
-    }, {
-        oldFile: '/docs/apis/core/form/advanced/repeat-elements.md',
-        newFile: '/docs/apis/subsystems/form/advanced/repeat-elements.md',
-    }, {
-        oldFile: '/general/developer/tools/index.md',
-        newFile: '/general/developer/tools.md',
-    }, {
-        oldFile: '/general/community/meetings.md',
-        newFile: '/general/community/meetings/index.md',
-    }, {
-        oldFile: '/general/community/credits.md',
-        newFile: '/general/community/credits/index.md',
-    }, {
-        oldFile: '/general/development/integration-review.md',
-        newFile: '/general/development/integration/index.md',
-    }, {
-        oldFile: '/general/development/release.md',
-        newFile: '/general/development/release/index.md',
-    }, {
-        oldFile: '/general/development/security.md',
-        newFile: '/general/development/security/index.md',
-    }, {
-        oldFile: '/general/development/testing.md',
-        newFile: '/general/development/testing/index.md',
-    }, {
-        oldFile: '/general/development/translation.md',
-        newFile: '/general/development/translation/index.md',
     }],
 };
 

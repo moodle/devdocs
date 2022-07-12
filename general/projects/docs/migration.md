@@ -164,4 +164,4 @@ We actively welcome community engagement on this project.
 
 Development for the new documentation is entirely within the new [devdocs Github Repository](https://github.com/moodle/devdocs).
 
-See the [contributing](/general/documentation/contributing) guide for more information.
+See the [contributing](../../documentation/contributing.md) guide for more information.

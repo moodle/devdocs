@@ -15,16 +15,16 @@ import TabItem from '@theme/TabItem';
 
 ## How can I help with translating Moodle?
 
-Please see the guide [Contributing a translation](/general/development/process/translation/contributing).
+Please see the guide [Contributing a translation](./contributing.md).
 
 ## I've found an error in a language pack. What do I do?
 
-- You are welcome to [contribute a fix](/general/development/process/translation/contributing) for the error. Alternatively you can contact the language pack maintainer as listed in the [Translation credits](http://lang.moodle.org/local/amos/credits.php).
+- You are welcome to [contribute a fix](./contributing.md) for the error. Alternatively you can contact the language pack maintainer as listed in the [Translation credits](http://lang.moodle.org/local/amos/credits.php).
 - English language string typo fixes and suggested improvements can be [contributed to the English (fixes) (en fix) language pack](https://docs.moodle.org/dev/Improving_English_language_strings).
 
 ## The month names and days are displayed in English. How can I translate them?
 
-This is neither Moodle bug nor a missing translation. Names of days and months are pulled out of your operating system. Your server, where the Moodle is running, does not seem to have the specific [locale](https://en.wikipedia.org/wiki/Locale_(computer_software)) installed. You need to contact the server administrator and ask them to install the needed locale. See [Table of locales](/general/development/process/translation/langpack/locales) for details.
+This is neither Moodle bug nor a missing translation. Names of days and months are pulled out of your operating system. Your server, where the Moodle is running, does not seem to have the specific [locale](https://en.wikipedia.org/wiki/Locale_(computer_software)) installed. You need to contact the server administrator and ask them to install the needed locale. See [Table of locales](./langpack/locales.md) for details.
 
 The particular locale to use for the given language is configured in the [langconfig.php](./langpack/langconfig) file in strings `locale` (for Unix like operating systems) and `localewin` (for Windows operating systems).
 
@@ -43,8 +43,8 @@ No, there is no way to know which strings will be shown for users and which not.
 
 First:
 
-- make sure [langconfig](/general/development/process/translation/langpack/langconfig) is properly set up.
-- take a look at [Translation priority](/general/development/process/translation/langpack/priority). All files have a rating according to how urgent they need translating.
+- make sure [langconfig](./langpack/langconfig.md) is properly set up.
+- take a look at [Translation priority](./langpack/priority.md). All files have a rating according to how urgent they need translating.
 - less urgent are also the contributed plugins, since they are not part of a standard Moodle distribution. There is a list of [the 20 top plugins downloads for Moodle](https://moodle.org/plugins/stats.php) which might be worth considering for translation priority.
 
 ## How many words are there in the English language pack?
@@ -323,7 +323,7 @@ A feedback by the Safe Exam Browser main developer:
 
 ## How can I help with translating Moodle documentation?
 
-Please see the guide [Translating Moodle Docs](/general/development/process/translation/docs).
+Please see the guide [Translating Moodle Docs](./docs.md).
 
 ## How can I find out the context of the strings?
 
@@ -405,7 +405,7 @@ Use [the Weblate H5P project translation page](https://translate-h5p.tk/weblate/
 ## See also
 
 - [Language customization](http://docs.moodle.org/en/Language_customization) in the user docs for information on how to edit an existing language pack
-- [String Deprecation](/general/projects/api/string-deprecation) was introduced in Moodle 2.8 to help minimize the language files but avoid accidental lost of translations by simply removing strings.
+- [String Deprecation](../../../projects/api/string-deprecation.md) was introduced in Moodle 2.8 to help minimize the language files but avoid accidental lost of translations by simply removing strings.
 - [Generating a translation memory and running a quality test](https://lang.moodle.org/mod/forum/discuss.php?d=4098#p4879) forum discussion
 - [Translation in context](https://moodle.org/mod/forum/discuss.php?d=347843) forum discussion
 

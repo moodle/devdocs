@@ -41,5 +41,5 @@ There are admin settings to enforce a minimum level of complexity for passwords,
 ## See also
 
 - [Security](../security)
-- [Coding](/general/development/policies)
+- [Coding](../../policies.md)
 - [Brute force attack in OWASP](https://owasp.org/www-community/attacks/Brute_force_attack)

@@ -77,8 +77,8 @@ These are the target dates for releases. These dates may vary slightly due to un
 
 | Release type | Frequency | Months |
 | --- | --- | --- |
-| [Major](/general/development/process#major-release-cycles) (eg. 3.x) | 6 monthly | Second Monday of May and November |
-| [Minor](/general/development/process#stable-maintenance-cycles) (Point) (eg. 3.x.y) | 2 monthly | Second Monday of July, September, November, March and May. |
+| [Major](./development/process.md#major-release-cycles) (eg. 3.x) | 6 monthly | Second Monday of May and November |
+| [Minor](./development/process.md#stable-maintenance-cycles) (Point) (eg. 3.x.y) | 2 monthly | Second Monday of July, September, November, March and May. |
 
 :::tip
 
@@ -358,56 +358,56 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 
 ## Moodle 1.8
 
-- [Moodle 1.8](/general/releases/1.8) - 30 March 2007
-- [Moodle 1.8.1](/general/releases/1.8/1.8.1) - 14 June 2007
-- [Moodle 1.8.2](/general/releases/1.8/1.8.2) - 8 July 2007
-- [Moodle 1.8.3](/general/releases/1.8/1.8.3) - 11 October 2007
-- [Moodle 1.8.4](/general/releases/1.8/1.8.4) - 11 January 2008
-- [Moodle 1.8.5](/general/releases/1.8/1.8.5) - 8 April 2008
-- [Moodle 1.8.6](/general/releases/1.8/1.8.6) - 11 July 2008
-- [Moodle 1.8.7](/general/releases/1.8/1.8.7) - 15 October 2008
-- [Moodle 1.8.8](/general/releases/1.8/1.8.8) - 28 January 2009
-- [Moodle 1.8.9](/general/releases/1.8/1.8.9) - 15 May 2009
-- [Moodle 1.8.10](/general/releases/1.8/1.8.10) - 26 October 2009
-- [Moodle 1.8.11](/general/releases/1.8/1.8.11) - 25 November 2009
-- [Moodle 1.8.12](/general/releases/1.8/1.8.12) - 27 March 2010
-- [Moodle 1.8.13](/general/releases/1.8/1.8.13) - 8 June 2010
-- [Moodle 1.8.14](/general/releases/1.8/1.8.14) - 3 December 2010
+- [Moodle 1.8](./releases/1.8.md) - 30 March 2007
+- [Moodle 1.8.1](./releases/1.8/1.8.1.md) - 14 June 2007
+- [Moodle 1.8.2](./releases/1.8/1.8.2.md) - 8 July 2007
+- [Moodle 1.8.3](./releases/1.8/1.8.3.md) - 11 October 2007
+- [Moodle 1.8.4](./releases/1.8/1.8.4.md) - 11 January 2008
+- [Moodle 1.8.5](./releases/1.8/1.8.5.md) - 8 April 2008
+- [Moodle 1.8.6](./releases/1.8/1.8.6.md) - 11 July 2008
+- [Moodle 1.8.7](./releases/1.8/1.8.7.md) - 15 October 2008
+- [Moodle 1.8.8](./releases/1.8/1.8.8.md) - 28 January 2009
+- [Moodle 1.8.9](./releases/1.8/1.8.9.md) - 15 May 2009
+- [Moodle 1.8.10](./releases/1.8/1.8.10.md) - 26 October 2009
+- [Moodle 1.8.11](./releases/1.8/1.8.11.md) - 25 November 2009
+- [Moodle 1.8.12](./releases/1.8/1.8.12.md) - 27 March 2010
+- [Moodle 1.8.13](./releases/1.8/1.8.13.md) - 8 June 2010
+- [Moodle 1.8.14](./releases/1.8/1.8.14.md) - 3 December 2010
 - Support has ended
 
 ## Moodle 1.7
 
-- [Moodle 1.7](/general/releases/1.7) - 7 November 2006
-- [Moodle 1.7.1](/general/releases/1.7/1.7.1) - 17 January 2007
-- [Moodle 1.7.2](/general/releases/1.7/1.7.2) - 30 March 2007
-- [Moodle 1.7.3](/general/releases/1.7/1.7.3) - 11 October 2007
-- [Moodle 1.7.4](/general/releases/1.7/1.7.4) - 11 January 2008
-- [Moodle 1.7.5](/general/releases/1.7/1.7.5) - 11 July 2008
-- [Moodle 1.7.6](/general/releases/1.7/1.7.6) - 15 October 2008
-- [Moodle 1.7.7](/general/releases/1.7/1.7.7) - 28 January 2009
+- [Moodle 1.7](./releases/1.7.md) - 7 November 2006
+- [Moodle 1.7.1](./releases/1.7/1.7.1.md) - 17 January 2007
+- [Moodle 1.7.2](./releases/1.7/1.7.2.md) - 30 March 2007
+- [Moodle 1.7.3](./releases/1.7/1.7.3.md) - 11 October 2007
+- [Moodle 1.7.4](./releases/1.7/1.7.4.md) - 11 January 2008
+- [Moodle 1.7.5](./releases/1.7/1.7.5.md) - 11 July 2008
+- [Moodle 1.7.6](./releases/1.7/1.7.6.md) - 15 October 2008
+- [Moodle 1.7.7](./releases/1.7/1.7.7.md) - 28 January 2009
 - Support has ended
 
 ## Moodle 1.6
 
-- [Moodle 1.6](/general/releases/1.6) - 20 June 2006
-- [Moodle 1.6.1](/general/releases/1.6/1.6.1) - 20 July 2006
-- [Moodle 1.6.2](/general/releases/1.6/1.6.2) - 12 September 2006
-- [Moodle 1.6.3](/general/releases/1.6/1.6.3) - 10 October 2006
-- [Moodle 1.6.4](/general/releases/1.6/1.6.4) - 17 January 2007
-- [Moodle 1.6.5](/general/releases/1.6/1.6.5) - 30 March 2007
+- [Moodle 1.6](./releases/1.6.md) - 20 June 2006
+- [Moodle 1.6.1](./releases/1.6/1.6.1.md) - 20 July 2006
+- [Moodle 1.6.2](./releases/1.6/1.6.2.md) - 12 September 2006
+- [Moodle 1.6.3](./releases/1.6/1.6.3.md) - 10 October 2006
+- [Moodle 1.6.4](./releases/1.6/1.6.4.md) - 17 January 2007
+- [Moodle 1.6.5](./releases/1.6/1.6.5.md) - 30 March 2007
 - Moodle 1.6.6 - 11 January 2008
 - Moodle 1.6.7 - 11 July 2008
-- [Moodle 1.6.8](/general/releases/1.6/1.6.8) - 15 October 2008
-- [Moodle 1.6.9](/general/releases/1.6/1.6.9) - 28 January 2009
+- [Moodle 1.6.8](./releases/1.6/1.6.8.md) - 15 October 2008
+- [Moodle 1.6.9](./releases/1.6/1.6.9.md) - 28 January 2009
 - Support has ended
 
 ## Moodle 1.5
 
-- [Moodle 1.5](/general/releases/1.5) - 5 June 2005
-- [Moodle 1.5.1](/general/releases/1.5/1.5.1) - 8 July 2005
-- [Moodle 1.5.2](/general/releases/1.5/1.5.2) - 16 July 2005
-- [Moodle 1.5.3](/general/releases/1.5/1.5.3) - 11 November 2005
-- [Moodle 1.5.4](/general/releases/1.5/1.5.4) - 21 May 2006
+- [Moodle 1.5](./releases/1.5.md) - 5 June 2005
+- [Moodle 1.5.1](./releases/1.5/1.5.1.md) - 8 July 2005
+- [Moodle 1.5.2](./releases/1.5/1.5.2.md) - 16 July 2005
+- [Moodle 1.5.3](./releases/1.5/1.5.3.md) - 11 November 2005
+- [Moodle 1.5.4](./releases/1.5/1.5.4.md) - 21 May 2006
 - Support has ended
 
 ## Moodle 1.4
@@ -417,7 +417,7 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 - Moodle 1.4.2 - 5 November 2004
 - Moodle 1.4.3 - 21 December 2004
 - Moodle 1.4.4 - 7 March 2005
-- [Moodle 1.4.5](/general/releases/1.4/1.4.5) - 7 May 2005
+- [Moodle 1.4.5](./releases/1.4/1.4.5.md) - 7 May 2005
 - Support has ended
 
 ## Moodle 1.3
@@ -462,7 +462,7 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 
 ## See also
 
-- [Roadmap](/general/community/roadmap) - future versions
+- [Roadmap](./community/roadmap.md) - future versions
 - [Moodle versions](https://docs.moodle.org/dev/Moodle_versions) - an explanation of how our versions work plus version numbers for each release (for $plugin->requires)
 
 ## Translations

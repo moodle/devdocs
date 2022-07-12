@@ -9,7 +9,7 @@ tags:
   - Quality assurance
 ---
 
-Testing is an important part of the [Moodle development process](/general/development/process).
+Testing is an important part of the [Moodle development process](../../process.md).
 Depending on the integration period (normal or continuous) testing can take place at different times.
 Your first priority as a tester should be to finish testing on the day they have been assigned. You should update the testing status so that the testing status is clear.
 
@@ -66,7 +66,7 @@ Testing instructions are clear, concise, complete, and accurate. Where possible 
 
 ## Differences in test process during continuous integration periods
 
-During [continuous integration](/general/development/process/integration#during-continuous-integrationfreezeqa-period) the schedule is changed to allow faster iteration and for bug fixes to be applied more rapidly than the usual weekly cycle. The goal during this period is ...
+During [continuous integration](../integration/index.md#during-continuous-integrationfreezeqa-period) the schedule is changed to allow faster iteration and for bug fixes to be applied more rapidly than the usual weekly cycle. The goal during this period is ...
 goal during this period is to release a new version of master multiple times per week. We try to keep the process more flexible during this time in order that developers who have less pressing issues than others can take the load off those concentrating on big fixes. It works best if we work together to help each other out.
 
 :::warning
@@ -87,7 +87,7 @@ as the very first command.
 
 :::tip
 
-Alternatively, you can also use [Moodle Development Kit (MDK)](/general/development/tools/mdk), and add the option `--integration` to install a Moodle instance based on integration.git.
+Alternatively, you can also use [Moodle Development Kit (MDK)](../../tools/mdk.md), and add the option `--integration` to install a Moodle instance based on integration.git.
 
 :::
 

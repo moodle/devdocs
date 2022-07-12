@@ -177,7 +177,7 @@ It would be useful for you to have a couple of bookmarked / saved permalinks per
 
 ## See also
 
-- [Automated Manipulation of Strings 2.0](/general/projects/api/amos) for the AMOS developer spec
+- [Automated Manipulation of Strings 2.0](../../../projects/api/amos.md) for the AMOS developer spec
 - [Accepting submissions](https://www.youtube.com/watch?v=JtY5zvEHnQ8) Instruction video for language pack maintainers
 - [Contributing to a language pack](https://www.youtube.com/watch?v=XClUZOuFfWo) Instruction video for language pack contributors
 - [Changing the default language](https://www.youtube.com/watch?v=xT2-ElTaH6M) Instruction video on how to change your default language

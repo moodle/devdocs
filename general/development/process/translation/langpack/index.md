@@ -10,7 +10,7 @@ tags:
 
 If Moodle is not yet translated into your language and you would like to help, please  [create an account on the Translation site](http://lang.moodle.org/login/signup.php) and contact our Moodle translation coordinator through [translation@moodle.org](mailto:translation@moodle.org).
 
-Once your language pack has been set up, you can follow the instructions provided in [Maintaining a language pack](/general/development/process/translation/maintaining).
+Once your language pack has been set up, you can follow the instructions provided in [Maintaining a language pack](../maintaining.md).
 
 First:
 

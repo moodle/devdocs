@@ -15,7 +15,7 @@ This page is the top level page regarding all testing activities around the Mood
 
 ### Code testing
 
-Code is tested as part of reviewing at some key parts of the [Moodle development process](/general/development/process).
+Code is tested as part of reviewing at some key parts of the [Moodle development process](../../process.md).
 
 - `Development`. The developer of some code should test their own work on a wide variety of environments for correctness and performance
 - `Peer review`. Developers often test each others work early in the development process
@@ -33,7 +33,7 @@ Moodle has a dedicated team of testers who perform most of the manual testing fo
 
 :::info More info
 
-We recommend that you follow the [Testing of integrated issues guide](/general/development/process/testing/integrated-issues) to get a better understanding of how testing integrated issues works.
+We recommend that you follow the [Testing of integrated issues guide](./integrated-issues.md) to get a better understanding of how testing integrated issues works.
 
 :::
 
@@ -43,7 +43,7 @@ Once all major features for a new Moodle release have landed, Moodle performs a 
 
 :::info More info
 
-We recommend that you follow the [QA testing guide](/general/development/process/testing/qa) to know more about the Quality Assurance test cycle.
+We recommend that you follow the [QA testing guide](./qa.md) to know more about the Quality Assurance test cycle.
 
 :::
 
@@ -65,9 +65,9 @@ We recommend that you follow [PHPUnit integration](https://docs.moodle.org/dev/P
 
 Moodle uses a framework called Behat to automatically test the user-interface. Tests can be written for each plugin, and for Moodle core.
 
-- To run the existing tests, read [Running acceptance test](/general/development/tools/behat/running). You really need to do this first.
-- To write new tests, read [Writing acceptance tests](/general/development/tools/behat/writing).
-- To define new steps that can you used when writing tests, see [Writing new acceptance test step definitions](/general/development/tools/behat/writing#writing-new-acceptance-test-step-definitions).
+- To run the existing tests, read [Running acceptance test](../../tools/behat/running.md). You really need to do this first.
+- To write new tests, read [Writing acceptance tests](../../tools/behat/writing.md).
+- To define new steps that can you used when writing tests, see [Writing new acceptance test step definitions](../../tools/behat/writing.md#writing-new-acceptance-test-step-definitions).
 
 :::tip
 Because Behat tests work through the Moodle user interface, they are a bit slow. Therefore, you should probably also use PHPUnit to test the detailed edge cases in your code.
@@ -93,7 +93,7 @@ Every day, an automated build in a test server runs a large number of tests conc
 These tests must pass completely before a new release can be made.
 
 - [Unit tests](https://docs.moodle.org/dev/Unit_tests) using the PHPUnit framework
-- [Acceptance testing](/general/development/tools/behat) using the Behat framework
+- [Acceptance testing](../../tools/behat/index.md) using the Behat framework
 - Performance testing using JMeter.
 
 :::note

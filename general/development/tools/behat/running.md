@@ -13,8 +13,8 @@ This documentation covers how to run Behat tests within Moodle, including requir
 
 ## Requirements
 
-1. Any recent OS with [supported version of Moodle](/general/releases) installed
-1. A recent browser (Firefox and Chrome as standard, but [other browsers](/general/development/tools/behat/browsers) are possible)
+1. Any recent OS with [supported version of Moodle](../../../releases.md) installed
+1. A recent browser (Firefox and Chrome as standard, but [other browsers](./browsers/index.md) are possible)
 1. The WebDriver implementation for your browser
 1. A recent version of Selenium (Optional, but recommended)
 1. A recent Java Runtime Environment (Required if using Selenium)
@@ -25,7 +25,7 @@ Some extra software is also recommended for testing with Behat.
 
 #### Pre-configured browser profiles: moodle-browser-config
 
-Available for [all supported versions of Moodle](/general/releases), the [moodle-browser-config](https://github.com/andrewnicols/moodle-browser-config) is a recommended inclusion for Behat. This configuration tooling provides a range of standard browser profiles for testing.
+Available for [all supported versions of Moodle](../../../releases.md), the [moodle-browser-config](https://github.com/andrewnicols/moodle-browser-config) is a recommended inclusion for Behat. This configuration tooling provides a range of standard browser profiles for testing.
 
 :::note
 
@@ -91,7 +91,7 @@ Installation instructions can be found at [https://github.com/andrewnicols/chrom
 
 :::tip Environment
 
-These notes assume that you have already installed a supported Java Runtime Environment, and the [moodle-browser-config](/general/development/tools/behat/running#pre-configured-browser-profiles-moodle-browser-config) tool.
+These notes assume that you have already installed a supported Java Runtime Environment, and the [moodle-browser-config](./running.md#pre-configured-browser-profiles-moodle-browser-config) tool.
 
 :::
 
@@ -142,7 +142,7 @@ Both the browser, and its driver, must be placed inside your `$PATH` - this may 
 You can download Google Chrome from [https://www.google.com.au/chrome](https://www.google.com.au/chrome).
 
 You will need the [correct version of the chromedriver](https://chromedriver.chromium.org/downloads) as per the
-documentation. Alternatively you can make use of the [chromedriver-wrapper utility](/general/development/tools/behat/running#chromedriver-wrapper) noted in the Recommended extras sections.
+documentation. Alternatively you can make use of the [chromedriver-wrapper utility](./running.md#chromedriver-wrapper) noted in the Recommended extras sections.
 
 Either the `chromedriver` binary must be in a directory in your `$PATH`, or the `chromedriver-wrapper/bin` folder must be in your `$PATH`.
 
@@ -252,7 +252,7 @@ vendor/bin/behat --config /Users/nicols/Sites/moodles/sm/moodledata_behat/behatr
 
 :::tip
 
-If you are using the `moodle-browser-config` utility, then you can use any profile listed in [moodle-browser-config](/general/development/tools/behat/running#pre-configured-browser-profiles-moodle-browser-config). Otherwise you can write your own browser profile configuration.
+If you are using the `moodle-browser-config` utility, then you can use any profile listed in [moodle-browser-config](./running.md#pre-configured-browser-profiles-moodle-browser-config). Otherwise you can write your own browser profile configuration.
 
 :::
 
@@ -418,7 +418,7 @@ Running parallel (headless) runs on different selenium servers avoid random focu
 
 With the `--tags` or the `-name` Behat options you can filter which tests are going to run or which ones are going to be skipped. There are a few tags that you might be interested in:
 
-- `@JavaScript`: All the tests that runs in a browser using JavaScript; they require Selenium or the browser's own automation layer, as per [Run tests without Selenium](/general/development/tools/behat/running#run-tests-without-selenium-chromedriver-geckodriver) to be running, otherwise an exception will be thrown.
+- `@JavaScript`: All the tests that runs in a browser using JavaScript; they require Selenium or the browser's own automation layer, as per [Run tests without Selenium](./running.md#run-tests-without-selenium-chromedriver-geckodriver) to be running, otherwise an exception will be thrown.
 - `@_file_upload`: All the tests that involves file uploading or any OS feature that is not 100% part of the browser. They should only be executed when Selenium is running in the same machine where the tests are running.
 - `@_alert`: All the tests that involves JavaScript dialogs (alerts, confirms...) are using a feature that is OS-dependant and out of the browser scope, so they should be tag appropriately as not all browsers manage them properly.
 - `@_switch_window`: All the tests that are using the `I switch to "NAME" window` step should be tagged as not all browsers manage them properly.
@@ -589,7 +589,7 @@ $CFG->behat_profiles = [
 ];
 ```
 
-See [alternative browsers](/general/development/tools/behat/browsers) for more details.
+See [alternative browsers](./browsers/index.md) for more details.
 
 ## Troubleshooting
 
@@ -637,7 +637,7 @@ For parallel runs, all options for initialising parallel runs are valid
 ### Tests are failing
 
 <!-- cspell:ignore Bselenium -->
-If you followed all the steps and you receive an unknown weird error probably your browser version is not compatible with the Selenium version you are running. Please refer to [Working combinations](/general/development/tools/behat/browsers#compatibility) to run the acceptance test.
+If you followed all the steps and you receive an unknown weird error probably your browser version is not compatible with the Selenium version you are running. Please refer to [Working combinations](./browsers/index.md#compatibility) to run the acceptance test.
 
 ### The tests are failing, and the error message is completely useless
 

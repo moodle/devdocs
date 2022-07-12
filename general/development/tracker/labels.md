@@ -16,13 +16,13 @@ Labels can only be added by a user with permission to edit an issue, that is the
 ## Labels
 
 - `triaged`<br/>
-This is set after a bug has been [triaged](/general/development/process/triage) by component lead or HQ developer. It indicates that the issue has been confirmed, with basic fields like "Priority" checked, and is now ready for a developer to look at.
+This is set after a bug has been [triaged](../process/triage.md) by component lead or HQ developer. It indicates that the issue has been confirmed, with basic fields like "Priority" checked, and is now ready for a developer to look at.
 
 - [`triaging_in_progress`](https://tracker.moodle.org/issues/?jql=labels%20in%20(triaging_in_progress))<br/>
 Used to flag issues that are being triaged (sometimes an ongoing process for days or weeks). When the issue has been triaged the label should be removed and a `triaged` label should be added or when the issue is closed.
 
 - `mdlqa`<br/>
-Used to flag that an issue is a direct result of a [Moodle QA test](/general/development/process/testing/qa), conducted just before major releases. The bug should also be linked to the original MDLQA test, so that developers/integrators can reset the original MDLQA test (for re-testing) when the MDL issue is fixed. Once all the related MDLQA tests are passing the label can be deleted.
+Used to flag that an issue is a direct result of a [Moodle QA test](../process/testing/qa.md), conducted just before major releases. The bug should also be linked to the original MDLQA test, so that developers/integrators can reset the original MDLQA test (for re-testing) when the MDL issue is fixed. Once all the related MDLQA tests are passing the label can be deleted.
 
 - `mdlqa_conversion`<br/>
 Used to flag MDL issues that are converting MDLQA issues to behat features. The bug should also be linked to the MDLQA test being converted. Useful to know what's going and exclude some issues from manual QA. Once the MDL issue has been closed and the MDLQA has been moved to [MDLQA-5249](https://tracker.moodle.org/browse/MDLQA-5249), the label can be deleted.
@@ -31,7 +31,7 @@ Used to flag MDL issues that are converting MDLQA issues to behat features. The 
 Used to flag issues that should have their own unit tests.
 
 - [`acceptance_test_required`](https://tracker.moodle.org/issues/?jql=labels%20%3D%20acceptance_test_required)<br/>
-Used to flag issues that should be regularly tested using the behat framework [Acceptance testing](/general/development/tools/behat). Before a major release these issues will be reviewed and new feature files will be added.
+Used to flag issues that should be regularly tested using the behat framework [Acceptance testing](../tools/behat/index.md). Before a major release these issues will be reviewed and new feature files will be added.
 
 - [`qa_test_required`](https://tracker.moodle.org/issues/?jql=labels%20%3D%20qa_test_required)<br/>
 Used to flag issues that cannot be covered by automated tests. When adding the label, a comment should be also added advising exactly what needs covering in the QA test, for example "steps 6-10 in testing instructions".
@@ -67,7 +67,7 @@ Moodle Partners apply this label to flag issues that are important to their clie
 This label indicates that a solution (patch) has been attached to the issue. However, if you can, it may be better to submit the issue for peer review, rather than using this label. This is useful to component leads and Moodle HQ when deciding what to work on next.
 
 - `cime`<br/>
-A developer can add the `cime` label to an issue to request that CiBot perform an [Automated code review](/general/development/tools/cibot).
+A developer can add the `cime` label to an issue to request that CiBot perform an [Automated code review](../tools/cibot.md).
 
 - [`performance`](https://tracker.moodle.org/issues/?jql=labels%20%3D%20performance%20AND%20project%20%3D%20MDL)<br/>
 Used to flag any issues that developers think may affect Moodle's performance in some way (positively or negatively).

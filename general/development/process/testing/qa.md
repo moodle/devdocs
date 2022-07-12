@@ -15,7 +15,7 @@ Real users systematically try each feature in Moodle and ensure that it works in
 
 ## Getting involved
 
-Would you like to help with QA testing? If so, please make sure you have created an account in the [Moodle tracker](/general/development/tracker) and you're subscribed to the [Testing and QA forum](https://moodle.org/mod/forum/view.php?id=56) in order to receive QA testing news updates.
+Would you like to help with QA testing? If so, please make sure you have created an account in the [Moodle tracker](../../tracker.md) and you're subscribed to the [Testing and QA forum](https://moodle.org/mod/forum/view.php?id=56) in order to receive QA testing news updates.
 
 ## Running tests
 
@@ -71,7 +71,7 @@ So you ran a test and it failed? Congratulations on finding a bug! Please do the
 1. Click the `Fail` button at the top of the page.
 2. Add a comment to the QA test stating that there was a problem and that you will report it as a Moodle bug.
 3. Note the MDLQA number; it will be something like [MDLQA-448](https://tracker.moodle.org/browse/MDLQA-448).
-4. Try searching for whether the bug has been reported previously, and if not create a new issue for it (as described in [Tracker introduction](/general/development/tracker)).
+4. Try searching for whether the bug has been reported previously, and if not create a new issue for it (as described in [Tracker introduction](../../tracker.md)).
 5. In the new Moodle (MDL) issue select 'Link' from the 'More actions' dropdown menu.
 Linking to the QA issue in the tracker
 6. Link to the QA test by selecting 'blocks' as the link type, entering the MDLQA number that you noted earlier, and optionally adding a comment.
@@ -255,5 +255,5 @@ Comments on tests from previous QA cycles:
 ## See also
 
 - [QA testing dashboard](https://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11454)
-- [Testing credits](/general/community/credits/testing)
+- [Testing credits](../../../community/credits/testing.md)
 - [Useful tips for QA testing](https://moodle.org/mod/forum/discuss.php?d=351302)

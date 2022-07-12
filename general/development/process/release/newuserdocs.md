@@ -57,7 +57,7 @@ In new wiki:
 
 In all older version wikis:
 
-- Edit https://docs.moodle.org/en/MediaWiki:MoodleDocsVersionLinks to add the new version and remove older versions (though keeping [LTS releases](/general/releases))
+- Edit https://docs.moodle.org/en/MediaWiki:MoodleDocsVersionLinks to add the new version and remove older versions (though keeping [LTS releases](../../../releases.md))
 
 ## Day of release
 

@@ -36,4 +36,4 @@ There is very little that Moodle can do about this.
 ## See also
 
 - [Security](../security)
-- [Coding](/general/development/policies)
+- [Coding](../../policies.md)

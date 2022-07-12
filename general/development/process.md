@@ -19,7 +19,7 @@ We use a workflow that ensures that new code receives multiple reviews by differ
 ![A summary of the Moodle Development Process flow](./process/_files/simplified_workflow.png)
 
 - The [triaging](#issue-triage) is done by the Component leads.
-- Anybody can participate in the issue [development](/general/development), by creating a patch for [a bug](#fixing-a-bug), [an improvement](#new-feature-development) or [a security issue](#security-issues).
+- Anybody can participate in the issue [development](./index.md), by creating a patch for [a bug](#fixing-a-bug), [an improvement](#new-feature-development) or [a security issue](#security-issues).
 - Anybody can also [peer review](./process/peer-review.md) code developed by other developers.
 - There is a dedicated team in Moodle HQ in charge of the [integration review](./process/integration/index.md), to ensure consistent quality across the codebase.
 - Every time an issue is integrated, the [testing](./process/testing/index.md) instructions are run by a dedicated team of testers.
@@ -40,7 +40,7 @@ While many of the developers work for Moodle.com, a large number are part of the
 
 ### CiBoT
 
-CiBoT is not a person but a bot who monitors the tracker and performs the [Automated code review](/general/development/tools/cibot) when issue is submitted for Peer review or when developer added `cime` label.
+CiBoT is not a person but a bot who monitors the tracker and performs the [Automated code review](./tools/cibot.md) when issue is submitted for Peer review or when developer added `cime` label.
 
 ### Component leads
 
@@ -63,7 +63,7 @@ During each week the testers look at all the issues in the testing queue, trying
 
 If they find problems they reject the issue and integrators may remove it from the integration repository and push it back to the developer for further work.
 
-See [Testing of integrated issues](/general/development/process/testing/integrated-issues) for more details.
+See [Testing of integrated issues](./process/testing/integrated-issues.md) for more details.
 
 ### Production maintainers
 
@@ -81,7 +81,7 @@ After [major releases](https://docs.moodle.org/dev/#Major_release_cycles) there 
 
 - x.x.1 will occur approximately two months after each major release (eg. 2.x).
 - There will then be another point release every two months after that.
-See the [General release calendar](/general/releases#general-release-calendar) for details.
+See the [General release calendar](../releases.md#general-release-calendar) for details.
 
 ### Issue triage
 
@@ -101,7 +101,7 @@ Whenever a solution for an issue is finished, it is submitted to the standard in
 
 ## Major release cycles
 
-Since Moodle 2.0, we have a policy of release major versions (eg 2.1, 2.2) every six months in May and November. See the [General release calendar](/general/releases#general-release-calendar) for more details.
+Since Moodle 2.0, we have a policy of release major versions (eg 2.1, 2.2) every six months in May and November. See the [General release calendar](../releases.md#general-release-calendar) for more details.
 
 Each release can be different, but generally the cycles work as follows.
 
@@ -119,13 +119,13 @@ The process of [new feature development](#new-feature-development) is described 
 
 ### Testing
 
-During development, as new code is integrated, automated testing conducted at the [code](/general/development/tools/phpunit) and [interface](/general/development/tools/behat) levels, to make sure there are no regressions caused by new features.
+During development, as new code is integrated, automated testing conducted at the [code](./tools/phpunit.md) and [interface](./tools/behat/index.md) levels, to make sure there are no regressions caused by new features.
 
-In the last month before the release, a feature freeze is called (no new features can be added) and volunteer testers from the Moodle community perform manual [QA testing](/general/development/process/testing/qa) of Moodle features. The current set of functional tests is listed in [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1). The list of tests is extended as new features are added, though we're also trying to reduce the number as more automated [acceptance tests](/general/development/tools/behat) are developed.
+In the last month before the release, a feature freeze is called (no new features can be added) and volunteer testers from the Moodle community perform manual [QA testing](./process/testing/qa.md) of Moodle features. The current set of functional tests is listed in [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1). The list of tests is extended as new features are added, though we're also trying to reduce the number as more automated [acceptance tests](./tools/behat/index.md) are developed.
 
 There is also a set of tests for manually testing any major theme changes - [MDLQA-11592](https://tracker.moodle.org/browse/MDLQA-11592).
 
-For more details, see [Testing](/general/development/process/testing).
+For more details, see [Testing](./process/testing/index.md).
 
 ### Sprints
 
@@ -141,16 +141,16 @@ During each cycle there are a periods and events that occur between and around s
 A period during which the Roadmap is explored, specs are written and prototypes are created. Regressions in the recent release are fixed as they arise.
 
 **End sync period** <br/>
-During the [on-sync period](/general/development/process/integration#on-sync-period), the recent release and master versions are kept synchronised. No new code is added during this period, which ensures regressions are fixed rapidly. This also allows for planning and provides relief for developers after a release.
+During the [on-sync period](./process/integration/index.md#on-sync-period), the recent release and master versions are kept synchronised. No new code is added during this period, which ensures regressions are fixed rapidly. This also allows for planning and provides relief for developers after a release.
 
 **Personal projects** <br/>
 Affecting full-time HQ developers only, this period allows for individual creations to be explored and provides a break from sprints.
 
 **Code freeze** <br/>
-A point after which no new code (only fixes to existing code) is accepted until beyond the release. This stabilisation allows for [QA testing](/general/development/process/testing/qa).
+A point after which no new code (only fixes to existing code) is accepted until beyond the release. This stabilisation allows for [QA testing](./process/testing/qa.md).
 
 **QA, bug fixing, continuous integration** <br/>
-A period after the code freeze where quality assurance testing takes place. No new code is added, which means developers are able to respond rapidly to bugs found. Integration becomes [continuous](/general/development/process/integration#during-continuous-integrationfreezeqa-period), meaning that failed QA tests can be re-run within days rather than having to wait for the weekly release.
+A period after the code freeze where quality assurance testing takes place. No new code is added, which means developers are able to respond rapidly to bugs found. Integration becomes [continuous](./process/integration/index.md#during-continuous-integrationfreezeqa-period), meaning that failed QA tests can be re-run within days rather than having to wait for the weekly release.
 
 **Release candidate** <br/>
 A point prior to the full release where a candidate is made public for wider testing.
@@ -181,7 +181,7 @@ Develop your code on an open Git repository, like github.com. That enables peopl
 
 Coverage with automated tests ([PHPUnit](https://docs.moodle.org/dev/PHPUnit) or [Behat integration](https://docs.moodle.org/dev/Behat)) is mandatory for new features.
 
-It is essential that your code follows the [Moodle Coding Guide](/general/development/policies).
+It is essential that your code follows the [Moodle Coding Guide](./policies.md).
 
 ### Submit your code for peer review
 
@@ -205,7 +205,7 @@ Process and the list of things to check are described in [Peer reviewing](proces
 
 The developer is responsible for acting on the feedback from the peer reviewer. If changes have been made and the developer is satisfied that this has accommodated the feedback from the peer reviewer, then the developer can submit the issue for integration. If there have been significant changes after the peer review, or if the peer reviewer has raised concerns about the approach taken, then the developer should offer the issue up for peer review again, most often to the same peer reviewer, but not necessarily.
 
-Submitting an issue to integration is much the same as for any Moodle code. In some cases the Component Lead may perform a Component Lead Review instead of the integration team. See [Integration Review](/general/development/process/integration) and the information about the integration workflow above.
+Submitting an issue to integration is much the same as for any Moodle code. In some cases the Component Lead may perform a Component Lead Review instead of the integration team. See [Integration Review](./process/integration/index.md) and the information about the integration workflow above.
 
 ## Fixing a bug
 
@@ -223,7 +223,7 @@ Bugs should normally be fixed on all the supported stable branches that are affe
 
 Develop your fix and push the change to an open git repository, for example on github.com. See also [Git for developers](https://docs.moodle.org/dev/Git_for_developers)
 
-It is essential that your code follows the [Moodle Coding Guide](/general/development/policies).
+It is essential that your code follows the [Moodle Coding Guide](./policies.md).
 
 You will need to push one commit for each branch the fix needs to be applied to. Often people use branch names like `MDL-12345-31_brief_name` so it is clear what each branch is. [git cherry-pick](http://kernel.org/pub/software/scm/git/docs/git-cherry-pick.html) can help with replicating the fix onto different branches.
 
@@ -254,11 +254,11 @@ Process and the list of things to check are described in [Peer reviewing](proces
 
 ### Submit your code for integration
 
-It will then be reviewed the following week by one of the integration team and either integrated or rejected. Once integrated, the fix will be tested, and then included in the next weekly release. For details see [Integration Review](/general/development/process/integration).
+It will then be reviewed the following week by one of the integration team and either integrated or rejected. Once integrated, the fix will be tested, and then included in the next weekly release. For details see [Integration Review](./process/integration/index.md).
 
 ## Security issues
 
-Issues identified as [security issues](/general/development/policies/security) are resolved in a slightly different way, in order to achieve responsible disclosure as described in [Moodle security procedures](/general/development/process/security).
+Issues identified as [security issues](./policies/security/index.md) are resolved in a slightly different way, in order to achieve responsible disclosure as described in [Moodle security procedures](./process/security/index.md).
 
 - Security issues should be labelled as "Minor" or "Serious" in order control visibility of the issue.
   - An issue reported with a security level of "Could be a security issue" should be evaluated as soon as possible and either set as "Minor" or "Serious" or the security level should be set to "None".
@@ -301,7 +301,7 @@ Decisions will be posted on the issue and that issue will be closed, allowing an
 
 - [Detailed workflow](./process/_files/workflow.jpg)
 - [Release process](./process/release)
-- [Deprecation](/general/development/policies/deprecation)
+- [Deprecation](./policies/deprecation.md)
 - [Integration dashboard](http://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11350)
 Walks-though of the process for contributors:
 - By Dan Poltawski, Integrator: http://www.slideshare.net/poltawski/how-to-guarantee-your-change-is-integrated-to-moodle-core, https://www.youtube.com/watch?v=836WtnM2YpM

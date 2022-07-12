@@ -112,4 +112,4 @@ Follow the [Output functions](/docs/apis/subsystems/output#output-functions) lin
 ## See also
 
 - [Security](../security)
-- [Coding](/general/development/policies)
+- [Coding](../../policies.md)

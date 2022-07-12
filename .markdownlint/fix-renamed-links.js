@@ -31,7 +31,7 @@ const fs = require('fs');
 const rootDir = path.dirname(__dirname);
 
 // A simple regex to capture all links which are not images.
-const linkFinder = /(?<!!)(?<description>\[.*\](?=\((?<target>[^)]*)\)|\[[^\]]*\]))/g;
+const linkFinder = /(?<!!)(?<description>\[[^\]]*\](?=\((?<target>[^)]*)\)|\[[^\]]*\]))/g;
 
 /**
  * Get the mapping of renamed locations.

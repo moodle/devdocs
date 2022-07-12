@@ -53,16 +53,16 @@ Many issues can be appropriately classified as borderline bug-fix/improvements. 
 
 :::note
 
-This doesn't include [`security_benefit` labelled issues](/general/development/tracker/labels).
+This doesn't include [`security_benefit` labelled issues](../tracker/labels.md).
 
 ::::
 
 - Apart from the previous, issues required to keep the testing infrastructure working and passing (travis, behat, phpunit, random failures, new steps availability...) will also be accepted when possible into security-only branches.
 - Finally, backport to unsupported branches only will happen when the issue is a **direct regression caused by a bug fix** introduced by the very latest releases. This applies to both security-only and out-of-support branches.
 
-A new weekly release will be performed including all the cases above, but [security issues that follow its own special process](/general/development/process#security-issues) and are released bi-monthly.
+A new weekly release will be performed including all the cases above, but [security issues that follow its own special process](../process.md#security-issues) and are released bi-monthly.
 
 ## See also...
 
-- [Integration review process](/general/development/process/integration)
-- [Process](/general/development/process)
+- [Integration review process](../process/integration/index.md)
+- [Process](../process.md)

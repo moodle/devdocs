@@ -5,7 +5,7 @@ tags:
   - Behat
   - Quality Assurance
 ---
-This page complements [Behat](/general/development/tools/behat) providing info about how to run the acceptance tests suite in different browsers.
+This page complements [Behat](../index.md) providing info about how to run the acceptance tests suite in different browsers.
 
 ## Drivers
 
@@ -74,4 +74,4 @@ Note that, to skip some tag, you must prepend it with the <tt>~</tt> (logical NO
 
 As OS, Browsers and Selenium keeps updating, some combination of OS+Browser+Selenium will not work on specific moodle version.
 
-We try to support the latest version of these combinations but they are not always BC and hence may not work with older releases. Please refer to [Working combinations of OS+Browser+selenium](/general/development/tools/behat/browsers/supportedbrowsers) to ensure you have correct combination of them to run acceptance test.
+We try to support the latest version of these combinations but they are not always BC and hence may not work with older releases. Please refer to [Working combinations of OS+Browser+selenium](./supportedbrowsers.md) to ensure you have correct combination of them to run acceptance test.

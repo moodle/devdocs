@@ -10,8 +10,8 @@ tags:
 - [Set up your development environment](#a-quick-start-to-moodle-development)
 - See the [list of relatively easy Moodle bugs](https://tracker.moodle.org/issues/?jql=project%20%3D%20MDL%20AND%20type%20in%20(bug)%20AND%20status%20%3D%20open%20AND%20Difficulty%20%3D%20Easy%20AND%20labels%20not%20in%20(patch)%20ORDER%20BY%20created%20DESC)
 - [Prepare a patch](https://docs.moodle.org/dev/Git_for_developers#Preparing_a_patch)
-- Read the [Coding style](/general/development/policies/codingstyle) policy
-- Send your patch to [peer review](/general/development/process/peer-review) and learn more about the [Moodle processes](/general/development/process).
+- Read the [Coding style](./policies/codingstyle/index.md) policy
+- Send your patch to [peer review](./process/peer-review.md) and learn more about the [Moodle processes](./process.md).
 - Create your custom plugins looking at the information in the [Plugin contribution](https://docs.moodle.org/dev/Plugin_contribution) page.
 
 :::
@@ -22,7 +22,7 @@ tags:
 
 1. Create an account on [Moodle.org](https://moodle.org/). You will need this to access the [Moodle General Developer forum](https://moodle.org/mod/forum/view.php?f=33) and download [Moodle plugins](https://moodle.org/plugins). You can also sign up to free self-paced courses in our [Moodle Academy Developer Learning Pathway](https://learn.moodle.org/)
 1. Create an account on [GitHub](https://github.com/) and [install Git on your computer](https://docs.moodle.org/dev/Git_for_developers). This is the source code version control repository tool of choice for Moodle development.
-1. [Install Moodle on your machine](https://docs.moodle.org/en/Installing_Moodle) or use a container environment like [moodle-docker](https://github.com/moodlehq/moodle-docker). You can also use [Moodle Development Kit (MDK)](/general/development/tools/mdk).
+1. [Install Moodle on your machine](https://docs.moodle.org/en/Installing_Moodle) or use a container environment like [moodle-docker](https://github.com/moodlehq/moodle-docker). You can also use [Moodle Development Kit (MDK)](./tools/mdk.md).
 
   :::tip
 
@@ -46,7 +46,7 @@ tags:
 
   :::
 
-- Install the [Moodle PHP CodeSniffer](/general/development/tools/phpcs). This will be used to test your plugin for conformance with Moodle coding standards. Use this to develop good coding skills.
+- Install the [Moodle PHP CodeSniffer](./tools/phpcs.md). This will be used to test your plugin for conformance with Moodle coding standards. Use this to develop good coding skills.
 - Install the Moodle [PHPdoc check plugin](https://moodle.org/plugins/local_moodlecheck). This will be used to test your source code documentation. This will also help improve your coding skills.
 
   :::info Advanced
@@ -68,12 +68,12 @@ If you have any question or want to share your ideas, there are several channels
 
 - [Moodle community forums](https://moodle.org/course/), available in different languages.
 - [A Matrix room](https://matrix.to/#/%23moodledev:moodle.com) available for real-time communication. Read the [chat policies](https://docs.moodle.org/dev/Chat) before joining.
-- [Developer meetings](/general/community/meetings), organised periodically and open to anyone interested in Moodle development.
+- [Developer meetings](../community/meetings/index.md), organised periodically and open to anyone interested in Moodle development.
 
 ## See also
 
-- [Releases](/general/releases) - versions of Moodle that have already been released
-- [Process](/general/development/process)
+- [Releases](../releases.md) - versions of Moodle that have already been released
+- [Process](./process.md)
 - [API guides](/docs/apis)
-- [Contributing](/general/community/contribute)
+- [Contributing](../community/contribute.md)
 - [A (july 2017) forum thread](https://moodle.org/mod/forum/discuss.php?d=355789) about Getting Started with Moodle Development.

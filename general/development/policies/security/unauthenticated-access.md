@@ -44,4 +44,4 @@ Yet another example is a **captcha**. This is some task that humans are able to 
 ## See also
 
 - [Security](../security)
-- [Coding](/general/development/policies)
+- [Coding](../../policies.md)

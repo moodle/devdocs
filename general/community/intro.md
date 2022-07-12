@@ -22,7 +22,7 @@ There are many other people contributing to Moodle in many ways, such as coding,
 
 ## How we develop the Roadmap
 
-The [Roadmap](./roadmap.md) lists the new features being developed for the next major version. This list is derived mostly from issues with large numbers of votes in the Moodle [Tracker](/general/development/tracker/guide), so please vote for what you want!  Other influences include general discussion, surveys and feature requests at MoodleMoots and in the Moodle forums.
+The [Roadmap](./roadmap.md) lists the new features being developed for the next major version. This list is derived mostly from issues with large numbers of votes in the Moodle [Tracker](../development/tracker/guide.md), so please vote for what you want!  Other influences include general discussion, surveys and feature requests at MoodleMoots and in the Moodle forums.
 
 Component leads decide on features in individual components, so make your case to them!
 
@@ -32,7 +32,7 @@ Moodle major releases (with big new features) are on a regular 6-month cycle, in
 
 Minor releases (with bug fixes only) are on a 2-month cycle, unless a security emergency occurs. They will increment the major release by 0.0.1 (eg 3.5 -> 3.5.1 -> 3.5.2).
 
-The full details of these can be seen in the [Releases](/general/releases).
+The full details of these can be seen in the [Releases](../releases.md).
 
 ## Support lifetime
 
@@ -58,7 +58,7 @@ See our [Process](../development/process.md) page for full information on our de
 
 ## Coding Standards
 
-Over time we have distilled our best practice in writing code down into our [Coding Guide](/general/development/policies). These rules cover the formatting and layout of all our code to make it consistent across the code base. If you plan to write Moodle code, you need to read it thoroughly.
+Over time we have distilled our best practice in writing code down into our [Coding Guide](../development/policies.md). These rules cover the formatting and layout of all our code to make it consistent across the code base. If you plan to write Moodle code, you need to read it thoroughly.
 
 ## Plugins and APIs
 

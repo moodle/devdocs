@@ -40,15 +40,15 @@ print_string('action'.$action);
 
 that are harder to detect. So, instead of simply removing the string `actionloginremote` you would put it to the list of deprecated strings.
 
-Another scenario may be that a semantically identical string was defined twice or it was put into the wrong component. If you think there may be places that rely on the wrong location (component), you should deprecate it. Copy the string to a new location (do not forget to use [CPY instruction for AMOS](/general/projects/api/amos) to replay the change in all existing translations) and deprecate the old one.
+Another scenario may be that a semantically identical string was defined twice or it was put into the wrong component. If you think there may be places that rely on the wrong location (component), you should deprecate it. Copy the string to a new location (do not forget to use [CPY instruction for AMOS](./amos.md) to replay the change in all existing translations) and deprecate the old one.
 
-Also, it may turn out that some strings are only vaguely defined and do not have a clear and unique context / semantics. Ideally, Moodle code should use context-sensitive strings rather than rely on one general string covering all cases. Things like [grammatical gender](http://en.wikipedia.org/wiki/Grammatical_gender) play an important role in many languages. For example, in Czech, "a role" or "a question" are of feminine gender and the correct translation of "hidden" in this case is `skrytá`, while "a badge" is of masculine gender and the correct translation is `skrytý`. So it would be better to have separate strings like `hiddenrole`, `hiddenquestion` and `hiddenbadge` even if they all read just "Hidden" in the English language pack. When you are about to split existing string into a couple of specific ones, you may wish to deprecate the general one at the end too (also, do not forget to use the [CPY](/general/projects/api/amos) again).
+Also, it may turn out that some strings are only vaguely defined and do not have a clear and unique context / semantics. Ideally, Moodle code should use context-sensitive strings rather than rely on one general string covering all cases. Things like [grammatical gender](http://en.wikipedia.org/wiki/Grammatical_gender) play an important role in many languages. For example, in Czech, "a role" or "a question" are of feminine gender and the correct translation of "hidden" in this case is `skrytá`, while "a badge" is of masculine gender and the correct translation is `skrytý`. So it would be better to have separate strings like `hiddenrole`, `hiddenquestion` and `hiddenbadge` even if they all read just "Hidden" in the English language pack. When you are about to split existing string into a couple of specific ones, you may wish to deprecate the general one at the end too (also, do not forget to use the [CPY](./amos.md) again).
 
 ### When should a string be removed?
 
 There are situations where deprecation does not make sense. For example when a whole functionality is being removed, or a very specific string (such as error message) is no longer used by the code. If it is very unlikely that the string is not used by any other code, it can simply be removed without the full deprecation process.
 
-The same logic applies to cases when a very specific string is to be moved or renamed. In this situation, it is valid to just move it (together with the matching [MOV instruction in the AMOScript](/general/projects/api/amos)).
+The same logic applies to cases when a very specific string is to be moved or renamed. In this situation, it is valid to just move it (together with the matching [MOV instruction in the AMOScript](./amos.md)).
 
 ## How to deprecate a string
 

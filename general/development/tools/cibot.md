@@ -22,7 +22,7 @@ No. Developers should strive to have CiBot approve every patch submitted, but th
 
 In short, please only update lines relating to your own change.
 
-There are some conventions that are not uniformly followed in the code base, many of these are conventions put in place after code was written. Our long term goal is for the entire codebase to follow the conventions, but in general, we don't want large-scale reformatting of existing code. See [Coding style#Policy about coding-style only fixes](/general/development/policies/codingstyle#policy-about-coding-style-only-fixes).
+There are some conventions that are not uniformly followed in the code base, many of these are conventions put in place after code was written. Our long term goal is for the entire codebase to follow the conventions, but in general, we don't want large-scale reformatting of existing code. See [Coding style#Policy about coding-style only fixes](../policies/codingstyle/index.md#policy-about-coding-style-only-fixes).
 
 ### Example "Should I fix coding style" situations
 
@@ -55,7 +55,7 @@ Please [file an issue](https://tracker.moodle.org/secure/CreateIssueDetails!init
 
 When you overrun the length limit many git tools do not display commits well. See how [github truncates ea6f548081](https://github.com/moodle/moodle/commits/ea6f5480818c31763f91a90a0cafb6a63ca18117) - it ruins the message and makes it harder for you to communicate your change to other developers.
 
-It is acknowledged that its often tricky to get a useful message in such a short space on the first line. However, the coding guidelines for git summary line length were established on the basis of [industry](https://github.com/blog/926-shiny-new-commit-styles) [best](http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/SubmittingPatches?id=aad7fb916a10f1065ad23de0c80a4a04bcba8437#n594) [practice](http://stackoverflow.com/questions/2290016/git-commit-messages-50-72-formatting). As the [Coding style](/general/development/policies/codingstyle#git-commits) mentions, do not be afraid to go into much more detail in your commit body.
+It is acknowledged that its often tricky to get a useful message in such a short space on the first line. However, the coding guidelines for git summary line length were established on the basis of [industry](https://github.com/blog/926-shiny-new-commit-styles) [best](http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/SubmittingPatches?id=aad7fb916a10f1065ad23de0c80a4a04bcba8437#n594) [practice](http://stackoverflow.com/questions/2290016/git-commit-messages-50-72-formatting). As the [Coding style](../policies/codingstyle/index.md#git-commits) mentions, do not be afraid to go into much more detail in your commit body.
 
 Try `git log --oneline --no-merges` if you want to see how other developers have tried to adapt to this situation.
 
@@ -85,4 +85,4 @@ While the issues reported might be trivial compared to benefit of the fix, over 
 
 ## See also
 
-- [Coding style](/general/development/policies/codingstyle) and other links in the [coding guidelines category](https://docs.moodle.org/Category/Coding_guidelines)
+- [Coding style](../policies/codingstyle/index.md) and other links in the [coding guidelines category](https://docs.moodle.org/Category/Coding_guidelines)

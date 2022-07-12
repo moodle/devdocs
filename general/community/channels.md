@@ -13,13 +13,13 @@ We also have a number of key forums, and chat rooms which we recommend you join.
 Moodle has a number of developer-related discussion forums hosted on Moodle.org, including:
 
 - the [General developer forum](https://moodle.org/mod/forum/view.php?id=55) - this is the best place for general developers queries, thoughts, ideas, and information. We'd recommend subscribing to this forum.
-- [Integration exposed](https://moodle.org/mod/forum/view.php?id=7966) - after the weekly integration has completed, and the latest and greatest weekly release is rolled, the [Integration team](/general/development/process/integration) will usually give a brief update with key information. We'd strongly recommend subscribing to this forum.
+- [Integration exposed](https://moodle.org/mod/forum/view.php?id=7966) - after the weekly integration has completed, and the latest and greatest weekly release is rolled, the [Integration team](../development/process/integration/index.md) will usually give a brief update with key information. We'd strongly recommend subscribing to this forum.
 - [Testing and QA](https://moodle.org/mod/forum/view.php?id=56) - this forum is a great resource for getting help with all things testing.
 - [Plugins traffic](https://moodle.org/mod/forum/view.php?id=8149) - this forum has occasional news and blog-like posts about Moodle plugin development.
 
 ## Chats
 
-Chats are a great way to interact with other Moodle developers on a daily basis and can help you to learn about the [processes](/general/development/process), upcoming features, and to provide feedback. We encourage you to take part in the conversation as much as possible.
+Chats are a great way to interact with other Moodle developers on a daily basis and can help you to learn about the [processes](../development/process.md), upcoming features, and to provide feedback. We encourage you to take part in the conversation as much as possible.
 
 The Official Moodle chats are hosted on our Federated [Matrix](https://matrix.org) server which everyone is welcome to join.
 
