@@ -192,9 +192,16 @@ const fetchImagesForDoc = async (title, newPath) => {
     }));
 };
 
-const fetchOneDoc = async (title, newPath, options) => {
+const fetchOneDoc = async (pageTitle, newPath, options) => {
     if (options.debug || process.env.DEBUG) {
         logger.level = 'debug';
+    }
+
+    let title = pageTitle;
+    if (title.startsWith('https://docs.moodle.org/dev/')) {
+        const url = new URL(title);
+        title = url.pathname.replace('/dev/', '');
+        logger.info(`URL detected. Using a value of ${title}`);
     }
 
     logger.info(`Fetching ${title} to ${newPath}`);

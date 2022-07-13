@@ -5,6 +5,7 @@ tags:
   - style guide
   - coding guidelines
   - linting
+sidebar_position: 5
 ---
 
 We are looking to implement both a coding style guide, and a writing style guide, for this documentation. This will include appropriate tooling and information.

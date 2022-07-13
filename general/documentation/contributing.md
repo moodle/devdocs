@@ -5,6 +5,7 @@ tags:
   - contributing
   - documentation
   - guide
+sidebar_position: 3
 ---
 
 The [Moodle](https://moodle.org) Developer Resources is the official source for all Moodle documentation. It's here to make your life as a Moodle Developer easier. To serve that purpose it has to be up-to-date, and as accurate and complete as possible. Every contribution is important in achieving that goal and we hope that you are able to be a part of that mission.
@@ -23,6 +24,7 @@ Moodle is in the process of updating and modernising its [Code of Conduct](./cod
 Anyone can get involved with, and add to, these resources - you don't have to be a developer or documentation aficionado. Here are a few ideas to get started:
 
 - Look at our list of [good first issues](https://github.com/moodle/devdocs/labels/good%20first%20issue)
+- [Migrate a document](#migrating-legacy-docs) from the legacy docs
 - Fix typos and grammatical errors
 - Document new Moodle features
 - Mark a deprecated feature as deprecated
@@ -30,6 +32,87 @@ Anyone can get involved with, and add to, these resources - you don't have to be
 - [Triage existing issues](#triaging-issues-and-pull-requests)
 
 If you need help, please reach out to us and we will do our best to advise you.
+
+### Migrating legacy docs
+
+We are currently migrating documentation from our [legacy documentation site](https://docs.moodle.org/dev), and one of the best ways to contribute with documentation is to help with this migration process.
+
+We have created a number of tools to make this a little easier and to automate as much as possible. These are mostly focused around our migration assistant. You can find its full documentation by running:
+
+```console
+yarn migrate --help
+```
+
+#### What we automate
+
+The migration assistant will:
+
+- try to guess the:
+  - page title
+  - relevant tags
+- create the directory structure to the new markdown file
+- fetch any images included in the original page
+- convert:
+  - WikiText tables to either Markdown tables, or HTML tables as appropriate
+  - page headings
+  - lists
+  - common font formatting like bold, and italics
+  - code blocks
+  - some common `*Note*` syntaxes to use an [Admonition](https://docusaurus.io/docs/next/markdown-features/admonitions)
+  - InterWiki links to fully-qualified links
+  - Regular links to markdown links
+- run markdownlint in fix mode to automatically fix any common, fixable issues
+- update the links for any internal documentation which has already been migrated
+- add the migrated page to our [list of migrated pages](https://github.com/moodle/devdocs/main/blob/data/migratedPages.yml)
+- update any links to the migrated page
+
+#### Using the assistant
+
+In most circumstances you should not need to pass any special options, and you will just need to pass the name of the document you are migrating, and the path to the location you'd like to migrate it to, for example:
+
+```console title="General migration usage"
+yarn migrate [Name or URL of legacy document] [/path/to/new/document]
+```
+
+:::tip
+
+You can either pass the full URL to the legacy document on the legacy devdocs site, or the name of the legacy document is the name within the URL, for example, in the following URL:
+
+```
+https://docs.moodle.org/dev/Moodle_and_PHP
+```
+
+The page name is `"Moodle_and_PHP"`.
+
+:::
+
+When choosing a location to migrate the document to, first ask whether the page contains information which relates to a particular version of Moodle - this may be a guide for a subsystem, or plugintype for example. If so, then this _must_ go into the `docs` folder. Most other content should go into the `general` folder.
+
+:::info
+
+The [structure of the documentation](./structure.md#general-structure) describes these two locations in further detail.
+
+:::
+
+```console title="Migrate the 'Moodle and PHP' documentation to a new policies page"
+yarn migrate Moodle_and_PHP ./general/development/policies/php.md
+```
+
+:::note
+
+The migration assistant is not perfect and is not aware of all WikiText features. Additionally if the formatting is not correct in the WikiText, some aspects may become incorrectly formatted during the conversion.
+
+:::
+
+:::danger After running the migration
+
+After performing a migration it is important to review the page content. You should attempt to:
+
+- update any relevant styling
+- remove legacy content which is no longer relevant
+- update code examples to meet current coding style rules
+
+:::
 
 ### Triaging Issues and Pull Requests
 
@@ -83,6 +166,19 @@ It's easy to get your development environment set up using [Yarn](https://yarnpk
 
 We also have a [Gitpod](#Quick-start-with-Gitpod) configuration if you want to jump straight in and have a go
 
+### Installation
+
+If you contribute regularly to our documentation, then we recommend you setup a local development environment for the best results.
+
+To set up a local development environment:
+
+1. Ensure you have:
+   1. [NVM](https://github.com/nvm-sh/nvm)
+   1. The most appropriate version of NodeJS by running `nvm install`
+   1. [Yarn](https://yarnpkg.com/)
+1. After cloning the repository, run `yarn install` in the root of the repository. This will install all dependencies as well as build all local packages.
+1. To start a development server, run `yarn start`.
+
 ### Quick start with Gitpod
 
 Gitpod is a free, cloud-based, development environment providing VS Code and a suitable development environment right in your browser.
@@ -100,20 +196,21 @@ even commit them and create a pull request.
 
 GitHub has also launched their own lightweight online editor which integrates tightly with GitHub. Take a look at [github.dev](https://github.dev/moodle/devdocs).
 
-### Installation
+:::info
 
-To install a local development environment:
+Gitpod is an alternative to local development and completely optional. We recommend [setting up a local development environment](#installation) if you plan to contribute regularly.
 
-1. Ensure you have:
-   1. [NVM](https://github.com/nvm-sh/nvm)
-   1. The most appropriate version of NodeJS by running `nvm install`
-   1. [Yarn](https://yarnpkg.com/)
-1. After cloning the repository, run `yarn install` in the root of the repository. This will install all dependencies as well as build all local packages.
-1. To start a development server, run `yarn start`.
+:::
 
 ### Style guidelines
 
 A set of writing and coding style guidelines for this documentation will be documented in more detail in the [style guides](./style-guides.md).
+
+:::important
+
+See our [linting and spelling](./linting.md) documentation for more information on how to check for common issues.
+
+:::
 
 ## Pull Requests
 
