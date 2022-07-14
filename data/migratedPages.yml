@@ -1542,6 +1542,9 @@ Subject_Access_Request_FAQ:
 Table_of_locales:
 - filePath: "/general/development/process/translation/langpack/locales.md"
   slug: "/general/development/process/translation/langpack/locales"
+Tag_API:
+- filePath: "/docs/apis/subsystems/tag/index.md"
+  slug: "/docs/apis/subsystems/tag/"
 Templates:
 - filePath: "/docs/guides/templates/index.md"
   slug: "/docs/guides/templates/"
