@@ -32,6 +32,16 @@ function UnsupportedTitle() {
     );
 }
 
+function UnreleasedTitle() {
+    return (
+        <Translate
+            id="version.unreleased.warning.title"
+        >
+            Unreleased Moodle Version
+        </Translate>
+    );
+}
+
 function UpgradeLink() {
     return (
         <Translate
@@ -91,7 +101,7 @@ function FutureReleaseWarning({ versionData }) {
                 <AutoFixHighIcon fontSize="inherit" />
             }
             title={
-                <UnsupportedTitle versionData={versionData} />
+                <UnreleasedTitle versionData={versionData} />
             }
         >
             <strong>
