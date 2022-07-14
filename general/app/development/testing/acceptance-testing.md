@@ -8,9 +8,9 @@ tags:
   - Moodle App
 ---
 
-In order to run tests that carry out automated functionality testing for the Moodle App, you can write [Acceptance tests](/general/development/tools/behat). This can be useful if you want to test plugins that are compatible with the app, or you're contributing to the app core. Behat tests for the app work the same way as tests for Moodle core, but they are not run as part of a normal Behat execution and there are some differences that we'll go through in this page.
+In order to run tests that carry out automated functionality testing for the Moodle App, you can write [Acceptance tests](../../../development/tools/behat/index.md). This can be useful if you want to test plugins that are compatible with the app, or you're contributing to the app core. Behat tests for the app work the same way as tests for Moodle core, but they are not run as part of a normal Behat execution and there are some differences that we'll go through in this page.
 
-A key point is that these tests are run using the Moodle Behat infrastructure, and don't depend only on the app codebase. Therefore, you will need a Moodle development setup as described in [Setting up development environment](/general/development/gettingstarted).
+A key point is that these tests are run using the Moodle Behat infrastructure, and don't depend only on the app codebase. Therefore, you will need a Moodle development setup as described in [Setting up development environment](../../../development/gettingstarted.md).
 
 The main advantages of this approach are:
 
@@ -30,7 +30,7 @@ Nevertheless, if you still have to run the projects in your local machine, you c
 
 ### Configuring the Moodle site
 
-You can learn how to run a Moodle site locally in [Setting up development environment](/general/development/gettingstarted).
+You can learn how to run a Moodle site locally in [Setting up development environment](../../../development/gettingstarted.md).
 
 Remember to install the [local_moodlemobileapp](https://github.com/moodlehq/moodle-local_moodlemobileapp/) plugin with the same version that you're using for the mobile app.
 
@@ -52,7 +52,7 @@ $CFG->behat_ionic_wwwroot = 'http://localhost:8100';
 
 The url you use here must be reachable by your Moodle site, and the application needs to be served at this url when running tests and also when you initialise the Behat environment.
 
-The Moodle App [only works in Chromium-based browsers](../setup/app-in-browser), so mobile tests will be ignored if you are using any other browser. You can learn how to configure the browser used in your tests in the [Running acceptance test](/general/development/tools/behat/running) page.
+The Moodle App [only works in Chromium-based browsers](../setup/app-in-browser), so mobile tests will be ignored if you are using any other browser. You can learn how to configure the browser used in your tests in the [Running acceptance test](../../../development/tools/behat/running.md) page.
 
 If everything is configured properly, you should see "Configured app tests for version X.X.X" after running `admin/tool/behat/cli/init.php`.
 
@@ -64,7 +64,7 @@ It is OK to combine mobile and web tests in the same run.
 
 ## Writing tests
 
-This page assumes you already know all about [Writing acceptance tests](/general/development/tools/behat/writing) in general.
+This page assumes you already know all about [Writing acceptance tests](../../../development/tools/behat/writing.md) in general.
 
 ### Test structure
 

@@ -51,6 +51,9 @@ const getRenamedFileMapping = (renames) => {
         if (oldFile.endsWith('/index.md')) {
             mappings[oldFile.replace(/\/index.md$/, '')] = newFile;
             mappings[`${oldFile.replace(/\/index.md$/, '')}/`] = newFile;
+        } else {
+            mappings[oldFile.replace(/.md$/, '')] = newFile;
+            mappings[`${oldFile.replace(/.md$/, '')}/`] = newFile;
         }
         return true;
     });

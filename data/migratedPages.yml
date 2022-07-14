@@ -8,8 +8,8 @@ Acceptance_testing/Browsers/Working_combinations_of_OS+Browser+selenium:
 - filePath: "/general/development/tools/behat/browsers/supportedbrowsers.md"
   slug: "/general/development/tools/behat/browsers/supportedbrowsers"
 Acceptance_testing_for_the_Moodle_App:
-- filePath: "/docs/moodleapp/development/testing/acceptance-testing.md"
-  slug: "/docs/moodleapp/development/testing/acceptance-testing"
+- filePath: "/general/app/development/testing/acceptance-testing.md"
+  slug: "/general/app/development/testing/acceptance-testing"
 Access_API:
 - filePath: "/docs/apis/subsystems/access.md"
   slug: "/docs/apis/subsystems/access"
@@ -83,14 +83,14 @@ Course_formats:
 - filePath: "/docs/apis/plugintypes/format/index.md"
   slug: "/docs/apis/plugintypes/format"
 Creating_mobile_course_formats:
-- filePath: "/docs/moodleapp/development/plugins-development-guide/examples/create-course-formats.md"
-  slug: "/docs/moodleapp/development/plugins-development-guide/examples/create-course-formats"
+- filePath: "/general/app/development/plugins-development-guide/examples/create-course-formats.md"
+  slug: "/general/app/development/plugins-development-guide/examples/create-course-formats"
 Credits:
 - filePath: "/general/community/credits/index.md"
   slug: "/general/community/credits"
 Custom_Moodle_Apps:
-- filePath: "/docs/moodleapp/customisation/custom-apps.md"
-  slug: "/docs/moodleapp/customisation/custom-apps"
+- filePath: "/general/app/customisation/custom-apps.md"
+  slug: "/general/app/customisation/custom-apps"
 DDL_functions:
 - filePath: "/docs/apis/core/dml/ddl.md"
   slug: "/docs/apis/core/dml/ddl"
@@ -116,8 +116,8 @@ Database_presets:
 - filePath: "/docs/apis/plugintypes/mod_data/presets.md"
   slug: "/docs/apis/plugintypes/mod_data/presets"
 Debugging_network_requests_in_the_Moodle_App:
-- filePath: "/docs/moodleapp/development/network-debug.md"
-  slug: "/docs/moodleapp/development/network-debug"
+- filePath: "/general/app/development/network-debug.md"
+  slug: "/general/app/development/network-debug"
 Deprecation:
 - filePath: "/general/development/policies/deprecation.md"
   slug: "/general/development/policies/deprecation"
@@ -1201,8 +1201,8 @@ Moodle_and_PHP:
 - filePath: "/general/development/policies/php.md"
   slug: "/general/development/php"
 Moodle_App:
-- filePath: "/docs/moodleapp.md"
-  slug: "/docs/moodleapp"
+- filePath: "/general/app.md"
+  slug: "/general/app"
 Moodle_App_4.0.0_release_notes:
 - filePath: "/general/app_releases/v4/v4.0.0.md"
   slug: "/general/app_releases/v4/v4.0.0"
@@ -1210,53 +1210,53 @@ Moodle_App_4.0.1_release_notes:
 - filePath: "/general/app_releases/v4/v4.0.1.md"
   slug: "/general/app_releases/v4/v4.0.1"
 Moodle_App_Accessibility:
-- filePath: "/docs/moodleapp/accessibility.md"
-  slug: "/docs/moodleapp/accessibility"
+- filePath: "/general/app/accessibility.md"
+  slug: "/general/app/accessibility"
 Moodle_App_Coding_Style:
 - filePath: "/general/development/policies/codingstyle-moodleapp.md"
   slug: "/general/development/policies/codingstyle-moodleapp"
 Moodle_App_Customisation:
-- filePath: "/docs/moodleapp/customisation/index.md"
-  slug: "/docs/moodleapp/customisation"
+- filePath: "/general/app/customisation/index.md"
+  slug: "/general/app/customisation"
 Moodle_App_Deep_Linking:
-- filePath: "/docs/moodleapp/development/deep-linking.md"
-  slug: "/docs/moodleapp/development/deep-linking"
+- filePath: "/general/app/development/deep-linking.md"
+  slug: "/general/app/development/deep-linking"
 Moodle_App_Development_Guide:
-- filePath: "/docs/moodleapp/development/development-guide.md"
-  slug: "/docs/moodleapp/development/development-guide"
+- filePath: "/general/app/development/development-guide.md"
+  slug: "/general/app/development/development-guide"
 Moodle_App_Development_Process:
 - filePath: "/general/development/process-moodleapp.md"
   slug: "/general/development/process-moodleapp"
 Moodle_App_Docker_Images:
-- filePath: "/docs/moodleapp/development/setup/docker-images.md"
-  slug: "/docs/moodleapp/development/setup/docker-images"
+- filePath: "/general/app/development/setup/docker-images.md"
+  slug: "/general/app/development/setup/docker-images"
 Moodle_App_FAQ:
-- filePath: "/docs/moodleapp/faq.md"
-  slug: "/docs/moodleapp/faq"
+- filePath: "/general/app/faq.md"
+  slug: "/general/app/faq"
 Moodle_App_Overview:
-- filePath: "/docs/moodleapp/overview.md"
-  slug: "/docs/moodleapp/overview"
+- filePath: "/general/app/overview.md"
+  slug: "/general/app/overview"
 Moodle_App_Plugins_Development_Guide:
-- filePath: "/docs/moodleapp/development/plugins-development-guide/index.md"
-  slug: "/docs/moodleapp/development/plugins-development-guide"
+- filePath: "/general/app/development/plugins-development-guide/index.md"
+  slug: "/general/app/development/plugins-development-guide"
 Moodle_App_Plugins_Upgrade_Guide:
-- filePath: "/docs/moodleapp/upgrading/plugins-upgrade-guide.md"
-  slug: "/docs/moodleapp/upgrading/plugins-upgrade-guide"
+- filePath: "/general/app/upgrading/plugins-upgrade-guide.md"
+  slug: "/general/app/upgrading/plugins-upgrade-guide"
 Moodle_App_Release_Notes:
 - filePath: "/general/app_releases.md"
   slug: "/general/app_releases"
 Moodle_App_Release_Process:
-- filePath: "/docs/moodleapp/development/release-process.md"
-  slug: "/docs/moodleapp/development/release-process"
+- filePath: "/general/app/development/release-process.md"
+  slug: "/general/app/development/release-process"
 Moodle_App_Remote_Themes:
-- filePath: "/docs/moodleapp/customisation/remote-themes.md"
-  slug: "/docs/moodleapp/customisation/remote-themes"
+- filePath: "/general/app/customisation/remote-themes.md"
+  slug: "/general/app/customisation/remote-themes"
 Moodle_App_Remote_Themes_Upgrade_Guide:
-- filePath: "/docs/moodleapp/upgrading/remote-themes-upgrade-guide.md"
-  slug: "/docs/moodleapp/upgrading/remote-themes-upgrade-guide"
+- filePath: "/general/app/upgrading/remote-themes-upgrade-guide.md"
+  slug: "/general/app/upgrading/remote-themes-upgrade-guide"
 Moodle_App_Scripts:_gulp_push:
-- filePath: "/docs/moodleapp/development/scripts/gulp-push.md"
-  slug: "/docs/moodleapp/development/scripts/gulp-push"
+- filePath: "/general/app/development/scripts/gulp-push.md"
+  slug: "/general/app/development/scripts/gulp-push"
 Moodle_App_Translation:
 - filePath: "/general/development/process/translation/moodleapp.md"
   slug: "/general/development/process/translation/moodleapp"
@@ -1522,14 +1522,14 @@ Security:Unauthorised_access:
 - filePath: "/general/development/policies/security/unauthorised-access.md"
   slug: "/general/development/policies/security/unauthorised-access"
 Sending_custom_Push_Notifications_to_the_Moodle_App:
-- filePath: "/docs/moodleapp/development/custom-push-notifications.md"
-  slug: "/docs/moodleapp/development/custom-push-notifications"
+- filePath: "/general/app/development/custom-push-notifications.md"
+  slug: "/general/app/development/custom-push-notifications"
 Setting_up_development_environment:
 - filePath: "general/development/gettingstarted.md"
   slug: "general/development/gettingstarted"
 Setting_up_your_development_environment_for_the_Moodle_App:
-- filePath: "/docs/moodleapp/development/setup/index.md"
-  slug: "/docs/moodleapp/development/setup"
+- filePath: "/general/app/development/setup/index.md"
+  slug: "/general/app/development/setup"
 Starting_a_new_language_pack:
 - filePath: "/general/development/process/translation/langpack/index.md"
   slug: "/general/development/process/translation/langpack"
@@ -1591,8 +1591,8 @@ Translation_priority:
 - filePath: "/general/development/process/translation/langpack/priority.md"
   slug: "/general/development/process/translation/langpack/priority"
 Unit_testing_for_the_Moodle_App:
-- filePath: "/docs/moodleapp/development/testing/unit-testing.md"
-  slug: "/docs/moodleapp/development/testing/unit-testing"
+- filePath: "/general/app/development/testing/unit-testing.md"
+  slug: "/general/app/development/testing/unit-testing"
 Upgrade_API:
 - filePath: "/docs/guides/upgrade/index.md"
   slug: "/docs/guides/upgrade/"
@@ -1600,8 +1600,8 @@ Upgrade_notes:
 - filePath: "docs/apis/_files/upgrade-txt.mdx"
   slug: "docs/apis/commonfiles#upgradetxt"
 Using_the_Moodle_App_in_a_browser:
-- filePath: "/docs/moodleapp/development/setup/app-in-browser.md"
-  slug: "/docs/moodleapp/development/setup/app-in-browser"
+- filePath: "/general/app/development/setup/app-in-browser.md"
+  slug: "/general/app/development/setup/app-in-browser"
 Writing_acceptance_tests:
 - filePath: "/general/development/tools/behat/writing.md"
   slug: "/general/development/tools/behat/writing"

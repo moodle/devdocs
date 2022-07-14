@@ -81,7 +81,7 @@ const FeatureList = [
         linkText: 'Check the release notes',
     },
     {
-        link: '/docs/moodleapp',
+        link: '/general/app',
         title: 'Moodle App',
         Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
         description: (

@@ -33,7 +33,7 @@ tags:
 | 5. | Send the applications to the stores for review. | Integration Lead |
 | 6. | Create a TAG/Release in github ([moodlehq/moodleapp](https://github.com/moodlehq/moodleapp/releases)) with the version number. | Integration Lead |
 | 7. | Mark the issue and the [version](https://tracker.moodle.org/projects/MOBILE?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page) as released in the tracker. | Integration Lead |
-| 8. | Update [release notes](/general/app_releases). | Integration Lead |
+| 8. | Update [release notes](../../app_releases.md). | Integration Lead |
 
 ## The following days
 
@@ -51,4 +51,4 @@ tags:
 
 ## See also
 
-- [Moodle App Release Notes](/general/app_releases)
+- [Moodle App Release Notes](../../app_releases.md)

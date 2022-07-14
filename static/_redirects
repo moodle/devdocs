@@ -8,3 +8,7 @@
 # Issue #
 # Redirect integration-review to integration
 /general/development/process/integration-review /general/development/process/integration
+
+# Issue #86
+# Redirect /docs/moodleapp to /general/app
+/docs/moodleapp /general/app

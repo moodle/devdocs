@@ -18,6 +18,6 @@ This documentation is version-specific and includes a range of useful guides and
 - Browse our [Moodle feature](./guides.md) deep dives
 - You may want to read the [Release notes](/general/releases/4.0) for Moodle 4.0
 - Have a plugin that you want to prepare for Moodle 4.0, check out the [Developer update notes](./devupdate.md)
-- Interested in supporting the Moodle App in your plugins? Read the [Moodle App documentation](./moodleapp.md)
+- Interested in supporting the Moodle App in your plugins? Read the [Moodle App documentation](/general/app)
 
 :::
