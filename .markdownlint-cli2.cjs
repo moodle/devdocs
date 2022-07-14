@@ -164,6 +164,9 @@ config.MD033 = {
         "InvalidExample",
         "ReactPlayer",
         "Link",
+        "ReleaseNoteIntro",
+        "ReleaseDate",
+        "ReleaseVersion",
     ]
 };
 
