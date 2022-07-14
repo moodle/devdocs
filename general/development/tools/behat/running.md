@@ -424,7 +424,7 @@ With the `--tags` or the `-name` Behat options you can filter which tests are go
 - `@_switch_window`: All the tests that are using the `I switch to "NAME" window` step should be tagged as not all browsers manage them properly.
 - `@_switch_iframe`: All the tests that are using the `I switch to "NAME" iframe` steps should be tagged as it is an advanced feature and some browsers may have problems dealing with them
 - `@_cross_browser`: All the tests that should run against multiple combinations of browsers + OS in a regular basis. The features that are sensitive to different combinations of OS and browsers should be tagged as @_cross_browser.
-- `@componentname`: Moodle features uses the [Frankenstyle](https://docs.moodle.org/dev/Frankenstyle) component name to tag the features according to the Moodle subsystem they belong to.
+- `@componentname`: Moodle features uses the [Frankenstyle](../../policies/codingstyle/frankenstyle.md) component name to tag the features according to the Moodle subsystem they belong to.
 
 #### Output formats
 

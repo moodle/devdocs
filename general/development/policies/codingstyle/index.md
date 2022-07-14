@@ -417,7 +417,7 @@ This has now been deprecated. Please use `stdClass` or the array instantiation i
 
 ### Functions and Methods
 
-Function names should be simple English lowercase words, and start with the [Frankenstyle](https://docs.moodle.org/dev/Frankenstyle) prefix and plugin name to avoid conflicts between plugins. Words should be separated by underscores.
+Function names should be simple English lowercase words, and start with the [Frankenstyle](./frankenstyle.md) prefix and plugin name to avoid conflicts between plugins. Words should be separated by underscores.
 
 Verbosity is encouraged: function names should be as illustrative as is practical to enhance understanding.
 
@@ -536,7 +536,7 @@ Core global variables in Moodle are identified using uppercase variables (that i
 
 ### Constants
 
-Constants should always be in upper case, and always start with [Frankenstyle](https://docs.moodle.org/dev/Frankenstyle) prefix and plugin name (in case of activities the module name only for legacy reasons). They should have words separated by underscores.
+Constants should always be in upper case, and always start with [Frankenstyle](./frankenstyle.md) prefix and plugin name (in case of activities the module name only for legacy reasons). They should have words separated by underscores.
 
 <ValidExample>
 
@@ -556,9 +556,9 @@ Use lower case for **true**, **false** and **null**.
 Formal namespaces are required for any new classes in Moodle. The following exceptions apply:
 
 1. There is no requirement to move existing non-namespaced classes to a namespace; and
-1. Where an existing mechanism exists for loading a class, and that mechanism does not support the use of a namespaced class, the existing [Frankenstyle](https://docs.moodle.org/dev/Frankenstyle) prefix on the class name will be allowed.
+1. Where an existing mechanism exists for loading a class, and that mechanism does not support the use of a namespaced class, the existing [Frankenstyle](./frankenstyle.md) prefix on the class name will be allowed.
 
-The use of a [Frankenstyle prefix on class names](https://docs.moodle.org/dev/Frankenstyle#Class_names) is deprecated and should only be used in the above exceptions.
+The use of a [Frankenstyle prefix on class names](./frankenstyle.md#class-names) is deprecated and should only be used in the above exceptions.
 
 <ValidExample>
 
@@ -1420,7 +1420,7 @@ The access can be used to specify access control for an element
 
 ##### `@package`
 
-The package tag should always be used to label php files with the correct [Frankenstyle](https://docs.moodle.org/dev/Frankenstyle) component name. Full rules are explained on that page, but in summary:
+The package tag should always be used to label php files with the correct [Frankenstyle](./frankenstyle.md) component name. Full rules are explained on that page, but in summary:
 
 1. If the file is part of any component plugin, then use the plugin component name (for example **mod_quiz** or **gradereport_xls**)
 1. If the file is part of a core subsystem then it will be core_xxxx where xxxx is the name defined in get_core_subsystems(). (for example **core_enrol** or **core_group**)

@@ -129,7 +129,7 @@ The Upgrade API makes _very intensive use_ of other APIs, including [DDL](../../
 
 In addition to the relevant files located in the db folder, a number of functions can also be defined:
 
-- **xmldb_(main|[frankenstyle](https://docs.moodle.org/dev/Frankenstyle))_install()**: to be used in install.php files.
+- **xmldb_(main|[frankenstyle](/general/development/policies/codingstyle/frankenstyle))_install()**: to be used in install.php files.
 - **xmldb_(main|frankenstyle)_uninstall()**: to be used in uninstall.php files.
 - **xmldb_(main|frankenstyle)_upgrade()**: to be used in upgrade.php files.
 

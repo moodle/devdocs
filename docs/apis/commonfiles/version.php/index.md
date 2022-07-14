@@ -22,7 +22,7 @@ It contains a number of properties, which are used during the plugin installatio
     types={["string"]}
 />
 
-The component value contains the name of the plugin in its full [frankenstyle](https://docs.moodle.org/dev/Frankenstyle) format.
+The component value contains the name of the plugin in its full [frankenstyle](/general/development/policies/codingstyle/frankenstyle) format.
 
 ```php
 $plugin->component = 'plugintype_pluginname';

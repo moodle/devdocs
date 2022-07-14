@@ -20,7 +20,7 @@ The following documentation is also related:
 Files are conceptually stored in _file areas_. A file area is uniquely identified by:
 
 - A `contextid`.
-- A full component name (using the [Frankenstyle](https://docs.moodle.org/dev/Frankenstyle) format), for example `course`, `mod_forum`, `mod_glossary`, `block_html`.
+- A full component name (using the [Frankenstyle](/general/development/policies/codingstyle/frankenstyle)/frankenstyle) format), for example `course`, `mod_forum`, `mod_glossary`, `block_html`.
 - A file area type, for example `intro` or `post`.
 - A unique `itemid`. Typically if there is only one of a file area per context, then the `itemid` is `0`, whilst if there can be multiple instances of a file area within a context, then the id of the item it relates to is used. For example in the course introduction text area, there is only one course introduction per course, so the `itemid` is set to `0`, whilst in a forum each forum post is within the same context, and the `itemid` should be the id of the post that it relates to.
 

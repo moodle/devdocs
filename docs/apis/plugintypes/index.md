@@ -48,7 +48,7 @@ The underscore character is not supported in activity modules for legacy reasons
 
 <!-- cspell:ignore datapreset , ltisource , ltiservice , forumreport , accessrule , logstore -->
 
-| Plugin type | Component name ([Frankenstyle](https://docs.moodle.org/dev/Frankenstyle)) | Moodle path | Description | Moodle versions |
+| Plugin type | Component name ([Frankenstyle](/general/development/policies/codingstyle/frankenstyle)) | Moodle path | Description | Moodle versions |
 | --- | --- | --- | --- | --- |
 | [Activity modules](./mod/index.mdx) | mod | /mod | Activity modules are essential types of plugins in Moodle as they provide activities in courses. For example: Forum, Quiz and Assignment. | 1.0+ |
 | [Antivirus plugins](./antivirus/index.mdx) | antivirus | /lib/antivirus | Antivirus scanner plugins provide functionality for virus scanning user uploaded files using third-party virus scanning tools in Moodle. For example: ClamAV. | 3.1+ |
@@ -137,6 +137,6 @@ foreach ($pluginman->get_plugin_types() as $type => $dir) {
 
 - [Guidelines for contributing code](https://docs.moodle.org/dev/Guidelines_for_contributed_code)
 - [Core APIs](../../apis.md)
-- [Frankenstyle](https://docs.moodle.org/dev/Frankenstyle)
+- [Frankenstyle](/general/development/policies/codingstyle/frankenstyle)
 - [Moodle Plugins directory](http://moodle.org/plugins)
 - [Tutorial](https://docs.moodle.org/dev/Tutorial) to help you learn how to write plugins for Moodle from start to finish, while showing you how to navigate the most important developer documentation along the way.
