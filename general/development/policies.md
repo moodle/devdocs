@@ -114,7 +114,7 @@ It includes components from both Twitter Bootstrap, and from Moodle, and it disp
 
 :::info
 
-For more about this, see [Component library](https://docs.moodle.org/dev/Component_library).
+For more about this, see [Component library](./tools/component-library.md).
 
 :::
 

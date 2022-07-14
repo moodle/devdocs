@@ -70,6 +70,9 @@ Community_credits:
 Component_Lead_Review:
 - filePath: "/general/development/process/integration/clr.md"
   slug: "/general/development/process/integration/clr"
+Component_library:
+- filePath: "/general/development/tools/component-library.md"
+  slug: "/general/development/tools/component-library"
 Contributing_a_translation:
 - filePath: "/general/development/process/translation/contributing.md"
   slug: "/general/development/process/translation/contributing"
@@ -1197,9 +1200,6 @@ Moodle_4.0_developer_update:
 Moodle_4.0_release_notes:
 - filePath: "/general/releases/4.0.md"
   slug: "/general/releases/4.0"
-Moodle_and_PHP:
-- filePath: "/general/development/policies/php.md"
-  slug: "/general/development/php"
 Moodle_App:
 - filePath: "/docs/moodleapp.md"
   slug: "/docs/moodleapp"
@@ -1392,6 +1392,9 @@ Moodle_Mobile_3.9.5_release_notes:
 Moodle_Penetration_Testing:
 - filePath: "/general/development/process/security/penetration-testing.md"
   slug: "/general/development/process/security/penetration-testing"
+Moodle_and_PHP:
+- filePath: "/general/development/policies/php.md"
+  slug: "/general/development/php"
 Moodle_libraries_credits:
 - filePath: "/general/community/credits/thirdpartylibs.md"
   slug: "/general/community/credits/thirdpartylibs"
