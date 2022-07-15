@@ -69,7 +69,7 @@ Ensure that:
 
 ### Component library
 
-Any improvement or new feature that introduces UI features to Moodle core from Moodle 4.0 onwards must be documented within the [Component library](https://docs.moodle.org/dev/Component_library).
+Any improvement or new feature that introduces UI features to Moodle core from Moodle 4.0 onwards must be documented within the [Component library](../tools/component-library.md).
 
 This applies to any feature introduced or updated from Moodle 4.0 onwards, which:
 
@@ -80,7 +80,7 @@ This applies to any feature introduced or updated from Moodle 4.0 onwards, which
 
 Ensure that any new User Interface feature in Moodle 4.0 or later which matches the above criteria:
 
-- Is documented in the [Component library](https://docs.moodle.org/dev/Component_library)
+- Is documented in the [Component library](../tools/component-library.md)
 - Includes examples of usage
 - Has appropriate descriptions
 - Respects all Moodle-supplied themes
