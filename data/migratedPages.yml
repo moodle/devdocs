@@ -40,6 +40,12 @@ Automated_Manipulation_of_Strings_2.0:
 Automated_code_review:
 - filePath: "/general/development/tools/cibot.md"
   slug: "/general/development/tools/cibot"
+Availability_API:
+- filePath: "/docs/apis/subsystems/availability/index.md"
+  slug: "/docs/apis/subsystems/availability/"
+Availability_conditions:
+- filePath: "/docs/apis/plugintypes/availability/index.md"
+  slug: "/docs/apis/plugintypes/availability/"
 Backup_API:
 - filePath: "/docs/apis/subsystems/backup/index.md"
   slug: "/docs/apis/subsystems/backup/"

@@ -70,7 +70,7 @@ The [Analytics API](./apis/subsystems/analytics/index.md) allow you to create pr
 
 ### Availability API (availability)
 
-The [Availability API](https://docs.moodle.org/dev/Availability_API) controls access to activities and sections.
+The [Availability API](./apis/subsystems/availability/index.md) controls access to activities and sections.
 
 ### Backup API (backup)
 
@@ -229,7 +229,7 @@ The [Advanced grading API](https://docs.moodle.org/dev/Advanced_grading_API) all
 
 ### Conditional activities API (condition) - deprecated in 2.7
 
-The deprecated [Conditional activities API](https://docs.moodle.org/dev/Conditional_activities_API) used to provide conditional access to modules and sections in Moodle 2.6 and below. It has been replaced by the [Availability API](https://docs.moodle.org/dev/Availability_API).
+The deprecated [Conditional activities API](https://docs.moodle.org/dev/Conditional_activities_API) used to provide conditional access to modules and sections in Moodle 2.6 and below. It has been replaced by the [Availability API](./apis/subsystems/availability/index.md).
 
 ### Groups API (group)
 
