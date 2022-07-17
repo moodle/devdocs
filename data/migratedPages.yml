@@ -1626,6 +1626,9 @@ lib/formslib.php_Testing:
 lib/formslib.php_Usage:
 - filePath: "/docs/apis/subsystems/form/usage.md"
   slug: "/docs/apis/subsystems/form/usage"
+lib/formslib.php_add_checkbox_controller:
+- filePath: "/docs/apis/subsystems/form/advanced/checkbox-controller.md"
+  slug: "/docs/apis/subsystems/form/advanced/checkbox-controller"
 lib/formslib.php_repeat_elements:
 - filePath: "/docs/apis/subsystems/form/advanced/repeat-elements.md"
   slug: "/docs/apis/subsystems/form/advanced/repeat-elements"
