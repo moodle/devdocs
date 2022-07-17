@@ -1629,6 +1629,9 @@ lib/formslib.php_Usage:
 lib/formslib.php_add_checkbox_controller:
 - filePath: "/docs/apis/subsystems/form/advanced/checkbox-controller.md"
   slug: "/docs/apis/subsystems/form/advanced/checkbox-controller"
+lib/formslib.php_no_submit_button_pressed:
+- filePath: "/docs/apis/subsystems/form/advanced/no-submit-button.md"
+  slug: "/docs/apis/subsystems/form/advanced/no-submit-button"
 lib/formslib.php_repeat_elements:
 - filePath: "/docs/apis/subsystems/form/advanced/repeat-elements.md"
   slug: "/docs/apis/subsystems/form/advanced/repeat-elements"
