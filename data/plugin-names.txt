@@ -1,5 +1,5 @@
-# This file contains a list of plugin names.
 # Please keep this file sorted alphabetically.
+# This file contains a list of plugin names.
 airnotifier
 assignfeedback
 atto
@@ -17,13 +17,12 @@ examview
 gradebook
 mnet
 multichoice
-multichoice
-myoverview
 myoverview
 picasa
 questionbank
 scorm
 skydrive
+surveybuilder
 usertours
 videojs
 wordselect

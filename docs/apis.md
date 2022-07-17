@@ -213,7 +213,7 @@ The [https://docs.moodle.org/dev/OpenBadges_User_Documentation Badges] user docu
 
 ### Custom fields API
 
-The [Custom fields API](https://docs.moodle.org/dev/Custom_fields_API) allows you to configure and add custom fields for different entities
+The [Custom fields API](./apis/customfields/index.md) allows you to configure and add custom fields for different entities
 
 ## Activity module APIs
 
