@@ -50,10 +50,13 @@ function getSinceLabel(type, versionNumber, issueNumber) {
         </span>
     );
 
+    const color = type === 'since' ? 'success' : 'warning';
+
     const chip = (
         <Chip
             key={`chip-${type}${normalisedVersionNumber}`}
             label={label}
+            color={color}
             clickable={!!issueNumber}
         />
     );
