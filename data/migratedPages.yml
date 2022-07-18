@@ -40,6 +40,9 @@ Automated_Manipulation_of_Strings_2.0:
 Automated_code_review:
 - filePath: "/general/development/tools/cibot.md"
   slug: "/general/development/tools/cibot"
+Backup_API:
+- filePath: "/docs/apis/subsystems/backup/index.md"
+  slug: "/docs/apis/subsystems/backup/"
 Behat_integration:
 - filePath: "/general/development/tools/behat/index.md"
   slug: "/general/development/tools/behat/"
@@ -1464,6 +1467,9 @@ Repository_API:
 Repository_plugins:
 - filePath: "/docs/apis/plugintypes/repository/index"
   slug: "/docs/apis/plugintypes/repository"
+Restore_API:
+- filePath: "/docs/apis/subsystems/backup/restore.md"
+  slug: "/docs/apis/subsystems/backup/restore"
 Roadmap:
 - filePath: "/general/community/roadmap.md"
   slug: "/general/community/roadmap"

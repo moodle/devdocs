@@ -74,7 +74,7 @@ The [Availability API](https://docs.moodle.org/dev/Availability_API) controls ac
 
 ### Backup API (backup)
 
-The [Backup API](https://docs.moodle.org/dev/Backup_API) defines exactly how to convert course data into XML for backup purposes, and the [Restore API](https://docs.moodle.org/dev/Restore_API) describes how to convert it back the other way.
+The [Backup API](./apis/subsystems/backup/index.md) defines exactly how to convert course data into XML for backup purposes, and the [Restore API](./apis/subsystems/backup/restore.md) describes how to convert it back the other way.
 
 ### Cache API (cache)
 

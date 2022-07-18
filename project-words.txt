@@ -103,6 +103,7 @@ columnsortorder
 competencyframeworks
 completionstatus
 componentlibrary
+configdata
 contextcourse
 contextcoursecat
 contextid
@@ -248,6 +249,7 @@ safeoverride
 scormreport
 selfcompletion
 sesskey
+settingslib
 setuplib
 shortanswer
 showdebugging
@@ -258,6 +260,7 @@ siteidentifier
 sitepolicynotagreed
 smallmessage
 splitview
+stepslib
 strftimedate
 strikethrough
 subplugin
