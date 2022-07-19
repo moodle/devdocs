@@ -18,8 +18,6 @@ Moodle allows data manipulation to take place within a database transaction, kno
 5. If one transaction (at any level) has been marked for `allow_commit()` it will be possible to change that status to `rollback()` in any outer level
 6. It will be **optional** to catch exceptions when using transactions, but if they are caught, then it is mandatory to mark the transaction for `rollback()`
 7. Any explicit `rollback()` call will pass the exception originating from it, as in `rollback($exception)`, to be re-thrown
-8. This API will work in a natural and similar fashion to the current recordsets code
-9. We **recommend** the use of InnoDB for 2.0 in environmental tests. At some point in the future this may become a **must**.
 
 ## The API
 
