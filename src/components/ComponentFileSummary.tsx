@@ -128,6 +128,8 @@ export interface ComponentFileSummaryProps {
     children?: React.ReactNode,
     required?: boolean,
     legacy?: boolean,
+    refreshedDuringUpgrade?: boolean,
+    refreshedDuringPurge?: boolean,
 }
 
 export default function ComponentFileSummary(props: ComponentFileSummaryProps): JSX.Element {

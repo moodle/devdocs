@@ -28,6 +28,7 @@ import DbMessagesPHP from './db-messages-php';
 import DbMobilePHP from './db-mobile-php';
 import DbRenamedclassesPHP from './db-renamedclasses-php';
 import DbServicesPHP from './db-services-php';
+import DbTasksPHP from './db-tasks-php';
 import DbUninstallPHP from './db-uninstall-php';
 import DbUpgradePHP from './db-upgrade-php';
 import EnvironmentXML from './environment-xml';
@@ -58,6 +59,7 @@ export {
     DbMobilePHP,
     DbRenamedclassesPHP,
     DbServicesPHP,
+    DbTasksPHP,
     DbUninstallPHP,
     EnvironmentXML,
     Lang,
