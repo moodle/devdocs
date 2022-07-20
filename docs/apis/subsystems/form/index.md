@@ -252,6 +252,8 @@ The [disabledIf()](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#
 
 ### hideIf()
 
+import { Since } from '@site/src/components';
+
 <Since version="3.4" />
 
 The [hideif()](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#hideIf) function can be used to conditionally _hide_ a group of elements, or and individual element depending on the state of other form elements.
