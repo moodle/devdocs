@@ -18,12 +18,37 @@
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 const visit = require('unist-util-visit');
 
+const projects = [
+    'MDL',
+    'MDLQA',
+    'MDLSITE',
+    'MOBILE',
+    'CONTRIB',
+];
+
+const expression = new RegExp(`(?<issueNumber>(${projects.join('|')})\\-\\d+)`, 'g');
+
+/**
+ * Get the AST for a link pointing to the Moodle Tracker for the specified issue number.
+ *
+ * @param {String} issueNumber
+ * @returns {Tree}
+ */
+const getLinkFromIssueNumber = (issueNumber) => ({
+    type: 'link',
+    url: `https://tracker.moodle.org/browse/${issueNumber}`,
+    children: [{
+        type: 'text',
+        value: issueNumber,
+    }],
+});
+
 /**
  * Update a text representation of a tracker issue into a link to that issue.
  *
  * These are in the format:
  *
- *     {tracker MDL-12345}
+ *     [PROJECT]-12345
  *
  * @param {Tree} node
  * @param {Number} index
@@ -31,68 +56,25 @@ const visit = require('unist-util-visit');
  */
 const updateTextLink = (node, index, parent) => {
     const { value } = node;
-    const tokenStart = value.indexOf('{tracker ');
-    if (tokenStart === -1) {
+
+    if (parent.type === 'link') {
         return null;
     }
 
-    const linkStart = tokenStart + '{tracker '.length;
-    const linkEnd = value.indexOf('}', linkStart);
+    const match = expression.exec(value);
+    if (match === null) {
+        return null;
+    }
 
-    const tokenEnd = linkEnd + 1;
-    const issueNumber = value.substring(linkStart, linkEnd);
-
-    const newValue = value.substring(1, tokenStart) + issueNumber + value.substring(tokenEnd);
-    console.warn(
-        `The {tracker ${issueNumber}\` syntax has been deprecated.`
-        + `Please use a [${issueNumber}](https://tracker.moodle.org/browse/${issueNumber})`,
-    );
+    const tokenStart = match.index;
+    const tokenEnd = match.index + match.groups.issueNumber.length;
 
     parent.children.splice(index, 1, {
         type: 'text',
-        value: newValue,
-    });
-
-    return null;
-};
-
-/**
- * Update an inline representation of a tracker issue into a link to that issue.
- *
- * These are in the format:
- *
- *     {tracker}`MDL-12345`
- *
- * @param {Tree} node
- * @param {Number} index
- * @param {Tree} parent
- */
-const updateInlineLink = (node, index, parent) => {
-    const tokenStart = node.value.indexOf('{tracker}');
-    if (tokenStart === -1) {
-        return null;
-    }
-
-    if (parent.children.length < index + 2) {
-        return null;
-    }
-
-    const followingNode = parent.children[index + 1];
-    if (followingNode.type !== 'inlineCode') {
-        return null;
-    }
-
-    const issueNumber = followingNode.value;
-
-    const newValue = node.value.substring(0, tokenStart) + issueNumber;
-    console.warn(
-        `The {tracker}\`${issueNumber}\` syntax has been deprecated.`
-        + `Please use a [${newValue}](https://tracker.moodle.org/browse/${newValue})`,
-    );
-
-    parent.children.splice(index, 2, {
+        value: node.value.substring(0, tokenStart),
+    }, getLinkFromIssueNumber(match.groups.issueNumber), {
         type: 'text',
-        value: newValue,
+        value: node.value.substring(tokenEnd),
     });
 
     return null;
@@ -102,7 +84,6 @@ const plugin = () => {
     const transformer = async (ast) => {
         visit(ast, 'text', (node, index, parent) => {
             updateTextLink(node, index, parent);
-            updateInlineLink(node, index, parent);
         });
     };
     return transformer;

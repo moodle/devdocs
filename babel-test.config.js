@@ -15,5 +15,10 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 module.exports = {
-    presets: [require.resolve('@docusaurus/core/lib/babel/preset')],
+    presets: [
+        require.resolve('@babel/preset-env'),
+    ],
+    plugins: [
+        ['@babel/transform-runtime'],
+    ],
 };
