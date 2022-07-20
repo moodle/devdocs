@@ -484,6 +484,26 @@ public function get(?string $default = null): string;
 
 :::
 
+### Web service functions
+
+Web service functions should be of the format `{fullcomponent}_{methodname}`, where
+
+- `{fullcomponent}` is the full Frankenstyle name of the component
+- `{methodname}` is the name of the method in the form of `{verb}_{noun}`
+  - `{verb}` - preferably one of `get`, `create`, `delete`, `update` or any verb that describes the action well
+  - `{noun}` - object(s) or entities that the action affects
+
+<ValidExample>
+
+- core_block_get_dashboard_blocks
+- core_calendar_update_event_start_day
+- core_cohort_create_cohorts
+- core_cohort_delete_cohort_members
+- core_auth_confirm_user
+- core_auth_is_minor
+
+</ValidExample>
+
 ### Variables
 
 Variable names should always be easy-to-read, meaningful lower-case English words. If you really need more than one word then run them together, but keep them as short as possible. Use **plural** names for arrays of objects. Use **positive** variables names always (allow, enable not prevent, disable).
