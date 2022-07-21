@@ -33,6 +33,23 @@ Anyone can get involved with, and add to, these resources - you don't have to be
 
 If you need help, please reach out to us and we will do our best to advise you.
 
+## Getting started
+
+Our documentation is built using [Docusaurus](https://docusarus.io), a powerful open source documentation project written in JavaScript. For more detailed information, see our [installation guide](./installation.md) to install your development environment and get started.
+
+:::tip
+
+If you're eager to jump in, then the fastest way to set up your development environment is to have [NVM](https://github.com/nvm-sh/nvm) installed and then run:
+
+```console
+nvm install
+npm i -g yarn
+yarn
+yarn start
+```
+
+:::
+
 ### Migrating legacy docs
 
 We are currently migrating documentation from our [legacy documentation site](https://docs.moodle.org/dev), and one of the best ways to contribute with documentation is to help with this migration process.
@@ -160,48 +177,6 @@ If you only wish to make a small change, you may want to use the [GitHub Edit in
 
 ## Development
 
-Our documentation is built using [Docusaurus](https://docusarus.io), a powerful open source documentation project written in JavaScript.
-
-It's easy to get your development environment set up using [Yarn](https://yarnpkg.com/), and we we recommend that you use [NVM](https://github.com/nvm-sh/nvm) for your NodeJS version management. You can check our [.nvmrc](https://github.com/moodle/devdocs/blob/main/.nvmrc) for the best version of NodeJS to use.
-
-We also have a [Gitpod](#Quick-start-with-Gitpod) configuration if you want to jump straight in and have a go
-
-### Installation
-
-If you contribute regularly to our documentation, then we recommend you setup a local development environment for the best results.
-
-To set up a local development environment:
-
-1. Ensure you have:
-   1. [NVM](https://github.com/nvm-sh/nvm)
-   1. The most appropriate version of NodeJS by running `nvm install`
-   1. [Yarn](https://yarnpkg.com/)
-1. After cloning the repository, run `yarn install` in the root of the repository. This will install all dependencies as well as build all local packages.
-1. To start a development server, run `yarn start`.
-
-### Quick start with Gitpod
-
-Gitpod is a free, cloud-based, development environment providing VS Code and a suitable development environment right in your browser.
-
-By [launching your workspace](https://gitpod.io/#https://github.com/moodle/devdocs) you can automatically:
-
-- clone our devdocs repo
-- install all dependencies
-- run `yarn start`
-
-You can write and preview your contributions from right within your browser, and
-even commit them and create a pull request.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/moodle/devdocs)
-
-GitHub has also launched their own lightweight online editor which integrates tightly with GitHub. Take a look at [github.dev](https://github.dev/moodle/devdocs).
-
-:::info
-
-Gitpod is an alternative to local development and completely optional. We recommend [setting up a local development environment](#installation) if you plan to contribute regularly.
-
-:::
-
 ### Style guidelines
 
 A set of writing and coding style guidelines for this documentation will be documented in more detail in the [style guides](./style-guides.md).
@@ -212,7 +187,7 @@ See our [linting and spelling](./linting.md) documentation for more information 
 
 :::
 
-## Pull Requests
+### Pull Requests
 
 All pull requests should be opened against the `main` branch, and pushed to your own GitHub fork of the repository.
 
