@@ -16,12 +16,12 @@
  */
 import React from 'react';
 import { ComponentFileSummary } from '../../_utils';
-import type { Props } from '../../_utils';
+import type { ComponentFileSummaryProps } from '../../_utils';
 import DefaultDescription from './lang.md';
 
 const defaultExample = "$string['pluginname'] = 'The name of my plugin will go here';";
 
-export default (initialProps: Props): ComponentFileSummary => (
+export default (initialProps: ComponentFileSummaryProps): JSX.Element => (
     <ComponentFileSummary
         filepath="/lang/en/plugintype_pluginname.php"
         refreshedDuringPurge

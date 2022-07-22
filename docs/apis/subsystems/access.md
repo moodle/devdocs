@@ -167,7 +167,7 @@ This function does following:
 - it verifies that user is logged in before accessing any course or activities (not-logged-in users can not enter any courses).
 - user is logged in as gu
 - verify access to hidden courses and activities
-- if an activity is specified, verify any [availability restrictions](https://docs.moodle.org/dev/Availability_API) for the activity
+- if an activity is specified, verify any [availability restrictions](./availability/index.md) for the activity
 - verify that user is either enrolled or has capability 'moodle/course:view' or some enrol plugin gives them temporary guest access
 - logs access to courses
 
