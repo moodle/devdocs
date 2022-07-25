@@ -593,6 +593,7 @@ Luuk
 Lévesque
 Macgirvin
 Madden
+Mady
 Magill
 Mahmoud
 Mahmoud.Kassaei
@@ -836,6 +837,7 @@ Ritchey
 Robert
 Robot
 Robynstar
+Rodrigo
 Roes
 Roeser
 Roger
@@ -901,6 +903,7 @@ Shashikant
 Sheremeta
 Shintaro
 Shwab
+Silva
 Silver
 Silvia
 Simeon
