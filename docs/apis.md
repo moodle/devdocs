@@ -58,7 +58,7 @@ The [Moodlelib API](https://docs.moodle.org/dev/Moodlelib_API) is the central li
 
 ### Admin settings API (admin)
 
-The [Admin settings](https://docs.moodle.org/dev/Admin_settings) API deals with providing configuration options for each plugin and Moodle core.
+The [Admin settings](./apis/other/admin-settings.md) API deals with providing configuration options for each plugin and Moodle core.
 
 ### Admin presets API (adminpresets)
 
