@@ -143,7 +143,7 @@ function [component_name]_pluginfile(
 function mod_myplugin_pluginfile(
     $course,
     $cm,
-    $context.
+    $context,
     string $filearea,
     array $args,
     bool $forcedownload,
@@ -176,7 +176,7 @@ function mod_myplugin_pluginfile(
     // The itemid can be used to check access to a record, and ensure that the
     // record belongs to the specifeid context. For example:
     if ($filearea === 'expectedfilearea') {
-        $post = $DB->get_record('myplugin_posts', ['id' => $itemid]');
+        $post = $DB->get_record('myplugin_posts', ['id' => $itemid]);
         if ($post->myplugin !== $context->instanceid) {
             // This post does not belong to the requested context.
             return false;
@@ -194,7 +194,7 @@ function mod_myplugin_pluginfile(
     }
 
     // For a plugin which does not specify the itemid, you may want to use:
-    $itemid = null to make your code more consistent.
+    $itemid = null; //to make your code more consistent.
 
     // Extract the filename / filepath from the $args array.
     $filename = array_pop($args); // The last item in the $args array.
@@ -215,7 +215,8 @@ function mod_myplugin_pluginfile(
     }
 
     // We can now send the file back to the browser - in this case with a cache lifetime of 1 day and no filtering.
-    send_stored_file($file, DAY_SECS, 0, $forcedownload, $options);
+    $daySecs = 60*60*24;
+    send_stored_file($file, $daySecs, 0, $forcedownload, $options);
 }
 ```
 
