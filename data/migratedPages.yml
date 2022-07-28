@@ -180,6 +180,9 @@ Filters:
 Form_API:
 - filePath: "/docs/apis/subsystems/form/index.md"
   slug: "/docs/apis/subsystems/form/"
+Frankenstyle:
+- filePath: "/general/development/policies/codingstyle/frankenstyle.md"
+  slug: "/general/development/policies/codingstyle/frankenstyle"
 Github_actions_integration:
 - filePath: "/general/development/tools/gha.md"
   slug: "/general/development/tools/gha"

@@ -320,7 +320,7 @@ The helper takes two comma separated arguments. The first is the desired length 
 
 ## Template files
 
-Templates are saved in `templates/*.mustache` files within core components and plugins folders. When loading them, templates are identified by their [full component name](https://docs.moodle.org/dev/Frankenstyle) followed by slash and the filename without the file extension.
+Templates are saved in `templates/*.mustache` files within core components and plugins folders. When loading them, templates are identified by their [full component name](/general/development/policies/codingstyle/frankenstyle) followed by slash and the filename without the file extension.
 
 :::info Example
 
