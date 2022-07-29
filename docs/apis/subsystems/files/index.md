@@ -193,7 +193,7 @@ function mod_myplugin_pluginfile(
         // false here.
     }
 
-    // For a plugin which does not specify the itemid, you may want to use:
+    // For a plugin which does not specify the itemid, you may want to use the following to keep your code consistent:
     $itemid = null; //to make your code more consistent.
 
     // Extract the filename / filepath from the $args array.
