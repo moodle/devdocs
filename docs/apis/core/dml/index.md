@@ -48,7 +48,7 @@ function my_function_making_use_of_database() {
 - All the `$table` parameters in the functions are meant to be the table name without prefixes:
 
 ```php
-$user = $DB->get_record('user', [ => '1']('id'));
+$user = $DB->get_record('user', ['id' => '1']);
 ```
 
 - In custom SQL queries, table names must be enclosed between curly braces. They will be then automatically converted to the real prefixed table name. There is no need to access <tt>$CFG->prefix</tt>
