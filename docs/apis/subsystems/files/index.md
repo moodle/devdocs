@@ -215,8 +215,7 @@ function mod_myplugin_pluginfile(
     }
 
     // We can now send the file back to the browser - in this case with a cache lifetime of 1 day and no filtering.
-    $daySecs = 60*60*24;
-    send_stored_file($file, $daySecs, 0, $forcedownload, $options);
+    send_stored_file($file, DAY_SECS, 0, $forcedownload, $options);
 }
 ```
 
