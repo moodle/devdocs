@@ -143,7 +143,7 @@ function [component_name]_pluginfile(
 function mod_myplugin_pluginfile(
     $course,
     $cm,
-    $context.
+    $context,
     string $filearea,
     array $args,
     bool $forcedownload,
@@ -176,7 +176,7 @@ function mod_myplugin_pluginfile(
     // The itemid can be used to check access to a record, and ensure that the
     // record belongs to the specifeid context. For example:
     if ($filearea === 'expectedfilearea') {
-        $post = $DB->get_record('myplugin_posts', ['id' => $itemid]');
+        $post = $DB->get_record('myplugin_posts', ['id' => $itemid]);
         if ($post->myplugin !== $context->instanceid) {
             // This post does not belong to the requested context.
             return false;
@@ -193,8 +193,8 @@ function mod_myplugin_pluginfile(
         // false here.
     }
 
-    // For a plugin which does not specify the itemid, you may want to use:
-    $itemid = null to make your code more consistent.
+    // For a plugin which does not specify the itemid, you may want to use the following to keep your code consistent:
+    // $itemid = null;
 
     // Extract the filename / filepath from the $args array.
     $filename = array_pop($args); // The last item in the $args array.
