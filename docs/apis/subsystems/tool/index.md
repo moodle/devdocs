@@ -220,5 +220,5 @@ An OK rule of thumb is: You can use an external page, which might use formslib, 
 - [adding settings for activity modules](https://docs.moodle.org/dev/Modules)
 - [adding admin reports to the tree](https://docs.moodle.org/dev/Admin_reports#How_your_report_gets_included_in_the_admin_tree)
 - configuration of repository plugins
-- [configuration for filter](../plugintypes/filter/index.md#adding-a-settings-screen)
+- [configuration for filter](../../plugintypes/filter/index.md#adding-a-settings-screen)
 - [Other developer documentation](https://docs.moodle.org/dev/Developer_documentation)
