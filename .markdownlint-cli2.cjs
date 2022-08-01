@@ -238,6 +238,9 @@ config.renamedLinks = {
     renames: [{
         oldFile: '/docs/apis/core/form/index.md',
         newFile: '/docs/apis/subsystems/form/index.md',
+    }, {
+        oldFile: '/docs/apis/subsystems/tool/index.md',
+        newFile: '/docs/apis/subsystems/admin/index.md',
     }],
 };
 

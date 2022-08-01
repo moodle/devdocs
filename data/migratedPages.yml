@@ -23,8 +23,8 @@ Add_a_block_cleanup:
 - filePath: "/general/projects/code/block-cleanup.md"
   slug: "/general/projects/code/block-cleanup"
 Admin_settings:
-- filePath: "/docs/apis/subsystems/tool/index.md"
-  slug: "/docs/apis/subsystems/tool/"
+- filePath: "/docs/apis/subsystems/admin/index.md"
+  slug: "/docs/apis/subsystems/admin/"
 Analytics_API:
 - filePath: "/docs/apis/subsystems/analytics/index.md"
   slug: "/docs/apis/subsystems/analytics/"
