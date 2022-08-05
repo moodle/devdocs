@@ -1,6 +1,3 @@
-AMOS_manual:
-- filePath: "/general/development/process/translation/amos.md"
-  slug: "/general/development/process/translation/amos"
 Acceptance_testing/Browsers:
 - filePath: "/general/development/tools/behat/browsers/index.md"
   slug: "/general/development/tools/behat/browsers/"
@@ -85,9 +82,6 @@ Component_Lead_Review:
 Component_library:
 - filePath: "/general/development/tools/component-library.md"
   slug: "/general/development/tools/component-library"
-Contributing_a_translation:
-- filePath: "/general/development/process/translation/contributing.md"
-  slug: "/general/development/process/translation/contributing"
 Core_APIs:
 - filePath: "/docs/apis.md"
   slug: "/docs/apis"
@@ -201,9 +195,6 @@ Hardening_new_Roles_system:
 Integration_Review:
 - filePath: "/general/development/process/integration/index.md"
   slug: "/general/development/process/integration"
-List_of_locales_supported_on_Moodle_community_servers:
-- filePath: "/general/development/process/translation/locales.md"
-  slug: "/general/development/process/translation/locales"
 Local_plugins:
 - filePath: "/docs/apis/plugintypes/local/index.mdx"
   slug: "/docs/apis/plugintypes/local"
@@ -213,9 +204,6 @@ Lock_API:
 Machine_learning_backends:
 - filePath: "/docs/apis/plugintypes/mlbackend/index.md"
   slug: "/docs/apis/plugintypes/mlbackend/"
-Maintaining_a_language_pack:
-- filePath: "/general/development/process/translation/maintaining.md"
-  slug: "/general/development/process/translation/maintaining"
 Mission:
 - filePath: "/general/community/mission.md"
   slug: "/general/community/mission"
@@ -1272,9 +1260,6 @@ Moodle_App_Remote_Themes_Upgrade_Guide:
 Moodle_App_Scripts:_gulp_push:
 - filePath: "/general/app/development/scripts/gulp-push.md"
   slug: "/general/app/development/scripts/gulp-push"
-Moodle_App_Translation:
-- filePath: "/general/development/process/translation/moodleapp.md"
-  slug: "/general/development/process/translation/moodleapp"
 Moodle_Development_kit:
 - filePath: "/general/development/tools/mdk.md"
   slug: "/general/development/tools/mdk"
@@ -1551,18 +1536,12 @@ Setting_up_development_environment:
 Setting_up_your_development_environment_for_the_Moodle_App:
 - filePath: "/general/app/development/setup/index.md"
   slug: "/general/app/development/setup"
-Starting_a_new_language_pack:
-- filePath: "/general/development/process/translation/langpack/index.md"
-  slug: "/general/development/process/translation/langpack"
 String_deprecation:
 - filePath: "/general/projects/api/string-deprecation.md"
   slug: "/general/projects/api/string-deprecation"
 Subject_Access_Request_FAQ:
 - filePath: "/docs/apis/subsystems/privacy/faq.md"
   slug: "/docs/apis/subsystems/privacy/faq"
-Table_of_locales:
-- filePath: "/general/development/process/translation/langpack/locales.md"
-  slug: "/general/development/process/translation/langpack/locales"
 Task_API:
 - filePath: "/docs/apis/subsystems/task/index.md"
   slug: "/docs/apis/subsystems/task/"
@@ -1596,24 +1575,6 @@ Tracker_issue_labels:
 Tracker_tips:
 - filePath: "/general/development/tracker/tips.md"
   slug: "/general/development/tracker/tips"
-Translating_Moodle_Docs:
-- filePath: "/general/development/process/translation/docs.md"
-  slug: "/general/development/process/translation/docs"
-Translating_plugins:
-- filePath: "/general/development/process/translation/plugins.md"
-  slug: "/general/development/process/translation/plugins"
-Translation:
-- filePath: "/general/development/process/translation/index.md"
-  slug: "/general/development/process/translation"
-Translation_FAQ:
-- filePath: "/general/development/process/translation/faq.md"
-  slug: "/general/development/process/translation/faq"
-Translation_langconfig:
-- filePath: "/general/development/process/translation/langpack/langconfig.md"
-  slug: "/general/development/process/translation/langpack/langconfig"
-Translation_priority:
-- filePath: "/general/development/process/translation/langpack/priority.md"
-  slug: "/general/development/process/translation/langpack/priority"
 Unit_testing_for_the_Moodle_App:
 - filePath: "/general/app/development/testing/unit-testing.md"
   slug: "/general/app/development/testing/unit-testing"
