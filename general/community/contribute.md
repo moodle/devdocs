@@ -14,7 +14,7 @@ If you want to contribute to Moodle, you can start looking at the following:
 - **Ready to help coding**? Check the [getting started](../development/gettingstarted.md) page.
 - **Share your plugins** in the [Plugins directory](https://moodle.org/plugins).
 - **Adopt an existing plugin**. Look at the [list of plugins seeking a new maintainer](https://moodle.org/plugins/browse.php?list=set&id=61) and read the [Plugins adoption programme](https://moodle.org/mod/forum/discuss.php?d=260354).
-- **Assist with the translation** of Moodle. See [Translation](../development/process/translation/index.md) page.
+- **Assist with the translation** of Moodle. See [Translation](https://docs.moodle.org/en/Translation) page.
 - **Get involved in the developer resources**, [contributing](../documentation/contributing.md) for fixing typos and errors, migrating pages, expanding the content, etc.
 
 :::tip Searching for other ways to contribute?

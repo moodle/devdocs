@@ -12,3 +12,18 @@
 # Issue #86
 # Redirect /docs/moodleapp to /general/app
 /docs/moodleapp /general/app
+
+# Issue #331
+/general/development/process/translation/amos https://docs.moodle.org/en/AMOS_manual
+/general/development/process/translation/contributing https://docs.moodle.org/en/Contributing_a_translation
+/general/development/process/translation/locales https://docs.moodle.org/en/List_of_locales_supported_on_Moodle_community_servers
+/general/development/process/translation/maintaining https://docs.moodle.org/en/Maintaining_a_language_pack
+/general/development/process/translation/moodleapp https://docs.moodle.org/en/Moodle_App_Translation
+/general/development/process/translation/langpack https://docs.moodle.org/en/Starting_a_new_language_pack
+/general/development/process/translation/langpack/locales https://docs.moodle.org/en/Table_of_locales
+/general/development/process/translation/docs https://docs.moodle.org/en/Translating_Moodle_Docs
+/general/development/process/translation/plugins https://docs.moodle.org/en/Translating_plugins
+/general/development/process/translation https://docs.moodle.org/en/Translation
+/general/development/process/translation/faq https://docs.moodle.org/en/Translation_FAQ
+/general/development/process/translation/langpack/langconfig https://docs.moodle.org/en/Translation_langconfig
+/general/development/process/translation/langpack/priority https://docs.moodle.org/en/Translation_priority
