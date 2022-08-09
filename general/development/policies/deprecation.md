@@ -110,7 +110,7 @@ Remember the phpDoc parameter type should also be updated to `null`.
 ```
 
 - Update all calls to the affected function removing the deprecated parameter.
-- Add a mention to corresponding `upgrade.txt` documenting the deprecated method should not be used any more.
+- Add a mention to corresponding `upgrade.txt` documenting the deprecated parameter should not be used any more.
 
 ## See also...
 
