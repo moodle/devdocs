@@ -308,11 +308,9 @@ const getUpdateMigratedPages = (logger) => (client) => async () => {
     const migratedPageData = yaml.load(await readFile(getMigrationPagePath(), 'utf8'));
 
     const getDocIdList = (newDocIds) => {
-        if (Array.isArray(newDocIds)) {
-            return newDocIds.map((newDoc) => newDoc.slug);
-        }
-
-        return [newDocIds.slug];
+        // Ensure that doc ids always have a single leading slash.
+        const ids = Array.isArray(newDocIds) ? newDocIds : [newDocIds];
+        return ids.map((newDoc) => newDoc.slug.replace(/^\/*/, '/'));
     };
 
     const getCurrentMigratedIdsForPage = (pageTitle) => getGetMigratedPageIds(logger)(client)(pageTitle);
