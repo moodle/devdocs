@@ -105,7 +105,7 @@ import EditForm from '!!raw-loader!./_examples/edit_form.php';
     plugintype="block"
     pluginname="pluginname"
     example={EditForm}
-    description="This file is only needed if yourt plugin have a specific configuration form. It is not required for most plugins. We can extend this configuration form, and add custom preferences fields, so that users can better tailor our block to a given task or page."
+    description="This file is only needed if your plugin has a specific configuration form. It is not required for most plugins. We can extend this configuration form, and add custom preferences fields, so that users can better tailor our block to a given task or page."
 />
 
 The example below adds a text attribute to the block instance settings.
@@ -144,7 +144,7 @@ Depending on your plugin needs your main class in `blocks/pluginname/block_plugi
 
 Once the block instance is created, there are several $this attributes that can be used:
 
-- `$this->config` The block instance configuration. By default it is an empty object but if the block has a [edit_form.php](#edit_form.php) file, it will be an object with the form data.
+- `$this->config` The block instance configuration. By default it is an empty object but if the block has an [edit_form.php](#edit_form.php) file, it will be an object with the form data.
 - `$this->content` This variable holds all the actual content that is displayed inside each block. Valid values for it are either NULL or an object of class stdClass, which must have specific member variables depending on the extended block base class.
 - `$this->page` The page object that the block is being displayed on.
 - `$this->context` The context object that the block is being displayed in.
@@ -327,15 +327,15 @@ An optional method to tell Moodle that the block has a global configuration sett
 
 ## Add instance configuration settings
 
-By default, block instances have no configuration settings. If you want to add some, you can add them by adsding a few methods and classes to your block.
+By default, block instances have no configuration settings. If you want to add some, you can add them by adding a few methods and classes to your block.
 
-### Create a edit_form.php file
+### Create an edit_form.php file
 
-To have a configuration form, you need to add a [edit_form.php](#edit_formphp) file into your plugin. After defining the configuration your blck base instance will have all your settings into [$this->config attribute](#block-class-attributes). See the [edit_form.php section above](#edit_formphp) for an example.
+To have a configuration form, you need to add an [edit_form.php](#edit_formphp) file into your plugin. After defining the configuration, your block's base instance will have all your settings in its [$this->config attribute](#block-class-attributes). See the [edit_form.php section above](#edit_formphp) for an example.
 
 :::caution
 
-Note that $this->config is available in all block methods **except the init() one**. This is because init() is called immediately as the block is being created, with the purpose of setting things up. Use [specialization](#specialization) intead.
+Note that $this->config is available in all block methods **except the init() one**. This is because init() is called immediately as the block is being created, with the purpose of setting things up. Use [specialization](#specialization) instead.
 
 :::
 
@@ -347,7 +347,7 @@ You cannot use the 'checkbox' element in the form (once set it will stay set). Y
 
 ### Optional instance_config_save method
 
-By default, all config_* settings will be stored in the `block_instance` table. The complete form data will be encoded in base64 before storing it in the <!-- cspell:disable --> `configdata` <!-- cspell:enable --> field. Every time a block instance is initialized all that data will be decoded in the [$this->config attribute](#block-class-attributes).
+By default, all config_* settings will be stored in the `block_instances` table. The complete form data will be encoded in base64 before storing it in the <!-- cspell:disable --> `configdata` <!-- cspell:enable --> field. Every time a block instance is initialized all that data will be decoded in the [$this->config attribute](#block-class-attributes).
 
 However, for some cases like the Atto HTML editor, you may want to store them in the database instead, or to alter the config data before storing it. In that case you can create a instance_config_save method.
 
