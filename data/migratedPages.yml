@@ -1451,7 +1451,7 @@ QA_testing:
   slug: "/general/development/process/testing/qa"
 Question_bank_plugins:
 - filePath: "/docs/apis/plugintypes/qbank/index.mdx"
-  slug: "docs/apis/plugintypes/qbank"
+  slug: "/docs/apis/plugintypes/qbank"
 Release_process:
 - filePath: "/general/development/process/release/index.md"
   slug: "/general/development/process/release"
@@ -1532,7 +1532,7 @@ Sending_custom_Push_Notifications_to_the_Moodle_App:
   slug: "/general/app/development/custom-push-notifications"
 Setting_up_development_environment:
 - filePath: "general/development/gettingstarted.md"
-  slug: "general/development/gettingstarted"
+  slug: "/general/development/gettingstarted"
 Setting_up_your_development_environment_for_the_Moodle_App:
 - filePath: "/general/app/development/setup/index.md"
   slug: "/general/app/development/setup"
@@ -1583,7 +1583,7 @@ Upgrade_API:
   slug: "/docs/guides/upgrade/"
 Upgrade_notes:
 - filePath: "docs/apis/_files/upgrade-txt.mdx"
-  slug: "docs/apis/commonfiles#upgradetxt"
+  slug: "/docs/apis/commonfiles#upgradetxt"
 Using_the_Moodle_App_in_a_browser:
 - filePath: "/general/app/development/setup/app-in-browser.md"
   slug: "/general/app/development/setup/app-in-browser"
