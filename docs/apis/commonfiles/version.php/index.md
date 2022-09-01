@@ -39,6 +39,8 @@ This value is used during the installation and upgrade process for diagnostics a
 
 The version number of the plugin. The format is partially date based with the form YYYYMMDDXX where XX is an incremental counter for the given year (YYYY), month (MM) and date (DD) of the plugin version's release. Every new plugin version must have this number increased in this file, which is detected by Moodle core and the upgrade process is triggered.
 
+If multiple stable branches of the plugin are maintained, the date part YYYYMMDD should be frozen at the branch forking date and the XX is used for incrementing the value on the given stable branch (allowing up to 100 updates on the given stable branch). The key point is that the version number is always increased both horizontally (within the same stable branch, more recent updates have higher XX than any previous one) and vertically (between any two stable branches, the more recent branch has YYYYMMDD00 higher than the older stable branch). Pay attention to this. It's easy to mess up and hard to fix.
+
 ```php
 $plugin->version = 2022061700;
                 // YYYY
