@@ -146,3 +146,9 @@ $tasks = [
     ],
 ];
 ```
+
+### Disabled tasks
+
+You can create a task that defaults to disabled by setting the field **disabled** to 1. Unless the administrator manually enables your task, it will not run.
+
+This is useful if a task is only required in certain situations and shouldn't run on every server that has your plugin installed.
