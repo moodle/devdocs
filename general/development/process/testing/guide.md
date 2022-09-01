@@ -10,8 +10,9 @@ We recommend that you:
 
 1. Number the steps in your test, and make use of sub-lists.
 2. Only put one action (preparation or validation) on each line - A step should only define a unique operation.
-3. Promote test validations - **Confirm**, **Verify** or **Ensure** - should be in **bold** so that they are easily identifiable.
-4. Make use of the [Jira Markdown formatting](https://tracker.moodle.org/secure/WikiRendererHelpAction.jspa?section=all).
+3. Be explicit when a configuration setting, plugin, etc needs to be enabled - saying "Enable _x_" is not sufficient, instead consider outlining **where** the user needs to go and **what** they need to do to enable _x_. As a rule of thumb, try to write these steps as if the tester has never used Moodle before.
+4. Promote test validations - **Confirm**, **Verify** or **Ensure** - should be in **bold** so that they are easily identifiable.
+5. Make use of the [Jira Markdown formatting](https://tracker.moodle.org/secure/WikiRendererHelpAction.jspa?section=all).
 
 In addition, the following items may be included:
 
