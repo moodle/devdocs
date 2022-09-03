@@ -13,7 +13,7 @@ Developer meetings are open to anyone interested in Moodle development.
 
 :::important
 
-The next meeting is scheduled for August 2022.
+Details about the next meeting (in October) will be available shortly.
 
 :::
 
