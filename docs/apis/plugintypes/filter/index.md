@@ -28,17 +28,17 @@ import {
 
 Filters are a way to automatically transform content before it is output. Filters may be used to:
 
-- Render embedded equations to images (the TeX filter)
-- Links to media files can be automatically converted to an embedded players.
-- Mentions of glossary terms can be automatically converted to links.
+- Render embedded equations to images (the TeX filter).
+- Automatically convert links to media files to embedded players.
+- Automatically convert mentions of glossary terms to links.
 
 Filters are one of the easiest types of plugin to create.
 
-Filters are applied to content passing in to the `format_string()` and `format_text()` functions, which are part of the [Output API](../subsystems/output).
+Filters are applied to content passed into the `format_string()` and `format_text()` functions, which are part of the [Output API](../subsystems/output).
 
 ## File structure
 
-Repository plugins are located in the `/filter` directory.
+Filter plugins are located in the `/filter` directory.
 
 Each plugin is in a separate subdirectory and consists of a number of _mandatory files_ and any other files the developer is going to use.
 
@@ -46,7 +46,7 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
   <summary>View an example directory layout for the `filter_pluginname` plugin.</summary>
 
 ```console
- repository/pluginname/
+ filter/pluginname/
  |-- lang
  |   `-- en
  |       `-- filter_pluginname.php
@@ -56,7 +56,7 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
 
 </details>
 
-Some of the important files for the repository plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
+Some of the important files for the filter plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
 ### filter.php
 
@@ -69,7 +69,7 @@ import Filter from '!!raw-loader!./_examples/filter.php';
     plugintype="filter"
     pluginname="pluginname"
     example={Filter}
-    description="The filter file contains the code for the main filter file. Unlike more complex plguins like activities or repositories, filters only have one mandatory class extending the core moodle_text_filter class."
+    description="The filter file contains the code for the main filter class. Unlike more complex plugins like activities or repositories, filters only have one mandatory class extending the core moodle_text_filter class."
 />
 
 ### version.php
@@ -93,7 +93,7 @@ export const langExample = `
 
 ## Test a filter
 
-To enable a filter go to the [filters administration screen](./index.md) and set the filter active to "On".
+To enable a filter, go to the [filters administration screen](./index.md) and set the filter active to "On".
 
 Filters are applied to all text that is printed with the output functions `format_text()` and `format_string()`. To see a filter in action, add some content to a label resource. When you look at that course in the course listing, you should see that your filter has transformed the text accordingly.
 
