@@ -1394,7 +1394,7 @@ Moodle_Penetration_Testing:
   slug: "/general/development/process/security/penetration-testing"
 Moodle_and_PHP:
 - filePath: "/general/development/policies/php.md"
-  slug: "/general/development/php"
+  slug: "/general/development/policies/php"
 Moodle_libraries_credits:
 - filePath: "/general/community/credits/thirdpartylibs.md"
   slug: "/general/community/credits/thirdpartylibs"
