@@ -221,7 +221,7 @@ Activity modules are the most important plugin in Moodle. There are several core
 
 ### Activity completion API (completion)
 
-The [Activity completion API](https://docs.moodle.org/dev/Activity_completion_API) is to indicate to the system how activities are completed.
+The [Activity completion API](./apis/core/activitycompletion/index.md) is to indicate to the system how activities are completed.
 
 ### Advanced grading API (grading)
 
