@@ -91,6 +91,9 @@ Component_Lead_Review:
 Component_library:
 - filePath: "/general/development/tools/component-library.md"
   slug: "/general/development/tools/component-library"
+Conditional_activities_API:
+- filePath: "/docs/apis/core/conditionalactivities/index.md"
+  slug: "/docs/apis/core/conditionalactivities/"
 Core_APIs:
 - filePath: "/docs/apis.md"
   slug: "/docs/apis"
