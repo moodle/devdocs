@@ -16,7 +16,8 @@ on:
 jobs:
   run:
     # Only run on the canonical repository.
-    # if: github.repository == 'moodle/devdocs'
+    if: github.repository == 'moodle/devdocs'
+
     name: Fetch the list of components from Moodle
     runs-on: ubuntu-latest
     steps:
