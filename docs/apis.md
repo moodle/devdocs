@@ -225,7 +225,7 @@ The [Activity completion API](https://docs.moodle.org/dev/Activity_completion_AP
 
 ### Advanced grading API (grading)
 
-The [Advanced grading API](https://docs.moodle.org/dev/Advanced_grading_API) allows you to add more advanced grading interfaces (such as rubrics) that can produce simple grades for the gradebook.
+The [Advanced grading API](./apis/core/grading/index.md) allows you to add more advanced grading interfaces (such as rubrics) that can produce simple grades for the gradebook.
 
 ### Conditional activities API (condition) - deprecated in 2.7
 

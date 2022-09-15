@@ -22,6 +22,9 @@ Add_a_block_cleanup:
 Admin_settings:
 - filePath: "/docs/apis/subsystems/admin/index.md"
   slug: "/docs/apis/subsystems/admin/"
+Advanced_grading_API:
+- filePath: "/docs/apis/core/grading/index.md"
+  slug: "/docs/apis/core/grading/"
 Analytics_API:
 - filePath: "/docs/apis/subsystems/analytics/index.md"
   slug: "/docs/apis/subsystems/analytics/"
