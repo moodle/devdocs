@@ -4,24 +4,30 @@ tags: []
 documentationDraft: true
 ---
 
-Conditional Apis allow you to specify , if to show or hide an activity when the conditions associated with it are met/not met. This should not be confused with [completion API](https://docs.moodle.org/dev/Activity_completion_API) which is used to mark if an activity is completed or not. That is conditional API is used to handle the availability of an activity where as completion helps to track the progress of student in an activity.
+The Conditional Activities API allowsyou to specify whether to hide, or show, an activity when a series of conditions associated with it are met.
+
+:::note
+
+This should not be confused with the [completion API](https://docs.moodle.org/dev/Activity_completion_API) which is used to mark if an activity is completed or not. The Conditional Activities API is used to handle the _availability_ of an activity, whilst the Completion API helps to track the _progress_ of student in an activity.
+
+:::
 
 ## Files
 
-The main file containing all important conditional stuff is located at `lib/conditionlib.php`..
+The main file containing all key functions is located at `lib/conditionlib.php`..
 
 ## Functions and Examples
 
 The class `condition_info` defined in `lib/conditionlib.php` is the main conditional API in Moodle. Following are some important methods of the above mentioned class.
 
 ```php
-fill_availability_conditions(&$cm)
+fill_availability_conditions($cm)
 get_full_course_module()
 add_completion_condition($cmid, $requiredcompletion)
-add_grade_condition($gradeitemid, $min, $max, $updateinmemory=false)
+add_grade_condition($gradeitemid, $min, $max, $updateinmemory = false)
 wipe_conditions()
-get_full_information($modinfo=null)
-is_available(&$information, $grabthelot=false, $userid=0, $modinfo=null)
+get_full_information($modinfo = null)
+is_available($information, $grabthelot = false, $userid = 0, $modinfo = null)
 show_availability()
 update_cm_from_form($cm, $fromform, $wipefirst=true)
 ```
@@ -34,12 +40,12 @@ The basic functionality of these methods can be classified as:-
 
 ### Fetching information related to conditions
 
-Following functions are normally used to fetch information regarding conditions associated with activities:-
+The following functions are normally used to fetch information regarding conditions associated with activities:
 
 ```php
 get_full_course_module();
 get_full_information($modinfo=null);
-is_available(&$information, $grabthelot=false, $userid=0, $modinfo=null);
+is_available($information, $grabthelot = false, $userid = 0, $modinfo = null);
 show_availability();
 ```
 
@@ -51,7 +57,7 @@ Example:-
 
 ```php
 $cm->id = $id;
-$test = new condition_info($cm,CONDITION_MISSING_EVERYTHING);
+$test = new condition_info($cm, CONDITION_MISSING_EVERYTHING);
 $fullcm = $test->get_full_course_module();
 ```
 
@@ -65,7 +71,7 @@ This function returns a string which describes the various conditions in place f
  c) From 13:05 on 14 Oct until 17 Oct (exact, midnight 18 Oct)
 ```
 
-Please refer the inline documentation in the code for detailed explanation of the logic and all possible cases.
+Please refer to the inline documentation in the code for detailed explanation of the logic and all possible cases.
 
 Example:-
 
@@ -81,8 +87,8 @@ This function is used to check if a given course module is currently available o
 Example:-
 
 ```php
-$ci = new condition_info((object)array('id'=>$cmid),CONDITION_MISSING_EVERYTHING);
-$bool = $ci->is_available($text,false,0);
+$ci = new condition_info((object) ['id' => $cmid], CONDITION_MISSING_EVERYTHING);
+$bool = $ci->is_available($text, false, 0);
 ```
 
 #### show_availability()
@@ -92,17 +98,17 @@ This function is used to check if information regarding availability of the curr
 Example:-
 
 ```php
-$ci = new condition_info((object)array('id'=>$cmid),CONDITION_MISSING_EVERYTHING);
+$ci = new condition_info((object) ['id' => $cmid], CONDITION_MISSING_EVERYTHING);
 $bool = $ci->show_availability();
 ```
 
 ### Adding/Updating conditional clauses to activities
 
 ```php
-fill_availability_conditions(&$cm);
+fill_availability_conditions($cm);
 add_completion_condition($cmid, $requiredcompletion);
-add_grade_condition($gradeitemid, $min, $max, $updateinmemory=false);
-update_cm_from_form($cm, $fromform, $wipefirst=true)
+add_grade_condition($gradeitemid, $min, $max, $updateinmemory = false);
+update_cm_from_form($cm, $fromform, $wipefirst = true)
 ```
 
 #### fill_availability_conditions()
@@ -114,7 +120,7 @@ $rawmods = get_course_mods($courseid);
 if (empty($rawmods)) {
     die;
 }
-if ($sections = $DB->get_records("course_sections", array("course"=>$courseid), "section ASC")) {
+if ($sections = $DB->get_records("course_sections", ["course" => $courseid], "section ASC")) {
     foreach ($sections as $section) {
         if (!empty($section->sequence)) {
             $sequence = explode(",", $section->sequence);
@@ -124,7 +130,7 @@ if ($sections = $DB->get_records("course_sections", array("course"=>$courseid), 
                     }
                     if (!empty($CFG->enableavailability)) {
                          condition_info::fill_availability_conditions($rawmods[$seq]);
-                         //do something
+                         // Do something.
                     }
                 }
             }
@@ -140,8 +146,8 @@ In Moodle availability condition of a Module or activity can depend on another a
 Example:-
 
 ```php
-$test1=new condition_info((object)array('id'=>$cmid),CONDITION_MISSING_EVERYTHING);
-$test1->add_completion_condition(13,3);
+$test1 = new condition_info((object) ['id' => $cmid], CONDITION_MISSING_EVERYTHING);
+$test1->add_completion_condition(13, 3);
 ```
 
 #### add_grade_condition()
@@ -151,8 +157,8 @@ This function is used to add a grade related restriction to an activity based on
 Example:-
 
 ```php
-$test1=new condition_info((object)array('id'=>$cmid),CONDITION_MISSING_EVERYTHING);
-$test1->add_grade_condition(666,0.4,null,true);
+$test1 = new condition_info((object) ['id' => $cmid], CONDITION_MISSING_EVERYTHING);
+$test1->add_grade_condition(666, 0.4, null, true);
 ```
 
 #### update_cm_from_form()
@@ -164,31 +170,30 @@ Example:-
 ```php
 $fromform = $mform->get_data();
 if (!empty($fromform->update)) {
+    if (!empty($course->groupmodeforce) or !isset($fromform->groupmode)) {
+        $fromform->groupmode = $cm->groupmode; // Keep the original.
+    }
 
-        if (!empty($course->groupmodeforce) or !isset($fromform->groupmode)) {
-            $fromform->groupmode = $cm->groupmode; // keep original
-        }
+    // update course module first
+    $cm->groupmode        = $fromform->groupmode;
+    $cm->groupingid       = $fromform->groupingid;
+    $cm->groupmembersonly = $fromform->groupmembersonly;
 
-        // update course module first
-        $cm->groupmode        = $fromform->groupmode;
-        $cm->groupingid       = $fromform->groupingid;
-        $cm->groupmembersonly = $fromform->groupmembersonly;
-
-        $completion = new completion_info($course);
-        if ($completion->is_enabled()) {
-            // Update completion settings
-            $cm->completion                = $fromform->completion;
-            $cm->completiongradeitemnumber = $fromform->completiongradeitemnumber;
-            $cm->completionview            = $fromform->completionview;
-            $cm->completionexpected        = $fromform->completionexpected;
-        }
-        if (!empty($CFG->enableavailability)) {
-            $cm->availablefrom             = $fromform->availablefrom;
-            $cm->availableuntil            = $fromform->availableuntil;
-            $cm->showavailability          = $fromform->showavailability;
-            condition_info::update_cm_from_form($cm,$fromform,true);
-        }
-// Do something else with the data
+    $completion = new completion_info($course);
+    if ($completion->is_enabled()) {
+        // Update completion settings.
+        $cm->completion                = $fromform->completion;
+        $cm->completiongradeitemnumber = $fromform->completiongradeitemnumber;
+        $cm->completionview            = $fromform->completionview;
+        $cm->completionexpected        = $fromform->completionexpected;
+    }
+    if (!empty($CFG->enableavailability)) {
+        $cm->availablefrom             = $fromform->availablefrom;
+        $cm->availableuntil            = $fromform->availableuntil;
+        $cm->showavailability          = $fromform->showavailability;
+        condition_info::update_cm_from_form($cm,$fromform,true);
+    }
+    // Do something else with the data.
 }
 ```
 
