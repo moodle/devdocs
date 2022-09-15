@@ -201,7 +201,7 @@ The testing API contains the Unit test API ([PHPUnit](/general/development/tools
 
 ### User-related APIs (user)
 
-This is a rather informal grouping of miscellaneous [User-related APIs](https://docs.moodle.org/dev/User-related_APIs) relating to sorting and searching lists of users.
+This is a rather informal grouping of miscellaneous [User-related APIs](./apis/core/user/index.md) relating to sorting and searching lists of users.
 
 ### Web services API (webservice)
 
