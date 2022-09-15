@@ -4,15 +4,18 @@ tags:
   - Plugins
   - Grading
   - Activity grading
+documentationDraft: true
 ---
 
-## Overview
-
-Advanced grading was introduced in Moodle 2.2 for grading of assignments. It is intended to be used for grading of other types of activities in the later versions. Moodle will try to minimise future API changes, but as this API is relatively new, changes are possible.
+Advanced grading was introduced in Moodle 2.2 for grading of assignments. It is intended to be used for grading of other types of activities in the later versions.
 
 ## Glossary
 
-In advanced grading we operate with three main entities: a grading area, a grading form definition and a grading form instance.
+In advanced grading we operate with three main entities:
+
+- a grading area;
+- a grading form definition; and
+- a grading form instance.
 
 ### Grading area
 
@@ -20,7 +23,7 @@ The grading area is basically the area that can be graded, for example, a submis
 
 ### Grading form definition
 
-Grading form definitions are the set of rules defining how the grading is performed. For example, in rubrics this is the set of criteria and levels and their display options. The basic information about definition is stored in the DB table grading_definitions. A separate entry is created for each grading area (i.e. for each module). Users with permission `moodle/grade:managegradingforms` are able to edit the definitions and mark them as "Ready".
+Grading form definitions are the set of rules defining how the grading is performed. For example, in rubrics this is the set of criteria and levels and their display options. The basic information about definition is stored in the DB table grading_definitions. A separate entry is created for each grading area (that is for each module). Users with permission `moodle/grade:managegradingforms` are able to edit the definitions and mark them as "Ready".
 
 ### Grading form instance
 
@@ -34,44 +37,61 @@ A grading form instance is created for each evaluation of a submission, using ad
 
 The following example is drawn from **/mod/assignment/lib.php**.
 
-1. In order for module to support advanced grading, its function **`MODNAME_supports(FEATURE_ADVANCED_GRADING)`** must return true.
-1. The module should define a function called **`MODNAME_grading_areas_list()`**.
+1. In order for module to support advanced grading, its function **`[activityname]_supports(FEATURE_ADVANCED_GRADING)`** must return true.
+
+    ```php title="mod/[activityname]/lib.php"
+    function [activityname]_supports(string $feature): ?bool {
+        switch ($feature) {
+            // ...
+            case FEATURE_ADVANCED_GRADING:
+                return true;
+            // ...
+        }
+    }
+    ```
+
+1. The module should define a function called **`[activityname]_grading_areas_list()`**.
 1. There needs to be a check to see if there is an advanced grading method for this area and it is available. If it is, retrieve it and set the grade range used in this module.
 
-```php
-if ($controller = get_grading_manager(...)->get_active_controller()) {
-    $controller->set_grade_range(...);
-    ...
-}
-```
+    ```php
+    if ($controller = get_grading_manager(...)->get_active_controller()) {
+        $controller->set_grade_range(...);
+        ...
+    }
+    ```
 
 1. There are two ways to create an grading object instance. Choose one of the following.
 
-```php
-$gradinginstance = $controller->get_current_instance(...);
-$gradinginstance = $controller->get_or_create_instance(...);
-```
+    ```php
+    $gradinginstance = $controller->get_current_instance(...);
+    $gradinginstance = $controller->get_or_create_instance(...);
+    ```
 
 1. During population of the grading form, simple grading elements can now be substituted with advanced grading element.
 
-```php
-$mform->addElement('grading', 'ELEMENTNAME', '...', array('gradinginstance' => $gradinginstance));
-```
+    ```php
+    $mform->addElement(
+        'grading',
+        'ELEMENTNAME',
+        '...',
+        ['gradinginstance' => $gradinginstance]
+    );
+    ```
 
 1. On submission of a grading form, the advanced grading information shall be also submitted. The grade for the gradebook retrieved from plugin and saved to the gradebook.
 
-```php
-$grade = $gradinginstance->submit_and_get_grade($data->ELEMENTNAME, ...)
-```
+    ```php
+    $grade = $gradinginstance->submit_and_get_grade($data->ELEMENTNAME, ...)
+    ```
 
 1. When the grade is displayed to the student it is displayed using the grading objects renderer.
 
-```php
-$output .= $controller->render_grade(...);
-```
+    ```php
+    $output .= $controller->render_grade(...);
+    ```
 
 1. To show the grading method to students before they are actually graded:
 
-```php
-$output .= $controller->render_preview($PAGE);
-```
+    ```php
+    $output .= $controller->render_preview($PAGE);
+    ```
