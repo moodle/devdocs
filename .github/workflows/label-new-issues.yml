@@ -12,6 +12,9 @@ on:
 
 jobs:
   automate-issues-labels:
+    # Only run on the canonical repository.
+    if: github.repository == 'moodle/devdocs'
+
     runs-on: ubuntu-latest
     steps:
       - name: initial labeling

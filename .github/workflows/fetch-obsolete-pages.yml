@@ -15,6 +15,9 @@ on:
 
 jobs:
   run:
+    # Only run on the canonical repository.
+    if: github.repository == 'moodle/devdocs'
+
     name: Update obsoletions and migrations with Wikimedia
     runs-on: ubuntu-latest
     steps:
