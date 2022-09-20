@@ -11,7 +11,7 @@ tags:
 
 ## Screen readers
 
-VoiceOver and TalkBack are the native applications for screen reading in iOS and Android devices. In order to make the code understandable to these applications we encourage the developers to use the [Rich Internet Applications (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria-1.1/|Accessible) recommendations of W3C. Those documents includes a bunch of rules to be applied to the HTML code to add semantic information to it.
+VoiceOver and TalkBack are the native applications for screen reading in iOS and Android devices. In order to make the code understandable to these applications we encourage the developers to use the [Rich Internet Applications (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria-1.1/) recommendations of W3C. Those documents includes a bunch of rules to be applied to the HTML code to add semantic information to it.
 
 First step on that is to [the role](https://www.w3.org/TR/wai-aria-1.1/#role_definitions|identify) of the main elements of navigation and information of the page. Then, you should apply the correct aria attributes to the elements that conform that role.
 
