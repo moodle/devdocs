@@ -8,7 +8,7 @@ The Conditional Activities API allowsyou to specify whether to hide, or show, an
 
 :::note
 
-This should not be confused with the [completion API](https://docs.moodle.org/dev/Activity_completion_API) which is used to mark if an activity is completed or not. The Conditional Activities API is used to handle the _availability_ of an activity, whilst the Completion API helps to track the _progress_ of student in an activity.
+This should not be confused with the [completion API](../activitycompletion/index.md) which is used to mark if an activity is completed or not. The Conditional Activities API is used to handle the _availability_ of an activity, whilst the Completion API helps to track the _progress_ of student in an activity.
 
 :::
 
