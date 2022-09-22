@@ -229,7 +229,7 @@ The [Advanced grading API](./apis/core/grading/index.md) allows you to add more 
 
 ### Conditional activities API (condition) - deprecated in 2.7
 
-The deprecated [Conditional activities API](https://docs.moodle.org/dev/Conditional_activities_API) used to provide conditional access to modules and sections in Moodle 2.6 and below. It has been replaced by the [Availability API](./apis/subsystems/availability/index.md).
+The deprecated [Conditional activities API](./apis/core/conditionalactivities/index.md) used to provide conditional access to modules and sections in Moodle 2.6 and below. It has been replaced by the [Availability API](./apis/subsystems/availability/index.md).
 
 ### Groups API (group)
 

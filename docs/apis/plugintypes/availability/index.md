@@ -335,4 +335,4 @@ We strongly recommend writing both unit tests, and functional tests for your ava
 ## See also
 
 - Using the [Availability API as a consumer](../../subsystems/availability/index.md)
-- [Conditional activities API](https://docs.moodle.org/dev/Conditional_activities_API)
+- [Conditional activities API](../../core/conditionalactivities/index.md)
