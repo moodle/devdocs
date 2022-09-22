@@ -64,6 +64,9 @@ Blocks:
 Bug_triage:
 - filePath: "/general/development/process/triage.md"
   slug: "/general/development/process/triage"
+Calendar_API:
+- filePath: "/docs/apis/core/calendar/index.md"
+  slug: "/docs/apis/core/calendar/"
 Check_API:
 - filePath: "/docs/apis/subsystems/check/index.md"
   slug: "/docs/apis/subsystems/check/"
