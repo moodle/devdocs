@@ -76,6 +76,38 @@ The capability names are defined in plugin language files, the name of the strin
 $string['folder:managefiles'] = 'Manage files in folder module';
 ```
 
+### Deprecating a capability
+
+When a capability is no longer needed or is replaced by another, it should be deprecated. The timeline for deprecation should follow the normal [Deprecation](/general/development/policies/deprecation) process.
+
+To mark a capability as deprecated, edit the access.php containing the capability, remove it from the `$capabilities` array, and add it to the `$deprecatedcapabilities` array in this file.
+
+Entries in `$deprecatedcapabilities` can have a `replacement` key indicating a new or existing capability that replaces the deprecated one. If this is specified, any checks to the deprecated capability will check the replacement capability instead. A debugging message will always be output at `DEBUG_DEVELOPER` level if a deprecated capability is checked.
+
+`$deprecatedcapaibilities` can also define an optional `message` explaining the deprecation.
+
+The following example demonstates an access.php file where a capability has been deprecated and replaced with another.
+
+```php title="mod/folder/db/access.php"
+$capabilities = [
+    'mod/folder:newmanagefiles' => [
+        'riskbitmask' => RISK_SPAM,
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_MODULE,
+        'archetypes' => [
+            'editingteacher' => CAP_ALLOW,
+        ],
+    ],
+];
+
+$deprecatedcapabilities = [
+    'mod/folder:managefiles' => [
+        'replacement' => 'mod/folder:newmanagefiles',
+        'message' => 'This was replaced with another capability'
+    ],
+];
+```
+
 ## Useful functions and classes
 
 ### Context fetching
