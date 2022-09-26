@@ -35,7 +35,7 @@ If you need help, please reach out to us and we will do our best to advise you.
 
 ## Getting started
 
-Our documentation is built using [Docusaurus](https://docusarus.io), a powerful open source documentation project written in JavaScript. For more detailed information, see our [installation guide](./installation.md) to install your development environment and get started.
+Our documentation is built using [Docusaurus](https://docusaurus.io), a powerful open source documentation project written in JavaScript. For more detailed information, see our [installation guide](./installation.md) to install your development environment and get started.
 
 :::tip
 
