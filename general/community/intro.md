@@ -14,7 +14,7 @@ This page gives an overview of the process of developing Moodle and outlines som
 - **[Moodle HQ](https://moodle.com/careers/)**<br />
 The team of developers who are directly funded by the Moodle project to work full-time on core developments.
 - **[Moodle Certified Service Providers](https://moodle.com/services/)**<br />
-Also known as Moodle Partners, these are over 80 companies around the world that provide Moodle services. These companies often have their own developers and may contribute to Moodle directly by working on core code or by creating plugins.
+Also known as Moodle Partners, these are over 100 companies around the world that provide Moodle services. These companies often have their own developers and may contribute to Moodle directly by working on core code or by creating plugins.
 - **Component leads**<br />
  A number of people around the world have volunteered to lead various components in Moodle. This involves maintaining existing code as well as listening to the community and improving that component with new features.
 
