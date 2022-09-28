@@ -1,6 +1,9 @@
 ---
 title: Working combinations of OS+Browser+selenium
 tags:
+  - Quality Assurance
+  - Testing
+  - Behaviour testing
   - Behat
 ---
 As OS, Browsers and Selenium keeps updating, some combination might fail on different Moodle releases.

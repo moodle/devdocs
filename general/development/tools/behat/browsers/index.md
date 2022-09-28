@@ -2,8 +2,10 @@
 title: Browsers
 sidebar_position: 3
 tags:
-  - Behat
   - Quality Assurance
+  - Testing
+  - Behaviour testing
+  - Behat
 ---
 This page complements [Behat](../index.md) providing info about how to run the acceptance tests suite in different browsers.
 

@@ -2,6 +2,9 @@
 title: Behat
 sidebar_position: 1
 tags:
+  - Quality Assurance
+  - Testing
+  - Behaviour testing
   - Behat
 ---
 This page describes the internals of Behat and the integration with Moodle.

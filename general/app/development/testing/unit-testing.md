@@ -4,6 +4,8 @@ sidebar_label: Unit testing
 tags:
   - Quality Assurance
   - Testing
+  - Unit testing
+  - Jest
   - Moodle App
 ---
 
