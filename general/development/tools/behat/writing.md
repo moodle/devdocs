@@ -2,6 +2,9 @@
 title: Writing acceptance tests
 sidebar_position: 2
 tags:
+  - Quality Assurance
+  - Testing
+  - Behaviour testing
   - Behat
 ---
 This documentation gives some hints on writing behat tests for Moodle core, and for plugins. The focus of the documentation is on behat tests for plugins. Behat Features and Scenarios are written in a natural language, and should

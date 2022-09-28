@@ -3,6 +3,8 @@ title: Running acceptance tests
 sidebar_position: 1
 tags:
   - Quality Assurance
+  - Testing
+  - Behaviour testing
   - Behat
 ---
 Moodle uses [Behat](https://behat.org), a php framework for automated functional testing, as part of a suite of testing tools.

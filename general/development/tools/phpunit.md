@@ -2,7 +2,10 @@
 title: PHPUnit
 sidebar_position: 1
 tags:
+  - Quality Assurance
+  - Testing
   - Unit testing
+  - PHPUnit
 ---
 PHPUnit by Sebastian Bergmann is an advanced unit testing framework for PHP. It is installed as Composer dependency and is not part of Moodle installation. To run PHPUnit tests, you have to manually install it on your development computer or test server.
 

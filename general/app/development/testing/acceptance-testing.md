@@ -4,6 +4,7 @@ sidebar_label: Acceptance testing
 tags:
   - Quality Assurance
   - Testing
+  - Behaviour testing
   - Behat
   - Moodle App
 ---
