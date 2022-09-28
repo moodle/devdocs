@@ -371,21 +371,21 @@ This is the minimum template structure your plugin must provide:
 
 import TemplateContent from '!!raw-loader!./_examples/output/content.mustache';
 
-<CodeBlock language="handlebars" title="template/local/content.mustache">{TemplateContent}</CodeBlock>
+<CodeBlock language="handlebars" title="templates/local/content.mustache">{TemplateContent}</CodeBlock>
 
   </TabItem>
   <TabItem value="sectionTemplate" label="Section">
 
 import TemplateSection from '!!raw-loader!./_examples/output/section.mustache';
 
-<CodeBlock language="handlebars" title="template/local/content/section.mustache">{TemplateSection}</CodeBlock>
+<CodeBlock language="handlebars" title="templates/local/content/section.mustache">{TemplateSection}</CodeBlock>
 
   </TabItem>
   <TabItem value="cmitemTemplate" label="Cmitem">
 
 import TemplateCmitem from '!!raw-loader!./_examples/output/cmitem.mustache';
 
-<CodeBlock language="handlebars" title="template/local/content/section/cmitem.mustache">{TemplateCmitem}</CodeBlock>
+<CodeBlock language="handlebars" title="templates/local/content/section/cmitem.mustache">{TemplateCmitem}</CodeBlock>
 
   </TabItem>
 </Tabs>
