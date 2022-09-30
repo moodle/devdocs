@@ -1234,8 +1234,8 @@ Moodle_App_Customisation:
 - filePath: "/general/app/customisation/index.md"
   slug: "/general/app/customisation"
 Moodle_App_Deep_Linking:
-- filePath: "/general/app/development/deep-linking.md"
-  slug: "/general/app/development/deep-linking"
+- filePath: "/general/app/development/link-handling/deep-linking.md"
+  slug: "/general/app/development/link-handling/deep-linking"
 Moodle_App_Development_Guide:
 - filePath: "/general/app/development/development-guide.md"
   slug: "/general/app/development/development-guide"
