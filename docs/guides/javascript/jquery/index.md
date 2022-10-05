@@ -76,24 +76,23 @@ require(['jquery'], function(jQuery) {
 
 ## What about JQuery UI ?
 
-JQuery UI is a separate project containing a library of reusable widgets that relies on JQuery. JQuery UI is available for plugins to use, but it **must not** be used in core code.
+JQuery UI is a separate project containing a library of reusable widgets that relies on JQuery. JQuery UI is available for plugins to use, but it **must not** be used in core code, and is _highly discouraged_ in plugin usage.
 
-The problems with JQuery UI are:
+The problems with JQuery UI include:
 
 - It uses an entirely different theme system for CSS that does not work well with Moodle themes
 - It introduces CSS conflicts with bootstrap
 - The widgets have some accessibility features - but only if used in a very specific way which is not well documented
 
-Over time we will build up a library of widgets in core either by wrapping a suitable library or implementing from scratch.
+We **do not** recommend use of jQuery as it is highly likely to break Bootstrap.
 
-If you _still_ want to use JQuery UI in your plugin, it is available as an AMD module named `jqueryui`.
+If you _still_ want to use JQuery UI in your plugin, you _must_ include it via the page requirements using the `jquery_plugin()` function.
 
-```javascript title="mod/yourplugin/amd/src/yourwidget.js"
-require(['jquery', 'jqueryui'], function(jQuery) {
-    // JQuery is available via jQuery
-    // JQuery UI is available via jQuery.ui
-});
+```php
+$PAGE->requires->jquery_plugin('ui');
 ```
+
+Please note that this _must_ be called before any content is output.
 
 ## See also
 
