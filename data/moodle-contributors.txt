@@ -53,6 +53,7 @@ Anandani
 Anant
 Anastasios
 Anderson
+Andolo
 Andrea
 Andreas
 Andres
@@ -943,6 +944,7 @@ Steffen
 Steffensen
 Stephane
 Stephen
+Stevani
 Steve
 Stewart
 Streltsov
