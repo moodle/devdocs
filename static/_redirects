@@ -27,3 +27,6 @@
 /general/development/process/translation/faq https://docs.moodle.org/en/Translation_FAQ
 /general/development/process/translation/langpack/langconfig https://docs.moodle.org/en/Translation_langconfig
 /general/development/process/translation/langpack/priority https://docs.moodle.org/en/Translation_priority
+
+# Issue #384
+/license /general/license
