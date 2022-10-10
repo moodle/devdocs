@@ -207,6 +207,9 @@ Hardening_new_Roles_system:
 Integration_Review:
 - filePath: "/general/development/process/integration/index.md"
   slug: "/general/development/process/integration"
+License:
+- filePath: "/general/license.md"
+  slug: "/general/license"
 Local_plugins:
 - filePath: "/docs/apis/plugintypes/local/index.mdx"
   slug: "/docs/apis/plugintypes/local"
