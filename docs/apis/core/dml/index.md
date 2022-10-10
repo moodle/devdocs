@@ -883,6 +883,19 @@ public function sql_order_by_text(
 );
 ```
 
+### sql_order_by_null
+
+<Since version="4.1" />
+
+Return the query fragment to be used to get records with a standardised return pattern of null values across database types to sort nulls first when ascending and last when descending.
+
+```php
+public function sql_order_by_null(
+    string $fieldname,
+    int $sort = SORT_ASC
+);
+```
+
 ### sql_concat
 
 Return the query fragment to concatenate all given parameters into one string.
