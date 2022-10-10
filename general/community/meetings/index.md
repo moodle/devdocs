@@ -14,7 +14,7 @@ Developer meetings are open to anyone interested in Moodle development.
 :::important
 
 Our next developer meeting will be on Tuesday 18 October 2022 at 08:00 UTC.
-Details: [Developer meeting October 2022](./meetings/202210)
+Details: [Developer meeting October 2022](./202210.md)
 
 :::
 
@@ -22,9 +22,9 @@ Details: [Developer meeting October 2022](./meetings/202210)
 
 ### 2022
 
-- [Developer meeting June 2022](./meetings/202206)
-- [Developer meeting April 2022](./meetings/202204)
-- [Developer meeting February 2022](./meetings/202202)
+- [Developer meeting June 2022](./202206.md)
+- [Developer meeting April 2022](./202204.md)
+- [Developer meeting February 2022](./202202.md)
 
 ### 2021
 
