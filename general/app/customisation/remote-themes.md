@@ -1,5 +1,5 @@
 ---
-title: Moodle App Remote themes
+title: Moodle App Remote Themes
 sidebar_label: Remote themes
 sidebar_position: 1
 tags:

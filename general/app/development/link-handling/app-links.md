@@ -1,5 +1,6 @@
 ---
-title: Links in the app
+title: Links in the Moodle App
+sidebar_label: Links in the app
 sidebar_position: 1
 tags:
  - Moodle App

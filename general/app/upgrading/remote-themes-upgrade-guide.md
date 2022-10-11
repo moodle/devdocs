@@ -1,6 +1,6 @@
 ---
-title: Moodle App Remote themes upgrade guide
-sidebar_label: Remote themes upgrade guide
+title: Moodle App Remote Themes Upgrade Guide
+sidebar_label: Remote themes
 sidebar_position: 2
 tags:
   - Moodle App

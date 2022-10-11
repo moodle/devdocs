@@ -1,5 +1,5 @@
 ---
-title: Troubleshooting on Moodle App Plugins development guide
+title: Troubleshooting Moodle App Plugins Development
 sidebar_label: Troubleshooting
 sidebar_position: 2
 tags:

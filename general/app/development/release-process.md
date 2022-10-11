@@ -1,5 +1,5 @@
 ---
-title: Moodle App Release process
+title: Moodle App Release Process
 sidebar_label: Release process
 sidebar_position: 8
 tags:

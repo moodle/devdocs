@@ -1,5 +1,5 @@
 ---
-title: Applying accessibility on Moodle App
+title: Applying accessibility on the Moodle App
 sidebar_label: Accessibility
 sidebar_position: 2
 tags:

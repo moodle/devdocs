@@ -1,5 +1,5 @@
 ---
-title: Moodle App Plugins development guide
+title: Moodle App Plugins Development Guide
 sidebar_label: Plugins development guide
 sidebar_position: 2
 tags:

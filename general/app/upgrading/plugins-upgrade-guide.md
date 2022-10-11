@@ -1,6 +1,6 @@
 ---
-title: Moodle App Plugins upgrade guide
-sidebar_label: Plugins upgrade guide
+title: Moodle App Plugins Upgrade Guide
+sidebar_label: Plugins
 sidebar_position: 7
 tags:
   - Moodle App
