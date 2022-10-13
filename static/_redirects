@@ -30,3 +30,8 @@
 
 # Issue #384
 /license /general/license
+
+# Issue #386
+# Redirect /releases to /general/releases
+/releases /general/releases
+/releases/* /general/releases/:splat
