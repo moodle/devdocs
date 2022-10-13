@@ -16,17 +16,12 @@
  */
 
 import React from 'react';
-import clsx from 'clsx';
+import { CodeExample } from '@site/src/components';
 
 export default function ValidExample(props) {
     return (
-        <div
-            className={clsx(' alert alert--success margin-bottom--lg ')}
-        >
-            <span className={clsx(' badge badge--success ')}>
-                An example of correct behaviour
-            </span>
+        <CodeExample type="success" title={props.title ?? 'An example of correct behaviour'}>
             {props.children}
-        </div>
+        </CodeExample>
     );
 }
