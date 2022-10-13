@@ -1,40 +1,116 @@
 ---
 title: Moodle App Remote Themes Upgrade Guide
 sidebar_label: Remote themes
-sidebar_position: 2
+sidebar_position: 1
 tags:
   - Moodle App
 ---
 
-In the following guide, you will find some examples to migrate your styles from an older version to work with the Ionic 5 Moodle App (starting at version 3.9.5). You will find tables where each row is a migration to do; the left part is the old code and the right part the new one.
+<!-- markdownlint-disable no-inline-html -->
 
-We recommend that you keep your old CSS rules for older versions (see [Before starting the migration](#before-starting-the-migration)), by doing so users who are still using Moodle App 3.9.4 and earlier will see the same styling you had until now.
+import { CodeDiff, ValidExample, InvalidExample } from '@site/src/components';
 
-## Before starting the migration
+In the following guide, you will learn how to migrate your styles from an older version of the app.
 
-1. Remove all styles using ionic classes ending with `-wp` (Windows Phone is not supported, therefore it's not necessary to specify it).
-2. Check [the theme file](https://github.com/moodlehq/moodleapp/blob/master/src/theme/theme.light.scss), where most variables are specified.
-3. As in the previous version, do not use any Saas variables (the ones starting with `$`). But now you can use [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (the ones starting with `--`).
-4. We recommend prepending all CSS rules with `body.ionic5` in order to make them only available for Ionic 5, and prepending the old ones with `body:not(.ionic5)` for the previous versions of the Moodle App (3.9.4, 3.9.3, and so on).
-5. Be aware that example rules may differ from your CSS, which could be more specific.
+However, keep in mind that not all your users will be using the latest version. We recommend that you keep your old CSS rules for older versions as indicated in the [Before starting the migration](#before-starting-the-migration) section. By doing so, users who haven't updated the app will continue seeing the same styles they had until now.
+
+Depending on which version of the app you're upgrading from, you'll need to go through multiple version upgrades. This guide is divided by version ranges, so you should be able to start with your current version and build up from there.
+
+### Before starting the migration
+
+We recommend prepending all conflicting CSS rules with the specific version they are targeting.
+
+For example, for a CSS stylesheet that targets both 4.0 and 4.1 versions, you should do the following:
+
+```css
+html.moodleapp-4-1 {
+    --ion-color-primary: red;
+}
+
+body.moodle-app-4-0 {
+    --ion-color-primary: green;
+}
+```
+
+You can use these classes to target specific major and patch versions as well, so for example version 4.1.0 ships with `moodleapp-4`, `moodleapp-4-1`, and `moodleapp-4-1-0` classes. You can also use ionic versions to filter styles, such as `ionic3` or `ionic5`.
+
+:::caution
+Notice that mode and version classes moved from the `body` tag to the `html` tag in version 4.1. Learn more about this when [upgrading from 4.0 to 4.1](#40-to-41).
+:::
 
 ### How to upgrade my theme
 
-You can follow the same process that is documented in the [Moodle App Remote themes](../customisation/remote-themes.md#how-can-you-create-your-own-theme) page.
+You can follow the same process that is documented in the [Moodle App Remote Themes](../customisation/remote-themes.md#how-can-you-create-your-own-theme) page.
 
-Make sure to read it in order to understand how to style your application for newer versions of the app. If you're upgrading your styles, it is likely that the documentation has been updated since you read it.
+Make sure to read it in order to understand how to style your application for newer versions of the app. If you're upgrading your styles, it is likely that the documentation has been updated since you read it. So we recommend taking a look even if you're already familiar with Remote Themes.
 
-## Colors
+## 4.0 to 4.1
+
+There is only one thing to look after when upgrading to 4.1, so it should be a relatively quick process.
+
+### Mode classes
+
+Starting in 4.1, mode and version classes have been moved from the `body` tag to the `html` tag. This change arised from [a bug on derivated CSS variables](https://tracker.moodle.org/browse/MOBILE-4127), and it should be fairly straightforward to make.
+
+<CodeDiff titles="4.0, 4.1">
+
+```css
+body {
+    --core-header-toolbar-background: red;
+}
+
+body.dark {
+    --core-header-toolbar-background: green;
+}
+```
+
+```css
+html {
+    --core-header-toolbar-background: red;
+}
+
+html.dark {
+    --core-header-toolbar-background: green;
+}
+```
+
+</CodeDiff>
+
+:::info
+In order to avoid breaking existing styles, version 4.1 will continue adding version classes both to `body` and `html` tags. But using the classes from the `body` tag is considered a deprecated approach, and won't be supported in future versions. So we recommend that you update your Remote Themes now.
+:::
+
+## 3.9.5 to 4.0
+
+There haven't been any breaking changes from 3.9.5 to 4.0 in terms of theming functionality, but the UI of the application has changed drastically so we recommend going over all the customisations to see that they are still relevant in the new version.
+
+## 3.9.4 to 3.9.5
+
+This upgrade requires more changes than usual because the Moodle App was upgraded the underlying Ionic framework from version 3 to version 5, which introduced many breaking changes.
+
+### Windows Phone
+
+Starting with this version, Windows Phone is no longer supported so you should remove all styles using Ionic classes ending with `-wp` since they are no longer necessary.
+
+### CSS variables
+
+Starting with this version, it is possible to use [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to make easier customisations, so it's likely that you won't need to override as many styles as before.
+
+You can see some examples in the sections below, and you can also look at [the theme file](https://github.com/moodlehq/moodleapp/blob/master/src/theme/theme.light.scss) to find some of the main variables of the app.
+
+### Colors
 
 The main color in the app is Moodle Orange, but you can now change it by using the `--primary` variable. This will probably reduce the CSS you are applying right now, but this only covers the main color.
 
 For other colors, check out [the colors section in the main documentation](../customisation/remote-themes.md#working-with-colors).
 
-## Header toolbar
+### Header toolbar
+
+#### Border width and color (new)
 
 On the header toolbar, we've added a bottom border that you can disable.
 
-### Border width and color (new)
+<ValidExample title="3.9.5">
 
 ```css
 ion-header ion-toolbar {
@@ -43,161 +119,193 @@ ion-header ion-toolbar {
 }
 ```
 
-### Background
+</ValidExample>
 
-```css title="Ionic 3 legacy code"
+#### Background
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 .toolbar-background-md, .toolbar-background-ios {
     background: red;
 }
 ```
 
-```css title="Ionic 5"
+```css
 ion-header ion-toolbar {
     --core-header-toolbar-background: red;
 }
 ```
 
-### Text and buttons
+</CodeDiff>
 
-```css title="Ionic 3 legacy code"
+#### Text and buttons
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 .toolbar-title-md,
 .toolbar-title-ios {
     color: red;
-}
-```
-
-```css title="Ionic 5"
-ion-header ion-toolbar {
-    --core-header-toolbar-color: red;
-}
-```
-
-```css title="Ionic 5"
-.toolbar-title-md,
-.toolbar-title-ios {
     font-weight: normal;
 }
 ```
 
-```css title="Ionic 5"
+```css
+ion-header ion-toolbar {
+    --core-header-toolbar-color: red;
+}
+
 ion-header ion-toolbar.in-toolbar h1,
 ion-header ion-toolbar.in-toolbar h2 {
     font-weight: normal;
 }
 ```
 
-## Bottom tab bar (main menu)
+</CodeDiff>
 
-### Background
+### Bottom tab bar (main menu)
 
-```css title="Ionic 3 legacy code"
+#### Background
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 .tabs-md .tabbar,
 .tabs-ios .tabbar {
     background: red;
 }
 ```
 
-```css title="Ionic 5"
+```css
 ion-tab-bar.mainmenu-tabs {
     --core-bottom-tabs-background: red;
     --core-bottom-tabs-background-selected: transparent;
 }
 ```
 
-### Tab icon color
+</CodeDiff>
 
-```css title="Ionic 3 legacy code"
+#### Tab icon color
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 .tabs-md .tab-button-icon,
 .tabs-ios .tab-button-icon {
     color: blue;
 }
 ```
 
-```css title="Ionic 5"
+```css
 ion-tab-bar.mainmenu-tabs {
     --core-bottom-tabs-color: blue;
 }
 ```
 
-### Selected tab icon color
+</CodeDiff>
 
-```css title="Ionic 3 legacy code"
+#### Selected tab icon color
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 tabs-md .tab-button[.tab-button-icon,
 .tabs-ios .tab-button[aria-selected=true](aria-selected=true]) .tab-button-icon {
     color: red;
 }
 ```
 
-```css title="Ionic 5"
+```css
 ion-tab-bar.mainmenu-tabs {
     --core-bottom-tabs-color-selected: red;
 }
 ```
 
-### Badge color and text
+</CodeDiff>
 
-```css title="Ionic 3 legacy code"
+#### Badge color and text
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 core-ion-tabs .tab-badge.badge {
     color: white;
     background: red;
 }
 ```
 
-```css title="Ionic 5"
+```css
 ion-tab-bar.mainmenu-tabs {
     --core-bottom-tabs-badge-text-color: white;
     --core-bottom-tabs-badge-color: red;
 }
 ```
 
-## Top tabs
+</CodeDiff>
 
-### Tabs background
+### Top tabs
 
-```css title="Ionic 3 legacy code"
+#### Tabs background
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 .core-tabs-bar {
   background-color: red;
 }
 ```
 
-```css title="Ionic 5"
+```css
 core-tabs, core-tabs-outlet {
     --core-tabs-background: red;
 }
 ```
 
-### Individual tab background
+</CodeDiff>
 
-```css title="Ionic 3 legacy code"
+#### Individual tab background
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 .core-tabs-bar .tab-slide {
   background-color: red;
 }
 ```
 
-```css title="Ionic 5"
+```css
 core-tabs, core-tabs-outlet {
     --core-tab-background: red;
 }
 ```
 
-### Unselected tab styles
+</CodeDiff>
 
-```css title="Ionic 3 legacy code"
+#### Unselected tab styles
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 .core-tabs-bar .tab-slide {
   color: red;
   border-bottom-color: red;
 }
 ```
 
-```css title="Ionic 5"
+```css
 core-tabs, core-tabs-outlet {
     --core-tab-color: red;
 }
 ```
 
-### Selected tab styles
+</CodeDiff>
 
-```css title="Ionic 3 legacy code"
+#### Selected tab styles
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 .core-tabs-bar .tab-slide[aria-selected=true]{
    color: red;
    border-bottom-color: red;
@@ -205,7 +313,7 @@ core-tabs, core-tabs-outlet {
 }
 ```
 
-```css title="Ionic 5"
+```css
 core-tabs, core-tabs-outlet {
     --core-tab-color-active: red;
     --core-tab-border-color-active: red;
@@ -213,25 +321,33 @@ core-tabs, core-tabs-outlet {
 }
 ```
 
-## Items
+</CodeDiff>
 
-### Items background color
+### Items
 
-```css title="Ionic 3 legacy code"
+#### Items background color
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 ion-item {
     background: red;
 }
 ```
 
-```css title="Ionic 5"
+```css
 body {
     --ion-item-background: red;
 }
 ```
 
-### Item divider background color
+</CodeDiff>
 
-```css title="Ionic 3 legacy code"
+#### Item divider background color
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 .item-divider-md,
 .item-divider-ios {
     background: red;
@@ -239,26 +355,32 @@ body {
 }
 ```
 
-```css title="Ionic 5"
+```css
 body {
     --item-divider-background: red;
     --item-divider-color: yellow;
 }
 ```
 
-### Empty divider background
+</CodeDiff>
 
-```css title="Ionic 5"
+#### Empty divider background
+
+<ValidExample title="3.9.5">
+
+```css
 body {
     --spacer-background: red;
 }
 ```
 
-## Progress bar
+</ValidExample>
 
-You can now easily style progress bars.
+### Progress bar
 
-```css title="Ionic 5"
+<ValidExample title="3.9.5">
+
+```css
 core-progress-bar {
     --core-progressbar-height: 8px;
     --core-progressbar-color: red;
@@ -267,67 +389,87 @@ core-progress-bar {
 }
 ```
 
-## More page
+</ValidExample>
 
-### Icons
+### More page
+
+#### Icons
 
 The icons in the More page can now easily change their color:
 
-```css title="Ionic 3 legacy code"
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 page-core-mainmenu-more ion-icon {
     color: red;
 }
 ```
 
-```css title="Ionic 5"
+```css
 page-core-mainmenu-more {
     --core-more-icon: red;
 }
 ```
 
+</CodeDiff>
+
 To change a color on a particular icon, you'll have to use the class of each handler. For example, to change the color of the folder icon on the menu item named Files:
 
-```css title="Ionic 3 legacy code"
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 page-core-mainmenu-more .ion-md-folder,
 page-core-mainmenu-more .ion-ios-folder {
     color: red;
 }
 ```
 
-```css title="Ionic 5"
+```css
 page-core-mainmenu-more .addon-privatefiles-handler ion-icon {\
     color: red !important;
 }
 ```
 
-### Item border color
+</CodeDiff>
 
-```css title="Ionic 3 legacy code"
+#### Item border color
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```css
 page-core-mainmenu-more .item-block.item-ios .item-inner,
 page-core-mainmenu-more .item-block.item-md .item-inner {
     border-bottom-color: red;
 }
 ```
 
-```css title="Ionic 5"
+```css
 page-core-mainmenu-more {
     --core-more-item-border: red;
 }
 ```
 
+</CodeDiff>
+
 The dividers background color can now be overridden using `--spacer-background`:
 
-```css title="Ionic 5"
+<ValidExample title="3.9.5">
+
+```css
 page-core-mainmenu-more {
     --spacer-background: blue;
 }
 ```
 
-## Login page
+</ValidExample>
+
+### Login page
 
 You can now personalise some colors in the Login page, but keep in mind that this only includes the credentials page (the one after you select the site).
 
-```css title="Ionic 5"
+<ValidExample title="3.9.5">
+
+```css
 body {
     --core-login-background: red;
     --core-login-text-color: blue;
@@ -336,11 +478,15 @@ body {
 }
 ```
 
-## Messages page
+</ValidExample>
+
+### Messages page
 
 Message discussion page, including chat activity and comments:
 
-```css title="Ionic 5"
+<ValidExample title="3.9.5">
+
+```css
 body {
     --addon-messages-message-bg: white;
     --addon-messages-message-activated-bg: gray-light;
@@ -352,7 +498,11 @@ body {
 }
 ```
 
+</ValidExample>
+
 You can also make some modifications on the input field:
+
+<ValidExample title="3.9.5">
 
 ```css
 body {
@@ -361,9 +511,13 @@ body {
 }
 ```
 
-## Full example
+</ValidExample>
+
+### Full example
 
 This is a full example showcasing how to handle multiple versions:
+
+<ValidExample title="3.9.4 and 3.9.5">
 
 ```css
 /* ----- Ionic 5 styles ----- */
@@ -396,4 +550,6 @@ body:not(.ionic5) .toolbar-background {
 }
 ```
 
-As you can see we recommend to always add `body.ionic` to start the CSS selectors, you can also use `:root body.ionic5` or even `html` before `body`.
+</ValidExample>
+
+As you can see we recommend to always add `body.ionic*` to start the CSS selectors, you can also use `:root body.ionic5` or even `html` before `body`.
