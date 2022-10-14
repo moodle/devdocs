@@ -16,12 +16,18 @@
  */
 
 import React from 'react';
-import { CodeExample } from '@site/src/components';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 
-export default function InvalidExample(props) {
+export default function CodeExample(props) {
     return (
-        <CodeExample type="danger" title={props.title ?? 'An example of incorrect behaviour'}>
+        <div
+            className={clsx(` alert alert--${props.type} margin-bottom--lg ${styles['code-example']} `)}
+        >
+            <span className={clsx(` badge badge--${props.type} margin-bottom--sm `)}>
+                {props.title}
+            </span>
             {props.children}
-        </CodeExample>
+        </div>
     );
 }
