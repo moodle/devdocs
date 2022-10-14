@@ -62,7 +62,7 @@ Moodle core's version number is defined in the `version.php` file located in the
 
 ```php
 // Require Moodle 4.0.0.
-$plugins->requires = 2022041900.00;
+$plugin->requires = 2022041900.00;
 ```
 
 ### Supported versions
