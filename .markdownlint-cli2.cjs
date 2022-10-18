@@ -236,8 +236,8 @@ config.renamedLinks = {
     // the page.
     // Note: You may also want to update the redirects in `static/_redirects`.
     renames: [{
-        oldFile: '/docs/apis/core/form/index.md',
-        newFile: '/docs/apis/subsystems/form/index.md',
+        oldFile: '/docs/apis/plugintypes/tinymce/index.md',
+        newFile: '/docs/apis/plugintypes/tiny/legacy.md',
     }, {
         oldFile: '/docs/apis/subsystems/tool/index.md',
         newFile: '/docs/apis/subsystems/admin/index.md',

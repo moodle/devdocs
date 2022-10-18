@@ -40,3 +40,7 @@
 # Redirect /roadmap to /general/community/roadmap
 /roadmap to /general/community/roadmap
 /roadmap/* to /general/community/roadmap/:splat
+
+# Issue #393
+# Redirect /docs/apis/plugintypes/tinymce to /docs/apis/plugintypes/tiny/legacy
+/docs/apis/plugintypes/tinymce to /docs/apis/plugintypes/tiny/legacy
