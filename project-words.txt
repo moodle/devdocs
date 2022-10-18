@@ -1,6 +1,7 @@
 # This file contains cspell exceptions to use for Moodle.
 # Please keep this file sorted alphabetically.
 Atto
+Aurelie
 AWST
 Badgr
 Bangma
@@ -59,6 +60,7 @@ RDBM
 RDBMS
 SIGINT
 SIGTERM
+Soulier
 TCPDF
 TODO
 ToBic
