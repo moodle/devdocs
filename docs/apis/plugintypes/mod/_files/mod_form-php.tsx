@@ -45,6 +45,8 @@ class mod_certificate_mod_form extends moodleform_mod {
 
         $this->add_action_buttons();
     }
+
+ }
 `;
 
 export default (initialProps: Props): ComponentFileSummary => (
