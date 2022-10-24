@@ -1335,6 +1335,21 @@ Copyright © 2009 Phacility
 
 <https://github.com/phacility/xhprof>
 
+## XMLRPC for PHP
+
+:::note lib/phpxmlrpc
+
+A php library for building xml-rpc clients and servers
+
+**Version**: 4.8.0<br/>
+**License**: BSD
+
+Copyright © 1999,2000,2001 Edd Dumbill, Useful Information Company
+
+:::
+
+<https://github.com/gggeek/phpxmlrpc>
+
 ## Yahoo User Interface
 
 :::note lib/yui
