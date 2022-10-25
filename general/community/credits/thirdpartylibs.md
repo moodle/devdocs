@@ -503,7 +503,7 @@ Copyright © 2005 Michal Migurski
 
 A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
 
-**Version**: 6.0.0<br/>
+**Version**: 6.3.0<br/>
 **License**: BSD
 
 Copyright © 2011, Neuman Vong
