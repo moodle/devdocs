@@ -1608,7 +1608,7 @@ Using_the_Moodle_App_in_a_browser:
 Writing_acceptance_tests:
 - filePath: "/general/development/tools/behat/writing.md"
   slug: "/general/development/tools/behat/writing"
-HTML_writer_API:
+html_writer:
 - filePath: "/docs/apis/core/htmlwriter/index.md"
   slug: "/docs/apis/core/htmlwriter/"
 jQuery:
