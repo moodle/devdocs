@@ -123,7 +123,7 @@ Copyright 2016 Nick Downie
 
 CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 
-**Version**: 5.65.0<br/>
+**Version**: 5.65.9<br/>
 **License**: MIT
 
 :::
