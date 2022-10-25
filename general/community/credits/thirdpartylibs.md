@@ -461,13 +461,13 @@ Copyright: 2016 The jQuery Foundation and other contributors
 
 <https://github.com/jquery/jquery-migrate>
 
-## JavaScript Beautifier
+## JS Beautifier
 
-:::note yui/src/beautify
+:::note lib/editor/atto/plugins/html/yui/src/beautify
 
 Beautify HTML code in Atto.
 
-**Version**: 1.14.0<br/>
+**Version**: 1.14.6<br/>
 **License**: MIT
 
 Copyright (c) 2007-2018 Einar Lielmanis, Liam Newman, and contributors.
