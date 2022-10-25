@@ -206,6 +206,7 @@ moodlehq
 moodlemobile
 moodlemobileapp
 moodlenetprofile
+moodleqa
 moremenu
 multianswer
 multichoice
