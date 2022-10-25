@@ -22,3 +22,4 @@ yarn-error.log*
 .github/styles/Microsoft
 .github/styles/write-good
 .eslintcache
+/.idea/
