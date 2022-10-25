@@ -11,7 +11,7 @@ tags:
 sidebar_position: 3
 ---
 
-Our documentation is built using [Docusaurus](https://docusarus.io), a powerful open source documentation project written in JavaScript.
+Our documentation is built using [Docusaurus](https://docusaurus.io), a powerful open source documentation project written in JavaScript.
 
 It's easy to get your development environment set up and if you plan to contribute regularly to our documentation, then we recommend you setup a [local development environment](#local-development) for the best results. If you're only planning to contribute as a once-off then you may want to consider trying [Gitpod](#quick-start-with-gitpod).
 
