@@ -626,7 +626,7 @@ JavaScript filter library for displaying LaTeX, AsciiMath notation, and MathML.
 
 CSS & JavaScript minifier, in PHP
 
-**Version**: 1.3.66<br/>
+**Version**: 1.3.69<br/>
 **License**: MIT
 
 :::
