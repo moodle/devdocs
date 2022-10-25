@@ -709,7 +709,7 @@ MongoDB PHP library
 
 JS library for displaying mustache templates.
 
-**Version**: 3.1.0<br/>
+**Version**: 4.2.0<br/>
 **License**: MIT
 
 Copyright (c) 2009 Chris Wanstrath (Ruby)<br/>
