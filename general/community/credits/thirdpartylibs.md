@@ -123,7 +123,7 @@ Copyright 2016 Nick Downie
 
 CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 
-**Version**: 5.65.0<br/>
+**Version**: 5.65.9<br/>
 **License**: MIT
 
 :::
@@ -503,7 +503,7 @@ Copyright © 2005 Michal Migurski
 
 A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
 
-**Version**: 6.0.0<br/>
+**Version**: 6.3.0<br/>
 **License**: BSD
 
 Copyright © 2011, Neuman Vong
@@ -626,7 +626,7 @@ JavaScript filter library for displaying LaTeX, AsciiMath notation, and MathML.
 
 CSS & JavaScript minifier, in PHP
 
-**Version**: 1.3.66<br/>
+**Version**: 1.3.69<br/>
 **License**: MIT
 
 :::
