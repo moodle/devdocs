@@ -1003,12 +1003,12 @@ Copyright © 2003 Brent R. Matzelle (bmatzelle AT yahoo DOT com)
 
 :::note lib/markdown.php
 
-Functions to convert from the Markdown text format into clean XHTML.
+Functions to convert Markdown text format into clean XHTML.
 
-**Version**: 1.9.0 (with modifications)<br/>
+**Version**: 2.0.0<br/>
 **License**: BSD
 
-@copyright 2004-2016 Michel Fortin <https://michelf.com/projects/php-markdown/><br/>
+@copyright 2004-2022 Michel Fortin <https://michelf.com/projects/php-markdown/><br/>
 @copyright (Original Markdown) 2004-2006 John Gruber <https://daringfireball.net/projects/markdown/><br/>
 All rights reserved.
 
