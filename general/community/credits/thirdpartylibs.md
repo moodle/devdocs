@@ -401,7 +401,7 @@ Copyright: 2008 Nathanael C. Fritz
 
 jQuery is a fast, small, and feature-rich JavaScript library widely used on moodle.
 
-**Version**: 3.6.0<br/>
+**Version**: 3.6.1<br/>
 **License**: MIT
 
 Copyright: 2016 The jQuery Foundation
@@ -448,11 +448,11 @@ Copyright: 2016 The jQuery Foundation and other contributors
 
 ## jQuery UI
 
-:::note lib/jquery/ui-1.13.0/
+:::note lib/jquery/ui-1.13.2/
 
 jQuery UI is a set of user interface interactions, effects, widgets, and themes built on top of the jQuery library.
 
-**Version**: 1.13.0<br/>
+**Version**: 1.13.2<br/>
 **License**: MIT
 
 Copyright: 2016 The jQuery Foundation and other contributors
