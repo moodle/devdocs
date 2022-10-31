@@ -51,70 +51,9 @@ Moodle is never used alone, and it is a part of many ecosystems at many levels. 
 
 In particular though, we are committed to helping to promote [<span class="underline">Open EdTech</span>](https://openedtech.global/) and to work closely with qualified Open EdTech products and major stakeholders to design and build an open architecture for a long-term future.
 
-## Roadmap timeline (will be updated soon)
+## Roadmap timeline
 
-<!--
-  Github Flavoured Markdown does not support tables without headers.
-  We must use an HTML table here.
-  Please note that Spacing in this table is important.
-  Markdown must have empty newlines between it and HTML markup.
--->
-<table>
-<thead>
-<tr>
-<th> 2022 </th>
-<th> Moodle LMS </th>
-<th> Moodle Workplace </th>
-<th> Moodle Apps </th>
-<th> MoodleCloud </th>
-<th> MoodleNet </th>
-<th> Moodle Academy </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> </td>
-<td>
-
-- **Minor releases**
-
-</td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td> </td>
-</tr>
-
-<tr><th> Q4 </th><td>
-
-- **Moodle 4.1**
-- **UX improvements**
-  - Course activities
-  - Gradebook
-  - Global UX (tables/filters)
-- **New**
-  - Improved integration with MoodleNet and other Moodle sites
-  - Improved integration with 3rd party platforms/tools
-  - Database improvements (MUA)
-  - Question bank improvements
-
-</td><td>
-
-</td><td>
-
-- **Release 4.1**
-
-</td><td>
-
-- **Release 4.1**
-
-</td><td>
-
-</td><td>
-
-</td></tr>
-</tbody></table>
+Our Roadmap can be viewed in the [IDEA Project in the Moodle Tracker](https://tracker.moodle.org/secure/RapidBoard.jspa?rapidView=260).
 
 ### Notes on the Moodle LMS releases
 

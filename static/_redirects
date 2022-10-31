@@ -35,3 +35,7 @@
 # Redirect /releases to /general/releases
 /releases /general/releases
 /releases/* /general/releases/:splat
+
+# Issue 415
+# Redirect /roadmap to /general/community/roadmap
+/roadmap to /general/community/roadmap
