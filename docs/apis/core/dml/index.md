@@ -1045,6 +1045,30 @@ if ($DB->sql_regex_supported()) {
 $pages = $DB->get_records_select('page', $select, $params, 'course', 'id, course, name');
 ```
 
+### sql_regex_get_word_beginning_boundary_marker
+
+<Since versions={["3.11.11", "4.0.5", "4.1"]} issueNumber="MDL-74912" />
+
+Return the word-beginning boundary marker if the current database driver supports regex syntax when searching.
+
+Defaults to `[[:<:]]`. On MySQL `v8.0.4+`, it returns `\\b`.
+
+```php
+public function sql_regex_get_word_beginning_boundary_marker()
+```
+
+### sql_regex_get_word_end_boundary_marker
+
+<Since versions={["3.11.11", "4.0.5", "4.1"]} issueNumber="MDL-74912" />
+
+Return the word-end boundary marker if the current database driver supports regex syntax when searching.
+
+Defaults to `[[:>:]]`. On MySQL `v8.0.4+`, it returns `\\b`.
+
+```php
+public function sql_regex_get_word_end_boundary_marker()
+```
+
 ### sql_intersect
 
 <Since version="2.8" />
