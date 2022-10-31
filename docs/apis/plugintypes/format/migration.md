@@ -30,7 +30,7 @@ The main areas affected by the new 4.0 course editor are:
 - Formats can override the `core_courseformat\base::supports_components` in their base class to use the new course editor library instead of the legacy one.
 - The course frontend uses a reactive state to maintain the UI elements updated. Format plugins can create new reactive AMD modules to interact with that state or extend the core_courseformat state classes to extend the data stored in that state.
 - Course formats now can implement the `core_courseformat\base::delete_format_data`  hook to clean data when the course is deleted.
-- The course `format_base` class now provides a method `show_editor` to know if the user is editing or not the course depending on the page editing and the user capabilities. This method should be used instead of the previous `$PAGE->user_is_editing() && has_capability('moodle/course:update', $coursecontext)`.
+- The course `format_base` class now provides a method `show_editor` to know if the user is editing or not the course depending on the page editing and the user capabilities. This method should be used instead of the previous `$PAGE->user_is_editing() && has_capability('moodle/course:manageactivities', $coursecontext)`. If you need to check for different capabilities, you can pass an array of them. If not specified, defaults to only `moodle:course/manageactivities`.
 
 ## Moodle 3.11 vs 4.0 course editor architecture
 
