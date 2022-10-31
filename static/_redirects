@@ -39,4 +39,4 @@
 # Issue 415
 # Redirect /roadmap to /general/community/roadmap
 /roadmap to /general/community/roadmap
-/roadmap/* to /general/community/roadmap/*
+/roadmap/* to /general/community/roadmap/:splat
