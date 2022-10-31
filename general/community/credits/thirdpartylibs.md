@@ -92,7 +92,7 @@ Copyright Jasig
 
 PHP Implementation of Apple's PList (binary and XML)
 
-**Version**: 2.0.2<br/>
+**Version**: 2.0.3<br/>
 **License**: MIT
 
 Copyright © 2018 Teclib<br/>
