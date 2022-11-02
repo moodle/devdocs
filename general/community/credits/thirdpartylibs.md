@@ -575,7 +575,7 @@ Copyright: Matt Agar and Martin Jantošovič
 
 Minimal lightweight simple logging for JavaScript.
 
-**Version**: 1.7.1<br/>
+**Version**: 1.8.0<br/>
 **License**: MIT
 
 Copyright (c) 2019 Tim Perry
@@ -652,7 +652,7 @@ CSS path converter, in PHP
 
 PHP API for reading MaxMind DB files
 
-**Version**: 1.10.1<br/>
+**Version**: 1.11.0<br/>
 **License**: Apache 2.0
 
 Copyright MaxMind
@@ -1109,7 +1109,7 @@ Copyright (c) 2015 Leaf Corcoran
 
 Simple Pie helps with blogs.
 
-**Version**: 1.5.6<br/>
+**Version**: 1.6.0<br/>
 **License**: BSD
 
 :::
@@ -1195,7 +1195,7 @@ Library for importing and exporting csv / excel / ODS files.
 
 Class to generate PDF files
 
-**Version**: 6.4.1<br/>
+**Version**: 6.5.0<br/>
 **License**: LGPL-v3.0-only
 
 Copyright Olivier PLATHEY
