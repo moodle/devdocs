@@ -989,15 +989,14 @@ Library to read, write and create spreadsheet documents in PHP.
 
 Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are based upon the standard AspEmail(tm) classes.
 
-**Version**: 6.2.0<br/>
+**Version**: 6.6.5<br/>
 **License**: LGPL
 
 Copyright © 2003 Brent R. Matzelle (bmatzelle AT yahoo DOT com)
 
 :::
 
-<http://phpmailer.sourceforge.net><br/>
-<https://github.com/PHPMailer/PHPMailer/releases>
+<https://github.com/PHPMailer/PHPMailer>
 
 ## PHP Markdown
 
