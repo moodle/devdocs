@@ -254,9 +254,9 @@ Copyright © 2000 Herman Veluwenkamp (hermanV AT mindless DOT com)
 
 :::note joubel/core
 
-The general H5P library
+The general H5P library used to display H5P content.
 
-**Version**: 1.24.3<br/>
+**Version**: moodle-1.22.4<br/>
 **License**: GPL-3.0
 
 Copyright © Joubel
@@ -269,10 +269,10 @@ Copyright © Joubel
 
 :::note joubel/editor
 
-A general library that is supposed to be used in most PHP implementations of H5P.
+The general H5P library used to edit H5P content.
 
-**Version**: moodle-1.20.2<br/>
-**License**: MIT
+**Version**: moodle-1.22.4<br/>
+**License**: GPL-3.0
 
 Copyright © Joubel
 
