@@ -41,6 +41,11 @@
                     "name": "4.0.4",
                     "releaseDate": "12 September 2022",
                     "version": 2022041904
+                },
+                {
+                    "name": "4.0.5",
+                    "releaseDate": "14 October 2022",
+                    "version": 2022041905
                 }
             ]
         },
@@ -107,6 +112,11 @@
                     "name": "3.11.10",
                     "releaseDate": "12 September 2022",
                     "version": 2021051710
+                },
+                {
+                    "name": "3.11.11",
+                    "releaseDate": "14 October 2022",
+                    "version": 2021051711
                 }
             ]
         },
@@ -280,6 +290,11 @@
                     "name": "3.9.17",
                     "releaseDate": "12 September 2022",
                     "version": 2020061517
+                },
+                {
+                    "name": "3.9.18",
+                    "releaseDate": "14 October 2022",
+                    "version": 2020061518
                 }
             ]
         },
