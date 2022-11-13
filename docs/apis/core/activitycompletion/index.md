@@ -89,10 +89,10 @@ To implement custom completion rules, you need to:
 1. Return true for FEATURE_COMPLETION_HAS_RULES in your activity's _supports function.
 1. Add database fields to your activity's main table to store the custom completion settings.
 1. Add backup and restore code to back up these fields.
-1. Add information about the completion settings to the activities cm_info object
+1. Add information about the completion settings to the activities cm_info object.
 1. Add controls to your activity's settings form so that users can select the custom rules, altering these database settings.
 1. Add a function that checks the value of these rules (if set).
-1. Add function returns descriptions for the completion states
+1. Add function returns descriptions for the completion states.
 1. Add code so that whenever the value affecting a rule might change, you inform the completion system.
 
 ### Database fields for completion settings
