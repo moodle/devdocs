@@ -100,6 +100,7 @@ Barnes
 Barras
 Barrett
 Barry
+Bartel
 Basset
 Bateson
 Baxter
@@ -315,6 +316,7 @@ Fish
 Fletcher
 Follin
 Fonseca
+Forget
 Forth
 Foster
 Fotis
@@ -633,6 +635,7 @@ Massart
 Mastny
 Matamoros
 Materka
+Matheus
 Mathew
 Mathieu
 Matt
@@ -646,6 +649,7 @@ McLean
 McQuillan
 Mcneill
 Mehr
+Meirza
 Meisberger
 Melihov
 Melissa
@@ -775,6 +779,7 @@ Pegenau
 Penelope
 Penner
 Penny
+Percy
 Perez
 Pete
 Peter
@@ -847,6 +852,7 @@ Robert
 Robot
 Robynstar
 Rodrigo
+Rodrigues
 Roes
 Roeser
 Roger
@@ -912,6 +918,7 @@ Shashikant
 Sheremeta
 Shintaro
 Shwab
+Siegmund
 Silva
 Silver
 Silvia
@@ -986,6 +993,7 @@ Thomas.Ludwig
 Thompson
 Thong
 Thorpe
+Thorsten
 Tien
 Tindell
 Tobias
@@ -1098,6 +1106,7 @@ Xuan
 YVANES
 Yair
 Yang
+Yannick
 Yevhenii
 Yolanda
 Yoshida
