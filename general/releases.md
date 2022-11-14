@@ -86,6 +86,17 @@ Upcoming release dates can be found in the Moodle development calendar, which is
 
 :::
 
+## Moodle 4.1
+
+<ReleaseTable releaseName="4.1" />
+
+:::info
+
+Bug fixes for general core bugs in 4.1.x will end 13 November 2023 (12 months).<br/>
+Bug fixes for security issues in 4.1.x will end 10 November 2025 (36 months).
+
+:::
+
 ## Moodle 4.0
 
 <ReleaseTable releaseName="4.0" />
