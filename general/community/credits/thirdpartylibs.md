@@ -1093,14 +1093,14 @@ RequireJS is a JavaScript file and module loader.
 
 scssphp is a compiler for SCSS written in PHP.
 
-**Version**: 1.10.0<br/>
+**Version**: 1.11.0<br/>
 **License**: MIT
 
 Copyright (c) 2015 Leaf Corcoran
 
 :::
 
-<http://leafo.github.io/scssphp>
+<https://scssphp.github.io/scssphp/>
 
 ## SimplePie
 
