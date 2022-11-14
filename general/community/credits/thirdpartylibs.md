@@ -940,7 +940,7 @@ Copyright © 2004-2008 The PHP Group & Stephan Schmidt
 
 A Parser for CSS Files written in PHP.
 
-**Version**: 8.3.1<br/>
+**Version**: 8.4.0<br/>
 **License**: MIT
 
 Copyright (c) 2011 Raphael Schweikert, <http://sabberworm.com/>
