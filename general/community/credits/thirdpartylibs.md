@@ -726,14 +726,14 @@ Copyright (c) 2010-2015 The mustache.js community
 
 PHP library for displaying mustache templates.
 
-**Version**: 2.13.0<br/>
+**Version**: 2.14.2<br/>
 **License**: MIT
 
 Copyright (c) 2010-2016 Justin Hileman
 
 :::
 
-<https://github.com/bobthecow/mustache.php/releases>
+<https://github.com/bobthecow/mustache.php>
 
 ## mp3player
 
