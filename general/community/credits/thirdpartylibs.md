@@ -136,7 +136,7 @@ CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 
 Library to parse easily data and sprite sheets for emoji.
 
-**Version**: 7.0.2<br/>
+**Version**: 14.0.1<br/>
 **License**: MIT
 
 Copyright (c) 2013 Cal Henderson
