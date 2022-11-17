@@ -77,7 +77,7 @@ Copyright (c) 2005, Jon Papaioannou
 
 phpCAS library to support CAS authentication plugin
 
-**Version**: 1.4.0<br/>
+**Version**: 1.6.0<br/>
 **License**: Apache License 2.0
 
 Copyright Jasig
