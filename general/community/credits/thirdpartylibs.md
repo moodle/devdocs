@@ -77,7 +77,7 @@ Copyright (c) 2005, Jon Papaioannou
 
 A library to support the CAS authentication plugin
 
-**Version**: 1.5.0<br/>
+**Version**: 1.6.0<br/>
 **License**: Apache License 2.0
 
 Copyright 2007-2020, Apereo Foundation
