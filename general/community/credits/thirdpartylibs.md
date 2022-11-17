@@ -1340,7 +1340,7 @@ Copyright © 2009 Phacility
 
 A php library for building xml-rpc clients and servers
 
-**Version**: 4.8.0<br/>
+**Version**: 4.8.1<br/>
 **License**: BSD
 
 Copyright © 1999,2000,2001 Edd Dumbill, Useful Information Company
