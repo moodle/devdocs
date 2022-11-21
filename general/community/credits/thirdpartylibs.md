@@ -71,20 +71,20 @@ Copyright (c) 2005, Jon Papaioannou
 
 <http://bennu.sourceforge.net/>
 
-## CAS
+## phpCAS
 
 :::note auth/cas/CAS
 
-phpCAS library to support CAS authentication plugin
+A library to support the CAS authentication plugin
 
-**Version**: 1.4.0<br/>
+**Version**: 1.6.0<br/>
 **License**: Apache License 2.0
 
-Copyright Jasig
+Copyright 2007-2020, Apereo Foundation
 
 :::
 
-<https://wiki.jasig.org/display/CASC/phpCAS>
+<https://github.com/apereo/phpCAS/>
 
 ## CFPropertyList
 
