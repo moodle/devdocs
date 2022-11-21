@@ -419,7 +419,6 @@ When naming variables in your export data, be careful not to reuse names of help
 
 :::
 
-
 The rendering method can now use templates to render the object:
 
 ```php
