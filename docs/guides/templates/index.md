@@ -413,7 +413,7 @@ public function export_for_template(renderer_base $output) {
 }
 ```
 
-:::Tip
+:::tip
 
 When naming variables in your export data, be careful not to reuse names of helpers such as `str` or `js` - these will silently fail. Try to keep your variable names short but descriptive.
 
