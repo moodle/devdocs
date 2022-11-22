@@ -1259,7 +1259,7 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 
 JavaScript library that makes it easier to work with and build on HTML5 video
 
-**Version**: 7.17.0<br/>
+**Version**: 7.20.3<br/>
 **License**: Apache
 
 Copyright Brightcove, Inc
