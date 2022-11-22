@@ -1,0 +1,243 @@
+[
+    {
+        "copyrightHolders": [
+            "Jeroen Wijering"
+        ],
+        "location": "filter/mediaplugin/flvplayer.swf",
+        "name": "FLV Player",
+        "description": "Provide a great search experience without the need for external, server-side, search services.",
+        "version": "",
+        "license": "GPL",
+        "customised": false,
+        "repository": "http://www.jeroenwijering.com"
+    },
+    {
+        "copyrightHolders": [
+            "2002 interactivetools.com, inc."
+        ],
+        "location": "lib/editor",
+        "name": "htmlArea",
+        "description": "JavaScript/HTML script to put a GUI editor in textareas on Internet Explorer and Mozilla.",
+        "version": "3.0 beta",
+        "license": "htmlArea License (based on BSD license)",
+        "customised": true,
+        "repository": "http://www.jeroenwijering.com"
+    },
+    {
+        "copyrightHolders": [
+            "2002 Ivan Kozik"
+        ],
+        "location": "lib/ipatlas",
+        "name": "IP-Atlas",
+        "description": "PHP scripts to show the location of an IP address on a map.",
+        "version": "",
+        "license": "GPL",
+        "customised": false,
+        "repository": "http://www.xpenguin.com/ip-atlas.php"
+    },
+    {
+        "copyrightHolders": [
+            "2008 Nathanael C. Fritz"
+        ],
+        "location": "lib/jabber",
+        "name": "PHP library for XMPP (aka Jabber, Google Talk, etc).",
+        "description": "Provide a great search experience without the need for external, server-side, search services.",
+        "version": "0.1rc2-r77",
+        "license": "GPL",
+        "customised": false,
+        "repository": "http://code.google.com/p/xmpphp"
+    },
+    {
+        "copyrightHolders": [
+            "2016 The jQuery Foundation and other contributors"
+        ],
+        "location": "lib/jquery/jquery-migrate-1.4.0.js",
+        "name": "jQuery migrate",
+        "description": "Library used to migrate older jQuery to jQuery 3.0",
+        "version": "1.4.0",
+        "license": "MIT",
+        "customised": false,
+        "repository": "https://github.com/jquery/jquery-migrate"
+    },
+    {
+        "copyrightHolders": [
+            "2005 Michal Migurski"
+        ],
+        "location": "lib/json",
+        "name": "Services_JSON",
+        "description": "Allows PHP->JS communication via JSON",
+        "version": "1.3.1",
+        "license": "Modified BSD (GPL-compatible)",
+        "customised": false,
+        "repository": "http://pear.php.net/pepr/pepr-proposal-show.php?id=198"
+    },
+    {
+        "copyrightHolders": [
+            "2002, 2003, 2005 Ulf Harnhammar"
+        ],
+        "location": "lib/kses.php",
+        "name": "kses",
+        "description": "HTML/XHTML filter that only allows some elements and attributes",
+        "version": "0.2.2",
+        "license": "GNU GPL",
+        "customised": false,
+        "repository": "http://sourceforge.net/projects/kses"
+    },
+    {
+        "copyrightHolders": [
+            "Matt Agar",
+            "Martin Jantošovič"
+        ],
+        "location": "lib/lessphp",
+        "name": "less.php",
+        "description": "The less.php is a PHP port of the official LESS processor used by moodle themes.",
+        "version": "1.7.0.10",
+        "license": "Apache 2.0",
+        "customised": false,
+        "repository": "http://lessphp.typesettercms.com"
+    },
+    {
+        "copyrightHolders": [
+            "2002-2004 Foteos Macrides",
+            "1998-2004 Erik Bosrupr"
+        ],
+        "location": "lib/overlib.js",
+        "name": "overlib.js",
+        "description": "JavaScript library to enable DHTML popups, floating windows, events etc.",
+        "version": "July 2004",
+        "license": "Artistic Open Source License",
+        "customised": false,
+        "repository": "http://www.macridesweb.com/oltest/"
+    },
+    {
+        "copyrightHolders": [
+            "2004 Vincent Blavet"
+        ],
+        "location": "lib/pclzip",
+        "name": "PclZip",
+        "description": "Class to create, manage and unpack zip files.",
+        "version": "2.4 RC1",
+        "license": "GNU GPL",
+        "customised": false,
+        "repository": "http://www.phpconcept.net"
+    },
+    {
+        "copyrightHolders": [
+            "2004 Xavier Noguer"
+        ],
+        "location": "lib/pear/OLE",
+        "name": "PEAR OLE classes",
+        "description": "This package allows reading and writing of OLE (Object Linking and Embedding) compound documents. This format is used as container for Excel (.xls), Word (.doc) and other Microsoft file formats.",
+        "version": "0.5",
+        "license": "PHP (plus special exemption for Moodle to make it compatible)",
+        "customised": false,
+        "repository": "http://pear.php.net/package/OLE"
+    },
+    {
+        "copyrightHolders": [
+            "2004 Xavier Noguer",
+            "2004 Mika Tuupola"
+        ],
+        "location": "lib/pear/Spreadsheet",
+        "name": "PEAR Spreadsheet classes",
+        "description": "Class to write Excel files",
+        "version": "0.9.1",
+        "license": "LGPL",
+        "customised": false,
+        "repository": "http://pear.php.net/package/Spreadsheet_Excel_Writer"
+    },
+    {
+        "copyrightHolders": [
+            "2004-2008 The PHP Group",
+            "2004-2008 Stephan Schmidt"
+        ],
+        "location": "lib/pear/XML",
+        "name": "XML_Parser",
+        "description": "Class implementing one handy (sax-expat) XML parser",
+        "version": "1.3.2",
+        "license": "New BSD License",
+        "customised": false,
+        "repository": "http://pear.php.net/package/XML_Parser"
+    },
+    {
+        "copyrightHolders": [
+            "2006 - 2015 PHPExcel"
+        ],
+        "location": "lib/phpexcel/PHPExcel.php",
+        "name": "PHPExcel",
+        "description": "Library to read, write and create spreadsheet documents in PHP.",
+        "version": "1.8.1",
+        "license": "LGPL",
+        "customised": false,
+        "repository": "https://github.com/PHPOffice/PHPExcel"
+    },
+    {
+        "copyrightHolders": [
+            "1999 - 2000 Monte Ohrt (monte@ispi.net)"
+        ],
+        "location": "lib/snoopy",
+        "name": "Snoopy",
+        "description": "A PHP net client",
+        "version": "1.0",
+        "license": "GNU LGPL",
+        "customised": false,
+        "repository": "http://snoopy.sourceforge.com"
+    },
+    {
+        "copyrightHolders": [
+            "2006 - 2015 PHPExcel"
+        ],
+        "location": "lib/spikephpcoverage",
+        "name": "Spike PHPCoverage",
+        "description": "PHP code coverage reporting tool",
+        "version": "0.8.2",
+        "license": "LGPL",
+        "customised": true,
+        "repository": "http://developer.spikesource.com/projects/phpcoverage"
+    },
+    {
+        "copyrightHolders": [
+            "2001 Chris Ryan (chris@greatbridge.com)"
+        ],
+        "location": "lib/class.smtp.php",
+        "name": "SMTP Class",
+        "description": "Class that can be used to connect and communicate with any SMTP server. It implements all the SMTP functions defined in RFC821 except TURN.",
+        "license": "LGPL",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2003 - 2005 Kasper Skaarhoj"
+        ],
+        "location": "lib/typo3",
+        "name": "Typo3 Character Set Class",
+        "description": "Class for conversion between charsets and multibyte-savy operations with strings.",
+        "version": "4.7.19",
+        "license": "GNU GPL",
+        "customised": false,
+        "repository": "https://typo3.org"
+    },
+    {
+        "copyrightHolders": [
+            "Brightcove, Inc"
+        ],
+        "location": "media/player/videojs/amd/src/videojs-flash-lazy.js",
+        "name": "Video.js - Custom Flash Player",
+        "description": "Custom Flash Player for VideoJS.",
+        "version": "5.4.2",
+        "license": "Apache 2.0",
+        "customised": false,
+        "repository": "https://github.com/videojs/video-js-swf/releases"
+    },
+    {
+        "copyrightHolders": [
+            "2005 Andrew Walker"
+        ],
+        "location": "lib/mp3player",
+        "name": "MP3 Player",
+        "description": "Flash movie to play streaming MP3s",
+        "version": "Unknown",
+        "license": "GNU GPL",
+        "customised": false
+    }
+]
