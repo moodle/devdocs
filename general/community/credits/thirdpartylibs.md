@@ -1203,6 +1203,28 @@ Copyright Olivier PLATHEY
 
 <http://www.setasign.com/products/fpdi/downloads>
 
+## TinyMCE
+
+:::note lib/editor/tiny/js
+
+Trusted open source rich text editor for devs who want control
+
+**Version**: 6.2.0
+**License**: MIT
+
+:::
+
+## TinyMCE (legacy)
+
+:::note lib/editor/tinymce/tiny_mce
+
+The JavaScript Rich Text Editor
+
+**Version**: 3.5.11
+**License**: LGPL
+
+:::
+
 ## Twitter Bootstrap
 
 :::note theme/boost/scss/bootstrap/
