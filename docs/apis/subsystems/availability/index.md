@@ -134,6 +134,31 @@ $DB->set_field(
 rebuild_course_cache($course->id, true);
 ```
 
+The following code can be used to programmatically set start and end date restrictions.
+
+```php
+use \core_availability\tree;
+
+$dates = [];
+$dates[] = \availability_date\condition::get_json(">=", $availability['start']);
+$dates[] = \availability_date\condition::get_json("<", $availability['end']);
+
+$showc = [true, true];
+$restrictions = tree::get_root_json($dates, tree::OP_AND, $showc);
+
+$DB->set_field(
+    'course_modules',
+    'availability',
+    json_encode($restrictions),
+    [
+        'id' => $cmid,
+    ]
+);
+rebuild_course_cache($course->id, true);
+```
+
+The ```$showc``` array determines if the course modules will be shown or invisible when not available.
+
 ## See also
 
 - Writing [Availability condition](../../plugintypes/availability/index.md) plugins
