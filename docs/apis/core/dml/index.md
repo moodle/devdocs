@@ -44,7 +44,7 @@ function my_function_making_use_of_database() {
 
 ### Table prefix
 
-- Most Moodle installations use a prefix for all the database tables, such as <tt>mdl_</tt>. This prefix is NOT to be used in the code in the code itself.
+- Most Moodle installations use a prefix for all the database tables, such as <tt>mdl_</tt>. This prefix is NOT to be used in the code itself.
 - All the `$table` parameters in the functions are meant to be the table name without prefixes:
 
 ```php
