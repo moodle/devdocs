@@ -71,6 +71,10 @@ If you have any question or want to share your ideas, there are several channels
 - [A Matrix room](https://matrix.to/#/%23moodledev:moodle.com) available for real-time communication. Read the [chat policies](https://docs.moodle.org/dev/Chat) before joining.
 - [Developer meetings](../community/meetings/index.md), organised periodically and open to anyone interested in Moodle development.
 
+## Developer FAQ
+
+Visit our [Developer FAQ](./abc/faq.md) page and get answers to some of our most common questions.
+
 ## See also
 
 - [Releases](../releases.md) - versions of Moodle that have already been released

@@ -66,7 +66,9 @@ module.exports = function getReleaseNotes() {
 
     Versions.forEach((versionData) => {
         if (!existsSync(path.resolve(__dirname, '../general/releases', versionData.name))) {
-            return;
+            if (!existsSync(path.resolve(__dirname, '../general/releases', `${versionData.name}.md`))) {
+                return;
+            }
         }
 
         if (isSupported(versionData)) {

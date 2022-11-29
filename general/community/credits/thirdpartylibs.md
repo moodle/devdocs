@@ -71,20 +71,20 @@ Copyright (c) 2005, Jon Papaioannou
 
 <http://bennu.sourceforge.net/>
 
-## CAS
+## phpCAS
 
 :::note auth/cas/CAS
 
-phpCAS library to support CAS authentication plugin
+A library to support the CAS authentication plugin
 
-**Version**: 1.4.0<br/>
+**Version**: 1.6.0<br/>
 **License**: Apache License 2.0
 
-Copyright Jasig
+Copyright 2007-2020, Apereo Foundation
 
 :::
 
-<https://wiki.jasig.org/display/CASC/phpCAS>
+<https://github.com/apereo/phpCAS/>
 
 ## CFPropertyList
 
@@ -92,7 +92,7 @@ Copyright Jasig
 
 PHP Implementation of Apple's PList (binary and XML)
 
-**Version**: 2.0.2<br/>
+**Version**: 2.0.3<br/>
 **License**: MIT
 
 Copyright © 2018 Teclib<br/>
@@ -136,7 +136,7 @@ CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 
 Library to parse easily data and sprite sheets for emoji.
 
-**Version**: 7.0.2<br/>
+**Version**: 14.0.1<br/>
 **License**: MIT
 
 Copyright (c) 2013 Cal Henderson
@@ -254,9 +254,9 @@ Copyright © 2000 Herman Veluwenkamp (hermanV AT mindless DOT com)
 
 :::note joubel/core
 
-The general H5P library
+The general H5P library used to display H5P content.
 
-**Version**: 1.24.3<br/>
+**Version**: moodle-1.22.4<br/>
 **License**: GPL-3.0
 
 Copyright © Joubel
@@ -269,10 +269,10 @@ Copyright © Joubel
 
 :::note joubel/editor
 
-A general library that is supposed to be used in most PHP implementations of H5P.
+The general H5P library used to edit H5P content.
 
-**Version**: moodle-1.20.2<br/>
-**License**: MIT
+**Version**: moodle-1.22.4<br/>
+**License**: GPL-3.0
 
 Copyright © Joubel
 
@@ -401,7 +401,7 @@ Copyright: 2008 Nathanael C. Fritz
 
 jQuery is a fast, small, and feature-rich JavaScript library widely used on moodle.
 
-**Version**: 3.6.0<br/>
+**Version**: 3.6.1<br/>
 **License**: MIT
 
 Copyright: 2016 The jQuery Foundation
@@ -448,11 +448,11 @@ Copyright: 2016 The jQuery Foundation and other contributors
 
 ## jQuery UI
 
-:::note lib/jquery/ui-1.13.0/
+:::note lib/jquery/ui-1.13.2/
 
 jQuery UI is a set of user interface interactions, effects, widgets, and themes built on top of the jQuery library.
 
-**Version**: 1.13.0<br/>
+**Version**: 1.13.2<br/>
 **License**: MIT
 
 Copyright: 2016 The jQuery Foundation and other contributors
@@ -575,7 +575,7 @@ Copyright: Matt Agar and Martin Jantošovič
 
 Minimal lightweight simple logging for JavaScript.
 
-**Version**: 1.7.1<br/>
+**Version**: 1.8.0<br/>
 **License**: MIT
 
 Copyright (c) 2019 Tim Perry
@@ -652,7 +652,7 @@ CSS path converter, in PHP
 
 PHP API for reading MaxMind DB files
 
-**Version**: 1.10.1<br/>
+**Version**: 1.11.0<br/>
 **License**: Apache 2.0
 
 Copyright MaxMind
@@ -696,7 +696,7 @@ Copyright © 2002-2004 John Forkosh Associates, Inc
 
 MongoDB PHP library
 
-**Version**: 1.8.0<br/>
+**Version**: 1.13.1<br/>
 **License**: apache 2.0
 
 :::
@@ -726,14 +726,14 @@ Copyright (c) 2010-2015 The mustache.js community
 
 PHP library for displaying mustache templates.
 
-**Version**: 2.13.0<br/>
+**Version**: 2.14.2<br/>
 **License**: MIT
 
 Copyright (c) 2010-2016 Justin Hileman
 
 :::
 
-<https://github.com/bobthecow/mustache.php/releases>
+<https://github.com/bobthecow/mustache.php>
 
 ## mp3player
 
@@ -940,7 +940,7 @@ Copyright © 2004-2008 The PHP Group & Stephan Schmidt
 
 A Parser for CSS Files written in PHP.
 
-**Version**: 8.3.1<br/>
+**Version**: 8.4.0<br/>
 **License**: MIT
 
 Copyright (c) 2011 Raphael Schweikert, <http://sabberworm.com/>
@@ -989,15 +989,14 @@ Library to read, write and create spreadsheet documents in PHP.
 
 Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are based upon the standard AspEmail(tm) classes.
 
-**Version**: 6.2.0<br/>
+**Version**: 6.6.5<br/>
 **License**: LGPL
 
 Copyright © 2003 Brent R. Matzelle (bmatzelle AT yahoo DOT com)
 
 :::
 
-<http://phpmailer.sourceforge.net><br/>
-<https://github.com/PHPMailer/PHPMailer/releases>
+<https://github.com/PHPMailer/PHPMailer>
 
 ## PHP Markdown
 
@@ -1094,14 +1093,14 @@ RequireJS is a JavaScript file and module loader.
 
 scssphp is a compiler for SCSS written in PHP.
 
-**Version**: 1.10.0<br/>
+**Version**: 1.11.0<br/>
 **License**: MIT
 
 Copyright (c) 2015 Leaf Corcoran
 
 :::
 
-<http://leafo.github.io/scssphp>
+<https://scssphp.github.io/scssphp/>
 
 ## SimplePie
 
@@ -1109,7 +1108,7 @@ Copyright (c) 2015 Leaf Corcoran
 
 Simple Pie helps with blogs.
 
-**Version**: 1.5.6<br/>
+**Version**: 1.6.0<br/>
 **License**: BSD
 
 :::
@@ -1195,7 +1194,7 @@ Library for importing and exporting csv / excel / ODS files.
 
 Class to generate PDF files
 
-**Version**: 6.4.1<br/>
+**Version**: 6.5.0<br/>
 **License**: LGPL-v3.0-only
 
 Copyright Olivier PLATHEY
@@ -1203,6 +1202,28 @@ Copyright Olivier PLATHEY
 :::
 
 <http://www.setasign.com/products/fpdi/downloads>
+
+## TinyMCE
+
+:::note lib/editor/tiny/js
+
+Trusted open source rich text editor for devs who want control
+
+**Version**: 6.2.0
+**License**: MIT
+
+:::
+
+## TinyMCE (legacy)
+
+:::note lib/editor/tinymce/tiny_mce
+
+The JavaScript Rich Text Editor
+
+**Version**: 3.5.11
+**License**: LGPL
+
+:::
 
 ## Twitter Bootstrap
 
@@ -1260,7 +1281,7 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 
 JavaScript library that makes it easier to work with and build on HTML5 video
 
-**Version**: 7.17.0<br/>
+**Version**: 7.20.3<br/>
 **License**: Apache
 
 Copyright Brightcove, Inc
@@ -1334,6 +1355,21 @@ Copyright © 2009 Phacility
 :::
 
 <https://github.com/phacility/xhprof>
+
+## XMLRPC for PHP
+
+:::note lib/phpxmlrpc
+
+A php library for building xml-rpc clients and servers
+
+**Version**: 4.8.1<br/>
+**License**: BSD
+
+Copyright © 1999,2000,2001 Edd Dumbill, Useful Information Company
+
+:::
+
+<https://github.com/gggeek/phpxmlrpc>
 
 ## Yahoo User Interface
 

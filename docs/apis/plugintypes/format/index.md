@@ -266,7 +266,7 @@ The format base class is used for all the core_courseformat integrations, from s
 | `get_renderer()` | Return the course format renderer instance |
 | `get_output_classname()` | This method gets a relative output class path (for example, "content\\section") and returns the correct output class namespace depending on if the format has overridden outputs or not. See [overriding output classes](#override-output-classes) section for more information. |
 | `is_section_current()` | Returns if a specific section is marked as current (highlighted) or not. |
-| `show_editor()` | Do all the user and page validations to know if the current course display has to include editor options or not. This includes both page editing mode and user capabilities. |
+| `show_editor()` | Do all the user and page validations to know if the current course display has to include editor options or not. This includes both page editing mode and user capabilities. You can pass an array of capabilities which should be checked. If none specified, will default to `moodle/course:manageactivities`. |
 
 ## Rendering a course
 

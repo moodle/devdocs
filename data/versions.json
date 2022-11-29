@@ -7,7 +7,14 @@
             "generalEndDate": "13 November 2023",
             "securityEndDate": "10 November 2025",
             "isLTS": true,
-            "releases": []
+            "releases": [
+                {
+                    "name": "4.1.0",
+                    "releaseDate": "28 November 2022",
+                    "version": 2022112800,
+                    "upgradePath": "https://docs.moodle.org/401/en/Upgrading"
+                }
+            ]
         },
         {
             "name": "4.0",
@@ -41,6 +48,11 @@
                     "name": "4.0.4",
                     "releaseDate": "12 September 2022",
                     "version": 2022041904
+                },
+                {
+                    "name": "4.0.5",
+                    "releaseDate": "14 November 2022",
+                    "version": 2022041905
                 }
             ]
         },
@@ -107,6 +119,11 @@
                     "name": "3.11.10",
                     "releaseDate": "12 September 2022",
                     "version": 2021051710
+                },
+                {
+                    "name": "3.11.11",
+                    "releaseDate": "14 November 2022",
+                    "version": 2021051711
                 }
             ]
         },
@@ -280,6 +297,11 @@
                     "name": "3.9.17",
                     "releaseDate": "12 September 2022",
                     "version": 2020061517
+                },
+                {
+                    "name": "3.9.18",
+                    "releaseDate": "14 November 2022",
+                    "version": 2020061518
                 }
             ]
         },

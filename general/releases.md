@@ -21,7 +21,7 @@ The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/
 
 <SupportedReleases />
 
-![Release graph summarising the currently supported Moodle releases in a visual form](_releases/404_release_graph.png)
+![Release graph summarising the currently supported Moodle releases in a visual form](_releases/4010_release_graph.png)
 
 <details>
     <summary>Release graph key</summary>
@@ -83,6 +83,17 @@ These are the target dates for releases. These dates may vary slightly due to un
 :::tip
 
 Upcoming release dates can be found in the Moodle development calendar, which is available as an [iCal feed](https://www.google.com/calendar/ical/moodle.com_p4c2oe7hsb77ltaro5qtihb5d4%40group.calendar.google.com/public/basic.ics), or to [browse](https://calendar.google.com/calendar/embed?src=moodle.com_p4c2oe7hsb77ltaro5qtihb5d4@group.calendar.google.com&pli=1).
+
+:::
+
+## Moodle 4.1
+
+<ReleaseTable releaseName="4.1" />
+
+:::info
+
+Bug fixes for general core bugs in 4.1.x will end 13 November 2023 (12 months).<br/>
+Bug fixes for security issues in 4.1.x will end 10 November 2025 (36 months).
 
 :::
 

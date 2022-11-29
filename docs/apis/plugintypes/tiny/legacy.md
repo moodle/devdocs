@@ -1,5 +1,5 @@
 ---
-title: TinyMCE Editor plugins
+title: Legacy TinyMCE Editor plugins
 tags:
   - TinyMCE
   - Plugin
