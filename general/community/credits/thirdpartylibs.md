@@ -1175,18 +1175,18 @@ Copyright © 2004 SpikeSource Inc
 
 <http://developer.spikesource.com/projects/phpcoverage>
 
-## Spout
+## OpenSpout
 
-:::note lib/spout
+:::note lib/openspout
 
-Library for importing and exporting csv / excel / ODS files.
+Library to read and write spreadsheet files (CSV, XLSX and ODS).
 
-**Version**: 3.3.0<br/>
-**License**: Apache
+**Version**: 3.7.3<br/>
+**License**: MIT
 
 :::
 
-<https://github.com/box/spout/>
+<https://github.com/openspout/openspout>
 
 ## TCPDF Class
 
