@@ -45,6 +45,7 @@ program
     .command('push-migrated')
     .description('Update the list of migrated pages on the remote WikiMedia site')
     .option('-d, --debug', 'Add debugging logging')
+    .option('-f, --force', 'Force an update')
     .action(async (options) => {
         if (options.debug || process.env.DEBUG) {
             logger.level = 'debug';
@@ -63,7 +64,7 @@ program
         }
 
         logger.info('Starting update of migrated pages in remote site');
-        await updateMigratedPages();
+        await updateMigratedPages(options.force);
         await updateMigratedPagesProtection();
         logger.info('Run completed');
     });

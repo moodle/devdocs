@@ -304,7 +304,7 @@ const getUpdateMigratedPagesProtection = (logger) => (client) => async () => {
 /**
  * Update the migrated page docs in Wikimedia.
  */
-const getUpdateMigratedPages = (logger) => (client) => async () => {
+const getUpdateMigratedPages = (logger) => (client) => async (force = false) => {
     const migratedPageData = yaml.load(await readFile(getMigrationPagePath(), 'utf8'));
 
     const getDocIdList = (newDocIds) => {
@@ -322,20 +322,16 @@ const getUpdateMigratedPages = (logger) => (client) => async () => {
         const migratedDocData = await getCurrentMigratedIdsForPage(legacyPage);
         const docIds = migratedDocData.newDocIds.sort();
 
-        if (JSON.stringify(docIds) === JSON.stringify(newDocIds)) {
+        if (!force && JSON.stringify(docIds) === JSON.stringify(newDocIds)) {
             logger.debug(`==> No changes for ${legacyPage} (${docIds.join(', ')})`);
         } else {
             logger.debug(`===> Current docIds for ${legacyPage} are: ${docIds.join(', ')}`);
             logger.info(`===> Setting docIds for ${legacyPage} to: ${newDocIds.join(', ')}`);
             const newTemplates = newDocIds.map((newDocId) => `{{Template:Migrated|newDocId=${newDocId}}}\n`).join('');
 
-            const newContent = newTemplates + migratedDocData.data.replaceAll(
-                /\{\{Template:Migrated[^}]*\}\}/g,
-                '',
-            ).trimStart();
             client.edit(
                 legacyPage,
-                newContent,
+                newTemplates.trimStart(),
                 'Update migration status and path',
 
                 // This is a major edit. minor = false.
