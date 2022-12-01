@@ -120,7 +120,6 @@ const config = {
     }),
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     plugins: [
-        'plugin-image-zoom',
         [
             '@docusaurus/plugin-content-docs',
             {
