@@ -23,7 +23,7 @@ To set up a local development environment we recommend install [NVM](https://git
 
 ```console
 nvm install
-npm i -g yarn
+corepack enable
 yarn
 ```
 
