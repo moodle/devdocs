@@ -17,15 +17,15 @@
  */
 
 /* eslint-disable import/no-extraneous-dependencies */
-const yaml = require('js-yaml');
-const path = require('path');
-const { exec } = require('child_process');
-const { program } = require('commander');
-const { writeFile, mkdir } = require('fs/promises');
-const { createWriteStream } = require('fs');
-const inquirer = require('inquirer');
+import yaml from 'js-yaml';
+import path from 'path';
+import { exec } from 'child_process';
+import { program } from 'commander';
+import { writeFile, mkdir } from 'fs/promises';
+import { createWriteStream } from 'fs';
+import inquirer from 'inquirer';
 
-const {
+import {
     getFetchDoc,
     getGetPagesByPrefix,
     getClient,
@@ -35,7 +35,7 @@ const {
     guessSlug,
     getGetImagesFromArticle,
     getGetImageInfo,
-} = require('./utils');
+} from './utils.js';
 
 const fetch = (...args) => import('node-fetch').then(({ default: get }) => get(...args));
 

@@ -24,7 +24,7 @@
     "mdxlint-all": "markdownlint-cli2-config .markdownlint/mdx/.markdownlint-cli2.cjs '{docs,general}/**/*.mdx' '*.mdx'",
     "mdxfix": "markdownlint-cli2-config .markdownlint/mdx/fix/.markdownlint-cli2.cjs",
     "mdxfix-all": "markdownlint-cli2-config .markdownlint/mdx/fix/.markdownlint-cli2.cjs '{docs,general}/**/*.mdx' '*.mdx'",
-    "migrate": "scripts/wikimedia-fetch.js migrate",
+    "migrate": "scripts/wikimedia-fetch.mjs migrate",
     "lint": "yarn mdlint-all; yarn mdxlint-all; yarn spell",
     "prepare": "husky install",
     "spell": "cspell '*.md' '*.mdx' '**/*.md' '**/*.mdx' 'docs/*.md' 'docs/*.mdx' 'docs/**/*.md' 'docs/**/*.mdx' 'general/*.md' 'general/*.mdx' 'general/**/*.md' 'general/**/*.mdx'"
@@ -84,7 +84,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-regexp": "^1.11.0",
     "husky": "^8.0.2",
-    "inquirer": "^8.2.5",
+    "inquirer": "^9.1.4",
     "jest": "^29.3.1",
     "js-yaml": "^4.1.0",
     "lint-staged": "^13.0.4",
