@@ -90,7 +90,6 @@
     "lint-staged": "^12.3.7",
     "markdownlint-cli2": "^0.4.0",
     "markdownlint-rule-helpers": "^0.16.0",
-    "netlify-plugin-cache": "^1.0.3",
     "node-fetch": "^3.2.10",
     "nodemw": "^0.17.0",
     "stylelint": "^14.6.1",

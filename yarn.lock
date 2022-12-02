@@ -8718,7 +8718,6 @@ __metadata:
     lint-staged: ^12.3.7
     markdownlint-cli2: ^0.4.0
     markdownlint-rule-helpers: ^0.16.0
-    netlify-plugin-cache: ^1.0.3
     node-fetch: ^3.2.10
     nodemw: ^0.17.0
     prism-react-renderer: ^1.3.1
@@ -13758,13 +13757,6 @@ __metadata:
   version: 2.6.2
   resolution: "neo-async@npm:2.6.2"
   checksum: deac9f8d00eda7b2e5cd1b2549e26e10a0faa70adaa6fdadca701cc55f49ee9018e427f424bac0c790b7c7e2d3068db97f3093f1093975f2acb8f8818b936ed9
-  languageName: node
-  linkType: hard
-
-"netlify-plugin-cache@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "netlify-plugin-cache@npm:1.0.3"
-  checksum: 967b9b7855711843ec1412a58be703850e46582e1df3e0edf086b5bcc3ac9b358a307eefed4520eafaeeec9011ecd4bf9b2919261454ece4699754653645891e
   languageName: node
   linkType: hard
 
