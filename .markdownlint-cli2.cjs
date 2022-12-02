@@ -212,6 +212,13 @@ config.MD049 = false;
 // MD050 / strong - style - Strong style should be consistent
 config.MD050 = false;
 
+// MDL051 / link-fragments - Links fragments should be valid
+// This rule is not compatible with Docusaurus as Docusaurus generates ids not present in the source.
+config.MD051 = false;
+
+// MD052 / reference-links-images - Reference links and images should use a label that is defined
+// MD053 / link-image-reference-definitions - Link and image reference definitions should be needed
+
 // Moodle casedWords.
 // Used to ensure that casing of some words is correct - for example in Trademarks.
 config.casedWords = {

@@ -1,3 +1,4 @@
 {
-    "stylelint.packageManager": "yarn"
+    "stylelint.packageManager": "yarn",
+    "cSpell.enabled": true
 }

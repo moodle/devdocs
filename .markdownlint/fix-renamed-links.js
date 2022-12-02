@@ -22,7 +22,7 @@ const {
     forEachLine,
     getLineMetadata,
     codeBlockAndSpanRanges,
-    overlapsAnyRange,
+    withinAnyRange,
 } = require('markdownlint-rule-helpers');
 
 const path = require('path');
@@ -245,7 +245,7 @@ module.exports = {
                     continue;
                 }
 
-                if (overlapsAnyRange(exclusions, lineIndex, match.index, match[0].length)) {
+                if (withinAnyRange(exclusions, lineIndex, match.index, match[0].length)) {
                     // This match was within a code block.
                     // Skip.
                     continue;

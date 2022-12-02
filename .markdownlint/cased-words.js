@@ -22,7 +22,7 @@ const {
     forEachLine,
     getLineMetadata,
     codeBlockAndSpanRanges,
-    overlapsAnyRange,
+    withinAnyRange,
 } = require('markdownlint-rule-helpers');
 
 const linkSearch = /(?<markdownLink>\[[^\]]*\](?<link>\([^)]*\)))/g;
@@ -78,7 +78,7 @@ module.exports = {
                     continue;
                 }
 
-                if (overlapsAnyRange(exclusions, lineIndex, match.index, match[0].length)) {
+                if (withinAnyRange(exclusions, lineIndex, match.index, match[0].length)) {
                     continue;
                 }
 

@@ -86,7 +86,7 @@ Entries in `$deprecatedcapabilities` can have a `replacement` key indicating a n
 
 `$deprecatedcapaibilities` can also define an optional `message` explaining the deprecation.
 
-The following example demonstates an access.php file where a capability has been deprecated and replaced with another.
+The following example demonstrates an access.php file where a capability has been deprecated and replaced with another.
 
 ```php title="mod/folder/db/access.php"
 $capabilities = [
