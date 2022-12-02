@@ -169,9 +169,9 @@ class renderer extends plugin_renderer_base {
 }
 ```
 
-The renderer exists to provide `render_<page>` methods for all renderables used in the plugin. A theme designer can provide a custom version of this renderer that changes the behaviour of any of the render methods and so to customize their theme. In this example, the render method for the index page (`render_index_page`) does 2 things. It asks the renderable to export it's data so that it is suitable for passing as the context to a template, and then renders a specific template with this context. A themer could either manipulate the data in the render method (e.g. removing menu entries), or change the template (change the generated HTML) to customize the output.
+The renderer exists to provide `render_<page>` methods for all renderables used in the plugin. A theme designer can provide a custom version of this renderer that changes the behaviour of any of the render methods and so to customize their theme. In this example, the render method for the index page (`render_index_page`) does 2 things. It asks the renderable to export it's data so that it is suitable for passing as the context to a template, and then renders a specific template with this context. A theme designer could either manipulate the data in the render method (e.g. removing menu entries), or change the template (change the generated HTML) to customize the output.
 
-The template used in this plugin is located in the plugin's templates folder. The template can also be overridden by a themer.
+The template used in this plugin is located in the plugin's templates folder. The template can also be overridden by a theme designer.
 
 ```xml title="admin/tool/demo/templates/index_page.mustache"
 <div class="hero-unit">
@@ -233,16 +233,16 @@ Some interesting parameters for this function are:
 
 - **format**: To tell the function about how the data has been entered. It defaults to `FORMAT_MOODLE` that is a cool format to process plain text because it features automatic link conversion, smilies and good conversion to html output. Other formats are `FORMAT_HTML`, `FORMAT_PLAIN`, `FORMAT_MARKDOWN`.
 - **options**: Here we can specify how we want the process to be performed. You only need to define them if they are different from the default value assumed. Main options are:
-  - **options->noclean**: To decide if we want to skip the clean-up of text, **un-protecting us** from attacks and other security flaws (defaults to false, so protection is enabled. You **shouldn't set it to true ever** unless you are 200% sure that only controlled users can edit it (mainly admins). **Never use it for general text places** (posts...) or you will be, sooner or later, attacked! Note that this option is ignored for `FORMAT_PLAIN`, the text is never cleaned.
-  - **options->trusted**: Indicates that this content is trusted and does not need clean-up (but only if `$CFG->enabletrusttext` is true). This argument is ignored if 'noclean' is specified.
-  - **options->filter**: To decide if you want to allow filters to process the text (defaults to true). This is ignored by `FORMAT_PLAIN` for which filters are never applied.
-  - **options->context**: If text is filtered (and this happens by default), it is very important to specify context (id or object) for applying filters. If context is not specified it will be taken from `$PAGE->context` and may potentially result in displaying the same text differently on different pages. For example all module-related information should have module context even when it appears in course-level reports, all course-related information such as name and description should have course context even when they are displayed on front page or system pages.
-  - **options->para**: To decide if you want every paragraph automatically enclosed between html paragraph tags (`<p>...</p>`) (defaults to true). This option only applies to `FORMAT_MOODLE`.
-  - **options->newlines**: To decide if linefeeds in text should be converted to html newlines (`<br />`) (defaults to true). This option only applies to `FORMAT_MOODLE`.
-  - **options->nocache**: If true the string will not be cached and will be formatted every call. Default false.
-  - **options->overflowdiv **: If set to true the formatted text will be encased in a div with the class no-overflow before being returned. Default false.
-  - **options->allowid** : If true then id attributes will not be removed, even when using htmlpurifier. Default false.
-  - **options->blanktarget** : If true all `<a>` tags will have `target="_blank"` added unless target is explicitly specified. Default false.
+  - `options->noclean`: To decide if we want to skip the clean-up of text, **un-protecting us** from attacks and other security flaws (defaults to false, so protection is enabled. You **shouldn't set it to true ever** unless you are 200% sure that only controlled users can edit it (mainly admins). **Never use it for general text places** (posts...) or you will be, sooner or later, attacked! Note that this option is ignored for `FORMAT_PLAIN`, the text is never cleaned.
+  - `options->trusted`: Indicates that this content is trusted and does not need clean-up (but only if `$CFG->enabletrusttext` is true). This argument is ignored if `noclean` is specified.
+  - `options->filter`: To decide if you want to allow filters to process the text (defaults to true). This is ignored by `FORMAT_PLAIN` for which filters are never applied.
+  - `options->context`: If text is filtered (and this happens by default), it is very important to specify context (id or object) for applying filters. If context is not specified it will be taken from `$PAGE->context` and may potentially result in displaying the same text differently on different pages. For example all module-related information should have module context even when it appears in course-level reports, all course-related information such as name and description should have course context even when they are displayed on front page or system pages.
+  - `options->param`: To decide if you want every paragraph automatically enclosed between html paragraph tags (`<p>...</p>`) (defaults to true). This option only applies to `FORMAT_MOODLE`.
+  - `options->newlines`: To decide if line feeds in text should be converted to html newlines (`<br />`) (defaults to true). This option only applies to `FORMAT_MOODLE`.
+  - `options->nocache`: If true the string will not be cached and will be formatted every call. Default false.
+  - `options->overflowdiv`*: If set to true the formatted text will be encased in a div with the class no-overflow before being returned. Default false.
+  - `options->allowid` : If true then id attributes will not be removed, even when using HTML Purifier. Default false.
+  - `options->blanktarget` : If true all `<a>` tags will have `target="_blank"` added unless target is explicitly specified. Default false.
 - **courseid_do_not_use**: This parameter was earlier used to help applying filters but now is replaced with more precise `$options->context`, see above
 
 ### format_string()
@@ -261,11 +261,11 @@ Please note that this function is basically one stripped version of the full `fo
 
 Some interesting parameters for this function are:
 
-- **striplinks**: To decide if, after the text has been processed by filters, we must delete any link from the result text. Used when we want to show the text inside menus, page titles... (defaults to true).
-- **options**
-  - **options->context**: Context (id or object) for applying filters. If context is not specified it will be taken from `$PAGE->context` and may potentially result in displaying the same text differently on different pages. For example all module-related information should have module context even when it appears in course-level reports, all course-related information such as name and description should have course context even when they are displayed on front page or system pages.
-  - **options->escape**: To decide if you want to escape HTML entities. True by default.
-  - **options->filter**: To decide if you want to allow filters to process the text (defaults to true). This is ignored by `FORMAT_PLAIN` for which filters are never applied.
+- `striplinks`: To decide if, after the text has been processed by filters, we must delete any link from the result text. Used when we want to show the text inside menus, page titles... (defaults to true).
+- `options`
+  - `options->context`: Context (id or object) for applying filters. If context is not specified it will be taken from `$PAGE->context` and may potentially result in displaying the same text differently on different pages. For example all module-related information should have module context even when it appears in course-level reports, all course-related information such as name and description should have course context even when they are displayed on front page or system pages.
+  - `options->escape`: To decide if you want to escape HTML entities. True by default.
+  - `options->filter`: To decide if you want to allow filters to process the text (defaults to true). This is ignored by `FORMAT_PLAIN` for which filters are never applied.
 
 :::note
 In earlier versions of Moodle, the third argument was integer `$courseid`. It is still supported for legacy - if the third argument is an integer instead of an array or object, it is considered to be course id and is this course's context is passed to the filters being applied.
