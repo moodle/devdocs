@@ -62,7 +62,7 @@ Copyright Deque Systems Inc.
 
 Bennu is an object-oriented library written in PHP that implements the iCalendar standard (RFC 2445).
 
-**Version**: 0.1 (customized since then) <br/>
+**Version**: 0.2 (customized since then) <br/>
 **License**: LGPL 2.1+
 
 Copyright (c) 2005, Jon Papaioannou
