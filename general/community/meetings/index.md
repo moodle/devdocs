@@ -12,8 +12,8 @@ sidebar_label: Meetings
 Developer meetings are open to anyone interested in Moodle development.
 
 :::important
-Our next Developer meeting is on 13th December 2022.
-The agenda and meeting link are in the [Developer meeting December 2022 notes](./202212.md)
+Our next Developer meeting is now on 31st January 2023.
+The agenda and meeting link are in the [Developer meeting January 2023 notes](./202301.md)
 
 If there are any topics that you would like to present or discuss at a developer meeting, please contact [Aurelie Soulier](https://moodle.org/user/profile.php?id=5177207).
 
@@ -21,9 +21,12 @@ If there are any topics that you would like to present or discuss at a developer
 
 ## Past meeting notes
 
+### 2023
+
+- [Developer meeting January 2023](./202301.md)
+
 ### 2022
 
-- [Developer meeting December 2022](./202212.md)
 - [Developer meeting October 2022](./202210.md)
 - [Developer meeting June 2022](./202206.md)
 - [Developer meeting April 2022](./202204.md)
