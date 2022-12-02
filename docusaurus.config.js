@@ -33,7 +33,6 @@ versionConfig.current = {
 const remarkPlugins = [
     require('./src/remark/moodleBanner'),
     require('./src/remark/trackerLinks'),
-    require('mdx-mermaid'),
 ];
 
 const isDeployPreview = !!process.env.NETLIFY && process.env.CONTEXT === 'deploy-preview';
@@ -120,7 +119,6 @@ const config = {
     }),
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     plugins: [
-        'plugin-image-zoom',
         [
             '@docusaurus/plugin-content-docs',
             {
