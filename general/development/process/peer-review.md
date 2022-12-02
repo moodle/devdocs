@@ -45,7 +45,7 @@ To allow the community of Moodle developers to work together, conventions should
 - Variables are named correctly (all lower case, no camel-case, no underscores).
 - Functions are named correctly (all lower case, no camel-case, underscores allowed).
 - PHP DocBlocks have been updated and adhere to coding style guide.
-- Where functions are being removed, the Deprecation process is followed.
+- Where functions are being removed, the [deprecation policy](../policies/deprecation.md) is followed.
 - The code doesn't use deprecated functions.
 - $_GET, $_POST, $_REQUEST, $_COOKIE, and $_SESSION are never used.
 
@@ -62,7 +62,8 @@ Ensure that:
 - Output renders are used to generate output strings, including HTML tags;
 - HTML output is valid html5;
 - No inline styles have been used in HTML output (everything has to be in CSS);
-- CSS has been added to the appropriate CSS files (base, specific area, sometimes canvas); and
+- CSS has been added to the appropriate CSS files (base, specific area, sometimes canvas);
+- Existing classes/layouts provided by Bootstrap and/or the theme are used where possible;
 - The code doesn't use buffered output unless absolutely necessary.
 - All visual output has a RTL alternative included
 - Feedback any notices (E_STRICT, etc) seen into the MDL.
@@ -179,7 +180,7 @@ Ensure that:
 
 - The PHPdoc comments on all classes, methods and fields are useful. (Comments that just repeat the function name are not helpful! Add value.)
 - Where an API has been changed significantly, the relevant upgrade.txt file has been updated with information.
-- Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but actually say what should be done instead.
+- Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but actually follow the [deprecation policy](../policies/deprecation.md).
 - Appropriate [labels](../tracker/labels.md) have been added when there has been a function change, particularly
   - docs_required (any functional change, usually paired with `ui_change`),
   - dev_docs_required (any change to APIs, usually paired with `api_change`),
@@ -193,9 +194,11 @@ Ensure that:
 
 Ensure that:
 
-- The commit matches the [Coding style](../policies/codingstyle/index.md)
+- The commit matches the [Coding style](../policies/codingstyle/index.md#git-commits)
 - The Git history is clean and the work has been rebased to logical commits; and
 - The original author of the work provided as a patch has been given credit within the commit (as author of in the commit message if changes were made).
+
+See also the [Commit cheat sheet](https://docs.moodle.org/dev/Commit_cheat_sheet) for further guidance.
 
 ### Third party code
 
