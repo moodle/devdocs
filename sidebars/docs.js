@@ -69,7 +69,7 @@ const sidebars = {
         {
             label: 'Release notes',
             type: 'link',
-            href: '/general/releases/4.0',
+            href: '/general/releases/4.1',
         },
         {
             label: 'Projects',
