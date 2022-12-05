@@ -13,6 +13,9 @@ Access_API:
 Accessibility:
 - filePath: "/general/development/policies/accessibility.md"
   slug: "/general/development/policies/accessibility"
+Activity_chooser:
+- filePath: "/docs/apis/plugintypes/mod/activitymodule.md"
+  slug: "/docs/apis/plugintypes/mod/activitymodule"
 Activity_completion_API:
 - filePath: "/docs/apis/core/activitycompletion/index.md"
   slug: "/docs/apis/core/activitycompletion/"
@@ -1560,12 +1563,12 @@ String_deprecation:
 Subject_Access_Request_FAQ:
 - filePath: "/docs/apis/subsystems/privacy/faq.md"
   slug: "/docs/apis/subsystems/privacy/faq"
+Tag_API:
+- filePath: "/docs/apis/subsystems/tag/index.md"
+  slug: "/docs/apis/subsystems/tag/"
 Task_API:
 - filePath: "/docs/apis/subsystems/task/index.md"
   slug: "/docs/apis/subsystems/task/"
-Tag_API:
-    - filePath: "/docs/apis/subsystems/tag/index.md"
-      slug: "/docs/apis/subsystems/tag/"
 Templates:
 - filePath: "/docs/guides/templates/index.md"
   slug: "/docs/guides/templates/"
