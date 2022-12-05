@@ -1,3 +1,6 @@
+AJAX:
+- filePath: "/docs/guides/javascript/ajax/index.md"
+  slug: "/docs/guides/javascript/ajax/"
 Acceptance_testing/Browsers:
 - filePath: "/general/development/tools/behat/browsers/index.md"
   slug: "/general/development/tools/behat/browsers/"
@@ -1560,12 +1563,12 @@ String_deprecation:
 Subject_Access_Request_FAQ:
 - filePath: "/docs/apis/subsystems/privacy/faq.md"
   slug: "/docs/apis/subsystems/privacy/faq"
+Tag_API:
+- filePath: "/docs/apis/subsystems/tag/index.md"
+  slug: "/docs/apis/subsystems/tag/"
 Task_API:
 - filePath: "/docs/apis/subsystems/task/index.md"
   slug: "/docs/apis/subsystems/task/"
-Tag_API:
-    - filePath: "/docs/apis/subsystems/tag/index.md"
-      slug: "/docs/apis/subsystems/tag/"
 Templates:
 - filePath: "/docs/guides/templates/index.md"
   slug: "/docs/guides/templates/"
