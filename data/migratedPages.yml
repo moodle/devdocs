@@ -1617,6 +1617,9 @@ Writing_acceptance_tests:
 YUI:
 - filePath: "/docs/guides/javascript/yui/index.md"
   slug: "/docs/guides/javascript/yui/"
+YUI/Modules:
+- filePath: "/docs/guides/javascript/yui/modules.md"
+  slug: "/docs/guides/javascript/yui/modules"
 html_writer:
 - filePath: "/docs/apis/core/htmlwriter/index.md"
   slug: "/docs/apis/core/htmlwriter/"
