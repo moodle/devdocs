@@ -45,7 +45,6 @@ The Moodle community is in the process of improving much of its JavaScript in ar
 You may find the following resources particularly helpful:
 
 - [YUI](./index.md); and
-- [YUI/Shifter](https://docs.moodle.org/dev/YUI/Shifter).
 
 ### Structure and naming
 
