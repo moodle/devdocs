@@ -1560,12 +1560,12 @@ String_deprecation:
 Subject_Access_Request_FAQ:
 - filePath: "/docs/apis/subsystems/privacy/faq.md"
   slug: "/docs/apis/subsystems/privacy/faq"
+Tag_API:
+- filePath: "/docs/apis/subsystems/tag/index.md"
+  slug: "/docs/apis/subsystems/tag/"
 Task_API:
 - filePath: "/docs/apis/subsystems/task/index.md"
   slug: "/docs/apis/subsystems/task/"
-Tag_API:
-    - filePath: "/docs/apis/subsystems/tag/index.md"
-      slug: "/docs/apis/subsystems/tag/"
 Templates:
 - filePath: "/docs/guides/templates/index.md"
   slug: "/docs/guides/templates/"
@@ -1614,6 +1614,9 @@ Using_the_Moodle_App_in_a_browser:
 Writing_acceptance_tests:
 - filePath: "/general/development/tools/behat/writing.md"
   slug: "/general/development/tools/behat/writing"
+YUI:
+- filePath: "/docs/guides/javascript/yui/index.md"
+  slug: "/docs/guides/javascript/yui/"
 html_writer:
 - filePath: "/docs/apis/core/htmlwriter/index.md"
   slug: "/docs/apis/core/htmlwriter/"
