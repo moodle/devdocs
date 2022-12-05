@@ -71,12 +71,9 @@ Therefor the name for this module will be:
 moodle-block_fruit-fruitbowl
 ```
 
-The other thing that you need to know in order to create your first module
-is where in your plugin the code needs to be.
+The other thing that you need to know in order to create your first module is where in your plugin the code needs to be.
 
-As described in the [JavaScript/Shifter#How do I write a YUI module which uses Shifter.3F](https://docs.moodle.org/dev/Javascript/Shifter#How_do_I_write_a_YUI_module_which_uses_Shifter.3F) documentation, the code will need to go in your plugin directory inside a yui directory.
-
-Since Moodle 2.5, the structure for this directory is:
+The code will need to go in your plugin directory inside a `yui` directory. Since Moodle 2.5, the structure for this directory is:
 
 ```bash
 yui/
@@ -86,7 +83,7 @@ yui/
         |-- js
         |   |-- fruitbowl.js
         |-- meta
-            |-- fruitbowl.json
+        |   |-- fruitbowl.json
 ```
 
 *Note: Moodle 2.5 onwards is backwards compatibly with the previous structure.*
@@ -98,8 +95,6 @@ So in the case of `moodle-block_fruit-fruitbowl`, the JavaScript code will need 
 ```
 
 (Sorry, it does look a little more complicated than it really is)
-
-See the notes in the [Shifter](https://docs.moodle.org/dev/Javascript/Shifter#How_do_I_write_a_YUI_module_which_uses_Shifter.3F) documentation for details on the build.json and meta/MODULENAME.json file contents.
 
 Now that you know where your code needs to be on disk, you can actually include and write it.
 

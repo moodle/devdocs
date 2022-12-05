@@ -22,8 +22,6 @@ Originally this transition suggested the use of jQuery, but since Moodle 3.8 the
 
 The [Yahoo! User Interface (YUI)](http://yuilibrary.com) framework is a fast, powerful, modular, and [well-documented](http://yuilibrary.com/yui/docs/api/) framework with a powerful loading system.
 
-<!-- cspell:ignore yuidoc -->
-
 ## The Basics
 
 YUI is an extremely extensible, fast, modular, and powerful JavaScript framework with a very capable loading system.
@@ -103,59 +101,31 @@ Some good books:
 
 JavaScript authoring have moved along considerably in recent years, and we highly recommend that you look at using some of the available tools to help you in your development. Most of these tools are available through [Node.js](http://nodejs.org) which is relatively trivial to install on most operating systems:
 
-### Shifter
+### Grunt
 
-[Shifter](https://docs.moodle.org/dev/Javascript/Shifter) is a tool to help manage your YUI modules. It takes away some of the confusion associated with creating a YUI module (like the YUI.add line) and moves the metadata out of your module, and into a separate json file. This means that it can be picked up by Moodle to reduce the number of HTTP transactions through use of the YUI combo loader. Shifter also lints your code with jshint, and minifies your code too.
-
-The upstream YUI project use a tool called [Shifter](http://yuilibrary.com/shifter) to wrap up meta-data, rollup files, minify, and strip out debugging information from files.
-We will shortly be shifting to use of Shifter for core Moodle as it offers us many potential benefits.
-
-**Note: More information on the use of Shifter within Moodle is discussed at [JavaScript/Shifter](https://docs.moodle.org/dev/Javascript/Shifter).**
-
-#### Installation
-
-Installation is relatively simple from the node.js Packaging Manager:
-
-```bash
-    npm install shifter@SUPPORTEDVERSION -g
-```
-
-For information on the current support version see [JavaScript/Shifter#Supported version of Shifter](https://docs.moodle.org/dev/Javascript/Shifter#Supported_version_of_Shifter)
+Moodle uses [Grunt](../index.md#grunt) for most JavaScript management. We recommend reading our Grunt documentation for further information on the available commands.
 
 #### Use
 
-There are two ways to run shifter depending on your intended use.
+There are several ways to use `grunt`.
 
-During development, we recommend you run shifter in --watch mode. To do so, enter the src directory of the module you are working on and run:
-
-```bash
-cd lib/yui/src
-shifter --watch
-```
-
-For more general use, you can run shifter across the whole of Moodle using --walk:
+During development, we recommend you run grunt in _watch_ mode:
 
 ```bash
-shifter --walk --recursive
+npx grunt watch
 ```
 
-...from your Moodle wwwroot.
+To build all YUI modules across Moodle you can call `grunt` by running the following command from the root directory:
 
-Read more about shifter: https://moodle.org/mod/forum/discuss.php?d=217450
+```bash
+npx grunt yui
+```
 
 ### JSHint
 
 [JSHint](http://jshint.com) is a JSLint derivative for checking your code. This includes checking for errors and recommended stylistic approaches to writing JavaScript.
 
 Since Moodle 2.5, a JSHint configuration is also included in the Moodle codebase to inform the tester of our preferences and recommendations.
-
-#### Installation
-
-Installation is relatively simple:
-
-```bash
-    npm install jshint -g
-```
 
 #### Use
 
@@ -164,7 +134,7 @@ Many IDEs and editors will automatically detect if you have JSHint installed and
 To run jshint on the command line, simply pass it the file that you wish to check:
 
 ```bash
-    jshint blocks/fruit/yui/fruitbowl/fruitbowl.js
+npx jshint blocks/fruit/yui/fruitbowl/fruitbowl.js
 ```
 
 #### Documentation
@@ -173,36 +143,6 @@ There's a variety of documentation on JSHint and the error messages it returns. 
 
 - [JSHint](http://jshint.com)
 - [JSLint Error Explanations](http://jslinterrors.com)
-
-### YUIDoc
-
-[YUIDoc](http://yui.github.com/yuidoc/) is a documentation system. It can work with any type of code, but is designed with JavaScript in mind.
-It's the documentation system used to create the YUI core API documentation, and will soon be used to create API documentation for Moodle-specific YUI modules in core.
-
-#### Installation
-
-Installation is relatively simple:
-
-```bash
-    npm install yuidocjs -g
-```
-
-#### Use
-
-To run yuidoc across the entirety of Moodle JavaScript, from the root directory run:
-
-```bash
-    yuidoc
-```
-
-Whilst writing your documentation, you may also like to run yuidoc in server mode. See the --server option for help on how to do this.
-
-#### Documentation
-
-There's a variety of documentation on JSHint and the error messages it returns. Start off with the jshint website:
-
-- [YUIDoc Project Documentation](http://yui.github.com/yuidoc/)
-- [YUIDoc Syntax Reference](http://yui.github.com/yuidoc/syntax/index.html)
 
 ## Moodle Settings for JavaScript Development
 
