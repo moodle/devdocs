@@ -1,20 +1,19 @@
 ---
 title: Activity chooser
-tags: []
+tags:
+- MUA Project
+documentationDraft: true
 ---
-{{Infobox Project
-|state = Released in Moodle 3.9
-|name = Activity chooser
-|tracker = [MDL-67255](https://tracker.moodle.org/browse/MDL-67255) (epic)
-|discussion = https://moodle.org/mod/forum/discuss.php?d=346664
-|assignee = Team Alpha
-}}
 
-## Introduction
+:::caution
+
+This documentation is from the project kick-off and has not been updated since the project completed.
+
+:::
 
 Through our road-map creation process of looking at highly voted tracker issues and relevant forum posts, as well as MUA interaction, an update to the activity chooser to simplify and make less intimidating, was chosen.
 
-[MDL-57828](https://tracker.moodle.org/browse/MDL-57828) was created and worked on, but unfortunately stalled, and did not complete its way through the integration process. There is a substantial forum post [](https://moodle.org/mod/forum/discuss.php?d=346664), with many suggestions and current pain points with the activity chooser. The MUA created a proposal issue ([MDL-61511](https://tracker.moodle.org/browse/MDL-61511)) to tackle the same issue.
+[MDL-57828](https://tracker.moodle.org/browse/MDL-57828) was created and worked on, but unfortunately stalled, and did not complete its way through the integration process. There is a [substantial forum post](https://moodle.org/mod/forum/discuss.php?d=346664), with many suggestions and current pain points with the activity chooser. The MUA created a proposal issue ([MDL-61511](https://tracker.moodle.org/browse/MDL-61511)) to tackle the same issue.
 
 We have recently been analysing how course creation is achieved. Two main ideas were tested with focus groups to try and find the best away to approach course creation. With this information we are confident that we have a user focused design that will improve the activity chooser for everyone.
 
@@ -63,7 +62,7 @@ The information about an activity will be accessible through the 'i' icon. Click
 
 ## Third party plugin developers
 
-Course module plugins can add items to the activity chooser by implementing the **{plugin}_get_content_items()** callback in their plugin lib (lib.php). This callback replaces the now deprecated **{plugin}_get_shortcuts()** method.
+Course module plugins can add items to the activity chooser by implementing the `{plugin}_get_content_items()` callback in their plugin lib (lib.php). This callback replaces the now deprecated `{plugin}_get_shortcuts()` method.
 
 In order for activity starring and recommendations to work, each content_item has an ID which is subject to some additional rules. Each ID:
 
@@ -71,8 +70,8 @@ In order for activity starring and recommendations to work, each content_item ha
 - Must not change.
 - Must be of type integer.
 
-See **lti_get_course_content_items()** for an example implementation in core.
+See `lti_get_course_content_items()` for an example implementation in core.
 
-Additionally, for recommendations to be made, plugins must implement the **{plugin}_get_all_content_items()** callback in their lib.php. This method must return a list of all content items that can be added across all courses.
+Additionally, for recommendations to be made, plugins must implement the `{plugin}_get_all_content_items()` callback in their lib.php. This method must return a list of all content items that can be added across all courses.
 
-Developers who are currently using the deprecated **{plugin}_get_shortcuts()** callback should implement the new callback in their plugins as soon as possible. Whilst legacy items are still included (in cases where the new callback has yet to be implemented in the plugin), these items can not be starred, nor recommended. Eventually all support for the deprecated method will be removed, as per normal deprecation policy.
+Developers who are currently using the deprecated `{plugin}_get_shortcuts()` callback should implement the new callback in their plugins as soon as possible. Whilst legacy items are still included (in cases where the new callback has yet to be implemented in the plugin), these items can not be starred, nor recommended. Eventually all support for the deprecated method will be removed, as per normal deprecation policy.
