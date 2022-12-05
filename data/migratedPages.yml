@@ -1620,6 +1620,9 @@ YUI:
 YUI/Modules:
 - filePath: "/docs/guides/javascript/yui/modules.md"
   slug: "/docs/guides/javascript/yui/modules"
+YUI/Namespacing:
+- filePath: "/docs/guides/javascript/yui/namespacing.md"
+  slug: "/docs/guides/javascript/yui/namespacing"
 html_writer:
 - filePath: "/docs/apis/core/htmlwriter/index.md"
   slug: "/docs/apis/core/htmlwriter/"
