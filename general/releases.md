@@ -78,7 +78,7 @@ These are the target dates for releases. These dates may vary slightly due to un
 | Release type | Frequency | Months |
 | --- | --- | --- |
 | [Major](./development/process.md#major-release-cycles) (eg. 3.x) | 6 monthly | Second Monday of May and November |
-| [Minor](./development/process.md#stable-maintenance-cycles) (Point) (eg. 3.x.y) | 2 monthly | Second Monday of July, September, November, March and May. |
+| [Minor](./development/process.md#stable-maintenance-cycles) (Point) (eg. 3.x.y) | 2 monthly | Second Monday of July, September, November, March and May. Third Monday of January. |
 
 :::tip
 
