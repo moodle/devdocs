@@ -444,7 +444,7 @@ echo $output->render($widget);
 
 ## Rendering in JavaScript
 
-Rendering a template from JavaScript is fairly easy. There is a [JavaScript module](https://docs.moodle.org/dev/Javascript_Modules) that can load (and cache) a template and then use it for rendering the given data.
+Rendering a template from JavaScript is fairly easy. There is a [JavaScript module](../javascript/modules.md) that can load (and cache) a template and then use it for rendering the given data.
 
 ```javascript
 import {exception as displayException} from 'core/notification';

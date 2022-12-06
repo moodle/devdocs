@@ -96,7 +96,7 @@ Please note that this _must_ be called before any content is output.
 
 ## See also
 
-- [JavaScript Modules](https://docs.moodle.org/dev/Javascript_Modules)
+- [JavaScript Modules](../modules.md)
 - [Useful core JavaScript modules](https://docs.moodle.org/dev/Useful_core_Javascript_modules)
 - [jQuery in Moodle before Moodle 2.9](https://docs.moodle.org/dev/jQuery_pre2.9)
 - [jQuery Documentation](http://jquery.com)

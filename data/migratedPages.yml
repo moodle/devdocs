@@ -216,6 +216,9 @@ Hardening_new_Roles_system:
 Integration_Review:
 - filePath: "/general/development/process/integration/index.md"
   slug: "/general/development/process/integration"
+Javascript_Modules:
+- filePath: "/docs/guides/javascript/modules.md"
+  slug: "/docs/guides/javascript/modules"
 License:
 - filePath: "/general/license.md"
   slug: "/general/license"
