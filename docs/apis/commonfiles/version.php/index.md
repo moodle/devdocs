@@ -56,7 +56,7 @@ $plugin->version = 2022061700;
     types={["integer"]}
 />
 
-The requires key specifies the minimum version of Moodle core requiresf or this plugin to function. It is _not_ possible to install the plugin on an earlier version of Moodle.
+The requires key specifies the minimum version of Moodle core requires for this plugin to function. It is _not_ possible to install the plugin on an earlier version of Moodle.
 
 Moodle core's version number is defined in the `version.php` file located in the Moodle root directory.
 
@@ -99,6 +99,7 @@ The plugin will not be installable on any versions of Moodle from this point on.
 
 ```php title="Specify that this version of the plugin does not support Moodle 3.11 and subsequent releases"
 $plugin->incompatible = 311;
+```
 
 ### Maturity
 
