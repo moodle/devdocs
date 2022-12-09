@@ -1,3 +1,6 @@
+AJAX:
+- filePath: "/docs/guides/javascript/ajax/index.md"
+  slug: "/docs/guides/javascript/ajax/"
 Acceptance_testing/Browsers:
 - filePath: "/general/development/tools/behat/browsers/index.md"
   slug: "/general/development/tools/behat/browsers/"
