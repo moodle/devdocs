@@ -5,7 +5,7 @@ tags:
   - YUI
 ---
 
-import DeprecatedSince from '../../../../src/components/DeprecatedSince';
+import DeprecatedSince from '@site/src/components/DeprecatedSince';
 
 <DeprecatedSince versions={["2.9"]} />
 
