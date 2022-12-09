@@ -26,6 +26,7 @@ module.exports = {
     ignorePatterns: [
     // Ignore code examples.
         'docs/**/_examples/*',
+        'versioned_docs/*/**/_examples/*',
         'general/**/_examples/*',
         '!.markdownlint',
         '!.lintstagedrc.mjs',
