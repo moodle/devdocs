@@ -29,6 +29,7 @@ IDEs
 IDOR
 IMSCP
 InnoDB
+Invisio
 Ionicons
 Josep
 JWKS
