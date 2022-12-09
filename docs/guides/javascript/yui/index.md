@@ -168,6 +168,6 @@ $CFG->debug = 32767;
 
 ## See Also
 
-- [JavaScript Modules](https://docs.moodle.org/dev/Javascript_Modules)
+- [JavaScript Modules](../modules.md)
 - [jQuery](../jquery/index.md)
 - [JavaScript FAQ](https://docs.moodle.org/dev/JavaScript_FAQ)

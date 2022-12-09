@@ -147,4 +147,4 @@ The benefit to marking these safe webservice is that (a) they can be called from
 ## See also
 
 - [Templates](../../templates/index.md)
-- [JavaScript Modules](https://docs.moodle.org/dev/Javascript_Modules)
+- [JavaScript Modules](../modules.md)
