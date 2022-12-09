@@ -1,13 +1,13 @@
 ---
 id: introduction
 title: Introduction
-description: Developer documentation for Moodle 4.0.
+description: Developer documentation for Moodle 4.2.
 slug: /
 tags:
   - Getting started
 ---
 
-Welcome to the Developer Documentation for **Moodle 4.0**.
+Welcome to the Developer Documentation for **Moodle 4.2**.
 
 This documentation is version-specific and includes a range of useful guides and information.
 
@@ -16,8 +16,7 @@ This documentation is version-specific and includes a range of useful guides and
 - If you're new to Moodle development, you should check out our [Getting started guide](/general/development/gettingstarted)
 - Look through our [guides to Moodle APIs](./apis.md)
 - Browse our [Moodle feature](./guides.md) deep dives
-- You may want to read the [Release notes](/general/releases/4.0) for Moodle 4.0
-- Have a plugin that you want to prepare for Moodle 4.0, check out the [Developer update notes](./devupdate.md)
+<!--- You may want to read the [Release notes](/general/releases/4.2) for Moodle 4.2-->
 - Interested in supporting the Moodle App in your plugins? Read the [Moodle App documentation](/general/app)
 
 :::
