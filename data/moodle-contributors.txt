@@ -850,6 +850,7 @@ Risner
 Ritchey
 Robert
 Robot
+Robotta
 Robynstar
 Rodrigo
 Rodrigues
@@ -949,6 +950,7 @@ Steele
 Stefan
 Steffen
 Steffensen
+Stephan
 Stephane
 Stephen
 Stevani
