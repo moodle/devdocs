@@ -52,3 +52,50 @@ This comment just repeats the name of the variable, but doesn't give any more de
 This comment is better because it describes the format of the parameter, and gives an example.
 
 </ValidExample>
+
+Similar principles apply when writing inline comments in code, to explain what is going on. The most
+value is added, not by writing out in English words things that are obvious from reading the code,
+but by noting things that are not immediately obvious, but which help to understand the code. For example:
+
+<InvalidExample>
+
+```php title="Another poor example"
+$runinsert = function (int $lastslot, array $tagstrings) use ($DB) {
+    $conditiondata = $DB->get_field('question_set_references', 'filtercondition',
+        ['itemid' => $lastslot, 'component' => 'mod_quiz', 'questionarea' => 'slot']);
+    // If there is any invalid slot data found, ignore that data.
+    if (!empty($conditiondata)) {
+        $condition = json_decode($conditiondata);
+        $condition->tags = $tagstrings;
+        $DB->set_field('question_set_references', 'filtercondition', json_encode($condition),
+                ['itemid' => $lastslot, 'component' => 'mod_quiz', 'questionarea' => 'slot']);
+    }
+};
+```
+
+Yes! I can see you are ignoring the data, rather than saving it, if $conditiondata is empty. What I am wondering is:
+Is that the right thing to do? Isn't this a data-loss bug?
+
+</InvalidExample>
+
+<ValidExample>
+
+```php title="A better version of the previous example"
+$runinsert = function (int $lastslot, array $tagstrings) use ($DB) {
+    $conditiondata = $DB->get_field('question_set_references', 'filtercondition',
+        ['itemid' => $lastslot, 'component' => 'mod_quiz', 'questionarea' => 'slot']);
+    // It is possible to have junk tags left in the database, without a corresponding
+    // slot, because of an old bugs (e.g. MDL-76193). Therefore, if the slot is not found,
+    // we can safely discard these tags.
+    if (!empty($conditiondata)) {
+        $condition = json_decode($conditiondata);
+        $condition->tags = $tagstrings;
+        $DB->set_field('question_set_references', 'filtercondition', json_encode($condition),
+                ['itemid' => $lastslot, 'component' => 'mod_quiz', 'questionarea' => 'slot']);
+    }
+};
+```
+
+This comment is better because it describes why discarding this data is the right thing to do here.
+
+</ValidExample>
