@@ -50,11 +50,13 @@ const sidebars = {
             },
         },
 
+        /*
         {
             label: 'Developer update',
             type: 'doc',
             id: 'devupdate',
         },
+*/
 
         {
             label: 'Moodle App',
