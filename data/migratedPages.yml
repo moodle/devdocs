@@ -136,6 +136,9 @@ Data_definition_API:
 Data_manipulation_API:
 - filePath: "/docs/apis/core/dml/index.md"
   slug: "/docs/apis/core/dml"
+Database_Schema:
+- filePath: "/docs/apis/core/dml/database-schema.md"
+  slug: "/docs/apis/core/dml/database-schema"
 Database_fields:
 - filePath: "/docs/apis/plugintypes/mod_data/fields.md"
   slug: "/docs/apis/plugintypes/mod_data/fields"
