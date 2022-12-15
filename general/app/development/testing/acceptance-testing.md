@@ -23,7 +23,7 @@ The main advantages of this approach are:
 
 In order to run tests for the app, you will need to run both a Moodle site and the Moodle App.
 
-The Moodle site should be version 3.9.7+, 3.10.4+ or newer (3.11, 4.0, etc.). You also need to install the [local_moodlemobileapp](https://github.com/moodlehq/moodle-local_moodlemobileapp/) plugin, using the version that corresponds with the version of the Moodle App that you're testing on. If you have tests for an older version, you can read the [Upgrading tests from an older version](#upgrading-tests-from-an-older-version) section.
+The Moodle site should be version 3.9.7+, 3.10.4+ or newer (3.11, 4.0, etc.). You also need to install the [local_moodleappbehat](https://github.com/moodlehq/moodle-local_moodleappbehat/) plugin, using the version that corresponds with the version of the Moodle App that you're testing on. If you have tests for an older version, you can read [How to upgrade tests from an older version](../../upgrading/acceptance-tests-upgrade-guide.md).
 
 We recommend that you use [moodle-docker](https://github.com/moodlehq/moodle-docker#use-containers-for-running-behat-tests-for-the-mobile-app), because it's configured to run mobile tests and you can skip reading this entire section. You won't even need to clone the app repository.
 
@@ -33,7 +33,7 @@ Nevertheless, if you still have to run the projects in your local machine, you c
 
 You can learn how to run a Moodle site locally in [Setting up development environment](../../../development/gettingstarted.md).
 
-Remember to install the [local_moodlemobileapp](https://github.com/moodlehq/moodle-local_moodlemobileapp/) plugin with the same version that you're using for the mobile app.
+Remember to install the [local_moodleappbehat](https://github.com/moodlehq/moodle-local_moodleappbehat/) plugin with the same version that you're using for the mobile app.
 
 ### Configuring the Moodle App
 
@@ -62,6 +62,18 @@ If everything is configured properly, you should see "Configured app tests for v
 To run mobile tests in Behat, simply launch Behat in the usual way. The app tests all have the `@app` tag, so if you want to run all the mobile tests you can use `--tags=@app`.
 
 It is OK to combine mobile and web tests in the same run.
+
+If you're writing core tests or modifying the app's custom steps, you can run one of the following commands to generate the `local_moodleappbehat` plugin automatically.
+
+```sh
+# Generate local_moodleappbehat once.
+npx gulp behat
+
+# Regenerate local_moodleappbehat when a test or behat file changes.
+npx gulp watch-behat
+```
+
+If you're using [moodle-docker](https://github.com/moodlehq/moodle-docker), this should guess your plugins path automatically. If you haven't or prefer to use another location, you can always set the `MOODLE_APP_BEHAT_PLUGIN_PATH` env variable.
 
 ## Writing tests
 
@@ -248,7 +260,7 @@ Feature: Test app (demo)
     Then the header should be "Course 1" in the app
 ```
 
-You can find more complex examples looking at the [tests for the app core](https://github.com/moodlehq/moodle-local_moodlemobileapp).
+You can find more complex examples looking at the [tests for the app core](https://github.com/moodlehq/moodleapp/blob/master/src/core/features/login/tests/behat/signup.feature) (search for files ending with `*.feature`).
 
 ## Limitations
 
@@ -283,7 +295,7 @@ Unfortunately, the only way to run this in parallel is to have separate Moodle i
 
 ### Debugging tests
 
-If you insert a pause into your test and open the developer tools, you can debug the application like you would during development. You can learn how to do that in [Using the Moodle App in a browser](../setup/app-in-browser.md).
+If you pause a test (for example, using the `I wait "2000" seconds` step) and open the developer tools, you can debug the application like you would during development. You can learn how to do that in [Using the Moodle App in a browser](../setup/app-in-browser.md).
 
 Additionally, you can see log information in the console about which Behat steps have been carried out so far, and whether Behat is waiting for anything. Here is an example:
 
@@ -298,15 +310,20 @@ VM649:391 BEHAT: 17:45:16.607 PENDING-: DELAY
 VM649:391 BEHAT: 17:45:16.653 PENDING-:
 ```
 
-While the test is paused, you can also carry out some of the app Behat steps manually by typing commands into the console, which is convenient if you're not quite sure what command would work. The commands are available in a global object called `behat`. Here are some examples:
+While the test is paused, you can also carry out some of the app Behat steps manually by typing commands into the console, which is convenient if you're not quite sure what command would work. You can find which commands are available in the [behat-runtime.ts](https://github.com/moodlehq/moodleapp/tree/master/src/testing/services/behat-runtime.ts) file.
+
+Here are some examples:
 
 ```javascript
+// I set the field "Password" to "student2" in the app
 behat.setField('Password', 'student2');
+
+// I press "Log in" near "Forgotten" in the app
 behat.press('Log in', 'Forgotten');
+
+// I press the back button in the app
 behat.pressStandard('back');
 ```
-
-There are more functions in the object; try using the browser's autocomplete to see the options, or look at the source in [app_behat_runtime.js](https://github.com/moodlehq/moodle-local_moodlemobileapp/blob/master/tests/behat/app_behat_runtime.js).
 
 If you're using `moodle-docker`, remember that you can interact with the browser [using VNC](https://github.com/moodlehq/moodle-docker#using-vnc-to-view-behat-tests). With a VNC client you can view in real-time what behat is doing in the browser.
 
@@ -314,24 +331,9 @@ If you're using `moodle-docker`, remember that you can interact with the browser
 
 If you find something missing to test your code, you can always implement custom steps.
 
-If you're writing a plugin, you can include a new class under `tests/behat/behat\_{youpluginname}.php`. If you're working on application code, you can always update [behat_app.php](https://github.com/moodlehq/moodle-local_moodlemobileapp/blob/master/tests/behat/behat_app.php) as well.
+If you're writing a plugin, you can include a new class under `tests/behat/behat\_{yourpluginname}.php`. If you're working on application code, you can always update [behat_app.php](https://github.com/moodlehq/moodleapp/blob/master/local_moodleappbehat/tests/behat/behat_app.php) as well.
 
-You can learn more about writing custom steps in the [Writing new acceptance test step definitions](https://docs.moodle.org/dev/Writing_new_acceptance_test_step_definitions) page, and if you want to see how the steps that are specific to the app work, you should look into [behat_app.php](https://github.com/moodlehq/moodle-local_moodlemobileapp/blob/master/tests/behat/behat_app.php) and [app_behat_runtime.js](https://github.com/moodlehq/moodle-local_moodlemobileapp/blob/master/tests/behat/app_behat_runtime.js).
-
-## Upgrading tests from an older version
-
-If you wrote tests before the app started using Ionic 5 (in version 3.9.5), it is possible that your tests are not working any longer. This guide has been rewritten with the latest information, so make sure to read the rest of the document to see what changed.
-
-In general though, upgrading your current tests should be mostly straightforward. Here are some overall things to keep in mind:
-
-- Ionic 5 starts using [the Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM), and that's the source of many issues for the previous version of the Behat tests. The built-in steps have been rewritten to keep that in mind, and mostly should work the same way. One important difference is that they look for content using accessibility rules, so some of your previous assumptions may not be working.
-- Before this update, it was safe to use the standard `I should see` step. But given the problems mentioned, it is likely that it breaks down in many situations. Instead, you should use the new `I should find ... in the app` steps.
-- Similar to the last point, some radio inputs and checkboxes that worked before are broken. You should be able to use the new `I select ... in the app` steps instead.
-- If you were relying in xpath or css selectors before, they will probably not work anymore. Even if you try to patch them, these selectors don't pierce through the Shadow DOM. In any case, it's always better to use accessible locators in your test like a real user would, so you can use this opportunity to improve accessibility in your plugin.
-- Pay special attention to any assertions such as `should not exist` that you have in your tests. These assertions will not fail, because the elements won't be found. But if you get an eventual bug when something is shown that shouldn't, those steps will probably not pick it up because the locators may have changed.
-- If you were running your tests in CI, there is a new dependency even if you're only testing a plugin and not running the application tests. The test definitions have been moved from core to the [local_moodlemobileapp](https://github.com/moodlehq/moodle-local_moodlemobileapp/) plugin, and you should have it installed in your Moodle site running the tests. This was done in order to decouple application code from the core.
-
-If you also need to upgrade your plugin, and not just the tests, check out the [Moodle App Plugins upgrade guide](../../upgrading/plugins-upgrade-guide.md) page.
+You can learn more about writing custom steps in the [Writing new acceptance test step definitions](https://docs.moodle.org/dev/Writing_new_acceptance_test_step_definitions) page, and if you want to see how the steps that are specific to the app work, you should look into [behat_app.php](https://github.com/moodlehq/moodleapp/blob/master/local_moodleappbehat/tests/behat/behat_app.php) and [behat-runtime.ts](https://github.com/moodlehq/moodleapp/tree/master/src/testing/services/behat-runtime.ts).
 
 ## Troubleshooting
 

@@ -47,7 +47,8 @@ tags:
 | 6. | Unfreeze Cordova plugins and JavaScript libraries versions (node modules). | Developer |
 | 7. | Check that the [Docker image](https://cloud.docker.com/u/moodlehq/repository/docker/moodlehq/moodleapp/general) for the new version was successfully built. | Integration Lead |
 | 8. | Update of the [local_moodlemobileapp](https://moodle.org/plugins/view.php?id=997) plugin (as final release) in moodle.org/plugins. | Developer |
-| 8. | Update the `DEFAULT_LASTVERSION` variable on [scripts/lang_functions.sh](https://github.com/moodlehq/moodleapp/blob/master/scripts/lang_functions.sh) | Developer |
+| 9. | Update of the [local_moodleappbehat](https://github.com/moodlehq/moodle-local_moodleappbehat/) plugin (as final release) in moodle.org/plugins. | Developer |
+| 10. | Update the `DEFAULT_LASTVERSION` variable on [scripts/lang_functions.sh](https://github.com/moodlehq/moodleapp/blob/master/scripts/lang_functions.sh) | Developer |
 
 ## See also
 
