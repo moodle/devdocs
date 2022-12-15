@@ -21,9 +21,10 @@ import { ValidExample, InvalidExample } from '@site/src/components';
 
 export default function CodeDiff(props) {
     const titles = useMemo(() => props.titles?.split(', ').map((title) => title.trim()), [props.titles]);
+    const vertical = props.vertical ?? false;
 
     return (
-        <div className={styles['code-diff']}>
+        <div className={`${styles['code-diff']} ${vertical && styles.vertical}`}>
             <InvalidExample title={titles?.[0] ?? null}>
                 {props.children[0]}
             </InvalidExample>

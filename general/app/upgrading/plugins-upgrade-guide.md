@@ -1,60 +1,145 @@
 ---
 title: Moodle App Plugins Upgrade Guide
 sidebar_label: Plugins
-sidebar_position: 7
+sidebar_position: 2
 tags:
   - Moodle App
 ---
+
+<!-- markdownlint-disable no-inline-html -->
+
+import { CodeDiff } from '@site/src/components';
+
+In the following guide, you will learn how to upgrade your plugins to support newer versions of the app.
+
+However, keep in mind that not all your users will be using the latest version. You can support multiple versions of the app by checking the value of `appversioncode`. Here you can find an example applied to the `choicegroup` plugin: [Choicegroup plugin](https://github.com/dpalou/moodle-mod_choicegroup/blob/ionic5/classes/output/mobile.php#L52).
+
+As you can see in that repository, the JS and the templates are duplicated in order to have one file to support one version and another file to support another version. You could even do this for more than 2 versions, depending on how thorough you want to be. In this example, they are called "ionic3" and "latest", because it was prepared when the app was upgraded from ionic 3 to ionic 5. But you can structure this as you prefer. You can also have a single file with different HTML depending on the `appversioncode`. That's up to you.
+
+Depending on which version of the app you're upgrading from, you'll need to go through multiple version upgrades. This guide is divided by version ranges, so you should be able to start with your current version and build up from there.
+
+Other than the changes outlined in this document, there may be smaller API changes that aren't highlighted here. Make sure to check the [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/master/upgrade.txt) file for an exhaustive list with all the changes.
+
+## 4.0 to 4.1
+
+There is only one thing to look after when upgrading to 4.1, so it should be a relatively quick process.
+
+### Mode classes
+
+If your plugin is not declaring any custom CSS, you can ignore this section.
+
+Starting in 4.1, mode and version classes have been moved from the `body` tag to the `html` tag. This change arised from [a bug on derivated CSS variables](https://tracker.moodle.org/browse/MOBILE-4127), and it should be fairly straightforward to make.
+
+<CodeDiff titles="4.0, 4.1">
+
+```css
+body {
+    color: black;
+}
+
+body.dark {
+    color: white;
+}
+```
+
+```css
+html {
+    color: black;
+}
+
+html.dark {
+    color: white;
+}
+```
+
+</CodeDiff>
+
+:::info
+In order to avoid breaking existing styles, version 4.1 will continue adding version classes both to `body` and `html` tags. But using the classes from the `body` tag is considered a deprecated approach, and won't be supported in future versions. So we recommend that you update your plugin now.
+:::
+
+## 3.9.5 to 4.0
+
+There haven't been any breaking changes from 3.9.5 to 4.0, but the UI of the application has changed drastically so we recommend taking special care that the UI of your plugin is still working properly. Also, remember to double check all the changes listed in [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/master/upgrade.txt).
+
+Other than that, everything should continue working as expected. If you find something that doesn't, please [let us know](https://tracker.moodle.org/projects/MOBILE).
+
+## 3.9.4 to 3.9.5
 
 Starting with version 3.9.5, the Moodle App uses Ionic 5. As usual, we tried not to change our APIs and components to prevent breaking existing plugins. Unfortunately, Ionic 5 comes with a lot of breaking changes, especially related to templates. This means that plugins need to be adapted in order to look good in the new versions of the app.
 
 Please note that if your plugin doesn't use Ionic components nor JavaScript, it's possible that you don't have to adapt it. However, we recommend you to test the plugin with new versions of the app to check if everything works correctly.
 
-## Ionic changes
+### Ionic changes
 
-Previous versions of the app used Ionic 3, so the update involved an increase in two versions and Ionic changed a lot of their components, directives and utilities.
+Previous versions of the app used Ionic 3, so the update involved an increase in two versions and Ionic changed a lot of their components, directives, and utilities.
 
 You can read the official [Ionic migration documentation](https://ionicframework.com/docs/reference/migration). Even if your plugins are not Ionic applications themselves, you can find information about components and other changes.
 
 One relevant change is that all functions related to modals are now asynchronous. This means that if your plugin is displaying a modal in JavaScript, you'll probably need to adapt your code.
 
-Another important change is that text inside of `<ion-item>` should always be placed inside of an `<ion-label>`, otherwise it might not look good in some cases. For example:
+Another important change is that text inside of `<ion-item>` should always be placed inside of an `<ion-label>`, otherwise it might not look good in some cases:
 
-```html title="Ionic 3"
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```html
 <ion-item>My text</ion-item>
 ```
 
-```html title="Ionic 5"
-<ion-item><ion-label>My text</ion-label></ion-item>
+```html
+<ion-item>
+    <ion-label>My text</ion-label>
+</ion-item>
 ```
 
-Finally, all Ionic directives are now components, like `<ion-label>` or `<ion-avatar>`. This means that these directives cannot be used in combination with another component. Some common cases that will need to be modified:
+</CodeDiff>
 
-```html title="Ionic 3"
-<ion-label core-mark-required="true">...</ion-label>
+Finally, all Ionic directives are now components, like `<ion-label>` or `<ion-avatar>`. This means that these directives cannot be used in combination with another component.
+
+Some common cases that will need to be modified are `core-mark-required` and `core-user-avatar`:
+
+<CodeDiff titles="3.9.4, 3.9.5">
+
+```html
+<ion-label core-mark-required="true">
+    ...
+</ion-label>
 
 <ion-avatar core-user-avatar ...>
 ```
 
-```html title="Ionic 5"
-<ion-label><span core-mark-required="true">...</span></ion-label>
+```html
+<ion-label>
+    <span core-mark-required="true">
+        ...
+    </span>
+</ion-label>
 
 <core-user-avatar ...>
 ```
 
-## You can now use ES6
+</CodeDiff>
+
+### You can now use ES6
 
 The minimum platform requirements for Cordova and Ionic increased, and so it also affected the Moodle App. The new version requires Android 5.1 with WebView 61+, which means that the JavaScript for the app can now be compiled to ES6.
 
 Please notice that you **cannot** use async/await, as they aren't part of ES6 and Android WebView 61 doesn't support them.
 
-One issue that can break your plugin's JavaScript is extending classes. In Ionic 3, when your plugin extends a class it's actually getting a function. In Ionic 5, your plugin will receive a JavaScript class and can be extended using class syntax:
+One issue that can break your plugin's JavaScript is extending classes. In Ionic 3, when your plugin extends a class it's actually getting a function. In Ionic 5, your plugin will receive a JavaScript class and it should be extended using class syntax.
 
 Here's an example to create a subclass of `CoreContentLinksModuleIndexHandler`:
 
-```javascript title="Ionic 3"
+<CodeDiff titles="3.9.4, 3.9.5" vertical>
+
+```javascript
 function AddonModCertificateModuleLinkHandler() {
-    that.CoreContentLinksModuleIndexHandler.call(this, that.CoreCourseHelperProvider, 'mmaModCertificate', 'certificate');
+    that.CoreContentLinksModuleIndexHandler.call(
+        this,
+        that.CoreCourseHelperProvider,
+        'mmaModCertificate',
+        'certificate',
+    );
 
     this.name = 'AddonModCertificateLinkHandler';
 }
@@ -63,7 +148,7 @@ AddonModCertificateModuleLinkHandler.prototype = Object.create(this.CoreContentL
 AddonModCertificateModuleLinkHandler.prototype.constructor = AddonModCertificateModuleLinkHandler;
 ```
 
-```javascript title="Ionic 5"
+```javascript
 class AddonModCertificateModuleLinkHandler extends this.CoreContentLinksModuleIndexHandler {
 
     constructor() {
@@ -75,7 +160,9 @@ class AddonModCertificateModuleLinkHandler extends this.CoreContentLinksModuleIn
 }
 ```
 
-## Changes in the app's code
+</CodeDiff>
+
+### Changes in the app's code
 
 We've also done some changes to the code of the app. Most of these changes probably don't affect your plugin, but you should still check this out just in case:
 
@@ -83,13 +170,17 @@ We've also done some changes to the code of the app. Most of these changes proba
 - To "cross out" an icon using `ion-icon` you need to use `class="icon-slash"` instead of `slash="true"`.
 - The function `syncOnSites` from `CoreSyncBaseProvider` now expects to receive a function with the parameters already bound:
 
-```javascript title="Ionic 3"
-    syncOnSites('events', this.syncAllEventsFunc.bind(this), [siteId);
+<CodeDiff titles="3.9.4, 3.9.5" vertical>
+
+```javascript
+syncOnSites('events', this.syncAllEventsFunc.bind(this), [siteId);
 ```
 
-```javascript title="Ionic 5"
-    syncOnSites('events', this.syncAllEventsFunc.bind(this, force), siteId);
+```javascript
+syncOnSites('events', this.syncAllEventsFunc.bind(this, force), siteId);
 ```
+
+</CodeDiff>
 
 - All the delegates that previously supplied an injector parameter to its handlers no longer do that. For example, the function `getComponent()` in `CoreUserProfileFieldDelegate` used to receive an injector as a parameter, but now it won't receive any parameter.
 - All the delegates that previously supplied a `NavController` parameter to its handlers no longer do that. For example, the function `openCourse()` in `CoreCourseFormatDelegate` no longer receive the `NavController` parameter.
@@ -106,13 +197,7 @@ We've also done some changes to the code of the app. Most of these changes proba
 - `ionViewCanLeave` function has been renamed to `canLeave`.
 - The `onchange` method of the `Network` service is now called `onChange`.
 
-## Supporting both Ionic 3 and Ionic 5
-
-Your plugin should still support Ionic 3 so it works on devices that haven't updated the app yet. This can be done by checking the value of `appversioncode` sent by the app. Here you can find an example applied to the `choicegroup` plugin: [Choicegroup plugin](https://github.com/dpalou/moodle-mod_choicegroup/blob/ionic5/classes/output/mobile.php#L52).
-
-As you can see in that repository, the JS and the templates are duplicated in order to have one file to support Ionic 3 and another file to support Ionic 5. In this example, they are called "ionic3" and "latest", but you can structure this as you prefer. You can also have a single file with different HTML depending on the `appversioncode`. That's up to you.
-
-## Is there any example I can look at?
+### Is there any example I can look at?
 
 If you used the app's code as an example to build your plugin, you can do the same. There are also some plugins that have been updated, for example, you can see the following PRs on the `choicegroup` plugin:
 
@@ -128,8 +213,3 @@ Before 3.5, the app was written using Ionic 1 and Moodle plugins could add mobil
 Nowadays, you need to install the [Moodle App Additional Features](https://docs.moodle.org/en/Moodle_app_additional_features) plugin to make these plugins compatible with the latest versions of Moodle.
 
 You can read about [Remote add-ons](https://docs.moodle.org/dev/Moodle_Mobile_2_(Ionic_1)_Remote_add-ons) for more details.
-
-## See also
-
-- [Moodle App Remote themes upgrade guide](./remote-themes-upgrade-guide.md)
-- [Moodle App Acceptance tests upgrade guide](../development/testing/acceptance-testing.md#upgrading-tests-from-an-older-version)
