@@ -149,7 +149,7 @@ Usually on Monday
 | 5. | &#10003; | &#10003; | Notify all registered sys admins, including security notes with CVE identifiers, using the [mailing list server](http://lists.moodle.org/). | Security Officer |
 | 6. | &#10003; |  | Post about the Major release on the [moodle.org News forum](http://moodle.org/news/) | Head of LMS |
 | 7. |  | &#10003; | Post about minor releases on the [moodle.org News forum](http://moodle.org/news/) | Development Manager |
-| 8. | &#10003; |  | New `X.Y+1dev` branch to be created in AMOS, to have master changes performed there. New `install_XY_STABLE` processing set up. These needs to be done anytime during the on-sync period. | AMOS Maintainer |
+| 8. | &#10003; |  | Add the next branch code to the `branchesall` admin setting at lang.moodle.org. Review the list of supported versions and update the value of `branchsupported` there eventually, too.  | AMOS Maintainer |
 | 9. | &#10003; | &#10003; | Verify, 24h after tagging, that https://moodle.org/dev/contributions.php has been updated with new versions. If not, file an urgent `MDLSITE` issue, crons must be running! | Integration Team |
 | 10. | &#10003; |  | For `en` and `de` Moodle Docs, update default redirects and enable email notifications. | Moodle Docs Maintainer |
 | 11. | &#10003; |  | Go through all points listed under Day of release in [New docs version process](./newuserdocs.md). | Community Manager |
