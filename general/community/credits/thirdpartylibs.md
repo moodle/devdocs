@@ -696,7 +696,7 @@ Copyright © 2002-2004 John Forkosh Associates, Inc
 
 MongoDB PHP library
 
-**Version**: 1.13.1<br/>
+**Version**: 1.15.0<br/>
 **License**: apache 2.0
 
 :::
