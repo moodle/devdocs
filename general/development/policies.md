@@ -161,7 +161,7 @@ Web services enable other systems to login to Moodle and perform operations. The
 
 :::info
 
-For more about this, see [Web services](https://docs.moodle.org/dev/Web_services).
+For more about this, see [Web services](/docs/apis/subsystems/external/).
 
 :::
 

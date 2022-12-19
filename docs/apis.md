@@ -119,7 +119,7 @@ allows any plugin to generate and handle xAPI standard statements.
 
 ### External functions API (external)
 
-The [External functions API](https://docs.moodle.org/dev/External_functions_API) allows you to create fully parametrised methods that can be accessed by external programs (such as [Web services](https://docs.moodle.org/dev/Web_services)).
+The [External functions API](https://docs.moodle.org/dev/External_functions_API) allows you to create fully parametrised methods that can be accessed by external programs (such as [Web services](./apis/subsystems/external/index.md)).
 
 ### Favourites API
 
