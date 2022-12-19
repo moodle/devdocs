@@ -5,84 +5,122 @@ tags:
   - Plugins
   - core_external
   - external
+sidebar_position: 5
 ---
-{{Moodle_2.0}}
 
-# Quick start
+This documentation covers the creation of a new external service for use in a web service of a fictional local plugin, `local_groupmanager`.
 
-## File structure
+## Functional specification
 
-The file structure is explained in these two documents:
+The `local_groupmanager` plugin has a need to create groups within a course and would like to do so using its own web service.
 
-- [Web services API](https://docs.moodle.org/dev/Web_services_API)
-- [External function API](./functions.md)
+:::important
 
-# Tutorial
+When defining a new service definition, Moodle requires that the name of the definition be in the form:
 
-We will create a web service into a local plugin. This service will contain one *local_myplugin_create_groups($groups)* web service function. This web service function will create a group into a Moodle course.
-
-## Write the specification documentation
-
-Before starting coding, let's identify our needs writing some short specification documents.
-
-### functional specification
-
-*local_myplugin_create_groups($groups)* will take a list of groups as parameters and it will return the same groups with their newly created id. If ever one group creation fails, the function will throw an exception, and no creation will happen.
-
-### technical specification
-
-- **the core function the external function will call**: *groups_create_group()* from [/group/lib.php](http://cvs.moodle.org/moodle/group/).
-- **the parameter types**: a list of object. This object are groups, with id/name/courseid.
-- **the returned value types**: a list of objects (groups) with their id.
-- **the user capabilities to check**: *moodle/course:managegroups*
-
-## Write a simple test client
-
-The first thing you should code is a web service test client. You will often discover use cases that you didn't think about. We are not showing any test client code here, see [How to create a web service client](https://docs.moodle.org/dev/Creating_a_web_service_client).
-
-## Declare the service
-
-This step is optional. You can pre-build a service including any web service functions, so the Moodle administrator doesn't need to do it. Add into /local/myplugin/db/services.php:
-
-```php
-  $services = array(
-      'mypluginservice' => array(                                                // the name of the web service
-          'functions' => array ('local_myplugin_create_groups'), // web service functions of this service
-          'requiredcapability' => '',                // if set, the web service user need this capability to access 
-                                                                              // any function of this service. For example: 'some/capability:specified'                 
-          'restrictedusers' => 0,                                             // if enabled, the Moodle administrator must link some user to this service
-                                                                              // into the administration
-          'enabled' => 1,                                                       // if enabled, the service can be reachable on a default installation
-          'shortname' =>  '',       // optional – but needed if restrictedusers is set so as to allow logins.
-          'downloadfiles' => 0,    // allow file downloads.
-          'uploadfiles'  => 0      // allow file uploads.
-       )
-  );
+```sh
+[frankenstyle_component]_[methodname]
 ```
 
-Note: it is not possible for an administrator to add/remove any function from a pre-built service.
+The [naming convention](https://docs.moodle.org/dev/Web_service_API_functions#Naming_convention) further dictates that the `methodname` component be in the form:
+
+```sh
+[methodname]  - The name of the method in the form of [verb]_[noun]
+[verb]        - Usually one of get, create, delete, update
+                A similar verb that well describes the action may also be used
+[noun]        - The object being modified
+                Usually in Plural form
+```
+
+:::
+
+import { CodeBlock, ValidExample, InvalidExample } from '@site/src/components';
+
+Per the Moodle naming convention for web services the name of the function should be:
+
+```
+local_groupmanager_create_groups
+```
+
+### Inputs
+
+The `local_groupmanager_create_groups` external service definition will take a list of _groups_ as its only parameters.
+
+### Outputs
+
+The service will return a list of the created groups, including the `id` element of those groups.
+
+### Exceptions and failures
+
+If _any_ group creation fails, the function will throw an exception, and no groups will be created.
+
+## Technical specification
+
+- **the core function the external function will call**: `groups_create_group()` from [/group/lib.php](http://github.com/moodle/moodle/tree/master/moodle/group/lib.php).
+- **the parameter types**: a list of object. This object are groups, with `id`/`name`/`courseid`.
+- **the returned value types**: a list of objects (groups) with their id.
+- **the user capabilities to check**: `moodle/course:managegroups`
 
 ## Declare the web service function
 
-Following the [Web service API](https://docs.moodle.org/dev/Web_services_API), you must declare the web service function in the *local/myplugin/db/services.php* file.
+An external function must be declared before it can be used in your plugin.
+Function declarations should be placed in the `db/services.php` file of your plugin. For example in our fictitious plugin this would be located in `local/groupmanager/db/services.php`.
 
 ```php
-$functions = array(
-    'local_myplugin_create_groups' => array(         //web service function name
-        'classname'   => 'local_myplugin_external',  //class containing the external function OR namespaced class in classes/external/XXXX.php
-        'methodname'  => 'create_groups',          //external function name
-        'classpath'   => 'local/myplugin/externallib.php',  //file containing the class/external function - not required if using namespaced auto-loading classes.
-                                                   // defaults to the service's externalib.php
-        'description' => 'Creates new groups.',    //human readable description of the web service function
-        'type'        => 'write',                  //database rights of the web service function (read, write)
-        'ajax' => true,        // is the service available to 'internal' ajax calls. 
-        'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE)    // Optional, only available for Moodle 3.1 onwards. List of built-in services (by shortname) where the function will be included.  Services created manually via the Moodle interface are not supported.
-        'capabilities' => '', // comma separated list of capabilities used by the function.
+$functions = [
+    // The name of your web service function, as discussed above.
+    'local_groupmanager_create_groups' => [
+        // The name of the namespaced class that the function is located in.
+        'classname'   => 'local_groupmanager\create_groups',
+
+        // A brief, human-readable, description of the web service function.
+        'description' => 'Creates new groups.',
+
+        // Options include read, and write.
+        'type'        => 'write',
+
+        // Whether the service is available for use in AJAX calls from the web.
+        'ajax'        => true,
+
+        // An optional list of services where the function will be included.
+        'services' => [
+            // A standard Moodle install includes one default service:
+            // - MOODLE_OFFICIAL_MOBILE_SERVICE.
+            // Specifying this service means that your function will be available for
+            // use in the Moodle Mobile App.
+            MOODLE_OFFICIAL_MOBILE_SERVICE,
+        ]
     ),
 );
 ```
 
-Web service functions should match the [naming convention](https://docs.moodle.org/dev/Web_services_Roadmap#Naming_convention).
+<details>
+<summary>Advanced options</summary>
+
+A number of advanced options are also available, as described below:
+
+```php
+$functions = [
+    // The name of your web service function, as discussed above.
+    'local_groupmanager_create_groups' => [
+        // A comma-separated list of capabilities used by the function.
+        // This is advisory only and used to indicate to the administrator configuring a custom service definition.
+        'capabilities' => 'moodle/course:creategroups,moodle/course:managegroups',
+
+        // The following parameters are also available, but are no longer recommended.
+
+        // The name of the external function name.
+        // If not specified, this will default to 'execute'.
+        // 'methodname'  => 'execute',
+
+        // The file containing the class/external function.
+        // Do not use if using namespaced auto-loading classes.
+        // 'classpath'   => 'local/groupmanager/externallib.php',
+    ),
+);
+```
+
+</details>
 
 ## Write the external function descriptions
 
@@ -92,213 +130,217 @@ Each external function is written with two other functions describing the parame
 - validate the web service function parameters
 - validate the web service function returned values
 - build WSDL files or other protocol documents
-These two description functions are located in the same file and the same class mentioned in local/myplugin/db/services.php.
 
-Thus for the web service function **local_myplugin_create_groups()**, we need write a class named **local_myplugin_external** in the file **local/myplugin/externallib.php**. The class will contain:
+These two description functions are located in the class declared in `local/groupmanager/db/services.php`.
 
-- create_groups(...)
-- create_groups_parameters()
-- create_groups_return()
+Thus for the web service function `local_groupmanager_create_groups()`, we should write a class named `create_groups` in the `local_groupmanager\external` namespace.
 
-### create_groups_parameters()
+This will be located in the file `local/groupmanager/classes/external/create_groups.php`. The class will contain:
+
+- `execute_groups(...)`
+- `execute_groups_parameters()`
+- `execute_groups_return()`
+
+### Defining parameters
 
 ```php
-require_once("$CFG->libdir/externallib.php");
+<?php
+namespace local_groupmanager\external;
 
-class local_myplugin_external extends external_api {
+require_once("{$CFG->libdir}/externallib.php");
+
+class create_groups extends \external_api {
 
     /**
      * Returns description of method parameters
      * @return external_function_parameters
      */
-    public static function create_groups_parameters() {
-        return new external_function_parameters(
-            array(
-                'groups' => new external_multiple_structure(
-                    new external_single_structure(
-                        array(
-                            'courseid' => new external_value(PARAM_INT, 'id of course'),
-                            'name' => new external_value(PARAM_TEXT, 'multilang compatible name, course unique'),
-                            'description' => new external_value(PARAM_RAW, 'group description text'),
-                            'enrolmentkey' => new external_value(PARAM_RAW, 'group enrol secret phrase'),
-                        )
-                    )
-                )
+    public static function execute_parameters() {
+        return new external_function_parameters([
+            'groups' => new external_multiple_structure(
+                new external_single_structure([
+                    'courseid' => new external_value(PARAM_INT, 'id of course'),
+                    'name' => new external_value(
+                        PARAM_TEXT,
+                        'multilang compatible name, course unique'
+                    ),
+                    'description' => new external_value(
+                        PARAM_RAW,
+                        'group description text'
+                    ),
+                    'enrolmentkey' => new external_value(
+                        PARAM_RAW,
+                        'group enrol secret phrase'
+                    ),
+                ])
             )
-        );
+        ]);
     }
+}
 ```
 
 A web service function without parameters will have a parameter description function like that:
 
 ```php
 /**
-     * Returns description of method parameters
-     * @return external_function_parameters
-     */
-    public static function functionname_parameters() {
-        return new external_function_parameters(
-            array(
-               //if I had any parameters, they would be described here. But I don't have any, so this array is empty.
-            )
-        );
-    }
+ * Returns description of method parameters
+ * @return external_function_parameters
+ */
+public static function execute_parameters(): external_function_parameters {
+    return new external_function_parameters([
+        // If this function had any parameters, they would be described here.
+        // This example has no parameters, so the array is empty.
+    ]);
+}
 ```
 
 A parameter can be described as:
 
-- a list => external_multiple_structure
-- an object => external_single_structure
-- a primary type => external_value
+- a list => `external_multiple_structure`
+- an object => `external_single_structure`
+- a primary type => `external_value`
 
-Our create_groups() function expects one parameter named *groups*, so we will first write:
+Our `create_groups()` function expects one parameter named `groups`, so we will first write:
 
 ```php
-    /**
-     * Returns description of method parameters
-     * @return external_function_parameters
-     */
-    public static function create_groups_parameters() {
-        return new external_function_parameters(
-            array(
-                'groups' => ...
-                
-            )
-        );
-    }
+/**
+ * Returns description of method parameters
+ * @return external_function_parameters
+ */
+public static function execute_parameters(): external_function_parameters {
+    return new external_function_parameters([
+        'groups' => ...
+    ]);
+}
 ```
 
 This *groups* parameter is a list of group. So we will write :
 
 ```php
-                'groups' => new external_multiple_structure(
-                    ...
-                )          
+'groups' => new external_multiple_structure(
+    ...
+)
 ```
 
 An external_multiple_structure object (list) can be constructed with:
 
-- *external_multiple_structure* (list)
-- *external_single_structure* (object)
-- *external_value* (primary type).
+- `external_multiple_structure` (list)
+- `external_single_structure` (object)
+- `external_value` (primary type).
 
-For our function it will be a *external_single_structure*:
+For our function it will be a `external_single_structure`:
 
 ```php
-                    new external_single_structure(
-                        array(
-                            'courseid' => ...,
-                            'name' => ...,
-                            'description' => ...,
-                            'enrolmentkey' => ...,
-                        )
-                    )           
+new external_single_structure([
+    'courseid' => ...,
+    'name' => ...,
+    'description' => ...,
+    'enrolmentkey' => ...,
+])
 ```
 
 Thus we obtain :
 
 ```php
-                'groups' => new external_multiple_structure(
-                    new external_single_structure(
-                        array(
-                            'courseid' => ...,
-                            'name' => ...,
-                            'description' => ...,
-                            'enrolmentkey' => ...,
-                        )
-                    )
-                )          
+'groups' => new external_multiple_structure(
+    new external_single_structure([
+        'courseid' => ...,
+        'name' => ...,
+        'description' => ...,
+        'enrolmentkey' => ...,
+    ])
+)
 ```
 
 Each group values is a *external_value* (primary type):
 
-- *courseid* is an integer
-- *name* is a string (text only, not tag)
-- *description* is a string (can be anything)
-- *enrolmentkey* is also a string (can be anything)
+- `courseid` is an integer
+- `name` is a string (text only, not tag)
+- `description` is a string (can be anything)
+- `enrolmentkey` is also a string (can be anything)
 
 We add them to the description :
 
 ```php
-                'groups' => new external_multiple_structure(
-                    new external_single_structure(
-                        array(
-                            'courseid' => new external_value(PARAM_INT, 'id of course'), //the second argument is a human readable description text. This text is displayed in the automatically generated documentation.
-                            'name' => new external_value(PARAM_TEXT, 'multilang compatible name, course unique'),
-                            'description' => new external_value(PARAM_RAW, 'group description text'),
-                            'enrolmentkey' => new external_value(PARAM_RAW, 'group enrol secret phrase'),
-                        )
-                    )
-                )          
+'groups' => new external_multiple_structure(
+    new external_single_structure([
+        // The second argument is a human readable description text.
+        // This text is displayed in the automatically generated documentation.
+        'courseid' => new external_value(PARAM_INT, 'id of course'),
+        'name' => new external_value(PARAM_TEXT, 'multilang compatible name, course unique'),
+        'description' => new external_value(PARAM_RAW, 'group description text'),
+        'enrolmentkey' => new external_value(PARAM_RAW, 'group enrol secret phrase'),
+    ])
+)
 ```
 
-### create_groups_returns()
+### execute_returns()
 
-It's similar to create_groups_parameters(), but instead of describing the parameters, it describes the return values.
+It's similar to execute_parameters(), but instead of describing the parameters, it describes the return values.
 
 ```php
-public static function create_groups_returns() {
-        return new external_multiple_structure(
-            new external_single_structure(
-                array(
-                    'id' => new external_value(PARAM_INT, 'group record id'),
-                    'courseid' => new external_value(PARAM_INT, 'id of course'),
-                    'name' => new external_value(PARAM_TEXT, 'multilang compatible name, course unique'),
-                    'description' => new external_value(PARAM_RAW, 'group description text'),
-                    'enrolmentkey' => new external_value(PARAM_RAW, 'group enrol secret phrase'),
-                )
-            )
-        );
-    }
+public static function execute_returns() {
+    return new external_multiple_structure(
+        new external_single_structure([
+            'id' => new external_value(PARAM_INT, 'group record id'),
+            'courseid' => new external_value(PARAM_INT, 'id of course'),
+            'name' => new external_value(PARAM_TEXT, 'multilang compatible name, course unique'),
+            'description' => new external_value(PARAM_RAW, 'group description text'),
+            'enrolmentkey' => new external_value(PARAM_RAW, 'group enrol secret phrase'),
+        ])
+    );
+}
 ```
 
 ### Required, Optional or Default value
 
-A value can be VALUE_REQUIRED, VALUE_OPTIONAL, or VALUE_DEFAULT. If not mentioned, a value is VALUE_REQUIRED by default.
+A value can be `VALUE_REQUIRED`, `VALUE_OPTIONAL`, or `VALUE_DEFAULT`. If not mentioned, a value is `VALUE_REQUIRED` by default.
 
 ```php
-                            'yearofstudy' => new external_value(PARAM_INT, 'year of study',VALUE_DEFAULT, 1979),                        
+'yearofstudy' => new external_value(PARAM_INT, 'year of study', VALUE_DEFAULT, 1979),
 ```
 
-- VALUE_REQUIRED - if the value is not supplied => the server throws an error message
-- VALUE_OPTIONAL - if the value is not supplied => the value is ignored. Note that VALUE_OPTIONAL can't be used in top level parameters, it must be used only within array/objects key definition. If you need top level Optional parameters you should use VALUE_DEFAULT instead.
-- VALUE_DEFAULT - if the value is not supplied => the default value is used
-Note: Because some web service protocols are strict about the number and types of arguments - it is not possible to specify an optional parameter as one of the top-most parameters for a function. Examples:
+- `VALUE_REQUIRED` - if the value is not supplied => the server throws an error message
+- `VALUE_OPTIONAL` - if the value is not supplied => the value is ignored. Note that VALUE_OPTIONAL can't be used in top level parameters, it must be used only within array/objects key definition. If you need top level Optional parameters you should use VALUE_DEFAULT instead.
+- `VALUE_DEFAULT` - if the value is not supplied => the default value is used
 
-Not cool:
+:::caution
+
+Because some web service protocols are strict about the number and types of arguments - it is not possible to specify an optional parameter as one of the top-most parameters for a function.
+
+<InvalidExample>
 
 ```php
-    public static function get_biscuit_parameters() {                                                                  
-        return new external_function_parameters(                                                                                    
-            array(                                                                                                                  
-                'chocolatechips' => new external_value(PARAM_BOOL, PARAM_REQUIRED),
-                'glutenfree' => new external_value(PARAM_BOOL, PARAM_DEFAULT, false),
-                'icingsugar' => new external_value(PARAM_BOOL, VALUE_OPTIONAL), // ERROR! top level optional parameter!!!
-            )
-        );
-    }
-             
+public static function get_biscuit_parameters() {
+    return new external_function_parameters([
+        'chocolatechips' => new external_value(PARAM_BOOL, PARAM_REQUIRED),
+        'glutenfree' => new external_value(PARAM_BOOL, PARAM_DEFAULT, false),
+        // ERROR! top level optional parameter!!!
+        'icingsugar' => new external_value(PARAM_BOOL, VALUE_OPTIONAL),
+    ]);
+}
 ```
 
-Cool:
+</InvalidExample>
+
+<ValidExample>
 
 ```php
-
-    public static function get_biscuit_parameters() {                                                                  
-        return new external_function_parameters(                                                                                    
-            array(
-                'ifeellike' => new external_single_structure(
-                    array(                                                                                                                  
-                        'chocolatechips' => new external_value(PARAM_BOOL, VALUE_REQUIRED),
-                        'glutenfree' => new external_value(PARAM_BOOL, PARAM_DEFAULT, false),
-                        'icingsugar' => new external_value(PARAM_BOOL, VALUE_OPTIONAL), // ALL GOOD!! We have nested the params in a external_single_structure.
-                    )
-                )
-            )
-        );
-    }
-     
+public static function get_biscuit_parameters() {
+    return new external_function_parameters([
+            'ifeellike' => new external_single_structure([
+                    'chocolatechips' => new external_value(PARAM_BOOL, VALUE_REQUIRED),
+                    'glutenfree' => new external_value(PARAM_BOOL, PARAM_DEFAULT, false),
+                    // ALL GOOD!! We have nested the params in a external_single_structure.
+                    'icingsugar' => new external_value(PARAM_BOOL, VALUE_OPTIONAL),
+        ])
+    ]);
+}
 ```
+
+</ValidExample>
+
+:::
 
 ## Implement the external function
 
@@ -310,11 +352,11 @@ We declared our web service function and we defined the external function parame
      * @param array $groups array of group description arrays (with keys groupname and courseid)
      * @return array of newly created groups
      */
-    public static function create_groups($groups) { //Don't forget to set it as static
+    public static function eceute_groups($groups) { //Don't forget to set it as static
         global $CFG, $DB;
         require_once("$CFG->dirroot/group/lib.php");
 
-        $params = self::validate_parameters(self::create_groups_parameters(), array('groups'=>$groups));
+        $params = self::validate_parameters(self::execute_parameters(), array('groups'=>$groups));
 
         $transaction = $DB->start_delegated_transaction(); //If an exception is thrown in the below code, all DB queries in this code will be rollback.
 
@@ -349,7 +391,9 @@ We declared our web service function and we defined the external function parame
 ### Parameter validation
 
 ```php
- $params = self::validate_parameters(self::create_groups_parameters(), array('groups'=>$groups));
+ $params = self::validate_parameters(self::execute_parameters(), [
+    'groups' => $groups,
+]);
 ```
 
 This *validate_parameters* function validates the external function parameters against the description. It will return an exception if some required parameters are missing, if parameters are not well-formed, and check the parameters validity. It is essential that you do this call to avoid potential hack.
@@ -359,7 +403,7 @@ This *validate_parameters* function validates the external function parameters a
 ### Context and Capability checks
 
 ```php
-/// now security checks
+// Perform security checks.
 $context = context_course::instance($group->courseid);
 self::validate_context($context);
 require_capability('moodle/course:managegroups', $context);
@@ -372,10 +416,10 @@ Note: validate_context() is required in all external functions before operating 
 You can throw exceptions. These are automatically handled by Moodle web service servers.
 
 ```php
-//Note: it is good practice to add detailled information in $debuginfo, 
-//         and only send back a generic exception message when Moodle DEBUG mode < NORMAL.
-//         It's what we do here throwing the invalid_parameter_exception($debug) exception
-throw new invalid_parameter_exception('Group with the same name already exists in the course'); 
+// Note: It is good practice to add detailled information in $debuginfo,
+//       and only send back a generic exception message when Moodle DEBUG mode < NORMAL.
+//       It's what we do here throwing the invalid_parameter_exception($debug) exception
+throw new invalid_parameter_exception('Group with the same name already exists in the course');
 ```
 
 ### Correct return values
@@ -387,36 +431,24 @@ The return values will be validated by the Moodle web service servers:
 - return values types don't match the description (int != PARAM_ALPHA) => the server will return an error
 **Note:** cast all your returned objects into arrays.
 
-## Making web service accessible through Apache Thrift
-
-This step is optional. If you wish to generate SDK for different programming languages and platforms using [Apache Thrift framework](http://thrift.apache.org) then [Moodle Thrift tools](https://bitbucket.org/hhteam/moodle_thrift_tools/wiki/Home) can help you.
-
-Two steps should be performed:
-
-- Generate .thrift files for Moodle API using thriftgenerator script.
-- Generate thrift handlers for PHP and copy the php files generated to your plugin source tree.
-It is also recommended to include thrift files into the distribution of your plugin in order to simplify creation of client bindings for the users of your API.
-
-That's it. Now the web API of your plugin is accessible through Apache Thrift Framework.
-
 ## Bump the plugin version
 
-Edit your local/myplugin/version.php and increase the plugin version. This should trigger a Moodle upgrade and the new web service should be available in the administration (*Administration > Plugins > Web Services > Manage services*)
+Edit your `local/groupmanager/version.php` and increase the plugin version. This should trigger a Moodle upgrade and the new web service should be available in the administration (*Administration > Plugins > Web Services > Manage services*)
 
 ## Deprecation
 
-External functions deprecation process is slightly different from the standard deprecation. If you are interested in deprecating any of your external functions you should **also** (apart from the applicable points detailed in the [standard deprecation docs](/general/development/policies/deprecation)) create a <tt>FUNCTIONNAME_is_deprecated()</tt> method in your external function class. Return true if the external function is deprecated. This is an example:
+External functions deprecation process is slightly different from the standard deprecation. If you are interested in deprecating any of your external functions you should **also** (apart from the applicable points detailed in the [standard deprecation docs](/general/development/policies/deprecation)) create a `FUNCTIONNAME_is_deprecated()` method in your external function class. Return true if the external function is deprecated. This is an example:
 
 ```php
      * Mark the function as deprecated.
      * @return bool
      */
-    public static function create_groups_is_deprecated() {
+    public static function execute_is_deprecated() {
         return true;
     }
 ```
 
-# See also
+## See also
 
 - [Web services developer documentation](./index.md)
 - [Web services user documentation](https://docs.moodle.org/en/Web_services)

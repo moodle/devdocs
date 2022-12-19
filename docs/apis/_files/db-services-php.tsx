@@ -23,10 +23,8 @@ const defaultExample = `
 $functions = [
     'plugintype_pluginname_create_things' => [
         'classname' => 'plugintype_pluginname\\external\\create_things',
-        'methodname' => 'execute',
         'description' => 'Create a new thing',
         'type' => 'write',
-        'capabilities' => 'plugintype/pluginname:create_things',
         'ajax' => true,
         'services' => [
             MOODLE_OFFICIAL_MOBILE_SERVICE,

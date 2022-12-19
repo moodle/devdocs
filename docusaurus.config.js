@@ -73,6 +73,12 @@ const config = {
         defaultLocale: 'en-AU',
     },
 
+    markdown: {
+        mermaid: true,
+    },
+
+    themes: ['@docusaurus/theme-mermaid'],
+
     presets: [
         [
             'classic',

@@ -5,28 +5,64 @@ tags:
   - core_external
   - external
   - core_files
+sidebar_position: 4
 ---
 
-## Summary
+Moodle provides two ways to fetch and upload files:
 
-Since Moodle 2.0, we provide web service functions to upload and download files. They are:
+1. A set of web service functions; and
+2. A pair of dedicated endpoints.
 
-1. moodle_file_get_files (Deprecated, use core_files_get_files since moodle 2.2 onward)
-1. moodle_file_upload (Deprecated, use core_files_upload since moodle 2.2 onward)
+## Web service functions
 
-File contents are encoded in base64, and for web service transmission, it's not efficient. Mobile devices don't have enough memory to decode/encode web service request/response containing large files.
+You can use the following functions to upload, and fetch, file content:
 
-So we developed some alternative solutions to upload/download files.
+1. `core_files_get_files()`; and
+1. `core_files_upload()`.
 
-## File upload
+When using these functions, the file content is base64-encoded.
 
-The entry point is */webservice/upload.php*, simply use HTTP POST method to upload files, it requires a web service token for authentication. If the upload is successfully, the files will be saved, prior to at least Moodle 2.9 in the user private file area but since in the user draft area.  Previously you could force the files to be saved in the draft area by specifying the then  optional parameter: *filearea=draft*.  Since at least Moodle 2.9, only two optional parameters are used, *itemid* to specify the draft area id – default 0 which is a new draft area - and *filepath* default  \'/\' to specify the file's path.
+:::note
 
-It is envisaged the *itemid* parameter will be used when the files are uploaded singularly in separate HTTP calls and the files are required to be in the same draft file area.  The client retrieves the *itemid* of the first uploaded file and uses it in subsequent uploads to specify the files must be saved in the same draft file area.
+Many devices do not have enough memory to encode and decode requests containing large files. As such we recommend using the dedicated endpoints instead.
+
+:::
+
+## Dedicated endpoints
+
+Moodle provides two dedicated endpoints which can be used, alongside the authentication token, to upload and fetch content. These are:
+
+- to upload a file: `/webservice/upload.php`; and
+- to fetch a file: `/webservice/pluginfile.php`.
+
+### File upload
+
+The recommended way to upload file content from an external service is by issue a `POST` request to the `/webservice/upload.php` endpoint, passing in a valid web service token for authentication.
+
+Upon successful upload, any files passed will be saved in the user's draft file area.
+
+The endpoint takes two optional arguments:
+
+- An `itemid` to upload the files to, defaulting to `0`. If none is specified then a new id is generated for the current user's draft file area
+- A `filepath` to store the file in, defaulting to `/`.
+
+The endpoint will return a JSON-encoded summary of the uploaded file, including the `itemid` that it was stored in.
+
+:::tip
+
+It is typical that the `itemid` parameter will be used when the files are uploaded singularly in separate HTTP calls and the files are required to be in the same draft file area.
+
+The client retrieves the `itemid` from the first uploaded file and uses it in subsequent uploads.
+
+This allows multiple files to be uploaded to the same draft file area.
+
+:::
 
 On every successful upload, the file/s information are returned in JSON format. If an error occurs, an error message will be sent back in JSON format too.
 
-Say, we want to upload <tt>users.csv</tt> from current directory using <tt>curl</tt>:
+:::note Example
+
+To upload a file, `users.csv`, you could use curl as follows:
 
 ```bash
 $ curl -X POST -F "file_1=@users.csv" https://SITENAME/webservice/upload.php?token=TOKEN \
@@ -48,43 +84,51 @@ $ curl -X POST -F "file_1=@users.csv" https://SITENAME/webservice/upload.php?tok
 ]
 ```
 
-Once all the files are uploaded, you can call the webservice that accepts files and pass it the *itemid* of the draft area containing the list of files for the request. The service can identify the uploads and manipulate them as necessary.  An example of a webservice that accepts files is: *mod_assign_save_submission*.
+The returned JSON response includes the key parts of the file record, including the `itemid`.
 
-To accept file uploads, the the service must allow "files download" (*Administration > Plugins > Web services > Manage services > Edit service > Advanced button*)
+:::
 
-There is an oldish code example on [code example on Github](https://github.com/moodlehq/sample-ws-clients/tree/master/PHP-HTTP-filehandling).
+Once all the files are uploaded, you can call a webserivce function to process the files from the user drafts area, passing in the `itemid` of the draft area containing the list of files for the request. The service can identify the uploads and manipulate them as necessary.
+
+An example of a webservice that accepts files is: `mod_assign_save_submission`.
+
+To accept file uploads, the service must allow "files download" (*Administration > Plugins > Web services > Manage services > Edit service > Advanced button*)
 
 ## File download
 
-We serve the files through */webservice/pluginfile.php*. This script requires a web service token for authentication.
+We serve the files through `/webservice/pluginfile.php`. This script requires a web service token for authentication.
 
-Look at the [code example on Github](https://github.com/moodlehq/sample-ws-clients/tree/master/PHP-HTTP-filehandling).
+To support file downloads, the service must allow "files download".
 
-In case of issue, think to check that:
+:::note
 
-1. the service associated with the token allow "*files download*"  (*Administration > Plugins > Web services > Manage services > Edit service > Advanced button*)
-1. the web service is valid
+The `/webservice/pluginfile.php` endpoint has the exact same structure as `/pluginfile.php` and `/tokenpluginfile.php`.
 
-Note: you could notice that */webservice/pluginfile.php* has the exact same stucture than */pluginfile.php*. We don't serve the files through */pluginfile.php* for web service clients because this script requires user's login session to work. It's why it might not be an option for web service client.
+We don't serve the files through `/pluginfile.php` for web service clients because it requires the user's login session to work, however it is possible to use the `/tokenpluginfile.php` endpoint with an appropriate token.
+
+:::
 
 ## Returning files in Web Services
 
-Since Moodle 3.2, you can return a complete file area list via Web Services using the static get_area_files method in external_util.
+Since Moodle 3.2, you can return a complete file area list via Web Services using the static `get_area_files` method, defined in `external_util`.
 
 ```php
-    $forum->introfiles = external_util::get_area_files($context->id, 'mod_forum', 'intro', false, false);
+$forum->introfiles = external_util::get_area_files($context->id, 'mod_forum', 'intro', false, false);
 ```
 
-You can also use the external_files structure definition in combination with the method to return the most common file fields required by WS clientes.
+You can also use the `external_files` structure definition in combination with the method to return the most common file fields required by WS clients.
 
 ```php
-     public static function get_forums_by_courses_returns() {
-        return new external_multiple_structure(
-            new external_single_structure(
-                array(
-                    'id' => new external_value(PARAM_INT, 'Forum id'),
-                     ....
-                    'introfiles' => new external_files('Files in the introduction text', VALUE_OPTIONAL),
+public static function execute_returns(): external_multiple_structure {
+    return new external_multiple_structure(
+        new external_single_structure([
+            'id' => new external_value(PARAM_INT, 'Forum id'),
+            // ...
+            'introfiles' => new external_files('Files in the introduction text', VALUE_OPTIONAL),
+            // ...
+        ])
+    );
+}
 ```
 
 ## See also

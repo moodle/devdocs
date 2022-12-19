@@ -33,6 +33,7 @@
     "@docusaurus/core": "^2.2.0",
     "@docusaurus/plugin-pwa": "^2.2.0",
     "@docusaurus/preset-classic": "^2.2.0",
+    "@docusaurus/theme-mermaid": "^2.2.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mdx-js/react": "^1.6.22",

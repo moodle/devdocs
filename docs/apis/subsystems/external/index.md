@@ -1,43 +1,56 @@
 ---
-title: Web Services
+title: External Services
 tags:
   - external
   - core_external
   - API
 ---
 
-### How it works
+Moodle has a full-featured Web Service framework, allowing you to use and create web services for use in external systems.
+The Web Service framework and the External API work closely together providing a number of _Endpoints_, and self-describing classes to support a wide range of uses.
 
-This example will give you an idea of how our web services infrastructure works.
+Moodle uses these web services internally for:
 
-1. The client sends a username and password to the web service login script.
-1. The script returns a token for that user account.
-1. The client calls a particular web service function on a protocol server including the token .
-1. The protocol server uses the token to check that the user can call the function.
-1. The protocol server calls the matching external function, located under the \component\external namespace (previously in a externallib.php file inside the relevant module).
-1. The external function checks that the current user has_capability to do this operation.
-1. The external function calls the matching Moodle core function (in lib.php usually).
-1. The core function can return a result to the external function.
-1. The external function will return a result to the protocol server.
-1. The protocol server returns the result to the client.
+- AJAX interactions in the Moodle Web Interface; and
+- The official Moodle Mobile App.
+
+The following example shows a typical authentication and protocol workflow.
+
+```mermaid
+sequenceDiagram
+    Client ->> Login Endpoint: Login attempted
+    Note right of Client: Authentication using <br> Username and Password
+    Login Endpoint ->> Client: Session token
+    Client ->> Protocol Server: Function and authentication token
+    Protocol Server -->> External API: Access Control Check
+    Note right of Protocol Server: The Session token is <br>used to confirm <br> user permission against <br> the specified API.
+    External API -->> Protocol Server: Authentication granted
+    Protocol Server ->> Plugin API: Function called against <br> relevant API
+    Plugin API ->> Protocol Server: Result passed back to Protocol server
+    Protocol Server -->> External API: Return value validated
+    Protocol Server ->> Client: Validated data returned to Client
+```
 
 ## Developer documentation
 
-The full API can be found on any Moodle sites under ** Administration block > Plugins > Web services > API Documentation**.
+The External Service API has two categories of documentation:
 
-**Note:** Additional services are available for uploading and downloading files which are not in the API Documentation - they are accessed in a different way. See [Web services files handling](./files.md)
+1. this documentation details how to _write_ a web service and use the External API; and
+2. API documentation for a live Moodle site, which can be found under ** Site administration > Plugins > Web services > API Documentation **.
+
+In addition to the standard API endpoints, several additional API endpoints are available for the purpose of uploading, and downloading, files. For more information on these endpoints, see the [file handling](./files.md) documentation.
 
 - [How to contribute a web service function to core](https://docs.moodle.org/dev/How_to_contribute_a_web_service_function_to_core)
 - [Adding a web service to your plugin](./writing-a-service.md)
 - Code example: [Adding a web service, using APIs](https://gist.github.com/timhunt/51987ad386faca61fe013904c242e9b4) by (Tim Hunt)
-- [Implement a web service client](https://docs.moodle.org/dev/Creating_a_web_service_client_)
+- [Implement a web service client](https://docs.moodle.org/dev/Creating_a_web_service_client)
 - [Web services files handling](./files.md)
-- [Web service Listing & Roadmap](https://docs.moodle.org/dev/Web_services_Roadmap_)
+- [Web service Listing & Roadmap](https://docs.moodle.org/dev/Web_services_Roadmap)
 
 ## Specification and brainstorming
 
-- [External services security](https://docs.moodle.org/dev/External_services_security_)
-- [External services description](https://docs.moodle.org/dev/External_services_description_)
+- [External services security](./security.md)
+- [External services description](./description.md)
 
 ## See also
 
