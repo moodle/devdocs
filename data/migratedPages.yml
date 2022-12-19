@@ -181,6 +181,9 @@ Enrolment_API:
 Enrolment_plugins:
 - filePath: "/docs/apis/plugintypes/enrol/index.md"
   slug: "/docs/apis/plugintypes/enrol/"
+External_services_description:
+- filePath: "/docs/apis/subsystems/external/description.md"
+  slug: "/docs/apis/subsystems/external/description"
 Favourites_API:
 - filePath: "/docs/apis/subsystems/favourites/index.md"
   slug: "/docs/apis/subsystems/favourites/"
