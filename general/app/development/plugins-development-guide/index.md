@@ -191,7 +191,7 @@ Note that if your functions use additional custom parameters (for example, if yo
 
 **Lang**
 
-The language pack string ids used in the plugin by all the handlers. Normally these will be strings from your own plugin, however, you can list any strings you need here, like `['moodle']('cancel',)`. If you do this, be warned that in the app you will then need to refer to that string as `{{ 'plugin.myplugin.cancel' | translate }}` (not `{{ 'plugin.moodle.cancel' | translate }}`).
+The language pack string ids used in the plugin by all the handlers. Normally these will be strings from your own plugin, however, you can list any strings you need here, like `['cancel', 'moodle']`. If you do this, be warned that in the app you will then need to refer to that string as `{{ 'plugin.myplugin.cancel' | translate }}` (not `{{ 'plugin.moodle.cancel' | translate }}`).
 
 Please only include the strings you actually need. The Web Service that returns the plugin information will include the translation of each string id for every language installed in the platform, and this will then be cached, so listing too many strings is very wasteful.
 
@@ -1180,7 +1180,7 @@ If your code needs to run after the DOM has been updated, you can use `setTimeou
 
 ```php
 return [
-    'template' => [
+    'templates' => [
         // ...
     ],
     'javascript' => 'setTimeout(function() { console.log("DOM is available now"); });',
