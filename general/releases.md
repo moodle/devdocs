@@ -86,7 +86,7 @@ Upcoming release dates can be found in the Moodle development calendar, which is
 
 :::
 
-## Moodle 4.1
+## Moodle 4.1 (LTS)
 
 <ReleaseTable releaseName="4.1" />
 
