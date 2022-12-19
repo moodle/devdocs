@@ -28,6 +28,9 @@ Activity_modules:
 Add_a_block_cleanup:
 - filePath: "/general/projects/code/block-cleanup.md"
   slug: "/general/projects/code/block-cleanup"
+Adding_a_web_service_to_a_plugin:
+- filePath: "/docs/apis/subsystems/external/writing-a-service.md"
+  slug: "/docs/apis/subsystems/external/writing-a-service"
 Admin_settings:
 - filePath: "/docs/apis/subsystems/admin/index.md"
   slug: "/docs/apis/subsystems/admin/"
