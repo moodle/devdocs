@@ -22,7 +22,7 @@ This works because the app is not coupled to any specific Moodle site, it acts a
 
 The app can also be compiled to work with a single site, or a list of approved sites. Which may be desirable for building custom applications. For most people though, [the official app from MoodleHQ](https://moodle.com/app/) will be sufficient because it's not restricted to any site.
 
-Keep in mind that the application only works with moodle sites that allow it, and this is disabled by default. If you want to allow users to log into your site using the app, make sure to [enable it in the settings](https://docs.moodle.org/en/Moodle_app_guide_for_admins#Enable_mobile_services_on_your_site). If you are not the site owner, reach out to the administrators.
+Keep in mind that the application only works with moodle sites that allow it, and this is disabled by default in some sites. If you want to allow users to log into your site using the app, make sure to check that it's [enabled in the settings](https://docs.moodle.org/en/Moodle_app_guide_for_admins#Enable_mobile_services_on_your_site). If you are not the site owner, reach out to the administrators.
 
 ### Architecture
 
