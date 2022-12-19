@@ -25,13 +25,13 @@ This example will give you an idea of how our web services infrastructure works.
 
 The full API can be found on any Moodle sites under ** Administration block > Plugins > Web services > API Documentation**.
 
-**Note:** Additional services are available for uploading and downloading files which are not in the API Documentation - they are accessed in a different way. See [Web services files handling](https://docs.moodle.org/dev/Web_services_files_handling)
+**Note:** Additional services are available for uploading and downloading files which are not in the API Documentation - they are accessed in a different way. See [Web services files handling](./files.md)
 
 - [How to contribute a web service function to core](https://docs.moodle.org/dev/How_to_contribute_a_web_service_function_to_core)
 - [Adding a web service to your plugin](https://docs.moodle.org/dev/Adding_a_web_service_to_a_plugin)
 - Code example: [Adding a web service, using APIs](https://gist.github.com/timhunt/51987ad386faca61fe013904c242e9b4) by (Tim Hunt)
 - [Implement a web service client](https://docs.moodle.org/dev/Creating_a_web_service_client_)
-- [Web services files handling](https://docs.moodle.org/dev/Web_services_files_handling)
+- [Web services files handling](./files.md)
 - [Web service Listing & Roadmap](https://docs.moodle.org/dev/Web_services_Roadmap_)
 
 ## Specification and brainstorming
