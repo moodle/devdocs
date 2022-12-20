@@ -5,95 +5,74 @@ tags:
 sidebar_position: 4
 ---
 
-This roadmap summarises the current plans on the future technical development of the Moodle's open source learning platform, consisting of Moodle LMS, Moodle Workplace LMS, MoodleCloud, MoodleNet, Moodle Apps, and Moodle Academy.
+Our Moodle Products roadmap is designed to provide visibility on the development priorities of the Moodle HQ Product teams and covers all the products in our open source learning platform portfolio, consisting of Moodle LMS, Moodle Workplace, MoodleCloud, MoodleNet, Moodle Apps, Moodle Community Sites, and Moodle Academy.
 
-### Where this roadmap comes from
+import Link from '@docusaurus/Link';
 
-Proposals for improvements and new features come from a variety of different places.
+<Link
+  to="https://tracker.moodle.org/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA"
+  title="View the current Moodle Roadmap on the Tracker"
+  >
 
-Feedback from the community is extremely important and you can reach us by
+  ![A summary of the current roadmap](./_roadmap/roadmap-summary.png)
 
-- creating new issues on [tracker](http://tracker.moodle.org),
-- joining the [Moodle Users Association](https://moodleassociation.org/) to vote on a new project for each release,
-- discussing your ideas on the [forums](https://moodle.org/forums),
-- creating new solutions as a plugin in the [Moodle Plugins directory](https://moodle.org/plugins),
-- or meeting us in person at one of our [MoodleMoots](https://moodle.com/events/)
+</Link>
 
-Moodle also has an extensive network of [Certified Moodle Service Providers](https://moodle.com/services), also known as Moodle Partners. Moodle Partners are service providers that are certified by Moodle HQ to provide high quality Moodle services for schools, institutions and organisations. We work closely with our partners to determine the needs of Moodle Users and improve the platform.
+## What is a roadmap and why is it important?
 
-Our Roadmap is built via our [Roadmap process](https://docs.moodle.org/dev/Roadmap_process). This process is continuously evolving but it always seeks to involve all our key stakeholders - students, teachers, admins, institutions, and of course our partners and supporters.
+The Moodle Products roadmap is our shared source of truth at Moodle HQ which we use to define our product direction, priorities and progress.
 
-## The big picture
+It is the plan that aligns our teams around common goals and outcomes.
 
-Working on the Moodle learning platform involves millions of moving parts, and every release generally includes hundreds of improvements. However, there are **four main goals** that we are focussing on for the next two years:
+## Who creates the roadmap and how often does it get updated?
 
-### User experience and flow
+The Moodle HQ Product teams curate every idea on the roadmap during our quarterly planning processes.
 
-The entire user experience from onboarding, into daily teaching/learning and expert customisation of Moodle is the core value of what makes Moodle useful or not in the real world, in fully online and blended modes.
+Every three months, the team takes a week off development to complete detailed planning of the work to be delivered during our next increment and map out our areas of focus for a rolling 12 to 18 months ahead.
 
-While we're working on hundreds of smaller, annoying issues, we are also doing some major re-thinking around what an LMS should be in the next decade and beyond as a tool to empower educators and learners.
+Before each planning week, our Product leads conduct engagement sessions with our stakeholders and review a range of data sources to collect ideas and prioritise the roadmap.
 
-### Enabling all our developers
+## Where do the ideas come from?
 
-Our significant community of engaged developers are an amazing group of over 1000 people - many of them make a living being part of the Moodle community.
+We curate our ideas from a wide range of sources including;
 
-We are of course working on ways to make Moodle programming easier and better, with better training and support as well as improved APIs, plugins, integrations and support for modern technologies.
+1. Moodle HQ Product teams continuously review issues created by our users who can log new feature requests and ideas for improvements in our [public tracker](https://tracker.moodle.org/projects/MDL/issues/MDL-75914?filter=allopenissues). The issues can also be voted on by our community to mark interest in the suggestions made by others.
+1. Our [public forums](https://moodle.org/course/) are available to all community members to obtain support and discuss ideas. They are a rich source of feedback that is used to inform our roadmap.
+1. The official voice of our users is the [Moodle Users Association](https://moodleassociation.org/), a group of passionate Moodlers from around the world who suggest and vote for new ideas to be delivered at each new release of the Moodle LMS platform.
+1. Many of our Products have Product Advisory Groups (PAGs) which meet on a regular basis to help inform the priorities of our roadmap ideas. These groups are formed by representatives from our user base and our [Moodle Partners](https://moodle.com/solutions/certified-service-providers/) network with whom we work closely to define the needs of our markets in education and workplace learning.
+1. Each of our products offers the opportunity to provide feedback via short questionnaires, we review the responses regularly and use the insights to shape our thinking.
+1. All members of the Moodle HQ team are encouraged to share their thoughts on the future of our open source platform. From new innovations to maintenance tasks, every idea is welcomed and is considered for prioritisation during our planning process.
 
-However, a particularly exciting initiative is the new Moodle Plugins Service, due in 2021, which will provide an "app store" experience on which all developers can build financial sustainability for their work, while teachers will have easier access to use hundreds of new plugins in their courses via the web interface, without needing to convince their admins to install code. This will help the entire plugins ecosystem.
+## How should the roadmap be interpreted?
 
-### Better integrations between Moodle products
+Our roadmap is not strictly speaking a delivery plan - we don't explicitly provide dates for each of our deliverables. The reason for this is that we know that the world around us is changing at pace, new ideas are constantly emerging and urgent issues pop up from time to time.
 
-The current Moodle products already integrate with each other, of course, but there is much more to be done to make them work together more seamlessly, as part of one platform, so that our users have a better experience and also so that they become more aware of solutions to their problems.
+Rather, we publish our roadmap using the 'Now, Next, Later' methodology, detailing the current order we plan to follow in delivering new features and enhancements across our product portfolio.
 
-### Better integration with the world
+The purpose of sharing the roadmap is to drive understanding in the community on where Moodle HQ's priorities lie. Our teams are often asked 'Why are you not working on X, it is really important', and the answer to that question is most frequently 'We agree that X is really important, but right now A is more important to more of our users and the future of our platform'.
 
-Moodle is never used alone, and it is a part of many ecosystems at many levels. We must connect to all kinds of other systems, we must of course comply with new legislation such as the GDPR, Accessibility and much more.
+That's because, at Moodle HQ, we have to balance the needs of our broad range of stakeholders and think long-term about our products. The point of sharing the roadmap is to make our prioritisation balancing act more transparent.
 
-In particular though, we are committed to helping to promote [<span class="underline">Open EdTech</span>](https://openedtech.global/) and to work closely with qualified Open EdTech products and major stakeholders to design and build an open architecture for a long-term future.
+## What are Moodle HQ's current priorities?
 
-## Roadmap timeline
+Our strategic plans for 2023 and beyond will see the development of Moodle's product portfolio focus on two main areas:
 
-Our Roadmap can be viewed in the [IDEA Project in the Moodle Tracker](https://tracker.moodle.org/secure/RapidBoard.jspa?rapidView=260).
+### Improving our user experience and flow​
 
-### Notes on the Moodle LMS releases
+The entire user experience from onboarding to daily teaching and learning is being reviewed.
 
-#### Moodle 4.1 (November 2022)
+We will be addressing the hundreds of little issues our users raise with us on the ease of using Moodle day to day whilst rethinking how some of our most popular activities operate to make them more intuitive.
 
-Moodle 4.1 (and following 4.x releases) will see a continuation of user experience (UX) improvements for the Moodle LMS platform. Moodle 4.0 focused on significant UX improvements for navigation and the main course page experience. In Moodle 4.1 we will focus on improving the UX for the course activities, commencing with the most widely used activities such as Assignment and Quiz. Improving the gradebook UX will be another main focus.
+### Evolving our technology
 
-Other projects include:
+To ensure that Moodle can deliver cutting-edge products and services for the next decade and beyond, we are investing in optimising Moodle's underlying technology.
 
-- Improving the integration with MoodleNet
-- Investigating and commencing the project to improve messaging in Moodle (proposed integration with [Matrix](https://matrix.org/) messaging)
-- MUA projects to improve the Database and Assignment activities
-- Continuing the [Question bank improvements](https://docs.moodle.org/dev/Question_bank_improvements_for_Moodle_4.1) project
+Expect more modernised solutions, easier integrations and a cleaner, leaner platform that can continue to perform at scale across a distributed internet landscape.
 
-### Release support time-frames
+## Where can I find out more?
 
-We are extending security support on Moodle 3.9 and Moodle 3.11 to November 2023. We are also extending general bug fix support on Moodle 3.11 by 6 months to November 2022. This will provide additional support and time for sites to make the transition to Moodle 4.0 or Moodle 4.1.
+To see all the details for our upcoming developments, you can visit the roadmap at any time simply by logging into Tracker and [viewing our public board](https://tracker.moodle.org/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA&selectedIssue=IDEA-86).
 
-| Version | (Scheduled) Release date | Full support period ends | Security support period ends |
-| --- | --- | --- | --- |
-| Moodle 3.9 (LTS) | 15 June 2020 | 10 May 2021 | 13 Nov 2023 (ext 6M) |
-| Moodle 3.10 | 9 Nov 2020 | 8 Nov 2021 | 9 May 2022 |
-| Moodle 3.11 | 17 May 2021 | 14 Nov 2022 (ext 6M) | 13 Nov 2023 (ext 12M) |
-| Moodle 4.0 | Apr 2022 | May 2023 | Nov 2023 |
-| Moodle 4.1 (LTS) | Nov 2022 | Nov 2023 | Nov 2025 |
+To stay up to date with all the latest developments, please keep an eye out for our Showcase Shorts, a bird's eye view of our latest design and development outcomes, announced on moodle.org [Community News](https://moodle.org/news) every few weeks.
 
-## Past releases
-
-See our [Releases](../releases.md) page for information about past releases.
-
-After Moodle 2.0 we switched to time-based releases rather than feature-based releases (see our [development process](../development/process.md)). Because of this, the details above on future releases are an indication of current priorities only, and are targeted to be released in the upcoming releases. Anything not ready by the next release date will generally be pushed to the following major release.
-
-### See also
-
-- [Releases](../releases.md) - versions of Moodle that have already been released
-- [Key dates relating to future releases](../releases#general-release-calendar)
-
-## Translations
-
-<!-- cspell:disable -->
-
-- [Plan de desarrollo](https://docs.moodle.org/es/Plan_de_desarrollo)
-- [Planification](https://docs.moodle.org/fr/Planification)
+To find out more about Moodle release time-frames, please visit our [Releases](../releases.md#general-release-calendar) page.
