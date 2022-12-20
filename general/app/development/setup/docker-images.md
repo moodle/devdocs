@@ -1,5 +1,5 @@
 ---
-title: Moodle App Docker images
+title: Moodle App Docker Images
 sidebar_label: Docker images
 sidebar_position: 2
 tags:

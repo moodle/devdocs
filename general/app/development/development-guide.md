@@ -1,5 +1,5 @@
 ---
-title: Moodle App Development guide
+title: Moodle App Development Guide
 sidebar_label: Development guide
 sidebar_position: 2
 tags:

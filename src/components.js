@@ -19,6 +19,7 @@ import AcademyLink from './components/AcademyLink';
 
 import Since from './components/Since';
 import DeprecatedSince from './components/DeprecatedSince';
+import CodeDiff from './components/CodeDiff';
 import CodeExample from './components/CodeExample';
 import ValidExample from './components/ValidExample';
 import InvalidExample from './components/InvalidExample';
@@ -35,6 +36,7 @@ export {
     Since,
     DeprecatedSince,
 
+    CodeDiff,
     CodeExample,
     ValidExample,
     InvalidExample,

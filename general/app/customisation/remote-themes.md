@@ -1,5 +1,5 @@
 ---
-title: Moodle App Remote themes
+title: Moodle App Remote Themes
 sidebar_label: Remote themes
 sidebar_position: 1
 tags:
@@ -23,7 +23,7 @@ Once you have everything ready, you can configure your theme by going to "Site a
 You can get started with the following example, and you should see the background of the top bar change to red once you log into the app:
 
 ```css
-body {
+html {
     --core-header-toolbar-background: red;
 }
 ```
@@ -76,7 +76,7 @@ Each of these also define other variants: `rgb`, `contrast`, `contrast-rgb`, `sh
 For example, if you want to override the primary color, you'll need to override the following variables:
 
 ```css
-body {
+html {
     --ion-color-primary: #006600;
 
     /* RGB list of the color */
@@ -101,7 +101,7 @@ body {
 Other than the basic and semantic colors, other components and pages define their own variables that you can override. You can look at the source code to find more, but these are some of the most relevant:
 
 ```css
-body {
+html {
     /* Page background */
     --background-color: white;
     --ion-background-color-rgb: 255, 255, 255;
@@ -120,27 +120,27 @@ body {
 
 ### Targeting different environments
 
-The `html` and `body` elements contain classes that indicate the environment the app is running on.
+The `html` element contains classes that indicate the environment the app is running on.
 
 #### Platform
 
-The `html` element indicates which platform the app is running on. For example, you can specify styles that will only apply to iOS by prepending them with `html.ios`, or `html.md` for Android:
+You can specify styles that will only apply to iOS by prepending them with `html.ios`, or `html.md` for Android:
 
 ```css
 /* Red toolbar in iOS */
-html.ios body {
+html.ios {
     --core-header-toolbar-background: red;
 }
 
 /* Green toolbar in Android */
-html.md body {
+html.md {
     --core-header-toolbar-background: green;
 }
 ```
 
 #### Moodle App and Moodle site versions
 
-The `body` element indicates the versions of the app and the Moodle site, so you can restrict CSS rules to a specific version by prepending one of these classes to the selector. For example, when accessing a 3.11.2 site using the 3.9.5 app the following classes will be present in the body:
+You can restrict CSS rules to a specific version using one of these classes. For example, when accessing a 3.11.2 site using the 3.9.5 app the following classes will be present in the `html` element:
 
 - `version-3`
 - `version-3-11`
@@ -152,29 +152,29 @@ The `body` element indicates the versions of the app and the Moodle site, so you
 And here's how to use them:
 
 ```css
-/* Red toolbar for Moodle App version 3.9.X */
-body.moodleapp-3-9 {
+/* Red toolbar for Moodle App version 4.1.X */
+html.moodleapp-4-1 {
     --core-header-toolbar-background: red;
 }
 
 /* Green toolbar for all other versions */
-body {
+html {
     --core-header-toolbar-background: green;
 }
 ```
 
 #### Application theme
 
-The application uses a light theme by default, but it adds the `dark` class to the `body` element when it is using a dark theme:
+The application uses a light theme by default, but it adds the `dark` class to the `html` element when it is using a dark theme:
 
 ```css
 /* Red toolbar for the Light Theme */
-body {
+html {
     --core-header-toolbar-background: red;
 }
 
 /* Green toolbar for the Dark Theme */
-body.dark {
+html.dark {
     --core-header-toolbar-background: green;
 }
 ```
@@ -188,7 +188,7 @@ Of course, you can combine any of these classes to create more granular styles.
 Let's say you want to have a red toolbar only in iOS, with the Dark Theme, for a Moodle site running 3.11.X:
 
 ```css
-html.ios body.version-3-11.dark {
+html.ios.version-3-11.dark {
     --core-header-toolbar-background: red;
 }
 ```
@@ -300,7 +300,7 @@ core-tabs, core-tabs-outlet {
 ### Items
 
 ```css
-body {
+html {
     /* Background */
     --ion-item-background: green;
 
@@ -349,7 +349,7 @@ page-core-mainmenu-more {
 You can personalise some colors in the Login page, but keep in mind that this only includes the credentials page (the one after you select the site).
 
 ```css
-body {
+html {
     --core-login-background: red;
     --core-login-text-color: blue;
     --core-login-input-background: green;
@@ -360,7 +360,7 @@ body {
 ### Messages page
 
 ```css
-body {
+html {
     --addon-messages-message-bg: white;
     --addon-messages-message-activated-bg: gray-light;
     --addon-messages-message-note-text: gray-dark;

@@ -44,4 +44,4 @@ You can read about that in the following forum posts:
 
 ## I am having problems running the app from the source code
 
-If you are having issues getting the app to compile, make sure to check out the troubleshooting section of the [Setting up your development environment for the Moodle App](./development/setup/index.md#troubleshooting) page.
+If you are having issues getting the app to compile, make sure to check out the [Troubleshooting](./development/setup/troubleshooting) page.
