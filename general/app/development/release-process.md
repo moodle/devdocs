@@ -43,7 +43,7 @@ tags:
 | 1. | Social media announcements (Forum and Twitter). | All the team & Marketing team |
 | 2. | Post in moodle.org/news. | Team Lead |
 | 3. | Review the users and developers documentation (check that everything is in order). Review the [docs_required and dev_docs_required_tags](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20labels%20in%20%28docs_required%2C%20dev_docs_required%29). Review the [Mobile features wiki documentation](https://docs.moodle.org/en/Moodle_Mobile_features). | All the team |
-| 4. | Delete the integration and desktop branches and create it again based on master. | Team Lead |
+| 4. | Delete the integration branch and create it again based on master. | Team Lead |
 | 5. | Bump version numbers in the following files in the integration branch: `config.xml` (version), `package.json` (version), `moodle.config.json` (versionname) appending a `-dev` to indicate that is a development version). Remember to update in config.xml the value of `AppendUserAgent` as well. | Integration Lead |
 | 6. | Unfreeze Cordova plugins and JavaScript libraries versions (node modules). | Developer |
 | 7. | Check that the [Docker image](https://cloud.docker.com/u/moodlehq/repository/docker/moodlehq/moodleapp/general) for the new version was successfully built. | Integration Lead |
