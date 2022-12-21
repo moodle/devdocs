@@ -987,6 +987,46 @@ Language strings should not contain or even rely on any leading or trailing whit
 
 ## Arrays
 
+### Array syntax
+
+When declaring new arrays, the Short Array Syntax should be used.
+
+<ValidExample>
+
+```php
+$myarray = [];
+$myarray = ['some', 'value'];
+$myarray (object) [];
+$myarray (object) ['some', 'value'];
+$myarray = [
+  'some' => 'value',
+];
+$myarray = (object) [
+  'some' => 'value',
+];
+```
+
+</ValidExample>
+
+The Long Array Syntax should not be used for new code, _but may be used_ where it matches surrounding code.
+
+<InvalidExample>
+
+```php
+$myarray = array();
+$myarray = array('some', 'value');
+$myarray (object) array();
+$myarray (object) array('some', 'value');
+$myarray = array(
+  'some' => 'value',
+);
+$myarray = (object) array(
+  'some' => 'value',
+);
+```
+
+</InvalidExample>
+
 ### Numerically indexed arrays
 
 When declaring arrays, a trailing space must be added after each comma delimiter to improve readability:
