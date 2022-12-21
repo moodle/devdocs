@@ -49,7 +49,7 @@ export default function Home() {
     return (
         <Layout
             title="Welcome to the Moodle Developer Resource site"
-            description="The Work-in-progress (not-yet official) source of Developer Resources for Moodle Developers."
+            description="Developer Resources for Moodle Developers."
         >
             <HomepageHeader />
             <main>
