@@ -28,6 +28,9 @@ Activity_modules:
 Add_a_block_cleanup:
 - filePath: "/general/projects/code/block-cleanup.md"
   slug: "/general/projects/code/block-cleanup"
+Adding_a_web_service_to_a_plugin:
+- filePath: "/docs/apis/subsystems/external/writing-a-service.md"
+  slug: "/docs/apis/subsystems/external/writing-a-service"
 Admin_settings:
 - filePath: "/docs/apis/subsystems/admin/index.md"
   slug: "/docs/apis/subsystems/admin/"
@@ -181,6 +184,12 @@ Enrolment_API:
 Enrolment_plugins:
 - filePath: "/docs/apis/plugintypes/enrol/index.md"
   slug: "/docs/apis/plugintypes/enrol/"
+External_functions_API:
+- filePath: "/docs/apis/subsystems/external/functions.md"
+  slug: "/docs/apis/subsystems/external/functions"
+External_services_description:
+- filePath: "/docs/apis/subsystems/external/description.md"
+  slug: "/docs/apis/subsystems/external/description"
 Favourites_API:
 - filePath: "/docs/apis/subsystems/favourites/index.md"
   slug: "/docs/apis/subsystems/favourites/"
@@ -1623,6 +1632,12 @@ User-related_APIs:
 Using_the_Moodle_App_in_a_browser:
 - filePath: "/general/app/development/setup/app-in-browser.md"
   slug: "/general/app/development/setup/app-in-browser"
+Web_services:
+- filePath: "/docs/apis/subsystems/external/index.md"
+  slug: "/docs/apis/subsystems/external/"
+Web_services_files_handling:
+- filePath: "/docs/apis/subsystems/external/files.md"
+  slug: "/docs/apis/subsystems/external/files"
 Writing_acceptance_tests:
 - filePath: "/general/development/tools/behat/writing.md"
   slug: "/general/development/tools/behat/writing"
