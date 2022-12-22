@@ -19,15 +19,16 @@ tags:
 | 6. | Contact the marketing team announcing the new release and highlights. | Integration Lead |
 | 7. | Add new QA tests to the "Testing cases" document. New QA tests should be labeled with [qa_test_required](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20resolution%20in%20(Unresolved%2C%20Fixed)%20AND%20labels%20%3D%20qa_test_required%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC). Remove that label once are added to the document. | Tester |
 | 8. | Run `npm audit` to ensure all the dependencies are OK and check github vulnerabilities report. | Developer |
-| 9. | Freeze Cordova plugins and JavaScript libraries versions (node modules) in the integration branch. | Developer |
-| 10. | **Start testing** | Tester |
+| 9. | Complete all TODOs related with the upcoming release, which are marked in code with a comment starting with @todo [version-number] (for example, before releasing 4.1 we'd search for comments starting with @todo [4.1]) | Developer |
+| 10. | Freeze Cordova plugins and JavaScript libraries versions (node modules) in the integration branch. | Developer |
+| 11. | **Start testing** | Tester |
 
 ## The release day
 
 | **#** | **Task** | **Responsibility** |
 |---|---|---|
-| 1. | Fix the version name in `integration:config.xml`, `integration:package.json` and `integration:moodle.config.json` (remove the `-dev`). | Developer |
-| 2. | Set the right version number for the new Moodle release in `MOODLE_RELEASES`. | Developer |
+| 1. | Fix the version name in `integration:config.xml`, `integration:package.json` and `integration:moodle.config.json` (remove the `-dev`). Remember to update in config.xml the value of `AppendUserAgent` as well. | Developer |
+| 2. | Set the right version number for the new Moodle LMS major release in the site.js constant `MOODLE_RELEASES`. | Developer |
 | 3. | Integrate the [integration branch onto the master one](https://github.com/moodlehq/moodleapp/compare/master...integration). | Integration Lead |
 | 4. | Do some testing with the production builds before sending the application to the stores (overall testing to see that nothing is broken because of the branch merge done in step 2): <ul><li>Correct definitive version name displayed (and commit)</li><li>AOT compiling worked</li><li>Language strings synchronised from lang.moodle.net</li><li>New language packs added</li></ul> | All the team |
 | 5. | Send the applications to the stores for review. | Integration Lead |
@@ -42,13 +43,17 @@ tags:
 | 1. | Social media announcements (Forum and Twitter). | All the team & Marketing team |
 | 2. | Post in moodle.org/news. | Team Lead |
 | 3. | Review the users and developers documentation (check that everything is in order). Review the [docs_required and dev_docs_required_tags](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20labels%20in%20%28docs_required%2C%20dev_docs_required%29). Review the [Mobile features wiki documentation](https://docs.moodle.org/en/Moodle_Mobile_features). | All the team |
-| 4. | Delete the integration and desktop branches and create it again based on master. | Team Lead |
-| 5. | Bump version numbers in the following files in the integration branch: `config.xml` (version), `package.json` (version), `moodle.config.json` (versionname) appending a `-dev` to indicate that is a development version). | Integration Lead |
+| 4. | Delete the integration branch and create it again based on master. | Team Lead |
+| 5. | Bump version numbers in the following files in the integration branch: `config.xml` (version), `package.json` (version), `moodle.config.json` (versionname) appending a `-dev` to indicate that is a development version). Remember to update in config.xml the value of `AppendUserAgent` as well. | Integration Lead |
 | 6. | Unfreeze Cordova plugins and JavaScript libraries versions (node modules). | Developer |
 | 7. | Check that the [Docker image](https://cloud.docker.com/u/moodlehq/repository/docker/moodlehq/moodleapp/general) for the new version was successfully built. | Integration Lead |
 | 8. | Update of the [local_moodlemobileapp](https://moodle.org/plugins/view.php?id=997) plugin (as final release) in moodle.org/plugins. | Developer |
 | 9. | Update of the [local_moodleappbehat](https://github.com/moodlehq/moodle-local_moodleappbehat/) plugin (as final release) in moodle.org/plugins. | Developer |
-| 10. | Update the `DEFAULT_LASTVERSION` variable on [scripts/lang_functions.sh](https://github.com/moodlehq/moodleapp/blob/master/scripts/lang_functions.sh) | Developer |
+| 10. | Update the `DEFAULT_LASTVERSION` variable with the new major release on [scripts/lang_functions.sh](https://github.com/moodlehq/moodleapp/blob/master/scripts/lang_functions.sh) | Developer |
+| 11. | Set the version number for the next Moodle LMS major release in the site.js constant `MOODLE_RELEASES`. | Developer |
+| 12. | Check if the Android API level should be increased or not to use a recent one. | Developer |
+| 13. | Review the new features/improvements specs/shaping documents to ensure that they clearly reflect the actual implementation of the feature. | All the team |
+| 14. | Review that all the minor issues found during the QA testing have a related and triaged MOBILE issue in the tracker. | All the team |
 
 ## See also
 
