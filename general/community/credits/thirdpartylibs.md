@@ -256,7 +256,7 @@ Copyright © 2000 Herman Veluwenkamp (hermanV AT mindless DOT com)
 
 The general H5P library used to display H5P content.
 
-**Version**: moodle-1.22.4<br/>
+**Version**: moodle-1.23<br/>
 **License**: GPL-3.0
 
 Copyright © Joubel
@@ -271,7 +271,7 @@ Copyright © Joubel
 
 The general H5P library used to edit H5P content.
 
-**Version**: moodle-1.22.4<br/>
+**Version**: moodle-1.23<br/>
 **License**: GPL-3.0
 
 Copyright © Joubel
