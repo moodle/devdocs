@@ -114,7 +114,7 @@ Bug fixes for security issues in 4.0.x will end 13 November 2023 (18 months).
 
 :::info
 
-Bug fixes for general core bugs in 3.11.x will end 14 Nov 2022 (12 months plus 6 months extension).<br/>
+Bug fixes for general core bugs in 3.11.x ended 14 Nov 2022 (12 months plus 6 months extension).<br/>
 Bug fixes for security issues in 3.11.x will end 13 Nov 2023 (18 months plus 12 months extension).
 
 :::
