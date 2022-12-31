@@ -1632,6 +1632,9 @@ User-related_APIs:
 Using_the_Moodle_App_in_a_browser:
 - filePath: "/general/app/development/setup/app-in-browser.md"
   slug: "/general/app/development/setup/app-in-browser"
+Web_Services_Unit_Test:
+- filePath: "/docs/apis/subsystems/external/testing.md"
+  slug: "/docs/apis/subsystems/external/testing"
 Web_services:
 - filePath: "/docs/apis/subsystems/external/index.md"
   slug: "/docs/apis/subsystems/external/"
