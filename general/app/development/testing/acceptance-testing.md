@@ -23,7 +23,7 @@ The main advantages of this approach are:
 
 In order to run tests for the app, you will need to run both a Moodle site and the Moodle App.
 
-The Moodle site should be version 3.9.7+, 3.10.4+ or newer (3.11, 4.0, etc.). You also need to install the [local_moodleappbehat](https://github.com/moodlehq/moodle-local_moodleappbehat/) plugin, using the version that corresponds with the version of the Moodle App that you're testing on. If you have tests for an older version, you can read [How to upgrade tests from an older version](../../upgrading/acceptance-tests-upgrade-guide.md).
+The Moodle site should be version 3.9.7+, 3.10.4+ or newer (3.11, 4.0, etc.). You also need to install the [`local_moodleappbehat`](https://github.com/moodlehq/moodle-local_moodleappbehat/) plugin, using the version that corresponds with the version of the Moodle App that you're testing on. If you have tests for an older version, you can read [How to upgrade tests from an older version](../../upgrading/acceptance-tests-upgrade-guide.md).
 
 We recommend that you use [moodle-docker](https://github.com/moodlehq/moodle-docker#use-containers-for-running-behat-tests-for-the-mobile-app), because it's configured to run mobile tests and you can skip reading this entire section. You won't even need to clone the app repository.
 
@@ -33,7 +33,7 @@ Nevertheless, if you still have to run the projects in your local machine, you c
 
 You can learn how to run a Moodle site locally in [Setting up development environment](../../../development/gettingstarted.md).
 
-Remember to install the [local_moodleappbehat](https://github.com/moodlehq/moodle-local_moodleappbehat/) plugin with the same version that you're using for the mobile app.
+Remember to install the [`local_moodleappbehat`](https://github.com/moodlehq/moodle-local_moodleappbehat/) plugin with the same version that you're using for the mobile app.
 
 ### Configuring the Moodle App
 

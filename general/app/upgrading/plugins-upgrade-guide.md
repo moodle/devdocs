@@ -28,7 +28,7 @@ There is only one thing to look after when upgrading to 4.1, so it should be a r
 
 If your plugin is not declaring any custom CSS, you can ignore this section.
 
-Starting in 4.1, mode and version classes have been moved from the `body` tag to the `html` tag. This change arised from [a bug on derivated CSS variables](https://tracker.moodle.org/browse/MOBILE-4127), and it should be fairly straightforward to make.
+Starting in 4.1, mode and version classes have been moved from the `body` tag to the `html` tag. This change arose from [a bug on derived CSS variables](https://tracker.moodle.org/browse/MOBILE-4127), and it should be fairly straightforward to make.
 
 <CodeDiff titles="4.0, 4.1">
 
