@@ -47,8 +47,8 @@ tags:
 | 5. | Bump version numbers in the following files in the integration branch: `config.xml` (version), `package.json` (version), `moodle.config.json` (versionname) appending a `-dev` to indicate that is a development version). Remember to update in config.xml the value of `AppendUserAgent` as well. | Integration Lead |
 | 6. | Unfreeze Cordova plugins and JavaScript libraries versions (node modules). | Developer |
 | 7. | Check that the [Docker image](https://cloud.docker.com/u/moodlehq/repository/docker/moodlehq/moodleapp/general) for the new version was successfully built. | Integration Lead |
-| 8. | Update of the [local_moodlemobileapp](https://moodle.org/plugins/view.php?id=997) plugin (as final release) in moodle.org/plugins. | Developer |
-| 9. | Update of the [local_moodleappbehat](https://github.com/moodlehq/moodle-local_moodleappbehat/) plugin (as final release) in moodle.org/plugins. | Developer |
+| 8. | Update of the [`local_moodlemobileapp`](https://moodle.org/plugins/view.php?id=997) plugin (as final release) in moodle.org/plugins. | Developer |
+| 9. | Update of the [`local_moodleappbehat`](https://github.com/moodlehq/moodle-local_moodleappbehat/) plugin (as final release) in moodle.org/plugins. | Developer |
 | 10. | Update the `DEFAULT_LASTVERSION` variable with the new major release on [scripts/lang_functions.sh](https://github.com/moodlehq/moodleapp/blob/master/scripts/lang_functions.sh) | Developer |
 | 11. | Set the version number for the next Moodle LMS major release in the site.js constant `MOODLE_RELEASES`. | Developer |
 | 12. | Check if the Android API level should be increased or not to use a recent one. | Developer |

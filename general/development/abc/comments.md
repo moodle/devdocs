@@ -73,7 +73,7 @@ $runinsert = function (int $lastslot, array $tagstrings) use ($DB) {
 };
 ```
 
-Yes! I can see you are ignoring the data, rather than saving it, if $conditiondata is empty. What I am wondering is:
+Yes! I can see you are ignoring the data, rather than saving it, if `$conditiondata` is empty. What I am wondering is:
 Is that the right thing to do? Isn't this a data-loss bug?
 
 </InvalidExample>
