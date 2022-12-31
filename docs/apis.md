@@ -205,7 +205,7 @@ This is a rather informal grouping of miscellaneous [User-related APIs](./apis/c
 
 ### Web services API (webservice)
 
-The [Web services API](https://docs.moodle.org/dev/Web_services_API) allows you to expose particular functions (usually external functions) as web services.
+The [Web services API](./apis/subsystems/external/writing-a-service.md) allows you to expose particular functions (usually external functions) as web services.
 
 ### Badges API (badges)
 

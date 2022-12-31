@@ -1,7 +1,7 @@
 ---
 title: File handling
 tags:
-  - Web_Services
+  - Web Services
   - core_external
   - external
   - core_files

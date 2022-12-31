@@ -1,7 +1,7 @@
 ---
 title: Function Definitions
 tags:
-  - Web_Services
+  - Web Services
   - API
   - core_external
   - external
@@ -117,4 +117,4 @@ Available parameter types are defined in `lib/moodlelib.php` and are used by the
 ## See also
 
 - [Core APIs](../../../apis.md)
-- [Web services API](https://docs.moodle.org/dev/Web_services_API)
+- [Web services API](./writing-a-service.md)
