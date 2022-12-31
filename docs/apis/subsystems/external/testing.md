@@ -2,25 +2,29 @@
 title: Unit Testing
 tags:
   - Unit testing
-  - Web_Services
+  - Web Services
+  - external
+  - core_external
+  - API
 ---
-{{Moodle 2.3}}Since Moodle 2.3 we are using PHP Unit framework. Writing a unit test before writing an external function will end up to be very helpful. The easiest external function is not an easy task, as you can see in [How to contribute a web service function to core](https://docs.moodle.org/dev/How_to_contribute_a_web_service_function_to_core). When writing PHPUnit tests you will:
 
-- discover use cases you didn't think about.
-- understand the feelings and the needs of the web service client developer.
-- end up with a function usable by everybody, not only by your own client.
+Unit tests are the best way of checking the behaviour of your external services and can help you to:
+
+- discover use cases you didn't think about
+- understand the feelings and the needs of the web service client developer
+- end up with a function usable by everybody, not only by your own client
 - reach integration way faster as you joined a proof of validity
 - make the QA process a breeze
 
-## How to run a PHPUnit test
-
-you should read first the [PHPUnit](/general/development/tools/phpunit) Moodle documentation to have a grasp of PHPUnit in Moodle.
+Writing unit tests for an external service function is no different to writing unit tests for any other part of Moodle, which is documented in under [PHPUnit](/general/development/tools/phpunit).
 
 ## How to write an external function PHPUnit test
 
-If it doesn't exist create a COMPONENTFOLDER/tests/externallib_test.php file.
+You should create one unit test testcase for each external service file, and it should be named after the file that it tests.
 
-```php
+For example, if you have written a service function in `[componentfolder]/classes/external/get_fruit.php`, you should write a unit test in `[componentfolder]/tests/external/get_fruit_test.php`.
+
+```php title="mod/kitchen/tests/external/get_fruit_test.php"
 <?php
 // This file is part of Moodle - http://moodle.org/
 //
@@ -38,54 +42,84 @@ If it doesn't exist create a COMPONENTFOLDER/tests/externallib_test.php file.
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * COMPONENT External functions unit tests
+ * Unit tests for the get_fruit function of the kitchen.
  *
- * @package    core_component
+ * @package    mod_kitchen
  * @category   external
  * @copyright  20XX Your Name
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace mod_kitchen\external;
+
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot . '/webservice/tests/helpers.php');
-require_once($CFG->dirroot . '/COMPONENT/externallib.php');
 
-class COMPONENT_external_testcase extends externallib_advanced_testcase {
+class get_fruit_test extends externallib_advanced_testcase {
 
     /**
-     * Test
+     * Test the execute function when capabilities are present.
+     *
+     * @covers \mod_fruit\external\get_fruit::execute
      */
-    public function test_FUNCTION_NAME() {
+    public function test_capabilities(): void {
+        $this->resetAfterTest(true);
+
+        $course = $this->getDataGenerator()->create_course();
+        $cm = $this->getDataGenerator()->create_module('mod_kitchen', [
+            'course' => $course->id,
+        ]);
+
+        // Set the required capabilities by the external function
+        $contextid = context_module::instance($cm->cmid)->id;
+        $roleid = $this->assignUserCapability('moodle/CAPABILITYNAME', $contextid);
+
+        // Call the external service function.
+        $returnvalue = get_fruit::execute([
+            'course' => $course->id,
+            'cmid' => $cm->id,
+        ]);
+
+        // We need to execute the return values cleaning process to simulate
+        // the web service server.
+        $returnvalue = external_api::clean_returnvalue(
+            get_fruit::execute_returns(),
+            $returnvalue
+        );
+
+        // Assert that there was a response.
+        // The actual response is tested in other tests.
+        $this->assertNotNull($returnvalue);
+    }
+
+    /**
+     * Test the execute function when capabilities are missing.
+     *
+     * @covers \mod_fruit\external\get_fruit::execute
+     */
+    public function test_capabilities_missing(): void {
         global $USER;
 
         $this->resetAfterTest(true);
 
+        $course = $this->getDataGenerator()->create_course();
+        $cm = $this->getDataGenerator()->create_module('mod_kitchen', [
+            'course' => $course->id,
+        ]);
+
         // Set the required capabilities by the external function
-        $contextid = context_XXXX::instance()->id;
-        $roleid = $this->assignUserCapability('moodle/CAPABILITYNAME', $contextid);
+        $contextid = context_module::instance($cm->cmid)->id;
+        $this->unassignUserCapability('moodle/CAPABILITYNAME', $contextid, $roleid);
 
-        $params = array(PARAM1, PARAM2, ...);
-
-        $returnvalue = COMPONENT_external::FUNCTION_NAME($params);
-
-        // We need to execute the return values cleaning process to simulate the web service server
-        $returnvalue = external_api::clean_returnvalue(COMPONENT_external::FUNCTION_NAME_returns(), $returnvalue);
-
-        // Some PHPUnit assert
-        $this->assertEquals(EXPECTED_VALUE, RETURNED_VALUE);
+        $params = [PARAM1, PARAM2, ...];
 
         // Call without required capability
-        $this->unassignUserCapability('moodle/CAPABILITYNAME', $contextid, $roleid);
         $this->expectException(required_capability_exception::class);
-        $returnvalue = COMPONENT_external::FUNCTION_NAME($params);
-
+        get_fruit::execute([
+            'course' => $course->id,
+            'cmid' => $cm->id,
+        ]);
     }
 }
 ```
-
-But the quickest way is most likely to look at some example like course/tests/courseexternallib_test.php - get_categories ([MDL-33995](https://tracker.moodle.org/browse/MDL-33995)). Also read [Writing PHPUnit tests](https://docs.moodle.org/dev/Writing_PHPUnit_tests).
-
-### Coding style
-
-- external functions often check many capabilities. Remember to assign the correct one to the $USER and also test for exception when the $USER doesn't have them.

@@ -1,7 +1,7 @@
 ---
 title: Function Definitions
 tags:
-  - Web_Services
+  - Web Services
   - API
   - core_external
   - external
