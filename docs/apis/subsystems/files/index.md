@@ -12,7 +12,7 @@ The File API is used to control, manage, and serve all files uploaded and stored
 The following documentation is also related:
 
 - The [Repository API](../../plugintypes/repository/index.md) is responsible for the code paths associated with uploading files to Moodle. This includes Repository plugins.
-- [Using the File API in Moodle forms](https://docs.moodle.org/dev/Using_the_File_API_in_Moodle_forms)
+- [Using the File API in Moodle forms](../form/usage/files.md)
 - Additional detail of how this API works is discussed in the [File API internals](./internals.md)
 
 ## File areas
@@ -225,7 +225,7 @@ function mod_myplugin_pluginfile(
 
 ## Getting files from the user
 
-You will typically use the [Forms API](https://docs.moodle.org/dev/Forms_API) to accept files from users. This topic is detailed in more detail in the [Using the File API in Moodle forms](https://docs.moodle.org/dev/Using_the_File_API_in_Moodle_forms) documentation.
+You will typically use the [Forms API](https://docs.moodle.org/dev/Forms_API) to accept files from users. This topic is detailed in more detail in the [Using the File API in Moodle forms](../form/usage/files.md) documentation.
 
 ## Common uses of the file API
 
@@ -434,5 +434,5 @@ if ($file) {
 
 - [Core APIs](../../../apis.md)
 - [File API internals](./internals.md) how the File API works internally.
-- [Using the File API in Moodle forms](https://docs.moodle.org/dev/Using_the_File_API_in_Moodle_forms)
+- [Using the File API in Moodle forms](../form/usage/files.md)
 - [Repository API](../../plugintypes/repository/index.md)
