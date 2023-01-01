@@ -46,7 +46,9 @@ See the [Roles and permissions](https://docs.moodle.org/en/Roles_and_permissions
 
 ### The sesskey param is a CSRF token
 
-Many penetration tests highlight the use of the `?sesskey=xxx` HTTP param as an issue because it leaks to session id. The moodle session is stored in a normal cookie, and the `sesskey` is actually instead a somewhat poorly named CSRF token param.
+Many penetration tests highlight the use of the `?sesskey=xxx` HTTP parameter as a security issue, claiming that it leaks the session ID. This should generally be considered a false positive as Moodle's `sesskey` is not actually a session key, but a poorly-named CSRF token. The Moodle session ID is stored separately in a normal cookie.
+
+Unfortunately it is not easy to rename this token at this time.
 
 :::info
 
