@@ -996,8 +996,8 @@ When declaring new arrays, the Short Array Syntax should be used.
 ```php
 $myarray = [];
 $myarray = ['some', 'value'];
-$myarray (object) [];
-$myarray (object) ['some', 'value'];
+$myarray = (object) [];
+$myarray = (object) ['some', 'value'];
 $myarray = [
   'some' => 'value',
 ];
@@ -1015,8 +1015,8 @@ The Long Array Syntax should not be used for new code, _but may be used_ where i
 ```php
 $myarray = array();
 $myarray = array('some', 'value');
-$myarray (object) array();
-$myarray (object) array('some', 'value');
+$myarray = (object) array();
+$myarray = (object) array('some', 'value');
 $myarray = array(
   'some' => 'value',
 );
