@@ -1027,6 +1027,12 @@ $myarray = (object) array(
 
 </InvalidExample>
 
+:::note
+
+See MDLSITE-4776 for the discussion on this coding style change.
+
+:::
+
 ### Numerically indexed arrays
 
 When declaring arrays, a trailing space must be added after each comma delimiter to improve readability:
