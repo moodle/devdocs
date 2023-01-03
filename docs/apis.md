@@ -211,7 +211,7 @@ The [Web services API](./apis/subsystems/external/writing-a-service.md) allows y
 
 The [https://docs.moodle.org/dev/OpenBadges_User_Documentation Badges] user documentation (is a temp page until we compile a proper page with all the classes and APIs that allows you to manage particular badges and OpenBadges Backpack).
 
-### Custom fields API
+### Custom fields API (customfield)
 
 The [Custom fields API](https://docs.moodle.org/dev/Custom_fields_API) allows you to configure and add custom fields for different entities
 
