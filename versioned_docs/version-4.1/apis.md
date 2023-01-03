@@ -119,7 +119,7 @@ allows any plugin to generate and handle xAPI standard statements.
 
 ### External functions API (external)
 
-The [External functions API](https://docs.moodle.org/dev/External_functions_API) allows you to create fully parametrised methods that can be accessed by external programs (such as [Web services](https://docs.moodle.org/dev/Web_services)).
+The [External functions API](./apis/subsystems/external/functions.md) allows you to create fully parametrised methods that can be accessed by external programs (such as [Web services](./apis/subsystems/external/index.md)).
 
 ### Favourites API
 
@@ -205,13 +205,13 @@ This is a rather informal grouping of miscellaneous [User-related APIs](./apis/c
 
 ### Web services API (webservice)
 
-The [Web services API](https://docs.moodle.org/dev/Web_services_API) allows you to expose particular functions (usually external functions) as web services.
+The [Web services API](./apis/subsystems/external/writing-a-service.md) allows you to expose particular functions (usually external functions) as web services.
 
 ### Badges API (badges)
 
 The [https://docs.moodle.org/dev/OpenBadges_User_Documentation Badges] user documentation (is a temp page until we compile a proper page with all the classes and APIs that allows you to manage particular badges and OpenBadges Backpack).
 
-### Custom fields API
+### Custom fields API (customfield)
 
 The [Custom fields API](https://docs.moodle.org/dev/Custom_fields_API) allows you to configure and add custom fields for different entities
 
