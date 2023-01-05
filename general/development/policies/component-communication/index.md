@@ -82,11 +82,23 @@ External functions are functions defined in Moodle using the External API. These
 
 Calling external functions from another component in Moodle is no different to calling the php functions directly. This is allowed and encouraged.
 
-One thing to think about when calling external functions from php though is that they are designed to be able to be called from a webservice, and so they will re-do all of the security checks and setup of the page theme and language that you have probably already done in your php page. To make sure this doesn't cause side-effects (like changing the theme halfway through a page), always use the wrapper in `external_api::call_external_function()` instead of calling the external function directly.
+One thing to think about when calling external functions from php though is that they are designed to be able to be called from a webservice, and so they will re-do all of the security checks and setup of the page theme and language that you have probably already done in your php page. To make sure this doesn't cause side-effects (like changing the theme halfway through a page), always use the wrapper in `\core_external\external_api::call_external_function()` instead of calling the external function directly.
 
 Additional rules for calling external functions:
 
-- Always use the `external_api::call_external_function()` wrapper when calling from php.
+- Always use the `\core_external\external_api::call_external_function()` wrapper when calling from php.
+
+import { Since } from '@site/src/components';
+
+:::note
+
+<Since version="4.2" issueNumber="MDL-76583" />
+
+The `external_api` class was renamed in Moodle 4.2 and can now be found under `\core_external\external_api`.
+
+Please note that if you are writing a non-core plugin which is available in older versions of Moodle, then you should continue to use the `external_api` class which will be maintained for backwards compatibility until Moodle 4.6
+
+:::
 
 ### JavaScript Modules (AMD)
 
@@ -194,7 +206,7 @@ The component API defines all the things this plugin can do. Every function in t
 
 ### External API
 
-The external API is a single class that wraps each function in the Component API. By exposing all the functions in the Component API we allow people to build new interfaces and apps that we have never even thought about without requiring changes to our plugin. Covering each external function with a unit test ensures that all our parameters and return types are correctly specified. Note: External API functions can be called directly from other dependant plugins or sub-plugins in Moodle - but you must use the external_api::call_external_function to do so or you will introduce problems with theme, language and context.
+The external API is a single class that wraps each function in the Component API. By exposing all the functions in the Component API we allow people to build new interfaces and apps that we have never even thought about without requiring changes to our plugin. Covering each external function with a unit test ensures that all our parameters and return types are correctly specified. Note: External API functions can be called directly from other dependant plugins or sub-plugins in Moodle - but you must use the `\core_external\external_api::call_external_function` to do so or you will introduce problems with theme, language and context.
 
 ### Webservice API
 

@@ -28,14 +28,32 @@ For a component named `local_groupmanager` located in `local/groupmanager` which
 
 :::
 
+import { Since } from '@site/src/components';
+
 A service definition:
 
-- _must_ `require_once` the `lib/externallib.php` file
-- _must_ extend the `external_api` class
+- _must_ extend the `\core_external\external_api` class
 - _must_ declare an `execute_parameters` function to describe the expected parameters of the function
 - _must_ declare an `execute` function which is called with the functions and performs the expected actions
 - _must_ declare an `execute_returns` function to describe the values returned by the function
 - _may_ declare an `execute_is_deprecated` function to declare a function as deprecated
+
+<Since version="4.2" issueNumber="MDL-76583" />
+
+:::caution Writing plugins supporting Multiple Moodle versions
+
+The External API subsystem was restructured in Moodle 4.2 and moved from classes within a manually-required file, to autoloaded and namespaced classes.
+
+If you are developing a plugin whose codebase is used or tested in multiple Moodle versions, including older versions of Moodle, then you:
+
+- _must_ `require_once` the `lib/externallib.php` file
+- _must_ extend the `external_api` class instead of `\core_external\external_api`
+
+This will allow your plugin to continue working without deprecation notices or failures.
+
+Please note that deprecation notices will be added to this pathway from Moodle 4.6 onwards.
+
+:::
 
 ### An example definition
 
@@ -44,11 +62,12 @@ A service definition:
 
 namespace local_groupmanager\external;
 
-defined('MOODLE_INTERNAL') || die;
+use external_function_parameters;
+use external_multiple_structure;
+use external_single_structure;
+use external_value;
 
-require_once("{$CFG->libdir}/externallib.php");
-
-class create_groups extends external_api {
+class create_groups extends \core_external\external_api {
     public static function execute_parameters(): external_function_parameters {
         return new external_function_parameters([
             'groups' => new external_multiple_structure(
