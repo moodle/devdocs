@@ -159,6 +159,40 @@ export const getJSFileDocHeader = ({
 };
 
 /**
+ * Fetch the standard File docblock used in JS files.
+ *
+ * @param {Props} props
+ * @returns {string}
+ */
+export const getYUIFileDocHeader = ({
+    plugintype = 'plugintype',
+    pluginname = 'pluginname',
+    examplePurpose,
+    modulename,
+}: Props): string => {
+    if (!examplePurpose) {
+        throw Error('Purpose must be specified');
+    }
+
+    if (!modulename) {
+        throw Error('YUI Module name must be specified');
+    }
+
+    return [
+        '/*',
+        ` * @package   ${plugintype}_${pluginname}`,
+        ' * @copyright Year, You Name <your@email.address>',
+        ' * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later',
+        ' */',
+        '',
+        '/**',
+        ` * @module moodle-${plugintype}_${pluginname}-${modulename}`,
+        ' */',
+        '',
+    ].join('\n');
+};
+
+/**
  * Fetch the standard File docblock used in PHP files.
  *
  * @param {Props} props
@@ -197,6 +231,8 @@ export const getFileDocHeader = (props: Props): string => {
     case ('js'):
     case ('javascript'):
         return getJSFileDocHeader(props);
+    case ('yui'):
+        return getYUIFileDocHeader(props);
     default:
         return getPhpFileDocHeader(props);
     }

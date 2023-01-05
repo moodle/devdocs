@@ -49,6 +49,9 @@ Assign_feedback_plugins:
 Assign_submission_plugins:
 - filePath: "/docs/apis/plugintypes/assign/submission.md"
   slug: "/docs/apis/plugintypes/assign/submission"
+Atto:
+- filePath: "/docs/apis/plugintypes/atto/index.md"
+  slug: "/docs/apis/plugintypes/atto/"
 Automated_Manipulation_of_Strings_2.0:
 - filePath: "/general/projects/api/amos.md"
   slug: "/general/projects/api/amos"
