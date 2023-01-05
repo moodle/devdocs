@@ -1,0 +1,1164 @@
+[
+    {
+        "copyrightHolders": [],
+        "location": "admin/tool/componentlibrary/amd/src/lunr.js",
+        "name": "lunr - http://lunrjs.com",
+        "description": "Provide a great search experience without the need for external, server-side, search services.",
+        "version": "2.3.8",
+        "license": "MIT",
+        "repository": "https://github.com/olivernn/lunr.js",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2015 Richard Dancsi"
+        ],
+        "location": "admin/tool/policy/amd/src/jquery-eu-cookie-law-popup.js",
+        "name": "jQuery EU Cookie Law popups",
+        "description": "An easy-to-install jQuery plugin to create EU Cookie Law popups and for GDPR compliance.",
+        "version": "1.1.3",
+        "license": "MIT",
+        "repository": "https://github.com/wimagguc/jquery-eu-cookie-law-popup",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2007-2020, Apereo Foundation"
+        ],
+        "location": "auth/cas/CAS",
+        "name": "CAS",
+        "description": "phpCAS library to support CAS authentication plugin.",
+        "version": "1.6.0",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/apereo/phpCAS",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "cache/stores/mongodb/MongoDB",
+        "name": "MongoDB PHP Library",
+        "description": "This library provides a high-level abstraction around the lower-level PHP driver, also known as the mongodb extension.",
+        "version": "1.13.1",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/mongodb/mongo-php-driver",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "enrol/lti/ims-blti",
+        "name": "IMS-BLTI",
+        "description": "Set of IMS-LTI tools originaly provided by IMS.",
+        "version": "1.0",
+        "license": "MIT",
+        "repository": "https://github.com/jfederico/ims-dev",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [],
+        "location": "filter/algebra/AlgParser.pm",
+        "name": "WeBWorK",
+        "version": "2.4.9+",
+        "license": "GPL",
+        "licenseversion": "2.0+",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2002-2004 John Forkosh Associates, Inc"
+        ],
+        "location": "filter/tex/mimetex.*",
+        "name": "mimeTeX",
+        "description": "Compiled C program to convert TeX into GIFs",
+        "version": "1.77",
+        "license": "GPL",
+        "licenseversion": "3.0+",
+        "repository": "https://github.com/icaoberg/mimetex",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "Joubel"
+        ],
+        "location": "h5p/h5plib/v124/joubel/core",
+        "name": "h5p-php-library",
+        "description": "The general H5P library.",
+        "version": "moodle-1.22.4",
+        "license": "GPL",
+        "licenseversion": "3.0+",
+        "repository": "https://github.com/h5p/h5p-php-library/",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "Joubel"
+        ],
+        "location": "h5p/h5plib/v124/joubel/editor",
+        "name": "h5p-editor-php-library",
+        "description": "A general library that is supposed to be used in most PHP implementations of H5P.",
+        "version": "moodle-1.22.4",
+        "license": "GPL",
+        "licenseversion": "3.0+",
+        "repository": "https://github.com/h5p/h5p-editor-php-library/",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2000-2013 John Lim (jlim#natsoft.com). All rights reserved.",
+            "2014 Damien Regad, Mark Newnham and the ADOdb community"
+        ],
+        "location": "lib/adodb",
+        "name": "AdoDB",
+        "description": "Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.",
+        "version": "5.22.2",
+        "license": "BSD/LGPL",
+        "licenseversion": "3-Clause/2.1+",
+        "repository": "https://github.com/ADOdb/ADOdb",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2014, The WebRTC project authors. All rights reserved. Copyright (c) 2018, The adapter.js project authors."
+        ],
+        "location": "lib/amd/src/adapter.js",
+        "name": "WebRTC adapter",
+        "description": "JavaScript library to insulate apps from spec changes and prefix differences in WebRTC. The prefix differences are mostly gone these days but differences in behaviour between browsers remain.",
+        "version": "8.0.0",
+        "license": "BSD",
+        "licenseversion": "3-Clause",
+        "repository": "https://github.com/webrtc/adapter",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2016 Nick Downie"
+        ],
+        "location": "lib/amd/src/chartjs-lazy.js",
+        "name": "Chart.js",
+        "description": "Simple yet flexible JavaScript charting for designers & developers.",
+        "version": "3.8.0",
+        "license": "MIT",
+        "repository": "https://github.com/chartjs/Chart.js",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2019 Tim Perry"
+        ],
+        "location": "lib/amd/src/loglevel.js",
+        "name": "loglevel.js",
+        "description": "Minimal lightweight simple logging for JavaScript.",
+        "version": "1.8.0",
+        "license": "MIT",
+        "repository": "https://github.com/pimterry/loglevel/",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2009 Chris Wanstrath (Ruby)",
+            "2010-2014 Jan Lehnardt (JavaScript)",
+            "2010-2015 The mustache.js community"
+        ],
+        "location": "lib/amd/src/mustache.js",
+        "name": "Mustache.js",
+        "description": "JS library for displaying mustache templates.",
+        "version": "4.2.0",
+        "license": "MIT",
+        "repository": "https://github.com/janl/mustache.js",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2016 Federico Zivolo and contributors"
+        ],
+        "location": "lib/amd/src/popper.js",
+        "name": "Popper.js",
+        "description": "A kickass library used to created Poppers in web applications.",
+        "version": "v1.12.6",
+        "license": "MIT",
+        "repository": "https://github.com/floating-ui/floating-ui",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/amd/src/truncate.js",
+        "name": "Truncate.js",
+        "description": "Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has several options such as length, finishBlock and noBreak.",
+        "version": "0.0.1",
+        "license": "MIT",
+        "repository": "https://github.com/pathable/truncate",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2005, Jon Papaioannou"
+        ],
+        "location": "lib/behat/axe",
+        "name": "axe-core",
+        "description": "Accessibility testing engine for websites and other HTML-based user interfaces.",
+        "version": "4.5.1",
+        "license": "MPL",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/dequelabs/axe-core",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2005, Jon Papaioannou"
+        ],
+        "location": "lib/bennu",
+        "name": "Bennu",
+        "description": "Bennu is an object-oriented library written in PHP that implements the iCalendar standard (RFC 2445).",
+        "version": "0.2-custom",
+        "license": "LGPL",
+        "licenseversion": "2.1+",
+        "repository": "https://sourceforge.net/projects/bennu/",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2007-2018 Einar Lielmanis, Liam Newman, and contributors."
+        ],
+        "location": "lib/editor/atto/plugins/html/yui/src/beautify",
+        "name": "jsbeautify",
+        "description": "Beautify HTML code in Atto.",
+        "version": "1.14.6",
+        "license": "MIT",
+        "repository": "https://github.com/beautify-web/js-beautify",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/atto/plugins/html/yui/src/codemirror",
+        "name": "codemirror",
+        "description": "CodeMirror is a versatile text editor implemented in JavaScript for the browser.",
+        "version": "5.65.9",
+        "license": "MIT",
+        "repository": "https://github.com/codemirror/codemirror5",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2014 Tim Down"
+        ],
+        "location": "lib/editor/atto/yui/src/rangy/js/*.*",
+        "name": "Rangy",
+        "description": "A cross-browser JavaScript range and selection library.",
+        "version": "1.3.0",
+        "license": "MIT",
+        "repository": "https://github.com/timdown/rangy",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/js/tinymce",
+        "name": "Tiny",
+        "version": "6.2.0",
+        "license": "MIT",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "Guido Neele (www.neele.name)"
+        ],
+        "location": "lib/editor/tinymce/plugins/pdw/tinymce",
+        "name": "PDW Toolbar Toggle",
+        "description": "A plugin for the TinyMCE WYSIWYG editor. The plugin shows and hides the toolbars just like the Kitchen Sink plugin in Wordpress.",
+        "version": "1.2",
+        "license": "MIT",
+        "repository": "https://github.com/GuidoNeele/PDW-Toggle-Toolbars-TinyMCE",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/tinymce/plugins/spellchecker/rpc.php",
+        "name": "TinyMCE spellchecker",
+        "description": "TinyMCE - Spellchecker for PHP.",
+        "version": "2.0.6.1",
+        "license": "LGPL",
+        "licenseversion": "2.1+",
+        "repository": "https://github.com/tinymce/tinymce_spellchecker_php",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2004-2012, Moxiecode Systems AB, All rights reserved."
+        ],
+        "location": "lib/editor/tinymce/tiny_mce",
+        "name": "TinyMCE",
+        "description": "The JavaScript Rich Text editor.",
+        "version": "3.5.11",
+        "license": "LGPL",
+        "licenseversion": "2.1+",
+        "repository": "https://github.com/tinymce/tinymce",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2013 Cal Henderson"
+        ],
+        "location": "lib/emoji-data",
+        "name": "Emoji data",
+        "description": "Library to parse easily data and sprite sheets for emoji.",
+        "version": "14.0.1",
+        "license": "MIT",
+        "repository": "https://github.com/iamcal/emoji-data/",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "Miles Kaufmann"
+        ],
+        "location": "lib/evalmath",
+        "name": "EvalMath",
+        "description": "Class to safely evaluate math expressions.",
+        "version": "1.0.0",
+        "license": "BSD",
+        "repository": "https://github.com/dbojdo/eval-math",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "Dave Gandy"
+        ],
+        "location": "lib/fonts",
+        "name": "Font Awesome - http://fontawesome.io",
+        "description": "The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.",
+        "version": "4.7.0",
+        "license": "SIL OFL",
+        "licenseversion": "1.1",
+        "repository": "https://github.com/FortAwesome/Font-Awesome",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2015 Leaf Corcoran"
+        ],
+        "location": "lib/geopattern-php",
+        "name": "GeoPattern",
+        "description": "Library for creating beautiful generative background images from a string.",
+        "version": "1.1.2",
+        "license": "MIT",
+        "repository": "https://github.com/RedeyeGroup/geopattern-php",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/google",
+        "name": "Google APIs",
+        "description": "Library Google APIs Client Library for PHP",
+        "version": "1.1.7",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/googleapis/google-api-php-client",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2000 Herman Veluwenkamp (hermanV AT mindless DOT com)"
+        ],
+        "location": "lib/graphlib.php",
+        "name": "Graph Class",
+        "description": "Class to draw line, point, bar, and area graphs, including numeric x-axis and double y-axis.",
+        "version": "1.6.3",
+        "license": "GPL",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "Horde LLC"
+        ],
+        "location": "lib/horde",
+        "name": "Horde",
+        "description": "Library used by the inbound e-mail handling system.",
+        "version": "5.2.23",
+        "license": "LGPL/BSD",
+        "licenseversion": "2.1",
+        "repository": "https://github.com/horde/base",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2005-2007 Jon Abernathy jon@chuggnutt.com"
+        ],
+        "location": "lib/html2text",
+        "name": "HTML2Text",
+        "description": "PHP script to convert HTML into an approximate text equivalent.",
+        "version": "4.3.1",
+        "license": "GPL",
+        "licenseversion": "2.0+",
+        "repository": "https://github.com/mtibben/html2text",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/htmlpurifier",
+        "name": "HTML Purifier",
+        "description": "Filters HTML.",
+        "version": "4.16.0",
+        "license": "LGPL",
+        "licenseversion": "2.1+",
+        "repository": "https://github.com/ezyang/htmlpurifier",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/http-message",
+        "name": "http-message",
+        "description": "Provide a set of common interfaces for HTTP messages as described in RFC 7230 and RFC 7231",
+        "version": "1.0.1",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/http-message",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2016 The jQuery Foundation"
+        ],
+        "location": "lib/jquery",
+        "name": "jQuery",
+        "description": "jQuery is a fast, small, and feature-rich JavaScript library widely used on moodle.",
+        "version": "3.6.1",
+        "license": "MIT",
+        "repository": "https://github.com/jquery/jquery",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2016 The jQuery Foundation and other contributors"
+        ],
+        "location": "lib/jquery",
+        "name": "jQuery UI",
+        "description": "jQuery UI is a set of user interface interactions, effects, widgets, and themes built on top of the jQuery library.",
+        "version": "1.13.2",
+        "license": "MIT",
+        "repository": "https://github.com/jquery/jquery-ui",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "MartinLenord"
+        ],
+        "location": "lib/lti1p3",
+        "name": "LTI 1.3 Tool Library",
+        "description": "A library used for building IMS-certified LTI 1.3 tool providers in PHP.",
+        "version": "5.2.1",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/packbackbooks/lti-1-3-php-library",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2016 IMS Global Learning Consortium Inc. All Rights Reserved. Trademark Policy - (www.imsglobal.org/trademarks)"
+        ],
+        "location": "lib/ltiprovider",
+        "name": "LTI Tool Provider Library PHP",
+        "description": "PHP library for communicating with learning tools as per the LTI specification.",
+        "version": "3.0.2",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/1EdTech/LTI-Tool-Provider-Library-PHP",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2004-2016 Michel Fortin https://michelf.com/projects/php-markdown/",
+            "(Original Markdown) 2004-2006 John Gruber https://daringfireball.net/projects/markdown/\nAll rights reserved."
+        ],
+        "location": "lib/markdown",
+        "name": "Markdown",
+        "description": "Functions to convert from the Markdown text format into clean XHTML.",
+        "version": "2.0.0",
+        "license": "BSD",
+        "repository": "https://github.com/michelf/php-markdown",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "MaxMind"
+        ],
+        "location": "lib/maxmind/GeoIp2",
+        "name": "GeoIP2 PHP API",
+        "description": "Library for processing of GeoIP data files.",
+        "version": "2.11.0",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/maxmind/GeoIP2-php",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "MaxMind"
+        ],
+        "location": "lib/maxmind/MaxMind",
+        "name": "MaxMind DB Reader API",
+        "description": "PHP API for reading MaxMind DB files.",
+        "version": "1.11.0",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/maxmind/MaxMind-DB-Reader-php/",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/minify/matthiasmullie-minify",
+        "name": "MatthiasMullie\\Minify",
+        "description": "CSS & JavaScript minifier, in PHP",
+        "version": "1.3.69",
+        "license": "MIT",
+        "repository": "https://github.com/matthiasmullie/minify",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/minify/matthiasmullie-pathconverter",
+        "name": "MatthiasMullie\\PathConverter",
+        "description": "CSS path converter, in PHP",
+        "version": "1.1.3",
+        "license": "MIT",
+        "repository": "https://github.com/matthiasmullie/path-converter",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2016-2020 Arkadiusz Kondas arkadiusz.kondas[at]gmail"
+        ],
+        "location": "lib/mlbackend/php/phpml",
+        "name": "PHP-ML",
+        "description": "Machine learning library used to generate data for the Analytics system.",
+        "version": "0.9.0",
+        "license": "MIT",
+        "repository": "https://gitlab.com/php-ai/php-ml",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2010-2016 Justin Hileman"
+        ],
+        "location": "lib/mustache",
+        "name": "Mustache",
+        "description": "PHP library for displaying mustache templates.",
+        "version": "2.14.2",
+        "license": "MIT",
+        "repository": "https://github.com/bobthecow/mustache.php",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2004 Adam Daniel, Bertrand Mansion, Klaus Guenther, Alexey Borzov"
+        ],
+        "location": "lib/pear/HTML/Common.php",
+        "name": "Pear_HTML_Common",
+        "description": "Class with many common HTML functions (used by HTML Quickform)",
+        "version": "1.7",
+        "license": "PHP",
+        "licenseversion": "2.0",
+        "repository": "http://pear.php.net/package/HTML_Common",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2004 Bertrand Mansion, Adam Daniel, Alexey Borzov"
+        ],
+        "location": "lib/pear/HTML/QuickForm",
+        "name": "Pear_HTML_QuickForm",
+        "description": "Class to write forms",
+        "version": "2.0",
+        "license": "PHP",
+        "licenseversion": "2.0",
+        "repository": "https://pear.php.net/package/HTML_Quickform",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2004 Bertrand Mansion, Adam Daniel, Alexey Borzov"
+        ],
+        "location": "lib/pear/HTML/QuickForm.php",
+        "name": "Pear_HTML_QuickForm.php",
+        "description": "Class to write forms",
+        "version": "2.0",
+        "license": "PHP",
+        "licenseversion": "2.0",
+        "repository": "https://pear.php.net/package/HTML_Quickform",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2001-2006 The PHP Group. All rights reserved"
+        ],
+        "location": "lib/pear/PEAR.php",
+        "name": "Pear.php",
+        "description": "Base class for other PEAR classes.",
+        "version": "1.4.5",
+        "license": "PHP",
+        "licenseversion": "3.0",
+        "repository": "https://pear.php.net/package/PEAR",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011 Raphael Schweikert, http://sabberworm.com/"
+        ],
+        "location": "lib/php-css-parser",
+        "name": "PHP-CSS-Parser",
+        "description": "A Parser for CSS Files written in PHP.",
+        "version": "8.4.0",
+        "license": "MIT",
+        "repository": "https://github.com/sabberworm/PHP-CSS-Parser",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2015 My C-Labs"
+        ],
+        "location": "lib/php-enum",
+        "name": "php-enum",
+        "description": "PHP Enum implementation inspired from SplEnum",
+        "version": "1.8.3",
+        "license": "MIT",
+        "repository": "https://github.com/myclabs/php-enum",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2011, Neuman Vong"
+        ],
+        "location": "lib/php-jwt",
+        "name": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519",
+        "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519",
+        "version": "6.3.0",
+        "license": "BSD",
+        "licenseversion": "3-Clause",
+        "repository": "https://github.com/firebase/php-jwt",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2003 Brent R. Matzelle (bmatzelle AT yahoo DOT com)"
+        ],
+        "location": "lib/phpmailer",
+        "name": "PHPMailer",
+        "description": "Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are based upon the standard AspEmail(tm) classes.",
+        "version": "6.6.5",
+        "license": "LGPL",
+        "licenseversion": "2.1",
+        "repository": "https://github.com/PHPMailer/PHPMailer",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/phpspreadsheet",
+        "name": "PhpSpreadsheet",
+        "description": "Library to read, write and create spreadsheet documents in PHP.",
+        "version": "1.25.2",
+        "license": "MIT",
+        "repository": "https://github.com/PHPOffice/PhpSpreadsheet",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "1999,2000,2001 Edd Dumbill, Useful Information Company"
+        ],
+        "location": "lib/phpxmlrpc",
+        "name": "phpxmlrpc",
+        "description": "A php library for building xml-rpc clients and servers",
+        "version": "4.8.1",
+        "license": "BSD",
+        "licenseversion": "3-Clause",
+        "repository": "https://github.com/gggeek/phpxmlrpc",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2018 Teclib",
+            "2009 Christian Kruse, Rodney Rehm"
+        ],
+        "location": "lib/plist",
+        "name": "plist",
+        "description": "PHP Implementation of Apple's PList (binary and XML).",
+        "version": "2.0.3",
+        "license": "MIT",
+        "repository": "https://github.com/TECLIB/CFPropertyList",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/polyfills",
+        "name": "regenerator-runtime",
+        "description": "This package implements a fully-functional source transformation that takes the syntax for generators/yield from ECMAScript 2015 or ES2015 and Asynchronous Iteration proposal and spits out efficient JS-of-today (ES5) that behaves the same way.",
+        "version": "0.13.7",
+        "license": "MIT",
+        "repository": "https://github.com/facebook/regenerator/",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/polyfills",
+        "name": "core-js-bundle",
+        "description": "Modular standard library for JavaScript. Includes polyfills for ECMAScript up to 2021: promises, symbols, collections, iterators, typed arrays, many other features, ECMAScript proposals, some cross-platform WHATWG / W3C features and proposals like URL. You can load only required features or use it without global namespace pollution.",
+        "version": "3.15.0",
+        "license": "MIT",
+        "repository": "https://github.com/zloirock/core-js",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/polyfills",
+        "name": "mdn-polyfill",
+        "description": "A collection of side-effect ECMAScript modules. Minimized, mangled and extremely small thanks to Rollup - next-generation ES6 module bundler.",
+        "version": "5.20.0",
+        "license": "MIT",
+        "repository": "https://github.com/msn0/mdn-polyfills",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/polyfills",
+        "name": "url-polyfill",
+        "description": "Polyfill URL and URLSearchParams to match last WHATWG specifications.",
+        "version": "1.1.12",
+        "license": "MIT",
+        "repository": "https://github.com/lifaon74/url-polyfill",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/requirejs",
+        "name": "RequireJS",
+        "description": "RequireJS is a JavaScript file and module loader.",
+        "version": "2.3.5",
+        "license": "MIT",
+        "repository": "https://github.com/requirejs/requirejs",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "Frédéric Massart"
+        ],
+        "location": "lib/rtlcss",
+        "name": "RTLCSS for PHP",
+        "description": "RTLCSS is a framework for converting Left-To-Right (LTR) Cascading Style Sheets(CSS) to Right-To-Left (RTL).",
+        "version": "1.0.1",
+        "license": "MIT",
+        "repository": "https://github.com/moodlehq/rtlcss-php",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2015 Leaf Corcoran"
+        ],
+        "location": "lib/scssphp",
+        "name": "scssphp",
+        "description": "scssphp is a compiler for SCSS written in PHP.",
+        "version": "1.11.0",
+        "license": "MIT",
+        "repository": "https://github.com/scssphp/scssphp/",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/simplepie",
+        "name": "SimplePie",
+        "description": "Simple Pie helps with blogs.",
+        "version": "1.6.0",
+        "license": "BSD",
+        "repository": "https://github.com/simplepie/simplepie",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2022 Box, Inc. All rights reserved"
+        ],
+        "location": "lib/spout",
+        "name": "Spout",
+        "description": "Library for importing and exporting csv / excel / ODS files.",
+        "version": "3.3.0",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/box/spout/",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "Olivier PLATHEY"
+        ],
+        "location": "lib/tcpdf",
+        "name": "TCPDF",
+        "description": "Class to generate PDF files",
+        "version": "6.5.0",
+        "license": "LGPL",
+        "licenseversion": "3.0-only",
+        "repository": "https://github.com/tecnickcom/TCPDF",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2000 Rod Apeldoorn - rod(at)canowhoopass(dot)com"
+        ],
+        "location": "lib/validateurlsyntax.php",
+        "name": "validateUrlSyntax",
+        "description": "URL syntax validation using PHP and regular expressions.",
+        "license": "GPL",
+        "licenseversion": "2.0+",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2009 Phacility"
+        ],
+        "location": "lib/xhprof",
+        "name": "XHProf",
+        "description": "A Hierarchical Profiler for PHP.",
+        "version": "2.3.5",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/longxinH/xhprof",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2006, Yahoo! Inc."
+        ],
+        "location": "lib/yuilib",
+        "name": "YUI",
+        "description": "The Yahoo! User Interface Library is a set of utilities and controls, in JavaScript, for building richly interactive web applications using techniques such as DOM scripting, DHTML and AJAX. The YUI Library also includes several core CSS resources.Set of user-interface components using AJAX, DHTML etc. We use it for all our AJAX-related stuff.",
+        "version": "3.17.2",
+        "license": "BSD",
+        "repository": "https://github.com/yui/yui3",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2006, Yahoo! Inc."
+        ],
+        "location": "lib/yuilib/gallery",
+        "name": "YUI Gallery",
+        "description": "The Gallery is a collection of modules that have been developed by the YUI community to enhance the capabilities of YUI.",
+        "version": "gallery-2013.10.02-20-26",
+        "license": "BSD",
+        "repository": "https://github.com/yui/yui3-gallery",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2007-2009 Paul Duncan pabs@pablotron.org",
+            "2014 Jonatan Männchen jonatan@maennchen.ch",
+            "2014 Jesse G. Donat donatj@gmail.com",
+            "2018 Nicolas CARPi nicolas.carpi@curie.fr"
+        ],
+        "location": "lib/zipstream",
+        "name": "ZipStream-PHP",
+        "description": "PHP ZIP Streaming Library",
+        "version": "2.2.0",
+        "license": "MIT",
+        "repository": "https://github.com/maennchen/ZipStream-PHP",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "Brion Vibber"
+        ],
+        "location": "media/player/videojs/amd/src/local/ogv/ogv.js",
+        "name": "ogv.js",
+        "description": "Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.",
+        "version": "1.8.4",
+        "license": "MIT",
+        "repository": "https://github.com/brion/ogv.js/",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "Brightcove, Inc"
+        ],
+        "location": "media/player/videojs/amd/src/video-lazy.js",
+        "name": "VideoJS",
+        "description": "JavaScript library that makes it easier to work with and build on HTML5 video.",
+        "version": "7.20.3",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/videojs/video.js",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2021 Huong Nguyen huongnv13@gmail.com"
+        ],
+        "location": "media/player/videojs/amd/src/videojs-ogvjs-lazy.js",
+        "name": "ogv.js Tech plugin for Video.JS",
+        "description": "The ogv.js tech plugin for VideoJS",
+        "version": "0.1.2",
+        "license": "MIT",
+        "repository": "https://github.com/HuongNV13/videojs-ogvjs",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2014-2015 Benoit Tremblay <trembl.ben@gmail.com>"
+        ],
+        "location": "media/player/videojs/amd/src/Youtube-lazy.js",
+        "name": "videojs-youtube",
+        "description": "YouTube Playback Technology for Video.js.",
+        "version": "2.6.1",
+        "license": "MIT",
+        "repository": "https://github.com/videojs/videojs-youtube",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "Brion Vibber"
+        ],
+        "location": "media/player/videojs/ogvjs",
+        "name": "ogv.js support files",
+        "description": "JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.",
+        "version": "1.8.4",
+        "license": "MIT",
+        "repository": "https://github.com/brion/ogv.js/",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "Brightcove, Inc"
+        ],
+        "location": "media/player/videojs/videojs",
+        "name": "VideoJS support files",
+        "description": "JavaScript library that makes it easier to work with and build on HTML5 video",
+        "version": "7.20.3",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/videojs/video.js",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2020 Setasign GmbH & Co. KG, https://www.setasign.com"
+        ],
+        "location": "mod/assign/feedback/editpdf/fpdi",
+        "name": "FPDI",
+        "description": "Collection of PHP classes facilitating developers to read pages from existing PDF documents and use them as templates in FPDF.",
+        "version": "2.3.6",
+        "license": "MIT",
+        "repository": "https://github.com/Setasign/FPDI",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2013, Donovan Schönknecht"
+        ],
+        "location": "repository/s3/S3.php",
+        "name": "S3",
+        "description": "A standalone Amazon S3 (REST) client for PHP 5.2.x using CURL that does not require PEAR.",
+        "version": "0.5.1",
+        "license": "BSD",
+        "repository": "https://github.com/tpyo/amazon-s3-php-class",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/bootstrap/alert.js",
+        "name": "bootstrap-alert",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/bootstrap/button.js",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "licenseversion": "",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/bootstrap/carousel.js",
+        "name": "bootstrap-carousel",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/bootstrap/collapse.js",
+        "name": "bootstrap-collapse",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/bootstrap/dropdown.js",
+        "name": "bootstrap-dropdown",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/bootstrap/modal.js",
+        "name": "bootstrap-modal",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/bootstrap/popover.js",
+        "name": "bootstrap-popover",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/bootstrap/scrollspy.js",
+        "name": "bootstrap-scrollspy",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/bootstrap/tab.js",
+        "name": "bootstrap-tab",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/bootstrap/toast.js",
+        "name": "bootstrap-toast",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/bootstrap/tools/sanitizer.js",
+        "name": "bootstrap-sanitizer",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/bootstrap/tooltip.js",
+        "name": "bootstrap-tooltip",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/bootstrap/util.js",
+        "name": "bootstrap-util",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/amd/src/index.js",
+        "name": "bootstrap-util",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "2011-2021 Twitter, Inc",
+            "2011-2021 The Bootstrap Authors"
+        ],
+        "location": "theme/boost/scss/bootstrap",
+        "name": "Twitter Bootstrap",
+        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
+        "version": "4.6.0",
+        "license": "MIT",
+        "repository": "https://github.com/twbs/bootstrap",
+        "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "Dave Gandy"
+        ],
+        "location": "theme/boost/scss/fontawesome",
+        "name": "Font Awesome - http://fontawesome.io",
+        "description": "Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.",
+        "version": "4.7.0",
+        "license": "(MIT)",
+        "repository": "https://github.com/FortAwesome/Font-Awesome",
+        "customised": false
+    }
+]
