@@ -239,5 +239,18 @@
         "version": "Unknown",
         "license": "GNU GPL",
         "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2022 Box, Inc. All rights reserved"
+        ],
+        "location": "lib/spout",
+        "name": "Spout",
+        "description": "Library for importing and exporting csv / excel / ODS files.",
+        "version": "3.3.0",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/box/spout/",
+        "customised": false
     }
 ]
