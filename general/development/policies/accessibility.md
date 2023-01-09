@@ -10,36 +10,28 @@ Moodle is designed to provide equal functionality and information to all people.
 
 ## Accessibility conformance
 
-As part of our ongoing commitment to provide an accessible platform and to continuously improve compliance with WCAG 2.1 Level AA, Moodle has been working with an external auditor to review the platform since January 2020.
+As part of our ongoing commitment to provide an accessible platform and to continuously improve compliance with WCAG 2.1 Level AA, Moodle has been working with an external auditor to review the platform since the development of Moodle 3.9 in January 2020.
 
-Key pages within Moodle, which are representative of its overall accessibility and functionality, are audited using both automated tools and user journey testing. The WCAG 2.1 Level A and Level AA issues raised from this audit were all addressed in Moodle 3.10 and Moodle 3.9.3 (both released on November 9th 2020). Many of these [accessibility improvements](https://tracker.moodle.org/browse/MDL-67688) where also back-ported to Moodle 3.7.5+ and Moodle 3.8.2+, where possible.
+Key pages within Moodle, which are representative of its overall accessibility and functionality, are audited using both automated tools and user journey testing. The WCAG 2.1 Level A and Level AA issues raised from this audit are all addressed. The accessibility fixes and improvements are also back-ported to current supported Moodle versions, where possible.
 
 :::info Moodle's accreditations
 
-Both Moodle, and the Moodle Mobile App hold a WCAG 2.1 AA accreditation based on the successful resolution of issues identified during audits.
+Both Moodle LMS and the Moodle Mobile App hold a WCAG 2.1 AA accreditation based on the successful resolution of issues identified during audits.
 
-These accreditations are renewed each year.
+Accreditations expire after one year, but this does not mean that the accreditation is invalid or that the Moodle version is no longer accessible. An expired accreditation just means that the process for re-accrediting the latest supported version or versions of Moodle is currently in progress.
 
-<div className='container' >
-    <div className='row' >
-        <div className='col col--6' >
-            <figure>
-                <a href="https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle">
-                    <img width="400px" src="https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle/badge" alt="WCAG 2.1 AA Accreditation for Moodle LMS" />
-                    <figcaption>Moodle WCAG 2.1 AA Accreditation, first issues November 10th 2020; Re-accredited on November 8th 2021</figcaption>
-                </a>
-            </figure>
-        </div>
-        <div className='col col--6' >
-            <figure>
-                <a href="https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle-mobile-app">
-                    <img width="400px" src="https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle-mobile-app/badge" alt="WCAG 2.1 AA Accreditation for Moodle LMS" />
-                    <figcaption>WCAG 2.1 Level AA accreditation badge for the Moodle app issued on 30 June 2021</figcaption>
-                </a>
-            </figure>
-        </div>
-    </div>
-</div>
+**[Moodle LMS](https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle)**
+
+| Version | WCAG 2.1 Level AA accreditation issued on | Tracker epic                                             |
+|---------|-------------------------------------------|----------------------------------------------------------|
+| v3.10   | 10 November 2020                          | [MDL-67688](https://tracker.moodle.org/browse/MDL-67688) |
+| v3.11   | 8 November 2021                           | [MDL-72657](https://tracker.moodle.org/browse/MDL-72657) |
+| v4.0    | _In progress_                             | [MDL-74624](https://tracker.moodle.org/browse/MDL-74624) |
+| v4.1    | _Pending_                                 |                                                          |
+
+**[Moodle App](https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle-mobile-app)**
+
+- WCAG 2.1 Level AA accreditation issued on 30 June 2021
 
 An overview of Moodle's conformance with the [WCAG 2.1](https://www.w3.org/TR/WCAG21/) guidelines can be found in our [accessibility conformance report](https://docs.moodle.org/311/en/VPAT#Moodle%20accessibility%20conformance%20report).
 
