@@ -54,9 +54,18 @@ Adhoc tasks are great for situations such as:
 
 ## Usage
 
-### Failures
+### Failures and error handling
 
 A task, either scheduled or adhoc, can sometimes fail. An example would be updating an RSS field when the network is temporarily down. This is handled by the task system automatically - all the failing task needs to do is throw an exception. The task will be retried after 1 minute. If the task keeps failing, the retry algorithm will add more time between each successive attempts up to a max of 24 hours.
+Therefore, if the task fails, it is OK for your code to just throw an exception. The task system will catch it an log it for you, and schedule the retry.
+
+However, sometimes it is a good idea to catch exceptions. For example, if your task loops over courses, doing some processing for each one,
+then it is better if an exception triggered in one course does not block processing of other courses. This requires some manual exception handling.
+If you catch an exception, then you become responsible for things that the task system normally handles.
+For example, it is important to log all the details of the error, so problems can be investigated and fixed. The helper function
+`mtrace_exception` makes this easier. Also, you need to consider: if something has gone wrong with part of the processing, but other parts succeeded,
+should the overall state of the task run be success or failure? It will depend on how the task works, but you may need to ensure that the task
+ends by throwing an exception if any part failed. There is a an example of all this in the [`\quiz_statistics\task\recalculate`](https://github.com/moodle/moodle/blob/master/mod/quiz/report/statistics/classes/task/recalculate.php).
 
 ### Caches
 
