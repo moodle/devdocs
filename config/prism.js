@@ -25,5 +25,6 @@ module.exports = {
     // We get colour highlighting without adding it as a language, and adding it to this list actually breaks the
     // formatting.
         'php',
+        'gherkin',
     ],
 };
