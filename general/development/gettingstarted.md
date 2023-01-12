@@ -10,7 +10,7 @@ tags:
 - [Set up your development environment](#a-quick-start-to-moodle-development)
 - See the [list of relatively easy Moodle bugs](https://tracker.moodle.org/issues/?jql=project%20%3D%20MDL%20AND%20type%20in%20(bug)%20AND%20status%20%3D%20open%20AND%20Difficulty%20%3D%20Easy%20AND%20labels%20not%20in%20(patch)%20ORDER%20BY%20created%20DESC)
 - Read our guide to making [a better contribution](./abc.md)
-- [Prepare a patch](https://docs.moodle.org/dev/Git_for_developers#Preparing_a_patch)
+- [Prepare a patch](/docs/guides/git/#preparing-a-patch)
 - Read the [Coding style](./policies/codingstyle/index.md) policy
 - Send your patch to [peer review](./process/peer-review.md) and learn more about the [Moodle processes](./process.md).
 - Create your custom plugins looking at the information in the [Plugin contribution](https://docs.moodle.org/dev/Plugin_contribution) page.
@@ -22,7 +22,7 @@ tags:
 ## A quick start to Moodle development
 
 1. Create an account on [Moodle.org](https://moodle.org/). You will need this to access the [Moodle General Developer forum](https://moodle.org/mod/forum/view.php?f=33) and download [Moodle plugins](https://moodle.org/plugins). You can also sign up to free self-paced courses in our [Moodle Academy Developer Learning Pathway](https://learn.moodle.org/)
-1. Create an account on [GitHub](https://github.com/) and [install Git on your computer](https://docs.moodle.org/dev/Git_for_developers). This is the source code version control repository tool of choice for Moodle development.
+1. Create an account on [GitHub](https://github.com/) and [install Git on your computer](/docs/guides/git/). This is the source code version control repository tool of choice for Moodle development.
 1. [Install Moodle on your machine](https://docs.moodle.org/en/Installing_Moodle) or use a container environment like [moodle-docker](https://github.com/moodlehq/moodle-docker). You can also use [Moodle Development Kit (MDK)](./tools/mdk.md).
 
   :::tip

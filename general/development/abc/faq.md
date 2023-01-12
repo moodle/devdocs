@@ -15,7 +15,7 @@ tags:
 There are various ways you can download and install Moodle on your system.
 
 - Visit our [download page](https://download.moodle.org/)
-- Clone from [Moodle's Git repository](https://github.com/moodle/moodle) or find out more about using [Git for developers](https://docs.moodle.org/dev/Git_for_developers)
+- Clone from [Moodle's Git repository](https://github.com/moodle/moodle) or find out more about using [Git for developers](/docs/guides/git/)
 
 ### Where can I start?
 
@@ -37,7 +37,7 @@ The Moodle community is an active group of teachers and developers that have mos
 
 ### How do I create a patch?
 
-If you have made some changes to the code that you would like to share with the community, learn how to [create a patch](https://docs.moodle.org/dev/Git_for_developers#Preparing_a_patch).
+If you have made some changes to the code that you would like to share with the community, learn how to [create a patch](/docs/guides/git/#preparing-a-patch).
 
 ### How do I create a module or plugin?
 

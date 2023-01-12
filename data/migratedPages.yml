@@ -219,6 +219,9 @@ Form_API:
 Frankenstyle:
 - filePath: "/general/development/policies/codingstyle/frankenstyle.md"
   slug: "/general/development/policies/codingstyle/frankenstyle"
+Git_for_developers:
+- filePath: "/docs/guides/git/index.md"
+  slug: "/docs/guides/git/"
 Github_actions_integration:
 - filePath: "/general/development/tools/gha.md"
   slug: "/general/development/tools/gha"
