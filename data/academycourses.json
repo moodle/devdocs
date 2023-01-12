@@ -91,6 +91,21 @@
             "series": [
                 "basics"
             ]
+        },
+        "updatePlugin400": {
+            "id": 66,
+            "name": "Update Plugins for Moodle 4.0",
+            "summary": "Learn about how to update your plugins to make them compatible with Moodle 4.0",
+            "description": "This course will provide an overview of the new user experience introduced in Moodle 4.0. It will cover the relevant API changes that developers need to be aware of. Learners will get hands-on practice in updating some Moodle 3.x plugins to make them compatible with Moodle 4.0.",
+            "tags": [
+                "development",
+                "plugins",
+                "updates"
+            ],
+            "archived": false,
+            "series": [
+                "intermediate"
+            ]
         }
     }
 }
