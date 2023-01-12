@@ -291,6 +291,6 @@ import AcademyLink from '@site/src/components/AcademyLink';
 import AcademyLink from '@site/src/components/AcademyLink';
 
 <AcademyLink
-  subject="Updating your Plugins for Moodle 4.0"
-  courseName="updatePlugin400"
+  subject="Setting up your Moodle Development environment"
+  courseName="setup"
 />
