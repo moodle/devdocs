@@ -19,7 +19,7 @@ import React from 'react';
 import Admonition from '@theme/Admonition';
 import Link from '@docusaurus/Link';
 import SchoolIcon from '@mui/icons-material/School';
-import courseList from '../academyCourses';
+import courseList from '@site/data/academycourses.json';
 import { Tooltip } from '@mui/material';
 
 export default function AcademyLink(props) {
