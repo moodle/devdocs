@@ -36,7 +36,7 @@ sequenceDiagram
 The External Service API has two categories of documentation:
 
 1. this documentation details how to _write_ a web service and use the External API; and
-2. API documentation for a live Moodle site, which can be found under ** Site administration > Plugins > Web services > API Documentation **.
+2. API documentation for a live Moodle site, which can be found under ** Site administration > Server > Web services > API Documentation **.
 
 In addition to the standard API endpoints, several additional API endpoints are available for the purpose of uploading, and downloading, files. For more information on these endpoints, see the [file handling](./files.md) documentation.
 
