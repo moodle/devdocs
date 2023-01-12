@@ -250,3 +250,47 @@ The following header should be present in all non-documentation code files:
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 ```
+
+### Linking to Moodle Academy
+
+These Moodle Developer Resources are one of many key sources of information for Moodle developers. One of the other most important sources of knowledge is the [Moodle Academy](https://moodle.academy/).
+
+You may wish to link documentation to relevant courses on the Moodle Academy, and we provide an easy way to do so.
+
+A list of relevant courses is [maintained as JSON within the documentation repository](https://github.com/moodle/devdocs/blob/main/data/academycourses.json). Each entry in the list of courses includes:
+
+- a unique name
+- the id of the course
+- a short name for the course
+- a brief summary of the course
+- a longer description
+- a list of relevant tags
+
+You can also make of a React element, `<AcademyLink /` which takes both a `courseName`, and `subject`.
+
+- The `courseName` relates to the key of the course metadata within the `academycourses.json`.
+- The `subject` is used in the text of the information box.
+
+:::note
+
+You will need to import the `AcademyLink` component from `@site/src/components/AcademyLink`
+
+:::
+
+As an example, the following will create a link to the Moodle Academy course with information on setting up your Moodle Development environment:
+
+```
+import AcademyLink from '@site/src/components/AcademyLink';
+
+<AcademyLink
+  subject="Setting up your Moodle Development environment"
+  courseName="setup"
+/>
+```
+
+import AcademyLink from '@site/src/components/AcademyLink';
+
+<AcademyLink
+  subject="Updating your Plugins for Moodle 4.0"
+  courseName="updatePlugin400"
+/>
