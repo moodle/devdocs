@@ -54,7 +54,7 @@ export default function AcademyLink(props) {
                 </Link>
             </Tooltip>
             {' '}
-            on Moodle Academy.
+            course on Moodle Academy.
         </Admonition>
     );
 }
