@@ -39,7 +39,7 @@
         "location": "cache/stores/mongodb/MongoDB",
         "name": "MongoDB PHP Library",
         "description": "This library provides a high-level abstraction around the lower-level PHP driver, also known as the mongodb extension.",
-        "version": "1.13.1",
+        "version": "1.15.0",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/mongodb/mongo-php-driver",
