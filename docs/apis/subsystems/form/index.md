@@ -166,8 +166,8 @@ Moodle provides a number of basic, and advanced, form elements. These are descri
 1. [date_time_selector](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#date_time_selector)
 1. [duration](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#duration)
 1. [editor](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#editor)
-1. [filepicker](https://docs.moodle.org/dev/Using_the_File_API_in_Moodle_forms#filepicker) - upload single file
-1. [filemanager](https://docs.moodle.org/dev/Using_the_File_API_in_Moodle_forms#filemanager) - upload multiple files
+1. [filepicker](./usage/files.md#file-picker) - upload single file
+1. [filemanager](./usage/files.md#file-manager) - upload multiple files
 1. [tags](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#tags)
 1. [addGroup](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#addGroup)
 1. [modgrade](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#modgrade)
@@ -326,7 +326,7 @@ $this->assertEquals($questiondata, $actualquestiondata);
 ## See also
 
 - [Core APIs](../../../apis.md)
-- [lib/formslib.php Usage](./usage.md)
+- [lib/formslib.php Usage](./usage/index.md)
 - [lib/formslib.php Form Definition](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition)
 - [Designing usable forms](/general/development/policies/designing-usable-forms)
 - [Fragment](https://docs.moodle.org/dev/Fragment)

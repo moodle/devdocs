@@ -1632,6 +1632,9 @@ Upgrade_notes:
 User-related_APIs:
 - filePath: "/docs/apis/core/user/index.md"
   slug: "/docs/apis/core/user/"
+Using_the_File_API_in_Moodle_forms:
+- filePath: "/docs/apis/subsystems/form/usage/files.md"
+  slug: "/docs/apis/subsystems/form/usage/files"
 Using_the_Moodle_App_in_a_browser:
 - filePath: "/general/app/development/setup/app-in-browser.md"
   slug: "/general/app/development/setup/app-in-browser"
@@ -1669,7 +1672,7 @@ lib/formslib.php_Testing:
 - filePath: "/docs/apis/subsystems/form/index.md"
   slug: "/docs/apis/subsystems/form/"
 lib/formslib.php_Usage:
-- filePath: "/docs/apis/subsystems/form/usage.md"
+- filePath: "/docs/apis/subsystems/form/usage/index.md"
   slug: "/docs/apis/subsystems/form/usage"
 lib/formslib.php_add_checkbox_controller:
 - filePath: "/docs/apis/subsystems/form/advanced/checkbox-controller.md"
