@@ -154,7 +154,7 @@ Bug fixes for security issues in 3.8.x ended 10 May 2021 (18 months).
 
 ## Moodle 3.7
 
-<ReleaseTable releaseName="3.8" />
+<ReleaseTable releaseName="3.7" />
 
 :::info
 
