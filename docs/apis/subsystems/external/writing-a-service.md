@@ -90,8 +90,8 @@ $functions = [
             // use in the Moodle Mobile App.
             MOODLE_OFFICIAL_MOBILE_SERVICE,
         ]
-    ),
-);
+    ],
+];
 ```
 
 <details>
