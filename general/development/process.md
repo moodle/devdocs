@@ -24,6 +24,8 @@ We use a workflow that ensures that new code receives multiple reviews by differ
 - There is a dedicated team in Moodle HQ in charge of the [integration review](./process/integration/index.md), to ensure consistent quality across the codebase.
 - Every time an issue is integrated, the [testing](./process/testing/index.md) instructions are run by a dedicated team of testers.
 
+import { Since } from '@site/src/components';
+
 ## Roles
 
 A number of roles make this work:
@@ -79,7 +81,7 @@ At Moodle HQ there are teams of developers using the [Scrum framework](http://ww
 
 After [major releases](https://docs.moodle.org/dev/#Major_release_cycles) there will be minor releases.
 
-- x.x.1 will occur approximately two months after each major release (eg. 2.x).
+- x.x.1 will occur approximately two months after each major release (eg. 4.x).
 - There will then be another point release every two months after that.
 See the [General release calendar](../releases.md#general-release-calendar) for details.
 
@@ -101,9 +103,25 @@ Whenever a solution for an issue is finished, it is submitted to the standard in
 
 ## Major release cycles
 
-Since Moodle 2.0, we have a policy of release major versions (eg 2.1, 2.2) every six months in May and November. See the [General release calendar](../releases.md#general-release-calendar) for more details.
+Moodle release versions are in the format x.y.z where the x.y is a major release, and the z is a minor release.
+
+<Since version="2.0"/>
+
+Since Moodle 2.0, we have a policy of release major versions (for example 4.0, 4.1) every six months in May and November.
+
+<Since version="4.2"/>
+
+Since Moodle 4.2, Moodle major versions (for example 4.2, 4.3, 4.4, etc.) are released every six months in April and October.
+
+Releases are in weeks 17, and 43 of the year.
+
+There will be a point release every two months following a major release. See the [General release calendar](../releases.md#general-release-calendar) for more details.
+
+:::note
 
 Each release can be different, but generally the cycles work as follows.
+
+:::
 
 ### Define roadmap
 
