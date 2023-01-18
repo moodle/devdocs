@@ -26,8 +26,6 @@ const projects = [
     'CONTRIB',
 ];
 
-const expression = new RegExp(`(?<issueNumber>(${projects.join('|')})\\-\\d+)`, 'g');
-
 /**
  * Get the AST for a link pointing to the Moodle Tracker for the specified issue number.
  *
@@ -53,17 +51,21 @@ const getLinkFromIssueNumber = (issueNumber) => ({
  * @param {Tree} node
  * @param {Number} index
  * @param {Tree} parent
+ * @returns {Number|String} The next index to process, or 'skip' to skip this node.
  */
 const updateTextLink = (node, index, parent) => {
     const { value } = node;
 
     if (parent.type === 'link') {
-        return null;
+        // This is already a link, so skip this one, but keep processing.
+        return 'skip';
     }
 
+    const expression = new RegExp(`(?<issueNumber>(${projects.join('|')})-\\d+)`, 'g');
     const match = expression.exec(value);
     if (match === null) {
-        return null;
+        // No matches found in this node, so skip this one, but keep processing.
+        return 'skip';
     }
 
     const tokenStart = match.index;
@@ -77,14 +79,22 @@ const updateTextLink = (node, index, parent) => {
         value: node.value.substring(tokenEnd),
     });
 
-    return null;
+    // A match was found and the parent modified.
+    // We have added two nodes - the link, and the text after the link.
+    // The next index to check is therefore the original index + 2 - which will be the text after the link.
+    // Returning a Number here will mean that the `visit` function will call us again with the next index.
+    return index + 2;
 };
 
 const plugin = () => {
     const transformer = async (ast) => {
-        visit(ast, 'text', (node, index, parent) => {
-            updateTextLink(node, index, parent);
-        });
+        // Visit all nodes on the AST which are of type 'text' and apply the updateTextLink function on them.
+        // The visit function's third parameter is a Visitor function.
+        // See the docs at https://github.com/syntax-tree/unist-util-visit-parents
+        // Note: It has a mixed return type.
+        // - If the Visitor function returns 'skip', then the visit function will skip this node and continue.
+        // - If the Visitor function returns a Number, then the visit function will continue from that index.
+        visit(ast, 'text', (node, index, parent) => updateTextLink(node, index, parent));
     };
     return transformer;
 };
