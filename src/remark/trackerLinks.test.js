@@ -59,6 +59,134 @@ describe('trackerLinks', () => {
             },
         ],
         [
+            'Multiple links in the same link',
+            {
+                type: 'paragraph',
+                children: [
+                    {
+                        type: 'text',
+                        value: 'See MDL-12345 or MDL-54321 for more information',
+                    },
+                ],
+            },
+            {
+                type: 'paragraph',
+                children: [
+                    {
+                        type: 'text',
+                        value: 'See ',
+                    },
+                    {
+                        type: 'link',
+                        url: 'https://tracker.moodle.org/browse/MDL-12345',
+                        children: [
+                            {
+                                type: 'text',
+                                value: 'MDL-12345',
+                            },
+                        ],
+                    },
+                    {
+                        type: 'text',
+                        value: ' or ',
+                    },
+                    {
+                        type: 'link',
+                        url: 'https://tracker.moodle.org/browse/MDL-54321',
+                        children: [
+                            {
+                                type: 'text',
+                                value: 'MDL-54321',
+                            },
+                        ],
+                    },
+                    {
+                        type: 'text',
+                        value: ' for more information',
+                    },
+                ],
+            },
+        ],
+        [
+            'Many links in the same link',
+            {
+                type: 'paragraph',
+                children: [
+                    {
+                        type: 'text',
+                        value: 'See MDL-12345 or MDL-54321 for more information. '
+                            + 'Don\'t forget about CONTRIB-12345 and CONTRIB-54321',
+                    },
+                ],
+            },
+            {
+                type: 'paragraph',
+                children: [
+                    {
+                        type: 'text',
+                        value: 'See ',
+                    },
+                    {
+                        type: 'link',
+                        url: 'https://tracker.moodle.org/browse/MDL-12345',
+                        children: [
+                            {
+                                type: 'text',
+                                value: 'MDL-12345',
+                            },
+                        ],
+                    },
+                    {
+                        type: 'text',
+                        value: ' or ',
+                    },
+                    {
+                        type: 'link',
+                        url: 'https://tracker.moodle.org/browse/MDL-54321',
+                        children: [
+                            {
+                                type: 'text',
+                                value: 'MDL-54321',
+                            },
+                        ],
+                    },
+                    {
+                        type: 'text',
+                        value: ' for more information. Don\'t forget about ',
+                    },
+                    {
+                        type: 'link',
+                        url: 'https://tracker.moodle.org/browse/CONTRIB-12345',
+                        children: [
+                            {
+                                type: 'text',
+                                value: 'CONTRIB-12345',
+                            },
+                        ],
+                    },
+                    {
+                        type: 'text',
+                        value: ' and ',
+                    },
+
+                    {
+                        type: 'link',
+                        url: 'https://tracker.moodle.org/browse/CONTRIB-54321',
+                        children: [
+                            {
+                                type: 'text',
+                                value: 'CONTRIB-54321',
+                            },
+                        ],
+                    },
+                    {
+                        type: 'text',
+                        value: '',
+                    },
+                ],
+            },
+        ],
+        [
             'Does not update existing links',
             {
                 type: 'paragraph',
@@ -97,6 +225,63 @@ describe('trackerLinks', () => {
                     }, {
                         type: 'text',
                         value: 'that link',
+                    },
+                ],
+            },
+        ],
+        [
+            'Does not update existing links, but does update subsequent issue numbers',
+            {
+                type: 'paragraph',
+                children: [
+                    {
+                        type: 'text',
+                        value: 'Do not modify ',
+                    },
+                    {
+                        type: 'link',
+                        url: 'https://example.com',
+                        children: [{
+                            type: 'text',
+                            value: 'MDL-12345',
+                        }],
+                    }, {
+                        type: 'text',
+                        value: 'that link but modify MDL-54321',
+                    },
+                ],
+            },
+            {
+                type: 'paragraph',
+                children: [
+                    {
+                        type: 'text',
+                        value: 'Do not modify ',
+                    },
+                    {
+                        type: 'link',
+                        url: 'https://example.com',
+                        children: [{
+                            type: 'text',
+                            value: 'MDL-12345',
+                        }],
+                    }, {
+                        type: 'text',
+                        value: 'that link but modify ',
+                    },
+                    {
+                        type: 'link',
+                        url: 'https://tracker.moodle.org/browse/MDL-54321',
+                        children: [
+                            {
+                                type: 'text',
+                                value: 'MDL-54321',
+                            },
+                        ],
+                    },
+                    {
+                        type: 'text',
+                        value: '',
                     },
                 ],
             },
