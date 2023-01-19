@@ -4,6 +4,10 @@ tags:
 - Core development
 ---
 
+<!-- markdownlint-disable no-inline-html -->
+
+import { CodeBlock, CodeExample } from '@site/src/components';
+
 This page highlights the important changes that are coming in Moodle 4.2 for developers.
 
 ## External API
@@ -47,3 +51,36 @@ The following parts of the external API have been moved to the `core_external` s
 | `external_generate_token()`                  | `core_external\util::generate_token()`                  |
 | `external_generate_token_for_current_user()` | `core_external\util::generate_token_for_current_user()` |
 | `external_log_token_request()`               | `core_external\util::log_token_request()`               |
+
+## Quiz activity
+
+At the moment, this is just a placeholder to say that there are significant changes in the Quiz activity (`mod_quiz`) in Moodle 4.2.
+A lot of the quiz code is being updated to modern Moodle coding standards while we add features in Epic MDL-74607.
+Therefore, if you have made customisations to the core quiz code, you will have work to do, and if you have made quiz sub-plugins
+(reports or access rules) you may have a small amount of work to do.
+
+I will write a more coherent summary once the changes are complete, but
+[mod/quiz/upgrade.txt](https://github.com/moodle/moodle/blob/master/mod/quiz/upgrade.txt) lists all the changes so far.
+
+### Developer tip - handling changes to base class names, while supporting multiple Moodle versions
+
+Thanks to Luca Bösch for working this out. If you want a single version of your plugin to support multiple version of Moodle
+without developer debug warnings, you can do it like this:
+
+<CodeExample type="warning" title="Work-around to support multiple base class names">
+
+```php
+
+// This work-around is required until Moodle 4.2 is the lowest version we support.
+if (class_exists('quiz_default_report')) {
+    class_alias('quiz_default_report', 'quiz_archive_parent_class_alias');
+} else {
+    class_alias('mod_quiz\local\reports\report_base', 'quiz_archive_parent_class_alias');
+}
+
+class quiz_archive_report extends quiz_archive_parent_class_alias {
+    // Contents of your class unchanged.
+}
+```
+
+</CodeExample>
