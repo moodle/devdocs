@@ -19,7 +19,7 @@ Before working with any data provided by a user you **must** validate the parame
 
 To do so you should call the `validate_parameters()` function, passing in the reference to your `execute_parameters()` function, and the complete list of parameters for the function. The function will return the validated and cleaned parameters.
 
-The `validate_parameters()` function is defined on the `external_api` class, and can be called as follows:
+The `validate_parameters()` function is defined on the `\core_external\external_api` class, and can be called as follows:
 
 ```php title="local/groupmanager/classes/external/create_groups.php"
 public static function execute(array $groups): array {
@@ -42,7 +42,7 @@ For example, if you are working with data belonging to a specific activity, you 
 
 If your function operates on multiple contexts (like a list of courses), you must validate each context right before generating any response data related to that context.
 
-The `validate_context()` function is defined on the `external_api` class, and can be called as follows:
+The `validate_context()` function is defined on the `\core_external\external_api` class, and can be called as follows:
 
 ```php title="local/groupmanager/classes/external/create_groups.php"
 public static function execute(array $groups): array {

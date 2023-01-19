@@ -83,7 +83,7 @@ class get_fruit_test extends externallib_advanced_testcase {
 
         // We need to execute the return values cleaning process to simulate
         // the web service server.
-        $returnvalue = external_api::clean_returnvalue(
+        $returnvalue = \core_external\external_api::clean_returnvalue(
             get_fruit::execute_returns(),
             $returnvalue
         );
