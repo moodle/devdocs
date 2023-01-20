@@ -5,15 +5,15 @@
             "name": "4.2",
             "releaseDate": "24 April 2023",
             "generalEndDate": "22 April 2024",
-            "securityEndDate": "21 October 2024",
+            "securityEndDate": "7 October 2024",
             "isLTS": false,
             "releases": []
         },
         {
             "name": "4.1",
             "releaseDate": "28 November 2022",
-            "generalEndDate": "13 November 2023",
-            "securityEndDate": "10 November 2025",
+            "generalEndDate": "11 December 2023",
+            "securityEndDate": "8 December 2025",
             "isLTS": true,
             "releases": [
                 {
@@ -32,8 +32,8 @@
         {
             "name": "4.0",
             "releaseDate": "19 April 2022",
-            "generalEndDate": "8 May 2023",
-            "securityEndDate": "13 November 2023",
+            "generalEndDate": "12 June 2023",
+            "securityEndDate": "11 December 2023",
             "isLTS": false,
             "releases": [
                 {
@@ -78,7 +78,7 @@
             "name": "3.11",
             "releaseDate": "17 May 2021",
             "generalEndDate": "14 November 2022",
-            "securityEndDate": "13 November 2023",
+            "securityEndDate": "11 December 2023",
             "isLTS": false,
             "releases": [
                 {
@@ -226,7 +226,7 @@
             "name": "3.9",
             "releaseDate": "15 June 2020",
             "generalEndDate": "10 May 2021",
-            "securityEndDate": "13 November 2023",
+            "securityEndDate": "11 December 2023",
             "isLTS": true,
             "releases": [
                 {

@@ -28,7 +28,7 @@ Component leads decide on features in individual components, so make your case t
 
 ## Moodle versions
 
-Moodle major releases (with big new features) are on a regular 6-month cycle, in May and November. Each major release increments the version number by 0.1 (eg 3.4 -> 3.5 -> 3.6) and starts a new branch of minor releases.
+Moodle major releases (with big new features) are on a regular 6-month cycle, in April and October. Each major release increments the version number by 0.1 (eg 3.4 -> 3.5 -> 3.6) and starts a new branch of minor releases.
 
 Minor releases (with bug fixes only) are on a 2-month cycle, unless a security emergency occurs. They will increment the major release by 0.0.1 (eg 3.5 -> 3.5.1 -> 3.5.2).
 
