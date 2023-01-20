@@ -15,8 +15,6 @@ This page lists all official releases of Moodle, grouped by branch in reverse ch
 
 ## Version support
 
-From Moodle 2.6 onwards, the end of support, both general and security, happens the second Monday of May and November, observing the 12, 18... month periods, no matter if the major release date was moved or not.
-
 The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/Long-term_support) version is Moodle 4.1.
 
 <SupportedReleases />
