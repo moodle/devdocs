@@ -75,6 +75,8 @@ jobs:
         with:
           add-paths: |
             data/*
+            general/community/credits/thirdpartylibs.md
+
           commit-message: "[repo] Update Moodle Component metadata"
           title: "[repo] Update Moodle Component metadata"
           signoff: false
