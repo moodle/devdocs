@@ -48,7 +48,7 @@ phpCAS library to support CAS authentication plugin.
 This library provides a high-level abstraction around the lower-level PHP driver, also known as the mongodb extension.
 
 - **Location**: cache/stores/mongodb/MongoDB
-- **Version**: 1.13.1
+- **Version**: 1.15.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/mongodb/mongo-php-driver](https://github.com/mongodb/mongo-php-driver)
 
@@ -491,6 +491,17 @@ PHP library for displaying mustache templates.
 - **Copyright holders**:
   - 2010-2016 Justin Hileman
 
+### OpenSpout
+
+Library to read and write spreadsheet files (CSV, XLSX and ODS).
+
+- **Location**: lib/openspout
+- **Version**: 3.7.3
+- **License**:  MIT
+- **URL**: [https://github.com/openspout/openspout](https://github.com/openspout/openspout)
+- **Copyright holders**:
+  - OpenSpout
+
 ### Pear_HTML_Common
 
 Class with many common HTML functions (used by HTML Quickform)
@@ -686,17 +697,6 @@ Simple Pie helps with blogs.
 - **Version**: 1.6.0
 - **License**:  BSD
 - **URL**: [https://github.com/simplepie/simplepie](https://github.com/simplepie/simplepie)
-
-### Spout
-
-Library for importing and exporting csv / excel / ODS files.
-
-- **Location**: lib/spout
-- **Version**: 3.3.0
-- **License**:  Apache 2.0
-- **URL**: [https://github.com/box/spout/](https://github.com/box/spout/)
-- **Copyright holders**:
-  - 2022 Box, Inc. All rights reserved
 
 ### TCPDF
 
@@ -1378,6 +1378,23 @@ This library is not currently used in Moodle
 - **URL**: [http://developer.spikesource.com/projects/phpcoverage](http://developer.spikesource.com/projects/phpcoverage)
 - **Copyright holders**:
   - 2006 - 2015 PHPExcel
+
+### Spout
+
+Library for importing and exporting csv / excel / ODS files.
+
+:::danger Outdated
+
+This library is not currently used in Moodle
+
+:::
+
+- **Location**: lib/spout
+- **Version**: 3.3.0
+- **License**:  Apache 2.0
+- **URL**: [https://github.com/box/spout/](https://github.com/box/spout/)
+- **Copyright holders**:
+  - 2022 Box, Inc. All rights reserved
 
 ### Typo3 Character Set Class
 

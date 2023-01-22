@@ -547,6 +547,18 @@
     },
     {
         "copyrightHolders": [
+            "OpenSpout"
+        ],
+        "location": "lib/openspout",
+        "name": "OpenSpout",
+        "description": "Library to read and write spreadsheet files (CSV, XLSX and ODS).",
+        "version": "3.7.3",
+        "license": "MIT",
+        "repository": "https://github.com/openspout/openspout",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
             "2004 Adam Daniel, Bertrand Mansion, Klaus Guenther, Alexey Borzov"
         ],
         "location": "lib/pear/HTML/Common.php",
