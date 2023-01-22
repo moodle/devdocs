@@ -38,6 +38,7 @@ editor
 edufields
 enrol
 error
+external
 favourites
 fileconverter
 filepicker
