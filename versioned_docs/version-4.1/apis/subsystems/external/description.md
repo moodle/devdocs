@@ -28,7 +28,7 @@ $functions = [
     // The name of your web service function, as discussed above.
     'local_myplugin_create_groups' => [
         // The name of the namespaced class that the function is located in.
-        'classname'   => 'local_groupmanager\create_groups',
+        'classname'   => 'local_groupmanager\external\create_groups',
 
         // A brief, human-readable, description of the web service function.
         'description' => 'Creates new groups.',
