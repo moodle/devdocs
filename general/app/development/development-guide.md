@@ -197,7 +197,7 @@ In addition to these files, feature folders may contain the following:
 - `directives/` and `pipes/` — Same as [core/directives/ and core/pipes/](#coredirectives-and-corepipes).
 - `lang.json` — See [Language files](#language-files).
 - `services/` — Same as [core/services/](#coreservices).
-- `pages/` — Page folders have the same structure as [core/components/](#corecomponents), but in addition they often declare modules as well to allow lazy-loading the page. In some cases, they can even have their own routing modules. For example, look at `core/features/mainmenu/pages/home/home-routing.module.ts`.
+- `pages/` — Page folders have the same structure as [core/components/](#corecomponents), but in addition they can declare modules if a page component is to be used in more than one module. Also, page components will declare their selectors starting with `page-`.
 
 In order to distinguish code from each feature, classes will be prefixed with the feature name. For example, the home page component declared in `core/features/mainmenu/pages/home/home.ts` is called `CoreMainMenuHomePage`.
 
@@ -266,7 +266,7 @@ Tests are found anywhere inside the `src/` folder, and they will be run as long 
 Here are some examples:
 
 - The utils text service declared in `core/services/utils/text.ts` is tested in `core/services/tests/utils/text.test.ts`.
-- The init login page declared in `core/features/login/pages/init/init.ts` is tested in `core/features/login/tests/pages/init.test.ts`. The test file can be directly under `pages/` (instead of `pages/init/`) because the page component is the only file that will be tested for this folder. So it would be unnecessary to have a folder with a single file.
+- The credentials page declared in `core/features/login/pages/credentials/credentials.ts` is tested in `core/features/login/tests/credentials.test.ts`. The test file can be directly under `tests/` (instead of `tests/pages/credentials/`) because the page component is the only file that will be tested for this folder. So it would be unnecessary to have a folder with a single file.
 - The root app component declared in `app/app.component.ts` is tested in `app/app.component.test.ts`. The test file can live alongside the component because this module doesn't have any nested folders.
 
 In addition to unit test files, there is also a folder at `testing/` with setup and file utilities shared among all tests.
@@ -279,13 +279,11 @@ All core features and addons can define their own routes, and we can do that in 
 
 With the [folders structure](#folders-structure) we're using, it is often the case where different core features or addons need to define routes depending on each other. For example, the *mainmenu* feature defines the layout and routes for the tabs that are always present at the bottom of the UI. But the home tab is defined in the *home* feature. In this scenario, it would be possible to just import the pages from the *home* module within the *mainmenu*, since both are core features and are allowed to know each other. But that approach can become messy, and what happens if an addon also needs to define a tab (like *privatefiles*)?
 
-As described in the [addons/ folder documentation](#addons), the answer to this situation is using the dependency inversion pattern. Instead of the *mainmenu* depending on anything rendering a tab (*home*, *privatefiles*, etc.), we can make those depend on the *mainmenu* instead. And we can do that using Angular's container.
+As described in the [addons/ folder documentation](#addons), the answer to this situation is using the dependency inversion pattern. Instead of the *mainmenu* depending on anything rendering a tab (*home*, *privatefiles*, etc.), we can make those depend on *mainmenu*. And we can do that using Angular's container.
 
 In order to allow injecting routes from other modules, we create a separated [Routing Module](https://angular.io/guide/module-types#routing-ngmodules). This is the only situation where we'll have a dedicated module for routing, in order to reduce the amount of module files in a feature root folder. Any routes that are not injected can be defined directly on their main or lazy module.
 
-It is often the case that modules using injected routes have a [RouterOutlet](https://angular.io/api/router/RouterOutlet). For that reason, injected routes can be defined either as children or siblings of the main route. The difference between those is that a child will be rendered within the outlet, whilst a sibling will replace the entire page. In order to make this distinction, routing modules accept either an array of routes to use as siblings or an object indicating both types of routes. You can see an example of this in the `core/features/courses/courses.module.ts` file where some *courses* routes are injected both as siblings and children into the home routing module.
-
-This architecture is not limited to feature or addon modules though, page modules can also define routing modules to allow injecting routes. One example is the `core/features/mainmenu/pages/home/home-routing.module.ts` file. Notice how the accompanying module does not use the *-lazy* name prefix, that is because page modules are loaded by their respective feature module and they are always lazy, so it isn't necessary to make that distinction (if a page is not lazy-loaded it doesn't have a dedicated module).
+It is often the case that modules using injected routes have a [RouterOutlet](https://angular.io/api/router/RouterOutlet). For that reason, injected routes can be defined either as children or siblings of the main route. The difference between those is that a child will be rendered within the outlet, whilst a sibling will replace the entire page. In order to make this distinction, routing modules accept either an array of routes to use as siblings or an object indicating both types of routes.
 
 ### Navigating between routes
 

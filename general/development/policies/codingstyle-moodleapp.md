@@ -331,6 +331,82 @@ sayHello('World', undefined, undefined, 3);
 - Global declarations and extensions — Any variable you add to the window object can be declared by extending the `Window` interface. The same idea applies for extending external dependencies.
 - Local declarations — Sometimes, it may be useful to create a dedicated declaration file when source files are growing too large. But this technique should not be used to substitute proper code organisation.
 
+### Using constants
+
+Constants that are exported should be declared outside of a class, to favour tree shaking:
+
+<ValidExample title="Good">
+
+```ts
+export const MY_CONSTANT = '...';
+
+export class MyService {}
+```
+
+</ValidExample>
+
+<InvalidExample title="Bad">
+
+```ts
+export class MyService {
+
+    public static readonly MY_CONSTANT = '...';
+
+}
+```
+
+</InvalidExample>
+
+In contrast, constants that are private or protected should be declared as static readonly class properties. Also, avoid calling them using `this.CONSTANT` form (given that they are static members):
+
+<ValidExample title="Good">
+
+```ts
+export class MyService {
+
+    protected static readonly MY_CONSTANT = '...';
+
+    public someMethod(): void {
+        alert(MyService.MY_CONSTANT);
+    }
+
+}
+```
+
+</ValidExample>
+
+<InvalidExample title="Bad">
+
+```ts
+const MY_CONSTANT = '...';
+
+export class MyService {
+
+    public someMethod(): void {
+        alert(MY_CONSTANT);
+    }
+
+}
+```
+
+</InvalidExample>
+
+<InvalidExample title="Bad">
+
+```ts
+export class MyService {
+
+    protected static readonly MY_CONSTANT = '...';
+
+    public someMethod(): void {
+        alert(this.MY_CONSTANT);
+    }
+
+}
+```
+
+</InvalidExample>
+
 ## Angular
 
 ### Avoid calling methods in templates
@@ -462,6 +538,104 @@ export class MyComponent {}
     templateUrl: 'my-component.html',
 })
 export default class MyComponent {}
+```
+
+</InvalidExample>
+
+### Declaring page modules
+
+When creating a page component, it should be declared in the feature's [lazy modules](../../../general/app/development/development-guide.md#routing). Exceptionally, pages that are used by more than one module can create a page module; but this module should only declare components, it shouldn't include any routing functionality.
+
+<ValidExample title="Good">
+
+```ts
+// file: core/features/feature/pages/index/index.ts
+@Component({
+    selector: 'page-core-feature-index',
+    templateUrl: 'index.html',
+})
+export class CoreFeatureIndexPageComponent {}
+```
+
+```ts
+// file: core/features/feature/feature-lazy.module.ts
+const routes: Routes = [
+    {
+        path: 'feature',
+        component: CoreFeatureIndexPageComponent,
+    },
+];
+
+@NgModule({
+    imports: [
+        RouterModule.forChild(routes),
+        CoreSharedModule,
+    ],
+    declarations: [
+        CoreFeatureIndexPageComponent,
+    ],
+})
+export class CoreFeatureLazyModule {}
+```
+
+</ValidExample>
+
+<CodeExample type="warning" title="Allowed only if the page is used in multiple modules">
+
+```ts
+// file: core/features/feature/pages/index/index.page.ts
+@Component({
+    selector: 'page-core-feature-index',
+    templateUrl: 'index.html',
+})
+export class CoreFeatureIndexPageComponent {}
+```
+
+```ts
+// file: core/features/feature/pages/index/index.module.ts
+@NgModule({
+    imports: [
+        CoreSharedModule,
+    ],
+    declarations: [
+        CoreFeatureIndexPageComponent,
+    ],
+})
+export class CoreFeatureIndexPageModule {}
+```
+
+</CodeExample>
+
+<InvalidExample title="Bad">
+
+```ts
+// file: core/features/feature/pages/index/index.page.ts
+@Component({
+    selector: 'page-core-feature-index',
+    templateUrl: 'index.html',
+})
+export class CoreFeatureIndexPageComponent {}
+```
+
+```ts
+// file: core/features/feature/pages/index/index.module.ts
+const routes: Routes = [
+    {
+        path: '',
+        component: CoreFeatureIndexPageComponent,
+    },
+];
+
+@NgModule({
+    imports: [
+        RouterModule.forChild(routes),
+        CoreSharedModule,
+    ],
+    declarations: [
+        CoreFeatureIndexPageComponent,
+    ],
+})
+export class CoreFeatureIndexPageModule {}
 ```
 
 </InvalidExample>
