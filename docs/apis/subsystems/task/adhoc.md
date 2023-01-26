@@ -26,7 +26,7 @@ To create a new adhoc task you should:
 
 ### Task class
 
-The class for your scheduled task, which extends the `\core\task\scheduled_task` class, should be in the `classes/task` directory of your plugin.
+The class for your adhoc task, which extends the `\core\task\adhoc_task` class, should be in the `classes/task` directory of your plugin.
 
 <details>
 
@@ -36,7 +36,7 @@ The class for your scheduled task, which extends the `\core\task\scheduled_task`
 namespace mod_example\task;
 
 /**
- * An example of a adhoc task.
+ * An example of an adhoc task.
  */
 class do_something extends \core\task\adhoc_task {
 
