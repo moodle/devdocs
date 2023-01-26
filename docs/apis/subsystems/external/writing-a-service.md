@@ -71,7 +71,7 @@ $functions = [
     // The name of your web service function, as discussed above.
     'local_groupmanager_create_groups' => [
         // The name of the namespaced class that the function is located in.
-        'classname'   => 'local_groupmanager\create_groups',
+        'classname'   => 'local_groupmanager\external\create_groups',
 
         // A brief, human-readable, description of the web service function.
         'description' => 'Creates new groups.',
@@ -137,9 +137,9 @@ Thus for the web service function `local_groupmanager_create_groups()`, we shoul
 
 This will be located in the file `local/groupmanager/classes/external/create_groups.php`. The class will contain:
 
-- `execute_groups(...)`
-- `execute_groups_parameters()`
-- `execute_groups_return()`
+- `execute(...)`
+- `execute_parameters()`
+- `execute_return()`
 
 ### Defining parameters
 
