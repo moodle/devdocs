@@ -71,7 +71,7 @@ $functions = [
     // The name of your web service function, as discussed above.
     'local_groupmanager_create_groups' => [
         // The name of the namespaced class that the function is located in.
-        'classname'   => 'local_groupmanager\create_groups',
+        'classname'   => 'local_groupmanager\external\create_groups',
 
         // A brief, human-readable, description of the web service function.
         'description' => 'Creates new groups.',
@@ -90,8 +90,8 @@ $functions = [
             // use in the Moodle Mobile App.
             MOODLE_OFFICIAL_MOBILE_SERVICE,
         ]
-    ),
-);
+    ],
+];
 ```
 
 <details>
@@ -137,9 +137,9 @@ Thus for the web service function `local_groupmanager_create_groups()`, we shoul
 
 This will be located in the file `local/groupmanager/classes/external/create_groups.php`. The class will contain:
 
-- `execute_groups(...)`
-- `execute_groups_parameters()`
-- `execute_groups_return()`
+- `execute(...)`
+- `execute_parameters()`
+- `execute_return()`
 
 ### Defining parameters
 
@@ -328,12 +328,12 @@ public static function get_biscuit_parameters() {
 ```php
 public static function get_biscuit_parameters() {
     return new external_function_parameters([
-            'ifeellike' => new external_single_structure([
-                    'chocolatechips' => new external_value(PARAM_BOOL, VALUE_REQUIRED),
-                    'glutenfree' => new external_value(PARAM_BOOL, PARAM_DEFAULT, false),
-                    // ALL GOOD!! We have nested the params in a external_single_structure.
-                    'icingsugar' => new external_value(PARAM_BOOL, VALUE_OPTIONAL),
-        ])
+        'ifeellike' => new external_single_structure([
+                'chocolatechips' => new external_value(PARAM_BOOL, VALUE_REQUIRED),
+                'glutenfree' => new external_value(PARAM_BOOL, PARAM_DEFAULT, false),
+                // ALL GOOD!! We have nested the params in a external_single_structure.
+                'icingsugar' => new external_value(PARAM_BOOL, VALUE_OPTIONAL),
+        ]),
     ]);
 }
 ```
@@ -352,11 +352,11 @@ We declared our web service function and we defined the external function parame
      * @param array $groups array of group description arrays (with keys groupname and courseid)
      * @return array of newly created groups
      */
-    public static function eceute_groups($groups) { //Don't forget to set it as static
+    public static function execute($groups) {
         global $CFG, $DB;
         require_once("$CFG->dirroot/group/lib.php");
 
-        $params = self::validate_parameters(self::execute_parameters(), array('groups'=>$groups));
+        $params = self::validate_parameters(self::execute_parameters(), ['groups' => $groups]);
 
         $transaction = $DB->start_delegated_transaction(); //If an exception is thrown in the below code, all DB queries in this code will be rollback.
 
@@ -368,7 +368,7 @@ We declared our web service function and we defined the external function parame
             if (trim($group->name) == '') {
                 throw new invalid_parameter_exception('Invalid group name');
             }
-            if ($DB->get_record('groups', array('courseid'=>$group->courseid, 'name'=>$group->name))) {
+            if ($DB->get_record('groups', ['courseid' => $group->courseid, 'name' => $group->name])) {
                 throw new invalid_parameter_exception('Group with the same name already exists in the course');
             }
 
@@ -379,7 +379,7 @@ We declared our web service function and we defined the external function parame
 
             // finally create the group
             $group->id = groups_create_group($group, false);
-            $groups[] = (array)$group;
+            $groups[] = (array) $group;
         }
 
         $transaction->allow_commit();
@@ -391,7 +391,7 @@ We declared our web service function and we defined the external function parame
 ### Parameter validation
 
 ```php
- $params = self::validate_parameters(self::execute_parameters(), [
+$params = self::validate_parameters(self::execute_parameters(), [
     'groups' => $groups,
 ]);
 ```
@@ -440,6 +440,7 @@ Edit your `local/groupmanager/version.php` and increase the plugin version. This
 External functions deprecation process is slightly different from the standard deprecation. If you are interested in deprecating any of your external functions you should **also** (apart from the applicable points detailed in the [standard deprecation docs](/general/development/policies/deprecation)) create a `FUNCTIONNAME_is_deprecated()` method in your external function class. Return true if the external function is deprecated. This is an example:
 
 ```php
+    /**
      * Mark the function as deprecated.
      * @return bool
      */
