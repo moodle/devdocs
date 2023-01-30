@@ -23,12 +23,12 @@ const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(
 
 const navbar = {
     title: '',
-    logo: {
-        alt: '',
-        src: 'img/Moodle.svg',
-        height: '35px',
-        width: '138px',
-    },
+    // logo: {
+    //     alt: '',
+    //     src: 'img/Moodle.svg',
+    //     height: '35px',
+    //     width: '138px',
+    // },
     items: [
         {
             to: '/docs',

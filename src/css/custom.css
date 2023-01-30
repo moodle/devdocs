@@ -95,6 +95,7 @@ html {
 
 .navbar {
   padding: 1rem;
+  padding-left: 0.5rem !important;
 }
 
 @media (min-width: 1200px) {
