@@ -178,6 +178,7 @@ Usually on Monday
 | 2. | &#10003; |  | The discussion about environmental requirements for next X.Y+1 major release ([MDL-71747](https://tracker.moodle.org/browse/MDL-71747)) will end and the issue will be resolved **immediately**. A new issue, about the requirements for the next `X.Y+2` major release will be created at the same time by cloning the previous one and dragging any non-resolved detail (due date = 3w after release). | Integration Team |
 | 3. | &#10003; |  | Ensure [Language pack for master (X.Y+1)](https://download.moodle.org/langpack/X.Y+1/) is available and merge the pull request MR4 for stop skipping the language upgrade in [moodle-ci-runner](https://github.com/moodlehq/moodle-ci-runner) repository. | Integration Team |
 | 4. | &#10003; |  | Ensure release retrospectives are held for each of the LMS teams and results are actioned. | Development Manager / Head of LMS |
+| 5. | &#10003; |  | <p>Prepare for the next version of PHP.</p> <p>We need to ensure that the Moodle versions that will support the next version of PHP are compatible with it.</p> <ul><li>If an epic has not been created yet, create an epic issue for it (see [MDL-76405](https://tracker.moodle.org/browse/MDL-76405) as an example)</li> <li>Go through the list of changes for the upcoming PHP version, identify potential breaking changes in Moodle and add them to the epic.</li></ul> <p>Related links:</p> <ul><li>[PHP versions](https://www.php.net/supported-versions.php)</li> <li>[PHP.Watch](https://php.watch/versions)</li> </ul> | Integration team |
 
 ## 1 month after
 
