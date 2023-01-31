@@ -53,7 +53,7 @@ You must be logged in to tracker to see issues in Epics.
 
 <Since versions={["3.11.8", "4.0.2"]} issueNumber="MDL-70745" />
 
-PHP 8.0 **can be used with** Moodle 3.11.8, Moodle 4.0.2 and later releases. See [MDL-70745](https://tracker.moodle.org/browse/MDL-70745) for details.
+PHP 8.0 **can be used with** Moodle 3.11.8, Moodle 4.0.2 and later releases. It is also the **minimum** supported version for Moodle 4.2. See [MDL-70745](https://tracker.moodle.org/browse/MDL-70745) for details.
 
 ### PHP 7.4
 
