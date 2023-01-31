@@ -32,10 +32,7 @@ function forum_supports(string $feature): bool {
         case FEATURE_COMPLETION_HAS_RULES:
             return true;
         default:
-            return null;
-    }
-}
-```
+            return;254798498711
 
 The relevant features for completion are:
 
