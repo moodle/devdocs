@@ -60,7 +60,7 @@ if ($mform->is_cancelled()) {
     redirect($nexturl);
 }
 
-// If the formw as not cancelled, and data was not submitted, then display the form.
+// If the form was not cancelled, and data was not submitted, then display the form.
 echo $OUTPUT->header();
 $mform->display();
 echo $OUTPUT->footer();
