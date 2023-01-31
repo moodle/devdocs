@@ -43,7 +43,7 @@ export default (initialProps: Props): ComponentFileSummary => (
         defaultExample={defaultExample}
         filepath="/thirdpartylibs.xml"
         filetype="xml"
-        summary="Details of third-party libraries includedin the plugin"
+        summary="Details of third-party libraries included in the plugin"
         showLicense={false}
         showFileHeader={false}
         {...initialProps}
