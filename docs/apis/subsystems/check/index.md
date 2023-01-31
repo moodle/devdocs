@@ -105,6 +105,7 @@ $string['checkfoobar'] = 'Check the foos to make sure they are barred';
 <?php
 namespace mod_myplugin\check;
 use core\check\check;
+use core\check\result;
 
 class foobar extends check {
 
