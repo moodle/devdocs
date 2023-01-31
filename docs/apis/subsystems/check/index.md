@@ -110,7 +110,7 @@ use core\check\result;
 class foobar extends check {
 
     public function get_action_link(): ?\action_link {
-        $url = new \moodle_url('/mod/myplugin/dosomething.php'),
+        $url = new \moodle_url('/mod/myplugin/dosomething.php');
         return new \action_link($url, get_string('sitepolicies', 'admin'));
     }
 
