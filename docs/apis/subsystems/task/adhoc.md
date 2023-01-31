@@ -63,7 +63,7 @@ $mytask = new \mod_example\task\do_something();
 $mytask->set_userid($someuser->id);
 
 // Set some custom data.
-// Note: This data must be serialiable.
+// Note: This data must be serializable.
 $mytask->set_custom_data([
     'documentation' => 'present',
     'correct' => true,
