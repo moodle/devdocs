@@ -6,7 +6,7 @@ tags:
 
 <!-- markdownlint-disable no-inline-html -->
 
-import { CodeBlock, CodeExample } from '@site/src/components';
+import { CodeBlock, CodeExample, InvalidExample, ValidExample } from '@site/src/components';
 
 This page highlights the important changes that are coming in Moodle 4.2 for developers.
 
@@ -51,6 +51,30 @@ The following parts of the external API have been moved to the `core_external` s
 | `external_generate_token()`                  | `core_external\util::generate_token()`                  |
 | `external_generate_token_for_current_user()` | `core_external\util::generate_token_for_current_user()` |
 | `external_log_token_request()`               | `core_external\util::log_token_request()`               |
+
+### Validation of `$required` parameter
+
+The `$required` parameter in `\core_external\external_description` is now being validated. This is in order to prevent accidentally passing incorrect parameters to the `external_description`'s and its subclasses' constructors.
+
+<InvalidExample>
+
+```php
+'contentformat' => new external_format_value('content', 'Content format'),
+```
+
+In this example, the field description has been accidentally passed for the `$required` parameter in `external_format_value`'s constructor. A debugging notice will be shown about the value `Content format` as an invalid value for the `$required` parameter.
+
+</InvalidExample>
+
+<ValidExample>
+
+```php
+'contentformat' => new external_format_value('content', VALUE_REQUIRED, 'Content format'),
+```
+
+The value for the `$required` parameter must either be set to either one of the `VALUE_DEFAULT`, `VALUE_REQUIRED`, or `VALUE_OPTIONAL` constants.
+
+</ValidExample>
 
 ## Quiz activity
 
