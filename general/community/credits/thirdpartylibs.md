@@ -332,6 +332,42 @@ Class to draw line, point, bar, and area graphs, including numeric x-axis and do
 - **Copyright holders**:
   - 2000 Herman Veluwenkamp (hermanV AT mindless DOT com)
 
+### GuzzleHttp/Guzzle
+
+Guzzle is a PHP HTTP client library
+
+- **Location**: lib/guzzlehttp/guzzle
+- **Version**: 7.5.0
+- **License**:  MIT
+- **URL**: [https://github.com/guzzle/guzzle](https://github.com/guzzle/guzzle)
+
+### Guzzle cache middleware
+
+A HTTP Cache for Guzzle as a simple Middleware to be added in the HandlerStack.
+
+- **Location**: lib/guzzlehttp/kevinrob/guzzlecache
+- **Version**: 4.0.2
+- **License**:  MIT
+- **URL**: [https://github.com/Kevinrob/guzzle-cache-middleware](https://github.com/Kevinrob/guzzle-cache-middleware)
+
+### GuzzleHttp/Promises
+
+Guzzle promises library
+
+- **Location**: lib/guzzlehttp/promises
+- **Version**: 1.5.2
+- **License**:  MIT
+- **URL**: [https://github.com/guzzle/promises](https://github.com/guzzle/promises)
+
+### GuzzleHttp/PSR7
+
+PSR-7 message implementation that also provides common utility methods
+
+- **Location**: lib/guzzlehttp/psr7
+- **Version**: 2.4.3
+- **License**:  MIT
+- **URL**: [https://github.com/guzzle/psr7](https://github.com/guzzle/psr7)
+
 ### Horde
 
 Library used by the inbound e-mail handling system.
@@ -362,15 +398,6 @@ Filters HTML.
 - **Version**: 4.16.0
 - **License**:  LGPL 2.1+
 - **URL**: [https://github.com/ezyang/htmlpurifier](https://github.com/ezyang/htmlpurifier)
-
-### http-message
-
-Provide a set of common interfaces for HTTP messages as described in RFC 7230 and RFC 7231
-
-- **Location**: lib/http-message
-- **Version**: 1.0.1
-- **License**:  MIT
-- **URL**: [https://github.com/php-fig/http-message](https://github.com/php-fig/http-message)
 
 ### jQuery
 
@@ -658,6 +685,42 @@ Polyfill URL and URLSearchParams to match last WHATWG specifications.
 - **License**:  MIT
 - **URL**: [https://github.com/lifaon74/url-polyfill](https://github.com/lifaon74/url-polyfill)
 
+### http-client
+
+Provides an abstraction that describe the components of a HTTP Client.
+
+- **Location**: lib/psr/http-client
+- **Version**: 1.0.0
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/http-client](https://github.com/php-fig/http-client)
+
+### http-factory
+
+Provides interfaces that describe the components of a HTTP Factory.
+
+- **Location**: lib/psr/http-factory
+- **Version**: 1.0.1
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/http-factory](https://github.com/php-fig/http-factory)
+
+### http-message
+
+Provide a set of common interfaces for HTTP messages as described in RFC 7230 and RFC 7231
+
+- **Location**: lib/psr/http-message
+- **Version**: 1.0.1
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/http-message](https://github.com/php-fig/http-message)
+
+### getallheaders polyfill
+
+A polyfill for getallheaders
+
+- **Location**: lib/ralouphie/getallheaders
+- **Version**: 3.0.3
+- **License**:  MIT
+- **URL**: [https://github.com/ralouphie/getallheaders](https://github.com/ralouphie/getallheaders)
+
 ### RequireJS
 
 RequireJS is a JavaScript file and module loader.
@@ -697,6 +760,15 @@ Simple Pie helps with blogs.
 - **Version**: 1.6.0
 - **License**:  BSD
 - **URL**: [https://github.com/simplepie/simplepie](https://github.com/simplepie/simplepie)
+
+### Symfony Deprecation contracts
+
+A generic function and convention to trigger deprecation notices
+
+- **Location**: lib/symfony/deprecation-contracts
+- **Version**: 3.1.1
+- **License**:  MIT
+- **URL**: [https://github.com/symfony/deprecation-contracts](https://github.com/symfony/deprecation-contracts)
 
 ### TCPDF
 

@@ -366,6 +366,46 @@
         "customised": false
     },
     {
+        "copyrightHolders": [],
+        "location": "lib/guzzlehttp/guzzle",
+        "name": "GuzzleHttp/Guzzle",
+        "description": "Guzzle is a PHP HTTP client library",
+        "version": "7.5.0",
+        "license": "MIT",
+        "repository": "https://github.com/guzzle/guzzle",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/guzzlehttp/kevinrob/guzzlecache",
+        "name": "Guzzle cache middleware",
+        "description": "A HTTP Cache for Guzzle as a simple Middleware to be added in the HandlerStack.",
+        "version": "4.0.2",
+        "license": "MIT",
+        "repository": "https://github.com/Kevinrob/guzzle-cache-middleware",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/guzzlehttp/promises",
+        "name": "GuzzleHttp/Promises",
+        "description": "Guzzle promises library",
+        "version": "1.5.2",
+        "license": "MIT",
+        "repository": "https://github.com/guzzle/promises",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/guzzlehttp/psr7",
+        "name": "GuzzleHttp/PSR7",
+        "description": "PSR-7 message implementation that also provides common utility methods",
+        "version": "2.4.3",
+        "license": "MIT",
+        "repository": "https://github.com/guzzle/psr7",
+        "customised": false
+    },
+    {
         "copyrightHolders": [
             "Horde LLC"
         ],
@@ -400,16 +440,6 @@
         "license": "LGPL",
         "licenseversion": "2.1+",
         "repository": "https://github.com/ezyang/htmlpurifier",
-        "customised": false
-    },
-    {
-        "copyrightHolders": [],
-        "location": "lib/http-message",
-        "name": "http-message",
-        "description": "Provide a set of common interfaces for HTTP messages as described in RFC 7230 and RFC 7231",
-        "version": "1.0.1",
-        "license": "MIT",
-        "repository": "https://github.com/php-fig/http-message",
         "customised": false
     },
     {
@@ -737,6 +767,46 @@
     },
     {
         "copyrightHolders": [],
+        "location": "lib/psr/http-client",
+        "name": "http-client",
+        "description": "Provides an abstraction that describe the components of a HTTP Client.",
+        "version": "1.0.0",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/http-client",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/psr/http-factory",
+        "name": "http-factory",
+        "description": "Provides interfaces that describe the components of a HTTP Factory.",
+        "version": "1.0.1",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/http-factory",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/psr/http-message",
+        "name": "http-message",
+        "description": "Provide a set of common interfaces for HTTP messages as described in RFC 7230 and RFC 7231",
+        "version": "1.0.1",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/http-message",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/ralouphie/getallheaders",
+        "name": "getallheaders polyfill",
+        "description": "A polyfill for getallheaders",
+        "version": "3.0.3",
+        "license": "MIT",
+        "repository": "https://github.com/ralouphie/getallheaders",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
         "location": "lib/requirejs",
         "name": "RequireJS",
         "description": "RequireJS is a JavaScript file and module loader.",
@@ -777,6 +847,16 @@
         "version": "1.6.0",
         "license": "BSD",
         "repository": "https://github.com/simplepie/simplepie",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/symfony/deprecation-contracts",
+        "name": "Symfony Deprecation contracts",
+        "description": "A generic function and convention to trigger deprecation notices",
+        "version": "3.1.1",
+        "license": "MIT",
+        "repository": "https://github.com/symfony/deprecation-contracts",
         "customised": false
     },
     {
