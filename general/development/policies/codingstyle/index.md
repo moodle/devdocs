@@ -344,6 +344,49 @@ This is consistent with the conventions of [PSR-12](https://github.com/php-fig/f
 
 :::
 
+### Whitespace
+
+Similar to [Section 2.3 of PSR-12](https://www.php-fig.org/psr/psr-12/#23-lines), each line of code should not have trailing whitespace. This is also applicable for multiline string literals such as SQL statements.
+
+#### Assignment operator
+
+There should be one blank space before and after the assignment operator `=`.
+
+<ValidExample>
+
+```php
+$foo = true;
+$foobar = false;
+$bafoo = 'Hello world';
+```
+
+</ValidExample>
+
+<InvalidExample>
+
+```php
+$foo    = true;
+$foobar = false;
+$bafoo  = 'Hello world';
+```
+
+While it seems more readable, aligning assignment operators may cause unnecessary changes to the surrounding code, especially when adding a new variable with a longer name.
+
+For example, adding a variable `$hellofoo` to the previous code example and aligning the assignment operators will end up with a more complicated diff that may obscure the issue that the patch is fixing.
+
+```diff
+< $foo    = true;
+< $foobar = false;
+< $bafoo  = 'Hello world';
+---
+> $foo      = true;
+> $foobar   = false;
+> $bafoo    = 'Hello world';
+> $hellofoo = 'Hi!';
+```
+
+</InvalidExample>
+
 ## Naming Conventions
 
 ### Filenames
