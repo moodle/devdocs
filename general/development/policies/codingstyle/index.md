@@ -1028,6 +1028,113 @@ $string['overduehandlingautoabandon'] = 'Unfinished attempts are immediately dis
 
 Language strings should not contain or even rely on any leading or trailing whitespace. Such strings are not easy to be translated in the translation tool, AMOS.
 
+## Objects
+
+### Importing `stdClass`
+
+For namespaced classes, importing `stdClass` via the `use` operator or using its fully qualified name are both acceptable.
+
+<ValidExample>
+
+```php
+use stdClass;
+
+// Using stdClass via import.
+$foo = new stdClass();
+```
+
+```php
+// Using stdClass with its fully qualified name.
+$foo = new \stdClass();
+```
+
+</ValidExample>
+
+### Dynamic properties
+
+`stdClass` objects can be created with dynamic properties by casting an associative array to an object or by instantiating a new `stdClass` object and assigning properties to it.
+
+<ValidExample>
+
+```php
+// Object casting.
+$foo = (object) [
+    'bar' => 1,
+    'baz' => 2,
+];
+
+// Setting dynamic properties.
+$foo = new stdClass();
+$foo->bar = 1;
+$foo->baz = 2;
+```
+
+</ValidExample>
+
+### Empty objects
+
+Generic PHP objects can be instantiated by the `new` operator or created by casting an empty array to an object. Both can be used in a number of situations.
+
+<ValidExample>
+
+Empty object creation
+
+```php
+// Via empty array object casting.
+$foo = (object) [];
+
+// Via the `new` operator.
+$foo = new stdClass();
+```
+
+Empty objects within an object with properties or arrays
+
+```php
+// Empty object within an object.
+$foo = (object) [];
+$foo->bar = (object) [];
+
+// Empty object within an array.
+$boo = [
+    'far' => (object) [],
+];
+```
+
+```php
+// Instantiating an empty object within an object.
+$foo = new stdClass();
+$foo->bar = new stdClass();
+
+// Instantiating an empty object within an array.
+$boo = [
+    'far' => new stdClass(),
+];
+```
+
+Returning empty objects
+
+```php
+/**
+ * A function that returns an empty object via casting.
+ *
+ * @return stdClass
+ */
+function foo() {
+    return (object) [];
+}
+
+/**
+ * A function that returns an empty object by instantiating `stdClass` is also fine.
+ *
+ * @return stdClass
+ */
+function bar() {
+    return new stdClass();
+}
+```
+
+</ValidExample>
+
 ## Arrays
 
 ### Array syntax
@@ -1037,14 +1144,25 @@ When declaring new arrays, the Short Array Syntax should be used.
 <ValidExample>
 
 ```php
+// Empty array.
 $myarray = [];
+
+// Array with values.
 $myarray = ['some', 'value'];
-$myarray = (object) [];
-$myarray = (object) ['some', 'value'];
+
+// Associative arrays.
 $myarray = [
   'some' => 'value',
 ];
-$myarray = (object) [
+
+// Empty object from casting an empty array.
+$myobject = (object) [];
+
+// Object from casting an array.
+$myobject = (object) ['some', 'value'];
+
+// Object from casting an associative array.
+$myobject = (object) [
   'some' => 'value',
 ];
 ```
@@ -1056,13 +1174,16 @@ The Long Array Syntax should not be used for new code, _but may be used_ where i
 <InvalidExample>
 
 ```php
+// Using the long array syntax when creating arrays.
 $myarray = array();
 $myarray = array('some', 'value');
-$myarray = (object) array();
-$myarray = (object) array('some', 'value');
 $myarray = array(
   'some' => 'value',
 );
+
+// Using the long array syntax when casting arrays to objects.
+$myarray = (object) array();
+$myarray = (object) array('some', 'value');
 $myarray = (object) array(
   'some' => 'value',
 );
@@ -1413,6 +1534,38 @@ Also, there are some basic rules about how to use those types:
 - With cases represented as array of given type, it's highly recommended to document them as type[] instead of the simpler and less informative "array" alternative (for example `int[]` or `stdClass[]`).
 - When multiple different types are possible, they must be separated by a vertical bar (pipe) (for example `@return int|false`).
 - All primitives and keywords must be lowercase. The case of the complex types and classes must match the original.
+
+<ValidExample>
+
+```php
+/**
+ * A method with correct type declarations.
+ *
+ * @param stdClass $obj Some object.
+ * @param array $arr Some array.
+ * @param bool $boo Some boolean.
+ * @param int $num Some integer.
+ * @return static Returns the instance of the class itself (PHP 8.0 and above).
+ */
+ ```
+
+</ValidExample>
+
+<InvalidExample>
+
+```php
+/**
+ * Some method with incorrect type declarations.
+ *
+ * @param object $obj An object that should be using `stdClass` for its type declaration.
+ * @param Array $arr An array that should be using `array` for its type declaration.
+ * @param boolean $boo A boolean that should be using `bool` for its type declaration.
+ * @param integer $num An integer that should be using `int` for its type declaration.
+ * @return BOOL Returns a boolean that should be declared using the lowercase `bool`.
+ */
+ ```
+
+</InvalidExample>
 
 #### Tags
 
