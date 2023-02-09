@@ -50,6 +50,21 @@ There are three different group modes, these modes allow for restrictions to be 
 
 This is explained in more detail on the [Groups access control](https://docs.moodle.org/dev/Groups_access_control) page.
 
+Only groups with `participation` enabled are availble for use in Separate and Visible groups mode. This is enabled by default for groups with *Visible to all* or *Visible to members* visibility (See below) but is always disabled for groups with *See own membership* or *Membership is hidden*.
+
+## Group visibility
+
+To help protect user privacy, each group has a `visibility` setting, which controls who can see the group and its members. The possible values are defined as constants in the `\core_group\visibility` class.
+
+Users with the `moodle/course:viewhiddengroups` capability can always see all groups, regardless of their visibility.
+Otherwise, the following restrictions apply:
+- Visible to all (`visibility::ALL` constant) - Everyone can see the group and its members. This is the default, and the legacy behaviour for all groups before Moodle 4.2.
+- Visible to members (`visibility::MEMBERS` constnat) - Only members of the group can see the group, and members of the group can see each others' membership of the group.
+- See own membership (`visibility::OWN` constant) - Only members of the group can see the group, and members **cannot** see each others' membership, only their own.
+- Membership is hidden (`visibility::NONE` constnat) - No-one can see the group or its members.
+
+The core API functions in groupslib such as `groups_get_all_groups()` and `groups_get_members()` will respect the group visibility and the current user's permissions, so use these as far as possible when fetching data about groups and their members. The `\core_group\visibility` class also has helper functions to determine whether a user is allowed to see a group, or its members.
+
 ## File locations
 
 The Groups API is currently defined in [lib/grouplib.php](https://github.com/moodle/moodle/blob/master/lib/grouplib.php). This contains global functions which have the `groups_` prefix, for example: `groups_get_group()`.
@@ -132,6 +147,29 @@ $url = new moodle_url('/mod/forum/view.php', ['id' => $cm->id]);
 // Print group information (A drop down box will be displayed if the user is a member of more than one group,
 // or has access to all groups).
 groups_print_activity_menu($cm, $url);
+```
+
+### How to get just the groups that the current user can see
+
+The following example will check whether the current user has permission to see hidden groups on a course, and **if they do not**, will apply additional conditions to a query to restrict the results to just those groups they should see. Note that a query like this must join on `group_members` as group visibility is dependant on the user's own memberships.
+
+```php
+$courseid = required_param('courseid', PARAM_INT)';
+$sql = "SELECT g.idnumber, gm.*
+          FROM {groups} g
+          JOIN {groups_members} gm ON gm.groupid = g.id
+         WHERE courseid = ?";
+
+$params = [$courseid];
+
+if (!has_capability('moodle/course:viewhiddengroups', context_course::instance($courseid)) {
+    // Apply visibility restrictions.
+    list($visibilitywhere, $visibilityparams) = \core_group\visibility::sql_group_visibility_where($userid);
+    $sql .= " AND " . $visibilitywhere;
+    $params = array_merge($params, $visibilityparams);
+}
+
+$rs = $DB->get_recordset_sql($sql, $params);
 ```
 
 ## Further reading
