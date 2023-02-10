@@ -58,6 +58,7 @@ To help protect user privacy, each group has a `visibility` setting, which contr
 
 Users with the `moodle/course:viewhiddengroups` capability can always see all groups, regardless of their visibility.
 Otherwise, the following restrictions apply:
+
 - Visible to all (`visibility::ALL` constant) - Everyone can see the group and its members. This is the default, and the legacy behaviour for all groups before Moodle 4.2.
 - Visible to members (`visibility::MEMBERS` constnat) - Only members of the group can see the group, and members of the group can see each others' membership of the group.
 - See own membership (`visibility::OWN` constant) - Only members of the group can see the group, and members **cannot** see each others' membership, only their own.
