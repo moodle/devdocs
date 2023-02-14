@@ -575,7 +575,7 @@ $preventfilelocking = true; // Variable names should not be negative.
 
 </InvalidExample>
 
-Core global variables in Moodle are identified using uppercase variables (that is `$CFG`, `$SESSION`, `$USER`, `$COURSE`, `$SITE`, `$PAGE`, `$DB`, and `$THEME`). Don't create any more!
+Core global variables in Moodle are identified using uppercase variables (that is `$CFG`, `$SESSION`, `$USER`, `$COURSE`, `$SITE`, `$PAGE`, `$PERF`, `$DB`, and `$THEME`). Don't create any more!
 
 ### Constants
 
