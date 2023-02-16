@@ -50,7 +50,7 @@ There are three different group modes, these modes allow for restrictions to be 
 
 This is explained in more detail on the [Groups access control](https://docs.moodle.org/dev/Groups_access_control) page.
 
-Only groups with `participation` enabled are availble for use in Separate and Visible groups mode. This is enabled by default for groups with *Visible to all* or *Visible to members* visibility (See below) but is always disabled for groups with *See own membership* or *Membership is hidden*.
+Only groups with `participation` enabled are available for use in Separate and Visible groups mode. This is enabled by default for groups with *Visible to all* or *Visible to members* visibility (See below) but is always disabled for groups with *See own membership* or *Membership is hidden*.
 
 Calling `groups_get_all_groups()` with the `$participationonly` argument set to `true` will only return groups with `participation` enabled. If you are calling this function within an activity plugin, you will usually want to do this unless you have a good reason not to.
 
@@ -62,9 +62,9 @@ Users with the `moodle/course:viewhiddengroups` capability can always see all gr
 Otherwise, the following restrictions apply:
 
 - Visible to all (`visibility::ALL` constant) - Everyone can see the group and its members. This is the default, and the legacy behaviour for all groups before Moodle 4.2.
-- Visible to members (`visibility::MEMBERS` constnat) - Only members of the group can see the group, and members of the group can see each others' membership of the group.
+- Visible to members (`visibility::MEMBERS` constant) - Only members of the group can see the group, and members of the group can see each others' membership of the group.
 - See own membership (`visibility::OWN` constant) - Only members of the group can see the group, and members **cannot** see each others' membership, only their own.
-- Membership is hidden (`visibility::NONE` constnat) - No-one can see the group or its members.
+- Membership is hidden (`visibility::NONE` constant) - No-one can see the group or its members.
 
 The core API functions in groupslib such as `groups_get_all_groups()` and `groups_get_members()` will respect the group visibility and the current user's permissions, so use these as far as possible when fetching data about groups and their members. The `\core_group\visibility` class also has helper functions to determine whether a user is allowed to see a group, or its members.
 
@@ -154,7 +154,7 @@ groups_print_activity_menu($cm, $url);
 
 ### How to get just the groups that the current user can see
 
-The following example will check whether the current user has permission to see hidden groups on a course, and **if they do not**, will apply additional conditions to a query to restrict the results to just those groups they should see. Note that a query like this must join on `group_members` as group visibility is dependant on the user's own memberships.
+The following example will check whether the current user has permission to see hidden groups on a course, and **if they do not**, will apply additional conditions to a query to restrict the results to just those groups they should see.
 
 ```php
 $courseid = required_param('courseid', PARAM_INT)';
@@ -165,15 +165,25 @@ $sql = "SELECT g.idnumber, gm.*
 
 $params = [$courseid];
 
-if (!has_capability('moodle/course:viewhiddengroups', context_course::instance($courseid)) {
+$context = context_course::instance($courseid);
+if (!has_capability('moodle/course:viewhiddengroups', $context) {
     // Apply visibility restrictions.
-    list($visibilitywhere, $visibilityparams) = \core_group\visibility::sql_group_visibility_where($userid);
+    [
+        $visibilitywhere,
+        $visibilityparams
+    ] = \core_group\visibility::sql_group_visibility_where($userid);
     $sql .= " AND " . $visibilitywhere;
     $params = array_merge($params, $visibilityparams);
 }
 
 $rs = $DB->get_recordset_sql($sql, $params);
 ```
+
+:::note
+
+A query like this must join on `group_members` as group visibility is dependant on the user's own memberships.
+
+:::
 
 ## Further reading
 
