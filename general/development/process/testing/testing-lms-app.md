@@ -28,7 +28,7 @@ For macOS (Apple silicon only) follow [this guideline](https://www.macrumors.com
 
 ### Hosted version (aka webapp)
 
-In a [Chromium-based browser](../../../app/development/setup/app-in-browser) (launched with special flags that disable the web security), you can access your site using the hosted versions of the app in [master.apps.moodledemo.net](https://master.apps.moodledemo.net) (the latest stable version) and [integration.apps.moodledemo.net](https://integration.apps.moodledemo.net) (development version).
+In a [Chromium-based browser](../../../app/development/setup/app-in-browser.md) (launched with special flags that disable the web security), you can access your site using the hosted versions of the app in [master.apps.moodledemo.net](https://master.apps.moodledemo.net) (the latest stable version) and [integration.apps.moodledemo.net](https://integration.apps.moodledemo.net) (development version).
 
 Once installed, to connect to your local site you can use its local ip address or hostname (localhost should work).
 
