@@ -36,7 +36,7 @@ Once installed, to connect to your local site you can use its local ip address o
 
 [Moodle HQ](https://moodle.com/) provides a couple of Docker images that contain the Moodle App ready for use. You can search all the available versions in [Docker Hub](https://hub.docker.com/r/moodlehq/moodleapp/tags).
 
-Please check this [document for details](../../../app/development/setup/docker-images).
+Please check this [document for details](../../../app/development/setup/docker-images.md).
 
 Once installed and running, to connect to your local site you can use its local ip address or hostname (localhost should work).
 
