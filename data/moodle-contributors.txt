@@ -82,6 +82,7 @@ Ashruf
 Astashov
 Atanas
 Atanasov
+Audun
 Automation
 Avdeev
 BKelada
@@ -467,6 +468,7 @@ Jason
 JayChurchward
 Jayaprakash
 Jayathissa
+Jaydn
 Jayesh
 Jayswal
 Jean-Michel
@@ -508,6 +510,7 @@ Jung
 Justin
 Justus
 Jwalit
+Jørstad
 KNDeepa
 Kabalin
 Kaleem
@@ -590,6 +593,7 @@ Levy
 Lewis
 Leyva
 Ligne
+Lillekjendlie
 Limekiller
 Lior
 Lloyd
@@ -654,6 +658,7 @@ Mcneill
 Mehr
 Meirza
 Meisberger
+Melanie
 Melihov
 Melissa
 Melià
@@ -1017,6 +1022,7 @@ Torres
 Totaram
 Travis
 Tregubov
+Treitinger
 Treu
 Trevor
 Trisha
@@ -1226,6 +1232,7 @@ gniske
 godric
 gregb_cc
 gthomas2
+guillermogomez
 gustav_delius
 hanna
 hansdezwart

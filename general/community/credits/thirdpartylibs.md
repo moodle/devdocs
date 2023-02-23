@@ -83,7 +83,7 @@ Compiled C program to convert TeX into GIFs
 The general H5P library.
 
 - **Location**: h5p/h5plib/v124/joubel/core
-- **Version**: moodle-1.22.4
+- **Version**: moodle-1.23
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-php-library/](https://github.com/h5p/h5p-php-library/)
 - **Copyright holders**:
@@ -94,7 +94,7 @@ The general H5P library.
 A general library that is supposed to be used in most PHP implementations of H5P.
 
 - **Location**: h5p/h5plib/v124/joubel/editor
-- **Version**: moodle-1.22.4
+- **Version**: moodle-1.23
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-editor-php-library/](https://github.com/h5p/h5p-editor-php-library/)
 - **Copyright holders**:
@@ -139,7 +139,7 @@ Simple yet flexible JavaScript charting for designers & developers.
 Minimal lightweight simple logging for JavaScript.
 
 - **Location**: lib/amd/src/loglevel.js
-- **Version**: 1.8.0
+- **Version**: 1.8.1
 - **License**:  MIT
 - **URL**: [https://github.com/pimterry/loglevel/](https://github.com/pimterry/loglevel/)
 - **Copyright holders**:
