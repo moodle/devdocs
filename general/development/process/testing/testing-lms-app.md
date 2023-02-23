@@ -42,4 +42,4 @@ Once installed and running, to connect to your local site you can use its local 
 
 ## See also
 
-- [Debugging network requests in the Moodle App](../../../app/development/network-debug)
+- [Debugging network requests in the Moodle App](../../../app/development/network-debug.md)
