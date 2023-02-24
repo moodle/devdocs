@@ -85,6 +85,10 @@ export MOODLE_APP_BROWSER=unsafe-chromium
 These instructions have only been tested in Linux. If you are using a different operative system, [let us know](https://github.com/moodle/devdocs/issues/76) how it went (or just [edit this page](https://github.com/moodle/devdocs/edit/main/docs/moodleapp/development/setup/app-in-browser.md)!).
 :::
 
+## Using the hosted versions of the app
+
+You can access your site using the hosted versions of the app in [master.apps.moodledemo.net](https://master.apps.moodledemo.net) (the latest stable version) and [integration.apps.moodledemo.net](https://integration.apps.moodledemo.net) (the current version in development).
+
 ## Tips & tricks
 
 Once you have everything set up, you should be able to develop like you would with any other front-end application. You can learn about the development tools you have available by reading the [Chrome DevTools documentation](https://developer.chrome.com/devtools/index).
