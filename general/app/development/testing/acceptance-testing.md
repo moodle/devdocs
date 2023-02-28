@@ -335,6 +335,17 @@ If you're writing a plugin, you can include a new class under `tests/behat/behat
 
 You can learn more about writing custom steps in the [Writing new acceptance test step definitions](https://docs.moodle.org/dev/Writing_new_acceptance_test_step_definitions) page, and if you want to see how the steps that are specific to the app work, you should look into [behat_app.php](https://github.com/moodlehq/moodleapp/blob/master/local_moodleappbehat/tests/behat/behat_app.php) and [behat-runtime.ts](https://github.com/moodlehq/moodleapp/tree/master/src/testing/services/behat-runtime.ts).
 
+### Testing graphical regressions
+
+If you want to test against graphical regressions, you can use the [local_behatsnapshots](https://github.com/NoelDeMartin/moodle-local_behatsnapshots/) plugin. It allows you to store UI snapshots in your repository and check against them every time Behat tests are run:
+
+```gherkin
+Given I enter the app
+Then the UI should match the snapshot
+```
+
+Learn more about it in the [plugin documentation](https://github.com/NoelDeMartin/moodle-local_behatsnapshots/#behat-snapshots-plugin).
+
 ## Troubleshooting
 
 ### General advice
