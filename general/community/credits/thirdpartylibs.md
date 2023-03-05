@@ -932,7 +932,7 @@ A standalone Amazon S3 (REST) client for PHP 5.2.x using CURL that does not requ
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/alert.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -944,7 +944,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/button.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -956,7 +956,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/carousel.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -968,7 +968,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/collapse.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -980,7 +980,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/dropdown.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -992,7 +992,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/modal.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1004,7 +1004,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/popover.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1016,7 +1016,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/scrollspy.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1028,7 +1028,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/tab.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1040,7 +1040,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/toast.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1052,7 +1052,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/tools/sanitizer.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1064,7 +1064,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/tooltip.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1076,7 +1076,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/util.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1088,7 +1088,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/index.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1100,7 +1100,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/scss/bootstrap
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
