@@ -1041,7 +1041,7 @@
         "location": "theme/boost/amd/src/bootstrap/alert.js",
         "name": "bootstrap-alert",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1053,7 +1053,7 @@
         ],
         "location": "theme/boost/amd/src/bootstrap/button.js",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "licenseversion": "",
         "repository": "https://github.com/twbs/bootstrap",
@@ -1067,7 +1067,7 @@
         "location": "theme/boost/amd/src/bootstrap/carousel.js",
         "name": "bootstrap-carousel",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1080,7 +1080,7 @@
         "location": "theme/boost/amd/src/bootstrap/collapse.js",
         "name": "bootstrap-collapse",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1093,7 +1093,7 @@
         "location": "theme/boost/amd/src/bootstrap/dropdown.js",
         "name": "bootstrap-dropdown",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1106,7 +1106,7 @@
         "location": "theme/boost/amd/src/bootstrap/modal.js",
         "name": "bootstrap-modal",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1119,7 +1119,7 @@
         "location": "theme/boost/amd/src/bootstrap/popover.js",
         "name": "bootstrap-popover",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1132,7 +1132,7 @@
         "location": "theme/boost/amd/src/bootstrap/scrollspy.js",
         "name": "bootstrap-scrollspy",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1145,7 +1145,7 @@
         "location": "theme/boost/amd/src/bootstrap/tab.js",
         "name": "bootstrap-tab",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1158,7 +1158,7 @@
         "location": "theme/boost/amd/src/bootstrap/toast.js",
         "name": "bootstrap-toast",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1171,7 +1171,7 @@
         "location": "theme/boost/amd/src/bootstrap/tools/sanitizer.js",
         "name": "bootstrap-sanitizer",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1184,7 +1184,7 @@
         "location": "theme/boost/amd/src/bootstrap/tooltip.js",
         "name": "bootstrap-tooltip",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1197,7 +1197,7 @@
         "location": "theme/boost/amd/src/bootstrap/util.js",
         "name": "bootstrap-util",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1210,7 +1210,7 @@
         "location": "theme/boost/amd/src/index.js",
         "name": "bootstrap-util",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1223,7 +1223,7 @@
         "location": "theme/boost/scss/bootstrap",
         "name": "Twitter Bootstrap",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.0",
+        "version": "4.6.2",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
