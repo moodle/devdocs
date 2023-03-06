@@ -10,6 +10,7 @@ tags:
 
 | **Version name** | **Date** | **Version code** |
 |---|---|---|
+| [Moodle App 4.1.1](./app_releases/v4/v4.1.1) | 28 February 2023 | 41100 |
 | [Moodle App 4.1.0](./app_releases/v4/v4.1.0) | 19 December 2022 | 41000 |
 | [Moodle App 4.0.2](./app_releases/v4/v4.0.2) | 25 October 2022 | 40200 |
 | [Moodle App 4.0.1](./app_releases/v4/v4.0.1) | 26 May 2022 | 40100 |
