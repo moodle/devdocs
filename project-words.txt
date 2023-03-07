@@ -37,6 +37,7 @@ MAINNODE
 MDL
 MDLQA
 MDLSITE
+Mebis
 Moodle
 MoodleCloud
 Moodleisms
