@@ -101,16 +101,16 @@ Note that under the strict schedule above, it is specially important **to be as 
 
 ### During continuous integration/Freeze/QA period
 
-During the continuous integration period (last 6 weeks before release) the integration team are continuously focused on producing regular builds of master to facilitate QA and fast fixes to issues identified.
+During the continuous integration period (last 7 weeks before release) the integration team are continuously focused on producing regular builds of master to facilitate QA and fast fixes to issues identified.
 
 Throughout:
 
 - Issues are picked on a one by one basis, prioritising [QA blockers](../testing/qa.md#resetting-tests) and master regressions (MUST FIX) issues.
-- After freeze (usually 5 weeks before release) any non bug fix issues are given the `integration_held` label and are explicitly not picked for integration. Still, anybody is able to add a reasoned `unhold_requested` label to those issues in order to get them unblocked by the development managers. Note this does not guarantee the issue to land before release, but just gives it a chance to be integrated like any other issue.
+- After freeze (usually 6 weeks before release) any non bug fix issues are given the `integration_held` label and are explicitly not picked for integration. Still, anybody is able to add a reasoned `unhold_requested` label to those issues in order to get them unblocked by the development managers. Note this does not guarantee the issue to land before release, but just gives it a chance to be integrated like any other issue.
 - Also, coming together with freeze, all the flow of issues to current integration is automatically controlled by the [Manage queues on continuous](https://ci.moodle.org/view/Tracker/job/TR%20-%20Manage%20queues%20on%20continuous/) job that keeps the current queue fed with issues, moves important ones, holds new features and other niceties. Issues are picked in strict integration order.
 - Our goal is to achieve 'release-ability' throughout, so we stop integrating to ensure a release happens
 
-So, basically, once under continuous integration, we do organize work as follows:
+So, basically, once under **the whole continuous integration period**, we do organise work as follows:
 
 - Continuous officially begins. Everybody is on integration. Until end of on-sync period.
 - Monday: Integration and [testing](../testing/integrated-issues.md#differences-in-test-process-during-continuous-integration-periods) happens.
