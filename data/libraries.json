@@ -36,17 +36,6 @@
     },
     {
         "copyrightHolders": [],
-        "location": "cache/stores/mongodb/MongoDB",
-        "name": "MongoDB PHP Library",
-        "description": "This library provides a high-level abstraction around the lower-level PHP driver, also known as the mongodb extension.",
-        "version": "1.15.0",
-        "license": "Apache",
-        "licenseversion": "2.0",
-        "repository": "https://github.com/mongodb/mongo-php-driver",
-        "customised": false
-    },
-    {
-        "copyrightHolders": [],
         "location": "enrol/lti/ims-blti",
         "name": "IMS-BLTI",
         "description": "Set of IMS-LTI tools originaly provided by IMS.",
@@ -197,7 +186,7 @@
         "location": "lib/behat/axe",
         "name": "axe-core",
         "description": "Accessibility testing engine for websites and other HTML-based user interfaces.",
-        "version": "4.5.1",
+        "version": "4.6.3",
         "license": "MPL",
         "licenseversion": "2.0",
         "repository": "https://github.com/dequelabs/axe-core",
@@ -254,45 +243,9 @@
         "copyrightHolders": [],
         "location": "lib/editor/tiny/js/tinymce",
         "name": "Tiny",
-        "version": "6.2.0",
+        "version": "6.3.2",
         "license": "MIT",
         "customised": false
-    },
-    {
-        "copyrightHolders": [
-            "Guido Neele (www.neele.name)"
-        ],
-        "location": "lib/editor/tinymce/plugins/pdw/tinymce",
-        "name": "PDW Toolbar Toggle",
-        "description": "A plugin for the TinyMCE WYSIWYG editor. The plugin shows and hides the toolbars just like the Kitchen Sink plugin in Wordpress.",
-        "version": "1.2",
-        "license": "MIT",
-        "repository": "https://github.com/GuidoNeele/PDW-Toggle-Toolbars-TinyMCE",
-        "customised": false
-    },
-    {
-        "copyrightHolders": [],
-        "location": "lib/editor/tinymce/plugins/spellchecker/rpc.php",
-        "name": "TinyMCE spellchecker",
-        "description": "TinyMCE - Spellchecker for PHP.",
-        "version": "2.0.6.1",
-        "license": "LGPL",
-        "licenseversion": "2.1+",
-        "repository": "https://github.com/tinymce/tinymce_spellchecker_php",
-        "customised": false
-    },
-    {
-        "copyrightHolders": [
-            "2004-2012, Moxiecode Systems AB, All rights reserved."
-        ],
-        "location": "lib/editor/tinymce/tiny_mce",
-        "name": "TinyMCE",
-        "description": "The JavaScript Rich Text editor.",
-        "version": "3.5.11",
-        "license": "LGPL",
-        "licenseversion": "2.1+",
-        "repository": "https://github.com/tinymce/tinymce",
-        "customised": true
     },
     {
         "copyrightHolders": [
@@ -536,7 +489,7 @@
         "location": "lib/minify/matthiasmullie-minify",
         "name": "MatthiasMullie\\Minify",
         "description": "CSS & JavaScript minifier, in PHP",
-        "version": "1.3.69",
+        "version": "1.3.70",
         "license": "MIT",
         "repository": "https://github.com/matthiasmullie/minify",
         "customised": true
@@ -683,7 +636,7 @@
         "location": "lib/phpmailer",
         "name": "PHPMailer",
         "description": "Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are based upon the standard AspEmail(tm) classes.",
-        "version": "6.6.5",
+        "version": "6.7.1",
         "license": "LGPL",
         "licenseversion": "2.1",
         "repository": "https://github.com/PHPMailer/PHPMailer",
@@ -694,7 +647,7 @@
         "location": "lib/phpspreadsheet",
         "name": "PhpSpreadsheet",
         "description": "Library to read, write and create spreadsheet documents in PHP.",
-        "version": "1.25.2",
+        "version": "1.28.0",
         "license": "MIT",
         "repository": "https://github.com/PHPOffice/PhpSpreadsheet",
         "customised": true

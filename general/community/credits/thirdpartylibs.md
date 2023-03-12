@@ -43,15 +43,6 @@ phpCAS library to support CAS authentication plugin.
 - **Copyright holders**:
   - 2007-2020, Apereo Foundation
 
-### MongoDB PHP Library
-
-This library provides a high-level abstraction around the lower-level PHP driver, also known as the mongodb extension.
-
-- **Location**: cache/stores/mongodb/MongoDB
-- **Version**: 1.15.0
-- **License**:  Apache 2.0
-- **URL**: [https://github.com/mongodb/mongo-php-driver](https://github.com/mongodb/mongo-php-driver)
-
 ### IMS-BLTI
 
 Set of IMS-LTI tools originaly provided by IMS.
@@ -183,7 +174,7 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 Accessibility testing engine for websites and other HTML-based user interfaces.
 
 - **Location**: lib/behat/axe
-- **Version**: 4.5.1
+- **Version**: 4.6.3
 - **License**:  MPL 2.0
 - **URL**: [https://github.com/dequelabs/axe-core](https://github.com/dequelabs/axe-core)
 - **Copyright holders**:
@@ -234,39 +225,8 @@ A cross-browser JavaScript range and selection library.
 ### Tiny
 
 - **Location**: lib/editor/tiny/js/tinymce
-- **Version**: 6.2.0
+- **Version**: 6.3.2
 - **License**:  MIT
-
-### PDW Toolbar Toggle
-
-A plugin for the TinyMCE WYSIWYG editor. The plugin shows and hides the toolbars just like the Kitchen Sink plugin in Wordpress.
-
-- **Location**: lib/editor/tinymce/plugins/pdw/tinymce
-- **Version**: 1.2
-- **License**:  MIT
-- **URL**: [https://github.com/GuidoNeele/PDW-Toggle-Toolbars-TinyMCE](https://github.com/GuidoNeele/PDW-Toggle-Toolbars-TinyMCE)
-- **Copyright holders**:
-  - Guido Neele (www.neele.name)
-
-### TinyMCE spellchecker
-
-TinyMCE - Spellchecker for PHP.
-
-- **Location**: lib/editor/tinymce/plugins/spellchecker/rpc.php
-- **Version**: 2.0.6.1
-- **License**:  LGPL 2.1+
-- **URL**: [https://github.com/tinymce/tinymce_spellchecker_php](https://github.com/tinymce/tinymce_spellchecker_php)
-
-### TinyMCE
-
-The JavaScript Rich Text editor.
-
-- **Location**: lib/editor/tinymce/tiny_mce
-- **Version**: 3.5.11 (with Moodle customisations)
-- **License**:  LGPL 2.1+
-- **URL**: [https://github.com/tinymce/tinymce](https://github.com/tinymce/tinymce)
-- **Copyright holders**:
-  - 2004-2012, Moxiecode Systems AB, All rights reserved.
 
 ### Emoji data
 
@@ -483,7 +443,7 @@ PHP API for reading MaxMind DB files.
 CSS & JavaScript minifier, in PHP
 
 - **Location**: lib/minify/matthiasmullie-minify
-- **Version**: 1.3.69 (with Moodle customisations)
+- **Version**: 1.3.70 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/matthiasmullie/minify](https://github.com/matthiasmullie/minify)
 
@@ -611,7 +571,7 @@ A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming t
 Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are based upon the standard AspEmail(tm) classes.
 
 - **Location**: lib/phpmailer
-- **Version**: 6.6.5
+- **Version**: 6.7.1
 - **License**:  LGPL 2.1
 - **URL**: [https://github.com/PHPMailer/PHPMailer](https://github.com/PHPMailer/PHPMailer)
 - **Copyright holders**:
@@ -622,7 +582,7 @@ Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are 
 Library to read, write and create spreadsheet documents in PHP.
 
 - **Location**: lib/phpspreadsheet
-- **Version**: 1.25.2 (with Moodle customisations)
+- **Version**: 1.28.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/PHPOffice/PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
 
