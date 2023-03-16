@@ -138,6 +138,7 @@ Bozhko
 Bram
 Brands
 Brat
+Bravo
 Brendan
 Brent
 Brian
@@ -617,6 +618,7 @@ Mahmoud
 Mahmoud.Kassaei
 Malith
 Malley
+Maneggia
 Mano
 Maoz
 Marc
@@ -777,6 +779,7 @@ Pablo
 Palou
 Panagiotis
 Panning
+Paola
 Parry
 Pataleta
 Patrick
@@ -792,6 +795,7 @@ Penner
 Penny
 Percy
 Perez
+Pesce
 Pete
 Peter
 Petit-Clair
@@ -860,6 +864,7 @@ Ripal
 Risner
 Ritchey
 Robert
+Roberto
 Robot
 Robotta
 Robynstar
@@ -1218,6 +1223,7 @@ evlice
 evltuma
 exe-cutor
 fabmen
+fcbsd
 fdallet
 ferran.recio
 fhuebler
