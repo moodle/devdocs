@@ -166,7 +166,7 @@ class AddonModCertificateModuleLinkHandler extends this.CoreContentLinksModuleIn
 
 We've also done some changes to the code of the app. Most of these changes probably don't affect your plugin, but you should still check this out just in case:
 
-- `<core-icon>` is now deprecated, please use `<ion-icon>` instead. Right now you can use font-awesome icons with `ion-icon`. However, it still hasn't been decided whether font awesome will be used in Moodle 4.0 or not, so font-awesome may be removed from the app in the future.
+- `<core-icon>` has been completely removed, please use `<ion-icon>` instead that now supports Font Awesome icons. See [Using 'font' icons with ion-icon](../development/plugins-development-guide#using-font-icons-with-ion-icon) for more information.
 - To "cross out" an icon using `ion-icon` you need to use `class="icon-slash"` instead of `slash="true"`.
 - The function `syncOnSites` from `CoreSyncBaseProvider` now expects to receive a function with the parameters already bound:
 
