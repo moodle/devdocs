@@ -88,6 +88,8 @@ Ensure that any new User Interface feature in Moodle 4.0 or later which matches 
 
 ### Language
 
+Naming things is hard. For help with wordings for new features and improvements, add the `ux_writing` label to the issue.
+
 To achieve appropriate internationalisation of Moodle, language strings must be managed correctly.
 
 Ensure that:
