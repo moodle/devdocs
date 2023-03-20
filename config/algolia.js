@@ -20,7 +20,7 @@ module.exports = {
     appId: 'NNUY2D5GV2',
 
     // Public API key: it is safe to commit it
-    apiKey: '11b0ce30d623418a6279455023c0faf8',
+    apiKey: '566da60648a9d5d130da201176508ff2',
 
     indexName: 'moodle2',
 
