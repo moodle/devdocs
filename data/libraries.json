@@ -4,7 +4,7 @@
         "location": "admin/tool/componentlibrary/amd/src/lunr.js",
         "name": "lunr - http://lunrjs.com",
         "description": "Provide a great search experience without the need for external, server-side, search services.",
-        "version": "2.3.8",
+        "version": "2.3.9",
         "license": "MIT",
         "repository": "https://github.com/olivernn/lunr.js",
         "customised": false
@@ -100,7 +100,7 @@
         "location": "lib/adodb",
         "name": "AdoDB",
         "description": "Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.",
-        "version": "5.22.2",
+        "version": "5.22.4",
         "license": "BSD/LGPL",
         "licenseversion": "3-Clause/2.1+",
         "repository": "https://github.com/ADOdb/ADOdb",
@@ -121,12 +121,12 @@
     },
     {
         "copyrightHolders": [
-            "2016 Nick Downie"
+            "2014-2022 Chart.js Contributors"
         ],
         "location": "lib/amd/src/chartjs-lazy.js",
         "name": "Chart.js",
         "description": "Simple yet flexible JavaScript charting for designers & developers.",
-        "version": "3.8.0",
+        "version": "4.2.1",
         "license": "MIT",
         "repository": "https://github.com/chartjs/Chart.js",
         "customised": true
@@ -212,7 +212,7 @@
         "location": "lib/editor/atto/plugins/html/yui/src/beautify",
         "name": "jsbeautify",
         "description": "Beautify HTML code in Atto.",
-        "version": "1.14.6",
+        "version": "1.14.7",
         "license": "MIT",
         "repository": "https://github.com/beautify-web/js-beautify",
         "customised": false
@@ -222,7 +222,7 @@
         "location": "lib/editor/atto/plugins/html/yui/src/codemirror",
         "name": "codemirror",
         "description": "CodeMirror is a versatile text editor implemented in JavaScript for the browser.",
-        "version": "5.65.9",
+        "version": "5.65.12",
         "license": "MIT",
         "repository": "https://github.com/codemirror/codemirror5",
         "customised": false
@@ -245,6 +245,7 @@
         "name": "Tiny",
         "version": "6.3.2",
         "license": "MIT",
+        "repository": "https://github.com/tinymce/tinymce",
         "customised": false
     },
     {
@@ -266,19 +267,19 @@
         "location": "lib/evalmath",
         "name": "EvalMath",
         "description": "Class to safely evaluate math expressions.",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "license": "BSD",
         "repository": "https://github.com/dbojdo/eval-math",
         "customised": true
     },
     {
         "copyrightHolders": [
-            "Dave Gandy"
+            "2023 Fonticons, Inc"
         ],
         "location": "lib/fonts",
-        "name": "Font Awesome - http://fontawesome.io",
+        "name": "Font Awesome - http://fontawesome.com",
         "description": "The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.",
-        "version": "4.7.0",
+        "version": "6.3.0",
         "license": "SIL OFL",
         "licenseversion": "1.1",
         "repository": "https://github.com/FortAwesome/Font-Awesome",
@@ -402,7 +403,7 @@
         "location": "lib/jquery",
         "name": "jQuery",
         "description": "jQuery is a fast, small, and feature-rich JavaScript library widely used on moodle.",
-        "version": "3.6.1",
+        "version": "3.6.4",
         "license": "MIT",
         "repository": "https://github.com/jquery/jquery",
         "customised": false
@@ -465,7 +466,7 @@
         "location": "lib/maxmind/GeoIp2",
         "name": "GeoIP2 PHP API",
         "description": "Library for processing of GeoIP data files.",
-        "version": "2.11.0",
+        "version": "2.13.0",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/maxmind/GeoIP2-php",
@@ -611,7 +612,7 @@
         "location": "lib/php-enum",
         "name": "php-enum",
         "description": "PHP Enum implementation inspired from SplEnum",
-        "version": "1.8.3",
+        "version": "1.8.4",
         "license": "MIT",
         "repository": "https://github.com/myclabs/php-enum",
         "customised": false
@@ -623,7 +624,7 @@
         "location": "lib/php-jwt",
         "name": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519",
         "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519",
-        "version": "6.3.0",
+        "version": "6.4.0",
         "license": "BSD",
         "licenseversion": "3-Clause",
         "repository": "https://github.com/firebase/php-jwt",
@@ -797,7 +798,7 @@
         "location": "lib/simplepie",
         "name": "SimplePie",
         "description": "Simple Pie helps with blogs.",
-        "version": "1.6.0",
+        "version": "1.8.0",
         "license": "BSD",
         "repository": "https://github.com/simplepie/simplepie",
         "customised": false
@@ -819,7 +820,7 @@
         "location": "lib/tcpdf",
         "name": "TCPDF",
         "description": "Class to generate PDF files",
-        "version": "6.5.0",
+        "version": "6.6.2",
         "license": "LGPL",
         "licenseversion": "3.0-only",
         "repository": "https://github.com/tecnickcom/TCPDF",
@@ -883,7 +884,7 @@
         "location": "lib/zipstream",
         "name": "ZipStream-PHP",
         "description": "PHP ZIP Streaming Library",
-        "version": "2.2.0",
+        "version": "2.4.0",
         "license": "MIT",
         "repository": "https://github.com/maennchen/ZipStream-PHP",
         "customised": false
@@ -1183,12 +1184,12 @@
     },
     {
         "copyrightHolders": [
-            "Dave Gandy"
+            "2023 Fonticons, Inc"
         ],
         "location": "theme/boost/scss/fontawesome",
-        "name": "Font Awesome - http://fontawesome.io",
+        "name": "Font Awesome - http://fontawesome.com",
         "description": "Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.",
-        "version": "4.7.0",
+        "version": "6.3.0",
         "license": "(MIT)",
         "repository": "https://github.com/FortAwesome/Font-Awesome",
         "customised": false

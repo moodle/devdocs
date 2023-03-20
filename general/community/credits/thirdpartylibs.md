@@ -17,7 +17,7 @@ Some of Moodle's libraries were written by other people, and are being redistrib
 Provide a great search experience without the need for external, server-side, search services.
 
 - **Location**: admin/tool/componentlibrary/amd/src/lunr.js
-- **Version**: 2.3.8
+- **Version**: 2.3.9
 - **License**:  MIT
 - **URL**: [https://github.com/olivernn/lunr.js](https://github.com/olivernn/lunr.js)
 
@@ -96,7 +96,7 @@ A general library that is supposed to be used in most PHP implementations of H5P
 Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.
 
 - **Location**: lib/adodb
-- **Version**: 5.22.2
+- **Version**: 5.22.4
 - **License**:  BSD/LGPL 3-Clause/2.1+
 - **URL**: [https://github.com/ADOdb/ADOdb](https://github.com/ADOdb/ADOdb)
 - **Copyright holders**:
@@ -119,11 +119,11 @@ JavaScript library to insulate apps from spec changes and prefix differences in 
 Simple yet flexible JavaScript charting for designers & developers.
 
 - **Location**: lib/amd/src/chartjs-lazy.js
-- **Version**: 3.8.0 (with Moodle customisations)
+- **Version**: 4.2.1 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/chartjs/Chart.js](https://github.com/chartjs/Chart.js)
 - **Copyright holders**:
-  - 2016 Nick Downie
+  - 2014-2022 Chart.js Contributors
 
 ### loglevel.js
 
@@ -196,7 +196,7 @@ Bennu is an object-oriented library written in PHP that implements the iCalendar
 Beautify HTML code in Atto.
 
 - **Location**: lib/editor/atto/plugins/html/yui/src/beautify
-- **Version**: 1.14.6
+- **Version**: 1.14.7
 - **License**:  MIT
 - **URL**: [https://github.com/beautify-web/js-beautify](https://github.com/beautify-web/js-beautify)
 - **Copyright holders**:
@@ -207,7 +207,7 @@ Beautify HTML code in Atto.
 CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 
 - **Location**: lib/editor/atto/plugins/html/yui/src/codemirror
-- **Version**: 5.65.9
+- **Version**: 5.65.12
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/codemirror5](https://github.com/codemirror/codemirror5)
 
@@ -227,6 +227,7 @@ A cross-browser JavaScript range and selection library.
 - **Location**: lib/editor/tiny/js/tinymce
 - **Version**: 6.3.2
 - **License**:  MIT
+- **URL**: [https://github.com/tinymce/tinymce](https://github.com/tinymce/tinymce)
 
 ### Emoji data
 
@@ -244,22 +245,22 @@ Library to parse easily data and sprite sheets for emoji.
 Class to safely evaluate math expressions.
 
 - **Location**: lib/evalmath
-- **Version**: 1.0.0 (with Moodle customisations)
+- **Version**: 1.0.1 (with Moodle customisations)
 - **License**:  BSD
 - **URL**: [https://github.com/dbojdo/eval-math](https://github.com/dbojdo/eval-math)
 - **Copyright holders**:
   - Miles Kaufmann
 
-### Font Awesome - http://fontawesome.io
+### Font Awesome - http://fontawesome.com
 
 The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
 - **Location**: lib/fonts
-- **Version**: 4.7.0
+- **Version**: 6.3.0
 - **License**:  SIL OFL 1.1
 - **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
 - **Copyright holders**:
-  - Dave Gandy
+  - 2023 Fonticons, Inc
 
 ### GeoPattern
 
@@ -364,7 +365,7 @@ Filters HTML.
 jQuery is a fast, small, and feature-rich JavaScript library widely used on moodle.
 
 - **Location**: lib/jquery
-- **Version**: 3.6.1
+- **Version**: 3.6.4
 - **License**:  MIT
 - **URL**: [https://github.com/jquery/jquery](https://github.com/jquery/jquery)
 - **Copyright holders**:
@@ -421,7 +422,7 @@ All rights reserved.
 Library for processing of GeoIP data files.
 
 - **Location**: lib/maxmind/GeoIp2
-- **Version**: 2.11.0
+- **Version**: 2.13.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/GeoIP2-php](https://github.com/maxmind/GeoIP2-php)
 - **Copyright holders**:
@@ -549,7 +550,7 @@ A Parser for CSS Files written in PHP.
 PHP Enum implementation inspired from SplEnum
 
 - **Location**: lib/php-enum
-- **Version**: 1.8.3
+- **Version**: 1.8.4
 - **License**:  MIT
 - **URL**: [https://github.com/myclabs/php-enum](https://github.com/myclabs/php-enum)
 - **Copyright holders**:
@@ -560,7 +561,7 @@ PHP Enum implementation inspired from SplEnum
 A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
 
 - **Location**: lib/php-jwt
-- **Version**: 6.3.0
+- **Version**: 6.4.0
 - **License**:  BSD 3-Clause
 - **URL**: [https://github.com/firebase/php-jwt](https://github.com/firebase/php-jwt)
 - **Copyright holders**:
@@ -717,7 +718,7 @@ scssphp is a compiler for SCSS written in PHP.
 Simple Pie helps with blogs.
 
 - **Location**: lib/simplepie
-- **Version**: 1.6.0
+- **Version**: 1.8.0
 - **License**:  BSD
 - **URL**: [https://github.com/simplepie/simplepie](https://github.com/simplepie/simplepie)
 
@@ -735,7 +736,7 @@ A generic function and convention to trigger deprecation notices
 Class to generate PDF files
 
 - **Location**: lib/tcpdf
-- **Version**: 6.5.0 (with Moodle customisations)
+- **Version**: 6.6.2 (with Moodle customisations)
 - **License**:  LGPL 3.0-only
 - **URL**: [https://github.com/tecnickcom/TCPDF](https://github.com/tecnickcom/TCPDF)
 - **Copyright holders**:
@@ -790,7 +791,7 @@ The Gallery is a collection of modules that have been developed by the YUI commu
 PHP ZIP Streaming Library
 
 - **Location**: lib/zipstream
-- **Version**: 2.2.0
+- **Version**: 2.4.0
 - **License**:  MIT
 - **URL**: [https://github.com/maennchen/ZipStream-PHP](https://github.com/maennchen/ZipStream-PHP)
 - **Copyright holders**:
@@ -1067,16 +1068,16 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
   - 2011-2021 Twitter, Inc
   - 2011-2021 The Bootstrap Authors
 
-### Font Awesome - http://fontawesome.io
+### Font Awesome - http://fontawesome.com
 
 Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
 - **Location**: theme/boost/scss/fontawesome
-- **Version**: 4.7.0
+- **Version**: 6.3.0
 - **License**:  (MIT)
 - **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
 - **Copyright holders**:
-  - Dave Gandy
+  - 2023 Fonticons, Inc
 
 ## Other libraries
 
