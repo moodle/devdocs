@@ -22,7 +22,7 @@ module.exports = {
     // Public API key: it is safe to commit it
     apiKey: '11b0ce30d623418a6279455023c0faf8',
 
-    indexName: 'moodle',
+    indexName: 'moodle2',
 
     // Optional: see doc section below.
     // Contextual search is enabled by default.
