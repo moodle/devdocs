@@ -16,7 +16,7 @@ The `external_api` class, and all related classes have been moved from `lib/exte
 
 :::note Delayed deprecation
 
-The old class locations have been aliased for backwards compatibility and will emit a deprecation notice in a _future_ release.
+The old class locations have been aliased for backwards compatibility and will emit a deprecation notice in a _future_ release. Please remember to add `require_once($CFG->dirroot . '/lib/externallib.php');` to your external service classes to make the aliases work.
 
 If you are writing a Moodle plugin which has a single codebase shared with older versions of Moodle, you should continue to use the old API locations at this time.
 
