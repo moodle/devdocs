@@ -245,7 +245,7 @@ It is essential that your code follows the [Moodle Coding Guide](./policies.md).
 
 You will need to push one commit for each branch the fix needs to be applied to. Often people use branch names like `MDL-12345-31_brief_name` so it is clear what each branch is. [git cherry-pick](http://kernel.org/pub/software/scm/git/docs/git-cherry-pick.html) can help with replicating the fix onto different branches.
 
-Consider setting up [Travis integration](https://docs.moodle.org/dev/Travis_integration) with your repository so tests will be automatically run for you whenever you push work on your fix.
+Consider setting up [GitHub Actions integration](https://moodledev.io/general/development/tools/gha) with your repository so tests will be automatically run for you whenever you push work on your fix.
 
 ### Submit your code for peer review
 
@@ -262,7 +262,7 @@ If you have never contributed to Moodle and don't see a button _Request peer rev
 
 After your first fix is integrated you will be added to developers group and will be able to send issues for peer review yourself. In this case make sure you are listed as Assignee and click on _Request peer review_ button in the tracker.
 
-If you've set up [Travis integration](https://docs.moodle.org/dev/Travis_integration), the issue will automatically show the Travis build status for the branch(es) you've submitted for peer review.
+If you've set up [GitHub Actions integration](https://moodledev.io/general/development/tools/gha), the issue will automatically show the GHA build status for the branch(es) you've submitted for peer review.
 
 ### Peer review
 
