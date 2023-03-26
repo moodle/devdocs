@@ -216,7 +216,7 @@ CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 A cross-browser JavaScript range and selection library.
 
 - **Location**: lib/editor/atto/yui/src/rangy/js/*.*
-- **Version**: 1.3.0 (with Moodle customisations)
+- **Version**: 1.3.1 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/timdown/rangy](https://github.com/timdown/rangy)
 - **Copyright holders**:
@@ -387,7 +387,7 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 A library used for building IMS-certified LTI 1.3 tool providers in PHP.
 
 - **Location**: lib/lti1p3
-- **Version**: 5.2.1 (with Moodle customisations)
+- **Version**: 5.2.6 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/packbackbooks/lti-1-3-php-library](https://github.com/packbackbooks/lti-1-3-php-library)
 - **Copyright holders**:
@@ -769,7 +769,7 @@ A Hierarchical Profiler for PHP.
 The Yahoo! User Interface Library is a set of utilities and controls, in JavaScript, for building richly interactive web applications using techniques such as DOM scripting, DHTML and AJAX. The YUI Library also includes several core CSS resources.Set of user-interface components using AJAX, DHTML etc. We use it for all our AJAX-related stuff.
 
 - **Location**: lib/yuilib
-- **Version**: 3.17.2
+- **Version**: 3.18.1
 - **License**:  BSD
 - **URL**: [https://github.com/yui/yui3](https://github.com/yui/yui3)
 - **Copyright holders**:
