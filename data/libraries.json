@@ -234,7 +234,7 @@
         "location": "lib/editor/atto/yui/src/rangy/js/*.*",
         "name": "Rangy",
         "description": "A cross-browser JavaScript range and selection library.",
-        "version": "1.3.0",
+        "version": "1.3.1",
         "license": "MIT",
         "repository": "https://github.com/timdown/rangy",
         "customised": true
@@ -427,7 +427,7 @@
         "location": "lib/lti1p3",
         "name": "LTI 1.3 Tool Library",
         "description": "A library used for building IMS-certified LTI 1.3 tool providers in PHP.",
-        "version": "5.2.1",
+        "version": "5.2.6",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/packbackbooks/lti-1-3-php-library",
@@ -857,7 +857,7 @@
         "location": "lib/yuilib",
         "name": "YUI",
         "description": "The Yahoo! User Interface Library is a set of utilities and controls, in JavaScript, for building richly interactive web applications using techniques such as DOM scripting, DHTML and AJAX. The YUI Library also includes several core CSS resources.Set of user-interface components using AJAX, DHTML etc. We use it for all our AJAX-related stuff.",
-        "version": "3.17.2",
+        "version": "3.18.1",
         "license": "BSD",
         "repository": "https://github.com/yui/yui3",
         "customised": false

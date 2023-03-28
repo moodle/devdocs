@@ -13,6 +13,7 @@ Ackermann
 Ackland-Snow
 Adam
 Adamcik
+Adermann
 Adrian
 Afrar
 Agarwal
@@ -747,6 +748,7 @@ Nigel
 Nikhil
 Nikita
 Nikoloutsopoulos
+Nils
 Nina
 Nitzan
 Nivedita
