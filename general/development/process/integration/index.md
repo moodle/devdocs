@@ -137,7 +137,7 @@ Immediately after a major release and for a short period (right now, 2 weeks, ma
 
 At all effects, it's a normal period (see above), and weeklies are produced for supported stable branches and also for master. But with one important rule/goal:
 
-- We must keep the latest stable branch and master 100% on-sync, specifically about versions and upgrade steps. Some well-known exceptions to this are: *.travis.yml*, *backup.class.php*, *config.php* (*$release*, *$branch*, *$maturity* and comments only, never *$version*!), *install/lang/xx files* (the new stable branch for install lang files is created 2w after the release).
+- We must keep the latest stable branch and master 100% on-sync, specifically about versions and upgrade steps. Some well-known exceptions to this are: *backup.class.php*, *config.php* (*$release*, *$branch*, *$maturity* and comments only, never *$version*!), *install/lang/xx files* (the new stable branch for install lang files is created 2w after the release).
 
 This simple, but important constraint, is there to facilitate the integration of impeding bugs, needing urgent resolution, and by keeping them the same, we guarantee that any stable or master fix will apply without problems to both branches. Of course, in order to achieve the rule, these must be also observed along the period:
 
