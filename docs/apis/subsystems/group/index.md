@@ -56,15 +56,15 @@ Calling `groups_get_all_groups()` with the `$participationonly` argument set to 
 
 ## Group visibility
 
-To help protect user privacy, each group has a `visibility` setting, which controls who can see the group and its members. The possible values are defined as constants in the `\core_group\visibility` class.
+To help protect user privacy, each group has a `visibility` setting, which controls who can see the group and its members. The possible values are defined as `GROUPS_VISIBILITY_*` constants in grouplib.
 
 Users with the `moodle/course:viewhiddengroups` capability can always see all groups, regardless of their visibility.
 Otherwise, the following restrictions apply:
 
-- Visible to all (`visibility::ALL` constant) - Everyone can see the group and its members. This is the default, and the legacy behaviour for all groups before Moodle 4.2.
-- Visible to members (`visibility::MEMBERS` constant) - Only members of the group can see the group, and members of the group can see each others' membership of the group.
-- See own membership (`visibility::OWN` constant) - Only members of the group can see the group, and members **cannot** see each others' membership, only their own.
-- Membership is hidden (`visibility::NONE` constant) - No-one can see the group or its members.
+- Visible to all (`GROUPS_VISIBILITY_ALL` constant) - Everyone can see the group and its members. This is the default, and the legacy behaviour for all groups before Moodle 4.2.
+- Visible to members (`GROUPS_VISIBILITY_MEMBERS` constant) - Only members of the group can see the group, and members of the group can see each others' membership of the group.
+- See own membership (`GROUPS_VISIBILITY_OWN` constant) - Only members of the group can see the group, and members **cannot** see each others' membership, only their own.
+- Membership is hidden (`GROUPS_VISIBILITY_NONE` constant) - No-one can see the group or its members.
 
 The core API functions in groupslib such as `groups_get_all_groups()` and `groups_get_members()` will respect the group visibility and the current user's permissions, so use these as far as possible when fetching data about groups and their members. The `\core_group\visibility` class also has helper functions to determine whether a user is allowed to see a group, or its members.
 
