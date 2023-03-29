@@ -87,7 +87,7 @@ These instructions have only been tested in Linux. If you are using a different 
 
 ## Using the hosted versions of the app
 
-You can access your site using the hosted versions of the app in [master.apps.moodledemo.net](https://master.apps.moodledemo.net) (the latest stable version) and [integration.apps.moodledemo.net](https://integration.apps.moodledemo.net) (the current version in development).
+You can access your site using the hosted versions of the app in [latest.apps.moodledemo.net](https://latest.apps.moodledemo.net) (the latest stable version) and [main.apps.moodledemo.net](https://main.apps.moodledemo.net) (the current version in development).
 
 ## Tips & tricks
 

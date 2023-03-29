@@ -1,6 +1,7 @@
 # This file contains cspell exceptions to use for Moodle.
 # Please keep this file sorted alphabetically.
 Achour
+Appstore
 Atto
 Aurelie
 AWST
@@ -85,6 +86,7 @@ allowcaching
 assignfeedback
 assignsubmission
 behat
+behatsnapshots
 bigbluebuttonbn
 bitand
 bitnot

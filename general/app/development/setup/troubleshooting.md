@@ -16,7 +16,7 @@ If you are stuck with an error and you can't find a way to continue, here's a li
 - Make sure that you are using the proper node and npm versions. You can see it looking at the `engines` key in `package.json`. If you are using [nvm](https://github.com/nvm-sh/nvm), just run `nvm install`.
 - Make sure that all dependencies have been installed properly. To be extra sure, run `npm ci`; this will remove the `node_modules/` folder and install all dependencies again exactly as described in your `package-lock.json`.
 - If you are having issues trying to build for Android or iOS, try removing the `www/`, `platforms/` and `plugins/` folders and try again.
-- If you are using a development version, maybe the repository is broken and it's not your fault. Try checking out the `master` branch and see if you're getting the same error.
+- If you are using a development version, maybe the repository is broken and it's not your fault. Try checking out the `latest` branch and see if you're getting the same error.
 - Try cloning the repository in a new folder and run through the instructions in this page again. If you can, try doing it on a different computer to make sure that you're doing everything properly and it's not a problem in your machine.
 - Try creating [a blank Ionic application](https://ionicframework.com/docs/cli/commands/start) and see if you're having the same problems. Make sure that you are using the same version of the main dependencies (Angular, Cordova, Ionic CLI, etc.).
 - If you are searching for help online, maybe your problem has nothing to do with the Moodle App in particular an it's related with Ionic, Cordova, Angular, etc. Searching using the proper context will give you better solutions.

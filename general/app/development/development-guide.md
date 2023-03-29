@@ -18,12 +18,12 @@ Before embarking on Moodle-specific documentation, we recommend that you are at 
 
 In order to get started, you'll need to prepare your development environment. We recommend that you do it before proceeding with the guide, that way you can tinker with the codebase to solidify your understanding.
 
-You can obtain a copy of the source code by cloning the public repository. If you want to work on a specific version of the app, you can check the tag with the version number you need; for example `v3.9.5`. If you want to work on the latest development version, you should check out the `integration` branch:
+You can obtain a copy of the source code by cloning the public repository. If you want to work on a specific version of the app, you can check the tag with the version number you need; for example `v3.9.5`. If you want to work on the latest development version, you should check out the `main` branch:
 
 ```bash
 git clone git@github.com:moodlehq/moodleapp.git
 cd moodleapp
-git checkout integration # or `git checkout v3.9.5`
+git checkout main # or `git checkout v3.9.5`
 ```
 
 The only things you need to install before running the app are NodeJS and npm. Make sure that you are using the correct versions of each environment (looking at the `engines` entry in `package.json`). We recommend using a version manager like [nvm](https://github.com/nvm-sh/nvm) to make this easier, you can prepare the correct environment running ```nvm install``` in the project root. Remember to run this every time you work with the app, or if you're not working on any other node projects in your computer you can run ```nvm alias default `node -v` ``` to make it the default.
@@ -299,7 +299,7 @@ CoreNavigator.navigate('../');
 
 Other than navigation, this service also contains some helpers that are not available in Angular out of the box. For example, the `getRouteParam` will get values from multiple sources such as query parameters or route parameters, and it also supports reading non-primitive values.
 
-Make sure to [check out the full api](https://github.com/moodlehq/moodleapp/blob/integration/src/core/services/navigator.ts) to learn more about the `CoreNavigator` service.
+Make sure to [check out the full api](https://github.com/moodlehq/moodleapp/blob/main/src/core/services/navigator.ts) to learn more about the `CoreNavigator` service.
 
 ## Singletons
 
@@ -391,7 +391,7 @@ There are two types of tests in the mobile app.
 
 Unit tests are written in JavaScript using [jest](https://jestjs.io/). If you want to create a new one, jest is already configured and you only need to create a file ending with *.test.ts* within the project. If you're going to do so, remember to follow the [file location conventions](#test-files).
 
-You can run the entire test suite using the npm test command. If you are using VSCode, you can also use the debugger to [run preconfigured test tasks](https://github.com/moodlehq/moodleapp/blob/integration/.vscode/launch.json) in the current file or the entire project (using F5 with the default keybindings). This will allow you to use breakpoints and other advanced debugging tools.
+You can run the entire test suite using the npm test command. If you are using VSCode, you can also use the debugger to [run preconfigured test tasks](https://github.com/moodlehq/moodleapp/blob/main/.vscode/launch.json) in the current file or the entire project (using F5 with the default keybindings). This will allow you to use breakpoints and other advanced debugging tools.
 
 You can write standard jest tests for the most part, but something to keep in mind is that the codebase relies heavily on [Service Singletons](#service-singletons). So you will need to mock any instances that are used in the code you're testing.
 

@@ -24,7 +24,7 @@ Let's clarify some points:
 
 If you only want to write a plugin, it is not necessary that you set up your environment to work with the Moodle App. In fact, you don't even need to compile it. You can just [use a Chromium-based browser](./setup/app-in-browser) to add mobile support to your plugins!
 
-You can use the app from one of the hosted versions on [master.apps.moodledemo.net](https://master.apps.moodledemo.net) (the latest stable version) and [integration.apps.moodledemo.net](https://integration.apps.moodledemo.net) (the latest development version). If you need any specific environment (hosted versions are deployed with a **production** environment), you can also use [Docker images](./setup/docker-images). And if you need to test your plugin in a native device, you can always use [Moodle HQ's application](https://download.moodle.org/mobile).
+You can use the app from one of the hosted versions on [latest.apps.moodledemo.net](https://latest.apps.moodledemo.net) (the latest stable version) and [main.apps.moodledemo.net](https://main.apps.moodledemo.net) (the latest development version). If you need any specific environment (hosted versions are deployed with a **production** environment), you can also use [Docker images](./setup/docker-images). And if you need to test your plugin in a native device, you can always use [Moodle HQ's application](https://download.moodle.org/mobile).
 
 This should suffice for developing plugins. However, if you are working on advanced functionality and you need to run the application from the source code, you can find more information in the [Moodle App Development guide](./development-guide).
 
@@ -696,7 +696,7 @@ Components and directives are Angular concepts; you can learn more about them an
 
 These are some useful custom components and directives that are only available in the Moodle App. Please note that this isn't the full list of custom components and directives, it's just an extract of the most common ones.
 
-You can find a full list of components and directives in the source code of the app, within [`src/core/components`](https://github.com/moodlehq/moodleapp/tree/master/src/core/components) and [`src/core/directives`](https://github.com/moodlehq/moodleapp/tree/master/src/core/directives).
+You can find a full list of components and directives in the source code of the app, within [`src/core/components`](https://github.com/moodlehq/moodleapp/tree/latest/src/core/components) and [`src/core/directives`](https://github.com/moodlehq/moodleapp/tree/latest/src/core/directives).
 
 #### `core-format-text`
 
@@ -886,8 +886,8 @@ Font icons are widely used on the app and Moodle LMS website. In order to suppor
 - Name prefixed with `fas-` or `fa-` will use [Font awesome solid library](https://fontawesome.com/v5/search?m=free&s=solid).
 - Name prefixed with `far-` will use [Font awesome regular library](https://fontawesome.com/v5/search?m=free&s=regular).
 - Name prefixed with `fab-` will use [Font awesome brands library](https://fontawesome.com/v5/search?m=free&s=brands) (But only a few are supported and we discourage to use them).
-- Name prefixed with `moodle-` will use some svg icons [imported from Moodle LMS](https://github.com/moodlehq/moodleapp/tree/master/src/assets/fonts/moodle/moodle).
-- Name prefixed with `fam-` will use [customized font awesome icons](https://github.com/moodlehq/moodleapp/tree/master/src/assets/fonts/moodle/font-awesome).
+- Name prefixed with `moodle-` will use some svg icons [imported from Moodle LMS](https://github.com/moodlehq/moodleapp/tree/latest/src/assets/fonts/moodle/moodle).
+- Name prefixed with `fam-` will use [customized font awesome icons](https://github.com/moodlehq/moodleapp/tree/latest/src/assets/fonts/moodle/font-awesome).
 - If the prefix is not found or not valid, the app will search the icon name on the [Ionicons library](https://ionic.io/ionicons).
 
 ```html title="Example of usage to show icon "pizza-slice" from font-awesome regular library"
@@ -1747,7 +1747,7 @@ $notification->customdata = [
 
 In both cases you will have to create a link handler to treat the URL. For more info on how to create the link handler, please see [how to create an advanced link handler](#link-handlers).
 
-If you want to do something that only happens when the notification is clicked, not when the link is clicked, you'll have to implement a push click handler yourself. The way to create it is similar to [creating an advanced link handler](#link-handlers), but you'll have to use `CorePushNotificationsDelegate` and your handler will have to implement the properties and functions defined in the [CorePushNotificationsClickHandler](https://github.com/moodlehq/moodleapp/blob/master/src/core/features/pushnotifications/services/push-delegate.ts#L27) interface.
+If you want to do something that only happens when the notification is clicked, not when the link is clicked, you'll have to implement a push click handler yourself. The way to create it is similar to [creating an advanced link handler](#link-handlers), but you'll have to use `CorePushNotificationsDelegate` and your handler will have to implement the properties and functions defined in the [CorePushNotificationsClickHandler](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/pushnotifications/services/push-delegate.ts#L27) interface.
 
 ### Implement a module similar to mod_label
 
