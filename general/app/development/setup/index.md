@@ -77,17 +77,16 @@ sudo pacman -S libsecret
 
 ## Running the app in a browser
 
-You can obtain a copy of the source code by cloning the public repository. If you want to work on the latest development version, you should check out the `integration` branch:
+You can obtain a copy of the source code by cloning the public repository:
 
 ```bash
 git clone git@github.com:moodlehq/moodleapp.git
-cd moodleapp
-git checkout integration
 ```
 
 Once you have the correct environment set up, you can run the application with the following two commands:
 
 ```bash
+cd moodleapp
 npm install
 npm start
 ```

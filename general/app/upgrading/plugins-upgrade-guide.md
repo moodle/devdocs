@@ -18,7 +18,7 @@ As you can see in that repository, the JS and the templates are duplicated in or
 
 Depending on which version of the app you're upgrading from, you'll need to go through multiple version upgrades. This guide is divided by version ranges, so you should be able to start with your current version and build up from there.
 
-Other than the changes outlined in this document, there may be smaller API changes that aren't highlighted here. Make sure to check the [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/master/upgrade.txt) file for an exhaustive list with all the changes.
+Other than the changes outlined in this document, there may be smaller API changes that aren't highlighted here. Make sure to check the [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt) file for an exhaustive list with all the changes.
 
 ## 4.0 to 4.1
 
@@ -60,7 +60,7 @@ In order to avoid breaking existing styles, version 4.1 will continue adding ver
 
 ## 3.9.5 to 4.0
 
-There haven't been any breaking changes from 3.9.5 to 4.0, but the UI of the application has changed drastically so we recommend taking special care that the UI of your plugin is still working properly. Also, remember to double check all the changes listed in [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/master/upgrade.txt).
+There haven't been any breaking changes from 3.9.5 to 4.0, but the UI of the application has changed drastically so we recommend taking special care that the UI of your plugin is still working properly. Also, remember to double check all the changes listed in [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt).
 
 Other than that, everything should continue working as expected. If you find something that doesn't, please [let us know](https://tracker.moodle.org/projects/MOBILE).
 

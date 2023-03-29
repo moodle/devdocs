@@ -511,7 +511,7 @@ There is a maximum line length of 140 characters for templates. Whenever that le
 </InvalidExample>
 
 :::info
-If you are using VSCode, this should be done automatically on every save with the [configuration that ships with the app](https://github.com/moodlehq/moodleapp/blob/master/.vscode/settings.json#L8).
+If you are using VSCode, this should be done automatically on every save with the [configuration that ships with the app](https://github.com/moodlehq/moodleapp/blob/latest/.vscode/settings.json#L8).
 :::
 
 ### Avoid default exports

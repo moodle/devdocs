@@ -260,7 +260,7 @@ Feature: Test app (demo)
     Then the header should be "Course 1" in the app
 ```
 
-You can find more complex examples looking at the [tests for the app core](https://github.com/moodlehq/moodleapp/blob/master/src/core/features/login/tests/behat/signup.feature) (search for files ending with `*.feature`).
+You can find more complex examples looking at the [tests for the app core](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/login/tests/behat/signup.feature) (search for files ending with `*.feature`).
 
 ## Limitations
 
@@ -310,7 +310,7 @@ VM649:391 BEHAT: 17:45:16.607 PENDING-: DELAY
 VM649:391 BEHAT: 17:45:16.653 PENDING-:
 ```
 
-While the test is paused, you can also carry out some of the app Behat steps manually by typing commands into the console, which is convenient if you're not quite sure what command would work. You can find which commands are available in the [behat-runtime.ts](https://github.com/moodlehq/moodleapp/tree/master/src/testing/services/behat-runtime.ts) file.
+While the test is paused, you can also carry out some of the app Behat steps manually by typing commands into the console, which is convenient if you're not quite sure what command would work. You can find which commands are available in the [behat-runtime.ts](https://github.com/moodlehq/moodleapp/tree/latest/src/testing/services/behat-runtime.ts) file.
 
 Here are some examples:
 
@@ -331,9 +331,9 @@ If you're using `moodle-docker`, remember that you can interact with the browser
 
 If you find something missing to test your code, you can always implement custom steps.
 
-If you're writing a plugin, you can include a new class under `tests/behat/behat\_{yourpluginname}.php`. If you're working on application code, you can always update [behat_app.php](https://github.com/moodlehq/moodleapp/blob/master/local_moodleappbehat/tests/behat/behat_app.php) as well.
+If you're writing a plugin, you can include a new class under `tests/behat/behat\_{yourpluginname}.php`. If you're working on application code, you can always update [behat_app.php](https://github.com/moodlehq/moodleapp/blob/latest/local_moodleappbehat/tests/behat/behat_app.php) as well.
 
-You can learn more about writing custom steps in the [Writing new acceptance test step definitions](https://docs.moodle.org/dev/Writing_new_acceptance_test_step_definitions) page, and if you want to see how the steps that are specific to the app work, you should look into [behat_app.php](https://github.com/moodlehq/moodleapp/blob/master/local_moodleappbehat/tests/behat/behat_app.php) and [behat-runtime.ts](https://github.com/moodlehq/moodleapp/tree/master/src/testing/services/behat-runtime.ts).
+You can learn more about writing custom steps in the [Writing new acceptance test step definitions](https://docs.moodle.org/dev/Writing_new_acceptance_test_step_definitions) page, and if you want to see how the steps that are specific to the app work, you should look into [behat_app.php](https://github.com/moodlehq/moodleapp/blob/latest/local_moodleappbehat/tests/behat/behat_app.php) and [behat-runtime.ts](https://github.com/moodlehq/moodleapp/tree/latest/src/testing/services/behat-runtime.ts).
 
 ### Testing graphical regressions
 
@@ -354,7 +354,7 @@ If you are stuck with an error and you can't find a way to continue, here's a li
 
 - Make sure you added `$CFG->behat_ionic_wwwroot = "http://localhost:8100";` (or equivalent) to your `config.php` file, and that url is reachable from the host where your Moodle site is running.
 - Remember when you need to re-run `admin/tool/behat/cli/init.php`, and make sure that you see "Configured app tests for version X.X.X". When in doubt, just run it again; it may fix your problem.
-- It is possible that your tests break if you're using an unstable version of the app. Try to use stable versions using the `master` branch if you're working with the source code or tagged releases if you're using Docker.
+- It is possible that your tests break if you're using an unstable version of the app. Try to use stable versions using the `latest` branch if you're working with the source code or tagged releases if you're using Docker.
 - Mobile Behat tests don't work well with XDebug, so if you're using it, turn it off in `php.ini` while running the tests. Also, remember to restart Apache if necessary.
 
 ### Unable to load app version from http://moodleapp:8100/config.json
