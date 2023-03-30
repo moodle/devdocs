@@ -50,7 +50,11 @@ There are three different group modes, these modes allow for restrictions to be 
 
 This is explained in more detail on the [Groups access control](https://docs.moodle.org/dev/Groups_access_control) page.
 
+:::caution
+
 Only groups with `participation` enabled are available for use in Separate and Visible groups mode. This is enabled by default for groups with *Visible to all* or *Visible to members* visibility (See below) but is always disabled for groups with *See own membership* or *Membership is hidden*.
+
+:::
 
 Calling `groups_get_all_groups()` with the `$participationonly` argument set to `true` will only return groups with `participation` enabled. If you are calling this function within an activity plugin, you will usually want to do this unless you have a good reason not to.
 
