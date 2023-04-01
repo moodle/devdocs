@@ -47,6 +47,7 @@ sidebar_position: 7
 | 5. | &#10003; |  | Monitor MDL issues created for QA fails. Add them to the "Must fix for X.Y" list and get a developer to work on the issue immediately. | Product delivery lead |
 | 6. | &#10003; |  | Begin reviewing [new and changed English language strings](https://lang.moodle.org/mod/forum/view.php?id=7) ready for `en_fix` to be merged 2 weeks prior. | English fixes lang pack maintainer |
 | 7. | &#10003; |  | Review standards certifications (Open Badges, LTI, etc) and schedule in recertification to be performed. | Product delivery lead |
+| 8. | &#10003; |  | Bump the priority of all the minor new features and improvements being must-fix or already under IR/CLR with X.Y as only affected version. Use [this search to find them](https://tracker.moodle.org/issues/?jql=project%20%3D%20MDL%20AND%20resolution%20%3D%20Unresolved%20%20AND%20type%20!%3D%20%22Bug%22%20AND%20priority%20%3C%20%22Major%22%20%20AND%20(fixversion%20in%20(versionMatches(%22Must%20fix%20for%20.*%22))%20OR%20(%22Component%20Lead%20Review%22%20IS%20NOT%20EMPTY%20AND%20affectedversion%20%3D%204.1))) (note that it will need to be adjusted for current X.Y version). Standard message will be used to explain the priority raise. | Integration Team |
 
 ## 4 weeks prior
 
@@ -61,7 +62,6 @@ sidebar_position: 7
 | 7. | &#10003; |  | Push any plugins to the plugins database which were previously a part of core. | Plugins Liaison |
 | 8. | &#10003; |  | Tidy up current latest en version of Moodle Docs prior to copying it to create new version wiki as described in [New docs version process](./newuserdocs.md). | Community Manager |
 | 9. | &#10003; |  | Review the [list of features and improvements submitted before code freeze](https://tracker.moodle.org/issues/?filter=17705&jql=filter%20%3D%2011701%20AND%20type%20!%3D%20Bug) which are awaiting integration review and decide on related QA tests to be put on hold. This should be done in the same meeting in point 2. | Product delivery lead |
-| 10. | &#10003; |  | Bump the priority of all the minor new features and improvements being must-fix or already under IR/CLR with X.Y as only affected version. Use [this search to find them](https://tracker.moodle.org/issues/?jql=project%20%3D%20MDL%20AND%20resolution%20%3D%20Unresolved%20%20AND%20type%20!%3D%20%22Bug%22%20AND%20priority%20%3C%20%22Major%22%20%20AND%20(fixversion%20in%20(versionMatches(%22Must%20fix%20for%20.*%22))%20OR%20(%22Component%20Lead%20Review%22%20IS%20NOT%20EMPTY%20AND%20affectedversion%20%3D%204.1))) (note that it will need to be adjusted for current X.Y version). Standard message will be used to explain the priority raise. | Integration Team |
 
 ## 3 weeks prior
 
