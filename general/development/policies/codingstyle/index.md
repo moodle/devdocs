@@ -350,7 +350,8 @@ Similar to [Section 2.3 of PSR-12](https://www.php-fig.org/psr/psr-12/#23-lines)
 
 #### Assignment operator
 
-There should be one blank space before and after the assignment operator `=`.
+- One or more spaces are allowed before assignments.
+- One and only one space is allowed after assignments.
 
 <ValidExample>
 
@@ -362,7 +363,7 @@ $bafoo = 'Hello world';
 
 </ValidExample>
 
-<InvalidExample>
+<ValidExample>
 
 ```php
 $foo    = true;
@@ -370,22 +371,9 @@ $foobar = false;
 $bafoo  = 'Hello world';
 ```
 
-While it seems more readable, aligning assignment operators may cause unnecessary changes to the surrounding code, especially when adding a new variable with a longer name.
+</ValidExample>
 
-For example, adding a variable `$hellofoo` to the previous code example and aligning the assignment operators will end up with a more complicated diff that may obscure the issue that the patch is fixing.
-
-```diff
-< $foo    = true;
-< $foobar = false;
-< $bafoo  = 'Hello world';
----
-> $foo      = true;
-> $foobar   = false;
-> $bafoo    = 'Hello world';
-> $hellofoo = 'Hi!';
-```
-
-</InvalidExample>
+When making decisions about the spaces to apply before assignments, please consider both surrounding and similar code.
 
 ## Naming Conventions
 
