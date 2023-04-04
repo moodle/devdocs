@@ -406,5 +406,3 @@ When defining new Step definitions in your plugin, try to make sure the step nam
 ### PHPDoc comments to map scenario steps
 
 PHPDoc style comments before functions can be used to map to your .scenario files. Read more about this here https://behat.org/en/latest/user_guide/context/definitions.html
-
-When you define more steps in your plugin, make it clear they come from your plugin
