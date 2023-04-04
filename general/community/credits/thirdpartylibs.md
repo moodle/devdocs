@@ -17,7 +17,7 @@ Some of Moodle's libraries were written by other people, and are being redistrib
 Provide a great search experience without the need for external, server-side, search services.
 
 - **Location**: admin/tool/componentlibrary/amd/src/lunr.js
-- **Version**: 2.3.8
+- **Version**: 2.3.9
 - **License**:  MIT
 - **URL**: [https://github.com/olivernn/lunr.js](https://github.com/olivernn/lunr.js)
 
@@ -42,15 +42,6 @@ phpCAS library to support CAS authentication plugin.
 - **URL**: [https://github.com/apereo/phpCAS](https://github.com/apereo/phpCAS)
 - **Copyright holders**:
   - 2007-2020, Apereo Foundation
-
-### MongoDB PHP Library
-
-This library provides a high-level abstraction around the lower-level PHP driver, also known as the mongodb extension.
-
-- **Location**: cache/stores/mongodb/MongoDB
-- **Version**: 1.15.0
-- **License**:  Apache 2.0
-- **URL**: [https://github.com/mongodb/mongo-php-driver](https://github.com/mongodb/mongo-php-driver)
 
 ### IMS-BLTI
 
@@ -83,7 +74,7 @@ Compiled C program to convert TeX into GIFs
 The general H5P library.
 
 - **Location**: h5p/h5plib/v124/joubel/core
-- **Version**: moodle-1.22.4
+- **Version**: moodle-1.23
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-php-library/](https://github.com/h5p/h5p-php-library/)
 - **Copyright holders**:
@@ -94,7 +85,7 @@ The general H5P library.
 A general library that is supposed to be used in most PHP implementations of H5P.
 
 - **Location**: h5p/h5plib/v124/joubel/editor
-- **Version**: moodle-1.22.4
+- **Version**: moodle-1.23
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-editor-php-library/](https://github.com/h5p/h5p-editor-php-library/)
 - **Copyright holders**:
@@ -105,7 +96,7 @@ A general library that is supposed to be used in most PHP implementations of H5P
 Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.
 
 - **Location**: lib/adodb
-- **Version**: 5.22.2
+- **Version**: 5.22.4
 - **License**:  BSD/LGPL 3-Clause/2.1+
 - **URL**: [https://github.com/ADOdb/ADOdb](https://github.com/ADOdb/ADOdb)
 - **Copyright holders**:
@@ -128,18 +119,18 @@ JavaScript library to insulate apps from spec changes and prefix differences in 
 Simple yet flexible JavaScript charting for designers & developers.
 
 - **Location**: lib/amd/src/chartjs-lazy.js
-- **Version**: 3.8.0 (with Moodle customisations)
+- **Version**: 4.2.1 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/chartjs/Chart.js](https://github.com/chartjs/Chart.js)
 - **Copyright holders**:
-  - 2016 Nick Downie
+  - 2014-2022 Chart.js Contributors
 
 ### loglevel.js
 
 Minimal lightweight simple logging for JavaScript.
 
 - **Location**: lib/amd/src/loglevel.js
-- **Version**: 1.8.0
+- **Version**: 1.8.1
 - **License**:  MIT
 - **URL**: [https://github.com/pimterry/loglevel/](https://github.com/pimterry/loglevel/)
 - **Copyright holders**:
@@ -183,7 +174,7 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 Accessibility testing engine for websites and other HTML-based user interfaces.
 
 - **Location**: lib/behat/axe
-- **Version**: 4.5.1
+- **Version**: 4.6.3
 - **License**:  MPL 2.0
 - **URL**: [https://github.com/dequelabs/axe-core](https://github.com/dequelabs/axe-core)
 - **Copyright holders**:
@@ -205,7 +196,7 @@ Bennu is an object-oriented library written in PHP that implements the iCalendar
 Beautify HTML code in Atto.
 
 - **Location**: lib/editor/atto/plugins/html/yui/src/beautify
-- **Version**: 1.14.6
+- **Version**: 1.14.7
 - **License**:  MIT
 - **URL**: [https://github.com/beautify-web/js-beautify](https://github.com/beautify-web/js-beautify)
 - **Copyright holders**:
@@ -216,7 +207,7 @@ Beautify HTML code in Atto.
 CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 
 - **Location**: lib/editor/atto/plugins/html/yui/src/codemirror
-- **Version**: 5.65.9
+- **Version**: 5.65.12
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/codemirror5](https://github.com/codemirror/codemirror5)
 
@@ -225,7 +216,7 @@ CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 A cross-browser JavaScript range and selection library.
 
 - **Location**: lib/editor/atto/yui/src/rangy/js/*.*
-- **Version**: 1.3.0 (with Moodle customisations)
+- **Version**: 1.3.1 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/timdown/rangy](https://github.com/timdown/rangy)
 - **Copyright holders**:
@@ -234,39 +225,9 @@ A cross-browser JavaScript range and selection library.
 ### Tiny
 
 - **Location**: lib/editor/tiny/js/tinymce
-- **Version**: 6.2.0
+- **Version**: 6.3.2
 - **License**:  MIT
-
-### PDW Toolbar Toggle
-
-A plugin for the TinyMCE WYSIWYG editor. The plugin shows and hides the toolbars just like the Kitchen Sink plugin in Wordpress.
-
-- **Location**: lib/editor/tinymce/plugins/pdw/tinymce
-- **Version**: 1.2
-- **License**:  MIT
-- **URL**: [https://github.com/GuidoNeele/PDW-Toggle-Toolbars-TinyMCE](https://github.com/GuidoNeele/PDW-Toggle-Toolbars-TinyMCE)
-- **Copyright holders**:
-  - Guido Neele (www.neele.name)
-
-### TinyMCE spellchecker
-
-TinyMCE - Spellchecker for PHP.
-
-- **Location**: lib/editor/tinymce/plugins/spellchecker/rpc.php
-- **Version**: 2.0.6.1
-- **License**:  LGPL 2.1+
-- **URL**: [https://github.com/tinymce/tinymce_spellchecker_php](https://github.com/tinymce/tinymce_spellchecker_php)
-
-### TinyMCE
-
-The JavaScript Rich Text editor.
-
-- **Location**: lib/editor/tinymce/tiny_mce
-- **Version**: 3.5.11 (with Moodle customisations)
-- **License**:  LGPL 2.1+
 - **URL**: [https://github.com/tinymce/tinymce](https://github.com/tinymce/tinymce)
-- **Copyright holders**:
-  - 2004-2012, Moxiecode Systems AB, All rights reserved.
 
 ### Emoji data
 
@@ -284,22 +245,22 @@ Library to parse easily data and sprite sheets for emoji.
 Class to safely evaluate math expressions.
 
 - **Location**: lib/evalmath
-- **Version**: 1.0.0 (with Moodle customisations)
+- **Version**: 1.0.1 (with Moodle customisations)
 - **License**:  BSD
 - **URL**: [https://github.com/dbojdo/eval-math](https://github.com/dbojdo/eval-math)
 - **Copyright holders**:
   - Miles Kaufmann
 
-### Font Awesome - http://fontawesome.io
+### Font Awesome - http://fontawesome.com
 
 The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
 - **Location**: lib/fonts
-- **Version**: 4.7.0
+- **Version**: 6.3.0
 - **License**:  SIL OFL 1.1
 - **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
 - **Copyright holders**:
-  - Dave Gandy
+  - 2023 Fonticons, Inc
 
 ### GeoPattern
 
@@ -404,7 +365,7 @@ Filters HTML.
 jQuery is a fast, small, and feature-rich JavaScript library widely used on moodle.
 
 - **Location**: lib/jquery
-- **Version**: 3.6.1
+- **Version**: 3.6.4
 - **License**:  MIT
 - **URL**: [https://github.com/jquery/jquery](https://github.com/jquery/jquery)
 - **Copyright holders**:
@@ -426,7 +387,7 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 A library used for building IMS-certified LTI 1.3 tool providers in PHP.
 
 - **Location**: lib/lti1p3
-- **Version**: 5.2.1 (with Moodle customisations)
+- **Version**: 5.2.6 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/packbackbooks/lti-1-3-php-library](https://github.com/packbackbooks/lti-1-3-php-library)
 - **Copyright holders**:
@@ -461,7 +422,7 @@ All rights reserved.
 Library for processing of GeoIP data files.
 
 - **Location**: lib/maxmind/GeoIp2
-- **Version**: 2.11.0
+- **Version**: 2.13.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/GeoIP2-php](https://github.com/maxmind/GeoIP2-php)
 - **Copyright holders**:
@@ -483,7 +444,7 @@ PHP API for reading MaxMind DB files.
 CSS & JavaScript minifier, in PHP
 
 - **Location**: lib/minify/matthiasmullie-minify
-- **Version**: 1.3.69 (with Moodle customisations)
+- **Version**: 1.3.70 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/matthiasmullie/minify](https://github.com/matthiasmullie/minify)
 
@@ -589,7 +550,7 @@ A Parser for CSS Files written in PHP.
 PHP Enum implementation inspired from SplEnum
 
 - **Location**: lib/php-enum
-- **Version**: 1.8.3
+- **Version**: 1.8.4
 - **License**:  MIT
 - **URL**: [https://github.com/myclabs/php-enum](https://github.com/myclabs/php-enum)
 - **Copyright holders**:
@@ -600,7 +561,7 @@ PHP Enum implementation inspired from SplEnum
 A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
 
 - **Location**: lib/php-jwt
-- **Version**: 6.3.0
+- **Version**: 6.4.0
 - **License**:  BSD 3-Clause
 - **URL**: [https://github.com/firebase/php-jwt](https://github.com/firebase/php-jwt)
 - **Copyright holders**:
@@ -611,7 +572,7 @@ A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming t
 Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are based upon the standard AspEmail(tm) classes.
 
 - **Location**: lib/phpmailer
-- **Version**: 6.6.5
+- **Version**: 6.7.1
 - **License**:  LGPL 2.1
 - **URL**: [https://github.com/PHPMailer/PHPMailer](https://github.com/PHPMailer/PHPMailer)
 - **Copyright holders**:
@@ -622,7 +583,7 @@ Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are 
 Library to read, write and create spreadsheet documents in PHP.
 
 - **Location**: lib/phpspreadsheet
-- **Version**: 1.25.2 (with Moodle customisations)
+- **Version**: 1.28.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/PHPOffice/PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
 
@@ -757,7 +718,7 @@ scssphp is a compiler for SCSS written in PHP.
 Simple Pie helps with blogs.
 
 - **Location**: lib/simplepie
-- **Version**: 1.6.0
+- **Version**: 1.8.0
 - **License**:  BSD
 - **URL**: [https://github.com/simplepie/simplepie](https://github.com/simplepie/simplepie)
 
@@ -775,7 +736,7 @@ A generic function and convention to trigger deprecation notices
 Class to generate PDF files
 
 - **Location**: lib/tcpdf
-- **Version**: 6.5.0 (with Moodle customisations)
+- **Version**: 6.6.2 (with Moodle customisations)
 - **License**:  LGPL 3.0-only
 - **URL**: [https://github.com/tecnickcom/TCPDF](https://github.com/tecnickcom/TCPDF)
 - **Copyright holders**:
@@ -808,7 +769,7 @@ A Hierarchical Profiler for PHP.
 The Yahoo! User Interface Library is a set of utilities and controls, in JavaScript, for building richly interactive web applications using techniques such as DOM scripting, DHTML and AJAX. The YUI Library also includes several core CSS resources.Set of user-interface components using AJAX, DHTML etc. We use it for all our AJAX-related stuff.
 
 - **Location**: lib/yuilib
-- **Version**: 3.17.2
+- **Version**: 3.18.1
 - **License**:  BSD
 - **URL**: [https://github.com/yui/yui3](https://github.com/yui/yui3)
 - **Copyright holders**:
@@ -830,7 +791,7 @@ The Gallery is a collection of modules that have been developed by the YUI commu
 PHP ZIP Streaming Library
 
 - **Location**: lib/zipstream
-- **Version**: 2.2.0
+- **Version**: 2.4.0
 - **License**:  MIT
 - **URL**: [https://github.com/maennchen/ZipStream-PHP](https://github.com/maennchen/ZipStream-PHP)
 - **Copyright holders**:
@@ -932,7 +893,7 @@ A standalone Amazon S3 (REST) client for PHP 5.2.x using CURL that does not requ
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/alert.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -944,7 +905,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/button.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -956,7 +917,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/carousel.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -968,7 +929,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/collapse.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -980,7 +941,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/dropdown.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -992,7 +953,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/modal.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1004,7 +965,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/popover.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1016,7 +977,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/scrollspy.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1028,7 +989,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/tab.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1040,7 +1001,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/toast.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1052,7 +1013,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/tools/sanitizer.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1064,7 +1025,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/tooltip.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1076,7 +1037,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/bootstrap/util.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1088,7 +1049,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/index.js
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1100,23 +1061,23 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/scss/bootstrap
-- **Version**: 4.6.0 (with Moodle customisations)
+- **Version**: 4.6.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
   - 2011-2021 Twitter, Inc
   - 2011-2021 The Bootstrap Authors
 
-### Font Awesome - http://fontawesome.io
+### Font Awesome - http://fontawesome.com
 
 Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
 - **Location**: theme/boost/scss/fontawesome
-- **Version**: 4.7.0
+- **Version**: 6.3.0
 - **License**:  (MIT)
 - **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
 - **Copyright holders**:
-  - Dave Gandy
+  - 2023 Fonticons, Inc
 
 ## Other libraries
 

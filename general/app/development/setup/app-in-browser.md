@@ -85,12 +85,17 @@ export MOODLE_APP_BROWSER=unsafe-chromium
 These instructions have only been tested in Linux. If you are using a different operative system, [let us know](https://github.com/moodle/devdocs/issues/76) how it went (or just [edit this page](https://github.com/moodle/devdocs/edit/main/docs/moodleapp/development/setup/app-in-browser.md)!).
 :::
 
+## Using the hosted versions of the app
+
+You can access your site using the hosted versions of the app in [latest.apps.moodledemo.net](https://latest.apps.moodledemo.net) (the latest stable version) and [main.apps.moodledemo.net](https://main.apps.moodledemo.net) (the current version in development).
+
 ## Tips & tricks
 
 Once you have everything set up, you should be able to develop like you would with any other front-end application. You can learn about the development tools you have available by reading the [Chrome DevTools documentation](https://developer.chrome.com/devtools/index).
 
 Here's some things we find useful to work with the Moodle App in particular:
 
+- [Angular DevTools](https://chrome.google.com/webstore/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh) — Browser extension to debug Angular applications during development.
 - [Device Mode](https://developer.chrome.com/docs/devtools/device-mode/) — You can use this feature to make the browser behave more like a native device. This will work best if you [dock the development panel](https://developer.chrome.com/docs/devtools/customize/placement/) to one side (left or right), but you may want to do something else in your environment.
 - [Console Panel](https://developer.chrome.com/docs/devtools/console/) — This panel is essential for any developer, since it will show you any errors or custom messages that you've written. You can also use the search box to filter messages seeing everything is too overwhelming. You will also see specific logs from the Moodle App, but keep in mind that they are not used in production environment. If you are not running the application yourself, you can inspect the environment by opening the /assets/env.json url.
 - [Elements Panel](https://developer.chrome.com/docs/devtools/dom/) — This panel is also essential for any developer, you'll be able to inspect and modify the HTML that is actually being rendered.

@@ -757,7 +757,7 @@ Let's assume that the context for this page doesn't match what the tabs template
 
 Unfortunately, we'll almost certainly never have complete control over all of the contexts that our template will be rendered in which means we'll be expecting people to write new webservices to supply the same data in different formats every time they want to use a template. It becomes an unmanageable problem.
 
-Enter blocks! We can make the template more flexible by defining sections of the template that can be overriden when they are included. Pretty neat! This will allow us to enforce a certain core structure but not enforce a context on the template that is including the tabs.
+Enter blocks! We can make the template more flexible by defining sections of the template that can be overridden when they are included. Pretty neat! This will allow us to enforce a certain core structure but not enforce a context on the template that is including the tabs.
 
 Let's have another go at that template, this time leveraging blocks:
 

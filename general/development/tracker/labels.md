@@ -78,6 +78,9 @@ Used to identify issues that affect the interface presented to users. This label
 - [`ux_review_required`](https://tracker.moodle.org/issues/?jql=labels%20%3D%20%22ux_review_required%22)<br/>
 Used to identify issues that require review by Moodle HQ UX designers. This label will usually be added to issues that involve more than a trivial UI or workflow change, to ensure UX best practice is applied, with a consistent and human centered design approach. Adding this label will ensure the issue is placed on the UX backlog for review and input.
 
+- `ux_writing`<br/>
+For requesting help with naming and other wordings of new features and improvements. The issue will be added to the UX writing backlog for review and input.
+
 - `api_change`<br/>
 Used to identify API changes. This label will usually be added together with the `dev_docs_required` label, but the `api_change` will remain permanently with the issue, while the `dev_docs_required` label is removed after docs are created. This label is searched for during the preparation of release notes.
 

@@ -16,7 +16,7 @@ The `external_api` class, and all related classes have been moved from `lib/exte
 
 :::note Delayed deprecation
 
-The old class locations have been aliased for backwards compatibility and will emit a deprecation notice in a _future_ release.
+The old class locations have been aliased for backwards compatibility and will emit a deprecation notice in a _future_ release. Please remember to add `require_once($CFG->dirroot . '/lib/externallib.php');` to your external service classes to make the aliases work.
 
 If you are writing a Moodle plugin which has a single codebase shared with older versions of Moodle, you should continue to use the old API locations at this time.
 
@@ -108,3 +108,27 @@ class quiz_archive_report extends quiz_archive_parent_class_alias {
 ```
 
 </CodeExample>
+
+## Font Awesome 6
+
+The Font Awesome third-party library has been upgraded from 4.7 to 6.3.0 in MDL-76989. The syntax has slightly changed. The free version included in Moodle only supports the solid and regular styles:
+
+```css title="Version 4's syntax"
+<i class="fa fa-star"></i>
+<i class="fa fa-star-o"></i>
+```
+
+```css title="Version 6's syntax"
+<i class="fa-regular fa-star"></i>
+<i class="fa-solid fa-star"></i>
+```
+
+Font Awesome 6 is backwards compatible (because a shim has been included too), so the old syntax still works.
+
+In the SCSS/CSS files some changes needs to be done to display the icons properly:
+
+- The attribute `content: $fa-var-xxx` needs to be converted to `content: fa-content($fa-var-xxx)`
+- The regular style is used by default. When the solid styled icon needs to be used, the following must be added: `@extend .fa-solid`. There are other ways to achieve the same. More information can be found in [this page](https://fontawesome.com/v6/docs/web/use-with/scss#a-more-manual-custom-css-approach).
+- `@include fa-icons()` is not required anymore (when it's used, the icons are not displayed properly).
+
+More information about the changes between 4 and 6, including any icons which have been renamed, can be found in https://fontawesome.com/docs/web/setup/upgrade/upgrade-from-v4
