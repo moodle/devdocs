@@ -22,6 +22,7 @@ If there are any topics that you would like to present or discuss at a developer
 
 ### 2023
 
+- [Developer meeting May 2023](./202305.md)
 - [Developer meeting March 2023](./202303.md)
 - [Developer meeting January 2023](./202301.md)
 
