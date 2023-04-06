@@ -47,7 +47,7 @@ If you are unable to find a solution, contact a [Moodle Partner](https://moodle.
 
 ### Using a Browser
 
-In your [Chromium-based browser](./setup/app-in-browser), you can access your site using the hosted versions of the app in [master.apps.moodledemo.net](https://master.apps.moodledemo.net) (the latest stable version) and [integration.apps.moodledemo.net](https://integration.apps.moodledemo.net).
+In your [Chromium-based browser](./setup/app-in-browser), you can access your site using the hosted versions of the app in [latest.apps.moodledemo.net](https://latest.apps.moodledemo.net) (the latest stable version) and [main.apps.moodledemo.net](https://main.apps.moodledemo.net).
 
 Once you're using your site, you can open the [Network panel](https://developer.chrome.com/docs/devtools/network/) of the developer tools and inspect requests. If you're only interested in web service requests, [you can filter](https://developer.chrome.com/docs/devtools/network/#filter) writing `.php` in the filter input.
 

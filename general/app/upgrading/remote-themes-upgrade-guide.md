@@ -96,7 +96,7 @@ Starting with this version, Windows Phone is no longer supported so you should r
 
 Starting with this version, it is possible to use [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to make easier customisations, so it's likely that you won't need to override as many styles as before.
 
-You can see some examples in the sections below, and you can also look at [the theme file](https://github.com/moodlehq/moodleapp/blob/master/src/theme/theme.light.scss) to find some of the main variables of the app.
+You can see some examples in the sections below, and you can also look at [the theme file](https://github.com/moodlehq/moodleapp/blob/latest/src/theme/theme.light.scss) to find some of the main variables of the app.
 
 ### Colors
 
