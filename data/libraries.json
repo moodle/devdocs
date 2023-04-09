@@ -536,7 +536,7 @@
         "location": "lib/openspout",
         "name": "OpenSpout",
         "description": "Library to read and write spreadsheet files (CSV, XLSX and ODS).",
-        "version": "3.7.3",
+        "version": "4.13.0",
         "license": "MIT",
         "repository": "https://github.com/openspout/openspout",
         "customised": false
