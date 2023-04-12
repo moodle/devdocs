@@ -484,7 +484,7 @@ PHP library for displaying mustache templates.
 Library to read and write spreadsheet files (CSV, XLSX and ODS).
 
 - **Location**: lib/openspout
-- **Version**: 3.7.3
+- **Version**: 4.13.0
 - **License**:  MIT
 - **URL**: [https://github.com/openspout/openspout](https://github.com/openspout/openspout)
 - **Copyright holders**:
