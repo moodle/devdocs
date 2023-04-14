@@ -239,7 +239,7 @@ Bugs should normally be fixed on all the supported stable branches that are affe
 
 ### Develop your change using git
 
-Develop your fix and push the change to an open git repository, for example on github.com. See also [Git for developers](https://docs.moodle.org/dev/Git_for_developers)
+Develop your fix and push the change to an open git repository, for example on github.com. See also [Git for developers](/docs/guides/git/)
 
 It is essential that your code follows the [Moodle Coding Guide](./policies.md).
 
