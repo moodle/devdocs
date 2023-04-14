@@ -51,26 +51,38 @@ class do_something extends \core\task\adhoc_task {
 
 </details>
 
-### Queueing the task for execution
+### Custom data
 
-The processing of adhoc tasks is handled by the task manager. Typically you will instantiate a copy of your class, setting any relevant data, and then use the manager to queue the task, for example:
+Adhoc tasks can be configured with custom data which is available when the task is run. You might think of custom data as method parameters.
+
+The custom data fields can contain any JSON-serializable content, and can be set using the `set_custom_data(mixed $content)` method.
+
+It can be fetched using the `get_custom_data(): mixed` method.
+
+We recommend only ever calling `set_custom_data()` from within a factory method in the task class itself.
 
 ```php
-// Create the instance
-$mytask = new \mod_example\task\do_something();
+class do_something extends \core\task\adhoc_task {
 
-// Run this task as a specific user:
-$mytask->set_userid($someuser->id);
+    public static function instance(
+        int $id,
+        string $status,
+    ): void {
+        $task = new self();
+        $task->set_custom_data((object) [
+            'id' => $id,
+            'status' => $status,
+        ]);
 
-// Set some custom data.
-// Note: This data must be serializable.
-$mytask->set_custom_data([
-    'documentation' => 'present',
-    'correct' => true,
-])
+        return $task;
+    }
 
-// Queue the task.
-\core\task\manager::queue_adhoc_task($mytask);
+    public function execute() {
+        $data = $this->get_custom_data();
+        mtrace($data->id);
+        mtrace($data->status);
+    }
+}
 ```
 
 ### Task features
@@ -83,15 +95,20 @@ Unless otherwise specified, all tasks will run as the CLI admin user. This is of
 
 ```php
 // Run this task as a specific user:
-$mytask->set_userid($someuser->id);
+$task->set_userid($someuser->id);
 ```
+
+:::note
+
+We recommend that setting of the task user should also be performed within a factory method.
+
+:::
 
 #### Set a task to run at a future time
 
 You may need to plan to run a task at a future time - for example you may queue a forum digest task to run at a particular time. This can be accomplished using the `set_next_run_time()` function before queueing the task, for example:
 
 ```php
-$task = new my_future_task();
 $task->set_next_run_time($futuretime);
 \core\task\manager::queue_adhoc_task($task);
 ```
