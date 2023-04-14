@@ -96,7 +96,7 @@ function get_enrolled_users(
   <summary>View example</summary>
   <div>
 
-Get all users who are able to summit an assignment:
+Get all users who are able to submit an assignment:
 
 ```php
 $submissioncandidates = get_enrolled_users($modcontext, 'mod/assignment:submit');
