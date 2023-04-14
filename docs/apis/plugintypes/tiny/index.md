@@ -112,7 +112,7 @@ Once you have created a plugin skeleton configuration, you can generate your plu
 php admin/tool/pluginskel/cli/generate.php tiny_example.yml
 ```
 
-This will generate a working skeleton file for your plugin.
+This will generate a working skeleton file for your plugin. Remember that you component name must start with `tiny_`.
 
 :::note Compiled JavaScript
 
