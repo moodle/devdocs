@@ -23,9 +23,8 @@ sidebar_position: 7
 | :---: | :---: | :---: | --- | --- |
 | 1. | &#10003; |  | The [Continuous Integration](../integration/index.md#during-continuous-integration.2ffreeze.2fqa-period) period begins. Warn about it everywhere (telegram, exposed posts...).<br/>Rolling (on demand, beta, rc... all them together with stable weeklies) happens often (Tuesday & Friday are the usual days). All the team is on integration 100% since this week and until the end of continuous. | Integration Team |
 | 2. | &#10003; |  | Full demo of new code and sign-off for internal HQ projects. Decide which projects will be completed by the code freeze. | Platform manager / Head of educational solutions |
-| 3. | &#10003; |  | Check [closed qa_test_required-labelled issues](https://tracker.moodle.org/issues/?jql=labels%20%3D%20qa_test_required%20AND%20status%20%3D%20Closed) and create new QA tests as required. | Testing Maintainer |
+| 3. | &#10003; |  | <ul><li>Check [closed qa_test_required-labelled issues](https://tracker.moodle.org/issues/?jql=labels%20%3D%20qa_test_required%20AND%20status%20%3D%20Closed) and create new QA tests as required.</li><li>Let the community know [QA testing](../testing/qa.md) starts in two weeks and how they can participate.</li></ul> | Testing Maintainer |
 | 4. | &#10003; |  | Warn external developers about the impending code freeze in a post to the [General developer forum](http://moodle.org/mod/forum/view.php?id=55). ([example](https://moodle.org/mod/forum/discuss.php?d=225854)) | Platform Manager |
-| 5. | &#10003; |  | Let the community know [QA testing](../testing/qa.md) starts in two weeks and how they can participate. | Community Manager |
 
 ## 6 weeks prior
 
