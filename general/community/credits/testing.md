@@ -110,6 +110,10 @@ Adriano Ruseler, Adrian Perez, Alexander Dominicus, AL Rachels, Amaia Anabitarte
 
 Adriano Ruseler, Alistair Spark, AL Rachels, Amaia Anabitarte, Angelia Dela Cruz, Anthony Borrow, Avi Levy, Chen Levy, Chris Pratt, David Woloszyn, Eli Zard, Eva Dörfler, Ferran Recio, Hoda Askar, Huong Nguyen, Ilya Tregubov, Jake Dallimore, Jasmin Klindzic, Jean-Roch Meurisse, Jeremy Carre, John Edward Pedregosa, Julia, Jun Pataleta, Kevin Percy, Kim Jared Lucas, Laurent David, Luiggi Sansonetti, Lya Gobetti, Maria João, Mathew May, Meirza, Mihail Geshoski, Minh Hanh NGUYEN, Miri Lipson, Moien Abadi, Nadav Kavalerchik, Nicolas Martignoni, parsaseidahmad, Parto Khalili, Patrycja Glogowska, Praveen Chamarthi, Raquel Ortega, Ron Carl Alfon Yu, Saeed Ighanian, Sepehr Niki, Shamim Rezaie, Simey Lameze, Stephen Bourget, Stephen Grono, Stevani Andolo, Tamar Elikishvili, Tamir Hajaj, Tomasz Szkutnik
 
+## Moodle 4.2 QA
+
+Abe de Boer, Adriano Ruseler, Almog Aharon, AL Rachels, Amaia Anabitarte, Anderson Blaine, Angelia Dela Cruz, Angelina sutton , Arkadiusz Krawiec, Avi Levy, Carlos Escobedo, Chen Levy, Clement Prudhomme, Dag Klimas, David Woloszyn, Dominique-Alain Jan, Eli Zard, Eric Merrill, Fernando Acedo, Gemma Lesterhuis, Huong Nguyen, Jake Dallimore, Jean-Marc Doucet, Karen Holland, Kevin Percy, Kim Jared Lucas, Laurent David, Luiggi Sansonetti, Mary Cooch, Mathew May, Meirza, Michelle Lomman, Mihail Geshoski, Miri Lipson, Nadav Kavalerchik, Nicolas Martignoni, Patrycja Glogowska, Raquel Ortega, Ron Carl Alfon Yu, Shamim Rezaie, Simey Lameze, Stephen Bourget, Stephen Grono, Stevani Andolo, Tamahou Te Kowhai Scott, Tamar Elikishvili, Tamir Hajaj, Tomasz Szkutnik, Vika ablogeev
+
 <!-- cspell:enable -->
 
 ## See also
