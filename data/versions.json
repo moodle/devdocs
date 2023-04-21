@@ -7,7 +7,14 @@
             "generalEndDate": "22 April 2024",
             "securityEndDate": "7 October 2024",
             "isLTS": false,
-            "releases": []
+            "releases": [
+                {
+                    "name": "4.2.0",
+                    "releaseDate": "24 April 2023",
+                    "version": 2023042400,
+                    "upgradePath": "https://docs.moodle.org/402/en/Upgrading"
+                }
+            ]
         },
         {
             "name": "4.1",
