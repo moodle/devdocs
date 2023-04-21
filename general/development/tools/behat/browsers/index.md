@@ -70,7 +70,7 @@ Not all the drivers can execute all of Moodle's step definitions; we tagged the 
 Note that, to skip some tag, you must prepend it with the <tt>~</tt> (logical NOT) character. Examples:
 
 - Run all tests but `@_alert</tt> ones: <tt>--tags '~@_alert'`
-- Run all chrome tests but `@skip_chrome_zerosize` ones: `--tags '@JavaScript&&~@skip_chrome_zerosize'`
+- Run all chrome tests but `@skip_chrome_zerosize` ones: `--tags '@javascript&&~@skip_chrome_zerosize'`
 
 ## Working combinations of OS+Browser+selenium
 

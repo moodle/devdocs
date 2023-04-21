@@ -420,7 +420,7 @@ Running parallel (headless) runs on different selenium servers avoid random focu
 
 With the `--tags` or the `-name` Behat options you can filter which tests are going to run or which ones are going to be skipped. There are a few tags that you might be interested in:
 
-- `@JavaScript`: All the tests that runs in a browser using JavaScript; they require Selenium or the browser's own automation layer, as per [Run tests without Selenium](./running.md#run-tests-without-selenium-chromedriver-geckodriver) to be running, otherwise an exception will be thrown.
+- `@javascript`: All the tests that runs in a browser using JavaScript; they require Selenium or the browser's own automation layer, as per [Run tests without Selenium](./running.md#run-tests-without-selenium-chromedriver-geckodriver) to be running, otherwise an exception will be thrown.
 - `@_file_upload`: All the tests that involves file uploading or any OS feature that is not 100% part of the browser. They should only be executed when Selenium is running in the same machine where the tests are running.
 - `@_alert`: All the tests that involves JavaScript dialogs (alerts, confirms...) are using a feature that is OS-dependant and out of the browser scope, so they should be tag appropriately as not all browsers manage them properly.
 - `@_switch_window`: All the tests that are using the `I switch to "NAME" window` step should be tagged as not all browsers manage them properly.
@@ -586,7 +586,7 @@ If you would prefer not to use the `moodle-browser-config` tool but still wish t
 $CFG->behat_profiles = [
         'chrome' => [
             'browser' => 'chrome',
-            'tags' => '@JavaScript',
+            'tags' => '@javascript',
         ],
 ];
 ```

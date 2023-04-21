@@ -59,7 +59,7 @@ Feature: Here comes a description of your user story.
 ```
 
 The tags on top of the feature description can be used to select specific test cases when running the tests.
-The '@JavaScript' tag should only be used, if JavaScript is needed to execute your test. This is dependent on the step you will use in your definition.
+The `@javascript` tag should only be used, if JavaScript is needed to execute your test. This is dependent on the step you will use in your definition.
 JavaScript tests are usually much slower than tests executed without JavaScript.
 
 Afterwards you can specify a scenario:
