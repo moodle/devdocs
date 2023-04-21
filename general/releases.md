@@ -90,6 +90,17 @@ Minor releases dates differ slightly from release to release depending on the ti
 
 :::
 
+## Moodle 4.2
+
+<ReleaseTable releaseName="4.2" />
+
+:::info
+
+Bug fixes for general core bugs in 4.2.x will end 22 April 2024 (12 months).<br/>
+Bug fixes for security issues in 4.2.x will end 7 October 2024 (18 months).
+
+:::
+
 ## Moodle 4.1 (LTS)
 
 <ReleaseTable releaseName="4.1" />
