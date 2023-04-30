@@ -660,7 +660,7 @@
         "location": "lib/phpxmlrpc",
         "name": "phpxmlrpc",
         "description": "A php library for building xml-rpc clients and servers",
-        "version": "4.8.1",
+        "version": "4.10.1",
         "license": "BSD",
         "licenseversion": "3-Clause",
         "repository": "https://github.com/gggeek/phpxmlrpc",
