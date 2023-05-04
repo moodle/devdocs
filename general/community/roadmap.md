@@ -71,7 +71,7 @@ Expect more modernised solutions, easier integrations and a cleaner, leaner plat
 
 ## Where can I find out more?
 
-To see all the details for our upcoming developments, you can visit the roadmap at any time simply by logging into Tracker and [viewing our public board](https://tracker.moodle.org/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA&selectedIssue=IDEA-86).
+To see all the details for our upcoming developments, you can visit the roadmap at any time simply by logging into Tracker and [viewing our public board](https://tracker.moodle.org/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA).
 
 To stay up to date with all the latest developments, please keep an eye out for our Showcase Shorts, a bird's eye view of our latest design and development outcomes, announced on moodle.org [Community News](https://moodle.org/news) every few weeks.
 
