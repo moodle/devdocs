@@ -592,7 +592,7 @@ Library to read, write and create spreadsheet documents in PHP.
 A php library for building xml-rpc clients and servers
 
 - **Location**: lib/phpxmlrpc
-- **Version**: 4.8.1 (with Moodle customisations)
+- **Version**: 4.10.1 (with Moodle customisations)
 - **License**:  BSD 3-Clause
 - **URL**: [https://github.com/gggeek/phpxmlrpc](https://github.com/gggeek/phpxmlrpc)
 - **Copyright holders**:
