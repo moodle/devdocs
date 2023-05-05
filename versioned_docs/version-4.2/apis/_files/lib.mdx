@@ -1,0 +1,11 @@
+<!-- markdownlint-disable first-line-heading -->
+
+The `lib.php` file is a legacy file which acts as a bridge between Moodle core, and the plugin. In recent plugins it is should only used to define callbacks and related functionality which currently is not supported as an auto-loadable class.
+
+All functions defined in this file **must** meet the requirements set out in the relevant section of the [Coding style](/general/development/policies/codingstyle#Functions-and-Methods).
+
+:::note Performance impact
+
+Moodle core often loads all the <tt>lib.php</tt> files of a given plugin types. For performance reasons, it is strongly recommended to keep this file as small as possible and have just required code implemented in it. All the plugin's internal logic should be implemented in the auto-loaded classes.
+
+:::
