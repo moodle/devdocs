@@ -79,6 +79,15 @@ const config = {
 
     themes: ['@docusaurus/theme-mermaid'],
 
+    scripts: [
+        // Zipchat integration.
+        // See Martin Dougiamas for details on configuration.
+        {
+            src: 'https://zipchat.ai/widget/zipchat.js?id=gQKDVDpI9xQWW4n04W4K',
+            defer: true,
+        },
+    ],
+
     presets: [
         [
             'classic',
