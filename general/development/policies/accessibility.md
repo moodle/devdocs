@@ -26,14 +26,14 @@ Accreditations expire after one year, but this does not mean that the accreditat
 |---------|-------------------------------------------|----------------------------------------------------------|
 | v3.10   | 10 November 2020                          | [MDL-67688](https://tracker.moodle.org/browse/MDL-67688) |
 | v3.11   | 8 November 2021                           | [MDL-72657](https://tracker.moodle.org/browse/MDL-72657) |
-| v4.0    | _In progress_                             | [MDL-74624](https://tracker.moodle.org/browse/MDL-74624) |
-| v4.1    | _Pending_                                 |                                                          |
+| v4.0    | 3 May 2023                                | [MDL-74624](https://tracker.moodle.org/browse/MDL-74624) |
+| v4.1, v4.2 | _Pending_                              | [MDL-78185](https://tracker.moodle.org/browse/MDL-78185) |
 
 **[Moodle App](https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle-mobile-app)**
 
 - WCAG 2.1 Level AA accreditation issued on 30 June 2021
 
-An overview of Moodle's conformance with the [WCAG 2.1](https://www.w3.org/TR/WCAG21/) guidelines can be found in our [accessibility conformance report](https://docs.moodle.org/311/en/VPAT#Moodle%20accessibility%20conformance%20report).
+An overview of Moodle's conformance with the [WCAG 2.1](https://www.w3.org/TR/WCAG21/) guidelines can be found in our [accessibility conformance report](https://docs.moodle.org/en/VPAT#Moodle%20accessibility%20conformance%20report).
 
 :::
 
