@@ -31,7 +31,7 @@ Accreditations expire after one year, but this does not mean that the accreditat
 
 **[Moodle App](https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle-mobile-app)**
 
-- WCAG 2.1 Level AA accreditation issued on 30 June 2021
+- v4.2 WCAG 2.1 Level AA accreditation issued on 9 May 2023 [MOBILE-4182](https://tracker.moodle.org/browse/MOBILE-4182)
 
 An overview of Moodle's conformance with the [WCAG 2.1](https://www.w3.org/TR/WCAG21/) guidelines can be found in our [accessibility conformance report](https://docs.moodle.org/en/VPAT#Moodle%20accessibility%20conformance%20report).
 
