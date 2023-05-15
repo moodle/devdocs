@@ -7,6 +7,7 @@ tags:
 - Communication room
 - Communication service
 - Chat
+documentationDraft: true
 ---
 
 Communication plugin allows you to create a communication provider plugin, which can be added as a part of course or any other instances.
