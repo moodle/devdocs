@@ -1587,6 +1587,9 @@ Setting_up_development_environment:
 Setting_up_your_development_environment_for_the_Moodle_App:
 - filePath: "/general/app/development/setup/index.md"
   slug: "/general/app/development/setup"
+Setting_up_xhprof_on_Moodle:
+- filePath: "/docs/guides/profiling/index.md"
+  slug: "/docs/guides/profiling/"
 String_deprecation:
 - filePath: "/general/projects/api/string-deprecation.md"
   slug: "/general/projects/api/string-deprecation"
