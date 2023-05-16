@@ -106,8 +106,9 @@ class quiz_archive_report extends quiz_archive_parent_class_alias {
     // Contents of your class unchanged.
 }
 ```
-
 </CodeExample>
+
+There is a slightly messier real example of updating a quiz access rule sub-plugin here: https://github.com/moodleou/moodle-quizaccess_honestycheck/commit/a2f38f6587ff57ebef7b56191c216e2ffe309e87.
 
 ## Font Awesome 6
 
