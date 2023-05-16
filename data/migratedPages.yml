@@ -1494,6 +1494,9 @@ Privacy_API/Utilities:
 Process:
 - filePath: "/general/development/process.md"
   slug: "/general/development/process"
+Profiling_PHP:
+- filePath: "/docs/guides/profiling/index.md"
+  slug: "/docs/guides/profiling/"
 QA_testing:
 - filePath: "/general/development/process/testing/qa.md"
   slug: "/general/development/process/testing/qa"
