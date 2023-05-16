@@ -20,6 +20,12 @@ Depending on which version of the app you're upgrading from, you'll need to go t
 
 Other than the changes outlined in this document, there may be smaller API changes that aren't highlighted here. Make sure to check the [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt) file for an exhaustive list with all the changes.
 
+## 4.1 to 4.2
+
+Font Awesome icons have been updated to version 6.3.0, so make sure that all the icons you're using in your plugin are still supported.
+
+Additionally, the `<core-icon>` component has been removed (it was deprecated in 3.9.5). If you were still using it, you should replace it with `<ion-icon>` which now supports [using font icons](../development/plugins-development-guide#using-font-icons-with-ion-icon).
+
 ## 4.0 to 4.1
 
 There is only one thing to look after when upgrading to 4.1, so it should be a relatively quick process.
@@ -166,7 +172,7 @@ class AddonModCertificateModuleLinkHandler extends this.CoreContentLinksModuleIn
 
 We've also done some changes to the code of the app. Most of these changes probably don't affect your plugin, but you should still check this out just in case:
 
-- `<core-icon>` has been completely removed, please use `<ion-icon>` instead that now supports Font Awesome icons. See [Using 'font' icons with ion-icon](../development/plugins-development-guide#using-font-icons-with-ion-icon) for more information.
+- `<core-icon>` has been deprecated, please use `<ion-icon>` instead that now supports Font Awesome icons. See [Using 'font' icons with ion-icon](../development/plugins-development-guide#using-font-icons-with-ion-icon) for more information.
 - To "cross out" an icon using `ion-icon` you need to use `class="icon-slash"` instead of `slash="true"`.
 - The function `syncOnSites` from `CoreSyncBaseProvider` now expects to receive a function with the parameters already bound:
 
