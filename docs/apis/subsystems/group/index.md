@@ -189,6 +189,27 @@ A query like this must join on `group_members` as group visibility is dependant 
 
 :::
 
+<Since versions={[ 4.3 ]} />
+
+### Group GeoPattern images
+
+Moodle now allows groups to generate GeoPattern images. This is intended to improve the overall user experience by allowing users to differentiate groups easier in their Moodle activities and resources.
+
+Generate the SVG image for the group and use it in your Moodle activities and resources:
+
+```php
+$group_svg_image = moodle_url::make_pluginfile_url(
+                        $context->id,
+                        'group',
+                        'generated',
+                        $group->id,
+                        '/',
+                        'group.svg'
+                    );
+```
+
+This will create an SVG image for the specified group, which can then be used in Moodle activities and resources. Make sure to customize the code to fit your specific use case.
+
 ## Further reading
 
 - [Groups FAQ](https://docs.moodle.org/en/Groups_FAQ)
