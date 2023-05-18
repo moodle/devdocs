@@ -124,7 +124,7 @@ This shows the absolute minimum module you need to get started adding modules to
 
 ```js title="path/to/plugin/amd/src/somefile.js"
 export const init = () => {
-    widnow.alert("The init function was called");
+    window.alert("The init function was called");
 };
 ```
 
