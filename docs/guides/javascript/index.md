@@ -445,6 +445,14 @@ import WorkingWithStrings from '!!raw-loader!./_examples/str';
 
 ## Modals
 
+Provide a simple interface for creating a modal within Moodle. The module will ensure all accessibility requirements are met including applying the correct aria roles, focus control, aria hiding background elements and locking keyboard navigation.
+
+import WorkingWithModals from '!!raw-loader!./_examples/modal';
+
+<CodeBlock language="js" title="Example">{WorkingWithModals}</CodeBlock>
+
+See the [Modal Factory](./javascript/modal) for more information.
+
 ## Notifications
 
 ## AJAX Calls
