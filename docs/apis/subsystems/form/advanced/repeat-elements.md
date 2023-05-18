@@ -36,6 +36,7 @@ Most of the necessary information is in the phpdoc comment for the repeat_elemen
  * @param int $addfieldsno how many fields to add at a time
  * @param string $addstring name of button, {no} is replaced by no of blanks that will be added.
  * @param bool $addbuttoninside if true, don't call closeHeaderBefore($addfieldsname). Default false.
+ * @param string $deletebuttonname if specified, treats the no-submit button with this name as a "delete element" button in each of the elements.
  * @return int no of repeats of element in this page
  */
 ```
@@ -56,13 +57,14 @@ While the elements are zero-indexed, the `{no}` label is one-indexed.
 - The label used for the 'Add more' button can be set using the `$addstring` parameter. A `{no}` placeholder can be used in the string to indicate how many repeats will be added.
 - The number of element repeats currently shown is stored in a hidden element, whose name can be specified using the `$repeathiddenname` parameter.
 
-The following example shows how `repeat_elements()` can be used within a form definition:
+The following example shows how `repeat_elements()` can be used within a form definition with a delete button for each repeated field :
 
 ```php title="definition() function"
 $repeatarray = [
     $mform->createElement('text', 'option', get_string('optionno', 'choice')),
     $mform->createElement('text', 'limit', get_string('limitno', 'choice')),
     $mform->createElement('hidden', 'optionid', 0),
+    $mform->createElement('submit', 'delete', get_string('deletestr', 'choice'), [], false),
 ];
 
 
@@ -99,7 +101,8 @@ $this->repeat_elements(
     'option_add_fields',
     3,
     null,
-    true
+    true,
+    'delete',
 );
 ```
 
