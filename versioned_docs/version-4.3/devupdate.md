@@ -603,3 +603,11 @@ public function add_custom_instance(stdClass $course, ?array $fields = null): ?i
 ```
 
 In [MDL-73839](https://tracker.moodle.org/browse/MDL-73839) cohort enrolment method has been updated to support CSV course upload.
+
+## Addition of comboboxsearch component
+
+<Since version="4.3" issueNumber="MDL-77991" />
+
+As part of [MDL-77991](https://tracker.moodle.org/browse/MDL-77991) multiple gradebook report searching functionalities were migrated into a centralised core component.
+
+Details on its use can be found via [Combobox searching](./guides/javascript/comboboxsearch)

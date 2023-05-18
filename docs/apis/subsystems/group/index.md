@@ -199,13 +199,13 @@ Generate the SVG image for the group and use it in your Moodle activities and re
 
 ```php
 $group_svg_image = moodle_url::make_pluginfile_url(
-                        $context->id,
-                        'group',
-                        'generated',
-                        $group->id,
-                        '/',
-                        'group.svg'
-                    );
+    $context->id,
+    'group',
+    'generated',
+    $group->id,
+    '/',
+    'group.svg'
+);
 ```
 
 This will create an SVG image for the specified group, which can then be used in Moodle activities and resources. Make sure to customize the code to fit your specific use case.
