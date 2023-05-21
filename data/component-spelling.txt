@@ -21,6 +21,7 @@ calendar
 calendartype
 cohort
 comment
+communication
 competency
 completion
 contentbank
