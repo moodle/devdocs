@@ -112,6 +112,10 @@ The [Enrolment API](./apis/subsystems/enrol.md) deals with course participants.
 
 The [Events API](https://docs.moodle.org/dev/Events_API) allows to define "events" with payload data to be fired whenever you like, and it also allows you to define handlers to react to these events when they happen. This is the recommended form of inter-plugin communication. This also forms the basis for logging in Moodle.
 
+### Hooks API
+
+The [Hooks API](./apis/core/hooks/index.md) allows core and plugins to communicate indirectly with other plugins.
+
 ### Experience API (xAPI)
 
 The Experience API (xAPI) is an e-learning standard that allows learning content and learning systems to speak to each other. The [Experience API (xAPI)](https://docs.moodle.org/dev/Experience_API_(xAPI))
