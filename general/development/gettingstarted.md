@@ -53,7 +53,7 @@ tags:
   :::info Advanced
 
   You can use Xdebug to enable step-by-step debugging in PHP. Integrations are built into many popular editors.
-  [Learn more](https://docs.moodle.org/dev/Profiling_PHP#Xdebug)
+  [Learn more](/docs/guides/profiling/#xdebug)
 
   :::
 
