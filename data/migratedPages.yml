@@ -1509,6 +1509,9 @@ Release_process:
 Releases:
 - filePath: "/general/releases.md"
   slug: "/general/releases"
+Report_builder_API:
+- filePath: "/docs/apis/core/reportbuilder/index.md"
+  slug: "/docs/apis/core/reportbuilder/"
 Repository_API:
 - filePath: "/docs/apis/plugintypes/repository/index"
   slug: "/docs/apis/plugintypes/repository"
@@ -1584,12 +1587,12 @@ Sending_custom_Push_Notifications_to_the_Moodle_App:
 Setting_up_development_environment:
 - filePath: "general/development/gettingstarted.md"
   slug: "/general/development/gettingstarted"
-Setting_up_your_development_environment_for_the_Moodle_App:
-- filePath: "/general/app/development/setup/index.md"
-  slug: "/general/app/development/setup"
 Setting_up_xhprof_on_Moodle:
 - filePath: "/docs/guides/profiling/index.md"
   slug: "/docs/guides/profiling/"
+Setting_up_your_development_environment_for_the_Moodle_App:
+- filePath: "/general/app/development/setup/index.md"
+  slug: "/general/app/development/setup"
 String_deprecation:
 - filePath: "/general/projects/api/string-deprecation.md"
   slug: "/general/projects/api/string-deprecation"
