@@ -177,7 +177,7 @@ The [Rating API](https://docs.moodle.org/dev/Rating_API) lets you create AJAX ra
 <!-- cspell:ignore reportbuilder -->
 ### Report builder API (reportbuilder)
 
-The [Report builder API](https://docs.moodle.org/dev/Report_builder_API) allows you to create reports in your plugin, as well as providing custom reporting data which users can use to build their own reports.
+The [Report builder API](./apis/core/reportbuilder/index.md) allows you to create reports in your plugin, as well as providing custom reporting data which users can use to build their own reports.
 
 ### RSS API (rss)
 
