@@ -103,6 +103,9 @@ Component_Lead_Review:
 Component_library:
 - filePath: "/general/development/tools/component-library.md"
   slug: "/general/development/tools/component-library"
+Composer:
+- filePath: "/general/development/tools/composer.md"
+  slug: "/general/development/tools/composer"
 Conditional_activities_API:
 - filePath: "/docs/apis/core/conditionalactivities/index.md"
   slug: "/docs/apis/core/conditionalactivities/"
@@ -1584,12 +1587,12 @@ Sending_custom_Push_Notifications_to_the_Moodle_App:
 Setting_up_development_environment:
 - filePath: "general/development/gettingstarted.md"
   slug: "/general/development/gettingstarted"
-Setting_up_your_development_environment_for_the_Moodle_App:
-- filePath: "/general/app/development/setup/index.md"
-  slug: "/general/app/development/setup"
 Setting_up_xhprof_on_Moodle:
 - filePath: "/docs/guides/profiling/index.md"
   slug: "/docs/guides/profiling/"
+Setting_up_your_development_environment_for_the_Moodle_App:
+- filePath: "/general/app/development/setup/index.md"
+  slug: "/general/app/development/setup"
 String_deprecation:
 - filePath: "/general/projects/api/string-deprecation.md"
   slug: "/general/projects/api/string-deprecation"
