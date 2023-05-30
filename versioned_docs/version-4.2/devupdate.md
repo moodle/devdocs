@@ -14,11 +14,31 @@ This page highlights the important changes that are coming in Moodle 4.2 for dev
 
 The `external_api` class, and all related classes have been moved from `lib/externallib.php` to namespaced classes within the [`core_external` subsystem](./apis/subsystems/external/index.md).
 
-:::note Delayed deprecation
+### Delayed deprecation
 
 The old class locations have been aliased for backwards compatibility and will emit a deprecation notice in a _future_ release. Please remember to add `require_once($CFG->dirroot . '/lib/externallib.php');` to your external service classes to make the aliases work.
 
 If you are writing a Moodle plugin which has a single codebase shared with older versions of Moodle, you should continue to use the old API locations at this time.
+
+:::important Important now about requiring `lib/externallib.php`
+
+If you are making use of the delayed deprecation, please note that you **must** call the following **in the class file of your method definitions**:
+
+```php title="mod/example/classes/external/get_example.php"
+<?php
+
+namespace mod_example\external;
+
+require_once($CFG->dirroot . '/lib/externallib.php');
+
+class get_example {
+    // ...
+}
+```
+
+You **must not** include the legacy `lib/externallib.php` file anywhere else.
+
+You **must** also use either the [`@runTestsInSeparateProcesses`](https://docs.phpunit.de/en/9.6/annotations.html#runtestsinseparateprocesses) or the [`@runInSeparateProcess`](https://docs.phpunit.de/en/9.6/annotations.html#runinseparateprocess) annotations in any unit test related to the external API methods.
 
 :::
 
@@ -106,6 +126,7 @@ class quiz_archive_report extends quiz_archive_parent_class_alias {
     // Contents of your class unchanged.
 }
 ```
+
 </CodeExample>
 
 There is a slightly messier real example of updating a quiz access rule sub-plugin here: https://github.com/moodleou/moodle-quizaccess_honestycheck/commit/a2f38f6587ff57ebef7b56191c216e2ffe309e87.
