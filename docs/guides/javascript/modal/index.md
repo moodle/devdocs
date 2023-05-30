@@ -141,9 +141,7 @@ There are two parts to this:
 - a new Modal class which extends the `core/modal` class; and
 - a template
 
-Creating the Modal class is as simple as extending the `core/modal` class, providing a `TYPE` property, and registering the modal with the modal factory.
-
-We highly recommend declaring the _template_ as a static property on the class too and this will be required from Moodle 4.3 onwards.
+Creating the Modal class is as simple as extending the `core/modal` class, providing a `TYPE` property, a `TEMPLATE` property, and registering the modal with the modal factory.
 
 ```javascript title="mod/example/amd/src/my_modal.js"
 import Modal from 'core/modal';
@@ -154,11 +152,8 @@ export default MyModal extends Modal {
     static TEMPLATE = "mod_example/my_modal";
 }
 
-let registered = false;
-if (!registered) {
-    ModalRegistry.register(MyModal.TYPE, MyModal, MyModal.TEMPLATE);
-    registered = true;
-}
+// Modal Registration process for Moodle 4.3 onwards.
+MyModal.registerModalType();
 ```
 
 The template should extend the `core/modal` core template and can override any of the title, body, or footer regions, for example:
