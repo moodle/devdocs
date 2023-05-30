@@ -6,7 +6,7 @@ tags:
 
 <!-- markdownlint-disable no-inline-html -->
 
-import { CodeBlock, CodeExample, InvalidExample, ValidExample } from '@site/src/components';
+import { CodeBlock, CodeExample, InvalidExample, ValidExample, Since } from '@site/src/components';
 
 This page highlights the important changes that are coming in Moodle 4.3 for developers.
 
@@ -115,3 +115,130 @@ As a proof of concept, this feature has been implemented by:
     ```
 
 A new `core_courseformat/local/content/cm/activitybadge` template has been also created to display this activity badge data. As usual, it can be overridden by any format plugin.
+
+## Modal Dialogues
+
+Moodle 4.3 brings a number of improvements to Modal dialogues. These improvements focus on:
+
+- the declaration of new Modal types
+- the instantiation of new Modal instances
+- the use of instantiated Modals
+
+### Conversion of Modal to ESM Class
+
+<Since version="4.3" issueNumber="MDL-78306" />
+
+When creating a new modal type, these **must** now be written as an ESM class. Prototypal modals are no longer supported.
+
+These changes are backwards compatible with previous versions of Moodle. An ESM Modal definition can be used with Moodle 4.2 or earlier. A prototypal modal _cannot_ be used with Moodle 4.3 onwards.
+
+<InvalidExample
+    title="Prototypal modal definition"
+>
+
+```js
+var MyModal = function(root) {
+    Modal.call(this, root);
+    this.myCustomMethod();
+};
+
+MyModal.TYPE = 'mod_example/myModal';
+MyModal.prototype = Object.create(Modal.prototype);
+MyModal.prototype.constructor = MyModal;
+
+MyModal.prototype.registerEventListeners = function() {
+    // Apply parent event listeners.
+    Modal.prototype.registerEventListeners.call(this);
+
+    this.getModal().on(CustomEvents.events.activate, function(e) {
+        // ...
+    }.bind(this));
+};
+
+MyModal.prototype.myCustomMethod = function() {
+    // ...
+};
+
+return MyModal;
+```
+
+</InvalidExample>
+
+<ValidExample
+    title="The same content converted to an ESM class"
+>
+
+```js
+export default class MyModal extends Modal {
+    static TYPE = 'mod_example/myModal';
+
+    constructor(root) {
+        super(root);
+
+        this.myCustomMethod();
+    }
+
+    registerEventListeners() {
+        this.getModal().on(CustomEvents.events.activate, function(e) {
+            // ...
+        });
+    }
+
+    myCustomMethod() {
+        // ...
+    }
+}
+```
+
+</ValidExample>
+
+### Registration helper
+
+<Since version="4.3" issueNumber="MDL-78306" />
+
+Moodle 4.3 introduces a new `registerModalType` method on the Modal class to aid in registering a modal.
+
+:::note Compatibility with Moodle 4.2 and older
+
+If your code is intended to work with Moodle 4.2 and older, then you must continue to use the old method of registration. This legacy method will be maintained until Moodle 4.6.
+
+:::
+
+<InvalidExample
+    title="A modal using the legacy registration approach"
+>
+
+```js
+var MyModal = function(root) {
+    Modal.call(this, root);
+};
+
+MyModal.TYPE = 'mod_example/myModal';
+MyModal.prototype = Object.create(Modal.prototype);
+MyModal.prototype.constructor = MyModal;
+
+let registered = false;
+if (!registered) {
+    ModalRegistry.register(MyModal.TYPE, MyModal, 'mod_example/my_modal');
+    registered = true;
+}
+
+return MyModal;
+```
+
+</InvalidExample>
+
+<ValidExample
+    title="A modal using the new shortcut helper"
+>
+
+```js
+export default class MyModal extends Modal {
+    static TYPE = 'mod_example/myModal';
+    static TEMPLATE = 'mod_example/my_modal';
+}
+
+MyModal.registerModalType();
+```
+
+</ValidExample>
