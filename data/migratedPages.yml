@@ -1,6 +1,9 @@
 AJAX:
 - filePath: "/docs/guides/javascript/ajax/index.md"
   slug: "/docs/guides/javascript/ajax/"
+AMD_Modal:
+- filePath: "/docs/guides/javascript/modal/index.md"
+  slug: "/docs/guides/javascript/modal/"
 Acceptance_testing/Browsers:
 - filePath: "/general/development/tools/behat/browsers/index.md"
   slug: "/general/development/tools/behat/browsers/"
