@@ -289,8 +289,8 @@ Most plugins will make use of one or more of the following commands, but others 
 - [addIcon](https://www.tiny.cloud/docs/tinymce/6/apis/tinymce.editor.ui.registry/#addIcon)
 - [addButton](https://www.tiny.cloud/docs/tinymce/6/apis/tinymce.editor.ui.registry/#addButton)
 - [addToggleButton](https://www.tiny.cloud/docs/tinymce/6/apis/tinymce.editor.ui.registry/#addToggleButton)
-- [addMenuItem](https://www.tiny.cloud/docs/tinymce/6/apis/tinymce.editor.ui.registry/#addmenuItem)
-- [addToggleMenuItem](https://www.tiny.cloud/docs/tinymce/6/apis/tinymce.editor.ui.registry/#addmenuItem)
+- [addMenuItem](https://www.tiny.cloud/docs/tinymce/6/apis/tinymce.editor.ui.registry/#addMenuItem)
+- [addToggleMenuItem](https://www.tiny.cloud/docs/tinymce/6/apis/tinymce.editor.ui.registry/#addToggleMenuItem)
 
 Plugins may use any parts of the TinyMCE API that they need.
 
