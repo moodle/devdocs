@@ -58,6 +58,17 @@ Set of IMS-LTI tools originaly provided by IMS.
 - **Version**: 2.4.9+
 - **License**:  GPL 2.0+
 
+### PrismJS
+
+Prism is a lightweight, robust, and elegant syntax highlighting library. It's a spin-off project from Dabblet.
+
+- **Location**: filter/codehighlighter/amd/src/prism.js
+- **Version**: 1.16.0
+- **License**:  MIT
+- **URL**: [https://github.com/PrismJS/prism](https://github.com/PrismJS/prism)
+- **Copyright holders**:
+  - 2012 Lea Verou
+
 ### mimeTeX
 
 Compiled C program to convert TeX into GIFs
@@ -646,6 +657,15 @@ Polyfill URL and URLSearchParams to match last WHATWG specifications.
 - **License**:  MIT
 - **URL**: [https://github.com/lifaon74/url-polyfill](https://github.com/lifaon74/url-polyfill)
 
+### event-dispatcher
+
+Provides interfaces that descirbe an event dispatching mechanism.
+
+- **Location**: lib/psr/event-dispatcher
+- **Version**: 1.0.0
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/event-dispatcher](https://github.com/php-fig/event-dispatcher)
+
 ### http-client
 
 Provides an abstraction that describe the components of a HTTP Client.
@@ -758,7 +778,7 @@ URL syntax validation using PHP and regular expressions.
 A Hierarchical Profiler for PHP.
 
 - **Location**: lib/xhprof
-- **Version**: 2.3.5 (with Moodle customisations)
+- **Version**: 2.3.9 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/longxinH/xhprof](https://github.com/longxinH/xhprof)
 - **Copyright holders**:
@@ -827,7 +847,7 @@ JavaScript library that makes it easier to work with and build on HTML5 video.
 The ogv.js tech plugin for VideoJS
 
 - **Location**: media/player/videojs/amd/src/videojs-ogvjs-lazy.js
-- **Version**: 0.1.2
+- **Version**: 0.2.1
 - **License**:  MIT
 - **URL**: [https://github.com/HuongNV13/videojs-ogvjs](https://github.com/HuongNV13/videojs-ogvjs)
 - **Copyright holders**:
