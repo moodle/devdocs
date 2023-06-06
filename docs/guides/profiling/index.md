@@ -141,7 +141,7 @@ A number of parameters relate to profiling. First of all, profiler should be ena
 Both methods of configuration require that you set the xdebug mode to `profiler`:
 
 ```ini title="php.ini"
-xdebug.mode = profiler
+xdebug.mode = profile
 ```
 
 The default configuration once the mode is set to profiler is for the profiler to start for every request.
@@ -150,8 +150,9 @@ This behaviour is configured via the [`start_with_request`](https://xdebug.org/d
 
 It can also be enabled for specific pages by watching for a [_trigger_](https://xdebug.org/docs/all_settings#start_with_request#trigger)..
 
+
 ```ini title="php.ini"
-xdebug.mode = profiler
+xdebug.mode = profile
 xdebug.start_with_request = trigger
 ```
 
@@ -167,7 +168,7 @@ This tells the xdebug extension to look for a specific variable as a trigger nam
 By default, the content of the variable is not checked, but this can be configured with the `xdebug.trigger_value` parameter, for example:
 
 ```ini title="php.ini"
-xdebug.mode = profiler
+xdebug.mode = profile
 xdebug.start_with_request = trigger
 xdebug.trigger_value = ProfileMe
 ```
