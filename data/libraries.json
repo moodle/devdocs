@@ -55,6 +55,18 @@
     },
     {
         "copyrightHolders": [
+            "2012 Lea Verou"
+        ],
+        "location": "filter/codehighlighter/amd/src/prism.js",
+        "name": "PrismJS",
+        "description": "Prism is a lightweight, robust, and elegant syntax highlighting library. It's a spin-off project from Dabblet.",
+        "version": "1.16.0",
+        "license": "MIT",
+        "repository": "https://github.com/PrismJS/prism",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
             "2002-2004 John Forkosh Associates, Inc"
         ],
         "location": "filter/tex/mimetex.*",
@@ -721,6 +733,16 @@
     },
     {
         "copyrightHolders": [],
+        "location": "lib/psr/event-dispatcher",
+        "name": "event-dispatcher",
+        "description": "Provides interfaces that descirbe an event dispatching mechanism.",
+        "version": "1.0.0",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/event-dispatcher",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
         "location": "lib/psr/http-client",
         "name": "http-client",
         "description": "Provides an abstraction that describe the components of a HTTP Client.",
@@ -844,7 +866,7 @@
         "location": "lib/xhprof",
         "name": "XHProf",
         "description": "A Hierarchical Profiler for PHP.",
-        "version": "2.3.5",
+        "version": "2.3.9",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/longxinH/xhprof",
@@ -921,7 +943,7 @@
         "location": "media/player/videojs/amd/src/videojs-ogvjs-lazy.js",
         "name": "ogv.js Tech plugin for Video.JS",
         "description": "The ogv.js tech plugin for VideoJS",
-        "version": "0.1.2",
+        "version": "0.2.1",
         "license": "MIT",
         "repository": "https://github.com/HuongNV13/videojs-ogvjs",
         "customised": false
