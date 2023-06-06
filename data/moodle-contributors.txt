@@ -15,6 +15,7 @@ Adam
 Adamcik
 Adermann
 Adrian
+Adrien
 Afrar
 Agarwal
 Agheda
@@ -606,6 +607,7 @@ Lior
 Lloyd
 Lock
 Logan
+Loison
 Lorenzo
 Luca
 Lukas
@@ -1319,6 +1321,7 @@ mindforge
 minkowski
 mits
 mjollnir_
+mkassaei
 mohalisad
 moodler
 moodlerobot

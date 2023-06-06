@@ -150,7 +150,8 @@ This behaviour is configured via the [`start_with_request`](https://xdebug.org/d
 
 It can also be enabled for specific pages by watching for a [_trigger_](https://xdebug.org/docs/all_settings#start_with_request#trigger)..
 
-```ini title="php.in"
+
+```ini title="php.ini"
 xdebug.mode = profile
 xdebug.start_with_request = trigger
 ```

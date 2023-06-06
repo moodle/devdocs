@@ -285,5 +285,5 @@ $this->set_initial_sort_column('task_log:starttime', SORT_DESC);
 
 Check out these two system reports as an example:
 
-- **Task logs**: [admin/classes/local/systemreports/task_logs.php](https://github.com/moodle/moodle/blob/master/admin/classes/local/systemreports/task_logs.php)
-- **Config changes**: [report/configlog/classes/local/systemreports/config_changes.php](https://github.com/moodle/moodle/blob/master/report/configlog/classes/local/systemreports/config_changes.php)
+- **Task logs**: [admin/classes/reportbuilder/local/systemreports/task_logs.php](https://github.com/moodle/moodle/blob/master/admin/classes/reportbuilder/local/systemreports/task_logs.php)
+- **Config changes**: [report/configlog/classes/reportbuilder/local/systemreports/config_changes.php](https://github.com/moodle/moodle/blob/master/report/configlog/classes/reportbuilder/local/systemreports/config_changes.php)
