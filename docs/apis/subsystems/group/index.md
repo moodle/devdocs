@@ -70,7 +70,7 @@ Otherwise, the following restrictions apply:
 - See own membership (`GROUPS_VISIBILITY_OWN` constant) - Only members of the group can see the group, and members **cannot** see each others' membership, only their own.
 - Membership is hidden (`GROUPS_VISIBILITY_NONE` constant) - No-one can see the group or its members.
 
-The core API functions in groupslib such as `groups_get_all_groups()` and `groups_get_members()` will respect the group visibility and the current user's permissions, so use these as far as possible when fetching data about groups and their members. The `\core_group\visibility` class also has helper functions to determine whether a user is allowed to see a group, or its members.
+The core API functions in `groupslib` such as `groups_get_all_groups()` and `groups_get_members()` will respect the group visibility and the current user's permissions, so use these as far as possible when fetching data about groups and their members. The `\core_group\visibility` class also has helper functions to determine whether a user is allowed to see a group, or its members.
 
 ## File locations
 

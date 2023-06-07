@@ -23,16 +23,16 @@ Column instances define the data captured/displayed within a report column typic
 
 #### Column types
 
-- **Text**
-- **Integer** (Integer numbers)
-- **Float** (Decimal numbers)
-- **Timestamp** (Dates)
-- **Boolean** (Yes / No values)
-- **Longtext**
+- `Text`
+- `Integer` (Integer numbers)
+- `Float` (Decimal numbers)
+- `Timestamp` (Dates)
+- `Boolean` (Yes / No values)
+- `Longtext`
 
 #### Creating columns
 
-To create a new column, just create a new instance of **[reportbuilder/classes/local/report/column.php](https://github.com/moodle/moodle/blob/master/reportbuilder/classes/local/report/column.php)** class with:<br />
+To create a new column, just create a new instance of [`reportbuilder/classes/local/report/column.php`](https://github.com/moodle/moodle/blob/master/reportbuilder/classes/local/report/column.php) class with:
 
 ```php
 * string $name
@@ -285,5 +285,5 @@ $this->set_initial_sort_column('task_log:starttime', SORT_DESC);
 
 Check out these two system reports as an example:
 
-- **Task logs**: [admin/classes/reportbuilder/local/systemreports/task_logs.php](https://github.com/moodle/moodle/blob/master/admin/classes/reportbuilder/local/systemreports/task_logs.php)
-- **Config changes**: [report/configlog/classes/reportbuilder/local/systemreports/config_changes.php](https://github.com/moodle/moodle/blob/master/report/configlog/classes/reportbuilder/local/systemreports/config_changes.php)
+- **Task logs**: [`admin/classes/reportbuilder/local/systemreports/task_logs.php`](https://github.com/moodle/moodle/blob/master/admin/classes/reportbuilder/local/systemreports/task_logs.php)
+- **Config changes**: [`report/configlog/classes/reportbuilder/local/systemreports/config_changes.php`](https://github.com/moodle/moodle/blob/master/report/configlog/classes/reportbuilder/local/systemreports/config_changes.php)
