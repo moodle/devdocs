@@ -204,6 +204,7 @@ mnet
 modicon
 modname
 moodleapp
+moodleappbehat
 moodledemo
 moodledev
 moodleform
