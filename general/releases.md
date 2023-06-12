@@ -118,7 +118,7 @@ Bug fixes for security issues in 4.1.x will end 8 December 2025 (37 months).
 
 :::info
 
-Bug fixes for general core bugs in 4.0.x will end 12 June 2023 (13 months).<br/>
+Bug fixes for general core bugs in 4.0.x ended 12 June 2023 (13 months).<br/>
 Bug fixes for security issues in 4.0.x will end 11 December 2023 (19 months).
 
 :::
