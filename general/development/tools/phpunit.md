@@ -187,7 +187,7 @@ vendor/bin/phpunit my/tests/filename.php
 so, run this command in the CLI to see a real test in action:
 
 ```bash
-vendor/bin/phpunit cohort/tests/cohortlib_test.php
+vendor/bin/phpunit cohort/tests/lib_test.php
 ```
 
 You can also run a single test method inside a class:
