@@ -196,7 +196,9 @@ Of course, these functions can be discussed, modified and new functions can arri
 
 For each of the functions below we'll try to explain when they should be used, explaining the most important parameters supported and their meaning. Let's review them!
 
-### p() and s()
+### String formatting functions
+
+#### p() and s()
 
 ```php
 function s($var, $strip=false)
@@ -217,7 +219,7 @@ The key parameter for this function is:
 
 - **strip**: it decides if we want to strip slashes from the string or not. By default, it's `false`, so no strip will be performed. We should set such parameter to 'true' only when data to be processed isn't coming from database, but from HTTP requests (forms, links, ...).
 
-### format_text()
+#### format_text()
 
 ```php
 function format_text($text, $format = FORMAT_MOODLE, $options = null, $courseid_do_not_use = null)
@@ -245,7 +247,7 @@ Some interesting parameters for this function are:
   - `options->blanktarget` : If true all `<a>` tags will have `target="_blank"` added unless target is explicitly specified. Default false.
 - **courseid_do_not_use**: This parameter was earlier used to help applying filters but now is replaced with more precise `$options->context`, see above
 
-### format_string()
+#### format_string()
 
 ```php
 function format_string ($string, $striplinks = true, $options = null)
@@ -270,6 +272,46 @@ Some interesting parameters for this function are:
 :::note
 In earlier versions of Moodle, the third argument was integer `$courseid`. It is still supported for legacy - if the third argument is an integer instead of an array or object, it is considered to be course id and is this course's context is passed to the filters being applied.
 :::
+
+### Simple elements rendering
+
+:::important
+Those methods are designed to replace the old ```html_writer::tag(...)``` methods. Even if many of them are just wrappers around the old methods, they are more semantic and could be overridden by component renderers.
+:::
+
+While to render complex elements, you should use [templates](../../guides/templates/index.md), some simple elements can be rendered using the following functions:
+
+#### container()
+
+```php
+function container(string $contents, ?string $classes = null, ?string $id = null): string
+```
+
+This function should be used to:
+
+- Print a basic **div** container with the given contents, classes and id.
+
+Some interesting parameters for this function are:
+
+- `contents`: The contents of the container.
+- `classes`: The classes of the container. Note that this parameter is a comma-separated list of classes, not an array.
+- `id`: An optional id of the container.
+
+#### paragraph()
+
+```php
+function paragraph(string $contents, ?string $classes = null, ?string $id = null): string
+```
+
+This function should be used to:
+
+- Print a basic **p** paragraph with the given contents, classes and id.
+
+Some interesting parameters for this function are:
+
+- `contents`: The contents of the paragraph.
+- `classes`: The classes of the paragraph. Note that this parameter is a comma-separated list of classes, not an array.
+- `id`: An optional id of the paragraph.
 
 ## See also
 

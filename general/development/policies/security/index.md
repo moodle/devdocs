@@ -199,7 +199,7 @@ We recommend that you follow the [Output functions](/docs/apis/subsystems/output
 
 ### Log every request
 
-- Every script should call `add_to_log`.
+- Every script should log an [event](https://docs.moodle.org/dev/Events_API)
 
 ### Other good practice
 
