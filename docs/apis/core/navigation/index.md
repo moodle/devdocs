@@ -379,7 +379,7 @@ navigation_node::override_active_url(
 
 ### **Q.** How do I add a node to the "flat" navigation in the Boost theme?
 
-After creating a node and adding it to the navigation tree - you can set the property `showinflatnavigation` to true in order for this node to be displayed in the flat navigation.
+Adding a node to the "flat" navigation is only possible for Moodle versions before 4.0. After creating a node and adding it to the navigation tree - you can set the property `showinflatnavigation` to true in order for this node to be displayed in the flat navigation.
 
 ```php
 $node = navigation_node::create(...);
