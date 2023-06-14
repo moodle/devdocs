@@ -44,3 +44,6 @@
 # Issue #393
 # Redirect /docs/apis/plugintypes/tinymce to /docs/apis/plugintypes/tiny/legacy
 /docs/apis/plugintypes/tinymce to /docs/apis/plugintypes/tiny/legacy
+
+# MOBILE-4270
+/general/app/development/release-process /general/development/process-moodleapp/release

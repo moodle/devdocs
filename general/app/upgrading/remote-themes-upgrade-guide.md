@@ -44,6 +44,10 @@ You can follow the same process that is documented in the [Moodle App Remote The
 
 Make sure to read it in order to understand how to style your application for newer versions of the app. If you're upgrading your styles, it is likely that the documentation has been updated since you read it. So we recommend taking a look even if you're already familiar with Remote Themes.
 
+## 4.1 to 4.2
+
+The only change to keep in mind for this release is that Font Awesome icons were upgraded to version 6.3.0. This shouldn't affect Remote Themes directly, but given that it affects the visuals aspects of the app, it could potentially be relevant.
+
 ## 4.0 to 4.1
 
 There is only one thing to look after when upgrading to 4.1, so it should be a relatively quick process.
