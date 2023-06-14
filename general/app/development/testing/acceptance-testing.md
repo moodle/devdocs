@@ -193,6 +193,12 @@ These two steps are necessary if you want to test the transition between the app
 
 For example, after pressing "Open in browser" you can use the first step above, and you will be able to use normal Moodle Behat steps to work in the browser tab. Once you're finished, you can use the second step to go back to the app.
 
+```gherkin
+When I upload "stub1.txt" to "File" ".action-sheet-button" in the app
+```
+
+This step can be used to set files on a file input in the app. The stub file should be placed in a `fixtures/` folder at the same level than the `.feature` file.
+
 ### Assertions
 
 Like actions, there are some Behat assertions that are specific to the app.

@@ -11,6 +11,12 @@ In the following guide, you will learn how to upgrade your plugins' acceptance t
 
 Depending on which version of the app you're upgrading from, you'll need to go through multiple version upgrades. This guide is divided by version ranges, so you should be able to start with your current version and build up from there.
 
+## 4.1 to 4.2
+
+The default dimensions in app tests have changed from 360x720 to 500x720. If you weren't running tests in headless mode, this change won't affect you because 500 was already the minimum width for a non-headless Chrome instance. This change was made to have consistent behaviours when the tests are run in both modes.
+
+Additionally, core app tests started using the [local_behatsnapshots](https://github.com/NoelDeMartin/moodle-local_behatsnapshots/) to test against UI regressions. You can consider adopting it as well.
+
 ## 4.0 to 4.1
 
 The only relevant change in this version is that the location of the custom Behat steps for the app have moved again. This time, they've been moved into the repository of the app itself. In order to make this usable by plugins as well, the Behat code is mirrored automatically into a plugin.

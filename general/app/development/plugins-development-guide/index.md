@@ -548,7 +548,7 @@ In the previous section, we learned about some of the existing options for handl
 - `displayrefresh` (optional) — Whether the module should display the "Refresh" option in the top-right menu. This can be done in JavaScript too: `this.displayRefresh = false;`. Supported from the 3.6 version of the app.
 - `displayprefetch` (optional) — Whether the module should display the download option in the top-right menu. This can be done in JavaScript too: `this.displayPrefetch = false;`. Supported from the 3.6 version of the app.
 - `displaysize` (optional) — Whether the module should display the downloaded size in the top-right menu. This can be done in JavaScript too: `this.displaySize = false;`. Supported from the 3.6 version of the app.
-- `supportedfeatures` (optional) — It can be used to specify the supported features of the plugin. Currently the app only uses `FEATURE_MOD_ARCHETYPE` and `FEATURE_NO_VIEW_LINK`. It should be an array with features as keys (For example, `FEATURE_NO_VIEW_LINK => true`). If you need to calculate this dynamically please see [Module plugins: dynamically determine if a feature is supported](#module-plugins-dynamically-determine-if-a-feature-is-supported). Supported from the 3.6 version of the app.
+- `supportedfeatures` (optional) — It can be used to specify the supported features of the plugin. Please notice that some features are not supported by the app, unsupported features will be ignored. It should be an array with features as keys (For example, `FEATURE_NO_VIEW_LINK => true`). If you need to calculate this dynamically please see [Module plugins: dynamically determine if a feature is supported](#module-plugins-dynamically-determine-if-a-feature-is-supported). Supported from the 3.6 version of the app.
 - `coursepagemethod` (optional) — If set, this method will be called when the course is rendered and the HTML returned will be displayed in the course page for the module. Please notice the HTML returned should not contain directives or components, only default HTML. Supported from the 3.8 version of the app.
 - `ptrenabled` (optional) — Whether to enable pull-to-refresh gesture to refresh page content.
 
@@ -881,20 +881,20 @@ You can also use this to add options to the context menu, for example:
 
 #### Using 'font' icons with `ion-icon`
 
-Font icons are widely used on the app and Moodle LMS website. In order to support [font awesome icons](https://fontawesome.com/v5/search?m=free). We've added a directive that uses prefixes on the `name` attribute to use different font icons.
+Font icons are widely used on the app and Moodle LMS website. In order to support [Font Awesome 6.3 icons](https://fontawesome.com/search?o=r&m=free). We've added a directive that uses prefixes on the `name` attribute to use different font icons.
 
-- Name prefixed with `fas-` or `fa-` will use [Font awesome solid library](https://fontawesome.com/v5/search?m=free&s=solid).
-- Name prefixed with `far-` will use [Font awesome regular library](https://fontawesome.com/v5/search?m=free&s=regular).
-- Name prefixed with `fab-` will use [Font awesome brands library](https://fontawesome.com/v5/search?m=free&s=brands) (But only a few are supported and we discourage to use them).
-- Name prefixed with `moodle-` will use some svg icons [imported from Moodle LMS](https://github.com/moodlehq/moodleapp/tree/latest/src/assets/fonts/moodle/moodle).
-- Name prefixed with `fam-` will use [customized font awesome icons](https://github.com/moodlehq/moodleapp/tree/latest/src/assets/fonts/moodle/font-awesome).
+- Name prefixed with `fas-` or `fa-` will use [Font Awesome solid library](https://fontawesome.com/search?o=r&m=free&s=solid).
+- Name prefixed with `far-` will use [Font Awesome regular library](https://fontawesome.com/search?o=r&m=free&s=regular).
+- Name prefixed with `fab-` will use [Font Awesome brands library](https://fontawesome.com/search?o=r&m=free&f=brands) (But only a few are supported and we discourage to use them).
+- Name prefixed with `moodle-` will use some svg icons [imported from Moodle LMS](https://github.com/moodlehq/moodleapp/tree/master/src/assets/fonts/moodle/moodle).
+- Name prefixed with `fam-` will use [customized Font Awesome icons](https://github.com/moodlehq/moodleapp/tree/master/src/assets/fonts/moodle/font-awesome).
 - If the prefix is not found or not valid, the app will search the icon name on the [Ionicons library](https://ionic.io/ionicons).
 
-```html title="Example of usage to show icon "pizza-slice" from font-awesome regular library"
+```html title="Example of usage to show icon "pizza-slice" from Font Awesome regular library"
 <ion-icon name="fas-pizza-slice"></ion-icon>
 ```
 
-We encourage the use of font-awesome icons to match the appearance from the LMS website version.
+We encourage the use of Font Awesome 6.3 icons to match the appearance from the LMS website version.
 
 ### Specific component and directives for plugins
 

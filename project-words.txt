@@ -204,6 +204,7 @@ mnet
 modicon
 modname
 moodleapp
+moodleappbehat
 moodledemo
 moodledev
 moodleform
@@ -217,10 +218,12 @@ moremenu
 multianswer
 multichoice
 multilang
+multilanguage
 myprofile
 oldmoduleid
 onlinetext
 opcache
+otherfields
 pactivity
 passwordunmask
 pdftoppm
@@ -263,6 +266,7 @@ setuplib
 shortanswer
 showdebugging
 showsql
+signup
 simpletest
 siteadmin
 siteidentifier
