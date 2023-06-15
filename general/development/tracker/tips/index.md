@@ -47,7 +47,7 @@ Now you can enter queries in the Jira Query Language (JQL). Use as many AND, OR 
 | `issue in linkedIssues("MDL-12345","duplicated by")` | Returns all the issues directly and indirectly duplicated by 'MDL-12345'. i.e. if there is 'MDL-12222'  duplicated by 'MDL-12345'   and 'MDL-11111'  duplicated by 'MDL-12222', both 'MDL-11111' and 'MDL-12222' will be returned as search results. |
 | [`issue in favouriteIssues()`](https://tracker.moodle.org/issues/?jql=issue%20in%20favouriteIssues%28%29) | issues that you marked as favourite |
 
-More documentation on [https://confluence.atlassian.com/jirasoftwareserver071/advanced-searching-800707146.html Advanced searching]
+More documentation on [Advanced searching](https://confluence.atlassian.com/jirasoftwareserver071/advanced-searching-800707146.html)
 
 ## Using filters
 
