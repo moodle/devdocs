@@ -222,6 +222,7 @@ D'souza
 Dageförde
 Dallimore
 Dalton
+Damian
 Damiani
 Damien
 Damyon
@@ -425,6 +426,7 @@ Herrmann
 Heywood
 Hien
 Hilton
+Hippisley
 Hiroto
 Hittesh
 Hoang
@@ -1315,6 +1317,7 @@ mathusiast
 mattc-catalyst
 mchampan
 mchurch
+meirzamoodle
 michaelkotlyar
 michaelpenne
 mikewaters
@@ -1410,6 +1413,7 @@ vinhle
 vinkmar
 vpisabeywardana
 vthung
+vtos
 vyshane
 watcanz
 wehr

@@ -112,7 +112,7 @@
         "location": "lib/adodb",
         "name": "AdoDB",
         "description": "Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.",
-        "version": "5.22.4",
+        "version": "5.22.5",
         "license": "BSD/LGPL",
         "licenseversion": "3-Clause/2.1+",
         "repository": "https://github.com/ADOdb/ADOdb",
@@ -992,7 +992,7 @@
         "location": "mod/assign/feedback/editpdf/fpdi",
         "name": "FPDI",
         "description": "Collection of PHP classes facilitating developers to read pages from existing PDF documents and use them as templates in FPDF.",
-        "version": "2.3.6",
+        "version": "2.3.7",
         "license": "MIT",
         "repository": "https://github.com/Setasign/FPDI",
         "customised": false
