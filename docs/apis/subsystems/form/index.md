@@ -242,6 +242,21 @@ The `add_action_buttons` function is defined on `moodlform` class, and not a par
 
 :::
 
+### add_sticky_action_buttons()
+
+import { Since } from '@site/src/components';
+
+<Since version="4.3" />
+
+This method calls `add_action_buttons()` internally and makes 'action' buttons sticky.
+
+```php
+public function add_sticky_action_buttons(
+    bool $cancel = true,
+    ?string $submitlabel = null
+);
+```
+
 ### setDefault()
 
 The [setDefault()](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#setDefault_2) function can be used to set the default value for an element.
@@ -251,8 +266,6 @@ The [setDefault()](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#
 The [disabledIf()](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#disabledIf) function can be used to conditionally _disable_ a group of elements, or and individual element depending on the state of other form elements.
 
 ### hideIf()
-
-import { Since } from '@site/src/components';
 
 <Since version="3.4" />
 

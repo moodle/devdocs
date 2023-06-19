@@ -242,3 +242,14 @@ MyModal.registerModalType();
 ```
 
 </ValidExample>
+
+## Forms API
+
+A new method `add_sticky_action_buttons()` has been added to [Forms API](./apis/subsystems/form/index.md#add_sticky_action_buttons) to enable sticky footer.
+
+```php
+public function add_sticky_action_buttons(
+    bool $cancel = true,
+    ?string $submitlabel = null
+);
+```
