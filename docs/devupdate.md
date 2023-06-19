@@ -7,6 +7,8 @@ tags:
 <!-- markdownlint-disable no-inline-html -->
 
 import { CodeBlock, CodeExample, InvalidExample, ValidExample, Since } from '@site/src/components';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 This page highlights the important changes that are coming in Moodle 4.3 for developers.
 
@@ -132,6 +134,8 @@ When creating a new modal type, these **must** now be written as an ESM class. P
 
 These changes are backwards compatible with previous versions of Moodle. An ESM Modal definition can be used with Moodle 4.2 or earlier. A prototypal modal _cannot_ be used with Moodle 4.3 onwards.
 
+<Tabs>
+<TabItem value="before" label="Before Moodle 4.3">
 <InvalidExample
     title="Prototypal modal definition"
 >
@@ -163,7 +167,9 @@ return MyModal;
 ```
 
 </InvalidExample>
+</TabItem>
 
+<TabItem value="after" label="From Moodle 4.3 onwards" default>
 <ValidExample
     title="The same content converted to an ESM class"
 >
@@ -191,6 +197,8 @@ export default class MyModal extends Modal {
 ```
 
 </ValidExample>
+</TabItem>
+</Tabs>
 
 ### Registration helper
 
@@ -203,6 +211,8 @@ Moodle 4.3 introduces a new `registerModalType` method on the Modal class to aid
 If your code is intended to work with Moodle 4.2 and older, then you must continue to use the old method of registration. This legacy method will be maintained until Moodle 4.6.
 
 :::
+<Tabs>
+<TabItem value="before" label="Before Moodle 4.3">
 
 <InvalidExample
     title="A modal using the legacy registration approach"
@@ -227,7 +237,9 @@ return MyModal;
 ```
 
 </InvalidExample>
+</TabItem>
 
+<TabItem value="after" label="From Moodle 4.3 onwards" default>
 <ValidExample
     title="A modal using the new shortcut helper"
 >
@@ -242,6 +254,8 @@ MyModal.registerModalType();
 ```
 
 </ValidExample>
+</TabItem>
+</Tabs>
 
 ## Forms API
 
