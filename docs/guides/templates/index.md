@@ -470,7 +470,7 @@ Templates.renderForPromise('block_looneytunes/profile', context)
 .catch((error) => displayException(error));
 ```
 
-Under the hood, this does a few clever things for us. It loads the template via an AJAX call if it was not cached. It finds any missing lang strings in the template and loads them in a single AJAX request. It split the JS from the HTML and returns us both in easy to use way. Read on for how to nicely deal with that `js` parameter.
+Under the hood, this does a few clever things for us. It loads the template via an AJAX call if it was not cached. It finds any missing lang strings in the template and loads them in a single AJAX request. It splits the JS from the HTML and returns both in an easy to use way. Read on for how to nicely deal with that `js` parameter.
 
 ## Templates requiring JavaScript
 
