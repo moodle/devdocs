@@ -1609,7 +1609,7 @@ The description portion is optional, it can be left out if the function is simpl
 
 ##### `@var`
 
-The `@var` tag is used to document class properties.
+The `@var` tag is used to document both class properties and constants, don't use `@const` for the later.
 
 <ValidExample>
 
