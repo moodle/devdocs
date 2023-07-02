@@ -473,7 +473,7 @@ CSS path converter, in PHP
 Machine learning library used to generate data for the Analytics system.
 
 - **Location**: lib/mlbackend/php/phpml
-- **Version**: 0.9.0
+- **Version**: 0.10.0
 - **License**:  MIT
 - **URL**: [https://gitlab.com/php-ai/php-ml](https://gitlab.com/php-ai/php-ml)
 - **Copyright holders**:
@@ -495,7 +495,7 @@ PHP library for displaying mustache templates.
 Library to read and write spreadsheet files (CSV, XLSX and ODS).
 
 - **Location**: lib/openspout
-- **Version**: 4.13.0
+- **Version**: 4.15.0
 - **License**:  MIT
 - **URL**: [https://github.com/openspout/openspout](https://github.com/openspout/openspout)
 - **Copyright holders**:
@@ -583,7 +583,7 @@ A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming t
 Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are based upon the standard AspEmail(tm) classes.
 
 - **Location**: lib/phpmailer
-- **Version**: 6.7.1
+- **Version**: 6.8.0
 - **License**:  LGPL 2.1
 - **URL**: [https://github.com/PHPMailer/PHPMailer](https://github.com/PHPMailer/PHPMailer)
 - **Copyright holders**:
@@ -825,7 +825,7 @@ PHP ZIP Streaming Library
 Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.
 
 - **Location**: media/player/videojs/amd/src/local/ogv/ogv.js
-- **Version**: 1.8.4
+- **Version**: 1.8.9
 - **License**:  MIT
 - **URL**: [https://github.com/brion/ogv.js/](https://github.com/brion/ogv.js/)
 - **Copyright holders**:
@@ -836,7 +836,7 @@ Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 JavaScript library that makes it easier to work with and build on HTML5 video.
 
 - **Location**: media/player/videojs/amd/src/video-lazy.js
-- **Version**: 7.20.3 (with Moodle customisations)
+- **Version**: 8.3.0 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
@@ -847,7 +847,7 @@ JavaScript library that makes it easier to work with and build on HTML5 video.
 The ogv.js tech plugin for VideoJS
 
 - **Location**: media/player/videojs/amd/src/videojs-ogvjs-lazy.js
-- **Version**: 0.2.1
+- **Version**: 1.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/HuongNV13/videojs-ogvjs](https://github.com/HuongNV13/videojs-ogvjs)
 - **Copyright holders**:
@@ -858,7 +858,7 @@ The ogv.js tech plugin for VideoJS
 YouTube Playback Technology for Video.js.
 
 - **Location**: media/player/videojs/amd/src/Youtube-lazy.js
-- **Version**: 2.6.1
+- **Version**: 3.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/videojs/videojs-youtube](https://github.com/videojs/videojs-youtube)
 - **Copyright holders**:
@@ -869,7 +869,7 @@ YouTube Playback Technology for Video.js.
 JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.
 
 - **Location**: media/player/videojs/ogvjs
-- **Version**: 1.8.4
+- **Version**: 1.8.9
 - **License**:  MIT
 - **URL**: [https://github.com/brion/ogv.js/](https://github.com/brion/ogv.js/)
 - **Copyright holders**:
@@ -880,7 +880,7 @@ JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 JavaScript library that makes it easier to work with and build on HTML5 video
 
 - **Location**: media/player/videojs/videojs
-- **Version**: 7.20.3 (with Moodle customisations)
+- **Version**: 8.3.0 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
