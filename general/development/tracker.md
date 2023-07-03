@@ -97,6 +97,10 @@ If you find that a bug is still affecting a stable version of Moodle, despite th
 1. Create a new issue for the bug
 2. Go back to the closed issue, then in the More menu select 'Link'. Enter the number of the issue you've just created and a comment. This will generate an email notification to all watchers, so they know to watch, vote or comment on the new issue from then on.
 
+## Always add a comment
+
+Remember that the Tracker is a low-bandwith communication medium based mostly on text (like old-fashioned email lists). I am sure you know what you are doing when you edit an issue, but other people cannot read your mind (probably!). It is strongly encouraged that you always add at least a short comment when changing an issue, so it is clear to all watchers what is happening.
+
 ## See also
 
 - [Tracker tips](./tracker/tips)
