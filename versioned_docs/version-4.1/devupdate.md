@@ -872,11 +872,11 @@ The background colour for activity icons is set using a new variable in function
 
 Available purposes are:
 
-- MOD_PURPOSE_COMMUNICATION
-- MOD_PURPOSE_ASSESSMENT
-- MOD_PURPOSE_COLLABORATION
-- MOD_PURPOSE_CONTENT
-- MOD_PURPOSE_ADMINISTRATION
+- MOD_PURPOSE_COMMUNICATION: e.g. chat, choice, feedback, survey
+- MOD_PURPOSE_ASSESSMENT: e.g. assign, quiz, workshop
+- MOD_PURPOSE_COLLABORATION: e.g. data, forum, glossary, wiki
+- MOD_PURPOSE_CONTENT: e.g. book, folder, lesson, label, page
+- MOD_PURPOSE_ADMINISTRATION: e.g. attendance
 - MOD_PURPOSE_INTERFACE
 
 The background colours linked to these purposes are set in `theme/boost/scss/moodle/variables.scss`
