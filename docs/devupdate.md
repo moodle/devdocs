@@ -7,6 +7,8 @@ tags:
 <!-- markdownlint-disable no-inline-html -->
 
 import { CodeBlock, CodeExample, InvalidExample, ValidExample, Since } from '@site/src/components';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 This page highlights the important changes that are coming in Moodle 4.3 for developers.
 
@@ -128,13 +130,26 @@ Moodle 4.3 brings a number of improvements to Modal dialogues. These improvement
 
 <Since version="4.3" issueNumber="MDL-78306" />
 
-When creating a new modal type, these **must** now be written as an ESM class. Prototypal modals are no longer supported.
+If using a prototypal class, you will see an error message such as the following:
+
+```js title="Errors shown when trying to instantiate a prototypal modal"
+test.js:4 Uncaught TypeError: Class constructor Modal cannot be invoked without 'new'
+    at new MyModal (test.js:4:11)
+    at <anonymous>:1:1
+```
+
+All modal types **must** now be written as an ESM class. Prototypal modals are no longer supported.
 
 These changes are backwards compatible with previous versions of Moodle. An ESM Modal definition can be used with Moodle 4.2 or earlier. A prototypal modal _cannot_ be used with Moodle 4.3 onwards.
+
+<Tabs groupId="beforeAfter">
+<TabItem value="before" label="Before Moodle 4.3">
 
 <InvalidExample
     title="Prototypal modal definition"
 >
+
+A Prototypal modal _cannot_ extend an ESM class.
 
 ```js
 var MyModal = function(root) {
@@ -163,22 +178,30 @@ return MyModal;
 ```
 
 </InvalidExample>
+</TabItem>
 
+<TabItem value="after" label="From Moodle 4.3 onwards" default>
 <ValidExample
     title="The same content converted to an ESM class"
 >
+
+An ESM class can extend either another ESM class, or a prototypal method.
 
 ```js
 export default class MyModal extends Modal {
     static TYPE = 'mod_example/myModal';
 
     constructor(root) {
+        // We can override the constructor to call additional setup.
         super(root);
 
         this.myCustomMethod();
     }
 
     registerEventListeners() {
+        // Call the registerEventListeners method on the parent class.
+        super.registerEventListeners();
+
         this.getModal().on(CustomEvents.events.activate, function(e) {
             // ...
         });
@@ -191,6 +214,8 @@ export default class MyModal extends Modal {
 ```
 
 </ValidExample>
+</TabItem>
+</Tabs>
 
 ### Registration helper
 
@@ -204,9 +229,14 @@ If your code is intended to work with Moodle 4.2 and older, then you must contin
 
 :::
 
+<Tabs groupId="beforeAfter">
+<TabItem value="before" label="Before Moodle 4.3">
+
 <InvalidExample
     title="A modal using the legacy registration approach"
 >
+
+The legacy registration will continue to work and should be used if your plugin will be used in Moodle 4.2, or earlier.
 
 ```js
 var MyModal = function(root) {
@@ -227,10 +257,14 @@ return MyModal;
 ```
 
 </InvalidExample>
+</TabItem>
 
+<TabItem value="after" label="From Moodle 4.3 onwards" default>
 <ValidExample
     title="A modal using the new shortcut helper"
 >
+
+The shortcut helper for Modal registration is suitable for Moodle 4.3 onwards.
 
 ```js
 export default class MyModal extends Modal {
@@ -242,6 +276,8 @@ MyModal.registerModalType();
 ```
 
 </ValidExample>
+</TabItem>
+</Tabs>
 
 ## Forms API
 
@@ -250,6 +286,6 @@ A new method `add_sticky_action_buttons()` has been added to [Forms API](./apis/
 ```php
 public function add_sticky_action_buttons(
     bool $cancel = true,
-    ?string $submitlabel = null
+    ?string $submitlabel = null,
 );
 ```
