@@ -33,7 +33,7 @@ The install.xml file describes the database tables that will be created when the
 
 :::important
 
-The content of the `install.xml` file **must** be created and maintained using the [XMLDB Editor](https://docs.moodle.org/dev/XMLDB_editor).
+The content of the `install.xml` file **must** be created and maintained using the [XMLDB Editor](/general/development/tools/xmldb).
 
 :::
 
@@ -43,7 +43,7 @@ The upgrade.php file describes the steps used to migrate the plugin from one ver
 
 :::important
 
-The content of the `upgrade.php` file **must** be created and maintained using the [XMLDB Editor](https://docs.moodle.org/dev/XMLDB_editor).
+The content of the `upgrade.php` file **must** be created and maintained using the [XMLDB Editor](/general/development/tools/xmldb).
 
 :::
 
