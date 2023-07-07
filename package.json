@@ -96,7 +96,7 @@
     "markdownlint-rule-helpers": "^0.17.2",
     "node-fetch": "^3.3.0",
     "nodemw": "^0.18.0",
-    "stylelint": "^14.15.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-standard": "^29.0.0",
     "ts-jest": "^29.0.3",
     "typescript": "^4.9.3",
