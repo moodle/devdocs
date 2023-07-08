@@ -261,6 +261,9 @@ Machine_learning_backends:
 Mission:
 - filePath: "/general/community/mission.md"
   slug: "/general/community/mission"
+Module_visibility_and_display:
+- filePath: "/docs/apis/plugintypes/mod/visibility.md"
+  slug: "/docs/apis/plugintypes/mod/visibility"
 Moodle_1.4.5_release_notes:
 - filePath: "/general/releases/1.4/1.4.5.md"
   slug: "/general/releases/1.4/1.4.5"
