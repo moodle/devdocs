@@ -55,6 +55,7 @@ Anabitarte
 Anandani
 Anant
 Anastasios
+Anders
 Anderson
 Andolo
 Andrea
@@ -264,6 +265,7 @@ Dickman
 Didier
 Dieckmann
 Dikih
+Dinesh
 Dinh
 Djunaidi
 Dmitri
@@ -279,6 +281,7 @@ Dougiamas
 Drlík
 Dulk
 Dunand
+Durai
 Durber
 Dutta
 Dvorovenko
@@ -858,6 +861,7 @@ Ramindu
 Ramiro
 Ransom
 Raphaël
+Rasmussen
 Rawson
 Raymond
 Recio
