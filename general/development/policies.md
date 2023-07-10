@@ -133,9 +133,6 @@ For more information and advice, see [Performance and scalability](https://docs.
 ## Database
 
 Moodle has a powerful database abstraction layer that we wrote ourselves, called [XMLDB](https://docs.moodle.org/dev/XMLDB_Documentation).  This lets the same Moodle code work on MySQL/MariaDB, PostgreSQL, MS SQL Server and Oracle. There are known issues when using Oracle, it is not fully supported and is not recommended for production sites.
-``
-
-Is this Oracle statement true?
 
 We have tools and APIs for [defining and modifying tables](/docs/apis/core/dml/ddl), and [retrieving and storing data](/docs/apis/core/dml) in the database.
 
