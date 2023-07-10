@@ -18,7 +18,7 @@ Location: *Site administration > Development > XMLDB editor*
 
 To use the XMLDB editor to create tables for a new plugin:
 
-TIP for moodle ver 2.8: it would seem you need a "version.php" and a "settings.php" file within your mod/mymodule/ folder, along with a "db" folder that has "WRITE PERMISSION" inside your mod/mymodule/ folder. i assume the 2 files version.php and settings.php are for security, so XMLDB editor does not get abused some how. i would also assume settings.php and version.php need to be filled out to some extent. if you have above things, then you should be able to find your "mod/mymodule/" and be able to click the "create" link.
+TIP for moodle ver 2.8: it would seem you need a "version.php" and a "settings.php" file within your `mod/mymodule/` folder, along with a "db" folder that has "WRITE PERMISSION" inside your `mod/mymodule/` folder. i assume the 2 files version.php and settings.php are for security, so XMLDB editor does not get abused some how. i would also assume settings.php and version.php need to be filled out to some extent. if you have above things, then you should be able to find your `mod/mymodule/` and be able to click the "create" link.
 
 1. Under your plugin's directory, create a **`db`** directory, e.g. **`mod/mymodule/db`**. Make sure the web server has write access to this directory.
 2. In Moodle, navigate to Site administration->Development->XMLDB editor
@@ -52,7 +52,7 @@ To get the code for the '// Insert PHP code here' bit, open the XMLDB Editor and
 
 Choose the 'View PHP Code' option and then copy and paste the generated code.
 
-![xmldbeditor-showphpcode.png](./_xmldb/xmldbeditor-showphpcode.png)
+![An image showing the XMLDB Editor, highlighting the 'View PHP Code' link](./_xmldb/xmldbeditor-showphpcode.png)
 
 ## Use
 
@@ -84,11 +84,11 @@ Apart from the [Database Structures guidelines](https://docs.moodle.org/dev/Data
 8. Avoid to create all the fields as NOT NULL with the *silly* default value `*` (empty string). The underlying code used to create tables will handle it properly but the XMLDB structure must be REAL. Read more in the [Problems Page](https://docs.moodle.org/dev/XMLDB_Problems#NOT_NULL_fields_using_a_DEFAULT_*_clause).
 9. About FOREIGN KEYS
 10. Under the tables of every XMLDB file, you must define the existing **Foreign Keys** (FK) properly. This will allow everybody to know a bit better the structure, allow to evolve to a better constrained system in the future and will provide the underlying code with the needed info to create the proper indexes.
-12. Note that, if you define any field combination as FK you won't have to create any index on that fields, the code will do it automatically!
-13. Respect Convention 1.3
-14. About UNIQUE KEYS
-15. Declare any fields as UNIQUE KEY (UK) only if they are going to be used as target for one FK. Create unique indexes instead.
-16. Respect Convention 1.3
+11. Note that, if you define any field combination as FK you won't have to create any index on that fields, the code will do it automatically!
+12. Respect Convention 1.3
+13. About UNIQUE KEYS
+14. Declare any fields as UNIQUE KEY (UK) only if they are going to be used as target for one FK. Create unique indexes instead.
+15. Respect Convention 1.3
 
 ## See also
 

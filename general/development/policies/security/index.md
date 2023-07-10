@@ -185,7 +185,7 @@ We recommend that you follow the [Output functions](/docs/apis/subsystems/output
 
 ### Escape data before storing it in the database
 
-- Use the [XMLDB](/general/development/tools/xmldb) library. This takes care of most escaping issues for you.
+- Use the [XMLDB](../../tools/xmldb.md) library. This takes care of most escaping issues for you.
 - When you must use custom SQL code, **use place-holders** to insert values into the queries.
   - Before Moodle 2.0, you had to build SQL by concatenating strings. Take particular care, especially with quoting values, to avoid SQL injection vulnerabilities.
 - The `addslashes` method should no longer be use anywhere in Moodle 2.0 onwards.
