@@ -13,6 +13,8 @@ Before they can be used, all functions must be _declared_ to Moodle, and their i
 - Functions are _declared_ by noting them in the `db/services.php` file for a plugin.
 - Functions are _defined_ within their own class located within the `\component\external` namespace of a component.
 
+Note that there is a strict [naming convention for external service functions](https://moodledev.io/general/development/policies/naming#web-services).
+
 Function implementation classes consist of one class containing a number of functions, some of which are mandatory.
 
 During a Moodle installation or upgrade, the service and function _declarations_ are parsed by a service discovery process and stored within the database. An administrative UI may be used to change _some_ configuration details of these declarations.
