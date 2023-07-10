@@ -22,7 +22,7 @@ When defining a new service definition, Moodle requires that the name of the def
 [frankenstyle_component]_[methodname]
 ```
 
-The [naming convention](https://docs.moodle.org/dev/Web_service_API_functions#Naming_convention) further dictates that the `methodname` component be in the form:
+The [naming convention](https://moodledev.io/general/development/policies/naming#web-services) further dictates that the `methodname` component be in the form:
 
 ```sh
 [methodname]  - The name of the method in the form of [verb]_[noun]
