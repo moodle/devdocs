@@ -1674,6 +1674,9 @@ Web_services_files_handling:
 Writing_acceptance_tests:
 - filePath: "/general/development/tools/behat/writing.md"
   slug: "/general/development/tools/behat/writing"
+XMLDB_editor:
+- filePath: "/general/development/tools/xmldb.md"
+  slug: "/general/development/tools/xmldb"
 YUI:
 - filePath: "/docs/guides/javascript/yui/index.md"
   slug: "/docs/guides/javascript/yui/"

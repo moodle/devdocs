@@ -60,7 +60,7 @@ Learn how to use Moodle's [backup](/docs/apis/subsystems/backup) and [restore](/
 
 [Database schema introduction](/docs/apis/core/dml/database-schema) gives a high level overview of the database schema.
 
-Because of Moodle's modular nature, there is no single, detailed representation of the full database schema. Instead, the tables for each part of Moodle are defined in a database-neutral XML format in each part of Moodle (see [XMLDB](https://docs.moodle.org/dev/XMLDB_editor)). Look for files called `install.xml` located in folders called `db` throughout your Moodle installation.
+Because of Moodle's modular nature, there is no single, detailed representation of the full database schema. Instead, the tables for each part of Moodle are defined in a database-neutral XML format in each part of Moodle (see [XMLDB](/general/development/tools/xmldb)). Look for files called `install.xml` located in folders called `db` throughout your Moodle installation.
 
 Alternatively, log in as an administrator on your Moodle site and go to _Site administration -> Development -> XMLDB editor_. Use the _Doc_ link to see automatically generated documentation built from `install.xml` files.
 
