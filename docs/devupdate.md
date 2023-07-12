@@ -281,6 +281,8 @@ MyModal.registerModalType();
 
 ## Forms API
 
+### add_sticky_action_buttons
+
 A new method `add_sticky_action_buttons()` has been added to [Forms API](./apis/subsystems/form/index.md#add_sticky_action_buttons) to enable sticky footer.
 
 ```php
@@ -288,4 +290,47 @@ public function add_sticky_action_buttons(
     bool $cancel = true,
     ?string $submitlabel = null,
 );
+```
+
+### filter_shown_headers
+
+A new method `filter_shown_headers()` has been added to to [Forms API](./apis/subsystems/form/index.md#filter_shown_headers) to show some expanded headers only and hide the rest.
+
+This method adds values to `_shownonlyelements` array to decide whether a header should be shown or hidden.
+Only header names would be accepted and added to `_shownonlyelements` array.
+Headers included in `_shownonlyelements` will be shown expanded in the form. The rest of the headers will be hidden.
+
+```php
+public function filter_shown_headers(array $shownonly): void {
+    $this->_shownonlyelements = [];
+    if (empty($shownonly)) {
+        return;
+    }
+    foreach ($shownonly as $headername) {
+        $element = $this->getElement($headername);
+        if ($element->getType() == 'header') {
+            $this->_shownonlyelements[] = $headername;
+            $this->setExpanded($headername);
+        }
+    }
+}
+```
+
+Empty `_shownonlyelements` array doesn't affect header's status or visibility.
+
+```php title="/course/editsection.php"
+$showonly = optional_param('showonly', 0, PARAM_TAGLIST);
+
+[...]
+
+$mform = $courseformat->editsection_form($PAGE->url, $customdata);
+
+$initialdata = convert_to_array($sectioninfo);
+if (!empty($CFG->enableavailability)) {
+    $initialdata['availabilityconditionsjson'] = $sectioninfo->availability;
+}
+$mform->set_data($initialdata);
+if (!empty($showonly)) {
+    $mform->filter_shown_headers(explode(',', $showonly));
+}
 ```
