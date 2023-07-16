@@ -509,6 +509,7 @@ Jonathan
 Jonathon
 Jones
 Jordan
+Jordao
 Jordi
 Jorgensen
 Joseph
@@ -701,6 +702,7 @@ Milette
 Miller
 Milling
 Mirko
+Misha
 Mitin
 Mitsuhiro
 Mitxel
@@ -804,6 +806,7 @@ Paula
 Pavel
 Pawełczak
 Peachey
+Pedro
 Pegenau
 Penelope
 Penner
@@ -1144,6 +1147,7 @@ YVANES
 Yair
 Yang
 Yannick
+Yeung
 Yevhenii
 Yolanda
 Yoshida
