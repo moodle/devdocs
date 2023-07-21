@@ -927,7 +927,7 @@ To customize all icon colours use this scss array and add it to the 'Raw initial
      "communication": #F7634D,
      "content": #399BE2,
      "interface": #A378FF
- )
+ );
 ```
 
 ## I'm a developer, what do I need to know?
