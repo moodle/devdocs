@@ -1485,6 +1485,9 @@ Peer_reviewing:
 Plagiarism_API:
 - filePath: "/docs/apis/subsystems/plagiarism.md"
   slug: "/docs/apis/subsystems/plagiarism"
+Plugin_contribution:
+- filePath: "/general/community/plugincontribution/index.md"
+  slug: "/general/community/plugincontribution"
 Plugin_files:
 - filePath: "/docs/apis/commonfiles.md"
   slug: "/docs/apis/commonfiles"

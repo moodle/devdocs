@@ -13,7 +13,7 @@ tags:
 - [Prepare a patch](/docs/guides/git/#preparing-a-patch)
 - Read the [Coding style](./policies/codingstyle/index.md) policy
 - Send your patch to [peer review](./process/peer-review.md) and learn more about the [Moodle processes](./process.md).
-- Create your custom plugins looking at the information in the [Plugin contribution](https://docs.moodle.org/dev/Plugin_contribution) page.
+- Create your custom plugins looking at the information in the [Plugin contribution](../community/plugincontribution/index.md) page.
 
 :::
 
