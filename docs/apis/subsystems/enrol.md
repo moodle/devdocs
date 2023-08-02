@@ -99,7 +99,7 @@ function get_enrolled_users(
 Get all users who are able to submit an assignment:
 
 ```php
-$submissioncandidates = get_enrolled_users($modcontext, 'mod/assignment:submit');
+$submissioncandidates = get_enrolled_users($modcontext, 'mod/assign:submit');
 ```
 
   </div>
