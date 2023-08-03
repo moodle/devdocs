@@ -9,7 +9,13 @@ This page describes how to contribute your code into the [Plugins directory](htt
 
 ## Why
 
-You are encouraged to share your plugin with the community. But firstly, to be clear and honest, you do not necessarily need to submit your plugin into the Plugins directory. Maybe it is a custom plugin that solves one particular site's needs and you do not really want to share it with others. Remember you can always simply host your plugin on your own site and let users download it manually from there.
+You are encouraged to share your plugin with the community. But firstly, to be clear and honest, you do not necessarily need to submit your plugin into the Plugins directory. Maybe it is a custom plugin that solves one particular site's needs and you do not really want to share it with others.
+
+:::note
+
+Remember you can always simply host your plugin on your own site and let users download it manually from there.
+
+:::
 
 Having your plugin registered with the Plugins directory has several benefits.
 
@@ -54,13 +60,17 @@ Workflow of contributing a plugin into the Moodle plugins directory ([SVG versio
 - You are supposed to publish and share your plugin code so that others can clone it easily and eventually contribute patches for it easily.
 - [Github](https://github.com/) is a popular choice of many Moodle developers these days.
 - The layout should be that the root of the repository is the root of the plugin folder. In other words, in the root of your repository there should be files like version.php and folders like lang or classes. That way, your plugin can be directly cloned (checked out) into existing Moodle installation without conflicting with other contributed plugins of the same type, also obtained via Git.
-- It is suggested to follow the common naming convention of Moodle related repositories: moodle-{plugintype}_{pluginname}. For example, the birthday block has a repository name of moodle-block_birthday and is located at https://github.com/arborrow/moodle-block_birthday. Other developers can fork the code and work from their repositories.
+- It is suggested to follow the common naming convention of Moodle related repositories: moodle-`{plugintype}_{pluginname}`. For example, the birthday block has a repository name of `moodle-block_birthday` and is located at https://github.com/arborrow/moodle-block_birthday. Other developers can fork the code and work from their repositories.
 
 ### Tracker
 
 You are expected to have a system where users can report feature requests, bugs, and other code issues. Following the open source best practise, these reports should be open and public and the associated procedures should be as transparent as possible.
 
+:::info
+
 There are multiple options on where to host the issues tracker. Most plugin developers today prefer to have the issue tracker close to their source code management system - so they use the native issue tracker built into Github, BitBucket or some similar system. It is suggested to use a system that your users are likely to be familiar with.
+
+:::
 
 ## Tutorial
 
@@ -71,6 +81,6 @@ There is a [Tutorial](https://docs.moodle.org/dev/Tutorial) to help you learn ho
 - [Moodle icons](https://docs.moodle.org/dev/Moodle_icons)
 - [Overview](../../community/intro.md) of Moodle development
 - Using Moodle [Best practices for code modification?](http://moodle.org/mod/forum/discuss.php?d=99037) forum discussion
-- [Moodle](http://aosabook.org/en/moodle.html) in The Architecture of Open Source Applications, by Tim Hunt - an overview of all aspects of how Moodle works, it focuses on those areas where Moodle's design is particularly interesting.
-- [The Moodle 3.0 database schema](http://www.examulator.com/er/) reverse engineered and [Database schema introduction](https://docs.moodle.org/dev/Database_schema_introduction).
+- [Moodle in The Architecture of Open Source Applications](http://aosabook.org/en/moodle.html), by Tim Hunt - an overview of all aspects of how Moodle works, it focuses on those areas where Moodle's design is particularly interesting.
+- [The Moodle 3.0 database schema](https://moodledev.io/docs/apis/core/dml/database-schema) reverse engineered and [Database schema introduction](https://docs.moodle.org/dev/Database_schema_introduction).
 - [Preparing plugins for Moodle 3.0](https://moodle.org/mod/forum/discuss.php?d=322196) excellent summary in this forum thread. Also applies for Moodle 3.1 and newer.
