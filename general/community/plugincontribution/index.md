@@ -5,7 +5,7 @@ tags:
   - Plugins
   - Plugin documentation
 ---
-This page describes how to contribute your code into the [Plugins directory](https://docs.moodle.org/dev/Plugins_directory) to share it with the Moodle community.
+This page describes how to contribute your code into the [Plugins directory](../../community/plugincontribution/pluginsdirectory.md) to share it with the Moodle community.
 
 ## Why
 
@@ -33,12 +33,12 @@ Before submitting your work to the Plugins directory, you should make sure you h
 - **Plugin name** - See the [Frankenstyle](../../development/policies/codingstyle/frankenstyle.md) page for details.
 - **Repository** - You are expected to have the plugin code published and shared in a way that facilitates collaboration on further development. Ideally, you have the code available in a public Git repository. Most developers found [Github](https://github.com) a good place to host their code on. The [Repository](#repository) section below provides more details.
 - **Tracker** - You are expected to have a system where users can report issues, bugs and feature requests for the plugin. Again, many developers use [Github issues](https://guides.github.com/features/issues/) happily these days. You can also use the Moodle tracker if you prefer. See [Tracker](#tracker) section for more details.
-- **Documentation** - The plugin should have a good documentation available. See [Plugin documentation](https://docs.moodle.org/dev/Plugin_documentation) for options.
+- **Documentation** - The plugin should have a good documentation available. See [Plugin documentation](../../community/plugincontribution/documentation.md) for options.
 - **Screenshots** - Prepare good screenshots that illustrate your plugin's essential features.
 
 ## Sharing code in the Plugins directory
 
-So you have written a new plugin and want to share it now in the [Plugins directory](https://docs.moodle.org/dev/Plugins_directory)? Great! Shortly, the workflow of publishing and maintaining your plugin in the Plugins directory looks like this:
+So you have written a new plugin and want to share it now in the [Plugins directory](../../community/plugincontribution/pluginsdirectory.md)? Great! Shortly, the workflow of publishing and maintaining your plugin in the Plugins directory looks like this:
 
 ![Workflow of contributing a plugin into the Moodle plugins directory](_index/plugin-contribution-workflow.png)
 <figcaption>
@@ -47,7 +47,7 @@ Workflow of contributing a plugin into the Moodle plugins directory ([SVG versio
 
 </figcaption>
 
-1. You upload the initial plugin version for approval from the [Register a new plugin](https://moodle.org/plugins/registerplugin.php) link, available  in the Navigation block in the blocks drawer on the right. To help the approval review go smoothly, please feel encouraged to review the [Plugin contribution checklist](https://docs.moodle.org/dev/Plugin_contribution_checklist) and follow all the guidelines there.
+1. You upload the initial plugin version for approval from the [Register a new plugin](https://moodle.org/plugins/registerplugin.php) link, available  in the Navigation block in the blocks drawer on the right. To help the approval review go smoothly, please feel encouraged to review the [Plugin contribution checklist](../../community/plugincontribution/checklist.md) and follow all the guidelines there.
 1. After you submit the plugin for approval, please brace yourself with patience. You will likely wait some weeks before you get initial review results. We generally try and provide the feedback sooner, but it is not always possible. The actual approval queue stats [are available](https://moodle.org/plugins/queue.php).
 1. The plugin goes through the validation and approval process.
 1. Almost all plugins are sent back as "needing more work" as a result of the initial review, and there is no reason to feel bad about that. It is natural part of the workflow. You may find particular issues reported so you have an opportunity to demonstrate your ability to co-operate with the reporter to resolve them.

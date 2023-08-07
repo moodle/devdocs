@@ -121,6 +121,7 @@ coursecatlib
 coursefiles
 courseid
 courseindex
+coursemodule
 crtl
 datafield
 dayofweek
@@ -220,6 +221,7 @@ multichoice
 multilang
 multilanguage
 myprofile
+nowdoc
 oldmoduleid
 onlinetext
 opcache
@@ -232,6 +234,7 @@ pgsql
 phpcs
 phpdoc
 phpdocs
+phplint
 phpmailer
 phpstorm
 phptags
@@ -243,6 +246,7 @@ plugininfo
 pluginname
 plugintype
 plugintypes
+prechecks
 previewquestion
 privatefiles
 protectusernames
@@ -258,6 +262,8 @@ riskbitmask
 ruleset
 saas
 safeoverride
+savepoint
+savepoints
 scormreport
 selfcompletion
 sesskey
@@ -271,6 +277,7 @@ simpletest
 siteadmin
 siteidentifier
 sitepolicynotagreed
+superglobals
 smallmessage
 splitview
 stepslib
