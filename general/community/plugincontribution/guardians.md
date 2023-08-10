@@ -1,6 +1,7 @@
 ---
 title: Plugins guardians
 sidebar_position: 8
+sidebar_label: Guardians
 tags:
   - Guidelines for contributors
   - Plugin documentation

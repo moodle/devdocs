@@ -1,6 +1,7 @@
 ---
 title: Plugin contribution checklist
 sidebar_position: 2
+sidebar_label: Checklist
 tags:
   - Guidelines for contributors
   - Plugins
@@ -19,7 +20,12 @@ Before approaching the [Moodle plugins directory](https://moodle.org/plugins) an
 ### Supported Moodle versions
 
 - New plugins submitted into the plugins directory must support at least one of the currently maintained Moodle version.
-- See [Releases](../../releases.md) for the list of currently maintained Moodle versions (policy issue [MDL-47579](https://tracker.moodle.org/browse/MDL-47579)).
+
+:::info
+
+See [Releases](../../releases.md) for the list of currently maintained Moodle versions (policy issue [MDL-47579](https://tracker.moodle.org/browse/MDL-47579)).
+
+:::
 
 ### Code repository name
 
@@ -34,7 +40,12 @@ Before approaching the [Moodle plugins directory](https://moodle.org/plugins) an
 
 - Encourage participation and have a place to report issues, bugs, make feature requests, or suggest other types of improvements.
 - Both [Moodle tracker](../../development/tracker/guide.md) and [Github issues](https://guides.github.com/features/issues/) are common.
-- See [Plugin contribution#Tracker](./index.md#tracker) if you want to use the Moodle tracker.
+
+:::info
+
+See [Plugin contribution#Tracker](./index.md#tracker) if you want to use the Moodle tracker.
+
+:::
 
 ### Documentation URL
 
@@ -80,7 +91,12 @@ Before approaching the [Moodle plugins directory](https://moodle.org/plugins) an
 
 - Test the plugin with multiple database engines supported by Moodle.
 - At very least, the plugin is supposed to work with MySQL and PostgreSQL unless reasons are clearly explained in the description and the `README` file (such as the plugin is a wrapper for third-party DB specific utility).
-- [Data manipulation API](/docs/apis/core/dml) helps you to ensure cross-db compatibility.
+
+:::info
+
+[Data manipulation API](/docs/apis/core/dml) helps you to ensure cross-db compatibility.
+
+:::
 
 ## Coding
 
@@ -97,7 +113,12 @@ Before approaching the [Moodle plugins directory](https://moodle.org/plugins) an
 ### Boilerplate
 
 - All files should contain the common boilerplate at the beginning with explicit GPL license statement.
-- See the section [Coding style#Files](../../development/policies/codingstyle/index.md#files) for the template.
+
+:::info
+
+See the section [Coding style#Files](../../development/policies/codingstyle/index.md#files) for the template.
+
+:::
 
 ### Copyrights
 
@@ -107,8 +128,8 @@ Before approaching the [Moodle plugins directory](https://moodle.org/plugins) an
 
 ```php
 /**
- * @copyright 2019 John Smith <john.smith@example.com>
- * @copyright based on work by 2010 Mary Stuart <mary.stuart@example.com>
+ * @copyright 2023 John Smith <john.smith@example.com>
+ * @copyright based on work by 2020 Mary Stuart <mary.stuart@example.com>
  */
 ```
 
@@ -117,13 +138,23 @@ Before approaching the [Moodle plugins directory](https://moodle.org/plugins) an
 - All styles.css files from all plugins are concatenated, cached and served as a one big resource on all pages of the given Moodle installation.
 - For that reason, plugins must use properly namespaced selectors so that their style sheets can be safely combined with others without affecting other pages and elements beyond the plugin's scope.
 - Plugin specific CSS selectors are needed to make sure that your styling does not accidentally affect other parts of Moodle outside your plugin scope.
-- For example, instead of the selector `.contentarea` it is better to use something like `.path-mod-mymodule .contentarea` as the `.path-\*` classes are automatically added by the Moodle core renderers to the HTML `<body>` tag.
+
+:::tip Example
+
+Instead of the selector `.contentarea` it is better to use something like `.path-mod-mymodule .contentarea` as the `.path-\*` classes are automatically added by the Moodle core renderers to the HTML `<body>` tag.
+
+:::
 
 ### Namespace collisions
 
 - Check that all your DB tables, settings, functions, classes, constants and variables are named correctly. In most cases their names must start with the plugin type and plugin name, as in `block_yourname_something` (so called [frankenstyle](../../development/policies/codingstyle/frankenstyle.md) prefix). Modules are an exception to this rule as functions such as get_coursemodule_from_id() rely on there being no preface of 'mod'.
 - Do not define own classes, functions, variables or constants in the top-level scope (global space) without the valid frankenstyle prefix.
-- See [Coding style#Functions and Methods](../../development/policies/codingstyle/index.md#functions-and-methods) for details.
+
+:::info
+
+See [Coding style#Functions and Methods](../../development/policies/codingstyle/index.md#functions-and-methods) for details.
+
+:::
 
 ### Settings storage
 
@@ -139,13 +170,18 @@ Before approaching the [Moodle plugins directory](https://moodle.org/plugins) an
 - Just the English strings should ship with the plugin. All other translations are supposed to be submitted as contributions at [https://lang.moodle.org](https://lang.moodle.org) once your plugin is approved - see [Translating plugins](https://docs.moodle.org/dev/Translating_plugins).
 - Your code must not rely on trailing and leading whitespace in strings.
 - The string file must be considered as pure data file with the syntax `$string[]('id') = 'value';`. No other PHP syntax such as [concatenation](http://php.net/manual/en/language.operators.string.php),  [heredoc and nowdoc](http://php.net/manual/en/language.types.string.php) is supported by the tools that we use when processing your strings (even if it may work in Moodle itself).
-- The English language pack (lang/en/) in Moodle does not use "Capitalised Titles".
+- The English language pack (`lang/en/`) in Moodle does not use "Capitalised Titles".
 
 ### Privacy
 
 - Avoid gathering, storing, processing and sharing personal data unless they are needed for the plugin functionality.
-- Inform about all the personal data that the plugin processes, via both description and the [Privacy API](/docs/apis/subsystems/privacy/).
 - For plugins that integrate with an external system, privacy API implementation is required prior approval in the plugins directory (most notably the meta-data provider part).
+
+:::info
+
+Inform about all the personal data that the plugin processes, via both description and the [Privacy API](/docs/apis/subsystems/privacy/).
+
+:::
 
 ### Security
 

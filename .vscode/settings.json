@@ -1,7 +1,4 @@
 {
     "stylelint.packageManager": "yarn",
-    "cSpell.enabled": true,
-    "cSpell.words": [
-        "prechecks"
-    ]
+    "cSpell.enabled": true
 }

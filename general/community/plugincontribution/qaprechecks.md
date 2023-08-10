@@ -1,6 +1,7 @@
 ---
 title: Plugin QA prechecks
 sidebar_position: 4
+sidebar_label: QA prechecks
 tags:
   - Guidelines for contributors
   - Plugins
@@ -9,7 +10,7 @@ tags:
 ---
 Plugin QA prechecks are for testing the functionality of plugins submitted for approval in the Moodle Plugins directory. Together with [code prechecks](../../community/plugincontribution/codeprechecks), they are part of the plugin [approval process](../../community/plugincontribution#sharing-code-in-the-plugins-directory).
 
-Moodle community members with experience in setting up a local Moodle test environment can help with plugin QA prechecks. If you would like to help, please contact David Mudrák.
+Moodle community members with experience in setting up a local Moodle test environment can help with plugin QA prechecks. If you would like to help, please contact David Mudrák [david@moodle.com](mailto:david@moodle.com)
 
 ## QA environment setup
 

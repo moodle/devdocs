@@ -1,6 +1,7 @@
 ---
 title: Plugin code prechecks
 sidebar_position: 3
+sidebar_label: Code prechecks
 tags:
   - Guidelines for contributors
   - Plugins
@@ -18,7 +19,11 @@ If there are some formal errors or warnings detected, a label like this is displ
 
 ![Plugin code prechecks error](_codeprechecks/plugin-codeprechecks-error.png)
 
+:::info Labels information
+
 The first of the two numbers gives the total number of detected errors, the second number shows the number of warnings. If there are no errors but some warnings, the label is displayed in orange colour. In case of some errors, the label is displayed in red.
+
+:::
 
 Clicking the code prechecks label takes you to a page with details on particular tests executed. Individual labels are displayed for each of the test, with the same formatting rules as described above.
 

@@ -1,6 +1,7 @@
 ---
 title: Plugins directory API
 sidebar_position: 10
+sidebar_label: Directory API
 tags:
   - Guidelines for contributors
   - Plugins
@@ -90,9 +91,7 @@ return new external_multiple_structure(
 );
 ```
 
-#### Example cURL client fetching the list of maintained plugins
-
-```bash
+```bash title="Example cURL client fetching the list of maintained plugins"
 #!/bin/bash
 
 # Replace this with your own service access token.
@@ -159,9 +158,7 @@ return new external_single_structure([
 ]);
 ```
 
-#### Example CLI script to release a new version of a plugin
-
-```bash
+```bash title="Example CLI script to release a new version of a plugin"
 #!/bin/bash
 
 # Replace this with your own service access token.
@@ -183,6 +180,6 @@ ${CURL} ${ENDPOINT_REST} --data-urlencode "wstoken=${TOKEN}" --data-urlencode "w
     --data-urlencode "frankenstyle=${PLUGIN}" --data-urlencode "zipdrafitemtid=${ITEMID}" | jq
 ```
 
-#### GitHub Actions
+### GitHub Actions
 
 A new workflow can be configured at GitHub Actions to automatically release a new version in the Plugins directory once a tag is pushed to the repository. Please see https://github.com/moodlehq/moodle-plugin-release for details.

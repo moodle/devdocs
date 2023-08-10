@@ -1,6 +1,7 @@
 ---
 title: Plugin with third party libraries
 sidebar_position: 5
+sidebar_label: Third-party libraries
 tags:
   - Guidelines for contributors
   - Plugins

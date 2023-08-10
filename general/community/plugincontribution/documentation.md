@@ -1,6 +1,7 @@
 ---
 title: Plugin documentation
 sidebar_position: 6
+sidebar_label: Documentation
 tags:
   - Plugins
   - Plugin documentation
@@ -35,7 +36,7 @@ Copy and complete the following template code to obtain an infobox listing detai
 
 ![Example infobox: Stamp collection module](./_documentation/infobox_plugin.png)
 
-:::note
+:::tip
 
 If there is not yet a discussion thread about your plugin, please create one in the [General plugins forum](http://moodle.org/mod/forum/view.phpid=44).
 
@@ -43,7 +44,7 @@ If there is not yet a discussion thread about your plugin, please create one in 
 
 :::note
 
-Please make sure that the page linked in 'User:Maintainer name|Maintainer name' actually has your relevant details (profile), or a link to an existing profile in Moodle or elsewhere.
+Please make sure that the page linked in `User:Maintainer name|Maintainer name` actually has your relevant details (profile), or a link to an existing profile in Moodle or elsewhere.
 
 :::
 
@@ -52,7 +53,12 @@ The documentation may also include:
 - A features overview with screenshots or videos.
 - Installation instructions
 
-Plugin documentation examples: [Stamp collection](https://docs.moodle.org/en/Stamp_collection_module), [Profile switches](https://docs.moodle.org/en/Profile_switches).
+:::info Plugin documentation examples
+
+- [Stamp collection](https://docs.moodle.org/en/Stamp_collection_module)
+- [Profile switches](https://docs.moodle.org/en/Profile_switches)
+
+:::
 
 ## Which version of the user docs should the documentation be added to?
 

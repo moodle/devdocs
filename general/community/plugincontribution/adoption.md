@@ -1,6 +1,7 @@
 ---
 title: Plugins adoption programme
 sidebar_position: 9
+sidebar_label: Adoption programme
 tags:
   - Guidelines for contributors
   - Plugins
@@ -8,7 +9,11 @@ tags:
 ---
 The Plugins adoption programme is a process for making it clear that a plugin is orphaned and is looking for a new maintainer. The programme is one of the mechanisms helping to minimise the risks of relying on additional plugins. The programme helps to find new maintainers for plugins whose original authors can't work on the plugin fully any more.
 
+:::info
+
 The programmes started in 2014 by announcing it in [a forum post](https://moodle.org/mod/forum/discuss.php?d=260354#p1128482) and since then, many plugins found their new maintainers since then through it.
+
+:::
 
 ### Motivation
 
@@ -16,13 +21,9 @@ Having an additional plugin installed at a Moodle site is always a risk. One of 
 
 It's not that difficult to write a new Moodle plugin these days. Many students do that as a part of their school or thesis projects, for example. But can one rely on the author of plugin to provide sufficient (or at least some) support for it? To be a responsible maintainer of a plugin is much harder than to be an author of it. Many maintainers work on their plugins in their free time. And even if they are lucky enough to be paid for doing that, it's just time consuming (as everything).
 
-At certain moment, maintainers can realise they are not able to give enough love to their plugins any more. In the essay The Cathedral and the Bazaar, Eric Steven Raymond says
+At certain moment, maintainers can realise they are not able to give enough love to their plugins any more. In the essay "The Cathedral and the Bazaar", Eric Steven Raymond says:
 
-:::note
-
-When you lose interest in a program, your last duty to it is to hand it off to a competent successor.
-
-:::
+> When you lose interest in a program, your last duty to it is to hand it off to a competent successor.
 
 And that is what Moodle plugins adoption programme is about.
 
