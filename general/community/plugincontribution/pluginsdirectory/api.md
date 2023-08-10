@@ -1,7 +1,6 @@
 ---
 title: Plugins directory API
-sidebar_position: 10
-sidebar_label: Directory API
+sidebar_label: API
 tags:
   - Guidelines for contributors
   - Plugins

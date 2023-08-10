@@ -5,7 +5,7 @@ tags:
   - Plugins
   - Plugin documentation
 ---
-This page describes how to contribute your code into the [Plugins directory](../../community/plugincontribution/pluginsdirectory.md) to share it with the Moodle community.
+This page describes how to contribute your code into the [Plugins directory](../../community/plugincontribution/pluginsdirectory/index.md) to share it with the Moodle community.
 
 ## Why
 
@@ -38,7 +38,7 @@ Before submitting your work to the Plugins directory, you should make sure you h
 
 ## Sharing code in the Plugins directory
 
-So you have written a new plugin and want to share it now in the [Plugins directory](../../community/plugincontribution/pluginsdirectory.md)? Great! Shortly, the workflow of publishing and maintaining your plugin in the Plugins directory looks like this:
+So you have written a new plugin and want to share it now in the [Plugins directory](../../community/plugincontribution/pluginsdirectory/index.md)? Great! Shortly, the workflow of publishing and maintaining your plugin in the Plugins directory looks like this:
 
 ![Workflow of contributing a plugin into the Moodle plugins directory](_index/plugin-contribution-workflow.png)
 <figcaption>

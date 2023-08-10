@@ -1,6 +1,5 @@
 ---
 title: Plugins directory
-sidebar_position: 7
 tags:
   - Guidelines for contributors
   - Plugin documentation
