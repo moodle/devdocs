@@ -1,6 +1,5 @@
 ---
 title: Plugin QA prechecks
-sidebar_position: 4
 sidebar_label: QA prechecks
 tags:
   - Guidelines for contributors

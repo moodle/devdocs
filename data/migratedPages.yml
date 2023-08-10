@@ -1486,8 +1486,8 @@ Plagiarism_API:
 - filePath: "/docs/apis/subsystems/plagiarism.md"
   slug: "/docs/apis/subsystems/plagiarism"
 Plugin_QA_prechecks:
-- filePath: "/general/community/plugincontribution/qaprechecks.md"
-  slug: "/general/community/plugincontribution/qaprechecks"
+- filePath: "/general/community/plugincontribution/guardians/qaprechecks.md"
+  slug: "/general/community/plugincontribution/guardians/qaprechecks"
 Plugin_code_prechecks:
 - filePath: "/general/community/plugincontribution/codeprechecks.md"
   slug: "/general/community/plugincontribution/codeprechecks"
@@ -1519,7 +1519,7 @@ Plugins_directory_API:
 - filePath: "/general/community/plugincontribution/pluginsdirectoryapi.md"
   slug: "/general/community/plugincontribution/pluginsdirectoryapi"
 Plugins_guardians:
-- filePath: "/general/community/plugincontribution/guardians.md"
+- filePath: "/general/community/plugincontribution/guardians/index.md"
   slug: "/general/community/plugincontribution/guardians"
 Preference_API:
 - filePath: "/docs/apis/core/preference/index.md"

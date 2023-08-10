@@ -1,13 +1,12 @@
 ---
 title: Plugins guardians
-sidebar_position: 8
 sidebar_label: Guardians
 tags:
   - Guidelines for contributors
   - Plugin documentation
   - Plugins
 ---
-![thumb](./_guardians/plugins-guardian-logo.png)
+![thumb](./_index/plugins-guardian-logo.png)
 
 **Plugins guardians** are Moodle community members who volunteer to provide peer-reviews on plugins submitted into the [Plugins directory](../../community/plugincontribution/pluginsdirectory). Their peer-review is considerably taken into account when deciding on the plugin approval.
 
