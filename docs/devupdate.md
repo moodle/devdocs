@@ -334,3 +334,49 @@ if (!empty($showonly)) {
     $mform->filter_shown_headers(explode(',', $showonly));
 }
 ```
+
+## Activity completion
+
+### Append a suffix to the completion rules
+
+As part of [MDL-78516](https://tracker.moodle.org/browse/MDL-78516), the [Default completion form](https://docs.moodle.org/en/Activity_completion_settings#Changing_activity_completion_settings_in_bulk) has undergone a significant rebuild to enhance code reusability and maintainability. To prevent duplicate IDs, a suffix has been introduced to the form elements related to completion rules.
+
+For third-party plugins, an adjustment is needed to incorporate this new suffix, following the approach already taken by [core modules](https://github.com/sarjona/moodle/commit/8f57f0fdaca027c7099bc6966467077aecbc0862).
+
+The primary modification entails editing `mod/yourplugin/mod_form.php` and applying the suffix to the completion rule elements within all relevant methods. As an example, here are the changes made to the `mod/choice` module:
+
+```php
+    public function add_completion_rules() {
+        $mform = $this->_form;
+
+        $completionsubmitel = $this->get_suffixed_name('completionsubmit');
+        $mform->addElement('checkbox', $completionsubmitel, '', get_string('completionsubmit', 'choice'));
+        // Enable this completion rule by default.
+        $mform->setDefault($completionsubmitel, 1);
+        return [$completionsubmitel];
+    }
+
+    public function completion_rule_enabled($data) {
+        return !empty($data[$this->get_suffixed_name('completionsubmit')]);
+    }
+
+    public function data_postprocessing($data) {
+        parent::data_postprocessing($data);
+        // Set up completion section even if checkbox is not ticked.
+        if (!empty($data->completionunlocked)) {
+            if (empty($data->{$this->get_suffixed_name('completionsubmit')})) {
+                $data->{$this->get_suffixed_name('completionsubmit')} = 0;
+            }
+        }
+    }
+
+    protected function get_suffixed_name(string $fieldname): string {
+        return $fieldname . $this->get_suffix();
+    }
+```
+
+:::caution
+
+Starting from Moodle 4.3, completion rules without the suffix will be phased out from the [Default completion form](https://docs.moodle.org/en/Activity_completion_settings#Changing_activity_completion_settings_in_bulk) until they are updated to incorporate the required suffix
+
+:::

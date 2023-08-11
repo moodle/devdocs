@@ -3,8 +3,9 @@ title: Activity completion API
 tags:
   - Conditional activities
   - API
-documentationDraft: true
 ---
+
+import { Since } from '@site/src/components';
 
 :::note
 There are changes to the completion API introduced in **Moodle 3.11** to be incorporated to this page. Please refer to [Student activity completion](https://docs.moodle.org/dev/Student_activity_completion) for details.
@@ -86,7 +87,7 @@ Implementing custom completion rules is more complex than using the system-provi
 
 To implement custom completion rules, you need to:
 
-1. Return true for FEATURE_COMPLETION_HAS_RULES in your activity's _supports function.
+1. Return true for `FEATURE_COMPLETION_HAS_RULES` in your activity's `_supports` function.
 1. Add database fields to your activity's main table to store the custom completion settings.
 1. Add backup and restore code to back up these fields.
 1. Add information about the completion settings to the activities cm_info object.
@@ -197,6 +198,19 @@ When you have custom completion conditions, you need to add controls to your mod
 - Implement the `completion_rule_enabled` function which is called during form validation to check whether one of your activity's completion rules has been selected.
 - Implement other form changes if necessary to set up the form with your data. If your data is in the form of simple text boxes or dropdowns then this is not necessary, but you might want to have a checkbox that enables the rule with a separate control to set its value. This needs form tweaks.
 
+<Since
+  version="4.3"
+  issueNumber="MDL-78528"
+/>
+
+The default completion form has undergone a significant rebuild to enhance code reusability and maintainability. To prevent duplicate IDs, a suffix has been introduced to the form elements related to completion rules.
+
+:::info From Moodle 4.3 onwards
+
+Any custom completion rules added will need to use `$this->get_suffix()`.
+
+:::
+
 #### Example
 
 The forum offers a checkbox with a text input box beside it. You tick the checkbox to enable the rule, then type in the desired number of posts.
@@ -215,15 +229,43 @@ public function add_completion_rules() {
     $mform = $this->_form;
 
     $group = [
-        $mform->createElement('checkbox', 'completionpostsenabled', ' ', get_string('completionposts', 'forum')),
-        $mform->createElement('text', 'completionposts', ' ', ['size' => 3]),
+        $mform->createElement(
+            'checkbox',
+            $this->get_suffixed_name('completionpostsenabled'),
+            ' ',
+            get_string('completionposts', 'forum')
+        ),
+        $mform->createElement(
+            'text',
+            $this->get_suffixed_name('completionposts'),
+            ' ',
+            ['size' => 3]
+        ),
     ];
     $mform->setType('completionposts', PARAM_INT);
-    $mform->addGroup($group, 'completionpostsgroup', get_string('completionpostsgroup','forum'), [' '], false);
-    $mform->addHelpButton('completionpostsgroup', 'completionposts', 'forum');
-    $mform->disabledIf('completionposts', 'completionpostsenabled', 'notchecked');
+    $mform->addGroup(
+        $group,
+        $this->get_suffixed_name('completionpostsgroup'),
+        get_string('completionpostsgroup','forum'),
+        [' '],
+        false
+    );
+    $mform->addHelpButton(
+        $this->get_suffixed_name('completionpostsgroup'),
+        'completionposts',
+        'forum'
+    );
+    $mform->disabledIf(
+        $this->get_suffixed_name('completionposts'),
+        $this->get_suffixed_name('completionpostsenabled'),
+        'notchecked'
+    );
 
-    return ['completionpostsgroup'];
+    return [$this->get_suffixed_name('completionpostsgroup')];
+}
+
+protected function get_suffixed_name(string $fieldname): string {
+    return $fieldname . $this->get_suffix();
 }
 ```
 
@@ -232,6 +274,7 @@ public function add_completion_rules() {
 - The text input field is disabled if the checkbox isn't ticked.
 - Note that this function must return the top-level element associated with the completion rule. (If there are multiple elements, you can return more than one.)
   - This is used so that your controls become disabled if automatic completion is not selected.
+
 Next, a function for checking whether the user selected this option:
 
 ```php
@@ -242,13 +285,14 @@ Next, a function for checking whether the user selected this option:
  * @return bool True if one or more rules is enabled, false if none are.
  */
 public function completion_rule_enabled($data) {
-    return (!empty($data['completionpostsenabled']) && $data['completionposts'] != 0);
+    return (!empty($data[$this->get_suffixed_name('completionpostsenabled')]) &&
+            $data[$this->get_suffixed_name('completionposts')] != 0);
 }
 ```
 
 - The custom completion rule is enabled if the 'enabled' checkbox is ticked and the text field value is something other than zero.
   - This is used to give an error if the user selects automatic completion, but fails to select any conditions.
-That's all the 'required' functions, but we need to add some extra code to support the checkbox behaviour. I overrode get_data so that if there is a value in the edit field, but the checkbox is not ticked, the value counts as zero (the rule will not be enabled).
+That's all the 'required' functions, but we need to add some extra code to support the checkbox behaviour. I overrode `get_data` so that if there is a value in the edit field, but the checkbox is not ticked, the value counts as zero (the rule will not be enabled).
 
 ```php
 function get_data() {
@@ -257,10 +301,11 @@ function get_data() {
         return $data;
     }
     if (!empty($data->completionunlocked)) {
-        // Turn off completion settings if the checkboxes aren't ticked
-        $autocompletion = !empty($data->completion) && $data->completion==COMPLETION_TRACKING_AUTOMATIC;
-        if (empty($data->completionpostsenabled) || !$autocompletion) {
-        $data->completionposts = 0;
+        // Turn off completion settings if the checkboxes aren't ticked.
+        $autocompletion = !empty($data->{$this->get_suffixed_name('completion')}) &&
+                $data->{$this->get_suffixed_name('completion')} == COMPLETION_TRACKING_AUTOMATIC;
+        if (empty($data->{$this->get_suffixed_name('completionpostsenabled')}) || !$autocompletion) {
+        $data->{$this->get_suffixed_name('completionposts')} = 0;
         }
     }
     return $data;
@@ -277,10 +322,10 @@ function data_preprocessing(&$default_values){
     // Set up the completion checkboxes which aren't part of standard data.
     // We also make the default value (if you turn on the checkbox) for those
     // numbers to be 1, this will not apply unless checkbox is ticked.
-    $default_values['completionpostsenabled']=
-        !empty($default_values['completionposts']) ? 1 : 0;
-    if(empty($default_values['completionposts'])) {
-        $default_values['completionposts']=1;
+    $default_values[$this->get_suffixed_name('completionpostsenabled')] =
+            !empty($default_values[$this->get_suffixed_name('completionposts')]) ? 1 : 0;
+    if (empty($default_values[$this->get_suffixed_name('completionposts')])) {
+        $default_values[$this->get_suffixed_name('completionposts')] = 1;
     }
 }
 ```
