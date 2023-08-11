@@ -204,7 +204,7 @@ See also the [Commit cheat sheet](https://docs.moodle.org/dev/Commit_cheat_sheet
 
 ### Third party code
 
-Does the change contain [third party code](https://docs.moodle.org/dev/Plugin_with_third_party_libraries)? If so, ensure that:
+Does the change contain [third party code](../../community/plugincontribution/thirdpartylibraries)? If so, ensure that:
 
 - The code is licensed under a [GPL compatible license](http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses%7C).
 - The instructions for upgrading/importing the library and contained within a readme_moodle.txt file.

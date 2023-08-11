@@ -1485,15 +1485,42 @@ Peer_reviewing:
 Plagiarism_API:
 - filePath: "/docs/apis/subsystems/plagiarism.md"
   slug: "/docs/apis/subsystems/plagiarism"
+Plugin_QA_prechecks:
+- filePath: "/general/community/plugincontribution/guardians/qaprechecks.md"
+  slug: "/general/community/plugincontribution/guardians/qaprechecks"
+Plugin_code_prechecks:
+- filePath: "/general/community/plugincontribution/codeprechecks.md"
+  slug: "/general/community/plugincontribution/codeprechecks"
 Plugin_contribution:
 - filePath: "/general/community/plugincontribution/index.md"
   slug: "/general/community/plugincontribution"
+Plugin_contribution_checklist:
+- filePath: "/general/community/plugincontribution/checklist"
+  slug: "/general/community/plugincontribution/checklist"
+Plugin_documentation:
+- filePath: "/general/community/plugincontribution/documentation.md"
+  slug: "/general/community/plugincontribution/documentation"
 Plugin_files:
 - filePath: "/docs/apis/commonfiles.md"
   slug: "/docs/apis/commonfiles"
 Plugin_types:
 - filePath: "/docs/apis/plugintypes/index.md"
   slug: "/docs/apis/plugintypes/"
+Plugin_with_third_party_libraries:
+- filePath: "/general/community/plugincontribution/thirdpartylibraries.md"
+  slug: "/general/community/plugincontribution/thirdpartylibraries"
+Plugins_adoption_programme:
+- filePath: "/general/community/plugincontribution/adoption.md"
+  slug: "/general/community/plugincontribution/adoption"
+Plugins_directory:
+- filePath: "/general/community/plugincontribution/pluginsdirectory/index.md"
+  slug: "/general/community/plugincontribution/pluginsdirectory"
+Plugins_directory_API:
+- filePath: "/general/community/plugincontribution/pluginsdirectory/api.md"
+  slug: "/general/community/plugincontribution/pluginsdirectory/api"
+Plugins_guardians:
+- filePath: "/general/community/plugincontribution/guardians/index.md"
+  slug: "/general/community/plugincontribution/guardians"
 Preference_API:
 - filePath: "/docs/apis/core/preference/index.md"
   slug: "/docs/apis/core/preference/"
