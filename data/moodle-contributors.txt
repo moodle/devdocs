@@ -732,6 +732,7 @@ Myles
 Ménard
 Møller
 Nadav
+Nagargoje
 Namur
 Narissa
 Nathan
@@ -922,6 +923,7 @@ Sammarco
 Sander
 Sanecki
 Santos
+Santosh
 Sanya
 Sara
 Sarjoshi
@@ -1210,6 +1212,7 @@ carlesbellver
 carlos
 cataluke
 cescobedo
+chen
 comete-upn
 compuproggy
 coolbit
@@ -1312,6 +1315,7 @@ lashaalt
 laurentdavid
 lazydaisy
 les_kopari
+levy
 lfrodrigues
 liorgi
 lonecatz
