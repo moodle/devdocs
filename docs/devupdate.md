@@ -255,6 +255,104 @@ export default class MyModal extends Modal {
 </TabItem>
 </Tabs>
 
+### Instantiation and deprecation of `core/modal_factory`
+
+<Since version="4.3" issueNumber="MDL-78324" />
+
+Moodle 4.3 introduces a new way to instantiate modals which is significantly simpler than earlier versions. Rather than calling the `create` method on the `modal_factory`, it can now be called on the class that you are instantiating.
+
+In addition, a new `configure` method is introduced which allows you to override configuration options, provide your own, and more.
+
+Modals which are instantiated using the new method *do not* need to be registered if they are not consumed using the modal factory.
+
+This change will increase encapsulation and allow modals to handle common actions such as showing on creation, and removing on close much more easily.
+
+:::note Compatibility with Moodle 4.2 and older
+
+If your code is intended to work with Moodle 4.2 and older, then you must continue to use the existing `core/modal_factory`, and you must continue to register your modal. This legacy method will be maintained until Moodle 4.6.
+
+:::
+
+<Tabs groupId="beforeAfter">
+<TabItem value="before" label="Before Moodle 4.3">
+<InvalidExample
+    title="A modal created and instantiated using the legacy approach"
+>
+
+The legacy registration will continue to work and should be used if your plugin will be used in Moodle 4.2, or earlier.
+
+```js title="mod/example/amd/src/mymodal.js"
+export default class MyModal extends Modal {
+    static TYPE = 'mod_example/myModal';
+    static TEMPLATE = 'mod_example/my_modal';
+
+    myCustomSetter(value) {
+        this.value = value;
+    }
+}
+let registered = false;
+if (!registered) {
+    ModalRegistry.register(MyModal.TYPE, MyModal, 'mod_example/my_modal');
+    registered = true;
+}
+```
+
+```js title="mod/example/amd/src/consumer.js"
+import MyModal from './mymodal';
+import ModalFactory from 'core/modal_factory';
+
+// ...
+ModalFactory.create({
+    TYPE: MyModal.TYPE,
+}).then((modal) => {
+    modal.show();
+    modal.myCustomSetter('someValue');
+
+    return modal;
+})
+```
+
+</InvalidExample>
+</TabItem>
+
+<TabItem value="after" label="From Moodle 4.3 onwards" default>
+<ValidExample
+    title="A modal using the new approach"
+>
+
+```js title="mod/example/amd/src/mymodal.js"
+export default class MyModal extends Modal {
+    static TYPE = 'mod_example/myModal';
+    static TEMPLATE = 'mod_example/my_modal';
+
+    configure(modalConfig) {
+        // Specify any defaults you like here.
+        modalConfig.show = true;
+        super.configure(modalConfig);
+
+        this.myCustomSetter(modalConfig.myCustomValue);
+    }
+
+    myCustomSetter(value) {
+        this.value = value;
+    }
+}
+```
+
+```js title="mod/example/amd/src/consumer.js"
+import MyModal from './mymodal';
+
+// ...
+MyModal.create({
+    myCustomValue: 'someValue',
+    show: true,
+});
+```
+
+</ValidExample>
+</TabItem>
+</Tabs>
+
 ### Registration helper
 
 <Since version="4.3" issueNumber="MDL-78306" />
