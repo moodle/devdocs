@@ -240,6 +240,24 @@ A cross-browser JavaScript range and selection library.
 - **License**:  MIT
 - **URL**: [https://github.com/tinymce/tinymce](https://github.com/tinymce/tinymce)
 
+### js-beautify
+
+Beautifier for javascript.
+
+- **Location**: lib/editor/tiny/plugins/html/amd/src/beautify
+- **Version**: 1.14.8
+- **License**:  MIT
+- **URL**: [https://github.com/beautify-web/js-beautify/](https://github.com/beautify-web/js-beautify/)
+
+### codemirror
+
+CodeMirror is a versatile text editor implemented in JavaScript for the browser.
+
+- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Version**: 6.0.1
+- **License**:  MIT
+- **URL**: [https://github.com/codemirror/](https://github.com/codemirror/)
+
 ### Emoji data
 
 Library to parse easily data and sprite sheets for emoji.

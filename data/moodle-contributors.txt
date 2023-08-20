@@ -349,6 +349,7 @@ Fábio
 GUINOISEAU
 Galiszek
 Gancarz
+Garapati
 Gareth
 Garrett
 Garske
@@ -966,6 +967,7 @@ Simeon
 Simey
 Simon
 Singh
+Sirisha
 Sistrom
 Situ
 Skandalis
@@ -1281,6 +1283,7 @@ importer
 info@eWallah.net
 info@ewallah.net
 inigozendegi
+ishatalkin
 james-cnz
 jamiepratt
 jamiesensei
