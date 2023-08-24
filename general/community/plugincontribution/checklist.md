@@ -199,6 +199,8 @@ Examples of issues that will prevent your plugin from being approved:
 
 1. There is no public and transparent issue tracker where the community members can leave feedback, report bugs and suggest improvements.
 1. Your SQL fails to work on PostgreSQL even when working on MySQL.
+1. [Namespace collisions](../../development/policies/codingstyle/frankenstyle.md).
+1. Compliance with [security guidelines](../../development/policies/security/index.md).
 1. It integrates with an external system and does not have the privacy API correctly implemented.
 1. It is an activity module and does not have the backup and restore API implemented.
 
