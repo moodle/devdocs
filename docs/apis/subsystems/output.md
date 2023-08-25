@@ -313,6 +313,26 @@ Some interesting parameters for this function are:
 - `classes`: The classes of the paragraph. Note that this parameter is a comma-separated list of classes, not an array.
 - `id`: An optional id of the paragraph.
 
+#### sr_text()
+
+```php
+function sr_text(string $contents): string
+```
+
+This function should be used to:
+
+- Print an inline text for screen readers only.
+
+Some interesting parameters for this function are:
+
+- `contents`: The contents fo screen readers.
+
+In the standard Boost theme this method will output a span using the [Bootstrap screen reader class](https://getbootstrap.com/docs/4.0/getting-started/accessibility/#visually-hidden-content):
+
+```html
+<span class="sr-only">Contents</span>
+```
+
 ## See also
 
 - [HTML Guidelines](https://docs.moodle.org/dev/HTML_Guidelines)
