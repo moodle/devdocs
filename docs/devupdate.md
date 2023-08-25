@@ -380,3 +380,41 @@ The primary modification entails editing `mod/yourplugin/mod_form.php` and apply
 Starting from Moodle 4.3, completion rules without the suffix will be phased out from the [Default completion form](https://docs.moodle.org/en/Activity_completion_settings#Changing_activity_completion_settings_in_bulk) until they are updated to incorporate the required suffix
 
 :::
+
+## User preferences in JavaScript modules
+
+As part of [MDL-62859](https://tracker.moodle.org/browse/MDL-62859) and [MDL-76974](https://tracker.moodle.org/browse/MDL-76974), new methods for the reading and writing of user preferences in JavaScript modules have been created.
+
+The `core_user/repository` module exports new methods `getUserPreference`, `getUserPreferences`, `setUserPreference` and `setUserPreferences`. Examples of which are below:
+
+```js title="Get user preferences"
+
+import Notification from 'core/notification';
+import {getUserPreference, getUserPreferences} from 'core_user/repository';
+
+// Get single preference.
+getUserPreference('mod_example_foo')
+    .then(window.console.log)
+    .catch(Notification.exception);
+
+// Get multiple preferences.
+getUserPreferences()
+    .then(window.console.log)
+    .catch(Notification.exception);
+```
+
+```js title="Set user preferences"
+
+import Notification from 'core/notification';
+import {setUserPreference, setUserPreferences} from 'core_user/repository';
+
+// Set single preference.
+setUserPreference('mod_example_foo', 42)
+    .catch(Notification.exception);
+
+// Set multiple preferences.
+setUserPreferences([
+    {name: 'mod_example_foo', value: 42},
+    {name: 'mod_example_bar', value: 43},
+]).catch(Notification.exception);
+```
