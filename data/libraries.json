@@ -261,6 +261,26 @@
         "customised": false
     },
     {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/plugins/html/amd/src/beautify",
+        "name": "js-beautify",
+        "description": "Beautifier for javascript.",
+        "version": "1.14.8",
+        "license": "MIT",
+        "repository": "https://github.com/beautify-web/js-beautify/",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js",
+        "name": "codemirror",
+        "description": "CodeMirror is a versatile text editor implemented in JavaScript for the browser.",
+        "version": "6.0.1",
+        "license": "MIT",
+        "repository": "https://github.com/codemirror/",
+        "customised": false
+    },
+    {
         "copyrightHolders": [
             "2013 Cal Henderson"
         ],
