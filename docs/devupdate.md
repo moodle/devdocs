@@ -418,3 +418,46 @@ setUserPreferences([
     {name: 'mod_example_bar', value: 43},
 ]).catch(Notification.exception);
 ```
+
+## Icons
+
+### MIME
+
+:::info
+
+The MIME icons located in the `pix/f` directory, have undergone an update. These icons, previously available in various sizes, have now been replaced with SVG versions.
+
+:::
+
+To streamline the variety of icons associated with different MIME types, several specific MIME icons have been replaced. Instead, their corresponding generic icons have been integrated from the existing collection, leading to a more efficient representation:
+
+- avi -> video
+- base -> database
+- bmp -> image
+- html -> markup
+- jpeg -> image
+- mov -> video
+- mp3 -> audio
+- mpeg -> video
+- png -> image
+- quicktime -> video
+- tiff -> image
+- wav -> audio
+- wmv -> video
+
+The subsequent MIME icons have been entirely removed:
+
+- clip-353
+- edit
+- env
+- explore
+- folder-open
+- help
+- move
+- parent
+
+:::warning
+
+Files utilizing any of these removed icons will now be represented by the "unknown" icon.
+
+:::
