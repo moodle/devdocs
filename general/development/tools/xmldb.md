@@ -74,21 +74,39 @@ Choose the 'View PHP Code' option and then copy and paste the generated code.
 
 Apart from the [Database Structures guidelines](https://docs.moodle.org/dev/Database), some more conventions should be followed:
 
-1. About names:
-    1. All lowercase names (tables, indexes, keys and fields).
-    1. Table names and field names must use only a-z, 0-9 and _ chars. Max 28 characters.
-    1. Key and index names under the XMLDB Files must be formed by concatenating the name of the fields present in the key/index with the '"-" (minus) character.
-    1. Primary key always must be named "primary" (this is one exception to the previous convention).
-    1. It's highly recommended to avoid [reserved words](https://docs.moodle.org/dev/XMLDB_reserved_words) completely. We know we have some of them now but they should be completely out for next releases.
-1. About NULLS
-    1. Avoid to create all the fields as NOT NULL with the *silly* default value `*` (empty string). The underlying code used to create tables will handle it properly but the XMLDB structure must be REAL. Read more in the [Problems Page](https://docs.moodle.org/dev/XMLDB_Problems#NOT_NULL_fields_using_a_DEFAULT_*_clause).
-1. About FOREIGN KEYS
-    1. Under the tables of every XMLDB file, you must define the existing **Foreign Keys** (FK) properly. This will allow everybody to know a bit better the structure, allow to evolve to a better constrained system in the future and will provide the underlying code with the needed info to create the proper indexes.
-    1. Note that, if you define any field combination as FK you won't have to create any index on that fields, the code will do it automatically!
-    1. Respect Convention 1.3
-1. About UNIQUE KEYS
-    1. Declare any fields as UNIQUE KEY (UK) only if they are going to be used as target for one FK. Create unique indexes instead.
-    1. Respect Convention 1.3
+<ol>
+   <li>
+      About names:
+      <ol style="list-style-type: decimal">
+         <li>All lowercase names (tables, indexes, keys and fields).</li>
+         <li>Table names and field names must use only a-z, 0-9 and _ chars. Max 28 characters.</li>
+         <li>Key and index names under the XMLDB Files must be formed by concatenating the name of the fields present in the key/index with the '"-" (minus) character.</li>
+         <li>Primary key always must be named "primary" (this is one exception to the previous convention).</li>
+         <li>It's highly recommended to avoid <a href="https://docs.moodle.org/dev/XMLDB_reserved_words" target="_blank" rel="noopener noreferrer">reserved words</a> completely. We know we have some of them now but they should be completely out for next releases.</li>
+      </ol>
+   </li>
+   <li>
+      About NULLS
+      <ol style="list-style-type: decimal">
+         <li>Avoid to create all the fields as NOT NULL with the <em>silly</em> default value <code>''</code> (empty string). The underlying code used to create tables will handle it properly but the XMLDB structure must be REAL. Read more in the <a href="https://docs.moodle.org/dev/XMLDB_Problems#NOT_NULL_fields_using_a_DEFAULT_.27.27_clause" target="_blank" rel="noopener noreferrer">Problems Page</a>.</li>
+      </ol>
+   </li>
+   <li>
+      About FOREIGN KEYS
+      <ol style="list-style-type: decimal">
+         <li>Under the tables of every XMLDB file, you must define the existing <strong>Foreign Keys</strong> (FK) properly. This will allow everybody to know a bit better the structure, allow to evolve to a better constrained system in the future and will provide the underlying code with the needed info to create the proper indexes.</li>
+         <li>Note that, if you define any field combination as FK you won't have to create any index on that fields, the code will do it automatically!</li>
+         <li>Respect Convention 1.3</li>
+      </ol>
+   </li>
+   <li>
+      About UNIQUE KEYS
+      <ol style="list-style-type: decimal">
+         <li>Declare any fields as UNIQUE KEY (UK) only if they are going to be used as target for one FK. Create unique indexes instead.</li>
+         <li>Respect Convention 1.3</li>
+      </ol>
+   </li>
+</ol>
 
 ## See also
 
