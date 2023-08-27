@@ -185,7 +185,7 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 Accessibility testing engine for websites and other HTML-based user interfaces.
 
 - **Location**: lib/behat/axe
-- **Version**: 4.6.3
+- **Version**: 4.7.2
 - **License**:  MPL 2.0
 - **URL**: [https://github.com/dequelabs/axe-core](https://github.com/dequelabs/axe-core)
 - **Copyright holders**:
@@ -236,7 +236,7 @@ A cross-browser JavaScript range and selection library.
 ### Tiny
 
 - **Location**: lib/editor/tiny/js/tinymce
-- **Version**: 6.3.2
+- **Version**: 6.6.2
 - **License**:  MIT
 - **URL**: [https://github.com/tinymce/tinymce](https://github.com/tinymce/tinymce)
 
@@ -590,7 +590,7 @@ PHP Enum implementation inspired from SplEnum
 A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
 
 - **Location**: lib/php-jwt
-- **Version**: 6.4.0
+- **Version**: 6.8.1
 - **License**:  BSD 3-Clause
 - **URL**: [https://github.com/firebase/php-jwt](https://github.com/firebase/php-jwt)
 - **Copyright holders**:

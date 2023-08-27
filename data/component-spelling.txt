@@ -89,7 +89,6 @@ qbehaviour
 qformat
 qtype
 question
-quicktime
 rating
 report
 reportbuilder
