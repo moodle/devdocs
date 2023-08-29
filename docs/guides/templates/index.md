@@ -645,6 +645,7 @@ In PHP you have access to the `$CFG` object to allow access to properties. Musta
 ```
 
 The properties available on the `globals.config` object are the same as normally exposed for JavaScript; these are gathered from `get_config_for_javascript()` function in `lib/outputrequirementslib.php`.
+This object is only available when using client-side Mustache rendering in JavaScript; it is not added to templates rendered with the PHP Mustache engine.
 
 ## Core templates
 
