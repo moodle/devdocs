@@ -2,6 +2,21 @@
     "$schema": "../static/schema/versions.json",
     "versions": [
         {
+            "name": "4.3",
+            "releaseDate": "9 October 2023",
+            "generalEndDate": "14 October 2024",
+            "securityEndDate": "14 April 2025",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "4.3.0",
+                    "releaseDate": "9 October 2023",
+                    "version": 2023100900,
+                    "upgradePath": "https://docs.moodle.org/403/en/Upgrading"
+                }
+            ]
+        },
+        {
             "name": "4.2",
             "releaseDate": "24 April 2023",
             "generalEndDate": "22 April 2024",
