@@ -118,6 +118,32 @@ As a proof of concept, this feature has been implemented by:
 
 A new `core_courseformat/local/content/cm/activitybadge` template has been also created to display this activity badge data. As usual, it can be overridden by any format plugin.
 
+## JavaScript String fetchers
+
+<Since version="4.3" issueNumber="MDL-79064" />
+
+New string fetchers were introduced in MDL-79064:
+
+- `getString` - fetch a single string, resolving in a Native Promise
+- `getStrings` - fetch a set of strings, resolving in an array of Native Promises
+
+Note: These new fetchers will return a _native_ Promise rather than a jQuery Promise.
+
+The `get_string` and `get_strings` methods have _not_ been deprecated at this time but work is underway to allow for their future deprecation.
+
+:::caution Native Promises vs jQuery Promises
+
+The use of jQuery Promises is discouraged in Moodle as they have a different behaviour in some cases:
+
+- native Promises do not have the `done` method. Please use `then` instead
+- native Promises do not have the `fail` method. Please use `catch` instead
+
+Please note that the behaviour of `catch` differs from the jQuery `fail`. The `catch` method will return a resolved Promise, whist the `fail` method will not.
+
+You are **strongly** advised to convert all uses  of `.done`, and `.fail` in your code to `.then`, and `.catch` as appropriate.
+
+:::
+
 ## Modal Dialogues
 
 Moodle 4.3 brings a number of improvements to Modal dialogues. These improvements focus on:
@@ -431,30 +457,30 @@ The MIME icons located in the `pix/f` directory, have undergone an update. These
 
 To streamline the variety of icons associated with different MIME types, several specific MIME icons have been replaced. Instead, their corresponding generic icons have been integrated from the existing collection, leading to a more efficient representation:
 
-- avi -> video
-- base -> database
-- bmp -> image
-- html -> markup
-- jpeg -> image
-- mov -> video
-- mp3 -> audio
-- mpeg -> video
-- png -> image
-- quicktime -> video
-- tiff -> image
-- wav -> audio
-- wmv -> video
+- `avi` -> `video`
+- `base` -> `database`
+- `bmp` -> `image`
+- `html` -> `markup`
+- `jpeg` -> `image`
+- `mov` -> `video`
+- `mp3` -> `audio`
+- `mpeg` -> `video`
+- `png` -> `image`
+- `quicktime` -> `video`
+- `tiff` -> `image`
+- `wav` -> `audio`
+- `wmv` -> `video`
 
 The subsequent MIME icons have been entirely removed:
 
-- clip-353
-- edit
-- env
-- explore
-- folder-open
-- help
-- move
-- parent
+- `clip-353`
+- `edit`
+- `env`
+- `explore`
+- `folder-open`
+- `help`
+- `move`
+- `parent`
 
 :::warning
 
