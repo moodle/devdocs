@@ -55,19 +55,33 @@ That's because, at Moodle HQ, we have to balance the needs of our broad range of
 
 ## What are Moodle HQ's current priorities?
 
-Our strategic plans for 2023 and beyond will see the development of Moodle's product portfolio focus on two main areas:
+Moodle is a platform that is dedicated to empowering educators, trainers and learners all around the world. Our goal is to create solutions that make learning accessible to everyone, regardless of their location or financial situation.
 
-### Improving our user experience and flow​
+To achieve this goal, the areas we will focus on when developing our future versions of Moodle are:
 
-The entire user experience from onboarding to daily teaching and learning is being reviewed.
+### Unlocking Creativity
 
-We will be addressing the hundreds of little issues our users raise with us on the ease of using Moodle day to day whilst rethinking how some of our most popular activities operate to make them more intuitive.
+We aim to empower educators and learners to shape their learning according to their imagination and aspirations, leading to a more inclusive and personalised educational experience. This will be achieved through:
 
-### Evolving our technology
+- Optimisation of our current course interface and activities
+- Introduction of new course experiences
+- Diversification of content creation options
 
-To ensure that Moodle can deliver cutting-edge products and services for the next decade and beyond, we are investing in optimising Moodle's underlying technology.
+### Facilitating Collaboration
 
-Expect more modernised solutions, easier integrations and a cleaner, leaner platform that can continue to perform at scale across a distributed internet landscape.
+We will focus on enabling supportive and connected learning environments by continuously improving Moodle's ability to integrate and collaborate effectively with other solutions and leverage common standards. This will be achieved through:
+
+- Supporting plugin development
+- Leveraging of common standards
+- Capitalising on open source solutions
+
+### Optimising outcomes
+
+Providing our users with tools that optimise their efforts is paramount. We aim to create a toolset that not only reduces the time and cost of managing and creating courses but also helps learners overcome challenges more effectively. This will be achieved through:
+
+- Ecosystem support for advanced analytics
+- A more modern & leaner platform
+- New tools to support learners
 
 ## Where can I find out more?
 
