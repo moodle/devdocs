@@ -105,7 +105,7 @@ The `core.module.ts` file defines a module that imports all the core providers a
 
 The `shared.module.ts` file defines a [Shared Module](https://angular.io/guide/module-types#shared-ngmodules) that exposes core declarables (components, directives and pipes). When other modules use any of these, it's preferable to import this module instead of individual declarable modules separately.
 
-There is also a `constants.ts` file with global read-only values.
+There is also a `constants.ts` file which should follow the conventions for [constants files](#constants-files).
 
 #### core/initializers/
 
@@ -196,6 +196,7 @@ In addition to these files, feature folders may contain the following:
 - `components/` — Same as [core/components/](#corecomponents) (with the *core-{feature-name}-* namespace).
 - `directives/` and `pipes/` — Same as [core/directives/ and core/pipes/](#coredirectives-and-corepipes).
 - `lang.json` — See [Language files](#language-files).
+- `constants.ts` — See [Constants files](#constants-files).
 - `services/` — Same as [core/services/](#coreservices).
 - `pages/` — Page folders have the same structure as [core/components/](#corecomponents), but in addition they can declare modules if a page component is to be used in more than one module. Also, page components will declare their selectors starting with `page-`.
 
@@ -253,11 +254,19 @@ If a folder contains more than one type of TypeScript file, the type of file sho
 
 ### Language files
 
-All feature and addon folders can contain a lang.json file, as well as the `core/` folder. The JSON file contains all translatable string keys with the current english text. During compilation, those files will be merged into one single file on `assets/lang/en.json` that will contain the cooked string keys (every key of those files will be prepended with the module prefix).
+All feature and addon folders can contain a `lang.json` file, as well as the `core/` folder. The JSON file contains all translatable string keys with the current english text. During compilation, those files will be merged into one single file on `assets/lang/en.json` that will contain the cooked string keys (every key of those files will be prepended with the module prefix).
 
 An automatic process will create the rest of the language files on the `assets/lang/` folder based on the Moodle translation platform: [AMOS](https://lang.moodle.org/).
 
 In order to match existing Moodle language strings with the app strings the app contains a file on the scripts folder called `langindex.json`. This file contains an indexed array with the cooked string keys of the app, the value of every item is the module (file name) where to find the string in AMOS. If the value contains a slash '/' the text before the slash will correspond to the module (file name) and the text after will correspond to the string key on that file. If it does not contain a slash, the string key will be the last part of the cooked string key (splitting using dots .).
+
+### Constants files
+
+All exported constants should be declared within a `constants.ts` file. The term "constant" in TypeScript can be somewhat misleading, given that it is often used with the `const` keyword. What we mean with "constants" is simple read-only values. Most of the time, these will be primitive values (string, number, boolean, etc.) or simple objects.
+
+This may seem cumbersome at first, but it's very important in order to optimize [Code Splitting](https://webpack.js.org/guides/code-splitting/). Which can seriously impact performance. Given the size of the codebase, including a file in a bundle that doesn't need it can result in a cascade effect that bloats chunk sizes significantly. And constants are usually used outside of a module (for example, using route segments or unique identifiers).
+
+Additionally, because it's very likely that the content of these files ends up in the initial bundle of the application, they should seldom import anything (possibly with the exception of other constants).
 
 ### Test files
 
