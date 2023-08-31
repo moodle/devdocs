@@ -146,3 +146,9 @@ html {
     margin-top: 1.5rem;
   }
 }
+
+ol ol,
+ul ol {
+  /* Docusaurus overrides the style for nested ordered lists to roman-numerals, which is non-ideal. */
+  list-style-type: auto;
+}
