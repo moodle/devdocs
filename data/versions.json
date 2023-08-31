@@ -2,6 +2,21 @@
     "$schema": "../static/schema/versions.json",
     "versions": [
         {
+            "name": "4.3",
+            "releaseDate": "9 October 2023",
+            "generalEndDate": "14 October 2024",
+            "securityEndDate": "14 April 2025",
+            "isLTS": false,
+            "releases": [
+                {
+                    "name": "4.3.0",
+                    "releaseDate": "9 October 2023",
+                    "version": 2023100900,
+                    "upgradePath": "https://docs.moodle.org/403/en/Upgrading"
+                }
+            ]
+        },
+        {
             "name": "4.2",
             "releaseDate": "24 April 2023",
             "generalEndDate": "22 April 2024",
@@ -23,6 +38,12 @@
                     "name": "4.2.2",
                     "releaseDate": "14 August 2023",
                     "version": 2023042402
+                },
+                {
+                    "name": "4.2.3",
+                    "releaseNoteUrl": false,
+                    "releaseDate": "9 October 2023",
+                    "version": 2023042403
                 }
             ]
         },
@@ -63,6 +84,12 @@
                     "name": "4.1.5",
                     "releaseDate": "14 August 2023",
                     "version": 2022112805
+                },
+                {
+                    "name": "4.1.6",
+                    "releaseNoteUrl": false,
+                    "releaseDate": "9 October 2023",
+                    "version": 2022112806
                 }
             ]
         },
@@ -128,6 +155,12 @@
                     "name": "4.0.10",
                     "releaseDate": "14 August 2023",
                     "version": 2022041910
+                },
+                {
+                    "name": "4.0.11",
+                    "releaseNoteUrl": false,
+                    "releaseDate": "9 October 2023",
+                    "version": 2022041911
                 }
             ]
         },
@@ -224,6 +257,12 @@
                     "name": "3.11.16",
                     "releaseDate": "14 August 2023",
                     "version": 2021051716
+                },
+                {
+                    "name": "3.11.17",
+                    "releaseNoteUrl": false,
+                    "releaseDate": "9 October 2023",
+                    "version": 2021051717
                 }
             ]
         },
@@ -427,6 +466,12 @@
                     "name": "3.9.23",
                     "releaseDate": "14 August 2023",
                     "version": 2020061523
+                },
+                {
+                    "name": "3.9.24",
+                    "releaseNoteUrl": false,
+                    "releaseDate": "9 October 2023",
+                    "version": 2020061524
                 }
             ]
         },
