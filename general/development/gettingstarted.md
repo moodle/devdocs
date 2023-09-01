@@ -82,3 +82,4 @@ Visit our [Developer FAQ](./abc/faq.md) page and get answers to some of our most
 - [API guides](/docs/apis)
 - [Contributing](../community/contribute.md)
 - [A (july 2017) forum thread](https://moodle.org/mod/forum/discuss.php?d=355789) about Getting Started with Moodle Development.
+  
