@@ -433,13 +433,31 @@ import GetModal from '!!raw-loader!./_examples/promises/getModal';
 
 One of the most helpful core modules is `core/str` which allows you to fetch and render language Strings in JavaScript.
 
-The `core/str` module has two main functions, which both return Promises containing the resolved string.
+The `core/str` module has several core methods to support fetching strings:
+
+- `getString` - fetch a single string, returned in a _native_ Promise
+- `getStrings` - fetch a set of strings, returned in an array of _native_ Promises
+- `get_string` - fetch a single string, returned in a _jQuery_ Promise
+- `get_strings` - fetch a set of strings, returned in an array of _jQuery_ Promises
 
 Strings are fetched on request from Moodle, and are then cached in LocalStorage.
 
 import WorkingWithStrings from '!!raw-loader!./_examples/str';
 
 <CodeBlock language="js" title="Example">{WorkingWithStrings}</CodeBlock>
+
+:::caution Native vs jQuery promises
+
+<Since version="4.3" issueNumber="MDL-79064" />
+
+The `getString` and `getStrings` methods should be preferred from Moodle 4.3 onwards. These return _native_ Promises, which differ slightly in behaviour from jQuery Promises.
+
+Care should be taken in the following scenarios:
+
+- when writing a plugin which supports Moodle 4.2 or earlier, you _must_ use the `get_string` and `get_strings` methods
+- you should _never_ use `.done` or `.fail` as they do not exist in the native Promise specification, and their failure behaviour differs
+
+:::
 
 ## Templates
 
