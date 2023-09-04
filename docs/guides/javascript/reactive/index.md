@@ -14,7 +14,7 @@ import { Since, TabItem, Tabs, ValidExample, InvalidExample } from '@site/src/co
 
 <Since versions={[ 4.0 ]} />
 
-Third-party plugin developers are free to use any framework they want to implement reactive interfaces like React, Angular or Vue. However, for now Moodle does not provide any of them and all core developments are framework independant.
+Third-party plugin developers are free to use any framework they want to implement reactive interfaces like React, Angular or Vue. However, for now Moodle does not provide any of them and all core developments are framework independent.
 
 Nevertheless, in terms of reusability, maintainability and user experience the advantages of having a reactive UI are undeniable. For this reason Moodle has an adhoc reactive library that can be used to implement small reactive applications on any Moodle page.
 
