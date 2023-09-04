@@ -597,6 +597,17 @@ In the previous section, we learned about some of the existing options for handl
     - Any other value — Your block will immediately call the method specified in `mobile.php` and it will use the template to render the block.
 - `fallback` (optional) — This option allows you to specify a block to use in the app instead of your block. For example, you can make the app display the "My overview" block instead of your block in the app by setting `'fallback' => 'myoverview'`. The fallback will only be used if you don't specify a `method` and the `type` is different to `'title'` or `'prerendered'`. Supported from the 3.9.0 version of the app.
 
+### Options only for CoreEnrolDelegate
+
+- `enrolmentAction` (optional): The type of action done by the enrolment plugin. Defaults to 'browser'. Possible values:
+  - `browser` — When the user clicks to enrol, open a browser to perform the enrol in the browser. It doesn't require any JavaScript to work in the app.
+  - `self` — The user can self enrol in the app. Requires implementing the 'enrol' function in your JavaScript code.
+  - `guest` — Allows the user to enter the course as guest in the app. Requires implementing the 'canAccess' and 'validateAccess' functions in your JavaScript code.
+- `infoIcons` (optional) — Icons related to the enrolment to display next to the course. If the icons need to be calculated dynamically based on the course you need to implement the function 'getInfoIcons' in your JavaScript code. Properties for each icon:
+  - `icon` (required) — The icon name. E.g. 'fas-credit-card'.
+  - `label` (required) — The label of the icon (for accessibility).
+  - `className` (optional) — A CSS class to add to the icon element.
+
 ## Delegates
 
 Delegates can be classified by type of plugin. For more info about type of plugins, please see the [Types of plugins](#types-of-plugins) section.
@@ -678,6 +689,7 @@ These delegates require JavaScript to be supported. See [Initialisation](#initia
 - `CoreFileUploaderDelegate`
 - `CorePluginFileDelegate`
 - `CoreFilterDelegate`
+- `CoreEnrolDelegate` (added in 4.3 version of the app)
 
 ## Available components and directives
 
@@ -1629,6 +1641,59 @@ class AddonSingleActivityFormatHandler {
 }
 
 this.CoreCourseFormatDelegate.registerHandler(new AddonSingleActivityFormatHandler());
+```
+
+##### Self enrol plugin
+
+The `CoreEnrolDelegate` handler allows you to support enrolment plugins in the app. This example will show how to support a self enrol plugin, you can find an example of each type of plugin in the issue [MOBILE-4323](https://tracker.moodle.org/browse/MOBILE-4323).
+
+Here's an example on how to create a prefetch handler using the JS returned by the main method:
+
+```javascript
+const getEnrolmentInfo = (id) => {
+    // Get enrolment info for the enrol instance.
+    // Used internally, you can use any name, parameters and return data in here.
+};
+
+const selfEnrol = (method, info) => {
+    // Self enrol the user in the course.
+    // Used internally, you can use any name, parameters and return data in here.
+};
+
+var result = {
+    getInfoIcons: (courseId) => {
+        return this.CoreEnrolService.getSupportedCourseEnrolmentMethods(courseId, 'selftest').then(enrolments => {
+            if (!enrolments.length) {
+                return [];
+            }
+
+            // Since this code is for testing purposes just use the first one.
+            return getEnrolmentInfo(enrolments[0].id).then(info => {
+                if (!info.enrolpassword) {
+                    return [{
+                        label: 'plugin.enrol_selftest.pluginname',
+                        icon: 'fas-right-to-bracket',
+                    }];
+                } else {
+                    return [{
+                        label: 'plugin.enrol_selftest.pluginname',
+                        icon: 'fas-key',
+                    }];
+                }
+            });
+        });
+    },
+    enrol: (method) => {
+        return getEnrolmentInfo(method.id).then(info => {
+            return selfEnrol(method, info);
+        });
+    },
+    invalidate: (method) => {
+        // Invalidate WS data.
+    },
+};
+
+result;
 ```
 
 ### Using the JavaScript API
