@@ -487,3 +487,18 @@ The subsequent MIME icons have been entirely removed:
 Files utilizing any of these removed icons will now be represented by the "unknown" icon.
 
 :::
+
+<!-- cspell:ignore goutte,browserkit -->
+## Behat
+
+### Removal of Goutte and Goutte Mink Driver
+
+The [goutte behat mink driver](https://packagist.org/packages/behat/mink-goutte-driver) has been replaced by the [browserkit](https://packagist.org/packages/behat/mink-browserkit-driver) one because the former has been abandoned.
+
+The change should be completely transparent for (near) everybody. Only **if you are using some custom-generated `behat.yml`** file or other configuration alternatives different from the Moodle default one, then, **any `goutte` browser occurrence needs to be changed to `browserkit_http`** when configuring the behat mink extension.
+
+See MDL-78934 for more details and changes applied.
+
+### Removal of the `--skip-passed` option
+
+The legacy (and custom) Behat `--skip-passed` option has been removed completely. Please, use the standard `--rerun` option that provides exactly the same (execution of failed scenarios only).
