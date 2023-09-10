@@ -12,6 +12,18 @@ import TabItem from '@theme/TabItem';
 
 This page highlights the important changes that are coming in Moodle 4.3 for developers.
 
+## Database table and column names
+
+Starting with Moodle 4.3 the limits for both table and column names have been raised. Now table names can be up to 53 characters long (from previous 28 characters limit) and column names can be up to 63 characters long (from previous 30 characters limit).
+
+:::caution
+In order to achieve the above, the maximum length for the database prefix (`$CFG->prefix`) is now 10 characters. Installation or upgrade won't be possible with longer prefixes.
+:::
+
+:::caution
+If you are writing a plugin intended for older versions of Moodle then you must continue to use the lower limits of 28, and 30.
+:::
+
 ## Activity badge
 
 The new activity card design proposed for Moodle 4.3 differentiates badge information from other HTML content (displayed using the pre-existing `afterlink` feature).
