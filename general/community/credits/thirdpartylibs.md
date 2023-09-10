@@ -21,6 +21,27 @@ Provide a great search experience without the need for external, server-side, se
 - **License**:  MIT
 - **URL**: [https://github.com/olivernn/lunr.js](https://github.com/olivernn/lunr.js)
 
+### Assert
+
+- **Location**: admin/tool/mfa/factor/totp/extlib/Assert
+- **Version**: 2.1
+- **License**:  MIT
+- **URL**: [https://github.com/beberlei/assert](https://github.com/beberlei/assert)
+
+### OTPHP
+
+- **Location**: admin/tool/mfa/factor/totp/extlib/OTPHP
+- **Version**: 9.1.1
+- **License**:  MIT
+- **URL**: [https://github.com/Spomky-Labs/otphp](https://github.com/Spomky-Labs/otphp)
+
+### Constant-Time Encoding
+
+- **Location**: admin/tool/mfa/factor/totp/extlib/ParagonIE/ConstantTime
+- **Version**: 2.1.1
+- **License**:  MIT
+- **URL**: [https://github.com/paragonie/constant_time_encoding](https://github.com/paragonie/constant_time_encoding)
+
 ### jQuery EU Cookie Law popups
 
 An easy-to-install jQuery plugin to create EU Cookie Law popups and for GDPR compliance.
@@ -130,7 +151,7 @@ JavaScript library to insulate apps from spec changes and prefix differences in 
 Simple yet flexible JavaScript charting for designers & developers.
 
 - **Location**: lib/amd/src/chartjs-lazy.js
-- **Version**: 4.2.1 (with Moodle customisations)
+- **Version**: 4.4.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/chartjs/Chart.js](https://github.com/chartjs/Chart.js)
 - **Copyright holders**:
@@ -218,7 +239,7 @@ Beautify HTML code in Atto.
 CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 
 - **Location**: lib/editor/atto/plugins/html/yui/src/codemirror
-- **Version**: 5.65.12
+- **Version**: 5.65.15
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/codemirror5](https://github.com/codemirror/codemirror5)
 
@@ -394,7 +415,7 @@ Filters HTML.
 jQuery is a fast, small, and feature-rich JavaScript library widely used on moodle.
 
 - **Location**: lib/jquery
-- **Version**: 3.6.4
+- **Version**: 3.7.1
 - **License**:  MIT
 - **URL**: [https://github.com/jquery/jquery](https://github.com/jquery/jquery)
 - **Copyright holders**:
@@ -416,7 +437,7 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 A library used for building IMS-certified LTI 1.3 tool providers in PHP.
 
 - **Location**: lib/lti1p3
-- **Version**: 5.2.6 (with Moodle customisations)
+- **Version**: 5.4.1 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/packbackbooks/lti-1-3-php-library](https://github.com/packbackbooks/lti-1-3-php-library)
 - **Copyright holders**:
@@ -790,6 +811,13 @@ URL syntax validation using PHP and regular expressions.
 
 - **Copyright holders**:
   - 2000 Rod Apeldoorn - rod(at)canowhoopass(dot)com
+
+### WebAuthn
+
+- **Location**: lib/webauthn/src
+- **Version**: 2.0.1
+- **License**:  MIT
+- **URL**: [https://github.com/lbuchs/WebAuthn](https://github.com/lbuchs/WebAuthn)
 
 ### XHProf
 
