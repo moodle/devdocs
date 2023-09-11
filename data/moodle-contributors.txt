@@ -167,6 +167,7 @@ Candilio
 Carlos
 Carrick
 Carrier
+Carrillo
 Carson
 Carsten
 Carter
@@ -221,6 +222,7 @@ Cunningham
 Curry
 D'souza
 Dageförde
+Dale
 Dallimore
 Dalton
 Damian
@@ -240,6 +242,7 @@ Dave
 Davenport
 David
 Davidson
+Davies
 Davis
 Davitasvili
 Davo
@@ -293,6 +296,7 @@ Eberhardt
 Eddin
 Eduardo
 Ehringer
+Eichelberger
 Eijdenberg
 EizEddin
 Elbert
@@ -389,6 +393,7 @@ Gray
 Green
 Greeve
 Greg
+Gregor
 Gregory
 Greidanus
 Grigory
@@ -443,6 +448,7 @@ Hoobin
 Howard
 Hugh
 Hughes
+Hummel
 HungTran
 Hunkler
 Hunt
@@ -468,6 +474,7 @@ Iurii
 Iyer
 Iñaki
 Iñigo
+Jablon
 Jackson
 Jacob
 Jade
@@ -492,11 +499,13 @@ Jean-Roch
 Jeff
 Jenkins
 Jenny
+Jeremy
 Jerome
 Jess
 Jesse
 Jetha
 Jinu
+Joachim
 Joby
 Jody
 Joey
@@ -935,6 +944,7 @@ Schach
 Schmadel
 Schrenk
 Schroeder
+Schulz
 Scotson
 ScottVerbeek
 Scribner
@@ -1142,6 +1152,7 @@ Wirianto
 Wojciech
 Woldeselassie
 Wolf
+Wolfgang
 Woloszyn
 Wolters
 Woods
