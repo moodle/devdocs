@@ -502,3 +502,25 @@ See MDL-78934 for more details and changes applied.
 ### Removal of the `--skip-passed` option
 
 The legacy (and custom) Behat `--skip-passed` option has been removed completely. Please, use the standard `--rerun` option that provides exactly the same (execution of failed scenarios only).
+
+## Enrolment methods support in CSV course upload
+
+As part of [MDL-78855](https://tracker.moodle.org/browse/MDL-78855) new methods have been created for `enrol_plugin` to explicitly mark those enrolment methods that are supported in CSV course upload
+
+Example below for method to be supported:
+
+```php title="CSV supported"
+public function is_csv_upload_supported(): bool {
+    return true;
+}
+```
+
+Also a new method has been created for `enrol_plugin` to create enrolment instance with custom settings
+
+```php title="Add custom instance"
+public function add_custom_instance(stdClass $course, ?array $fields = null): ?int {
+    return $this->add_instance($course, $fields);
+}
+```
+
+In [MDL-73839](https://tracker.moodle.org/browse/MDL-73839) cohort enrolment method has been updated to support CSV course upload.
