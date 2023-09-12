@@ -353,68 +353,6 @@ MyModal.create({
 </TabItem>
 </Tabs>
 
-### Registration helper
-
-<Since version="4.3" issueNumber="MDL-78306" />
-
-Moodle 4.3 introduces a new `registerModalType` method on the Modal class to aid in registering a modal.
-
-:::note Compatibility with Moodle 4.2 and older
-
-If your code is intended to work with Moodle 4.2 and older, then you must continue to use the old method of registration. This legacy method will be maintained until Moodle 4.6.
-
-:::
-
-<Tabs groupId="beforeAfter">
-<TabItem value="before" label="Before Moodle 4.3">
-
-<InvalidExample
-    title="A modal using the legacy registration approach"
->
-
-The legacy registration will continue to work and should be used if your plugin will be used in Moodle 4.2, or earlier.
-
-```js
-var MyModal = function(root) {
-    Modal.call(this, root);
-};
-
-MyModal.TYPE = 'mod_example/myModal';
-MyModal.prototype = Object.create(Modal.prototype);
-MyModal.prototype.constructor = MyModal;
-
-let registered = false;
-if (!registered) {
-    ModalRegistry.register(MyModal.TYPE, MyModal, 'mod_example/my_modal');
-    registered = true;
-}
-
-return MyModal;
-```
-
-</InvalidExample>
-</TabItem>
-
-<TabItem value="after" label="From Moodle 4.3 onwards" default>
-<ValidExample
-    title="A modal using the new shortcut helper"
->
-
-The shortcut helper for Modal registration is suitable for Moodle 4.3 onwards.
-
-```js
-export default class MyModal extends Modal {
-    static TYPE = 'mod_example/myModal';
-    static TEMPLATE = 'mod_example/my_modal';
-}
-
-MyModal.registerModalType();
-```
-
-</ValidExample>
-</TabItem>
-</Tabs>
-
 ## Forms API
 
 ### add_sticky_action_buttons
