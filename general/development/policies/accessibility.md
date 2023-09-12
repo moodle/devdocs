@@ -6,6 +6,8 @@ tags:
   - Certification
 ---
 
+import { ValidExample } from '@site/src/components';
+
 Moodle is designed to provide equal functionality and information to all people. This means that there should be no barriers for people regardless of disabilities, assistive technologies that are used, different screen sizes and different input devices (for example mouse, keyboard and touchscreen).
 
 ## Accessibility conformance
@@ -121,7 +123,48 @@ See [the ARIA best practice advice on landmarks](https://www.w3.org/TR/wai-aria-
 
 All pages should have a unique title that describes the current page.
 
-See [the WCAG 2.1 success criteria for web page titles](https://www.w3.org/TR/WCAG21/#page-titled) for further information.
+Some tips for providing a meaningful page title:
+
+- The page title must be accurate and informative.
+- If the page causes a change of context (e.g. a search functionality), it should describe the result or change of context to the user.
+- It should be concise.
+- If possible, it should uniquely identify the page.
+- The most identifying information should come first.
+
+#### Example
+
+Consider that a student in the submission page of an assignment called `Kinetics problem set 1` in the `Physics 101` in the `Moodle University`.
+
+Then a suitable page title for the page would be something like:
+
+<ValidExample>
+
+The most unique identifying information first represented by the activity name and its sub-page, then followed by broader identifiers such as the course name and the site name.
+
+`Kinetics problem set 1: Submit assignment | Physics 101 | Moodle University`
+
+</ValidExample>
+
+<ValidExample>
+
+The most unique identifying information first represented by sub-page's name followed by the activity name that the page belongs to, then followed by broader identifiers such as the course name and the site name.
+
+`Submit assignment | Kinetics problem set 1 | Physics 101 | Moodle University`
+
+</ValidExample>
+
+#### Separating components of a page title
+
+When separating the components of the page tile, please use the `moodle_page:TITLE_SEPARATOR` constant.
+
+#### Site name on the page title
+
+There's no need to add the site's name when setting the page title using `$PAGE->set_title()`. The site name is automatically appended at the end of the page title by default by `$PAGE->set_title()`. The displayed site name on the page title will depend on the admin setting `$CFG->sitenameintitle` whether it's set to show the site's full name or the site's short name.
+
+#### Useful resources
+
+- [Understanding Success Criterion 2.4.2: Page Titled (Level A)](https://www.w3.org/WAI/WCAG21/Understanding/page-titled)
+- [Technique G88: Providing descriptive titles for Web pages](https://www.w3.org/WAI/WCAG21/Techniques/general/G88)
 
 ### Advanced UX Widgets
 
