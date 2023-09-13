@@ -601,8 +601,8 @@ In the previous section, we learned about some of the existing options for handl
 
 - `enrolmentAction` (optional): The type of action done by the enrolment plugin. Defaults to 'browser'. Possible values:
   - `browser` — When the user clicks to enrol, open a browser to perform the enrol in the browser. It doesn't require any JavaScript to work in the app.
-  - `self` — The user can self enrol in the app. Requires implementing the 'enrol' function in your JavaScript code.
-  - `guest` — Allows the user to enter the course as guest in the app. Requires implementing the 'canAccess' and 'validateAccess' functions in your JavaScript code.
+  - `self` — The user can self enrol in the app. Requires implementing the 'enrol' function in your JavaScript code. Also, your PHP class extending `enrol_plugin` should return some data instead of null in the `get_enrol_info` function, otherwise it won't work in the app.
+  - `guest` — Allows the user to enter the course as guest in the app. Requires implementing the 'canAccess' and 'validateAccess' functions in your JavaScript code. Also, your PHP class extending `enrol_plugin` should return some data instead of null in the `get_enrol_info` function, otherwise it won't work in the app.
 - `infoIcons` (optional) — Icons related to the enrolment to display next to the course. If the icons need to be calculated dynamically based on the course you need to implement the function 'getInfoIcons' in your JavaScript code. Properties for each icon:
   - `icon` (required) — The icon name. E.g. 'fas-credit-card'.
   - `label` (required) — The label of the icon (for accessibility).
