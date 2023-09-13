@@ -46,6 +46,10 @@ chromium-browser --allow-file-access-from-files --disable-web-security --disable
 start chrome.exe --allow-file-access-from-files --disable-web-security --disable-site-isolation-trials --allow-running-insecure-content --no-referrers --unlimited-storage --auto-open-devtools-for-tabs --user-data-dir=~/.chromium-dev-data
 ```
 
+```bash title="MacOS"
+open -a /Applications/Chromium.app --args --allow-file-access-from-files --disable-web-security --disable-site-isolation-trials --allow-running-insecure-content --no-referrers --unlimited-storage --auto-open-devtools-for-tabs --user-data-dir=~/.chromium-dev-data
+```
+
 If you are using other operative system, check out [how to run chromium with flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags) in other environments.
 Depending on the version of your browser, you may get a warning message saying "You are using an unsupported command-line flag". This is expected and can safely be ignored (for development).
 
