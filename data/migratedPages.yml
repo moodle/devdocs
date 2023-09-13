@@ -4,6 +4,9 @@ AJAX:
 AMD_Modal:
 - filePath: "/docs/guides/javascript/modal/index.md"
   slug: "/docs/guides/javascript/modal/"
+Acceptance_testing:
+- filePath: "/general/development/tools/behat/index.md"
+  slug: "/general/development/tools/behat/"
 Acceptance_testing/Browsers:
 - filePath: "/general/development/tools/behat/browsers/index.md"
   slug: "/general/development/tools/behat/browsers/"
@@ -112,6 +115,9 @@ Composer:
 Conditional_activities_API:
 - filePath: "/docs/apis/core/conditionalactivities/index.md"
   slug: "/docs/apis/core/conditionalactivities/"
+Contributing_to_Moodle:
+- filePath: "/general/community/contribute.md"
+  slug: "/general/community/contribute"
 Core_APIs:
 - filePath: "/docs/apis.md"
   slug: "/docs/apis"
