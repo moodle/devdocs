@@ -5,10 +5,12 @@ sidebar_position: 1
 tags:
   - Moodle App
 ---
-Browsers are not officially supported by the application, but you can use a **Chromium-based** browser for development if you don't need any native functionality.
+Browsers are not officially supported by the application, but you can use a **Chromium-based** browser older than version 119 for development if you don't need any native functionality.
 
 :::note Notice
-Please notice that it has to be a Chromium-based browser, because the application relies on the [Web SQL Database API](https://caniuse.com/?search=websql) which isn't supported in most browsers. This is a non-standard API, but that's not a problem because this is only used in the browser. Running on a native environment, the application relies on native APIs that are well supported.
+Please notice that it has to be a Chromium-based browser older than version 119 because the application relies on the [Web SQL Database API](https://caniuse.com/?search=websql) which isn't supported in most browsers. This is a non-standard API, but that's not a problem because this is only used in the browser. Running on a native environment, the application relies on native APIs that are well supported.
+
+This requirement may be dropped in future versions of the app: [MOBILE-4304](https://tracker.moodle.org/browse/MOBILE-4304)
 :::
 
 ## Differences between Chromium and Google Chrome
@@ -34,7 +36,7 @@ Disadvantages:
 
 ## Installation and configuration
 
-You can install the Chromium browser by downloading it from [the official download page](https://www.chromium.org/getting-involved/download-chromium).
+You can install the Chromium browser by downloading it from [the official download page](https://www.chromium.org/getting-involved/download-chromium) (make sure to install a version older than 119).
 
 In order to run the Moodle App, we recommend that you launch the browser with a couple of arguments. These are necessary to disable some of the limitations that don't exist in the native application, and also prepare the development environment.
 
