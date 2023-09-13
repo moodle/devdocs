@@ -126,14 +126,22 @@ All pages should have a unique title that describes the current page.
 Some tips for providing a meaningful page title:
 
 - The page title must be accurate and informative.
-- If the page causes a change of context (e.g. a search functionality), it should describe the result or change of context to the user.
+- If the page causes a _change of context_ (for example, a search functionality), it should describe the result or change of context to the user.
 - It should be concise.
 - If possible, it should uniquely identify the page.
 - The most identifying information should come first.
 
+:::note change of context
+
+(not to be confused with Moodle's `\core\context` class and its implementations)
+
+According to the [WCAG 2.1 Understanding Docs](https://www.w3.org/WAI/WCAG21/Understanding/on-focus.html#dfn-changes-of-context), a change in context is a major change that, if made without user awareness, can disorient users who are not able to view the entire page simultaneously. It can include changes of user agent, viewport, focus, or content that changes the meaning of the web page.
+
+:::
+
 #### Example
 
-Consider that a student in the submission page of an assignment called `Kinetics problem set 1` in the `Physics 101` in the `Moodle University`.
+Consider that a student is on the submission page of an assignment activity called `Kinetics problem set 1` in the `Physics 101` course on the `Mount Orange School` Moodle site.
 
 Then a suitable page title for the page would be something like:
 
@@ -141,25 +149,49 @@ Then a suitable page title for the page would be something like:
 
 The most unique identifying information first represented by the activity name and its sub-page, then followed by broader identifiers such as the course name and the site name.
 
-`Kinetics problem set 1: Submit assignment | Physics 101 | Moodle University`
+`Kinetics problem set 1: Submit assignment | Physics 101 | Mount Orange School`
 
 </ValidExample>
 
 <ValidExample>
 
-The most unique identifying information first represented by sub-page's name followed by the activity name that the page belongs to, then followed by broader identifiers such as the course name and the site name.
+The most unique identifying information first represented by the name of the sub-page, followed by the activity name that the page belongs to, then followed by broader identifiers such as the course name and the site name.
 
-`Submit assignment | Kinetics problem set 1 | Physics 101 | Moodle University`
+`Submit assignment | Kinetics problem set 1 | Physics 101 | Mount Orange School`
 
 </ValidExample>
 
 #### Separating components of a page title
 
-When separating the components of the page tile, please use the `moodle_page:TITLE_SEPARATOR` constant.
+When separating the components of the page tile, please use the `moodle_page::TITLE_SEPARATOR` constant.
+
+<ValidExample>
+
+```php
+[$course, $cm] = get_course_and_cm_from_cmid($id);
+// Activity name and its sub-page as the unique identifying information.
+$pagename = format_string($cm->name) . ': ' . get_string('view');
+// Course name.
+$coursename = format_string($course->fullname);
+// Set the page title, combining the activity page's name and course name using the title separator constant.
+$PAGE->set_title($pagename . moodle_page::TITLE_SEPARATOR . $coursename);
+```
+
+</ValidExample>
 
 #### Site name on the page title
 
-There's no need to add the site's name when setting the page title using `$PAGE->set_title()`. The site name is automatically appended at the end of the page title by default by `$PAGE->set_title()`. The displayed site name on the page title will depend on the admin setting `$CFG->sitenameintitle` whether it's set to show the site's full name or the site's short name.
+You should not add the name of the site when setting the page title using `$PAGE->set_title()`. The site name is automatically appended to the end of the page title in the correct format when using `$PAGE->set_title()`.
+
+:::info
+
+Administrators can use the `sitenameinititle` configuration setting to configure how this is shown in the title with possible options including:
+
+- the _full name_ of the site, for example, "Mount Orange School"
+- the _short name_ of the site, for example: "MOS"
+
+This is automatically handled by `$PAGE->set_title()`.
+:::
 
 #### Useful resources
 
