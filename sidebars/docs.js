@@ -51,6 +51,12 @@ const sidebars = {
         },
 
         {
+            label: 'Content guidelines',
+            type: 'link',
+            href: '/general/contentguidelines',
+        },
+
+        {
             label: 'Developer update',
             type: 'doc',
             id: 'devupdate',
