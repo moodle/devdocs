@@ -1,10 +1,13 @@
 ---
-title: Product writing guidelines
+title: The Moodle content guidelines
+sidebar_label: Content guidelines
+sidebar_position: 1
 tags:
-- Content style guide
-- UX Writing
+  - Content style guide
+  - UX Writing
 ---
-import {ValidExample, InvalidExample } from '@site/src/components';
+
+The Moodle content guidelines are for UX writers, copywriters, marketers, developers, translators, and anyone else writing for Moodle.
 
 These guidelines provide recommendations on how to write effective, consistent, and reliable content for Moodle's products.
 
