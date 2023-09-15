@@ -136,6 +136,9 @@ Credits:
 Custom_Moodle_Apps:
 - filePath: "/general/app/customisation/custom-apps.md"
   slug: "/general/app/customisation/custom-apps"
+Custom_fields_API:
+- filePath: "/docs/apis/core/customfields/index.md"
+  slug: "/docs/apis/core/customfields/"
 DDL_functions:
 - filePath: "/docs/apis/core/dml/ddl.md"
   slug: "/docs/apis/core/dml/ddl"
