@@ -1,6 +1,8 @@
 ---
 title: Custom fields API
-tags: []
+tags:
+  - customfield
+  - Custom field
 ---
 
 import { Since } from '@site/src/components';

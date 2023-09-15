@@ -1,12 +1,12 @@
 ---
-title: Course Custom fields
+title: Custom fields
 tags:
-  - core_course
+  - customfield
   - Course
   - Custom field
 ---
 
-Course custom fields allow you to create field types to be used for course custom fields. Instances of these field types can be added to a course. for example, if you want to display radio buttons on the course edit page, then you can create a radio custom course field plugin.
+Custom fields allow you to create field types to be used for custom fields. Instances of these field types can be added to the respective areas that implement [Custom fields API](/docs/apis/core/customfields). Currently in Moodle core only courses implement this API, however custom fields are also used in addon plugins for other areas. For example, if you want to display radio buttons on the course edit page, then you can add an instance of a radio custom field plugin to the Course custom fields configuration.
 
 import {
     Lang,
@@ -16,7 +16,7 @@ import DataController from './_files/data_controller';
 
 ## File structure
 
-Course custom field plugins are located in the `/customfield/field` directory. A plugin should not include any custom files outside of it's own plugin folder.
+Custom field plugins are located in the `/customfield/field` directory. A plugin should not include any custom files outside of it's own plugin folder.
 
 Each plugin is in a separate subdirectory and consists of a number of _mandatory files_ and any other files the developer is going to use.
 
@@ -44,10 +44,10 @@ customfield/field/checkbox
 
 </details>
 
-A course custom field plugin requires two _controller_ classes:
+A custom field plugin requires two _controller_ classes:
 
 - a _field_ controller, which describes the field itself; and
-- a _data_ controller, which describes with interface within the context of the course page.
+- a _data_ controller, which describes with interface within the context of the instance (i.e. course).
 
 ### Field Controller
 
@@ -121,8 +121,9 @@ The `datafield()` function returns an enumerated string and describes which data
 
 #### instance_form_definition()
 
-The `instance_form_definition()` function adds any required field elements that are displayed on the course editing page.
+The `instance_form_definition()` function adds any required field elements that are displayed on the instance editing page (i.e. on the course settings page).
 
 ## See Also
 
+- [Custom files API](/docs/apis/core/customfields)
 - [User Profile Fields](https://docs.moodle.org/dev/User_profile_fields)
