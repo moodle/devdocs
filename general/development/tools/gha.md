@@ -42,7 +42,7 @@ And that's all, pretty nice, simple and effective.
 
 ### How do I configure the PHPUnit executions
 
-Since Moodle 3.11.8 and 4.0.2, it's possible to configure the PHPUnit executions by creating a [GitHub repository secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) named `phpunit_options`. Just setup its value to the options that you want to pass to PHPUnit and they will come into effect for all runs. For a list of [PHPUnit available options](https://phpunit.readthedocs.io/en/9.5/textui.html#command-line-options) use the `vendor/bin/phpunit --help` command.
+Since Moodle 3.11.8 and 4.0.2, it's possible to configure the PHPUnit executions by creating a [GitHub repository secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) named `phpunit_options`. Just setup its value to the options that you want to pass to PHPUnit and they will come into effect for all runs. For a list of [PHPUnit available options](https://docs.phpunit.de/en/9.6/textui.html#command-line-options) use the `vendor/bin/phpunit --help` command.
 
 ## Moodle plugins
 

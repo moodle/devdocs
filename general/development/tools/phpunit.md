@@ -56,9 +56,9 @@ The following table shows what PHPUnit version is installed in which Moodle vers
 
 | Moodle version | PHPUnit version | Links                                                   |
 | --- | --- |---------------------------------------------------------|
-| Moodle 3.11 - 4.0 | PHPUnit 9.5 | [Documentation](https://phpunit.readthedocs.io/en/9.5/) |
-| Moodle 3.10 | PHPUnit 8.5 | [Documentation](https://phpunit.readthedocs.io/en/8.5/) |
-| Moodle 3.7 - 3.9 | PHPUnit 7.5 | [Documentation](https://phpunit.readthedocs.io/en/7.5/) |
+| Moodle 3.11 - 4.0 | PHPUnit 9.5 | [Documentation](https://docs.phpunit.de/en/9.6/) |
+| Moodle 3.10 | PHPUnit 8.5 | [Documentation](https://docs.phpunit.de/en/8.5/) |
+| Moodle 3.7 - 3.9 | PHPUnit 7.5 | [Documentation](https://docs.phpunit.de/en/7.5/) |
 | Moodle 3.4 - 3.6 | PHPUnit 6.5 | [Documentation](https://phpunit.de/manual/6.5/en/)      |
 | Moodle 3.2 - 3.3 | PHPUnit 5.5 | [Documentation](https://phpunit.de/manual/5.5/en/)      |
 | Moodle 3.1 | PHPUnit 4.8.27 | [Documentation 4.8](https://phpunit.de/manual/4.8/en/)  |
@@ -277,7 +277,7 @@ define('TEST_EXTERNAL_FILES_HTTP_URL', 'http://localhost/moodle-exttests');
 
 ## Writing new tests
 
-- read [official PHPUnit online documentation](http://www.phpunit.de/manual/current/en/)
+- read [official PHPUnit online documentation](https://docs.phpunit.de/en/9.6/)
 - see [Writing PHPUnit tests](https://docs.moodle.org/dev/Writing_PHPUnit_tests)
 
 ## PHPUnit support in IDEs
