@@ -12,7 +12,7 @@ class repository_pluginname extends repository {
      *
      * @param string $encodedpath
      * @param string $page
-     * @return array the list of files, including meta infomation
+     * @return array the list of files, including meta information
      */
     public function get_listing($encodedpath = '', $page = '') {
         // This methods
