@@ -72,48 +72,6 @@ This approach is **not recommended** and is only preserved for reference.
 
 :::
 
-## Moodle plugin
-
-Moodle includes a copy of the PHPCodeSniffer package, and the Moodle ruleset, as part of the [`moodle-local_codechecker`](https://github.com/moodlehq/moodle-local_codechecker) Moodle plugin. This makes the code checker available via a web-based interface for checking the syntax of a given file or folder.
-
-One way to install this plugin is using `git clone`:
-
-```console
-git clone https://github.com/moodlehq/moodle-local_codechecker.git local/codechecker
-```
-
-It is recommended that you add the plugin to your _local_ git ignore:
-
-```console
-echo local/codechecker >> .git/info/exclude
-```
-
-:::info
-
-The `.git/info/exclude` file is a per-repository version of the `.gitignore` file. Whilst `.gitignore` is tracked within the Moodle codebase and a version is shipped with Moodle, the `.git/info/exclude` file is local to your git clone.
-
-See the [gitignore](https://git-scm.com/docs/gitignore) documentation for more information on the gitignore feature.
-
-:::
-
-:::note
-
-If you are not installing the moodle ruleset globally, and are instead using the [`local_codechecker`](https://github.com/moodlehq/moodle-local_codechecker) plugin, then you _must_ also use the version of phpcs distributed in the plugin.
-
-This is located at `local/codechecker/phpcs/bin/phpcs`.
-
-:::
-
-Once installed a new codechecker option will appear in the Site administration -> Development page.
-
-This page allows for the code in a specified directory to be checked, for example if you wanted to check the code for the `shortanswer` question type you would enter
-
-```
-/question/type/shortanswer
-```
-
-You would then be presented with a list of the count of files processed and any warnings or errors.
-
 ## Editor integrations
 
 Many modern editors and IDEs will natively integrate with PHPCodeSniffer, and since Moodle versions 3.11.7, 4.0.1, and 4.1.0, no additional configuration is required.
