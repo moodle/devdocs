@@ -9,21 +9,24 @@ sidebar_position: 1
 
 import { Since } from '@site/src/components';
 
-## Overview
-
-This document describes the various code sniffing tools that Moodle recommends, their purpose, and their usage.
-
 [PHPCodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) is a tool used to analyse PHP code using a set of rules. In many cases these rules can be used to automatically fix the errors they identify.
 
-Moodle has published a ruleset intended to meet the [Moodle Coding Style](../policies/codingstyle/index.md), and identify any parts of the code do not conform to this style.
+Moodle has two sets of published rule-sets intended to meet the [Moodle Coding Style](../policies/codingstyle/index.md), and identify any parts of the code do not conform to this style. These are:
+
+- `moodle` - The standard ruleset which meets all variants of the coding style
+- `moodle-extra` - The extended standard which includes recommended best practices
+
+We recommend use of the `moodle-extra` standard, particularly when writing new code.
 
 ## Installation
 
-It is recommend that both the phpcs scripts, and the Moodle ruleset, are installed globally using Composer:
+The recommended method of installation is via the global composer command:
 
 ```console
 composer global require moodlehq/moodle-cs
 ```
+
+This ensures that you have a single copy of the standard used for all code.
 
 ### Configuration
 
@@ -32,6 +35,52 @@ composer global require moodlehq/moodle-cs
 A PHPCS configuration is included in the Moodle codebase and ensures that the correct phpcs ruleset is always used for the Moodle codebase.
 
 This can be further extended by generating an additional configuration to ignore all third-party libraries using the `grunt ignorefiles` command. See [grunt](./nodejs.md#grunt) for further information on using Grunt.
+
+If you would like to make use of the `moodle-extra` standard then you should create a `.phpcs.xml` file with the following content:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="MoodleCore">
+  <rule ref="./phpcs.xml"/>
+  <rule ref="moodle-extra"/>
+</ruleset>
+```
+
+This will extend the standard configuration, and apply the extra standard on top of it.
+
+#### Moodle 3.10 and earlier
+
+The easiest way to have PHP CodeSniffer pick up your preferred style is via a local configuration file.
+
+You can create a file named `.phpcs.xml` with the following contents:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="MoodleCore">
+  <rule ref="moodle"/>
+</ruleset>
+```
+
+If you wish to use the `moodle-extra` coding style, then you can use the following content:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="MoodleCore">
+  <rule ref="moodle-extra"/>
+</ruleset>
+```
+
+:::info
+
+Third-party library code will not be ignored with these versions of Moodle.
+
+:::
+
+:::tip Ignoring the file with Git
+
+We recommend configuring your code checkout to ignore the `.phpcs.xml` file by adding a local ignore record to `.git/info/exclude`
+
+:::
 
 #### Community plugins, and older Moodle versions
 
@@ -71,48 +120,6 @@ phpcs --config-set default_standard moodle
 This approach is **not recommended** and is only preserved for reference.
 
 :::
-
-## Moodle plugin
-
-Moodle includes a copy of the PHPCodeSniffer package, and the Moodle ruleset, as part of the [`moodle-local_codechecker`](https://github.com/moodlehq/moodle-local_codechecker) Moodle plugin. This makes the code checker available via a web-based interface for checking the syntax of a given file or folder.
-
-One way to install this plugin is using `git clone`:
-
-```console
-git clone https://github.com/moodlehq/moodle-local_codechecker.git local/codechecker
-```
-
-It is recommended that you add the plugin to your _local_ git ignore:
-
-```console
-echo local/codechecker >> .git/info/exclude
-```
-
-:::info
-
-The `.git/info/exclude` file is a per-repository version of the `.gitignore` file. Whilst `.gitignore` is tracked within the Moodle codebase and a version is shipped with Moodle, the `.git/info/exclude` file is local to your git clone.
-
-See the [gitignore](https://git-scm.com/docs/gitignore) documentation for more information on the gitignore feature.
-
-:::
-
-:::note
-
-If you are not installing the moodle ruleset globally, and are instead using the [`local_codechecker`](https://github.com/moodlehq/moodle-local_codechecker) plugin, then you _must_ also use the version of phpcs distributed in the plugin.
-
-This is located at `local/codechecker/phpcs/bin/phpcs`.
-
-:::
-
-Once installed a new codechecker option will appear in the Site administration -> Development page.
-
-This page allows for the code in a specified directory to be checked, for example if you wanted to check the code for the `shortanswer` question type you would enter
-
-```
-/question/type/shortanswer
-```
-
-You would then be presented with a list of the count of files processed and any warnings or errors.
 
 ## Editor integrations
 
