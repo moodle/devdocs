@@ -314,7 +314,7 @@
         "location": "lib/emoji-data",
         "name": "Emoji data",
         "description": "Library to parse easily data and sprite sheets for emoji.",
-        "version": "14.0.1",
+        "version": "15.0.1",
         "license": "MIT",
         "repository": "https://github.com/iamcal/emoji-data/",
         "customised": true
@@ -707,7 +707,7 @@
         "location": "lib/phpspreadsheet",
         "name": "PhpSpreadsheet",
         "description": "Library to read, write and create spreadsheet documents in PHP.",
-        "version": "1.28.0",
+        "version": "1.29.0",
         "license": "MIT",
         "repository": "https://github.com/PHPOffice/PhpSpreadsheet",
         "customised": true

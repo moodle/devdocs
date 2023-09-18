@@ -284,7 +284,7 @@ CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 Library to parse easily data and sprite sheets for emoji.
 
 - **Location**: lib/emoji-data
-- **Version**: 14.0.1 (with Moodle customisations)
+- **Version**: 15.0.1 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/iamcal/emoji-data/](https://github.com/iamcal/emoji-data/)
 - **Copyright holders**:
@@ -633,7 +633,7 @@ Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are 
 Library to read, write and create spreadsheet documents in PHP.
 
 - **Location**: lib/phpspreadsheet
-- **Version**: 1.28.0 (with Moodle customisations)
+- **Version**: 1.29.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/PHPOffice/PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
 
