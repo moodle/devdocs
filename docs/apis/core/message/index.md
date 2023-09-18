@@ -19,7 +19,7 @@ If you are looking for details of how the Messaging system's internal structure 
 
 If you are looking for instructions on the implementation of a custom message processor (a component that receives messages sent to a user), go to [Messaging custom components](https://docs.moodle.org/dev/Messaging_custom_components).
 
-If you are looking for instructions on sending messages programatically within Moodle then read on...
+If you are looking for instructions on sending messages programmatically within Moodle then read on...
 
 ## Overview
 
@@ -31,13 +31,13 @@ The Message API code is contained within `lib/messagelib.php` and is automatical
 
 ## Functions
 
-`message_send()` is the primary point of contact for the message API. Call it to send a message to a user. You can find a full description of the arguments that must be supplied at (link to phpdocs). There is also an example below.
+`message_send()` is the primary point of contact for the message API. Call it to send a message to a user. See the php documentation for a full description of the arguments that must be supplied. There is also an example below.
 
-## Message popup
+## Message pop-up
 
 <Since versions={["2.9"]} />
 
-A JavaScript popup can be displayed through a link to invite a user to message another. In order to use this feature, you need to require the JavaScript libraries using `message_messenger_requirejs()` and create a link with the attributes returned by `message_messenger_sendmessage_link_params()`. More in the examples.
+A JavaScript pop-up can be displayed through a link to invite a user to message another. In order to use this feature, you need to require the JavaScript libraries using `message_messenger_requirejs()` and create a link with the attributes returned by `message_messenger_sendmessage_link_params()`. More in the examples.
 
 ## Examples
 
@@ -45,28 +45,27 @@ A JavaScript popup can be displayed through a link to invite a user to message a
 
 The messages produced by a message provider is defined in the `/db/messages.php` file of a component. Below is code from the quiz module's `messages.php` file, shown as an example.
 
-```php
+```php title="mod/quiz/db/messages.php"
 defined('MOODLE_INTERNAL') || die();
-$messageproviders = array (
+$messageproviders = [
     // Notify teacher that a student has submitted a quiz attempt
-    'submission' => array (
-        'capability'  => 'mod/quiz:emailnotifysubmission'
-    ),
+    'submission' => [
+        'capability' => 'mod/quiz:emailnotifysubmission'
+    ],
     // Confirm a student's quiz attempt
-    'confirmation' => array (
-        'capability'  => 'mod/quiz:emailconfirmsubmission'
-    )
-);
+    'confirmation' => [
+        'capability' => 'mod/quiz:emailconfirmsubmission'
+    ],
+];
 ```
 
 The quiz can send two kinds of messages, quiz "submission" and "confirmation" notifications. Each message type is only available to users with the appropriate capability. Please note that the capability is checked at the system level context. Users who have this capability will have this message listed in their messaging preferences. You can omit the capability section if your message should be visible for all users. For example forum post notifications are available to all users.
 
 ```php
-$messageproviders = array (
+$messageproviders = [
     // Ordinary single forum posts
-    'posts' => array (
-    )
-);
+    'posts' => [],
+];
 ```
 
 When displaying your message types in a user's messaging preferences it will use a string from your component's language file called `messageprovider:messagename`. For example here are the relevant strings from the quiz's language file.
@@ -81,13 +80,12 @@ Once your `messages.php` is complete you need to increase the version number of 
 ### Setting defaults
 
 ```php title="The default processor can be set using an element of the array"
-
- 'mynotification' => [
-         'defaults' => [
-              'popup' => MESSAGE_PERMITTED + MESSAGE_DEFAULT_LOGGEDIN + MESSAGE_DEFAULT_LOGGEDOFF,
-              'email' => MESSAGE_PERMITTED 
-          ],
+'mynotification' => [
+    'defaults' => [
+        'pop-up' => MESSAGE_PERMITTED + MESSAGE_DEFAULT_LOGGEDIN + MESSAGE_DEFAULT_LOGGEDOFF,
+        'email' => MESSAGE_PERMITTED,
     ],
+],
 ```
 
 With that setting email will be permitted but disabled for each user by default. It  can be turned on by each user through the `preferences/notification` preferences options (`/message/notificationpreferences.php?userid=X`)
@@ -113,7 +111,7 @@ Note that if you change the values in message.php and then upgrade the plugin th
 
 Here is example code showing you how to actually send a notification message. The example shows the construction of a object with specific properties, which is then passed to the `message_send()` function that uses the information to send a message.
 
-```php
+```php title="Sending a message"
 $message = new \core\message\message();
 $message->component = 'mod_yourmodule'; // Your plugin's name
 $message->name = 'mynotification'; // Your notification name from message.php
@@ -127,19 +125,25 @@ $message->smallmessage = 'small message';
 $message->notification = 1; // Because this is a notification generated from Moodle, not a user-to-user message
 $message->contexturl = (new \moodle_url('/course/'))->out(false); // A relevant URL for the notification
 $message->contexturlname = 'Course list'; // Link title explaining where users get to for the contexturl
-$content = array('*' => array('header' => ' test ', 'footer' => ' test ')); // Extra content for specific processor
+// Extra content for specific processor
+$content = [
+    '*' => [
+        'header' => ' test ',
+        'footer' => ' test ',
+    ],
+];
 $message->set_additional_content('email', $content);
 
 // You probably don't need attachments but if you do, here is how to add one
 $usercontext = context_user::instance($user->id);
-$file = new stdClass;
+$file = new stdClass();
 $file->contextid = $usercontext->id;
 $file->component = 'user';
-$file->filearea  = 'private';
-$file->itemid    = 0;
-$file->filepath  = '/';
-$file->filename  = '1.txt';
-$file->source    = 'test';
+$file->filearea = 'private';
+$file->itemid = 0;
+$file->filepath = '/';
+$file->filename = '1.txt';
+$file->source = 'test';
 
 $fs = get_file_storage();
 $file = $fs->create_file_from_string($file, 'file1 content');
@@ -152,30 +156,30 @@ $messageid = message_send($message);
 ```php title="Before 2.9 message data used to be a stdClass object as shown below (This formation of a message will no longer work as of Moodle 3.6. Only a message object will be accepted):"
 
 $message = new stdClass();
-$message->component         = 'mod_quiz'; //your component name
-$message->name              = 'submission'; //this is the message name from messages.php
-$message->userfrom          = $USER;
-$message->userto            = $touser;
-$message->subject           = $subject;
-$message->fullmessage       = $message;
+$message->component = 'mod_quiz'; //your component name
+$message->name = 'submission'; //this is the message name from messages.php
+$message->userfrom = $USER;
+$message->userto = $touser;
+$message->subject = $subject;
+$message->fullmessage = $message;
 $message->fullmessageformat = FORMAT_PLAIN;
-$message->fullmessagehtml   = '';
-$message->smallmessage      = '';
-$message->notification      = 1; //this is only set to 0 for personal messages between users
+$message->fullmessagehtml = '';
+$message->smallmessage = '';
+$message->notification = 1; //this is only set to 0 for personal messages between users
 message_send($message);
 ```
 
-### How to set-up the message popup
+### How to set-up the message pop-up
 
-Here is example code showing you how to set-up the JavaScript popup link.
+Here is example code showing you how to set-up the JavaScript pop-up link.
 
 ```php
 require_once('message/lib.php');
 $userid = 2;
-$userto = $DB->get_record('user', array('id' => $userid));
+$userto = $DB->get_record('user', ['id' => $userid]);
 
 message_messenger_requirejs();
-$url = new moodle_url('message/index.php', array('id' => $userto->id));
+$url = new moodle_url('message/index.php', ['id' => $userto->id]);
 $attributes = message_messenger_sendmessage_link_params($userto);
 echo html_writer::link($url, 'Send a message', $attributes);
 ```
@@ -192,19 +196,13 @@ Similarly, message_output plugins don't need to change, so no worries there.
 
 If you are doing things with messages, then you need to understand how the internals have changed.
 
-The database tables have changed. Messages from Moodle components to a user (e.g. mod_quiz), telling them that something has happened (e.g. an attempt was submitted) have always been 'Notifications'. In the past, this was just a column in the `mdl_message` table. Now, messages and notifications are stored in completely separate tables. Notifications are in `mdl_notifications`. The strucutre of this table is very similar to the old `mdl_message` table which is now not used at all. Messages are in `mdl_messages`, and related tables, that now exist to support group messaging. Those tables join together like this:
+The database tables have changed. Messages from Moodle components to a user (e.g. mod_quiz), telling them that something has happened (e.g. an attempt was submitted) have always been 'Notifications'. In the past, this was just a column in the `mdl_message` table. Now, messages and notifications are stored in completely separate tables. Notifications are in `mdl_notifications`. The structure of this table is very similar to the old `mdl_message` table which is now not used at all. Messages are in `mdl_messages`, and related tables, that now exist to support group messaging. Those tables join together like this:
 
 ```sql
-SELECT *
-
-FROM mdl_messages m
-JOIN mdl_message_conversations con ON con.id = m.conversationid
-JOIN mdl_message_conversation_members mem ON mem.conversationid = con.id
+   SELECT *
+     FROM mdl_messages m
+     JOIN mdl_message_conversations con ON con.id = m.conversationid
+     JOIN mdl_message_conversation_members mem ON mem.conversationid = con.id
 LEFT JOIN mdl_message_user_actions act ON act.userid = mem.userid AND act.messageid = m.id
-
-ORDER BY m.timecreated, m.id, mem.userid, act.id
+ ORDER BY m.timecreated, m.id, mem.userid, act.id
 ```
-
-## See also
-
-- [Core APIs](../../../apis.md)
