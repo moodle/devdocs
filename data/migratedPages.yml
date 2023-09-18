@@ -40,6 +40,9 @@ Adding_a_web_service_to_a_plugin:
 Admin_settings:
 - filePath: "/docs/apis/subsystems/admin/index.md"
   slug: "/docs/apis/subsystems/admin/"
+Admin_tools:
+- filePath: "/general/projects/api/admin-tools.md"
+  slug: "/general/projects/api/admin-tools"
 Advanced_grading_API:
 - filePath: "/docs/apis/core/grading/index.md"
   slug: "/docs/apis/core/grading/"
