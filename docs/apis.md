@@ -139,7 +139,7 @@ The [Lock API](./apis/core/lock/index.md) lets you synchronise processing betwee
 
 ### Message API (message)
 
-The [Message API](https://docs.moodle.org/dev/Message_API) lets you post messages to users. They decide how they want to receive them.
+The [Message API](./apis/core/message/index.md) lets you post messages to users. They decide how they want to receive them.
 
 ### Media API (media)
 
