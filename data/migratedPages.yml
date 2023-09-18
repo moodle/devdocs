@@ -267,6 +267,9 @@ Lock_API:
 Machine_learning_backends:
 - filePath: "/docs/apis/plugintypes/mlbackend/index.md"
   slug: "/docs/apis/plugintypes/mlbackend/"
+Message_API:
+- filePath: "/docs/apis/core/message/index.md"
+  slug: "/docs/apis/core/message/"
 Mission:
 - filePath: "/general/community/mission.md"
   slug: "/general/community/mission"
