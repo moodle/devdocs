@@ -55,7 +55,7 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Assignment submission plugins](./assign/submission.md) | assignsubmission | /mod/assign/submission | Different forms of assignment submissions | 2.3+ |
 | [Assignment feedback plugins](./assign/feedback.md) | assignfeedback | /mod/assign/feedback | Different forms of assignment feedbacks | 2.3+ |
 | [Book tools](./mod_book/index.md) | booktool | /mod/book/tool | Small information-displays or tools that can be moved around pages | 2.1+ |
-| [Course Custom fields](./customfield/index.md) | customfield | /customfield/field | Custom field types, used in Custom course fields | 3.7+ |
+| [Custom fields](./customfield/index.md) | customfield | /customfield/field | Custom field types, used in Custom course fields | 3.7+ |
 | [Database fields](./mod_data/fields.md) | datafield | /mod/data/field | Different types of data that may be added to the Database activity module | 1.6+ |
 | [Database presets](./mod_data/presets.md) | datapreset | /mod/data/preset | Pre-defined templates for the Database activity module | 1.6+ |
 | [LTI sources](https://docs.moodle.org/dev/External_tool_source) | ltisource | /mod/lti/source | LTI providers can be added to external tools easily through the external tools interface see [Documentation on External Tools](https://docs.moodle.org/en/External_tool). This type of plugin is specific to LTI providers that need a plugin that can register custom handlers to process LTI messages | 2.7+ |
