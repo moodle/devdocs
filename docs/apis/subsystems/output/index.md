@@ -180,7 +180,7 @@ The template used in this plugin is located in the plugin's templates folder. Th
 </div>
 ```
 
-This is the mustache template for this demo. It uses some bootstrap classes directly to position and style the content on the page. `{{sometext}}` is replaced with the variable from the context when this template is rendered. For more information on templates see [Templates](../../guides/templates/index.md).
+This is the mustache template for this demo. It uses some bootstrap classes directly to position and style the content on the page. `{{sometext}}` is replaced with the variable from the context when this template is rendered. For more information on templates see [Templates](../../../guides/templates/index.md).
 
 ## Output Functions
 
@@ -279,7 +279,7 @@ In earlier versions of Moodle, the third argument was integer `$courseid`. It is
 Those methods are designed to replace the old ```html_writer::tag(...)``` methods. Even if many of them are just wrappers around the old methods, they are more semantic and could be overridden by component renderers.
 :::
 
-While to render complex elements, you should use [templates](../../guides/templates/index.md), some simple elements can be rendered using the following functions:
+While to render complex elements, you should use [templates](../../../guides/templates/index.md), some simple elements can be rendered using the following functions:
 
 #### container()
 
@@ -338,4 +338,4 @@ In the standard Boost theme this method will output a span using the [Bootstrap 
 - [HTML Guidelines](https://docs.moodle.org/dev/HTML_Guidelines)
 - [Output renderers](https://docs.moodle.org/dev/Output_renderers)
 - [Overriding a renderer](https://docs.moodle.org/dev/Overriding_a_renderer)
-- [Templates](../../guides/templates/index.md)
+- [Templates](../../../guides/templates/index.md)

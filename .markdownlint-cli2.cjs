@@ -246,6 +246,9 @@ config.renamedLinks = {
         oldFile: '/docs/apis/plugintypes/tinymce/index.md',
         newFile: '/docs/apis/plugintypes/tiny/legacy.md',
     }, {
+        oldFile: '/docs/apis/subsystems/output.md',
+        newFile: '/docs/apis/subsystems/output/index.md',
+    }, {
         oldFile: '/docs/apis/subsystems/tool/index.md',
         newFile: '/docs/apis/subsystems/admin/index.md',
     }],

@@ -249,6 +249,9 @@ Groups_API:
 Hardening_new_Roles_system:
 - filePath: "/docs/apis/subsystems/roles.md"
   slug: "/docs/apis/subsystems/roles"
+Inplace_editable:
+- filePath: "/docs/apis/subsystems/output/inplace.md"
+  slug: "/docs/apis/subsystems/output/inplace"
 Integration_Review:
 - filePath: "/general/development/process/integration/index.md"
   slug: "/general/development/process/integration"
@@ -1480,10 +1483,10 @@ New_docs_version_process:
 - filePath: "/general/development/process/release/newuserdocs.md"
   slug: "/general/development/process/release/newuserdocs"
 Output_API:
-- filePath: "/docs/apis/subsystems/output.md"
+- filePath: "/docs/apis/subsystems/output/index.md"
   slug: "/docs/apis/subsystems/output"
 Output_functions:
-- filePath: "/docs/apis/subsystems/output.md"
+- filePath: "/docs/apis/subsystems/output/index.md"
   slug: "/docs/apis/subsystems/output#output-functions"
 Overview:
 - filePath: "/general/community/intro.md"
