@@ -552,4 +552,52 @@ grunt
 </TabItem>
 </Tabs>
 
-### ESLint
+### JSHint
+
+[JSHint](http://jshint.com) is a JSLint derivative for checking your code. This includes checking for errors and recommended stylistic approaches to writing JavaScript.
+
+Since Moodle 2.5, a JSHint configuration is also included in the Moodle codebase to inform the tester of our preferences and recommendations.
+
+#### Use
+
+Many IDEs and editors will automatically detect if you have JSHint installed and pass your code through it for you, reporting any errors as you go.
+
+To run jshint on the command line, simply pass it the file that you wish to check:
+
+```bash
+npx jshint blocks/fruit/yui/fruitbowl/fruitbowl.js
+```
+
+#### Documentation
+
+There's a variety of documentation on JSHint and the error messages it returns. Start off with the jshint website:
+
+- [JSHint](http://jshint.com)
+- [JSLint Error Explanations](http://jslinterrors.com)
+
+## Moodle Settings for JavaScript Development
+
+The following settings will ensure that the js loaded by your browser is relatively readable.
+
+Make sure that :
+
+- your  Development / Debugging / Debug messages is set to "Developer : Extra Debug Moodle Messages ...." - Moodle will then use the debug non-minified and thus more readable YUI 2 and YUI 3 library files.
+- You will probably want to change some of the settings at "Home / Site administration / Appearance / AJAX and JavaScript" :
+  - YUI combo loading - you probably want to turn this off so that files are not combined.
+  - JavaScript caching and compressing - turn this off so that your custom JS code is not minified.
+  - Check the other settings on this page to see that they are as you would expect them to be.
+
+You might want to add the following code to your config.php file when developing or debugging JavaScript code:
+
+```php
+// For javascript development or debugging.
+$CFG->cachejs = false;
+$CFG->yuicomboloading = false;
+$CFG->yuiloglevel = 'debug';
+$CFG->debug = 32767;
+```
+
+## See Also
+
+- [JavaScript Modules](../modules.md)
+- [JavaScript FAQ](https://docs.moodle.org/dev/JavaScript_FAQ)
