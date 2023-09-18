@@ -599,5 +599,5 @@ $CFG->debug = 32767;
 
 ## See Also
 
-- [JavaScript Modules](../modules.md)
+- [JavaScript Modules](modules.md)
 - [JavaScript FAQ](https://docs.moodle.org/dev/JavaScript_FAQ)
