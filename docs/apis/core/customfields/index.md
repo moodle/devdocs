@@ -54,7 +54,7 @@ handler::setup_edit_page() // Sets page context/url/breadcrumb for the customfie
 
 ### Add custom fields to the instance edit form
 
-Custom fields are added to the **instances**. For example, course custom fields are added to the courses, so `courseid` is the `instanceid`. In the example of [mod_surveybuilder](https://github.com/marinaglancy/moodle-mod_surveybuilder) we use `$USER->id` as the `instanceid` (which means that in this example one user can fill the survey in one module only once). In each case of using custom fields there should be a clear concept of an **instance**. `Instanceid` is required to save the data but it may be empty when we render the instance edit form (for example, the course is not yet created).
+Custom fields are added to the **instances**. For example, course custom fields are added to the courses, so `courseid` is the `instanceid`. In the example of [`mod_surveybuilder`](https://github.com/marinaglancy/moodle-mod_surveybuilder) we use `$USER->id` as the `instanceid` (which means that in this example one user can fill the survey in one module only once). In each case of using custom fields there should be a clear concept of an **instance**. `Instanceid` is required to save the data but it may be empty when we render the instance edit form (for example, the course is not yet created).
 
 Developer must add custom field callbacks to the instance edit form. If the instance is "made up" (like in `mod_surveybuilder`), a new form has to be created with `id` field in it that will refer to the `instanceid`.
 

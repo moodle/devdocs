@@ -6,7 +6,7 @@ tags:
   - Custom field
 ---
 
-Custom fields allow you to create field types to be used for custom fields. Instances of these field types can be added to the respective areas that implement [Custom fields API](/docs/apis/core/customfields). Currently in Moodle core only courses implement this API, however custom fields are also used in addon plugins for other areas. For example, if you want to display radio buttons on the course edit page, then you can add an instance of a radio custom field plugin to the Course custom fields configuration.
+Custom fields allow you to create field types to be used for custom fields. Instances of these field types can be added to the respective areas that implement [Custom fields API](../../core/customfields/index.md). Currently in Moodle core only courses implement this API, however custom fields are also used in addon plugins for other areas. For example, if you want to display radio buttons on the course edit page, then you can add an instance of a radio custom field plugin to the Course custom fields configuration.
 
 import {
     Lang,
@@ -125,5 +125,5 @@ The `instance_form_definition()` function adds any required field elements that 
 
 ## See Also
 
-- [Custom files API](/docs/apis/core/customfields)
+- [Custom files API](../../core/customfields/index.md)
 - [User Profile Fields](https://docs.moodle.org/dev/User_profile_fields)
