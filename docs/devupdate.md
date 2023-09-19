@@ -500,6 +500,18 @@ Files utilizing any of these removed icons will now be represented by the "unkno
 
 :::
 
+### SVG icons
+
+A new PHPUnit test has been introduced to verify the presence of SVG files for all system icons in Moodle LMS. Any missing SVG files have been rectified within Moodle LMS.
+
+:::tip
+
+Third-party plugins are strongly encouraged to follow suit, adding missing SVG files too, to avoid PHPUnit test failures.
+
+The SVG icons in Moodle LMS were sourced from https://fontawesome.com/search?m=free&o=r, which offers free icons under the Creative Commons Attribution 4.0 International license, consistent with the Moodle icon set.
+
+:::
+
 <!-- cspell:ignore goutte,browserkit -->
 ## Behat
 
