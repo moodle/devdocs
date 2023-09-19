@@ -134,3 +134,5 @@ tags:
 
 - Emojis can make your writing more fun, but don't go overboard with them :wink:.
 - Don't use negative emojis, such as 😡 😒 🤢 👹 ☠️
+
+<!-- cspell:ignore ALLCAPS Matias -->

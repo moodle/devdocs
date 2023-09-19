@@ -32,7 +32,7 @@ Tone: Warm, friendly, engaging, conversational and informative
 
 Audience: Team members, partners, community, potential users
 Tone: Informative, helpful, conversational, educational
-> Moodle HQ will be at ALTC to meet members of the education community face-to-face and share ideas about how our open source platform can help you achieve your goals.  
+> Moodle HQ will be at ALTC to meet members of the education community face-to-face and share ideas about how our open source platform can help you achieve your goals.
 
 #### Success stories
 
@@ -45,3 +45,5 @@ Tone: Engaging, inspiring, emotive
 Audience: Users
 Tone: Helpful, informative and conversational
 > Looks like you typed the wrong site address. Check for typos and try again.
+
+<!-- cspell:ignore ALTC -->
