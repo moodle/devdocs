@@ -6,6 +6,8 @@ tags:
   - Certification
 ---
 
+import { ValidExample } from '@site/src/components';
+
 Moodle is designed to provide equal functionality and information to all people. This means that there should be no barriers for people regardless of disabilities, assistive technologies that are used, different screen sizes and different input devices (for example mouse, keyboard and touchscreen).
 
 ## Accessibility conformance
@@ -121,7 +123,80 @@ See [the ARIA best practice advice on landmarks](https://www.w3.org/TR/wai-aria-
 
 All pages should have a unique title that describes the current page.
 
-See [the WCAG 2.1 success criteria for web page titles](https://www.w3.org/TR/WCAG21/#page-titled) for further information.
+Some tips for providing a meaningful page title:
+
+- The page title must be accurate and informative.
+- If the page causes a _change of context_ (for example, a search functionality), it should describe the result or change of context to the user.
+- It should be concise.
+- If possible, it should uniquely identify the page.
+- The most identifying information should come first.
+
+:::note change of context
+
+(not to be confused with Moodle's `\core\context` class and its implementations)
+
+According to the [WCAG 2.1 Understanding Docs](https://www.w3.org/WAI/WCAG21/Understanding/on-focus.html#dfn-changes-of-context), a change in context is a major change that, if made without user awareness, can disorient users who are not able to view the entire page simultaneously. It can include changes of user agent, viewport, focus, or content that changes the meaning of the web page.
+
+:::
+
+#### Example
+
+Consider that a student is on the submission page of an assignment activity called `Kinetics problem set 1` in the `Physics 101` course on the `Mount Orange School` Moodle site.
+
+Then a suitable page title for the page would be something like:
+
+<ValidExample>
+
+The most unique identifying information first represented by the activity name and its sub-page, then followed by broader identifiers such as the course name and the site name.
+
+`Kinetics problem set 1: Submit assignment | Physics 101 | Mount Orange School`
+
+</ValidExample>
+
+<ValidExample>
+
+The most unique identifying information first represented by the name of the sub-page, followed by the activity name that the page belongs to, then followed by broader identifiers such as the course name and the site name.
+
+`Submit assignment | Kinetics problem set 1 | Physics 101 | Mount Orange School`
+
+</ValidExample>
+
+#### Separating components of a page title
+
+When separating the components of the page tile, please use the `moodle_page::TITLE_SEPARATOR` constant.
+
+<ValidExample>
+
+```php
+[$course, $cm] = get_course_and_cm_from_cmid($id);
+// Activity name and its sub-page as the unique identifying information.
+$pagename = format_string($cm->name) . ': ' . get_string('view');
+// Course name.
+$coursename = format_string($course->fullname);
+// Set the page title, combining the activity page's name and course name using the title separator constant.
+$PAGE->set_title($pagename . moodle_page::TITLE_SEPARATOR . $coursename);
+```
+
+</ValidExample>
+
+#### Site name on the page title
+
+You should not add the name of the site when setting the page title using `$PAGE->set_title()`. The site name is automatically appended to the end of the page title in the correct format when using `$PAGE->set_title()`.
+
+:::info
+
+Administrators can use the `sitenameinititle` configuration setting to configure how this is shown in the title with possible options including:
+
+- the _full name_ of the site, for example, "Mount Orange School"
+- the _short name_ of the site, for example: "MOS"
+
+This is automatically handled by `$PAGE->set_title()`.
+:::
+
+#### Useful resources
+
+- [Understanding Success Criterion 2.4.2: Page Titled (Level A)](https://www.w3.org/WAI/WCAG21/Understanding/page-titled)
+- [Technique G88: Providing descriptive titles for Web pages](https://www.w3.org/WAI/WCAG21/Techniques/general/G88)
 
 ### Advanced UX Widgets
 

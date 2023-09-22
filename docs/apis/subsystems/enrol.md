@@ -223,6 +223,19 @@ The method takes the following parameters:
 $enrolplugin->add_default_instance($course->id);
 ```
 
+### $enrol_plugin->add_custom_instance()
+
+Add a new enrolment instance to a specific course with custom settings an returns the instance id. This method will create a new instance record in the `enrol` table with the specified settings.
+
+The method takes the following parameters:
+
+- Course object
+- Array of instance settings
+
+```php
+$enrolplugin->add_custom_instance($course, $settings);
+```
+
 ### $enrol_plugin->delete_instance()
 
 Remove an enrolment instance form a course and invalidate all related user enrolments.
@@ -234,6 +247,11 @@ The method takes the following parameters:
 ```php
 $enrolplugin->delete_instance($instance);
 ```
+
+### $enrol_plugin->is_csv_upload_supported()
+
+Checks whether enrolment plugin is supported in CSV course upload. Defaults to false. Override this function in your enrolment plugin if you want it to
+be supported in CSV course upload.
 
 ## See also
 

@@ -224,3 +224,7 @@ There will be a pause (a few minutes) while building everything. It should finis
 `
 
 Then you can access it by running Chrome and connecting to localhost:8100.
+
+## `window.openDatabase` is not a function
+
+This error appears in browsers that don't support the [WebSQL](https://caniuse.com/?search=websql) API. We suggest using a [Chromium-based browser older than version 119](./app-in-browser.md).

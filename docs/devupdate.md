@@ -12,6 +12,18 @@ import TabItem from '@theme/TabItem';
 
 This page highlights the important changes that are coming in Moodle 4.3 for developers.
 
+## Database table and column names
+
+Starting with Moodle 4.3 the limits for both table and column names have been raised. Now table names can be up to 53 characters long (from previous 28 characters limit) and column names can be up to 63 characters long (from previous 30 characters limit).
+
+:::caution
+In order to achieve the above, the maximum length for the database prefix (`$CFG->prefix`) is now 10 characters. Installation or upgrade won't be possible with longer prefixes.
+:::
+
+:::caution
+If you are writing a plugin intended for older versions of Moodle then you must continue to use the lower limits of 28, and 30.
+:::
+
 ## Activity badge
 
 The new activity card design proposed for Moodle 4.3 differentiates badge information from other HTML content (displayed using the pre-existing `afterlink` feature).
@@ -118,6 +130,32 @@ As a proof of concept, this feature has been implemented by:
 
 A new `core_courseformat/local/content/cm/activitybadge` template has been also created to display this activity badge data. As usual, it can be overridden by any format plugin.
 
+## JavaScript String fetchers
+
+<Since version="4.3" issueNumber="MDL-79064" />
+
+New string fetchers were introduced in MDL-79064:
+
+- `getString` - fetch a single string, resolving in a Native Promise
+- `getStrings` - fetch a set of strings, resolving in an array of Native Promises
+
+Note: These new fetchers will return a _native_ Promise rather than a jQuery Promise.
+
+The `get_string` and `get_strings` methods have _not_ been deprecated at this time but work is underway to allow for their future deprecation.
+
+:::caution Native Promises vs jQuery Promises
+
+The use of jQuery Promises is discouraged in Moodle as they have a different behaviour in some cases:
+
+- native Promises do not have the `done` method. Please use `then` instead
+- native Promises do not have the `fail` method. Please use `catch` instead
+
+Please note that the behaviour of `catch` differs from the jQuery `fail`. The `catch` method will return a resolved Promise, whist the `fail` method will not.
+
+You are **strongly** advised to convert all uses  of `.done`, and `.fail` in your code to `.then`, and `.catch` as appropriate.
+
+:::
+
 ## Modal Dialogues
 
 Moodle 4.3 brings a number of improvements to Modal dialogues. These improvements focus on:
@@ -217,43 +255,61 @@ export default class MyModal extends Modal {
 </TabItem>
 </Tabs>
 
-### Registration helper
+### Instantiation and deprecation of `core/modal_factory`
 
-<Since version="4.3" issueNumber="MDL-78306" />
+<Since version="4.3" issueNumber="MDL-78324" />
 
-Moodle 4.3 introduces a new `registerModalType` method on the Modal class to aid in registering a modal.
+Moodle 4.3 introduces a new way to instantiate modals which is significantly simpler than earlier versions. Rather than calling the `create` method on the `modal_factory`, it can now be called on the class that you are instantiating.
+
+In addition, a new `configure` method is introduced which allows you to override configuration options, provide your own, and more.
+
+Modals which are instantiated using the new method *do not* need to be registered if they are not consumed using the modal factory.
+
+This change will increase encapsulation and allow modals to handle common actions such as showing on creation, and removing on close much more easily.
 
 :::note Compatibility with Moodle 4.2 and older
 
-If your code is intended to work with Moodle 4.2 and older, then you must continue to use the old method of registration. This legacy method will be maintained until Moodle 4.6.
+If your code is intended to work with Moodle 4.2 and older, then you must continue to use the existing `core/modal_factory`, and you must continue to register your modal. This legacy method will be maintained until Moodle 4.6.
 
 :::
 
 <Tabs groupId="beforeAfter">
 <TabItem value="before" label="Before Moodle 4.3">
-
 <InvalidExample
-    title="A modal using the legacy registration approach"
+    title="A modal created and instantiated using the legacy approach"
 >
 
 The legacy registration will continue to work and should be used if your plugin will be used in Moodle 4.2, or earlier.
 
-```js
-var MyModal = function(root) {
-    Modal.call(this, root);
-};
+```js title="mod/example/amd/src/mymodal.js"
+export default class MyModal extends Modal {
+    static TYPE = 'mod_example/myModal';
+    static TEMPLATE = 'mod_example/my_modal';
 
-MyModal.TYPE = 'mod_example/myModal';
-MyModal.prototype = Object.create(Modal.prototype);
-MyModal.prototype.constructor = MyModal;
-
+    myCustomSetter(value) {
+        this.value = value;
+    }
+}
 let registered = false;
 if (!registered) {
     ModalRegistry.register(MyModal.TYPE, MyModal, 'mod_example/my_modal');
     registered = true;
 }
+```
 
-return MyModal;
+```js title="mod/example/amd/src/consumer.js"
+import MyModal from './mymodal';
+import ModalFactory from 'core/modal_factory';
+
+// ...
+ModalFactory.create({
+    TYPE: MyModal.TYPE,
+}).then((modal) => {
+    modal.show();
+    modal.myCustomSetter('someValue');
+
+    return modal;
+})
 ```
 
 </InvalidExample>
@@ -261,18 +317,36 @@ return MyModal;
 
 <TabItem value="after" label="From Moodle 4.3 onwards" default>
 <ValidExample
-    title="A modal using the new shortcut helper"
+    title="A modal using the new approach"
 >
 
-The shortcut helper for Modal registration is suitable for Moodle 4.3 onwards.
-
-```js
+```js title="mod/example/amd/src/mymodal.js"
 export default class MyModal extends Modal {
     static TYPE = 'mod_example/myModal';
     static TEMPLATE = 'mod_example/my_modal';
-}
 
-MyModal.registerModalType();
+    configure(modalConfig) {
+        // Specify any defaults you like here.
+        modalConfig.show = true;
+        super.configure(modalConfig);
+
+        this.myCustomSetter(modalConfig.myCustomValue);
+    }
+
+    myCustomSetter(value) {
+        this.value = value;
+    }
+}
+```
+
+```js title="mod/example/amd/src/consumer.js"
+import MyModal from './mymodal';
+
+// ...
+MyModal.create({
+    myCustomValue: 'someValue',
+    show: true,
+});
 ```
 
 </ValidExample>
@@ -431,33 +505,82 @@ The MIME icons located in the `pix/f` directory, have undergone an update. These
 
 To streamline the variety of icons associated with different MIME types, several specific MIME icons have been replaced. Instead, their corresponding generic icons have been integrated from the existing collection, leading to a more efficient representation:
 
-- avi -> video
-- base -> database
-- bmp -> image
-- html -> markup
-- jpeg -> image
-- mov -> video
-- mp3 -> audio
-- mpeg -> video
-- png -> image
-- quicktime -> video
-- tiff -> image
-- wav -> audio
-- wmv -> video
+- `avi` -> `video`
+- `base` -> `database`
+- `bmp` -> `image`
+- `html` -> `markup`
+- `jpeg` -> `image`
+- `mov` -> `video`
+- `mp3` -> `audio`
+- `mpeg` -> `video`
+- `png` -> `image`
+- `quicktime` -> `video`
+- `tiff` -> `image`
+- `wav` -> `audio`
+- `wmv` -> `video`
 
 The subsequent MIME icons have been entirely removed:
 
-- clip-353
-- edit
-- env
-- explore
-- folder-open
-- help
-- move
-- parent
+- `clip-353`
+- `edit`
+- `env`
+- `explore`
+- `folder-open`
+- `help`
+- `move`
+- `parent`
 
 :::warning
 
 Files utilizing any of these removed icons will now be represented by the "unknown" icon.
 
 :::
+
+### SVG icons
+
+A new PHPUnit test has been introduced to verify the presence of SVG files for all system icons in Moodle LMS. Any missing SVG files have been rectified within Moodle LMS.
+
+:::tip
+
+Third-party plugins are strongly encouraged to follow suit, adding missing SVG files too, to avoid PHPUnit test failures.
+
+The SVG icons in Moodle LMS were sourced from https://fontawesome.com/search?m=free&o=r, which offers free icons under the Creative Commons Attribution 4.0 International license, consistent with the Moodle icon set.
+
+:::
+
+<!-- cspell:ignore goutte,browserkit -->
+## Behat
+
+### Removal of Goutte and Goutte Mink Driver
+
+The [goutte behat mink driver](https://packagist.org/packages/behat/mink-goutte-driver) has been replaced by the [browserkit](https://packagist.org/packages/behat/mink-browserkit-driver) one because the former has been abandoned.
+
+The change should be completely transparent for (near) everybody. Only **if you are using some custom-generated `behat.yml`** file or other configuration alternatives different from the Moodle default one, then, **any `goutte` browser occurrence needs to be changed to `browserkit_http`** when configuring the behat mink extension.
+
+See MDL-78934 for more details and changes applied.
+
+### Removal of the `--skip-passed` option
+
+The legacy (and custom) Behat `--skip-passed` option has been removed completely. Please, use the standard `--rerun` option that provides exactly the same (execution of failed scenarios only).
+
+## Enrolment methods support in CSV course upload
+
+As part of [MDL-78855](https://tracker.moodle.org/browse/MDL-78855) new methods have been created for `enrol_plugin` to explicitly mark those enrolment methods that are supported in CSV course upload
+
+Example below for method to be supported:
+
+```php title="CSV supported"
+public function is_csv_upload_supported(): bool {
+    return true;
+}
+```
+
+Also a new method has been created for `enrol_plugin` to create enrolment instance with custom settings
+
+```php title="Add custom instance"
+public function add_custom_instance(stdClass $course, ?array $fields = null): ?int {
+    return $this->add_instance($course, $fields);
+}
+```
+
+In [MDL-73839](https://tracker.moodle.org/browse/MDL-73839) cohort enrolment method has been updated to support CSV course upload.

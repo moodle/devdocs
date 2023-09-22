@@ -8,7 +8,7 @@ tags:
 
 <Since version="3.2" />
 
-import { CodeBlock, CodeExample, InvalidExample, ValidExample, Since } from '@site/src/components';
+import { CodeBlock, CodeExample, InvalidExample, ValidExample, Since, DeprecatedSince } from '@site/src/components';
 
 The use of modal modules provides a simplified developer experience for creating modal dialogues within Moodle.
 
@@ -19,6 +19,36 @@ Modals will fire events for common actions that occur within the modal for other
 Moodle ships with several standard modal types for you to re-use including a simple cancel modal, and a save/cancel modal.
 
 ## Creating a basic modal
+
+<Since version="4.3"  issueNumber="MDL-78324" />
+
+Modals can be created by calling the static `create` method on the modal type you wish to create, for example:
+
+```javascript title="Creating a stadard modal"
+import Modal from 'core/modal';
+
+export const init = async () => {
+    const modal = await Modal.create({
+        title: 'Test title',
+        body: '<p>Example body content</p>',
+        footer: 'An example footer content',
+        show: true,
+        removeOnClose: true,
+    });
+}
+```
+
+Other standard options are described in the JS Documentation for [the MoodleConfig type](https://jsdoc.moodledev.io/master/module-core_modal.html#~MoodleConfig).
+
+:::note Support for earlier versions
+
+If you are supporting an earlier version of Moodle, then you must use the Modal Factory and register your modal.
+
+:::
+
+### Modal Factory
+
+<DeprecatedSince version="4.3"  issueNumber="MDL-78324" />
 
 The Modal Factory can be used to instantiate a new Modal. The factory provides a `create` function, accepting some configuration which is used to create the modal instance, and an optional _trigger element_. The `create` function returns a Promise that is resolved with the created modal.
 
@@ -65,7 +95,9 @@ export const init = async () => {
 };
 ```
 
-### Using the 'trigger'
+#### Using the 'trigger'
+
+<DeprecatedSince version="4.3"  issueNumber="MDL-78324" />
 
 Moodle Modals created using the Modal Factory support an optional _trigger_ element. Whilst this is available, it is no longer recommended and support for it will likely be removed in Moodle 4.3.
 
@@ -92,6 +124,59 @@ A number of commonly used modals are available as standard, these include:
 - a Delete / Cancel modal
 - a Save / Cancel modal
 - a Cancel modal
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="43Split">
+<TabItem value="after43" label="Moodle 4.3">
+<Since version="4.3"  issueNumber="MDL-78324" />
+
+:::note
+
+If you are developing code for use in Moodle 4.2, or earlier, then you must continue to follow the 4.2 guidelines.
+
+:::
+
+To use these modals you can call the `create` method on the relevant Modal Class.
+
+```javascript title="Creating a save/cancel modal"
+import ModalSaveCancel from 'core/modal_save_cancel';
+import {get_string as getString} from 'core/str';
+
+export const init = async () => {
+    const modal = await ModalSaveCancel.create({
+        title: 'test title',
+        body: getString('confirmchange', 'mod_example'),
+    });
+
+    // ...
+};
+```
+
+Each type of modal may fire additional events to allow your code to handle the new functionality being offered -- for example, if you wanted to have a save/cancel modal that you did some form validation on before saving you could do something like the example below.
+
+```javascript title="Listening to a Save event"
+import ModalSaveCancel from 'core/modal_save_cancel';
+import ModalEvents from 'core/modal_events';
+import {get_string as getString} from 'core/str';
+
+export const init = async () => {
+    const modal = await ModalSaveCancel.create({
+        title: 'test title',
+        body: getString('confirmchange', 'mod_example'),
+    });
+
+    modal.getRoot().on(ModalEvents.save, (e) => {
+        // ...
+    })
+
+    // ...
+};
+```
+
+</TabItem>
+<TabItem value="pre43" label="Moodle 4.2 and earlier">
 
 To use these modals you can provide the `type` argument to the `ModalFactory.create` method. This argument takes a string value and values can be found for these modals in `ModalFactory.TYPES`.
 
@@ -132,6 +217,9 @@ export const init = async () => {
 };
 ```
 
+</TabItem>
+</Tabs>
+
 ## Creating a custom modal type
 
 In some situations it is desirable to write a brand new modal.
@@ -141,19 +229,21 @@ There are two parts to this:
 - a new Modal class which extends the `core/modal` class; and
 - a template
 
-Creating the Modal class is as simple as extending the `core/modal` class, providing a `TYPE` property, a `TEMPLATE` property, and registering the modal with the modal factory.
+:::important Custom modals in Moodle 4.2 and earlier
+
+Since Moodle 4.3, creating the Modal class is as simple as extending the `core/modal` class, and providing a `TYPE` property, and `TEMPLATE` property.
+
+For older versions of Moodle, refer to the [Moodle 4.2 documentation](/versioned_docs/version-4.2/guides/javascript/modal/index.md#creating-a-custom-modal-type).
+
+:::
 
 ```javascript title="mod/example/amd/src/my_modal.js"
 import Modal from 'core/modal';
-import ModalFactory from 'core/modal_factory';
 
 export default MyModal extends Modal {
     static TYPE = "mod_example/my_modal";
     static TEMPLATE = "mod_example/my_modal";
 }
-
-// Modal Registration process for Moodle 4.3 onwards.
-MyModal.registerModalType();
 ```
 
 The template should extend the `core/modal` core template and can override any of the title, body, or footer regions, for example:
@@ -186,18 +276,47 @@ The template should extend the `core/modal` core template and can override any o
 {{/ core/modal }}
 ```
 
-Once defined, the new modal can be instantiated using the Modal Factory, for example:
+Once defined, the new modal can be instantiated using the standard `create` method, for example:
 
 ```javascript title="Instantiating a custom modal"
-import ModalFactory from 'core/modal_factory';
 import MyModal from 'mod_example/my_modal';
 
 export default const init = async() => {
     // ...
-    const modal = await ModalFactory.create({
-        type: MyModal.TYPE,
-    });
+    const modal = await MyModal.create({});
 
     modal.show();
+}
+```
+
+### Overriding default configuration
+
+When creating your own modal type, you may wish to override the standard configuration. This can be achieved by overriding the `configure` class and providing your own options, for example:
+
+```javascript title="Overriding standard options"
+import Modal from 'core/modal';
+
+export default MyModal extends Modal {
+    static TYPE = "mod_example/my_modal";
+    static TEMPLATE = "mod_example/my_modal";
+
+    configure(modalConfig) {
+        // Show this modal on instantiation.
+        modalConfig.show = true;
+
+        // Remove from the DOM on close.
+        modalConfig.removeOnClose = true;
+
+        super.configure(modalConfig);
+
+        // Accept our own custom arguments too.
+        if (modalConfig.someValue) {
+            this.setSomeValue(someValue);
+        }
+    }
+
+    setSomeValue(value) {
+        this.someValue = value;
+    }
 }
 ```

@@ -37,6 +37,22 @@
                 }
             ]
         },
+        "api/admin-tools": {
+            "title": "Admin tools",
+            "status": "Complete",
+            "owners": [
+                {
+                    "name": "Petr Škoda",
+                    "githubUsername": "škoďák"
+                }
+            ],
+            "issueLinks": [
+                {
+                    "link": "https://tracker.moodle.org/browse/MDL-29029",
+                    "title": "MDL-29029"
+                }
+            ]
+        },
         "api/amos": {
             "title": "Automated Manipulation of Strings (AMOS)",
             "status": "Complete",

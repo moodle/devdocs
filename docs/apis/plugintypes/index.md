@@ -55,7 +55,7 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Assignment submission plugins](./assign/submission.md) | assignsubmission | /mod/assign/submission | Different forms of assignment submissions | 2.3+ |
 | [Assignment feedback plugins](./assign/feedback.md) | assignfeedback | /mod/assign/feedback | Different forms of assignment feedbacks | 2.3+ |
 | [Book tools](./mod_book/index.md) | booktool | /mod/book/tool | Small information-displays or tools that can be moved around pages | 2.1+ |
-| [Course Custom fields](./customfield/index.md) | customfield | /customfield/field | Custom field types, used in Custom course fields | 3.7+ |
+| [Custom fields](./customfield/index.md) | customfield | /customfield/field | Custom field types, used in Custom course fields | 3.7+ |
 | [Database fields](./mod_data/fields.md) | datafield | /mod/data/field | Different types of data that may be added to the Database activity module | 1.6+ |
 | [Database presets](./mod_data/presets.md) | datapreset | /mod/data/preset | Pre-defined templates for the Database activity module | 1.6+ |
 | [LTI sources](https://docs.moodle.org/dev/External_tool_source) | ltisource | /mod/lti/source | LTI providers can be added to external tools easily through the external tools interface see [Documentation on External Tools](https://docs.moodle.org/en/External_tool). This type of plugin is specific to LTI providers that need a plugin that can register custom handlers to process LTI messages | 2.7+ |
@@ -79,7 +79,7 @@ The underscore character is not supported in activity modules for legacy reasons
 | [TinyMCE editor plugins](./tiny/legacy.md) | tinymce | /lib/editor/tinymce/plugins | Extra functionality for the TinyMCE text editor. | 2.4+ |
 | [Enrolment plugins](./enrol/index.md) | enrol | /enrol | Ways to control who is enrolled in courses | 2.0+ |
 | [Authentication plugins](https://docs.moodle.org/dev/Authentication_plugins) | auth | /auth | Allows connection to external sources of authentication | 2.0+ |
-| [Admin tools](https://docs.moodle.org/dev/Admin_tools) | tool | /admin/tool | Provides utility scripts useful for various site administration and maintenance tasks | 2.2+ |
+| [Admin tools](/general/projects/api/admin-tools) | tool | /admin/tool | Provides utility scripts useful for various site administration and maintenance tasks | 2.2+ |
 | [Log stores](./logstore/index.md) | logstore | /admin/tool/log/store | Event logs storage back-ends | 2.7+ |
 | [Availability conditions](./availability/index.md) | availability | /availability/condition | Conditions to restrict user access to activities and sections. | 2.7+ |
 | [Calendar types](https://docs.moodle.org/dev/Calendar_types) | calendartype | /calendar/type | Defines how dates are displayed throughout Moodle | 2.6+ |

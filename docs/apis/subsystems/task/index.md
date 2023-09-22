@@ -95,7 +95,7 @@ The older syntax of cron.php or modname_cron() is still supported, and will be r
 
 ### Generating output
 
-Since Moodle 3.5 it is safe to use the [Output API](../output.md) in cron tasks. Prior to this there may be cases where the Output API has not been initialised.
+Since Moodle 3.5 it is safe to use the [Output API](../output/index.md) in cron tasks. Prior to this there may be cases where the Output API has not been initialised.
 
 In order to improve debugging information, it is good practice to call `mtrace` to log what's going on within a task execution:
 

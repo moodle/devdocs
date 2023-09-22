@@ -40,7 +40,7 @@ The [Page API](https://docs.moodle.org/dev/Page_API) is used to set up the curre
 
 ### Output API (output)
 
-The [Output API](./apis/subsystems/output.md) is used to render the HTML for all parts of the page.
+The [Output API](./apis/subsystems/output/index.md) is used to render the HTML for all parts of the page.
 
 ### String API (string)
 
@@ -139,7 +139,7 @@ The [Lock API](./apis/core/lock/index.md) lets you synchronise processing betwee
 
 ### Message API (message)
 
-The [Message API](https://docs.moodle.org/dev/Message_API) lets you post messages to users. They decide how they want to receive them.
+The [Message API](./apis/core/message/index.md) lets you post messages to users. They decide how they want to receive them.
 
 ### Media API (media)
 
@@ -217,7 +217,7 @@ The [https://docs.moodle.org/dev/OpenBadges_User_Documentation Badges] user docu
 
 ### Custom fields API (customfield)
 
-The [Custom fields API](https://docs.moodle.org/dev/Custom_fields_API) allows you to configure and add custom fields for different entities
+The [Custom fields API](./apis/core/customfields/index.md) allows you to configure and add custom fields for different entities
 
 ## Activity module APIs
 

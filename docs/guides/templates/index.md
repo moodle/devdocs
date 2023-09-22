@@ -10,7 +10,7 @@ description: A guide to the features and use of Mustache templating in Moodle.
 
 Moodle makes use of the [Mustache](https://mustache.github.io) template system to render most of its HTML output, and in some other cases too.
 
-Templates are defined as plain text, which typically includes HTML, and a range of Mustache tags and placeholders. THe Mustache placeholders are replaced with actual values during the render of the page. Mustache templates can be rendered both server-side in PHP, and client-side using JavaScript. Themes can overrides the templates defined in other components if required.
+Templates are defined as plain text, which typically includes HTML, and a range of Mustache tags and placeholders. The Mustache placeholders are replaced with actual values during the render of the page. Mustache templates can be rendered both server-side in PHP, and client-side using JavaScript. Themes can overrides the templates defined in other components if required.
 
 <details>
 <summary>A simple example</summary>
@@ -645,6 +645,7 @@ In PHP you have access to the `$CFG` object to allow access to properties. Musta
 ```
 
 The properties available on the `globals.config` object are the same as normally exposed for JavaScript; these are gathered from `get_config_for_javascript()` function in `lib/outputrequirementslib.php`.
+This object is only available when using client-side Mustache rendering in JavaScript; it is not added to templates rendered with the PHP Mustache engine.
 
 ## Core templates
 

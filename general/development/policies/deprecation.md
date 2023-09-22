@@ -14,6 +14,8 @@ tags:
 
 ## Why is deprecation needed?
 
+import { ValidExample, InvalidExample, TabItem, Tabs } from '@site/src/components';
+
 In an open source project, the end use of the codebase varies. People may have customisations and plugins that depend on a function that has been targeted for deprecation. Rather than simply removing a function, we must gracefully deprecate the function over a period covered by a number of released versions.
 
 ## What is Moodle's deprecation policy?
@@ -93,29 +95,137 @@ Longer deprecation periods can be considered for functions that are widely used.
 
 ## Parameters deprecation
 
-- The deprecated parameter should be renamed to `$unused` and it's default value changed to `null`.
-- The respective parameter phpDoc should be updated stating the parameter has been deprecated since version X.X and should not be used any more.
+Whilst it is possible to deprecate individual method parameters, care must be taken in doing so.
 
-```
- @param null $unused This parameter has been deprecated since 4.0 and should not be used anymore.
-```
+If a method is overridden then it is often not possible to change parameters. This includes changing any type hint, or adding a new default value. Additionally, adding a default value to any argument is only possible if all remaining arguments are optional too.
 
-:::note
+:::tip
 
-Remember the phpDoc parameter type should also be updated to `null`.
+It is strongly advised to deprecate an entire method, rather than deprecating a single parameter.
 
 :::
 
-- Show a debugging message if that parameter is being provided in the function call:
+- Deprecated parameters **MUST** be retained, and **MUST NOT** be renamed
+- The respective parameter phpDoc should be updated stating the parameter has been deprecated since version X.X and should not be used any more
+- Update all calls to the affected function and either:
+  - converting to use named parameters, removing the deprecated parameter; or
+  - removing if at the end of a list of optional parameters.
+- Add a mention to the corresponding `upgrade.txt` file, documenting that the deprecated parameter should not be used any more
+- Add a mention to the [Developer Update notes](https://github.com/moodle/devdocs/blob/main/docs/devupdate.md), documenting that the deprecated parameter should not be used any more
+- _Where possible_:
+  - If a type was previously specified it should be altered to be made nullable
+  - If the default value is not already `null`, then it should be updated to `null`
+  - If the default value was not already `null`, and a non-null value is provided, a debugging notice should be emitted
+- Where it is not possible to make the the type nullable, consider deprecating the method and creating a new one with the updated parameters
 
-```
- if ($unused !== null) {
-     debugging('Deprecated argument passed to ' . __FUNCTION__, DEBUG_DEVELOPER);
- }
+:::caution Changes to default values and types
+
+The [Covariance and Contravariance rules for PHP](https://www.php.net/manual/en/language.oop5.variance.php) prevent changes to argument types and defaults when a class is extended and that method overridden.
+
+When deprecating a method which is _likely_ to be extended, you should strongly consider deprecating the entire method and creating a replacement method with the updated arguments instead. This includes all renderer methods.
+
+:::
+
+<ValidExample>
+  <Tabs>
+    <TabItem value="original" label="Original">
+
+```php
+/**
+ * Greet a user and their pets. Remind them how old they are.
+ *
+ * @param string $name The name of the individual
+ * @param int $age The age of the individaul
+ * @param string[] $pets A list of pets that the individual has
+ * @return The greeting
+ */
+public function greet_person(
+    string $name,
+    int $age,
+    array $pets = [],
+}: string {
+    return sprintf(
+        "A big, warm, welcome to %s who, at the grand old age of %d, has %d pets!",
+        $name,
+        $age,
+        count($pets),
+    );
+}
 ```
 
-- Update all calls to the affected function removing the deprecated parameter.
-- Add a mention to corresponding `upgrade.txt` documenting the deprecated parameter should not be used any more.
+  </TabItem>
+  <TabItem value="param-deprecation" label="Deprecate a parameter" default>
+
+```php
+/**
+ * Greet a user and their pets.
+ *
+ * @param string $name The name of the individual
+ * @param null|int $age This parameter has been deprecated since 4.0 and should not be used anymore.
+ * @param string[] $pets A list of pets that the individual has
+ */
+public function greet_person(
+    string $name,
+    null|int $age = null,
+    array $pets = [],
+}: void {
+    if ($age !== null) {
+        debugging(
+            'The age argument has been deprecated. Please remove it from your method calls.',
+            DEBUG_DEVELOPER,
+        );
+    }
+
+    return sprintf(
+        "A big, warm, welcome to %s who has %d pets!",
+        $name,
+        count($pets),
+    );
+}
+```
+
+  </TabItem>
+  <TabItem value="method-deprecation" label="Deprecating the method instead">
+
+```php
+/**
+ * Greet a user and their pets.
+ *
+ * @param string $name The name of the individual
+ * @param null|int $age This parameter has been deprecated since 4.0 and should not be used anymore.
+ * @param string[] $pets A list of pets that the individual has
+ */
+public function greet_person(
+    string $name,
+    int $age,
+    array $pets = [],
+}: void {
+    debugging(
+        'The `greet_person` method has been deprecated and replaced with `greet_person_with_pets`. ' .
+            'Please update your method calls accordingly.',
+        DEBUG_DEVELOPER,
+    );
+
+    return $this->greet_person_with_pets(
+        name: $name,
+        pets: $pets,
+    );
+}
+```
+
+  </TabItem>
+  </Tabs>
+</ValidExample>
+
+:::note Deprecations for core methods in Moodle 4.1 and earlier
+
+Prior to support for PHP 8.0 in Moodle 4.2, the policy for parameter argument deprecation stated that deprecated parameters must be renamed to `$unused` or a similar name.
+
+This has been changed to no longer allow renaming of arguments because it can lead to fatal errors if the calling code makes use of named parameter arguments.
+
+Named parameter arguments are available from PHP 8.0 onwards.
+
+:::
 
 ## See also...
 

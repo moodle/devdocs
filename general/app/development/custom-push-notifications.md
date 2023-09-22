@@ -24,9 +24,9 @@ In both cases, please remember that the number of user devices that can receive 
 
 ## Moodle's Message API
 
-Please read the official Moodle documentation, [Message API](https://docs.moodle.org/dev/Message_API), where it is explained how to create a new message provider within a plugin.
+Please read the official Moodle documentation, [Message API](/docs/apis/core/message/), where it is explained how to create a new message provider within a plugin.
 
-Apart from what is explained in the [Message API](https://docs.moodle.org/dev/Message_API) please notice that it is possible to add a "customdata" field (json-encoded) with additional parameters. Those parameters are the ones described in the Airnotifier API section below.
+Apart from what is explained in the [Message API](/docs/apis/core/message/) please notice that it is possible to add a "customdata" field (json-encoded) with additional parameters. Those parameters are the ones described in the Airnotifier API section below.
 
 ## Airnotifier API
 
