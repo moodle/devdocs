@@ -81,6 +81,7 @@ Arjen
 Arjona
 Arnaud
 Arto
+Artur
 Ashley
 Ashruf
 Astashov
@@ -758,6 +759,7 @@ Neis
 Nelson
 Neosi
 Netica
+Neumann
 Newman
 Nghia
 Nguyen
