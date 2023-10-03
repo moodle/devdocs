@@ -538,7 +538,8 @@ Files utilizing any of these removed icons will now be represented by the "unkno
 
 ### SVG icons
 
-A new PHPUnit test has been introduced to verify the presence of SVG files for all system icons in Moodle LMS. Any missing SVG files have been rectified within Moodle LMS.
+- The `$CFG->svgicons` parameter has been deprecated and removed. It was initially introduced in Moodle 2.4 as a response to incomplete SVG support in some web browsers, as documented in MDL-22955. However, the web landscape has evolved considerably since that time, and all modern browsers now fully support SVG files, as confirmed by this compatibility chart: https://caniuse.com/svg.
+- A new PHPUnit test has been introduced to verify the presence of SVG files for all system icons in Moodle LMS. Any missing SVG files have been rectified within Moodle LMS.
 
 :::tip
 
