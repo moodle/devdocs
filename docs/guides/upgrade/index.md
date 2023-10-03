@@ -137,9 +137,9 @@ In addition to the relevant files located in the db folder, a number of function
 
 Some of these functions have variants depending on whether they are being called from core code, or a plugin.
 
-When called from core, the `main` variant should be used, otherwise the frankenstyle name of teh component should be used.
+When called from core, the `main` variant should be used, otherwise the frankenstyle name of the component should be used.
 
-For example, if you are defining an installation behaviour in the install.php script of a block named `block_exampke`, you would have an install.php similar to the following:
+For example, if you are defining an installation behaviour in the install.php script of a block named `block_example`, you would have an install.php similar to the following:
 
 ```php title="blocks/example/db/install.php"
 <?php
