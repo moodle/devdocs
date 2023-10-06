@@ -249,6 +249,9 @@ Groups:
 Groups_API:
 - filePath: "/docs/apis/subsystems/group/index.md"
   slug: "/docs/apis/subsystems/group/"
+Grunt:
+- filePath: "/general/development/tools/nodejs.md"
+  slug: "/general/development/tools/nodejs"
 Hardening_new_Roles_system:
 - filePath: "/docs/apis/subsystems/roles.md"
   slug: "/docs/apis/subsystems/roles"

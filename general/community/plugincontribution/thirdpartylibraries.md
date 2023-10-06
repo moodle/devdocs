@@ -33,4 +33,4 @@ JavaScript AMD modules cannot exist in a sub-folder - they must exist in a singl
 
 ## See also
 
-- [Grunt](https://docs.moodle.org/dev/Grunt) - Information for installing and using Grunt
+- [Grunt](../../development/tools/nodejs.md#grunt) - Information for installing and using Grunt
