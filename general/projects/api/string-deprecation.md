@@ -46,7 +46,7 @@ Also, it may turn out that some strings are only vaguely defined and do not have
 
 ### When should a string be removed?
 
-There are situations where deprecation does not make sense. For example when a whole functionality is being removed, or a very specific string (such as error message) is no longer used by the code. If it is very unlikely that the string is not used by any other code, it can simply be removed without the full deprecation process.
+There are situations where deprecation does not make sense. For example when a whole functionality is being removed, or a very specific string (such as error message) is no longer used by the code. If it is very unlikely that the string is used by any other code, it can simply be removed without the full deprecation process.
 
 The same logic applies to cases when a very specific string is to be moved or renamed. In this situation, it is valid to just move it (together with the matching [MOV instruction in the AMOScript](./amos.md)).
 
