@@ -45,12 +45,12 @@ To allow the community of Moodle developers to work together, conventions should
 - Variables are named correctly (all lower case, no camel-case, no underscores).
 - Functions are named correctly (all lower case, no camel-case, underscores allowed).
 - PHP DocBlocks have been updated and adhere to coding style guide.
-- Where functions are being removed, the [deprecation policy](../policies/deprecation.md) is followed.
+- Where functions are being removed, the [deprecation policy](../../policies/deprecation.md) is followed.
 - The code doesn't use deprecated functions.
 - $_GET, $_POST, $_REQUEST, $_COOKIE, and $_SESSION are never used.
 
 :::tip
-See the [Coding style guide](../policies/codingstyle/index.md) for details. Most of the previous items list are checked automatically by the CiBot (Automated code review). So in this case it's recommended to review the execution results to validate that there aren't errors. However, take into account that for now, CiBot is not checking all file types (it happens, for instance, with the JavaScript files).
+See the [Coding style guide](../../policies/codingstyle/index.md) for details. Most of the previous items list are checked automatically by the CiBot (Automated code review). So in this case it's recommended to review the execution results to validate that there aren't errors. However, take into account that for now, CiBot is not checking all file types (it happens, for instance, with the JavaScript files).
 :::
 
 ### Output
@@ -70,7 +70,7 @@ Ensure that:
 
 ### Component library
 
-Any improvement or new feature that introduces UI features to Moodle core from Moodle 4.0 onwards must be documented within the [Component library](../tools/component-library.md).
+Any improvement or new feature that introduces UI features to Moodle core from Moodle 4.0 onwards must be documented within the [Component library](../../tools/component-library.md).
 
 This applies to any feature introduced or updated from Moodle 4.0 onwards, which:
 
@@ -81,7 +81,7 @@ This applies to any feature introduced or updated from Moodle 4.0 onwards, which
 
 Ensure that any new User Interface feature in Moodle 4.0 or later which matches the above criteria:
 
-- Is documented in the [Component library](../tools/component-library.md)
+- Is documented in the [Component library](../../tools/component-library.md)
 - Includes examples of usage
 - Has appropriate descriptions
 - Respects all Moodle-supplied themes
@@ -137,7 +137,7 @@ Ensure that:
 - `Sesskey` values are checked before all write actions where appropriate (some read actions as well);
 - Capabilities are checked where roles differ;
 - User inputs are properly escaped (eg the correct param type is used and risky types such as raw are only used where necessary and safe to do so); and
-- If the issue itself is a [security](https://docs.moodle.org/dev/security) issue, the [security process](../process.md#security-issues) is being followed.
+- If the issue itself is a [security](https://docs.moodle.org/dev/security) issue, the [security process](../../process.md#security-issues) is being followed.
   - Ensure that the fix is **not** available in a public repository (ie. a personal Github account); stand-alone patches should be provided instead.
   - The issue will not be integrated until just before the next minor version release.
 
@@ -182,8 +182,8 @@ Ensure that:
 
 - The PHPdoc comments on all classes, methods and fields are useful. (Comments that just repeat the function name are not helpful! Add value.)
 - Where an API has been changed significantly, the relevant upgrade.txt file has been updated with information.
-- Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but actually follow the [deprecation policy](../policies/deprecation.md).
-- Appropriate [labels](../tracker/labels.md) have been added when there has been a function change, particularly
+- Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but actually follow the [deprecation policy](../../policies/deprecation.md).
+- Appropriate [labels](../../tracker/labels.md) have been added when there has been a function change, particularly
   - docs_required (any functional change, usually paired with `ui_change`),
   - dev_docs_required (any change to APIs, usually paired with `api_change`),
   - `ui_change` (any functional change, usually paired with docs_required, except ui_change remains permanently),
@@ -196,7 +196,7 @@ Ensure that:
 
 Ensure that:
 
-- The commit matches the [Coding style](../policies/codingstyle/index.md#git-commits)
+- The commit matches the [Coding style](../../policies/codingstyle/index.md#git-commits)
 - The Git history is clean and the work has been rebased to logical commits; and
 - The original author of the work provided as a patch has been given credit within the commit (as author of in the commit message if changes were made).
 
@@ -204,7 +204,7 @@ See also the [Commit cheat sheet](https://docs.moodle.org/dev/Commit_cheat_sheet
 
 ### Third party code
 
-Does the change contain [third party code](../../community/plugincontribution/thirdpartylibraries)? If so, ensure that:
+Does the change contain [third party code](../../../community/plugincontribution/thirdpartylibraries.md)? If so, ensure that:
 
 - The code is licensed under a [GPL compatible license](http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses%7C).
 - The instructions for upgrading/importing the library and contained within a readme_moodle.txt file.
@@ -248,7 +248,9 @@ Ensure that:
 
 We aim for Moodle to be accessible to everyone, especially to people with disabilities. When peer-reviewing a patch that introduces changes on the frontend, it would be good to do a quick accessibility check on the page or on the UI elements affected by the patch.
 
-Some quick checks that can be done to check for accessibility:
+Checking accessibility requires a bit of practice and knowledge, if you want to perform a systematic accessibility check, you can follow the [Accessibility checklist](./accessibility-checklist.md).
+
+Even if you don't have much experience with accessibility, there are some quick checks that can be done to check for accessibility:
 
 - **Automated tools**.
   - Does it pass automated accessibility checks? (e.g. via [axe DevTools](https://www.deque.com/axe/devtools/) or [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/))
@@ -295,7 +297,7 @@ Thanks again for your contribution. I have reviewed the patch:
 I don't have permission to use the peer review buttons on this issue. I hope that someone with sufficient permissions will move the issue forwards soon.
 ```
 
-You should now add the '[ready_for_integration](../tracker/labels.md)' tag to the issue to indicate you have passed the peer review and it can move to the next step.
+You should now add the '[ready_for_integration](../../tracker/labels.md)' tag to the issue to indicate you have passed the peer review and it can move to the next step.
 
 Feedback to indicate the issue requires further work might look like the following;
 
