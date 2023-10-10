@@ -58,16 +58,155 @@ You may see mention of various vulnerabilities here. Moodle only uses these tool
 
 :::
 
-### Grunt
+## Grunt
 
 As part of its build stack, Moodle uses the [Grunt](https://gruntjs.com) task runner.
 
+:::info
+
+Grunt is a command line tool used to prepare our JavaScript and CSS for production usage. After making any change to JavaScript or CSS files in Moodle, you must run grunt to lint, minify and package the JavaScript/CSS properly so that it can be served by Moodle.
+
 Grunt is composed of a set of tasks, defined within the Moodle code repository in the `Gruntfile.js` file, and a grunt CLI tool which must also be installed.
+
+:::
 
 Once you have installed the local development dependencies, you can simply run grunt using `npx`, for example:
 
 ```bash
 $ npx grunt stylelin
+```
+
+### Install grunt
+
+JavaScript and CSS in Moodle must be processed by some build tools before they will be visible to the web browser. Grunt is a build tool written in JavaScript that runs in the [nodejs](http://nodejs.org/) environment. You will need to install NodeJS and the Grunt tools:
+
+```bash title="Installing grunt"
+nvm install && nvm use
+npm install
+npm install -g grunt-cli
+```
+
+### Running grunt
+
+Typical commands:
+
+```
+grunt amd                               # Alias for "ignorefiles", "eslint:amd", "rollup"
+grunt js                                # Alias for "amd", "yui" tasks.
+grunt css                               # Alias for "scss", "rawcss" tasks.
+grunt shifter                           # Run Shifter
+grunt componentlibrary                  # Build the component library
+grunt eslint --show-lint-warnings       # Show pedantic lint warnings for JS
+grunt                                   # Try to do the right thing:
+                                        # * If you are in a folder called amd, do grunt amd
+                                        # * If you are in a folder called yui/src/something, do grunt shifter
+                                        # * Otherwise build everything (grunt css js).
+grunt watch                             # Run tasks on file changes
+```
+
+- On Linux/Mac it will build everything in the current folder and below.
+- You need to cd into the amd folder of your module root, for example `dirroot/blocks/foo/amd`, before running `grunt amd` (this will compile only your plugins AMD source files).
+- You can make output more verbose by adding `-v` parameter.
+- If used with `grunt shifter` you will have to `cd` into the `module/yui/src` folder, and to show what your lint errors are you can also use the `-v` parameter.
+- On Windows, you need to specify the path on the command line like `--root=admin/tool/templatelibrary`.
+
+### Install watchman
+
+If you get an error when running "grunt watch" complaining about `watchman`, you most likely need to install it. Check out the [watchman installation](https://facebook.github.io/watchman/docs/install.html) page.
+
+```bash title="Installing watchman from source in Linux/Mac"
+$ git clone https://github.com/facebook/watchman.git -b v4.9.0 --depth 1
+$ cd watchman
+$ ./autogen.sh
+$ ./configure
+$ make
+$ sudo make install
+```
+
+If you're on Linux, you may also want to make sure that `fs.inotify.max_user_watches` is set in `/etc/sysctl.conf`:
+
+```
+fs.inotify.max_user_watches = 524288
+```
+
+And then reload running `sudo sysctl -p`.
+
+### Using Grunt in additional plugins
+
+You may want to use Grunt for performing tasks in your custom Moodle plugins. For building AMD and YUI modules in a plugin, the standard configuration `Gruntfile.js` located in the Moodle root should work well. For building CSS files, you will have to set up a separate Grunt installation in the root of your plugin.
+
+If you do not have it yet, create the `package.json` file in the root of your plugin:
+
+```json title="package.json"
+    {
+        "name": "moodle-plugintype_pluginname"
+    }
+```
+
+Install grunt, grunt sass and grunt watch modules. Note that you should put the folder `node_modules` into your plugin's `.gitignore` file, too.
+
+```bash title="Installing grunt and grunt modules"
+    $ cd /path/to/your/plugin/root
+    $ npm install --save-dev grunt grunt-contrib-sass grunt-contrib-watch grunt-load-gruntfile
+```
+
+Create a `Gruntfile.js` in the root of your plugin and configure the task for building CSS files from SCSS files:
+
+```javascript
+"use strict";
+
+module.exports = function (grunt) {
+
+    // We need to include the core Moodle grunt file too, otherwise we can't run tasks like "amd".
+    require("grunt-load-gruntfile")(grunt);
+    grunt.loadGruntfile("../../Gruntfile.js");
+
+    // Load all grunt tasks.
+    grunt.loadNpmTasks("grunt-contrib-sass");
+    grunt.loadNpmTasks("grunt-contrib-watch");
+    grunt.loadNpmTasks("grunt-contrib-clean");
+
+    grunt.initConfig({
+        watch: {
+            // If any .scss file changes in directory "scss" then run the "sass" task.
+            files: "scss/*.scss",
+            tasks: ["sass"]
+        },
+        css: {
+            // Production config is also available.
+            development: {
+                options: {
+                    // Specifies directories to scan for @import directives when parsing.
+                    // Default value is the directory of the source, which is probably what you want.
+                    paths: ["css/"],
+                    compress: true
+                },
+                files: {
+                    "styles.css": "scss/styles.css"
+                }
+            },
+        }
+    });
+    // The default task (running "grunt" in console).
+    grunt.registerTask("default", ["css"]);
+};
+```
+
+Now running `grunt` or `grunt css` in your plugin root folder will compile the file and saves it as `styles.css`. Running "grunt watch" will watch the scss/*.scss files and if some is changed, it will immediately rebuild the CSS file.
+
+If you are working on a custom theme, you may have multiple `scss/*.scss` files that you want to compile to their `style/*.css` counterparts. You can either define an explicit list all such file pairs, or let that list be created for you by making use of [expand:true feature](http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically) of `Gruntfile.js`:
+
+```javascript
+// This dynamically creates the list of files to be processed.
+files: [
+    {
+        expand: true,
+        cwd: "scss/",
+        src: "*.scss",
+        dest: "style/",
+        ext: ".css"
+    }
+]
 ```
 
 ## Common issues
