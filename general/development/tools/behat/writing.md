@@ -65,13 +65,18 @@ JavaScript tests are usually much slower than tests executed without JavaScript.
 Afterwards you can specify a scenario:
 
 ```gherkin
-@javascript
 Scenario: Description of your scenario, which you want to test.
     When I log in as "student1"
     And I am on "Course 1" course homepage
 ```
 
 Again you can define specific tags. Afterwards you write the steps, which should be executed during your test.
+
+:::tip
+
+Tags that are specified in your feature's header automatically apply to all scenarios defined in that feature, so it is not necessary to repeat them. In the above example, the scenario will use JavaScript, although it does not have the `@javascript` tag.
+
+:::
 
 ### Multiple Scenarios
 
