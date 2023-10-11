@@ -147,28 +147,26 @@ This will be located in the file `local/groupmanager/classes/external/create_gro
 <?php
 namespace local_groupmanager\external;
 
-require_once("{$CFG->libdir}/externallib.php");
-
 class create_groups extends \external_api {
 
     /**
      * Returns description of method parameters
-     * @return external_function_parameters
+     * @return \external_function_parameters
      */
     public static function execute_parameters() {
-        return new external_function_parameters([
-            'groups' => new external_multiple_structure(
-                new external_single_structure([
-                    'courseid' => new external_value(PARAM_INT, 'id of course'),
-                    'name' => new external_value(
+        return new \external_function_parameters([
+            'groups' => new \external_multiple_structure(
+                new \external_single_structure([
+                    'courseid' => new \external_value(PARAM_INT, 'id of course'),
+                    'name' => new \external_value(
                         PARAM_TEXT,
                         'multilang compatible name, course unique'
                     ),
-                    'description' => new external_value(
+                    'description' => new \external_value(
                         PARAM_RAW,
                         'group description text'
                     ),
-                    'enrolmentkey' => new external_value(
+                    'enrolmentkey' => new \external_value(
                         PARAM_RAW,
                         'group enrol secret phrase'
                     ),
@@ -187,7 +185,7 @@ A web service function without parameters will have a parameter description func
  * @return external_function_parameters
  */
 public static function execute_parameters(): external_function_parameters {
-    return new external_function_parameters([
+    return new \external_function_parameters([
         // If this function had any parameters, they would be described here.
         // This example has no parameters, so the array is empty.
     ]);
@@ -208,7 +206,7 @@ Our `create_groups()` function expects one parameter named `groups`, so we will 
  * @return external_function_parameters
  */
 public static function execute_parameters(): external_function_parameters {
-    return new external_function_parameters([
+    return new \external_function_parameters([
         'groups' => ...
     ]);
 }
@@ -217,7 +215,7 @@ public static function execute_parameters(): external_function_parameters {
 This *groups* parameter is a list of group. So we will write :
 
 ```php
-'groups' => new external_multiple_structure(
+'groups' => new \external_multiple_structure(
     ...
 )
 ```
@@ -231,7 +229,7 @@ An external_multiple_structure object (list) can be constructed with:
 For our function it will be a `external_single_structure`:
 
 ```php
-new external_single_structure([
+new \external_single_structure([
     'courseid' => ...,
     'name' => ...,
     'description' => ...,
@@ -242,8 +240,8 @@ new external_single_structure([
 Thus we obtain :
 
 ```php
-'groups' => new external_multiple_structure(
-    new external_single_structure([
+'groups' => new \external_multiple_structure(
+    new \external_single_structure([
         'courseid' => ...,
         'name' => ...,
         'description' => ...,
@@ -262,14 +260,14 @@ Each group values is a *external_value* (primary type):
 We add them to the description :
 
 ```php
-'groups' => new external_multiple_structure(
-    new external_single_structure([
+'groups' => new \external_multiple_structure(
+    new \external_single_structure([
         // The second argument is a human readable description text.
         // This text is displayed in the automatically generated documentation.
-        'courseid' => new external_value(PARAM_INT, 'id of course'),
-        'name' => new external_value(PARAM_TEXT, 'multilang compatible name, course unique'),
-        'description' => new external_value(PARAM_RAW, 'group description text'),
-        'enrolmentkey' => new external_value(PARAM_RAW, 'group enrol secret phrase'),
+        'courseid' => new \external_value(PARAM_INT, 'id of course'),
+        'name' => new \external_value(PARAM_TEXT, 'multilang compatible name, course unique'),
+        'description' => new \external_value(PARAM_RAW, 'group description text'),
+        'enrolmentkey' => new \external_value(PARAM_RAW, 'group enrol secret phrase'),
     ])
 )
 ```
@@ -280,13 +278,13 @@ It's similar to execute_parameters(), but instead of describing the parameters, 
 
 ```php
 public static function execute_returns() {
-    return new external_multiple_structure(
-        new external_single_structure([
-            'id' => new external_value(PARAM_INT, 'group record id'),
-            'courseid' => new external_value(PARAM_INT, 'id of course'),
-            'name' => new external_value(PARAM_TEXT, 'multilang compatible name, course unique'),
-            'description' => new external_value(PARAM_RAW, 'group description text'),
-            'enrolmentkey' => new external_value(PARAM_RAW, 'group enrol secret phrase'),
+    return new \external_multiple_structure(
+        new \external_single_structure([
+            'id' => new \external_value(PARAM_INT, 'group record id'),
+            'courseid' => new \external_value(PARAM_INT, 'id of course'),
+            'name' => new \external_value(PARAM_TEXT, 'multilang compatible name, course unique'),
+            'description' => new \external_value(PARAM_RAW, 'group description text'),
+            'enrolmentkey' => new \external_value(PARAM_RAW, 'group enrol secret phrase'),
         ])
     );
 }
@@ -297,7 +295,7 @@ public static function execute_returns() {
 A value can be `VALUE_REQUIRED`, `VALUE_OPTIONAL`, or `VALUE_DEFAULT`. If not mentioned, a value is `VALUE_REQUIRED` by default.
 
 ```php
-'yearofstudy' => new external_value(PARAM_INT, 'year of study', VALUE_DEFAULT, 1979),
+'yearofstudy' => new \external_value(PARAM_INT, 'year of study', VALUE_DEFAULT, 1979),
 ```
 
 - `VALUE_REQUIRED` - if the value is not supplied => the server throws an error message
@@ -312,11 +310,11 @@ Because some web service protocols are strict about the number and types of argu
 
 ```php
 public static function get_biscuit_parameters() {
-    return new external_function_parameters([
-        'chocolatechips' => new external_value(PARAM_BOOL, PARAM_REQUIRED),
-        'glutenfree' => new external_value(PARAM_BOOL, PARAM_DEFAULT, false),
+    return new \external_function_parameters([
+        'chocolatechips' => new \external_value(PARAM_BOOL, PARAM_REQUIRED),
+        'glutenfree' => new \external_value(PARAM_BOOL, PARAM_DEFAULT, false),
         // ERROR! top level optional parameter!!!
-        'icingsugar' => new external_value(PARAM_BOOL, VALUE_OPTIONAL),
+        'icingsugar' => new \external_value(PARAM_BOOL, VALUE_OPTIONAL),
     ]);
 }
 ```
@@ -327,12 +325,12 @@ public static function get_biscuit_parameters() {
 
 ```php
 public static function get_biscuit_parameters() {
-    return new external_function_parameters([
-        'ifeellike' => new external_single_structure([
-                'chocolatechips' => new external_value(PARAM_BOOL, VALUE_REQUIRED),
-                'glutenfree' => new external_value(PARAM_BOOL, PARAM_DEFAULT, false),
+    return new \external_function_parameters([
+        'ifeellike' => new \external_single_structure([
+                'chocolatechips' => new \external_value(PARAM_BOOL, VALUE_REQUIRED),
+                'glutenfree' => new \external_value(PARAM_BOOL, PARAM_DEFAULT, false),
                 // ALL GOOD!! We have nested the params in a external_single_structure.
-                'icingsugar' => new external_value(PARAM_BOOL, VALUE_OPTIONAL),
+                'icingsugar' => new \external_value(PARAM_BOOL, VALUE_OPTIONAL),
         ]),
     ]);
 }
@@ -366,10 +364,10 @@ We declared our web service function and we defined the external function parame
             $group = (object)$group;
 
             if (trim($group->name) == '') {
-                throw new invalid_parameter_exception('Invalid group name');
+                throw new \invalid_parameter_exception('Invalid group name');
             }
             if ($DB->get_record('groups', ['courseid' => $group->courseid, 'name' => $group->name])) {
-                throw new invalid_parameter_exception('Group with the same name already exists in the course');
+                throw new \invalid_parameter_exception('Group with the same name already exists in the course');
             }
 
             // now security checks
@@ -419,7 +417,7 @@ You can throw exceptions. These are automatically handled by Moodle web service 
 // Note: It is good practice to add detailled information in $debuginfo,
 //       and only send back a generic exception message when Moodle DEBUG mode < NORMAL.
 //       It's what we do here throwing the invalid_parameter_exception($debug) exception
-throw new invalid_parameter_exception('Group with the same name already exists in the course');
+throw new \invalid_parameter_exception('Group with the same name already exists in the course');
 ```
 
 ### Correct return values
