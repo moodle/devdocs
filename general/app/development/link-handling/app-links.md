@@ -10,8 +10,10 @@ tags:
 
 When a user presses a link in the Moodle app, the behaviour changes depending on whether the URL is supported by the app or not:
 
-- If the URL belongs to the same site and it's supported by the app, then the app will try to open the corresponding page inside the app. For example if the user presses a link to an assignment, then the assignment will be opened inside the app if possible.
-- If it's a URL pointing to an external site or it's a URL not supported by the app then it will be opened in a browser. For example admin settings aren't supported by the app, so clicking a link to an admin settings page will open the page in browser.
+- If the URL belongs to the same site and it's supported by the app, then the app will try to open the corresponding page. For example if the user presses a link to an assignment, then the assignment will be opened inside the app rather than opening a browser.
+- If it's a URL pointing to an external site or it's a URL not supported by the app, then it will be opened in an external browser. This can also be configured to [open in an embedded browser](#opening-links-in-an-embedded-browser). For example admin settings aren't supported by the app, so clicking a link to an admin settings page will open the page in an external browser.
+- If it's a URL pointing to a local file it will be opened with an external app in Android, and an embedded viewer in iOS. For example opening a PDF within a SCORM package would open a PDF reader in Android or and embedded PDF viewer in iOS.
+- If the link is inside an iframe (and is not pointing to a local file), it will be opened within the same iframe. This behaviour can be changed by setting the link's `target` attribute to anything other than `_self`, in which case the URL will be opened in an external browser. For example, clicking a link with a `target="_blank"` attribute would open the URL in an external browser.
 
 ## Extending the list of supported URLs
 
