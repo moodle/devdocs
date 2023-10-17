@@ -97,7 +97,7 @@ Ensure that:
 - New language strings are named correctly (all lower case, no camel-case, underscores are permissible in some cases);
 - Help strings are named and formatted as described in [Help strings](https://docs.moodle.org/dev/Help_strings);
 - Language strings are used instead of hard-coded strings for text output;
-- Language strings have not been removed or renamed, had their meaning changed or had their parameters changed in stable branches (permitted only in master); and
+- Language strings have not been removed or renamed, had their meaning changed or had their parameters changed in stable branches (permitted only in master following [string deprecation policy](../../../projects/api/string-deprecation.md)); and
 - [AMOS commands](https://docs.moodle.org/dev/AMOS_commands) have been specified when moving or copying language strings.
 
 ### Databases
