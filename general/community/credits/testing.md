@@ -114,6 +114,9 @@ Adriano Ruseler, Alistair Spark, AL Rachels, Amaia Anabitarte, Angelia Dela Cruz
 
 Abe de Boer, Adriano Ruseler, Almog Aharon, AL Rachels, Amaia Anabitarte, Anderson Blaine, Angelia Dela Cruz, Angelina sutton , Arkadiusz Krawiec, Avi Levy, Carlos Escobedo, Chen Levy, Clement Prudhomme, Dag Klimas, David Woloszyn, Dominique-Alain Jan, Eli Zard, Eric Merrill, Fernando Acedo, Gemma Lesterhuis, Huong Nguyen, Jake Dallimore, Jean-Marc Doucet, Karen Holland, Kevin Percy, Kim Jared Lucas, Laurent David, Luiggi Sansonetti, Mary Cooch, Mathew May, Meirza, Michelle Lomman, Mihail Geshoski, Miri Lipson, Nadav Kavalerchik, Nicolas Martignoni, Patrycja Glogowska, Raquel Ortega, Ron Carl Alfon Yu, Shamim Rezaie, Simey Lameze, Stephen Bourget, Stephen Grono, Stevani Andolo, Tamahou Te Kowhai Scott, Tamar Elikishvili, Tamir Hajaj, Tomasz Szkutnik, Vika ablogeev
 
+## Moodle 4.3 QA
+Adriano Ruseler, Alain Corbière, Amaia Anabitarte, Angelia Dela Cruz, Chen Levy, Chris Pratt, Daniel Dubbeldam, David Woloszyn, Gemma Lesterhuis, German Valero, Huong Nguyen, Jake Dallimore, Joseph Rézeau, Kim Jared Lucas, Laurent David, Luiggi Sansonetti, Mary Cooch, Meirza, Michelle Lomman, Mihail Geshoski, Mikel Martín Corrales, Minh Hanh NGUYEN, Miri Lipson, Nicolas Martignoni, Raquel Ortega, Ron Carl Alfon Yu, Safat Shahin, Sara Arjona (@sarjona), Simey Lameze, Stephen Grono, Stevani Andolo, Tamahou Te Kowhai Scott, Tamir Hajaj, Vika ablogeev
+
 <!-- cspell:enable -->
 
 ## See also
