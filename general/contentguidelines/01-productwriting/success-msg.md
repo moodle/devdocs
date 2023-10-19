@@ -84,8 +84,6 @@ The preset has been successfully applied.
 
 </InvalidExample>
 
-Don't repeat information from the title.
-
 <ValidExample title="Do">
 
 Message sent.

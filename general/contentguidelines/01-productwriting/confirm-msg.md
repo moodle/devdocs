@@ -125,21 +125,28 @@ Calls to action (CTAs) should be clear and simple, and offer a straightforward w
 <ValidExample title="Do">
 
 **Delete downloaded data?**  
-Cancel | Delete
+Cancel | **Delete**
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
 **Delete downloaded data?**  
-Cancel | Continue
+Cancel | **Continue**
 
 </InvalidExample>
 
+<ValidExample title="Do">
+
+**Log out from this device?**  
+Cancel | **Log out**
+
+</ValidExample>
+
 <InvalidExample title="Don't">
 
-**Delete downloaded data?**  
-No | Yes
+**Log out from this device?**  
+No | **Ok**
 
 </InvalidExample>
 
@@ -158,6 +165,13 @@ Cancel | **Move**
 Cancel | **Continue**
 
 </InvalidExample>
+
+<ValidExample title="Don't">
+
+**Delete** tool?  
+Cancel | **Delete**
+
+</ValidExample>
 
 <InvalidExample title="Don't">
 

@@ -68,11 +68,9 @@ tags:
 
 ## Dates, numbers and currencies
 
+The Moodle software allows users to customise their dates, time and numbers format to their own region and preferences. This section covers the way in which we write dates, numbers and currencies outside of the software.
+
 ### Dates, months, and years
-
-- For short dates, use DD/MM/YYYY without any leading zeros.
-
-> Example: 21/12/1975 or 21/3/2020
 
 - For long dates, use DD Month YYYY without any leading zeros.
 
@@ -84,15 +82,25 @@ tags:
 
 - For days of the week, use the following abbreviations: Mon, Tues, Weds, Thurs, Fri, Sat, Sun.
 
+- Try to avoid short dates; but if you use them, use DD/MM/YYYY without any leading zeros.
+
+> Example: 21/12/1975 or 21/3/2020
+
 ### Time and time zones
 
-- Write 'am' and 'pm' always in lowercase, with no space before them and with no periods between the letters.
+- Write 'am' and 'pm' always in lowercase, with a nonbreaking space (&amp;nbsp) before them and with no periods between the letters.
 
-> Example: 2:00pm, not 2:00 pm
+> Example: 2:00 pm, not 2:00pm
 
 - For times on the hour, include minutes.
 
-> Example: 6:00pm, not 6pm
+> Example: 6:00 pm, not 6 pm
+
+- Use the 12-hour or 24-hour system depending on the audience you're writing for. If you're writing for a global audience, use the 24-hour format as it's more clear and consistent.
+
+- If you're writing about a specific time that affects people worldwide (for example, down time for a site or a deadline for a contest), always include the name of the time zone. Or, even better, include more than one time zone.
+
+> Example: 'The contest will close at 4:00 pm AWST / 10:00 am CEST' and not 'The contest will close at 4:00 pm'.
 
 ### Numbers, fractions, and units
 
@@ -101,15 +109,16 @@ tags:
 > Example: Three days left to get early bird tickets.
 
 - To separate thousands and millions, use commas.
+
 - To indicate decimal points, use periods.
 
 > Example: 1,000 (one thousand); 3.14 (three point one four)
 
 - Always use a country code with phone numbers.
 
-- For units of measure, use lowercase letters and don't leave a space before the unit
+- For units of measure, use lowercase letters and a nonbreaking space (&amp;nbsp) before the unit.
 
-> Example: 121km, not 121 km.
+> Example: 121 km, not 121km.
 
 - When you write a decimal, include a leading zero before the decimal point.
 
@@ -133,6 +142,6 @@ tags:
 ## Emojis
 
 - Emojis can make your writing more fun, but don't go overboard with them :wink:.
-- Don't use negative emojis, such as 😡 😒 🤢 👹 ☠️
+- Be mindful when using emojis that might convey negative connotations or meanings, such as 😡 😒 🤢 👹 ☠️.
 
 <!-- cspell:ignore ALLCAPS Matias -->

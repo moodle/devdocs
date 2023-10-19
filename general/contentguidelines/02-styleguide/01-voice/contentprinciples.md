@@ -102,7 +102,7 @@ We write with accessibility, inclusivity and diversity in mind. That's why we av
 
 - Language that reinforces racial, ethnic or religious stereotypes, for example: Use *allowlist* and *denylist* instead of *whitelist* and *blacklist*.
 - Ableist language, for example: Say *amazing*, *awesome*, *shocking* or *intense* instead of *insane* or *crazy*. Say *final check* instead of *sanity check*.
-- Unnecessarily gendered words, for example: Say *people* or *humanity* instead of *mankind*. Say *chairperson* instead of *chairman*.
+- Unnecessarily gendered words, for example: Say *people* or *humanity* instead of *mankind*. Say *chairperson* or *chair* instead of *chairman*.
 - Figures of speech that refer to war or violence, for example: Say *try* instead of *take a shot*. Say *near miss* instead of *dodged bullet*
 
 ### Use diverse examples
