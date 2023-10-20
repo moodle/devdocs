@@ -1,4 +1,6 @@
-.projecttable {
+.projectsummary {
   float: right;
   clear: both;
+  font-family: monospace;
+  padding-left: 1rem;
 }
