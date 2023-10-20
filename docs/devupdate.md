@@ -549,6 +549,10 @@ The SVG icons in Moodle LMS were sourced from https://fontawesome.com/search?m=f
 
 :::
 
+:::note
+When adding SVG files from [FontAwesome](https://fontawesome.com/icons), please make sure to use the `Free` icon set by generating the file from the `SVG` code, rather than downloading it. This approach ensures the correct licensing of the icon, as the downloaded version may have a different license at times.
+:::
+
 <!-- cspell:ignore goutte,browserkit -->
 ## Behat
 
