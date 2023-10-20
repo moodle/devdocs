@@ -69,6 +69,18 @@ Something went wrong.
 
 </InvalidExample>
 
+<ValidExample title="Do">
+
+Your username and password don't match. Please try again.
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+Login failed.
+
+</InvalidExample>
+
 Explain what happened clearly.
 
 <ValidExample title="Do">
@@ -145,7 +157,7 @@ You didn't type a password.
 
 Having a call to action depends on the component you choose.
 
-When possible, provide users with a contextually relevant action that can help them solve the problem, e.g. 'Go to settings' or 'Contact support'.
+When possible, provide users with a contextually relevant action that can help them solve the problem, for example 'Go to settings' or 'Contact support'.
 
 If you use an HTML modal to display an error message, always provide an option to dismiss the modal.
 
@@ -155,7 +167,7 @@ Use CTA to provide users with a posssible solution:
 
 **Your device is offline**  
 Download failed because you're not connected to the internet.  
-Ok | Go to settings
+Ok | **Go to settings**
 
 </ValidExample>
 
@@ -163,6 +175,6 @@ Ok | Go to settings
 
 **Your device is offline**  
 Download failed because you're not connected to the internet.  
-Ok | Cancel
+Ok | **Cancel**
 
 </InvalidExample>
