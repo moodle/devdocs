@@ -67,7 +67,7 @@ class do_something extends \core\task\adhoc_task {
     public static function instance(
         int $id,
         string $status,
-    ): void {
+    ): self {
         $task = new self();
         $task->set_custom_data((object) [
             'id' => $id,
