@@ -2,6 +2,7 @@
 title: Moodle 4.2 developer update
 tags:
 - Core development
+- Moodle 4.2
 ---
 
 <!-- markdownlint-disable no-inline-html -->
