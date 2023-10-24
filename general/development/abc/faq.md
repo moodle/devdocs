@@ -39,6 +39,12 @@ The Moodle community is an active group of teachers and developers that have mos
 
 If you have made some changes to the code that you would like to share with the community, learn how to [create a patch](/docs/guides/git/#preparing-a-patch).
 
+### How do I assign an issue to myself?
+
+Before you can become the assignee on an issue you must work on an issue and have it integrated, and closed. Typically this may be with the help of another developer.
+
+When working on this issue it is important that you **do not** set the assignee at all so that it can be easily discovered and you can be promoted within the Tracker.
+
 ### How do I create a module or plugin?
 
 Use the following resources to help get you started with modules and plugins.
