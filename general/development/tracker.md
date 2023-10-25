@@ -72,7 +72,7 @@ Only existing developers may assign an issue to themselves.
 
 :::important New developers
 
-If you are working on your first issue, please **do not** assign it to anyone. Leave it unassigned and add the `patch` label to the issue when it is ready.
+If you are working on your first issue, please **do not** assign it to anyone. Leave it unassigned and add the `patch` label to the issue when it is ready. If you are not the reporter of the issue, you won't have the necessary permissions to add the label. You may need to ask the reporter to add it for you or ask in the [public developers' chat](https://matrix.to/#/%23moodledev:moodle.com).
 
 After your issue has been integrated, a member of the integration team will update your capabilities within the Moodle Tracker and assign the issue to you.
 
