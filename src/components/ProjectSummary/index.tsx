@@ -50,52 +50,54 @@ export default function ProjectSummary(props: ProjectSummaryProps): ReactNode {
 
     function GetProjectSummary(projectData: ProjectSummaryData): ReactNode {
         return (
-            <table className={styles.projecttable}>
-                <tbody>
-                    <tr>
-                        <th>Owners</th>
-                        <td>{getOwners(projectData)}</td>
-                    </tr>
-                    <tr>
-                        <th>Status</th>
-                        <td>{getStatus(projectData)}</td>
-                    </tr>
-                    {projectData.discussionLinks?.length > 0
-                        && (
-                            <tr>
-                                <th>Links</th>
-                                <td>
-                                    {projectData.discussionLinks.map(({ link, title }) => (
-                                        <div key={title}>
-                                            <Link
-                                                to={link}
-                                            >
-                                                {title}
-                                            </Link>
-                                        </div>
-                                    ))}
-                                </td>
-                            </tr>
-                        )}
-                    {projectData.issueLinks?.length > 0
-                        && (
-                            <tr>
-                                <th>Issues</th>
-                                <td>
-                                    {projectData.issueLinks.map(({ link, title }) => (
-                                        <div key={title}>
-                                            <Link
-                                                to={link}
-                                            >
-                                                {title}
-                                            </Link>
-                                        </div>
-                                    ))}
-                                </td>
-                            </tr>
-                        )}
-                </tbody>
-            </table>
+            <div className={styles.projectsummary}>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Owners</th>
+                            <td>{getOwners(projectData)}</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>{getStatus(projectData)}</td>
+                        </tr>
+                        {projectData.discussionLinks?.length > 0
+                            && (
+                                <tr>
+                                    <th>Links</th>
+                                    <td>
+                                        {projectData.discussionLinks.map(({ link, title }) => (
+                                            <div key={title}>
+                                                <Link
+                                                    to={link}
+                                                >
+                                                    {title}
+                                                </Link>
+                                            </div>
+                                        ))}
+                                    </td>
+                                </tr>
+                            )}
+                        {projectData.issueLinks?.length > 0
+                            && (
+                                <tr>
+                                    <th>Issues</th>
+                                    <td>
+                                        {projectData.issueLinks.map(({ link, title }) => (
+                                            <div key={title}>
+                                                <Link
+                                                    to={link}
+                                                >
+                                                    {title}
+                                                </Link>
+                                            </div>
+                                        ))}
+                                    </td>
+                                </tr>
+                            )}
+                    </tbody>
+                </table>
+            </div>
         );
     }
 
