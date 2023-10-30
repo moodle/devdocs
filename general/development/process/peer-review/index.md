@@ -235,34 +235,15 @@ Ensure that:
 
 ### Accessibility
 
-We aim for Moodle to be accessible to everyone, especially to people with disabilities. When peer-reviewing a patch that introduces changes on the frontend, it would be good to do a quick accessibility check on the page or on the UI elements affected by the patch.
+Moodle should be accessible to everyone. When reviewing any changes that affects the frontend, ensure that these points have been considered:
 
-Checking accessibility requires a bit of practice and knowledge, if you want to perform a systematic accessibility check, you can follow the [Accessibility checklist](./accessibility-checklist.md).
+- Automated tools: Does it pass automated accessibility checks? (e.g. via [axe DevTools](https://www.deque.com/axe/devtools/) or [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/))
+- Colours: Do the text have sufficient colour contrast against the background? If the patch introduces elements that convey information through colours, are there alternative means to convey this information to users with visual impairments?
+- HTML validity: Does the patch generate a page with valid HTML? (e.g. checked via [Nu HTML validator](https://validator.w3.org/nu/#textarea))
+- Keyboard navigation: Can you successfully navigate through the interface via keyboard?
+- Screen reader: When using a screen reader (e.g. [ChromeVox](https://support.google.com/chromebook/answer/7031755?hl=en), [NVDA](https://www.nvaccess.org/), [JAWS](https://www.freedomscientific.com/products/software/jaws/), etc), are the UI components being properly and clearly announced?
 
-Even if you don't have much experience with accessibility, there are some quick checks that can be done to check for accessibility:
-
-- **Automated tools**.
-  - Does it pass automated accessibility checks? (e.g. via [axe DevTools](https://www.deque.com/axe/devtools/) or [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/))
-- **Colours**:
-  - Do the text have sufficient colour contrast against the background?
-  - If the patch introduces elements that convey information through colours, are there alternative means to convey this information to users with visual impairments?
-- **HTML validity**
-  - Does the patch generate a page with valid HTML? (e.g. checked via [Nu HTML validator](https://validator.w3.org/nu/#textarea))
-- **Keyboard navigation**
-  - Can you successfully navigate through the interface via keyboard?
-- **Screen reader'**
-  - When using a screen reader (e.g. [ChromeVox](https://support.google.com/chromebook/answer/7031755?hl=en), [NVDA](https://www.nvaccess.org/), [JAWS](https://www.freedomscientific.com/products/software/jaws/), etc), are the UI components being properly and clearly announced?
-
-:::important
-Although these checks are optional, we encourage everyone to keep accessibility in mind when doing peer reviews.
-:::
-
-During peer reviews, please mark this category with either of the following (whichever's applicable):
-
-- **Y** - When accessibility has been checked and no accessibility issues were found.
-- **N** - When accessibility has been checked but accessibility issues were found.
-- **N/A** - When an accessibility check is not applicable for the patch.
-- **S** - To indicate that an accessibility check might be needed but has been skipped by the peer reviewer.
+But, remember that what you are doing here is part of a peer review. If you want to perform a systematic accessibility check, you can follow the [Accessibility checklist](./accessibility-checklist.md).
 
 ### Overall completeness and correctness
 
