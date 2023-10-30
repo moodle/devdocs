@@ -32,7 +32,7 @@ These are points to consider while peer-reviewing issues. Further explanation be
 [] Icons
 [] The Moodle mobile app / web services
 [] Accessibility (Optional)
-[] Sanity check
+[] Overall completeness and correctness
 ```
 
 Acceptable check-marks are Y (for yes), N (for no) or - (for not applicable). All N check-marks should be accompanied by an explanation of the problem that still needs to be addressed.
@@ -264,16 +264,16 @@ During peer reviews, please mark this category with either of the following (whi
 - **N/A** - When an accessibility check is not applicable for the patch.
 - **S** - To indicate that an accessibility check might be needed but has been skipped by the peer reviewer.
 
-### Sanity check
+### Overall completeness and correctness
 
 Ensure that:
 
-- The code seems to solve the described problem completely within its reported scope (and further issues have been created to resolve remaining parts or further refactoring);
-- The code makes sense in relation to the broader codebase (look at the whole function, not just the altered code); and
+- The code seems to solve the described problem completely within its reported scope (and further issues have been created to resolve remaining parts or further refactoring).
+- The code makes sense in relation to the broader codebase (look at the whole function, not just the altered code).
 - The developer has searched for and fixed other areas that may also have been affected by the same problem.
-- Verify that the related component maintainers, if known, have participated and are aware of the issue (as assignee, or existing comments...). If they have not, please perform a friendly @mention to make them aware about the issue. A list of component leads is available here: https://docs.moodle.org/dev/Component_Leads
+- Verify that the related component maintainers, if known, have participated and are aware of the issue (as assignee, or existing comments...). If they have not, please perform a friendly @mention to make them aware about the issue. A list of component leads is available here: https://docs.moodle.org/dev/Component_Leads.
 - If any version numbers have been changed in [version.php](https://docs.moodle.org/dev/version.php) files, then the changes follow [the rule for updating version numbers in core](https://docs.moodle.org/dev/Moodle_versions#How_to_increment_version_numbers_in_core).
-- There are comments on tracker explaining why current approach was taken and why other options (especially large issues). If not comment asking them to explain
+- There are comments on tracker explaining why current approach was taken and why other options (especially large issues). If not comment asking them to explain.
 
 ## Process
 
