@@ -31,7 +31,7 @@ These are points to consider while peer-reviewing issues. Further explanation be
 [] Third party code
 [] Icons
 [] The Moodle mobile app / web services
-[] Accessibility (Optional)
+[] Accessibility
 [] Overall completeness and correctness
 ```
 
