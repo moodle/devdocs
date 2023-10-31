@@ -31,6 +31,7 @@
                 },
                 {
                     "name": "4.3.1",
+                    "releaseNoteUrl": false,
                     "releaseDate": "11 December 2023",
                     "version": 2023100901
                 }
