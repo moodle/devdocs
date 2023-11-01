@@ -374,6 +374,51 @@ public function roles_protected() {
   </div>
 </details>
 
+### enrol_plugin:find_instance(): stdClass
+
+Returns enrolment instance in a given course matching provided data. If enrol plugin implements this method, then it is supported
+ in CSV course upload.
+
+:::note
+
+So far following enrol plugins implement this method: *enrol_manual*, *enrol_self*, *enrol_guest*, *enrol_cohort*.
+ Method must be capable to uniquely identify instance in a course using provided data in order to implement this method. For example, *enrol_cohort* uses
+ `cohortID` together with `roleID` to identify instance. For some methods (like *enrol_lti* or *enrol_payment*) it is not possible
+ to uniquely identify instance in a course using provided data, so such methods will not be supported in CSV course upload.
+
+The only exception is *enrol_self* - although it is not possible to uniquely identify enrolment instance in a course using provided data, it is still supported in CSV course upload. For *enrol_self* method `find_instance()` returns the first available enrolment instance in a course.
+
+:::
+
+<details>
+  <summary>View example</summary>
+  <div>
+
+```php
+public function find_instance(array $enrolmentdata, int $courseid) : ?stdClass {
+    global $DB;
+    $instances = enrol_get_instances($courseid, false);
+
+    $instance = null;
+    if (isset($enrolmentdata['cohortidnumber']) && isset($enrolmentdata['role'])) {
+        $cohortid = $DB->get_field('cohort', 'id', ['idnumber' => $enrolmentdata['cohortidnumber']]);
+        $roleid = $DB->get_field('role', 'id', ['shortname' => $enrolmentdata['role']]);
+        if ($cohortid && $roleid) {
+            foreach ($instances as $i) {
+                if ($i->enrol == 'cohort' && $i->customint1 == $cohortid && $i->roleid == $roleid) {
+                    $instance = $i;
+                    break;
+                }
+            }
+        }
+    }
+    return $instance;
+}
+```
+
+  </div>
+</details>
+
 ## Standard Editing UI
 
 Moodle participants page has a standard editing UI for manual enrolments. To integrate a plugin into the start UI you need to implement the following methods:
