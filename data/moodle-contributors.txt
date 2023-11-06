@@ -110,6 +110,7 @@ Barry
 Bartel
 Basset
 Bateson
+Baudry
 Baxter
 Bayler
 Beedell
@@ -150,6 +151,7 @@ Brian
 Brisland
 Brown
 Bruce
+Bruno
 Bruton
 Bryan
 Buecker
@@ -1371,6 +1373,7 @@ nicolasconnault
 nlnrose
 nobelium
 nread
+oliviervalentin
 paca70
 palojacko
 papillon
@@ -1440,6 +1443,7 @@ uid536
 uid697
 unknown
 urs_hunkler
+viettruongq
 villate
 vinhle
 vinkmar
