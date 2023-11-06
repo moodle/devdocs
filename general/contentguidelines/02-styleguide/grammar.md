@@ -88,7 +88,7 @@ The Moodle software allows users to customise their dates, time and numbers form
 
 ### Time and time zones
 
-- Write 'am' and 'pm' always in lowercase, with a nonbreaking space (&amp;nbsp) before them and with no periods between the letters.
+- Write 'am' and 'pm' always in lowercase, with a non-breaking space (&amp;nbsp) before them and with no periods between the letters.
 
 > Example: 2:00 pm, not 2:00pm
 
@@ -116,7 +116,7 @@ The Moodle software allows users to customise their dates, time and numbers form
 
 - Always use a country code with phone numbers.
 
-- For units of measure, use lowercase letters and a nonbreaking space (&amp;nbsp) before the unit.
+- For units of measure, use lowercase letters and a non-breaking space (&amp;nbsp) before the unit.
 
 > Example: 121 km, not 121km.
 

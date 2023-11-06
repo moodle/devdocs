@@ -21,6 +21,7 @@ If there are any topics that you would like to present or discuss at a developer
 ## Past meeting notes
 
 ### 2023
+
 - [Developer meeting November 2023](./202311.md)
 - [Developer meeting August 2023](./202308.md)
 - [Developer meeting May 2023](./202305.md)

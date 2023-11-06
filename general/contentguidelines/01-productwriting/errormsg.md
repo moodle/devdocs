@@ -53,7 +53,7 @@ The file is too large.
 
 <InvalidExample title="Don't">
 
-Coudn't upload file.
+Couldn't upload file.
 
 </InvalidExample>
 
@@ -161,20 +161,20 @@ When possible, provide users with a contextually relevant action that can help t
 
 If you use an HTML modal to display an error message, always provide an option to dismiss the modal.
 
-Use CTA to provide users with a posssible solution:
+Use CTA to provide users with a possible solution:
 
 <ValidExample title="Do">
 
-**Your device is offline**  
-Download failed because you're not connected to the internet.  
+**Your device is offline**
+Download failed because you're not connected to the internet.
 Ok | **Go to settings**
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**Your device is offline**  
-Download failed because you're not connected to the internet.  
+**Your device is offline**
+Download failed because you're not connected to the internet.
 Ok | **Cancel**
 
 </InvalidExample>
