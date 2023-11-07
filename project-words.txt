@@ -36,6 +36,7 @@ Invisio
 Ionicons
 Josep
 JWKS
+Kanban
 MAINNODE
 MDL
 MDLQA
