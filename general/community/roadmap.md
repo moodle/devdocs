@@ -9,6 +9,10 @@ Our Moodle Products roadmap is designed to provide visibility on the development
 
 import Link from '@docusaurus/Link';
 
+:::tip View our living Roadmap
+
+Our Roadmap is public, open, and living - you can see it at any time on our [Roadmap Kanban board](https://tracker.moodle.org/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA).
+
 <Link
   to="https://tracker.moodle.org/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA"
   title="View the current Moodle Roadmap on the Tracker"
@@ -17,6 +21,8 @@ import Link from '@docusaurus/Link';
   ![A summary of the current roadmap](./_roadmap/roadmap-summary.png)
 
 </Link>
+
+:::
 
 ## What is a roadmap and why is it important?
 
