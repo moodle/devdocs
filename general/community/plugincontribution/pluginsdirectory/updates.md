@@ -1,4 +1,14 @@
-# 07/11/2023
+---
+title: Plugins directory updates
+sidebar_position: 1
+sidebar_label: Updates
+tags:
+  - Guidelines for contributors
+  - Plugins
+  - Plugin documentation
+---
+
+## 07/11/2023
 
 Different improvements in the main page:
 
