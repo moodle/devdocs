@@ -1,4 +1,6 @@
-# 07/11/2023
+# Updates
+
+## 07/11/2023
 
 Different improvements in the main page:
 
