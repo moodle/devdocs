@@ -5,7 +5,7 @@ tags:
 sidebar_position: 4
 ---
 
-Our Moodle Products roadmap is designed to provide visibility on the development priorities of the Moodle HQ Product teams and covers all the products in our open source learning platform portfolio, consisting of Moodle LMS, Moodle Workplace, MoodleCloud, MoodleNet, Moodle Apps, Moodle Community Sites, and Moodle Academy.
+Our Moodle Products roadmap is designed to provide visibility on the development priorities of the Moodle HQ Product teams and covers all the products in our open source learning platform portfolio, consisting of Moodle LMS, Moodle Workplace, MoodleCloud, Moodle Apps, Moodle Community Sites, and Moodle Academy.
 
 import Link from '@docusaurus/Link';
 
