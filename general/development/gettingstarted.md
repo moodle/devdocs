@@ -12,7 +12,7 @@ tags:
 - Read our guide to making [a better contribution](./abc.md)
 - [Prepare a patch](/docs/guides/git/#preparing-a-patch)
 - Read the [Coding style](./policies/codingstyle/index.md) policy
-- Send your patch to [peer review](./process/peer-review.md) and learn more about the [Moodle processes](./process.md).
+- Send your patch to [peer review](./process/peer-review/index.md) and learn more about the [Moodle processes](./process.md).
 - Create your custom plugins looking at the information in the [Plugin contribution](../community/plugincontribution/index.md) page.
 
 :::

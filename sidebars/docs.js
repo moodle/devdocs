@@ -51,6 +51,12 @@ const sidebars = {
         },
 
         {
+            label: 'Content guidelines',
+            type: 'link',
+            href: '/general/contentguidelines',
+        },
+
+        {
             label: 'Developer update',
             type: 'doc',
             id: 'devupdate',
@@ -69,7 +75,7 @@ const sidebars = {
         {
             label: 'Release notes',
             type: 'link',
-            href: '/general/releases/4.2',
+            href: '/general/releases/4.3',
         },
         {
             label: 'Projects',

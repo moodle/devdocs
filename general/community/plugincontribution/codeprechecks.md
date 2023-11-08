@@ -40,5 +40,5 @@ Finally, clicking some of these individual test labels takes you to a page with 
 - **phpdoc**: Checks that the plugin files, classes and functions are documented in the source code.
 - **savepoint**: Reports issues detected with the handling of [upgrade savepoints](/docs/guides/upgrade/).
 - **thirdparty**: Reports issues with the [thirdpartylibs.xml](/docs/apis/commonfiles#thirdpartylibsxml) file.
-- **grunt**: Reports issues with [Grunt](https://docs.moodle.org/dev/Grunt) builds.
+- **grunt**: Reports issues with [Grunt](../../development/tools/nodejs.md#grunt) builds.
 - **mustache** : Reports issues with [Mustache templates](/docs/guides/templates/).

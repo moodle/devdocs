@@ -19,7 +19,7 @@ The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/
 
 <SupportedReleases />
 
-![Release graph summarising the currently supported Moodle releases in a visual form](_releases/4022_release_graph.png)
+![Release graph summarising the currently supported Moodle releases in a visual form](_releases/4023_release_graph.png)
 
 <details>
     <summary>Release graph key</summary>
@@ -87,6 +87,17 @@ Upcoming release dates can be found in the Moodle development calendar, which is
 :::note
 
 Minor releases dates differ slightly from release to release depending on the timing of public holidays in Western Australia.
+
+:::
+
+## Moodle 4.3
+
+<ReleaseTable releaseName="4.3" />
+
+:::info
+
+Bug fixes for general core bugs in 4.3.x will end 14 October 2024 (12 months).<br/>
+Bug fixes for security issues in 4.3.x will end 14 April 2025 (18 months).
 
 :::
 

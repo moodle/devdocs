@@ -76,7 +76,11 @@ Apart from the [Database Structures guidelines](https://docs.moodle.org/dev/Data
 
 1. About names:
     1. All lowercase names (tables, indexes, keys and fields).
-    1. Table names and field names must use only a-z, 0-9 and _ chars. Max 28 characters.
+    1. Table names and field names must use only a-z, 0-9 and _ chars. Max 53 characters for tables and 63 characters for fields (28 and 30 before Moodle 4.3).
+
+     :::caution
+     If you are writing a plugin intended for older versions of Moodle then you must continue to use the lower limits of 28, and 30.
+     :::
     1. Key and index names under the XMLDB Files must be formed by concatenating the name of the fields present in the key/index with the '"-" (minus) character.
     1. Primary key always must be named "primary" (this is one exception to the previous convention).
     1. It's highly recommended to avoid [reserved words](https://docs.moodle.org/dev/XMLDB_reserved_words) completely. We know we have some of them now but they should be completely out for next releases.

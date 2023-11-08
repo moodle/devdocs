@@ -20,7 +20,7 @@ We use a workflow that ensures that new code receives multiple reviews by differ
 
 - The [triaging](#issue-triage) is done by the Component leads.
 - Anybody can participate in the issue [development](./index.md), by creating a patch for [a bug](#fixing-a-bug), [an improvement](#new-feature-development) or [a security issue](#security-issues).
-- Anybody can also [peer review](./process/peer-review.md) code developed by other developers.
+- Anybody can also [peer review](./process/peer-review/index.md) code developed by other developers.
 - There is a dedicated team in Moodle HQ in charge of the [integration review](./process/integration/index.md), to ensure consistent quality across the codebase.
 - Every time an issue is integrated, the [testing](./process/testing/index.md) instructions are run by a dedicated team of testers.
 

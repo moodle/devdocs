@@ -36,7 +36,7 @@ The Component Library is written using the same Hugo tooling that the Twitter Bo
 
 The library is built from your console, and you will need to install the same NodeJS dependencies that we use for many of our other development features.
 
-See our [Grunt](https://docs.moodle.org/dev/Grunt) documentation for information on how to install these dependencies.
+See our [Grunt](./nodejs.md#grunt) documentation for information on how to install these dependencies.
 
 Once you have installed the NodeJS dependencies you can then use the [grunt](http://gruntjs.com/) tooling to build the library.:
 

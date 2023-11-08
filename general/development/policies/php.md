@@ -49,6 +49,12 @@ You must be logged in to tracker to see issues in Epics.
 
 ## PHP supported versions
 
+### PHP 8.2
+
+<Since versions={["4.2.3", "4.3"]} issueNumber="MDL-76405" />
+
+PHP 8.2 **can be used with** Moodle 4.2.3, Moodle 4.3 and later releases. See MDL-76405 for details.
+
 ### PHP 8.1
 
 <Since versions={["4.1.2", "4.2"]} issueNumber="MDL-73016" />
@@ -92,10 +98,6 @@ PHP 7.1 **can be used with** Moodle 3.2 and later releases. It is also the **min
 PHP 7.0 **can be used with** Moodle 3.0.1, Moodle 3.1 and later releases. It is also the **minimum** supported version for Moodle 3.4. See [Moodle and PHP 7.0 details](https://docs.moodle.org/dev/Moodle_and_PHP_7.0_details) and [MDL-50565](https://tracker.moodle.org/browse/MDL-50565) for details.
 
 ## PHP versions under development
-
-### PHP 8.2
-
-PHP 8.2 support **is currently being implemented** for Moodle 4.2.x, 4.3.0 and later releases. Hence it's still **incomplete and only for development purposes**. See MDL-76405 for details.
 
 ### PHP 8.3
 

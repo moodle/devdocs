@@ -5,9 +5,13 @@ tags:
 sidebar_position: 4
 ---
 
-Our Moodle Products roadmap is designed to provide visibility on the development priorities of the Moodle HQ Product teams and covers all the products in our open source learning platform portfolio, consisting of Moodle LMS, Moodle Workplace, MoodleCloud, MoodleNet, Moodle Apps, Moodle Community Sites, and Moodle Academy.
+Our Moodle Products roadmap is designed to provide visibility on the development priorities of the Moodle HQ Product teams and covers all the products in our open source learning platform portfolio, consisting of Moodle LMS, Moodle Workplace, MoodleCloud, Moodle Apps, Moodle Community Sites, and Moodle Academy.
 
 import Link from '@docusaurus/Link';
+
+:::tip View our living Roadmap
+
+Our Roadmap is public, open, and living - you can see it at any time on our [Roadmap Kanban board](https://tracker.moodle.org/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA).
 
 <Link
   to="https://tracker.moodle.org/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA"
@@ -17,6 +21,8 @@ import Link from '@docusaurus/Link';
   ![A summary of the current roadmap](./_roadmap/roadmap-summary.png)
 
 </Link>
+
+:::
 
 ## What is a roadmap and why is it important?
 

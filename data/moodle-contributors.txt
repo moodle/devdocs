@@ -81,6 +81,7 @@ Arjen
 Arjona
 Arnaud
 Arto
+Artur
 Ashley
 Ashruf
 Astashov
@@ -109,6 +110,7 @@ Barry
 Bartel
 Basset
 Bateson
+Baudry
 Baxter
 Bayler
 Beedell
@@ -149,6 +151,7 @@ Brian
 Brisland
 Brown
 Bruce
+Bruno
 Bruton
 Bryan
 Buecker
@@ -167,6 +170,7 @@ Candilio
 Carlos
 Carrick
 Carrier
+Carrillo
 Carson
 Carsten
 Carter
@@ -221,6 +225,7 @@ Cunningham
 Curry
 D'souza
 Dageförde
+Dale
 Dallimore
 Dalton
 Damian
@@ -240,6 +245,7 @@ Dave
 Davenport
 David
 Davidson
+Davies
 Davis
 Davitasvili
 Davo
@@ -293,6 +299,7 @@ Eberhardt
 Eddin
 Eduardo
 Ehringer
+Eichelberger
 Eijdenberg
 EizEddin
 Elbert
@@ -389,6 +396,7 @@ Gray
 Green
 Greeve
 Greg
+Gregor
 Gregory
 Greidanus
 Grigory
@@ -443,6 +451,7 @@ Hoobin
 Howard
 Hugh
 Hughes
+Hummel
 HungTran
 Hunkler
 Hunt
@@ -468,6 +477,7 @@ Iurii
 Iyer
 Iñaki
 Iñigo
+Jablon
 Jackson
 Jacob
 Jade
@@ -492,11 +502,13 @@ Jean-Roch
 Jeff
 Jenkins
 Jenny
+Jeremy
 Jerome
 Jess
 Jesse
 Jetha
 Jinu
+Joachim
 Joby
 Jody
 Joey
@@ -749,6 +761,7 @@ Neis
 Nelson
 Neosi
 Netica
+Neumann
 Newman
 Nghia
 Nguyen
@@ -932,9 +945,11 @@ Saylor
 Sazonov
 Scaramuccia
 Schach
+Schillinger
 Schmadel
 Schrenk
 Schroeder
+Schulz
 Scotson
 ScottVerbeek
 Scribner
@@ -1142,6 +1157,7 @@ Wirianto
 Wojciech
 Woldeselassie
 Wolf
+Wolfgang
 Woloszyn
 Wolters
 Woods
@@ -1357,6 +1373,7 @@ nicolasconnault
 nlnrose
 nobelium
 nread
+oliviervalentin
 paca70
 palojacko
 papillon
@@ -1403,6 +1420,7 @@ skaldrom
 skodak
 spvickers
 stabijoh
+stemiwe
 stevando
 stigbjarne
 stronk7
@@ -1425,6 +1443,7 @@ uid536
 uid697
 unknown
 urs_hunkler
+viettruongq
 villate
 vinhle
 vinkmar

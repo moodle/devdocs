@@ -178,6 +178,7 @@ Usually on Monday
 | 3. | &#10003; |  | Ensure [Language pack for master (X.Y+1)](https://download.moodle.org/langpack/X.Y+1/) is available and merge the pull request MR4 for stop skipping the language upgrade in [moodle-ci-runner](https://github.com/moodlehq/moodle-ci-runner) repository. | Integration Team |
 | 4. | &#10003; |  | Ensure release retrospectives are held for each of the LMS teams and results are actioned. | Platform Manager / Head of educational solutions |
 | 5. | &#10003; |  | <p>Prepare for the next version of PHP.</p> <p>We need to ensure that the Moodle versions that will support the next version of PHP are compatible with it.</p> <ul><li>If an epic has not been created yet, create an epic issue for it (see [MDL-76405](https://tracker.moodle.org/browse/MDL-76405) as an example)</li> <li>Go through the list of changes for the upcoming PHP version, identify potential breaking changes in Moodle and add them to the epic.</li></ul> <p>Related links:</p> <ul><li>[PHP versions](https://www.php.net/supported-versions.php)</li> <li>[PHP.Watch](https://php.watch/versions)</li> </ul> | Integration team |
+| 6. | &#10003; |  | Create a fork in Developer documentation for the major release. | Integration Team |
 
 ## 1 month after
 

@@ -3,6 +3,7 @@
 Achour
 Appstore
 Atto
+Aurélie
 Aurelie
 AWST
 Badgr
@@ -12,6 +13,7 @@ Brickfield
 Bugcrowd
 Choicegroup
 CiBot
+CEST
 CONTEXT_BLOCK
 CONTEXT_COURSE
 CONTEXT_COURSECAT
@@ -34,6 +36,7 @@ Invisio
 Ionicons
 Josep
 JWKS
+Kanban
 MAINNODE
 MDL
 MDLQA

@@ -4,6 +4,9 @@ AJAX:
 AMD_Modal:
 - filePath: "/docs/guides/javascript/modal/index.md"
   slug: "/docs/guides/javascript/modal/"
+Acceptance_testing:
+- filePath: "/general/development/tools/behat/index.md"
+  slug: "/general/development/tools/behat/"
 Acceptance_testing/Browsers:
 - filePath: "/general/development/tools/behat/browsers/index.md"
   slug: "/general/development/tools/behat/browsers/"
@@ -37,6 +40,9 @@ Adding_a_web_service_to_a_plugin:
 Admin_settings:
 - filePath: "/docs/apis/subsystems/admin/index.md"
   slug: "/docs/apis/subsystems/admin/"
+Admin_tools:
+- filePath: "/general/projects/api/admin-tools.md"
+  slug: "/general/projects/api/admin-tools"
 Advanced_grading_API:
 - filePath: "/docs/apis/core/grading/index.md"
   slug: "/docs/apis/core/grading/"
@@ -112,6 +118,9 @@ Composer:
 Conditional_activities_API:
 - filePath: "/docs/apis/core/conditionalactivities/index.md"
   slug: "/docs/apis/core/conditionalactivities/"
+Contributing_to_Moodle:
+- filePath: "/general/community/contribute.md"
+  slug: "/general/community/contribute"
 Core_APIs:
 - filePath: "/docs/apis.md"
   slug: "/docs/apis"
@@ -130,6 +139,9 @@ Credits:
 Custom_Moodle_Apps:
 - filePath: "/general/app/customisation/custom-apps.md"
   slug: "/general/app/customisation/custom-apps"
+Custom_fields_API:
+- filePath: "/docs/apis/core/customfields/index.md"
+  slug: "/docs/apis/core/customfields/"
 DDL_functions:
 - filePath: "/docs/apis/core/dml/ddl.md"
   slug: "/docs/apis/core/dml/ddl"
@@ -237,9 +249,15 @@ Groups:
 Groups_API:
 - filePath: "/docs/apis/subsystems/group/index.md"
   slug: "/docs/apis/subsystems/group/"
+Grunt:
+- filePath: "/general/development/tools/nodejs.md"
+  slug: "/general/development/tools/nodejs"
 Hardening_new_Roles_system:
 - filePath: "/docs/apis/subsystems/roles.md"
   slug: "/docs/apis/subsystems/roles"
+Inplace_editable:
+- filePath: "/docs/apis/subsystems/output/inplace.md"
+  slug: "/docs/apis/subsystems/output/inplace"
 Integration_Review:
 - filePath: "/general/development/process/integration/index.md"
   slug: "/general/development/process/integration"
@@ -258,6 +276,9 @@ Lock_API:
 Machine_learning_backends:
 - filePath: "/docs/apis/plugintypes/mlbackend/index.md"
   slug: "/docs/apis/plugintypes/mlbackend/"
+Message_API:
+- filePath: "/docs/apis/core/message/index.md"
+  slug: "/docs/apis/core/message/"
 Mission:
 - filePath: "/general/community/mission.md"
   slug: "/general/community/mission"
@@ -1468,10 +1489,10 @@ New_docs_version_process:
 - filePath: "/general/development/process/release/newuserdocs.md"
   slug: "/general/development/process/release/newuserdocs"
 Output_API:
-- filePath: "/docs/apis/subsystems/output.md"
+- filePath: "/docs/apis/subsystems/output/index.md"
   slug: "/docs/apis/subsystems/output"
 Output_functions:
-- filePath: "/docs/apis/subsystems/output.md"
+- filePath: "/docs/apis/subsystems/output/index.md"
   slug: "/docs/apis/subsystems/output#output-functions"
 Overview:
 - filePath: "/general/community/intro.md"
