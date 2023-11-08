@@ -27,7 +27,7 @@ If you define a web service here, then the administrator cannot add or remove an
 
 ## Declaring a custom service declaration
 
-Service declarations should be placed in the `db/services.php` file of your plugin, for example `local/groupmanager/db/services.php`.
+Service declarations should be placed in the `db/services.php` file of your plugin (after function declaration), for example `local/groupmanager/db/services.php`.
 
 ```php title="local/groupmanager/db/services.php"
 $services = [
@@ -60,8 +60,8 @@ $services = [
 
         // Whether to allow file uploads.
         'uploadfiles'  => 0,
-    )
-);
+    ]
+];
 ```
 
 :::note
