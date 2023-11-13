@@ -92,6 +92,10 @@ The [Check API](./apis/subsystems/check/index.md) allows you to add security, pe
 
 The [Comment API](https://docs.moodle.org/dev/Comment_API) allows you to save and retrieve user comments, so that you can easily add commenting to any of your code.
 
+### Communication API (communication)
+
+The [Communication API](./apis/subsystems/communication/index.md) provides access to the messaging system and other communication providers (such as Matrix).
+
 ### Competency API (competency)
 
 The [Competency API](https://docs.moodle.org/dev/Competency_API) allows you to list and add evidence of competencies to learning plans, learning plan templates, frameworks, courses and activities.
