@@ -35,9 +35,7 @@ To get more debug output from npm commands, see [the available configuration fla
 
 ## I can't change the language
 
-If you're getting a network error for a url like `http://localhost:8100/assets/lang/es.json`, this probably means that you haven't installed the language packs.
-
-Currently, you can install them in your machine running the `scripts/update_lang.sh` script, but it may not work in your system if you don't have php installed. For future improvements, you can subscribe to [MOBILE-3864](https://tracker.moodle.org/browse/MOBILE-3864).
+If you're getting a network error for a url like `http://localhost:8100/assets/lang/es.json`, this probably means that you haven't installed the language packs. You can install them with `npm run lang:update-langpacks`.
 
 ## Error: `libsass` bindings not found. Try reinstalling node-sass?
 

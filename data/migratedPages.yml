@@ -1291,8 +1291,8 @@ Moodle_App_4.0.1_release_notes:
 - filePath: "/general/app_releases/v4/v4.0.1.md"
   slug: "/general/app_releases/v4/v4.0.1"
 Moodle_App_Accessibility:
-- filePath: "/general/app/accessibility.md"
-  slug: "/general/app/accessibility"
+- filePath: "/general/app/development/accessibility.md"
+  slug: "/general/app/development/accessibility"
 Moodle_App_Coding_Style:
 - filePath: "/general/development/policies/codingstyle-moodleapp.md"
   slug: "/general/development/policies/codingstyle-moodleapp"
