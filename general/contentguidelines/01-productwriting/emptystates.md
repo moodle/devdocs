@@ -39,7 +39,7 @@ Your search didn't match any courses
 
 <InvalidExample title="Don't">
 
-No courses found
+Nothing to show
 
 </InvalidExample>
 
@@ -51,7 +51,7 @@ You're not enrolled in any courses
 
 <InvalidExample title="Don't">
 
-No courses to show
+No courses found
 
 </InvalidExample>
 
