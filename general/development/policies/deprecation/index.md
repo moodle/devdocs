@@ -232,5 +232,6 @@ Named parameter arguments are available from PHP 8.0 onwards.
 - [String deprecation](../../../projects/api/string-deprecation.md)
 - [External functions deprecation](/docs/apis/subsystems/external/writing-a-service#deprecation)
 - [Capabilities deprecation](/docs/apis/subsystems/access#deprecating-a-capability)
+- [SCSS deprecation](./scss-deprecation.md)
 - [Process](../../process.md)
 - [Release process](../../process/release/index.md)
