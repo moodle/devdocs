@@ -1,6 +1,5 @@
 ---
 title: NodeJS and Grunt
-sidebar_position: 1
 ---
 
 Moodle uses a [NodeJS](https://nodejs.org/en/) toolchain to perform a number of development actions, including linting, transpilation of JavaScript, compilation of the Component Library, and a number of other routine tasks.

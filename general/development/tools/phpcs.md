@@ -4,7 +4,6 @@ tags:
   - coding style
   - policies
   - tools
-sidebar_position: 1
 ---
 
 import { Since } from '@site/src/components';
