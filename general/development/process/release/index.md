@@ -190,4 +190,4 @@ Usually on Monday
 
 ## See also
 
-- [Deprecation process](../../policies/deprecation.md)
+- [Deprecation process](../../policies/deprecation/index.md)
