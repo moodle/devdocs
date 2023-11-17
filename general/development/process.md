@@ -319,7 +319,7 @@ Decisions will be posted on the issue and that issue will be closed, allowing an
 
 - [Detailed workflow](./process/_files/workflow.jpg)
 - [Release process](./process/release)
-- [Deprecation](./policies/deprecation.md)
+- [Deprecation](./policies/deprecation/index.md)
 - [Integration dashboard](http://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11350)
 Walks-though of the process for contributors:
 - By Dan Poltawski, Integrator: http://www.slideshare.net/poltawski/how-to-guarantee-your-change-is-integrated-to-moodle-core, https://www.youtube.com/watch?v=836WtnM2YpM

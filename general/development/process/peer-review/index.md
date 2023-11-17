@@ -45,7 +45,7 @@ To allow the community of Moodle developers to work together, conventions should
 - Variables are named correctly (all lower case, no camel-case, no underscores).
 - Functions are named correctly (all lower case, no camel-case, underscores allowed).
 - PHP DocBlocks have been updated and adhere to coding style guide.
-- Where functions are being removed, the [deprecation policy](../../policies/deprecation.md) is followed.
+- Where functions are being removed, the [deprecation policy](../../policies/deprecation/index.md) is followed.
 - The code doesn't use deprecated functions.
 - $_GET, $_POST, $_REQUEST, $_COOKIE, and $_SESSION are never used.
 
@@ -182,7 +182,7 @@ Ensure that:
 
 - The PHPdoc comments on all classes, methods and fields are useful. (Comments that just repeat the function name are not helpful! Add value.)
 - Where an API has been changed significantly, the relevant upgrade.txt file has been updated with information.
-- Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but actually follow the [deprecation policy](../../policies/deprecation.md).
+- Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but actually follow the [deprecation policy](../../policies/deprecation/index.md).
 - Appropriate [labels](../../tracker/labels.md) have been added when there has been a function change, particularly
   - docs_required (any functional change, usually paired with `ui_change`),
   - dev_docs_required (any change to APIs, usually paired with `api_change`),

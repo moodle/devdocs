@@ -2028,7 +2028,7 @@ If you have a big task that is nearly done, apart a few TODOs, and you really wa
 
 There is a nice "to-do checker" reporting tool, restricted to admins and available via web @ [`lib/tests/other/todochecker.php`](https://github.com/moodle/moodle/blob/master/lib/tests/other/todochecker.php).
 
-Finally, don't forget to add any MDL-12345 used by your TODOs (and @todos too, unless part of the [deprecation process](../deprecation.md), those are handled apart) to the "Review TODOs Epic": MDL-47779 (requires login to see the issues)
+Finally, don't forget to add any MDL-12345 used by your TODOs (and @todos too, unless part of the [deprecation process](../deprecation/index.md), those are handled apart) to the "Review TODOs Epic": MDL-47779 (requires login to see the issues)
 
 ### CVS keywords
 
