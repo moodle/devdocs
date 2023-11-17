@@ -93,7 +93,7 @@ When adding SCSS code to the `deprecated.scss` file, it is important to add it u
 //
 ```
 
-And alongside with that, a new issue should be created in the tracker to remove the deprecated SCSS code with the title `Remove strings deprecated in X.Y` and in the epic `X.[Y+4]` deprecations.
+And alongside with that, a new issue should be created in the tracker to remove the deprecated SCSS code with the title `Remove SCSS deprecated in X.Y` and in the epic `X.[Y+4]` deprecations.
 
 After 4 major versions, the deprecated SCSS code will be removed from the `deprecated.scss` file.
 
