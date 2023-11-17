@@ -30,8 +30,10 @@ tags:
 | 3. | Do some testing with the production builds before sending the application to the stores (overall testing to see that nothing is broken): <ul><li>Correct definitive version name displayed (and commit)</li><li>AOT compiling worked</li><li>Language strings synchronised from [lang.moodle.net](https://lang.moodle.net)</li><li>New language packs added</li></ul> | All the team |
 | 4. | Send the applications to the stores for review. | Team Lead |
 | 5. | Check TAG/Release have been created in github ([moodlehq/moodleapp](https://github.com/moodlehq/moodleapp/releases)) with the version number. | Developer |
-| 6. | Mark the issue and the [version](https://tracker.moodle.org/projects/MOBILE?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page) as released in the tracker. | Team Lead |
-| 7. | Update [release notes](../../app_releases.md). | Team Lead |
+| 6. | Update the `ci` branch in the behat tests plugin ([moodlehq/moodle-local_moodleappbehat](https://github.com/moodlehq/moodle-local_moodleappbehat/)) with the version number. | Developer |
+| 7. | Open PR with release documentation updates (from [moodlemobile/devdocs:app-docs](https://github.com/moodlemobile/devdocs/tree/app-docs) to [moodle/devdocs](https://github.com/moodle/devdocs)). | Developer |
+| 8. | Mark the issue and the [version](https://tracker.moodle.org/projects/MOBILE?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page) as released in the tracker. | Team Lead |
+| 9. | Update [release notes](../../app_releases.md). | Team Lead |
 
 ## The following days
 

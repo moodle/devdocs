@@ -3,7 +3,6 @@ title: Automated code review
 tags:
   - Coding guidelines
   - Tools
-sidebar_position: 5
 ---
 Moodle issues submitted for review and inclusion into core are examined by our continuous integration (ci) system and checked against various automated tests. We use the automated checks to help improve the code quality in Moodle.
 

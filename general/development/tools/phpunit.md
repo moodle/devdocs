@@ -1,6 +1,5 @@
 ---
 title: PHPUnit
-sidebar_position: 1
 tags:
   - Quality Assurance
   - Testing

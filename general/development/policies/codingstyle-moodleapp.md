@@ -333,14 +333,22 @@ sayHello('World', undefined, undefined, 3);
 
 ### Using constants
 
-Constants that are exported should be declared outside of a class, to favour tree shaking:
+In order to optimize [Code Splitting](https://webpack.js.org/guides/code-splitting/), constants that are exported should be declared in [a constants file](../../../general/app/development/development-guide.md#constants-files):
 
 <ValidExample title="Good">
 
 ```ts
-export const MY_CONSTANT = '...';
+// src/core/features/my-feature/constants.ts
+export const MY_SERVICE_NAME = '...';
 
-export class MyService {}
+// src/core/features/my-feature/services/my-service.ts
+import { MY_SERVICE_NAME } from '../constants';
+
+export class MyService implements NamedService {
+
+    name = MY_SERVICE_NAME;
+
+}
 ```
 
 </ValidExample>
@@ -348,9 +356,27 @@ export class MyService {}
 <InvalidExample title="Bad">
 
 ```ts
-export class MyService {
+// src/core/features/my-feature/services/my-service.ts
+export class MyService implements NamedService {
 
-    public static readonly MY_CONSTANT = '...';
+    public static readonly MY_SERVICE_NAME = '...';
+
+    name = MyService.MY_SERVICE_NAME;
+
+}
+```
+
+</InvalidExample>
+
+<InvalidExample title="Bad">
+
+```ts
+// src/core/features/my-feature/services/my-service.ts
+export const MY_SERVICE_NAME = '...';
+
+export class MyService implements NamedService {
+
+    name = MY_SERVICE_NAME;
 
 }
 ```

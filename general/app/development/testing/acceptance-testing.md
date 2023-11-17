@@ -286,7 +286,15 @@ Behat tests can relate to particular versions of the mobile app. For these situa
 
 You can use two-digit or three-digit version numbers. For example, you could use `@app_from4.0` or `@app_upto3.9.5`.
 
-After changing the app version used for testing, make sure you re-run Behat init. It is the initialisation process that stores which version of the app you're using.
+Keep in mind that these tags will only take effect after using the `I enter the app` step, so it won't be effective for skipping steps in your Background blocks. If you need to skip these as well, you can do it using the following step:
+
+```gherkin
+  Background:
+    Given the Moodle site is compatible with this feature
+    And the following "courses" exist:
+```
+
+Also, after changing the app version used for testing, make sure you re-run Behat init. It is the initialisation process that stores which version of the app you're using.
 
 ### Testing against multiple app versions
 

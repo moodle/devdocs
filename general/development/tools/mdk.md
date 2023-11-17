@@ -2,7 +2,6 @@
 title: Moodle Development Kit
 tags:
   - tools
-sidebar_position: 3
 ---
 
 Every developer creates simple tools to avoid repeating cumbersome and/or boring tasks, and that is precisely why MDK has been created: to pack all those useful tools in a portable way across systems. Initially developed in Bash, the project moved to Python to avoid dealing with inconsistencies between Unix platforms, and eventually to support Windows.

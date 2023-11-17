@@ -65,7 +65,7 @@ When the application connects with a site, it will fetch information about which
 
 ## Platform Support
 
-The Moodle App only works with Moodle sites running version 3.1 or newer.
+The Moodle App only works with Moodle sites running version 3.5 or newer.
 
 The minimum platforms supported by the application are Android 5.1 (with Webview 61 or higher) and iOS 11.
 
