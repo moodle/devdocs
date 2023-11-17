@@ -440,6 +440,17 @@ See the [detailed documentation](./apis/core/clock/index.md) on how to use this 
 
 ## Enrolment
 
+### Meta enrolment support in CSV course upload
+
+<Since version="4.4" issueNumber="MDL-73852" />
+
+It is now possible to use meta enrolment when uploading courses using CSV file. Here is an example of CSV file that can be used to upload a course with meta enrolment:
+
+```php title="Example of CSV for meta enrolment"
+shortname,fullname,category_idnumber,enrolment_1,enrolment_1_metacoursename
+course1,Course 1,CAT1,meta,course2
+```
+
 ### Support for multiple instances in csv course upload
 
 <Since version="4.4" issueNumber="MDL-43820" />
