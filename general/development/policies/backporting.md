@@ -30,7 +30,7 @@ Should you feel that a new feature or improvement needs backporting, please foll
 
 The integration team will process backport requests, with the following guidelines:
 
-1. The integration team will together consider each request individually considering the needs of the community (influenced by forum posts, moodle partners, nagging developers etc).
+1. The integration team will together consider each request individually considering the needs of the community (influenced by forum posts, moodle partners, discussion with developers via tracker or private message, etc).
 2. Backports will happen not earlier than 3 weeks and not later than 2 months after the request was performed.
 3. Rationale will be given for rejection
 
