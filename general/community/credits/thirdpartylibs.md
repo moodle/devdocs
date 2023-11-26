@@ -192,6 +192,17 @@ A kickass library used to created Poppers in web applications.
 - **Copyright holders**:
   - 2016 Federico Zivolo and contributors
 
+### Popper.js
+
+A kickass library used to created Poppers in web applications.
+
+- **Location**: lib/amd/src/popper2.js
+- **Version**: v2.11.8
+- **License**:  MIT
+- **URL**: [https://github.com/floating-ui/floating-ui](https://github.com/floating-ui/floating-ui)
+- **Copyright holders**:
+  - 2016 Federico Zivolo and contributors
+
 ### Truncate.js
 
 Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has several options such as length, finishBlock and noBreak.

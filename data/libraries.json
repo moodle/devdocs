@@ -209,6 +209,18 @@
         "customised": false
     },
     {
+        "copyrightHolders": [
+            "2016 Federico Zivolo and contributors"
+        ],
+        "location": "lib/amd/src/popper2.js",
+        "name": "Popper.js",
+        "description": "A kickass library used to created Poppers in web applications.",
+        "version": "v2.11.8",
+        "license": "MIT",
+        "repository": "https://github.com/floating-ui/floating-ui",
+        "customised": false
+    },
+    {
         "copyrightHolders": [],
         "location": "lib/amd/src/truncate.js",
         "name": "Truncate.js",
