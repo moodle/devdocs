@@ -2073,6 +2073,7 @@ PHP includes multiple questionable features that are highly discouraged because 
 1. do not use `preg_replace()` with /e modifier - use callbacks in order to prevent unintended PHP execution.
 1. do not use backticks for shell command execution.
 1. do not use `goto`, neither the operator neither labels - use other programming techniques to control the execution flow.
+1. do not use `unserialize`, can lead to unintended PHP execution if not used properly with user supplied data - there are better methods of data exchange.
 
 ## Policy about coding-style only fixes
 
