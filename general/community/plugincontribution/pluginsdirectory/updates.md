@@ -8,7 +8,16 @@ tags:
   - Plugin documentation
 ---
 
-## 07/11/2023
+## 22 November 2023
+
+### Pagination in Plugins Directory
+
+Instead of the previous infinite scroll, this update introduces pagination to the plugins directory, making it easier to navigate through a large number of plugins.
+
+- the plugins are displayed in pages of 30 plugins each.
+- the total number of plugins and a pagination bar are shown at the bottom of the page.
+
+## 07 November 2023
 
 Different improvements in the main page:
 
