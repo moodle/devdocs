@@ -17,9 +17,49 @@ Please note that, in many cases, more specific APIs may be more appropriate, for
 
 :::
 
+import { Since } from '@site/src/components';
+
 ## User field display
 
 The [User fields](https://docs.moodle.org/dev/User_fields) class is mainly used when displaying tables of data about users. It indicates which extra fields (e.g. email) should be displayed in the current context based on the permissions of the current user. It also provides ways to get the necessary data from a query, and to obtain other generally-useful fields for user names and pictures.
+
+<Since version="4.3" issueNumber="MDL-77353" />
+
+### `core_user::get_profile_picture`
+
+Generate user picture.
+
+- **`user`** - The person to get details of.
+- **`context`** - The context will be used to determine the visibility of the user's picture.
+- **`options`** - Display options to be overridden:
+  - `courseid`: course id of user profile in link
+  - `size`: 35 (size of image)
+  - `link`: true (make image clickable - the link leads to user profile)
+  - `popup`: false (open in popup)
+  - `alttext`: true (add image alt attribute)
+  - `class`: image class attribute (default `userpicture`)
+  - `visibletoscreenreaders` true (whether to be visible to screen readers)
+  - `includefullname`: false (whether to include the user's full name together with the user picture)
+  - `includetoken`: false (whether to use a token for authentication. True for current user, int value for other user id)
+
+<Since version="4.3" issueNumber="MDL-77353" />
+
+### `core_user::get_profile_url`
+
+Generate profile url.
+
+- **`user`** - The person to get details of.
+- **`context`** - The context will be used to determine the visibility of the user's full name.
+
+<Since version="4.3" issueNumber="MDL-77353" />
+
+### `core_user::get_fullname`
+
+Generate user full name.
+
+- **`user`** - The person to get details of.
+- **`context`** - The context will be used to determine the visibility of the user's profile url.
+- **`options`** - Can include: override - if true, will not use forced firstname/lastname settings
 
 ## User fields definition
 
