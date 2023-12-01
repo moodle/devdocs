@@ -85,6 +85,9 @@ Blocks:
 Bug_triage:
 - filePath: "/general/development/process/triage.md"
   slug: "/general/development/process/triage"
+Cache_API:
+- filePath: "/docs/apis/subsystems/muc/index.md"
+  slug: "/docs/apis/subsystems/muc/"
 Calendar_API:
 - filePath: "/docs/apis/core/calendar/index.md"
   slug: "/docs/apis/core/calendar/"
