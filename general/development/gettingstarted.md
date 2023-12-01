@@ -21,7 +21,7 @@ tags:
 
 ## A quick start to Moodle development
 
-1. Create an account on [Moodle.org](https://moodle.org/). You will need this to access the [Moodle General Developer forum](https://moodle.org/mod/forum/view.php?f=33) and download [Moodle plugins](https://moodle.org/plugins). You can also sign up to free self-paced courses in our [Moodle Academy Developer Learning Pathway](https://learn.moodle.org/)
+1. Create an account on [Moodle.org](https://moodle.org/). You will need this to access the [Moodle General Developer forum](https://moodle.org/mod/forum/view.php?f=33) and download [Moodle plugins](https://moodle.org/plugins). You can also sign up to free self-paced courses in our [Moodle Academy Developer Learning Pathway](https://moodle.academy/course/index.php?categoryid=4)
 1. Create an account on [GitHub](https://github.com/) and [install Git on your computer](/docs/guides/git/). This is the source code version control repository tool of choice for Moodle development.
 1. [Install Moodle on your machine](https://docs.moodle.org/en/Installing_Moodle) or use a container environment like [moodle-docker](https://github.com/moodlehq/moodle-docker). You can also use [Moodle Development Kit (MDK)](./tools/mdk.md).
 
