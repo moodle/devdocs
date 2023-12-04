@@ -191,6 +191,7 @@ Charles
 Charlotte
 Charsley
 Chernyavskiy
+Chin
 Chris
 Christian
 Christiansen
@@ -282,6 +283,7 @@ Dmitry
 Dmytro
 Dobbelstein
 Domagalski
+Dominic
 Donald
 Dongsheng
 Doughty
