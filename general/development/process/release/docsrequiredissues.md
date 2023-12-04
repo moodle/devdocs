@@ -1,37 +1,25 @@
 ---
-title: Docs required issues
+title: Documentation process
 sidebar_position: 2
 tags:
   - Documentation
   - Processes
 ---
 
-According to the [Release process](./index.md#3-weeks-prior), 3 weeks prior to release we need to check [docs_required-labelled issues](https://tracker.moodle.org/issues/?jql=labels%20%3D%20docs_required%20AND%20status%20%3D%20Closed) and write new documentation, removing the label and commenting in the issue when the work is done.
+## Issue labelling
 
-Ideally, shortly after release, say within 4 weeks, the number of `docs_required` labelled issues for the versions being released should be zero.
+Prior to each major release, add labels to closed issues as follows:
 
-## Comments templates
+- `docs_required` - new features and improvements which need documenting, also changes which require the existing documentation to be updated.
+- `ui_change` - significant changes to the student or teacher user interface.
+- `upgrade_notes` - issues that may affect upgraded sites such as new site admin settings, user tours, major UI changes.
 
-### Improvement documented
+## Writing documentation
 
- ```
-Removing the docs_required label as this improvement is now documented: https://docs.moodle.org/en/Groups
-If you notice that the documentation can be improved, please feel free to log in to the wiki and edit the page.
-Help in keeping Moodle documentation accurate and up-to-date is much appreciated.
-```
-
-When adding documentation about improvements or new features to Moodle Docs, it can be helpful to mention the tracker issue number in the wiki page edit summary.
-
-### Request for information
-
-```
-This issue is labelled docs_required; however, it seems it's a bug fix rather than a new feature or improvement.
-Please can anyone specify what needs documenting; otherwise the docs_required label can be removed.
-```
-
-### Nothing found needing documenting
-
-```
-Removing the docs_required label as there doesn't seem to be anything needing documenting, nor any screenshots needing updating.
-If not, please describe what needs doing in a comment and re-add the docs_required label.
-```
+1. Go through the list of [closed MDL docs_required-labelled issues](https://tracker.moodle.org/issues/?jql=project%20%3D%20MDL%20AND%20status%20%3D%20Closed%20AND%20labels%20%3D%20docs_required) and write documentation based on the issue description or testing instructions. If it's unclear, comment in the issue asking for help.
+2. Go through the list of ui_change-labelled issues for the version e.g. [ui_change-labelled issues with 4.3 fix version](https://tracker.moodle.org/issues/?jql=project%20%3D%20MDL%20AND%20resolution%20%3D%20Fixed%20AND%20fixVersion%20%3D%204.3%20AND%20labels%20%3D%20ui_change) and update existing documentation including screenshots.
+3. Go through the list of upgrade_notes-labelled issues for the version e.g. [upgrade_notes-labelled issues with 4.3 fix version](https://tracker.moodle.org/issues/?jql=project%20%3D%20MDL%20AND%20resolution%20%3D%20Fixed%20AND%20fixVersion%20%3D%204.3%20AND%20labels%20%3D%20upgrade_notes) and add documentation to the docs page [Upgrading](https://docs.moodle.org/en/Upgrading) under 'Possible issues that may affect you in Moodle x'.
+4. When saving the documentation wiki edit, mention the tracker issue number in the edit summary.
+5. For a new feature or improvement with at least a paragraph of documentation, edit the tracker issue and add the documentation link. For an existing documentation update, there is no need to add a documentation link.
+6. Optional: Add a comment to the tracker issue with the documentation link.
+7. Remove the `docs_required` label from the tracker issue. Leave the `ui_change` and `upgrade_notes` labels on the issues.
