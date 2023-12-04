@@ -1,5 +1,5 @@
 ---
-title: New user docs version
+title: New user docs version process
 sidebar_label: New user docs
 sidebar_position: 1
 tags:
@@ -23,9 +23,8 @@ Tidying up in current latest version wiki:
 1. Check and delete as necessary https://docs.moodle.org/en/Special:NewFiles
 1. Check and delete as necessary https://docs.moodle.org/en/Special:ListDuplicatedFiles
 1. Check and delete as necessary https://docs.moodle.org/en/Special:UnusedFiles
-1. (Check and delete as necessary https://docs.moodle.org/en/Special:ShortPages )
 
-Create a tracker issue for creating new en and de version wikis similar to [MDLSITE-6433](https://tracker.moodle.org/browse/MDLSITE-6433).
+Create a tracker issue for creating new en and de version wikis similar to [MDLSITE-7357](https://tracker.moodle.org/browse/MDLSITE-7357).
 
 <!-- cspell:ignore Sitenotice -->
 
@@ -38,7 +37,7 @@ In new version wiki:
 1. Add message to MediaWiki:Sitenotice
 1. Remove new features template from all pages in Category:New_features
 1. Edit Template:New_features and Category:New_features
-1. Go through [tracker issues with the docs_required label](https://tracker.moodle.org/issues/?jql=labels%20%3D%20docs_required) and the release notes for the upcoming release and add documentation on new features plus the new features template
+1. Follow the [Documentation process](./docsrequiredissues) for adding documentation about new features and improvements
 1. Create Upgrading_to_Moodle_x.y and redirect to Upgrading
 1. Update version number in Template:Version and Template:Version2 and Git for Administrators
 1. Review Special:WantedPages
