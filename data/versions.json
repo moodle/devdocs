@@ -10,8 +10,8 @@
             "releases": [
                 {
                     "name": "4.4.0",
-                    "releaseDate": "14 October 2024",
-                    "version": 2024041400,
+                    "releaseDate": "22 April 2024",
+                    "version": 2024042200,
                     "upgradePath": "https://docs.moodle.org/404/en/Upgrading"
                 }
             ]
@@ -19,8 +19,8 @@
         {
             "name": "4.3",
             "releaseDate": "9 October 2023",
-            "generalEndDate": "14 October 2024",
-            "securityEndDate": "14 April 2025",
+            "generalEndDate": "7 October 2024",
+            "securityEndDate": "21 April 2025",
             "isLTS": false,
             "releases": [
                 {
@@ -31,7 +31,6 @@
                 },
                 {
                     "name": "4.3.1",
-                    "releaseNoteUrl": false,
                     "releaseDate": "11 December 2023",
                     "version": 2023100901
                 }
@@ -67,7 +66,6 @@
                 },
                 {
                     "name": "4.2.4",
-                    "releaseNoteUrl": false,
                     "releaseDate": "11 December 2023",
                     "version": 2023042404
                 }
@@ -118,7 +116,6 @@
                 },
                 {
                     "name": "4.1.7",
-                    "releaseNoteUrl": false,
                     "releaseDate": "11 December 2023",
                     "version": 2022112807
                 }
@@ -194,7 +191,6 @@
                 },
                 {
                     "name": "4.0.12",
-                    "releaseNoteUrl": false,
                     "releaseDate": "11 December 2023",
                     "version": 2022041912
                 }
@@ -301,7 +297,6 @@
                 },
                 {
                     "name": "3.11.18",
-                    "releaseNoteUrl": false,
                     "releaseDate": "11 December 2023",
                     "version": 2021051718
                 }
@@ -512,6 +507,11 @@
                     "name": "3.9.24",
                     "releaseDate": "9 October 2023",
                     "version": 2020061524
+                },
+                {
+                    "name": "3.9.25",
+                    "releaseDate": "11 December 2023",
+                    "version": 2020061525
                 }
             ]
         },

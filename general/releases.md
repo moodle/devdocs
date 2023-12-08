@@ -19,7 +19,7 @@ The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/
 
 <SupportedReleases />
 
-![Release graph summarising the currently supported Moodle releases in a visual form](_releases/4023_release_graph.png)
+![Release graph summarising the currently supported Moodle releases in a visual form](_releases/4031_release_graph.png)
 
 <details>
     <summary>Release graph key</summary>
@@ -96,8 +96,8 @@ Minor releases dates differ slightly from release to release depending on the ti
 
 :::info
 
-Bug fixes for general core bugs in 4.3.x will end 14 October 2024 (12 months).<br/>
-Bug fixes for security issues in 4.3.x will end 14 April 2025 (18 months).
+Bug fixes for general core bugs in 4.3.x will end 7 October 2024 (12 months).<br/>
+Bug fixes for security issues in 4.3.x will end 21 April 2025 (18 months).
 
 :::
 
