@@ -7,45 +7,17 @@ tags:
   - Legal
 ---
 
-## Trademarks
+## Copyright in the Moodle software and documentation
 
-### The Moodle Trademark
+The overall **Moodle** _software_ package is Copyright © 1999 onwards, [Martin Dougiamas](http://dougiamas.com/) with portions contributed/copyrighted by many others (see the [Developer credits](http://moodle.org/dev/) and the source code itself) and all of it is provided under the terms of the GPL. This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either [version 2 of the License](http://www.gnu.org/licenses/gpl-2.0.txt) (for Moodle 1.x), [version 3 of the License](http://www.gnu.org/licenses/gpl-3.0.txt) (for Moodle 2.x) or (at your option) any later version, as explained in clause 14 of Version 3 reproduced below.
 
-The brand and word "Moodle" has trade mark protection in many countries around the world. Various Moodle™ trade marks are owned by either Moodle Pty Ltd or one of its associated entities. The law obligates trade mark owners to police their trade marks and prevent the use of confusingly similar names by third parties.
-
-We have created a more concise and thorough set of [Trademark Guidelines](https://moodle.com/wp-content/uploads/2023/02/Moodle-Trademark-Guidelines-2023-4.pdf) to help you understand how to comply with Moodle's trade mark requirements. The Trademark Guidelines will also assist our Moodle Certified Partners and the community to understand some of the principles that inform Moodle's stance whenever potential infringement has been detected by us or our community.
-
-We need to be clear about use of the word "Moodle" and how we restrict its use when promoting commercial Moodle™ branded services. The proper use of trade marks reliably assures consumers about the quality of the associated products or services and where they have been derived from. Because the Moodle LMS is made available under the open source 'GNU General Public License' that permits you to modify the copyrighted software, the distribution of such modified software in combination with Moodle trade marks can potentially mislead others in the community. To be clear, the GNU GPL does not include an implied right or licence to use Moodle's trade marks.
-
-We do all this to protect the very business model that allows us to continue developing various Moodle software solutions for you.
-
-### Allowed uses of "Moodle"
-
-The following uses don't require any permission at all:
-
-- Referring to the software or the Moodle project as the "Moodle™ software" or the "Moodle™ project"
-- Describing your own implementation of the Moodle™ software platform (including within corporate settings).
-- Describing a Moodle-based community hub.
-- Describing certain software you've made that integrates with Moodle™ branded software (e.g. a Moodle™ integration feature on another system).
-
-### Restricted uses of "Moodle"
-
-The following uses are generally prohibited without explicit and direct permission being granted to you by Moodle Pty Ltd. We do this to protect the Moodle™ project from software and sites which could confuse people. If in doubt, reach out for clarification at [trademarks@moodle.com](mailo:trademarks@moodle.com)
-
-- You can't use the word "Moodle" or any Moodle logos for commercial purposes without prior written permission from Moodle HQ.
-- You can't use "Moodle" in the name of your software (including Mobile apps).
-- You can't use "Moodle" in your company name.
-- You can't use "Moodle" in your domain name.
-- You can't use "Moodle" in advertising-related keywords (such as Adsense).
-- You can't use "Moodle" to describe services around Moodle (such as hosting, training, support, consulting, course creation services, theme development, customisation, installation, integration, analytics and certification) that cause consumers to be confused that you are associated with Moodle HQ if you are not. This applies even if you do not charge for the services. Note that usually only Moodle Partners have this permission.
-
-## Copyright License for Moodle
-
-The overall **Moodle** *software package* is Copyright © 1999 onwards, [Martin Dougiamas](http://dougiamas.com/) with portions contributed/copyrighted by many others (see the [Developer credits](http://moodle.org/dev/) and the source code itself) and all of it is provided under the terms of the GPL.   This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either [version 2 of the License](http://www.gnu.org/licenses/gpl-2.0.txt) (for Moodle 1.x), [version 3 of the License](http://www.gnu.org/licenses/gpl-3.0.txt) (for Moodle 2.x) or (at your option) any later version.
-
-The **Moodle** *documentation* is Copyright © 2005 onwards by the individual authors of each page (see History link on each page) and is provided to all under the same terms of the GPL as the Moodle software.
+The **Moodle** _documentation_ is Copyright © 2005 onwards by the individual authors of each page (see History link on each page) and is provided to all under the same terms of the GPL as the Moodle software.
 
 Moodle and the Moodle Documentation are distributed in the hope that they will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License below for more details.
+
+## Use of Moodle Marks
+
+The word _Moodle_ and associated Moodle logos are trademarks or registered trademarks of Moodle Pty Ltd or its related affiliates. Permitted uses are stated on our website at http://moodle.com/trademarks and the Trademark Guidelines available there. Most importantly, without prior written permission from Moodle, you cannot use the word "Moodle" or any Moodle logos (nor any derivatives thereof, or any words or marks that are deceptively or confusingly similar) for any commercial purposes, or in ways that are likely to confuse consumers about the origin of the software, or to suggest that you are in any way associated with or endorsed by Moodle.
 
 ```
                     GNU GENERAL PUBLIC LICENSE
