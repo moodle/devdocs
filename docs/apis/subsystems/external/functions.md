@@ -117,12 +117,12 @@ class create_groups extends \core_external\external_api {
     }
 
     public static function execute_returns(): external_single_structure {
-        return new external_single_structure(
+        return new external_single_structure([
             'groups' => new external_multiple_structure([
                 'id' => new external_value(PARAM_INT, 'Id of the created user'),
                 'name' => new external_value(PARAM_RAW, 'The name of the group'),
             ])
-        );
+        ]);
     }
 }
 ```
