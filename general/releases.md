@@ -15,7 +15,7 @@ This page lists all official releases of Moodle, grouped by branch in reverse ch
 
 ## Version support
 
-The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/Long-term_support) version is Moodle 4.1.
+The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/Long-term_support) version is Moodle 4.1. The next LTS version will be Moodle 4.5.
 
 <SupportedReleases />
 
