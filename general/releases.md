@@ -118,7 +118,7 @@ Bug fixes for security issues in 4.2.x will end 7 October 2024 (18 months).
 
 :::info
 
-Bug fixes for general core bugs in 4.1.x will end 11 December 2023 (13 months).<br/>
+Bug fixes for general core bugs in 4.1.x ended 11 December 2023 (13 months).<br/>
 Bug fixes for security issues in 4.1.x will end 8 December 2025 (37 months).
 
 :::
@@ -130,7 +130,7 @@ Bug fixes for security issues in 4.1.x will end 8 December 2025 (37 months).
 :::info
 
 Bug fixes for general core bugs in 4.0.x ended 12 June 2023 (13 months).<br/>
-Bug fixes for security issues in 4.0.x will end 11 December 2023 (19 months).
+Bug fixes for security issues in 4.0.x ended 11 December 2023 (19 months).
 
 :::
 
@@ -141,7 +141,7 @@ Bug fixes for security issues in 4.0.x will end 11 December 2023 (19 months).
 :::info
 
 Bug fixes for general core bugs in 3.11.x ended 14 November 2022 (12 months plus 6 months extension).<br/>
-Bug fixes for security issues in 3.11.x will end 11 December 2023 (18 months plus 13 months extension).
+Bug fixes for security issues in 3.11.x ended 11 December 2023 (18 months plus 13 months extension).
 
 :::
 
@@ -163,7 +163,7 @@ Bug fixes for security issues in 3.10.x ended 9 May 2022 (18 months).
 :::info
 
 Bug fixes for general core bugs in 3.9.x ended 10 May 2021 (12 months). <br/>
-Bug fixes for security issues in 3.9.x will end 11 December 2023 (36 months plus 7 months extension).
+Bug fixes for security issues in 3.9.x ended 11 December 2023 (36 months plus 7 months extension).
 
 :::
 
