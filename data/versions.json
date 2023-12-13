@@ -5,7 +5,7 @@
             "name": "4.4",
             "releaseDate": "22 April 2024",
             "generalEndDate": "21 April 2025",
-            "securityEndDate": "9 December 2025",
+            "securityEndDate": "8 December 2025",
             "isLTS": false,
             "releases": [
                 {
