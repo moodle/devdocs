@@ -23,9 +23,9 @@ Moodle is in the process of updating and modernising its [Code of Conduct](./cod
 
 Anyone can get involved with, and add to, these resources - you don't have to be a developer or documentation aficionado. Here are a few ideas to get started:
 
+- Make a small change such as a typo fix
 - Look at our list of [good first issues](https://github.com/moodle/devdocs/labels/good%20first%20issue)
 - [Migrate a document](#migrating-legacy-docs) from the legacy docs
-- Fix typos and grammatical errors
 - Document new Moodle features
 - Mark a deprecated feature as deprecated
 - Raise issues in GitHub for [features which need to be documented](https://github.com/moodle/devdocs/issues/new?assignees=&labels=documentation%2C+help+wanted%2C+enhancement&template=documentation-request.yml&title=%5Bdocs%5D+Create+documentation+for+%5BFeature%5D)
@@ -33,7 +33,20 @@ Anyone can get involved with, and add to, these resources - you don't have to be
 
 If you need help, please reach out to us and we will do our best to advise you.
 
-## Getting started
+## Making a small change
+
+To make a small change, such as a typo fix:
+
+1. Follow the link at the bottom of the page 'Edit this page'.
+2. Edit the text to make the change then click the Preview button to check it looks OK.
+3. When you're happy with your edit, click the button 'Commit changes...'.
+4. In the 'Commit message' field, add a short message describing the change.
+5. Click 'Propose changes'.
+6. Click 'Create pull request'.
+7. Optional: add a description of the change.
+8. Click 'Create pull request' again.
+
+## Getting started with a development environment
 
 Our documentation is built using [Docusaurus](https://docusaurus.io), a powerful open source documentation project written in JavaScript. For more detailed information, see our [installation guide](./installation.md) to install your development environment and get started.
 
@@ -172,8 +185,6 @@ For migrated documentation, if you can provide updated code examples, then this 
 We welcome contributions to these developer resources. If you've not contributed before and would like to do so, then you may like to look at our list of [good first issues](https://github.com/moodle/devdocs/labels/good%20first%20issue) to get you started.
 
 If you have domain-specific knowledge in an area which has outstanding documentation then the [`help wanted`](https://github.com/moodle/devdocs/labels/help%20wanted) search may give you some inspiration.
-
-If you only wish to make a small change, you may want to use the [GitHub Edit interface](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files#editing-files-in-another-users-repository) and to open a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
 ## Development
 
