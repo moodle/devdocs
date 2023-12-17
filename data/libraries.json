@@ -231,6 +231,17 @@
         "customised": true
     },
     {
+        "copyrightHolders": [],
+        "location": "lib/aws-sdk",
+        "name": "AWS SDK for PHP",
+        "description": "The AWS SDK for PHP library",
+        "version": "3.277.11",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/aws/aws-sdk-php",
+        "customised": false
+    },
+    {
         "copyrightHolders": [
             "2005, Jon Papaioannou"
         ],
@@ -465,6 +476,18 @@
         "license": "LGPL",
         "licenseversion": "2.1+",
         "repository": "https://github.com/ezyang/htmlpurifier",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2014 Michael Dowling, https://github.com/mtdowling"
+        ],
+        "location": "lib/jmespath",
+        "name": "JMESPath",
+        "description": "The JMESPath library",
+        "version": "2.6.1",
+        "license": "MIT",
+        "repository": "https://github.com/jmespath/jmespath.php",
         "customised": false
     },
     {

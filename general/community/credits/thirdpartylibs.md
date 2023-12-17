@@ -212,6 +212,15 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 - **License**:  MIT
 - **URL**: [https://github.com/pathable/truncate](https://github.com/pathable/truncate)
 
+### AWS SDK for PHP
+
+The AWS SDK for PHP library
+
+- **Location**: lib/aws-sdk
+- **Version**: 3.277.11
+- **License**:  Apache 2.0
+- **URL**: [https://github.com/aws/aws-sdk-php](https://github.com/aws/aws-sdk-php)
+
 ### axe-core
 
 Accessibility testing engine for websites and other HTML-based user interfaces.
@@ -420,6 +429,17 @@ Filters HTML.
 - **Version**: 4.16.0
 - **License**:  LGPL 2.1+
 - **URL**: [https://github.com/ezyang/htmlpurifier](https://github.com/ezyang/htmlpurifier)
+
+### JMESPath
+
+The JMESPath library
+
+- **Location**: lib/jmespath
+- **Version**: 2.6.1
+- **License**:  MIT
+- **URL**: [https://github.com/jmespath/jmespath.php](https://github.com/jmespath/jmespath.php)
+- **Copyright holders**:
+  - 2014 Michael Dowling, https://github.com/mtdowling
 
 ### jQuery
 
