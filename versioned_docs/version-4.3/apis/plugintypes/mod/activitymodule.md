@@ -62,7 +62,7 @@ The information about an activity will be accessible through the 'i' icon. Click
 
 ## Third party plugin developers
 
-Course module plugins can add items to the activity chooser by implementing the `{plugin}_get_content_items()` callback in their plugin lib (lib.php). This callback replaces the now deprecated `{plugin}_get_shortcuts()` method.
+Course module plugins can add items to the activity chooser by implementing the `{plugin}_get_course_content_items()` callback in their plugin lib (lib.php). This callback replaces the now deprecated `{plugin}_get_shortcuts()` method.
 
 In order for activity starring and recommendations to work, each content_item has an ID which is subject to some additional rules. Each ID:
 
