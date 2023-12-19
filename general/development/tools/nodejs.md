@@ -146,7 +146,7 @@ Install grunt, grunt sass and grunt watch modules. Note that you should put the 
 
 ```bash title="Installing grunt and grunt modules"
     $ cd /path/to/your/plugin/root
-    $ npm install --save-dev grunt grunt-contrib-sass grunt-contrib-watch grunt-load-gruntfile
+    $ npm install --save-dev grunt grunt-contrib-sass grunt-contrib-watch grunt-load-gruntfile grunt-contrib-clean
 ```
 
 Create a `Gruntfile.js` in the root of your plugin and configure the task for building CSS files from SCSS files:
@@ -171,24 +171,40 @@ module.exports = function (grunt) {
             files: "scss/*.scss",
             tasks: ["sass"]
         },
-        css: {
+        sass: {
             // Production config is also available.
             development: {
                 options: {
+                    // Saas output style.
+                     style: "expanded",
                     // Specifies directories to scan for @import directives when parsing.
                     // Default value is the directory of the source, which is probably what you want.
-                    paths: ["css/"],
-                    compress: true
+                    loadPath: ["myOtherImports/"]
                 },
                 files: {
-                    "styles.css": "scss/styles.css"
+                    "styles.css": "scss/styles.scss"
                 }
             },
+            prod:{
+                options: {
+                    // Saas output style.
+                    style: "compressed",
+                    // Specifies directories to scan for @import directives when parsing.
+                    // Default value is the directory of the source, which is probably what you want.
+                    loadPath: ["myOtherImports/"]
+                },
+                files: {
+                    "styles-prod.css": "scss/styles.scss"
+                }
+            }
         }
     });
     // The default task (running "grunt" in console).
-    grunt.registerTask("default", ["css"]);
+    grunt.registerTask("default", ["sass:development"]);
+    // The production task (running "grunt prod" in console).
+    grunt.registerTask("prod", ["sass:prod"]);
 };
+
 ```
 
 Now running `grunt` or `grunt css` in your plugin root folder will compile the file and saves it as `styles.css`. Running "grunt watch" will watch the scss/*.scss files and if some is changed, it will immediately rebuild the CSS file.
