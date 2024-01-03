@@ -46,11 +46,11 @@ The main content area shows tabs for secondary navigation with a maximum of 5 it
 The secondary navigation pulls information mainly from the settings navigation node from each context. Any plugin that implements the existing navigation hooks will have their items added to the secondary navigation.
 Existing navigation hooks:
 
-- {module}_extend_navigation
-- {local}_extend_navigation
-- {report}_report_extend_navigation
-- {plugin}_extend_navigation_course
-- {plugin}_extend_navigation_category_settings
+- `{module}_extend_navigation`
+- `{local}_extend_navigation`
+- `{report}_report_extend_navigation`
+- `{plugin}_extend_navigation_course`
+- `{plugin}_extend_navigation_category_settings`
 
 #### Changing the order of tabs
 

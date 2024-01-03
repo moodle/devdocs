@@ -193,7 +193,7 @@ In addition to these files, feature folders may contain the following:
 - `{feature-name}.scss` — Reusable styles for components defined in this module.
 - `classes/` — Same as [core/classes/](#coreclasses).
 - `utils/` — Same as [core/utils/](#coreutils).
-- `components/` — Same as [core/components/](#corecomponents) (with the *core-{feature-name}-* namespace).
+- `components/` — Same as [core/components/](#corecomponents) (with the *`core-{feature-name}-`* namespace).
 - `directives/` and `pipes/` — Same as [core/directives/ and core/pipes/](#coredirectives-and-corepipes).
 - `lang.json` — See [Language files](#language-files).
 - `constants.ts` — See [Constants files](#constants-files).
@@ -204,7 +204,7 @@ In order to distinguish code from each feature, classes will be prefixed with th
 
 ### addons/
 
-This folder contains [Domain Modules](https://angular.io/guide/module-types#domain-ngmodules) for additional features. Its structure is similar to [core/features/](#corefeatures), but the namespace is *addon-{addon-name}-* and addon modules are decoupled from core and each other. This means that any code within core shouldn't import anything from addons, and addons shouldn't import anything from each other.
+This folder contains [Domain Modules](https://angular.io/guide/module-types#domain-ngmodules) for additional features. Its structure is similar to [core/features/](#corefeatures), but the namespace is *`addon-{addon-name}-`* and addon modules are decoupled from core and each other. This means that any code within core shouldn't import anything from addons, and addons shouldn't import anything from each other.
 
 This level of decoupling can be achieved using the [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle), which in this case is easier to apply using [Angular's Dependency Injection framework](https://angular.io/guide/dependency-injection). However, this theoretical nirvana has not been achieved in the current status of the codebase. And it's arguable whether it is desirable, given the cost of adhering strictly to this pattern.
 
