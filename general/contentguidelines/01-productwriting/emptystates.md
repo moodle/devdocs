@@ -61,14 +61,14 @@ On first use or user-emptied states, writing an encouraging title not only infor
 
 <ValidExample title="Do">
 
-**You're all caught up!**  
+**You're all caught up!**
 There are no upcoming activities in your timeline.
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**No upcoming activities**  
+**No upcoming activities**
 There are no upcoming activities in your timeline.
 
 </InvalidExample>
@@ -81,14 +81,14 @@ Explain briefly what users can do to fill the empty state.
 
 <ValidExample title="Do">
 
-**Your search didn't match any courses**  
+**Your search didn't match any courses**
 Try adjusting your filters or browse all courses.
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**No results**  
+**No results**
 There are no results for your search.
 
 </InvalidExample>
@@ -97,14 +97,14 @@ If users can't do anything themselves to fill in the empty state, explain what t
 
 <ValidExample title="Do">
 
-**You're not enrolled in any course**  
+**You're not enrolled in any course**
 Once you enrol in a course, it will appear here.
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**No courses**  
+**No courses**
 You're not enrolled in any course yet.
 
 </InvalidExample>
@@ -117,32 +117,32 @@ Keep calls to action concise and actionable, and tell the user exactly what they
 
 <ValidExample title="Do">
 
-**You're not enrolled in any course**  
-Once you enrol in a course, it will appear here.  
+**You're not enrolled in any course**
+Once you enrol in a course, it will appear here.
 CTA: **Browse courses**
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**No courses**  
-You're not enrolled in any course yet.  
+**No courses**
+You're not enrolled in any course yet.
 CTA: **Search**
 
 </InvalidExample>
 
 <ValidExample title="Do">
 
-**This database is empty**  
-Add entries to start building your activity.  
+**This database is empty**
+Add entries to start building your activity.
 CTA: **Add entry**
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**Add the first entry**  
-This database has no entries yet.  
+**Add the first entry**
+This database has no entries yet.
 CTA: **Continue**
 
 </InvalidExample>
@@ -153,8 +153,8 @@ You can include the secondary call to action as a link in the description:
 
 <ValidExample title="Do">
 
-**Create your first course**  
-Need help getting started? Check out our [Quickstart guide](#calls-to-action).  
+**Create your first course**
+Need help getting started? Check out our [Quick start guide](#calls-to-action).
 CTA: **Add course**
 
 </ValidExample>
@@ -163,7 +163,7 @@ Or include it as a secondary call to action:
 
 <ValidExample title="Do">
 
-**No entries yet**  
+**No entries yet**
 CTAs: Import entries | **Add entry**
 
 </ValidExample>
