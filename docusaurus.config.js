@@ -150,66 +150,6 @@ const config = {
                 editCurrentVersion: true,
             },
         ],
-
-        [
-            '@docusaurus/plugin-pwa',
-            {
-                debug: isDeployPreview,
-                offlineModeActivationStrategies: [
-                    'appInstalled',
-                    'standalone',
-                    'queryString',
-                ],
-                pwaHead: [
-                    {
-                        tagName: 'link',
-                        rel: 'icon',
-                        href: '/img/icons/orange_m.svg',
-                    },
-                    {
-                        tagName: 'link',
-                        rel: 'manifest',
-                        href: '/manifest.json',
-                    },
-                    {
-                        tagName: 'meta',
-                        name: 'theme-color',
-                        content: 'rgb(208, 99, 0)',
-                    },
-                    {
-                        tagName: 'meta',
-                        name: 'apple-mobile-web-app-capable',
-                        content: 'yes',
-                    },
-                    {
-                        tagName: 'meta',
-                        name: 'apple-mobile-web-app-status-bar-style',
-                        content: '#000',
-                    },
-                    {
-                        tagName: 'link',
-                        rel: 'apple-touch-icon',
-                        href: '/img/icons/maskable_icon.png',
-                    },
-                    {
-                        tagName: 'link',
-                        rel: 'mask-icon',
-                        href: '/img/icons/maskable_icon.png',
-                        color: 'rgb(208, 99, 0)',
-                    },
-                    {
-                        tagName: 'meta',
-                        name: 'msapplication-TileImage',
-                        content: '/img/icons/maskable_icon.png',
-                    },
-                    {
-                        tagName: 'meta',
-                        name: 'msapplication-TileColor',
-                        content: '#000',
-                    },
-                ],
-            },
-        ],
     ],
 };
 
