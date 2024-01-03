@@ -221,8 +221,8 @@ Please follow the instructions from the [README file](https://github.com/FMCorz/
 When you install MDK, you will be asked for the following information (with default responses indicated in square brackets):
 
 - What user are you initialising MDK for? [default - your current username]
-- What is the `DocumentRoot` of your virtual host? [`~/www`] <- **See note below**
-- Where do you want to store your Moodle instances? [`~/moodles`] <- This can be in your home directory (the default) because a symlink will be created using `DocumentRoot`
+- What is the `DocumentRoot` of your virtual host? [`~/www`] \<- **See note below**
+- Where do you want to store your Moodle instances? [`~/moodles`] \<- This can be in your home directory (the default) because a symlink will be created using `DocumentRoot`
 - What is your Github username? (Leave blank if not using Github)
 - What is your MySQL user? [`root`]
 - What is your MySQL password? [`root`]
