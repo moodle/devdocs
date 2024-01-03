@@ -11,6 +11,17 @@ import { Since } from '@site/src/components';
 
 This page highlights the important changes that are coming in Moodle 4.4 for developers.
 
+## Meta enrolment support in csv course upload
+
+<Since version="4.4" issueNumber="MDL-73852" />
+
+It is now possible to use meta enrolment when uploading courses using CSV file. Here is an example of csv file that can be used to upload a course with meta enrolment:
+
+```php
+shortname,fullname,category_idnumber,enrolment_1,enrolment_1_metacoursename
+course1,Course 1,CAT1,meta,course2
+```
+
 ## Multiple enrol instances of same type in csv course upload
 
 <Since version="4.4" issueNumber="MDL-43820" />
