@@ -80,6 +80,7 @@ mod/assign/feedback/file
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable no-space-in-code -->
+<!-- markdownlint-disable no-inline-html -->
 
 export const settingsExample = `
 $settings->add(
@@ -109,6 +110,7 @@ All feedback plugins should include one setting named 'default' to indicate if t
 
 <!-- markdownlint-save -->
 <!-- markdownlint-disable code-block-style -->
+<!-- markdownlint-disable no-inline-html -->
 
 <LocalLib
     required

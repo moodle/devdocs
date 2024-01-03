@@ -319,15 +319,15 @@ const fetchOneDoc = async (pageTitle, newPath, options) => {
         ));
         logger.info(`=> Running migration phase ${phaseData.path}`);
         if (phaseData.type === 'markdownlint') {
-            // Use markdownlint-cli2-config to specify these as separate phases.
+            // Use markdownlint-cli2 to specify these as separate phases.
             // This is necessary because if two rules operate on the same text, then no fix is made.
             // The order of these is important because they often do operate on the same line.
             // For example, we *must* convert all numbered lists before converting markup headers to markdown.
             const phaseScript = path.join(phasePath, '.markdownlint-cli2.cjs');
-            logger.debug(`yarn markdownlint-cli2-config ${phaseScript} ${newFile}`);
+            logger.debug(`yarn markdownlint-cli2 --config ${phaseScript} ${newFile}`);
 
             await new Promise((resolve) => {
-                exec(`yarn markdownlint-cli2-config ${phaseScript} ${newFile}`, async (error, stdout, stderr) => {
+                exec(`yarn markdownlint-cli2 --config ${phaseScript} ${newFile}`, async (error, stdout, stderr) => {
                     if (error) {
                         logger.warn(
                             `The '${phaseData.path}' conversion reported warnings `
