@@ -15,12 +15,15 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
+import {
+    useNavbarMobileSidebar,
+} from '@docusaurus/theme-common/internal';
 import Navbar from '@theme-original/Navbar';
 import styles from './index.module.css';
 
 export default function NavbarWrapper(props) {
     const openMenu = (element) => {
-        if (document.getElementById(element).style.display === 'none') {
+        if (document.getElementById(element).style.display !== 'block') {
             document.getElementById(element).style.display = 'block';
         } else {
             document.getElementById(element).style.display = 'none';
@@ -37,12 +40,24 @@ export default function NavbarWrapper(props) {
         document.getElementById('navbar_nav').style.display = 'block';
     };
 
+    const mobileSidebar = useNavbarMobileSidebar();
+
+    if (mobileSidebar.shouldRender) {
+        return (
+            <Navbar {...props} />
+        );
+    }
+
     return (
         <>
             <nav className={styles.moodlesitestopnavbar}>
 
-                <button className={styles.mobile_menu} type="button" onClick={() => openMenu('navbar_wrapper')}>
-
+                <button
+                    className={styles.mobile_menu}
+                    type="button"
+                    onClick={() => openMenu('navbar_wrapper')}
+                    aria-label="Toggle navigation"
+                >
                     <span className={styles.fa_waffle_mobile} />
                 </button>
                 <a href="https://moodle.org" className="navbar-brand position-lg-fixed d-none d-lg-flex align-items-center m-0 p-0 aabtn">
@@ -93,12 +108,21 @@ export default function NavbarWrapper(props) {
                         </div>
 
                         <li className={styles.search}>
-                            <a className={styles.nav_link} href="https://moodle.org/public/search">
+                            <a
+                                className={styles.nav_link}
+                                href="https://moodle.org/public/search"
+                                aria-label="Search moodle.org"
+                            >
                                 <i className={styles.fa_search} />
                             </a>
                         </li>
                         <li className={styles.waffle}>
-                            <button className={styles.nav_link} type="button" onClick={() => openMenu('waffle_menu')}>
+                            <button
+                                className={styles.nav_link}
+                                type="button"
+                                onClick={() => openMenu('waffle_menu')}
+                                aria-label="Toggle sites menu"
+                            >
                                 <i className={styles.fa_waffle} />
                             </button>
                         </li>
@@ -143,11 +167,15 @@ export default function NavbarWrapper(props) {
                                 </p>
                             </div>
                         </div>
-
                     </ul>
 
                     <ul className={styles.sites_nav} id="sites-nav">
-                        <button className={styles.nav_link} type="button" onClick={closeSitesMenu}>
+                        <button
+                            className={styles.nav_link}
+                            type="button"
+                            onClick={closeSitesMenu}
+                            aria-label="Close sites menu"
+                        >
                             <i className={styles.fa_arrow_left} style={{ marginLeft: '-0.6rem' }} />
                         </button>
                         <div className="pt-2 pathways">
