@@ -7,7 +7,7 @@ tags:
 
 <!-- markdownlint-disable no-inline-html -->
 
-import { Since } from '@site/src/components';
+import { Since, ValidExample, InvalidExample } from '@site/src/components';
 
 This page highlights the important changes that are coming in Moodle 4.4 for developers.
 
@@ -39,6 +39,44 @@ will only update the second enrol instance.
 :::
 
 A new method `enrol_plugin:find_instance()` is added to the enrol plugin interface to allow plugins to find an existing instance of the same type in the course. If you want your enrolment method to be supported in CSV course upload, you need to implement this [method](./apis/plugintypes/enrol#enrol_pluginfind_instance-stdclass)
+
+## Bootstrap preparations for version 5
+
+<Since version="4.4" issueNumber="MDL-71979" />
+
+Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. To prepare for this, some of the current Bootstrap 4 classes usages have been replaced with version 5 compatible classes. This will help us to upgrade to Bootstrap 5 in the future.
+
+- The `.media` component has been replaced with utility classes.
+
+<InvalidExample title="Don't">
+
+```html
+<div class="media">
+    <div class="media-left">
+        [...]
+    </div>
+    <div class="media-body">
+        [...]
+    </div>
+</div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<div class="d-flex">
+    <div class="flex-shrink-0">
+        [...]
+    </div>
+    <div class="flex-grow-1 ml-3">
+        [...]
+    </div>
+</div>
+```
+
+</ValidExample>
 
 ## Previous versions
 
