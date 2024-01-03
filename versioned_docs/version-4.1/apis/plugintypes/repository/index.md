@@ -84,7 +84,6 @@ import RepositoryLibExample from '!!raw-loader!./_examples/lib.php';
     plugintype="repository"
     pluginname="pluginname"
     example={RepositoryLibExample}
-    // Not legacy for repository.
     legacy={false}
     required
 >
@@ -394,7 +393,6 @@ import FlickPublicLib from '!!raw-loader!./_examples/flickr_public_lib.php';
     plugintype="repository"
     pluginname="pluginname"
     example={FlickPublicLib}
-    // Not legacy for repository.
     legacy={false}
     summary={false}
     description=""

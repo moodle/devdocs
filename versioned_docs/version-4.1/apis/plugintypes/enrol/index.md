@@ -65,7 +65,6 @@ import LibExample from '!!raw-loader!./_examples/lib.php';
     plugintype="enrol"
     pluginname="pluginname"
     example={LibExample}
-    // Not legacy for enrolment plugins.
     legacy={false}
     required
 >
