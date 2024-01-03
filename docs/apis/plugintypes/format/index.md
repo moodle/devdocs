@@ -322,7 +322,7 @@ This is the minimum output classes your plugin must provide:
   <TabItem value="contentOutput" label="Content" default>
 
 import OutputContent from '!!raw-loader!./_examples/output/content.php';
-const OutputContentProps = {
+export const OutputContentProps = {
     examplePurpose: 'Output content',
     plugintype: 'format',
     pluginname: 'pluginname',
@@ -335,7 +335,7 @@ const OutputContentProps = {
   <TabItem value="sectionOutput" label="Section">
 
 import OutputSection from '!!raw-loader!./_examples/output/section.php';
-const OutputSectionProps = {
+export const OutputSectionProps = {
     examplePurpose: 'Output section',
     plugintype: 'format',
     pluginname: 'pluginname',
@@ -348,7 +348,7 @@ const OutputSectionProps = {
   <TabItem value="cmitemOutput" label="Cmitem">
 
 import OutputCmitem from '!!raw-loader!./_examples/output/cmitem.php';
-const OutputCmitemProps = {
+export const OutputCmitemProps = {
     examplePurpose: 'Output cmitem',
     plugintype: 'format',
     pluginname: 'pluginname',
