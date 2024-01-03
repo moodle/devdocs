@@ -387,6 +387,8 @@ At this point we have created everything necessary for the administration pages.
 
 That's all - the administration part of our Flickr Public plugin is done. For your information, Box.net, Flickr, and Flickr Public all have similar administration APIs.
 
+<!-- markdownlint-disable no-inline-html -->
+
 import FlickPublicLib from '!!raw-loader!./_examples/flickr_public_lib.php';
 
 <Lib
