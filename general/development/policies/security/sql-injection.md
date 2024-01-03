@@ -69,4 +69,4 @@ In Moodle 1.9 or earlier:
 
 - [Security](../security)
 - [Coding](../../policies.md)
-- <https://sqlmap.org> - A tool for automatically finding SQL injection vulnerabilities.
+- [https://sqlmap.org](https://sqlmap.org) - A tool for automatically finding SQL injection vulnerabilities.

@@ -78,7 +78,7 @@ Note that when using standard elements like `$OUTPUT->continue_button()` and oth
 
 ## Ensure your code does not expose the sesskey inadvertently
 
-There are various ways that the sesskey could be leaked, and if this happens then it opens the door to types of risks that would be otherwise be mitigated by the sesskey: <https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html>
+There are various ways that the sesskey could be leaked, and if this happens then it opens the door to types of risks that would be otherwise be mitigated by the sesskey: [https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
 
 There are broadly two ways it could be leaked, in the frontend and in the backend.
 

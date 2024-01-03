@@ -207,8 +207,8 @@ syncOnSites('events', this.syncAllEventsFunc.bind(this, force), siteId);
 
 If you used the app's code as an example to build your plugin, you can do the same. There are also some plugins that have been updated, for example, you can see the following PRs on the `choicegroup` plugin:
 
-- <https://github.com/ndunand/moodle-mod_choicegroup/pull/149>
-- <https://github.com/ndunand/moodle-mod_choicegroup/pull/150>
+- [https://github.com/ndunand/moodle-mod_choicegroup/pull/149](https://github.com/ndunand/moodle-mod_choicegroup/pull/149)
+- [https://github.com/ndunand/moodle-mod_choicegroup/pull/150](https://github.com/ndunand/moodle-mod_choicegroup/pull/150)
 
 You can also look at the [Moodle App Plugins development guide](../development/plugins-development-guide/index.md), it has been updated to reflect how to write plugins for the latest version of the app.
 

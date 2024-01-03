@@ -311,7 +311,7 @@ This is the most important part of your plugin because it contains the code that
 
 In this template we'll be using Ionic, together with directives and components specific to the Moodle App.
 
-All the HTML elements starting with `ion-` are ionic components. Most of the time, the component name is self-explanatory but you may refer to a detailed guide here: <https://ionicframework.com/docs/components/>
+All the HTML elements starting with `ion-` are ionic components. Most of the time, the component name is self-explanatory but you may refer to a detailed guide here: [https://ionicframework.com/docs/components/](https://ionicframework.com/docs/components/).
 
 All the HTML elements starting with `core-` are custom components of the Moodle App.
 
