@@ -79,7 +79,6 @@ import LibExample from '!!raw-loader!./_examples/lib.php';
     plugintype="format"
     pluginname="pluginname"
     example={LibExample}
-    // Not legacy for format.
     legacy={false}
     required
 >
