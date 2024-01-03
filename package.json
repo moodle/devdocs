@@ -111,5 +111,5 @@
     "unist-util-inspect": "7.0.1",
     "winston": "^3.8.2"
   },
-  "packageManager": "yarn@3.2.4"
+  "packageManager": "yarn@4.1.1"
 }
