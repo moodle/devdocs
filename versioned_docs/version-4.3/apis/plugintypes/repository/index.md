@@ -817,7 +817,7 @@ Return true if should be included in a search throughout all repositories (curre
 
 ### Repository support for returning file as alias/shortcut
 
-It is possible to link to the file from external (or internal) repository by reference. In UI it is called "create alias/shortcut". This creates a row in {files} table but the contents of the file is not stored. Although it may be cached by repository if developer wants to.
+It is possible to link to the file from external (or internal) repository by reference. In UI it is called "create alias/shortcut". This creates a row in `files` table but the contents of the file is not stored. Although it may be cached by repository if developer wants to.
 
 Make sure that function supported_returntypes() returns FILE_REFERENCE among other types.
 

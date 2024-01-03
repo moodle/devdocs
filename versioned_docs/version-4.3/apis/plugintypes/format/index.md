@@ -162,7 +162,7 @@ The easiest way to create a new course format using the latest version of tool_p
 
 import PluginskelRecipe from '!!raw-loader!./_examples/pluginskel_recipe.yaml';
 
-<CodeBlock language="yaml">{PluginskelRecipe}</CodeBlock>
+<CodeBlock  language="yaml">{PluginskelRecipe}</CodeBlock>
 
   </div>
 </details>
@@ -194,7 +194,7 @@ Here are the main features in course formats and responsible for them format_bas
 
 ## Course sections
 
-There is existing functionality in Moodle core to support organizing course modules into sections. Course format plugins do not have to use them but most of them do. Database table {course_sections} stores basic information about sections. Also section info is cached and returned by `format->get_modinfo()` (or the global function `get_fast_modinfo()`) so every action changing the sections must be followed by rebuild_course_cache(). Course module must always belong to the section. Even if your course format does not use sections, the section with the number 0 is always created.
+There is existing functionality in Moodle core to support organizing course modules into sections. Course format plugins do not have to use them but most of them do. Database table `course_sections` stores basic information about sections. Also section info is cached and returned by `format->get_modinfo()` (or the global function `get_fast_modinfo()`) so every action changing the sections must be followed by rebuild_course_cache(). Course module must always belong to the section. Even if your course format does not use sections, the section with the number 0 is always created.
 
 You must define `$string['sectionname']` if your language file even if the format does not use sections because it can be called unconditionally from other parts of the code, even though it won't be displayed.
 
@@ -229,15 +229,15 @@ The format base class has several methods to integrate the course format with th
 
 ### Course format options
 
-The core table {course_format_options} in Moodle database is designed to store additional options for course formats. Those options may belong for the whole course or just for course section.
+The core table `course_format_options` in Moodle database is designed to store additional options for course formats. Those options may belong for the whole course or just for course section.
 
-Course format options must not have the same names as fields in database table {course}, section options must not have the same names as fields in {course_sections}. Also, make sure names do not duplicate completion and conditional fields in edit forms.
+Course format options must not have the same names as fields in database table `course`, section options must not have the same names as fields in `course_sections`. Also, make sure names do not duplicate completion and conditional fields in edit forms.
 
 When the teacher changes the course format in the course edit form AND the old and the new course formats share the same option name, the value of this option is copied from one format to another. For example, if the course had format Topics and had 8 sections in it and teacher changes format to Weeks, the course will have 8 weeks in it.
 
-During backup the course format options are stored as if they were additional fields in {course} table. Do not store IDs of elements (courses, sections, etc.) in course format options because they will not be backed up and restored properly. You can use section numbers because they are relative inside the course. If absolute ids are necessary you can create your own backup/restore scripts, see Backup API.
+During backup the course format options are stored as if they were additional fields in `course` table. Do not store IDs of elements (courses, sections, etc.) in course format options because they will not be backed up and restored properly. You can use section numbers because they are relative inside the course. If absolute ids are necessary you can create your own backup/restore scripts, see Backup API.
 
-Webservices expect course format options to be passed in additional entities but for backward compatibility `numsections`, `hiddensections` and `coursedisplay` can also be passed as if they were fields in {course} table.
+Webservices expect course format options to be passed in additional entities but for backward compatibility `numsections`, `hiddensections` and `coursedisplay` can also be passed as if they were fields in `course` table.
 
 | `core_courseformat\base` Overridable method  | Description  |
 |---|---|
@@ -246,20 +246,20 @@ Webservices expect course format options to be passed in additional entities but
 | `get_format_options()` | (usually no need to override) low level function to retrieve course format options values. It is more convenient to use methods get_course() and get_section() |
 | `create_edit_form_elements()` | This function is called to alter course edit form and standard section edit form. The default implementation creates simple form elements for each option defined in either `course_format_options()` or `section_format_options()`. Overwrite it if you want to have more comprehensive form elements or if you do not want options to appear in edit forms, etc. |
 | `edit_form_validation()` | Overwrite if course format plugin needs additional validation for it's option in course edit form |
-| `update_format_options()` | (usually no need to override) low level function to insert/update records in db table {course_format_options} |
+| `update_format_options()` | (usually no need to override) low level function to insert/update records in db table `course_format_options` |
 | `update_course_format_options()` | updates course format options with the data from the edit course form. The plugin can override for example to include calculated options fields, especially when the course format is being changed. For example, format_topics and format_weeks automatically fill field `numsections` when the user switches from other format |
 | `update_section_format_options()` | updates course format options for the section with the data from the edit section form |
 | `editsection_form()` | Return an instance of moodleform to edit a specified section. Default implementation returns instance of `editsection_form` that automatically adds additional fields defined in section_format_options() |
 | `get_default_course_enddate()` | Overwrite if the course format is time-based. The base class calculates the default course end date based on the number of sections. |
-| `delete_format_data()` | This hook method is called when the course is deleted and can be used to remove any course data not stored in the standards {course_format_options} and {course} tables (like user preferences, for example). |
+| `delete_format_data()` | This hook method is called when the course is deleted and can be used to remove any course data not stored in the standards `course_format_options` and `course` tables (like user preferences, for example). |
 
 Course format base helpers
 The format base class is used for all the core_courseformat integrations, from settings to rendering. All course output classes will receive the course format instance as a primary param and the class has several helper methods to get information about the format.
 
 | `core_courseformat\base` Overridable method  | Description  |
 |---|---|
-| `get_course()` | (no need to override) returns object with all fields from db table {course} AND all course format options |
-| `get_section()` | (no need to override) returns instance of section_info. It will contain all fields from table {course_sections} and all course format options for this section |
+| `get_course()` | (no need to override) returns object with all fields from db table `course` AND all course format options |
+| `get_section()` | (no need to override) returns instance of section_info. It will contain all fields from table `course_sections` and all course format options for this section |
 | `get_sections()` | Return all course sections (it is just a wrapper fo the modinfo get_section_info_all) |
 | `get_course_display()` | Returns if the course is using a multi page or a single page display (`COURSE_DISPLAY_MULTIPAGE` or `COURSE_DISPLAY_SINGLEPAGE`) |
 | `get_modinfo()` | Returns the current course modinfo (equivalent to get_fast_modinfo but without specifying the course) |
@@ -371,21 +371,21 @@ This is the minimum template structure your plugin must provide:
 
 import TemplateContent from '!!raw-loader!./_examples/output/content.mustache';
 
-<CodeBlock language="handlebars" title="templates/local/content.mustache">{TemplateContent}</CodeBlock>
+<CodeBlock  language="handlebars" title="templates/local/content.mustache">{TemplateContent}</CodeBlock>
 
   </TabItem>
   <TabItem value="sectionTemplate" label="Section">
 
 import TemplateSection from '!!raw-loader!./_examples/output/section.mustache';
 
-<CodeBlock language="handlebars" title="templates/local/content/section.mustache">{TemplateSection}</CodeBlock>
+<CodeBlock  language="handlebars" title="templates/local/content/section.mustache">{TemplateSection}</CodeBlock>
 
   </TabItem>
   <TabItem value="cmitemTemplate" label="Cmitem">
 
 import TemplateCmitem from '!!raw-loader!./_examples/output/cmitem.mustache';
 
-<CodeBlock language="handlebars" title="templates/local/content/section/cmitem.mustache">{TemplateCmitem}</CodeBlock>
+<CodeBlock  language="handlebars" title="templates/local/content/section/cmitem.mustache">{TemplateCmitem}</CodeBlock>
 
   </TabItem>
 </Tabs>
@@ -394,7 +394,7 @@ import TemplateCmitem from '!!raw-loader!./_examples/output/cmitem.mustache';
 
 Once your plugin has the basic mustache structure, you can provide extra mustache blocks to override parts of the page. To do so it is important to understand first the special way in which the course format mustaches are included.
 
-Most moodle mustache files include sub-templates by doing {{> path/to/the/template }}. However, in the course format subsystems, all sub-templates are loaded using a slightly different pattern.
+Most moodle mustache files include sub-templates by doing `{{> path/to/the/template }}`. However, in the course format subsystems, all sub-templates are loaded using a slightly different pattern.
 
 <details>
   <summary>View example: override course format templates using mustache blocks</summary>
