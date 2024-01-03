@@ -209,6 +209,18 @@
         "customised": false
     },
     {
+        "copyrightHolders": [
+            "2016 Federico Zivolo and contributors"
+        ],
+        "location": "lib/amd/src/popper2.js",
+        "name": "Popper.js",
+        "description": "A kickass library used to created Poppers in web applications.",
+        "version": "v2.11.8",
+        "license": "MIT",
+        "repository": "https://github.com/floating-ui/floating-ui",
+        "customised": false
+    },
+    {
         "copyrightHolders": [],
         "location": "lib/amd/src/truncate.js",
         "name": "Truncate.js",
@@ -217,6 +229,17 @@
         "license": "MIT",
         "repository": "https://github.com/pathable/truncate",
         "customised": true
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/aws-sdk",
+        "name": "AWS SDK for PHP",
+        "description": "The AWS SDK for PHP library",
+        "version": "3.277.11",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/aws/aws-sdk-php",
+        "customised": false
     },
     {
         "copyrightHolders": [
@@ -453,6 +476,18 @@
         "license": "LGPL",
         "licenseversion": "2.1+",
         "repository": "https://github.com/ezyang/htmlpurifier",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2014 Michael Dowling, https://github.com/mtdowling"
+        ],
+        "location": "lib/jmespath",
+        "name": "JMESPath",
+        "description": "The JMESPath library",
+        "version": "2.6.1",
+        "license": "MIT",
+        "repository": "https://github.com/jmespath/jmespath.php",
         "customised": false
     },
     {

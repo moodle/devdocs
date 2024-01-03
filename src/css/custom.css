@@ -16,6 +16,8 @@
   --ifm-color-primary-lighter: #d96900;
   --ifm-color-primary-lightest: #f67600;
   --ifm-color-contrasting: #194866;
+  --ifm-color-success: #008a00;
+  --ifm-color-danger: #ed060d;
   --ifm-font-family-base: "Open Sans";
   --ifm-navbar-height: 5.5rem;
   --ifm-navbar-padding-horizontal: 5.5rem;

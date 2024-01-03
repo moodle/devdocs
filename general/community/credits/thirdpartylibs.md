@@ -192,6 +192,17 @@ A kickass library used to created Poppers in web applications.
 - **Copyright holders**:
   - 2016 Federico Zivolo and contributors
 
+### Popper.js
+
+A kickass library used to created Poppers in web applications.
+
+- **Location**: lib/amd/src/popper2.js
+- **Version**: v2.11.8
+- **License**:  MIT
+- **URL**: [https://github.com/floating-ui/floating-ui](https://github.com/floating-ui/floating-ui)
+- **Copyright holders**:
+  - 2016 Federico Zivolo and contributors
+
 ### Truncate.js
 
 Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has several options such as length, finishBlock and noBreak.
@@ -200,6 +211,15 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 - **Version**: 0.0.1 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/pathable/truncate](https://github.com/pathable/truncate)
+
+### AWS SDK for PHP
+
+The AWS SDK for PHP library
+
+- **Location**: lib/aws-sdk
+- **Version**: 3.277.11
+- **License**:  Apache 2.0
+- **URL**: [https://github.com/aws/aws-sdk-php](https://github.com/aws/aws-sdk-php)
 
 ### axe-core
 
@@ -409,6 +429,17 @@ Filters HTML.
 - **Version**: 4.16.0
 - **License**:  LGPL 2.1+
 - **URL**: [https://github.com/ezyang/htmlpurifier](https://github.com/ezyang/htmlpurifier)
+
+### JMESPath
+
+The JMESPath library
+
+- **Location**: lib/jmespath
+- **Version**: 2.6.1
+- **License**:  MIT
+- **URL**: [https://github.com/jmespath/jmespath.php](https://github.com/jmespath/jmespath.php)
+- **Copyright holders**:
+  - 2014 Michael Dowling, https://github.com/mtdowling
 
 ### jQuery
 

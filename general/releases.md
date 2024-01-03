@@ -15,11 +15,11 @@ This page lists all official releases of Moodle, grouped by branch in reverse ch
 
 ## Version support
 
-The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/Long-term_support) version is Moodle 4.1.
+The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/Long-term_support) version is Moodle 4.1. The next LTS version will be Moodle 4.5.
 
 <SupportedReleases />
 
-![Release graph summarising the currently supported Moodle releases in a visual form](_releases/4023_release_graph.png)
+![Release graph summarising the currently supported Moodle releases in a visual form](_releases/4032_release_graph.png)
 
 <details>
     <summary>Release graph key</summary>
@@ -96,8 +96,8 @@ Minor releases dates differ slightly from release to release depending on the ti
 
 :::info
 
-Bug fixes for general core bugs in 4.3.x will end 14 October 2024 (12 months).<br/>
-Bug fixes for security issues in 4.3.x will end 14 April 2025 (18 months).
+Bug fixes for general core bugs in 4.3.x will end 7 October 2024 (12 months).<br/>
+Bug fixes for security issues in 4.3.x will end 21 April 2025 (18 months).
 
 :::
 
@@ -118,7 +118,7 @@ Bug fixes for security issues in 4.2.x will end 7 October 2024 (18 months).
 
 :::info
 
-Bug fixes for general core bugs in 4.1.x will end 11 December 2023 (13 months).<br/>
+Bug fixes for general core bugs in 4.1.x ended 11 December 2023 (13 months).<br/>
 Bug fixes for security issues in 4.1.x will end 8 December 2025 (37 months).
 
 :::
@@ -130,7 +130,7 @@ Bug fixes for security issues in 4.1.x will end 8 December 2025 (37 months).
 :::info
 
 Bug fixes for general core bugs in 4.0.x ended 12 June 2023 (13 months).<br/>
-Bug fixes for security issues in 4.0.x will end 11 December 2023 (19 months).
+Bug fixes for security issues in 4.0.x ended 11 December 2023 (19 months).
 
 :::
 
@@ -141,7 +141,7 @@ Bug fixes for security issues in 4.0.x will end 11 December 2023 (19 months).
 :::info
 
 Bug fixes for general core bugs in 3.11.x ended 14 November 2022 (12 months plus 6 months extension).<br/>
-Bug fixes for security issues in 3.11.x will end 11 December 2023 (18 months plus 13 months extension).
+Bug fixes for security issues in 3.11.x ended 11 December 2023 (18 months plus 13 months extension).
 
 :::
 
@@ -163,7 +163,7 @@ Bug fixes for security issues in 3.10.x ended 9 May 2022 (18 months).
 :::info
 
 Bug fixes for general core bugs in 3.9.x ended 10 May 2021 (12 months). <br/>
-Bug fixes for security issues in 3.9.x will end 11 December 2023 (36 months plus 7 months extension).
+Bug fixes for security issues in 3.9.x ended 11 December 2023 (36 months plus 7 months extension).
 
 :::
 
