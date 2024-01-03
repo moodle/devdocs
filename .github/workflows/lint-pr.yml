@@ -17,10 +17,10 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.0.0
         with:
-          node-version: "16"
+          node-version: "18"
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Lint markdown files
         run: yarn mdlint-all
