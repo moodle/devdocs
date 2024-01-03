@@ -22,7 +22,7 @@ The format to create the links is the following:
 moodlemobile://https://username@domain.com?token=TOKEN&privatetoken=PRIVATETOKEN&redirect=http://domain.com/course/view.php?id=2
 ```
 
-The only data required is the base URL of your site (in the example above, `<https://domain.com>`).
+The only data required is the base URL of your site (in the example above, `https://domain.com`).
 
 ### Site URL
 
@@ -32,7 +32,7 @@ As mentioned above, this is the only required parameter. It should be the base U
 moodlemobile://https://domain.com
 ```
 
-In the example above, if the `<https://domain.com>` site isn't stored in the app, the user will be redirected to the credentials screen to access the site.
+In the example above, if the `https://domain.com` site isn't stored in the app, the user will be redirected to the credentials screen to access the site.
 
 ### Username
 
@@ -42,7 +42,7 @@ If you want the app to be opened with a certain username you can specify it in t
 moodlemobile://https://username@domain.com
 ```
 
-In the example above, if the `username` user and the `<https://domain.com>` site aren't stored in the app, the user will be sent to the credentials screen to access the site (the username input will be pre-populated, but the user will be able to change it if he wants to). If the app has several users of this site stored, including "username", the right user will be loaded.
+In the example above, if the `username` user and the `https://domain.com` site aren't stored in the app, the user will be sent to the credentials screen to access the site (the username input will be pre-populated, but the user will be able to change it if he wants to). If the app has several users of this site stored, including "username", the right user will be loaded.
 
 ### Token and Private token
 
@@ -70,7 +70,7 @@ moodlemobile://https://domain.com?redirect=http://domain.com/course/view.php?id=
 
 This link will open the course with id 2 in the app. Please notice that the app doesn't support all Moodle URLs, only some of them are supported.
 
-The redirect URL should belong to the same site as the base URL. For example, if the base URL is `<http://domain.com>` but the redirect is `<http://anothersite.com/>...`, an error will be displayed.
+The redirect URL should belong to the same site as the base URL. For example, if the base URL is `http://domain.com` but the redirect is `http://anothersite.com/...`, an error will be displayed.
 
 The redirect parameter can be a relative URL based on the base URL. The example above can also be written like this:
 
