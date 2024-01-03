@@ -65,6 +65,7 @@ The class must be named `field_controller` within your plugin's namespace (for e
 <!-- markdownlint-disable no-inline-html -->
 
 import fieldExample from '!!raw-loader!./_files/field_controller.php';
+
 <FieldController example={fieldExample} />
 
 <!-- markdownlint-restore -->
@@ -100,6 +101,7 @@ The class must be named `data_controller` within your plugin's namespace (for ex
 <!-- markdownlint-disable no-inline-html -->
 
 import dataExample from '!!raw-loader!./_files/data_controller.php';
+
 <DataController example={dataExample} />
 
 <!-- markdownlint-restore -->
