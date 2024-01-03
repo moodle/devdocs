@@ -25,7 +25,9 @@ We always follow this agreed policy regarding PHP and Moodle supported versions:
     - The [minimum version supported in any way by php](https://www.php.net/supported-versions.php) the day of the Moodle release (so we provide slow, progressive increments).
     - The maximum PHP version supported by the previous LTS branch (so we guarantee jumping between LTS is possible without upgrading PHP at the same time).
 
-<details><summary>PHP and Moodle policy in Jira wiki markup format.</summary>
+<details>
+
+<summary>PHP and Moodle policy in Jira wiki markup format.</summary>
 
 ```txt
 {panel:title=Policy: PHP & Moodle supported versions|borderStyle=dashed|borderColor=#cccccc|titleBGColor=#f7d6c1|bgColor=#ffffce}
