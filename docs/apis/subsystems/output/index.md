@@ -221,15 +221,11 @@ The key parameter for this function is:
 
 #### format_text()
 
-```php
-function format_text($text, $format = FORMAT_MOODLE, $options = null, $courseid_do_not_use = null)
-```
-
 This function should be used to:
 
 - print **any html/plain/markdown/moodle text**, needing any of the features below. It is mainly used for long strings like posts, answers, glossary items, etc.
 - filter content through Moodle or 3rd party language filters for multi-language support. Not to be confused with [get_string](https://docs.moodle.org/dev/String_API#get_string.28.29) which is used to access localized strings in Moodle and its language packs. Together, these functions enable Moodle multi-language support .
-Note that this function is really **heavy** because it supports **cleaning** of dangerous contents, delegates processing to enabled **content filter**s, supports different **formats** of text (HTML, PLAIN, MARKDOWN, MOODLE) and performs a lot of **automatic conversions** like adding smilies, build links. Also, it includes a strong **cache mechanism** (DB based) that will alleviate the server from a lot of work processing the same texts time and again.
+Note that this function is really **heavy** because it supports **cleaning** of dangerous contents, delegates processing to enabled **content filters**, supports different **formats** of text (HTML, PLAIN, MARKDOWN, MOODLE) and performs a lot of **automatic conversions** like adding smilies, build links. Also, it includes a strong **cache mechanism** (DB based) that will alleviate the server from a lot of work processing the same texts time and again.
 
 Some interesting parameters for this function are:
 
@@ -241,17 +237,11 @@ Some interesting parameters for this function are:
   - `options->context`: If text is filtered (and this happens by default), it is very important to specify context (id or object) for applying filters. If context is not specified it will be taken from `$PAGE->context` and may potentially result in displaying the same text differently on different pages. For example all module-related information should have module context even when it appears in course-level reports, all course-related information such as name and description should have course context even when they are displayed on front page or system pages.
   - `options->param`: To decide if you want every paragraph automatically enclosed between html paragraph tags (`<p>...</p>`) (defaults to true). This option only applies to `FORMAT_MOODLE`.
   - `options->newlines`: To decide if line feeds in text should be converted to html newlines (`<br />`) (defaults to true). This option only applies to `FORMAT_MOODLE`.
-  - `options->nocache`: If true the string will not be cached and will be formatted every call. Default false.
   - `options->overflowdiv`*: If set to true the formatted text will be encased in a div with the class no-overflow before being returned. Default false.
   - `options->allowid` : If true then id attributes will not be removed, even when using HTML Purifier. Default false.
   - `options->blanktarget` : If true all `<a>` tags will have `target="_blank"` added unless target is explicitly specified. Default false.
-- **courseid_do_not_use**: This parameter was earlier used to help applying filters but now is replaced with more precise `$options->context`, see above
 
 #### format_string()
-
-```php
-function format_string ($string, $striplinks = true, $options = null)
-```
 
 This function should be used to:
 
@@ -269,14 +259,12 @@ Some interesting parameters for this function are:
   - `options->escape`: To decide if you want to escape HTML entities. True by default.
   - `options->filter`: To decide if you want to allow filters to process the text (defaults to true). This is ignored by `FORMAT_PLAIN` for which filters are never applied.
 
-:::note
-In earlier versions of Moodle, the third argument was integer `$courseid`. It is still supported for legacy - if the third argument is an integer instead of an array or object, it is considered to be course id and is this course's context is passed to the filters being applied.
-:::
-
 ### Simple elements rendering
 
 :::important
+
 Those methods are designed to replace the old ```html_writer::tag(...)``` methods. Even if many of them are just wrappers around the old methods, they are more semantic and could be overridden by component renderers.
+
 :::
 
 While to render complex elements, you should use [templates](../../../guides/templates/index.md), some simple elements can be rendered using the following functions:
