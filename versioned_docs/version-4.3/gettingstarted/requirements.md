@@ -38,7 +38,7 @@ The following PHP extensions are required (most of which are installed and enabl
 
 The following relational database servers are supported. The relevant PHP extension will also be required.
 
-- [MariaDB](https://mariadb.org/) (version 10.2.29 or higher) with the [MySQLi PHP Extension](https://www.php.net/manual/en/book.mysqli.php)
+- [MariaDB](https://mariadb.org/) (version 10.6.7 or higher) with the [MySQLi PHP Extension](https://www.php.net/manual/en/book.mysqli.php)
 - [MySQL](https://www.mysql.com/) (version 5.7 or higher) with the [MySQLi PHP Extension](https://www.php.net/manual/en/book.mysqli.php)
 - [Postgresql](https://www.postgresql.org/) (version 10 or higher) with the [pgsql PHP Extension](https://www.php.net/manual/en/book.pgsql.php)
 - [Microsoft SQL Server](https://www.microsoft.com/en-au/sql-server/sql-server-downloads) (version 14.0 or higher) with the [`SQLSRV` PHP Extension](https://www.php.net/manual/en/book.sqlsrv.php)
