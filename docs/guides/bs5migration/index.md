@@ -170,3 +170,41 @@ The following previously deprecated mixins will be dropped in BS5, so they can b
 ```
 
 </ValidExample>
+
+### Card decks
+
+The `.card-deck` helper class has been replaced with utility classes.
+
+<InvalidExample title="Don't">
+
+```html
+<div class="card-deck">
+    <div class="card">
+        [...]
+    </div>
+    <div class="card">
+        [...]
+    </div>
+</div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<div class="row row-cols-1 row-cols-sm-2">
+    <div class="col">
+        <div class="card">
+            [...]
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            [...]
+        </div>
+    </div>
+</div>
+```
+
+</ValidExample>
