@@ -227,7 +227,7 @@ Named parameter arguments are available from PHP 8.0 onwards.
 
 :::
 
-## See also...
+## See also
 
 - [String deprecation](../../../projects/api/string-deprecation.md)
 - [External functions deprecation](/docs/apis/subsystems/external/writing-a-service#deprecation)

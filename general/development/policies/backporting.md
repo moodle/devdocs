@@ -37,7 +37,9 @@ The integration team will process backport requests, with the following guidelin
 If the backport request is approved, please follow the usual development process to submit the feature or improvement on earlier branches. Just to be clear, this means using the new bug number. So, even if the fix you are back-porting cherry-picks cleanly, you will need to amend the commit comment to use the new MDL-XXXXX number.
 
 :::tip
+
 It would be good practice to also add a line like "This is a backport of MDL-YYYYY." in the amended commit comment.
+
 :::
 
 You can probably copy the testing instructions from the original issue. If so, make it clear you done this by saying something like "Copied from MDL-66327". Of course, if you can improve the instructions, feel free to edit. [MDL-66614](https://tracker.moodle.org/browse/MDL-66614) and [MDL-66327](https://tracker.moodle.org/browse/MDL-66327) are probably a reasonably good example fo what should be done.
@@ -49,20 +51,19 @@ Many issues can be appropriately classified as borderline bug-fix/improvements. 
 ## Backport fixes to unsupported branches
 
 - Given the [general policy](#general-policy) above, only supported stable branches are candidates normally.
-- Also security, privacy, data-loss and regressions caused by any of the previous issue types are accepted to be fixed into security-only supported branches.
-
-:::note
-
-This doesn't include [`security_benefit` labelled issues](../tracker/labels.md).
-
-::::
-
-- Apart from the previous, issues required to keep the testing infrastructure working and passing (github actions, behat, phpunit, random failures, new steps availability...) will also be accepted when possible into security-only branches.
-- Finally, backport to unsupported branches only will happen when the issue is a **direct regression caused by a bug fix** introduced by the very latest releases. This applies to both security-only and out-of-support branches.
+- In addition to this any security, privacy, data-loss, and regression, caused by any of the previous issue types are accepted to be fixed into security-only supported branches.
+- In addition to the above, issues required to keep the testing infrastructure working and passing (GitHub Actions, Behat, PHPUnit, addressing random failures, including new Behat steps availability, and so on) will also be accepted when possible into security-only branches
+- Backport to _unsupported_ branches will only be considered when the issue is a **direct regression caused by a bug fix** introduced by the very latest releases. This applies to both security-only and out-of-support branches.
 
 A new weekly release will be performed including all the cases above, but [security issues that follow its own special process](../process.md#security-issues) and are released bi-monthly.
 
-## See also...
+:::note Security issues and the `security_benefit` label
+
+Issues labelled with the [`security_benefit` labelled issues](../tracker/labels.md) are not considered to be security issues and will not be backported automatically. These are typically _improvements_ to security rather than bugs or vulnerabilities.
+
+:::
+
+## See also
 
 - [Integration review process](../process/integration/index.md)
 - [Process](../process.md)
