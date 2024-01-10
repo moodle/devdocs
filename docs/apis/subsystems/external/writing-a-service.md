@@ -319,8 +319,7 @@ public static function get_biscuit_parameters() {
         'chocolatechips' => new external_value(
             PARAM_BOOL,
             'if biscuit contains chocolate chips',
-            VALUE_REQUIRED,
-            VALUE_DEFAULT
+            VALUE_REQUIRED
         ),
         'glutenfree' => new external_value(
             type: PARAM_BOOL,
