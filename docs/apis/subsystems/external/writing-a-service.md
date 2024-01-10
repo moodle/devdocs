@@ -328,7 +328,11 @@ public static function get_biscuit_parameters() {
             allownull: false
         ),
         // ERROR! top level optional parameter!!!
-        'icingsugar' => new external_value(PARAM_BOOL, 'if biscuit has icing sugar on top', VALUE_OPTIONAL),
+        'icingsugar' => new external_value(
+            PARAM_BOOL,
+            'if biscuit has icing sugar on top',
+            VALUE_OPTIONAL
+        ),
     ]);
 }
 ```
@@ -352,8 +356,12 @@ public static function get_biscuit_parameters() {
                     default: false,
                     allownull: false
                 ),
-                // ALL GOOD!! We have nested the params in a external_single_structure.
-                'icingsugar' => new external_value(PARAM_BOOL, 'if biscuit has icing sugar on top', VALUE_OPTIONAL),
+                // ALL GOOD!! We have nested the params in an external_single_structure.
+                'icingsugar' => new external_value(
+                    PARAM_BOOL,
+                    'if biscuit has icing sugar on top',
+                    VALUE_OPTIONAL
+                ),
         ]),
     ]);
 }
