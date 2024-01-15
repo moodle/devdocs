@@ -62,7 +62,7 @@ export default (initialProps: Props): ComponentFileSummary => (
         defaultDescription={ButtonDescription}
         plugintype="atto"
         filepath="/yui/src/button/js/button.js"
-        filetype="yui"
+        filetype="js"
         summary="Example Button JavaScript"
         {...initialProps}
     />
