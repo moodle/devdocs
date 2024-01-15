@@ -59,22 +59,6 @@ pod setup
 
 Please note that for compiling the app in Mac you need to open the `Moodle.xcworkspace` file, more information here: [MOBILE-1970](https://tracker.moodle.org/browse/MOBILE-1970).
 
-### Linux only: `libsecret`
-
-If you are using [the gulp push script](./scripts/gulp-push), you need to have `libsecret` installed before running `npm install`. Depending on your distribution, you will need to run one of the following commands:
-
-```bash title="Debian/Ubuntu"
-sudo apt-get install libsecret-1-dev
-```
-
-```bash title="Red Hat"
-sudo yum install libsecret-devel
-```
-
-```bash title="Arch Linux"
-sudo pacman -S libsecret
-```
-
 ## Running the app in a browser
 
 You can obtain a copy of the source code by cloning the public repository:

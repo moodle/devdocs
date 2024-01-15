@@ -420,7 +420,6 @@ You can learn more about this in the [Acceptance testing for the Moodle App](./t
 
 ## See also
 
-- [Moodle App Scripts: gulp push](./scripts/gulp-push.md)
 - [Moodle App Accessibility](./accessibility.md)
 - [Moodle App Link Handling](./link-handling/app-links.md)
 - [Moodle App Translation](https://docs.moodle.org/en/Moodle_App_Translation)
