@@ -64,7 +64,7 @@ We strongly recommend that you create a new shortcut and use it only for working
 In Linux, you can create such a shortcut by writing a script that is globally available. For example, you can create the following file in `/usr/local/bin/unsafe-chromium`:
 
 ```bash
-chromium-browser --allow-file-access-from-files --disable-web-security --disable-site-isolation-trials --allow-running-insecure-content --no-referrers --unlimited-storage --auto-open-devtools-for-tabs --user-data-dir=/home/{username}/.chromium-dev-data $@
+chromium-browser --allow-file-access-from-files --disable-web-security --disable-site-isolation-trials --allow-running-insecure-content --no-referrers --unlimited-storage --auto-open-devtools-for-tabs --disable-infobars --user-data-dir=/home/{username}/.chromium-dev-data $@
 ```
 
 Notice that this time we shouldn't use `~/.chromium-dev-data` to describe the user data dir. That's because this file can be called from a different shell, and `~` could not be interpreted properly (this may end up creating a folder called "~" in your project folder, and you probably don't want that).
@@ -79,13 +79,17 @@ These instructions have only been tested in Linux. If you are using a different 
 
 ### Configuring the default browser
 
-When you launch the application by running `npm start`, this will open a tab on your default browser. You can close this tab and open the url with your development browser, but if you want to do it automatically you can override the default browser by setting the `MOODLE_APP_BROWSER` environment variable.
+When you launch the application by running `npm start`, this will open a tab in your default browser. You can close this tab and open the url with your development browser, but if you want to do it automatically you can override the default browser by setting the `MOODLE_APP_BROWSER` environment variable.
 
 For example, if you have created a shortcut like we mentioned in the previous section, you can just add the following to your `~/.bashrc` file:
 
 ```bash
-export MOODLE_APP_BROWSER=unsafe-chromium
+export MOODLE_APP_BROWSER=/usr/local/bin/unsafe-chromium
 ```
+
+:::caution Use absolute paths
+Make sure to set this variable to an absolute path, and not just the name of the binary. Even if the program is loaded in the global PATH, it will not work unless it's an absolute path.
+:::
 
 :::note Help wanted!
 These instructions have only been tested in Linux. If you are using a different operative system, [let us know](https://github.com/moodle/devdocs/issues/76) how it went (or just [edit this page](https://github.com/moodle/devdocs/edit/main/docs/moodleapp/development/setup/app-in-browser.md)!).
