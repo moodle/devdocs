@@ -260,6 +260,51 @@ $formatter->format_text(
 
 :::
 
+## Parameters
+
+### API Change
+
+<Since version="4.4" issueNumber="MDL-80005" />
+
+Parameter constants, and the cleaning of values using these parameters, has been moved to a new enum in `\core\param`.
+
+The enum contains relevant associated methods for fetching, validating, and cleaning the content of values, for example:
+
+```php title="Examples of enum-based parameters"
+// Clean an existing variable.
+$value = \core\param::ALPHANUMEXT->clean($value);
+$value = \core\param::ALPHANUMEXT->validate_param($value);
+$value = \core\param::ALPHANUMEXT->clean_param_array($value);
+
+// Require a param (replaced required_param).
+$value = \core\param::ALPHANUMEXT->required_param('someparamname');
+$value = \core\param::ALPHANUMEXT->optional_param('someparamname', 'defaultvalue');
+$value = \core\param::ALPHANUMEXT->required_param_array('someparamname');
+$value = \core\param::ALPHANUMEXT->optional_param_array('someparamname', []);
+```
+
+:::note
+
+The existing `PARAM_*` constants, and related methods (`required_param`, `optional_param()`, `clean_param()`, and so on) remain in place, and are _not currently deprecated_. At this time _you do_ not need to migrate to the APIs.
+
+:::
+
+### Deprecations
+
+<Since version="4.4" issueNumber="MDL-80005" />
+
+A number of deprecated parameter types have been deprecated, these include:
+
+- `PARAM_CLEAN`
+- `PARAM_INTEGER`
+- `PARAM_NUMBER`
+- `PARAM_ACTION`
+- `PARAM_FORMAT`
+- `PARAM_MULTILANG`
+- `PARAM_CLEANFILE`
+
+These param types have all been deprecated since Moodle 2.0.
+
 ## Enrolment
 
 ### Support for multiple instances in csv course upload
