@@ -54,6 +54,7 @@ namespace mod_kitchen\external;
 
 defined('MOODLE_INTERNAL') || die();
 
+global $CFG;
 require_once($CFG->dirroot . '/webservice/tests/helpers.php');
 
 class get_fruit_test extends externallib_advanced_testcase {
