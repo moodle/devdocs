@@ -311,6 +311,61 @@ Enhancements to this page:
 - The `$CFG->linkcoursesections` setting has been entirely removed. Initially used for the Classic theme to empower admins in deciding whether section names in the Navigation block should be linked, this setting is now obsolete. With the introduction of the course/section.php page, dedicated to displaying content for any single section, and a convenient link from the main course page, users can seamlessly focus on section content without the need for this setting.
 - The methods `core_courseformat\base::set_section_number()` and `core_courseformat\base::get_section_number()` have been deprecated and replaced by `core_courseformat\base::set_sectionnum()` and `core_courseformat\base::get_sectionnum()`. The new methods use the null value when all the sections must be displayed (instead of 0). That way, section 0 (General), can be displayed on a single page too.
 
+## Activity icons
+
+<Since version="4.4" issueNumber="MDL-78284" />
+
+### New designs
+
+The activity icons have been updated to prioritize readability and transform the existing filled square shapes with white icons into outlined colored icons against a transparent background. This modification ensures that the icons are not only more accessible but also easily distinguishable for users.
+When upgrading the SVG files, the .png files have been removed.
+
+:::tip Considerations for creating/updating SVG icons
+
+- Please make sure that the icons are filled with `#212529` and that the background is transparent.
+- The icons should be 24x24px. It's recommended to define width and height into the SVG files to guarantee that the icons are displayed correctly.
+
+:::
+
+![New activity icons](./_devupdate/activity-icons.png)
+
+### Activity purposes
+
+Since Moodle 4.0, in places like the course page and the activity chooser icons have a more prominent role which is defined using the `FEATURE_MOD_PURPOSE` feature flag.
+
+The available activity purposes for this feature are:
+
+- Administration (`MOD_PURPOSE_ADMINISTRATION`)
+- Assessment (`MOD_PURPOSE_ASSESSMENT`)
+- Collaboration (`MOD_PURPOSE_COLLABORATION`)
+- Communication (`MOD_PURPOSE_COMMUNICATION`)
+- Interactive content (`MOD_PURPOSE_INTERACTIVECONTENT`)
+- Resource (`MOD_PURPOSE_CONTENT`)
+- Other (`MOD_PURPOSE_OTHER`)
+
+:::danger Changes in purposes for Moodle 4.4
+
+- `MOD_PURPOSE_INTERFACE` has been deprecated, so it's not recommended to use it.
+- `MOD_PURPOSE_INTERACTIVECONTENT` has been added. In core, it's used for activities like H5P, Lesson, SCORM and IMS package.
+
+:::
+
+### Branded icons
+
+A new callback, `<modname>_is_branded()` has been added to the modules. Branded icons are displayed with their original colours and they are not affected by the activity purpose colours. By default, none of the modules are branded.
+
+```php
+/**
+ * Whether the activity is branded.
+ * This information is used, for instance, to decide if a filter should be applied to the icon or not.
+ *
+ * @return bool True if the activity is branded, false otherwise.
+ */
+function h5pactivity_is_branded(): bool {
+    return true;
+}
+```
+
 ## Previous versions
 
 - [Moodle 4.3 developer update](./4.3/devupdate)
