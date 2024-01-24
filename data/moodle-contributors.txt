@@ -13,6 +13,7 @@ Ackermann
 Ackland-Snow
 Adam
 Adamcik
+Adams
 Adermann
 Adrian
 Adrien
@@ -812,6 +813,7 @@ Ordóñez
 Orzu
 Osanda
 Osswald
+Oswald
 Osychenko
 Otto
 PERF
