@@ -7,7 +7,7 @@ tags:
 
 <!-- markdownlint-disable no-inline-html -->
 
-import { Since } from '@site/src/components';
+import { Since, ValidExample, InvalidExample } from '@site/src/components';
 
 This page highlights the important changes that are coming in Moodle 4.4 for developers.
 
@@ -61,6 +61,31 @@ shortname,fullname,category,summary,cohort,student,cohort,teacher
 :::
 
 </details>
+
+## Bootstrap preparations for version 5
+
+<Since version="4.4" issueNumber="MDL-71979" />
+
+Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. To prepare for this, some of the current Bootstrap 4 classes usages have been replaced with version 5 compatible classes. This will help us to upgrade to Bootstrap 5 in the future.
+
+- Badge colour class helpers `.badge-*` have been replaced with background utilities (use `.bg-primary` instead of `.badge-primary`) combined with the corresponding text colour classes (`.text-dark` or `.text-white`) to meet accessibility contrast.
+- The `.badge-pill` class has been replaced with `.rounded-pill`
+
+<InvalidExample title="Don't">
+
+```html
+<span class="badge badge-danger badge-pill">Error badge</span>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<span class="badge bg-danger text-white rounded-pill">Error badge</span>
+```
+
+</ValidExample>
 
 ## Previous versions
 
