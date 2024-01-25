@@ -316,10 +316,23 @@ Because some web service protocols are strict about the number and types of argu
 ```php
 public static function get_biscuit_parameters() {
     return new external_function_parameters([
-        'chocolatechips' => new external_value(PARAM_BOOL, PARAM_REQUIRED),
-        'glutenfree' => new external_value(PARAM_BOOL, PARAM_DEFAULT, false),
+        'chocolatechips' => new external_value(
+            PARAM_BOOL,
+            'if biscuit contains chocolate chips',
+            VALUE_REQUIRED
+        ),
+        'glutenfree' => new external_value(
+            type: PARAM_BOOL,
+            required: VALUE_DEFAULT,
+            default: false,
+            allownull: false
+        ),
         // ERROR! top level optional parameter!!!
-        'icingsugar' => new external_value(PARAM_BOOL, VALUE_OPTIONAL),
+        'icingsugar' => new external_value(
+            PARAM_BOOL,
+            'if biscuit has icing sugar on top',
+            VALUE_OPTIONAL
+        ),
     ]);
 }
 ```
@@ -332,10 +345,23 @@ public static function get_biscuit_parameters() {
 public static function get_biscuit_parameters() {
     return new external_function_parameters([
         'ifeellike' => new external_single_structure([
-                'chocolatechips' => new external_value(PARAM_BOOL, VALUE_REQUIRED),
-                'glutenfree' => new external_value(PARAM_BOOL, PARAM_DEFAULT, false),
-                // ALL GOOD!! We have nested the params in a external_single_structure.
-                'icingsugar' => new external_value(PARAM_BOOL, VALUE_OPTIONAL),
+                'chocolatechips' => new external_value(
+                    PARAM_BOOL,
+                    'if biscuit contains chocolate chips',
+                    VALUE_REQUIRED
+                ),
+                'glutenfree' => new external_value(
+                    type: PARAM_BOOL,
+                    required: VALUE_DEFAULT,
+                    default: false,
+                    allownull: false
+                ),
+                // ALL GOOD!! We have nested the params in an external_single_structure.
+                'icingsugar' => new external_value(
+                    PARAM_BOOL,
+                    'if biscuit has icing sugar on top',
+                    VALUE_OPTIONAL
+                ),
         ]),
     ]);
 }

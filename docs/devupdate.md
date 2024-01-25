@@ -11,34 +11,56 @@ import { Since, ValidExample, InvalidExample } from '@site/src/components';
 
 This page highlights the important changes that are coming in Moodle 4.4 for developers.
 
-## Multiple enrol instances of same type in csv course upload
+## Enrolment
+
+### Support for multiple instances in csv course upload
 
 <Since version="4.4" issueNumber="MDL-43820" />
 
 It is now possible to upload a CSV file with multiple enrol instances of the same type in same course. This is useful for example when you want to enrol users in a course using two different cohorts.
 
-:::caution Format of the CSV file
-
-Please use **only** single line per enrol instance format:
+To support this, a new method has been added to allow the UI to locate existing enrolment instances:
 
 ```php
+/**
+ * Finds matching instances for a given course.
+ *
+ * @param array $enrolmentdata enrolment data.
+ * @param int $courseid Course ID.
+ * @return stdClass|null Matching instance
+ */
+public function find_instance(
+    array $enrolmentdata,
+    int $courseid,
+) : ?stdClass;
+```
+
+If your enrolment plugins supports multiple instances within the same course, you should implement [this method](./apis/plugintypes/enrol#enrol_pluginfind_instance-stdclass).
+
+<details>
+
+<summary>Format of the CSV file</summary>
+
+Each line of the CSV should only have data for _one_ enrolment instance.
+
+```csv title="best-example.csv"
 shortname,fullname,category_idnumber,enrolment_1,enrolment_1_role,enrolment_1_cohortidnumber
 C1,Course 1,CAT1,cohort,student,CV1
 C1,Course 1,CAT1,cohort,teacher,CV4
 ```
 
-If a single line format is used, only last enrol instance will be updated. For example
+:::warning
 
-```php
+If a single line format is used, only the _final_ enrolment instance will be updated. For example in the following example only the second enrolment instance will be updated:
+
+```csv title="not-recommended-example.csv"
 shortname,fullname,category,summary,enrolment_1,enrolment_1_role,enrolment_2,enrolment_2_role
 shortname,fullname,category,summary,cohort,student,cohort,teacher
 ```
 
-will only update the second enrol instance.
-
 :::
 
-A new method `enrol_plugin:find_instance()` is added to the enrol plugin interface to allow plugins to find an existing instance of the same type in the course. If you want your enrolment method to be supported in CSV course upload, you need to implement this [method](./apis/plugintypes/enrol#enrol_pluginfind_instance-stdclass)
+</details>
 
 ## Bootstrap preparations for version 5
 
