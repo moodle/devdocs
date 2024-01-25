@@ -87,6 +87,44 @@ Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. 
 
 </ValidExample>
 
+## Bootstrap preparations for version 5
+
+<Since version="4.4" issueNumber="MDL-71979" />
+
+Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. To prepare for this, some of the current Bootstrap 4 classes usages have been replaced with version 5 compatible classes. This will help us to upgrade to Bootstrap 5 in the future.
+
+- The `.media` component has been replaced with utility classes.
+
+<InvalidExample title="Don't">
+
+```html
+<div class="media">
+    <div class="media-left">
+        [...]
+    </div>
+    <div class="media-body">
+        [...]
+    </div>
+</div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<div class="d-flex">
+    <div class="flex-shrink-0">
+        [...]
+    </div>
+    <div class="flex-grow-1 ml-3">
+        [...]
+    </div>
+</div>
+```
+
+</ValidExample>
+
 ## Previous versions
 
 - [Moodle 4.3 developer update](./4.3/devupdate)
