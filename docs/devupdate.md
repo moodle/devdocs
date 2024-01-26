@@ -298,6 +298,19 @@ The `.media` component has been replaced with utility classes.
 
 </ValidExample>
 
+## New course section page
+
+<Since version="4.4" issueNumber="MDL-79986" />
+
+The new course/section.php page is designed exclusively for displaying individual section content. It only requires `sectionid`, eliminating the need for the legacy sectionnumber.
+
+Enhancements to this page:
+
+- The General section will no longer appear above the selected section, ensuring a focused display of content for the specified section id.
+- Regardless of the Course layout ("All sections on one page" vs "One section per page"), all section names in the main course page content will now link to the new page (excluding editing mode).
+- The `$CFG->linkcoursesections` setting has been entirely removed. Initially used for the Classic theme to empower admins in deciding whether section names in the Navigation block should be linked, this setting is now obsolete. With the introduction of the course/section.php page, dedicated to displaying content for any single section, and a convenient link from the main course page, users can seamlessly focus on section content without the need for this setting.
+- The methods `core_courseformat\base::set_section_number()` and `core_courseformat\base::get_section_number()` have been deprecated and replaced by `core_courseformat\base::set_sectionnum()` and `core_courseformat\base::get_sectionnum()`. The new methods use the null value when all the sections must be displayed (instead of 0). That way, section 0 (General), can be displayed on a single page too.
+
 ## Previous versions
 
 - [Moodle 4.3 developer update](./4.3/devupdate)
