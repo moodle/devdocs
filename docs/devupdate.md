@@ -68,6 +68,8 @@ shortname,fullname,category,summary,cohort,student,cohort,teacher
 
 Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. To prepare for this, some of the current Bootstrap 4 classes usages have been replaced with version 5 compatible classes. This will help us to upgrade to Bootstrap 5 in the future.
 
+### Badges
+
 - Badge colour class helpers `.badge-*` have been replaced with background utilities (use `.bg-primary` instead of `.badge-primary`) combined with the corresponding text colour classes (`.text-dark` or `.text-white`) to meet accessibility contrast.
 - The `.badge-pill` class has been replaced with `.rounded-pill`
 
@@ -87,7 +89,9 @@ Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. 
 
 </ValidExample>
 
-- The `.media` component has been replaced with utility classes.
+### Media
+
+The `.media` component has been replaced with utility classes.
 
 <InvalidExample title="Don't">
 
