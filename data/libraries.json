@@ -139,7 +139,7 @@
         "location": "lib/adodb",
         "name": "AdoDB",
         "description": "Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.",
-        "version": "5.22.5",
+        "version": "5.22.7",
         "license": "BSD/LGPL",
         "licenseversion": "3-Clause/2.1+",
         "repository": "https://github.com/ADOdb/ADOdb",
@@ -584,7 +584,7 @@
         "location": "lib/minify/matthiasmullie-minify",
         "name": "MatthiasMullie\\Minify",
         "description": "CSS & JavaScript minifier, in PHP",
-        "version": "1.3.70",
+        "version": "1.3.71",
         "license": "MIT",
         "repository": "https://github.com/matthiasmullie/minify",
         "customised": true
@@ -892,7 +892,7 @@
         "location": "lib/scssphp",
         "name": "scssphp",
         "description": "scssphp is a compiler for SCSS written in PHP.",
-        "version": "1.11.0",
+        "version": "1.12.1",
         "license": "MIT",
         "repository": "https://github.com/scssphp/scssphp/",
         "customised": false
@@ -919,14 +919,15 @@
     },
     {
         "copyrightHolders": [
-            "Olivier PLATHEY"
+            "Olivier PLATHEY",
+            "Nicola Asuni"
         ],
         "location": "lib/tcpdf",
         "name": "TCPDF",
         "description": "Class to generate PDF files",
-        "version": "6.6.2",
+        "version": "6.6.5",
         "license": "LGPL",
-        "licenseversion": "3.0-only",
+        "licenseversion": "3.0-or-later",
         "repository": "https://github.com/tecnickcom/TCPDF",
         "customised": true
     },

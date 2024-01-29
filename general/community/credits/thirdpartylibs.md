@@ -128,7 +128,7 @@ A general library that is supposed to be used in most PHP implementations of H5P
 Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.
 
 - **Location**: lib/adodb
-- **Version**: 5.22.5
+- **Version**: 5.22.7
 - **License**:  BSD/LGPL 3-Clause/2.1+
 - **URL**: [https://github.com/ADOdb/ADOdb](https://github.com/ADOdb/ADOdb)
 - **Copyright holders**:
@@ -525,7 +525,7 @@ PHP API for reading MaxMind DB files.
 CSS & JavaScript minifier, in PHP
 
 - **Location**: lib/minify/matthiasmullie-minify
-- **Version**: 1.3.70 (with Moodle customisations)
+- **Version**: 1.3.71 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/matthiasmullie/minify](https://github.com/matthiasmullie/minify)
 
@@ -797,7 +797,7 @@ RTLCSS is a framework for converting Left-To-Right (LTR) Cascading Style Sheets(
 scssphp is a compiler for SCSS written in PHP.
 
 - **Location**: lib/scssphp
-- **Version**: 1.11.0
+- **Version**: 1.12.1
 - **License**:  MIT
 - **URL**: [https://github.com/scssphp/scssphp/](https://github.com/scssphp/scssphp/)
 - **Copyright holders**:
@@ -826,11 +826,12 @@ A generic function and convention to trigger deprecation notices
 Class to generate PDF files
 
 - **Location**: lib/tcpdf
-- **Version**: 6.6.2 (with Moodle customisations)
-- **License**:  LGPL 3.0-only
+- **Version**: 6.6.5 (with Moodle customisations)
+- **License**:  LGPL 3.0-or-later
 - **URL**: [https://github.com/tecnickcom/TCPDF](https://github.com/tecnickcom/TCPDF)
 - **Copyright holders**:
   - Olivier PLATHEY
+  - Nicola Asuni
 
 ### validateUrlSyntax
 
