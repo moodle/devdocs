@@ -87,7 +87,7 @@ Use the `git-blame` tool on the corresponding `lang/en/deprecated.txt` and find 
 [git blame lang/en/deprecated.txt](https://github.com/moodle/moodle/blame/master/lang/en/deprecated.txt)<br/>
 [git blame mod/quiz/lang/en/deprecated.txt](https://github.com/moodle/moodle/blame/master/mod/quiz/lang/en/deprecated.txt)
 
-::::
+:::
 
 ## See also
 
