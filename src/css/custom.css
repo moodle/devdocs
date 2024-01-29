@@ -154,3 +154,8 @@ ul ol {
   /* Docusaurus overrides the style for nested ordered lists to roman-numerals, which is non-ideal. */
   list-style-type: auto;
 }
+
+.theme-admonition {
+    /* Prevent overlapping custom components, such as ProjectSummary */
+    clear: both;
+}
