@@ -90,7 +90,7 @@ The [Check API](./apis/subsystems/check/index.md) allows you to add security, pe
 
 ### Comment API (comment)
 
-The [Comment API](https://docs.moodle.org/dev/Comment_API) allows you to save and retrieve user comments, so that you can easily add commenting to any of your code.
+The [Comment API](./api/core/comment) allows you to save and retrieve user comments, so that you can easily add commenting to any of your code.
 
 ### Competency API (competency)
 
