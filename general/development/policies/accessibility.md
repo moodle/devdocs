@@ -29,7 +29,7 @@ Accreditations expire after one year, but this does not mean that the accreditat
 | v3.10   | 10 November 2020                          | [MDL-67688](https://tracker.moodle.org/browse/MDL-67688) |
 | v3.11   | 8 November 2021                           | [MDL-72657](https://tracker.moodle.org/browse/MDL-72657) |
 | v4.0    | 3 May 2023                                | [MDL-74624](https://tracker.moodle.org/browse/MDL-74624) |
-| v4.1, v4.2 | _Pending_                              | [MDL-78185](https://tracker.moodle.org/browse/MDL-78185) |
+| v4.1, v4.2 | 24 January 2024                        | [MDL-78185](https://tracker.moodle.org/browse/MDL-78185) |
 
 **[Moodle App](https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle-mobile-app)**
 
@@ -217,24 +217,55 @@ When it is determined that an advanced interface is required (typically one that
 - [Authoring Tool Accessibility Guidelines (ATAG) 2.0](https://www.w3.org/TR/ATAG20/)
 - [User Agent Accessibility Guidelines (UAAG) 2.0](https://www.w3.org/TR/UAAG20/)
 
-## Accessibility Tools
+## Accessibility Testing
 
-Moodle officially supports the following screen reader/browser configurations:
+### Screen readers
+
+The following screen readers are mainly used when performing tests that require screen readers:
+
+- [NVDA Screen Reader](https://www.nvaccess.org/) (Windows)
+- [JAWS Screen Reader](http://www.freedomscientific.com/) (Windows)
+
+Both screen readers work well with Chrome, Edge, and Firefox.
 
 <!-- cspell:ignore Chromevox -->
 
-- Browsers:
-  - Microsoft Edge, Jaws 15+ (Latest version recommended)
-  - Mozilla Firefox, NVDA 2014.1+ (Latest version recommended)
-- Screen readers:
-  - [NVDA Screen Reader](https://www.nvaccess.org/) (Windows)
-  - [JAWS Screen Reader](http://www.freedomscientific.com/) (Windows)
-  - [Chromevox Screen Reader](http://www.chromevox.com/) (Linux, Chrome OS, Windows, Mac OS X)
-  - [Orca Screen Reader](https://help.gnome.org/users/orca/stable/) (Linux)
-- Accessibility tools:
-  - [WebAIM Web Accessibility Evaluation Tool](https://wave.webaim.org/extension/) (Chrome, Firefox)
-  - [Chrome Accessibility Dev Tools](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference) (Chrome)
-  - [W3C Accessibility Tool Listing](http://www.w3.org/WAI/ER/tools/complete)
+Since Moodle LMS is being developed to meet WCAG 2.1 Level AA standards, other screen readers that implement the web accessibility API of their supported operating system and browser(s) and support WCAG 2.1 Level AA should also work with Moodle.
+
+- VoiceOver ([MacOS](https://support.apple.com/en-au/guide/voiceover/welcome/mac)/[iOS](https://support.apple.com/en-au/guide/iphone/iph3e2e415f/ios))
+  - Works best with Safari
+  - Works well with Chrome and Firefox
+- [Talkback](https://support.google.com/accessibility/android/answer/2633135?hl=en&ref_topic=10601774&sjid=13502500306212449126-AP) (Android)
+  - Works best with Chrome
+  - Works well with Firefox
+- [Chromebook Screen Reader](https://support.google.com/chromebook/answer/7031755) (Chrome OS)
+- [Chrome Screen Reader extension (formerly Chromevox)](https://chromewebstore.google.com/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn) (Windows, Linux, MacOS)
+  - Compatible with Chromium-based browsers, such as Google Chrome and Microsoft Edge
+  - We don't test on this anymore since Google has ceased active development on this extension
+
+### Accessibility testing tools
+
+Aside from screen readers, Moodle LMS is also being tested using a variety of accessibility tools:
+
+#### Built-in browser dev tools
+
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/accessibility/reference)
+- [Firefox Accessibility Inspector](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html)
+
+#### Browser extensions
+
+- [axe DevTools](https://www.deque.com/axe/devtools/) (Chrome, Firefox)
+- [WebAIM Web Accessibility Evaluation Tool (WAVE)](https://wave.webaim.org/extension/) (Chrome, Firefox)
+
+#### HTML Validator
+
+- [Nu HTML Checker](https://github.com/validator/validator)
+
+#### Behat
+
+<!-- cspell:ignore Deque -->
+
+Moodle LMS' automated acceptance testing integrates Deque Systems' accessibility testing engine, [axe-core](https://github.com/dequelabs/axe-core), to support automated accessibility testing through Behat.
 
 ## International Legislation
 
