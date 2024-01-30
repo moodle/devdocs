@@ -63,6 +63,10 @@ See [Plugin contribution#Tracker](./index.md#tracker) if you want to use the Moo
 - Additional files contained in the plugin ZIP package (such as third party libraries used by the plugin, or included media) may eventually use other license as long as it is [GPL compatible](http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses). See [Plugin files#thirdpartylibs.xml](/docs/apis/commonfiles#thirdpartylibsxml) for how to do it.
 - Note that binary files violate GPL unless the source code is also included or available (e.g. Java classes or Flash).
 
+### Intellectual property rights
+
+You represent and warrant that any and all intellectual property that you upload or submit via the [Moodle plugins directory](https://moodle.org/plugins) is either your sole and exclusive property or you have secured any and all authorisation, licences and rights to use such intellectual property as applicable under relevant laws. You hereby grant Moodle a licence to use, copy, transmit, store, process and back-up your data, account information, intellectual property and other related information ("Data") and consent to Moodle removing all Data should it determine to do so.
+
 ### Subscription needed
 
 - If the plugin requires a third-party subscription based service, make sure the description states it very clearly.
