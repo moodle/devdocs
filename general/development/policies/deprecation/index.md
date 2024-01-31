@@ -53,6 +53,7 @@ Deprecation affects only the current master version, in other words, the depreca
  debugging('foobar() is deprecated. Please use foobar::blah() instead.', DEBUG_DEVELOPER);
  ```
 
+- Unit tests that call the function should have `assertDebuggingCalled()` added to allow them to continue running.
 - If the deprecated function has been replaced with a new function, ideally the new function should be called from the deprecated function, so that the new functionality is used. This will make maintenance easier moving forward.
 - A `@deprecated` tag should be added to the PHPDoc for the function description so that IDEs describing the function will note that it is deprecated, documenting which version it was deprecated in and the MDL issue associated with it. See the guidelines in [Coding style](../codingstyle/index.md#deprecated-and-todo).
 - If the function is an external function, then an additional deprecation-specific method needs to be created and set to return true. See the [adding a web service to a plugin](/docs/apis/subsystems/external/writing-a-service#deprecation) docs on that process. You should continue to add the `@deprecated since x.x` tag to the docs of all three of the relevant external methods (parameters, main method, returns) to make it clear to IDEs that the function is deprecated.
