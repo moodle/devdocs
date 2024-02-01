@@ -257,27 +257,29 @@ When it is determined that an advanced interface is required (typically one that
 
 ### Screen readers
 
-The following screen readers are mainly used when performing tests that require screen readers:
+Screen readers that implement the web accessibility API of their supported operating system and conform with the WCAG 2.1 Level AA guidelines should work well with Moodle products.
 
-- [NVDA Screen Reader](https://www.nvaccess.org/) (Windows)
-- [JAWS Screen Reader](http://www.freedomscientific.com/) (Windows)
+The table below lists some of the popular screen readers available. Browsers in **bold** font indicate the best compatibility with the given screen reader compared to other compatible browsers.
 
-Both screen readers work well with Chrome, Edge, and Firefox.
+<!-- cspell:ignore ChromeVox -->
 
-<!-- cspell:ignore Chromevox -->
+| Screen reader                                                                                                                   | Operating system | Browser compatibility             | Used in testing on |
+|---------------------------------------------------------------------------------------------------------------------------------|------------------|-----------------------------------|--------------------|
+| [NVDA](https://www.nvaccess.org/)                                                                                               | Windows          | Chrome, Edge, Firefox             | LMS                |
+| [JAWS](http://www.freedomscientific.com/)                                                                                       | Windows          | Chrome, Edge, Firefox             | LMS                |
+| [Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1)         | Windows          | **Edge**, Chrome, Firefox         |                    |
+| [VoiceOver](https://support.apple.com/guide/voiceover)                                                                          | macOS, iOS       | **Safari**, Chrome, Edge, Firefox | LMS, App           |
+| [Talkback](https://support.google.com/accessibility/android/topic/3529932?hl=en&ref_topic=9078845&sjid=13502500306212449126-AP) | Android          | **Chrome**, Firefox               | LMS, App           |
+| [ChromeVox](https://support.google.com/chromebook/answer/7031755)                                                               | Chrome OS        | **Chrome**, Firefox               |                    |
 
-Since Moodle LMS is being developed to meet WCAG 2.1 Level AA standards, other screen readers that implement the web accessibility API of their supported operating system and browser(s) and support WCAG 2.1 Level AA should also work with Moodle.
+:::info Notes about screen reader testing
 
-- VoiceOver ([MacOS](https://support.apple.com/en-au/guide/voiceover/welcome/mac)/[iOS](https://support.apple.com/en-au/guide/iphone/iph3e2e415f/ios))
-  - Works best with Safari
-  - Works well with Chrome and Firefox
-- [Talkback](https://support.google.com/accessibility/android/answer/2633135?hl=en&ref_topic=10601774&sjid=13502500306212449126-AP) (Android)
-  - Works best with Chrome
-  - Works well with Firefox
-- [Chromebook Screen Reader](https://support.google.com/chromebook/answer/7031755) (Chrome OS)
-- [Chrome Screen Reader extension (formerly Chromevox)](https://chromewebstore.google.com/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn) (Windows, Linux, MacOS)
-  - Compatible with Chromium-based browsers, such as Google Chrome and Microsoft Edge
-  - We don't test on this anymore since Google has ceased active development on this extension
+Moodle HQ use screen readers when testing:
+
+- Bug fixes to accessibility issues that require screen reader testing
+- New pages or user interface components that are being developed for new product features or improvements
+
+:::
 
 ### Accessibility testing tools
 
@@ -288,7 +290,7 @@ Aside from screen readers, Moodle LMS is also being tested using a variety of ac
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/accessibility/reference)
 - [Firefox Accessibility Inspector](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html)
 
-#### Browser extensions
+#### Browser Extensions
 
 - [axe DevTools](https://www.deque.com/axe/devtools/) (Chrome, Firefox)
 - [WebAIM Web Accessibility Evaluation Tool (WAVE)](https://wave.webaim.org/extension/) (Chrome, Firefox)
