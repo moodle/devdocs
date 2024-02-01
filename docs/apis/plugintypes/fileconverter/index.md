@@ -14,7 +14,7 @@ File converters are an important tool to support other plugins with file convers
 
 ## File structure
 
-File converter plugins are located in the `/file/converter` directory.
+File converter plugins are located in the `/files/converter` directory.
 
 Each plugin is in a separate subdirectory and consists of a number of _mandatory files_ and any other files the developer is going to use.
 
