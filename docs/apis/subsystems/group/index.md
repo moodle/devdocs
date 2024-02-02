@@ -87,7 +87,7 @@ This is using an example from the module forums.
 $id = required_param('id', PARAM_INT);
 
 // Get the course module.
-$cm = get_coursemodule_from_id('forum', $id, 0, false, MUST_EXIST)
+$cm = get_coursemodule_from_id('forum', $id, 0, false, MUST_EXIST);
 
 // Get the current group id.
 $currentgroupid = groups_get_activity_group($cm);
@@ -161,7 +161,7 @@ groups_print_activity_menu($cm, $url);
 The following example will check whether the current user has permission to see hidden groups on a course, and **if they do not**, will apply additional conditions to a query to restrict the results to just those groups they should see.
 
 ```php
-$courseid = required_param('courseid', PARAM_INT)';
+$courseid = required_param('courseid', PARAM_INT);
 $sql = "SELECT g.idnumber, gm.*
           FROM {groups} g
           JOIN {groups_members} gm ON gm.groupid = g.id
@@ -170,7 +170,7 @@ $sql = "SELECT g.idnumber, gm.*
 $params = [$courseid];
 
 $context = context_course::instance($courseid);
-if (!has_capability('moodle/course:viewhiddengroups', $context) {
+if (!has_capability('moodle/course:viewhiddengroups', $context)) {
     // Apply visibility restrictions.
     [
         $visibilitywhere,
