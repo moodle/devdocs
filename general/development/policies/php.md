@@ -101,7 +101,7 @@ PHP 7.0 **can be used with** Moodle 3.0.1, Moodle 3.1 and later releases. It is 
 
 ### PHP 8.3
 
-PHP 8.3 support **is currently being implemented**. We hope to make this available for Moodle 4.4 but this has not yet been confirmed and is subject to change. See MDL-76426 for details.
+PHP 8.3 support **is currently being implemented** for Moodle 4.4 and later releases. Hence it's still **incomplete and only for development purposes**. See MDL-76426 for details.
 
 ## See also
 
