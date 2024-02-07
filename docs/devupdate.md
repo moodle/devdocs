@@ -154,6 +154,14 @@ $formatter->format_text(
 
 :::
 
+### Clock interface
+
+<Since version="4.4" issueNumber="MDL-80838" />
+
+Moodle now supports use of a PSR-20 compliant Clock Interface, accessed via Dependency Injection.
+
+See the [detailed documentation](./apis/core/clock/index.md) on how to use this new interface.
+
 ## Enrolment
 
 ### Support for multiple instances in csv course upload
