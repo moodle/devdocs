@@ -40,6 +40,9 @@ function xmldb_certificate_upgrade($oldversion = 0) {
         // Certificate savepoint reached.
         upgrade_mod_savepoint(true, 2012091800, 'certificate');
     }
+
+    // Everything has succeeded to here. Return true.
+    return true;
 }`;
 
 export default (initialProps: Props): ComponentFileSummary => (
