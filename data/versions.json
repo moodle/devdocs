@@ -39,6 +39,11 @@
                     "releaseDate": "22 December 2023",
                     "version": 2023100902,
                     "notes": "Unscheduled minor release"
+                },
+                {
+                    "name": "4.3.3",
+                    "releaseDate": "12 February 2024",
+                    "version": 2023100903
                 }
             ]
         },
@@ -80,6 +85,11 @@
                     "releaseDate": "22 December 2023",
                     "version": 2023042405,
                     "notes": "Unscheduled minor release"
+                },
+                {
+                    "name": "4.2.6",
+                    "releaseDate": "12 February 2024",
+                    "version": 2023042406
                 }
             ]
         },
@@ -136,6 +146,11 @@
                     "releaseDate": "22 December 2023",
                     "version": 2022112808,
                     "notes": "Unscheduled minor release"
+                },
+                {
+                    "name": "4.1.9",
+                    "releaseDate": "12 February 2024",
+                    "version": 2022112809
                 }
             ]
         },
