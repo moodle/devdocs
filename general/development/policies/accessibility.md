@@ -12,32 +12,67 @@ Moodle is designed to provide equal functionality and information to all people.
 
 ## Accessibility conformance
 
-As part of our ongoing commitment to provide an accessible platform and to continuously improve compliance with WCAG 2.1 Level AA, Moodle has been working with an external auditor to review the platform since the development of Moodle 3.9 in January 2020.
+As part of our ongoing commitment to accessibility and continuously improving conformance with the WCAG 2.1 Level AA success criteria, Moodle is working with an external team of accessibility specialists to review the accessibility of its products through regular accessibility audits.
 
-Key pages within Moodle, which are representative of its overall accessibility and functionality, are audited using both automated tools and user journey testing. The WCAG 2.1 Level A and Level AA issues raised from this audit are all addressed. The accessibility fixes and improvements are also back-ported to current supported Moodle versions, where possible.
+### Accessibility accreditations
 
-:::info Moodle's accreditations
+#### Moodle LMS
 
-Both Moodle LMS and the Moodle Mobile App hold a WCAG 2.1 AA accreditation based on the successful resolution of issues identified during audits.
+Moodle LMS has been accredited to meet [WCAG 2.1 Level AA conformance](https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle).
 
-Accreditations expire after one year, but this does not mean that the accreditation is invalid or that the Moodle version is no longer accessible. An expired accreditation just means that the process for re-accrediting the latest supported version or versions of Moodle is currently in progress.
+The table below provides a history of the accessibility audits performed on the Moodle LMS.
 
-**[Moodle LMS](https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle)**
+| Audit period   | Target conformance | Accreditation date | Tracker epic                                             | Fixed versions               |
+|----------------|--------------------|--------------------|----------------------------------------------------------|------------------------------|
+| January 2020   | WCAG 2.1 Level AA  | 10 November 2020   | [MDL-67688](https://tracker.moodle.org/browse/MDL-67688) | v3.10, v3.9.3                |
+| September 2021 | WCAG 2.1 Level AA  | 8 November 2021    | [MDL-72657](https://tracker.moodle.org/browse/MDL-72657) | v4.0, v3.11.5, v3.10.8       |
+| May 2022       | WCAG 2.1 Level AA  | 3 May 2023         | [MDL-74624](https://tracker.moodle.org/browse/MDL-74624) | v4.2, v4.1.3, v4.0.8         |
+| August 2023    | WCAG 2.1 Level AA  | 24 January 2024    | [MDL-78185](https://tracker.moodle.org/browse/MDL-78185) | v4.4, v4.3.1, v4.2.4, v4.1.7 |
 
-| Version | WCAG 2.1 Level AA accreditation issued on | Tracker epic                                             |
-|---------|-------------------------------------------|----------------------------------------------------------|
-| v3.10   | 10 November 2020                          | [MDL-67688](https://tracker.moodle.org/browse/MDL-67688) |
-| v3.11   | 8 November 2021                           | [MDL-72657](https://tracker.moodle.org/browse/MDL-72657) |
-| v4.0    | 3 May 2023                                | [MDL-74624](https://tracker.moodle.org/browse/MDL-74624) |
-| v4.1, v4.2 | _Pending_                              | [MDL-78185](https://tracker.moodle.org/browse/MDL-78185) |
+<details>
 
-**[Moodle App](https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle-mobile-app)**
+<summary>Table column information</summary>
 
-- v4.2 WCAG 2.1 Level AA accreditation issued on 9 May 2023 [MOBILE-4182](https://tracker.moodle.org/browse/MOBILE-4182)
+- **Audit period** - when the accessibility audit was performed
+- **Target conformance** - the target WCAG guidelines version and the conformance level for the accreditation
+- **Accreditation date** - the date the accessibility accreditation was issued
+- **Tracker epic** - link to the Epic issue in the Moodle Tracker that contains the issues fixed for the accessibility audit
+- **Fixed versions** - the Moodle versions that include the fixes from the issues raised from the audit
 
-An overview of Moodle's conformance with the [WCAG 2.1](https://www.w3.org/TR/WCAG21/) guidelines can be found in our [accessibility conformance report](https://docs.moodle.org/en/VPAT#Moodle%20accessibility%20conformance%20report).
+</details>
+
+#### Moodle App
+
+The Moodle App was accredited to meet [WCAG 2.1 Level AA conformance](https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle-mobile-app) on 9 May 2023. See [MOBILE-4182](https://tracker.moodle.org/browse/MOBILE-4182) for more details.
+
+#### Moodle Workplace
+
+Moodle Workplace is currently in the process of getting the WCAG 2.1 Level AA accreditation.
+
+### Accessibility accreditation process
+
+1. External auditors perform an accessibility audit on key pages/screens within the Moodle product using automated tools and user journey testing. These pages are selected as representative of the product's overall accessibility and functionality.
+    - The audit is performed on a test site that contains the latest released version of the Moodle product at the time of the audit.
+2. The Level A and Level AA issues raised from this audit are all addressed. Level AAA issues raised will also be fixed where practical.
+    - The accessibility fixes and improvements are applied to:
+        - The development branch for the upcoming major version of the Moodle product
+        - The current released version(s) of the Moodle product
+3. The external auditors verify the accessibility fixes.
+4. Once all fixes have been verified, a conformance report is issued to Moodle.
+
+:::info
+
+The WCAG accreditation expires after 12 months as it is recognised that software and browsers are constantly evolving. Moodle will be undertaking the accreditation process annually.
 
 :::
+
+<!-- cspell:ignore VPAT -->
+
+### Voluntary Product Accessibility Template (VPAT)
+
+#### Moodle LMS
+
+An overview of Moodle LMS' conformance with the [WCAG 2.1](https://www.w3.org/TR/WCAG21/) guidelines can be found in our [accessibility conformance report](https://docs.moodle.org/en/VPAT#Moodle%20accessibility%20conformance%20report).
 
 ## Authoring features
 
@@ -217,24 +252,57 @@ When it is determined that an advanced interface is required (typically one that
 - [Authoring Tool Accessibility Guidelines (ATAG) 2.0](https://www.w3.org/TR/ATAG20/)
 - [User Agent Accessibility Guidelines (UAAG) 2.0](https://www.w3.org/TR/UAAG20/)
 
-## Accessibility Tools
+## Accessibility Testing
 
-Moodle officially supports the following screen reader/browser configurations:
+### Screen readers
 
-<!-- cspell:ignore Chromevox -->
+Screen readers that implement the web accessibility API of their supported operating system and conform with the WCAG 2.1 Level AA guidelines should work well with Moodle products.
 
-- Browsers:
-  - Microsoft Edge, Jaws 15+ (Latest version recommended)
-  - Mozilla Firefox, NVDA 2014.1+ (Latest version recommended)
-- Screen readers:
-  - [NVDA Screen Reader](https://www.nvaccess.org/) (Windows)
-  - [JAWS Screen Reader](http://www.freedomscientific.com/) (Windows)
-  - [Chromevox Screen Reader](http://www.chromevox.com/) (Linux, Chrome OS, Windows, Mac OS X)
-  - [Orca Screen Reader](https://help.gnome.org/users/orca/stable/) (Linux)
-- Accessibility tools:
-  - [WebAIM Web Accessibility Evaluation Tool](https://wave.webaim.org/extension/) (Chrome, Firefox)
-  - [Chrome Accessibility Dev Tools](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference) (Chrome)
-  - [W3C Accessibility Tool Listing](http://www.w3.org/WAI/ER/tools/complete)
+The table below lists some of the popular screen readers available. Browsers in **bold** font indicate the best compatibility with the given screen reader compared to other compatible browsers.
+
+<!-- cspell:ignore ChromeVox -->
+
+| Screen reader                                                                                                                   | Operating system | Browser compatibility             | Used in testing on |
+|---------------------------------------------------------------------------------------------------------------------------------|------------------|-----------------------------------|--------------------|
+| [NVDA](https://www.nvaccess.org/)                                                                                               | Windows          | Chrome, Edge, Firefox             | LMS                |
+| [JAWS](http://www.freedomscientific.com/)                                                                                       | Windows          | Chrome, Edge, Firefox             | LMS                |
+| [Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1)         | Windows          | **Edge**, Chrome, Firefox         |                    |
+| [VoiceOver](https://support.apple.com/guide/voiceover)                                                                          | macOS, iOS       | **Safari**, Chrome, Edge, Firefox | LMS, App           |
+| [Talkback](https://support.google.com/accessibility/android/topic/3529932?hl=en&ref_topic=9078845&sjid=13502500306212449126-AP) | Android          | **Chrome**, Firefox               | LMS, App           |
+| [ChromeVox](https://support.google.com/chromebook/answer/7031755)                                                               | Chrome OS        | **Chrome**, Firefox               |                    |
+
+:::info Notes about screen reader testing
+
+Moodle HQ directly tests with a number of different screen readers when assessing:
+
+- Bug fixes to accessibility issues that require screen reader testing
+- New pages or user interface components that are being developed for new product features or improvements
+
+:::
+
+### Accessibility testing tools
+
+Aside from screen readers, Moodle LMS is also tested using a variety of accessibility tools:
+
+#### Built-in browser dev tools
+
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/accessibility/reference)
+- [Firefox Accessibility Inspector](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html)
+
+#### Browser Extensions
+
+- [axe DevTools](https://www.deque.com/axe/devtools/) (Chrome, Firefox)
+- [WebAIM Web Accessibility Evaluation Tool (WAVE)](https://wave.webaim.org/extension/) (Chrome, Firefox)
+
+#### HTML Validator
+
+- [Nu HTML Checker](https://github.com/validator/validator)
+
+#### Behat
+
+<!-- cspell:ignore Deque -->
+
+Moodle LMS' automated acceptance testing integrates Deque Systems' accessibility testing engine, [axe-core](https://github.com/dequelabs/axe-core), to support automated accessibility testing through Behat.
 
 ## International Legislation
 
