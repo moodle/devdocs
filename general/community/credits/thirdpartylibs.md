@@ -105,8 +105,8 @@ Compiled C program to convert TeX into GIFs
 
 The general H5P library.
 
-- **Location**: h5p/h5plib/v124/joubel/core
-- **Version**: moodle-1.23
+- **Location**: h5p/h5plib/v126/joubel/core
+- **Version**: 1.26
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-php-library/](https://github.com/h5p/h5p-php-library/)
 - **Copyright holders**:
@@ -116,7 +116,7 @@ The general H5P library.
 
 A general library that is supposed to be used in most PHP implementations of H5P.
 
-- **Location**: h5p/h5plib/v124/joubel/editor
+- **Location**: h5p/h5plib/v126/joubel/editor
 - **Version**: moodle-1.23
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-editor-php-library/](https://github.com/h5p/h5p-editor-php-library/)
@@ -463,6 +463,13 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 - **Copyright holders**:
   - 2016 The jQuery Foundation and other contributors
 
+### Serializable Closure
+
+- **Location**: lib/laravel/serializable-closure
+- **Version**: 1.3.2
+- **License**:  MIT
+- **URL**: [https://github.com/laravel/serializable-closure](https://github.com/laravel/serializable-closure)
+
 ### LTI 1.3 Tool Library
 
 A library used for building IMS-certified LTI 1.3 tool providers in PHP.
@@ -626,6 +633,20 @@ A Parser for CSS Files written in PHP.
 - **Copyright holders**:
   - 2011 Raphael Schweikert, http://sabberworm.com/
 
+### PHP DI Invoker
+
+- **Location**: lib/php-di/invoker
+- **Version**: 2.3.4
+- **License**:  MIT
+- **URL**: [https://github.com/php-di/invoker](https://github.com/php-di/invoker)
+
+### PHP Dependency Injector
+
+- **Location**: lib/php-di/php-di
+- **Version**: 7.0.6
+- **License**:  MIT
+- **URL**: [https://github.com/PHP-DI/PHP-DI](https://github.com/PHP-DI/PHP-DI)
+
 ### php-enum
 
 PHP Enum implementation inspired from SplEnum
@@ -726,6 +747,15 @@ Polyfill URL and URLSearchParams to match last WHATWG specifications.
 - **Version**: 1.1.12
 - **License**:  MIT
 - **URL**: [https://github.com/lifaon74/url-polyfill](https://github.com/lifaon74/url-polyfill)
+
+### container
+
+Common Container Interface (PHP FIG PSR-11).
+
+- **Location**: lib/psr/container
+- **Version**: 2.0.2
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/container](https://github.com/php-fig/container)
 
 ### event-dispatcher
 
