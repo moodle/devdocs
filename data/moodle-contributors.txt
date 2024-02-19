@@ -417,6 +417,7 @@ Gustav
 Haemmerle
 Hager
 Hagey,
+Hamar
 Hanauska
 Hancox
 Hanusch
@@ -686,6 +687,7 @@ Matt
 Matteo
 Matter
 Matthew
+Matthias
 Mayank
 Mayer
 McCormack
@@ -808,6 +810,7 @@ Olley
 Olsen
 Olujide
 Oosthuizen
+Opitz
 Oquist
 Ordóñez
 Orzu
@@ -823,6 +826,7 @@ Panagiotis
 Panning
 Paola
 Parry
+Pascal
 Pataleta
 Patrick
 Patrik
