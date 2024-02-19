@@ -6,7 +6,7 @@ tags:
 - core
 ---
 
-import { Since } from '@site/src/components';
+import { Since, ValidExample } from '@site/src/components';
 
 <Since version="4.3" issueNumber="MDL-74954" />
 
@@ -17,6 +17,26 @@ This page describes the Hooks API which is a replacement for some of the lib.php
 The most common use case for hooks is to allow customisation of standard plugins or core functionality
 through hook callbacks in local plugins. For example adding a custom institution password
 policy that applies to all enabled authentication plugins through a new local plugin.
+
+## Hook Policies
+
+New hooks added to Moodle from Moodle 4.4 onwards must meet the following rules:
+
+- When describing a hook which happens before or after, the following modifiers are allowed:
+  - `before`
+  - `after`
+- When a modifier is used, it should be used as a _prefix_
+- Hooks belonging to a core subsystem should be located within that subsystem, and _not_ in the `core` subsystem
+- Hook descriptions **should** be in English, and **should not** use language strings or support translation
+
+<ValidExample title="Examples of valid hook names">
+
+- `\core_course\hook\before_course_visibility_changed`
+- `\core_form\hook\before_form_validation`
+- `\core_form\hook\after_form_validation`
+- `\core\hook\navigation\before_render`
+
+</ValidExample>
 
 ## General concepts
 
