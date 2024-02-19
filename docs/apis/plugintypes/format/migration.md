@@ -82,7 +82,7 @@ Scenario 2: If your plugin does not have a renderer, create a file **course/form
   <div>
 
 import Renderer from '!!raw-loader!./_examples/output/renderer.php';
-const RendererProps = {
+export const RendererProps = {
     examplePurpose: 'Output renderer',
     plugintype: 'format',
     pluginname: 'pluginname',
@@ -145,7 +145,7 @@ The new workflow in 4.0 is:
   <div>
 
 import Format from '!!raw-loader!./_examples/format.php';
-const FormatProps = {
+export const FormatProps = {
     examplePurpose: 'Format course display',
     plugintype: 'format',
     pluginname: 'pluginname',
@@ -198,7 +198,7 @@ If your course format plugin uses a sections-activity structure it is possible t
   <div>
 
 import BaseCourseIndex from '!!raw-loader!./_examples/lib_course_index.php';
-const BaseCourseIndexProps = {
+export const BaseCourseIndexProps = {
     examplePurpose: 'Format base class with course index enabled',
     plugintype: 'format',
     pluginname: 'pluginname',
@@ -242,7 +242,7 @@ Once your plugin has all the necessary data attributes you can disable the old Y
   <div>
 
 import BaseComponents from '!!raw-loader!./_examples/lib_components.php';
-const BaseComponentsProps = {
+export const BaseComponentsProps = {
     examplePurpose: 'Format base class with components enabled',
     plugintype: 'format',
     pluginname: 'pluginname',

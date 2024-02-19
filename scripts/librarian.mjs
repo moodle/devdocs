@@ -123,7 +123,9 @@ const renderCopyrightHolders = (copyrightHolders) => {
     return `- **Copyright holders**:
 ${copyrightHolders.map((copyrightHolder) => `  - ${copyrightHolder}`).join(`
 `)}
-`;
+`
+        .replaceAll(/</g, '')
+        .replaceAll(/>/g, '');
 };
 
 const renderLibraryUrl = (libraryUrl) => {

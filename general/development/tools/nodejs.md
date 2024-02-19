@@ -12,8 +12,8 @@ Use of [NVM](#node-version-manager) for installation of NodeJS is highly recomme
 
 The recommended way of installing NodeJS is via the [Node Version Manager](https://github.com/nvm-sh/nvm), or NVM. NVM allows you to have several different versions of NodeJS installed and in-use at once on your computer.
 
-- For Linux and Mac, follow <https://github.com/nvm-sh/nvm#installing-and-updating>
-- For Windows, use <https://github.com/coreybutler/nvm-windows/releases> -- Note! NVM 1.1.7 for Windows has bugs. You should upgrade to at least 1.1.9.)
+- For Linux and Mac, follow [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
+- For Windows, use [https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases) -- Note! NVM 1.1.7 for Windows has bugs. You should upgrade to at least 1.1.9.)
 
 :::tip Checking that NVM is working
 

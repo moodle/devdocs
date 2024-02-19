@@ -970,7 +970,7 @@ YouTube Playback Technology for Video.js.
 - **License**:  MIT
 - **URL**: [https://github.com/videojs/videojs-youtube](https://github.com/videojs/videojs-youtube)
 - **Copyright holders**:
-  - 2014-2015 Benoit Tremblay <trembl.ben@gmail.com>
+  - 2014-2015 Benoit Tremblay trembl.ben@gmail.com
 
 ### ogv.js support files
 

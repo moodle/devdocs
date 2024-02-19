@@ -138,6 +138,10 @@
   content: url("/static/img/search.svg");
 }
 
+.fa_waffle {
+  cursor: pointer;
+}
+
 .moodlesitestopnavbar .fa_waffle::before{
   content: url("/static/img/waffle.svg");
 }

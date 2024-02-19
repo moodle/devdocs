@@ -15,8 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-const visit = require('unist-util-visit');
+import { visit } from 'unist-util-visit';
 
 const projects = [
     'MDL',
@@ -61,7 +60,7 @@ const updateTextLink = (node, index, parent) => {
         return 'skip';
     }
 
-    const expression = new RegExp(`(?<issueNumber>(${projects.join('|')})-\\d+)`, 'g');
+    const expression = new RegExp(`(?<issueNumber>(${projects.join('|')})-\\d+)`);
     const match = expression.exec(value);
     if (match === null) {
         // No matches found in this node, so skip this one, but keep processing.
@@ -86,17 +85,14 @@ const updateTextLink = (node, index, parent) => {
     return index + 2;
 };
 
-const plugin = () => {
-    const transformer = async (ast) => {
-        // Visit all nodes on the AST which are of type 'text' and apply the updateTextLink function on them.
-        // The visit function's third parameter is a Visitor function.
-        // See the docs at https://github.com/syntax-tree/unist-util-visit-parents
-        // Note: It has a mixed return type.
-        // - If the Visitor function returns 'skip', then the visit function will skip this node and continue.
-        // - If the Visitor function returns a Number, then the visit function will continue from that index.
-        visit(ast, 'text', (node, index, parent) => updateTextLink(node, index, parent));
-    };
-    return transformer;
+const plugin = () => async (ast) => {
+    // Visit all nodes on the AST which are of type 'text' and apply the updateTextLink function on them.
+    // The visit function's third parameter is a Visitor function.
+    // See the docs at https://github.com/syntax-tree/unist-util-visit-parents
+    // Note: It has a mixed return type.
+    // - If the Visitor function returns 'skip', then the visit function will skip this node and continue.
+    // - If the Visitor function returns a Number, then the visit function will continue from that index.
+    visit(ast, 'text', (node, index, parent) => updateTextLink(node, index, parent));
 };
 
-module.exports = plugin;
+export default plugin;

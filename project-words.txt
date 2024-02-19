@@ -195,6 +195,7 @@ mainmenu
 manageentries
 manageqbehaviours
 managetoken
+Matomo
 mathjax
 maxbytes
 mbstring

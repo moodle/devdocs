@@ -4,7 +4,11 @@ on:
   pull_request:
     paths:
       - 'docs/**/*.md'
+      - 'docs/**/*.mdx'
       - 'general/**/*.md'
+      - 'general/**/*.mdx'
+      - 'versioned_docs/**/*.md'
+      - 'versioned_docs/**/*.mdx'
       - .markdownlint-cli2.cjs
 
 jobs:
@@ -12,15 +16,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3.0.0
+        uses: actions/setup-node@v4
         with:
-          node-version: "16"
+          node-version: "18"
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Lint markdown files
-        run: yarn mdlint-all
+        run: yarn mdlint-all && yarn mdxlint-all
+
+      - name: Check spelling
+        run: yarn spell
