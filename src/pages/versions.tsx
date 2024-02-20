@@ -69,7 +69,7 @@ export default function Version(): JSX.Element {
                     <div className="margin-bottom--lg">
                         <Heading as="h3" id="next">
                             <Translate id="versionsPage.current.title">
-                                The next version of Moodle (master)
+                                The next version of Moodle (main)
                             </Translate>
                         </Heading>
                         <p>

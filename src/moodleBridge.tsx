@@ -17,7 +17,7 @@
 
 import React, { type ReactNode } from 'react';
 import CodeBlock from '@theme/CodeBlock';
-import DefaultComponentData from '@site/data/master/components.json';
+import DefaultComponentData from '@site/data/main/components.json';
 
 export interface ComponentList {
     plugintypes: object,
@@ -79,7 +79,7 @@ export const getFileNameGetter = (ComponentData: ComponentList) => ({
 };
 
 /**
- * Get the filename for an example file using component data defined in the Master branch.
+ * Get the filename for an example file using component data defined in the main branch.
  *
  * @param {Props} props
  * @returns {string}
@@ -326,7 +326,7 @@ export const fileExampleGetter = (ComponentData: ComponentList) => (
 /**
  * Compose an example file for the given dataset.
  *
- * This function takes a set of Component Data for master.
+ * This function takes a set of Component Data for main.
  *
  * @param {Props} initialProps
  * @param {string} defaultExample
