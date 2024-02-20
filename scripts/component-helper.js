@@ -45,7 +45,7 @@ program
     .action(async () => {
         logger.info('Loading component data');
         // eslint-disable-next-line global-require, import/no-dynamic-require
-        const components = await require(getNormalizedPath('data', 'master', 'components.json'));
+        const components = await require(getNormalizedPath('data', 'main', 'components.json'));
         const validSpellings = [
             // Note: We use a Set here to remove duplicates easily.
             ...new Set([

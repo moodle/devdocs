@@ -25,7 +25,7 @@ const versionConfig = Object.fromEntries(Versions.map((version) => [version, {
     banner: 'none',
 }]));
 versionConfig.current = {
-    label: 'master',
+    label: 'main',
     banner: 'none',
 };
 
