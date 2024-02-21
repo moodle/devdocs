@@ -35,7 +35,7 @@ To get more debug output from npm commands, see [the available configuration fla
 
 ## I can't change the language
 
-If you're getting a network error for a url like `http://localhost:8100/assets/lang/es.json`, this probably means that you haven't installed the language packs. You can install them with `npm run lang:update-langpacks`.
+If you're getting a network error for a url like `https://localhost:8100/assets/lang/es.json`, this probably means that you haven't installed the language packs. You can install them with `npm run lang:update-langpacks`.
 
 ## Error: `libsass` bindings not found. Try reinstalling node-sass?
 
@@ -222,7 +222,3 @@ There will be a pause (a few minutes) while building everything. It should finis
 `
 
 Then you can access it by running Chrome and connecting to localhost:8100.
-
-## `window.openDatabase` is not a function
-
-This error appears in browsers that don't support the [WebSQL](https://caniuse.com/?search=websql) API. We suggest using a [Chromium-based browser older than version 119](./app-in-browser.md).
