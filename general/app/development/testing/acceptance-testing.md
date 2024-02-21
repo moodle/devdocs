@@ -1,6 +1,7 @@
 ---
 title: Acceptance testing for the Moodle App
 sidebar_label: Acceptance testing
+sidebar_position: 2
 tags:
   - Quality Assurance
   - Testing
