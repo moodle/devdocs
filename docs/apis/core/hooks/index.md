@@ -64,10 +64,6 @@ Information passed between subsystem and plugins is encapsulated in arbitrary PH
 These can be in any namespace, but generally speaking they should be placed in the `some_component\hook\*`
 namespace. Where possible, hooks are expected to implement the `core\hook\described_hook` interface.
 
-The names of hook classes should follow the standard pattern of general to more specific, this groups
-hooks for the same item when sorting alphabetically. For example `core\hook\course_delete_pre` instead
-of `pre_course_delete`.
-
 ### Hook callback
 
 The code executing a hook does not know in advance which plugin is going to react to a hook.
