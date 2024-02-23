@@ -16,8 +16,7 @@ There are a number of reasons Moodle is chosen as a platform for educational res
 
 ## Discussing Moodle research
 
-- [Moodle Research forum](https://moodle.org/mod/forum/view.php?id=8205)
-- [Analytics and Reporting forum](https://moodle.org/mod/forum/view.php?id=8044)
+- [Moodle Research Lab](https://moodle.me/research)
 
 ## Moodle research publications
 
