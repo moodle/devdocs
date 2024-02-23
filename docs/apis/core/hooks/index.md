@@ -6,7 +6,7 @@ tags:
 - core
 ---
 
-import { Since, ValidExample } from '@site/src/components';
+import { Since, ValidExample, Tabs, TabItem } from '@site/src/components';
 
 <Since version="4.3" issueNumber="MDL-74954" />
 
@@ -62,7 +62,17 @@ to/from any other plugins. The exact type of information flow facilitated by hoo
 
 Information passed between subsystem and plugins is encapsulated in arbitrary PHP class instances.
 These can be in any namespace, but generally speaking they should be placed in the `some_component\hook\*`
-namespace. Where possible, hooks are expected to implement the `core\hook\described_hook` interface.
+namespace.
+
+Hooks are encouraged to describe themselves and to provide relevant metadata to make them easier to use and discover. There are two ways to describe a hook:
+
+- implement the `\core\hook\described_hook` interface, which has two methods:
+  - `get_description(): string;`
+  - `get_tags(): array;`
+- add an instance of the following attributes to the class:
+  - `\core\attribute\label(string $description)`
+  - `\core\attribute\tags($a, $set, $of, $tags, ...)`
+  - `\core\attribute\hook\replaces_callbacks('a_list_of_legacy_callbacks', 'that_this_hook_replaces')`
 
 ### Hook callback
 
@@ -138,16 +148,51 @@ Imagine mod_activity plugin wants to notify other plugins that it finished insta
 then mod_activity plugin developer adds a new hook and calls it at the end of plugin
 installation process.
 
+<Tabs>
+
+<TabItem value="attribute-usage" label="Described by attribute" default>
+
+```php title="/mod/activity/classes/hook/installation_finished.php"
+<?php
+namespace mod_activity\hook;
+
+#[\core\attribute\label('Hook dispatched at the very end of installation of mod_activity plugin.')]
+#[\core\attribute\tags('installation')]
+class installation_finished implements \core\hook\described_hook {
+    public function __construct(
+        public function string $version,
+    ) {
+    }
+}
+```
+
+</TabItem>
+
+<TabItem value="interface-usage" label="Described using Interface" default>
+
 ```php title="/mod/activity/classes/hook/installation_finished.php"
 <?php
 namespace mod_activity\hook;
 
 class installation_finished implements \core\hook\described_hook {
+    public function __construct(
+        public function string $version,
+    ) {
+    }
+
     public static function get_hook_description(): string {
         return 'Hook dispatched at the very end of installation of mod_activity plugin.';
     }
+
+    public static function get_hook_tags(): array {
+        return ['installation'];
+    }
 }
 ```
+
+</TabItem>
+
+</Tabs>
 
 ```php title="/mod/activity/db/install.php"
 <?php
@@ -317,6 +362,27 @@ This example describes migration of `after_config` callback from the very end of
 
 First we need a new hook:
 
+<Tabs>
+
+<TabItem value="attribute-usage" label="Described by attribute" default>
+
+```php title="/lib/classes/hook/after_config.php"
+<?php
+namespace core\hook;
+
+use core\attribute;
+
+#[attribute\label('Hook dispatched at the very end of lib/setup.php')]
+#[attribute\tags('config')]
+#[attribute\hook\replaces_callbacks('after_config')]
+final class after_config {
+}
+```
+
+</TabItem>
+
+<TabItem value="interface-usage" label="Described using Interface" default>
+
 ```php title="/lib/classes/hook/after_config.php"
 <?php
 namespace core\hook;
@@ -325,11 +391,20 @@ final class after_config implements described_hook, deprecated_callback_replacem
     public static function get_hook_description(): string {
         return 'Hook dispatched at the very end of lib/setup.php';
     }
+
+    public static function get_hook_tags(): array {
+        return ['config'];
+    }
+
     public static function get_deprecated_plugin_callbacks(): array {
         return ['after_config'];
     }
 }
 ```
+
+</TabItem>
+
+</Tabs>
 
 The hook needs to be emitted immediately after the current callback execution code,
 and an extra parameter `$migratedtohook` must be set to true in the call to `get_plugins_with_function()`.
@@ -364,22 +439,14 @@ Since the hook is an arbitrary PHP object, it is possible to create any range of
 
 namespace core\hook;
 
-final class block_delete_pre implements described_hook, deprecated_callback_replacement {
-    public static function get_hook_description(): string {
-        return 'A hook dispatched just before a block instance is deleted';
-    }
+use core\attribute;
 
+#[attribute\label('A hook dispatched just before a block instance is deleted')]
+#[attribute\hook\replaces_callbacks('pre_block_delete')]
+final class block_delete_pre {
     public function __construct(
-        protected stdClass $blockinstance,
+        public readonly \stdClass $blockinstance,
     ) {}
-
-    public function get_instance(): stdClass {
-        return $this->blockinstance;
-    }
-
-    public static function get_deprecated_plugin_callbacks(): array {
-        return ['pre_block_delete'];
-    }
 }
 ```
 
@@ -412,22 +479,16 @@ To make use of Stoppable events, the hook simply needs to implement the `Psr\Eve
 
 namespace core\hook;
 
+use core\attribute;
+
+#[attribute\label('A hook dispatched just before a block instance is deleted')]
+#[attribute\hook\replaces_callbacks('pre_block_delete')]
 final class block_delete_pre implements
-    described_hook,
-    deprecated_callback_replacement.
     Psr\EventDispatcher\StoppableEventInterface
 {
-    public static function get_hook_description(): string {
-        return 'A hook dispatched just before a block instance is deleted';
-    }
-
     public function __construct(
-        protected stdClass $blockinstance,
+        public readonly \stdClass $blockinstance,
     ) {}
-
-    public function get_instance(): stdClass {
-        return $this->blockinstance;
-    }
 
     public function isPropagationStopped(): bool {
         return $this->stopped;
@@ -435,10 +496,6 @@ final class block_delete_pre implements
 
     public function stop(): void {
         $this->stopped = true;
-    }
-
-    public static function get_deprecated_plugin_callbacks(): array {
-        return ['pre_block_delete'];
     }
 }
 ```
@@ -457,3 +514,12 @@ class callbacks {
     }
 }
 ```
+
+## Tips and Tricks
+
+Whilst not being formal requirements, you are encouraged to:
+
+- describe and tag your hook as appropriate using either:
+  - the `\core\hook\described_hook` interface; or
+  - the `\core\attribute\label` and `\core\attribute\tags` attributes
+- make use of constructor property promotion combined with readonly properties to reduce unnecessary boilerplate.
