@@ -22,8 +22,7 @@ useful?
   the audience is worth playing on yourself.
 - Any time you find you used a word that is part of the name of the thing in the comment, be suspicious.
   That word is probably not adding any value. (Sometimes it is unavoidable.)
-- Going further, if essentially all the words in the comment are part of the name, you are
-  just wasting everyone's time. You can do better than that!
+- Going further, if all the words in the comment just part of the name, what is the point? You can do better than that!
 - If in doubt, think about adding value: what is not already obvious from the name (and type)?
   That is what really needs to be explained. For example, if something is being passed as a string,
   what formats will work?
