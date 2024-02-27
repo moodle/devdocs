@@ -7,7 +7,6 @@ tags:
 - Communication room
 - Communication service
 - Chat
-documentationDraft: true
 ---
 
 Communication plugin allows you to create a communication provider plugin, which can be added as a part of course or any other instances.
@@ -55,22 +54,6 @@ communication/provider/example
 
 You will notice that there are a couple of classes named as example as a prefix, these are feature classes and can be named however
 you like. These are feature classes which will be defined from the communication_feature.php from the plugin.
-
-:::
-
-## Creating a new plugin
-
-:::info
-
-TBA after implementing MDL-76796
-
-:::
-
-### Generating the plugin skeleton
-
-:::info
-
-TBA after implementing MDL-76796
 
 :::
 
