@@ -60,11 +60,15 @@ Gitpod is an alternative to local development and completely optional. We recomm
 
 ### Starting the development server
 
+The development server is the best way to edit docs locally. Once the development server has started, the docs will open in your browser. You can then make changes to the source markdown files (`*.md` and `*.mdx`), which should be automatically live reloaded in your browser.
+
 ```console
 yarn start
 ```
 
 ### Building the docs and serving them locally
+
+This is probably only something you would do if you were developing or testing the build process.
 
 ```console
 yarn build

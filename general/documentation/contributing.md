@@ -10,6 +10,8 @@ sidebar_position: 3
 
 The [Moodle](https://moodle.org) Developer Resources is the official source for all Moodle documentation. It's here to make your life as a Moodle Developer easier. To serve that purpose it has to be up-to-date, and as accurate and complete as possible. Every contribution is important in achieving that goal and we hope that you are able to be a part of that mission.
 
+The documentation is written in Markdown (specifically [commonmark (docs link)](https://commonmark.org/help/) which is built into the website using a tool called [Docusaurus](https://docusaurus.io/docs/next/markdown-features). You don't need to understand all the details of that to make simple contributions.
+
 If you are new to Open Source contributions, or you are interested in learning how to run or contribute to an open source project, then these resources from the [Open Source Guides](https://opensource.guide/) website may give you some help and insight into common practices. It has a collection of resources for individuals, communities, and companies who are interested in open source contributions. The following guides may be especially useful to you:
 
 - [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
@@ -52,7 +54,7 @@ Our documentation is built using [Docusaurus](https://docusaurus.io), a powerful
 
 :::tip
 
-If you're eager to jump in, then the fastest way to set up your development environment is to have [NVM](https://github.com/nvm-sh/nvm) installed and then run:
+If you're eager to jump in the fastest way to set up your development environment is to, after cloning this repository onto your computer, have [NVM](https://github.com/nvm-sh/nvm) installed and then run:
 
 ```console
 nvm install
@@ -60,6 +62,10 @@ npm i -g yarn
 yarn
 yarn start
 ```
+
+Once this completes, the docs will open in your browser. You can just edit the .md source files in your editor and reload the pages to see the effect of your changes.
+
+Once you have made changes in your local checkout, you can commit them, and submit a pull request through github as usual.
 
 :::
 
