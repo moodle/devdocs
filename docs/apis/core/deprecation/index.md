@@ -14,7 +14,7 @@ When deprecating a code feature, it is often desirable to include a reasonable a
 
 In some cases it is also desirable to check if a called class, or method, has been marked as deprecated.
 
-One way to simplify this is through use of the `\core\deprecated` PHP attribute, which can be used in conjunction with the `\core\deprecation` class.
+One way to simplify this is through use of the `\core\attribute\deprecated` PHP attribute, which can be used in conjunction with the `\core\deprecation` class.
 
 :::note
 
@@ -41,15 +41,15 @@ The attribute is a Moodle PHP Attribute and can be applied to:
 
 ```php title="Example attribute usage"
 // On a global function:
-#[\core\deprecated('random_bytes', since: '4.3')]
+#[\core\attribute\deprecated('random_bytes', since: '4.3')]
 function random_bytes_emulate($length) {
     // Replaced by random_bytes since Moodle 4.3.
 }
 
 // On a class:
-#[\core\deprecated(replacement: null, since: '4.4', reason: 'This functionality has been removed.')]
+#[\core\attribute\deprecated(replacement: null, since: '4.4', reason: 'This functionality has been removed.')]
 class example {
-    #[\core\deprecated(
+    #[\core\attribute\deprecated(
         replacement: '\core\example::do_something',
         since: '4.3',
         reason: 'No longer required',
@@ -60,7 +60,7 @@ class example {
 
 // On an enum case:
 enum example {
-    #[\core\deprecated('example::OPTION', since: '4.4', final: true)]
+    #[\core\attribute\deprecated('example::OPTION', since: '4.4', final: true)]
     case OPTION;
 }
 ```
@@ -76,7 +76,7 @@ The `\core\deprecation` class contains helper methods to inspect for use of the 
 ```php title="Examples of usage"
 // A method which has been initially deprecated, and replaced by 'random_bytes'. It should show debugging.
 /** @deprecated since 4.3 */
-#[\core\deprecated('random_bytes', since: '4.3')]
+#[\core\attribute\deprecated('random_bytes', since: '4.3')]
 function random_bytes_emulate($length) {
     \core\deprecation::emit_deprecation_if_present(__FUNCTION__);
     return random_bytes($length);
@@ -84,7 +84,7 @@ function random_bytes_emulate($length) {
 
 // A method which has been finally deprecated and should throw an exception.
 /** @deprecated since 2.7 */
-#[\core\deprecated(replacement: 'Events API', since: '2.3', final: true)]
+#[\core\attribute\deprecated(replacement: 'Events API', since: '2.3', final: true)]
 function add_to_log() {
     \core\deprecation::emit_deprecation_if_present(__FUNCTION__);
 }

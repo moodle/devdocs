@@ -307,7 +307,7 @@ These param types have all been deprecated since Moodle 2.0.
 
 ## Introduction of `deprecated` attribute
 
-A new `\core\deprecated` attribute, and related `\core\deprecation` class have been introduced to provide a standardised way to emit deprecation notices.
+A new `\core\attribute\deprecated` attribute, and related `\core\deprecation` class have been introduced to provide a standardised way to emit deprecation notices.
 
 The attribute can be applied to:
 
@@ -332,7 +332,7 @@ The `\core\deprecation` class contains helper methods to inspect for use of the 
 ```php title="Examples of usage"
 // A method which has been initially deprecated and should show debugging.
 /** @deprecated since 4.3 */
-#[\core\deprecated(replacement: 'random_bytes', since: '4.3')]
+#[\core\attribute\deprecated(replacement: 'random_bytes', since: '4.3')]
 function random_bytes_emulate($length) {
     \core\deprecation::emit_deprecation_if_present(__FUNCTION__);
     return random_bytes($length);
@@ -340,7 +340,7 @@ function random_bytes_emulate($length) {
 
 // A method which has been finally deprecated and should throw an exception.
 /** @deprecated since 2.7 */
-#[\core\deprecated(replacement: 'Events API', since: '2.3', final: true)]
+#[\core\attribute\deprecated(replacement: 'Events API', since: '2.3', final: true)]
 function add_to_log() {
     \core\deprecation::emit_deprecation_if_present(__FUNCTION__);
 }
