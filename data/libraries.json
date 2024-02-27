@@ -10,6 +10,18 @@
         "customised": false
     },
     {
+        "copyrightHolders": [
+            "The Roundcube Dev Team"
+        ],
+        "location": "admin/tool/messageinbound/roundcube",
+        "name": "Roundcube Framework",
+        "version": "1.6.6",
+        "license": "GPL",
+        "licenseversion": "3.0+",
+        "repository": "https://github.com/roundcube/roundcubemail",
+        "customised": false
+    },
+    {
         "copyrightHolders": [],
         "location": "admin/tool/mfa/factor/totp/extlib/Assert",
         "name": "Assert",
@@ -243,12 +255,12 @@
     },
     {
         "copyrightHolders": [
-            "2005, Jon Papaioannou"
+            "Deque Systems, Inc."
         ],
         "location": "lib/behat/axe",
         "name": "axe-core",
         "description": "Accessibility testing engine for websites and other HTML-based user interfaces.",
-        "version": "4.7.2",
+        "version": "4.8.4",
         "license": "MPL",
         "licenseversion": "2.0",
         "repository": "https://github.com/dequelabs/axe-core",
@@ -440,19 +452,6 @@
         "license": "MIT",
         "repository": "https://github.com/guzzle/psr7",
         "customised": false
-    },
-    {
-        "copyrightHolders": [
-            "Horde LLC"
-        ],
-        "location": "lib/horde",
-        "name": "Horde",
-        "description": "Library used by the inbound e-mail handling system.",
-        "version": "5.2.23",
-        "license": "LGPL/BSD",
-        "licenseversion": "2.1",
-        "repository": "https://github.com/horde/base",
-        "customised": true
     },
     {
         "copyrightHolders": [

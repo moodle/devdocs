@@ -21,6 +21,15 @@ Provide a great search experience without the need for external, server-side, se
 - **License**:  MIT
 - **URL**: [https://github.com/olivernn/lunr.js](https://github.com/olivernn/lunr.js)
 
+### Roundcube Framework
+
+- **Location**: admin/tool/messageinbound/roundcube
+- **Version**: 1.6.6
+- **License**:  GPL 3.0+
+- **URL**: [https://github.com/roundcube/roundcubemail](https://github.com/roundcube/roundcubemail)
+- **Copyright holders**:
+  - The Roundcube Dev Team
+
 ### Assert
 
 - **Location**: admin/tool/mfa/factor/totp/extlib/Assert
@@ -226,11 +235,11 @@ The AWS SDK for PHP library
 Accessibility testing engine for websites and other HTML-based user interfaces.
 
 - **Location**: lib/behat/axe
-- **Version**: 4.7.2
+- **Version**: 4.8.4
 - **License**:  MPL 2.0
 - **URL**: [https://github.com/dequelabs/axe-core](https://github.com/dequelabs/axe-core)
 - **Copyright holders**:
-  - 2005, Jon Papaioannou
+  - Deque Systems, Inc.
 
 ### Bennu
 
@@ -398,17 +407,6 @@ PSR-7 message implementation that also provides common utility methods
 - **Version**: 2.4.3
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/psr7](https://github.com/guzzle/psr7)
-
-### Horde
-
-Library used by the inbound e-mail handling system.
-
-- **Location**: lib/horde
-- **Version**: 5.2.23 (with Moodle customisations)
-- **License**:  LGPL/BSD 2.1
-- **URL**: [https://github.com/horde/base](https://github.com/horde/base)
-- **Copyright holders**:
-  - Horde LLC
 
 ### HTML2Text
 
