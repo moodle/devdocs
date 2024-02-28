@@ -237,111 +237,13 @@ shortname,fullname,category,summary,cohort,student,cohort,teacher
 
 </details>
 
-## Bootstrap preparations for version 5
+## Refactoring BS4 features dropped in BS5
 
 <Since version="4.4" issueNumber="MDL-71979" />
 
 Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. To prepare for this, some of the current Bootstrap 4 classes usages have been replaced with version 5 compatible classes. This will help us to upgrade to Bootstrap 5 in the future.
 
-### Badges
-
-- Badge colour class helpers `.badge-*` have been replaced with background utilities (use `.bg-primary` instead of `.badge-primary`) combined with the corresponding text colour classes (`.text-dark` or `.text-white`) to meet accessibility contrast.
-- The `.badge-pill` class has been replaced with `.rounded-pill`
-
-<InvalidExample title="Don't">
-
-```html
-<span class="badge badge-danger badge-pill">Error badge</span>
-```
-
-</InvalidExample>
-
-<ValidExample title="Do">
-
-```html
-<span class="badge bg-danger text-white rounded-pill">Error badge</span>
-```
-
-</ValidExample>
-
-### Media
-
-The `.media` component has been replaced with utility classes.
-
-<InvalidExample title="Don't">
-
-```html
-<div class="media">
-    <div class="media-left">
-        [...]
-    </div>
-    <div class="media-body">
-        [...]
-    </div>
-</div>
-```
-
-</InvalidExample>
-
-<ValidExample title="Do">
-
-```html
-<div class="d-flex">
-    <div class="flex-shrink-0">
-        [...]
-    </div>
-    <div class="flex-grow-1 ml-3">
-        [...]
-    </div>
-</div>
-```
-
-</ValidExample>
-
-### Mixins
-
-The following previously deprecated mixins will be dropped in BS5, so they can be refactored:
-
-- hover, hover-focus, plain-hover-focus and hover-focus-active
-- float-left, float-right and float-none
-- nav-divider
-- img-retina
-- text-hide
-- invisible
-- form-control-focus
-- text-emphasis-variant
-- size
-- make-container-max-widths
-- g-variant and bg-gradient-variant
-
-<InvalidExample title="Don't">
-
-```css
-.collapse-list-item {
-    padding: $collapse-list-item-padding-y $collapse-list-item-padding-x;
-    @include hover-focus() {
-        background-color: $collapse-list-item-hover-bg;
-        border-color: $collapse-list-item-hover-border;
-    }
-}
-```
-
-</InvalidExample>
-
-<ValidExample title="Do">
-
-```css
-.collapse-list-item {
-    padding: $collapse-list-item-padding-y $collapse-list-item-padding-x;
-    &:hover,
-    &:focus {
-        background-color: $collapse-list-item-hover-bg;
-        border-color: $collapse-list-item-hover-border;
-    }
-}
-```
-
-</ValidExample>
+See more information in [Bootstrap 5 migration](./guides/bs5migration/index.md).
 
 ## New course section page
 
