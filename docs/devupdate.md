@@ -298,6 +298,51 @@ The `.media` component has been replaced with utility classes.
 
 </ValidExample>
 
+### Mixins
+
+The following previously deprecated mixins will be dropped in BS5, so they can be refactored:
+
+- hover, hover-focus, plain-hover-focus and hover-focus-active
+- float-left, float-right and float-none
+- nav-divider
+- img-retina
+- text-hide
+- invisible
+- form-control-focus
+- text-emphasis-variant
+- size
+- make-container-max-widths
+- g-variant and bg-gradient-variant
+
+<InvalidExample title="Don't">
+
+```css
+.collapse-list-item {
+    padding: $collapse-list-item-padding-y $collapse-list-item-padding-x;
+    @include hover-focus() {
+        background-color: $collapse-list-item-hover-bg;
+        border-color: $collapse-list-item-hover-border;
+    }
+}
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```css
+.collapse-list-item {
+    padding: $collapse-list-item-padding-y $collapse-list-item-padding-x;
+    &:hover,
+    &:focus {
+        background-color: $collapse-list-item-hover-bg;
+        border-color: $collapse-list-item-hover-border;
+    }
+}
+```
+
+</ValidExample>
+
 ## New course section page
 
 <Since version="4.4" issueNumber="MDL-79986" />
