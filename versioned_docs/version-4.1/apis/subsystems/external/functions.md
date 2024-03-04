@@ -89,7 +89,7 @@ class create_groups extends external_api {
         require_capability('moodle/course:creategroups', $coursecontext);
 
         // Create the group using existing Moodle APIs.
-        $createdgroups = \local_groupmanager\util::create_groups($groups)
+        $createdgroups = \local_groupmanager\util::create_groups($groups);
 
         // Return a value as described in the returns function.
         return [
