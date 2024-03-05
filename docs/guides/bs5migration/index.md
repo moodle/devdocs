@@ -141,3 +141,32 @@ The following previously deprecated mixins will be dropped in BS5, so they can b
 ```
 
 </ValidExample>
+
+### Forms
+
+- The `.form-group` helper class has been replaced with margins.
+- The `.form-inline` helper class has been replaced with utility classes.
+
+<InvalidExample title="Don't">
+
+```html
+<form class="form-inline">
+    <div class="form-group">
+        [...]
+    </div>
+</form>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<form class="d-flex flex-wrap align-items-center">
+    <div class="mb-3">
+        [...]
+    </div>
+</form>
+```
+
+</ValidExample>
