@@ -152,11 +152,82 @@ class installation_finished implements \core\hook\described_hook {
 ```php title="/mod/activity/db/install.php"
 <?php
 function xmldb_activity_install() {
-   $hook = new \mod_activity\hook\installation_finished();
-   \core\hook\manager::get_instance()->dispatch($hook);
+    $hook = new \mod_activity\hook\installation_finished();
+    \core\di::get(\core\hook\manager::class())->dispatch($hook);
 }
 
 ```
+
+## Dispatching hooks
+
+Once a hook has been created, it needs to be _dispatched_. The dispatcher is responsible for ordering all listeners and calling them with the hook data.
+
+The hook manager is responsible for dispatching hook instances using the `dispatch(object $hook)` method.
+
+The `dispatch` method is an instance method and requires an instance of the hook manager.
+
+From Moodle 4.4 you should make use of the [Dependency Injection](../di/index.md) system, for example:
+
+```php title="Dispatching a hook with DI"
+\core\di::get(\core\hook\manager::class())->dispatch($hook);
+```
+
+Using DI for dependency injection has the benefit that the hook manager can use fixture callbacks to test a range of behaviours, for example:
+
+```php title="Mocking a hook listener"
+// Unit test.
+public function test_before_standard_footer_html_hooked(): void {
+    // Load the callback classes.
+    require_once(__DIR__ . '/fixtures/core_renderer/before_standard_footer_html_callbacks.php');
+
+    // Replace the version of the manager in the DI container with a phpunit one.
+    \core\di::set(
+        \core\hook\manager::class,
+        \core\hook\manager::phpunit_get_instance([
+            // Load a list of hooks for `test_plugin1` from the fixture file.
+            'test_plugin1' => __DIR__ .
+                '/fixtures/core_renderer/before_standard_footer_html_hooks.php',
+        ]),
+    );
+
+    $page = new moodle_page();
+    $renderer = new core_renderer($page, RENDERER_TARGET_GENERAL);
+
+    $html = $renderer->standard_footer_html();
+    $this->assertIsString($html);
+    $this->assertStringContainsString('A heading can be added', $html);
+}
+
+// fixtures/core_renderer/before_standard_footer_html_callbacks.php
+final class before_standard_footer_html_callbacks {
+    public static function before_standard_footer_html(
+        \core\hook\output\before_standard_footer_html $hook,
+    ): void {
+        $hook->add_html("<h1>A heading can be added</h1>");
+    }
+}
+
+// fixtures/core_renderer/before_standard_footer_html_hooks.php
+$callbacks = [
+    [
+        'hook' => \core\hook\output\before_standard_footer_html::class,
+        'callback' => \test_fixtures\core_renderer\before_standard_footer_html_callbacks::class
+            . '::before_standard_footer_html',
+    ],
+];
+```
+
+:::note
+
+Prior to Moodle 4.3 the only way to dispatch a hook is by accessing the manager instance:
+
+```php
+\core\hook\manager::get_instance()->dispatch($hook);
+```
+
+This approach is harder to test in situ.
+
+:::
 
 ## Registering of hook callbacks
 
@@ -277,7 +348,7 @@ foreach ($pluginswithfunction as $plugins) {
     }
 }
 // Dispatch the new Hook implementation immediately after the legacy callback.
-core\hook\manager::get_instance()->dispatch(new core\hook\after_config());
+\core\di::get(\core\hook\manager::class())->dispatch(new \core\hook\after_config());
 ```
 
 ## Hooks which contain data
@@ -325,7 +396,7 @@ if ($pluginsfunction = get_plugins_with_function('pre_block_delete', 'lib.php', 
     }
 }
 $hook = new \core\hook\block_delete_pre($instance);
-core\hook\manager::get_instance()->dispatch($hook);
+\core\di::get(\core\hook\manager::class())->dispatch($hook);
 ```
 
 ## Hooks which can be stopped
