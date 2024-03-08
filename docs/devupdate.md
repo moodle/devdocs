@@ -25,6 +25,80 @@ This page highlights the important changes that are coming in Moodle 4.4 for dev
 
 Support for PSR-11 compatible Containers has been introduced and can be accessed via the `\core\di` class. Read the [full documentation](./apis/core/di/index.md) for information on how to use Moodle's DI infrastructure.
 
+### Attributes
+
+<Since version="4.4" issueNumber="MDL-81011" />
+
+PHP 8.0 introduced support for the Attribute language feature and Moodle is beginning to make use of this in small but helpful ways.
+
+To simplify this adoption, a new `\core\attribute_helper` class has been created with methods to quickly and easily fetch the `\ReflectionAttribute` for any relevant attributes.
+
+The new methods can search for an attribute using a reference, which can be:
+
+- a string, whose name represents a global function, a class, or a class combined with a method, property, constant, or enum
+- an instantiated object
+- an array whose first value is either a string or object, and whose optional second value is a child of the first value
+
+```php title="Fetching attributes"
+<?php
+
+use core\attribute_helper;
+use core\attribute\{label, tags};
+
+// Get a label on the \some_function_name() method.
+$label = attribute_helper::one_from('some_function_name', label::class)?->newInstance();
+
+// Get an instance of a label on the \example class.
+$label = attribute_helper::one_from(example::class, label::class)?->newInstance();
+
+// Get an instance of a label on an instance of the \example class.
+$example = new example();
+$label = attribute_helper::one_from($example, label::class)?->newInstance();
+
+// Get an instance of a label on a constant, property, or method of the \example class.
+$label = attribute_helper::one_from([example::class, 'some_child'], label::class)?->newInstance();
+
+// Get an instance of a label on a constant, property, or method of an instance of the \example class.
+$example = new example();
+$label = attribute_helper::one_from([$example, 'some_child'], label::class)?->newInstance();
+```
+
+Other variations of the above are also possible.
+
+### Hooks
+
+<Since version="4.4" issueNumber="MDL-81011" />
+
+Attribute-based alternatives to the `\core\hook\described_hook`, and `\core\hook\deprecated_callback_replacement` interfaces are now supported.
+
+- the `\core\attribute\label` attribute can be used to add a string-based description of the hook.
+- the `\core\attribute\tags` attribute can be used to add one or more tags to describe the hook.
+- the `\core\attribute\hook\replaces_callbacks` attribute can be used to add one or more replaced callbacks.
+
+```php
+<?php
+
+namespace core\hook;
+
+use core\attribute;
+
+#[attribute\label('This is a description of the hook')]
+#[attribute\tags('examples', 'navigation', 'authentication')]
+#[attribute\hook\replaces_callbacks('an_old_callback_that_is_replaced_here')]
+class before_navigation_render {
+    public function __construct(
+        public readonly \navigation_node $navigation,
+    ) {
+    }
+}
+```
+
+:::tip
+
+It is still possible to use the `\core\hook\described_hook` and `\core\hook\deprecated_callback_replacement` interfaces. The attribute approach is provided as a more light-weight alternative.
+
+:::
+
 ### String formatting
 
 #### Deprecation of format_* parameters
