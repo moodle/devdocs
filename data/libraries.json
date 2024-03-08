@@ -1034,7 +1034,7 @@
         "location": "lib/zipstream",
         "name": "ZipStream-PHP",
         "description": "PHP ZIP Streaming Library",
-        "version": "2.4.0",
+        "version": "3.1.0",
         "license": "MIT",
         "repository": "https://github.com/maennchen/ZipStream-PHP",
         "customised": false
