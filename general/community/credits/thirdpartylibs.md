@@ -160,7 +160,7 @@ JavaScript library to insulate apps from spec changes and prefix differences in 
 Simple yet flexible JavaScript charting for designers & developers.
 
 - **Location**: lib/amd/src/chartjs-lazy.js
-- **Version**: 4.4.0 (with Moodle customisations)
+- **Version**: 4.4.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/chartjs/Chart.js](https://github.com/chartjs/Chart.js)
 - **Copyright holders**:
@@ -473,7 +473,7 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 A library used for building IMS-certified LTI 1.3 tool providers in PHP.
 
 - **Location**: lib/lti1p3
-- **Version**: 5.4.1 (with Moodle customisations)
+- **Version**: 6.0.0 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/packbackbooks/lti-1-3-php-library](https://github.com/packbackbooks/lti-1-3-php-library)
 - **Copyright holders**:
