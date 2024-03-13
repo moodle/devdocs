@@ -260,6 +260,110 @@ $formatter->format_text(
 
 :::
 
+## Parameters
+
+### API Change
+
+<Since version="4.4" issueNumber="MDL-80005" />
+
+Parameter constants, and the cleaning of values using these parameters, has been moved to a new enum in `\core\param`.
+
+The enum contains relevant associated methods for fetching, validating, and cleaning the content of values, for example:
+
+```php title="Examples of enum-based parameters"
+// Clean an existing variable.
+$value = \core\param::ALPHANUMEXT->clean($value);
+$value = \core\param::ALPHANUMEXT->validate_param($value);
+$value = \core\param::ALPHANUMEXT->clean_param_array($value);
+
+// Require a param (replaced required_param).
+$value = \core\param::ALPHANUMEXT->required_param('someparamname');
+$value = \core\param::ALPHANUMEXT->optional_param('someparamname', 'defaultvalue');
+$value = \core\param::ALPHANUMEXT->required_param_array('someparamname');
+$value = \core\param::ALPHANUMEXT->optional_param_array('someparamname', []);
+```
+
+:::note
+
+The existing `PARAM_*` constants, and related methods (`required_param`, `optional_param()`, `clean_param()`, and so on) remain in place, and are _not currently deprecated_. At this time _you do_ not need to migrate to the APIs.
+
+:::
+
+### Deprecations
+
+<Since version="4.4" issueNumber="MDL-80005" />
+
+A number of deprecated parameter types have been deprecated, these include:
+
+- `PARAM_CLEAN`
+- `PARAM_INTEGER`
+- `PARAM_NUMBER`
+- `PARAM_ACTION`
+- `PARAM_FORMAT`
+- `PARAM_MULTILANG`
+- `PARAM_CLEANFILE`
+
+These param types have all been deprecated since Moodle 2.0.
+
+## Introduction of `deprecated` attribute
+
+A new `\core\attribute\deprecated` attribute, and related `\core\deprecation` class have been introduced to provide a standardised way to emit deprecation notices.
+
+The attribute can be applied to:
+
+- classes, traits, interfaces, and enums
+- enum cases
+- global functions
+- class constants, properties, and methods
+
+The attribute can be used to specify information including:
+
+- the version that a feature was deprecated
+- the relevant MDL
+- the reason for deprecation
+- any replacement
+- whether the deprecation is final
+
+The `\core\deprecation` class contains helper methods to inspect for use of the deprecated attribute and allows usage including:
+
+- checking if a feature is deprecated
+- emitting a deprecation notice if a feature is deprecated
+
+```php title="Examples of usage"
+// A method which has been initially deprecated and should show debugging.
+/** @deprecated since 4.3 */
+#[\core\attribute\deprecated(replacement: 'random_bytes', since: '4.3')]
+function random_bytes_emulate($length) {
+    \core\deprecation::emit_deprecation_if_present(__FUNCTION__);
+    return random_bytes($length);
+}
+
+// A method which has been finally deprecated and should throw an exception.
+/** @deprecated since 2.7 */
+#[\core\attribute\deprecated(replacement: 'Events API', since: '2.3', final: true)]
+function add_to_log() {
+    \core\deprecation::emit_deprecation_if_present(__FUNCTION__);
+}
+
+// Checking when an enum case is deprecated:
+\core\deprecation::is_deprecated(\core\param::RAW); // Returns false.
+\core\deprecation::is_deprecated(\core\param::INTEGER); // Returns true.
+
+// Checking if a class is deprecated:
+\core\deprecation::is_deprecated(\core\task\manager::class); // Returns false.
+
+// Checking if an instantiated class is deprecated:
+\core\deprecation::is_deprecated(new \moodle_url('/example/'));
+
+// Checking if a class method is deprecated:
+\core\deprecation::is_deprecated([\moodle_url::class, 'out']);
+\core\deprecation::is_deprecated([new \moodle_url('/example/'), 'out']);
+```
+
+This functionality is intended to simplify deprecation of features such as constants, enums, and related items which are called from centralised APIs and difficult to detect as deprecated.
+
+This functionality does not replace the phpdoc `@deprecated` docblock.
+
 ## Enrolment
 
 ### Support for multiple instances in csv course upload
