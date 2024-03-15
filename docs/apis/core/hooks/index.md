@@ -256,8 +256,10 @@ final class before_standard_footer_html_callbacks {
 $callbacks = [
     [
         'hook' => \core\hook\output\before_standard_footer_html::class,
-        'callback' => \test_fixtures\core_renderer\before_standard_footer_html_callbacks::class
-            . '::before_standard_footer_html',
+        'callback' => [
+            \test_fixtures\core_renderer\before_standard_footer_html_callbacks::class,
+            'before_standard_footer_html',
+        ],
     ],
 ];
 ```
@@ -278,12 +280,23 @@ This approach is harder to test in situ.
 
 Any plugin is free to register callbacks for all core and plugin hooks.
 The registration is done by adding a `db/hooks.php` file to plugin.
-Callbacks **must** be provided as PHP callable strings in the form of "some\class\name::static_method".
+Callbacks may be be provided as a PHP callable in either:
+
+- string notation, in the form of `some\class\name::static_method`; or
+- array notation, in the form of `[\some\class\name::class, 'static_method']`.
+
+:::danger Use of array notation
+
+<Since version="4.4" issueNumber="MDL-81180" />
+
+Support for Array notated callbacks was introduced in Moodle 4.4. If you are writing a callback for a Moodle 4.3 site, you _must_ use the string notation.
+
+:::
 
 Hook callbacks are executed in the order of their priority from highest to lowest.
 Any guidelines for callback priority should be described in hook descriptions if necessary.
 
-:::important
+:::caution
 
 Callbacks _are executed during system installation and all upgrades_, the callback
 methods must verify the plugin is in correct state. Often the easies way is to
@@ -314,14 +327,14 @@ class hook_callbacks {
 }
 ```
 
-Then developer has to register this new method as the hook callback by adding it to the db/hooks.php file.
+Then the developer has to register this new method as the hook callback by adding it to the `db/hooks.php` file.
 
 ```php title="/local/stuff/db/hooks.php"
 <?php
 $callbacks = [
     [
         'hook' => mod_activity\hook\installation_finished::class,
-        'callback' => local_stuff\local\hook_callbacks::class . '::activity_installation_finished',
+        'callback' => [\local_stuff\local\hook_callbacks::class, 'activity_installation_finished'],
         'priority' => 500,
     ],
 ];

@@ -67,6 +67,8 @@ Other variations of the above are also possible.
 
 ### Hooks
 
+#### Hook interfaces
+
 <Since version="4.4" issueNumber="MDL-81011" />
 
 Attribute-based alternatives to the `\core\hook\described_hook`, and `\core\hook\deprecated_callback_replacement` interfaces are now supported.
@@ -98,6 +100,62 @@ class before_navigation_render {
 It is still possible to use the `\core\hook\described_hook` and `\core\hook\deprecated_callback_replacement` interfaces. The attribute approach is provided as a more light-weight alternative.
 
 :::
+
+#### Callable notation
+
+<Since version="4.4" issueNumber="MDL-81180" />
+
+When specifying the callback for a hook, you can now do so using the callable array notation, for example:
+
+<Tabs>
+
+<TabItem value="array-notation" label="Array notation" default>
+
+```php
+$callbacks = [
+    [
+        'hook' => 'test_plugin\\hook\\hook',
+        // Array notation:
+        'callback' => [\test_plugin\callbacks::class, 'test1'],
+    ],
+];
+```
+
+</TabItem>
+
+<TabItem value="string-notation-using-class" label="String notation" default>
+
+```php
+$callbacks = [
+    [
+        'hook' => 'test_plugin\\hook\\hook',
+        // String notation:
+        'callback' => \test_plugin\callbacks::class . '::test1',
+    ],
+];
+```
+
+</TabItem>
+
+<TabItem value="string-notation-using-string" label="Alternate string notation (discouraged)" default>
+
+```php
+$callbacks = [
+    [
+        'hook' => 'test_plugin\\hook\\hook',
+        // Strongly discouraged:
+        'callback' => '\\test_plugin\\callbacks::test1',
+    ],
+];
+```
+
+</TabItem>
+
+</Tabs>
+
+:::danger Callbacks in earlier versions of Moodle
+
+If writing a callback for Moodle 4.3, you **must** use the string notation.
 
 ### String formatting
 
@@ -427,7 +485,7 @@ See more information in [Bootstrap 5 migration](./guides/bs5migration/index.md).
 
 <Since version="4.4" issueNumber="MDL-79986" />
 
-The new course/section.php page is designed exclusively for displaying individual section content. It only requires `sectionid`, eliminating the need for the legacy sectionnumber.
+The new course/section.php page is designed exclusively for displaying individual section content. It only requires `sectionid`, eliminating the need for the legacy `sectionnumber`.
 
 Enhancements to this page:
 
