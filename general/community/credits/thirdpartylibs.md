@@ -257,7 +257,7 @@ Bennu is an object-oriented library written in PHP that implements the iCalendar
 Beautify HTML code in Atto.
 
 - **Location**: lib/editor/atto/plugins/html/yui/src/beautify
-- **Version**: 1.14.7
+- **Version**: 1.15.1
 - **License**:  MIT
 - **URL**: [https://github.com/beautify-web/js-beautify](https://github.com/beautify-web/js-beautify)
 - **Copyright holders**:
@@ -570,7 +570,7 @@ PHP library for displaying mustache templates.
 Library to read and write spreadsheet files (CSV, XLSX and ODS).
 
 - **Location**: lib/openspout
-- **Version**: 4.15.0
+- **Version**: 4.23.0
 - **License**:  MIT
 - **URL**: [https://github.com/openspout/openspout](https://github.com/openspout/openspout)
 - **Copyright holders**:
@@ -672,7 +672,7 @@ A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming t
 Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are based upon the standard AspEmail(tm) classes.
 
 - **Location**: lib/phpmailer
-- **Version**: 6.8.0
+- **Version**: 6.9.1
 - **License**:  LGPL 2.1
 - **URL**: [https://github.com/PHPMailer/PHPMailer](https://github.com/PHPMailer/PHPMailer)
 - **Copyright holders**:
@@ -942,7 +942,7 @@ Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 JavaScript library that makes it easier to work with and build on HTML5 video.
 
 - **Location**: media/player/videojs/amd/src/video-lazy.js
-- **Version**: 8.3.0 (with Moodle customisations)
+- **Version**: 8.10.0 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
@@ -964,7 +964,7 @@ The ogv.js tech plugin for VideoJS
 YouTube Playback Technology for Video.js.
 
 - **Location**: media/player/videojs/amd/src/Youtube-lazy.js
-- **Version**: 3.0.0
+- **Version**: 3.0.1
 - **License**:  MIT
 - **URL**: [https://github.com/videojs/videojs-youtube](https://github.com/videojs/videojs-youtube)
 - **Copyright holders**:
@@ -986,7 +986,7 @@ JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 JavaScript library that makes it easier to work with and build on HTML5 video
 
 - **Location**: media/player/videojs/videojs
-- **Version**: 8.3.0 (with Moodle customisations)
+- **Version**: 8.10.0 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
@@ -997,7 +997,7 @@ JavaScript library that makes it easier to work with and build on HTML5 video
 Collection of PHP classes facilitating developers to read pages from existing PDF documents and use them as templates in FPDF.
 
 - **Location**: mod/assign/feedback/editpdf/fpdi
-- **Version**: 2.3.7
+- **Version**: 2.6.0
 - **License**:  MIT
 - **URL**: [https://github.com/Setasign/FPDI](https://github.com/Setasign/FPDI)
 - **Copyright holders**:
