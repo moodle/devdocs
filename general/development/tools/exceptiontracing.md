@@ -2,6 +2,8 @@
 title: Exception Tracing
 tags:
   - tools
+  - debugging
+  - exceptions
 ---
 
 <Since versions={["4.4"]} issueNumber={"MDL-79974"} />
@@ -25,6 +27,14 @@ The whoops UI is only used when the following conditions are met:
   - during a Behat run.
 - the `$CFG->debug_developer_use_pretty_exceptions` value is not `false`
 - the whoops library is available (using `composer install`)
+
+## Debugging messages
+
+Moodle typically show debugging messages created with the `debugging()` method inline, however this can be easy to miss.
+
+If Whoops is configured then `debugging()` messages will instead trigger an error and be shown using the Whoops UI.
+
+This can be controlled using the `$CFG->debug_developer_debugging_as_error` setting.
 
 ## Configuration
 
@@ -74,5 +84,21 @@ $CFG->debug_developer_editor = fn ($file, $line) => "whatever://open?file=$file&
 For full documentation on this feature, see the [whoops documentation](https://github.com/filp/whoops/blob/master/docs/Open%20Files%20In%20An%20Editor.md).
 
 :::
+
+### Treating debugging as an error
+
+In normal circumstances Moodle will treat all calls to `debugging()` as an informational message which is shown inline in the page body.
+
+You may wish to treat these as Errors instead, especially when updating code between Moodle versions.
+
+The default behaviour for `debugging()` is:
+
+- if the whoops UI is installed, and available, then treat `debugging()` as an Error;
+- otherwise treat `debugging()` as an informational message only.
+
+Thi scan be further configured by setting the `$CFG->debug_developer_debugging_as_error` property:
+
+- `$CFG->debug_developer_debugging_as_error = true;` - always treat debugging calls as an error, whether whoops is available or not;
+- `$CFG->debug_developer_debugging_as_error = false;` - never treat debugging calls as an Error, even when whoops is available.
 
 <!-- cspell:ignore macvim,textmate -->
