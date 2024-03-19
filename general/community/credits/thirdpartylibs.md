@@ -268,7 +268,7 @@ Beautify HTML code in Atto.
 CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 
 - **Location**: lib/editor/atto/plugins/html/yui/src/codemirror
-- **Version**: 5.65.15
+- **Version**: 5.65.16
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/codemirror5](https://github.com/codemirror/codemirror5)
 
