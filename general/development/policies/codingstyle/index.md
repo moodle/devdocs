@@ -555,7 +555,7 @@ $allowfilelocking = false;
 
 ```php
 $Quiz = null; // Variables should be all lower case.
-$camelCase = null; // Variables should not be in camelCase, PascalCake.
+$camelCase = null; // Variables should not be in camelCase, PascalCase.
 $aReallyLongVariableNameWithoutAGoodReason = null; // Variable names should be sensible and short.
 $error_string = null; // Variable names should not contain underscores.
 $preventfilelocking = true; // Variable names should not be negative.
