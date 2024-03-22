@@ -84,7 +84,7 @@ To mark a capability as deprecated, edit the access.php containing the capabilit
 
 Entries in `$deprecatedcapabilities` can have a `replacement` key indicating a new or existing capability that replaces the deprecated one. If this is specified, any checks to the deprecated capability will check the replacement capability instead. A debugging message will always be output at `DEBUG_DEVELOPER` level if a deprecated capability is checked.
 
-`$deprecatedcapaibilities` can also define an optional `message` explaining the deprecation.
+`$deprecatedcapabilities` can also define an optional `message` explaining the deprecation.
 
 The following example demonstrates an access.php file where a capability has been deprecated and replaced with another.
 
