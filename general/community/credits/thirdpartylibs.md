@@ -335,7 +335,7 @@ Class to safely evaluate math expressions.
 The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
 - **Location**: lib/fonts
-- **Version**: 6.4.0
+- **Version**: 6.5.1
 - **License**:  SIL OFL 1.1
 - **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
 - **Copyright holders**:
@@ -424,7 +424,7 @@ PHP script to convert HTML into an approximate text equivalent.
 Filters HTML.
 
 - **Location**: lib/htmlpurifier
-- **Version**: 4.16.0
+- **Version**: 4.17.0
 - **License**:  LGPL 2.1+
 - **URL**: [https://github.com/ezyang/htmlpurifier](https://github.com/ezyang/htmlpurifier)
 
@@ -661,7 +661,7 @@ PHP Enum implementation inspired from SplEnum
 A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
 
 - **Location**: lib/php-jwt
-- **Version**: 6.8.1
+- **Version**: 6.10.0
 - **License**:  BSD 3-Clause
 - **URL**: [https://github.com/firebase/php-jwt](https://github.com/firebase/php-jwt)
 - **Copyright holders**:
@@ -1199,7 +1199,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
 - **Location**: theme/boost/scss/fontawesome
-- **Version**: 6.4.0
+- **Version**: 6.5.1
 - **License**:  (MIT)
 - **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
 - **Copyright holders**:
