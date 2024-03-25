@@ -62,7 +62,7 @@ debugging('foobar() is deprecated. Please use foobar::blah() instead.', DEBUG_DE
 <TabItem value="core_deprecation" label="Using the \core\deprecation API from Moodle 4.4">
 
 ```php
-#[\core\deprecated('foobar::blahv()', since: '4.4', mdl: 'MDL-XXXXX')]
+#[\core\attribute\deprecated('foobar::blahv()', since: '4.4', mdl: 'MDL-XXXXX')]
 public function foobar(): void {
     \core\deprecation::emit_deprecation_if_present([self, __FUNCTION__]);
 }
@@ -118,7 +118,7 @@ throw new coding_exception(
 <TabItem value="core_deprecation" label="Using the \core\deprecation API from Moodle 4.4">
 
 ```php
-#[\core\deprecated('foobar::blah()', since: '4.4', mdl: 'MDL-XXXXX', final: true)]
+#[\core\attribute\deprecated('foobar::blah()', since: '4.4', mdl: 'MDL-XXXXX', final: true)]
 public function foobar(): void {
     \core\deprecation::emit_deprecation_if_present([self, __FUNCTION__]);
 }
