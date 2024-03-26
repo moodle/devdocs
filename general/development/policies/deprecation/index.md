@@ -64,7 +64,7 @@ debugging('foobar() is deprecated. Please use foobar::blah() instead.', DEBUG_DE
 ```php
 #[\core\attribute\deprecated('foobar::blahv()', since: '4.4', mdl: 'MDL-XXXXX')]
 public function foobar(): void {
-    \core\deprecation::emit_deprecation_if_present([self, __FUNCTION__]);
+    \core\deprecation::emit_deprecation_if_present([$this, __FUNCTION__]);
 }
 ```
 
@@ -120,7 +120,7 @@ throw new coding_exception(
 ```php
 #[\core\attribute\deprecated('foobar::blah()', since: '4.4', mdl: 'MDL-XXXXX', final: true)]
 public function foobar(): void {
-    \core\deprecation::emit_deprecation_if_present([self, __FUNCTION__]);
+    \core\deprecation::emit_deprecation_if_present([self::class, __FUNCTION__]);
 }
 ```
 
