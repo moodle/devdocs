@@ -12,8 +12,8 @@ sidebar_label: Meetings
 Developer meetings are open to anyone interested in Moodle development.
 
 :::important
-Our next Developer meeting is March 2024.
-The agenda is already confirmed, but if there are any topics that you would like to present or discuss at our next developer meeting, please contact [Olga Koenig](https://moodle.org/user/profile.php?id=6165464).
+Our next Developer meeting is May 2024.
+The agenda is not confirmed yet. If there are any topics that you would like to present or discuss at our next developer meeting, please contact [Olga Koenig](https://moodle.org/user/profile.php?id=6165464).
 
 :::
 
@@ -22,6 +22,7 @@ The agenda is already confirmed, but if there are any topics that you would like
 ### 2024
 
 - [Developer meeting February 2024](./202402.md)
+- [Developer meeting March 2024](./202403.md)
 
 ### 2023
 
