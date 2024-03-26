@@ -549,6 +549,42 @@ function h5pactivity_is_branded(): bool {
 }
 ```
 
+## PHPUnit 9.6 update
+
+<Since version="4.4" issueNumber="MDL-81266" />
+
+### Intention
+
+The main goal of this minor update, from **PHPUnit 9.5 to 9.6**, is to start informing to developers in advance about the functionality that has been deprecated in the 9.x series and will be removed completely with the next PHPUnit 10.x update.
+
+### Deprecated stuff
+
+Here you can find all the functionality that has been deprecated in PHPUnit 9.x and needs to be fixed, converted or removed in order to allow the tests to continue working once Moodle gets upgraded to PHPUnit 10.x:
+
+- A number of attribute-related assertions have been deprecated, will be removed with PHPUnit 10. Alternatives for *some* of them are available (Ref. MDL-81281):
+  - `assertClassHasAttribute()`
+  - `assertClassNotHasAttribute()`
+  - `assertClassHasStaticAttribute()`
+  - `assertClassNotHasStaticAttribute()`
+  - `assertObjectHasAttribute()`        => `assertObjectHasProperty()`
+  - `assertObjectNotHasAttribute()`      => `assertObjectNotHasProperty()`
+- A number of deprecation, notice, warning and error expectations have been deprecated, will be removed with PHPUnit 10. No alternative exists. A working replacement is available in the linked issue, hopefully there aren't many cases (Ref. MDL-81266):
+  - `expectDeprecation()`
+  - `expectDeprecationMessage()`
+  - `expectDeprecationMessageMatches()`
+  - `expectError()`
+  - `expectErrorMessage()`
+  - `expectErrorMessageMatches()`
+  - `expectNotice()`
+  - `expectNoticeMessage()`
+  - `expectNoticeMessageMatches()`
+  - `expectWarning()`
+  - `expectWarningMessage()`
+  - `expectWarningMessageMatches()`
+- The `->withConsecutive()` functionality on PHPUnit mocks has been **silently** deprecated, will be removed with PHPUnit 10. Note that this won't affect PHPUnit 9.6 runs and an alternative path will be proposed in the linked issue, part of the PHPUnit 10 epic (Ref. MDL-81308).
+- `PHPUnit\Framework\TestCase::getMockClass()` has been deprecated, will be removed with PHPUnit 10. No clear alternative exists and won't be investigated, because there aren't cases in core.
+- Cannot use the `Test` suffix on abstract test case classes anymore. Proceed to rename them to end with `TestCase` instead.
+
 ## Previous versions
 
 - [Moodle 4.3 developer update](./4.3/devupdate)
