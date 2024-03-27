@@ -87,10 +87,6 @@ For more information see [MDL-47271](https://tracker.moodle.org/browse/MDL-47271
 
 Available from _/report/performance/index.php_, each check might simply check for certain settings which are known to slow things down, or it might actually do some sort of test like multiple reads and writes to the db or filesystem to get a performance metric.
 
-### Health checks (health)
-
-Available from _/admin/tool/health_, the 'health center' is currently unsupported and contains some very old code. It is conceptually similar to 'status' checks except larger more long terms issues, such as detecting corrupt records. Ideally it is improved and converted to the Check API, see https://tracker.moodle.org/browse/[MDL-67228](https://tracker.moodle.org/browse/MDL-67228)
-
 ## Implementing a new check
 
 ### A check class
