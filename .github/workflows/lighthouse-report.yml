@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # v3
 
       - name: Wait for the Netlify Preview
-        uses: andrewnicols/wait-for-netlify-preview@v1
+        uses: andrewnicols/wait-for-netlify-preview@v1.0.6
         id: netlify
         with:
           site_id: "3c056055-e1bd-4cfd-8a02-ed35ab7aedfa"
