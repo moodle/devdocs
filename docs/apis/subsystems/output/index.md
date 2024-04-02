@@ -211,15 +211,16 @@ The only difference between these two functions is that `s()` returns the string
 
 These functions should be used to:
 
-- print all the **values of form fields** like `<input>` or `<textarea>` tags.
-- **show plain (non-HTML) text** that has been introduced by the user (search string, quiz responses, ...).
-- print, in general, all **dynamic data that is not HTML**, does not need to be cleaned or processed by filters. Never use these functions for strings that contain HTML markup.
+- Print all the **values of form fields** like `<input>` or `<textarea>` tags.
+- **Print plain (non-HTML) text** that has been introduced by the user (search string, quiz responses, ...).
+- Print in general as long as the text does not need to be cleaned or processed by filters.
+- Print HTML source code instead of rendering it.
 
 The functions replace certain characters that have a special meaning in HTML (`<, >, ", ', and &`) with HTML entities so that they are displayed as intended. Note that even though the value of form fields printed with `p()` will have these characters converted to HTML entities, the submitted values will still contain the original characters.
 
 The key parameter for this function is:
 
-- **strip**: Set to `true` to strip slashes from the string. Only set this parameter to `true` when the data to be processed is not coming from the database. This should be used when the string comes from HTTP requests (forms, links, ...). (Default is `false`, so no strip will be performed)
+- `strip`: Set to `true` to strip slashes from the string. Only set this parameter to `true` when the data to be processed is not coming from the database. This should be used when the string comes from HTTP requests (forms, links, ...). (Default is `false`, so no strip will be performed)
 
 #### format_text()
 
