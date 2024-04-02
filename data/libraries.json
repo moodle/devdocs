@@ -296,7 +296,7 @@
         "location": "lib/editor/atto/plugins/html/yui/src/codemirror",
         "name": "codemirror",
         "description": "CodeMirror is a versatile text editor implemented in JavaScript for the browser.",
-        "version": "5.65.15",
+        "version": "5.65.16",
         "license": "MIT",
         "repository": "https://github.com/codemirror/codemirror5",
         "customised": false
