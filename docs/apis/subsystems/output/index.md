@@ -232,7 +232,7 @@ function format_text(
         'trusted' => false,
         'filter' => true,
         'context' => $context,
-        'param' => true,
+        'para' => true,
         'newline' => true,
         'allowid' => false,
         'blanktarget' => false,
@@ -255,7 +255,7 @@ Some interesting parameters for this function are:
   - `options->trusted`: Set to `true` if the content is trusted and does not need clean-up. This argument is only enabled if `$CFG->enabletrusttext` is also set to `true`. It is ignored if `noclean` is specified. (Default is `false`)
   - `options->filter`: Set to `false` if you do not want to allow filters to process the text. This is ignored by `FORMAT_PLAIN` for which filters are never applied. (Default is `true`)
   - `options->context`: If text is filtered (and this happens by default), it is very important to specify the context (id or object) for applying filters. If context is not specified it will be taken from `$PAGE->context` and may potentially result in displaying the same text differently on different pages. For example, all module-related information should have module context even when it appears in course-level reports, all course-related information such as name and description should have course context even when displayed on the front page or system pages.
-  - `options->param`: Set to `false` if you do not want every paragraph to automatically be enclosed between HTML paragraph tags (`<p>...</p>`). This option only applies to `FORMAT_MOODLE`. (Defaults is `true`)
+  - `options->para`: Set to `false` if you do not want every paragraph to automatically be enclosed between HTML paragraph tags (`<p>...</p>`). This option only applies to `FORMAT_MOODLE`. (Defaults is `true`)
   - `options->newlines`: Set to `false` if line feeds in text should be converted to HTML newlines (`<br />`). This option only applies to `FORMAT_MOODLE`. (Default to `true`)
   - `options->overflowdiv`*: Set to `true` if you want the formatted text to automatically be encased in a div with the class no-overflow before being returned. (Default is `false`)
   - `options->allowid`: Set to `true` to ensure that the id attributes will not be removed, even when using HTML Purifier. (Default is `false`)
