@@ -223,15 +223,22 @@ Some checks are by their nature asynchronous. For instance having moodle send an
 
 ## Reusing checks inside admin setting pages
 
-Quite often you have a plugin that includes some sort of status check in the admin settings page where you configure the plugin. Eg you can add the api keys for a service and it shows you right in the settings page if the connection settings work.
+Quite often you have a plugin that includes some sort of status check in the admin settings page where you configure the plugin. For example you can add the api keys for a service and it shows you right in the settings page if the connection settings work.
 
 You can re-use the Check api to get this nice feature for free:
 
 ```php
-$temp->add(new admin_setting_check('antivirus/checkantivirus', new \core\check\environment\antivirus()));
+$temp->add(new admin_setting_check(
+    'antivirus/checkantivirus',
+    new \core\check\environment\antivirus(),
+));
 ```
 
+:::info
+
 These checks are performed asynchronously, and only if the check is visible, so will not slow down the whole admin tree which is often a downside of implementing this manually.
+
+:::
 
 You can also use checks which are not linked into one of the reports. This means you can check the connection while configuring the plugin, but before it is enabled, and only add the check to the status report page once the plugin is enabled.
 
