@@ -27,7 +27,7 @@ Moodle has had various types of checks and reports for a long time but they were
 - a password policy plugin could add a security check
 - a custom authentication plugin can add a check that the upstream identity system can be connected to
 - a MUC store plugin could add a performance check
-Having these centralized and with a consistent contract makes it much easier to ensure the whole system is running smoothly. This makes it possible for an external integration with monitoring systems such as Nagios / Icinga. The Check API is expose as an NPRE compliance cli script:
+Having these centralized and with a consistent contract makes it much easier to ensure the whole system is running smoothly. This makes it possible for an external integration with monitoring systems such as Nagios / Icinga. The Check API is exposed as an NPRE compliance cli script:
 
 ```console
 php admin/cli/checks.php
@@ -49,7 +49,7 @@ How the various states are then leveraged is a local decision. A typical policy 
 
 ## Check types and reports
 
-Checks are broken down into types, which roughly map to a step life cycle of your Moodle System
+Checks are broken down into types, which roughly map to a step in the life cycle of your Moodle System.
 
 ### Environmental checks
 
@@ -65,7 +65,7 @@ None of these checks are as exhaustive as the checks in the reports below. It al
 
 ### Security checks (security)
 
-Available from _/report/security/index.php_, these checks make sure that a Moodle instance is hardened correctly for you needs.
+Available from _/report/security/index.php_, these checks make sure that a Moodle instance is hardened correctly for your needs.
 
 For more information see [MDL-67776](https://tracker.moodle.org/browse/MDL-67776).
 
@@ -75,7 +75,7 @@ Available from _/report/status/index.php_, a status check is an 'in the moment' 
 
 :::danger Important
 
-It is critical to understand that Status checks are conceptually defined at the level off the application and not at a lower host level such as a docker container or node in a cluster. Checks should be defined so that whichever instance you ask you should get a consistent answer. DO NOT use the Status Checks to detect containers which need reaped and restarted. If you do, any status error will mean all containers will simultaneously be marked for reaping.
+It is critical to understand that Status checks are conceptually defined at the level of the application and not at a lower host level such as a docker container or node in a cluster. Checks should be defined so that whichever instance you ask you should get a consistent answer. DO NOT use the Status Checks to detect containers which need to be reaped or restarted. If you do, any status errors may mean all containers will simultaneously be marked for reaping.
 
 An additional status check is likely the most common type of check a plugin would define. Especially a plugin that connects to a 3rd party service. If the concept of 'OK' requires some sort of threshold, eg network response within 500ms, then that threshold should be managed by the plugin and optionally exposed as a admin setting. The plugin may choose to have different thresholds for Warning / Error / Critical. When designing a new Status Check be mindful that it needs to be actionable, for instance if you are asserting that a remote domain is available and it goes down, which then alerts your infrastructure team, there isn't much they can do about it if it isn't their domain. If it is borderline then make things like this configurable so that each site has to option of tune their own policies of what should be considered an issue or not.
 
@@ -130,7 +130,7 @@ The summary could change depending on the result of the check but for a simple c
 
 ### The details
 
-Unlike the summary the details is allowed and encouraged to be html. Often it will be a bullet list of a table of the things that it asserted which make up the check.
+Unlike the summary the details is allowed and encouraged to be html. Often it will be a bullet list, or a table of the things that it asserted which make up the check.
 
 ### The action link
 
@@ -138,7 +138,7 @@ The action link is the place to go to help fix the issue. It should be as specif
 
 ### lib.php callback
 
-First decide if and when your new check(s) should be shown. Should it be present if your plugin is disabled? If you do not want it show if disabled then do not return it in callback below. If you do want it to show when disabled, but the check doesn't much sense then you can return a value of NA.
+First decide if and when your new check(s) should be shown. Should it be present if your plugin is disabled? If you do not want it show if disabled then do not return it in callback below. If you do want it to show when disabled, but a check result doesn't make much sense, then you can return a value of NA.
 
 Next decide on what type of check it should be which determines what report it will be included in. Some checks might make sense to be reused with more than one report, eg it could be in both Status and Performance.
 
@@ -220,6 +220,27 @@ https://github.com/moodle/moodle/blob/master/lib/classes/check/access/riskxss_re
 ### Asynchronous checks
 
 Some checks are by their nature asynchronous. For instance having moodle send an email to itself and then having it processed by the inbound mail handler to make it's properly configured (see [MDL-48800](https://tracker.moodle.org/browse/MDL-48800)). In cases like these please make sure the age or staleness of the check is shown in the summary, and you should also consider turning the result status into a warning if the result is too old. If appropriate make the threshold a configurable admin setting.
+
+## Reusing checks inside admin setting pages
+
+Quite often you have a plugin that includes some sort of status check in the admin settings page where you configure the plugin. For example you can add the api keys for a service and it shows you right in the settings page if the connection settings work.
+
+You can re-use the Check api to get this nice feature for free:
+
+```php
+$temp->add(new admin_setting_check(
+    'antivirus/checkantivirus',
+    new \core\check\environment\antivirus(),
+));
+```
+
+:::info
+
+These checks are performed asynchronously, and only if the check is visible, so will not slow down the whole admin tree which is often a downside of implementing this manually.
+
+:::
+
+You can also use checks which are not linked into one of the reports. This means you can check the connection while configuring the plugin, but before it is enabled, and only add the check to the status report page once the plugin is enabled.
 
 ## See also
 
