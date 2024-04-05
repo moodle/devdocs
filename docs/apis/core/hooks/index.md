@@ -158,9 +158,9 @@ namespace mod_activity\hook;
 
 #[\core\attribute\label('Hook dispatched at the very end of installation of mod_activity plugin.')]
 #[\core\attribute\tags('installation')]
-class installation_finished implements \core\hook\described_hook {
+final class installation_finished {
     public function __construct(
-        public function string $version,
+        public readonly string $version,
     ) {
     }
 }
@@ -174,9 +174,9 @@ class installation_finished implements \core\hook\described_hook {
 <?php
 namespace mod_activity\hook;
 
-class installation_finished implements \core\hook\described_hook {
+final class installation_finished implements \core\hook\described_hook {
     public function __construct(
-        public function string $version,
+        public readonly string $version,
     ) {
     }
 
@@ -198,7 +198,7 @@ class installation_finished implements \core\hook\described_hook {
 <?php
 function xmldb_activity_install() {
     $hook = new \mod_activity\hook\installation_finished();
-    \core\di::get(\core\hook\manager::class())->dispatch($hook);
+    \core\di::get(\core\hook\manager::class)->dispatch($hook);
 }
 
 ```
@@ -214,7 +214,7 @@ The `dispatch` method is an instance method and requires an instance of the hook
 From Moodle 4.4 you should make use of the [Dependency Injection](../di/index.md) system, for example:
 
 ```php title="Dispatching a hook with DI"
-\core\di::get(\core\hook\manager::class())->dispatch($hook);
+\core\di::get(\core\hook\manager::class)->dispatch($hook);
 ```
 
 Using DI for dependency injection has the benefit that the hook manager can use fixture callbacks to test a range of behaviours, for example:
@@ -280,7 +280,7 @@ This approach is harder to test in situ.
 
 Any plugin is free to register callbacks for all core and plugin hooks.
 The registration is done by adding a `db/hooks.php` file to plugin.
-Callbacks may be be provided as a PHP callable in either:
+Callbacks may be provided as a PHP callable in either:
 
 - string notation, in the form of `some\class\name::static_method`; or
 - array notation, in the form of `[\some\class\name::class, 'static_method']`.
