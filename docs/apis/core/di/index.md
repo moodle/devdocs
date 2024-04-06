@@ -162,7 +162,7 @@ class example_test extends \advanced_testcase {
 
         // Call a method on the example class.
         // This method uses \core\di to fetch the client and use it to fetch data.
-        $example \core\di::get(example::class);
+        $example = \core\di::get(example::class);
         $result = $example->do_the_thing();
 
         // The result will be based on the mock response.
