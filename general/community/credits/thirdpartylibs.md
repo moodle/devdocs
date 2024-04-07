@@ -286,7 +286,7 @@ A cross-browser JavaScript range and selection library.
 ### Tiny
 
 - **Location**: lib/editor/tiny/js/tinymce
-- **Version**: 6.6.2
+- **Version**: 6.8.3
 - **License**:  MIT
 - **URL**: [https://github.com/tinymce/tinymce](https://github.com/tinymce/tinymce)
 
@@ -745,6 +745,15 @@ Polyfill URL and URLSearchParams to match last WHATWG specifications.
 - **Version**: 1.1.12
 - **License**:  MIT
 - **URL**: [https://github.com/lifaon74/url-polyfill](https://github.com/lifaon74/url-polyfill)
+
+### clock
+
+Clock Interface (PHP FIG PSR-20).
+
+- **Location**: lib/psr/clock
+- **Version**: 1.0.0
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/clock](https://github.com/php-fig/clock)
 
 ### container
 
