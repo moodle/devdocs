@@ -184,10 +184,10 @@ This is the mustache template for this demo. It uses some bootstrap classes dire
 
 ## Output Functions
 
-This section tries to explain a bit how dynamic data should be sent from Moodle to the browser in an organised and standard way.
+This section explains how dynamic data should be sent from Moodle to the web browser in an organised and standard way.
 
 :::important
-Obviously it's possible to have your own output methods but, thinking that you are going to share your code (yep, this is an OpenSource project!) and in the collaborative way we try to build and maintain the system every day, it would be really better to follow the basic guidelines explained below.
+It is possible to have your own output methods but, thinking that you are going to share your code (yep, this is an OpenSource project!) and in the collaborative way we try to build and maintain the system every day, it would be really better to follow the basic guidelines explained below.
 
 By using them you will be helping to have better, more secure and readable code. Spend some minutes trying to understand them, please!
 :::
@@ -198,6 +198,8 @@ For each of the functions below we'll try to explain when they should be used, e
 
 ### String formatting functions
 
+The `format_string` and `format_text` functions should always be used when preparing the output of information. They may also be used to process information before it is stored in the database however, filters should only be applied at output. For example, language filters must only be applied as the content is prepared for output because we don't yet know the user's preferred language.
+
 #### p() and s()
 
 ```php
@@ -205,59 +207,82 @@ function s($var, $strip=false)
 function p($var, $strip=false)
 ```
 
-These functions share the same code, so they will be explained together. The only difference is that `s()` returns the string, while `p()` prints it directly.
+The only difference between these two functions is that `s()` returns the string, while `p()` prints it directly.
 
 These functions should be used to:
 
-- print all the **values of form fields** like `<input>` or `<textarea>` tags.
-- **show plain (non-HTML) text** that has been introduced by the user (search string, quiz responses, ...).
-- print, in general, all the **dynamic data, not being HTML**, that doesn't need to be cleaned nor processed by filters. It is important not to use these functions for strings that contain HTML markup.
+- Print all the **values of form fields** like `<input>` or `<textarea>` tags.
+- **Print plain (non-HTML) text** that has been introduced by the user (search string, quiz responses, ...).
+- Print in general as long as the text does not need to be cleaned or processed by filters.
+- Print HTML source code instead of rendering it.
 
-The functions replace certain characters that would have special meaning in HTML (`<, >, ", ', and &`) by HTML entities, so that they are displayed as intended. Note that even though the value of form fields printed with `p()` will have these characters converted to HTML entities, the submitted values will still contain the original characters.
+The functions replace certain characters that have a special meaning in HTML (`<, >, ", ', and &`) with HTML entities so that they are displayed as intended. Note that even though the value of form fields printed with `p()` will have these characters converted to HTML entities, the submitted values will still contain the original characters.
 
 The key parameter for this function is:
 
-- **strip**: it decides if we want to strip slashes from the string or not. By default, it's `false`, so no strip will be performed. We should set such parameter to 'true' only when data to be processed isn't coming from database, but from HTTP requests (forms, links, ...).
+- `strip`: Set to `true` to strip slashes from the string. Only set this parameter to `true` when the data to be processed is not coming from the database. This should be used when the string comes from HTTP requests (forms, links, ...). (Default is `false`, so no strip will be performed)
 
 #### format_text()
+
+```php
+function format_text(
+    string $text,
+    $format = FORMAT_MOODLE,
+    [
+        'noclean' => false,
+        'trusted' => false,
+        'filter' => true,
+        'context' => $context,
+        'para' => true,
+        'newline' => true,
+        'allowid' => false,
+        'blanktarget' => false,
+    ],
+);
+
+```
 
 This function should be used to:
 
 - print **any html/plain/markdown/moodle text**, needing any of the features below. It is mainly used for long strings like posts, answers, glossary items, etc.
-- filter content through Moodle or 3rd party language filters for multi-language support. Not to be confused with [get_string](https://docs.moodle.org/dev/String_API#get_string.28.29) which is used to access localized strings in Moodle and its language packs. Together, these functions enable Moodle multi-language support .
-Note that this function is really **heavy** because it supports **cleaning** of dangerous contents, delegates processing to enabled **content filters**, supports different **formats** of text (HTML, PLAIN, MARKDOWN, MOODLE) and performs a lot of **automatic conversions** like adding smilies, build links. Also, it includes a strong **cache mechanism** (DB based) that will alleviate the server from a lot of work processing the same texts time and again.
+- filter content through Moodle or 3rd party language filters for multi-language support. This is not to be confused with [get_string](https://docs.moodle.org/dev/String_API#get_string.28.29) which is used to access localized strings in Moodle from its language packs. Together, these functions enable Moodle multi-language support.
+Note that this function is **process intensive** because it supports **cleaning** of dangerous contents, delegates processing to enabled **content filters**, supports different **formats** of text (HTML, PLAIN, MARKDOWN, MOODLE) and performs a lot of **automatic conversions** like adding smilies, build links. Also, it includes a strong **cache mechanism** (DB-based) that will alleviate the server from a lot of work processing the same texts time and again.
 
 Some interesting parameters for this function are:
 
-- **format**: To tell the function about how the data has been entered. It defaults to `FORMAT_MOODLE` that is a cool format to process plain text because it features automatic link conversion, smilies and good conversion to html output. Other formats are `FORMAT_HTML`, `FORMAT_PLAIN`, `FORMAT_MARKDOWN`.
-- **options**: Here we can specify how we want the process to be performed. You only need to define them if they are different from the default value assumed. Main options are:
-  - `options->noclean`: To decide if we want to skip the clean-up of text, **un-protecting us** from attacks and other security flaws (defaults to false, so protection is enabled. You **shouldn't set it to true ever** unless you are 200% sure that only controlled users can edit it (mainly admins). **Never use it for general text places** (posts...) or you will be, sooner or later, attacked! Note that this option is ignored for `FORMAT_PLAIN`, the text is never cleaned.
-  - `options->trusted`: Indicates that this content is trusted and does not need clean-up (but only if `$CFG->enabletrusttext` is true). This argument is ignored if `noclean` is specified.
-  - `options->filter`: To decide if you want to allow filters to process the text (defaults to true). This is ignored by `FORMAT_PLAIN` for which filters are never applied.
-  - `options->context`: If text is filtered (and this happens by default), it is very important to specify context (id or object) for applying filters. If context is not specified it will be taken from `$PAGE->context` and may potentially result in displaying the same text differently on different pages. For example all module-related information should have module context even when it appears in course-level reports, all course-related information such as name and description should have course context even when they are displayed on front page or system pages.
-  - `options->param`: To decide if you want every paragraph automatically enclosed between html paragraph tags (`<p>...</p>`) (defaults to true). This option only applies to `FORMAT_MOODLE`.
-  - `options->newlines`: To decide if line feeds in text should be converted to html newlines (`<br />`) (defaults to true). This option only applies to `FORMAT_MOODLE`.
-  - `options->overflowdiv`*: If set to true the formatted text will be encased in a div with the class no-overflow before being returned. Default false.
-  - `options->allowid` : If true then id attributes will not be removed, even when using HTML Purifier. Default false.
-  - `options->blanktarget` : If true all `<a>` tags will have `target="_blank"` added unless target is explicitly specified. Default false.
+- **format**: This parameter specifies the format of the text. `FORMAT_MOODLE` is a useful format for processing plain text because it features automatic rendering of links and smilies, and does a good job of converting plain text to HTML output. Other supported formats include `FORMAT_HTML`, `FORMAT_PLAIN`, `FORMAT_MARKDOWN`. (Default is `FORMAT_MOODLE`)
+- **options**: Here we can specify options for processing the text. You only need to define them if they are different from the default values. The main options are:
+  - `options->noclean`: Set to `true` to skip the clean-up of text, **un-protecting us** from attacks and other security flaws. You **should never set it to `true`** unless you are 200% sure that only trusted users can edit the content such as site administrators. **Never use it for user-submitted text** (posts...) or you will be attacked sooner or later! Note that this option is ignored for `FORMAT_PLAIN` where the text is never cleaned. (Default is `false`, so protection is enabled)
+  - `options->trusted`: Set to `true` if the content is trusted and does not need clean-up. This argument is only enabled if `$CFG->enabletrusttext` is also set to `true`. It is ignored if `noclean` is specified. (Default is `false`)
+  - `options->filter`: Set to `false` if you do not want to allow filters to process the text. This is ignored by `FORMAT_PLAIN` for which filters are never applied. (Default is `true`)
+  - `options->context`: If text is filtered (and this happens by default), it is very important to specify the context (id or object) for applying filters. If context is not specified it will be taken from `$PAGE->context` and may potentially result in displaying the same text differently on different pages. For example, all module-related information should have module context even when it appears in course-level reports, all course-related information such as name and description should have course context even when displayed on the front page or system pages.
+  - `options->para`: Set to `false` if you do not want every paragraph to automatically be enclosed between HTML paragraph tags (`<p>...</p>`). This option only applies to `FORMAT_MOODLE`. (Defaults is `true`)
+  - `options->newlines`: Set to `false` if line feeds in text should be converted to HTML newlines (`<br />`). This option only applies to `FORMAT_MOODLE`. (Default to `true`)
+  - `options->overflowdiv`*: Set to `true` if you want the formatted text to automatically be encased in a div with the class no-overflow before being returned. (Default is `false`)
+  - `options->allowid`: Set to `true` to ensure that the id attributes will not be removed, even when using HTML Purifier. (Default is `false`)
+  - `options->blanktarget`: Set to `true` to have `target="_blank"` added to all `<a>` tags unless the target attribute is explicitly specified. (Default is `false`)
 
 #### format_string()
+
+```php
+function format_string(string $text, $striplinks = true, ['context' => $context, 'escape' => true, 'filter' => true])
+```
 
 This function should be used to:
 
 - print **short non-html strings that need filter processing** (activity titles, post subjects, glossary concepts...). If the string contains HTML, it will be filtered out. If you want the HTML, use `format_text()` instead.
-- filter content through Moodle or 3rd party language filters for multi-language support. Not to be confused with [get_string](https://docs.moodle.org/dev/String_API#get_string.28.29) which is used to access localized strings in Moodle and its language packs. Together, these functions enable Moodle multi-language support .
+- filter content through Moodle or 3rd party language filters for multi-language support. Not to be confused with [get_string](https://docs.moodle.org/dev/String_API#get_string.28.29) which is used to access localized strings in Moodle and its language packs. Together, these functions enable Moodle multi-language support.
 All enabled **heading filters** will be applied to the string.
 
-Please note that this function is basically one stripped version of the full `format_text()` function detailed above and **it doesn't offer any of its options or protections**. It simply filters the strings and returns the result, so we must ensure that text being processed has been properly cleaned at input time, using the proper `xxx_param()` functions.
+Please note that this function is a stripped version of the full `format_text()` function detailed above. **It does not offer any of its options or protections**. It simply filters the strings and returns the result, so we must ensure that the string has been processed properly and cleaned at input time using the proper `xxx_param()` functions.
 
 Some interesting parameters for this function are:
 
-- `striplinks`: To decide if, after the text has been processed by filters, we must delete any link from the result text. Used when we want to show the text inside menus, page titles... (defaults to true).
+- `striplinks`: Set to `false` to remove all links after the text has been processed by filters. Used when we want to show the text inside menus, page titles, etc. (Default is `true`)
 - `options`
-  - `options->context`: Context (id or object) for applying filters. If context is not specified it will be taken from `$PAGE->context` and may potentially result in displaying the same text differently on different pages. For example all module-related information should have module context even when it appears in course-level reports, all course-related information such as name and description should have course context even when they are displayed on front page or system pages.
-  - `options->escape`: To decide if you want to escape HTML entities. True by default.
-  - `options->filter`: To decide if you want to allow filters to process the text (defaults to true). This is ignored by `FORMAT_PLAIN` for which filters are never applied.
+  - `options->context`: Context (id or object) for applying filters. If context is not specified it will be taken from `$PAGE->context` and may potentially result in displaying the same text differently on different pages. For example, all module-related information should have module context even when it appears in course-level reports, all course-related information such as name and description should have course context even when they are displayed on the front page or system pages.
+  - `options->escape`: Set to `false` if you do not want to escape HTML entities. (Default is `true`)
+  - `options->filter`: Set to `false` if you want to allow filters to process the text. This is ignored by `FORMAT_PLAIN` for which filters are never applied.  (Default to `true`)
 
 ### Simple elements rendering
 
