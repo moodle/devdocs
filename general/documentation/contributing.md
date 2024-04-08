@@ -161,6 +161,26 @@ When doing so you should may want to:
 - Flag issues that are stale or that should be closed.
 - Review code.
 
+## Adding diagrams
+
+The diagram tool [Mermaid](https://mermaid.js.org/intro/) is integrated into this docs site. This lets you define simple diagrams in the source of the page. For example:
+
+````
+```mermaid
+flowchart LR
+    WRITE[Write Mermaid code] --> Re-render --> Profit!
+```
+````
+
+... which produces:
+
+```mermaid
+flowchart LR
+    WRITE[Write Mermaid code] --> Re-render --> Profit!
+```
+
+To work out the Mermaid syntax you need for the diagram you are trying to create, the [Live editor](https://mermaid.live/) is highly recommended.
+
 ## Our Development Process
 
 While our development of Moodle is managed in the [Moodle Tracker](https://tracker.moodle.org/), all development of these Developer Resources takes place in this [GitHub repository](https://github.com/moodle/devdocs). All work takes place in public, in this repository.
