@@ -1,13 +1,13 @@
 ---
 id: introduction
 title: Introduction
-description: Developer documentation for Moodle 4.3.
+description: Developer documentation for Moodle 4.4.
 slug: /
 tags:
   - Getting started
 ---
 
-Welcome to the Developer Documentation for **Moodle 4.3**.
+Welcome to the Developer Documentation for **Moodle 4.4**.
 
 This documentation is version-specific and includes a range of useful guides and information.
 
