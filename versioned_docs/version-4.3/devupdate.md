@@ -554,6 +554,20 @@ The SVG icons in Moodle LMS were sourced from https://fontawesome.com/search?m=f
 When adding SVG files from [FontAwesome](https://fontawesome.com/icons), please make sure to use the `Free` icon set by generating the file from the `SVG` code, rather than downloading it. This approach ensures the correct licensing of the icon, as the downloaded version may have a different license at times.
 :::
 
+## Cron and Tasks API
+
+### Legacy Cron
+
+<Since version="4.3" issueNumber="MDL-61165" />
+
+Support for the `cron.php` and `modname_cron` legacy cron system has been removed.
+
+:::caution
+
+All legacy cron tasks must now be converted to Tasks
+
+:::
+
 <!-- cspell:ignore goutte,browserkit -->
 ## Behat
 
