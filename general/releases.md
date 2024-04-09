@@ -90,6 +90,17 @@ Minor releases dates differ slightly from release to release depending on the ti
 
 :::
 
+## Moodle 4.4
+
+<ReleaseTable releaseName="4.4" />
+
+:::info
+
+Bug fixes for general core bugs in 4.4.x will end 21 April 2025 (12 months).<br/>
+Bug fixes for security issues in 4.4.x will end 8 December 2025 (18 months).
+
+:::
+
 ## Moodle 4.3
 
 <ReleaseTable releaseName="4.3" />
