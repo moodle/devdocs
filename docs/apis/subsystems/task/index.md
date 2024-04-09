@@ -85,14 +85,6 @@ In the case of an adhoc task, you can call the [`set_userid`](./adhoc.md#running
 
 For scheduled tasks you should either pass the ID of the user to the `require_capability()` function, or use the `cron_setup_user()` function to switch to that user.
 
-### Legacy cron
-
-The older syntax of cron.php or modname_cron() is still supported, and will be removed in the near future. This is because:
-
-- the legacy cron functions run serially - a long running cron in one plugin will hold up the other plugins crons
-- the legacy cron functions are fragile - a failure in one cron in one plugin will prevent the cron in other functions from running at all
-- the scheduling cannot be changed by administrators
-
 ### Generating output
 
 Since Moodle 3.5 it is safe to use the [Output API](../output/index.md) in cron tasks. Prior to this there may be cases where the Output API has not been initialised.
@@ -118,3 +110,19 @@ Several tools exist for administrators:
 - The task log viewer allows administrators to view logs from both adhoc and scheduled task runs
 - The scheduled task manager allows administrators to configure the time schedule for tasks
 - The 'Tasks running now' tool allows administrators to view key details of any task currently running
+
+## Important notes
+
+### Legacy cron
+
+import { Since } from '@site/src/components';
+
+<Since version="4.3" issueNumber="MDL-61165" />
+
+Support for an older syntax using `cron.php` or `modname_cron()` was removed in Moodle 4.3.
+
+:::caution
+
+All legacy cron features **must** be converted to Tasks.
+
+:::
