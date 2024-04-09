@@ -8,7 +8,7 @@ Every developer creates simple tools to avoid repeating cumbersome and/or boring
 
 ## Key concept
 
-The most important concept of MDK is that it works with Moodle instances. An instance of Moodle is a directory in which you have checked out a particular version together with a database using a specific database engine. This means that if you want to work on Moodle 2.3 and 2.4, using both MySQL and PostgreSQL, you will have four separate instance directories. This choice was made because it is the safest, clearest, and most straightforward solution.
+The most important concept of MDK is that it works with Moodle instances. An instance of Moodle is a directory in which you have checked out a particular version together with a database using a specific database engine. This means that if you want to work on Moodle 4.3 and 4.2, using both MySQL and PostgreSQL, you will have four separate instance directories. This choice was made because it is the safest, clearest, and most straightforward solution.
 
 ## Typical workflows using MDK
 
