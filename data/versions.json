@@ -44,6 +44,12 @@
                     "name": "4.3.3",
                     "releaseDate": "12 February 2024",
                     "version": 2023100903
+                },
+                {
+                    "name": "4.3.4",
+                    "releaseNoteUrl": false,
+                    "releaseDate": "22 April 2024",
+                    "version": 2023100904
                 }
             ]
         },
@@ -90,6 +96,12 @@
                     "name": "4.2.6",
                     "releaseDate": "12 February 2024",
                     "version": 2023042406
+                },
+                {
+                    "name": "4.2.7",
+                    "releaseNoteUrl": false,
+                    "releaseDate": "22 April 2024",
+                    "version": 2023042407
                 }
             ]
         },
@@ -151,6 +163,12 @@
                     "name": "4.1.9",
                     "releaseDate": "12 February 2024",
                     "version": 2022112809
+                },
+                {
+                    "name": "4.1.10",
+                    "releaseNoteUrl": false,
+                    "releaseDate": "22 April 2024",
+                    "version": 2022112810
                 }
             ]
         },
