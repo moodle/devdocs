@@ -110,7 +110,7 @@ export default () => {
 };
 ```
 
-If both are used, then the _default_ export will override tall _named_ exports.
+If both are used, then the _default_ export will override all _named_ exports.
 
 ### Inline JavaScript
 
