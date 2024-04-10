@@ -228,9 +228,9 @@ To adapt your plugin to the new editor you must add the proper data attributes. 
 | Section | `li.section#section-{SECTION.NUM}` | `data-for="section"`<br/>`data-id={SECTION.ID}`<br/>`data-number={SECTION.NUM}` |
 | Section header | `#sectionid-{SECTION.ID}-title` | `data-for="section_title"`<br/>`data-id={SECTION.ID}`<br/>`data-number={SECTION.NUM}` |
 | Course module item (activity) | `li.activity#module-{CM.ID}` | `data-for="cmitem"`<br/>`data-id={CM.ID}` |
-| Course sections list | `.course-content>ul` | `data-for="course_sectionlist"`<br/>| `Section course modules list | Li.section .content .section` | `data-for="cmlist"`<br/>|
+| Course sections list | `.course-content>ul` | `data-for="course_sectionlist"`<br/> `Section course modules list Li.section .content .section` <br/> `data-for="cmlist"`|
 | Course module action link | `a.cm-edit-action` | `data-action={ACTIONNAME}`<br/>`data-id={CM.ID}` |
-| Section action link | `.section_action_menu` | `data-action={ACTIONNAME}`<br/>`data-id={SECTION.ID}`
+| Section action link | `.section_action_menu` | `data-action={ACTIONNAME}`<br/>`data-id={SECTION.ID}` |
 | Section info | `.section_availability` | `data-for="sectioninfo"` |
 
 ### Step 2: enable supports components feature

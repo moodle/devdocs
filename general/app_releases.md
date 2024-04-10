@@ -74,7 +74,7 @@ Version 2 was based on Ionic 1 and it supported Moodle versions from 2.4 onwards
 | [Moodle Mobile 2.3](./app_releases/v2/v2.3) | 8 October 2015 |
 | [Moodle Mobile 2.2](./app_releases/v2/v2.2) | 10 September 2015 |
 | [Moodle Mobile 2.1](./app_releases/v2/v2.1) | 28 August 2015 |
-| [Moodle Mobile 2.0](./app_releases/v2/v2.0) | 31 July 2015 | |
+| [Moodle Mobile 2.0](./app_releases/v2/v2.0) | 31 July 2015 |
 
 ## Moodle Mobile 1.x
 

@@ -80,7 +80,7 @@ Core subsystems can provide own strings via a file stored in `lang/en/{subsystem
 | Maths library | core_mathslib |  |
 | Media | core_media |  |
 | Messaging | core_message | /message |
-| MIME types | core_mimetypes |
+| MIME types | core_mimetypes | |
 | MNet | core_mnet | /mnet |
 | Dashboard | core_my | /my |
 | User notes | core_notes | /notes |
@@ -153,7 +153,7 @@ This allows uses of the constant to autoload the content without needing to manu
 
 ### Table names
 
-All table names for a plugin must begin with its frankenstyle name (after the standard Moodle table prefix).  
+All table names for a plugin must begin with its frankenstyle name (after the standard Moodle table prefix).
 
 :::warning
 
