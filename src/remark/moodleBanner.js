@@ -15,12 +15,51 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-module.exports = () => (root) => {
-    root.children.unshift({
-        type: 'import',
-        value: 'import MoodlePageBanner from "@site/src/theme/MoodlePageBanner";',
-    }, {
-        type: 'jsx',
-        value: '<MoodlePageBanner frontMatter={frontMatter} {...(typeof metadata !== "undefined" ? {metadata} : {} )}/>',
+import { visit } from 'unist-util-visit';
+import { find } from 'unist-util-find';
+
+import * as acorn from 'acorn';
+import { mdxJsx } from 'micromark-extension-mdx-jsx';
+import { mdxjsEsm } from 'micromark-extension-mdxjs-esm';
+import { fromMarkdown } from 'mdast-util-from-markdown';
+import { mdxJsxFromMarkdown } from 'mdast-util-mdx-jsx';
+import { mdxjsEsmFromMarkdown } from 'mdast-util-mdxjs-esm';
+
+const getImportAst = () => fromMarkdown(
+    'import MoodlePageBanner from "@site/src/theme/MoodlePageBanner";',
+    {
+        extensions: [mdxjsEsm({ acorn, addResult: true })],
+        mdastExtensions: [mdxjsEsmFromMarkdown()],
+    },
+).children[0];
+
+const getPageBannerAst = () => fromMarkdown(
+    '<MoodlePageBanner frontMatter={frontMatter} metadata={metadata} />',
+    {
+        extensions: [mdxJsx({ acorn, addResult: true })],
+        mdastExtensions: [mdxJsxFromMarkdown()],
+    },
+).children[0];
+
+const plugin = () => async (ast) => {
+    const importAst = getImportAst();
+    const pageBannerAst = getPageBannerAst();
+
+    visit(ast, 'root', (root) => {
+        const frontMatterNode = find(ast, { type: 'yaml' });
+        if (!frontMatterNode) {
+            return;
+        }
+
+        const frontMatterIndex = root.children.indexOf(frontMatterNode);
+
+        root.children.splice(
+            frontMatterIndex + 1,
+            0,
+            importAst,
+            pageBannerAst,
+        );
     });
 };
+
+export default plugin;

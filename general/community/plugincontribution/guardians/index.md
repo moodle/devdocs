@@ -22,4 +22,4 @@ These three come in this priority order. So for example, even not-so-well-writte
 
 ## How to join
 
-Moodle developers and experienced users are welcome to sign up for the Plugin guardians programme. Please email David Mudrák <david@moodle.com> for more details. Please attach links to your Moodle development related work such as published plugins, Moodle patches, forum posts in developer forums etc.
+Moodle developers and experienced users are welcome to sign up for the Plugin guardians programme. Please email [David Mudrák](mailto:david@moodle.com) for more details. Please attach links to your Moodle development related work such as published plugins, Moodle patches, forum posts in developer forums etc.

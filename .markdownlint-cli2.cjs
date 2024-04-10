@@ -154,7 +154,9 @@ config.MD033 = {
         "var",
 
         // These are custom React elements, either from Docusaurus, or our own.
+        "AcademyLink",
         "CodeBlock",
+        "ComponentFileSummary",
         "Tabs",
         "TabItem",
         "TabItems",
@@ -164,9 +166,14 @@ config.MD033 = {
         "InvalidExample",
         "ReactPlayer",
         "Link",
+        "ProjectSummary",
         "ReleaseNoteIntro",
         "ReleaseDate",
         "ReleaseVersion",
+        "VersionPHP",
+        "Lib",
+        "Lang",
+        "DbAccessPHP",
     ]
 };
 

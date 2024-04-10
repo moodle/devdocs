@@ -21,11 +21,11 @@ export default {
     '*.css': ['stylelint --allow-empty-input --fix'],
     '*.{js,jsx,ts,tsx,mjs}': ['eslint --fix'],
     '*.mdx': [
-        'markdownlint-cli2-config .markdownlint/mdx/fix/.markdownlint-cli2.cjs',
+        'markdownlint-cli2 --config .markdownlint/mdx/fix/.markdownlint-cli2.cjs',
         'cspell --no-must-find-files --no-progress',
     ],
     '*.md': [
-        'markdownlint-cli2-fix',
+        'markdownlint-cli2 --fix',
         'cspell --no-must-find-files --no-progress',
     ],
     'src/**/*.{js,jsx,ts,tsx,mjs}': [

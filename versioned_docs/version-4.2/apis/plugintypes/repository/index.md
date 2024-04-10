@@ -84,12 +84,11 @@ import RepositoryLibExample from '!!raw-loader!./_examples/lib.php';
     plugintype="repository"
     pluginname="pluginname"
     example={RepositoryLibExample}
-    // Not legacy for repository.
     legacy={false}
     required
 >
 
-This file contains the main repository class definition, which must extend the core `\repository` class. By extending the base class and overriding some of the class methods, the plugin can configure standard features and behaviours. See [Administration API](#administration-apis) for more information.
+This file contains the main repository class definition, which must extend the core `\repository` class. By extending the base class and overriding some of the class methods, the plugin can configure standard features and behaviours. See [Administration API](../../subsystems/admin/index.md) for more information.
 
 </Lib>
 
@@ -377,7 +376,7 @@ In order to access to a flickr public account, the plugin needs to know the emai
 - **get_instance_option_names** returing ['email_address'].
 - **instance_config_form** adding a text box called 'email_address' into the form.
 
-So at this moment all our Flickr Public Repositories will have a specific email address. However this is not enough. In order to communicate with Flickr, Moodle needs to know a Flickr API key (<http://www.flickr.com/services/api/>). This API key is the same for any repository. We could add it with the email address setting but the administrator would have to enter the same API key for every repository. Hopefully the administrator can add settings to the plugin level, impacting all repositories. To do so you need to override:
+So at this moment all our Flickr Public Repositories will have a specific email address. However this is not enough. In order to communicate with Flickr, Moodle needs to know a Flickr API key https://www.flickr.com/services/api/. This API key is the same for any repository. We could add it with the email address setting but the administrator would have to enter the same API key for every repository. Hopefully the administrator can add settings to the plugin level, impacting all repositories. To do so you need to override:
 
 - **get_type_option_names** returing ['api_key'].
 - **type_config_form** adding the api_key text input element into the form.
@@ -394,7 +393,6 @@ import FlickPublicLib from '!!raw-loader!./_examples/flickr_public_lib.php';
     plugintype="repository"
     pluginname="pluginname"
     example={FlickPublicLib}
-    // Not legacy for repository.
     legacy={false}
     summary={false}
     description=""
@@ -817,7 +815,7 @@ Return true if should be included in a search throughout all repositories (curre
 
 ### Repository support for returning file as alias/shortcut
 
-It is possible to link to the file from external (or internal) repository by reference. In UI it is called "create alias/shortcut". This creates a row in {files} table but the contents of the file is not stored. Although it may be cached by repository if developer wants to.
+It is possible to link to the file from external (or internal) repository by reference. In UI it is called "create alias/shortcut". This creates a row in `files` table but the contents of the file is not stored. Although it may be cached by repository if developer wants to.
 
 Make sure that function supported_returntypes() returns FILE_REFERENCE among other types.
 
@@ -845,7 +843,12 @@ public function sync_individual_file(stored_file $storedfile) {
 
 #### get_reference_details($reference, $filestatus = 0)
 
-Returns human-readable information about where the original file is stored (to be displayed in the filepicker properties box). It is usually prefixed with repository name and semicolon (for example 'Myrepository: <http://url.to.file'>). `$reference` is the 'source' output by `get_listing`. <!-- cspell:disable -->`$filestatus`<!-- cspell:enable --> can be either 0 (OK - default) or 666 (source file missing).
+Returns human-readable information about where the original file is stored (to be displayed in the filepicker properties box).
+
+This is usually prefixed with the repository name, and a semicolon. For example: `Myrepository: http://url.to.file`.
+
+- `$reference` is the 'source' output by `get_listing`
+- `$filestatus` can be either `0` (OK - default) or `666` (source file missing).
 
 <details>
   <summary>View example</summary>

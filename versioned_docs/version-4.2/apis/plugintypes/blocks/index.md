@@ -144,7 +144,7 @@ Depending on your plugin needs your main class in `blocks/pluginname/block_plugi
 
 Once the block instance is created, there are several $this attributes that can be used:
 
-- `$this->config` The block instance configuration. By default it is an empty object but if the block has an [edit_form.php](#edit_form.php) file, it will be an object with the form data.
+- `$this->config` The block instance configuration. By default it is an empty object but if the block has an [edit_form.php](#edit_formphp) file, it will be an object with the form data.
 - `$this->content` This variable holds all the actual content that is displayed inside each block. Valid values for it are either NULL or an object of class stdClass, which must have specific member variables depending on the extended block base class.
 - `$this->page` The page object that the block is being displayed on.
 - `$this->context` The context object that the block is being displayed in.

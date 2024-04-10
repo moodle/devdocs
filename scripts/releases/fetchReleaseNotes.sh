@@ -32,8 +32,8 @@ for file in ${dir}/* ${dir}.md; do
     ./scripts/releases/stripFullPageName.sh $file
 done
 
-yarn markdownlint-cli2-config scripts/migration/phases/12-admonition/.markdownlint-cli2.cjs "${dir}".md
-yarn markdownlint-cli2-config scripts/migration/phases/12-admonition/.markdownlint-cli2.cjs "${dir}"/*.md
+yarn markdownlint-cli2 --config scripts/migration/phases/12-admonition/.markdownlint-cli2.cjs "${dir}".md
+yarn markdownlint-cli2 --config scripts/migration/phases/12-admonition/.markdownlint-cli2.cjs "${dir}"/*.md
 
 yarn mdlint-all
 

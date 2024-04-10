@@ -16,7 +16,7 @@ We recommend that you:
 
 In addition, the following items may be included:
 
-1. Setup requirements. If so, explain them with detailed information and/or provide a link to the documentation, for example <https://docs.moodle.org/en/OAuth_2_services>.
+1. Setup requirements. If so, explain them with detailed information and/or provide a link to the documentation, for example [https://docs.moodle.org/en/OAuth_2_services](https://docs.moodle.org/en/OAuth_2_services).
 2. Whether testing involves git/shell interaction, SQL operations or commands in general, don't assume the tester knows how to perform that stuff. Instead, add them explicitly to the instructions.
 3. Whether multiple themes (for example boost, or classic) should be used.
 4. Whether more than one browser should be used.

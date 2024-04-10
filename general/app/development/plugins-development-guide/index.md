@@ -311,7 +311,7 @@ This is the most important part of your plugin because it contains the code that
 
 In this template we'll be using Ionic, together with directives and components specific to the Moodle App.
 
-All the HTML elements starting with `ion-` are ionic components. Most of the time, the component name is self-explanatory but you may refer to a detailed guide here: <https://ionicframework.com/docs/components/>
+All the HTML elements starting with `ion-` are ionic components. Most of the time, the component name is self-explanatory but you may refer to a detailed guide here: [https://ionicframework.com/docs/components/](https://ionicframework.com/docs/components/).
 
 All the HTML elements starting with `core-` are custom components of the Moodle App.
 
@@ -925,7 +925,7 @@ Data that can be passed to the directive:
 - `title` (string) — The title to display with the new content. Only if `samePage` is `false`.
 - `samePage` (boolean) — Optional, defaults to `false`. Whether to display the content in same page or open a new one.
 - `useOtherData` (any) — Whether to include `otherdata` (from the `get_content` WS call) in the arguments for the new `get_content` call. If not supplied, no other data will be added. If supplied but empty (`null`, `false` or an empty string) all the `otherdata` will be added. If it's an array, it will only copy the properties whose names are in the array. Please notice that doing `[useOtherData]=""` is the same as not supplying it, so nothing will be copied. Also, objects or arrays in `otherdata` will be converted to a JSON encoded string.
-- `form` (string) — ID or name to identify a form in the template. The form will be obtained from `document.forms`. If supplied and a form is found, the form data will be retrieved and sent to the new `get_content` WS call. If your form contains an `ion-radio`, `ion-checkbox` or `ion-select`, please see [Values of \`ion-radio\`, \`ion-checkbox\` or \`ion-select\` aren't sent to my WS](#values-of-ion-radio-ion-checkbox-or-ion-select-arent-sent-to-my-ws).
+- `form` (string) — ID or name to identify a form in the template. The form will be obtained from `document.forms`. If supplied and a form is found, the form data will be retrieved and sent to the new `get_content` WS call. If your form contains an `ion-radio`, `ion-checkbox` or `ion-select`, please see [Values of \`ion-radio\`, \`ion-checkbox\` or \`ion-select\` aren't sent to my WS](./troubleshooting.md#values-of-ion-radio-ion-checkbox-or-ion-select-arent-sent-to-my-ws).
 
 Let's see some examples.
 
@@ -957,7 +957,7 @@ Data that can be passed to the directive:
 - `params` (object) — The params for the WS call.
 - `preSets` (object) — Extra options for the WS call: whether to use cache or not, etc.
 - `useOtherDataForWS` (any) — Whether to include `otherdata` (from the `get_content` WS call) in the params for the WS call. If not supplied, no other data will be added. If supplied but empty (`null`, `false` or an empty string) all the `otherdata` will be added. If it's an array, it will only copy the properties whose names are in the array.Please notice that `[useOtherDataForWS]=""` is the same as not supplying it, so nothing will be copied. Also, objects or arrays in `otherdata` will be converted to a JSON encoded string.
-- `form` (string) — ID or name to identify a form in the template. The form will be obtained from `document.forms`. If supplied and a form is found, the form data will be retrieved and sent to the new `get_content` WS call. If your form contains an `ion-radio`, `ion-checkbox` or `ion-select`, please see [Values of \`ion-radio\`, \`ion-checkbox\` or \`ion-select\` aren't sent to my WS](#values-of-ion-radio-ion-checkbox-or-ion-select-arent-sent-to-my-ws).
+- `form` (string) — ID or name to identify a form in the template. The form will be obtained from `document.forms`. If supplied and a form is found, the form data will be retrieved and sent to the new `get_content` WS call. If your form contains an `ion-radio`, `ion-checkbox` or `ion-select`, please see [Values of \`ion-radio\`, \`ion-checkbox\` or \`ion-select\` aren't sent to my WS](./troubleshooting.md#values-of-ion-radio-ion-checkbox-or-ion-select-arent-sent-to-my-ws).
 - `confirmMessage` (string) — Message to confirm the action when the user clicks the element. If not supplied, no confirmation will be requested. If supplied but empty, "Are you sure?" will be used.
 - `showError` (boolean) — Optional, defaults to `true`. Whether to show an error message if the WS call fails. This field was added in 3.5.2.
 - `successMessage` (string) — Message to show on success. If not supplied, no message. If supplied but empty, defaults to "Success".
@@ -1012,7 +1012,7 @@ If you don't need to load some new content when done, please see [core-site-plug
 - `params` (object) — The parameters for the WS call.
 - `preSets` (object) — Extra options for the WS call: whether to use cache or not, etc.
 - `useOtherDataForWS` (any) — Whether to include `otherdata` (from the `get_content` WS call) in the params for the WS call. If not supplied, no other data will be added. If supplied but empty (`null`, `false` or an empty string) all the `otherdata` will be added. If it's an array, it will only copy the properties whose names are in the array.  Please notice that `[useOtherDataForWS]=""` is the same as not supplying it, so nothing will be copied. Also, objects or arrays in `otherdata` will be converted to a JSON encoded string.
-- `form` (string) — ID or name to identify a form in the template. The form will be obtained from `document.forms`. If supplied and a form is found, the form data will be retrieved and sent to the new `get_content` WS call. If your form contains an `ion-radio`, `ion-checkbox` or `ion-select`, please see [Values of \`ion-radio\`, \`ion-checkbox\` or \`ion-select\` aren't sent to my WS](#values-of-ion-radio-ion-checkbox-or-ion-select-arent-sent-to-my-ws).
+- `form` (string) — ID or name to identify a form in the template. The form will be obtained from `document.forms`. If supplied and a form is found, the form data will be retrieved and sent to the new `get_content` WS call. If your form contains an `ion-radio`, `ion-checkbox` or `ion-select`, please see [Values of \`ion-radio\`, \`ion-checkbox\` or \`ion-select\` aren't sent to my WS](./troubleshooting.md#values-of-ion-radio-ion-checkbox-or-ion-select-arent-sent-to-my-ws).
 - `confirmMessage` (string) — Message to confirm the action when the user clicks the element. If not supplied, no confirmation will be requested. If supplied but empty, "Are you sure?" will be used.
 - `showError` (boolean) — Optional, defaults to `true`. Whether to show an error message if the WS call fails. This field was added in 3.5.2.
 - `component` (string) — The component of the new content.
@@ -1077,7 +1077,7 @@ If you want to call a WS when the user clicks on a certain element, please see [
 - `params` (object) — The parameters for the WS call.
 - `preSets` (object) — Extra options for the WS call: whether to use cache or not, etc.
 - `useOtherDataForWS` (any) — Whether to include `otherdata` (from the `get_content` WS call) in the params for the WS call. If not supplied, no other data will be added. If supplied but empty (`null`, `false` or an empty string) all the `otherdata` will be added. If it's an array, it will only copy the properties whose names are in the array. Please notice that `[useOtherDataForWS]=""` is the same as not supplying it, so nothing will be copied. Also, objects or arrays in `otherdata` will be converted to a JSON encoded string.
-- `form` (string) — ID or name to identify a form in the template. The form will be obtained from `document.forms`. If supplied and a form is found, the form data will be retrieved and sent to the new `get_content` WS call. If your form contains an `ion-radio`, `ion-checkbox` or `ion-select`, please see [Values of \`ion-radio\`, \`ion-checkbox\` or \`ion-select\` aren't sent to my WS](#values-of-ion-radio-ion-checkbox-or-ion-select-arent-sent-to-my-ws).
+- `form` (string) — ID or name to identify a form in the template. The form will be obtained from `document.forms`. If supplied and a form is found, the form data will be retrieved and sent to the new `get_content` WS call. If your form contains an `ion-radio`, `ion-checkbox` or `ion-select`, please see [Values of \`ion-radio\`, \`ion-checkbox\` or \`ion-select\` aren't sent to my WS](./troubleshooting.md#values-of-ion-radio-ion-checkbox-or-ion-select-arent-sent-to-my-ws).
 - `onSuccess` (Function) — A function to call when the WS call is successful (HTTP call successful and no exception returned). This field was added in 3.5.2.
 - `onError` (Function) — A function to call when the WS call fails (HTTP call fails or an exception is returned). This field was added in 3.5.2.
 - `onDone` (Function) — A function to call when the WS call finishes (either success or fail). This field was added in 3.5.2.

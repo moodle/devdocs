@@ -10,7 +10,7 @@ sidebar_position: 3
 
 The [Moodle](https://moodle.org) Developer Resources is the official source for all Moodle documentation. It's here to make your life as a Moodle Developer easier. To serve that purpose it has to be up-to-date, and as accurate and complete as possible. Every contribution is important in achieving that goal and we hope that you are able to be a part of that mission.
 
-The documentation is written in Markdown (specifically [commonmark (docs link)](https://commonmark.org/help/) which is built into the website using a tool called [Docusaurus](https://docusaurus.io/docs/next/markdown-features). You don't need to understand all the details of that to make simple contributions.
+The documentation is written in Markdown (specifically [CommonMark (docs link)](https://commonmark.org/help/) which is built into the website using a tool called [Docusaurus](https://docusaurus.io/docs/next/markdown-features). You don't need to understand all the details of that to make simple contributions.
 
 If you are new to Open Source contributions, or you are interested in learning how to run or contribute to an open source project, then these resources from the [Open Source Guides](https://opensource.guide/) website may give you some help and insight into common practices. It has a collection of resources for individuals, communities, and companies who are interested in open source contributions. The following guides may be especially useful to you:
 

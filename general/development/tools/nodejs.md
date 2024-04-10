@@ -4,7 +4,7 @@ title: NodeJS and Grunt
 
 Moodle uses a [NodeJS](https://nodejs.org/en/) toolchain to perform a number of development actions, including linting, transpilation of JavaScript, compilation of the Component Library, and a number of other routine tasks.
 
-Use of [NVM](#node-version-manager) for installation of NodeJS is highly recommended over direct installation.
+Use of [NVM](#install-nvm-and-node) for installation of NodeJS is highly recommended over direct installation.
 
 ## Setup and installation
 
@@ -12,8 +12,8 @@ Use of [NVM](#node-version-manager) for installation of NodeJS is highly recomme
 
 The recommended way of installing NodeJS is via the [Node Version Manager](https://github.com/nvm-sh/nvm), or NVM. NVM allows you to have several different versions of NodeJS installed and in-use at once on your computer.
 
-- For Linux and Mac, follow <https://github.com/nvm-sh/nvm#installing-and-updating>
-- For Windows, use <https://github.com/coreybutler/nvm-windows/releases> -- Note! NVM 1.1.7 for Windows has bugs. You should upgrade to at least 1.1.9.)
+- For Linux and Mac, follow [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
+- For Windows, use [https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases) -- Note! NVM 1.1.7 for Windows has bugs. You should upgrade to at least 1.1.9.)
 
 :::tip Checking that NVM is working
 

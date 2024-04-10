@@ -24,6 +24,10 @@ import ModFormPHP from './_files/mod_form-php';
 import IndexPHP from './_files/index-php';
 import ViewPHP from './_files/view-php';
 
+import InstallDescription from './_files/install_description.md';
+import AccessDescription from './_files/access_description.md';
+import LibDescription from './_files/lib_description.md';
+
 Activity modules are a fundamental course feature and are usually the primary delivery method for learning content in Moodle.
 
 The plugintype of an Activity module is `mod`, and the frankenstyle name of a plugin is therefore `mod_[modname]`.
@@ -166,31 +170,7 @@ $capabilities = [
     showLicense={false}
     plugintype='mod'
     pluginname='[modname]'
-    extraDescription={
-<div>
-
-For activities the following capabilities are _required_:
-
-- `mod/[modname]:addinstance`: Controls whether a user may create a new instance of the activity
-- `mod/[modname]:view`: Controls whether a user may view an instance of the activity
-
-The example below shows the recommended configuration for the `addinstance` and `view` capabilities.
-
-This configuration will allow:
-
-- editing teachers and managers to create new instances, but not non-editing teachers.
-- all roles to view the activity.
-
-:::important
-
-Granting the view capability to archetypes like `guest` does not allow any user to view all activities. Users are still subject to standard access controls like course enrolment.
-
-:::
-
-For further information on what each attribute in that capabilities array means visit [NEWMODULE Adding capabilities](https://docs.moodle.org/dev/NEWMODULE_Adding_capabilities).
-
-</div>
-    }
+    extraDescription={<AccessDescription />}
 />
 
 ### `events.php` - Event observers
@@ -202,23 +182,7 @@ For further information on what each attribute in that capabilities array means 
 <DbInstallXML
   plugintype="mod"
   pluginname="[modname]"
-  extraDescription={
-    <>
-
-Moodle requires that you create a table for your plugin whose name exactly matches the plugin name. For example, the `certificate` activity module _must_ have a database table named `certificate`. Certain fields within this table are
-also _required_:
-
-| Field name     | Properties               | Keys / Indexes                    | Notes                                                                                    |
-| ---            | ---                      | ---                               | ---                                                                                      |
-| `id`           | `INT(10), auto sequence` | primary key for the table         |                                                                                          |
-| `course`       | `INT(10)`                | foreign key to the `course` table |                                                                                          |
-| `name`         | `CHAR(255)`              |                                   | Holds the user-specified name of the activity instance                                   |
-| `timemodified` | `INT(10)`                |                                   | The timestamp of when the activity was last modified                                     |
-| `intro`        | `TEXT`                   |                                   | A standard field to hold the user-defined activity description (see `FEATURE_MOD_INTRO`) |
-| `introformat`  | `INT(4)`                 |                                   | A standard field to hold the format of the field                                         |
-
-</>
-  }
+  extraDescription={<InstallDescription />}
 />
 
 ### `upgrade.php` - Upgrade steps
@@ -247,29 +211,7 @@ also _required_:
 ### `lib.php` - Library functions
 
 <Lib
-  extraDescription={
-<div>
-
-For an Activity, you _must_ define the following three functions, which are described below:
-
-```php title="mod/[modname]/lib.php"
-function [modname]_add_instance($instancedata, $mform = null): int;
-function [modname]_update_instance($instancedata, $mform): bool;
-function [modname]_delete_instance($id): bool;
-```
-
-- The `[modname]_add_instance()` function is called when the activity creation form is submitted. This function is only called when adding an activity and should contain any logic required to add the activity.
-- The `[modname]_update_instance()` function is called when the activity editing form is submitted.
-- The `[modname]_delete_instance()` function is called when the activity deletion is confirmed. It is responsible for removing all data associated with the instance.
-
-:::note
-
-The `lib.php` file is one of the older parts of Moodle and functionality is gradually being migrated to class-based function calls.
-
-:::
-
-</div>
-  }
+  extraDescription={<LibDescription />}
 />
 
 ### `mod_form.php` - Instance create/edit form

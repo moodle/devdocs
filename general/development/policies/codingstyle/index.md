@@ -2131,4 +2131,4 @@ This document was drawn from the following sources:
 - [Coding](../../policies.md)
 - [CodeSniffer](../../policies/codingstyle/index.md)
 - [Code Checker plugin](https://moodle.org/plugins/local_codechecker)
-- [Accessibility coding guidelines](./accessibility#Moodle-related-accessibility-coding-guidelines)
+- [Accessibility coding guidelines](../accessibility.md#coding-standards)

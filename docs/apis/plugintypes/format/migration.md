@@ -82,7 +82,7 @@ Scenario 2: If your plugin does not have a renderer, create a file **course/form
   <div>
 
 import Renderer from '!!raw-loader!./_examples/output/renderer.php';
-const RendererProps = {
+export const RendererProps = {
     examplePurpose: 'Output renderer',
     plugintype: 'format',
     pluginname: 'pluginname',
@@ -145,7 +145,7 @@ The new workflow in 4.0 is:
   <div>
 
 import Format from '!!raw-loader!./_examples/format.php';
-const FormatProps = {
+export const FormatProps = {
     examplePurpose: 'Format course display',
     plugintype: 'format',
     pluginname: 'pluginname',
@@ -198,7 +198,7 @@ If your course format plugin uses a sections-activity structure it is possible t
   <div>
 
 import BaseCourseIndex from '!!raw-loader!./_examples/lib_course_index.php';
-const BaseCourseIndexProps = {
+export const BaseCourseIndexProps = {
     examplePurpose: 'Format base class with course index enabled',
     plugintype: 'format',
     pluginname: 'pluginname',
@@ -228,9 +228,9 @@ To adapt your plugin to the new editor you must add the proper data attributes. 
 | Section | `li.section#section-{SECTION.NUM}` | `data-for="section"`<br/>`data-id={SECTION.ID}`<br/>`data-number={SECTION.NUM}` |
 | Section header | `#sectionid-{SECTION.ID}-title` | `data-for="section_title"`<br/>`data-id={SECTION.ID}`<br/>`data-number={SECTION.NUM}` |
 | Course module item (activity) | `li.activity#module-{CM.ID}` | `data-for="cmitem"`<br/>`data-id={CM.ID}` |
-| Course sections list | `.course-content>ul` | `data-for="course_sectionlist"`<br/>| `Section course modules list | Li.section .content .section` | `data-for="cmlist"`<br/>|
+| Course sections list | `.course-content>ul` | `data-for="course_sectionlist"`<br/> `Section course modules list Li.section .content .section` <br/> `data-for="cmlist"`|
 | Course module action link | `a.cm-edit-action` | `data-action={ACTIONNAME}`<br/>`data-id={CM.ID}` |
-| Section action link | `.section_action_menu` | `data-action={ACTIONNAME}`<br/>`data-id={SECTION.ID}`
+| Section action link | `.section_action_menu` | `data-action={ACTIONNAME}`<br/>`data-id={SECTION.ID}` |
 | Section info | `.section_availability` | `data-for="sectioninfo"` |
 
 ### Step 2: enable supports components feature
@@ -242,7 +242,7 @@ Once your plugin has all the necessary data attributes you can disable the old Y
   <div>
 
 import BaseComponents from '!!raw-loader!./_examples/lib_components.php';
-const BaseComponentsProps = {
+export const BaseComponentsProps = {
     examplePurpose: 'Format base class with components enabled',
     plugintype: 'format',
     pluginname: 'pluginname',

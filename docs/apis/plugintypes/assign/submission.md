@@ -80,6 +80,7 @@ mod/assign/submission/file
 <!-- markdownlint-disable no-space-in-code -->
 <!-- markdownlint-disable blanks-around-fences -->
 <!-- markdownlint-disable code-block-style -->
+<!-- markdownlint-disable no-inline-html -->
 
 import settingsExample from '!!raw-loader!./_files/submission_settings.php';
 

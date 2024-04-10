@@ -10,11 +10,11 @@ The structure of this page is the following:
 
 - The first part, up to the point where you get the `npm start` command to work, includes the basics of what you need to work on the app.
 - The second part indicates how to build the app to run it on a native device (or emulator).
-- You can find [troubleshooting advices in a separate page](./setup/troubleshooting). If you encounter a problem that is not already listed, please consider adding it.
+- You can find [troubleshooting advices in a separate page](./troubleshooting.md). If you encounter a problem that is not already listed, please consider adding it.
 
 Most of your development can happen on a browser, you only need to use an emulator if you have to work on native functionality.
 
-If you are just [adding mobile support to plugins](./plugins-development-guide), you probably don't need to build the app yourself and you can skip reading this page.
+If you are just [adding mobile support to plugins](../plugins-development-guide/index.md), you probably don't need to build the app yourself and you can skip reading this page.
 
 ## Requirements
 
@@ -22,7 +22,7 @@ If you are just [adding mobile support to plugins](./plugins-development-guide),
 
 Most of the time we recommend that you use a browser for development; the app will work in any Chromium-based browser. We recommend using the Chromium browser (an open source alternative to Google Chrome). You can get it from the [official download page](https://www.chromium.org/getting-involved/download-chromium).
 
-To learn more about using a browser for development, and why it needs to be Chromium-based, read the [Using the Moodle App in a browser](./setup/app-in-browser) page.
+To learn more about using a browser for development, and why it needs to be Chromium-based, read the [Using the Moodle App in a browser](./app-in-browser.md) page.
 
 ### Install git
 
@@ -91,7 +91,7 @@ npm install
 npm start
 ```
 
-This will launch the application in a browser and you should be ready to start coding (you may also want to [configure the default browser](./setup/app-in-browser#configuring-the-default-browser) for future runs). This compiles the entire application and can take a while, so don't worry if it doesn't open the browser instantly. Keep in mind that this command may open the browser before the dev server is ready, and you could get a network error. If that happens, just wait until the dev server is ready and launch the application again. It should be ready when you see a "Compiled successfully" message in the console.
+This will launch the application in a browser and you should be ready to start coding (you may also want to [configure the default browser](./app-in-browser.md#configuring-the-default-browser) for future runs). This compiles the entire application and can take a while, so don't worry if it doesn't open the browser instantly. Keep in mind that this command may open the browser before the dev server is ready, and you could get a network error. If that happens, just wait until the dev server is ready and launch the application again. It should be ready when you see a "Compiled successfully" message in the console.
 
 Congratulations, you have just completed the basics to become a Moodle App developer!
 
@@ -110,7 +110,7 @@ npm run prod:android # Uses AOT compilation, read below
 npm run prod:ios     # Uses AOT compilation, read below
 ```
 
-If you get any errors while building, please see the [Troubleshooting](#troubleshooting) section below.
+If you get any errors while building, please see the [Troubleshooting](./troubleshooting.md) section.
 
 You can also inspect the HTML and look at the console logs by using [Chrome's Remote Debugging for Android](https://developer.chrome.com/docs/devtools/remote-debugging/) and [Safari's Develop menu for iOS](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/15.1/mac/12.0). This will only work with emulators or devices connected to your computer running with the development environment.
 
@@ -163,6 +163,6 @@ After doing this, remember to run the emulator in write mode for subsequent sess
 ## See also
 
 - [Moodle App Coding Style](../../../development/policies/codingstyle-moodleapp.md)
-- [Debugging network requests in the Moodle App](./network-debug)
+- [Debugging network requests in the Moodle App](../network-debug.md)
 - [Moodle Docker](https://github.com/moodlehq/moodle-docker)
 - [Ionic CLI docs](http://ionicframework.com/docs/cli/)

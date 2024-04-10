@@ -15,10 +15,12 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* eslint-disable global-require */
-require('dotenv').config();
+import { config as dotEnvConfig } from 'dotenv';
+import Versions from './versions.json';
+import MoodleBannerRemark from './src/remark/moodleBanner.js';
+import TrackerLinksRemark from './src/remark/trackerLinks.js';
 
-const Versions = require('./versions.json');
+dotEnvConfig();
 
 const versionConfig = Object.fromEntries(Versions.map((version) => [version, {
     label: version,
@@ -31,8 +33,8 @@ versionConfig.current = {
 
 // Share the remarkPlugins between all presets.
 const remarkPlugins = [
-    require('./src/remark/moodleBanner'),
-    require('./src/remark/trackerLinks'),
+    MoodleBannerRemark,
+    TrackerLinksRemark,
 ];
 
 const isDeployPreview = !!process.env.NETLIFY && process.env.CONTEXT === 'deploy-preview';
@@ -211,4 +213,4 @@ const config = {
     ],
 };
 
-module.exports = config;
+export default config;

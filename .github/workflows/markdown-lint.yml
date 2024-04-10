@@ -8,15 +8,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3.0.0
+        uses: actions/setup-node@v4
         with:
-          node-version: "16"
+          node-version: "18"
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Lint markdown files
         run: yarn mdlint-all
+
+      - name: Lint mdx files
+        run: yarn mdxlint-all
+
+      - name: Check spelling
+        run: yarn spell

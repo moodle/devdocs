@@ -47,7 +47,7 @@ We use the [`node-keytar`](https://github.com/atom/node-keytar) library to manag
 The script will use a file named `.moodleapp-dev-config` to store some configuration data in JSON format. You can also create or edit that file to configure the script's behaviour. These are the fields it accepts:
 
 - `upstreamRemote` — The upstream where to push the branch if the remote param isn't supplied. By default: origin.
-- `tracker.url` — URL of the tracker to update. By default: <https://tracker.moodle.org/>.
+- `tracker.url` — URL of the tracker to update. By default: [https://tracker.moodle.org/](https://tracker.moodle.org/).
 - `tracker.username` — Username to use in the tracker.
 - `tracker.fieldnames.repositoryurl` — Name of the tracker field where to put the repository URL. By default: "Pull  from Repository".
 - `tracker.fieldnames.branch` — Name of the tracker field where to put the branch name. By default: "Pull Master Branch".
