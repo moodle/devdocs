@@ -53,7 +53,7 @@ All the settings save here should match the ones fetched by `get_default_value` 
 
 Because this feature works using user preferences, you need to declare that in your privacy provider.
 
-This is boring but necessary. Easiest way to see what to do is to [copy another quetion type](https://github.com/moodle/moodle/blob/master/question/type/match/classes/privacy/provider.php).
+This is boring but necessary. Easiest way to see what to do is to [copy another question type](https://github.com/moodle/moodle/blob/master/question/type/match/classes/privacy/provider.php).
 
 Note, it is necessary for your provider to declare the ones saved by core. (I suppose, ideally, someone would make a helpful base class, or trait, to make it easier to implement this.)
 

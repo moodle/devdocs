@@ -13,17 +13,17 @@ The question subsystem in Moodle manages the creation, editing and management of
 
 This is the part that makes questions work when users attempt or otherwise interact with questions as part of a learning experience.
 
-The main user of this in the standard Moodle package is mod_quiz, but there is also qbank_previewquestion, and numerous plugins, including [filter_embedquestion](https://moodle.org/plugins/filter_embedquestion).
+The main user of this in the standard Moodle package is mod_quiz, but there is also qbank_previewquestion, and numerous plugins, including [`filter_embedquestion`](https://moodle.org/plugins/filter_embedquestion).
 
 The goal of this part of the system is to allow the widest ranges of interactive learning experiences to be created, therefore the question engine supports two types of plugin:
 
 ### Question types (qtype_)
 
-[Question types](../../plugintypes/qtype/index.md) define what the question is. For example a multiple choice or drag-drop question question, or a text input question graded as eith a string (e.g. shortanswer or [pattern-match](https://moodle.org/plugins/qtype_pmatch)) or as a number. It might be something much more complex, like a [crossword](https://moodle.org/plugins/qtype_crossword), or a [coding exercise](https://moodle.org/plugins/qtype_coderunner).
+[Question types](../../plugintypes/qtype/index.md) define what the question is. For example a multiple choice or drag-drop question question, or a text input question graded as with a string (e.g. shortanswer or [pattern-match](https://moodle.org/plugins/qtype_pmatch)) or as a number. It might be something much more complex, like a [crossword](https://moodle.org/plugins/qtype_crossword), or a [coding exercise](https://moodle.org/plugins/qtype_coderunner).
 
 ### Question behaviours (qbehaviour_)
 
-Question behaviours let Moodle support different ways for a student to interact with questions. For example it might be like a classic exams, where initially the student just inputs their answers to all the questions, which are only graded, and feedback given later (qbehaviour_deferredfeedback). Or it the student might have a 'Check' button in each question so their work can be graded immediately (qbahviour_immediatefeebdack). It might even be that after their first try, if that is not right, the students can immediately Try again, to see if they can correct their mistake based on the initial feedback (qbehaviour_interactive).
+Question behaviours let Moodle support different ways for a student to interact with questions. For example it might be like a classic exams, where initially the student just inputs their answers to all the questions, which are only graded, and feedback given later (`qbehaviour_deferredfeedback`). Or it the student might have a 'Check' button in each question so their work can be graded immediately (`qbahviour_immediatefeedback`). It might even be that after their first try, if that is not right, the students can immediately Try again, to see if they can correct their mistake based on the initial feedback (`qbehaviour_interactive`).
 
 ### Core question engine
 
@@ -45,7 +45,7 @@ The question bank provides the UI where teachers create, edit and manage questio
 
 ### Question import/export plugins (qformat_)
 
-Question import/export plugins questions to be exported and imported in a variety of formats. Use by plugins like qbank_exportquestions, qbank_importquestions and qbank_exporttoxml.
+Question import/export plugins questions to be exported and imported in a variety of formats. Use by plugins like `qbank_exportquestions`, `qbank_importquestions` and `qbank_exporttoxml`.
 
 ### Question types (qtype_)
 
