@@ -373,7 +373,7 @@ public function roles_protected() {
   </div>
 </details>
 
-### enrol_plugin:find_instance(): stdClass
+### enrol_plugin:find_instance(): stdClass {#enrol_pluginfind_instance-stdclass}
 
 Returns enrolment instance in a given course matching provided data. If enrol plugin implements this method, then it is supported
  in CSV course upload.

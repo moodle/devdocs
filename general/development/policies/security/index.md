@@ -155,7 +155,7 @@ Moodle is very flexible system, administrators may define multiple roles. Each r
 ### Check permissions
 
 - Before allowing the user to see anything or do anything, call to [`has_capability`](/docs/apis/subsystems/access#has_capability) or [`require_capability`](/docs/apis/subsystems/access#require_capability).
-- Capabilities should be annotated with the appropriate **[risks](/docs/apis/subsystems/roles#basic-risks)**.
+- Capabilities should be annotated with the appropriate **[risks](/docs/apis/subsystems/roles#risk-bitmask-in-capabilities)**.
 - If appropriate, restrict what people can see according to **groups**.
 
 ### Don't trust any input from users

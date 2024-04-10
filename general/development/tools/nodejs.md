@@ -4,7 +4,7 @@ title: NodeJS and Grunt
 
 Moodle uses a [NodeJS](https://nodejs.org/en/) toolchain to perform a number of development actions, including linting, transpilation of JavaScript, compilation of the Component Library, and a number of other routine tasks.
 
-Use of [NVM](#node-version-manager) for installation of NodeJS is highly recommended over direct installation.
+Use of [NVM](#install-nvm-and-node) for installation of NodeJS is highly recommended over direct installation.
 
 ## Setup and installation
 

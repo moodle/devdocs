@@ -88,7 +88,7 @@ import RepositoryLibExample from '!!raw-loader!./_examples/lib.php';
     required
 >
 
-This file contains the main repository class definition, which must extend the core `\repository` class. By extending the base class and overriding some of the class methods, the plugin can configure standard features and behaviours. See [Administration API](#administration-apis) for more information.
+This file contains the main repository class definition, which must extend the core `\repository` class. By extending the base class and overriding some of the class methods, the plugin can configure standard features and behaviours. See [Administration API](../../subsystems/admin/index.md) for more information.
 
 </Lib>
 
