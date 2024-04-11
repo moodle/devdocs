@@ -21,5 +21,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
+      - name: Docusaurus cache
+        uses: docuactions/cache@v1.1
+
       - name: Test build website
         run: yarn build
