@@ -91,7 +91,7 @@ Used to identify all issues to be listed in the release notes (minor or major).
 Issues that need to be mentioned in the user documentation [under 'Possible issues that may affect you in Moodle X.0' (major versions).
 
 - [`developer_notes`](https://tracker.moodle.org/issues/?jql=labels%20%3D%20developer_notes)<br/>
-Issues that need to be mentioned in the [integration exposed forum](https://moodle.org/mod/forum/view.php?f=1153) and in the [Moodle developer update documentation](../../../docs/devupdate).
+Issues that need to be mentioned in the [integration exposed forum](https://moodle.org/mod/forum/view.php?f=1153) and in the [Moodle developer update documentation](/docs/devupdate).
 
 - `lost_functionality`<br/>
 Used to identify issues describing functionality which was available in an earlier version but which is no longer available in the latest version.
