@@ -69,6 +69,8 @@ The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/
 </div>
 </details>
 
+In addition to these versions, other versions may also have some level of support. You are welcome to report issues for them in [our Issue Tracker](https://tracker.moodle.org/).
+
 ## General release calendar
 
 These are the target dates for releases. These dates may vary slightly due to unforeseen circumstances.
