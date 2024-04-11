@@ -34,16 +34,28 @@
 # Issue #386
 # Redirect /releases to /general/releases
 /releases /general/releases
+
+# Issue 415
+# Redirect /roadmap to /general/community/roadmap
+/roadmap /general/community/roadmap
+
+# Issue #393
+# Redirect /docs/apis/plugintypes/tinymce to /docs/apis/plugintypes/tiny/legacy
+/docs/apis/plugintypes/tinymce /docs/apis/plugintypes/tiny/legacy
+
+# MOBILE-4270
+/general/app/development/release-process /general/development/process-moodleapp/release
+
+
+
+############################################################################
+# Splats should go later for performance
+############################################################################
+
+# Issue #386
+# Redirect /releases to /general/releases
 /releases/* /general/releases/:splat
 
 # Issue 415
 # Redirect /roadmap to /general/community/roadmap
-/roadmap to /general/community/roadmap
-/roadmap/* to /general/community/roadmap/:splat
-
-# Issue #393
-# Redirect /docs/apis/plugintypes/tinymce to /docs/apis/plugintypes/tiny/legacy
-/docs/apis/plugintypes/tinymce to /docs/apis/plugintypes/tiny/legacy
-
-# MOBILE-4270
-/general/app/development/release-process /general/development/process-moodleapp/release
+/roadmap/* /general/community/roadmap/:splat
