@@ -37,8 +37,6 @@ const remarkPlugins = [
     TrackerLinksRemark,
 ];
 
-const isDeployPreview = !!process.env.NETLIFY && process.env.CONTEXT === 'deploy-preview';
-
 const getBaseUrl = () => {
     if (process.env.NETLIFY) {
         // Netlify hosts on '/', always.
@@ -54,13 +52,25 @@ const getBaseUrl = () => {
     return '/devdocs/';
 };
 
+const isDeployPreview = () => {
+    if (process.env.NETLIFY) {
+        return process.env.CONTEXT === 'deploy-preview';
+    }
+
+    if (process.env.CLOUDFLARE) {
+        return process.env.CLOUDFLARE === 'preview';
+    }
+
+    return false;
+};
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'Moodle Developer Resources',
     tagline: 'Nurturing Moodle Developers',
 
     // url: 'https://develop.moodle.org',
-    url: process.env?.URL || 'https://moodledev.io',
+    url: process.env?.CF_PAGES_URL || process.env?.URL || 'https://moodledev.io',
     baseUrl: getBaseUrl(),
     trailingSlash: false,
     onBrokenLinks: 'throw',
@@ -109,7 +119,7 @@ const config = {
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
-                gtag: !isDeployPreview
+                gtag: !isDeployPreview()
                     ? {
                         trackingID: 'G-L9EE8RW5B1',
                     }
@@ -154,7 +164,7 @@ const config = {
         [
             '@docusaurus/plugin-pwa',
             {
-                debug: isDeployPreview,
+                debug: isDeployPreview(),
                 offlineModeActivationStrategies: [
                     'appInstalled',
                     'standalone',
