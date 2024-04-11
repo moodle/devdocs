@@ -19,6 +19,7 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
+import NextVersionData from '@site/nextVersion';
 
 /* eslint-disable global-require */
 
@@ -48,7 +49,7 @@ const FeatureList = [
         linkText: 'View standards',
     },
     {
-        link: '/docs/apis',
+        link: `${NextVersionData.nextVersionRoot}/apis`,
         title: 'API guides',
         Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
         description: (

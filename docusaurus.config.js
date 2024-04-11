@@ -19,6 +19,9 @@ import { config as dotEnvConfig } from 'dotenv';
 import Versions from './versions.json';
 import MoodleBannerRemark from './src/remark/moodleBanner.js';
 import TrackerLinksRemark from './src/remark/trackerLinks.js';
+import UnversionedDocsLinksRemark from './src/remark/unversionedDocsLinks.js';
+
+// eslint-disable global-require
 
 dotEnvConfig();
 
@@ -29,29 +32,25 @@ const versionConfig = Object.fromEntries(Versions.map((version) => [version, {
 versionConfig.current = {
     label: 'main',
     banner: 'none',
+    path: '4.4',
 };
 
 // Share the remarkPlugins between all presets.
 const remarkPlugins = [
     MoodleBannerRemark,
     TrackerLinksRemark,
+    UnversionedDocsLinksRemark,
 ];
 
 const isDeployPreview = !!process.env.NETLIFY && process.env.CONTEXT === 'deploy-preview';
 
 const getBaseUrl = () => {
-    if (process.env.NETLIFY) {
-        // Netlify hosts on '/', always.
-        return '/';
-    }
-
     if (typeof process.env.BASEURL !== 'undefined') {
         // Respect the env.
         return process.env.BASEURL;
     }
 
-    // Default is currently '/devdocs'.
-    return '/devdocs/';
+    return '/';
 };
 
 /** @type {import('@docusaurus/types').Config} */
