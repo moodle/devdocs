@@ -76,6 +76,10 @@ html {
   width: 12.5rem;
 }
 
+.navbar__items {
+  margin-left: var(--ifm-menu-link-padding-horizontal);
+}
+
 .navbar__link {
   border-bottom: solid 2px transparent;
   border-top: solid 2px transparent;
@@ -156,6 +160,6 @@ ul ol {
 }
 
 .theme-admonition {
-    /* Prevent overlapping custom components, such as ProjectSummary */
-    clear: both;
+  /* Prevent overlapping custom components, such as ProjectSummary */
+  clear: both;
 }
