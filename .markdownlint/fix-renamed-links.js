@@ -123,6 +123,14 @@ const isRelativeLinkPossible = (link, file) => {
     const linkFolder = link.split('/')[1];
     const fileFolder = file.split('/')[1];
 
+    if (linkFolder === 'docs' && fileFolder === 'docs') {
+        if (link.match(/^\/docs\/\d\.\d\//)) {
+            // This is a versioned link.
+            // We don't want to normalise these.
+            return false;
+        }
+    }
+
     // In Docusaurus, different root folders contain different plugin instances.
     // Docusaurus does not support relative links between different plugins.
     return linkFolder === fileFolder;
@@ -164,7 +172,11 @@ const getOptimisedLink = (mappings, file, currentLink, forceRelative) => {
     const updatedLink = mappings[normalisedCurrentLink] ? mappings[normalisedCurrentLink] : normalisedCurrentLink;
     const relativeLinkPossible = isRelativeLinkPossible(updatedLink, normalisedCurrentFile);
     const forceRelativeLink = shouldForceRelativeForLink(currentLink, forceRelative);
+    const isRelativeLink = currentLink.startsWith('./') || currentLink.startsWith('../');
 
+    if (isRelativeLink && !relativeLinkPossible) {
+        return updatedLink;
+    }
     if (updatedLink === normalisedCurrentLink && !forceRelativeLink) {
         // There is no rename for this file.
         // Configuration is set to _not_ force a relative link for this section.

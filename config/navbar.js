@@ -15,6 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 const VersionsArchived = require('../versionsArchived.json');
+const nextVersionData = require('../nextVersion.js');
 
 const ArchivedVersionsDropdownItems = Object.entries(VersionsArchived).splice(
     0,
@@ -31,7 +32,7 @@ const navbar = {
     },
     items: [
         {
-            to: '/docs',
+            to: nextVersionData.nextVersionRoot,
             label: 'Guides',
             position: 'left',
         },

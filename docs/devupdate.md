@@ -595,6 +595,6 @@ Here you can find all the functionality that has been deprecated in PHPUnit 9.x 
 
 ## Previous versions
 
-- [Moodle 4.3 developer update](./4.3/devupdate)
-- [Moodle 4.2 developer update](./4.2/devupdate)
-- [Moodle 4.1&4.0 developer update](./4.1/devupdate)
+- [Moodle 4.3 developer update](/docs/4.3/devupdate)
+- [Moodle 4.2 developer update](/docs/4.2/devupdate)
+- [Moodle 4.1&4.0 developer update](/docs/4.1/devupdate)
