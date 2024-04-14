@@ -295,9 +295,9 @@ A cross-browser JavaScript range and selection library.
 Beautifier for javascript.
 
 - **Location**: lib/editor/tiny/plugins/html/amd/src/beautify
-- **Version**: 1.14.8
+- **Version**: 1.15.1
 - **License**:  MIT
-- **URL**: [https://github.com/beautify-web/js-beautify/](https://github.com/beautify-web/js-beautify/)
+- **URL**: [https://github.com/beautifier/js-beautify/](https://github.com/beautifier/js-beautify/)
 
 ### codemirror
 
@@ -884,7 +884,7 @@ URL syntax validation using PHP and regular expressions.
 ### WebAuthn
 
 - **Location**: lib/webauthn/src
-- **Version**: 2.0.1
+- **Version**: 2.1.1
 - **License**:  MIT
 - **URL**: [https://github.com/lbuchs/WebAuthn](https://github.com/lbuchs/WebAuthn)
 

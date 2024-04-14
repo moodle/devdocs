@@ -327,9 +327,9 @@
         "location": "lib/editor/tiny/plugins/html/amd/src/beautify",
         "name": "js-beautify",
         "description": "Beautifier for javascript.",
-        "version": "1.14.8",
+        "version": "1.15.1",
         "license": "MIT",
-        "repository": "https://github.com/beautify-web/js-beautify/",
+        "repository": "https://github.com/beautifier/js-beautify/",
         "customised": false
     },
     {
@@ -992,7 +992,7 @@
         "copyrightHolders": [],
         "location": "lib/webauthn/src",
         "name": "WebAuthn",
-        "version": "2.0.1",
+        "version": "2.1.1",
         "license": "MIT",
         "repository": "https://github.com/lbuchs/WebAuthn",
         "customised": false
