@@ -607,6 +607,16 @@ Here you can find all the functionality that has been deprecated in PHPUnit 9.x 
 - `PHPUnit\Framework\TestCase::getMockClass()` has been deprecated, will be removed with PHPUnit 10. No clear alternative exists and won't be investigated, because there aren't cases in core.
 - Cannot use the `Test` suffix on abstract test case classes anymore. Proceed to rename them to end with `TestCase` instead.
 
+## Developer metadata
+
+<Since version="4.4" issueNumber="MDL-81084" />
+
+The list of plugins which are shipped with Moodle core is now available in a JSON format and located at `/lib/plugins.json`.
+
+The schema for this format can be found at `/lib/plugins.schema.json`.
+
+See [Developer metadata](/general/development/tools/metadata) for more information on available metadata.
+
 ## Previous versions
 
 - [Moodle 4.3 developer update](/docs/4.3/devupdate)
