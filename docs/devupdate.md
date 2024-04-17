@@ -326,6 +326,23 @@ If you are using this functionality in older versions of Moodle you are advised 
 
 :::
 
+<Since version="4.4" issueNumber="MDL-79128" />
+
+The behaviour of the task runner has been changed to limit the number of retries allowed before a failing _adhoc_ task is removed. Scheduled tasks are not affected.
+
+The default value for the maximum retry limit on an Ad-hoc task is **12**.
+
+Retries can be entirely disabled by passing a value of `0`, for example:
+
+```php
+$task = new example_task();
+// This task wil not be retried at all.
+$task->set_attempts_available(0);
+\core\task\manager::queue_task($task);
+```
+
+See the [detailed documentation](./apis/subsystems/task/adhoc#retrying-failing-tasks) on how to use these new APIs.
+
 ## Parameters
 
 ### API Change
