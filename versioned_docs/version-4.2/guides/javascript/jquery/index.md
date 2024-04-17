@@ -7,8 +7,6 @@ tags:
 description: A description of how and when to use jQuery in Moodle
 ---
 
-import { DeprecatedSince, TabItem, Tabs } from '@site/src/components';
-
 <DeprecatedSince versions={["3.8"]} />
 
 The use of jQuery in new code is strongly discouraged and is not generally accepted in core. Specific exceptions to this rule are made on a case-by-case basis, generally when interfacing with legacy code which expects to be passed a jQuery object.

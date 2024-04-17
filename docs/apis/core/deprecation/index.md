@@ -6,8 +6,6 @@ tags:
 
 <!-- markdownlint-disable no-inline-html -->
 
-import { Since } from '@site/src/components';
-
 <Since version="4.4" issueNumbers="MDL-80005" />
 
 When deprecating a code feature, it is often desirable to include a reasonable amount of information, and to provide a consistent deprecation message.

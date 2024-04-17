@@ -6,8 +6,6 @@ tags:
   - tools
 ---
 
-import { Since } from '@site/src/components';
-
 [PHPCodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) is a tool used to analyse PHP code using a set of rules. In many cases these rules can be used to automatically fix the errors they identify.
 
 Moodle has two sets of published rule-sets intended to meet the [Moodle Coding Style](../policies/codingstyle/index.md), and identify any parts of the code do not conform to this style. These are:

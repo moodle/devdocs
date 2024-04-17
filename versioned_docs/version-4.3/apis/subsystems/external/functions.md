@@ -28,8 +28,6 @@ For a component named `local_groupmanager` located in `local/groupmanager` which
 
 :::
 
-import { Since } from '@site/src/components';
-
 A service definition:
 
 - _must_ extend the `\core_external\external_api` class

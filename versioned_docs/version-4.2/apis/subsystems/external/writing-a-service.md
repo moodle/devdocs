@@ -34,8 +34,6 @@ The [naming convention](https://docs.moodle.org/dev/Web_service_API_functions#Na
 
 :::
 
-import { CodeBlock, ValidExample, InvalidExample } from '@site/src/components';
-
 Per the Moodle naming convention for web services the name of the function should be:
 
 ```

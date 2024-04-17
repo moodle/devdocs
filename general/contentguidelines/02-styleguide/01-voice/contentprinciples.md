@@ -6,8 +6,6 @@ tags:
 - UX Writing
 ---
 
-import {ValidExample, InvalidExample } from '@site/src/components';
-
 Our content principles help us understand and reinforce our personality, tone and voice. They also help us provide a consistent experience across all our products, services output and any other way we interact with people.
 
 With everything we write, we aim to:

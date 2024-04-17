@@ -5,10 +5,10 @@ tags:
   - API
 ---
 
-import { Since } from '@site/src/components';
-
 :::note
+
 There are changes to the completion API introduced in **Moodle 3.11** to be incorporated to this page. Please refer to [Student activity completion](https://docs.moodle.org/dev/Student_activity_completion) for details.
+
 :::
 
 Activities do not need to be changed to support conditional availability, but they do need changing to support the completion system.

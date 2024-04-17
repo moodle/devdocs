@@ -14,8 +14,6 @@ tags:
 
 ## Why is deprecation needed?
 
-import { ValidExample, InvalidExample, TabItem, Tabs } from '@site/src/components';
-
 In an open source project, the end use of the codebase varies. People may have customisations and plugins that depend on a function that has been targeted for deprecation. Rather than simply removing a function, we must gracefully deprecate the function over a period covered by a number of released versions.
 
 ## What is Moodle's deprecation policy?

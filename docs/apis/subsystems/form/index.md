@@ -244,8 +244,6 @@ The `add_action_buttons` function is defined on `moodlform` class, and not a par
 
 ### add_sticky_action_buttons()
 
-import { Since } from '@site/src/components';
-
 <Since version="4.3" />
 
 This method calls `add_action_buttons()` internally and makes 'action' buttons sticky.

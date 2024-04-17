@@ -8,8 +8,6 @@ tags:
   - core_dml
 ---
 
-import { Since, ValidExample, InvalidExample } from '@site/src/components';
-
 This page describes the functions available to access data in the Moodle database. You should **exclusively** use these functions in order to retrieve or modify database content because these functions provide a high level of abstraction and guarantee that your database manipulation will work against different RDBMSes.
 
 Where possible, tricks and examples will be documented here in order to make developers' lives a bit easier. Of course, feel free to clarify, complete and add more information to this documentation. It will be welcome, absolutely!

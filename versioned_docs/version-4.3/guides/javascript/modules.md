@@ -27,8 +27,6 @@ From Moodle versions 2.9 to 3.8, Moodle supported JavaScript modules written usi
 
 For information on the development toolchain, see our [documentation on how to install and use NodeJS and Grunt](/general/development/tools/nodejs#grunt).
 
-import { Since } from '@site/src/components';
-
 ### Development mode
 
 <Since version="3.8" />

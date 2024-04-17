@@ -7,7 +7,7 @@ tags:
 description: A description of the plugin version.php file, describing the various features
 ---
 
-import { LanguageProperty, Since } from '@site/src/components';
+import { LanguageProperty } from '@site/src/components';
 
 Every plugin must have a `version.php` file located in the root directory of that plugin.
 

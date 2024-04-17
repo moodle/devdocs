@@ -6,8 +6,6 @@ tags:
 - core
 ---
 
-import { Since } from '@site/src/components';
-
 <Since version="4.3" issueNumber="MDL-74954" />
 
 This page describes the Hooks API which is a replacement for some of the lib.php based one-to-many

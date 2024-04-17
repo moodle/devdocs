@@ -7,8 +7,6 @@ tags:
   - Messaging
 ---
 
-import { Since } from '@site/src/components';
-
 ## What is this document?
 
 This document describes how to make use of the Moodle Messaging API to send messages to Moodle users.

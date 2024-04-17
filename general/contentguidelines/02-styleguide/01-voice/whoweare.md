@@ -5,7 +5,6 @@ tags:
   - Content style guide
   - UX Writing
 ---
-import {ValidExample, InvalidExample } from '@site/src/components';
 
 When representing Moodle either as a team member or as part of our community, it's essential to reflect on who Moodle is and who we aren't. Avoid confrontation in our written, verbal, or other forms of communication.
 
@@ -90,7 +89,7 @@ It's super easy to impress other Moodlers at MoodleMoot Global!
 
 </InvalidExample>
 
-We're **supportive**, not **opposing**.  
+We're **supportive**, not **opposing**.
 
 <ValidExample title="Do">
 

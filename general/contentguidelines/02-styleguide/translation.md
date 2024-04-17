@@ -6,8 +6,6 @@ tags:
   - UX Writing
 ---
 
-import { CodeBlock, TabItem, Tabs, ValidExample, InvalidExample } from '@site/src/components';
-
 ### Keep it simple
 
 We write in English for a global audience, and want to make our content accessible to everyone.

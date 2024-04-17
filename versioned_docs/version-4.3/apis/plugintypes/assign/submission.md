@@ -9,7 +9,6 @@ toc_max_heading_level: 4
 description: Assign submission plugins allow you to define different ways for a student to submit their work
 ---
 
-import { Since } from '@site/src/components';
 import {
     SettingsPHP,
     LocalLib,

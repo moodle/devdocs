@@ -7,7 +7,6 @@ tags:
 
 <!-- markdownlint-disable no-inline-html -->
 
-import { CodeBlock, CodeExample, InvalidExample, ValidExample, Since } from '@site/src/components';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

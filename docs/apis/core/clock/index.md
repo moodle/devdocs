@@ -9,12 +9,6 @@ tags:
 description: Fetching the current time
 ---
 
-import {
-    Since,
-    ValidExample,
-    InvalidExample,
-} from '@site/src/components';
-
 <Since version="4.4" issueNumber="MDL-80838" />
 
 Moodle supports use of a [PSR-20](https://php-fig.org/psr/psr20/) compatible Clock interface, which should be accessed using Dependency Injection.

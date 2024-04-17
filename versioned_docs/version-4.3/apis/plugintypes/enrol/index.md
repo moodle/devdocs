@@ -9,7 +9,6 @@ tags:
 <!-- cspell:ignore timeend -->
 <!-- cspell:ignore unenrolment -->
 
-import { CodeBlock } from '@site/src/components';
 import {
     Lang,
     Lib,

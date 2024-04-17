@@ -7,7 +7,7 @@ tags:
 description: A description of the library tag.php file, describing what plugins have tags where their callbacks are located.
 ---
 
-import { LanguageProperty, Since } from '@site/src/components';
+import { LanguageProperty } from '@site/src/components';
 
 :::note
 There are more options such as specifying the default value for "Standard tags", having a fixed collection or excluding from search.

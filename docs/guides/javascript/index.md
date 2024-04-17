@@ -2,8 +2,6 @@
 title: JavaScript
 ---
 
-import { Since, CodeBlock, TabItem, Tabs } from '@site/src/components';
-
 Moodle makes heavy use of JavaScript to improve the experience for its users.
 
 All new JavaScript in Moodle should use the ES2015+ module format, which is

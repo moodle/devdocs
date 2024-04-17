@@ -27,8 +27,6 @@ From Moodle versions 2.9 to 3.8, Moodle supported JavaScript modules written usi
 
 For information on the development toolchain, see our [documentation on how to install and use NodeJS and Grunt](/general/development/tools/nodejs).
 
-import { Since } from '@site/src/components';
-
 ### Development mode
 
 <Since version="3.8" />
@@ -52,7 +50,7 @@ If you use `mdk`, this is also applied from the `mdk run dev` script.
 
 ### Transpiling Modules
 
-Since all JavaScript must now be transpiled you must use the [Grunt](https://docs.moodle.org/dev/Grunt) in order for you changes to appear in the browser.
+Since all JavaScript must now be transpiled you must use the [Grunt](/general/development/tools/nodejs) in order for you changes to appear in the browser.
 
 You can build all modules in Moodle by using the `grunt amd` command, for example:
 
