@@ -343,6 +343,12 @@ $task->set_attempts_available(0);
 
 See the [detailed documentation](./apis/subsystems/task/adhoc#retrying-failing-tasks) on how to use these new APIs.
 
+### JavaScript
+
+<Since version="4.4" issueNumber="MDL-80850" />
+
+A new JS module, `core/dropzone`, has been introduced to provide a standardised way to create a Drop-zone in Moodle. Read the [full documentation](./guides/javascript/index.md#dropzone) for information on how to use it.
+
 ## Parameters
 
 ### API Change
