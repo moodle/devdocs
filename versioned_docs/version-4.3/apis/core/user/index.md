@@ -17,8 +17,6 @@ Please note that, in many cases, more specific APIs may be more appropriate, for
 
 :::
 
-import { Since } from '@site/src/components';
-
 ## User field display
 
 The [User fields](https://docs.moodle.org/dev/User_fields) class is mainly used when displaying tables of data about users. It indicates which extra fields (e.g. email) should be displayed in the current context based on the permissions of the current user. It also provides ways to get the necessary data from a query, and to obtain other generally-useful fields for user names and pictures.

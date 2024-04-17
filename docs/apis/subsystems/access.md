@@ -6,8 +6,6 @@ tags:
 
 <!-- cspell:ignore NEWMODULE -->
 
-import AcademyLink from '@site/src/components/AcademyLink';
-
 The Access API gives you functions so you can determine what the current user is allowed to do. It also allows plugins to extend Moodle with new capabilities.
 
 ## Overview

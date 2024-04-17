@@ -18,8 +18,6 @@ Good uses for tasks include:
 
 In general any operation that takes more than a few seconds might be a candidate for a task.
 
-import { Since } from '@site/src/components';
-
 ## Benefits
 
 - Better user experience (give the user feedback immediately, that their task has been queued)

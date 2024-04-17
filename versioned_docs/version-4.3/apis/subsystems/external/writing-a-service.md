@@ -34,8 +34,6 @@ The [naming convention](https://moodledev.io/general/development/policies/naming
 
 :::
 
-import { CodeBlock, ValidExample, InvalidExample } from '@site/src/components';
-
 Per the Moodle naming convention for web services the name of the function should be:
 
 ```

@@ -9,8 +9,6 @@ tags:
   - core
 ---
 
-import { Since, ValidExample, InvalidExample } from '@site/src/components';
-
 <Since version="2.0" />
 
 In this page you'll access to the available functions under Moodle to be able to handle DB structures (tables, fields, indexes...).
@@ -41,7 +39,7 @@ function xmldb_xxxx_upgrade {
 
 :::tip
 
-Always use the [XMLDB Editor](https://docs.moodle.org/dev/XMLDB_editor) to modify your tables. It is capable of generating the PHP code required to make your definition changes.
+Always use the [XMLDB Editor](/general/development/tools/xmldb) to modify your tables. It is capable of generating the PHP code required to make your definition changes.
 
 :::
 
@@ -122,7 +120,7 @@ $dbman->drop_index($table, $index, $continue = true, $feedback = true)
 1. The `$newtablename`, and `$newfieldname` parameters are, always, simple strings.
 1. All the `*_exists()` functions always return a boolean value.
 1. If any issue is encountered during execution of these functions, an Exception will be thrown and the upgrade process will stop.
-1. Always use the [XMLDB Editor](https://docs.moodle.org/dev/XMLDB_editor) to generate the PHP code automatically.
+1. Always use the [XMLDB Editor](/general/development/tools/xmldb) to generate the PHP code automatically.
 
 ## See also
 

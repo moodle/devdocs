@@ -6,7 +6,6 @@ tags:
 ---
 
 import { ProjectSummary } from '@site/src';
-import { Since } from '@site/src/components';
 
 <Since versions={["2.2"]} issueNumber="MDL-57898" />
 

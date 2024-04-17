@@ -7,14 +7,6 @@ tags:
 
 <!-- markdownlint-disable no-inline-html -->
 
-import {
-    Since,
-    ValidExample,
-    InvalidExample,
-    Tabs,
-    TabItem,
-} from '@site/src/components';
-
 This page highlights the important changes that are coming in Moodle 4.4 for developers.
 
 ## Core changes

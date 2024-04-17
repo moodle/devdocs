@@ -6,8 +6,6 @@ tags:
   - Certification
 ---
 
-import { ValidExample } from '@site/src/components';
-
 Moodle is designed to provide equal functionality and information to all people. This means that there should be no barriers for people regardless of disabilities, assistive technologies that are used, different screen sizes and different input devices (for example mouse, keyboard and touchscreen).
 
 ## Accessibility conformance

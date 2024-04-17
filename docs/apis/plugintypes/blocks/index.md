@@ -12,11 +12,6 @@ import {
     DbAccessPHP,
 } from '../../_files';
 import { ComponentFileSummary } from '../../../_utils';
-import {
-    CodeBlock,
-    Tabs,
-    TabItem
-} from '@site/src/components';
 
 Block plugins allow you to show supplemental information, and features, within different parts of Moodle.
 

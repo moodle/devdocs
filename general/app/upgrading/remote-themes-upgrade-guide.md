@@ -8,8 +8,6 @@ tags:
 
 <!-- markdownlint-disable no-inline-html -->
 
-import { CodeDiff, ValidExample, InvalidExample } from '@site/src/components';
-
 In the following guide, you will learn how to migrate your styles from an older version of the app.
 
 However, keep in mind that not all your users will be using the latest version. We recommend that you keep your old CSS rules for older versions as indicated in the [Before starting the migration](#before-starting-the-migration) section. By doing so, users who haven't updated the app will continue seeing the same styles they had until now.

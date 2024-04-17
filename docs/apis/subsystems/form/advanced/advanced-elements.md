@@ -7,8 +7,6 @@ tags:
   - Advanced
 ---
 
-import { ValidExample, InvalidExample } from '@site/src/components';
-
 Form elements can be marked as 'advanced'. This has the effect that they are hidden initially.
 
 To control whether an element is advanced, you can use the `setAdvanced` method on the MoodleQuickForm instance and set a specific element as being advanced, for example:

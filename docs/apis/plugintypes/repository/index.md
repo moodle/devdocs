@@ -12,12 +12,6 @@ import {
     VersionPHP,
 } from '../../_files';
 
-import {
-    CodeBlock,
-    Tabs,
-    TabItem
-} from '@site/src/components';
-
 Repository plugin allow Moodle to bring contents into Moodle from external repositories.
 
 ### Prerequisites

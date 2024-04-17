@@ -7,7 +7,7 @@ tags:
 description: A description of the plugin scheduled task configuration file
 ---
 
-import { LanguageProperty, Since } from '@site/src/components';
+import { LanguageProperty } from '@site/src/components';
 
 If a plugin wants to configure scheduled task, two items are required:
 

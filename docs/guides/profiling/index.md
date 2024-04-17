@@ -12,8 +12,6 @@ PHP has two types of profiler:
 - XHProf is a standard designed for capturing profile traces on live servers. It was originally designed by engineers at Facebook and is suitable for production environments.
 - [XDebug](http://www.xdebug.org/docs/profiler) is well known. and understood, and its trace output is supported by tools like [KCachegrind](http://kcachegrind.sourceforge.net/html/Home.html). It is not recommended for production environments.
 
-import { Since } from '@site/src/components';
-
 ## XHProf
 
 XHProf is both a standard, and a profiler itself. Support for the standard, and two of the standard implementations of it, are built into Moodle.

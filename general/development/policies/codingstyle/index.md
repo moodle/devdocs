@@ -7,8 +7,6 @@ tags:
   - Developer processes
 ---
 
-import { CodeBlock, TabItem, Tabs, ValidExample, InvalidExample } from '@site/src/components';
-
 ## Overview
 
 ### Scope

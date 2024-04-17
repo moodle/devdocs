@@ -5,8 +5,6 @@ tags:
   - Custom field
 ---
 
-import { Since } from '@site/src/components';
-
 <Since versions={["3.7"]} issueNumber="MDL-57898" />
 
 ## Custom fields API overview

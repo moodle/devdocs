@@ -9,8 +9,6 @@ tags:
   - core
 ---
 
-import { Since, ValidExample, InvalidExample } from '@site/src/components';
-
 <Since version="2.0" />
 
 In this page you'll access to the available functions under Moodle to be able to handle DB structures (tables, fields, indexes...).

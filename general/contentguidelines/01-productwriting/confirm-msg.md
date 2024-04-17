@@ -5,7 +5,6 @@ tags:
 - Content style guide
 - UX Writing
 ---
-import {ValidExample, InvalidExample } from '@site/src/components';
 
 Confirmation messages prompt people to confirm actions that have significant consequences or are difficult to undo. They can also help prevent errors or unexpected results by verifying user intent before proceeding with an action.
 
@@ -74,14 +73,14 @@ The description should explain the consequences of the action and share addition
 
 <ValidExample title="Do">
 
-**Delete entry?**  
+**Delete entry?**
 This will delete the entry 'My first blog post'.
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**Delete entry?**  
+**Delete entry?**
 Are you sure you want to delete the blog post?
 
 </InvalidExample>
@@ -90,14 +89,14 @@ Don't repeat information from the title.
 
 <ValidExample title="Do">
 
-**Remove account 'Barbara Gardner'?**  
+**Remove account 'Barbara Gardner'?**
 This account and its data on the site [site name] will be removed from the app on this device.
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**Remove account 'Barbara Gardner'?**  
+**Remove account 'Barbara Gardner'?**
 Are you sure you want to remove this account?
 
 </InvalidExample>
@@ -106,14 +105,14 @@ Save "Are you sure?" for actions that have very serious consequences. For exampl
 
 <ValidExample title="Do">
 
-**Delete tool?**  
+**Delete tool?**
 This tool is currently being used in at least one activity in your course. If you delete this tool, the activities that use it will no longer work. Are you sure you want to delete the tool?
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**Delete activity?**  
+**Delete activity?**
 Are you sure you want to delete the activity?
 
 </InvalidExample>
@@ -124,28 +123,28 @@ Calls to action (CTAs) should be clear and simple, and offer a straightforward w
 
 <ValidExample title="Do">
 
-**Delete downloaded data?**  
+**Delete downloaded data?**
 Cancel | **Delete**
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**Delete downloaded data?**  
+**Delete downloaded data?**
 Cancel | **Continue**
 
 </InvalidExample>
 
 <ValidExample title="Do">
 
-**Log out from this device?**  
+**Log out from this device?**
 Cancel | **Log out**
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**Log out from this device?**  
+**Log out from this device?**
 No | **Ok**
 
 </InvalidExample>
@@ -154,28 +153,28 @@ Use the same verb in both the title and the confirmation button to make the cont
 
 <ValidExample title="Do">
 
-**Move** selected activities?  
+**Move** selected activities?
 Cancel | **Move**
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**Move** selected activities?  
+**Move** selected activities?
 Cancel | **Continue**
 
 </InvalidExample>
 
 <ValidExample title="Don't">
 
-**Delete** tool?  
+**Delete** tool?
 Cancel | **Delete**
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**Delete** tool?  
+**Delete** tool?
 Cancel | **Remove**
 
 </InvalidExample>
@@ -184,14 +183,14 @@ Avoid 'cancelling cancellations'
 
 <ValidExample title="Do">
 
-**Cancel booking?**  
+**Cancel booking?**
 Keep my booking | Cancel booking
 
 </ValidExample>
 
 <InvalidExample title="Don't">
 
-**Cancel subscription?**  
+**Cancel subscription?**
 Cancel | Confirm cancellation
 
 </InvalidExample>

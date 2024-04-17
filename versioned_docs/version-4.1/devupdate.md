@@ -6,8 +6,6 @@ tags:
 ---
 This page highlights the important changes that are coming in Moodle 4.0 for developers. Including how the UX improvements impact custom themes, relevant API changes, and what you can do as developer to prepare for the 4.0 release.
 
-import AcademyLink from '@site/src/components/AcademyLink';
-
 <AcademyLink
   subject="Updating your Plugins for Moodle 4.0"
   courseName="updatePlugin400"

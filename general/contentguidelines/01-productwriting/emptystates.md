@@ -5,7 +5,6 @@ tags:
 - Content style guide
 - UX Writing
 ---
-import {ValidExample, InvalidExample } from '@site/src/components';
 
 Empty states appear when there's nothing to display to our users. They can happen in a variety of situations:
 

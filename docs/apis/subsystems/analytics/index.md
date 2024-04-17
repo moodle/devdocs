@@ -6,8 +6,6 @@ tags:
   - API
 ---
 
-import { Since } from '@site/src/components';
-
 <!-- cspell:ignore analysables -->
 
 The Moodle Analytics API allows Moodle site managers to define _prediction models_ that combine _indicators_ and a _target_.

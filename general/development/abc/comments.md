@@ -8,8 +8,6 @@ tags:
   - Best practices
 ---
 
-import { CodeBlock, ValidExample, InvalidExample } from '@site/src/components';
-
 Moodle coding style rules tell us to write comments for pretty much everything we create,
 and this can seem like a chore. However, there is no point creating the world's most useful
 class if no-one can understand how to use it. So, if we have to write comments, how can we make them
