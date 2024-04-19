@@ -1683,6 +1683,9 @@ Testing_instructions_guide:
 Testing_of_integrated_issues:
 - filePath: "/general/development/process/testing/integrated-issues.md"
   slug: "/general/development/process/testing/integrated-issues"
+Themes_overview:
+- filePath: "/docs/apis/plugintypes/theme/index.md"
+  slug: "/docs/apis/plugintypes/theme/"
 Time_API:
 - filePath: "/docs/apis/subsystems/time/index.md"
   slug: "/docs/apis/subsystems/time/"
