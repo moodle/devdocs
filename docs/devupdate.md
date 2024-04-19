@@ -149,6 +149,8 @@ $callbacks = [
 
 If writing a callback for Moodle 4.3, you **must** use the string notation.
 
+:::
+
 ### String formatting
 
 #### Deprecation of format_* parameters
