@@ -274,6 +274,7 @@ Comments on tests from previous QA cycles:
 - [Moodle 4.1 QA](https://tracker.moodle.org/browse/MDLQA-16759)
 - [Moodle 4.2 QA](https://tracker.moodle.org/browse/MDLQA-17385)
 - [Moodle 4.3 QA](https://tracker.moodle.org/browse/MDLQA-17933)
+- [Moodle 4.4 QA](https://tracker.moodle.org/browse/MDLQA-18443)
 
 ## See also
 
