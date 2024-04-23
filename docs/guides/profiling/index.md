@@ -16,14 +16,7 @@ PHP has two types of profiler:
 
 XHProf is both a standard, and a profiler itself. Support for the standard, and two of the standard implementations of it, are built into Moodle.
 
-### Extensions
-
-Moodle supports two extensions which export to the xhprof standard:
-
-- [xhprof](#extensions-xhprof)
-- [Tideways](#extensions-tideways)
-
-#### XHProf Extension {#extensions-xhprof}
+### XHProf Extension
 
 XHProf is a function-level hierarchical profiler for PHP. The raw data collection component is implemented in C, as a PHP extension. It is capable of reporting function-level inclusive and exclusive wall times, memory usage, CPU times and number of calls for each function. Additionally, it supports ability to compare two runs (hierarchical DIFF reports), or aggregate results from multiple runs.
 
@@ -31,23 +24,6 @@ For more information, see:
 
 - [Installation and API Documentation](https://www.php.net/manual/en/book.xhprof.php)
 - [Change-logs and Version information](https://pecl.php.net/package/xhprof)
-
-#### Tideways Extension {#extensions-tideways}
-
-[Tideways](https://tideways.com/profiler/downloads) is an alternative to XHProf, and support for this is built into Moodle. The maintainer, [Tideways](https://tideways.io), is a large, paid-for service, which can be used to identify a range of issues with production services.
-
-:::note
-
-Whilst the service itself is a paid-for service, the instrumentation tooling is both Open Source, and free.
-
-:::
-
-There are two variants of the plugin. You will almost certainly want the `tideways_xhprof` plugin.
-
-- [tideways](https://tideways.com/profiler/downloads) - the original tool, which includes both xhprof instrumentation, and support for the Tideways service.
-- [tideways_xhprof](https://github.com/tideways/php-xhprof-extension) - a rewritten implementation of the original which only includes the xhprof instrumentation.
-
-For installation details please see https://github.com/tideways/php-xhprof-extension
 
 ### Export Xhprof data to plugins
 
