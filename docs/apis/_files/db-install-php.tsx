@@ -22,7 +22,7 @@ import DefaultDescription from './db-install-php.mdx';
 export default (initialProps: Props): ComponentFileSummary => (
     <ComponentFileSummary
         defaultDescription={DefaultDescription}
-        filepath="/CHANGES"
+        filepath="/db/install.php"
         filetype="php"
         summary="Post-installation hook"
         {...initialProps}
