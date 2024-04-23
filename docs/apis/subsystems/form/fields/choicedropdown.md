@@ -1,4 +1,9 @@
-# Choice Dropdown Form Field (`choicedropdown`)
+---
+title: Choice Dropdown
+tags:
+- core_form
+- form
+---
 
 The `choicedropdown` form field creates a dropdown list with multiple options. It is different from a
 standard select dropdown in that each option can have extra icons and descriptions. This field is often
