@@ -6,7 +6,6 @@ tags:
   - Testing
   - Behat
 ---
-<!-- cspell:ignore JMeter -->
 
 ## Introduction
 
