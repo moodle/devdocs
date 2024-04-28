@@ -1007,6 +1007,7 @@ Skoda
 Skylar
 Smith
 Sokolov
+Soler
 Solomon
 Soon-Systems
 Souto
@@ -1083,6 +1084,7 @@ Tomo
 Toni
 Tony
 Topfstedt
+Torrent
 Torres
 Totaram
 Travis
