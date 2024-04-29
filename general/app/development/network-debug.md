@@ -72,12 +72,12 @@ Here's how to debug web service errors:
 
 You can execute the following in the JavaScript console:
 
-```javascript
+```js
 window.handleOpenURL("moodlemobile://URL?token=WSTOKEN");
 ```
 
 You can also launch a normal authentication process (allowing the authentication popup) and capture the redirect to `moodlemobile://...` created by the `admin/tool/mobile/launch.php` script and then execute the following in the console:
 
-```javascript
+```js
 window.handleOpenURL("moodlemobile://token=ABCxNGUxMD........=");
 ```
