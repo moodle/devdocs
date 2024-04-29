@@ -11,11 +11,6 @@ tags:
 <!-- cspell:ignore filterlocalsettings -->
 
 import {
-    Since,
-    CodeBlock
-} from '@site/src/components';
-
-import {
     DbAccessPHP,
     Lang,
     Lib,

@@ -6,8 +6,6 @@ tags:
   - tools
 ---
 
-import { Since } from '@site/src/components';
-
 [PHPCodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) is a tool used to analyse PHP code using a set of rules. In many cases these rules can be used to automatically fix the errors they identify.
 
 Moodle has two sets of published rule-sets intended to meet the [Moodle Coding Style](../policies/codingstyle/index.md), and identify any parts of the code do not conform to this style. These are:
@@ -27,6 +25,18 @@ composer global require moodlehq/moodle-cs
 ```
 
 This ensures that you have a single copy of the standard used for all code.
+
+Updates to the CodeSniffer are not applied automatically. To determine if updates are required, run the following via the command line:
+
+```console
+composer global show -l
+```
+
+To apply updates:
+
+```console
+composer global update
+```
 
 ### Configuration
 
@@ -126,6 +136,8 @@ This approach is **not recommended** and is only preserved for reference.
 Many modern editors and IDEs will natively integrate with PHPCodeSniffer, and since Moodle versions 3.11.7, 4.0.1, and 4.1.0, no additional configuration is required.
 
 For older versions many editors will allow you to manually configure the PHPCodeSniffer standard to use, for example, the [VS Code PHPCodeSniffer extension](https://marketplace.visualstudio.com/items?itemName=obliviousharmony.vscode-php-codesniffer) can be configured in this way.
+
+If you get the error: 'ERROR: Referenced sniff "moodle" does not exist', you may need to specify the location of the CodeSniffer in your IDE. Note the location when installing, and add that to the settings. e.g. "Exec: Linux": "/home/xxxx/.config/composer/vendor/bin/phpcs"; and select "Automatic" as the Standard.
 
 ## Advanced Usage
 

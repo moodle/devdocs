@@ -308,24 +308,14 @@ You can also make of a React element, `<AcademyLink /` which takes both a `cours
 - The `courseName` relates to the key of the course metadata within the `academycourses.json`.
 - The `subject` is used in the text of the information box.
 
-:::note
-
-You will need to import the `AcademyLink` component from `@site/src/components/AcademyLink`
-
-:::
-
 As an example, the following will create a link to the Moodle Academy course with information on setting up your Moodle Development environment:
 
 ```
-import AcademyLink from '@site/src/components/AcademyLink';
-
 <AcademyLink
   subject="Setting up your Moodle Development environment"
   courseName="setup"
 />
 ```
-
-import AcademyLink from '@site/src/components/AcademyLink';
 
 <AcademyLink
   subject="Setting up your Moodle Development environment"

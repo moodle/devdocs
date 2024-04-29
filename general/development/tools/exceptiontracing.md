@@ -14,8 +14,6 @@ From Moodle 4.4 onwards Moodle can use the [whoops library](https://github.com/f
 
 The library is included with Composer, in the same way that other developer-only features are included, and is only enabled when debugging modes are enabled. It can also be disabled as a developer preference.
 
-import { Since } from '@site/src/components';
-
 The whoops UI is only used when the following conditions are met:
 
 - `$CFG->debugdisplay` is `true`;

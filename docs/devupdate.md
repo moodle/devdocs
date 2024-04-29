@@ -7,14 +7,6 @@ tags:
 
 <!-- markdownlint-disable no-inline-html -->
 
-import {
-    Since,
-    ValidExample,
-    InvalidExample,
-    Tabs,
-    TabItem,
-} from '@site/src/components';
-
 This page highlights the important changes that are coming in Moodle 4.4 for developers.
 
 ## Core changes
@@ -156,6 +148,8 @@ $callbacks = [
 :::danger Callbacks in earlier versions of Moodle
 
 If writing a callback for Moodle 4.3, you **must** use the string notation.
+
+:::
 
 ### String formatting
 
@@ -318,6 +312,43 @@ $formatter->format_text(
 
 :::
 
+### Tasks API
+
+<Since version="4.4" issueNumber="MDL-67667" />
+
+Support for tasks which block all other tasks has been removed. The ability to configure a task as blocking is no longer supported and will not work.
+
+This functionality had the ability to cause significant performance issues, and contained a number of serious bugs.
+
+:::caution
+
+If you are using this functionality in older versions of Moodle you are advised to move away from it as soon as possible in all Moodle versions.
+
+:::
+
+<Since version="4.4" issueNumber="MDL-79128" />
+
+The behaviour of the task runner has been changed to limit the number of retries allowed before a failing _adhoc_ task is removed. Scheduled tasks are not affected.
+
+The default value for the maximum retry limit on an Ad-hoc task is **12**.
+
+Retries can be entirely disabled by passing a value of `0`, for example:
+
+```php
+$task = new example_task();
+// This task wil not be retried at all.
+$task->set_attempts_available(0);
+\core\task\manager::queue_task($task);
+```
+
+See the [detailed documentation](./apis/subsystems/task/adhoc#retrying-failing-tasks) on how to use these new APIs.
+
+### JavaScript
+
+<Since version="4.4" issueNumber="MDL-80850" />
+
+A new JS module, `core/dropzone`, has been introduced to provide a standardised way to create a Drop-zone in Moodle. Read the [full documentation](./guides/javascript/index.md#dropzone) for information on how to use it.
+
 ## Parameters
 
 ### API Change
@@ -431,6 +462,17 @@ Moodle now supports use of a PSR-20 compliant Clock Interface, accessed via Depe
 See the [detailed documentation](./apis/core/clock/index.md) on how to use this new interface.
 
 ## Enrolment
+
+### Meta enrolment support in CSV course upload
+
+<Since version="4.4" issueNumber="MDL-73852" />
+
+It is now possible to use meta enrolment when uploading courses using CSV file. Here is an example of CSV file that can be used to upload a course with meta enrolment:
+
+```php title="Example of CSV for meta enrolment"
+shortname,fullname,category_idnumber,enrolment_1,enrolment_1_metacoursename
+course1,Course 1,CAT1,meta,course2
+```
 
 ### Support for multiple instances in csv course upload
 
@@ -592,6 +634,16 @@ Here you can find all the functionality that has been deprecated in PHPUnit 9.x 
 - The `->withConsecutive()` functionality on PHPUnit mocks has been **silently** deprecated, will be removed with PHPUnit 10. Note that this won't affect PHPUnit 9.6 runs and an alternative path will be proposed in the linked issue, part of the PHPUnit 10 epic (Ref. MDL-81308).
 - `PHPUnit\Framework\TestCase::getMockClass()` has been deprecated, will be removed with PHPUnit 10. No clear alternative exists and won't be investigated, because there aren't cases in core.
 - Cannot use the `Test` suffix on abstract test case classes anymore. Proceed to rename them to end with `TestCase` instead.
+
+## Developer metadata
+
+<Since version="4.4" issueNumber="MDL-81084" />
+
+The list of plugins which are shipped with Moodle core is now available in a JSON format and located at `/lib/plugins.json`.
+
+The schema for this format can be found at `/lib/plugins.schema.json`.
+
+See [Developer metadata](/general/development/tools/metadata) for more information on available metadata.
 
 ## Previous versions
 

@@ -166,8 +166,8 @@ Moodle provides a number of basic, and advanced, form elements. These are descri
 1. [date_time_selector](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#date_time_selector)
 1. [duration](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#duration)
 1. [editor](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#editor)
-1. [filepicker](./usage/files.md#file-picker) - upload single file
-1. [filemanager](./usage/files.md#file-manager) - upload multiple files
+1. [filepicker](/docs/apis/subsystems/form/usage/files.md#file-picker) - upload single file
+1. [filemanager](/docs/apis/subsystems/form/usage/files.md#file-manager) - upload multiple files
 1. [tags](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#tags)
 1. [addGroup](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#addGroup)
 1. [modgrade](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#modgrade)
@@ -251,8 +251,6 @@ The [setDefault()](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#
 The [disabledIf()](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#disabledIf) function can be used to conditionally _disable_ a group of elements, or and individual element depending on the state of other form elements.
 
 ### hideIf()
-
-import { Since } from '@site/src/components';
 
 <Since version="3.4" />
 

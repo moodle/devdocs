@@ -32,6 +32,15 @@ Please follow the steps to enable the feature.
 
 :::
 
+## Hooks
+
+The Communication API takes advantage of the [Hooks API](../../plugintypes/communication/index.md) with actions performed in the following way:
+
+1. Actions in core have their own hook dispatched (for example enrol, change role, add to group).
+2. Hooks are then registered to a particular callback (`lib/db/hooks.php`).
+3. Callbacks are then listened for inside the Communication API's hook listener (`communication\hook_listener`) where all the logic is performed.
+4. To identify the ones Communication API is using, the callbacks will be methods from Communication API's hook listener (`communication\hook_listener`).
+
 ## Important features of the API
 
 The below are the important methods/features of the API. These methods/features are the ones which can be used to interact with the communication API.
@@ -47,12 +56,12 @@ the enabled provider for that instance.
 
 ```php
 $communication = \core_communication\api::load_by_instance(
-            context: $context,
-            component: 'core_course',
-            instancetype: 'coursecommunication',
-            instanceid: $courseid,
-            provider: 'communication_matrix',
-        );
+    context: $context,
+    component: 'core_course',
+    instancetype: 'coursecommunication',
+    instanceid: $courseid,
+    provider: 'communication_matrix',
+);
 ```
 
 ### Create and configure a room
@@ -61,10 +70,10 @@ $communication = \core_communication\api::load_by_instance(
 
 ```php
 public function create_and_configure_room(
-        string $communicationroomname,
-        ?\stored_file $avatar = null,
-        ?\stdClass $instance = null,
-    )
+    string $communicationroomname,
+    ?\stored_file $avatar = null,
+    ?\stdClass $instance = null,
+);
 ```
 
 This method takes the following parameters:
@@ -79,23 +88,27 @@ field named topic which sets the topic of the room, the instance object can be u
 Please refer to [Communication plugin](../../plugintypes/communication/index.md) documentation for more details.
 
 ```php
-// First initialize the communication instance, provided the context is already initialized and the selected provider is available
+// First initialize the communication instance,
+// provided the context is already initialized
+// and the selected provider is available
 // though a form or other means.
 $communication = \core_communication\api::load_by_instance(
-            context: $context,
-            component: 'core_course',
-            instancetype: 'coursecommunication',
-            instanceid: $course->id,
-            provider: 'communication_matrix',
-        );
+    context: $context,
+    component: 'core_course',
+    instancetype: 'coursecommunication',
+    instanceid: $course->id,
+    provider: 'communication_matrix',
+);
 
-// Now call the create_and_configure_room() method to add an ad-hoc to create a room in the communication provider and configure it
-// with the required settings.
+// Now call the create_and_configure_room() method
+// to add an ad-hoc to create a room in the
+// communication provider and configure it with the
+// required settings.
 $communication->create_and_configure_room(
-                communicationroomname: $course->fullname,
-                avatar: $courseimage ?: null,
-                instance: $course,
-            );
+    communicationroomname: $course->fullname,
+    avatar: $courseimage ?: null,
+    instance: $course,
+);
 ```
 
 ### Update a room and its associated information
@@ -104,11 +117,11 @@ $communication->create_and_configure_room(
 
 ```php
 public function update_room(
-        ?int $active = null,
-        ?string $communicationroomname = null,
-        ?\stored_file $avatar = null,
-        ?\stdClass $instance = null,
-    )
+    ?int $active = null,
+    ?string $communicationroomname = null,
+    ?\stored_file $avatar = null,
+    ?\stdClass $instance = null,
+);
 ```
 
 This method takes the following parameters:
@@ -121,21 +134,22 @@ This method takes the following parameters:
 ```php
 // First initialize the instance.
 $communication = \core_communication\api::load_by_instance(
-            context: $context,
-            component: 'core_course',
-            instancetype: 'coursecommunication',
-            instanceid: $course->id,
-            provider: 'communication_matrix',
-        );
+    context: $context,
+    component: 'core_course',
+    instancetype: 'coursecommunication',
+    instanceid: $course->id,
+    provider: 'communication_matrix',
+);
 
-// Now update the room with the required settings. The instance will be used by dynamic fields feature of the plugin to allow the plugin
-// to get the required information from the instance.
+// Now update the room with the required settings.
+// The instance will be used by dynamic fields feature of the plugin
+// to allow the plugin to get the required information from the instance.
 $communication->update_room(
-                active: $active,
-                communicationroomname: $communicationroomname,
-                avatar: $courseimage ?: null,
-                instance: $course,
-            );
+    active: $active,
+    communicationroomname: $communicationroomname,
+    avatar: $courseimage ?: null,
+    instance: $course,
+);
 ```
 
 ### Delete a room
@@ -149,6 +163,37 @@ This is destructive and might remove all the messages and other data associated 
 
 :::
 
+### Create and configure a room according to the provider
+
+There are cases where the provider is changed for a communication instance.
+For example, previously the provider was set to _Provider B_ and now it has changed to _Provider A_.
+In this case, the room and its members need to be configured according to the new provider. Without any extra logic needed, the method `$communication->configure_room_and_membership_by_provider()` takes care of this in the following way:
+
+1. Communication provider is changed from _Provider B_ to _Provider A_.
+2. New room is created in _Provider A_.
+3. Members are added to the new room at _Provider A_.
+4. Members are removed from the old room at _Provider B_.
+
+```php
+// First initialize the instance.
+$communication = \core_communication\api::load_by_instance(
+            context: $context,
+            component: 'core_course',
+            instancetype: 'coursecommunication',
+            instanceid: $course->id,
+            provider: 'communication_matrix',
+        );
+
+// Now call this with the new provider to take care of the room and its members for the new provider.
+$communication->configure_room_and_membership_by_provider(
+                provider: 'communication_slack',
+                instance: $course,
+                communicationroomname: $coursecommunicationroomname,
+                users: $enrolledusers,
+                instanceimage: $courseimage,
+            );
+```
+
 ### Add members to a room
 
 `$communication->add_members_to_room()` method is used to add an ad-hoc to add members to a room in the communication provider. The user id of each user to be added to
@@ -156,9 +201,9 @@ the provider room is also stored in the communication_user table for user mappin
 
 ```php
 public function add_members_to_room(
-        array $userids,
-        bool $queue = true,
-    )
+    array $userids,
+    bool $queue = true,
+);
 ```
 
 This method accepts the following parameters:
@@ -169,16 +214,16 @@ This method accepts the following parameters:
 ```php
 // First initialize the instance, provider is not required here, it will initialize the enabled instance.
 $communication = \core_communication\api::load_by_instance(
-            context: $context,
-            component: 'core_course',
-            instancetype: 'coursecommunication',
-            instanceid: $course->id,
-        );
+    context: $context,
+    component: 'core_course',
+    instancetype: 'coursecommunication',
+    instanceid: $course->id,
+);
 
 // Now add the members.
 $communication->add_members_to_room(
-                userids: $enrolledusers,
-            );
+    userids: $enrolledusers,
+);
 ```
 
 ### Update the membership of a room
@@ -188,9 +233,9 @@ The user mapping for each of the users are also reset to allow task to update th
 
 ```php
 public function update_room_membership(
-        array $userids,
-        bool $queue = true,
-    )
+    array $userids,
+    bool $queue = true,
+);
 ```
 
 This method accepts the same parameters as the `add_members_to_room()` method and the usage is also the same.
@@ -202,12 +247,20 @@ The users are flagged as deleted in the communication_user table to allow the ta
 
 ```php
 public function remove_members_from_room(
-        array $userids,
-        bool $queue = true
-    )
+    array $userids,
+    bool $queue = true
+);
 ```
 
 This method accepts the same parameters as the `add_members_to_room()` method and the usage is also the same.
+
+It's also possible to remove all members from a room by using `$communication->remove_all_members_from_room()`. This method does not take any parameters and will remove all users from the room and delete the user mapping found in the `communication_user` table.
+
+:::caution
+
+Both `$communication->remove_all_members_from_room()` and `$communication->remove_members_from_room()` will remove users and may delete communication history from the provider itself.
+
+:::
 
 ### Show the communication room creation status notification
 
@@ -225,9 +278,9 @@ It will also be required to use `set_data()` method in order to set the data to 
 
 ```php
 public function form_definition(
-        \MoodleQuickForm $mform,
-        string $selectdefaultcommunication = processor::PROVIDER_NONE,
-    )
+    \MoodleQuickForm $mform,
+    string $selectdefaultcommunication = processor::PROVIDER_NONE,
+);
 ```
 
 This method accepts the following parameters:

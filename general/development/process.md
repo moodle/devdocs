@@ -24,8 +24,6 @@ We use a workflow that ensures that new code receives multiple reviews by differ
 - There is a dedicated team in Moodle HQ in charge of the [integration review](./process/integration/index.md), to ensure consistent quality across the codebase.
 - Every time an issue is integrated, the [testing](./process/testing/index.md) instructions are run by a dedicated team of testers.
 
-import { Since } from '@site/src/components';
-
 ## Roles
 
 A number of roles make this work:

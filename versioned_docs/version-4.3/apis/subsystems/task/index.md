@@ -69,7 +69,7 @@ ends by throwing an exception if any part failed. There is a an example of all t
 
 ### Caches
 
-Historically many Moodle APIs have used static caches. Whilst many of these have been replaced by the [Moodle Universal Cache](../../../../../docs/apis/subsystems/muc/index.md), which can be cleared between runs, it is not possible to guarantee that this is always the case.
+Historically many Moodle APIs have used static caches. Whilst many of these have been replaced by the [Moodle Universal Cache](/docs/apis/subsystems/muc/index.md), which can be cleared between runs, it is not possible to guarantee that this is always the case.
 
 When working with long-running tasks, you may need to consider caching - this applies to both scheduled, and adhoc, tasks. This is particularly true for tasks related to enrolment.
 
@@ -114,8 +114,6 @@ Several tools exist for administrators:
 ## Important notes
 
 ### Legacy cron
-
-import { Since } from '@site/src/components';
 
 <Since version="4.3" issueNumber="MDL-61165" />
 

@@ -156,3 +156,28 @@ The `reschedule_or_queue_adhoc_task()` function will locate any existing task ma
 ```php
 \core\task\manager::reschedule_or_queue_adhoc_task($task);
 ```
+
+#### Retrying failing tasks
+
+<Since version="4.4" issueNumber="MDL-79128" />
+
+The number of retries for a failing task can be controlled using the `set_attempts_available()` method on the task before it is queued. If not specified a task will be allowed **12** retries.
+
+```php
+$task->set_attempts_available(2);
+\core\task\manager::queue_adhoc_task($task);
+```
+
+You can get the remaining available attempts of a task by calling the `get_attempts_available()` function.
+
+```php
+$task->get_attempts_available();
+```
+
+Tasks are retried by default, but this behaviour can be modified by overriding the `retry_until_success()` method in your task class, for example:
+
+```php
+public function retry_until_success(): bool {
+    return false;
+}
+```

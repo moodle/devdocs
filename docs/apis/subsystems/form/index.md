@@ -154,9 +154,11 @@ Moodle provides a number of basic, and advanced, form elements. These are descri
 <!-- cspell:ignore choosecoursefile -->
 <!-- cspell:ignore modgrade -->
 <!-- cspell:ignore questioncategory -->
+<!-- cspell:ignore choicedropdown -->
 
 1. [Autocomplete](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#autocomplete) - A select box that allows you to start typing to narrow the list of options, or search for results.
 1. [advcheckbox](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#advcheckbox) - Advance checkbox
+1. [choicedropdown](./form/fields/choicedropdown) - A dropdown menu where custom information is displayed on each option.
 1. [float](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#float)
 1. [passwordunmask](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#passwordunmask) - A password element with option to show the password in plaintext.
 1. [recaptcha](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#recaptcha)
@@ -243,8 +245,6 @@ The `add_action_buttons` function is defined on `moodlform` class, and not a par
 :::
 
 ### add_sticky_action_buttons()
-
-import { Since } from '@site/src/components';
 
 <Since version="4.3" />
 

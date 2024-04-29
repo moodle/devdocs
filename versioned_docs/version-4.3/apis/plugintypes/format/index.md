@@ -10,11 +10,8 @@ tags:
 <!-- cspell:ignore cmitem -->
 <!-- cspell:ignore controlmenu -->
 
-import { CodeBlock, Since } from '@site/src/components';
 import { getExample } from '@site/src/moodleBridge';
 import { ComponentFileSummary } from '../../../_utils';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import {
     Lang,
     Lib,

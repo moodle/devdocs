@@ -113,9 +113,17 @@ Several tools exist for administrators:
 
 ## Important notes
 
-### Legacy cron
+### Blocking tasks
 
-import { Since } from '@site/src/components';
+<Since version="4.4" issueNumber="MDL-67667" />
+
+Support for tasks which block all other tasks has been removed. The ability to configure a task as blocking is no longer supported and will not work.
+
+This functionality had the ability to cause significant performance issues, and contained a number of serious bugs.
+
+If you are using this functionality in older versions of Moodle you are advised to move away from it as soon as possible in all Moodle versions.
+
+### Legacy cron
 
 <Since version="4.3" issueNumber="MDL-61165" />
 

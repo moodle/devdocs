@@ -5,7 +5,6 @@ tags:
 - Content style guide
 - UX Writing
 ---
-import {ValidExample, InvalidExample } from '@site/src/components';
 
 Success messages tell users that they've completed a task or achieved a goal, or that an action within the system has been successfully completed.
 

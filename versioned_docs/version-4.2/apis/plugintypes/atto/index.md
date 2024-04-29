@@ -3,9 +3,6 @@ title: Atto
 tags: []
 ---
 
-
-import { Since } from '@site/src/components';
-
 <Since versions={["2.7"]} issueNumber="MDL-43841" />
 
 Atto is a JavaScript text editor built specifically for Moodle. It is the default text editor in Moodle from 2.7 onwards, and is implemented as a standard Moodle [text editor plugin](https://docs.moodle.org/dev/Editors). Most of the code is written in JavaScript using YUI modules.
@@ -81,6 +78,8 @@ import LibDescription from './_examples/lib.md';
 />
 
 ### yui/src/button/*
+
+<!-- markdownlint-disable no-inline-html -->
 
 <Button
     pluginname="media"

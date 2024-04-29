@@ -74,6 +74,68 @@ This was a very simplified example, in the real life you will probably want to:
 - Use an existing function to update a record (which hopefully also validates input value and triggers events)
 - Add unit tests and behat tests
 
+<details>
+  <summary>View example</summary>
+  <div>
+
+```php title="admin/tool/mytest/classes/local/inplace_edit_text.php"
+
+class inplace_edit_text extends \core\output\inplace_editable {
+    /**
+     * Constructor.
+     *
+     * @param object $record
+     */
+    public function __construct($record) {
+        parent::__construct(
+            component: 'tool_mytest',
+            // The item type as managed your plugin.
+            itemtype: 'mytesttext',
+            // An ID that relates to this instance of this item type.
+            itemid: $record->id,
+            // Whether this user can makes changes.
+            // Perhaps based upon a capability check.
+            editable: has_capability(
+                'capname',
+                \context_system::instance(),
+            ),
+            // The display value of this item.
+            displayvalue: format_string($record->name),
+            // The machine-readable value.
+            value: $record->name,
+            // Hints and labels.
+            edithint: get_string('edithint', 'tool_mytest'),
+            editlabel: get_string('editlabel', 'tool_mytest'),
+        );
+        $this->set_type_select($answeroptionstemp);
+    }
+
+    /**
+     * Updates the value in database and returns itself.
+     *
+     * Called from inplace_editable callback
+     *
+     * @param int $itemid
+     * @param mixed $newvalue
+     * @return \self
+     */
+    public static function update($itemid, $newvalue) {
+        // Clean the new value.
+        $newvalue = clean_param($newvalue, PARAM_INT);
+
+        // {{ Do some mighty things here}}
+
+        $record = $DB->get_record('xxx', ['id' => 'xxx']);
+
+        // Finally return itself.
+        return new self($record);
+    }
+}
+```
+
+</div>
+</details>
+
 ## Toggles and dropdowns
 
 You may choose to set the UI for your inplace editable element to be a string value (default), toggle or dropdown.
@@ -126,6 +188,118 @@ $tmpl = new \core\output\inplace_editable(
 );
 $tmpl->set_type_toggle([0, 1]);
 ```
+
+<details>
+  <summary>View example</summary>
+  <div>
+
+```php title="admin/tool/mytest/classes/local/inplace_edit_select.php"
+class inplace_edit_select extends \core\output\inplace_editable {
+    /**
+     * Constructor.
+     *
+     * @param \stdClass $record
+     */
+    public function __construct($record) {
+        // Get the options for inplace_edit select box.
+        // The array needs the format:
+        //     $options = [
+        //         'value1' => 'text1',
+        //         'value2' => 'text2',
+        //     ];
+        $options = \tool_mytest\classes\helper::get_options();
+
+        parent::__construct(
+            component: 'tool_mytest',
+            // The item type as managed your plugin.
+            itemtype: 'mytestselect',
+            // An ID that relates to this instance of this item type.
+            itemid: $record->id,
+            // Whether this user can makes changes.
+            // Perhaps based upon a capability check.
+            editable: has_capability(
+                'capname',
+                \context_system::instance(),
+            ),
+            // The display value of this item.
+            displayvalue: $options[$optionkey],
+            // The machine-readable value.
+            value: $optionkey,
+            // Hints and labels.
+            edithint: get_string('edithint', 'tool_mytest'),
+            editlabel: get_string('editlabel', 'tool_mytest'),
+        );
+        $this->set_type_select($options);
+    }
+
+    /**
+     * Updates the value in database and returns itself.
+     *
+     * Called from inplace_editable callback
+     *
+     * @param int $itemid
+     * @param mixed $newvalue
+     * @return \self
+     */
+    public static function update($itemid, $newvalue) {
+        // Clean the new value.
+        $newvalue = clean_param($newvalue, PARAM_INT);
+
+        // {{ Do some mighty things here}}
+
+        $record = $DB->get_record('xxx', ['id' => 'xxx']);
+
+        // Finally return itself.
+        return new self($record);
+    }
+}
+```
+
+  </div>
+</details>
+
+<details>
+  <summary>View example rendering with PHP</summary>
+  <div>
+
+```php
+$renderer = $PAGE->get_renderer('core');
+$inplaceedit = new tool_mytest\local\inplace_edit_text($record);
+$params = $inplaceedit->export_for_template($renderer);
+echo $OUTPUT->render_from_template('core/inplace_edit', $params);
+```
+
+  </div>
+</details>
+
+<details>
+  <summary>View example rendering with JavaScript</summary>
+  <div>
+
+```php title="Render inplace_edit with JavaScript"
+$itemid = 153 // Id of the element to be modified inplace.
+$renderer = $PAGE->get_renderer('core');
+$inplaceedit = new tool_mytest\local\inplace_edit_text($record);
+$params = $inplaceedit->export_for_template($renderer);
+```
+
+```js title="The params are transferred via webservice and are then processed by JavaScript"
+Templates.renderForPromise('core/inplace_edit', params)
+    .then(({html, js}) => {
+        Templates.replaceNodeContents('nodeid', html, js);
+        return true;
+    })
+    .catch((error) => displayException(error));
+```
+
+  </div>
+</details>
+
+:::note
+
+In the examples above, `core/inplace_edit` can also be used as a partial in another template.
+
+:::
 
 ## How does it work
 

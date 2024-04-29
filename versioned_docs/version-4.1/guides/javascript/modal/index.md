@@ -8,8 +8,6 @@ tags:
 
 <Since version="3.2" />
 
-import { CodeBlock, CodeExample, InvalidExample, ValidExample, Since } from '@site/src/components';
-
 The use of modal modules provides a simplified developer experience for creating modal dialogues within Moodle.
 
 The module attempts to ensure that all accessibility requirements are met, including applying the correct aria roles, focus control, aria hiding background elements, and locking keyboard navigation.

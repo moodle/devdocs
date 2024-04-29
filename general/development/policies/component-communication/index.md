@@ -6,8 +6,6 @@ tags:
   - Coding guidelines
 ---
 
-import { CodeBlock, TabItem, Tabs } from '@site/src/components';
-
 ## Components
 
 ![Components in Moodle](./componentsinmoodle.png)
@@ -87,8 +85,6 @@ One thing to think about when calling external functions from php though is that
 Additional rules for calling external functions:
 
 - Always use the `\core_external\external_api::call_external_function()` wrapper when calling from php.
-
-import { Since } from '@site/src/components';
 
 :::note
 

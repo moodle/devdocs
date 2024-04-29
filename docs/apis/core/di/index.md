@@ -8,14 +8,6 @@ tags:
 description: The use of PSR-11 compatible Dependency Injection in Moodle
 ---
 
-import {
-    Since,
-    ValidExample,
-    InvalidExample,
-    Tabs,
-    TabItem,
-} from '@site/src/components';
-
 <Since version="4.4" issueNumber="MDL-80072" />
 
 Moodle supports the use of [PSR-11](https://www.php-fig.org/psr/psr-11/) compatible Dependency Injection, accessed using the `\core\di` class, which internally makes use of [PHP-DI](https://php-di.org).

@@ -5,7 +5,6 @@ tags:
 - Content style guide
 - UX Writing
 ---
-import {ValidExample, InvalidExample } from '@site/src/components';
 
 Error messages describe issues that stop users from finishing a task, or the system from functioning properly. A good error message explains what happened, the reason why it happened, and what the user can do to move forward. They may even provide a way forward in the call to action.
 

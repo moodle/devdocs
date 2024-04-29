@@ -6,12 +6,6 @@ tags:
 
 <!-- markdownlint-disable no-inline-html -->
 
-import {
-    Since,
-    ValidExample,
-    InvalidExample,
-} from '@site/src/components';
-
 Bootstrap 5 has evolved with new features, improvements, and changes in its latest version, and along with this some breaking changes also come, which need to be addressed in the migration process.
 
 :::info

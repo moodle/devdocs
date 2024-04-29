@@ -8,8 +8,6 @@ tags:
 
 <!-- markdownlint-disable no-inline-html -->
 
-import { CodeDiff } from '@site/src/components';
-
 In the following guide, you will learn how to upgrade your plugins to support newer versions of the app.
 
 However, keep in mind that not all your users will be using the latest version. You can support multiple versions of the app by checking the value of `appversioncode`. Here you can find an example applied to the `choicegroup` plugin: [Choicegroup plugin](https://github.com/dpalou/moodle-mod_choicegroup/blob/ionic5/classes/output/mobile.php#L52).

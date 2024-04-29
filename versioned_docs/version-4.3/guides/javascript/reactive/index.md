@@ -10,8 +10,6 @@ tags:
 <!-- cspell:ignore METHODNAME -->
 <!-- cspell:ignore DATAID -->
 
-import { Since, TabItem, Tabs, ValidExample, InvalidExample } from '@site/src/components';
-
 <Since versions={[ 4.0 ]} />
 
 Third-party plugin developers are free to use any framework they want to implement reactive interfaces like React, Angular or Vue. However, for now Moodle does not provide any of them and all core developments are framework independent.

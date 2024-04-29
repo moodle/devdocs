@@ -6,8 +6,6 @@ tags:
   - YUI
 ---
 
-import DeprecatedSince from '@site/src/components/DeprecatedSince';
-
 <DeprecatedSince versions={["2.9"]} />
 
 :::caution

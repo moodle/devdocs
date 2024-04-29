@@ -62,7 +62,14 @@
                     "type": "string"
                 },
                 "version": {
-                    "type": "number"
+                    "oneOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ]
                 },
                 "notes": {
                     "type": "string"

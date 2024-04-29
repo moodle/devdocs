@@ -23,7 +23,7 @@ const today = new Date();
 export interface versionInfo {
     name: string,
     releaseDate: string,
-    version: number,
+    version: boolean | number,
     notes?: string,
     releaseNoteUrl?: boolean | string,
     upgradePath?: boolean | string,

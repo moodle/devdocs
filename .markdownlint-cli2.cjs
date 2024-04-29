@@ -174,6 +174,8 @@ config.MD033 = {
         "Lib",
         "Lang",
         "DbAccessPHP",
+        "SettingsPHP",
+        "LocalLib",
     ]
 };
 

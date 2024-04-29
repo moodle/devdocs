@@ -9,7 +9,6 @@ toc_max_heading_level: 4
 description: Assign feedback plugins allow you to define different ways that a teacher can provide feedback to their students.
 ---
 
-import { Since } from '@site/src/components';
 import {
     SettingsPHP,
     LocalLib,

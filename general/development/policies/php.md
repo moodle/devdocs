@@ -9,8 +9,6 @@ tags:
   - PHP
 ---
 
-import { Since } from '@site/src/components';
-
 New PHP versions are [released every year](https://www.php.net/supported-versions.php) and come with important improvements and changes compared with previous versions. Moodle tries to support them as soon as possible, always matching them with our own [scheduled release plans](../../releases.md).
 
 ## Policy statement

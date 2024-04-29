@@ -9,8 +9,6 @@ description: Question type plugins allow you to extend the functionality of the 
 documentationDraft: true
 ---
 
-import { Since } from '@site/src/components';
-
 <Since
   version="4.0"
   issueNumber="MDL-70329"
