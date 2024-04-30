@@ -53,7 +53,7 @@ All the settings save here should match the ones fetched by `get_default_value` 
 
 Because this feature works using user preferences, you need to declare that in your privacy provider.
 
-This is boring but necessary. Easiest way to see what to do is to [copy another question type](https://github.com/moodle/moodle/blob/master/question/type/match/classes/privacy/provider.php).
+This is boring but necessary. Easiest way to see what to do is to [copy another question type](https://github.com/moodle/moodle/blob/main/question/type/match/classes/privacy/provider.php).
 
 Note, it is necessary for your provider to declare the ones saved by core. (I suppose, ideally, someone would make a helpful base class, or trait, to make it easier to implement this.)
 
@@ -61,7 +61,7 @@ Note, it is necessary for your provider to declare the ones saved by core. (I su
 
 Always a good idea. You are likely to need:
 
-1. [Unit tests for the privacy provider](https://github.com/moodle/moodle/blob/master/question/type/match/tests/privacy/provider_test.php).
-2. Behat test to show that the saved settings are re-used. Many question types have [a `behat/add.feature` file where it is easy to add coverage for this](https://github.com/moodle/moodle/blob/master/question/type/match/tests/behat/add.feature).
+1. [Unit tests for the privacy provider](https://github.com/moodle/moodle/blob/main/question/type/match/tests/privacy/provider_test.php).
+2. Behat test to show that the saved settings are re-used. Many question types have [a `behat/add.feature` file where it is easy to add coverage for this](https://github.com/moodle/moodle/blob/main/question/type/match/tests/behat/add.feature).
 
 The links in that list go to examples of how these are implemented in `qtype_match`.

@@ -196,7 +196,7 @@ There are no instructions `DEL` or `ADD`. AMOS automatically recognized new stri
 
 :::note
 
-Strings can be removed on the master branch easily by removing them from the strings file. No AMOS command is needed. Just make sure the string is not use elsewhere and do not remove the string from stable branches.
+Strings can be removed on the main branch easily by removing them from the strings file. No AMOS command is needed. Just make sure the string is not use elsewhere and do not remove the string from stable branches.
 
 :::
 

@@ -78,7 +78,7 @@ The [Backup API](./apis/subsystems/backup/index.md) defines exactly how to conve
 
 ### Cache API (cache)
 
-The [The Moodle Universal Cache (MUC)](https://docs.moodle.org/dev/The_Moodle_Universal_Cache_(MUC)) is the structure for storing cache data within Moodle. [Cache API](https://docs.moodle.org/dev/Cache_API) explains some of what is needed to use a cache in your code.
+The [The Moodle Universal Cache (MUC)](https://docs.moodle.org/dev/The_Moodle_Universal_Cache_(MUC)) is the structure for storing cache data within Moodle. [Cache API](/docs/apis/subsystems/muc/index.md) explains some of what is needed to use a cache in your code.
 
 ### Calendar API (calendar)
 
@@ -135,7 +135,7 @@ The [Lock API](./apis/core/lock/index.md) lets you synchronise processing betwee
 
 ### Message API (message)
 
-The [Message API](https://docs.moodle.org/dev/Message_API) lets you post messages to users. They decide how they want to receive them.
+The [Message API](/docs/apis/core/message/index.md) lets you post messages to users. They decide how they want to receive them.
 
 ### Media API (media)
 
@@ -173,7 +173,7 @@ The [Rating API](https://docs.moodle.org/dev/Rating_API) lets you create AJAX ra
 <!-- cspell:ignore reportbuilder -->
 ### Report builder API (reportbuilder)
 
-The [Report builder API](../../docs/apis/core/reportbuilder/index.md) allows you to create reports in your plugin, as well as providing custom reporting data which users can use to build their own reports.
+The [Report builder API](/docs/apis/core/reportbuilder/index.md) allows you to create reports in your plugin, as well as providing custom reporting data which users can use to build their own reports.
 
 ### RSS API (rss)
 
@@ -213,7 +213,7 @@ The [https://docs.moodle.org/dev/OpenBadges_User_Documentation Badges] user docu
 
 ### Custom fields API (customfield)
 
-The [Custom fields API](../../docs/apis/core/customfields/index.md) allows you to configure and add custom fields for different entities
+The [Custom fields API](/docs/apis/core/customfields/index.md) allows you to configure and add custom fields for different entities
 
 ## Activity module APIs
 

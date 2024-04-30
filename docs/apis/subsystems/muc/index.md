@@ -280,7 +280,7 @@ One potential benefit of a simple version number strategy if your cache misses a
 
 :::info
 
-An example of this strategy in Moodle is the theme versions cache: https://github.com/moodle/moodle/blob/master/lib/outputlib.php#L88-L100
+An example of this strategy in Moodle is the theme versions cache: https://github.com/moodle/moodle/blob/main/lib/outputlib.php#L88-L100
 
 Note this is not actually in MUC but the caching concepts are the same.
 
@@ -309,7 +309,7 @@ It may look like Moodle theme-related caching uses this strategy, but actually i
 
 :::info
 
-https://github.com/moodle/moodle/blob/master/lib/datalib.php#L1131-L1145
+https://github.com/moodle/moodle/blob/main/lib/datalib.php#L1131-L1145
 
 It works best with a cache store that supports Least Recently Used garbage collection.
 :::

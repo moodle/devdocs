@@ -898,8 +898,8 @@ Font icons are widely used on the app and Moodle LMS website. In order to suppor
 - Name prefixed with `fas-` or `fa-` will use [Font Awesome solid library](https://fontawesome.com/search?o=r&m=free&s=solid).
 - Name prefixed with `far-` will use [Font Awesome regular library](https://fontawesome.com/search?o=r&m=free&s=regular).
 - Name prefixed with `fab-` will use [Font Awesome brands library](https://fontawesome.com/search?o=r&m=free&f=brands) (But only a few are supported and we discourage to use them).
-- Name prefixed with `moodle-` will use some svg icons [imported from Moodle LMS](https://github.com/moodlehq/moodleapp/tree/master/src/assets/fonts/moodle/moodle).
-- Name prefixed with `fam-` will use [customized Font Awesome icons](https://github.com/moodlehq/moodleapp/tree/master/src/assets/fonts/moodle/font-awesome).
+- Name prefixed with `moodle-` will use some svg icons [imported from Moodle LMS](https://github.com/moodlehq/moodleapp/tree/main/src/assets/fonts/moodle/moodle).
+- Name prefixed with `fam-` will use [customized Font Awesome icons](https://github.com/moodlehq/moodleapp/tree/main/src/assets/fonts/moodle/font-awesome).
 - If the prefix is not found or not valid, the app will search the icon name on the [Ionicons library](https://ionic.io/ionicons).
 
 ```html title="Example of usage to show icon "pizza-slice" from Font Awesome regular library"

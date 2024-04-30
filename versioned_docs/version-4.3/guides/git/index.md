@@ -101,7 +101,7 @@ This command does several jobs for you:
 - Creates a new folder
 - Initialises a new local Git repository
 - Sets your GitHub repository as the remote repository called 'origin'
-- Makes a local checkout of the branch 'master'
+- Makes a local checkout of the branch 'main'
 
 :::tip
 [MDK](/general/development/tools/mdk) features many commands that aid in the creation and management of your Moodle branches. If you haven't checked it out already, see how MDK can streamline your Moodle development.
@@ -109,7 +109,7 @@ This command does several jobs for you:
 
 ## Keeping your public repository up-to-date
 <!-- cspell:ignore forwardable -->
-Your fork at GitHub is not updated automatically. To keep it synced with the upstream Moodle repository, you have to fetch the recent changes from the official moodle.git repository. To avoid conflicts, it is strongly recommended that you never modify the standard Moodle branches. Never commit directly into `master` and `MOODLE_XXX_STABLE` branches, but instead create topic branches to work on. In Git terminology, the `master` branch and `MOODLE_XXX_STABLE` branches should always be fast-forwardable.
+Your fork at GitHub is not updated automatically. To keep it synced with the upstream Moodle repository, you have to fetch the recent changes from the official moodle.git repository. To avoid conflicts, it is strongly recommended that you never modify the standard Moodle branches. Never commit directly into `main` and `MOODLE_XXX_STABLE` branches, but instead create topic branches to work on. In Git terminology, the `main` branch and `MOODLE_XXX_STABLE` branches should always be fast-forwardable.
 
 ![git-sync-github.png](./_index/git-sync-github.png)
 
@@ -126,13 +126,13 @@ The following commands can be used to keep the your forked Moodle branches at yo
 ```
 #!/bin/bash
 git fetch upstream
-for BRANCH in MOODLE_{19..39}_STABLE MOODLE_{310..311}_STABLE MOODLE_{400..403}_STABLE master; do
+for BRANCH in MOODLE_{19..39}_STABLE MOODLE_{310..311}_STABLE MOODLE_{400..403}_STABLE main; do
     git push origin refs/remotes/upstream/$BRANCH:refs/heads/$BRANCH
 done
 ```
 
 :::caution
-Never commit directly into `master` and `MOODLE_XXX_STABLE` branches
+Never commit directly into `main` and `MOODLE_XXX_STABLE` branches
 :::
 
 :::tip
@@ -173,7 +173,7 @@ git push origin MOODLE_99_STABLE:MOODLE_99_STABLE
 The above code will create a new copy of the `MOODLE_99_STABLE` branch in your local repository. If you do not need to keep a local copy of the new branch (probably the case), you can remove it from your local repository as follows:
 
 ```
-git checkout master
+git checkout main
 git branch -D MOODLE_99_STABLE
 ```
 
@@ -183,10 +183,10 @@ git branch -D MOODLE_99_STABLE
 
 As mentioned earlier, you never work on standard Moodle branches directly. Every time you are going to edit something, switch to a local branch. Fork the local branch off Moodle's standard branch that you think it should be eventually merged to.
 
-For example, if you are working on a patch for **4.1**, fork the branch off `MOODLE_401_STABLE`. Patches for the next [major version](https://docs.moodle.org/dev/Moodle_versions) should be based on the `master` branch.
+For example, if you are working on a patch for **4.1**, fork the branch off `MOODLE_401_STABLE`. Patches for the next [major version](https://docs.moodle.org/dev/Moodle_versions) should be based on the `main` branch.
 
 ```
-git checkout -b MDL-xxxxx-master_brief_name origin/master
+git checkout -b MDL-xxxxx-main_brief_name origin/main
 ```
 
 If you forget to specify the branch you want to fork from, the new branch will be based on the currently checked-out branch. It is recommended you always specify this.
@@ -218,7 +218,7 @@ git log
 Your local branch changes may consist of several commits. Once you are happy with it, and you have checked it against Moodle's [Coding styles](/general/development/policies/codingstyle), publish your changes by pushing to your public repository.
 
 ```
-git push origin MDL-xxxxx-master_brief_name
+git push origin MDL-xxxxx-main_brief_name
 ```
 
 Now your branch is published and you can ask Moodle core developers to review it and eventually integrate it into Moodle's main repository.
@@ -231,10 +231,10 @@ There are a couple of ways this can be achieved.
 
 #### Reset all changes and commit again
 
-The following command will preserve your changes, but all commits on top of `master` branch will be gone and become **unstaged** and ready to be added and committed again.
+The following command will preserve your changes, but all commits on top of `main` branch will be gone and become **unstaged** and ready to be added and committed again.
 
 ```
-git reset --mixed origin/master
+git reset --mixed origin/main
 ```
 
 #### Rebase your changes
@@ -247,12 +247,12 @@ Rebase your branch using the following command:
 git rebase --interactive
 ```
 
-Whichever option you chose, you have "rewritten history". If you had already pushed your branch to your remote repository, you may encounter issues when trying to push the updated branch. If you try `git push MDL-xxxxx-master_brief_name` you will get an error message suggesting you to `force push`.
+Whichever option you chose, you have "rewritten history". If you had already pushed your branch to your remote repository, you may encounter issues when trying to push the updated branch. If you try `git push MDL-xxxxx-main_brief_name` you will get an error message suggesting you to `force push`.
 
 To force push the changed commits use:
 
 ```
-git push -f origin MDL-xxxxx-master_brief_name
+git push -f origin MDL-xxxxx-main_brief_name
 ```
 
 If an error occurs because you are still using the git protocol (read only), use this command:
@@ -273,16 +273,16 @@ After some time contributing to Moodle, you will have accumulated many branches,
 
 ```
 git fetch upstream
-git branch --merged upstream/master
+git branch --merged upstream/main
 git branch --merged upstream/MOODLE_XXX_STABLE
 ```
 
 #### Pruning local branches
 
-The `git fetch upstream` command fetches the changes from your upstream repository (remember that `git fetch` does not modify your working directory, so it is safe to run it whenever). The `git branch --merged` commands displays all branches that are merged into the Moodle's upstream `master` branch and `MOODLE_XXX_STABLE` branch, respectively. To delete these local branches, use:
+The `git fetch upstream` command fetches the changes from your upstream repository (remember that `git fetch` does not modify your working directory, so it is safe to run it whenever). The `git branch --merged` commands displays all branches that are merged into the Moodle's upstream `main` branch and `MOODLE_XXX_STABLE` branch, respectively. To delete these local branches, use:
 
 ```
-git branch -d MDL-xxxxx-master_accepted_branch
+git branch -d MDL-xxxxx-main_accepted_branch
 ```
 
 #### Pruning remote branches
@@ -292,7 +292,7 @@ A similar approach can be used to check the branches published at your origin re
 ```
 git fetch origin
 git fetch upstream
-git branch -r --merged upstream/master
+git branch -r --merged upstream/main
 git branch -r --merged upstream/MOODLE_XXX_STABLE
 ```
 
@@ -301,7 +301,7 @@ The `git fetch upstream` command makes sure that you have all your branches from
 To delete a branch on your origin repository, use:
 
 ```
-git push origin :MDL-xxxxx-master_branch_to_delete
+git push origin :MDL-xxxxx-main_branch_to_delete
 ```
 
 This syntax may look unfamiliar, however it is pretty logical. The general syntax of the `git push` command is:
@@ -359,7 +359,7 @@ Once you have acquired the code and are ready to review it, reference Moodle's [
 Rebasing is a process when you cut off the branch from its current start point and transplant it to another point. Let us assume the following history exists:
 
 ```mermaid
-%%{init: { 'gitGraph': {'mainBranchName': 'master', 'mainBranchOrder': 2 }} }%%
+%%{init: { 'gitGraph': {'mainBranchName': 'main', 'mainBranchOrder': 2 }} }%%
 gitGraph
     commit id: "D"
     commit id: "E"
@@ -367,20 +367,20 @@ gitGraph
     commit id: "A"
     commit id: "B"
     commit id: "C"
-    checkout master
+    checkout main
     commit id: "F"
     commit id: "G"
 
 ```
 
-The result of the command `git rebase master topic` would transplant the `topic` branch on top of the `master` branch and look like this:
+The result of the command `git rebase main topic` would transplant the `topic` branch on top of the `main` branch and look like this:
 
 ```mermaid
-%%{init: { 'gitGraph': {'mainBranchName': 'master', 'mainBranchOrder': 2 }} }%%
+%%{init: { 'gitGraph': {'mainBranchName': 'main', 'mainBranchOrder': 2 }} }%%
 gitGraph
     commit id: "D"
     commit id: "E"
-    checkout master
+    checkout main
     commit id: "F"
     commit id: "G"
     branch topic order: 1
@@ -393,10 +393,10 @@ gitGraph
 
 You may be asked to rebase your branch if the submitted branch was based on an outdated commit. Consider this example:
 
-On Tuesday, we create a new topic branch, forked off the upstream `master` branch. On Wednesday, the upstream `master` branch is updated with all the changes from the last integration cycle. To make our branch easier to integrate, we rebase our branch against the newly updated `master` branch.
+On Tuesday, we create a new topic branch, forked off the upstream `main` branch. On Wednesday, the upstream `main` branch is updated with all the changes from the last integration cycle. To make our branch easier to integrate, we rebase our branch against the newly updated `main` branch.
 
 ```
-git rebase master MDL-xxxxx-master_topic_branch
+git rebase main MDL-xxxxx-main_topic_branch
 ```
 
 Note that rebasing effectively rewrites the history of the branch. **Do not rebase the branch if there is a chance that somebody has already forked it and based their own branch on it.** For this reason, many Git tutorials discourage from rebasing any branch that has been published.
@@ -419,7 +419,7 @@ git rebase --continue
 
 Most bugs are fixed on each stable branch (e.g. `MOODLE_400_STABLE`, `MOODLE_311_STABLE`). If you are working on an fix based on one of these branches, it is possible you will need to prepare a patch for other affected stable branches too.
 
-In Moodle, we separately maintain the stable branches and the current development branch (master). We do not merge stable branches into the master one. Typically, the contributor prepares at least two branches: one with the fix for the affected stable branch(es), and one with the fix for the master branch.
+In Moodle, we separately maintain the stable branches and the current development branch (main). We do not merge stable branches into the main one. Typically, the contributor prepares at least two branches: one with the fix for the affected stable branch(es), and one with the fix for the main branch.
 
 Let's assume you have a patch prepared, based on `MOODLE_400_STABLE`, called `MDL-xxxxx-400_topic`. It is possible to apply this patch to other stable branches. There are a few ways we could achieve this.
 
@@ -428,18 +428,18 @@ Let's assume you have a patch prepared, based on `MOODLE_400_STABLE`, called `MD
 Let's assume we have two local Git repositories:
 
 1. `~/public_html/moodle_400` containing a local installation of Moodle 4.0, and
-2. `~/public_html/moodle_master` containing a local installation of the most recent development version of Moodle.
+2. `~/public_html/moodle_main` containing a local installation of the most recent development version of Moodle.
 
-They both use your public repository at github.com as the origin. You have a branch in `moodle_400` called `MDL-xxxxx-400_topic` that was forked off `MOODLE_400_STABLE`. It contains one commit. Now, you want to apply this commit to a new branch in `moodle_master` called `MDL-xxxxx-master_topic`.
+They both use your public repository at github.com as the origin. You have a branch in `moodle_400` called `MDL-xxxxx-400_topic` that was forked off `MOODLE_400_STABLE`. It contains one commit. Now, you want to apply this commit to a new branch in `moodle_main` called `MDL-xxxxx-main_topic`.
 
 ```
-cd ~/public_html/moodle_master
-git checkout -b MDL-xxxxx-master_topic origin/master
+cd ~/public_html/moodle_main
+git checkout -b MDL-xxxxx-main_topic origin/main
 git fetch ../moodle_400 MDL-xxxxx-400_topic
 git cherry-pick FETCH_HEAD
 ```
 
-1. The `git checkout -b MDL-xxxxx-master_topic origin/master` command creates new local branch, forked off `master`.
+1. The `git checkout -b MDL-xxxxx-main_topic origin/main` command creates new local branch, forked off `main`.
 2. The `git fetch ../moodle_400 MDL-xxxxx-400_topic` command fetches all data needed to apply the topic branch, and sets the pointer to the tip of that branch with `FETCH_HEAD` as a symbolic reference.
 3. The `git cherry-pick FETCH_HEAD` command picks the tip of the branch (the top-most commit) and tries to apply it on the current branch.
 
@@ -464,8 +464,8 @@ The `git format-patch -o .patches MOODLE_400_STABLE..MDL-xxxxx-400_topic` comman
 In this example, we will apply them to another repository.
 
 ```
-cd ~/public_html/moodle_master
-git checkout -b MDL-xxxxx-master_topic origin/master
+cd ~/public_html/moodle_main
+git checkout -b MDL-xxxxx-main_topic origin/main
 git am -3 ../moodle_400/.patches/*
 ```
 

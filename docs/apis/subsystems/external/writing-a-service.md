@@ -54,7 +54,7 @@ If _any_ group creation fails, the function will throw an exception, and no grou
 
 ## Technical specification
 
-- **the core function the external function will call**: `groups_create_group()` from [/group/lib.php](http://github.com/moodle/moodle/tree/master/moodle/group/lib.php).
+- **the core function the external function will call**: `groups_create_group()` from [/group/lib.php](http://github.com/moodle/moodle/tree/main/moodle/group/lib.php).
 - **the parameter types**: a list of object. This object are groups, with `id`/`name`/`courseid`.
 - **the returned value types**: a list of objects (groups) with their id.
 - **the user capabilities to check**: `moodle/course:managegroups`

@@ -74,7 +74,7 @@ The core API functions in `groupslib` such as `groups_get_all_groups()` and `gro
 
 ## File locations
 
-The Groups API is currently defined in [lib/grouplib.php](https://github.com/moodle/moodle/blob/master/lib/grouplib.php). This contains global functions which have the `groups_` prefix, for example: `groups_get_group()`.
+The Groups API is currently defined in [lib/grouplib.php](https://github.com/moodle/moodle/blob/main/lib/grouplib.php). This contains global functions which have the `groups_` prefix, for example: `groups_get_group()`.
 
 ## Examples
 

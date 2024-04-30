@@ -78,7 +78,7 @@ The [Backup API](./apis/subsystems/backup/index.md) defines exactly how to conve
 
 ### Cache API (cache)
 
-The [The Moodle Universal Cache (MUC)](https://docs.moodle.org/dev/The_Moodle_Universal_Cache_(MUC)) is the structure for storing cache data within Moodle. [Cache API](https://docs.moodle.org/dev/Cache_API) explains some of what is needed to use a cache in your code.
+The [The Moodle Universal Cache (MUC)](https://docs.moodle.org/dev/The_Moodle_Universal_Cache_(MUC)) is the structure for storing cache data within Moodle. [Cache API](/docs/apis/subsystems/muc/index.md) explains some of what is needed to use a cache in your code.
 
 ### Calendar API (calendar)
 

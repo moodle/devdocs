@@ -35,9 +35,9 @@ If correcting this variable would affect other parts of the code not covered by 
 
 ## Requesting CiBot checks an issue
 
-At any time a developer can add the label `cime` to an issue to request it runs it checks against it. The bot [checks for issues with the cime label](https://github.com/moodlehq/moodle-local_ci/blob/master/tracker_automations/bulk_precheck_issues/criteria/developer_request/query.sh) every 20mins and runs the checks then remove the cime label. (Note that because it removes the label, it is normal to 'create' the label).
+At any time a developer can add the label `cime` to an issue to request it runs it checks against it. The bot [checks for issues with the cime label](https://github.com/moodlehq/moodle-local_ci/blob/main/tracker_automations/bulk_precheck_issues/criteria/developer_request/query.sh) every 20mins and runs the checks then remove the cime label. (Note that because it removes the label, it is normal to 'create' the label).
 
-Any issue [submitted for peer review](https://github.com/moodlehq/moodle-local_ci/blob/master/tracker_automations/bulk_precheck_issues/criteria/awaiting_peer_review/query.sh) or [integration review](https://github.com/moodlehq/moodle-local_ci/blob/master/tracker_automations/bulk_precheck_issues/criteria/awaiting_integration/query.sh) will be checked automatically as long as it does not already have the 'ci'  label.
+Any issue [submitted for peer review](https://github.com/moodlehq/moodle-local_ci/blob/main/tracker_automations/bulk_precheck_issues/criteria/awaiting_peer_review/query.sh) or [integration review](https://github.com/moodlehq/moodle-local_ci/blob/main/tracker_automations/bulk_precheck_issues/criteria/awaiting_integration/query.sh) will be checked automatically as long as it does not already have the 'ci'  label.
 
 ## Are additional CiBot checks possible?
 

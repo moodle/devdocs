@@ -55,7 +55,7 @@ open -a /Applications/Chromium.app --args --allow-file-access-from-files --disab
 If you are using other operative system, check out [how to run chromium with flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags) in other environments.
 Depending on the version of your browser, you may get a warning message saying "You are using an unsupported command-line flag". This is expected and can safely be ignored (for development).
 
-For more info about the user data dir, please read [the official documentation](https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md).
+For more info about the user data dir, please read [the official documentation](https://chromium.googlesource.com/chromium/src/+/main/docs/user_data_dir.md).
 
 ### Creating a shortcut
 

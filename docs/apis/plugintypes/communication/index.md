@@ -153,6 +153,6 @@ All the necessary code to synchronise the room members should live here.
 
 :::info
 
-For a real plugin example, please look at the [Matrix plugin](https://github.com/moodle/moodle/tree/master/communication/provider/matrix).
+For a real plugin example, please look at the [Matrix plugin](https://github.com/moodle/moodle/tree/main/communication/provider/matrix).
 
 :::

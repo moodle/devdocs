@@ -6,7 +6,7 @@ tags:
  - Tools
 ---
 
-The `gulp push` command automatically pushes a branch to a git remote and then updates the corresponding Moodle Tracker (Jira) issue with the diff URL or a patch file, similar to `mdk push -t`. This script was developed using [mdk](https://github.com/FMCorz/mdk) as an example. It's meant to be used for `MOBILE` issues, so it will only update the "master" fields in the tracker.
+The `gulp push` command automatically pushes a branch to a git remote and then updates the corresponding Moodle Tracker (Jira) issue with the diff URL or a patch file, similar to `mdk push -t`. This script was developed using [mdk](https://github.com/FMCorz/mdk) as an example. It's meant to be used for `MOBILE` issues, so it will only update the "main" fields in the tracker.
 
 To run it, just go to the root of the project and run:
 
@@ -17,7 +17,7 @@ gulp push
 By default, running `gulp push` without any parameter will push the **current branch** to the **origin** remote. Then it will guess the issue number based on the branch name and it will update the tracker issue to include the following fields:
 
 - If it's a security issue, it will upload a patch file.
-- Otherwise it will update the fields: "Pull from Repository", "Pull Master Branch", and "Pull Master Diff URL".
+- Otherwise it will update the fields: "Pull from Repository", "Pull Main Branch", and "Pull Main Diff URL".
 
 ## Parameters
 
@@ -50,8 +50,8 @@ The script will use a file named `.moodleapp-dev-config` to store some configura
 - `tracker.url` — URL of the tracker to update. By default: [https://tracker.moodle.org/](https://tracker.moodle.org/).
 - `tracker.username` — Username to use in the tracker.
 - `tracker.fieldnames.repositoryurl` — Name of the tracker field where to put the repository URL. By default: "Pull  from Repository".
-- `tracker.fieldnames.branch` — Name of the tracker field where to put the branch name. By default: "Pull Master Branch".
-- `tracker.fieldnames.diffurl` — Name of the tracker field where to put the diff URL. By default: "Pull Master Diff URL".
+- `tracker.fieldnames.branch` — Name of the tracker field where to put the branch name. By default: "Pull Main Branch".
+- `tracker.fieldnames.diffurl` — Name of the tracker field where to put the diff URL. By default: "Pull Main Diff URL".
 - `wording.branchRegex` — Regex to use to identify the issue number based on the branch name. By default: `(MOBILE)[-\_](\[0-9]+)`. If you want to use the script to handle issues that aren't `MOBILE` you'll need to update this field. For example, if you work on 2 projects: `(MOBILE|MYPROJECT)[-\_](\[0-9]+)`.
 - `{PROJECTNAME}.repositoryUrl` — To specify the git URL where to push changes for a certain project (`{PROJECTNAME}` is the name of the project). This can be used if you work on different projects and you want to push changes to different remotes depending on the project. For example: `MOBILE.repositoryUrl: https://github.com/moodlehq/moodleapp`.
 - `{PROJECTNAME}.diffUrlTemplate` — To specify the diff URL template to use for a certain project (`{PROJECTNAME}` is the name of the project). By default: `remoteUrl + '/compare/%headcommit%...%branch%'`.

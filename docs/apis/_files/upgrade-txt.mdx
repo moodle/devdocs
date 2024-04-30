@@ -1,20 +1,20 @@
 <!-- markdownlint-disable first-line-heading -->
 Each component and subsystem may make use of an `upgrade.txt` file in the top level folder. A section title is used to identify the Moodle version where the change was introduced, and significant changes for that version relating to that component or subsystem are noted.
 
-For example, given an API change is applied for the upcoming Moodle version 4.1 which is still in the **master** branch (4.1dev), the version number on the `upgrade.txt`'s section title will be set to **4.1**.
+For example, given an API change is applied for the upcoming Moodle version 4.1 which is still in the **main** branch (4.1dev), the version number on the `upgrade.txt`'s section title will be set to **4.1**.
 
-```txt title="Example 1: Change applied to the master branch"
+```txt title="Example 1: Change applied to the main branch"
 == 4.1 ==
 An API change to empower educators!
 ```
 
 #### Changes applied to multiple branches
 
-When changes are integrated to multiple branches, for example a stable version and the master branch, then the relevant versions used to describe the change in the `upgrade.txt` file should be the next version to be released _for each branch_. The **master** branch should always use the next major version.
+When changes are integrated to multiple branches, for example a stable version and the main branch, then the relevant versions used to describe the change in the `upgrade.txt` file should be the next version to be released _for each branch_. The **main** branch should always use the next major version.
 
-For example, if a change is applied to the **MOODLE_400_STABLE** during the development of Moodle 4.0.2, and the **master** branch during the development of Moodle 4.1, then the relevant versions will be **4.0.2** and **4.1**, respectively. The section title for the **master** branch will be the same as the one in Example 1. The section title for the **MOODLE_400_STABLE** branch will indicate the next upcoming minor version (4.0.2 in this case):
+For example, if a change is applied to the **MOODLE_400_STABLE** during the development of Moodle 4.0.2, and the **main** branch during the development of Moodle 4.1, then the relevant versions will be **4.0.2** and **4.1**, respectively. The section title for the **main** branch will be the same as the one in Example 1. The section title for the **MOODLE_400_STABLE** branch will indicate the next upcoming minor version (4.0.2 in this case):
 
-```txt title="Example 2: Patch applied to master and MOODLE_400_STABLE"
+```txt title="Example 2: Patch applied to main and MOODLE_400_STABLE"
 == 4.0.2 ==
 An API change to empower educators!
 ```
@@ -23,7 +23,7 @@ An API change to empower educators!
 
 Multiple versions within the section title are **not** allowed. However, developers may note the Moodle versions that the change applies to within the upgrade note text itself.
 
-```txt title="Example 3a: master (4.1dev)"
+```txt title="Example 3a: main (4.1dev)"
 == 4.1 ==
 An API change to empower educators! (This was fixed in 4.1 and 4.0.2)
 ```
@@ -43,9 +43,9 @@ An API change to empower educators!
 When Moodle is developing two major versions in parallel, for example Moodle 3.11.0, and Moodle 4.0.0, then the
 version in the earliest of the major version development branches will be used for both branches.
 
-For example, given we are in a parallel development situation with **MOODLE_311_STABLE** (3.11dev) and **master** (4.0dev), with Moodle 3.11 as the next upcoming major Moodle version. If an API change is applied to **MOODLE_311_STABLE**, the version number on the section title will be **3.11** for both **master** and **MOODLE_400_STABLE** branches.
+For example, given we are in a parallel development situation with **MOODLE_311_STABLE** (3.11dev) and **main** (4.0dev), with Moodle 3.11 as the next upcoming major Moodle version. If an API change is applied to **MOODLE_311_STABLE**, the version number on the section title will be **3.11** for both **main** and **MOODLE_400_STABLE** branches.
 
-```txt title="Example 4a: master (4.0dev)"
+```txt title="Example 4a: main (4.0dev)"
 == 3.11 ==
 An API change to empower educators!
 ```
