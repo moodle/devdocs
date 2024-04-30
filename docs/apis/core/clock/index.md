@@ -11,7 +11,7 @@ description: Fetching the current time
 
 <Since version="4.4" issueNumber="MDL-80838" />
 
-Moodle supports use of a [PSR-20](https://php-fig.org/psr/psr20/) compatible Clock interface, which should be accessed using Dependency Injection.
+Moodle supports use of a [PSR-20](https://php-fig.org/psr/psr-20/) compatible Clock interface, which should be accessed using Dependency Injection.
 
 This should be used instead of `time()` to fetch the current time. This allows unit tests to mock time and therefore to test a variety of cases such as events happening at the same time, or setting an explicit time.
 
