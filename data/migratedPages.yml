@@ -196,6 +196,9 @@ Developer_meeting_August_2021:
 Developer_meeting_December_2021:
 - filePath: "/general/community/meetings/2021/12.md"
   slug: "/general/community/meetings/2021/12"
+Developer_meeting_February_2021:
+- filePath: "/general/community/meetings/2021/02.md"
+  slug: "/general/community/meetings/2021/02"
 Developer_meeting_February_2022:
 - filePath: "/general/community/meetings/2022/02.md"
   slug: "/general/community/meetings/2022/02"

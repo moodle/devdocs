@@ -46,7 +46,7 @@ The agenda is not confirmed yet. If there are any topics that you would like to 
 - [Developer meeting August 2021](./2021/08.md)
 - [Developer meeting June 2021](./2021/06.md)
 - [Developer meeting April 2021](./2021/04.md)
-- [Developer meeting February 2021](https://docs.moodle.org/dev/Developer_meeting_February_2021)
+- [Developer meeting February 2021](./2021/02.md)
 
 ### 2020
 
