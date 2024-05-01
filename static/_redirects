@@ -46,7 +46,12 @@
 # MOBILE-4270
 /general/app/development/release-process /general/development/process-moodleapp/release
 
-
+# Issue #998
+# Redirect /apis/plugintypes/tiny/legacy to /apis/plugintypes/tiny
+/docs/apis/plugintypes/tiny/legacy /docs/apis/plugintypes/tiny
+/docs/4.4/apis/plugintypes/tiny/legacy /docs/apis/plugintypes/tiny
+/docs/4.3/apis/plugintypes/tiny/legacy /docs/apis/plugintypes/tiny
+/docs/4.2/apis/plugintypes/tiny/legacy /docs/apis/plugintypes/tiny
 
 ############################################################################
 # Splats should go later for performance
