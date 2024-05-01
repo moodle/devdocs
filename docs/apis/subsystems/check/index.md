@@ -215,7 +215,7 @@ class foobar_result extends \core\check\result {
 
 For a real example see:
 
-https://github.com/moodle/moodle/blob/master/lib/classes/check/access/riskxss_result.php
+https://github.com/moodle/moodle/blob/main/lib/classes/check/access/riskxss_result.php
 
 ### Asynchronous checks
 

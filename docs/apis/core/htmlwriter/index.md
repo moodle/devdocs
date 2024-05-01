@@ -16,7 +16,7 @@ Please consider using [templates](../../../guides/templates/index.md) as an alte
 
 :::note
 
-There is no documentation for most of this class. Please read [HTML Writer Class Reference](https://phpdoc.moodledev.io/master/d4/d78/classhtml__writer.html) for further information.
+There is no documentation for most of this class. Please read [HTML Writer Class Reference](https://phpdoc.moodledev.io/main/d4/d78/classhtml__writer.html) for further information.
 
 :::
 

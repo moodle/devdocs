@@ -27,7 +27,7 @@ Moodle has a fine grained capabilities and roles system for providing access con
 
 However if a penetration test finds that actions can be taken which expose an XSS risk, **AND** that the test user has **NOT** been granted capabilities that grant them an explicit XSS risk, then there is a real issue and either the XSS risk should be closed, or it should be disclosed in the definition of that capability.
 
-The most trivial example would be the ability to [edit `site:config`](https://github.com/moodle/moodle/blob/master/lib/db/access.php#L58-L60) which has the RISK_XSS:
+The most trivial example would be the ability to [edit `site:config`](https://github.com/moodle/moodle/blob/main/lib/db/access.php#L58-L60) which has the RISK_XSS:
 
 ```php
     'moodle/site:config' => [

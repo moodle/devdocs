@@ -67,7 +67,7 @@ Testing instructions are clear, concise, complete, and accurate. Where possible 
 ## Differences in test process during continuous integration periods
 
 During [continuous integration](../integration/index.md#during-continuous-integrationfreezeqa-period) the schedule is changed to allow faster iteration and for bug fixes to be applied more rapidly than the usual weekly cycle. The goal during this period is ...
-goal during this period is to release a new version of master multiple times per week. We try to keep the process more flexible during this time in order that developers who have less pressing issues than others can take the load off those concentrating on big fixes. It works best if we work together to help each other out.
+goal during this period is to release a new version of main multiple times per week. We try to keep the process more flexible during this time in order that developers who have less pressing issues than others can take the load off those concentrating on big fixes. It works best if we work together to help each other out.
 
 :::warning
 Priority is given to testing issues to ensure we can release regularly

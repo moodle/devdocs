@@ -166,11 +166,11 @@ In Moodle core, one of the standard simple rules is not to make any database cha
 
 :::warning Advanced
 
-Suppose, in order to fix a bug, you need to make a database change in the Moodle 4.0 stable branch (and the master branch targetting Moodle 4.1). The root of the problem is that people may upgrade their Moodle in three different ways, which
+Suppose, in order to fix a bug, you need to make a database change in the Moodle 4.0 stable branch (and the main branch targetting Moodle 4.1). The root of the problem is that people may upgrade their Moodle in three different ways, which
 
 - Upgrade from \<=4.0.2 to 4.0.3 - this executes the upgrade script on the 4.0 branch.
-- Upgrade from \<=4.0.2 directly to >=4.1 - this executes the upgrade script on the master branch.
-- Upgrade from 4.0.3 to >=4.1 - in this case, you must ensure that the upgrade on master is not executed.
+- Upgrade from \<=4.0.2 directly to >=4.1 - this executes the upgrade script on the main branch.
+- Upgrade from 4.0.3 to >=4.1 - in this case, you must ensure that the upgrade on main is not executed.
 
 The normal way to do this is ensure that your database upgrade is idempotent. That is, it does not matter if you do it twice. So for example, instead of doing
 

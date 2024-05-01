@@ -31,7 +31,7 @@ php composer.phar install
 
 ## How to prepare and submit composer changes
 
-There are a number of situations where we need to update the bundled [composer.json](https://github.com/moodle/moodle/blob/master/composer.json)] in core. When we upgrade, for a given branch, [the phpunit](https://tracker.moodle.org/browse/MDL-71036) or [the behat-extension](https://tracker.moodle.org/browse/MDL-70637) versions... we also have to update the [composer.lock](https://github.com/moodle/moodle/blob/master/composer.lock) file, in order to guarantee that all the tests will run in a stable, verified environment.
+There are a number of situations where we need to update the bundled [composer.json](https://github.com/moodle/moodle/blob/main/composer.json)] in core. When we upgrade, for a given branch, [the phpunit](https://tracker.moodle.org/browse/MDL-71036) or [the behat-extension](https://tracker.moodle.org/browse/MDL-70637) versions... we also have to update the [composer.lock](https://github.com/moodle/moodle/blob/main/composer.lock) file, in order to guarantee that all the tests will run in a stable, verified environment.
 
 As far as there are a number of variables affecting how that lock file will be generated, here there are some standard steps to follow, in order to guarantee that any change to composer will be always applied in the same, standard and verified way.
 

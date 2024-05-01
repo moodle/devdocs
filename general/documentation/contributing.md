@@ -258,7 +258,7 @@ The `<area>` tag is primarily used for `docs` changes to describe the section of
 Some of this documentation related to a specific version of Moodle:
 
 - `general` - This section is not documented at all
-- `docs` - Relates to the current Moodle development branch, known as `master`
+- `docs` - Relates to the current Moodle development branch, known as `main`
 - `versioned_docs/version-X.Y` - Related to a specific major version of Moodle
 
 If you are documenting a feature which should be documented across older versions, we request that you backport it to the relevant stable versions.

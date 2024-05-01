@@ -15,7 +15,7 @@ Our general policy is as follows:
 - Bug fixes will be backported to all (and only to) supported stable branches.
   - When fixing a bug, please provide a fix for all supported stable branches.
   - If a fix doesn't make sense to be backported to every branch, please make it clear in the issue.
-- Improvements or new features will only land in master.
+- Improvements or new features will only land in main.
 
 ## Process for requesting a non bug-fix backport
 

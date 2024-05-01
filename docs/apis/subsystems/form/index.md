@@ -209,8 +209,8 @@ $mform->addElement(
 
 For a real-life example, see:
 
-- [Custom element definition](https://github.com/moodle/moodle/blob/master/admin/tool/lp/classes/course_competency_rule_form_element.php)
-- [Custom element usage](https://github.com/moodle/moodle/blob/master/admin/tool/lp/lib.php#L157-L161)
+- [Custom element definition](https://github.com/moodle/moodle/blob/main/admin/tool/lp/classes/course_competency_rule_form_element.php)
+- [Custom element usage](https://github.com/moodle/moodle/blob/main/admin/tool/lp/lib.php#L157-L161)
 
 ## Commonly used functions
 
