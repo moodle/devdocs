@@ -42,7 +42,7 @@ The agenda is not confirmed yet. If there are any topics that you would like to 
 ### 2021
 
 - [Developer meeting December 2021](./2021/12.md)
-- [Developer meeting October 2021](https://docs.moodle.org/dev/Developer_meeting_October_2021)
+- [Developer meeting October 2021](./2021/10.md)
 - [Developer meeting August 2021](https://docs.moodle.org/dev/Developer_meeting_August_2021)
 - [Developer meeting June 2021](https://docs.moodle.org/dev/Developer_meeting_June_2021)
 - [Developer meeting April 2021](https://docs.moodle.org/dev/Developer_meeting_April_2021)
