@@ -50,7 +50,7 @@ The agenda is not confirmed yet. If there are any topics that you would like to 
 
 ### 2020
 
-- [Developer meeting December 2020](https://docs.moodle.org/dev/Developer_meeting_December_2020)
+- [Developer meeting December 2020](./2020/12.md)
 - [Developer meeting October 2020](https://docs.moodle.org/dev/Developer_meeting_October_2020)
 - [Developer meeting August 2020](https://docs.moodle.org/dev/Developer_meeting_August_2020)
 - [Developer meeting June 2020](https://docs.moodle.org/dev/Developer_meeting_June_2020)
