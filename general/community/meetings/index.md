@@ -54,7 +54,7 @@ The agenda is not confirmed yet. If there are any topics that you would like to 
 - [Developer meeting October 2020](./2020/10.md)
 - [Developer meeting August 2020](./2020/08.md)
 - [Developer meeting June 2020](./2020/06.md)
-- [Developer meeting April 2020](https://docs.moodle.org/dev/Developer_meeting_April_2020)
+- [Developer meeting April 2020](./2020/04.md)
 - [Developer meeting January 2020](https://docs.moodle.org/dev/Developer_meeting_January_2020)
 
 ### 2019
