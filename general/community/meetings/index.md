@@ -21,23 +21,23 @@ The agenda is not confirmed yet. If there are any topics that you would like to 
 
 ### 2024
 
-- [Developer meeting February 2024](./202402.md)
-- [Developer meeting March 2024](./202403.md)
+- [Developer meeting February 2024](./2024/02.md)
+- [Developer meeting March 2024](./2024/03.md)
 
 ### 2023
 
-- [Developer meeting November 2023](./202311.md)
-- [Developer meeting August 2023](./202308.md)
-- [Developer meeting May 2023](./202305.md)
-- [Developer meeting March 2023](./202303.md)
-- [Developer meeting January 2023](./202301.md)
+- [Developer meeting November 2023](./2023/11.md)
+- [Developer meeting August 2023](./2023/08.md)
+- [Developer meeting May 2023](./2023/05.md)
+- [Developer meeting March 2023](./2023/03.md)
+- [Developer meeting January 2023](./2023/01.md)
 
 ### 2022
 
-- [Developer meeting October 2022](./202210.md)
-- [Developer meeting June 2022](./202206.md)
-- [Developer meeting April 2022](./202204.md)
-- [Developer meeting February 2022](./202202.md)
+- [Developer meeting October 2022](./2022/10.md)
+- [Developer meeting June 2022](./2022/06.md)
+- [Developer meeting April 2022](./2022/04.md)
+- [Developer meeting February 2022](./2022/02.md)
 
 ### 2021
 

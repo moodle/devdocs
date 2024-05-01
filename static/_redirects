@@ -53,6 +53,17 @@
 /docs/4.3/apis/plugintypes/tiny/legacy /docs/apis/plugintypes/tiny
 /docs/4.2/apis/plugintypes/tiny/legacy /docs/apis/plugintypes/tiny
 
+# Issue #999
+/general/community/meetings/202403 /general/community/meetings/2024/03
+/general/community/meetings/202402 /general/community/meetings/2024/02
+/general/community/meetings/202311 /general/community/meetings/2023/11
+/general/community/meetings/202308 /general/community/meetings/2023/08
+/general/community/meetings/202305 /general/community/meetings/2023/05
+/general/community/meetings/202303 /general/community/meetings/2023/03
+/general/community/meetings/202301 /general/community/meetings/2023/01
+/general/community/meetings/202210 /general/community/meetings/2022/10
+/general/community/meetings/202206 /general/community/meetings/2022/06
+
 ############################################################################
 # Splats should go later for performance
 ############################################################################
