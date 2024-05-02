@@ -62,7 +62,7 @@ The agenda is not confirmed yet. If there are any topics that you would like to 
 - [GlobalMoot DevJam Unconference November 2019](https://docs.moodle.org/dev/GlobalMoot_DevJam_Unconference_November_2019)
 - [Developer meeting October 2019](./2019/10.md)
 - [Developer meeting July 2019](./2019/07.md)
-- [Developer meeting May 2019](https://docs.moodle.org/dev/Developer_meeting_May_2019)
+- [Developer meeting May 2019](./2019/05.md)
 - [Developer meeting April 2019](https://docs.moodle.org/dev/Developer_meeting_April_2019)
 - [Developer meeting March 2019](https://docs.moodle.org/dev/Developer_meeting_March_2019)
 - [Developer meeting February 2019](https://docs.moodle.org/dev/Developer_meeting_February_2019)
