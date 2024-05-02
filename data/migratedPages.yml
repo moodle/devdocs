@@ -312,6 +312,9 @@ Git_for_developers:
 Github_actions_integration:
 - filePath: "/general/development/tools/gha.md"
   slug: "/general/development/tools/gha"
+GlobalMoot_DevJam_Unconference_November_2019:
+- filePath: "/general/community/meetings/2018/global_devjam.md"
+  slug: "/general/community/meetings/2018/global_devjam"
 Groups:
 - filePath: "/docs/apis/subsystems/group/index.md"
   slug: "/docs/apis/subsystems/group/"
