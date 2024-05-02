@@ -70,7 +70,7 @@ The agenda is not confirmed yet. If there are any topics that you would like to 
 
 ### 2018
 
-- [Developer meeting December 2018](https://docs.moodle.org/dev/Developer_meeting_December_2018)
+- [Developer meeting December 2018](./2018/12.md)
 - [Developer meeting November 2018](./2018/11.md)
 - [Developer meeting July 2018](./2018/07.md)
 
