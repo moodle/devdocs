@@ -1491,7 +1491,7 @@ Navigation_API:
 New_docs_version_process:
 - filePath: "/general/development/process/release/newuserdocs.md"
   slug: "/general/development/process/release/newuserdocs"
-New_features_ideas:
+New_feature_ideas:
 - filePath: "/general/community/contribute.md"
   slug: "/general/community/contribute"
 Output_API:
