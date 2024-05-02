@@ -76,10 +76,9 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Text filters](./filter/index.md) | filter | /filter | Automatically convert, highlight, and transmogrify text posted into Moodle. | 1.4+ |
 | [Editors](https://docs.moodle.org/dev/Editors) | editor | /lib/editor | Alternative text editors for editing content | 2.0+ |
 | [Atto editor plugins](./atto/index.md) | atto | /lib/editor/atto/plugins | Extra functionality for the Atto text editor | 2.7+ |
-| [TinyMCE editor plugins](./tiny/legacy.md) | tinymce | /lib/editor/tinymce/plugins | Extra functionality for the TinyMCE text editor. | 2.4+ |
 | [Enrolment plugins](./enrol/index.md) | enrol | /enrol | Ways to control who is enrolled in courses | 2.0+ |
 | [Authentication plugins](https://docs.moodle.org/dev/Authentication_plugins) | auth | /auth | Allows connection to external sources of authentication | 2.0+ |
-| [Admin tools](https://docs.moodle.org/dev/Admin_tools) | tool | /admin/tool | Provides utility scripts useful for various site administration and maintenance tasks | 2.2+ |
+| [Admin tools](/general/projects/api/admin-tools) | tool | /admin/tool | Provides utility scripts useful for various site administration and maintenance tasks | 2.2+ |
 | [Log stores](./logstore/index.md) | logstore | /admin/tool/log/store | Event logs storage back-ends | 2.7+ |
 | [Availability conditions](./availability/index.md) | availability | /availability/condition | Conditions to restrict user access to activities and sections. | 2.7+ |
 | [Calendar types](https://docs.moodle.org/dev/Calendar_types) | calendartype | /calendar/type | Defines how dates are displayed throughout Moodle | 2.6+ |
