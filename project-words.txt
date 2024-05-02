@@ -71,6 +71,7 @@ RDBMS
 SIGINT
 SIGTERM
 Soulier
+Stene
 TCPDF
 TODO
 ToBic
