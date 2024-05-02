@@ -64,7 +64,7 @@ The agenda is not confirmed yet. If there are any topics that you would like to 
 - [Developer meeting July 2019](./2019/07.md)
 - [Developer meeting May 2019](./2019/05.md)
 - [Developer meeting April 2019](./2019/04.md)
-- [Developer meeting March 2019](https://docs.moodle.org/dev/Developer_meeting_March_2019)
+- [Developer meeting March 2019](./2019/03.md)
 - [Developer meeting February 2019](https://docs.moodle.org/dev/Developer_meeting_February_2019)
 - [Developer meeting January 2019](https://docs.moodle.org/dev/Developer_meeting_January_2019)
 
