@@ -278,7 +278,7 @@ define('TEST_EXTERNAL_FILES_HTTP_URL', 'http://localhost/moodle-exttests');
 ## Writing new tests
 
 - read [official PHPUnit online documentation](https://docs.phpunit.de/en/9.6/)
-- see [Writing PHPUnit tests](https://docs.moodle.org/dev/Writing_PHPUnit_tests)
+- see [Writing PHPUnit tests](/general/development/tools/phpunit/write)
 
 ## PHPUnit support in IDEs
 
