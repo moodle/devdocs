@@ -13,6 +13,9 @@ Acceptance_testing/Browsers:
 Acceptance_testing/Browsers/Working_combinations_of_OS+Browser+selenium:
 - filePath: "/general/development/tools/behat/browsers/supportedbrowsers.md"
   slug: "/general/development/tools/behat/browsers/supportedbrowsers"
+Acceptance_testing/Contributing_automated_tests:
+- filePath: "/general/development/process/testing/qa.md"
+  slug: "/general/development/process/testing/qa#automating-a-test"
 Acceptance_testing_for_the_Moodle_App:
 - filePath: "/general/app/development/testing/acceptance-testing.md"
   slug: "/general/app/development/testing/acceptance-testing"
