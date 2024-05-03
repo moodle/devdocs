@@ -28,6 +28,7 @@ Filepool
 Gapfill
 Gifreu
 GSOC
+Henrick
 IDEs
 IDOR
 IMSCP
@@ -70,6 +71,7 @@ RDBMS
 SIGINT
 SIGTERM
 Soulier
+Stene
 TCPDF
 TODO
 ToBic

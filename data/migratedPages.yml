@@ -184,12 +184,78 @@ Designing_usable_forms:
 Developer_FAQ:
 - filePath: "/general/development/abc/faq.md"
   slug: "/general/development/abc/faq"
+Developer_meeting_April_2019:
+- filePath: "/general/community/meetings/2019/04.md"
+  slug: "/general/community/meetings/2019/04"
+Developer_meeting_April_2020:
+- filePath: "/general/community/meetings/2020/04.md"
+  slug: "/general/community/meetings/2020/04"
+Developer_meeting_April_2021:
+- filePath: "/general/community/meetings/2021/04.md"
+  slug: "/general/community/meetings/2021/04"
 Developer_meeting_April_2022:
-- filePath: "/general/community/meetings/202204.md"
-  slug: "/general/community/meetings/202204"
+- filePath: "/general/community/meetings/2022/04.md"
+  slug: "/general/community/meetings/2022/04"
+Developer_meeting_August_2020:
+- filePath: "/general/community/meetings/2020/08.md"
+  slug: "/general/community/meetings/2020/08"
+Developer_meeting_August_2021:
+- filePath: "/general/community/meetings/2021/08.md"
+  slug: "/general/community/meetings/2021/08"
+Developer_meeting_December_2018:
+- filePath: "/general/community/meetings/2018/12.md"
+  slug: "/general/community/meetings/2018/12"
+Developer_meeting_December_2020:
+- filePath: "/general/community/meetings/2020/12.md"
+  slug: "/general/community/meetings/2020/12"
+Developer_meeting_December_2021:
+- filePath: "/general/community/meetings/2021/12.md"
+  slug: "/general/community/meetings/2021/12"
+Developer_meeting_February_2019:
+- filePath: "/general/community/meetings/2019/02.md"
+  slug: "/general/community/meetings/2019/02"
+Developer_meeting_February_2021:
+- filePath: "/general/community/meetings/2021/02.md"
+  slug: "/general/community/meetings/2021/02"
 Developer_meeting_February_2022:
-- filePath: "/general/community/meetings/202202.md"
-  slug: "/general/community/meetings/202202"
+- filePath: "/general/community/meetings/2022/02.md"
+  slug: "/general/community/meetings/2022/02"
+Developer_meeting_January_2019:
+- filePath: "/general/community/meetings/2019/01.md"
+  slug: "/general/community/meetings/2019/01"
+Developer_meeting_January_2020:
+- filePath: "/general/community/meetings/2020/01.md"
+  slug: "/general/community/meetings/2020/01"
+Developer_meeting_July_2018:
+- filePath: "/general/community/meetings/2018/07.md"
+  slug: "/general/community/meetings/2018/07"
+Developer_meeting_July_2019:
+- filePath: "/general/community/meetings/2019/07.md"
+  slug: "/general/community/meetings/2019/07"
+Developer_meeting_June_2020:
+- filePath: "/general/community/meetings/2020/06.md"
+  slug: "/general/community/meetings/2020/06"
+Developer_meeting_June_2021:
+- filePath: "/general/community/meetings/2021/06.md"
+  slug: "/general/community/meetings/2021/06"
+Developer_meeting_March_2019:
+- filePath: "/general/community/meetings/2019/03.md"
+  slug: "/general/community/meetings/2019/03"
+Developer_meeting_May_2019:
+- filePath: "/general/community/meetings/2019/05.md"
+  slug: "/general/community/meetings/2019/05"
+Developer_meeting_November_2018:
+- filePath: "/general/community/meetings/2018/11.md"
+  slug: "/general/community/meetings/2018/11"
+Developer_meeting_October_2019:
+- filePath: "/general/community/meetings/2019/10.md"
+  slug: "/general/community/meetings/2019/10"
+Developer_meeting_October_2020:
+- filePath: "/general/community/meetings/2020/10.md"
+  slug: "/general/community/meetings/2020/10"
+Developer_meeting_October_2021:
+- filePath: "/general/community/meetings/2021/10.md"
+  slug: "/general/community/meetings/2021/10"
 Developer_meetings:
 - filePath: "/general/community/meetings/index.md"
   slug: "/general/community/meetings"
@@ -246,6 +312,9 @@ Git_for_developers:
 Github_actions_integration:
 - filePath: "/general/development/tools/gha.md"
   slug: "/general/development/tools/gha"
+GlobalMoot_DevJam_Unconference_November_2019:
+- filePath: "/general/community/meetings/2018/global_devjam.md"
+  slug: "/general/community/meetings/2018/global_devjam"
 Groups:
 - filePath: "/docs/apis/subsystems/group/index.md"
   slug: "/docs/apis/subsystems/group/"
