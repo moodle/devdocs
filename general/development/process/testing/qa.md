@@ -232,6 +232,21 @@ To create a new QA test:
 
 :::
 
+## Automating a test
+
+1. Choose a test from the list [MDLQA tests with label mdlqa_conversion](https://tracker.moodle.org/issues/?jql=project%20%3D%20MDLQA%20AND%20labels%20%3D%20mdlqa_conversion%20and%20status%20%3D%20Open).
+1. Create a new MDL issue with summary `Automate MDLQA-wxyz` and component `Automated functional tests` and any MDLQA component such as `Forum` which is also an MDL component.
+1. Add the `mdlqa_conversion` label to the new MDL issue
+1. Link to the MDLQA test by selecting `Will help resolve` as the link type.
+1. Follow the instructions provided in the guide Writing acceptance tests.
+1. Include `MDLQA-wxyz` and a short description of what is being automated to the commit message/s where the .feature files are added/edited.
+
+:::info
+
+When a test is automated, it needs to be moved from MDLQA-1 to MDLQA-5249.
+
+:::
+
 ## Feedback
 
 Feedback on all aspects of our QA testing process is welcome.
