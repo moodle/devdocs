@@ -15,7 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const nextVersion = '4.4';
+const nextVersion = '4.5';
 const nextLTSVersion = '4.5';
 const nextVersionRoot = `/docs/${nextVersion}`;
 

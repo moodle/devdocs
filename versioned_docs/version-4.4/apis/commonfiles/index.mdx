@@ -1,0 +1,164 @@
+---
+title: Common files
+tags:
+  - Plugins
+  - API
+  - Subsystem
+---
+
+import {
+    AmdDir,
+    BackupDir,
+    CLIDir,
+    Changes,
+    ClassesDir,
+    DbAccessPHP,
+    DbEventsPHP,
+    DbInstallPHP,
+    DbInstallXML,
+    DbMessagesPHP,
+    DbRenamedclassesPHP,
+    DbServicesPHP,
+    DbTasksPHP,
+    DbUninstallPHP,
+    DbUpgradePHP,
+    EnvironmentXML,
+    Lang,
+    Lib,
+    LocalLib,
+    PixDir,
+    Readme,
+    ReadmeMoodleTXT,
+    SettingsPHP,
+    StylesCSS,
+    ThirdpartylibsXML,
+    UpgradeTXT,
+    VersionPHP,
+    YUIDir,
+} from '../_files';
+
+<!-- markdownlint-disable MD033/no-inline-html -->
+
+This page describes the common files which may be present in any Moodle subsystem or [plugin type](../plugintypes/index.md). Some of these files are mandatory and __must__ exist within a component, whilst others are optional.
+
+### version.php
+
+<VersionPHP />
+
+### lang/en/plugintype_pluginname.php
+
+import extraLangDescription from '../_files/lang-extra.md';
+
+<Lang extraDescription={extraLangDescription} />
+
+### lib.php
+
+<Lib />
+
+### locallib.php
+
+<LocalLib />
+
+### db/install.xml
+
+<DbInstallXML />
+
+### db/upgrade.php
+
+<DbUpgradePHP />
+
+### db/access.php
+
+<DbAccessPHP />
+
+### db/install.php
+
+<DbInstallPHP />
+
+### db/uninstall.php
+
+<DbUninstallPHP />
+
+### db/events.php
+
+<DbEventsPHP />
+
+### db/messages.php
+
+<DbMessagesPHP />
+
+### db/services.php
+
+<DbServicesPHP />
+
+### db/tasks.php
+
+<DbTasksPHP />
+
+### db/renamedclasses.php
+
+<DbRenamedclassesPHP />
+
+### classes/
+
+<ClassesDir />
+
+### cli/
+
+<CLIDir />
+
+### settings.php
+
+<SettingsPHP />
+
+### amd/
+
+<AmdDir />
+
+### yui/
+
+<YUIDir />
+
+### backup/
+
+<BackupDir />
+
+### styles.css
+
+<StylesCSS />
+
+### pix/icon.svg
+
+<PixDir />
+
+### thirdpartylibs.xml
+
+<ThirdpartylibsXML />
+
+### readme_moodle.txt
+
+<ReadmeMoodleTXT />
+
+### upgrade.txt
+
+<UpgradeTXT />
+
+### environment.xml
+
+<EnvironmentXML />
+
+### README
+
+<Readme />
+
+### CHANGES
+
+<Changes />
+
+## See also
+
+- [Moodle architecture](https://docs.moodle.org/dev/Moodle_architecture) - general overview of Moodle code architecture
+- [Plugin types](../plugintypes/index.md) - list of all supported plugin types
+- [Moodle plugins directory](https://moodle.org/plugins/) - repository of contributed plugins for Moodle
+- [Moodle plugin skeleton generator](https://moodle.org/plugins/tool_pluginskel) - allows to quickly generate code skeleton for a new plugin
+- [Checklist for plugin contributors](/general/community/plugincontribution/checklist) - read before submitting a plugin

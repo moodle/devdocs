@@ -20,6 +20,7 @@ import Versions from './versions.json';
 import MoodleBannerRemark from './src/remark/moodleBanner.js';
 import TrackerLinksRemark from './src/remark/trackerLinks.js';
 import UnversionedDocsLinksRemark from './src/remark/unversionedDocsLinks.js';
+import * as nextVersion from './nextVersion.js';
 
 // eslint-disable global-require
 
@@ -32,7 +33,7 @@ const versionConfig = Object.fromEntries(Versions.map((version) => [version, {
 versionConfig.current = {
     label: 'main',
     banner: 'none',
-    path: '4.4',
+    path: nextVersion.nextVersion,
 };
 
 // Share the remarkPlugins between all presets.
