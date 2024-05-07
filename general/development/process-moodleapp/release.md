@@ -17,7 +17,7 @@ tags:
 | 4. | Add the release notes in the release issue created (search for the [release_notes tag](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20labels%20%3D%20release_notes)). Ask someone from the documentation team to review the release notes. | Developer |
 | 5. | Contact the marketing team announcing the new release and highlights. | Team Lead |
 | 6. | Add new QA tests to the `apps_test` site. New QA tests should be labeled with [qa_test_required](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20resolution%20in%20(Unresolved%2C%20Fixed)%20AND%20labels%20%3D%20qa_test_required%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC), remove that label once they are added to the site. | Tester |
-| 7. | Complete all TODOs related with the upcoming release, which are marked in code with a comment starting with `@todo [version-number]` (for example, before releasing 4.1 we'd search for comments starting with `@todo [4.1]`) | Developer |
+| 7. | Complete all TODOs related with the upcoming release, which are marked in code with a comment starting with `@todo {version-number}` (for example, before releasing 4.1 we'd search for comments starting with `@todo 4.1`) | Developer |
 | 8. | Update npm dependencies in the `main` branch, and run `npm audit` to ensure all the dependencies are OK. Also check github vulnerabilities report. | Developer |
 | 9. | **Start testing** | Tester |
 
