@@ -31,6 +31,7 @@ export interface versionInfo {
 
 export interface majorVersionData {
     name: string,
+    codeFreezeDate?: string,
     releaseDate: string,
     generalEndDate: string,
     securityEndDate: string,

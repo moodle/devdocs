@@ -3,6 +3,7 @@
     "versions": [
         {
             "name": "4.5",
+            "codeFreezeDate": "26 August 2024",
             "releaseDate": "7 October 2024",
             "generalEndDate": "6 October 2025",
             "securityEndDate": "6 October 2027",
