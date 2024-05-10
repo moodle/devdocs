@@ -20,3 +20,7 @@ This documentation is version-specific and includes a range of useful guides and
 - You may want to read the [Release notes](/general/releases/4.4) for Moodle 4.4
 
 :::
+
+import ReleaseStateSummary from '@site/src/components/ReleaseStateSummary';
+
+<ReleaseStateSummary releaseName="4.4" />

@@ -20,3 +20,7 @@ This documentation is version-specific and includes a range of useful guides and
 {/*- You may want to read the [Release notes](/general/releases/4.5) for Moodle 4.5 */}
 
 :::
+
+import ReleaseStateSummary from '@site/src/components/ReleaseStateSummary';
+
+<ReleaseStateSummary releaseName="4.5" />

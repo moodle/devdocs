@@ -20,3 +20,7 @@ This documentation is version-specific and includes a range of useful guides and
 - Interested in supporting the Moodle App in your plugins? Read the [Moodle App documentation](/general/app)
 
 :::
+
+import ReleaseStateSummary from '@site/src/components/ReleaseStateSummary';
+
+<ReleaseStateSummary releaseName="4.3" />
