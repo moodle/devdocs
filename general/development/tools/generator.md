@@ -58,3 +58,9 @@ To execute the behat generators via CLI, you can use the following command:
 ```bash
 php admin/tool/generator/cli/runtestscenario.php --feature=/path/to/some/testing/scenario.feature
 ```
+
+:::tip Example
+
+Some example Behat generator files can be found in [`admin/tool/generator/tests/fixtures/`](https://github.com/moodle/moodle/blob/main/admin/tool/generator/tests/fixtures/). For instance, [`testscenario/scenario.feature`](https://github.com/moodle/moodle/blob/main/admin/tool/generator/tests/fixtures/testscenario/scenario.feature) creates a course with two assignment activities and enrols one teacher along with five students.
+
+:::
