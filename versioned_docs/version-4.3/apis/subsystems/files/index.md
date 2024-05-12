@@ -382,7 +382,7 @@ If a file is to be moved to a different context, file area, or item id then you 
 ```php title="Move a file to a different file area"
 $fs = get_file_storage();
 $filerecord = [
-  'contextid'    => $file->get_contextid()
+  'contextid'    => $file->get_contextid(),
   'component'    => $file->get_component(),
   'filearea'     => 'newfilearea',
   'itemid'       => 0,
