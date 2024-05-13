@@ -24,6 +24,9 @@
                 "releaseDate": {
                     "type": "string"
                 },
+                "codeFreezeDate": {
+                    "type": "string"
+                },
                 "generalEndDate": {
                     "type": "string"
                 },

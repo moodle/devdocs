@@ -176,6 +176,7 @@ config.MD033 = {
         "DbAccessPHP",
         "SettingsPHP",
         "LocalLib",
+        "ReleaseStateSummary",
     ]
 };
 
