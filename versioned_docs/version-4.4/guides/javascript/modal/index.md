@@ -238,7 +238,7 @@ For older versions of Moodle, refer to the [Moodle 4.2 documentation](/versioned
 ```javascript title="mod/example/amd/src/my_modal.js"
 import Modal from 'core/modal';
 
-export default MyModal extends Modal {
+export default class MyModal extends Modal {
     static TYPE = "mod_example/my_modal";
     static TEMPLATE = "mod_example/my_modal";
 }
@@ -294,7 +294,7 @@ When creating your own modal type, you may wish to override the standard configu
 ```javascript title="Overriding standard options"
 import Modal from 'core/modal';
 
-export default MyModal extends Modal {
+export default class MyModal extends Modal {
     static TYPE = "mod_example/my_modal";
     static TEMPLATE = "mod_example/my_modal";
 
