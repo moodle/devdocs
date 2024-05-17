@@ -47,6 +47,27 @@ Please note that the same limitations regarding access to the Database, Session,
 
 :::
 
+#### Autoloading legacy classes
+
+<Since version="4.5" issueNumber="MDL-81919" />
+
+The Moodle class autoloader is now able to load legacy classes defined in the relevant `db/legacyclasses.php`. Files should only contain a single class.
+
+```php title="Example entry in lib/db/legacyclasses.php"
+$legacyclasses = [
+    // The legacy \moodle_exception class can be loaded from lib/classes/exception/moodle_exception.php.
+    \moodle_exception::class => 'exception/moodle_exception.php',
+
+    // The legacy \cache class can be loaded from cache/classes/cache.php.
+    \cache::class => [
+        'core_cache',
+        'cache.php',
+    ],
+];
+```
+
+See MDL-81919 for further information on the rationale behind this change.
+
 ### SMS API
 
 A new SMS API was introduced. See the [SMS API documentation](./apis/subsystems/sms/index.md) for more information.

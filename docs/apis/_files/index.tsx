@@ -26,6 +26,7 @@ import DbInstallPHP from './db-install-php';
 import DbInstallXML from './install-xml';
 import DbMessagesPHP from './db-messages-php';
 import DbMobilePHP from './db-mobile-php';
+import DbLegacyclassesPHP from './db-legacyclasses-php';
 import DbRenamedclassesPHP from './db-renamedclasses-php';
 import DbServicesPHP from './db-services-php';
 import DbTasksPHP from './db-tasks-php';
@@ -57,6 +58,7 @@ export {
     DbInstallXML,
     DbMessagesPHP,
     DbMobilePHP,
+    DbLegacyclassesPHP,
     DbRenamedclassesPHP,
     DbServicesPHP,
     DbTasksPHP,
