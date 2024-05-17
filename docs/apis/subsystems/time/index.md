@@ -5,76 +5,131 @@ tags:
   - Time
 ---
 
-Internally Moodle always stores all times in unixtime format (number of seconds since epoch) which is independent of timezones.
+Internally Moodle always stores all times in unixtime format, which is a format independent of timezones.
 
-The Time API is used to display proper date-time depending on user or site timezones.
+The Time API is then used to display the correct date and time depending on user and site timezones.
 
-## Functions
+:::tip
 
-There is a class in Moodle to handle most needs of working with times. There are 2 cases to consider when working with time:
+The Unix Time format is defined as the number of seconds since the Unix epoch, which began on January 1 1970 at 00:00:00 UTC.
 
-System Time
-
-This is when you are dealing with dates on the server e.g. executing scheduled tasks, performing background tasks - anything which does not depend on the timezone of any specific user.
-
-User Time
-
-This is when you are manipulating dates and times and you need to display them to the user in their current timezone (which may be different for each user).
-
-The main API for time is in the class "core_date" which will give you php DateTimeZone objects for either user time or server time as needed. You can then use the php datetime classes to manipulate the time. When finished manipulating the time, get a timestamp with DateTime::getTimestamp().
-
-Example: Get the current server time + 1 day.
-
-```php
-$tomorrow = new DateTime("1 day", core_date::get_server_timezone_object());
-```
-
-Get a timestamp for storing in the database:
-
-```php
-$tomorrowint = $tomorrow->getTimestamp();
-```
-
-Get a timestamp for 3pm tomorrow in the current users timezone.
-
-```php
-$time = new DateTime("now", core_date::get_user_timezone_object());
-$time->add(new DateInterval("P1D"));
-$time->setTime(15, 0, 0);
-
-$timestamp = $time->getTimestamp();
-```
-
-:::danger
-Never add or subtract timestamps for any reason - you will get it wrong (DST is a killer)!
 :::
 
-Other functions related to time api can be found in lib/moodlelib.php.
+## Classifications of Time
+
+In Moodle there are 2 cases to consider when working with time:
+
+### System Time
+
+In Moodle, the term 'System Time' is used to describe dates on the server, for example times when executing scheduled tasks, performing background tasks, and so on. That is, anything which does not depend on the timezone of any specific user.
+
+### User Time
+
+The term 'User Time' is used for times which are user-specific. That is that they are in the user's time zone.
+
+You will see these when displaying dates and times to the user in their current timezone (which may be different for each user).
+
+## The Time APIs
+
+The main APIs for time in Moodle are the `\core\clock` class, which allows you to fetch and manipulate the current time; and the `core_date` class, which handles PHP `DateTimeZone` objects for either user time or server time as needed. You can then use the PHP `DateTime` classes to manipulate the time. You can also fetch a timestamp with `DateTime::getTimestamp()`.
+
+### Fetching and manipulating the current time
+
+<Since issueNumber="MDL-80838" version="4.4" />
+
+The `\core\clock` Interface was added in Moodle 4.4 and is available via [Dependency Injection](../../core/di/index.md). It provides a [clock implementation](../../core/clock/index.md) which is consistent with the [PSR-20: Clock](https://www.php-fig.org/psr/psr-20/) interfaces.
+
+This is the recommended approach for fetching the current time and should be used instead of native implementations such as `time()`, and `new \DateTime();`.
+
+```php title="Fetching the clock"
+$clock = \core\di::get(\core\clock::class);
+```
+
+:::tip Why use the Clock?
+
+By using the clock interface fetched via Dependency Injection, it becomes easier to test different conditions within your code. For example you can inject a custom implementation of the clock which simulates a 5 minute gap between creation of different records, and allows you to test features such as sorting.
+
+You can read more on [Unit testing](../../core/clock/index.md#unit-testing) with the Clock API.
+
+:::
+
+The clock interface's `now()` method returns a `\DateTimeImmutable` object representing the current time:
+
+```php title="Fetching the current DateTime"
+$now = \core\di::get(\core\clock::class)->now();
+```
+
+This can be further modified using the [`add`](https://www.php.net/manual/en/datetimeimmutable.add.php), [`sub`](https://www.php.net/manual/en/datetimeimmutable.sub.php), and [`modify`](https://www.php.net/manual/en/datetimeimmutable.modify.php) methods, for example:
+
+```php title="Fetch the DateTime for 24 hours time"
+$tomorrow = \core\di::get(\core\clock::class)
+    ->now()
+    ->modify('+1 day');
+```
+
+The Unix Timestamp can be fetched for the DateTime Object using the `getTimestamp()` method:
+
+```php title="Fetching the timestamp"
+$tomorrow = \core\di::get(\core\clock::class)
+    ->now()
+    ->modify('+1 day')
+    ->getTimestamp();
+```
+
+:::danger Modifying the DateTime object
+
+The object returned from the `\core\clock::now()` method is an instance of `\DateTimeImmutable`.
+
+Calling any of the modifier methods (`add()`, `sub()`, or `modify()`) will not modify the object, but will return a new object with the updated time.
+
+```php
+$today = \core\di::get(\core\clock::class)
+    ->now();
+
+$tomorrow = $today->modify('+1 day');
+
+$today !== $tomorrow;
+```
+
+:::
+
+The `\core\time` interface also provides a helper to fetch the current Unix Timestamp in a single operation:
+
+```php title="Fetching the current Unix Timestamp"
+$now = \core\di::get(\core\clock::class)->time();
+```
+
+### Displaying time
+
+Moodle provides a range of methods to display a Unix Timestamp in the relevant Language and Timezone.
 
 1. Time API's for current user
-   - **make_timestamp** - Given date-time, it produces a GMT timestamp for current user.
-   - **userdate** - Gets formatted string that represents a date in user time (note that the format required by this function is the [strftime()](https://www.php.net/manual/en/function.strftime.php) format, not the more common format used by date())
-   - **usertime** - Given a GMT timestamp (seconds since epoch), offsets it by the timezone.  eg 3pm in India is 3pm GMT - 5.5 * 3600 seconds
-   - **usergetdate** - Given a timestamp in GMT, returns an array that represents the date-time in user time
-   - **usergetmidnight** - Given a date, return the GMT timestamp of the most recent midnight for the current user.
-   - **usertimezone** - Returns current user's timezone
+   - `userdate` - Given a Unix Timestamp, return a formatted string that represents a date in the user's time.
+
+     :::note
+
+     The format required by this function is the [`strftime()`](https://www.php.net/manual/en/function.strftime.php) format, not the more common format used by `date()`.
+
+     :::
+
+   - `usergetmidnight` - Given a Unix Timestamp, return the Unix Timestamp of the most recent midnight for the current user.
+   - `usertimezone` - Return the current user's timezone
+   - `make_timestamp` - Given date-time, it produces a Unix Timestamp for current user.
 1. System Time API
-   - **format_time** - Format a date/time (seconds) as weeks, days, hours etc as needed
-   - **dst_offset_on** - Calculates the Daylight Saving Offset for a given date/time (timestamp)
-   - **find_day_in_month** - Calculates when the day appears in specific month
-   - **days_in_month** - Calculate number of days in a given month
-   - **dayofweek** - Calculate the position in the week of a specific calendar day
+   - `format_time` - Format a date or time period in seconds as weeks, days, hours, and so on, as needed
+   - `dst_offset_on` - Calculates the Daylight Saving Offset for a given Unix Timestamp
+   - `find_day_in_month` - Calculates when the day appears in specific month
+   - `days_in_month` - Calculate number of days in a given month
+   - `dayofweek` - Calculate the position in the week of a specific calendar day
 1. Older legacy date/time functions. Do not use in new code.
-   - **usertime** - Appends the users timezone offset to an integer timestamp
-   - **get_timezone_offset** - Systems's timezone difference from GMT in seconds
-   - **get_user_timezone_offset** - Returns user's timezone difference from GMT in hours
-   - **dst_changes_for_year** -  Calculates the required DST change and returns a Timestamp Array
+   - `usergetdate` - Given a Unix Timestamp, returns an array that represents the date-time in user time
+   - `usertime` - Appends the users timezone offset to an integer timestamp
 
 ## Glossary
 
 ### Timezone
 
-Moodle supports following timezone formats:
+Moodle supports the following timezone formats:
 
 1. UTC (specifically UTC−11 to UTC+11)
 1. Time offsets from UTC (int +-(0-13) or float +-(0.5-12.5))
@@ -90,7 +145,7 @@ DST is abbreviation of **Daylight Saving Time** (also known as "Day light saving
 
 ## Examples
 
-### Create DateTime with date/time from a unixtime (number of seconds)
+### Create DateTime with date/time from a Unix Timestamp
 
 ```php
 $date = new DateTime();
@@ -103,22 +158,31 @@ echo userdate($date->getTimestamp());
 Prints the current date and time in the user's timezone:
 
 ```php
-$now = time();
+$now = \core\di::get(\core\clock::class)->time();
 echo userdate($now);
 ```
 
 To manually specify the display format, use one of the formatting strings defined in the <tt>core_langconfig</tt> component of the user's language. For example, to display just the date without the time, use:
 
 ```php
-echo userdate(time(), get_string('strftimedaydate', 'core_langconfig'));
+echo userdate(
+    \core\di::get(\core\clock::class)->time(),
+    get_string('strftimedaydate', 'core_langconfig'),
+);
 ```
 
 You can also use the <tt>DateTime</tt> class to obtain the timestamp:
 
 ```php
-$date = new DateTime("tomorrow", core_date::get_user_timezone_object());
-$date->setTime(0, 0, 0);
-echo userdate($date->getTimestamp(), get_string('strftimedatefullshort', 'core_langconfig'));
+$date = \core\di::get(\core\clock::class)
+    ->now()
+    ->modify('+1 day')
+    ->setTime(0, 0, 0);
+
+echo userdate(
+    $date->getTimestamp(),
+    get_string('strftimedatefullshort', 'core_langconfig'),
+);
 ```
 
 ### System Time API
@@ -126,13 +190,13 @@ echo userdate($date->getTimestamp(), get_string('strftimedatefullshort', 'core_l
 Find the day of the week for the first day in this month.
 
 ```php
-$now = new DateTime("now", core_date::get_server_timezone_object());
+$now = \core\di::get(\core\clock::class)->now();
 
 $year = $now->format('Y');
 $month = $now->format('m');
 
-$now->setDate($year, $month, 1);
-$dayofweek = $now->format('N');
+$firstdayofmonth = $now->setDate($year, $month, 1);
+$dayofweek = $firstdayofmonth->format('N');
 echo $dayofweek;
 ```
 
