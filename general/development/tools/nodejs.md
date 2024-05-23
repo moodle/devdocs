@@ -72,7 +72,7 @@ Grunt is composed of a set of tasks, defined within the Moodle code repository i
 Once you have installed the local development dependencies, you can simply run grunt using `npx`, for example:
 
 ```bash
-$ npx grunt stylelin
+$ npx grunt stylelint
 ```
 
 ### Install grunt
