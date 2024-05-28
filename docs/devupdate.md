@@ -11,14 +11,14 @@ This page highlights the important changes that are coming in Moodle 4.5 for dev
 
 ## Reset course page
 
-The reset course page has been improved. The "Delete" or "Remove" wording have been removed from all the options to make it easier to focus on the data to be removed and avoid inconsistencies and duplicated information.
+The reset course page has been improved. The words "Delete", and "Remove" have been removed from all options to make it easier to focus on the type of data to be removed and avoid inconsistencies and duplicated information.
 Third party plugins implementing reset methods might need to:
 
 - Add static element in the `_reset_course_form_definition` method before all the options with the `Delete` string:
 
-```php
+    ```php
     $mform->addElement('static', 'assigndelete', get_string('delete'));
-```
+    ```
 
 - Review all the strings used in the reset page to remove the `Delete` or `Remove` words from them.
 
