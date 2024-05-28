@@ -147,7 +147,7 @@ We highly recommend declaring the _template_ as a static property on the class t
 import Modal from 'core/modal';
 import ModalFactory from 'core/modal_factory';
 
-export default MyModal extends Modal {
+export default class MyModal extends Modal {
     static TYPE = "mod_example/my_modal";
     static TEMPLATE = "mod_example/my_modal";
 }
