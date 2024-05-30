@@ -28,3 +28,7 @@ Starting from Moodle 4.5, the Reset course page form defined in the `_reset_cour
 Check changes in any of the core plugins that implement the reset course method.
 
 :::
+
+## Database activity
+
+The `mod_data_renderer::render_fields_footer` method has been deprecated as it's no longer used
