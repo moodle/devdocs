@@ -28,3 +28,7 @@ Starting from Moodle 4.5, the Reset course page form defined in the `_reset_cour
 Check changes in any of the core plugins that implement the reset course method.
 
 :::
+
+## TinyMCE plugins
+
+The `helplinktext` language string is no longer required by editor plugins, instead the `pluginname` will be used in the help dialogue
