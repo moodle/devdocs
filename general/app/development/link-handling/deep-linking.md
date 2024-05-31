@@ -1,6 +1,6 @@
 ---
 title: Moodle App Deep Linking
-sidebar_label: Deep Linking
+sidebar_label: Deep linking
 sidebar_position: 2
 tags:
  - Moodle App
@@ -76,16 +76,6 @@ The redirect parameter can be a relative URL based on the base URL. The example 
 
 ```text
 moodlemobile://https://domain.com?redirect=/course/view.php?id=2
-```
-
-## Before 3.7
-
-Deep linking was introduced in version 3.6.1, but it had a different format that was updated in 3.7.0 to the one we use today.
-
-This is an example of the previous format:
-
-```text
-moodlemobile://link=https://mysite.es/mod/choice/view.php?id=8
 ```
 
 ## See also

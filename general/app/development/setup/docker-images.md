@@ -61,11 +61,3 @@ Before version 4.4.0, images didn't run on a secure context, so you'd need to ac
 ```bash
 docker run --rm -p 8100:80 moodlehq/moodleapp:4.3.0
 ```
-
-Before version 3.9.5, images didn't support specifying the environment and they were always run as **development**. You will also notice that they take a while to launch and they are exposed in port 8100 instead, that's because these images contained the source code and they were run using Angular's development server. This has been improved since and images are easier to work with:
-
-```bash
-docker run --rm -p 8100:8100 moodlehq/moodleapp:3.6.0
-```
-
-Tagged releases are only available from version 3.6.0 onwards.

@@ -22,7 +22,7 @@ Other than the changes outlined in this document, there may be smaller API chang
 
 Font Awesome icons have been updated to version 6.3.0, so make sure that all the icons you're using in your plugin are still supported.
 
-Additionally, the `<core-icon>` component has been removed (it was deprecated in 3.9.5). If you were still using it, you should replace it with `<ion-icon>` which now supports [using font icons](../development/plugins-development-guide#using-font-icons-with-ion-icon).
+Additionally, the `<core-icon>` component has been removed (it was deprecated in 3.9.5). If you were still using it, you should replace it with `<ion-icon>` which now supports [using font icons](../development/plugins-development-guide/api-reference.md#ion-icon).
 
 ## 4.0 to 4.1
 
@@ -136,7 +136,7 @@ Here's an example to create a subclass of `CoreContentLinksModuleIndexHandler`:
 
 <CodeDiff titles="3.9.4, 3.9.5" vertical>
 
-```javascript
+```js
 function AddonModCertificateModuleLinkHandler() {
     that.CoreContentLinksModuleIndexHandler.call(
         this,
@@ -152,7 +152,7 @@ AddonModCertificateModuleLinkHandler.prototype = Object.create(this.CoreContentL
 AddonModCertificateModuleLinkHandler.prototype.constructor = AddonModCertificateModuleLinkHandler;
 ```
 
-```javascript
+```js
 class AddonModCertificateModuleLinkHandler extends this.CoreContentLinksModuleIndexHandler {
 
     constructor() {
@@ -170,17 +170,17 @@ class AddonModCertificateModuleLinkHandler extends this.CoreContentLinksModuleIn
 
 We've also done some changes to the code of the app. Most of these changes probably don't affect your plugin, but you should still check this out just in case:
 
-- `<core-icon>` has been deprecated, please use `<ion-icon>` instead that now supports Font Awesome icons. See [Using 'font' icons with ion-icon](../development/plugins-development-guide#using-font-icons-with-ion-icon) for more information.
+- `<core-icon>` has been deprecated, please use `<ion-icon>` which now supports [using font icons](../development/plugins-development-guide/api-reference.md#ion-icon).
 - To "cross out" an icon using `ion-icon` you need to use `class="icon-slash"` instead of `slash="true"`.
 - The function `syncOnSites` from `CoreSyncBaseProvider` now expects to receive a function with the parameters already bound:
 
 <CodeDiff titles="3.9.4, 3.9.5" vertical>
 
-```javascript
-syncOnSites('events', this.syncAllEventsFunc.bind(this), [siteId);
+```js
+syncOnSites('events', this.syncAllEventsFunc.bind(this), [siteId]);
 ```
 
-```javascript
+```js
 syncOnSites('events', this.syncAllEventsFunc.bind(this, force), siteId);
 ```
 
