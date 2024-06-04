@@ -311,3 +311,74 @@ Several utilities have been renamed to use logical property names instead of dir
 ```
 
 </ValidExample>
+
+### Theme color level
+
+In Bootstrap 4.x we used a function called `theme-color-level()` which was removed in Bootstrap 5. The prototype of the function was:
+
+:::info Previous version using `theme-color-level()`
+
+```css
+@function theme-color-level($colorname, $level) {
+    [...]
+}
+[...]
+theme-color-level('primary', 1);
+```
+
+:::
+
+The replacement is now `shift-color()`. This function is used to shift a color by a percentage (weight) of shades.
+So, two major difference in the new version:
+
+- we use the color definition instead of the color name
+- we use percentages instead of levels.
+
+:::info Current version using `shift-color()`
+
+```css
+@function shift-color($color, $weight) {
+   [...]
+}
+[...]
+shift-color($primary, 10%);
+```
+
+:::
+
+As we transitioned from using levels to percentages, the parameters have changed.
+So instead of working with numbers (1 to 11), we now use percentages.
+To simplify this transition, Bootstrap 5 has established a new equivalency: each level increment from 1
+now corresponds to a 10% shift.
+
+:::info From absolute levels to percentages
+
+For example, if a theme-color-level was previously set to a value of 1, it will now be set to 10%.
+A level of two will be adjusted by 20% and so on.
+
+:::
+
+We can use the following formula to convert the level to percentage:
+
+<InvalidExample title="Don't">
+
+```css
+theme-color-level('primary', 1)
+theme-color-level('primary', -2)
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```css
+shift-color($primary, 10%);
+shift-color($primary, -20%);
+```
+
+</ValidExample>
+
+:::note
+The `theme-color-level()` has been changed to `color-level()` and then subsequently removed and replaced by scale-color().
+In the stable 5.0 the final decision was to adopt `shift-color()` so we will use this function in the bridge file.
+:::
