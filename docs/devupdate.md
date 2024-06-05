@@ -9,7 +9,27 @@ tags:
 
 This page highlights the important changes that are coming in Moodle 4.5 for developers.
 
-## Reset course page
+## Core changes
+
+### Autoloader
+
+#### `ABORT_AFTER_CONFIG`
+
+<Since version="4.4" issueNumber="MDL-80275" />
+
+Prior to Moodle 4.5 only a small number of classes were compatible with scripts using the `ABORT_AFTER_CONFIG` constant.
+
+MDL-80275 modifies the location of the class Autoloader in the Moodle bootstrap to make it available to scripts using the `ABORT_AFTER_CONFIG` constant.
+
+:::note
+
+Please note that the same limitations regarding access to the Database, Session, and similar resources still exist.
+
+:::
+
+## Course
+
+### Reset course page
 
 The reset course page has been improved. The words "Delete", and "Remove" have been removed from all options to make it easier to focus on the type of data to be removed and avoid inconsistencies and duplicated information.
 Third party plugins implementing reset methods might need to:
