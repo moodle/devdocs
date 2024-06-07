@@ -343,6 +343,116 @@
         "customised": false
     },
     {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js",
+        "name": "codemirror/autocomplete",
+        "description": "Autocompletion for the CodeMirror code editor.",
+        "version": "6.16.0",
+        "license": "MIT",
+        "repository": "https://github.com/codemirror/autocomplete",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js",
+        "name": "codemirror/commands",
+        "description": "Collection of editing commands for the CodeMirror code editor.",
+        "version": "6.5.0",
+        "license": "MIT",
+        "repository": "https://github.com/codemirror/commands",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js",
+        "name": "codemirror/lang-css",
+        "description": "CSS language support for the CodeMirror code editor.",
+        "version": "6.2.1",
+        "license": "MIT",
+        "repository": "https://github.com/codemirror/lang-css",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js",
+        "name": "codemirror/lang-html",
+        "description": "HTML language support for the CodeMirror code editor.",
+        "version": "6.4.9",
+        "license": "MIT",
+        "repository": "https://github.com/codemirror/lang-html",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js",
+        "name": "codemirror/lang-javascript",
+        "description": "JavaScript language support for the CodeMirror code editor.",
+        "version": "6.2.2",
+        "license": "MIT",
+        "repository": "https://github.com/codemirror/lang-javascript",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js",
+        "name": "codemirror/lang-xml",
+        "description": "XML language support for the CodeMirror code editor.",
+        "version": "6.1.0",
+        "license": "MIT",
+        "repository": "https://github.com/codemirror/lang-xml",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js",
+        "name": "codemirror/language",
+        "description": "Language support infrastructure for the CodeMirror code editor.",
+        "version": "6.10.1",
+        "license": "MIT",
+        "repository": "https://github.com/codemirror/language",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js",
+        "name": "codemirror/lint",
+        "description": "Linting support for the CodeMirror code editor.",
+        "version": "6.7.1",
+        "license": "MIT",
+        "repository": "https://github.com/codemirror/lint",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js",
+        "name": "codemirror/search",
+        "description": "Search functionality for the CodeMirror code editor.",
+        "version": "6.5.6",
+        "license": "MIT",
+        "repository": "https://github.com/codemirror/search",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js",
+        "name": "codemirror/state",
+        "description": "Editor state data structures for the CodeMirror code editor.",
+        "version": "6.4.1",
+        "license": "MIT",
+        "repository": "https://github.com/codemirror/state",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js",
+        "name": "codemirror/view",
+        "description": "DOM view component for the CodeMirror code editor.",
+        "version": "6.26.3",
+        "license": "MIT",
+        "repository": "https://github.com/codemirror/view",
+        "customised": false
+    },
+    {
         "copyrightHolders": [
             "2013 Cal Henderson"
         ],
@@ -418,7 +528,7 @@
         "location": "lib/guzzlehttp/guzzle",
         "name": "GuzzleHttp/Guzzle",
         "description": "Guzzle is a PHP HTTP client library",
-        "version": "7.5.0",
+        "version": "7.8.1",
         "license": "MIT",
         "repository": "https://github.com/guzzle/guzzle",
         "customised": false
@@ -428,7 +538,7 @@
         "location": "lib/guzzlehttp/kevinrob/guzzlecache",
         "name": "Guzzle cache middleware",
         "description": "A HTTP Cache for Guzzle as a simple Middleware to be added in the HandlerStack.",
-        "version": "4.0.2",
+        "version": "5.1.0",
         "license": "MIT",
         "repository": "https://github.com/Kevinrob/guzzle-cache-middleware",
         "customised": false
@@ -438,7 +548,7 @@
         "location": "lib/guzzlehttp/promises",
         "name": "GuzzleHttp/Promises",
         "description": "Guzzle promises library",
-        "version": "1.5.2",
+        "version": "2.0.2",
         "license": "MIT",
         "repository": "https://github.com/guzzle/promises",
         "customised": false
@@ -448,7 +558,7 @@
         "location": "lib/guzzlehttp/psr7",
         "name": "GuzzleHttp/PSR7",
         "description": "PSR-7 message implementation that also provides common utility methods",
-        "version": "2.4.3",
+        "version": "2.6.2",
         "license": "MIT",
         "repository": "https://github.com/guzzle/psr7",
         "customised": false
