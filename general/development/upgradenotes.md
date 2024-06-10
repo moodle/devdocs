@@ -21,7 +21,7 @@ From Moodle 4.5 a new tool, `upgradenotes` has been created to help improve upgr
 - Think about whether your change actually needs documenting in upgrade notes:
   - if your change is in a plugin then it probably does not have any public APIs
   - most bug fixes do not need to be noted unless they change an API
-- When deprecating a feature, the replacement should also be mentioned
+- When deprecating a feature, the replacement should also be mentioned. To put it another way: what developers want to know is the right way to do things in the future, so focus on explaining that.
 
 ## Using `upgradenotes`
 
