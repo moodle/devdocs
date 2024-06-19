@@ -52,3 +52,69 @@ Check changes in any of the core plugins that implement the reset course method.
 ## TinyMCE plugins
 
 The `helplinktext` language string is no longer required by editor plugins, instead the `pluginname` will be used in the help dialogue
+
+## Theme
+
+### Context header
+
+<Since version="4.5" issueNumber="MDL-82160" />
+
+The method `core_renderer::render_context_header($contextheader)` has been deprecated, `core_renderer::render($contextheader)` should be used instead.
+
+Plugins can still modify the context header by:
+
+- Overriding `core_renderer::context_header()` method in their class extending `core_renderer`
+- Adding `core_renderer::render_context_header()` method to their class extending `core_renderer`
+- Overriding the `core/context_header.mustache` template
+
+<Tabs>
+
+<TabItem value="context_header" label="context_header()">
+
+```php title="theme/example/classes/output/core_renderer.php"
+class core_renderer extends \core_renderer {
+    [...]
+    public function context_header($headerinfo = null, $headinglevel = 1): string {
+        $output = parent::context_header($headerinfo, $headinglevel);
+        return $output . '<div class="badge badge-info">Hi!</div>';
+    }
+    [...]
+}
+```
+
+</TabItem>
+
+<TabItem value="render_context_header" label="render_context_header()">
+
+```php title="theme/example/classes/output/core_renderer.php"
+class core_renderer extends \core_renderer {
+    [...]
+    protected function render_context_header(\context_header $contextheader) {
+        $context = $contextheader->export_for_template($this);
+        $output = $this->render_from_template('core/context_header', $context);
+        return $output . '<div class="badge badge-info">Hi!</div>';
+    }
+    [...]
+}
+```
+
+</TabItem>
+
+<TabItem value="template" label="Template">
+
+```mustache title="theme/example/templates/core/context_header.mustache"
+{{!
+    @template core/context_header
+
+    Template context_header
+
+    Example context (json):
+    {
+    }
+}}
+<div class="badge badge-info">Hi!</div>
+```
+
+</TabItem>
+
+</Tabs>
