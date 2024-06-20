@@ -202,3 +202,101 @@ The `.card-deck` helper class has been replaced with utility classes.
 ```
 
 </ValidExample>
+
+## Create a BS5 "bridge"
+
+<Since version="4.5" issueNumber="MDL-79917" />
+
+Some simple breaking changes could be also addressed in advance creating a BS5 "bridge". With small additions to this "bridge", we can refactor in advance the occurrences in the codebase for some dropped or changed features in BS5.
+
+A new SCSS file `bs5-bridge.scss` has been created in the `theme/boost/scss/moodle` folder. This file will contain the necessary changes to make the codebase compatible with Bootstrap 5.
+
+:::info Example of a bridge in `bs5-bridge.scss`
+
+```css
+/* In Bootstrap 5 the .no-gutters class has been replaced with .g-0, so we can
+add a new class in the bridge file to make the codebase compatible with BS5. */
+.g-0 {
+    @extend .no-gutters;
+}
+```
+
+:::
+
+### No gutters
+
+The `.no-gutters` grid class has been replaced with `.g-0`.
+
+<InvalidExample title="Don't">
+
+```html
+<div class="row no-gutters">
+    <div class="col-6">[...]</div>
+    <div class="col-6">[...]</div>
+</div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<div class="row g-0">
+    <div class="col-6">[...]</div>
+    <div class="col-6">[...]</div>
+</div>
+```
+
+</ValidExample>
+
+### Theme color level
+
+In Bootstrap 4.x we used a function called theme-color-level() which was removed in Bootstrap 5. The prototype of the function was:
+
+```css
+@function theme-color-level($colorname, $level) {
+    [...]
+}
+[...]
+theme-color-level('primary', 1);
+```
+
+The replacement is now shift-color(). This function is used to shift a color by a percentage (weight) of shades.
+So, two major difference: we use the color definition instead of the color name and we use percentages instead of levels.
+
+```css
+@function shift-color($color, $weight) {
+   [...]
+}
+[...]
+shift-color($primary, 10%);
+```
+
+As we changed from level to percentage, the usage of the function will be different. To make it easier,
+Bootstrap 5 has set the equivalent from 1 to 10%, so a theme-color-level that was shifted by the value 1
+will now be shifted by 10%.
+
+We can use the following formula to convert the level to percentage:
+
+<InvalidExample title="Don't">
+
+```css
+theme-color-level('primary', 1)
+theme-color-level('primary', -2)
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```css
+shift-color($primary, 10%);
+shift-color($primary, -20%);
+```
+
+</ValidExample>
+
+:::note
+The `theme-color-level()` has been changed to `color-level()` and then subsequently removed and replaced by scale-color().
+In the stable 5.0 the final decision was to adopt `shift-color()` so we will use this function in the bridge file.
+:::
