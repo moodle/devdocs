@@ -142,3 +142,11 @@ class core_renderer extends \core_renderer {
 </TabItem>
 
 </Tabs>
+
+### Refactoring BS4 features dropped in BS5 using a "bridge"
+
+<Since version="4.5" issueNumber="MDL-79917" />
+
+Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. To prepare for this, some of the current Bootstrap 4 classes usages have been replaced with version 5 compatible classes using a "bridge". This will help us to upgrade to Bootstrap 5 in the future.
+
+See more information in [Bootstrap 5 migration](./guides/bs5migration/index.md).
