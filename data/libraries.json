@@ -189,7 +189,7 @@
         "location": "lib/amd/src/loglevel.js",
         "name": "loglevel.js",
         "description": "Minimal lightweight simple logging for JavaScript.",
-        "version": "1.8.1",
+        "version": "1.9.1",
         "license": "MIT",
         "repository": "https://github.com/pimterry/loglevel/",
         "customised": false
@@ -459,7 +459,7 @@
         "location": "lib/emoji-data",
         "name": "Emoji data",
         "description": "Library to parse easily data and sprite sheets for emoji.",
-        "version": "15.0.1",
+        "version": "15.1.2",
         "license": "MIT",
         "repository": "https://github.com/iamcal/emoji-data/",
         "customised": true
@@ -678,7 +678,7 @@
         "location": "lib/maxmind/GeoIp2",
         "name": "GeoIP2 PHP API",
         "description": "Library for processing of GeoIP data files.",
-        "version": "2.13.0",
+        "version": "3.0.0",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/maxmind/GeoIP2-php",
@@ -691,7 +691,7 @@
         "location": "lib/maxmind/MaxMind",
         "name": "MaxMind DB Reader API",
         "description": "PHP API for reading MaxMind DB files.",
-        "version": "1.11.0",
+        "version": "1.11.1",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/maxmind/MaxMind-DB-Reader-php/",
@@ -852,7 +852,7 @@
             "2011, Neuman Vong"
         ],
         "location": "lib/php-jwt",
-        "name": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519",
+        "name": "PHP-JWT",
         "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519",
         "version": "6.10.0",
         "license": "BSD",
@@ -994,7 +994,7 @@
         "location": "lib/psr/http-factory",
         "name": "http-factory",
         "description": "Provides interfaces that describe the components of a HTTP Factory.",
-        "version": "1.0.1",
+        "version": "1.1.0",
         "license": "MIT",
         "repository": "https://github.com/php-fig/http-factory",
         "customised": false
@@ -1276,6 +1276,7 @@
             "2011-2021 The Bootstrap Authors"
         ],
         "location": "theme/boost/amd/src/bootstrap/button.js",
+        "name": "bootstrap-button",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
         "version": "4.6.2",
         "license": "MIT",
