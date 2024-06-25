@@ -29,7 +29,9 @@ Even though the tests are mirrored into the `local_moodleappbehat` repository, t
 
 ### What can I do if my changes in core are making the app tests fail?
 
-You can look at the failure logs, and hopefully that will give you enough hints to understand what's happening. If that's not clear enough, try to use the app against your local instance to see if you can reproduce the problem (you can use the [development webapps](../network-debug.md#using-a-browser) in your computer). You can also run the app tests in your development machine [following the documentation](./acceptance-testing) (make sure to use the `ci` branch of the `local_moodleappbehat` plugin to include the tests).
+You can look at the failure logs, and hopefully that will give you enough hints to understand what's happening. For more details, you can also check the Build Artifacts to find screenshots of the application when the tests failed.
+
+If that's not clear enough, try to use the app against your local instance to see if you can reproduce the problem (you can use the [development webapps](../network-debug.md#using-a-browser) in your computer). You can also run the app tests in your development machine [following the documentation](./acceptance-testing) (make sure to use the `ci` branch of the `local_moodleappbehat` plugin to include the tests).
 
 Also, make sure your moodle code is up to date with the latest changes. The application tests are working against the latest development version of the LMS, so if your fork is using an old version it's possible that the problem has been fixed upstream.
 
