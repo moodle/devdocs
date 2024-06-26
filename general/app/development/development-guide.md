@@ -404,6 +404,26 @@ All the nomenclature can be a bit confusing, so let's do a recap:
 - Service Singleton: An instance of a Singleton Service.
 - Singleton Proxy: An object that relays method calls to a Service Singleton instance.
 
+## Database
+
+Most of the persistent data in the application is stored in SQLite databases. In particular, there is one database for global app configuration, and one for each site. Reading and writing data is encapsulated in the `CoreDatabaseTable` class. Each table can be configured to use one of the following caching strategies:
+
+- Eager Caching: When the table is initialised, it will query all the records and store them in memory. This improves performance for data that is read very often, because reads will happen in-memory without touching the database. But it shouldn't be used for tables with a lot of records, to reduce memory consumption.
+- Lazy Caching: Lazy caching works similar to eager caching, but instead of querying all the records upfront it'll remember records after reading them for the first time. This strategy is more appropriate for tables that are read often but have too many records to cache completely in memory.
+- No Caching: Finally, for tables that are written more often than they are read, it is possible to disable caching altogether.
+
+Something else important to note is that not all these tables are instantiated when the application is initialized, so for example even though a table may have Eager loading; it could be itself initialized lazily.
+
+### Schema migrations
+
+Table schemas are declared using `CoreAppSchema`, `CoreSiteSchema`, and `SQLiteDBTableSchema` interfaces; and invoked using `CoreApp.createTablesFromSchema()` and `CoreSitesProvider.applySiteSchemas()`. In the case of site tables, these can be registered with the `CORE_SITE_SCHEMAS` injection token and they'll be invoked automatically when a new site is created.
+
+In order to make some changes in existing schemas, it'll be necessary to change the `version` number and implement the `migrate` method to perform any operations necessary during the migration.
+
+### Legacy
+
+Ideally, all interactions with the database would go through a `CoreDatabaseTable` instance. However, there is still some code using the previous approach through the `SQLiteDB` class. This should be avoided for new code, and eventually migrated to use the new approach to take advantage of caching.
+
 ## Application Lifecycle
 
 When the application is launched, the contents of [index.html](#indexhtml) are rendered on screen. This file is intentionally concise because all the flare is added by JavaScript, and the splash screen will be covering the application UI until it has fully started. If you are developing in the browser, this will be a blank screen for you given that the splash screen is not available on the web. We are not targeting browsers in production, so it's acceptable to have this behaviour during development.
