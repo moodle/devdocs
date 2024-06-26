@@ -284,15 +284,29 @@ Learn more about unit tests in the [Testing](#testing) section.
 
 ## Routing
 
-All core features and addons can define their own routes, and we can do that in their main module. However, those are loaded when the application starts up, and that won't be desirable in most cases. In those situations, we can use [lazy loading](https://angular.io/guide/lazy-loading-ngmodules) to defer it until necessary. To encapsulate lazy functionality, we can define a [Routed Module](https://angular.io/guide/module-types#routed) named `{feature-name}LazyModule`. For example, the *login* core feature defines both a `CoreLoginModule` and a `CoreLoginLazyModule`.
+All core features and addons can define their own routes, and we can do that in their main module. However, those are loaded when the application starts up, and that won't be desirable in most cases. We can use [lazy loading](https://angular.io/guide/lazy-loading-ngmodules) to defer loading routes until they are necessary. To encapsulate lazy functionality, we can define a [Routed Module](https://angular.io/guide/module-types#routed) named `{feature-name}LazyModule`. For example, the *login* core feature defines both a `CoreLoginModule` (for routes that are loaded when the application starts up) and a `CoreLoginLazyModule` (for routes that are loaded only when necessary).
+
+### Dynamic Routes
 
 With the [folders structure](#folders-structure) we're using, it is often the case where different core features or addons need to define routes depending on each other. For example, the *mainmenu* feature defines the layout and routes for the tabs that are always present at the bottom of the UI. But the home tab is defined in the *home* feature. In this scenario, it would be possible to just import the pages from the *home* module within the *mainmenu*, since both are core features and are allowed to know each other. But that approach can become messy, and what happens if an addon also needs to define a tab (like *privatefiles*)?
 
-As described in the [addons/ folder documentation](#addons), the answer to this situation is using the dependency inversion pattern. Instead of the *mainmenu* depending on anything rendering a tab (*home*, *privatefiles*, etc.), we can make those depend on *mainmenu*. And we can do that using Angular's container.
+As described in the [addons/ folder documentation](#addons), the answer to this situation is using the dependency inversion principle. Instead of the *mainmenu* depending on anything rendering a tab (*home*, *privatefiles*, etc.), we can make those depend on *mainmenu*. And we can do that using Angular's container.
 
-In order to allow injecting routes from other modules, we create a separated [Routing Module](https://angular.io/guide/module-types#routing-ngmodules). This is the only situation where we'll have a dedicated module for routing, in order to reduce the amount of module files in a feature root folder. Any routes that are not injected can be defined directly on their main or lazy module.
+In order to allow injecting routes from other modules, we create a separated [Routing Module](https://angular.io/guide/module-types#routing-ngmodules). This is the only situation where we'll have a dedicated module for routing. Any routes that are not meant to be injected can be defined directly on their main or lazy module.
 
-It is often the case that modules using injected routes have a [RouterOutlet](https://angular.io/api/router/RouterOutlet). For that reason, injected routes can be defined either as children or siblings of the main route. The difference between those is that a child will be rendered within the outlet, whilst a sibling will replace the entire page. In order to make this distinction, routing modules accept either an array of routes to use as siblings or an object indicating both types of routes.
+It is often the case that modules using injected routes use a [RouterOutlet](https://angular.io/api/router/RouterOutlet). For that reason, injected routes can be defined either as children or siblings of the main route. The difference between those is that a child will be rendered within the outlet, whilst a sibling will replace the entire page. In order to make this distinction, routing modules accept either an array of routes to use as siblings or an object indicating both types of routes.
+
+Finally, since these routes are defined dynamically, they cannot be imported statically when defining parent routes. They will need to be encapsulated on a builder function, taking an `injector` as an argument to resolve all the injected routes. You can see an example of this in the `buildTabMainRoutes`, and how it's used across the app.
+
+### Split View Routes
+
+Some pages in the app use a split-view pattern that consists of a navigation menu on the left, and the main content in the right (in LTR interfaces). It is typically used to display a list of items in the menu, and display the contents of the selected item in the content. For example, showing a list of settings on the left with their content on the right.
+
+This pattern is used in large screens (such as tablets), and logically is made up of two pages: one used for the menu and one for the content. The one with the menu defines an outlet for the content page, and in smaller devices (such as mobile phones), the outlet is hidden and navigating to items will override the entire page instead of populating the outlet. This is achieved by the styles and markup of the `<core-split-view>` component.
+
+In order for the different behaviour to take place, routes are defined twice. Once where the content is a children of the menu, and again where the content is a sibling of the menu. These two definitions would clash in normal situations, but they are defined with a conditional that toggles them depending on the active breakpoint. You can find an example looking at the route definitions in the `CoreSettingsLazyModule`, which correspond with the routes that you can visit from the Main Menu > More > App Settings.
+
+The navigation between these routes is often encapsulated within a `CoreListItemsManager` instance, that takes care of discerning the current active item and updating the route when selected items change. This manager will obtain the items from a `CoreRoutedItemsManagerSource`, which is necessary to enable [swipe navigation](#navigating-using-swipe-gestures).
 
 ### Navigating between routes
 
@@ -309,6 +323,14 @@ CoreNavigator.navigate('../');
 Other than navigation, this service also contains some helpers that are not available in Angular out of the box. For example, the `getRouteParam` will get values from multiple sources such as query parameters or route parameters, and it also supports reading non-primitive values.
 
 Make sure to [check out the full api](https://github.com/moodlehq/moodleapp/blob/main/src/core/services/navigator.ts) to learn more about the `CoreNavigator` service.
+
+### Navigating using swipe gestures
+
+Most pages that use a split-view in tablets can be navigated using swipe gestures in mobile devices. The navigation is often encapsulated within a `CoreSwipeNavigationItemsManager` instance.
+
+As mentioned in the [split-view section](#split-view-routes), the items used by the manager are obtained from a `CoreRoutedItemsManagerSource`. This source will be reused between menu and content pages in mobile as well, so that swipe navigation respects any filters that have been applied in the menu page. In order to make sure that the same instance is reused, instead of creating a new one, these can be instantiated using the `CoreRoutedItemsManagerSourcesTracker.getOrCreateSource()` method. It will reuse instances that are still active, and when passed to managers the references will be cleared up when the managers are destroyed.
+
+You can find an example of this pattern in `CoreUserParticipantsPage`, where participants can be filtered and the swipe navigation will respect the filtered results.
 
 ## Singletons
 
