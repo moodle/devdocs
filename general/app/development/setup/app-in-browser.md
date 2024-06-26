@@ -92,6 +92,16 @@ Make sure to set this variable to an absolute path, and not just the name of the
 These instructions have only been tested in Linux. If you are using a different operative system, [let us know](https://github.com/moodle/devdocs/issues/76) how it went (or just [edit this page](https://github.com/moodle/devdocs/edit/main/general/app/development/setup/app-in-browser.md)!).
 :::
 
+## Handling deep links
+
+Using a browser, you'll realize it's not possible to handle deep links, for example if you're trying to log in using SSO.
+
+To work around that, you can simulate a deep link being pressed running the following code in the console:
+
+```js
+handleOpenURL('moodlemobile://token=...');
+```
+
 ## Using the hosted versions of the app
 
 You can access your site using the hosted versions of the app in [latest.apps.moodledemo.net](https://latest.apps.moodledemo.net) (the latest stable version) and [main.apps.moodledemo.net](https://main.apps.moodledemo.net) (the current version in development).
