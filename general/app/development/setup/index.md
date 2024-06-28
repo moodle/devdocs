@@ -114,36 +114,6 @@ Running `npm start`, `npm run dev:android` or `npm run dev:ios` compiles using J
 
 The `npm run prod:android` and `npm run prod:ios` commands use AOT compilation because they generate production bundles.
 
-### Using Android emulators
-
-Most of the time, you should be using an emulator running recent versions of Android, and it should work fine. But sometimes, you may want to use an older version to test a specific behaviour.
-
-If you want to run the application in an Android 5 emulator, you'll need to upgrade the system webview because emulators come with version 37 preinstalled. Your first idea may be to upgrade the webview using the Google Play store, but it will not work because the webview served by Google Play is `com.google.android.webview` whilst the system webview used in emulators is `com.android.webview`. You can do the following instead.
-
-Once you have [created your Android 5 virtual device](https://developer.android.com/studio/run/managing-avds), you'll need to do download [the apk for Webview 61](https://android.googlesource.com/platform/external/chromium-webview/+/refs/heads/oreo-m3-release/prebuilt/x86_64/) and run the following commands:
-
-```bash
-# Open the folder where the "emulator" script is installed
-cd $(dirname `which emulator`)
-
-# Boot the emulator in write mode (you can get a list of device names running "emulator -list-avds")
-emulator @DeviceName -writable-system
-
-# In a different shell, make /system writable
-adb remount
-
-# Uninstall the webview app manually and reboot the device
-adb shell
-rm -rf /data/data/com.android.webview
-rm -rf /system/app/webview
-reboot
-
-# Install the new version
-adb install webview.apk
-```
-
-After doing this, remember to run the emulator in write mode for subsequent sessions, but you don't need to call the `remount` command every time.
-
 ## See also
 
 - [Moodle App Coding Style](../../../development/policies/codingstyle-moodleapp.md)

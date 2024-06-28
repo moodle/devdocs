@@ -18,6 +18,22 @@ Depending on which version of the app you're upgrading from, you'll need to go t
 
 Other than the changes outlined in this document, there may be smaller API changes that aren't highlighted here. Make sure to check the [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt) file for an exhaustive list with all the changes.
 
+## 4.3 to 4.4
+
+Starting with this release, the changes listed in [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt) will only document breaking changes for APIs exposed to site plugins. Internal changes will no longer be documented. Make sure to check out the file to learn about the changes in this version.
+
+Also, the Ionic version has been upgraded to v7 (from v5), make sure to check the relevant upgrade guides for [v6](https://ionicframework.com/docs/updating/6-0) and [v7](https://ionicframework.com/docs/updating/7-0). In particular, the syntax to declare input labels has been refactored. The legacy syntax will continue working for the time being, but we recommend migrating to the [modern syntax](https://ionicframework.com/docs/api/input#migrating-from-legacy-input-syntax) as soon as possible.
+
+The Angular version has also been upgraded to v17, and it comes with new features such as [a new syntax for conditionals and loops](https://angular.dev/essentials/conditionals-and-loops) and [signals](https://angular.dev/guide/signals). Signals are not available in the app yet, but most new features like the conditionals should work. In any case, always make sure to test your code with the latest version of the app before proceeding; and keep in mind that some of your users could still be using an old version of the app. So adopt these new features with caution.
+
+Finally, the application now needs to run in a secure context (https://). This change only affects your development environment, and it was necessary to [move on from the deprecated WebSQL API](https://tracker.moodle.org/browse/MOBILE-4304).
+
+## 4.2 to 4.3
+
+Font Awesome icons have been updated to version 6.4.0, so make sure that all the icons you're using in your plugin are still supported.
+
+Other than that, there have been some changes in the APIs related to analytics. Check out [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt) to learn about the specifics.
+
 ## 4.1 to 4.2
 
 Font Awesome icons have been updated to version 6.3.0, so make sure that all the icons you're using in your plugin are still supported.

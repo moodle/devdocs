@@ -53,6 +53,7 @@ tags:
 | 11. | Review the new features/improvements specs/shaping documents to ensure that they clearly reflect the actual implementation of the feature. | All the team |
 | 12. | Review that all the minor issues found during the QA testing have a related and triaged MOBILE issue in the tracker. | All the team |
 | 13. | Make sure that tests are passing with all the supported versions in [ci.moodle.org](https://ci.moodle.org). | Developer |
+| 14. | Update APK in [download.moodle.org/mobile](https://download.moodle.org/mobile). | Team Lead |
 
 ## See also
 

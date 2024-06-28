@@ -35,8 +35,12 @@ In the template, we use it referencing `CONTENT_OTHERDATA`:
 ```html ng2
 {{=<% %>=}}
 <ion-item>
-    <ion-label position="stacked">{{ 'plugin.local_hello.name | translate }}</ion-label>
-    <ion-input type="text" [(ngModel)]="CONTENT_OTHERDATA.name"></ion-input>
+    <ion-input
+        [label]="'plugin.local_hello.name' | translate"
+        labelPlacement="stacked"
+        type="text"
+        [(ngModel)]="CONTENT_OTHERDATA.name"
+    ></ion-input>
 </ion-item>
 <ion-item>
     <ion-label>
@@ -118,8 +122,12 @@ In this example, we're not using `otherdata` at all, so the input will be empty 
 {{=<% %>=}}
 <form id="name-form">
     <ion-item>
-        <ion-label position="stacked">{{ 'plugin.local_hello.name | translate }}</ion-label>
-        <ion-input name="name" type="text"></ion-input>
+        <ion-input
+            [label]="'plugin.local_hello.name' | translate"
+            labelPlacement="stacked"
+            name="name"
+            type="text"
+        ></ion-input>
     </ion-item>
     <ion-item>
         <ion-label>

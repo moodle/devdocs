@@ -393,11 +393,9 @@ If you are stuck with an error and you can't find a way to continue, here's a li
 - It is possible that your tests break if you're using an unstable version of the app. Try to use stable versions using the `latest` branch if you're working with the source code or tagged releases if you're using Docker.
 - Mobile Behat tests don't work well with XDebug, so if you're using it, turn it off in `php.ini` while running the tests. Also, remember to restart Apache if necessary.
 
-### Unable to load app version from https://moodleapp:8100/config.json
+### Unable to load app version from https://localhost:8100/assets/env.json
 
 This message appears when the Moodle site is not able to reach the app. Make sure that the url is available from the host you're running the Behat commands from. Also make sure that the app is actually running at the specified url.
-
-It's ok if the actual `/config.json` url doesn't work, that's actually a remnant from legacy code. The url that Moodle is actually looking for is `/assets/env.json`.
 
 ### The plugins required by this course could not be loaded correctly...
 
