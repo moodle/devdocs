@@ -171,7 +171,7 @@ Simple yet flexible JavaScript charting for designers & developers.
 Minimal lightweight simple logging for JavaScript.
 
 - **Location**: lib/amd/src/loglevel.js
-- **Version**: 1.8.1
+- **Version**: 1.9.1
 - **License**:  MIT
 - **URL**: [https://github.com/pimterry/loglevel/](https://github.com/pimterry/loglevel/)
 - **Copyright holders**:
@@ -412,7 +412,7 @@ DOM view component for the CodeMirror code editor.
 Library to parse easily data and sprite sheets for emoji.
 
 - **Location**: lib/emoji-data
-- **Version**: 15.0.1 (with Moodle customisations)
+- **Version**: 15.1.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/iamcal/emoji-data/](https://github.com/iamcal/emoji-data/)
 - **Copyright holders**:
@@ -607,7 +607,7 @@ All rights reserved.
 Library for processing of GeoIP data files.
 
 - **Location**: lib/maxmind/GeoIp2
-- **Version**: 2.13.0
+- **Version**: 3.0.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/GeoIP2-php](https://github.com/maxmind/GeoIP2-php)
 - **Copyright holders**:
@@ -618,7 +618,7 @@ Library for processing of GeoIP data files.
 PHP API for reading MaxMind DB files.
 
 - **Location**: lib/maxmind/MaxMind
-- **Version**: 1.11.0
+- **Version**: 1.11.1
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/MaxMind-DB-Reader-php/](https://github.com/maxmind/MaxMind-DB-Reader-php/)
 - **Copyright holders**:
@@ -755,7 +755,7 @@ PHP Enum implementation inspired from SplEnum
 - **Copyright holders**:
   - 2015 My C-Labs
 
-### A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
+### PHP-JWT
 
 A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
 
@@ -886,7 +886,7 @@ Provides an abstraction that describe the components of a HTTP Client.
 Provides interfaces that describe the components of a HTTP Factory.
 
 - **Location**: lib/psr/http-factory
-- **Version**: 1.0.1
+- **Version**: 1.1.0
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/http-factory](https://github.com/php-fig/http-factory)
 
@@ -1134,7 +1134,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
   - 2011-2021 Twitter, Inc
   - 2011-2021 The Bootstrap Authors
 
-### undefined
+### bootstrap-button
 
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
