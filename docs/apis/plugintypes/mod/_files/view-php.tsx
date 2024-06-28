@@ -23,8 +23,12 @@ const defaultExample = `
 require('../../config.php');
 
 $id = required_param('id', PARAM_INT);
-[$course, $cm] = get_course_and_cm_from_cmid($id, '[modname]');
-$instance = $DB->get_record('[modname]', ['id'=> $cm->instance], '*', MUST_EXIST);
+try {
+    [$course, $cm] = get_course_and_cm_from_cmid($id, '[modname]');
+    $instance = $DB->get_record('[modname]', ['id'=> $cm->instance], '*', MUST_EXIST);
+} catch (Exception $e) {
+    print_error('invalidcourse', 'error', '', $id);
+}
 `;
 
 export default (initialProps: Props): ComponentFileSummary => (
