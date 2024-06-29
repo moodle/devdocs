@@ -22,11 +22,12 @@ import Navbar from '@theme-original/Navbar';
 import styles from './index.module.css';
 
 export default function NavbarWrapper(props) {
-    const openMenu = (element) => {
-        if (document.getElementById(element).style.display !== 'block') {
-            document.getElementById(element).style.display = 'block';
+    const openMenu = (elementId) => {
+        const element = document.getElementById(elementId);
+        if (element.style.display !== 'block') {
+            element.style.display = 'block';
         } else {
-            document.getElementById(element).style.display = 'none';
+            element.style.display = 'none';
         }
     };
 
