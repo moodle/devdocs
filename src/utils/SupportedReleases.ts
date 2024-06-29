@@ -136,9 +136,7 @@ export const getSupportedReleases = (): Array<majorVersionData> => (
 );
 
 export const getVersion = (versionName: string): majorVersionData => {
-    const [major, release] = versionName.split('.');
-    const majorVersion = `${major}.${release}`;
-    return getAllVersions().find((version) => version.name === majorVersion);
+    return getAllVersions().find((version) => version.name === versionName);
 };
 
 export const getRelease = (versionName: string): versionInfo | null => {
