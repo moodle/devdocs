@@ -629,7 +629,7 @@ PHP API for reading MaxMind DB files.
 CSS & JavaScript minifier, in PHP
 
 - **Location**: lib/minify/matthiasmullie-minify
-- **Version**: 1.3.71 (with Moodle customisations)
+- **Version**: 1.3.73 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/matthiasmullie/minify](https://github.com/matthiasmullie/minify)
 
