@@ -187,6 +187,7 @@ intval
 invalidcoursemodule
 isempty
 isnotempty
+isoverallcomplete
 lable
 langindex
 lastaccess
@@ -233,6 +234,7 @@ oldmoduleid
 onlinetext
 opcache
 otherfields
+outlinks
 pactivity
 passwordunmask
 pdftoppm
