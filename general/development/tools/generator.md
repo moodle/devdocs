@@ -44,23 +44,39 @@ Before executing the behat generators, you need a `feature` file you want to exe
 
 The tool does not use `selenium` or any other browser wrapper. It reads the feature file and executes specific steps in it.
 
-:::
-
 This means:
 
-1. The tool will only execute generator steps. If any other type of step is present in the `feature` file, it will show a parsing error.
-1. For now, the tool can only execute normal scenarios. It does not support background, outline, or scenario outline scenarios.
+1. The tool will only execute a few steps, which are generators and set config values. If any other type of step is present in the `feature` file, it will show a parsing error.
+1. For now, the tool can only execute normal scenarios. It does not support background, or outline scenarios.
 
-To execute the behat generators via the web interface, go to `Site administration > Development > Create testing scenarios`. Once there, you can upload the `feature` file you want to execute and see the the execution results.
-
-To execute the behat generators via CLI, you can use the following command:
-
-```bash
-php admin/tool/generator/cli/runtestscenario.php --feature=/path/to/some/testing/scenario.feature
-```
+:::
 
 :::tip Example
 
 Some example Behat generator files can be found in [`admin/tool/generator/tests/fixtures/`](https://github.com/moodle/moodle/blob/main/admin/tool/generator/tests/fixtures/). For instance, [`testscenario/scenario.feature`](https://github.com/moodle/moodle/blob/main/admin/tool/generator/tests/fixtures/testscenario/scenario.feature) creates a course with two assignment activities and enrols one teacher along with five students.
 
 :::
+
+### Execute a testing scenario behat file
+
+Before running a testing scenario, you need to install all behat dependencies. If you already execute some behat on the instance you can skip this step. Otherwise, you need to install the dependencies by running the following command:
+
+```bash
+php admin/tool/generator/cli/runtestscenario.php
+```
+
+There are two ways to run a testing scenario using a behat file: via the web interface or the CLI.
+
+To run via web interface:
+
+1. Go to `Site administration > Development > Create testing scenarios`.
+1. Upload the `feature` file you want to execute and submit the form.
+
+To run via CLI:
+
+1. Copy the `feature` file you want to execute to some server location. You will need the full path to the file.
+1. Run the following command:
+
+```bash
+php admin/tool/generator/cli/runtestscenario.php --feature=/path/to/some/testing/scenario.feature
+```
