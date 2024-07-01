@@ -65,7 +65,7 @@ If you catch an exception, then you become responsible for things that the task 
 For example, it is important to log all the details of the error, so problems can be investigated and fixed. The helper function
 `mtrace_exception` makes this easier. Also, you need to consider: if something has gone wrong with part of the processing, but other parts succeeded,
 should the overall state of the task run be success or failure? It will depend on how the task works, but you may need to ensure that the task
-ends by throwing an exception if any part failed. There is a an example of all this in the [`\quiz_statistics\task\recalculate`](https://github.com/moodle/moodle/blob/master/mod/quiz/report/statistics/classes/task/recalculate.php).
+ends by throwing an exception if any part failed. There is a an example of all this in the [`\quiz_statistics\task\recalculate`](https://github.com/moodle/moodle/blob/main/mod/quiz/report/statistics/classes/task/recalculate.php).
 
 ### Caches
 

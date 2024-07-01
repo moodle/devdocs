@@ -362,7 +362,7 @@ public function processes_user_data();
 /**
  * SQL JOIN from a sample to users table.
  *
- * More info in [https://github.com/moodle/moodle/blob/master/analytics/classes/local/analyser/base.php core_analytics\local\analyser\base]::join_sample_user
+ * More info in [https://github.com/moodle/moodle/blob/main/analytics/classes/local/analyser/base.php core_analytics\local\analyser\base]::join_sample_user
  *
  * @param string $sampletablealias The alias of the table with a sampleid field that will join with this SQL string
  * @return string

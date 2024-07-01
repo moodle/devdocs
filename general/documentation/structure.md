@@ -44,7 +44,7 @@ If you are creating a page which does not fit into one of these categories, we s
 
 The versioned documentation has two locations you will need to look at:
 
-- For the Moodle master branch, see the [docs](https://github.com/moodle/devdocs/tree/main/docs) folder
+- For the Moodle main branch, see the [docs](https://github.com/moodle/devdocs/tree/main/docs) folder
 - For older versions of Moodle which are documented here, see the [versioned_docs](https://github.com/moodle/devdocs/tree/main/versioned_docs) folder
 
 :::note

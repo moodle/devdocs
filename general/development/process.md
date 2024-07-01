@@ -157,7 +157,7 @@ During each cycle there are a periods and events that occur between and around s
 A period during which the Roadmap is explored, specs are written and prototypes are created. Regressions in the recent release are fixed as they arise.
 
 **End sync period** <br/>
-During the [on-sync period](./process/integration/index.md#on-sync-period), the recent release and master versions are kept synchronised. No new code is added during this period, which ensures regressions are fixed rapidly. This also allows for planning and provides relief for developers after a release.
+During the [on-sync period](./process/integration/index.md#on-sync-period), the recent release and main versions are kept synchronised. No new code is added during this period, which ensures regressions are fixed rapidly. This also allows for planning and provides relief for developers after a release.
 
 **Personal projects** <br/>
 Affecting full-time HQ developers only, this period allows for individual creations to be explored and provides a break from sprints.
@@ -233,7 +233,7 @@ Every change must have an issue in the tracker. If you are fixing a bug, there i
 
 ### Decide which branches the fix is required on
 
-Bugs should normally be fixed on all the supported stable branches that are affected. New features should just go into master, but sometimes minor enhancements are made on the most recent stable branch.
+Bugs should normally be fixed on all the supported stable branches that are affected. New features should just go into main, but sometimes minor enhancements are made on the most recent stable branch.
 
 ### Develop your change using git
 

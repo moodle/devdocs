@@ -16,8 +16,8 @@ Moodle will attempt to provide a more complete tutorial in this documentation wh
 
 Some good examples of usage of the Forms API can be found at the following locations:
 
-- [Course edit form - definition](https://github.com/moodle/moodle/blob/master/course/edit_form.php)
-- [Course edit form - usage](https://github.com/moodle/moodle/blob/master/course/edit.php)
+- [Course edit form - definition](https://github.com/moodle/moodle/blob/main/course/edit_form.php)
+- [Course edit form - usage](https://github.com/moodle/moodle/blob/main/course/edit.php)
 
 :::
 

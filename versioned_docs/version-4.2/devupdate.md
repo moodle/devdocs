@@ -103,7 +103,7 @@ Therefore, if you have made customisations to the core quiz code, you will have 
 (reports or access rules) you may have a small amount of work to do.
 
 I will write a more coherent summary once the changes are complete, but
-[mod/quiz/upgrade.txt](https://github.com/moodle/moodle/blob/master/mod/quiz/upgrade.txt) lists all the changes so far.
+[mod/quiz/upgrade.txt](https://github.com/moodle/moodle/blob/main/mod/quiz/upgrade.txt) lists all the changes so far.
 
 ### Developer tip - handling changes to base class names, while supporting multiple Moodle versions
 

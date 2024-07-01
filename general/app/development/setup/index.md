@@ -40,7 +40,7 @@ If you intend to run the application in a native device, you will need to instal
 
 ### Windows only: Native build dependencies
 
-`node-gyp` requires native build tools for your platform. If you're developing on Mac or Linux, you'll probably have these already ([refer to the docs if you don't](https://github.com/nodejs/node-gyp/blob/master/README.md)). On Windows, run the following command as administrator (in cmd or Powershell):
+`node-gyp` requires native build tools for your platform. If you're developing on Mac or Linux, you'll probably have these already ([refer to the docs if you don't](https://github.com/nodejs/node-gyp/blob/main/README.md)). On Windows, run the following command as administrator (in cmd or Powershell):
 
 ```bash
 npm install --global --production windows-build-tools

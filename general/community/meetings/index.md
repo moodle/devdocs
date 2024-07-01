@@ -12,7 +12,7 @@ sidebar_label: Meetings
 Developer meetings are open to anyone interested in Moodle development.
 
 :::important
-Our next Developer meeting is May 2024.
+Our next Developer meeting is July 2024.
 The agenda is not confirmed yet. If there are any topics that you would like to present or discuss at our next developer meeting, please contact [Olga Koenig](https://moodle.org/user/profile.php?id=6165464).
 
 :::
@@ -21,58 +21,59 @@ The agenda is not confirmed yet. If there are any topics that you would like to 
 
 ### 2024
 
-- [Developer meeting February 2024](./202402.md)
-- [Developer meeting March 2024](./202403.md)
+- [Developer meeting February 2024](./2024/02.md)
+- [Developer meeting March 2024](./2024/03.md)
+- [Developer meeting May 2024](./2024/05.md)
 
 ### 2023
 
-- [Developer meeting November 2023](./202311.md)
-- [Developer meeting August 2023](./202308.md)
-- [Developer meeting May 2023](./202305.md)
-- [Developer meeting March 2023](./202303.md)
-- [Developer meeting January 2023](./202301.md)
+- [Developer meeting November 2023](./2023/11.md)
+- [Developer meeting August 2023](./2023/08.md)
+- [Developer meeting May 2023](./2023/05.md)
+- [Developer meeting March 2023](./2023/03.md)
+- [Developer meeting January 2023](./2023/01.md)
 
 ### 2022
 
-- [Developer meeting October 2022](./202210.md)
-- [Developer meeting June 2022](./202206.md)
-- [Developer meeting April 2022](./202204.md)
-- [Developer meeting February 2022](./202202.md)
+- [Developer meeting October 2022](./2022/10.md)
+- [Developer meeting June 2022](./2022/06.md)
+- [Developer meeting April 2022](./2022/04.md)
+- [Developer meeting February 2022](./2022/02.md)
 
 ### 2021
 
-- [Developer meeting December 2021](https://docs.moodle.org/dev/Developer_meeting_December_2021)
-- [Developer meeting October 2021](https://docs.moodle.org/dev/Developer_meeting_October_2021)
-- [Developer meeting August 2021](https://docs.moodle.org/dev/Developer_meeting_August_2021)
-- [Developer meeting June 2021](https://docs.moodle.org/dev/Developer_meeting_June_2021)
-- [Developer meeting April 2021](https://docs.moodle.org/dev/Developer_meeting_April_2021)
-- [Developer meeting February 2021](https://docs.moodle.org/dev/Developer_meeting_February_2021)
+- [Developer meeting December 2021](./2021/12.md)
+- [Developer meeting October 2021](./2021/10.md)
+- [Developer meeting August 2021](./2021/08.md)
+- [Developer meeting June 2021](./2021/06.md)
+- [Developer meeting April 2021](./2021/04.md)
+- [Developer meeting February 2021](./2021/02.md)
 
 ### 2020
 
-- [Developer meeting December 2020](https://docs.moodle.org/dev/Developer_meeting_December_2020)
-- [Developer meeting October 2020](https://docs.moodle.org/dev/Developer_meeting_October_2020)
-- [Developer meeting August 2020](https://docs.moodle.org/dev/Developer_meeting_August_2020)
-- [Developer meeting June 2020](https://docs.moodle.org/dev/Developer_meeting_June_2020)
-- [Developer meeting April 2020](https://docs.moodle.org/dev/Developer_meeting_April_2020)
-- [Developer meeting January 2020](https://docs.moodle.org/dev/Developer_meeting_January_2020)
+- [Developer meeting December 2020](./2020/12.md)
+- [Developer meeting October 2020](./2020/10.md)
+- [Developer meeting August 2020](./2020/08.md)
+- [Developer meeting June 2020](./2020/06.md)
+- [Developer meeting April 2020](./2020/04.md)
+- [Developer meeting January 2020](./2020/01.md)
 
 ### 2019
 
-- [GlobalMoot DevJam Unconference November 2019](https://docs.moodle.org/dev/GlobalMoot_DevJam_Unconference_November_2019)
-- [Developer meeting October 2019](https://docs.moodle.org/dev/Developer_meeting_October_2019)
-- [Developer meeting July 2019](https://docs.moodle.org/dev/Developer_meeting_July_2019)
-- [Developer meeting May 2019](https://docs.moodle.org/dev/Developer_meeting_May_2019)
-- [Developer meeting April 2019](https://docs.moodle.org/dev/Developer_meeting_April_2019)
-- [Developer meeting March 2019](https://docs.moodle.org/dev/Developer_meeting_March_2019)
-- [Developer meeting February 2019](https://docs.moodle.org/dev/Developer_meeting_February_2019)
-- [Developer meeting January 2019](https://docs.moodle.org/dev/Developer_meeting_January_2019)
+- [GlobalMoot DevJam Unconference November 2019](./2018/global_devjam.md)
+- [Developer meeting October 2019](./2019/10.md)
+- [Developer meeting July 2019](./2019/07.md)
+- [Developer meeting May 2019](./2019/05.md)
+- [Developer meeting April 2019](./2019/04.md)
+- [Developer meeting March 2019](./2019/03.md)
+- [Developer meeting February 2019](./2019/02.md)
+- [Developer meeting January 2019](./2019/01.md)
 
 ### 2018
 
-- [Developer meeting December 2018](https://docs.moodle.org/dev/Developer_meeting_December_2018)
-- [Developer meeting November 2018](https://docs.moodle.org/dev/Developer_meeting_November_2018)
-- [Developer meeting July 2018](https://docs.moodle.org/dev/Developer_meeting_July_2018)
+- [Developer meeting December 2018](./2018/12.md)
+- [Developer meeting November 2018](./2018/11.md)
+- [Developer meeting July 2018](./2018/07.md)
 
 ### 2017
 

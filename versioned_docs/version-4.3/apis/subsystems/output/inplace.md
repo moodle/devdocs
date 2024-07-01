@@ -140,7 +140,7 @@ class inplace_edit_text extends \core\output\inplace_editable {
 
 You may choose to set the UI for your inplace editable element to be a string value (default), toggle or dropdown.
 
-Examples of dropdown setup (see also [example by overriding class](https://github.com/moodle/moodle/blob/master/tag/classes/output/tagareacollection.php)):
+Examples of dropdown setup (see also [example by overriding class](https://github.com/moodle/moodle/blob/main/tag/classes/output/tagareacollection.php)):
 
 ```php
 $tagcollections = \core_tag_collection::get_collections_menu(true);
@@ -163,7 +163,7 @@ $tmpl = new \core\output\inplace_editable(
 $tmpl->set_type_select($tagcollections);
 ```
 
-Example of toggle setup (see also [example by overriding class](https://github.com/moodle/moodle/blob/master/tag/classes/output/tagareaenabled.php)):
+Example of toggle setup (see also [example by overriding class](https://github.com/moodle/moodle/blob/main/tag/classes/output/tagareaenabled.php)):
 
 ```php
 $tmpl = new \core\output\inplace_editable(

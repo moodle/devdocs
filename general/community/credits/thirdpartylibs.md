@@ -171,7 +171,7 @@ Simple yet flexible JavaScript charting for designers & developers.
 Minimal lightweight simple logging for JavaScript.
 
 - **Location**: lib/amd/src/loglevel.js
-- **Version**: 1.8.1
+- **Version**: 1.9.1
 - **License**:  MIT
 - **URL**: [https://github.com/pimterry/loglevel/](https://github.com/pimterry/loglevel/)
 - **Copyright holders**:
@@ -308,12 +308,111 @@ CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/](https://github.com/codemirror/)
 
+### codemirror/autocomplete
+
+Autocompletion for the CodeMirror code editor.
+
+- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Version**: 6.16.0
+- **License**:  MIT
+- **URL**: [https://github.com/codemirror/autocomplete](https://github.com/codemirror/autocomplete)
+
+### codemirror/commands
+
+Collection of editing commands for the CodeMirror code editor.
+
+- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Version**: 6.5.0
+- **License**:  MIT
+- **URL**: [https://github.com/codemirror/commands](https://github.com/codemirror/commands)
+
+### codemirror/lang-css
+
+CSS language support for the CodeMirror code editor.
+
+- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Version**: 6.2.1
+- **License**:  MIT
+- **URL**: [https://github.com/codemirror/lang-css](https://github.com/codemirror/lang-css)
+
+### codemirror/lang-html
+
+HTML language support for the CodeMirror code editor.
+
+- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Version**: 6.4.9
+- **License**:  MIT
+- **URL**: [https://github.com/codemirror/lang-html](https://github.com/codemirror/lang-html)
+
+### codemirror/lang-javascript
+
+JavaScript language support for the CodeMirror code editor.
+
+- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Version**: 6.2.2
+- **License**:  MIT
+- **URL**: [https://github.com/codemirror/lang-javascript](https://github.com/codemirror/lang-javascript)
+
+### codemirror/lang-xml
+
+XML language support for the CodeMirror code editor.
+
+- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Version**: 6.1.0
+- **License**:  MIT
+- **URL**: [https://github.com/codemirror/lang-xml](https://github.com/codemirror/lang-xml)
+
+### codemirror/language
+
+Language support infrastructure for the CodeMirror code editor.
+
+- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Version**: 6.10.1
+- **License**:  MIT
+- **URL**: [https://github.com/codemirror/language](https://github.com/codemirror/language)
+
+### codemirror/lint
+
+Linting support for the CodeMirror code editor.
+
+- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Version**: 6.7.1
+- **License**:  MIT
+- **URL**: [https://github.com/codemirror/lint](https://github.com/codemirror/lint)
+
+### codemirror/search
+
+Search functionality for the CodeMirror code editor.
+
+- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Version**: 6.5.6
+- **License**:  MIT
+- **URL**: [https://github.com/codemirror/search](https://github.com/codemirror/search)
+
+### codemirror/state
+
+Editor state data structures for the CodeMirror code editor.
+
+- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Version**: 6.4.1
+- **License**:  MIT
+- **URL**: [https://github.com/codemirror/state](https://github.com/codemirror/state)
+
+### codemirror/view
+
+DOM view component for the CodeMirror code editor.
+
+- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Version**: 6.26.3
+- **License**:  MIT
+- **URL**: [https://github.com/codemirror/view](https://github.com/codemirror/view)
+
 ### Emoji data
 
 Library to parse easily data and sprite sheets for emoji.
 
 - **Location**: lib/emoji-data
-- **Version**: 15.0.1 (with Moodle customisations)
+- **Version**: 15.1.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/iamcal/emoji-data/](https://github.com/iamcal/emoji-data/)
 - **Copyright holders**:
@@ -377,7 +476,7 @@ Class to draw line, point, bar, and area graphs, including numeric x-axis and do
 Guzzle is a PHP HTTP client library
 
 - **Location**: lib/guzzlehttp/guzzle
-- **Version**: 7.5.0
+- **Version**: 7.8.1
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/guzzle](https://github.com/guzzle/guzzle)
 
@@ -386,7 +485,7 @@ Guzzle is a PHP HTTP client library
 A HTTP Cache for Guzzle as a simple Middleware to be added in the HandlerStack.
 
 - **Location**: lib/guzzlehttp/kevinrob/guzzlecache
-- **Version**: 4.0.2
+- **Version**: 5.1.0
 - **License**:  MIT
 - **URL**: [https://github.com/Kevinrob/guzzle-cache-middleware](https://github.com/Kevinrob/guzzle-cache-middleware)
 
@@ -395,7 +494,7 @@ A HTTP Cache for Guzzle as a simple Middleware to be added in the HandlerStack.
 Guzzle promises library
 
 - **Location**: lib/guzzlehttp/promises
-- **Version**: 1.5.2
+- **Version**: 2.0.2
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/promises](https://github.com/guzzle/promises)
 
@@ -404,7 +503,7 @@ Guzzle promises library
 PSR-7 message implementation that also provides common utility methods
 
 - **Location**: lib/guzzlehttp/psr7
-- **Version**: 2.4.3
+- **Version**: 2.6.2
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/psr7](https://github.com/guzzle/psr7)
 
@@ -508,7 +607,7 @@ All rights reserved.
 Library for processing of GeoIP data files.
 
 - **Location**: lib/maxmind/GeoIp2
-- **Version**: 2.13.0
+- **Version**: 3.0.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/GeoIP2-php](https://github.com/maxmind/GeoIP2-php)
 - **Copyright holders**:
@@ -519,7 +618,7 @@ Library for processing of GeoIP data files.
 PHP API for reading MaxMind DB files.
 
 - **Location**: lib/maxmind/MaxMind
-- **Version**: 1.11.0
+- **Version**: 1.11.1
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/MaxMind-DB-Reader-php/](https://github.com/maxmind/MaxMind-DB-Reader-php/)
 - **Copyright holders**:
@@ -656,7 +755,7 @@ PHP Enum implementation inspired from SplEnum
 - **Copyright holders**:
   - 2015 My C-Labs
 
-### A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
+### PHP-JWT
 
 A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
 
@@ -787,7 +886,7 @@ Provides an abstraction that describe the components of a HTTP Client.
 Provides interfaces that describe the components of a HTTP Factory.
 
 - **Location**: lib/psr/http-factory
-- **Version**: 1.0.1
+- **Version**: 1.1.0
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/http-factory](https://github.com/php-fig/http-factory)
 
@@ -1035,7 +1134,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
   - 2011-2021 Twitter, Inc
   - 2011-2021 The Bootstrap Authors
 
-### undefined
+### bootstrap-button
 
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 

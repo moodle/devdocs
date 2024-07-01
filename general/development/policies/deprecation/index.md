@@ -18,7 +18,7 @@ In an open source project, the end use of the codebase varies. People may have c
 
 ## What is Moodle's deprecation policy?
 
-- Deprecations should only be on master, not on stables (exceptions may be made for some external service integrations)
+- Deprecations should only be on main, not on stables (exceptions may be made for some external service integrations)
 - Deprecations apply to all public APIs, classes, and files.
 - Removal of a function, class, or file may only be considered after a minimum of 4 major releases since the deprecation. Example: anything deprecated in 3.2 means that it will be removed in 3.6
 - All deprecations should emit debugging notices where possible
@@ -36,7 +36,7 @@ Both steps should always happen as earlier as possible in the 6-months period be
 
 ### Step 1. Immediate action
 
-Deprecation affects only the current master version, in other words, the deprecation only becomes effective after the next [major release](../../../releases.md).
+Deprecation affects only the current main version, in other words, the deprecation only becomes effective after the next [major release](../../../releases.md).
 
 - If the function is not a member of a class (in other words, it is an independent function), it should be moved, with its PHPDoc and all comments, to `lib/deprecatedlib.php`, which is included everywhere. If the function is a class member, it will need to be deprecated in its current location.
   - Deprecated behat step definitions should be moved to `lib/tests/behat/behat_deprecated.php`. Steps that are part of a component should be moved to `$COMPONENT_DIRECTORY/tests/behat/behat_<COMPONENT>_deprecated.php` instead. Deprecated function should call to `behat_deprecated::deprecated_message()` proposing an alternative to the deprecated method.
@@ -98,7 +98,7 @@ Longer deprecation periods can be considered for functions that are widely used.
 
 ### Step 2. Final deprecation
 
-- If a function has been marked as deprecated for `3.[x]` (eg. 3.1) and set for removal at `3.[x + 4]` (eg. 3.5), soon after the release of `3.[x + 3].1` (eg. 3.4.1), the `3.[x + 4]` deprecation META will be processed. This means that the deprecated function will undergo final deprecation before `3.[x + 4]`, but only in the master version. This allows any potential regressions caused by the final deprecation of the function to be exposed as soon as possible.
+- If a function has been marked as deprecated for `3.[x]` (eg. 3.1) and set for removal at `3.[x + 4]` (eg. 3.5), soon after the release of `3.[x + 3].1` (eg. 3.4.1), the `3.[x + 4]` deprecation META will be processed. This means that the deprecated function will undergo final deprecation before `3.[x + 4]`, but only in the main version. This allows any potential regressions caused by the final deprecation of the function to be exposed as soon as possible.
 - When a function undergoes final deprecation, all content of the function should be removed. In the skeleton that remains, an error statement should be included that indicates that the function cannot be used anymore. You can also direct developers to the new function(s) in this message.
 
 <Tabs>

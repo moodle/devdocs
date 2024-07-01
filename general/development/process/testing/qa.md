@@ -23,7 +23,7 @@ Would you like to help with QA testing? If so, please make sure you have created
    - Only assign an issue to yourself which no one else is testing (Assignee = Unassigned).
    - Only assign one issue at a time unless you plan to test a number of related issues within the next 24 hours. In other words, don't assign several issues to yourself then do nothing for several days. ;-)
    - The label `test_server_required` indicates issues that can't be tested on the QA testing site. The label `credentials_required` indicates that credentials such as an OAuth 2 service client ID and secret are required.
-2. Using either the [Moodle QA Testing Site](https://qa.moodledemo.net/) or your own test site running the latest Moodle 4.2dev (available from Git on the integration/master branch git://git.moodle.org/integration.git) with [debugging](https://docs.moodle.org/dev/debugging) set to developer, perform each of the steps listed in the test.
+2. Using either the [Moodle QA Testing Site](https://qa.moodledemo.net/) or your own test site running the latest Moodle 4.2dev (available from Git on the integration/main branch git://git.moodle.org/integration.git) with [debugging](https://docs.moodle.org/dev/debugging) set to developer, perform each of the steps listed in the test.
 3. Please *attach screenshots of the steps where you verify or check something*.
 4. If it makes sense, please test using the currently supported themes, Boost and Classic.
 5. Choose an appropriate workflow action:
@@ -229,6 +229,21 @@ To create a new QA test:
 - For a test requiring admin access which can be run on the QA site, add:
 
 > This test requires admin access. If you would like to use the [QA testing site|https://qa.moodledemo.net/] for running it, please see the [QA testing guide|https://docs.moodle.org/dev/QA_testing] for details of how to request admin access. Begin just after the hourly reset to give yourself plenty of time to complete the test!
+
+:::
+
+## Automating a test
+
+1. Choose a test from the list [MDLQA tests with label mdlqa_conversion](https://tracker.moodle.org/issues/?jql=project%20%3D%20MDLQA%20AND%20labels%20%3D%20mdlqa_conversion%20and%20status%20%3D%20Open).
+1. Create a new MDL issue with summary `Automate MDLQA-wxyz` and component `Automated functional tests` and any MDLQA component such as `Forum` which is also an MDL component.
+1. Add the `mdlqa_conversion` label to the new MDL issue
+1. Link to the MDLQA test by selecting `Will help resolve` as the link type.
+1. Follow the instructions provided in the guide Writing acceptance tests.
+1. Include `MDLQA-wxyz` and a short description of what is being automated to the commit message/s where the .feature files are added/edited.
+
+:::info
+
+When a test is automated, it needs to be moved from MDLQA-1 to MDLQA-5249.
 
 :::
 

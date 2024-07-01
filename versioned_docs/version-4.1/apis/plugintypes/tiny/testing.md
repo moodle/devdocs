@@ -29,7 +29,7 @@ By using these tags appropriately, Moodle will ensure that TinyMCE is set as the
 
 ### Useful steps
 
-A number of useful Behat steps have been defined in [TinyMCE Behat context](https://github.com/moodle/moodle/blob/master/lib/editor/tiny/tests/behat/behat_editor_tiny.php).
+A number of useful Behat steps have been defined in [TinyMCE Behat context](https://github.com/moodle/moodle/blob/main/lib/editor/tiny/tests/behat/behat_editor_tiny.php).
 
 :::caution Use generic steps where possible
 
@@ -39,7 +39,7 @@ Typically, when interacting with an Editor, you should use the _generic_ step de
 
 #### Generic steps to interact with editors
 
-Most of these steps are defined in the [Behat Forms context](https://github.com/moodle/moodle/blob/master/lib/tests/behat/behat_forms.php) and this documentation should not be treated as a complete list, rather an indication of approaches that you may consider taking.
+Most of these steps are defined in the [Behat Forms context](https://github.com/moodle/moodle/blob/main/lib/tests/behat/behat_forms.php) and this documentation should not be treated as a complete list, rather an indication of approaches that you may consider taking.
 
 ##### Setting content of a field
 

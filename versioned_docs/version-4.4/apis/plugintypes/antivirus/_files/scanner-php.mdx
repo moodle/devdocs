@@ -1,0 +1,13 @@
+<!-- markdownlint-disable first-line-heading -->
+<!-- cspell:ignore deleteinfected -->
+
+The `classes/scanner.php` class must be defined in the correct namespace for your plugin, and must extend the `\core\antivirus\scanner` class.
+
+It is responsible for implementing the interface between Moodle and the antivirus scanning tool.
+
+The following methods are compulsory:
+
+- `is_configured(): bool` - returns true, if this antivirus plugin is configured.
+- `scan_file($file, $filename, $deleteinfected): void` - performs the **$file** scanning using antivirus functionality, using **$filename** as filename string in any reporting, deletes infected file if **$deleteinfected** is true.
+
+If a virus is found the `scan_file()` function _must_ throw an instance of the `\core\antivirus\scanner_exception` type.

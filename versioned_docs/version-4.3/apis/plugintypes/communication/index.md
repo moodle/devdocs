@@ -133,6 +133,6 @@ All the necessary actions to remove members from a room should live here. The ar
 
 :::info
 
-For a real plugin example, please look at the [Matrix plugin](https://github.com/moodle/moodle/tree/master/communication/provider/matrix).
+For a real plugin example, please look at the [Matrix plugin](https://github.com/moodle/moodle/tree/main/communication/provider/matrix).
 
 :::

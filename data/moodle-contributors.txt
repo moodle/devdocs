@@ -8,6 +8,7 @@ Abdullah
 Abhijit
 Abhimanyu
 Abhishek
+Abila
 Abraham
 Ackermann
 Ackland-Snow
@@ -239,6 +240,7 @@ Damiani
 Damien
 Damyon
 Dang
+DangHieu1407
 Dani
 Daniel
 Daniele
@@ -680,6 +682,7 @@ Marty
 Martín
 Mary
 Massart
+Massicotte
 Mastny
 Matamoros
 Materka
@@ -1007,6 +1010,7 @@ Skoda
 Skylar
 Smith
 Sokolov
+Soler
 Solomon
 Soon-Systems
 Souto
@@ -1083,6 +1087,7 @@ Tomo
 Toni
 Tony
 Topfstedt
+Torrent
 Torres
 Totaram
 Travis

@@ -117,7 +117,7 @@ Few things to highlight:
 
 ## Individual settings
 
-Let us look at a simple example: [mod/lesson/settings.php](https://github.com/moodle/moodle/blob/master/mod/lesson/settings.php). This is included by admin/settings/plugins.php, which has already created $settings, which is an admin_settingpage that we can add to. The file contains lots of lines that look a bit like:
+Let us look at a simple example: [mod/lesson/settings.php](https://github.com/moodle/moodle/blob/main/mod/lesson/settings.php). This is included by admin/settings/plugins.php, which has already created $settings, which is an admin_settingpage that we can add to. The file contains lots of lines that look a bit like:
 
 ```php
 $settings->add(new admin_setting_configtext('mod_lesson/mediawidth', get_string('mediawidth', 'lesson'),

@@ -146,7 +146,7 @@ With the changes in boost to incorporate the primary and secondary navigation, t
   ```
 
 - It is recommended to transition towards the secondary/tertiary navigation hierarchy to reduce user cognitive load and with a logical separation of components
-  - Secondary navigation can be added to the templates by following the example https://github.com/moodle/moodle/blob/master/theme/boost/templates/columns2.mustache#L64-L68 This leverages the secondary navigation class to generate it's content.
+  - Secondary navigation can be added to the templates by following the example https://github.com/moodle/moodle/blob/main/theme/boost/templates/columns2.mustache#L64-L68 This leverages the secondary navigation class to generate it's content.
 - Flat navigation classes have been marked for deprecation. Themes that leverage the flat_navigation will need to make the following changes in their plugins in order to use it
   - Account for the additional changes [theme changes](#theme-changes)
   - Indicate that they do not implement secondary navigation via the page's `set_secondary_navigation` function. It is recommended to set this within the root layout file, for example, columns2
@@ -838,7 +838,7 @@ More information about this project can be found in the [Site admin presets](htt
 
 From Moodle 4.0, Internet Explorer is no longer supported. See [MDL-73915](https://tracker.moodle.org/browse/MDL-73915) and [MDLSITE-6109](https://tracker.moodle.org/browse/MDLSITE-6109) for further information on this change.
 
-This change means that changes built on 4.0 onwards (including the master branch) will be different to older versions of Moodle.
+This change means that changes built on 4.0 onwards (including the main branch) will be different to older versions of Moodle.
 
 For plugin developers supporting multiple versions of Moodle using a single plugin version, the compiled JavaScript files are backwards compatible and will _work_ on all supported versions, however if you run the `grunt` command on multiple versions you will see unbuilt changes. Running grunt on all versions of Moodle is not necessary and this check can be safely disabled for Moodle versions 3.9 - 4.0, as long as only at least you run `grunt` against at least one version of Moodle.
 

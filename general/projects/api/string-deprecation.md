@@ -58,7 +58,7 @@ When deprecating a core string from `lang/en/xxxx.php` the `fullcomponentname` s
 
 :::
 
-- Strings can be deprecated and removed on the `master` branch only.
+- Strings can be deprecated and removed on the `main` branch only.
 - Locate or create a file `deprecated.txt` either in `lang/en/` or `componentfullpath/lang/en/`
 - Add a line `identifier,fullcomponentname` to the end of this file
 - Move the string inside the existing language file to the end of the file under the comment `// Deprecated since Moodle X.Y.` (this comment will help removing deprecated strings later).
@@ -78,14 +78,14 @@ There are two possibilities. Either the code that uses the deprecated string mus
 
 Use the `git-blame` tool on the corresponding `lang/en/deprecated.txt` and find the commit/issue that deprecated the string. It should give you enough information to decide on the most appropriate action.
 
-- If you think the string was deprecated by mistake, create a new issue in the tracker to remove it from the list (on all supported branches, not only on master).
+- If you think the string was deprecated by mistake, create a new issue in the tracker to remove it from the list (on all supported branches, not only on main).
 - If the string was renamed or moved, you will probably want to fix the caller to use the new name/location of the string.
 - You may as well copy the string to your own plugin scope and make it context-specific.
 
 :::info Git blame
 
-[git blame lang/en/deprecated.txt](https://github.com/moodle/moodle/blame/master/lang/en/deprecated.txt)<br/>
-[git blame mod/quiz/lang/en/deprecated.txt](https://github.com/moodle/moodle/blame/master/mod/quiz/lang/en/deprecated.txt)
+[git blame lang/en/deprecated.txt](https://github.com/moodle/moodle/blame/main/lang/en/deprecated.txt)<br/>
+[git blame mod/quiz/lang/en/deprecated.txt](https://github.com/moodle/moodle/blame/main/mod/quiz/lang/en/deprecated.txt)
 
 :::
 

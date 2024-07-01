@@ -43,7 +43,7 @@ For details about using the Moodle API to get things done, see the [coding guide
 
 Several tools are available to help you in write code that conforms to this guide:
 
-- The Moodle [Code checker](https://moodle.org/plugins/view.php?plugin=local_codechecker) (integrates with [eclipse/phpstorm](https://github.com/moodlehq/moodle-local_codechecker/blob/master/README.md#ide-integration))
+- The Moodle [Code checker](https://moodle.org/plugins/view.php?plugin=local_codechecker) (integrates with [eclipse/phpstorm](https://github.com/moodlehq/moodle-local_codechecker/blob/main/README.md#ide-integration))
 - The Moodle [PHPdoc checker](https://moodle.org/plugins/local_moodlecheck)
 
 It is worth using both tools to check the code you are writing as they both perform slightly different checks.
@@ -2024,7 +2024,7 @@ This is especially important if you know an issue still exists in that code that
 
 If you have a big task that is nearly done, apart a few TODOs, and you really want to mark the big task as finished, then you should file new tracker tasks for each TODO and change the TODOs comments to point at the new issue numbers.
 
-There is a nice "to-do checker" reporting tool, restricted to admins and available via web @ [`lib/tests/other/todochecker.php`](https://github.com/moodle/moodle/blob/master/lib/tests/other/todochecker.php).
+There is a nice "to-do checker" reporting tool, restricted to admins and available via web @ [`lib/tests/other/todochecker.php`](https://github.com/moodle/moodle/blob/main/lib/tests/other/todochecker.php).
 
 Finally, don't forget to add any MDL-12345 used by your TODOs (and @todos too, unless part of the [deprecation process](../deprecation/index.md), those are handled apart) to the "Review TODOs Epic": MDL-47779 (requires login to see the issues)
 
@@ -2079,8 +2079,8 @@ Way before this coding-style guide was defined and agreed, a lot of code had bee
 In any case, in order to normalize the (progressive, non-critical) transition, a policy issue (MDL-43233) was created and agreed about. And these are the rules to apply to coding-style only changes:
 
 1. Related coding-style changes (same lines, a variable within a method/function, adjacent comments, etc.) within a real issue are allowed.
-1. Unrelated coding-style changes (other methods, blocks of code, comments, etc.) within a real issue are only accepted for master and in a separate commit.
-1. Coding-style only issues are only accepted for master along the first 2 months of every cycle.
+1. Unrelated coding-style changes (other methods, blocks of code, comments, etc.) within a real issue are only accepted for main and in a separate commit.
+1. Coding-style only issues are only accepted for main along the first 2 months of every cycle.
 
 ## Git commits
 

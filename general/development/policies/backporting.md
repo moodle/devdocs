@@ -15,7 +15,17 @@ Our general policy is as follows:
 - Bug fixes will be backported to all (and only to) supported stable branches.
   - When fixing a bug, please provide a fix for all supported stable branches.
   - If a fix doesn't make sense to be backported to every branch, please make it clear in the issue.
-- Improvements or new features will only land in master.
+- Improvements or new features will only land in `main`.
+
+### Bug fixes for accessibility issues
+
+As part of Moodle's commitment to accessibility, bug fixes for accessibility issues can be backported to the latest LTS branch whenever possible, in addition to the supported stable branches.
+
+- This policy applies even when the LTS branch goes out of general support and into security support.
+- Accessibility fixes will not be backported to non-LTS branches that are out of general support.
+- If the LTS branch is out of general support and under security support, the Integration Team will exercise discretion in determining whether the accessibility fix is [safe enough](../process/integration/index.md#integration-principles) to be backported to the LTS branch.
+- When the next LTS version is released, backporting of accessibility bug fixes will cease for the older LTS branch.
+  - For example, accessibility bug fixes will be backported to the Moodle 4.1 LTS branch from its release up to Moodle 4.4's release. However, when Moodle 4.5 LTS is released, accessibility fixes will no longer be backported to the 4.1 LTS branch.
 
 ## Process for requesting a non bug-fix backport
 

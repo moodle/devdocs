@@ -202,3 +202,49 @@ The `.card-deck` helper class has been replaced with utility classes.
 ```
 
 </ValidExample>
+
+## Create a BS5 "bridge"
+
+<Since version="4.5" issueNumber="MDL-79917" />
+
+Some simple breaking changes could be also addressed in advance creating a BS5 "bridge". With small additions to this "bridge", we can refactor in advance the occurrences in the codebase for some dropped or changed features in BS5.
+
+A new SCSS file `bs5-bridge.scss` has been created in the `theme/boost/scss/moodle` folder. This file will contain the necessary changes to make the codebase compatible with Bootstrap 5.
+
+:::info Example of a bridge in `bs5-bridge.scss`
+
+```css
+/* In Bootstrap 5 the .no-gutters class has been replaced with .g-0, so we can
+add a new class in the bridge file to make the codebase compatible with BS5. */
+.g-0 {
+    @extend .no-gutters;
+}
+```
+
+:::
+
+### No gutters
+
+The `.no-gutters` grid class has been replaced with `.g-0`.
+
+<InvalidExample title="Don't">
+
+```html
+<div class="row no-gutters">
+    <div class="col-6">[...]</div>
+    <div class="col-6">[...]</div>
+</div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<div class="row g-0">
+    <div class="col-6">[...]</div>
+    <div class="col-6">[...]</div>
+</div>
+```
+
+</ValidExample>

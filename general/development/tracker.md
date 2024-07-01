@@ -120,4 +120,4 @@ Remember that the Tracker is a low-bandwidth communication medium based mostly o
 ## See also
 
 - [Tracker tips](./tracker/tips)
-- [New feature ideas](https://docs.moodle.org/dev/New_feature_ideas)
+- [New feature ideas](../community/contribute.md)
