@@ -42,6 +42,14 @@ You can follow the same process that is documented in the [Moodle App Remote The
 
 Make sure to read it in order to understand how to style your application for newer versions of the app. If you're upgrading your styles, it is likely that the documentation has been updated since you read it. So we recommend taking a look even if you're already familiar with Remote Themes.
 
+## 4.3 to 4.4
+
+Ionic version has been upgraded to v7 (from v5). This shouldn't have any direct impact in remote themes; but make sure that they are still working properly.
+
+## 4.2 to 4.3
+
+The only change to keep in mind for this release is that Font Awesome icons were upgraded to version 6.4.0. This shouldn't affect Remote Themes directly, but given that it affects the visuals aspects of the app, it could potentially be relevant.
+
 ## 4.1 to 4.2
 
 The only change to keep in mind for this release is that Font Awesome icons were upgraded to version 6.3.0. This shouldn't affect Remote Themes directly, but given that it affects the visuals aspects of the app, it could potentially be relevant.

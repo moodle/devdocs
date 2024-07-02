@@ -1,6 +1,7 @@
 ---
 title: Acceptance testing for the Moodle App
 sidebar_label: Acceptance testing
+sidebar_position: 2
 tags:
   - Quality Assurance
   - Testing
@@ -23,7 +24,7 @@ The main advantages of this approach are:
 
 In order to run tests for the app, you will need to run both a Moodle site and the Moodle App.
 
-The Moodle site should be version 3.9.7+, 3.10.4+ or newer (3.11, 4.0, etc.). You also need to install the [`local_moodleappbehat`](https://github.com/moodlehq/moodle-local_moodleappbehat/) plugin, using the version that corresponds with the version of the Moodle App that you're testing on. If you have tests for an older version, you can read [How to upgrade tests from an older version](../../upgrading/acceptance-tests-upgrade-guide.md).
+You need to install the [`local_moodleappbehat`](https://github.com/moodlehq/moodle-local_moodleappbehat/) plugin, using the version that corresponds with the version of the Moodle App that you're testing on. If you have tests for an older version, you can read [How to upgrade tests from an older version](../../upgrading/acceptance-tests-upgrade-guide.md).
 
 We recommend that you use [moodle-docker](https://github.com/moodlehq/moodle-docker#use-containers-for-running-behat-tests-for-the-mobile-app), because it's configured to run mobile tests and you can skip reading this entire section. You won't even need to clone the app repository.
 
@@ -48,12 +49,33 @@ However you set up the environment, if you change the version of the app you'll 
 In order to enable app testing, you need to add the following configuration to your site's `config.php` file:
 
 ```php
-$CFG->behat_ionic_wwwroot = 'http://localhost:8100';
+$CFG->behat_ionic_wwwroot = 'https://localhost:8100';
 ```
 
 The url you use here must be reachable by your Moodle site, and the application needs to be served at this url when running tests and also when you initialise the Behat environment.
 
 The Moodle App [only works in Chromium-based browsers](../setup/app-in-browser), so mobile tests will be ignored if you are using any other browser. You can learn how to configure the browser used in your tests in the [Running acceptance test](../../../development/tools/behat/running.md) page.
+
+Additionally, the app must run in a secure context and will issue local certificates during development. This aren't usually trusted by browsers out of the box, so you'll need to disable some security capabilities to make it work:
+
+```php
+$CFG->behat_profiles = [
+    'default' => [
+        'browser' => 'chrome', // Make sure it's version 102 or newer.
+        'wd_host' => 'http://localhost:4444/wd/hub',
+        'capabilities' => [
+            'extra_capabilities' => [
+                'chromeOptions' => [
+                    'args' => [
+                        '--ignore-certificate-errors',
+                        '--allow-running-insecure-content',
+                    ],
+                ],
+            ],
+        ],
+    ],
+];
+```
 
 If everything is configured properly, you should see "Configured app tests for version X.X.X" after running `admin/tool/behat/cli/init.php`.
 
@@ -328,7 +350,7 @@ While the test is paused, you can also carry out some of the app Behat steps man
 
 Here are some examples:
 
-```javascript
+```js
 // I set the field "Password" to "student2" in the app
 behat.setField('Password', 'student2');
 
@@ -366,16 +388,14 @@ Learn more about it in the [plugin documentation](https://github.com/NoelDeMarti
 
 If you are stuck with an error and you can't find a way to continue, here's a list of things you can do:
 
-- Make sure you added `$CFG->behat_ionic_wwwroot = "http://localhost:8100";` (or equivalent) to your `config.php` file, and that url is reachable from the host where your Moodle site is running.
+- Make sure you added `$CFG->behat_ionic_wwwroot = "https://localhost:8100";` (or equivalent) to your `config.php` file, and that url is reachable from the host where your Moodle site is running.
 - Remember when you need to re-run `admin/tool/behat/cli/init.php`, and make sure that you see "Configured app tests for version X.X.X". When in doubt, just run it again; it may fix your problem.
 - It is possible that your tests break if you're using an unstable version of the app. Try to use stable versions using the `latest` branch if you're working with the source code or tagged releases if you're using Docker.
 - Mobile Behat tests don't work well with XDebug, so if you're using it, turn it off in `php.ini` while running the tests. Also, remember to restart Apache if necessary.
 
-### Unable to load app version from http://moodleapp:8100/config.json
+### Unable to load app version from https://localhost:8100/assets/env.json
 
 This message appears when the Moodle site is not able to reach the app. Make sure that the url is available from the host you're running the Behat commands from. Also make sure that the app is actually running at the specified url.
-
-It's ok if the actual `/config.json` url doesn't work, that's actually a remnant from legacy code. The url that Moodle is actually looking for is `/assets/env.json`.
 
 ### The plugins required by this course could not be loaded correctly...
 

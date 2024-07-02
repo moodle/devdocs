@@ -17,7 +17,7 @@ When a user presses a link in the Moodle app, the behaviour changes depending on
 
 ## Extending the list of supported URLs
 
-The app has a defined list of supported URLs. If you have a plugin adapted to work in the app and you want to support links to your plugin you will need to create a Link Handler. For more information and examples about this, please see the [Link handlers](../plugins-development-guide/index.md#link-handlers) documentation.
+The app has a defined list of supported URLs. If you have a plugin adapted to work in the app and you want to support links to your plugin you will need to create a Link Handler. For more information and examples about this, please see the [CoreContentLinksDelegate](../plugins-development-guide/api-reference.md#corecontentlinksdelegate) documentation.
 
 ## Opening links in an embedded browser
 

@@ -1,6 +1,7 @@
 ---
 title: Unit testing for the Moodle App
 sidebar_label: Unit testing
+sidebar_position: 1
 tags:
   - Quality Assurance
   - Testing

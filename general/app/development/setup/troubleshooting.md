@@ -14,8 +14,10 @@ If you are stuck with an error and you can't find a way to continue, here's a li
 
 - Using git, look at the changes you have in your working directory and make sure that they aren't causing the problem. Be specially careful with changes in `package.json` and `package-lock.json`. You can see a list of the files you have modified running `git status`.
 - Make sure that you are using the proper node and npm versions. You can see it looking at the `engines` key in `package.json`. If you are using [nvm](https://github.com/nvm-sh/nvm), just run `nvm install`.
-- Make sure that all dependencies have been installed properly. To be extra sure, run `npm ci`; this will remove the `node_modules/` folder and install all dependencies again exactly as described in your `package-lock.json`.
-- If you are having issues trying to build for Android or iOS, try removing the `www/`, `platforms/` and `plugins/` folders and try again.
+- Make sure that all dependencies have been installed properly. To be extra sure, run `npm ci`; this will remove the `node_modules/` folder and install all dependencies again exactly as described in your `package-lock.json`. You may want to delete `cordova-plugin-moodleapp/node_modules` as well.
+- Clear Angular's cache by removing the `.angular` folder.
+- If you are having issues trying to build for Android or iOS, try removing the `www/`, `platforms/`, and `plugins/` folders and try again.
+- Make sure to use the scripts configured in the app repository, such as `npm start` and `npm run dev:android`. The Ionic, Angular, and Cordova CLIs have many commands you could be using, such as `ionic serve`, `cordova run android`, `ng lint`, etc. We don't recommend using them because they haven't been tested as thoroughly. If you end up using them anyways, make sure to use them through `npx`, such as `npx ionic serve`. This will ensure that you're using the proper version of the CLIs instead of relying on a globally installed dependency.
 - If you are using a development version, maybe the repository is broken and it's not your fault. Try checking out the `latest` branch and see if you're getting the same error.
 - Try cloning the repository in a new folder and run through the instructions in this page again. If you can, try doing it on a different computer to make sure that you're doing everything properly and it's not a problem in your machine.
 - Try creating [a blank Ionic application](https://ionicframework.com/docs/cli/commands/start) and see if you're having the same problems. Make sure that you are using the same version of the main dependencies (Angular, Cordova, Ionic CLI, etc.).
@@ -35,7 +37,7 @@ To get more debug output from npm commands, see [the available configuration fla
 
 ## I can't change the language
 
-If you're getting a network error for a url like `http://localhost:8100/assets/lang/es.json`, this probably means that you haven't installed the language packs. You can install them with `npm run lang:update-langpacks`.
+If you're getting a network error for a url like `https://localhost:8100/assets/lang/es.json`, this probably means that you haven't installed the language packs. You can install them with `npm run lang:update-langpacks`.
 
 ## Error: `libsass` bindings not found. Try reinstalling node-sass?
 
@@ -222,7 +224,3 @@ There will be a pause (a few minutes) while building everything. It should finis
 `
 
 Then you can access it by running Chrome and connecting to localhost:8100.
-
-## `window.openDatabase` is not a function
-
-This error appears in browsers that don't support the [WebSQL](https://caniuse.com/?search=websql) API. We suggest using a [Chromium-based browser older than version 119](./app-in-browser.md).

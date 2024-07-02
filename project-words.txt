@@ -57,6 +57,7 @@ Nextcloud
 Notas
 OCI8
 OIDC
+OPFS
 OWASP
 Oudtshoorn
 Packagist
@@ -92,6 +93,7 @@ allowcaching
 assignfeedback
 assignsubmission
 behat
+behats
 behatsnapshots
 bigbluebuttonbn
 bitand
@@ -187,6 +189,7 @@ intval
 invalidcoursemodule
 isempty
 isnotempty
+isoverallcomplete
 lable
 langindex
 lastaccess
@@ -233,6 +236,7 @@ oldmoduleid
 onlinetext
 opcache
 otherfields
+outlinks
 pactivity
 passwordunmask
 pdftoppm
@@ -287,6 +291,7 @@ sitepolicynotagreed
 superglobals
 smallmessage
 splitview
+sqliteviewer
 stepslib
 strftimedate
 strikethrough
@@ -327,6 +332,7 @@ usertimezone
 varchar
 versionname
 videojs
+webapps
 webdav
 webserver
 webservice

@@ -11,6 +11,16 @@ In the following guide, you will learn how to upgrade your plugins' acceptance t
 
 Depending on which version of the app you're upgrading from, you'll need to go through multiple version upgrades. This guide is divided by version ranges, so you should be able to start with your current version and build up from there.
 
+## 4.3 to 4.4
+
+The application now needs to run in a secure context (https://). This change only affects your development environment, including acceptance tests, and it was necessary to [move on from the deprecated WebSQL API](https://tracker.moodle.org/browse/MOBILE-4304). Make sure to update the settings related to the app in the `config.php` of your Moodle's development environment.
+
+If you were using [moodle-docker](https://github.com/moodlehq/moodle-docker), you no longer need to use the `MOODLE_DOCKER_APP_RUNTIME` env variable; but if you do, you'll also need to change it to `ionic7`.
+
+## 4.2 to 4.3
+
+There haven't been any relevant changes in this version, but make sure to run your tests against the latest version to check that they continue working properly.
+
 ## 4.1 to 4.2
 
 The default dimensions in app tests have changed from 360x720 to 500x720. If you weren't running tests in headless mode, this change won't affect you because 500 was already the minimum width for a non-headless Chrome instance. This change was made to have consistent behaviours when the tests are run in both modes.

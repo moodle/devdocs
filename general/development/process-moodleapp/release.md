@@ -17,7 +17,7 @@ tags:
 | 4. | Add the release notes in the release issue created (search for the [release_notes tag](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20labels%20%3D%20release_notes)). Ask someone from the documentation team to review the release notes. | Developer |
 | 5. | Contact the marketing team announcing the new release and highlights. | Team Lead |
 | 6. | Add new QA tests to the `apps_test` site. New QA tests should be labeled with [qa_test_required](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20resolution%20in%20(Unresolved%2C%20Fixed)%20AND%20labels%20%3D%20qa_test_required%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC), remove that label once they are added to the site. | Tester |
-| 7. | Complete all TODOs related with the upcoming release, which are marked in code with a comment starting with `@todo [version-number]` (for example, before releasing 4.1 we'd search for comments starting with `@todo [4.1]`) | Developer |
+| 7. | Complete all TODOs related with the upcoming release, which are marked in code with a comment starting with `@todo {version-number}` (for example, before releasing 4.1 we'd search for comments starting with `@todo 4.1`) | Developer |
 | 8. | Update npm dependencies in the `main` branch, and run `npm audit` to ensure all the dependencies are OK. Also check github vulnerabilities report. | Developer |
 | 9. | **Start testing** | Tester |
 
@@ -31,9 +31,10 @@ tags:
 | 4. | Send the applications to the stores for review. | Team Lead |
 | 5. | Check TAG/Release have been created in github ([moodlehq/moodleapp](https://github.com/moodlehq/moodleapp/releases)) with the version number. | Developer |
 | 6. | Update the `ci` branch in the behat tests plugin ([moodlehq/moodle-local_moodleappbehat](https://github.com/moodlehq/moodle-local_moodleappbehat/)) with the version number. | Developer |
-| 7. | Open PR with release documentation updates (from [moodlemobile/devdocs:app-docs](https://github.com/moodlemobile/devdocs/tree/app-docs) to [moodle/devdocs](https://github.com/moodle/devdocs)). | Developer |
-| 8. | Mark the issue and the [version](https://tracker.moodle.org/projects/MOBILE?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page) as released in the tracker. | Team Lead |
-| 9. | Update [release notes](../../app_releases.md). | Team Lead |
+| 7. | Update [upgrade guides](../../app/upgrading). | Developer |
+| 8. | Open PR with release documentation updates (from [moodlemobile/devdocs:app-docs](https://github.com/moodlemobile/devdocs/tree/app-docs) to [moodle/devdocs](https://github.com/moodle/devdocs)). | Developer |
+| 9. | Mark the issue and the [version](https://tracker.moodle.org/projects/MOBILE?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page) as released in the tracker. | Team Lead |
+| 10. | Update [release notes](../../app_releases.md). | Team Lead |
 
 ## The following days
 
@@ -52,6 +53,7 @@ tags:
 | 11. | Review the new features/improvements specs/shaping documents to ensure that they clearly reflect the actual implementation of the feature. | All the team |
 | 12. | Review that all the minor issues found during the QA testing have a related and triaged MOBILE issue in the tracker. | All the team |
 | 13. | Make sure that tests are passing with all the supported versions in [ci.moodle.org](https://ci.moodle.org). | Developer |
+| 14. | Update APK in [download.moodle.org/mobile](https://download.moodle.org/mobile). | Team Lead |
 
 ## See also
 

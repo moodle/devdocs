@@ -18,11 +18,27 @@ Depending on which version of the app you're upgrading from, you'll need to go t
 
 Other than the changes outlined in this document, there may be smaller API changes that aren't highlighted here. Make sure to check the [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt) file for an exhaustive list with all the changes.
 
+## 4.3 to 4.4
+
+Starting with this release, the changes listed in [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt) will only document breaking changes for APIs exposed to site plugins. Internal changes will no longer be documented. Make sure to check out the file to learn about the changes in this version.
+
+Also, the Ionic version has been upgraded to v7 (from v5), make sure to check the relevant upgrade guides for [v6](https://ionicframework.com/docs/updating/6-0) and [v7](https://ionicframework.com/docs/updating/7-0). In particular, the syntax to declare input labels has been refactored. The legacy syntax will continue working for the time being, but we recommend migrating to the [modern syntax](https://ionicframework.com/docs/api/input#migrating-from-legacy-input-syntax) as soon as possible.
+
+The Angular version has also been upgraded to v17, and it comes with new features such as [a new syntax for conditionals and loops](https://angular.dev/essentials/conditionals-and-loops) and [signals](https://angular.dev/guide/signals). Signals are not available in the app yet, but most new features like the conditionals should work. In any case, always make sure to test your code with the latest version of the app before proceeding; and keep in mind that some of your users could still be using an old version of the app. So adopt these new features with caution.
+
+Finally, the application now needs to run in a secure context (https://). This change only affects your development environment, and it was necessary to [move on from the deprecated WebSQL API](https://tracker.moodle.org/browse/MOBILE-4304).
+
+## 4.2 to 4.3
+
+Font Awesome icons have been updated to version 6.4.0, so make sure that all the icons you're using in your plugin are still supported.
+
+Other than that, there have been some changes in the APIs related to analytics. Check out [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt) to learn about the specifics.
+
 ## 4.1 to 4.2
 
 Font Awesome icons have been updated to version 6.3.0, so make sure that all the icons you're using in your plugin are still supported.
 
-Additionally, the `<core-icon>` component has been removed (it was deprecated in 3.9.5). If you were still using it, you should replace it with `<ion-icon>` which now supports [using font icons](../development/plugins-development-guide#using-font-icons-with-ion-icon).
+Additionally, the `<core-icon>` component has been removed (it was deprecated in 3.9.5). If you were still using it, you should replace it with `<ion-icon>` which now supports [using font icons](../development/plugins-development-guide/api-reference.md#ion-icon).
 
 ## 4.0 to 4.1
 
@@ -136,7 +152,7 @@ Here's an example to create a subclass of `CoreContentLinksModuleIndexHandler`:
 
 <CodeDiff titles="3.9.4, 3.9.5" vertical>
 
-```javascript
+```js
 function AddonModCertificateModuleLinkHandler() {
     that.CoreContentLinksModuleIndexHandler.call(
         this,
@@ -152,7 +168,7 @@ AddonModCertificateModuleLinkHandler.prototype = Object.create(this.CoreContentL
 AddonModCertificateModuleLinkHandler.prototype.constructor = AddonModCertificateModuleLinkHandler;
 ```
 
-```javascript
+```js
 class AddonModCertificateModuleLinkHandler extends this.CoreContentLinksModuleIndexHandler {
 
     constructor() {
@@ -170,17 +186,17 @@ class AddonModCertificateModuleLinkHandler extends this.CoreContentLinksModuleIn
 
 We've also done some changes to the code of the app. Most of these changes probably don't affect your plugin, but you should still check this out just in case:
 
-- `<core-icon>` has been deprecated, please use `<ion-icon>` instead that now supports Font Awesome icons. See [Using 'font' icons with ion-icon](../development/plugins-development-guide#using-font-icons-with-ion-icon) for more information.
+- `<core-icon>` has been deprecated, please use `<ion-icon>` which now supports [using font icons](../development/plugins-development-guide/api-reference.md#ion-icon).
 - To "cross out" an icon using `ion-icon` you need to use `class="icon-slash"` instead of `slash="true"`.
 - The function `syncOnSites` from `CoreSyncBaseProvider` now expects to receive a function with the parameters already bound:
 
 <CodeDiff titles="3.9.4, 3.9.5" vertical>
 
-```javascript
-syncOnSites('events', this.syncAllEventsFunc.bind(this), [siteId);
+```js
+syncOnSites('events', this.syncAllEventsFunc.bind(this), [siteId]);
 ```
 
-```javascript
+```js
 syncOnSites('events', this.syncAllEventsFunc.bind(this, force), siteId);
 ```
 
