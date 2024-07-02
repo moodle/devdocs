@@ -55,7 +55,7 @@ Checks are broken down into types, which roughly map to a step in the life cycle
 
 Available from _/admin/environment.php_, environmental checks make sure that a Moodle instance is fully configured.
 
-This page is a potential candidate to move to the new Check API but it slightly more complex than the other checks so hasn't been tackled yet. It would be a deeper change and this is intrinsically part of the install and upgrade system. It is not as critical to refactor as it is already possible for a plugin to declare its own checks, via either declarative [Environment checking](https://docs.moodle.org/dev/Environment_checking) or programmatically with a custom check:
+This page is a potential candidate to move to the new Check API but it slightly more complex than the other checks so it hasn't been tackled yet. It would be a deeper change and this is intrinsically part of the install and upgrade system. It is not as critical to refactor as it is already possible for a plugin to declare its own checks, via either declarative [Environment checking](https://docs.moodle.org/dev/Environment_checking) or programmatically with a custom check:
 
 ### Configuration checks
 
