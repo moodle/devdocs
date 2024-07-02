@@ -584,3 +584,15 @@ export const configure = (instanceConfig) => {
 ```
 
 </details>
+
+## CSS styles
+
+CSS styles that apply to the editor controls and its popup windows can be placed in the normal Moodle `styles.css` file, because these controls are part of the normal Moodle page.
+
+If there are styles that need to apply to the actual content being edited, this appears in a separate iframe so the normal styles have no effect. These styles should be placed in a file called `editor_styles.css`. You might need to do this if your plugin inserts HTML within the content such as a custom `<span class="...">` tag which needs particular styling.
+
+:::note
+
+Care should be taken when adding content styles so that generated content is not tied to the editor plugin. If the plugin is removed (or users choose a different editor), it should not break content.
+
+:::
