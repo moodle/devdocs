@@ -137,8 +137,11 @@ Course_formats:
 - filePath: "/docs/apis/plugintypes/format/index.md"
   slug: "/docs/apis/plugintypes/format"
 Creating_mobile_course_formats:
-- filePath: "/general/app/development/plugins-development-guide/examples/create-course-formats.md"
-  slug: "/general/app/development/plugins-development-guide/examples/create-course-formats"
+- filePath: "/general/app/development/plugins-development-guide/examples/course-formats.md"
+  slug: "/general/app/development/plugins-development-guide/examples/course-formats"
+Creating_mobile_question_types:
+- filePath: "/general/app/development/plugins-development-guide/examples/question-types.md"
+  slug: "/general/app/development/plugins-development-guide/examples/question-types"
 Credits:
 - filePath: "/general/community/credits/index.md"
   slug: "/general/community/credits"
@@ -1402,17 +1405,14 @@ Moodle_App_Release_Notes:
 - filePath: "/general/app_releases.md"
   slug: "/general/app_releases"
 Moodle_App_Release_Process:
-- filePath: "/general/app/development/release-process.md"
-  slug: "/general/app/development/release-process"
+- filePath: "/general/development/process-moodleapp/release.md"
+  slug: "/general/development/process-moodleapp/release"
 Moodle_App_Remote_Themes:
 - filePath: "/general/app/customisation/remote-themes.md"
   slug: "/general/app/customisation/remote-themes"
 Moodle_App_Remote_Themes_Upgrade_Guide:
 - filePath: "/general/app/upgrading/remote-themes-upgrade-guide.md"
   slug: "/general/app/upgrading/remote-themes-upgrade-guide"
-Moodle_App_Scripts:_gulp_push:
-- filePath: "/general/app/development/scripts/gulp-push.md"
-  slug: "/general/app/development/scripts/gulp-push"
 Moodle_Development_kit:
 - filePath: "/general/development/tools/mdk.md"
   slug: "/general/development/tools/mdk"
