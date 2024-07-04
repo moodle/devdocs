@@ -9,6 +9,26 @@ tags:
 
 This page highlights the important changes that are coming in Moodle 4.5 for developers.
 
+## Badges
+
+### Deprecated `badges/newbadge.php`
+
+The `badges/newbadge.php` and `badges/edit.php` pages have been combined to make things easier to maintain since both were pretty similar (`newbadge.php` for creating badges and `edit.php` for editing them).
+
+As a result, `badges/newbadge.php` is now deprecated and will be removed in Moodle 6.0. Please update your code to use badges/edit.php instead.
+
+:::info
+
+Visiting
+
+https://yourmoodlesite/badges/newbadge.php?id=x
+
+will now automatically redirect to
+
+https://yourmoodlesite/badges/edit.php?courseid=x&mode=new
+
+:::
+
 ## Core changes
 
 ### Autoloader
