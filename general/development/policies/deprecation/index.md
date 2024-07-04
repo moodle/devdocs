@@ -40,6 +40,9 @@ Deprecation affects only the current main version, in other words, the deprecati
 
 - If the function is not a member of a class (in other words, it is an independent function), it should be moved, with its PHPDoc and all comments, to `lib/deprecatedlib.php`, which is included everywhere. If the function is a class member, it will need to be deprecated in its current location.
   - Deprecated behat step definitions should be moved to `lib/tests/behat/behat_deprecated.php`. Steps that are part of a component should be moved to `$COMPONENT_DIRECTORY/tests/behat/behat_<COMPONENT>_deprecated.php` instead. Deprecated function should call to `behat_deprecated::deprecated_message()` proposing an alternative to the deprecated method.
+- If a public file is being deprecated (for example, `badges/newbadge.php` in MDL-43938), the following actions should be done:
+  - Add a `@deprecated` tag to the PHPDoc for the file description so that IDEs describing the file will note that it is deprecated, documenting which version it was deprecated in, the MDL issue associated with it and the MDL where the file will be removed.
+  - Add a debugging message or a redirect to the new file with a message so attention is drawn to the deprecation. The message should state that the file being included has been deprecated and should help a developer or user using the file that has gone, telling them what they should do instead.
 - If an entire class is being deprecated, the following actions should be done:
   - Add @deprecated tag on class level PHPDoc block
   - Add @deprecated tag on the PHPDoc block of all public methods
