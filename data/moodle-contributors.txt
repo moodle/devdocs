@@ -448,6 +448,7 @@ Hernández
 Herrmann
 Heywood
 Hien
+Hieu
 Hilton
 Hippisley
 Hiroto
@@ -903,6 +904,7 @@ Rasmussen
 Rawson
 Raymond
 Recio
+Reichert
 Reischmann
 Renaat
 Renaud

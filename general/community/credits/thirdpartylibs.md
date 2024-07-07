@@ -563,7 +563,7 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 ### Serializable Closure
 
 - **Location**: lib/laravel/serializable-closure
-- **Version**: 1.3.2
+- **Version**: 1.3.3
 - **License**:  MIT
 - **URL**: [https://github.com/laravel/serializable-closure](https://github.com/laravel/serializable-closure)
 
@@ -877,7 +877,7 @@ Provides interfaces that descirbe an event dispatching mechanism.
 Provides an abstraction that describe the components of a HTTP Client.
 
 - **Location**: lib/psr/http-client
-- **Version**: 1.0.0
+- **Version**: 1.0.3
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/http-client](https://github.com/php-fig/http-client)
 
@@ -895,7 +895,7 @@ Provides interfaces that describe the components of a HTTP Factory.
 Provide a set of common interfaces for HTTP messages as described in RFC 7230 and RFC 7231
 
 - **Location**: lib/psr/http-message
-- **Version**: 1.0.1
+- **Version**: 2.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/http-message](https://github.com/php-fig/http-message)
 
@@ -953,7 +953,7 @@ Simple Pie helps with blogs.
 A generic function and convention to trigger deprecation notices
 
 - **Location**: lib/symfony/deprecation-contracts
-- **Version**: 3.1.1
+- **Version**: 3.5.0
 - **License**:  MIT
 - **URL**: [https://github.com/symfony/deprecation-contracts](https://github.com/symfony/deprecation-contracts)
 
