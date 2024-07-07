@@ -16,19 +16,20 @@ Correct use of this API allows Moodle to automatically create, and handle upgrad
 
 This process is controlled by three primary files within your plugin, and a number of additional optional files for optional features:
 
-- [version.php](../../apis/commonfiles/version.php/index.md): This records the version of the plugin code. You must increase version in version.php after any change in the `/db/` folder, any change in JavaScript code, any new auto-loaded class, any new setting and also after any change in language pack, because a new version triggers the upgrade procedure and resets all caches.
-- db/install.xml: This file describes the database tables that will be created during installation. It is only used during the initial installation of the plugin.
-- db/upgrade.php: This file is used during the upgrade process when upgrading from an older version of the plugin installed upgrades to the latest version.
+- [`version.php`](../../apis/commonfiles/version.php/index.md): This records the version of the plugin code. You must increase version in `version.php` after any change in the `db/` folder, any change in JavaScript code, any new auto-loaded class, any new setting and also after any change in language pack, because a new version triggers the upgrade procedure and resets all caches.
+- `db/install.xml`: This file describes the database tables that will be created during installation. It is only used during the initial installation of the plugin.
+- `db/upgrade.php`: This file is used during the upgrade process when upgrading from an older version of the plugin installed upgrades to the latest version.
+- `db/upgradelib.php`: This file is optional. When upgrade step process is not trivial, it is possible to define upgrade function here and call it from upgrade step. Functions added to `upgradelib.php` can be covered by unittest to be sure it does right thing and reflects recent API changes.
 
 ### version.php
 
-The version.php file describes the current version of the plugin, and additional features such as its maturity, any dependencies or requirements, and a release name.
+The `version.php` file describes the current version of the plugin, and additional features such as its maturity, any dependencies or requirements, and a release name.
 
 See the documentation on [version.php](../../apis/commonfiles/version.php/index.md) for further information on the features of this file.
 
 ### db/install.xml
 
-The install.xml file describes the database tables that will be created when the plugin is installed.
+The `install.xml` file describes the database tables that will be created when the plugin is installed.
 
 :::important
 
@@ -38,11 +39,11 @@ The content of the `install.xml` file **must** be created and maintained using t
 
 ### db/upgrade.php
 
-The upgrade.php file describes the steps used to migrate the plugin from one version to a newer version. Moodle only supports the upgrade of plugins. **Plugins can not be downgraded**.
+The `upgrade.php` file describes the steps used to migrate the plugin from one version to a newer version. Moodle only supports the upgrade of plugins. **Plugins can not be downgraded**.
 
 :::important
 
-The content of the `upgrade.php` file **must** be created and maintained using the [XMLDB Editor](/general/development/tools/xmldb).
+The database fields definition content of the `upgrade.php` file **must** be created and maintained using the [XMLDB Editor](/general/development/tools/xmldb).
 
 :::
 
@@ -58,14 +59,10 @@ function xmldb_[plugintype]_[pluginname]_upgrade($oldversion): bool {
 
     if ($oldversion < 2019031200) {
         // Perform the upgrade from version 2019031200 to the next version.
-
-        // The content of this section should be generated using the XMLDB Editor.
     }
 
     if ($oldversion < 2019031201) {
         // Perform the upgrade from version 2019031201 to the next version.
-
-        // The content of this section should be generated using the XMLDB Editor.
     }
 
     // Everything has succeeded to here. Return true.
@@ -78,7 +75,7 @@ function xmldb_[plugintype]_[pluginname]_upgrade($oldversion): bool {
 During an upgrade, restrictions are placed on the functions that your upgrade code may call. This is because Moodle has not been fully update and some APIs may have code in place relating to a future database or data format.
 
 - All upgrade code may use the [basic database API](../../apis/core/dml/index.md).
-- In a **plugin**, upgrade code should not call **any plugin functions**. For example, if your plugin has a function that changes frog settings to 'green', and you need to do this during upgrade, then you **must not** call this function; instead, manually update the database rows so that the frog settings become green). However, **you _may_ call core functions** rather than making core changes in database.
+- In a **plugin**, upgrade code should not call **any plugin functions** directly. For example, if your plugin has a function that changes frog settings to 'green', and you need to do this during upgrade, then you **must not** call this function; instead, manually update the database rows so that the frog settings become green). However, **you _may_ call core functions** rather than making core changes in database.
 - In **core**, upgrade code should not even call **any core functions**. For example, if you need to add a calendar event, this should be done by inserting into a database table rather than calling a function to add the event. Certain functions marked with a comment such as `set_config` and `get_config` are excepted.
 
 :::info Rationale for these rules
@@ -99,13 +96,33 @@ Core functions are now safe to call because the core data is in Current state. B
 
 :::
 
+### Delaying upgrade
+
+In some cases, upgrade function execution needs to be delayed:
+
+- For example, if we change the DB structure **after** this upgrade script and the API method expects that a field is present but at the moment when the upgrade script is executed it is not there yet.
+- The upgrade script requires cache rebuild or any other operation that is simply not available during upgrade (i.e. calling course cache rebuild will throw an exception if executed during upgrade)
+- It is a long-running script
+
+In this scenario, we call upgrade function in [adhoc task](../../apis/subsystems/task/adhoc.md) and schedule its run as follows:
+
+```php title="Example of scheduling adhoc task in upgrade step"
+if ($oldversion < 2020031001) {
+    // Schedule ad-hoc task to migrate existing course completion data.
+    $task = new \plugintype_pluginname\task\migrate_course_completion();
+    \core\task\manager::queue_adhoc_task($task, true);
+    // Datastore savepoint reached.
+    upgrade_plugin_savepoint(true, 2020031001, 'plugintype', 'pluginname');
+}
+```
+
 ## Summary
 
-The first time a user installs any version of your plugin, the install.xml file will be used to create all the required database tables. Therefore install.xml should always contain the definition of the up-to-date database structure. Moodle recognises this situation because there is a version.php file on disc, but there is no (*plugintype*_*pluginname*, version) value in the config_plugins table.
+The first time a user installs any version of your plugin, the `install.xml` file will be used to create all the required database tables. Therefore `install.xml` should always contain the definition of the up-to-date database structure. Moodle recognises this situation because there is a `version.php` file on disc, but there is no (*plugintype*_*pluginname*, version) value in the `config_plugins` table.
 
-If the user already had a version of your plugin installed, and then upgrades to a newer version, Moodle will detect this because the version.php file will contain a newer version number than the (*plugintype*_*pluginname*, version) value in the mdl_config_plugins table. In this case, Moodle will run the code in the upgrade.php file, passing in the old version number, so that the correct bits of upgrade can be run, as controlled by the if ($oldversion < XXXXXXXXXX) blocks of code.
+If the user already had a version of your plugin installed, and then upgrades to a newer version, Moodle will detect this because the `version.php` file will contain a newer version number than the (*plugintype*_*pluginname*, version) value in the `mdl_config_plugins` table. In this case, Moodle will run the code in the `upgrade.php` file, passing in the old version number, so that the correct bits of upgrade can be run, as controlled by the `if ($oldversion < XXXXXXXXXX)` blocks of code.
 
-The contents of the install.xml and upgrade.php files should be generated using the XMLDB editor.
+The contents of the `install.xml` and database fields changes in  `upgrade.php` files should be generated using the XMLDB editor.
 
 ## Other things that can be in the db folder
 
@@ -138,7 +155,7 @@ Some of these functions have variants depending on whether they are being called
 
 When called from core, the `main` variant should be used, otherwise the frankenstyle name of the component should be used.
 
-For example, if you are defining an installation behaviour in the install.php script of a block named `block_example`, you would have an install.php similar to the following:
+For example, if you are defining an installation behaviour in the `install.php` script of a block named `block_example`, you would have an `install.php` similar to the following:
 
 ```php title="blocks/example/db/install.php"
 <?php
@@ -194,7 +211,7 @@ if (!$dbman->table_exists($table)) {
 
 </ValidExample>
 
-You should also think about what version numbers to put in your version.php file on each branch. Above all, test carefully.
+You should also think about what version numbers to put in your `version.php` file on each branch. Above all, test carefully.
 
 :::
 
