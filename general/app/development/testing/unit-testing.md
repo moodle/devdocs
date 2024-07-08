@@ -138,7 +138,9 @@ Let's say you want to test the following component that render a list of user na
     template: `
         <h1>Users List</h1>
         <ul>
-            <li *ngFor="let user of users">{{ user }}</li>
+            @for (user of users; track $index) {
+                <li>{{ user }}</li>
+            }
         </ul>
     `,
 })
