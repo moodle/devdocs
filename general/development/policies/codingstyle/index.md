@@ -2056,6 +2056,9 @@ To get the full list of exception types, search for the regular expression 'clas
 
 Where appropriate, you should create new subclasses of moodle_exception for use in your code. 
 
+
+<Since version="4.5" issueNumber="MDL-81903" />
+
 If you create a custom exception class it *may* live in the `classes/exception/` directory, and be namespaced in `<plugin>/exception/`
 
 A few notable exception types:
