@@ -444,9 +444,9 @@ In some situations, a simple method that only returns a value would be acceptabl
 <ValidExample title="Good">
 
 ```html
-<div *ngIf="isAdmin">
-    <!-- Show admin content -->
-</div>
+@if (isAdmin) {
+    <div> <!-- Show admin content --> </div>
+}
 ```
 
 </ValidExample>
@@ -454,9 +454,9 @@ In some situations, a simple method that only returns a value would be acceptabl
 <CodeExample type="warning" title="Allowed, but discouraged">
 
 ```html
-<div *ngIf="site.isAdmin()">
-    <!-- Show admin content -->
-</div>
+@if (site.isAdmin()) {
+    <div> <!-- Show admin content --> </div>
+}
 ```
 
 </CodeExample>
@@ -502,15 +502,17 @@ There is a maximum line length of 140 characters for templates. Whenever that le
 <ValidExample title="Good">
 
 ```html
-<ion-item
-    *ngFor="let course of courses" [title]="course.title"
-    [class.selected]="isSelected(course)" class="ion-text-wrap"
-    button detail="true"
-    (click)="selectCourse(course)">
-    <ion-label>
-        {{ course.title }}
-    </ion-label>
-</ion-item>
+@for (course of courses; track $index) {
+    <ion-item
+        [title]="course.title"
+        [class.selected]="isSelected(course)" class="ion-text-wrap"
+        button detail="true"
+        (click)="selectCourse(course)">
+        <ion-label>
+            {{ course.title }}
+        </ion-label>
+    </ion-item>
+}
 ```
 
 </ValidExample>
@@ -518,18 +520,19 @@ There is a maximum line length of 140 characters for templates. Whenever that le
 <InvalidExample title="Bad">
 
 ```html
-<ion-item
-    *ngFor="let course of courses"
-    [title]="course.title"
-    [class.selected]="isSelected(course)"
-    class="ion-text-wrap"
-    button
-    detail="true"
-    (click)="selectCourse(course)">
-    <ion-label>
-        {{ course.title }}
-    </ion-label>
-</ion-item>
+@for (course of courses; track $index) {
+    <ion-item
+        [title]="course.title"
+        [class.selected]="isSelected(course)"
+        class="ion-text-wrap"
+        button
+        detail="true"
+        (click)="selectCourse(course)">
+        <ion-label>
+            {{ course.title }}
+        </ion-label>
+    </ion-item>
+}
 ```
 
 </InvalidExample>
