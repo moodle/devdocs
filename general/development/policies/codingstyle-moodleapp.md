@@ -435,7 +435,7 @@ export class MyService {
 
 ### Avoid calling methods in templates
 
-Method calls should be avoided in template rendering, this includes structural directives such as `ngIf` or `ngFor`.
+Method calls should be avoided in template rendering, including structural directives like `ngIf` or `ngFor`. The same applies to the new control flow syntax with `@if` or `@for`.
 
 Angular templates can be rendered very often, and calling methods on every render could cause some unintended performance issues. For that reason, it is usually safer to rely on values rather than methods.
 
@@ -502,7 +502,7 @@ There is a maximum line length of 140 characters for templates. Whenever that le
 <ValidExample title="Good">
 
 ```html
-@for (course of courses; track $index) {
+@for (course of courses; track course.id) {
     <ion-item
         [title]="course.title"
         [class.selected]="isSelected(course)" class="ion-text-wrap"
@@ -520,7 +520,7 @@ There is a maximum line length of 140 characters for templates. Whenever that le
 <InvalidExample title="Bad">
 
 ```html
-@for (course of courses; track $index) {
+@for (course of courses; track course.id) {
     <ion-item
         [title]="course.title"
         [class.selected]="isSelected(course)"
