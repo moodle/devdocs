@@ -53,7 +53,7 @@ class mobile {
 ```html handlebars title="templates/mobile_course.mustache"
 {{=<% %>=}}
 <core-dynamic-component [component]="coreCourseFormatComponent.allSectionsComponent" [data]="data" class="format-myformat">
-    @for (section of sections; track $index) {
+    @for (section of sections; track section.id) {
         <ion-item-divider>
             <ion-label>
                 <core-format-text [text]="section.name" contextLevel="course" [contextInstanceId]="course.id">
@@ -70,7 +70,7 @@ class mobile {
             </ion-item>
         }
 
-        @for (module of section.modules; track $index) {
+        @for (module of section.modules; track module.id) {
             @if (module.visibleoncoursepage !== 0) {
                 <core-course-module [module]="module" [section]="section" (completionChanged)="onCompletionChange()">
                 </core-course-module>
