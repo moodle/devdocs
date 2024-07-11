@@ -53,7 +53,7 @@ class mobile {
 ```html handlebars title="templates/mobile_course.mustache"
 {{=<% %>=}}
 <core-dynamic-component [component]="coreCourseFormatComponent.allSectionsComponent" [data]="data" class="format-myformat">
-    <ng-container *ngFor="let section of sections">
+    @for (section of sections; track section.id) {
         <ion-item-divider>
             <ion-label>
                 <core-format-text [text]="section.name" contextLevel="course" [contextInstanceId]="course.id">
@@ -61,20 +61,22 @@ class mobile {
             </ion-label>
         </ion-item-divider>
 
-        <ion-item *ngIf="section.summary">
-            <ion-label>
-                <core-format-text [text]="section.summary" contextLevel="course" [contextInstanceId]="course.id">
-                </core-format-text>
-            </ion-label>
-        </ion-item>
+        @if (section.summary) {
+            <ion-item>
+                <ion-label>
+                    <core-format-text [text]="section.summary" contextLevel="course" [contextInstanceId]="course.id">
+                    </core-format-text>
+                </ion-label>
+            </ion-item>
+        }
 
-        <ng-container *ngFor="let module of section.modules">
-            <ng-container *ngIf="module.visibleoncoursepage !== 0">
+        @for (module of section.modules; track module.id) {
+            @if (module.visibleoncoursepage !== 0) {
                 <core-course-module [module]="module" [section]="section" (completionChanged)="onCompletionChange()">
                 </core-course-module>
-            </ng-container>
-        </ng-container>
-    </ng-container>
+            }
+        }
+    }
 </core-dynamic-component>
 ```
 
@@ -116,11 +118,11 @@ class mobile {
 Then filter the list of sections in your template:
 
 ```html
-<ng-container *ngFor="let section of sections">
-    <ng-container *ngIf="section.id in CONTENT_OTHERDATA.displaysections">
+@for (section of sections; track $index) {
+    @if (section.id in CONTENT_OTHERDATA.displaysections) {
         <!-- code to display the section goes here -->
-    </ng-container>
-</ng-container>
+    }
+}
 ```
 
 ## Using JavaScript

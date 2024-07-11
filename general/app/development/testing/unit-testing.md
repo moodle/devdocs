@@ -128,7 +128,7 @@ Most services will be instantiated properly without mocks, but sometimes you may
 
 ## Testing components
 
-Angular components have a strong graphical part, but that doesn't mean that you can't test their logic and markup rendering using unit tests with Jest. You can follow [Angular's best practices for testing components](https://angular.io/guide/testing-components-scenarios), and we also provide a couple of helpers that make things easier.
+Angular components have a strong graphical part, but that doesn't mean that you can't test their logic and markup rendering using unit tests with Jest. You can follow [Angular's best practices for testing components](https://angular.dev/guide/testing/components-scenarios), and we also provide a couple of helpers that make things easier.
 
 Let's say you want to test the following component that render a list of user names:
 
@@ -138,7 +138,9 @@ Let's say you want to test the following component that render a list of user na
     template: `
         <h1>Users List</h1>
         <ul>
-            <li *ngFor="let user of users">{{ user }}</li>
+            @for (user of users; track $index) {
+                <li>{{ user }}</li>
+            }
         </ul>
     `,
 })
