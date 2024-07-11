@@ -47,6 +47,10 @@ Please note that the same limitations regarding access to the Database, Session,
 
 :::
 
+### SMS API
+
+A new SMS API was introduced. See the [SMS API documentation](./apis/subsystems/sms/index.md) for more information.
+
 ## Course
 
 ### Reset course page
