@@ -10,6 +10,7 @@ tags:
 
 | **Version name** | **Date** |
 |---|---|
+| [Moodle App 4.4.1](./app_releases/v4/v4.4.1) |  9 July 2024 |
 | [Moodle App 4.4.0](./app_releases/v4/v4.4.0) |  28 June 2024 |
 | [Moodle App 4.3.0](./app_releases/v4/v4.3.0) |  10 November 2023 |
 | [Moodle App 4.2.0](./app_releases/v4/v4.2.0) |  9 June 2023 |

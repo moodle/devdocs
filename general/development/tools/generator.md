@@ -47,7 +47,7 @@ The tool does not use `selenium` or any other browser wrapper. It reads the feat
 This means:
 
 1. The tool will only execute a few steps, which are generators and set config values. If any other type of step is present in the `feature` file, it will show a parsing error.
-1. For now, the tool can only execute normal scenarios. It does not support background, or outline scenarios.
+1. The tool can only execute scenarios and outline scenarios. It does not support background.
 
 :::
 
