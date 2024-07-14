@@ -1276,6 +1276,7 @@ dhawes
 diml
 dinhloc
 djachenko
+djarrancotleanu
 dlnsk
 do-you-even-curl
 donal
