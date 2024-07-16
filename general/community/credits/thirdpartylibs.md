@@ -434,7 +434,7 @@ Class to safely evaluate math expressions.
 The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
 - **Location**: lib/fonts
-- **Version**: 6.5.1
+- **Version**: 6.5.2
 - **License**:  SIL OFL 1.1
 - **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
 - **Copyright holders**:
@@ -1307,7 +1307,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
 - **Location**: theme/boost/scss/fontawesome
-- **Version**: 6.5.1
+- **Version**: 6.5.2
 - **License**:  (MIT)
 - **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
 - **Copyright holders**:

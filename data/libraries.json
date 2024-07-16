@@ -483,7 +483,7 @@
         "location": "lib/fonts",
         "name": "Font Awesome - http://fontawesome.com",
         "description": "The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.",
-        "version": "6.5.1",
+        "version": "6.5.2",
         "license": "SIL OFL",
         "licenseversion": "1.1",
         "repository": "https://github.com/FortAwesome/Font-Awesome",
@@ -1460,7 +1460,7 @@
         "location": "theme/boost/scss/fontawesome",
         "name": "Font Awesome - http://fontawesome.com",
         "description": "Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.",
-        "version": "6.5.1",
+        "version": "6.5.2",
         "license": "(MIT)",
         "repository": "https://github.com/FortAwesome/Font-Awesome",
         "customised": false
