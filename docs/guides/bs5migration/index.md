@@ -248,3 +248,58 @@ The `.no-gutters` grid class has been replaced with `.g-0`.
 ```
 
 </ValidExample>
+
+### Theme color level
+
+In Bootstrap 4.x we used a function called `theme-color-level()` which was removed in Bootstrap 5. The prototype of the function was:
+
+```css
+@function theme-color-level($colorname, $level) {
+    [...]
+}
+[...]
+theme-color-level('primary', 1);
+```
+
+The replacement is now `shift-color()`. This function is used to shift a color by a percentage (weight) of shades.
+So, two major difference in the new version:
+
+- we use the color definition instead of the color name
+- we use percentages instead of levels.
+
+```css
+@function shift-color($color, $weight) {
+   [...]
+}
+[...]
+shift-color($primary, 10%);
+```
+
+As we changed from level to percentage, the parameters are different and we move from a number (1 to 11) to a percentage.
+To make it easier, Bootstrap 5 has set the equivalent from 1 to 10%, so a theme-color-level that was shifted by
+the value 1 will now be shifted by 10%.
+
+We can use the following formula to convert the level to percentage:
+
+<InvalidExample title="Don't">
+
+```css
+theme-color-level('primary', 1)
+theme-color-level('primary', -2)
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```css
+shift-color($primary, 10%);
+shift-color($primary, -20%);
+```
+
+</ValidExample>
+
+:::note
+The `theme-color-level()` has been changed to `color-level()` and then subsequently removed and replaced by scale-color().
+In the stable 5.0 the final decision was to adopt `shift-color()` so we will use this function in the bridge file.
+:::
