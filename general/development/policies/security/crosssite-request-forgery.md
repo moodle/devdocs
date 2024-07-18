@@ -31,13 +31,19 @@ It may be a bit surprising, but this type of attack may be used against servers 
 
 ## How Moodle avoids this problem
 
-### Session key
+### Session key (CSRF token) {#session-key}
 
-The most important protection is the concept of a **sesskey**, short for session key.
+The most important protection is the concept CSRF token, which is for historic reasons called **`sesskey`** in Moodle.
 
-When you log in, Moodle adds a random string to your session. Whenever it prints a link or a button to perform a significant action, it adds the sesskey value to the submitted data. Before performing the action, it checks the sesskey value in the request with the one in the session, and the action is only performed if the two match.
+When you log in, Moodle generates a random string and stores it in the session. Whenever it prints a link or a button to perform a significant action, it adds the sesskey value to the submitted data. Before performing the action, it checks the sesskey value in the request with the one in the session, and the action is only performed if the two match.
 
 Therefore, the request to delete a user is actually something like below and there is no way for Evil Hacker to know what the sesskey is, so they cannot construct an URL that tricks the admin into deleting a user: `http://example.com/moodle/user/delete.php?id=123&confirm=1&sesskey=E8i5BCxLJR`
+
+:::info
+
+The `sesskey` should not be confused with Moodle Session ID, which a PHP session cookie responsible for session continuity (remaining logged in).
+
+:::
 
 ### Use HTTP correctly
 
