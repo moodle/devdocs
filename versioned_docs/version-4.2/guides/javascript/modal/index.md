@@ -145,7 +145,7 @@ We highly recommend declaring the _template_ as a static property on the class t
 
 ```javascript title="mod/example/amd/src/my_modal.js"
 import Modal from 'core/modal';
-import ModalFactory from 'core/modal_factory';
+import ModalRegistry from 'core/modal_registry';
 
 export default class MyModal extends Modal {
     static TYPE = "mod_example/my_modal";
