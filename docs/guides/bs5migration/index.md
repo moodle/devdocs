@@ -248,3 +248,33 @@ The `.no-gutters` grid class has been replaced with `.g-0`.
 ```
 
 </ValidExample>
+
+### Close button
+
+The `.close` class has been replaced with `.btn-close`.
+
+<InvalidExample title="Don't">
+
+```html
+<div class="alert alert-warning alert-dismissible" role="alert">
+  I'm an alert.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<div class="alert alert-warning alert-dismissible" role="alert">
+  I'm an alert.
+  <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+```
+
+</ValidExample>
