@@ -469,6 +469,7 @@ Hunkler
 Hunt
 Huong
 Hutchinson
+Huynh
 Hämmerle
 Hübler
 ISHIKAWA
@@ -871,6 +872,7 @@ Pinto
 Pisarev
 Piton
 Platts
+Poder
 Poggenpohl
 Pollak
 Poltawski
@@ -1157,6 +1159,7 @@ Walker
 Wallis
 Wandachowicz
 Ward
+Warwicker
 Watson
 Webster
 Wedekind
