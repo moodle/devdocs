@@ -346,6 +346,101 @@ In the standard Boost theme this method will output a span using the [Bootstrap 
 <span class="sr-only">Contents</span>
 ```
 
+### Other
+
+#### Progress Bars
+
+There are two types of progress bars you can use in Moodle.
+
+##### Standard Progress Bars
+
+The first is the old standard progress bar which updates as the page loads (ie. the page won't fully load until the progress bar is finished). It can be used to render the current process on the page, or via cli to render the progress of a script.
+
+Example:
+
+```php
+<?php
+define('NO_OUTPUT_BUFFERING', true); // Required if not used via cli.
+require 'config.php';
+
+$PAGE->set_context(context_system::instance());
+$PAGE->set_url('/');
+
+echo $OUTPUT->header();
+
+$pb = new \core\output\progress_bar('bar', 500);
+$pb->create();
+$num_tasks = 500; // the number of tasks to be completed.
+for($cur_task = 0; $cur_task <= $num_tasks; $cur_task++)
+{
+    for ($i=0; $i<100000; $i++)
+    {
+        ;;;
+    }
+    $pb->update($cur_task, $num_tasks, 'this is'. $cur_task . 'h');
+}
+
+echo $OUTPUT->footer();
+```
+
+##### Stored Progress Bars
+
+The other type of progress bar you can use is a stored progress bar, which can be used to store and update the progress of a long-running task in the database, and render live updates to the web page via AJAX web service polling.
+
+It can be implemented into a CLI script. Example:
+
+```php
+<?php
+
+define('CLI_SCRIPT', true);
+
+require_once('config.php');
+require_once($CFG->libdir . '/clilib.php');
+
+$num_tasks = 5000; // the number of tasks to be completed.
+
+$progress = new \core\output\stored_progress_bar('example-cli-bar');
+$progress->start();
+
+for($cur_task = 0; $cur_task <= $num_tasks; $cur_task++)
+{
+    $progress->update($cur_task, $num_tasks, 'this is '. $cur_task . '/' . $num_tasks);
+}
+
+mtrace('DONE');
+```
+
+Or a scheduled or adhoc task, via a trait. Example:
+
+```php
+class stored_progress_scheduled_task_example extends \core\task\scheduled_task {
+
+    use \core\task\stored_progress_task_trait;
+
+    public function execute() {
+
+        // This simulates a specific count of iterations the task will do, e.g. x number of courses to loop through and do something.
+        $iterations = 100;
+
+        $this->start_stored_progress(); // This creates the stored progress record for the named task.
+
+        for ($i = 1; $i <= $iterations; $i++) {
+
+            // Here we just update and tell it which one we are on and it will work out % from those.
+            $this->progress->update($i, $iterations, 'i am at ' . $i  . ' of ' . $iterations);
+            sleep(1);
+
+        }
+
+        return true;
+
+    }
+
+}
+```
+
+With the stored progress bars, you can update the progress either via iterations, by passing in the total amount expected and then the current iteration, using `->update()`(see: previous example), this will calculate the percentage complete for you. Or you can use `->update_full()` to manually set the percentage complete.
+
 ## See also
 
 - [HTML Guidelines](https://docs.moodle.org/dev/HTML_Guidelines)
