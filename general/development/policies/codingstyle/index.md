@@ -2054,8 +2054,7 @@ We have a set of custom exception classes. The base class is moodle_exception. Y
 
 To get the full list of exception types, search for the regular expression 'class +\w+_exception +extends' or ask your IDE to list all the subclasses of moodle_exception.
 
-Where appropriate, you should create new subclasses of moodle_exception for use in your code. 
-
+Where appropriate, you should create new subclasses of moodle_exception for use in your code.
 
 <Since version="4.5" issueNumber="MDL-81903" />
 
