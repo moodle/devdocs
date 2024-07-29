@@ -35,7 +35,7 @@ https://yourmoodlesite/badges/edit.php?courseid=x&mode=new
 
 #### `ABORT_AFTER_CONFIG`
 
-<Since version="4.4" issueNumber="MDL-80275" />
+<Since version="4.5" issueNumber="MDL-80275" />
 
 Prior to Moodle 4.5 only a small number of classes were compatible with scripts using the `ABORT_AFTER_CONFIG` constant.
 
