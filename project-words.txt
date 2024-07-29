@@ -195,6 +195,7 @@ langindex
 lastaccess
 lastname
 lastruntime
+legacyclasses
 locallib
 loglevel
 mainmenu

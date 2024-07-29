@@ -17,14 +17,35 @@
 import React from 'react';
 import { ComponentFileSummary } from '../../_utils';
 import type { Props } from '../../_utils';
-import DefaultDescription from './classes-dir.mdx';
+import DefaultDescription from './db-legacyclasses-php.mdx';
+
+const defaultExample = `
+defined('MOODLE_INTERNAL') || die;
+
+$legacyclasses = [
+    'old_class_name' => 'path/within/classes/directory.php',
+
+    // Examples:
+    \\coding_exception::class => 'exception/coding_exception.php',
+    \\moodle_exception::class => 'exception/moodle_exception.php',
+
+    // Example loading a class from a different subsystem.
+    // This should typically only be used in core.
+    \\cache::class => [
+        'core_cache',   // The name of the subsystem to load from.
+        'cache.php',    // The file name within that filesystem's classes directory.
+    ],
+];
+`;
 
 export default (initialProps: Props): ComponentFileSummary => (
     <ComponentFileSummary
         refreshedDuringPurge
-        filepath="/classes/"
-        summary="Autoloaded classes"
+        defaultExample={defaultExample}
         defaultDescription={DefaultDescription}
+        filepath="/db/legacyclasses.php"
+        summary="Legacy classes"
+        examplePurpose="Legacy classes"
         {...initialProps}
     />
 );
