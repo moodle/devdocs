@@ -1557,7 +1557,17 @@ Also, there are some basic rules about how to use those types:
 
 ##### `@copyright`
 
-These include the year and copyright holder (creator) of the original file. Do not change these in existing files!
+This tag should include the copyright holder (creator) of the original file. Do not change these in existing files!
+
+The Copyright holder should be the real person who originally authored the file.
+
+:::info Use of AI
+
+If the file was created by an AI assistant, the copyright should be allocated to the individual who instructed the AI assistant.
+
+:::
+
+Please do not include a Copyright Year on new files.
 
 <ValidExample>
 
