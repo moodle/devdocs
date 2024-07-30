@@ -1849,7 +1849,7 @@ class policy_issue {
 
 For files containing only one artifact (class, interface, trait, etc.), specifically for all the files within `classes` directories, but also any other file fulfilling the condition anywhere else, it will be enough with the class phpdoc block. The file phpdoc block will be considered optional at all effects, giving to the class one precedence.
 
-The [@package](https://docs.moodle.org/dev/#@package), [@copyright](https://docs.moodle.org/dev/#@copyright) and [@license](https://docs.moodle.org/dev/#@license) tags (and the optional [@category](https://docs.moodle.org/dev/#@category) tag ), as shown in the example above, must be present always in the file (in whichever docblock, but all together).
+The [@package](#package), [@copyright](#copyright) and [@license](#license) tags (and the optional [@category](#category) tag ), as shown in the example above, must be present always in the file (in whichever docblock, but all together).
 
 ### Properties
 
