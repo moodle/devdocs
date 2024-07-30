@@ -185,7 +185,7 @@ Here is a template for the plugin's version.php file to copy and paste:
 
 /**
  * @package   plugintype_pluginname
- * @copyright 2020, You Name <your@email.address>
+ * @copyright You Name <your@email.address>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

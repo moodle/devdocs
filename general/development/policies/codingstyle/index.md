@@ -1262,7 +1262,7 @@ $myarray = [
  * Long description for class (if any)...
  *
  * @package    mod_mymodule
- * @copyright  2008 Kim Bloggs
+ * @copyright  Kim Bloggs
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class sample_class {
@@ -1572,7 +1572,7 @@ Please do not include a Copyright Year on new files.
 <ValidExample>
 
 ```
-  @copyright 2008 Kim Bloggs
+  @copyright Kim Bloggs
 ```
 
 </ValidExample>
@@ -1820,7 +1820,7 @@ For files containing only one artifact, the file phpdoc block is optional as lon
  *
  * @package    mod_mymodule
  * @category   backup
- * @copyright  2008 Kim Bloggs
+ * @copyright  Kim Bloggs
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 ```
@@ -1839,7 +1839,7 @@ All classes must have a complete docblock like this:
  *
  * @package    mod_mymodule
  * @category   backup
- * @copyright  2008 Kim Bloggs
+ * @copyright  Kim Bloggs
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class policy_issue {
