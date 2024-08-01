@@ -1936,7 +1936,21 @@ All functions and methods should have a complete docblock like this:
 
 You must include a description even if it appears to be obvious from the `@param` and/or `@return` lines.
 
-An exception is made for overridden methods which make no change to the meaning of the parent method and maintain the same arguments/return values. In this case you should omit the comment completely. Use of the `@inheritdoc` or `@see` tags is explicitly forbidden as a replacement for any complete docblock.
+An exception is made for overridden methods which make no change to the meaning of the parent method and maintain the same arguments/return values. In this case you should omit the comment completely, and apply the `#[\Override]` attribute. This can safely be applied in older versions of PHP before the attribute was supported. Use of the `@inheritdoc` or `@see` tags is explicitly forbidden as a replacement for any complete docblock.
+
+<ValidExample>
+
+```php
+class example implements templatable {
+
+    #[\Override]
+    public function export_for_template(renderer_base $output) {
+        return ['foo' => 'bar'];
+    }
+}
+```
+
+</ValidExample>
 
 ### Defines
 
