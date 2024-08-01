@@ -16,7 +16,7 @@ As part of our ongoing commitment to accessibility and continuously improving co
 
 #### Moodle LMS
 
-Moodle LMS has been accredited to meet [WCAG 2.1 Level AA conformance](https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle).
+Moodle LMS has been accredited to meet [WCAG 2.1 Level AA conformance](https://tracker.moodle.org/secure/attachment/147694/Moodle%20Statement%20of%20Conformance%202024.pdf).
 
 The table below provides a history of the accessibility audits performed on the Moodle LMS.
 
