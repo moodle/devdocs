@@ -278,11 +278,11 @@ Please note that this function is a stripped version of the full `format_text()`
 
 Some interesting parameters for this function are:
 
-- `striplinks`: Set to `false` to remove all links after the text has been processed by filters. Used when we want to show the text inside menus, page titles, etc. (Default is `true`)
+- `striplinks`: Set to `false` to keep all links after the text has been processed by filters. Used when we want to show the text inside menus, page titles, etc. (Default is `true`)
 - `options`
   - `options->context`: Context (id or object) for applying filters. If context is not specified it will be taken from `$PAGE->context` and may potentially result in displaying the same text differently on different pages. For example, all module-related information should have module context even when it appears in course-level reports, all course-related information such as name and description should have course context even when they are displayed on the front page or system pages.
   - `options->escape`: Set to `false` if you do not want to escape HTML entities. (Default is `true`)
-  - `options->filter`: Set to `false` if you want to allow filters to process the text. This is ignored by `FORMAT_PLAIN` for which filters are never applied.  (Default to `true`)
+  - `options->filter`: Set to `false` if you do not want to allow filters to process the text. This is ignored by `FORMAT_PLAIN` for which filters are never applied. (Default is `true`)
 
 ### Simple elements rendering
 
