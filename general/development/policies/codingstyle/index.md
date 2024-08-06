@@ -717,7 +717,7 @@ use mod_porridge\local\equipment\spoon as silverspoon; // Named import with no g
 
 <InvalidExample>
 
-```php title="Inocrrect: An example of the namespace keyword used incorrectly"
+```php title="Incorrect: An example of the namespace keyword used incorrectly"
 $obj = new namespace\Another();
 ```
 
