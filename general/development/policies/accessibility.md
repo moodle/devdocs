@@ -45,7 +45,7 @@ The Moodle App was accredited to meet [WCAG 2.1 Level AA conformance](https://ww
 
 #### Moodle Workplace
 
-Moodle Workplace has been accredited to meet WCAG 2.1 Level AA conformance.
+Moodle Workplace has been accredited to meet [WCAG 2.1 Level AA conformance](https://www.grackledocs.com/en/accreditations/12295) on 27 Jun 2024.
 
 The table below provides a history of the accessibility audits performed on Moodle Workplace.
 
