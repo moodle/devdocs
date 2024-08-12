@@ -742,6 +742,16 @@
         "customised": true
     },
     {
+        "copyrightHolders": [],
+        "location": "lib/nikic/fast-route",
+        "name": "FastRoute",
+        "version": "1.3.0",
+        "license": "BSD",
+        "licenseversion": "3-Clause",
+        "repository": "https://github.com/nikic/FastRoute",
+        "customised": false
+    },
+    {
         "copyrightHolders": [
             "OpenSpout"
         ],
@@ -875,7 +885,7 @@
     },
     {
         "copyrightHolders": [],
-        "location": "lib/phpspreadsheet",
+        "location": "lib/phpspreadsheet/phpspreadsheet",
         "name": "PhpSpreadsheet",
         "description": "Library to read, write and create spreadsheet documents in PHP.",
         "version": "1.29.0",
@@ -1011,6 +1021,46 @@
     },
     {
         "copyrightHolders": [],
+        "location": "lib/psr/http-server-handler",
+        "name": "psr/http-server-handler",
+        "description": "Common interface for HTTP server-side request handler",
+        "version": "1.0.2",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/http-server-handler",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/psr/http-server-middleware",
+        "name": "psr/http-server-middleware",
+        "description": "Common interface for HTTP server-side middleware",
+        "version": "1.0.2",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/http-server-middleware",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/psr/log",
+        "name": "log",
+        "description": "Common interface for logging libraries",
+        "version": "3.0.0",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/log",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/psr/simple-cache",
+        "name": "simple-cache",
+        "description": "Common interface for logging libraries",
+        "version": "3.0.0",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/simple-cache",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
         "location": "lib/ralouphie/getallheaders",
         "name": "getallheaders polyfill",
         "description": "A polyfill for getallheaders",
@@ -1061,6 +1111,15 @@
         "version": "1.8.0",
         "license": "BSD",
         "repository": "https://github.com/simplepie/simplepie",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/slim",
+        "name": "Slim Framework",
+        "version": "4.13.0",
+        "license": "MIT",
+        "repository": "https://github.com/slimphp/Slim",
         "customised": false
     },
     {

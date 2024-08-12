@@ -664,6 +664,13 @@ PHP library for displaying mustache templates.
 - **Copyright holders**:
   - 2010-2016 Justin Hileman
 
+### FastRoute
+
+- **Location**: lib/nikic/fast-route
+- **Version**: 1.3.0
+- **License**:  BSD 3-Clause
+- **URL**: [https://github.com/nikic/FastRoute](https://github.com/nikic/FastRoute)
+
 ### OpenSpout
 
 Library to read and write spreadsheet files (CSV, XLSX and ODS).
@@ -781,7 +788,7 @@ Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are 
 
 Library to read, write and create spreadsheet documents in PHP.
 
-- **Location**: lib/phpspreadsheet
+- **Location**: lib/phpspreadsheet/phpspreadsheet
 - **Version**: 1.29.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/PHPOffice/PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
@@ -899,6 +906,42 @@ Provide a set of common interfaces for HTTP messages as described in RFC 7230 an
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/http-message](https://github.com/php-fig/http-message)
 
+### psr/http-server-handler
+
+Common interface for HTTP server-side request handler
+
+- **Location**: lib/psr/http-server-handler
+- **Version**: 1.0.2
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/http-server-handler](https://github.com/php-fig/http-server-handler)
+
+### psr/http-server-middleware
+
+Common interface for HTTP server-side middleware
+
+- **Location**: lib/psr/http-server-middleware
+- **Version**: 1.0.2
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/http-server-middleware](https://github.com/php-fig/http-server-middleware)
+
+### log
+
+Common interface for logging libraries
+
+- **Location**: lib/psr/log
+- **Version**: 3.0.0
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/log](https://github.com/php-fig/log)
+
+### simple-cache
+
+Common interface for logging libraries
+
+- **Location**: lib/psr/simple-cache
+- **Version**: 3.0.0
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/simple-cache](https://github.com/php-fig/simple-cache)
+
 ### getallheaders polyfill
 
 A polyfill for getallheaders
@@ -947,6 +990,13 @@ Simple Pie helps with blogs.
 - **Version**: 1.8.0
 - **License**:  BSD
 - **URL**: [https://github.com/simplepie/simplepie](https://github.com/simplepie/simplepie)
+
+### Slim Framework
+
+- **Location**: lib/slim
+- **Version**: 4.13.0
+- **License**:  MIT
+- **URL**: [https://github.com/slimphp/Slim](https://github.com/slimphp/Slim)
 
 ### Symfony Deprecation contracts
 
