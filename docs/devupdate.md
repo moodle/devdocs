@@ -94,6 +94,26 @@ Check changes in any of the core plugins that implement the reset course method.
 
 :::
 
+## Filter Plugins
+
+<Since version="4.5" issueNumber="MDL-82427" />
+
+Filter plugins and the Filter API have been updated to use the standard Moodle Class Autoloading infrastructure.
+
+To ensure that your plugin continues to work in Moodle 4.5, you should move the `filter_[pluginname]` class located in `filter/[pluginname]/filter.php` to `filter/[pluginname]/classes/text_filter.php`, setting the namespace to `filter_[pluginname]` and renaming the class to `text_filter`.
+
+:::tip Codebases supporting multiple versions of Moodle
+
+If your codebase also supports Moodle 4.4 and earlier then you will also need to create a file in the 'old' location (`filter/[pluginname]/filter.php`) with the following content:
+
+```php title="filter/[pluginname]/filter.php"
+class_alias(\filter_[pluginname]\text_filter::class, \filter_[pluginname]::class);
+```
+
+This will ensure that the plugin class is available at both the old and new locations.
+
+:::
+
 ## TinyMCE plugins
 
 The `helplinktext` language string is no longer required by editor plugins, instead the `pluginname` will be used in the help dialogue
