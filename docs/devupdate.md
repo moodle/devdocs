@@ -94,6 +94,14 @@ Check changes in any of the core plugins that implement the reset course method.
 
 :::
 
+## Deprecations
+
+### Icon deprecation
+
+<Since version="4.5" issueNumber="MDL-82212" />
+
+A new mechanism for deprecating icons has been introduced. More information can be found in the [icon deprecation documentation](/general/development/policies/deprecation/icon-deprecation).
+
 ## Filter Plugins
 
 <Since version="4.5" issueNumber="MDL-82427" />
