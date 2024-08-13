@@ -148,9 +148,9 @@ xdebug.trigger_value = ProfileMe
 
 :::
 
-When using a trigger to start xdebug, open any php page on your server in your browser having added `XDEBUG_PROFILE` parameter to URL string, for example `http://servername/moodle2/index.php?XDEBUG_PROFILE`.
+When using a trigger to start xdebug, open any php page on your server in your browser having added `XDEBUG_PROFILE` parameter to URL string, for example `http://servername/moodle2/index.php?XDEBUG_PROFILE=ProfileMe`.
 
-If that page already has some parameters, just add our trigger to the URL end, for example: `http://servername/moodle2/mod/forum/view.php?id=5&XDEBUG_PROFILE`.
+If that page already has some parameters, just add our trigger to the URL end, for example: `http://servername/moodle2/mod/forum/view.php?id=5&XDEBUG_PROFILE=ProfileMe`.
 
 The profile should be generated in the directory you specified with `xdebug.output_dir` directive:
 
