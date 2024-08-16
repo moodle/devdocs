@@ -278,3 +278,36 @@ The `.close` class has been replaced with `.btn-close`.
 ```
 
 </ValidExample>
+
+### Directional utilities
+
+Several utilities have been renamed to use logical property names instead of directional ones.
+
+- Renamed .float-left and .float-right to .float-start and .float-end.
+- Renamed .border-left and .border-right to .border-start and .border-end.
+- Renamed .rounded-left and .rounded-right to .rounded-start and .rounded-end.
+- Renamed .ml-* and .mr-* to .ms-* and .me-*.
+- Renamed .pl-* and .pr-* to .ps-* and .pe-*.
+- Renamed .text-left and .text-right to .text-start and .text-end.
+
+<InvalidExample title="Don't">
+
+```html
+<div class="ml-3 pr-sm-3">
+    <div class="border-left text-left">[...]</div>
+    <div class="float-right mr-auto">[...]</div>
+</div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<div class="ms-3 pe-sm-3">
+    <div class="border-start text-start">[...]</div>
+    <div class="float-end me-auto">[...]</div>
+</div>
+```
+
+</ValidExample>
