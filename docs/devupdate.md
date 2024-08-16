@@ -191,3 +191,49 @@ class core_renderer extends \core_renderer {
 Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. To prepare for this, some of the current Bootstrap 4 classes usages have been replaced with version 5 compatible classes using a "bridge". This will help us to upgrade to Bootstrap 5 in the future.
 
 See more information in [Bootstrap 5 migration](./guides/bs5migration/index.md).
+
+### Support FontAwesome families
+
+<Since version="4.5" issueNumber="MDL-82210" />
+
+Upon upgrading Font Awesome (FA) from version 4 to 6, the solid family was selected by default. However, FA6 includes additional families such as regular and brands. Support for these families has now been integrated, allowing icons defined with `icon_system::FONTAWESOME` to use them.
+Icons can add the FontAwesome family (`fa-regular`, `fa-brands`, `fa-solid`) near the icon name to display it using this styling:
+
+```php title="Example of FA families from lib/classes/output/icon_system_fontawesome.php"
+            'core:i/rss' => 'fa-rss',
+            'core:i/rsssitelogo' => 'fa-graduation-cap',
+            'core:i/scales' => 'fa-scale-balanced',
+            'core:i/scheduled' => 'fa-regular fa-calendar-check',
+            'core:i/search' => 'fa-magnifying-glass',
+            'core:i/section' => 'fa-regular fa-rectangle-list',
+            'core:i/sendmessage' => 'fa-regular fa-paper-plane',
+            'core:i/settings' => 'fa-gear',
+            'core:i/share' => 'fa-regular fa-share-from-square',
+            'core:i/show' => 'fa-regular fa-eye-slash',
+            'core:i/siteevent' => 'fa-solid fa-globe',
+
+```
+
+### FontAwesome icons updated
+
+<Since version="4.5" issueNumber={"MDL-77537"} />
+
+The icons in Moodle core have been updated according to the UX team's specifications in MDL-77754. The team reviewed and proposed updates to leverage the new icons in Font Awesome 6, ensuring greater consistency.
+
+In addition to updating the icons, the following changes have been made:
+
+- The SVG files have been updated to SVG FA6 for better alignment and improved appearance.
+- PNG, JPG, and GIF files have been removed from the repository where possible, leaving only SVG files to simplify maintenance.
+
+For third-party plugins utilizing their own icons via the callback `get_fontawesome_icon_map()`, it is advisable to review and align these icons with the core icons for consistency. Here are some guidelines followed by the UX team that may be useful:
+
+- The pencil icon has been replaced by a pen.
+- The cog icon is used exclusively for settings; otherwise, use the pen icon.
+- Import/Upload actions should use the `fa-upload` icon, while Export/Download actions should use the `fa-download` icon.
+- The eye icon is used for both visibility and preview actions.
+
+:::tip Icons in Component library
+
+On the Icons page of the [Component library](/general/development/tools/component-library), you can find a comprehensive list of all the icons available in Moodle core.
+
+:::
