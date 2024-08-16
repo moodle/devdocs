@@ -13,9 +13,11 @@ This page highlights the important changes that are coming in Moodle 4.5 for dev
 
 ### Deprecated `badges/newbadge.php`
 
+<Since version="4.5" issueNumber="MDL-43938" />
+
 The `badges/newbadge.php` and `badges/edit.php` pages have been combined to make things easier to maintain since both were pretty similar (`newbadge.php` for creating badges and `edit.php` for editing them).
 
-As a result, `badges/newbadge.php` is now deprecated and will be removed in Moodle 6.0. Please update your code to use badges/edit.php instead.
+As a result, `badges/newbadge.php` is now deprecated and will be removed in Moodle 6.0. Please update your code to use `badges/edit.php` instead.
 
 :::info
 
@@ -26,6 +28,28 @@ https://yourmoodlesite/badges/newbadge.php?id=x
 will now automatically redirect to
 
 https://yourmoodlesite/badges/edit.php?courseid=x&mode=new
+
+:::
+
+### Deprecated `badges/view.php`
+
+<Since version="4.5" issueNumber="MDL-82503" />
+
+The `badges/index.php` and `badges/view.php` pages have been combined to make things easier to maintain since both were pretty similar and the workflow for accessing badges from the course page was confusing in some cases.
+
+As a result, `badges/view.php` is now deprecated and will be removed in Moodle 6.0. Please update your code to use `badges/index.php` instead.
+
+Apart from that, the `course_badges` system report has been merged with `badges` system report. It has been deprecated too and will be removed in Moodle 6.0. Please update your code to use `badges` system report instead.
+
+:::info
+
+Visiting
+
+https://yourmoodlesite/badges/view.php?type=x&id=x
+
+will now automatically redirect to
+
+https://yourmoodlesite/badges/index.php?type=x&id=x
 
 :::
 
