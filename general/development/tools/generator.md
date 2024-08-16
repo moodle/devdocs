@@ -42,7 +42,7 @@ Before executing the behat generators, you need a `feature` file you want to exe
 
 :::important
 
-The tool does not use `selenium` or any other browser wrapper. It reads the feature file and executes specific steps in it.
+The tool does not use `selenium` or any other browser wrapper. It reads the feature file and executes specific steps in it. You can check all the available steps going to `Site administration > Development > Create testing scenarios` and expanding the information container using the **Show more** button.
 
 This means:
 
