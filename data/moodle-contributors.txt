@@ -494,6 +494,7 @@ Jablon
 Jackson
 Jacob
 Jade
+Jahreis
 Jake
 Jakob
 Jakub
@@ -601,6 +602,7 @@ Krishnan
 Krista
 Krister
 Kristian
+Kristiina.Bax
 Kucherov
 Kudelis
 Kudriavtsev
@@ -795,6 +797,7 @@ Nießen
 Nigel
 Nikhil
 Nikita
+Nikolai
 Nikoloutsopoulos
 Nils
 Nina
