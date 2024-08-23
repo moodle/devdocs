@@ -61,3 +61,9 @@ Any context-specific preference should:
 The core_enrol subsystem just uses the enrol_xxx components to display the UI to manage the enrolments. The process as a whole is managed by core_enrol, and enrol_xxx are just a way of bringing two concepts together. The data is stored consistently within core_enrol and the enrol_xxx components are essentially a conduit to store the data en the core_enrol subsystem.
 
 You can ultimately work out which enrol plugin a user is enrolled with, but the UI is largely provided by core_enrol, and the calling code is actually core_enrol. Besides, you don't create an enrolment plugin instance in isolation: core_enrol is central to the experience.
+
+## My plugin does not store any personal data itself, but does send personal data into the Moodle logs or another subsystem. What should I do?
+
+You need to implement `\core_privacy\local\metadata\provider` so that you can describe the sub-systems used by your plugin in the `get_metadata()` method of your provider.
+
+The exporting and deleting of the user data in the subsystem will be handled by that subsystem and the plugins inside it, so you do not need to implement any of the request interfaces which are used to export data from the plugin.
