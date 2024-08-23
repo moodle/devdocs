@@ -1,5 +1,5 @@
 ---
-title: SCSS Deprecation
+title: SCSS deprecation
 tags:
   - Processes
   - Core development
