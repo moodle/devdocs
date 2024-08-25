@@ -23,18 +23,9 @@
     },
     {
         "copyrightHolders": [],
-        "location": "admin/tool/mfa/factor/totp/extlib/Assert",
-        "name": "Assert",
-        "version": "2.1",
-        "license": "MIT",
-        "repository": "https://github.com/beberlei/assert",
-        "customised": false
-    },
-    {
-        "copyrightHolders": [],
         "location": "admin/tool/mfa/factor/totp/extlib/OTPHP",
         "name": "OTPHP",
-        "version": "9.1.1",
+        "version": "11.3.0",
         "license": "MIT",
         "repository": "https://github.com/Spomky-Labs/otphp",
         "customised": false
@@ -99,7 +90,7 @@
         "location": "filter/codehighlighter/amd/src/prism.js",
         "name": "PrismJS",
         "description": "Prism is a lightweight, robust, and elegant syntax highlighting library. It's a spin-off project from Dabblet.",
-        "version": "1.16.0",
+        "version": "1.29.0",
         "license": "MIT",
         "repository": "https://github.com/PrismJS/prism",
         "customised": false
@@ -247,7 +238,7 @@
         "location": "lib/aws-sdk",
         "name": "AWS SDK for PHP",
         "description": "The AWS SDK for PHP library",
-        "version": "3.277.11",
+        "version": "3.318.0",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/aws/aws-sdk-php",
@@ -260,7 +251,7 @@
         "location": "lib/behat/axe",
         "name": "axe-core",
         "description": "Accessibility testing engine for websites and other HTML-based user interfaces.",
-        "version": "4.8.4",
+        "version": "4.10.0",
         "license": "MPL",
         "licenseversion": "2.0",
         "repository": "https://github.com/dequelabs/axe-core",
@@ -1140,7 +1131,7 @@
         "location": "lib/tcpdf",
         "name": "TCPDF",
         "description": "Class to generate PDF files",
-        "version": "6.6.5",
+        "version": "6.7.5",
         "license": "LGPL",
         "licenseversion": "3.0-or-later",
         "repository": "https://github.com/tecnickcom/TCPDF",
@@ -1220,14 +1211,14 @@
     },
     {
         "copyrightHolders": [
-            "Brion Vibber"
+            "Brooke Vibber"
         ],
         "location": "media/player/videojs/amd/src/local/ogv/ogv.js",
         "name": "ogv.js",
         "description": "Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.",
-        "version": "1.8.9",
+        "version": "1.9.0",
         "license": "MIT",
-        "repository": "https://github.com/brion/ogv.js/",
+        "repository": "https://github.com/bvibber/ogv.js",
         "customised": false
     },
     {
@@ -1237,7 +1228,7 @@
         "location": "media/player/videojs/amd/src/video-lazy.js",
         "name": "VideoJS",
         "description": "JavaScript library that makes it easier to work with and build on HTML5 video.",
-        "version": "8.10.0",
+        "version": "8.17.3",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/videojs/video.js",
@@ -1269,14 +1260,14 @@
     },
     {
         "copyrightHolders": [
-            "Brion Vibber"
+            "Brooke Vibber"
         ],
         "location": "media/player/videojs/ogvjs",
         "name": "ogv.js support files",
         "description": "JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.",
-        "version": "1.8.9",
+        "version": "1.9.0",
         "license": "MIT",
-        "repository": "https://github.com/brion/ogv.js/",
+        "repository": "https://github.com/bvibber/ogv.js",
         "customised": false
     },
     {
@@ -1286,7 +1277,7 @@
         "location": "media/player/videojs/videojs",
         "name": "VideoJS support files",
         "description": "JavaScript library that makes it easier to work with and build on HTML5 video",
-        "version": "8.10.0",
+        "version": "8.17.3",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/videojs/video.js",

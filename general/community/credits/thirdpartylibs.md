@@ -30,17 +30,10 @@ Provide a great search experience without the need for external, server-side, se
 - **Copyright holders**:
   - The Roundcube Dev Team
 
-### Assert
-
-- **Location**: admin/tool/mfa/factor/totp/extlib/Assert
-- **Version**: 2.1
-- **License**:  MIT
-- **URL**: [https://github.com/beberlei/assert](https://github.com/beberlei/assert)
-
 ### OTPHP
 
 - **Location**: admin/tool/mfa/factor/totp/extlib/OTPHP
-- **Version**: 9.1.1
+- **Version**: 11.3.0
 - **License**:  MIT
 - **URL**: [https://github.com/Spomky-Labs/otphp](https://github.com/Spomky-Labs/otphp)
 
@@ -93,7 +86,7 @@ Set of IMS-LTI tools originaly provided by IMS.
 Prism is a lightweight, robust, and elegant syntax highlighting library. It's a spin-off project from Dabblet.
 
 - **Location**: filter/codehighlighter/amd/src/prism.js
-- **Version**: 1.16.0
+- **Version**: 1.29.0
 - **License**:  MIT
 - **URL**: [https://github.com/PrismJS/prism](https://github.com/PrismJS/prism)
 - **Copyright holders**:
@@ -226,7 +219,7 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 The AWS SDK for PHP library
 
 - **Location**: lib/aws-sdk
-- **Version**: 3.277.11
+- **Version**: 3.318.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/aws/aws-sdk-php](https://github.com/aws/aws-sdk-php)
 
@@ -235,7 +228,7 @@ The AWS SDK for PHP library
 Accessibility testing engine for websites and other HTML-based user interfaces.
 
 - **Location**: lib/behat/axe
-- **Version**: 4.8.4
+- **Version**: 4.10.0
 - **License**:  MPL 2.0
 - **URL**: [https://github.com/dequelabs/axe-core](https://github.com/dequelabs/axe-core)
 - **Copyright holders**:
@@ -1012,7 +1005,7 @@ A generic function and convention to trigger deprecation notices
 Class to generate PDF files
 
 - **Location**: lib/tcpdf
-- **Version**: 6.6.5 (with Moodle customisations)
+- **Version**: 6.7.5 (with Moodle customisations)
 - **License**:  LGPL 3.0-or-later
 - **URL**: [https://github.com/tecnickcom/TCPDF](https://github.com/tecnickcom/TCPDF)
 - **Copyright holders**:
@@ -1089,18 +1082,18 @@ PHP ZIP Streaming Library
 Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.
 
 - **Location**: media/player/videojs/amd/src/local/ogv/ogv.js
-- **Version**: 1.8.9
+- **Version**: 1.9.0
 - **License**:  MIT
-- **URL**: [https://github.com/brion/ogv.js/](https://github.com/brion/ogv.js/)
+- **URL**: [https://github.com/bvibber/ogv.js](https://github.com/bvibber/ogv.js)
 - **Copyright holders**:
-  - Brion Vibber
+  - Brooke Vibber
 
 ### VideoJS
 
 JavaScript library that makes it easier to work with and build on HTML5 video.
 
 - **Location**: media/player/videojs/amd/src/video-lazy.js
-- **Version**: 8.10.0 (with Moodle customisations)
+- **Version**: 8.17.3 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
@@ -1133,18 +1126,18 @@ YouTube Playback Technology for Video.js.
 JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.
 
 - **Location**: media/player/videojs/ogvjs
-- **Version**: 1.8.9
+- **Version**: 1.9.0
 - **License**:  MIT
-- **URL**: [https://github.com/brion/ogv.js/](https://github.com/brion/ogv.js/)
+- **URL**: [https://github.com/bvibber/ogv.js](https://github.com/bvibber/ogv.js)
 - **Copyright holders**:
-  - Brion Vibber
+  - Brooke Vibber
 
 ### VideoJS support files
 
 JavaScript library that makes it easier to work with and build on HTML5 video
 
 - **Location**: media/player/videojs/videojs
-- **Version**: 8.10.0 (with Moodle customisations)
+- **Version**: 8.17.3 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
