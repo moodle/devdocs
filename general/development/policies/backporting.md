@@ -41,7 +41,7 @@ Should you feel that a new feature or improvement needs backporting, please foll
 The integration team will process backport requests, with the following guidelines:
 
 1. The integration team will together consider each request individually considering the needs of the community (influenced by forum posts, moodle partners, discussion with developers via tracker or private message, etc).
-2. Backports will happen not earlier than 3 weeks and not later than 2 months after the request was performed.
+2. Backport requests will be processed not earlier than 3 weeks and not later than 2 months after the original improvement/new feature has been integrated.
 3. Rationale will be given for rejection
 
 If the backport request is approved, please follow the usual development process to submit the feature or improvement on earlier branches. Just to be clear, this means using the new bug number. So, even if the fix you are back-porting cherry-picks cleanly, you will need to amend the commit comment to use the new MDL-XXXXX number.
