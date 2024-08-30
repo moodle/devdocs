@@ -39,6 +39,12 @@
                     "name": "4.4.2",
                     "releaseDate": "12 August 2024",
                     "version": 2024042202
+                },
+                {
+                    "name": "4.4.3",
+                    "releaseDate": "2 September 2024",
+                    "version": 2024042203,
+                    "notes": "Unscheduled minor release"
                 }
             ]
         },
@@ -85,6 +91,12 @@
                     "name": "4.3.6",
                     "releaseDate": "12 August 2024",
                     "version": 2023100906
+                },
+                {
+                    "name": "4.3.7",
+                    "releaseDate": "2 September 2024",
+                    "version": 2023100907,
+                    "notes": "Unscheduled minor release"
                 }
             ]
         },
@@ -146,6 +158,12 @@
                     "name": "4.2.9",
                     "releaseDate": "12 August 2024",
                     "version": 2023042409
+                },
+                {
+                    "name": "4.2.10",
+                    "releaseDate": "2 September 2024",
+                    "version": 2023042410,
+                    "notes": "Unscheduled minor release"
                 }
             ]
         },
@@ -222,6 +240,12 @@
                     "name": "4.1.12",
                     "releaseDate": "12 August 2024",
                     "version": 2022112812
+                },
+                {
+                    "name": "4.1.13",
+                    "releaseDate": "2 September 2024",
+                    "version": 2022112813,
+                    "notes": "Unscheduled minor release"
                 }
             ]
         },
