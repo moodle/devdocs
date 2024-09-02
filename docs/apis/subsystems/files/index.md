@@ -293,6 +293,19 @@ $fs = get_file_storage();
 $fs->create_file_from_storedfile($fileinfo, $existingfile);
 ```
 
+#### Notification requirements for new files
+
+By default, the `$notify` parameter has a value of `true` and will call the after_file_created hook after files are created. If you prefer not to do this, you can set it to `false`.
+
+```php title="Create a file from a file on disk, but do not trigger the after_file_created hook"
+$fs = get_file_storage();
+
+// Create a file from a file on disk, but do not trigger the after_file_created hook.
+$fs->create_file_from_pathname($fileinfo, $requestdir . '/helloworld.txt', false);
+```
+
+The same principle also applies to the other functions.
+
 ### List all files in a particular file area
 
 You may need to fetch a list of all files in a specific file area. You can do this using the `file_storage::get_area_files()` API, which will return array of `stored_file` objects, for example:
