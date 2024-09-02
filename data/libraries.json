@@ -585,7 +585,7 @@
         "location": "lib/jmespath",
         "name": "JMESPath",
         "description": "The JMESPath library",
-        "version": "2.6.1",
+        "version": "2.7.0",
         "license": "MIT",
         "repository": "https://github.com/jmespath/jmespath.php",
         "customised": false
