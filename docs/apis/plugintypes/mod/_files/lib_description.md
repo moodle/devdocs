@@ -17,6 +17,47 @@ The `lib.php` file is one of the older parts of Moodle and functionality is grad
 
 :::
 
+##### Activity module support functions
+
+Activity modules can implement a global function to provide additional information about the module
+features. These functions are optional and can be used to provide additional features or to modify the behaviour of the activity module.
+
+```php title="mod/[modname]/lib.php"
+function [modname]_supports(string $feature): bool|string|null;
+```
+
+The function `[modname]_supports` is used to check if the activity module supports a particular feature. The function should return `true` if the feature is supported, `false` if it is not supported, `null` if the feature is unknown, or string for the module purpose for some features.
+
+Each feature is identified by a constant, which is defined in the `lib
+/moodlelib.php` file. Some of the available features are:
+
+- `FEATURE_GROUPS` and `FEATURE_GROUPINGS`: The activity module supports groups and groupings.
+- `FEATURE_SHOW_DESCRIPTION`: The activity module supports showing the description on the course page.
+- `FEATURE_QUICKCREATE`: The activity `[modname]_add_instance()` function is able to create an instance without showing a form using the default settings. It is used by the `core_courseformat_create_module` webservice to know which activities are compatible. If this feature is supported, the activity module should provide a `quickcreatename` string in the language file that will be used as the name of the instance created.
+
+<details>
+  <summary>View example</summary>
+  <div>
+
+```php
+function [modname]_supports($feature) {
+    return match ($feature) {
+        FEATURE_GROUPS => true,
+        FEATURE_GROUPINGS => true,
+        FEATURE_MOD_INTRO => true,
+        FEATURE_COMPLETION_TRACKS_VIEWS => true,
+        FEATURE_GRADE_HAS_GRADE => true,
+        FEATURE_BACKUP_MOODLE2 => true,
+        FEATURE_SHOW_DESCRIPTION => true,
+        FEATURE_MOD_PURPOSE => MOD_PURPOSE_COLLABORATION,
+        default => null,
+    };
+}
+```
+
+  </div>
+</details>
+
 :::tip
 
 To have your Activity plugin classified in the right Activity category, you must define the function `[modname]_supports` and add the `FEATURE_MOD_PURPOSE` constant:
