@@ -22,6 +22,25 @@ The process for including a third party library is the same for core code as it 
 1. Put that library into a sub folder in your plugin. It is best to NOT use version numbers in the foldername ("jquery" not "jquery-1.7.3").
 1. Create or update the `lib/thirdpartylibs.xml` file for your plugin, according to the format described in the [documentation](/docs/apis/commonfiles#thirdpartylibsxml).
 1. Create a [`readme_moodle.txt`](/docs/apis/commonfiles#readme_moodletxt) file in the new third party library folder containing detailed instructions on how to complete steps 3-6 above. This should list download urls, build instructions etc.
+1. Ensure that the `composer.json` file is included if it is available. Check for any libraries that autoload PSR-0, PSR-4 namespaces, and function files, and then add them to the loader.
+
+    ```php title="lib/classes/component.php"
+    // The associative array of PSR-0 namespaces and corresponding paths.
+    protected static $psr0namespaces = [
+        'Mustache' => 'lib/mustache/src/Mustache',
+    ];
+
+    // The associative array of PRS-4 namespaces and corresponding paths.
+    protected static $psr4namespaces = [
+        \DI::class => 'lib/php-di/php-di/src',
+    ];
+
+    // The array containing files which are normally in a package's composer/autoload.files section.
+    protected static $composerautoloadfiles = [
+        'lib/php-di/php-di/src/functions.php',
+    ];
+    ```
+
 1. Note any creation, update or deletion of third party libraries in your plugins `upgrade.txt` or [CHANGES](/docs/apis/commonfiles#changes).
 1. Run `grunt ignorefiles` to regenerate ignored files path
 
