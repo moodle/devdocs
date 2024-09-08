@@ -60,7 +60,7 @@ An easy-to-install jQuery plugin to create EU Cookie Law popups and for GDPR com
 phpCAS library to support CAS authentication plugin.
 
 - **Location**: auth/cas/CAS
-- **Version**: 1.6.0
+- **Version**: 1.6.1
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/apereo/phpCAS](https://github.com/apereo/phpCAS)
 - **Copyright holders**:
@@ -505,7 +505,7 @@ PSR-7 message implementation that also provides common utility methods
 PHP script to convert HTML into an approximate text equivalent.
 
 - **Location**: lib/html2text
-- **Version**: 4.3.1
+- **Version**: 4.3.2
 - **License**:  GPL 2.0+
 - **URL**: [https://github.com/mtibben/html2text](https://github.com/mtibben/html2text)
 - **Copyright holders**:
