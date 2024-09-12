@@ -43,9 +43,8 @@ In new version wiki:
 1. Review Special:WantedPages
 1. Review Special:LonelyPages
 1. Review instances of "(new in x.y)" text (not always necessary to remove them)
-1. Add link to new version wiki to https://docs.moodle.org/dev/MediaWiki:Sidebar
 1. Add link to new version wiki to https://docs.moodle.org/en/MoodleDocs:Overview
-1. Post on moodle.org in the Moodle community sites forum about the new version wikis, for example, [Moodle Docs 3.11 wikis now available](https://moodle.org/mod/forum/discuss.php?d=422141)
+1. Post on moodle.org in the Moodle community sites forum about the new version wikis, for example, [Moodle Docs 4.5 English wiki now available](https://moodle.org/mod/forum/discuss.php?d=461965)
 
 ## 1 week prior
 
