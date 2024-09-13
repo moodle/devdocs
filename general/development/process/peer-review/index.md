@@ -113,7 +113,7 @@ Ensure that:
 
 ### Testing instructions and automated tests
 
-It is the developer's responsibility to test code before integration. As well as veryifying that the proposed change works, good tests can and should help the peer reviewer, integration reviewer, and anyone looking at this code in future to understand how it is supposed to work. They also help verify that everything that might be affected by this change was considered.
+It is the developer's responsibility to test code before integration. As well as verifying that the proposed change works, good tests can and should help the peer reviewer, integration reviewer, and anyone looking at this code in future to understand how it is supposed to work. They also help verify that everything that might be affected by this change was considered.
 
 For manual testing check that:
 
