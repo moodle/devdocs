@@ -117,7 +117,7 @@ It is the developer's responsibility to test code before integration. As well as
 
 For manual testing check that:
 
-- The manual testing instructures:
+- The manual testing instructions:
   - Are in the [correct format](./testing/guide).
   - Are clear.
   - Are concise.
@@ -133,7 +133,7 @@ For automated testing (PHPunit and Behat):
 - Automated tests are our way of verifying that Moodle works as expected, and that future changes do not cause unexpected regressions. Therefore, all Moodle code should come with tests.
 - If it is a bug that is being fixed, then the fact that the bug could exist means that an automated tests was missing (otherwise we would have found the bug sooner). So every bug fix should come with test coverage. (If there is a genuine reason this is impossible, this should be explained in a tracker comment.)
 - However, running automated tests takes time and energy. Check that the tests are not excessive, and that they follow best practice (e.g. Behat tests using generators, not setting things up through the UI.) Don't make MDL-15169 worse!
-- Not every change in Moodle reqires an entire new test. Sometimes, it is more appropriate and efficient to add some checks in an existing tests. (But this should not be taken to excess, since that could lead to a mess where it is not clear what is being tested where.)
+- Not every change in Moodle requires an entire new test. Sometimes, it is more appropriate and efficient to add some checks in an existing tests. (But this should not be taken to excess, since that could lead to a mess where it is not clear what is being tested where.)
 - Check that the tests have been added in the best place. Are the tests in a place where someone working on related features in the future will expect to find them.
 - As part of your review, check that the unit tests pass. Hopefully this can just be done by checking GitHub actions. (If the developer has not enabled GHA yet, encourage them to do so by linking them to [the instructions](https://moodledev.io/general/development/tools/gha).)
 - Look for evidence that relevant Behat tests pass, especially when it involved UI changes. Note that Behat is not run by GitHub actions, but all the tests will be run as part of the integration process.
