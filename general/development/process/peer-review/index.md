@@ -113,19 +113,30 @@ Ensure that:
 
 ### Testing instructions and automated tests
 
-It is the developer's responsibility to test code before integration. Issues should not be sent for peer review without tests so that the peer reviewer can assess their quality and use them to consider the scope of the issue.
+It is the developer's responsibility to test code before integration. As well as verifying that the proposed change works, good tests can and should help the peer reviewer, integration reviewer, and anyone looking at this code in future to understand how it is supposed to work. They also help verify that everything that might be affected by this change was considered.
 
-Ensure that:
+For manual testing check that:
 
-- There are specific testing instructions that state how, as well as what, to test. Please ensure that the testing instructions:
-  - Are in the [correct format](./testing/guide);
-  - Are clear; and
-  - Are concise;
-  - They consider other perspectives of other users perhaps not considered by original developers e.g. Moodle mobile app users
-- The assignee has tested according to the instructions and verified that they are passing (This is the responsibility of the assignee, not the peer reviewer)
-- New unit tests have been added when there is a change in functionality; and
-- **Unit tests pass** for related areas where changes have been made.
-- **Behat tests pass** for related areas where changes have been made, especially when it involved UI changes.
+- The manual testing instructions:
+  - Are in the [correct format](./testing/guide).
+  - Are clear.
+  - Are concise.
+  - Are sufficient to verify that the change is working.
+  - Have considered what else might be affected by the change. That is, we have not just make the original issue go away, but we have done that without introducing any regressions.
+  - Regarding the previous point, a common thing to overlook is the Moodle mobile app users, so please consider that.
+- Having said all that, the testing instructions should be no longer than necessary. There is no point testing essentially the same thing twice. Testers do a valuable job, but they have limited time. Please respect that.
+- In relation to that, it is OK not to write testing instructions for parts of the fix that are already covered well enough by automated tests. Just remember that automated checks cannot see every problem that a set of human eyeballs would see.
+- Look for evidence that the assignee has tested according to the instructions and verified that they are passing. (This is the responsibility of the assignee, not the peer reviewer.)
+
+For automated testing (PHPunit and Behat):
+
+- Automated tests are our way of verifying that Moodle works as expected, and that future changes do not cause unexpected regressions. Therefore, all Moodle code should come with tests.
+- If it is a bug that is being fixed, then the fact that the bug could exist means that an automated tests was missing (otherwise we would have found the bug sooner). So every bug fix should come with test coverage. (If there is a genuine reason this is impossible, this should be explained in a tracker comment.)
+- However, running automated tests takes time and energy. Check that the tests are not excessive, and that they follow best practice (e.g. Behat tests using generators, not setting things up through the UI.) Don't make MDL-15169 worse!
+- Not every change in Moodle requires an entire new test. Sometimes, it is more appropriate and efficient to add some checks in an existing tests. (But this should not be taken to excess, since that could lead to a mess where it is not clear what is being tested where.)
+- Check that the tests have been added in the best place. Are the tests in a place where someone working on related features in the future will expect to find them.
+- As part of your review, check that the unit tests pass. Hopefully this can just be done by checking GitHub actions. (If the developer has not enabled GHA yet, encourage them to do so by linking them to [the instructions](https://moodledev.io/general/development/tools/gha).)
+- Look for evidence that relevant Behat tests pass, especially when it involved UI changes. Note that Behat is not run by GitHub actions, but all the tests will be run as part of the integration process.
 
 ### Security
 
