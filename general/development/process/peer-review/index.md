@@ -128,7 +128,7 @@ For manual testing check that:
 - In relation to that, it is OK not to write testing instructions for parts of the fix that are already covered well enough by automated tests. Just remember that automated checks cannot see every problem that a set of human eyeballs would see.
 - Look for evidence that the assignee has tested according to the instructions and verified that they are passing. (This is the responsibility of the assignee, not the peer reviewer.)
 
-For automated testing (PHPunit and Behat): 
+For automated testing (PHPunit and Behat):
 
 - Automated tests are our way of verifying that Moodle works as expected, and that future changes do not cause unexpected regressions. Therefore, all Moodle code should come with tests.
 - If it is a bug that is being fixed, then the fact that the bug could exist means that an automated tests was missing (otherwise we would have found the bug sooner). So every bug fix should come with test coverage. (If there is a genuine reason this is impossible, this should be explained in a tracker comment.)
