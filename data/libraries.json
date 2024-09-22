@@ -1035,7 +1035,7 @@
         "location": "lib/psr/log",
         "name": "log",
         "description": "Common interface for logging libraries",
-        "version": "3.0.0",
+        "version": "3.0.2",
         "license": "MIT",
         "repository": "https://github.com/php-fig/log",
         "customised": false
