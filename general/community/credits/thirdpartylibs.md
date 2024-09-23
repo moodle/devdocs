@@ -922,7 +922,7 @@ Common interface for HTTP server-side middleware
 Common interface for logging libraries
 
 - **Location**: lib/psr/log
-- **Version**: 3.0.0
+- **Version**: 3.0.2
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/log](https://github.com/php-fig/log)
 
