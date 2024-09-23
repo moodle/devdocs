@@ -5,6 +5,9 @@
 access
 admin
 adminpresets
+ai
+aiplacement
+aiprovider
 analytics
 antivirus
 auth
