@@ -18,8 +18,9 @@ tags:
 | 5. | Contact the marketing team announcing the new release and highlights. | Team Lead |
 | 6. | Add new QA tests to the `apps_test` site. New QA tests should be labeled with [qa_test_required](https://tracker.moodle.org/issues/?jql=project%20%3D%20MOBILE%20AND%20resolution%20in%20(Unresolved%2C%20Fixed)%20AND%20labels%20%3D%20qa_test_required%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC), remove that label once they are added to the site. | Tester |
 | 7. | Complete all TODOs related with the upcoming release, which are marked in code with a comment starting with `@todo {version-number}` (for example, before releasing 4.1 we'd search for comments starting with `@todo 4.1`) | Developer |
-| 8. | Update npm dependencies in the `main` branch, and run `npm audit` to ensure all the dependencies are OK. Also check github vulnerabilities report. | Developer |
-| 9. | **Start testing** | Tester |
+| 8. | Update npm dependencies in the `main` branch, both in the root folder and in cordova-plugin-moodleapp, and run `npm audit` to ensure all the dependencies are OK. Also check github vulnerabilities report. | Developer |
+| 9. | Freeze npm dependencies to avoid being updated during QA. For the root package.json, this can be done running `npx gulp freeze-dependencies` (make sure no error appears in console). cordova-plugin-moodleapp dependencies need to be frozen manually. | Developer |
+| 10. | **Start testing** | Tester |
 
 ## The release day
 
@@ -54,6 +55,7 @@ tags:
 | 12. | Review that all the minor issues found during the QA testing have a related and triaged MOBILE issue in the tracker. | All the team |
 | 13. | Make sure that tests are passing with all the supported versions in [ci.moodle.org](https://ci.moodle.org). | Developer |
 | 14. | Update APK in [download.moodle.org/mobile](https://download.moodle.org/mobile). | Team Lead |
+| 15. | Unfreeze the dependencies in the root package.json and in cordova-plugin-moodleapp. | Developer |
 
 ## See also
 
