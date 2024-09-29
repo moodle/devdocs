@@ -107,8 +107,8 @@ Compiled C program to convert TeX into GIFs
 
 The general H5P library.
 
-- **Location**: h5p/h5plib/v126/joubel/core
-- **Version**: 1.26
+- **Location**: h5p/h5plib/v127/joubel/core
+- **Version**: moodle-1.27.0
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-php-library/](https://github.com/h5p/h5p-php-library/)
 - **Copyright holders**:
@@ -118,8 +118,8 @@ The general H5P library.
 
 A general library that is supposed to be used in most PHP implementations of H5P.
 
-- **Location**: h5p/h5plib/v126/joubel/editor
-- **Version**: moodle-1.23
+- **Location**: h5p/h5plib/v127/joubel/editor
+- **Version**: moodle-1.27.0
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-editor-php-library/](https://github.com/h5p/h5p-editor-php-library/)
 - **Copyright holders**:
@@ -443,6 +443,13 @@ Library for creating beautiful generative background images from a string.
 - **URL**: [https://github.com/RedeyeGroup/geopattern-php](https://github.com/RedeyeGroup/geopattern-php)
 - **Copyright holders**:
   - 2015 Leaf Corcoran
+
+### libphonenumber for PHP (Lite)
+
+- **Location**: lib/giggsey/libphonenumber-for-php-lite
+- **Version**: 8.13.31
+- **License**:  Apache 2.0
+- **URL**: [https://github.com/giggsey/libphonenumber-for-php-lite](https://github.com/giggsey/libphonenumber-for-php-lite)
 
 ### Google APIs
 
@@ -990,6 +997,13 @@ Simple Pie helps with blogs.
 - **Version**: 4.13.0
 - **License**:  MIT
 - **URL**: [https://github.com/slimphp/Slim](https://github.com/slimphp/Slim)
+
+### PHP Cloneable
+
+- **Location**: lib/spatie/php-cloneable
+- **Version**: 1.0.2
+- **License**:  MIT
+- **URL**: [https://github.com/spatie/php-cloneable](https://github.com/spatie/php-cloneable)
 
 ### Symfony Deprecation contracts
 
