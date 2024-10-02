@@ -1,4 +1,3 @@
-
 ---
 
 # Database Fields for Moodle 4.4.3
