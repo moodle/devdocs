@@ -1,81 +1,126 @@
+
+
+## **Database Fields for Moodle 4.4.3**
+
+*This documentation is a work-in-progress. Feel free to contribute.*
+
+The **Database activity** in Moodle allows users to create structured collections of data, including support for predefined field types such as **text**, **date**, and **URL**. Developers can create custom field types for more specialized uses, ensuring flexibility and adaptability across different institutions or academic needs.
+
+### **Custom Field Types Examples**
+- **Discipline-specific field types**:  
+  Example: *“Protein PDB code”* allows users to input a PDB code, which displays a 3D viewer of the protein structure or links to molecular databases.
+  
+- **Institution-specific field types**:  
+  Example: *“Library reference number”* enables users to input reference numbers that can convert into direct links for local library services.
+  
+- **Module-specific field types**:  
+  Example: *“Wiki page”* field provides a dropdown list of wiki pages, allowing users to link database entries to specific wiki content.
+
 ---
-title: Database fields
-tags:
-  - mod_data
-  - datafield
-  - plugintype
-  - subplugin
-documentationDraft: true
+
+### **File Structure for Field Sub-Plugins**
+
+Custom database field sub-plugins are located in `/mod/data/field`. Each plugin is in a separate subdirectory with several required files, as well as any additional files developers might use.
+
 ---
 
-The [Database activity](https://docs.moodle.org/en/Database_module) included with Moodle includes support for several predefined [field types](./fields.md), including text, date, and URL. It is also possible to create new field types. For example, you might like to create:
+### **Key Files for Field Plugins**
 
-- Discipline-specific field types - For example "Protein PDB code": users can enter the PDB code for a protein, and then the display 3D viewer for the protein structure, or link out to molecular databases.
-- Institution-specific field types -  For example "library reference number": Allow users to enter a reference number which can be automatically turned into a direct link for local library services.
-- Module-specific field types - For example "wiki page": users see a drop-down list containing the names of pages in your wiki, and can choose which page this particular entry refers to.
+#### **1. `field.class.php` (Required)**
+Defines the field type, behaviors, and properties in a class named `data_field_[pluginname]`. This class must extend the `data_field_base` base class.
 
-import { ComponentFileSummary } from '../../../_utils';
+#### **Key Functions to Override:**
+- `display_add_field($recordid = 0)`: Generates HTML for adding or editing a record.
+- `display_browse_field($recordid, $template)`: Generates HTML for browsing records.
+- `update_content($recordid, $value, $name = '')`: Saves data entered by the user.
+- `get_sort_sql($fieldname)`: Defines SQL for sorting the field.
+- `get_content_value($value)`: Retrieves the content that users will see, potentially transforming data before display.
 
-## File structure
+---
 
-Database field sub-plugins are located in the `/mod/data/field` directory.
+### **Class Locations and Autoloading**
 
-Each plugin is in a separate subdirectory and consists of a number of _mandatory files_ and any other files the developer is going to use.
+Custom field definitions reside in `field.class.php`, and **Moodle 4.4.3** still does not autoload this file. It is recommended to follow Moodle’s [autoloading guidelines](https://moodledev.io/docs/guidelines/files/autoloading) to future-proof your code and maintain compatibility with upcoming releases.
 
-<details>
-  <summary>View an example directory layout for the `datafield_number` subplugin.</summary>
+---
 
-```console
-mod/data/field/number
-├── classes
-│   └── privacy
-│       └── provider.php
-├── field.class.php
-├── lang
-│   └── en
-│       └── datafield_number.php
-├── mod.html
-└── version.php
+### **Field Configuration Form**
+
+#### **File Path:** `/mod.html` (Required)
+
+This file defines the form for adding or editing the field configuration. It uses Moodle's **Form API** to create input elements.
+
+```php
+$mform->addElement('text', 'fieldname', get_string('fieldname', 'datafield_[pluginname]'), 'size="30"');
+$mform->setType('fieldname', PARAM_TEXT);
+$mform->addRule('fieldname', null, 'required', null, 'client');
 ```
 
-</details>
+**Note**: The form creation process for fields retains legacy elements and does not follow modern best practices. Developers are encouraged to update these forms and follow Moodle’s [Form API guidelines](https://moodledev.io/docs/apis/core/dml/moodleform).
 
-Some of the important files for the database field plugintype are described below. See the [common plugin files](../../commonfiles/index.mdx) documentation for details of other files which may be useful in your plugin.
+---
 
-### Field class
+### **Security Best Practices**
 
-<ComponentFileSummary
-    filepath="/field.class.php"
-    required
-    summary="Definition of the field type"
-/>
+Moodle 4.4.3 enforces updated security protocols. When creating custom fields, ensure that inputs are properly validated and sanitized. Use Moodle's security functions like `required_param()` and `optional_param()` to prevent attacks such as SQL injection and cross-site scripting (XSS).
 
-The field, its behaviours, and its properties, are defined in a class named `data_field_[pluginname]` located in `field.class.php`. This class must extend the `data_field_base` base class.
+Example:
 
-:::danger Class locations
+```php
+$input = required_param('input', PARAM_ALPHANUM);  // Only accepts alphanumeric characters
+```
 
-The field definition is currently located in the `field.class.php` file and is not yet autoloaded by Moodle.
+---
 
-:::
+### **Testing and Compatibility**
 
-The base class defines some simple behaviours which you can override in your plugin. The following functions are of particular interest:
+Custom field plugins must be tested for compatibility across Moodle 4.4.3 supported environments:
+- **PHP 8.1**
+- **MariaDB 10.6.7**
+- **MySQL 8.0**
+- **PostgreSQL 13**
+- **MSSQL 2017**
+- **Oracle 19c**
 
-- `display_add_field($recordid = 0)` - Return some HTML for use when a user is adding/editing a record
-- `display_browse_field($recordid, $template)` - Return some HTML for displaying a record
-- `update_content($recordid, $value, $name = '')` - Store the data entered by a user for a record
-- `get_sort_sql($fieldname)` - Specify SQL for how this field should be sorted
-- `get_content_value($value)` - Useful if the info stored in the database if different from the info that ends up being presented to the user
+Developers should use Moodle’s [unit testing framework](https://moodledev.io/docs/apis/core/testing/phpunit) to automate testing and ensure plugin functionality in diverse environments.
 
-### Field configuration form
+---
 
-<ComponentFileSummary
-    filepath="/mod.html"
-    required
-    summary="Form definition for adding and editing the field configuration"
-/>
+### **Form API Enhancements in Moodle 4.4.3**
 
-:::danger
+Moodle 4.4.3 brings further improvements to the **Form API**, especially in terms of accessibility and UX. Ensure that custom field forms are:
+- **Mobile-responsive**
+- **Accessible**
+- **Optimized for modern browsers**
 
-The field definition is one of the older parts of Moodle and does not use best practice.
+Make use of Moodle's standard form elements, ensuring that your forms adhere to accessibility guidelines.
 
-:::
+---
+
+### **Version Control and Deployment**
+
+To ensure smooth development and deployment of custom field types:
+- Use Moodle’s **Git version control** system.
+- Maintain proper versioning to ensure compatibility with Moodle's plugin directory and version upgrades.
+  
+Developers should submit and maintain their plugins through the [Moodle Plugin Directory](https://moodle.org/plugins).
+
+---
+
+**Tags**: `mod_data`, `datafield`, `plugin`, `subplugin`
+
+---
+
+**Last Updated**: 2 October 2024
+
+---
+
+### **Key Considerations for Moodle 4.4.3:**
+- Use **updated coding standards** to align with Moodle’s guidelines for PHP 8.1.
+- Ensure that **security features** are in place to prevent vulnerabilities.
+- Maintain **compatibility** across all supported platforms and environments.
+- Follow **best practices** for creating forms and managing plugin configuration.
+
+By adhering to these guidelines, you can ensure that your custom field types are modern, secure, and compatible with future Moodle versions.
+
+---
