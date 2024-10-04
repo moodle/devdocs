@@ -643,7 +643,7 @@ You need to provide a description of the value of the user preference. (This des
  * @param   int         $userid The userid of the user whose data is to be exported.
  */
 public static function export_user_preferences(int $userid) {
-    $markasreadonnotification = get_user_preference('markasreadonnotification', null, $userid);
+    $markasreadonnotification = get_user_preferences('markasreadonnotification', null, $userid);
     if (null !== $markasreadonnotification) {
         switch ($markasreadonnotification) {
             case 0:
