@@ -10,6 +10,10 @@ tags:
 
 The following people have helped with [Quality Assurance (QA) testing](../../development/process/testing/qa):
 
+## Moodle 4.5 QA
+
+Adriano Ruseler, Alain Corbière, Alistair Spark, Amaia Anabitarte, Angelia Dela Cruz, Avi Levy, Carol, Dag Klimas, David Woloszyn, Eli Zard, Fernando Acedo, Ferran Recio, Jake Dallimore, Joe Goldberg, John Provasnik, Joseph Rézeau, Kevin Percy, Kim Jared Lucas, Laurent David, Luiggi Sansonetti, Maria João, Mary Cooch, Mathew May, Meirza, Michelle Lomman, Mihail Geshoski, Mikel Martín Corrales, Minh Hanh NGUYEN, Miri Lipson, Nadav Kavalerchik, Nicolas Martignoni, Praveen Chamarthi, Rajeshwar S, Raquel Ortega, Ron Carl Alfon Yu, Sabina Abellan, Safat Shahin, Sara Arjona (@sarjona), Simey Lameze, Stevani Andolo, Tamar Elikishvili, Victor Déniz Falcón, Vika ablogeev, yonatan kostov
+
 ## Moodle 4.4 QA
 
 Adriano Ruseler, Alain Corbière, AL Rachels, Alistair Spark, Amaia Anabitarte, Angelia Dela Cruz, Avi Levy, Carlos Escobedo, Chris Pratt, David Woloszyn, Eric Yullu, Ferran Recio, Gemma Lesterhuis, German Valero, Huong Nguyen, Ilya Tregubov, Jake Dallimore, Jean-Marc Doucet, John Provasnik, Joseph Rézeau, Kevin Percy, Kim Jared Lucas, Laurent David, Luiggi Sansonetti, Mathew May, Meirza, Mihail Geshoski, Mikel Martín Corrales, Nicolas Martignoni, Patrick Lemaire, Rajeshwar S, Raquel Ortega, Ron Carl Alfon Yu, Sabina Abellan, Safat Shahin, Sara Arjona (@sarjona), Shamim Rezaie, Simey Lameze, Stevani Andolo, Victor Déniz Falcón, Vika ablogeev
