@@ -66,8 +66,8 @@ In previous latest version wiki:
 1. Edit https://docs.moodle.org/en/MediaWiki:Noarticletext to make it like https://docs.moodle.org/2x-1/en/MediaWiki:Noarticletext
 1. Edit https://docs.moodle.org/en/Creating_SCORM_Content to make it like https://docs.moodle.org/2x-1/en/Creating_SCORM_Content
 1. Go through Special:RecentChanges in the previous most recent version wiki and add relevant changes to the new version wiki
-1. Edit https://docs.moodle.org/en/Awards and add `#redirect [en](https://docs.moodle.org/en/Awards)` so it redirects to the latest version of the page
-1. Edit https://docs.moodle.org/en/MoodleDocs:Overview and add `#redirect [en](https://docs.moodle.org/MoodleDocs/Overview)` so it redirects to the latest version of the page
+1. Edit https://docs.moodle.org/en/Awards and add `#REDIRECT [[:en:Awards]]` so it redirects to the latest version of the page
+1. Edit https://docs.moodle.org/en/MoodleDocs:Overview and add `#REDIRECT [[:en:MoodleDocs:Overview]]` so it redirects to the latest version of the page
 1. For no longer supported versions, create MediaWiki:Sitenotice by copying content from https://docs.moodle.org/37/en/MediaWiki:Sitenotice
 
 ## Final checks
