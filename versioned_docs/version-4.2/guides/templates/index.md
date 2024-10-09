@@ -413,6 +413,22 @@ public function export_for_template(renderer_base $output) {
 }
 ```
 
+If you wish to render using any template your renderable can implement `named_templatable` interface instead of `templatable`. It will have to implement an additional new method `public function get_template_name(\renderer_base $renderer): string` that returns the name of the template to be used.
+
+Example of the method added to tell a renderable to use the `mywidget.mustache` template in the `tool_myplugin` plugin templates directory:
+
+```php
+/**
+ * Get the name of the template to use for this templatable.
+ *
+ * @param renderer_base $output
+ * @return string
+ */
+public function get_template_name(\renderer_base $renderer): string {
+    return 'tool_myplugin/mywidget';
+}
+```
+
 :::tip
 
 When naming variables in your export data, be careful not to reuse names of helpers such as `str` or `js` - these will silently fail. Try to keep your variable names short but descriptive.
