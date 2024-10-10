@@ -226,3 +226,19 @@ For example, the `aiprovider_openai` plugin provides settings for the user and g
     ));
     $settings->hide_if('aiprovider_openai/userratelimit', 'aiprovider_openai/enableuserratelimit', 'eq', 0);
 ```
+
+## Minimal configuration
+
+Each provider will need to specify what it takes to achieve minimal configuration. The parent method `is_provider_configured()` will
+return `false` by default and will need to be overwritten by the child class.
+
+The `is_provider_configured()` must return `true` for UI component visibility and functionality.
+
+For example, the `aiprovider_azureai` provider checks values are set for `$this->apikey` and `$this->apiendpoint` and returns
+the result.
+
+```php
+    public function is_provider_configured(): bool {
+        return !empty($this->apikey) && !empty($this->apiendpoint);
+    }
+```
