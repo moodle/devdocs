@@ -55,7 +55,7 @@ The following table shows what PHPUnit version is installed in which Moodle vers
 
 | Moodle version | PHPUnit version | Links                                                   |
 | --- | --- |---------------------------------------------------------|
-| Moodle 4.4 | PHPUnit 9.6 | [Documentation](https://docs.phpunit.de/en/9.6/) |
+| Moodle 4.4 - 4.5 | PHPUnit 9.6 | [Documentation](https://docs.phpunit.de/en/9.6/) |
 | Moodle 3.11 - 4.3 | PHPUnit 9.5 | [Documentation](https://docs.phpunit.de/en/9.6/) |
 | Moodle 3.10 | PHPUnit 8.5 | [Documentation](https://docs.phpunit.de/en/8.5/) |
 | Moodle 3.7 - 3.9 | PHPUnit 7.5 | [Documentation](https://docs.phpunit.de/en/7.5/) |
