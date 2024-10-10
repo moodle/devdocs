@@ -2,6 +2,23 @@
     "$schema": "../static/schema/versions.json",
     "versions": [
         {
+            "name": "5.0",
+            "releaseDate": "14 April 2025",
+            "generalEndDate": "20 April 2026",
+            "securityEndDate": "5 October 2026",
+            "isLTS": false,
+            "codeFreezeDate": "3 March 2025",
+            "releases": [
+                {
+                    "name": "5.0.0",
+                    "releaseDate": "14 April 2025",
+                    "version": 2025041400,
+                    "upgradePath": "https://docs.moodle.org/500/en/Upgrading",
+                    "releaseNoteUrl": false
+                }
+            ]
+        },
+        {
             "name": "4.5",
             "releaseDate": "7 October 2024",
             "generalEndDate": "6 October 2025",
@@ -13,6 +30,12 @@
                     "releaseDate": "7 October 2024",
                     "version": 2024100700,
                     "upgradePath": "https://docs.moodle.org/405/en/Upgrading"
+                },
+                {
+                    "name": "4.5.1",
+                    "releaseDate": "9 December 2024",
+                    "version": 2024100701,
+                    "releaseNoteUrl": false
                 }
             ]
         },
@@ -49,6 +72,12 @@
                     "name": "4.4.4",
                     "releaseDate": "7 October 2024",
                     "version": 2024042204
+                },
+                {
+                    "name": "4.4.5",
+                    "releaseDate": "9 December 2024",
+                    "version": 2024042205,
+                    "releaseNoteUrl": false
                 }
             ]
         },
@@ -106,6 +135,12 @@
                     "name": "4.3.8",
                     "releaseDate": "7 October 2024",
                     "version": 2023100908
+                },
+                {
+                    "name": "4.3.9",
+                    "releaseDate": "9 December 2024",
+                    "version": 2023100909,
+                    "releaseNoteUrl": false
                 }
             ]
         },
@@ -265,6 +300,12 @@
                     "name": "4.1.14",
                     "releaseDate": "7 October 2024",
                     "version": 2022112814
+                },
+                {
+                    "name": "4.1.15",
+                    "releaseDate": "9 December 2024",
+                    "version": 2022112815,
+                    "releaseNoteUrl": false
                 }
             ]
         },
@@ -1497,7 +1538,6 @@
                     "name": "2.7.7",
                     "releaseDate": "10 March 2015",
                     "version": 2014051207
-
                 },
                 {
                     "name": "2.7.8",
@@ -2097,17 +2137,17 @@
                 {
                     "name": "1.9.8",
                     "releaseDate": "25 March 2010",
-                    "version": 2007101580.00
+                    "version": 2007101580
                 },
                 {
                     "name": "1.9.9",
                     "releaseDate": "8 June 2010",
-                    "version": 2007101590.00
+                    "version": 2007101590
                 },
                 {
                     "name": "1.9.10",
                     "releaseDate": "25 October 2010",
-                    "version": 2007101591.00
+                    "version": 2007101591
                 },
                 {
                     "name": "1.9.11",
@@ -2137,7 +2177,7 @@
                 {
                     "name": "1.9.16",
                     "releaseDate": "9 January 2012",
-                    "version": 2007101591.10
+                    "version": 2007101591.1
                 },
                 {
                     "name": "1.9.17",
@@ -2152,7 +2192,7 @@
                 {
                     "name": "1.9.19",
                     "releaseDate": "9 July 2012",
-                    "version": 2007101592.00,
+                    "version": 2007101592,
                     "notes": "Support has ended"
                 }
             ]
