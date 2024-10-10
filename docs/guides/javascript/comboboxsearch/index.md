@@ -175,15 +175,15 @@ Manually open and close the dropdown rather than purely relying on Bootstrap.
 
 Ensure that nodes that are susceptible to change are up-to-date when we need them.
 
-#### registerClickHandlers()
+#### registerClickHandlers() {#registerClickHandlers}
 
 Handle our base case of click handlers i.e. opening and closing the dropdown. This can be further extended in callers for any special handling.
 
-#### registerKeyHandlers()
+#### registerKeyHandlers() {#registerKeyHandlers}
 
 Handle our base case of keyboard handlers i.e. opening and closing the dropdown, accessibility handling. This can be further extended in callers for any special handling.
 
-#### registerInputHandlers()
+#### registerInputHandlers() {#registerInputHandlers}
 
 Register the text input handlers for the search input and debounce the input so that we don't need to fire a bunch of calls as the user is still typing.
 <!-- cspell:ignore filterrenderpipe -->
@@ -191,37 +191,37 @@ Register the text input handlers for the search input and debounce the input so 
 
 Combine the filter and render methods into a single method to be called by the input handlers as a QoL shorthand call.
 
-#### renderAndShow()
+#### renderAndShow() {#renderAndShow}
 
 Given we need to update the display, ensure we have the latest dataset and render it.
 
-#### keyUpDown()
+#### keyUpDown() {#keyUpDown}
 
 Given the user is navigating the dropdown with the keyboard, handle the common up and down arrow key cases.
 
-#### clickHandler()
+#### clickHandler() {#clickHandler}
 
-Used within [registerClickHandlers](#registerClickHandlers()) to handle the common click cases like selecting results, closing the dropdown, etc.
+Used within [registerClickHandlers](#registerClickHandlers) to handle the common click cases like selecting results, closing the dropdown, etc.
 
-#### keyHandler()
+#### keyHandler() {#keyHandler}
 
-Used within [registerKeyHandlers](#registerKeyHandlers()) to handle the common keyboard cases like navigating nodes, closing the dropdown, etc.
+Used within [registerKeyHandlers](#registerKeyHandlers) to handle the common keyboard cases like navigating nodes, closing the dropdown, etc.
 
 #### selectNode()
 
-When used in conjunction with [keyUpDown](#keyUpDown()) and other similar functions, this function will select the node that the user has navigated to.
+When used in conjunction with [keyUpDown](#keyUpDown) and other similar functions, this function will select the node that the user has navigated to.
 
 #### moveToFirstNode()
 
-When used in conjunction with [keyUpDown](#keyUpDown()) and other similar functions, this function will move the user to the first node in the dropdown.
+When used in conjunction with [keyUpDown](#keyUpDown) and other similar functions, this function will move the user to the first node in the dropdown.
 
 #### moveToLastNode()
 
-When used in conjunction with [keyUpDown](#keyUpDown()) and other similar functions, this function will move the user to the last node in the dropdown.
+When used in conjunction with [keyUpDown](#keyUpDown) and other similar functions, this function will move the user to the last node in the dropdown.
 
 #### moveToNode()
 
-When used in conjunction with [keyUpDown](#keyUpDown()) and other similar functions, this function will move the user to the node that is passed in.
+When used in conjunction with [keyUpDown](#keyUpDown) and other similar functions, this function will move the user to the node that is passed in.
 
 ### Required functions to implement
 
