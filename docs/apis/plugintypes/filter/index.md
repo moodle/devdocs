@@ -54,7 +54,7 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
 
 Some of the important files for the filter plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
-### filter.php
+### classes/text_filter.php
 
 import Filter from '!!raw-loader!./_examples/filter.php';
 
