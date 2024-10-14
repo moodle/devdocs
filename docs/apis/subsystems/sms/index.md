@@ -20,6 +20,7 @@ $message = \core\di::get(\core_sms\manager::class)
         recipientuserid: $user->id,
         issensitive: false,
         async: false,
+        gatewayid: 22,
     );
 ```
 
@@ -121,4 +122,48 @@ graph TD
         GQ --> |Sent to recipient by Gateway| GS
         GQ --> |Gateway failed to send the message| GF
     end
+```
+
+## Getting the list of SMS gateways
+
+Once the gateway is configured from UI, any component implementing the core_sms API can get the list of gateways. The list can also be filtered.
+
+```php title="Getting the list of enabled gateways"
+$manager = \core\di::get(\core_sms\manager::class);
+$gatewayrecords = $manager->get_gateway_records();
+
+// It is also possible to filter the requst.
+$gatewayrecords = $manager->get_gateway_records(['id' => $id]);
+
+// To get all the enabled gateway instances.
+$gatewayrecords = $manager->get_enabled_gateway_instances();
+```
+
+## Some important hooks to be aware of
+
+SMS API dispatches some hooks which should be assessed and used when this API is implemented in a plugin/component. These hooks helps with
+managing the data, like save them from deletion or accidental deactivation from the SMS Gateway management UI while a specific gateway is
+being used by a component.
+
+### before_gateway_deleted & before_gateway_disabled
+
+Before deleting or disabling an SMS gateway, these two hooks are dispatched from the core_sms API to allow the components using that specific
+gateway to stop that action or do necessary cleanup. It is important to listed to these hooks to prevent data loss or potential issues with a
+gateway being used which is deleted or disabled by accident.
+
+```php title="Implement the hooks to check for usage before deletion or deactivation"
+
+public static function check_gateway_usage_in_example_plugin(
+    before_gateway_deleted|before_gateway_disabled $hook,
+): void {
+    try {
+        $smsgatewayid = (int)get_config('example_plugin', 'smsgateway');
+        if ($smsgatewayid && $smsgatewayid === (int)$hook->gateway->id) {
+            $hook->stop_propagation();
+        }
+    } catch (\dml_exception $exception) {
+        $hook->stop_propagation();
+    }
+}
+
 ```
