@@ -636,7 +636,7 @@ try {
      // Assuming the both inserts work, we get to the following line.
      $transaction->allow_commit();
 
-} catch(Exception $e) {
+} catch (Exception $e) {
      $transaction->rollback($e);
 }
 ```
