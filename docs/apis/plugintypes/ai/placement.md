@@ -72,7 +72,7 @@ $action = new \core_ai\aiactions\generate_image(
 // Send the action to the AI manager.
 $manager = \core\di::get(\core_ai\manager::class);
 $response = $manager->process_action($action);
-````
+```
 
 - The process_action() method will then return a response object (instance of `responses\response_base`).
 - It is up to the Placement to check for success (or not) of the response and pass the result back to the
