@@ -1,0 +1,14 @@
+<!-- markdownlint-disable first-line-heading -->
+Moodle supports a feature known as _ [Event observers](https://docs.moodle.org/dev/Events_API#Event_observers) _ to allow components to make changes when certain events take place.
+
+The `db/events.php` file allows you define any event subscriptions that your plugin needs to listen for.
+
+Event subscriptions are a convenient way to observe events generated elsewhere in Moodle.
+
+:::caution Communication between components
+
+You _should not_ use event subscriptions to subscribe to events belonging to other plugins, without defining a dependency upon that plugin.
+
+See the [Component communication principles](/general/development/policies/component-communication#event-observers) documentation for a description of some of the risks of doing so.
+
+:::

@@ -1,0 +1,18 @@
+<!-- markdownlint-disable first-line-heading -->
+
+The `db/tasks.php` file contains the initial schedule configuration for each of your plugins _scheduled_ tasks. Adhoc tasks are not run on a regular schedule and therefore are not described in this file.
+
+:::caution Editing the schedule for an existing task
+
+If an existing task is edited, it will only be updated in the database if the administrator has not customised the schedule of that task in any way.
+
+:::
+
+The following fields also accept a value of `R`, which indicates that Moodle should choose a random value for that field:
+
+- minute
+- hour
+- dayofweek
+- day
+
+See [db/tasks.php](../commonfiles/db-tasks.php/index.md) for full details of the file format.

@@ -1,0 +1,13 @@
+<!-- markdownlint-disable first-line-heading -->
+
+The `db/access.php` file contains the __initial__ configuration for a plugin's access control rules.
+
+Access control is handled in Moodle by the use of Roles, and Capabilities. You can read more about these in the [Access API](../subsystems/access.md) documentation.
+
+:::caution Changing initial configuration
+
+If you make changes to the initial configuration of _existing_ access control rules, these will only take effect for _new installations of your plugin_. Any existing installation **will not** be updated with the latest configuration.
+
+Updating existing capability configuration for an installed site is not recommended as it may have already been modified by an administrator.
+
+:::

@@ -1,0 +1,84 @@
+## This is an example recipe file that you can use as a template for your own plugins.
+## See the list of all files it would generate:
+##
+##     php generate.php example.yaml --list-files
+##
+## View a particular file contents without actually writing it to the disk:
+##
+##     php generate.php example.yaml --file=version.php
+##
+## To see the full list of options, run:
+##
+##     php generate.php --help
+##
+---
+## Frankenstyle component name.
+component: format_pluginname
+
+## Human readable name of the plugin.
+name: Example pluginname format
+
+## Human readable release number.
+release: "0.1.0"
+
+## Plugin version number, e.g. 2016062100. Will be set to current date if left empty.
+#version: 2016121200
+
+## Required Moodle version, e.g. 2015051100 or "2.9".
+requires: "4.0"
+
+## Plugin maturity level. Possible options are MATURIY_ALPHA, MATURITY_BETA,
+## MATURITY_RC or MATURIY_STABLE.
+maturity: MATURITY_BETA
+
+## Copyright holder(s) of the generated files and classes.
+copyright: YOURNAME <YOURNAME@YOURSITE.com>
+
+## Features flags can control generation of optional files/code fragments.
+features:
+  readme: true
+  license: true
+
+  ## Privacy API implementation
+privacy:
+  haspersonaldata: false
+  uselegacypolyfill: false
+
+format_features:
+  # Create the Moodle 4.0+ basic template structure.
+  basic_outputs: true
+
+  # General format features.
+  uses_sections: true
+  uses_course_index: true
+  uses_indentation: false
+  uses_inplace_editor: true
+  uses_reactive_components: true
+  uses_news: true
+
+## Explicitly added strings
+lang_strings:
+  - id: mycustomstring
+    text: You can add 'extra' strings via the recipe file.
+  - id: mycustomstring2
+    text: Another string with {$a->some} placeholder.
+
+    ## Needed for course format plugins.
+  - id: addsections
+    text: Add section
+  - id: currentsection
+    text: This section
+  - id: editsection
+    text: Edit section
+  - id: editsectionname
+    text: Edit section name
+  - id: deletesection
+    text: Delete section
+  - id: newsectionname
+    text: New name for section {$a}
+  - id: sectionname
+    text: Section
+  - id: hidefromothers
+    text: Hide section
+  - id: showfromothers
+    text: Show section
