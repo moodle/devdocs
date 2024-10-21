@@ -1,0 +1,152 @@
+---
+title: Local plugins
+tags:
+  - Plugins
+---
+
+import {
+    getExample,
+    getFileNameWithComponentPath,
+    CodeBlock,
+} from '@site/src/moodleBridge';
+
+import {
+    Lib,
+    SettingsPHP,
+} from '../../_files';
+
+The recommended way to add new functionality to Moodle is to create a new standard plugin (for example, activity, block, authentication, enrol). The `local` plugin-type is mostly suitable for things that do not fit into these standard plugin types.
+
+Local plugins are used in cases when no standard plugin is suitable. Examples of these situations include:
+
+- event consumers communicating with external systems
+- custom definitions of web services and external functions
+- applications that extend moodle at the system level (for example hub server, amos server)
+- custom admin settings
+- extending the navigation block with custom menus
+- new database tables used in core hacks (**strongly discouraged**)
+- new capability definitions used in core hacks (**strongly discouraged**)
+
+## List of differences from normal plugins:
+
+Local plugins have several important differences from the standard plugin types, including:
+
+- they are always executed last during install, and upgrade. This is guaranteed by their order in `get_plugin_types()`.
+- they are _expected_ to use event handlers. Event subscriptions are intended for communication from core to plugins only, making local plugins the ideal candidate for them.
+- they can add admin settings to any settings page. They are loaded last when constructing admin tree to enable this.
+- they _do not need_ to have any UI. Other plugin types are usually visible somewhere within the interface.
+
+## File structure
+
+Local plugins support the [standard plugin files](../commonfiles) supported by other plugin types.
+
+## Examples
+
+The following examples show some ways in which you can use a local plugin.
+
+### Adding an element to the settings menu
+
+A local plugin can extend or modify the settings navigation by defining a function named `local_[pluginname]_extend_settings_navigation` in its `lib.php`. This is called when Moodle builds the settings block. For example:
+
+export const settingsNavigationExample = `
+function local_[pluginname]_extend_settings_navigation($settingsnav, $context) {
+    global $CFG, $PAGE;\n
+\
+    // Only add this settings item on non-site course pages.
+    if (!$PAGE->course or $PAGE->course->id == 1) {
+        return;
+    }\n
+\
+    // Only let users with the appropriate capability see this settings item.
+    if (!has_capability('moodle/backup:backupcourse', context_course::instance($PAGE->course->id))) {
+        return;
+    }\n
+\
+    if ($settingnode = $settingsnav->find('courseadmin', navigation_node::TYPE_COURSE)) {
+        $strfoo = get_string('foo', 'local_[pluginname]');
+        $url = new moodle_url('/local/[pluginname]/foo.php', array('id' => $PAGE->course->id));
+        $foonode = navigation_node::create(
+            $strfoo,
+            $url,
+            navigation_node::NODETYPE_LEAF,
+            '[pluginname]',
+            '[pluginname]',
+            new pix_icon('t/addcontact', $strfoo)
+        );
+        if ($PAGE->url->compare($url, URL_MATCH_BASE)) {
+            $foonode->make_active();
+        }
+        $settingnode->add_node($foonode);
+    }
+}
+`;
+
+<Lib
+    plugintype='local'
+    pluginname='[pluginname]'
+    example={settingsNavigationExample}
+    description={false}
+    open
+/>
+
+### Removing the "Site Home" link from the navigation menu
+
+A plugin can modify existing navigation, and settings navigation, components from within the `local_[pluginname]_extend_navigation()` function, for example:
+
+export const modifyNavigationExample = `
+function local_[pluginname]_extend_navigation(global_navigation $navigation) {
+    if ($home = $navigation->find('home', global_navigation::TYPE_SETTING)) {
+        $home->remove();
+    }
+}
+`;
+
+<Lib
+    plugintype='local'
+    pluginname='[pluginname]'
+    example={modifyNavigationExample}
+    description={false}
+    open
+/>
+
+### Adding Site Wide Settings For Your Local Plugin
+
+export const siteWideSettingsExample = `
+// Ensure the configurations for this site are set
+if ($hassiteconfig) {\n
+\
+    // Create the new settings page
+    // - in a local plugin this is not defined as standard, so normal $settings->methods will throw an error as
+    // $settings will be null
+    $settings = new admin_settingpage('local_[pluginname]', 'Your Settings Page Title');\n
+\
+    // Create
+    $ADMIN->add('localplugins', $settings);\n
+\
+    // Add a setting field to the settings for this page
+    $settings->add(new admin_setting_configtext(
+        // This is the reference you will use to your configuration
+        'local_[pluginname]/apikey',\n
+\
+        // This is the friendly title for the config, which will be displayed
+        'External API: Key',\n
+\
+        // This is helper text for this config field
+        'This is the key used to access the External API',\n
+\
+        // This is the default value
+        'No Key Defined',\n
+\
+        // This is the type of Parameter this config is
+        PARAM_TEXT
+    ));
+}
+`;
+
+<SettingsPHP
+    plugintype='local'
+    pluginname='[pluginname]'
+    example={siteWideSettingsExample}
+    description={false}
+    open
+/>
