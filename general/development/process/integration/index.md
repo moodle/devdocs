@@ -125,10 +125,16 @@ Along this period we always release as many stable weeklies, both supported (alw
 
 - **Once beta is released**, new features or improvements "unrelated" with the release will be really harder to be accepted. A +4 from developer managers (normally +3 is enough) will be needed to proceed with the issue. Integrators vote will be, always, -1.
 - **Once rc are released**, new features or improvements "unrelated" with the release are forbidden. No unhold voting, no managers. Simply forbidden.
-- **Last week before release**, only "related" issues will be picked for integration. Everything else (bug fixes included) are kept out (given the "integration_held" label) if unrelated, at very least until after release. No distractions.
+- **Last week before the release**, only "related" issues to the major release will be picked for integration. Everything else will be kept out and given the "`integration_held`" label until after the release or the on-sync period. No distractions.
 
-:::info
-Definition: `related` said to be a followup of required/planned to release OR a direct (and recent) regression caused by a bug fix OR a security issue.
+:::info More information about the last week before the release
+
+- Issues related to the major release are:
+  - Follow-up issues required/planned for the release (especially must-fix and `mdlqa` issues)
+  - A direct regression caused by a bug fix from a recent release
+  - Security issues
+- Normally, the minor release date of the currently supported Moodle versions coincides with the major release date. While we'd like to integrate as many bug fixes as possible for the minor releases, bug fixes that are deemed unrelated to the major release will be kept out of the integration queue during the last week before the release. These bug fixes will be processed for the next minor release instead.
+
 :::
 
 ### On-sync period
