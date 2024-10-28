@@ -18,6 +18,10 @@ Depending on which version of the app you're upgrading from, you'll need to go t
 
 Other than the changes outlined in this document, there may be smaller API changes that aren't highlighted here. Make sure to check the [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt) file for an exhaustive list with all the changes.
 
+## 4.4 to 4.5
+
+The Ionic version has been upgraded to v8 (from v7), make sure to check the relevant upgrade guides for [v8](https://ionicframework.com/docs/updating/8-0). In particular, the legacy syntax to declare input labels that was deprecated on Ionic7 now has been removed.
+
 ## 4.3 to 4.4
 
 Starting with this release, the changes listed in [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt) will only document breaking changes for APIs exposed to site plugins. Internal changes will no longer be documented. Make sure to check out the file to learn about the changes in this version.
