@@ -451,3 +451,24 @@ The `.rounded-sm` and `.rounded-lg` classes have been replaced with `.rounded-1`
 ```
 
 </ValidExample>
+
+### Font utility classes
+
+The `.font-weight-*` class has been replaced with `.fw-*` for brevity and consistency.
+The `.font-italic` class has been replaced with `.fst-italic` for brevity and consistency.
+
+<InvalidExample title="Don't">
+
+```html
+<span class="font-weight-bold font-italic">I'm a bold italic text</span>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<span class="fw-bold fst-italic">I'm a bold italic text</span>
+```
+
+</ValidExample>
