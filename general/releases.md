@@ -90,7 +90,7 @@ Minor releases dates differ slightly from release to release depending on the ti
 
 :::
 
-## Moodle 4.5
+## Moodle 4.5 (LTS)
 
 <ReleaseTable releaseName="4.5" />
 
