@@ -101,7 +101,22 @@ Longer deprecation periods can be considered for functions that are widely used.
 
 ### Step 2. Final deprecation
 
-- If a function has been marked as deprecated for `3.[x]` (eg. 3.1) and set for removal at `3.[x + 4]` (eg. 3.5), soon after the release of `3.[x + 3].1` (eg. 3.4.1), the `3.[x + 4]` deprecation META will be processed. This means that the deprecated function will undergo final deprecation before `3.[x + 4]`, but only in the main version. This allows any potential regressions caused by the final deprecation of the function to be exposed as soon as possible.
+#### Policy
+
+The final deprecation policy for Moodle LMS has been updated to align more closely with the LTS (long-term support) release cycle starting from Moodle 4.5 (LTS).
+
+- The final deprecation of features or functionality that were deprecated before an LTS release will happen on the next major version after the LTS release.
+- In terms of the updates in the version numbering for Moodle LMS:
+  - Functions that have been deprecated in standard, non-LTS releases of the current Moodle LMS series (`X.Y`, with `X` as the series number) will be up for final deprecation on the first release of the next Moodle LMS series (`[X+1].0`).
+  - Functions that have been deprecated in an LTS version (the last version within a series) will be up for final deprecation on the next major version after the next LTS release (`[X+2].0`).
+
+<ValidExample title="Example">
+    - Functions deprecated in Moodle 4.4 (Series 4) and below will be up for final deprecation in Moodle 5.0 (the first Series 5 Moodle version).
+    - Functions deprecated in Moodle 4.5 (LTS) will be up for final deprecation in Moodle 6.0 (the first release for Series 6 right after the Moodle 5.3 (LTS) release).
+</ValidExample>
+
+#### Procedure
+
 - When a function undergoes final deprecation, all content of the function should be removed. In the skeleton that remains, an error statement should be included that indicates that the function cannot be used anymore. You can also direct developers to the new function(s) in this message.
 
 <Tabs>
