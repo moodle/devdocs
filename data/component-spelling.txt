@@ -5,6 +5,9 @@
 access
 admin
 adminpresets
+ai
+aiplacement
+aiprovider
 analytics
 antivirus
 auth
@@ -96,6 +99,8 @@ repository
 role
 rss
 search
+sms
+smsgateway
 table
 tag
 theme

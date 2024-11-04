@@ -32,10 +32,10 @@ These options include:
 
 - `--install`: launch the installation script after creating the instance
 - `--engine`: database engine to install the instance on (must be used with `--install`), default: `mysqli`
-- `--version`: version of Moodle create an instance of (default: '`master'`)
+- `--version`: version of Moodle create an instance of (default: `main`)
 - `--run`: scripts to run after installation (default: `none`)
 
-More information about scripts is available here: https://github.com/FMCorz/mdk/tree/master/mdk/scripts
+Check out MDK's [`scripts` folder](https://github.com/FMCorz/mdk/tree/master/mdk/scripts) for more information.
 
 <details>
   <summary>This is equivalent to doing</summary>
@@ -244,20 +244,20 @@ mdk config set path ""
 Every Moodle release, a new version of MDK is also being released in order to prepare for the development of the next Moodle version. To upgrade MDK:
 
 1. Update all of the Moodle instances: `mdk update --all`
-1. Check out the master branch for all of your master instances, e.g. in your stable_master branch: `git checkout master`
+1. Check out the `main` branch for all of your `main` instances, e.g. in your stable_main branch: `git checkout main`
 1. Upgrade MDK
    1. Via pip: `sudo pip install moodle-sdk --upgrade`
    1. Via Homebrew: `brew upgrade moodle-sdk`
 1. Run MDK doctor to fix its `masterBranch` configuration. `mdk doctor --fix --masterbranch`
-1. Run MDK doctor to check the master instances. `mdk doctor --all`
-   1. If you don't see an error saying something like "stable_master is on branch master instead of MOODLE_XX_STABLE", then you're all good. Otherwise, do a hard reset your master instances:
+1. Run MDK doctor to check the `main` instances. `mdk doctor --all`
+   1. If you don't see an error saying something like "stable_main is on branch main instead of MOODLE_XX_STABLE", then you're all good. Otherwise, do a hard reset your main instances:
 
 ```
 mdk update -c
-cd ~/moodles/[integration/stable]_master
-git checkout master
+cd ~/moodles/[integration/stable]_main
+git checkout main
 git fetch `mdk config show upstreamRemote`
-git reset --hard `mdk config show upstreamRemote`/master
+git reset --hard `mdk config show upstreamRemote`/main
 ```
 
 ## The MDK Suite

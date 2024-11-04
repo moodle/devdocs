@@ -1,5 +1,7 @@
 {
     "plugintypes": {
+        "aiplacement": "ai/placement",
+        "aiprovider": "ai/provider",
         "antivirus": "lib\/antivirus",
         "availability": "availability\/condition",
         "qtype": "question\/type",
@@ -41,9 +43,11 @@
         "theme": "theme",
         "local": "local",
         "h5plib": "h5p\/h5plib",
-        "paygw": "payment\/gateway"
+        "paygw": "payment\/gateway",
+        "smsgateway": "sms/gateway"
     },
     "subsystems": {
+        "ai": "ai",
         "access": null,
         "admin": "admin",
         "adminpresets": "admin/presets",
@@ -115,6 +119,7 @@
         "rss": "rss",
         "role": "admin\/roles",
         "search": "search",
+        "sms": "sms",
         "table": "lib\/table",
         "tag": "tag",
         "timezones": null,

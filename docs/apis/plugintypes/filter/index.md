@@ -45,7 +45,8 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
  |-- lang
  |   `-- en
  |       `-- filter_pluginname.php
- |-- filter.php
+ |-- classes
+ |   `-- text_filter.php
  `-- version.php
 ```
 
@@ -53,18 +54,18 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
 
 Some of the important files for the filter plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
-### filter.php
+### classes/text_filter.php
 
 import Filter from '!!raw-loader!./_examples/filter.php';
 
 <ComponentFileSummary
     required
-    filepath="/filter.php"
+    filepath="/classes/text_filter.php"
     summary="Filter main class"
     plugintype="filter"
     pluginname="pluginname"
     example={Filter}
-    description="The filter file contains the code for the main filter class. Unlike more complex plugins like activities or repositories, filters only have one mandatory class extending the core moodle_text_filter class."
+    description="The filter file contains the code for the main filter class. Unlike more complex plugins like activities or repositories, filters only have one mandatory class extending the core `\core_filters\text_filter` class."
 />
 
 ### version.php
@@ -137,7 +138,7 @@ To support this behaviour, a filter plugin must provide a `filterlocalsettings.p
   <div>
 
 ```php title="filterlocalsettings.php"
-class pluginfile_filter_local_settings_form extends filter_local_settings_form {
+class pluginfile_filter_local_settings_form extends \core_filters\form\local_settings_form {
     protected function definition_inner(\MoodleQuickForm $mform) {
         $mform->addElement(
             'text',
@@ -159,11 +160,14 @@ All the local configurations can be accessed in the main filter class in the `$t
   <summary>View example</summary>
   <div>
 
-```php title="filter.php"
+```php title="filter/pluginname/classes/text_filter.php"
 <?php
-class filter_helloworld extends moodle_text_filter {
+namespace filter_pluginname;
+
+class text_filter extends \core_filters\text_filter {
     public function filter(string $text, array $options = []) {
         global $CFG;
+
         $search = $this->localconfig['word'] ?? 'default';
         return str_replace($search, "Hello $search!", $text);
     }

@@ -15,11 +15,11 @@ This page lists all official releases of Moodle, grouped by branch in reverse ch
 
 ## Version support
 
-The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/Long-term_support) version is Moodle 4.1. The next LTS version will be Moodle 4.5.
+The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/Long-term_support) version is Moodle 4.5. The next LTS version will be Moodle 5.3.
 
 <SupportedReleases />
 
-![Release graph summarising the currently supported Moodle releases in a visual form](_releases/4041_release_graph.png)
+![Release graph summarising the currently supported Moodle releases in a visual form](_releases/4050_release_graph.png)
 
 <details>
     <summary>Release graph key</summary>
@@ -87,6 +87,17 @@ Upcoming release dates can be found in the Moodle development calendar, which is
 :::note
 
 Minor releases dates differ slightly from release to release depending on the timing of public holidays in Western Australia.
+
+:::
+
+## Moodle 4.5 (LTS)
+
+<ReleaseTable releaseName="4.5" />
+
+:::info
+
+Bug fixes for general core bugs in 4.5.x will end 6 October 2025 (12 months).<br/>
+Bug fixes for security issues in 4.5.x will end October 2027 (36 months).
 
 :::
 

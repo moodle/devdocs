@@ -23,18 +23,9 @@
     },
     {
         "copyrightHolders": [],
-        "location": "admin/tool/mfa/factor/totp/extlib/Assert",
-        "name": "Assert",
-        "version": "2.1",
-        "license": "MIT",
-        "repository": "https://github.com/beberlei/assert",
-        "customised": false
-    },
-    {
-        "copyrightHolders": [],
         "location": "admin/tool/mfa/factor/totp/extlib/OTPHP",
         "name": "OTPHP",
-        "version": "9.1.1",
+        "version": "11.3.0",
         "license": "MIT",
         "repository": "https://github.com/Spomky-Labs/otphp",
         "customised": false
@@ -67,7 +58,7 @@
         "location": "auth/cas/CAS",
         "name": "CAS",
         "description": "phpCAS library to support CAS authentication plugin.",
-        "version": "1.6.0",
+        "version": "1.6.1",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/apereo/phpCAS",
@@ -99,7 +90,7 @@
         "location": "filter/codehighlighter/amd/src/prism.js",
         "name": "PrismJS",
         "description": "Prism is a lightweight, robust, and elegant syntax highlighting library. It's a spin-off project from Dabblet.",
-        "version": "1.16.0",
+        "version": "1.29.0",
         "license": "MIT",
         "repository": "https://github.com/PrismJS/prism",
         "customised": false
@@ -121,10 +112,10 @@
         "copyrightHolders": [
             "Joubel"
         ],
-        "location": "h5p/h5plib/v126/joubel/core",
+        "location": "h5p/h5plib/v127/joubel/core",
         "name": "h5p-php-library",
         "description": "The general H5P library.",
-        "version": "1.26",
+        "version": "moodle-1.27.0",
         "license": "GPL",
         "licenseversion": "3.0+",
         "repository": "https://github.com/h5p/h5p-php-library/",
@@ -134,10 +125,10 @@
         "copyrightHolders": [
             "Joubel"
         ],
-        "location": "h5p/h5plib/v126/joubel/editor",
+        "location": "h5p/h5plib/v127/joubel/editor",
         "name": "h5p-editor-php-library",
         "description": "A general library that is supposed to be used in most PHP implementations of H5P.",
-        "version": "moodle-1.23",
+        "version": "moodle-1.27.0",
         "license": "GPL",
         "licenseversion": "3.0+",
         "repository": "https://github.com/h5p/h5p-editor-php-library/",
@@ -247,7 +238,7 @@
         "location": "lib/aws-sdk",
         "name": "AWS SDK for PHP",
         "description": "The AWS SDK for PHP library",
-        "version": "3.277.11",
+        "version": "3.318.0",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/aws/aws-sdk-php",
@@ -260,7 +251,7 @@
         "location": "lib/behat/axe",
         "name": "axe-core",
         "description": "Accessibility testing engine for websites and other HTML-based user interfaces.",
-        "version": "4.8.4",
+        "version": "4.10.0",
         "license": "MPL",
         "licenseversion": "2.0",
         "repository": "https://github.com/dequelabs/axe-core",
@@ -503,6 +494,15 @@
     },
     {
         "copyrightHolders": [],
+        "location": "lib/giggsey/libphonenumber-for-php-lite",
+        "name": "libphonenumber for PHP (Lite)",
+        "version": "8.13.31",
+        "license": "Apache 2.0",
+        "repository": "https://github.com/giggsey/libphonenumber-for-php-lite",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
         "location": "lib/google",
         "name": "Google APIs",
         "description": "Library Google APIs Client Library for PHP",
@@ -570,7 +570,7 @@
         "location": "lib/html2text",
         "name": "HTML2Text",
         "description": "PHP script to convert HTML into an approximate text equivalent.",
-        "version": "4.3.1",
+        "version": "4.3.2",
         "license": "GPL",
         "licenseversion": "2.0+",
         "repository": "https://github.com/mtibben/html2text",
@@ -594,7 +594,7 @@
         "location": "lib/jmespath",
         "name": "JMESPath",
         "description": "The JMESPath library",
-        "version": "2.6.1",
+        "version": "2.7.0",
         "license": "MIT",
         "repository": "https://github.com/jmespath/jmespath.php",
         "customised": false
@@ -742,6 +742,16 @@
         "customised": true
     },
     {
+        "copyrightHolders": [],
+        "location": "lib/nikic/fast-route",
+        "name": "FastRoute",
+        "version": "1.3.0",
+        "license": "BSD",
+        "licenseversion": "3-Clause",
+        "repository": "https://github.com/nikic/FastRoute",
+        "customised": false
+    },
+    {
         "copyrightHolders": [
             "OpenSpout"
         ],
@@ -875,7 +885,7 @@
     },
     {
         "copyrightHolders": [],
-        "location": "lib/phpspreadsheet",
+        "location": "lib/phpspreadsheet/phpspreadsheet",
         "name": "PhpSpreadsheet",
         "description": "Library to read, write and create spreadsheet documents in PHP.",
         "version": "1.29.0",
@@ -1011,6 +1021,46 @@
     },
     {
         "copyrightHolders": [],
+        "location": "lib/psr/http-server-handler",
+        "name": "psr/http-server-handler",
+        "description": "Common interface for HTTP server-side request handler",
+        "version": "1.0.2",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/http-server-handler",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/psr/http-server-middleware",
+        "name": "psr/http-server-middleware",
+        "description": "Common interface for HTTP server-side middleware",
+        "version": "1.0.2",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/http-server-middleware",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/psr/log",
+        "name": "log",
+        "description": "Common interface for logging libraries",
+        "version": "3.0.2",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/log",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/psr/simple-cache",
+        "name": "simple-cache",
+        "description": "Common interface for logging libraries",
+        "version": "3.0.0",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/simple-cache",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
         "location": "lib/ralouphie/getallheaders",
         "name": "getallheaders polyfill",
         "description": "A polyfill for getallheaders",
@@ -1065,6 +1115,24 @@
     },
     {
         "copyrightHolders": [],
+        "location": "lib/slim",
+        "name": "Slim Framework",
+        "version": "4.13.0",
+        "license": "MIT",
+        "repository": "https://github.com/slimphp/Slim",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/spatie/php-cloneable",
+        "name": "PHP Cloneable",
+        "version": "1.0.2",
+        "license": "MIT",
+        "repository": "https://github.com/spatie/php-cloneable",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
         "location": "lib/symfony/deprecation-contracts",
         "name": "Symfony Deprecation contracts",
         "description": "A generic function and convention to trigger deprecation notices",
@@ -1081,7 +1149,7 @@
         "location": "lib/tcpdf",
         "name": "TCPDF",
         "description": "Class to generate PDF files",
-        "version": "6.6.5",
+        "version": "6.7.5",
         "license": "LGPL",
         "licenseversion": "3.0-or-later",
         "repository": "https://github.com/tecnickcom/TCPDF",
@@ -1161,14 +1229,14 @@
     },
     {
         "copyrightHolders": [
-            "Brion Vibber"
+            "Brooke Vibber"
         ],
         "location": "media/player/videojs/amd/src/local/ogv/ogv.js",
         "name": "ogv.js",
         "description": "Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.",
-        "version": "1.8.9",
+        "version": "1.9.0",
         "license": "MIT",
-        "repository": "https://github.com/brion/ogv.js/",
+        "repository": "https://github.com/bvibber/ogv.js",
         "customised": false
     },
     {
@@ -1178,7 +1246,7 @@
         "location": "media/player/videojs/amd/src/video-lazy.js",
         "name": "VideoJS",
         "description": "JavaScript library that makes it easier to work with and build on HTML5 video.",
-        "version": "8.10.0",
+        "version": "8.17.3",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/videojs/video.js",
@@ -1210,14 +1278,14 @@
     },
     {
         "copyrightHolders": [
-            "Brion Vibber"
+            "Brooke Vibber"
         ],
         "location": "media/player/videojs/ogvjs",
         "name": "ogv.js support files",
         "description": "JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.",
-        "version": "1.8.9",
+        "version": "1.9.0",
         "license": "MIT",
-        "repository": "https://github.com/brion/ogv.js/",
+        "repository": "https://github.com/bvibber/ogv.js",
         "customised": false
     },
     {
@@ -1227,7 +1295,7 @@
         "location": "media/player/videojs/videojs",
         "name": "VideoJS support files",
         "description": "JavaScript library that makes it easier to work with and build on HTML5 video",
-        "version": "8.10.0",
+        "version": "8.17.3",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/videojs/video.js",

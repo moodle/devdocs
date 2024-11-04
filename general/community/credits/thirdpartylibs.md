@@ -30,17 +30,10 @@ Provide a great search experience without the need for external, server-side, se
 - **Copyright holders**:
   - The Roundcube Dev Team
 
-### Assert
-
-- **Location**: admin/tool/mfa/factor/totp/extlib/Assert
-- **Version**: 2.1
-- **License**:  MIT
-- **URL**: [https://github.com/beberlei/assert](https://github.com/beberlei/assert)
-
 ### OTPHP
 
 - **Location**: admin/tool/mfa/factor/totp/extlib/OTPHP
-- **Version**: 9.1.1
+- **Version**: 11.3.0
 - **License**:  MIT
 - **URL**: [https://github.com/Spomky-Labs/otphp](https://github.com/Spomky-Labs/otphp)
 
@@ -67,7 +60,7 @@ An easy-to-install jQuery plugin to create EU Cookie Law popups and for GDPR com
 phpCAS library to support CAS authentication plugin.
 
 - **Location**: auth/cas/CAS
-- **Version**: 1.6.0
+- **Version**: 1.6.1
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/apereo/phpCAS](https://github.com/apereo/phpCAS)
 - **Copyright holders**:
@@ -93,7 +86,7 @@ Set of IMS-LTI tools originaly provided by IMS.
 Prism is a lightweight, robust, and elegant syntax highlighting library. It's a spin-off project from Dabblet.
 
 - **Location**: filter/codehighlighter/amd/src/prism.js
-- **Version**: 1.16.0
+- **Version**: 1.29.0
 - **License**:  MIT
 - **URL**: [https://github.com/PrismJS/prism](https://github.com/PrismJS/prism)
 - **Copyright holders**:
@@ -114,8 +107,8 @@ Compiled C program to convert TeX into GIFs
 
 The general H5P library.
 
-- **Location**: h5p/h5plib/v126/joubel/core
-- **Version**: 1.26
+- **Location**: h5p/h5plib/v127/joubel/core
+- **Version**: moodle-1.27.0
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-php-library/](https://github.com/h5p/h5p-php-library/)
 - **Copyright holders**:
@@ -125,8 +118,8 @@ The general H5P library.
 
 A general library that is supposed to be used in most PHP implementations of H5P.
 
-- **Location**: h5p/h5plib/v126/joubel/editor
-- **Version**: moodle-1.23
+- **Location**: h5p/h5plib/v127/joubel/editor
+- **Version**: moodle-1.27.0
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-editor-php-library/](https://github.com/h5p/h5p-editor-php-library/)
 - **Copyright holders**:
@@ -226,7 +219,7 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 The AWS SDK for PHP library
 
 - **Location**: lib/aws-sdk
-- **Version**: 3.277.11
+- **Version**: 3.318.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/aws/aws-sdk-php](https://github.com/aws/aws-sdk-php)
 
@@ -235,7 +228,7 @@ The AWS SDK for PHP library
 Accessibility testing engine for websites and other HTML-based user interfaces.
 
 - **Location**: lib/behat/axe
-- **Version**: 4.8.4
+- **Version**: 4.10.0
 - **License**:  MPL 2.0
 - **URL**: [https://github.com/dequelabs/axe-core](https://github.com/dequelabs/axe-core)
 - **Copyright holders**:
@@ -451,6 +444,13 @@ Library for creating beautiful generative background images from a string.
 - **Copyright holders**:
   - 2015 Leaf Corcoran
 
+### libphonenumber for PHP (Lite)
+
+- **Location**: lib/giggsey/libphonenumber-for-php-lite
+- **Version**: 8.13.31
+- **License**:  Apache 2.0
+- **URL**: [https://github.com/giggsey/libphonenumber-for-php-lite](https://github.com/giggsey/libphonenumber-for-php-lite)
+
 ### Google APIs
 
 Library Google APIs Client Library for PHP
@@ -512,7 +512,7 @@ PSR-7 message implementation that also provides common utility methods
 PHP script to convert HTML into an approximate text equivalent.
 
 - **Location**: lib/html2text
-- **Version**: 4.3.1
+- **Version**: 4.3.2
 - **License**:  GPL 2.0+
 - **URL**: [https://github.com/mtibben/html2text](https://github.com/mtibben/html2text)
 - **Copyright holders**:
@@ -532,7 +532,7 @@ Filters HTML.
 The JMESPath library
 
 - **Location**: lib/jmespath
-- **Version**: 2.6.1
+- **Version**: 2.7.0
 - **License**:  MIT
 - **URL**: [https://github.com/jmespath/jmespath.php](https://github.com/jmespath/jmespath.php)
 - **Copyright holders**:
@@ -664,6 +664,13 @@ PHP library for displaying mustache templates.
 - **Copyright holders**:
   - 2010-2016 Justin Hileman
 
+### FastRoute
+
+- **Location**: lib/nikic/fast-route
+- **Version**: 1.3.0
+- **License**:  BSD 3-Clause
+- **URL**: [https://github.com/nikic/FastRoute](https://github.com/nikic/FastRoute)
+
 ### OpenSpout
 
 Library to read and write spreadsheet files (CSV, XLSX and ODS).
@@ -781,7 +788,7 @@ Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are 
 
 Library to read, write and create spreadsheet documents in PHP.
 
-- **Location**: lib/phpspreadsheet
+- **Location**: lib/phpspreadsheet/phpspreadsheet
 - **Version**: 1.29.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/PHPOffice/PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
@@ -899,6 +906,42 @@ Provide a set of common interfaces for HTTP messages as described in RFC 7230 an
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/http-message](https://github.com/php-fig/http-message)
 
+### psr/http-server-handler
+
+Common interface for HTTP server-side request handler
+
+- **Location**: lib/psr/http-server-handler
+- **Version**: 1.0.2
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/http-server-handler](https://github.com/php-fig/http-server-handler)
+
+### psr/http-server-middleware
+
+Common interface for HTTP server-side middleware
+
+- **Location**: lib/psr/http-server-middleware
+- **Version**: 1.0.2
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/http-server-middleware](https://github.com/php-fig/http-server-middleware)
+
+### log
+
+Common interface for logging libraries
+
+- **Location**: lib/psr/log
+- **Version**: 3.0.2
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/log](https://github.com/php-fig/log)
+
+### simple-cache
+
+Common interface for logging libraries
+
+- **Location**: lib/psr/simple-cache
+- **Version**: 3.0.0
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/simple-cache](https://github.com/php-fig/simple-cache)
+
 ### getallheaders polyfill
 
 A polyfill for getallheaders
@@ -948,6 +991,20 @@ Simple Pie helps with blogs.
 - **License**:  BSD
 - **URL**: [https://github.com/simplepie/simplepie](https://github.com/simplepie/simplepie)
 
+### Slim Framework
+
+- **Location**: lib/slim
+- **Version**: 4.13.0
+- **License**:  MIT
+- **URL**: [https://github.com/slimphp/Slim](https://github.com/slimphp/Slim)
+
+### PHP Cloneable
+
+- **Location**: lib/spatie/php-cloneable
+- **Version**: 1.0.2
+- **License**:  MIT
+- **URL**: [https://github.com/spatie/php-cloneable](https://github.com/spatie/php-cloneable)
+
 ### Symfony Deprecation contracts
 
 A generic function and convention to trigger deprecation notices
@@ -962,7 +1019,7 @@ A generic function and convention to trigger deprecation notices
 Class to generate PDF files
 
 - **Location**: lib/tcpdf
-- **Version**: 6.6.5 (with Moodle customisations)
+- **Version**: 6.7.5 (with Moodle customisations)
 - **License**:  LGPL 3.0-or-later
 - **URL**: [https://github.com/tecnickcom/TCPDF](https://github.com/tecnickcom/TCPDF)
 - **Copyright holders**:
@@ -1039,18 +1096,18 @@ PHP ZIP Streaming Library
 Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.
 
 - **Location**: media/player/videojs/amd/src/local/ogv/ogv.js
-- **Version**: 1.8.9
+- **Version**: 1.9.0
 - **License**:  MIT
-- **URL**: [https://github.com/brion/ogv.js/](https://github.com/brion/ogv.js/)
+- **URL**: [https://github.com/bvibber/ogv.js](https://github.com/bvibber/ogv.js)
 - **Copyright holders**:
-  - Brion Vibber
+  - Brooke Vibber
 
 ### VideoJS
 
 JavaScript library that makes it easier to work with and build on HTML5 video.
 
 - **Location**: media/player/videojs/amd/src/video-lazy.js
-- **Version**: 8.10.0 (with Moodle customisations)
+- **Version**: 8.17.3 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
@@ -1083,18 +1140,18 @@ YouTube Playback Technology for Video.js.
 JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.
 
 - **Location**: media/player/videojs/ogvjs
-- **Version**: 1.8.9
+- **Version**: 1.9.0
 - **License**:  MIT
-- **URL**: [https://github.com/brion/ogv.js/](https://github.com/brion/ogv.js/)
+- **URL**: [https://github.com/bvibber/ogv.js](https://github.com/bvibber/ogv.js)
 - **Copyright holders**:
-  - Brion Vibber
+  - Brooke Vibber
 
 ### VideoJS support files
 
 JavaScript library that makes it easier to work with and build on HTML5 video
 
 - **Location**: media/player/videojs/videojs
-- **Version**: 8.10.0 (with Moodle customisations)
+- **Version**: 8.17.3 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:

@@ -32,6 +32,8 @@ Typically this task is performed by the Integration team using the following ste
 1. Uncomment and update the link to the release notes for this version
 1. Open `docs/devupdate.md` in your editor
 1. Clear the content of this file and update the version numbers
+1. Open `docs/intro.md` in your editor
+1. Update the occurrences of the version number for the recent release with the version number for the next major version of Moodle
 1. Open `nextVersion.js` in your editor
 1. Update the values for `nextVersion` (and `nextLTSVersion` after the release of an LTS version)
 1. Commit these changes ([Example from Moodle 4.4](https://github.com/moodle/devdocs/commit/XXaeb6385209caed38d757d53bc47f9bd66fdcfa0cY))

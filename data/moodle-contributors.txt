@@ -157,6 +157,7 @@ Brown
 Bruce
 Bruno
 Bruton
+Bruyen
 Bryan
 Buecker
 Bukhari
@@ -494,6 +495,7 @@ Jablon
 Jackson
 Jacob
 Jade
+Jahreis
 Jake
 Jakob
 Jakub
@@ -535,9 +537,11 @@ Jonathan
 Jonathon
 Jones
 Jordan
+JordanKrauseDE
 Jordao
 Jordi
 Jorgensen
+Jose
 Joseph
 Josh
 Josh.Aston
@@ -560,7 +564,9 @@ Kalinin
 Kania
 Kanika
 Karen
+Karjun
 Karl
+KarlReyesCatalyst
 Karmali
 Kassaei
 Kateryna
@@ -575,6 +581,7 @@ Kelty
 Kenneth
 Kenny
 Kepa
+Kethiri
 Kevin
 Khajuria
 Khattar
@@ -596,11 +603,13 @@ Korner
 Kornfeld
 Kosinski
 Koskela
+Kotlyar
 Krige
 Krishnan
 Krista
 Krister
 Kristian
+Kristiina.Bax
 Kucherov
 Kudelis
 Kudriavtsev
@@ -634,6 +643,7 @@ Levi
 Levy
 Lewis
 Leyva
+Liam
 Ligne
 Lillekjendlie
 Limekiller
@@ -643,8 +653,10 @@ Lloyd
 Lock
 Logan
 Loison
+Loong
 Lorenzo
 Luca
+Lucian
 Lukas
 Luke
 Lundberg
@@ -673,6 +685,7 @@ Marier
 Marina
 Marinetti
 Mario
+Marius
 Mark
 Markku
 Marsden
@@ -747,6 +760,7 @@ Monllaó
 Montesinos
 Moodle
 Moore
+Moran
 Moreau
 Moriana
 Morris
@@ -795,6 +809,7 @@ Nießen
 Nigel
 Nikhil
 Nikita
+Nikolai
 Nikoloutsopoulos
 Nils
 Nina
@@ -878,6 +893,7 @@ Pollak
 Poltawski
 Porritt
 Potenko
+Pound
 Powell
 PraiseSatan
 Prateek
@@ -936,6 +952,7 @@ Rohan
 Rohith
 Roman
 Roperto
+Rosenbaum
 Rossco
 Rossiani
 Rougeth
@@ -971,6 +988,7 @@ Schillinger
 Schmadel
 Schrenk
 Schroeder
+Schultz
 Schulz
 Scotson
 ScottVerbeek
@@ -1106,6 +1124,7 @@ Troy
 Tsheke
 Tsukanov
 Tsuyuki
+Tuan
 Tuan.Dinh
 Tucker
 Tung
@@ -1220,6 +1239,7 @@ Zoltán
 [Peter
 abgreeve
 acorbier
+adamson
 adamtpaw
 adamtppaw
 adpe
@@ -1271,6 +1291,7 @@ danghieu1407
 danielfetzer
 danmarsden
 danstowell
+david
 ddelblanco
 defacer
 deraadt
@@ -1341,6 +1362,7 @@ jbeedell
 jerome
 jeromemoodle
 jfederico
+jfedericobn
 jgraham909
 jgutierr25
 jinhofer
@@ -1354,6 +1376,7 @@ jonathanharker
 joseph_rezeau
 jpuntd
 jrchamp
+juliavs85
 julmis
 jungwirr
 kaipe
@@ -1428,6 +1451,7 @@ poltawski
 ppichet
 prateeksachan
 ptrkmkl
+rajandangi
 rajesh
 ralf-bonn
 raortegar
@@ -1480,10 +1504,12 @@ uid536
 uid697
 unknown
 urs_hunkler
+vietlx426
 viettruongq
 villate
 vinhle
 vinkmar
+vlad.kidanov
 vpisabeywardana
 vthung
 vtos
