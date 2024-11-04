@@ -105,7 +105,7 @@ function futureRelease({ releaseData }: majorVersionData): JSX.Element {
                     , which
                     {' '}
                     {releaseData.isLTS && <strong>will be an LTS release</strong>}
-                    {!releaseData.isLTS && <strong>will not an LTS release</strong>}
+                    {!releaseData.isLTS && <strong>will not be an LTS release</strong>}
                     , is scheduled for release on
                     {' '}
                     <strong>
