@@ -1239,6 +1239,7 @@ Zoltán
 [Peter
 abgreeve
 acorbier
+adamson
 adamtpaw
 adamtppaw
 adpe
@@ -1290,6 +1291,7 @@ danghieu1407
 danielfetzer
 danmarsden
 danstowell
+david
 ddelblanco
 defacer
 deraadt
@@ -1502,6 +1504,7 @@ uid536
 uid697
 unknown
 urs_hunkler
+vietlx426
 viettruongq
 villate
 vinhle
