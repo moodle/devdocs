@@ -163,6 +163,11 @@ html {
 }
 ```
 
+#### Moodle site theme
+
+Starting on Moodle App 4.4 you can restrict CSS rules to a specific site theme. So, when accessing to your site, the app will retrieve the name of the site theme and will add a class to HTML tag following the next pattern:
+`theme-site-MYTHEME` and you can use this selector to filter your rules.
+
 #### Application theme
 
 The application uses a light theme by default, but it adds the `dark` class to the `html` element when it is using a dark theme:
