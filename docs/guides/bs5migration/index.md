@@ -382,3 +382,23 @@ shift-color($primary, -20%);
 The `theme-color-level()` has been changed to `color-level()` and then subsequently removed and replaced by scale-color().
 In the stable 5.0 the final decision was to adopt `shift-color()` so we will use this function in the bridge file.
 :::
+
+### Rounded classes
+
+The `.rounded-sm` and `.rounded-lg` classes have been replaced with `.rounded-1` and `.rounded-3`.
+
+<InvalidExample title="Don't">
+
+```html
+<div class="rounded-lg"> Rounded content </div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<div class="rounded-3"> Rounded content </div>
+```
+
+</ValidExample>
