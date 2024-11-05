@@ -19,6 +19,7 @@ If there are any topics that you would like to present or discuss, please contac
 
 ### 2024
 
+- [Developer meeting November 2024](./2024/11.md)
 - [Developer meeting September 2024](./2024/09.md)
 - [Developer meeting May 2024](./2024/05.md)
 - [Developer meeting March 2024](./2024/03.md)
