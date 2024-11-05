@@ -10,6 +10,7 @@ tags:
 
 | **Version name** | **Date** |
 |---|---|
+| [Moodle App 4.5.0](./app_releases/v4/v4.5.0) |  31 October 2024 |
 | [Moodle App 4.4.1](./app_releases/v4/v4.4.1) |  9 July 2024 |
 | [Moodle App 4.4.0](./app_releases/v4/v4.4.0) |  28 June 2024 |
 | [Moodle App 4.3.0](./app_releases/v4/v4.3.0) |  10 November 2023 |
@@ -22,6 +23,7 @@ tags:
 
 - From 4.0.0 to 4.3.0 it was based on Ionic 5 version.
 - On 4.4.0 the app was based on Ionic 7 version.
+- On 4.5.0 the app was based on Ionic 8 version.
 
 ## Moodle App 3.x
 
