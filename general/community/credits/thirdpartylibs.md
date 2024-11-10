@@ -993,7 +993,7 @@ Simple Pie helps with blogs.
 
 ### Slim Framework
 
-- **Location**: lib/slim
+- **Location**: lib/slim/slim
 - **Version**: 4.13.0
 - **License**:  MIT
 - **URL**: [https://github.com/slimphp/Slim](https://github.com/slimphp/Slim)
@@ -1039,7 +1039,7 @@ URL syntax validation using PHP and regular expressions.
 
 ### WebAuthn
 
-- **Location**: lib/webauthn/src
+- **Location**: lib/webauthn
 - **Version**: 2.1.1
 - **License**:  MIT
 - **URL**: [https://github.com/lbuchs/WebAuthn](https://github.com/lbuchs/WebAuthn)
