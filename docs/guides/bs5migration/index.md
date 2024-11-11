@@ -402,3 +402,52 @@ The `.rounded-sm` and `.rounded-lg` classes have been replaced with `.rounded-1`
 ```
 
 </ValidExample>
+
+### Screen reader utilities
+
+"Screen reader" classes are now "visually hidden" classes.
+
+- Renamed `.sr-only` and `.sr-only-focusable` to `.visually-hidden` and `.visually-hidden-focusable`.
+- Renamed `sr-only()` and `sr-only-focusable()` mixins to `visually-hidden()` and `visually-hidden-focusable()`.
+
+<InvalidExample title="Don't">
+
+```html
+<span class="sr-only sr-only-focusable">
+    Visually hidden text
+</span>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<span class="visually-hidden visually-hidden-focusable">
+    Visually hidden text
+</span>
+```
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+```scss
+.my-hidden-text {
+    @include sr-only();
+    @include sr-only-focusable();
+}
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```scss
+.my-hidden-text {
+    @include visually-hidden();
+    @include visually-hidden-focusable();
+}
+```
+
+</ValidExample>
