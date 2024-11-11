@@ -382,3 +382,52 @@ shift-color($primary, -20%);
 The `theme-color-level()` has been changed to `color-level()` and then subsequently removed and replaced by scale-color().
 In the stable 5.0 the final decision was to adopt `shift-color()` so we will use this function in the bridge file.
 :::
+
+### Screen reader utilities
+
+"Screen reader" classes are now "visually hidden" classes.
+
+- Renamed .sr-only and .sr-only-focusable to .visually-hidden and .visually-hidden-focusable.
+- Renamed sr-only() and sr-only-focusable() mixins to visually-hidden() and visually-hidden-focusable().
+
+<InvalidExample title="Don't">
+
+```html
+<span class="sr-only sr-only-focusable">
+    Visually hidden text
+</span>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<span class="visually-hidden visually-hidden-focusable">
+    Visually hidden text
+</span>
+```
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+```scss
+.my-hidden-text {
+    @include sr-only();
+    @include sr-only-focusable();
+}
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```scss
+.my-hidden-text {
+    @include visually-hidden();
+    @include visually-hidden-focusable();
+}
+```
+
+</ValidExample>
