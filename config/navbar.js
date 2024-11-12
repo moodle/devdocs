@@ -56,6 +56,20 @@ const navbar = {
             label: 'Process',
             docsPluginId: 'general',
         },
+        {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'moodleapp',
+            label: 'Moodle App',
+            docsPluginId: 'general',
+        },
+        {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'contentguidelines',
+            label: 'Content guidelines',
+            docsPluginId: 'general',
+        },
 
         // Right.
         {

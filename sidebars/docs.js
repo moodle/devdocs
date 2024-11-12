@@ -63,12 +63,6 @@ const sidebars = {
         },
 
         {
-            label: 'Moodle App',
-            type: 'link',
-            href: '/general/app',
-        },
-
-        {
             type: 'html',
             value: '<hr>',
         },
