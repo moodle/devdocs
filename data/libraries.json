@@ -1115,7 +1115,7 @@
     },
     {
         "copyrightHolders": [],
-        "location": "lib/slim",
+        "location": "lib/slim/slim",
         "name": "Slim Framework",
         "version": "4.13.0",
         "license": "MIT",
@@ -1168,7 +1168,7 @@
     },
     {
         "copyrightHolders": [],
-        "location": "lib/webauthn/src",
+        "location": "lib/webauthn",
         "name": "WebAuthn",
         "version": "2.1.1",
         "license": "MIT",
