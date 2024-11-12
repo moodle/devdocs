@@ -324,8 +324,8 @@ Plugin page can listen to JQuery events that are triggered on successful update 
 
 ```php
 $PAGE->requires->js_amd_inline("
-require(['jquery'], function(\$) {
-    $('body').on('event:core/inplace_editable:updateFailed', '[data-inplaceeditable]', (e) => {
+require(['jquery', 'core/local/inplace_editable/events'], function(\$, Events) {
+    $('body').on(Events.eventTypes.elementUpdateFailed, '[data-inplaceeditable]', (e) => {
         // The exception object returned by the callback.
         const exception = e.exception;
 
@@ -337,7 +337,7 @@ require(['jquery'], function(\$) {
 
         // Do your own error processing here.
     });
-    $('body').on('core/inplace_editable:updated', '[data-inplaceeditable]', (e) => {
+    $('body').on(Events.eventTypes.elementUpdated, '[data-inplaceeditable]', (e) => {
         // Everything that web service returned.
         const ajaxreturn = e.ajaxreturn;
 
