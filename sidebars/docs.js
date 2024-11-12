@@ -49,13 +49,6 @@ const sidebars = {
                 id: 'apis',
             },
         },
-
-        {
-            label: 'Content guidelines',
-            type: 'link',
-            href: '/general/contentguidelines',
-        },
-
         {
             label: 'Developer update',
             type: 'doc',
@@ -63,20 +56,16 @@ const sidebars = {
         },
 
         {
-            label: 'Moodle App',
-            type: 'link',
-            href: '/general/app',
-        },
-
-        {
             type: 'html',
             value: '<hr>',
         },
+
         {
-            label: 'Release notes',
+            label: 'Content guidelines',
             type: 'link',
-            href: '/general/releases/4.3',
+            href: '/general/contentguidelines',
         },
+
         {
             label: 'Projects',
             type: 'link',
