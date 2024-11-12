@@ -40,16 +40,21 @@ const navbar = {
             to: '/general/community/contribute',
             label: 'Community',
             position: 'left',
+            activeBasePath: '/general/community',
         },
         {
-            to: '/general/development/gettingstarted',
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'coding',
             label: 'Coding',
-            position: 'left',
+            docsPluginId: 'general',
         },
         {
-            to: '/general/development/process',
-            label: 'Process',
+            type: 'docSidebar',
             position: 'left',
+            sidebarId: 'process',
+            label: 'Process',
+            docsPluginId: 'general',
         },
 
         // Right.
