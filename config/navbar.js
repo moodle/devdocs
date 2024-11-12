@@ -64,6 +64,13 @@ const navbar = {
             docsPluginId: 'general',
         },
         {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'releaseNotes',
+            label: 'Releases',
+            docsPluginId: 'general',
+        },
+        {
             type: 'dropdown',
             label: 'Writing',
             items: [

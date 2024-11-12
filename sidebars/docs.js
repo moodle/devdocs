@@ -59,11 +59,6 @@ const sidebars = {
             type: 'html',
             value: '<hr>',
         },
-        {
-            label: 'Release notes',
-            type: 'link',
-            href: '/general/releases',
-        },
 
         {
             label: 'Content guidelines',
