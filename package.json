@@ -46,7 +46,7 @@
     "commander": "5.1.0",
     "dotenv": "^16.0.3",
     "hast-util-from-parse5": "^7.1.0",
-    "libxmljs2": "^0.31.0",
+    "libxmljs2": "^0.35.0",
     "mdast-util-from-markdown": "^2.0.0",
     "mdast-util-mdx-jsx": "^3.0.0",
     "mdast-util-mdxjs-esm": "^2.0.1",
