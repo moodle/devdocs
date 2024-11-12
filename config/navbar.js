@@ -53,7 +53,7 @@ const navbar = {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'process',
-            label: 'Process',
+            label: 'Processes',
             docsPluginId: 'general',
         },
         {
