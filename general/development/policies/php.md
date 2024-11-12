@@ -20,7 +20,7 @@ We always follow this agreed policy regarding PHP and Moodle supported versions:
 1. A LTS will always **require the previous LTS** (or later) for upgrading.
 2. The **maximum PHP version** supported for a branch will be the max one achieved along the life of the branch. Usually with .0 releases but may happen later (we added support for php80 with 3.11.8, or support for php81 with 4.1.2, for example).
 3. The **minimum PHP** version supported for a branch will be **the lower of**:
-    - The [minimum version supported in any way by php](https://www.php.net/supported-versions.php) the day of the Moodle release (so we provide slow, progressive increments).
+    - The [minimum version supported in any way by php](https://www.php.net/supported-versions.php) that is under support for at least 12 more months when the new Moodle version gets released (so we provide slow, progressive increments).
     - The maximum PHP version supported by the previous LTS branch (so we guarantee jumping between LTS is possible without upgrading PHP at the same time).
 
 <details>
@@ -33,7 +33,7 @@ Since Moodle 3.5 (MDL-59159), these rules apply to decide Minimum PHP and Moodle
  # A LTS will always require the previous LTS (or later) for upgrading.
  # The maximum PHP version supported for a branch will be the max one achieved along the life of the branch. Usually with .0 releases but may happen later (we added support for php80 with 3.11.8, or support for php81 with 4.1.2, for example).
  # The minimum PHP version supported for a branch will be *the lower of*:
- -- The [minimum version supported in any way by php|http://php.net/supported-versions.php] the day of the Moodle release (so we provide slow, progressive increments).
+ -- The [minimum version supported in any way by php|http://php.net/supported-versions.php] that is under support for at least 12 more months when the new Moodle version gets released (so we provide slow, progressive increments).
  -- The maximum PHP version supported by the previous LTS branch (so we guarantee jumping between LTS is possible without upgrading PHP at the same time).{panel}
 ```
 
