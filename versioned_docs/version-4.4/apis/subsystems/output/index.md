@@ -116,9 +116,9 @@ In the code above, we created a renderable. This is a class that you have to add
 
 namespace tool_demo\output;
 
-use renderable
-use renderer_base
-use templatable
+use renderable;
+use renderer_base;
+use templatable;
 use stdClass;
 
 class index_page implements renderable, templatable {
@@ -142,7 +142,25 @@ class index_page implements renderable, templatable {
 }
 ```
 
-This class implements the renderable interface, which has no methods, and the templatable interface, which means that this class could be rendered with a template, so it must implement the `export_for_template` method. So in this example, the class accepts data via it's constructor, and stores that data in class variables. It does nothing else fancy with the data in this example (but it could). Note that the `export_for_template` function should only return simple types (arrays, stdClass, bool, int, float, string).
+This class implements the:
+
+- `renderable` interface, which has no methods
+- `templatable` interface, which means that this class could be rendered with a template, so it must implement the `export_for_template` method
+
+In this example, the class accepts data via it's constructor, and stores that data in class variables. It does nothing else with the data in this example (but it could). Note that the `export_for_template` function should only return simple types (`arrays`, `stdClass`, `bool`, `int`, `float`, `string`), or those that implement the [`Stringable`](https://www.php.net/manual/en/class.stringable.php) interface.
+
+If you wish to use a specific template to render the content you may specify anyone by replacing `templatable` with `named_templatable`, which extends templatable and requires that you implement a `get_template_name()` method that returns the name of the template you wish to use.
+
+```php title="Example implementation of get_template_name()"
+    /**
+     * Gets the name of the mustache template used to render the data.
+     *
+     * @return string
+     */
+    public function get_template_name(\renderer_base $renderer): string {
+         return 'tool_demo/index_page';
+    }
+```
 
 Now let's look at the renderer for this plugin.
 
@@ -170,6 +188,13 @@ class renderer extends plugin_renderer_base {
 ```
 
 The renderer exists to provide `render_<page>` methods for all renderables used in the plugin. A theme designer can provide a custom version of this renderer that changes the behaviour of any of the render methods and so to customize their theme. In this example, the render method for the index page (`render_index_page`) does 2 things. It asks the renderable to export it's data so that it is suitable for passing as the context to a template, and then renders a specific template with this context. A theme designer could either manipulate the data in the render method (e.g. removing menu entries), or change the template (change the generated HTML) to customize the output.
+
+You do not need to implement a renderer for a plugin if you are using templates and you either:
+
+1. Use the `templatable` interface and have a template with the same name in the same namespace
+2. Use the `named_templatable` interface
+
+In these cases the data from the renderable will be automatically routed to the correct template, however if you do implement a render method that will be used in preference to the default routing.
 
 The template used in this plugin is located in the plugin's templates folder. The template can also be overridden by a theme designer.
 
@@ -282,7 +307,7 @@ Some interesting parameters for this function are:
 - `options`
   - `options->context`: Context (id or object) for applying filters. If context is not specified it will be taken from `$PAGE->context` and may potentially result in displaying the same text differently on different pages. For example, all module-related information should have module context even when it appears in course-level reports, all course-related information such as name and description should have course context even when they are displayed on the front page or system pages.
   - `options->escape`: Set to `false` if you do not want to escape HTML entities. (Default is `true`)
-  - `options->filter`: Set to `false` if you do not want to allow filters to process the text. This is ignored by `FORMAT_PLAIN` for which filters are never applied.  (Default to `true`)
+  - `options->filter`: Set to `false` if you do not want to allow filters to process the text. This is ignored by `FORMAT_PLAIN` for which filters are never applied. (Default is `true`)
 
 ### Simple elements rendering
 

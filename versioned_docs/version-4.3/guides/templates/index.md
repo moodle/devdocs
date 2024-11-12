@@ -10,7 +10,7 @@ description: A guide to the features and use of Mustache templating in Moodle.
 
 Moodle makes use of the [Mustache](https://mustache.github.io) template system to render most of its HTML output, and in some other cases too.
 
-Templates are defined as plain text, which typically includes HTML, and a range of Mustache tags and placeholders. The Mustache placeholders are replaced with actual values during the render of the page. Mustache templates can be rendered both server-side in PHP, and client-side using JavaScript. Themes can overrides the templates defined in other components if required.
+Templates are defined as plain text, which typically includes HTML, and a range of Mustache tags and placeholders. The Mustache placeholders are replaced with actual values during the render of the page. Mustache templates can be rendered both server-side in PHP, and client-side using JavaScript. Themes can override the templates defined in other components if required.
 
 <details>
 <summary>A simple example</summary>
@@ -388,7 +388,7 @@ Templates can be effectively used in [renderers](https://docs.moodle.org/dev/Ren
 
 In the simplest case where you have a renderable, templatable object with a class name matching the name of the template that will render it, you do not need to add any renderer code explicity. Passing your widget directly to `$OUTPUT->render()` will infer the name of your template, call `export_for_template()` and `render_from_template()`, then return the result.
 
-Example of the method added to the renderable `mywidget`:
+The following example shows a renderable using the `mywidget.mustache` template in the `tool_myplugin` plugin templates directory:
 
 ```php
 /**
@@ -410,6 +410,22 @@ public function export_for_template(renderer_base $output) {
     }
 
     return $data;
+}
+```
+
+If you wish to render using any template your renderable can implement `named_templatable` interface instead of `templatable`. It will have to implement an additional new method `public function get_template_name(\renderer_base $renderer): string` that returns the name of the template to be used.
+
+Example of the method added to tell a renderable to use the `mywidget.mustache` template in the `tool_myplugin` plugin templates directory:
+
+```php
+/**
+ * Get the name of the template to use for this templatable.
+ *
+ * @param renderer_base $output
+ * @return string
+ */
+public function get_template_name(\renderer_base $renderer): string {
+    return 'tool_myplugin/mywidget';
 }
 ```
 
