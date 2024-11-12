@@ -64,11 +64,25 @@ const navbar = {
             docsPluginId: 'general',
         },
         {
-            type: 'docSidebar',
+            type: 'dropdown',
+            label: 'Writing',
+            items: [
+                {
+                    type: 'docSidebar',
+                    // position: 'left',
+                    sidebarId: 'contentguidelines',
+                    label: 'Content guidelines',
+                    docsPluginId: 'general',
+                },
+                {
+                    type: 'docSidebar',
+                    // position: 'left',
+                    sidebarId: 'documentation',
+                    label: 'Documentation',
+                    docsPluginId: 'general',
+                },
+            ],
             position: 'left',
-            sidebarId: 'contentguidelines',
-            label: 'Content guidelines',
-            docsPluginId: 'general',
         },
 
         // Right.

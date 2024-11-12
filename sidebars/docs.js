@@ -49,13 +49,6 @@ const sidebars = {
                 id: 'apis',
             },
         },
-
-        {
-            label: 'Content guidelines',
-            type: 'link',
-            href: '/general/contentguidelines',
-        },
-
         {
             label: 'Developer update',
             type: 'doc',
@@ -71,6 +64,13 @@ const sidebars = {
             type: 'link',
             href: '/general/releases',
         },
+
+        {
+            label: 'Content guidelines',
+            type: 'link',
+            href: '/general/contentguidelines',
+        },
+
         {
             label: 'Projects',
             type: 'link',
