@@ -194,7 +194,7 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->version = 2022060100;
 $plugin->requires = 2022041900.00; // Moodle 4.0.
 $plugin->supported = [400, 400];
-$plugin->incompatible = [401];
+$plugin->incompatible = 401;
 $plugin->component = 'tool_example';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->release = '41.3-lemmings-1.0';
