@@ -266,7 +266,7 @@ class inplace_edit_select extends \core\output\inplace_editable {
 $renderer = $PAGE->get_renderer('core');
 $inplaceedit = new tool_mytest\local\inplace_edit_text($record);
 $params = $inplaceedit->export_for_template($renderer);
-echo $OUTPUT->render_from_template('core/inplace_edit', $params);
+echo $OUTPUT->render_from_template('core/inplace_editable', $params);
 ```
 
   </div>
@@ -284,7 +284,7 @@ $params = $inplaceedit->export_for_template($renderer);
 ```
 
 ```js title="The params are transferred via webservice and are then processed by JavaScript"
-Templates.renderForPromise('core/inplace_edit', params)
+Templates.renderForPromise('core/inplace_editable', params)
     .then(({html, js}) => {
         Templates.replaceNodeContents('nodeid', html, js);
         return true;
@@ -324,8 +324,8 @@ Plugin page can listen to JQuery events that are triggered on successful update 
 
 ```php
 $PAGE->requires->js_amd_inline("
-require(['jquery'], function(\$) {
-    $('body').on('updatefailed', '[data-inplaceeditable]', (e) => {
+require(['jquery', 'core/local/inplace_editable/events'], function(\$, Events) {
+    $('body').on(Events.eventTypes.elementUpdateFailed, '[data-inplaceeditable]', (e) => {
         // The exception object returned by the callback.
         const exception = e.exception;
 
@@ -337,7 +337,7 @@ require(['jquery'], function(\$) {
 
         // Do your own error processing here.
     });
-    $('body').on('updated', '[data-inplaceeditable]', (e) => {
+    $('body').on(Events.eventTypes.elementUpdated, '[data-inplaceeditable]', (e) => {
         // Everything that web service returned.
         const ajaxreturn = e.ajaxreturn;
 
