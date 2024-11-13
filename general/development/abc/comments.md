@@ -42,7 +42,7 @@ This comment just repeats the name of the variable, but doesn't give any more de
 
 ```php title="Here is a better example"
 /**
- * @param $component Frankenstyle component name, e.g. 'mod_forum'
+ * @param string $component Frankenstyle component name, e.g. 'mod_forum'
  */
 ```
 
