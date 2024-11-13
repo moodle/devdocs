@@ -118,7 +118,7 @@ Bug fixes for security issues in 4.4.x will end 8 December 2025 (18 months).
 
 :::info
 
-Bug fixes for general core bugs in 4.3.x will end 7 October 2024 (12 months).<br/>
+Bug fixes for general core bugs in 4.3.x ended 7 October 2024 (12 months).<br/>
 Bug fixes for security issues in 4.3.x will end 21 April 2025 (18 months).
 
 :::
@@ -129,8 +129,8 @@ Bug fixes for security issues in 4.3.x will end 21 April 2025 (18 months).
 
 :::info
 
-Bug fixes for general core bugs in 4.2.x will end 22 April 2024 (12 months).<br/>
-Bug fixes for security issues in 4.2.x will end 7 October 2024 (18 months).
+Bug fixes for general core bugs in 4.2.x ended 22 April 2024 (12 months).<br/>
+Bug fixes for security issues in 4.2.x ended 7 October 2024 (18 months).
 
 :::
 
