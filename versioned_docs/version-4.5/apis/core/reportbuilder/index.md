@@ -128,14 +128,14 @@ All report elements can be defined within the reports themselves - but entities 
 To create an entity, the new entity class must extend **[reportbuilder/classes/local/entities/base.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/entities/base.php)** class and must include these methods:
 
 ```php
-get_default_table_aliases()
+get_default_tables()
 get_default_entity_title()
 initialise()
 ```
 
-##### get_default_table_aliases()
+##### get_default_tables()
 
-Defines the SQL alias for the database tables the entity uses.
+Defines all the database tables that must be present in the main SQL or joins added to the entity.
 
 ##### get_default_entity_title()
 

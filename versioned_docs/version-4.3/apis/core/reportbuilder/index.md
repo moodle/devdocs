@@ -125,7 +125,7 @@ All report elements can be defined within the reports themselves - but entities 
 
 #### Create an entity
 
-To create an entity, the new entity class must extend **[reportbuilder/classes/local/entities/base.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/entities/base.php)** class and must include these methods:
+To create an entity, the new entity class must extend **[reportbuilder/classes/local/entities/base.php](https://github.com/moodle/moodle/blob/MOODLE_403_STABLE/reportbuilder/classes/local/entities/base.php)** class and must include these methods:
 
 ```php
 get_default_table_aliases()
@@ -149,8 +149,8 @@ This is where we **add** the entity columns and filters.
 
 Check out these two entities as an example to start building reports:
 
-- **User entity**: [reportbuilder/classes/local/entities/user.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/entities/user.php)
-- **Course entity**: [reportbuilder/classes/local/entities/course.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/entities/course.php)
+- **User entity**: [reportbuilder/classes/local/entities/user.php](https://github.com/moodle/moodle/blob/MOODLE_403_STABLE/reportbuilder/classes/local/entities/user.php)
+- **Course entity**: [reportbuilder/classes/local/entities/course.php](https://github.com/moodle/moodle/blob/MOODLE_403_STABLE/reportbuilder/classes/local/entities/course.php)
 
 ### Actions
 
