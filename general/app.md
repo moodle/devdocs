@@ -1,5 +1,5 @@
 ---
-title: Moodle App
+title: Moodle 
 tags:
   - Moodle App
 ---
