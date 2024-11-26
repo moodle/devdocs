@@ -5,11 +5,11 @@ tags:
   - reports
 ---
 
-## System Reports
+## Overview
 
 ### Introduction
 
-System reports are a consistent way of providing reporting data, with paging, filtering, exporting standardized across them. Once the groundwork is done in defining the report elements in entities, it's possible to implement them with minimal code just by adding entities to the report, and defining which elements you want to use from them.
+The report builder API is a way of providing reporting data, with paging, filtering, exporting standardized across them in both system and custom reports. Once the groundwork is done in defining the report elements in entities, it's possible to implement them with minimal code just by adding entities to the report, and defining which elements you want to use from them.
 
 ### Column
 
@@ -168,11 +168,11 @@ Report actions can be defined in system reports to provide CTA links for each ro
   )));
 ```
 
-### System reports
+## System reports
 
 System reports are a consistent way of providing reporting data, with paging, filtering, exporting standardized across them. Once the groundwork is done in defining the report elements in entities, it's possible to implement them with minimal code just by adding entities to the report, and defining which elements you want to use from them
 
-#### Create a new system report using entities
+### Create a new system report using entities
 
 To create a new system report just create a new class extending [reportbuilder/classes/system_report.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/system_report.php).
 
@@ -261,9 +261,9 @@ Once the whole report has been defined, is possible to set if the report will be
 $this->set_downloadable(true);
 ```
 
-#### Use an entity
+### Use an entity
 
-#### Override display name for a column
+### Override display name for a column
 
 It's possible to override the display name of a column, if you don't want to use the value provided by the entity.
 
@@ -273,7 +273,7 @@ if ($column = $this->get_column('user:fullname')) {
 }
 ```
 
-#### Set a default initial sort direction
+### Set a default initial sort direction
 
 It's possible to set a default initial sort direction for one column.
 
@@ -281,7 +281,7 @@ It's possible to set a default initial sort direction for one column.
 $this->set_initial_sort_column('task_log:starttime', SORT_DESC);
 ```
 
-#### Examples
+### Examples
 
 Check out these two system reports as an example:
 
