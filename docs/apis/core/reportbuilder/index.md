@@ -133,6 +133,18 @@ get_default_entity_title()
 initialise()
 ```
 
+If creating an entity for core Moodle data it should be located in one of the following namespaces:
+
+- `\core_reportbuilder\local\entities\`
+- `reportbuilder\local\entities` sub namespace of the subsystem the data is from, for example [`core_course\reportbuilder\local\entities\course_category`](https://github.com/moodle/moodle/blob/main/course/classes/reportbuilder/local/entities/course_category.php)
+
+When creating one for your own plugin you could technically put it anywhere, however to make it easy to find you should probably use a sub namespace like:
+
+- `reportbuilder\local\entities`
+- `reportbuilder\entities`
+
+For example if you were building a entity to show assignments you might make it's full namespace `\mod_assign\reportbuilder\entities\assignments`.
+
 ##### get_default_tables()
 
 Defines all the database tables that must be present in the main SQL or joins added to the entity.
@@ -144,6 +156,23 @@ Defines the default title for this entity.
 ##### initialise()
 
 This is where we **add** the entity columns and filters.
+
+#### Tips
+
+Always add all the entities joins to each of its columns and filters, if you do not do this there may be issues when you try to use them in reports.
+
+```php title="Adding entity joins to a column"
+$column->add_joins($this->get_joins())
+```
+
+When writing any SQL snippets you should always use the alias table aliases that are returned by the `get_table_alias()` method, this is because reports using the column can change the alias used by a table.
+
+```php title="Example of getting the alias for a table"
+$logalias = $this->get_table_alias('logstore_standard_log');
+$useralias = $this->get_table_alias('user');
+$fildname = "{$useralias).lastname";
+$join = "JOIN {user} {$useralias} ON {$useralias}.id = {$logalias}.relateduser"
+```
 
 #### Examples
 

@@ -145,6 +145,23 @@ Defines the default title for this entity.
 
 This is where we **add** the entity columns and filters.
 
+#### Tips
+
+Always add all the entities joins to each of its columns and filters, if you do not do this there may be issues when you try to use them in reports.
+
+```php title="Adding entity joins to a column"
+$column->add_joins($this->get_joins())
+```
+
+When writing any SQL snippets you should always use the alias table aliases that are returned by the `get_table_alias()` method, this is because reports using the column can change the alias used by a table.
+
+```php title="Example of getting the alias for a table"
+$logalias = $this->get_table_alias('logstore_standard_log');
+$useralias = $this->get_table_alias('user');
+$fildname = "{$useralias).lastname";
+$join = "JOIN {user} {$useralias} ON {$useralias}.id = {$logalias}.relateduser"
+```
+
 #### Examples
 
 Check out these two entities as an example to start building reports:
@@ -279,6 +296,23 @@ It's possible to set a default initial sort direction for one column.
 
 ```php
 $this->set_initial_sort_column('task_log:starttime', SORT_DESC);
+```
+
+#### Tips
+
+Always add all the entities joins to each of its columns and filters, if you do not do this there may be issues when you try to use them in reports.
+
+```php title="Adding entity joins to a column"
+$column->add_joins($this->get_joins())
+```
+
+When writing any SQL snippets you should always use the alias table aliases that are returned by the `get_table_alias()` method, this is because reports using the column can change the alias used by a table.
+
+```php title="Example of getting the alias for a table"
+$logalias = $this->get_table_alias('logstore_standard_log');
+$useralias = $this->get_table_alias('user');
+$fildname = "{$useralias).lastname";
+$join = "JOIN {user} {$useralias} ON {$useralias}.id = {$logalias}.relateduser"
 ```
 
 ### Examples
