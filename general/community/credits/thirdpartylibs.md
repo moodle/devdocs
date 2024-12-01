@@ -40,7 +40,7 @@ Provide a great search experience without the need for external, server-side, se
 ### Constant-Time Encoding
 
 - **Location**: admin/tool/mfa/factor/totp/extlib/ParagonIE/ConstantTime
-- **Version**: 2.1.1
+- **Version**: 3.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/paragonie/constant_time_encoding](https://github.com/paragonie/constant_time_encoding)
 

@@ -34,7 +34,7 @@
         "copyrightHolders": [],
         "location": "admin/tool/mfa/factor/totp/extlib/ParagonIE/ConstantTime",
         "name": "Constant-Time Encoding",
-        "version": "2.1.1",
+        "version": "3.0.0",
         "license": "MIT",
         "repository": "https://github.com/paragonie/constant_time_encoding",
         "customised": false
