@@ -479,7 +479,7 @@ public function get_default_conditions(): array {
 }
 ```
 
-You may also optionally define the [initial values for any of the default conditions](\versioned_docs\version-4.4\apis\core\reportbuilder\filtering.md) by overriding the `get_default_condition_values()` method.
+You may also optionally define the [initial values for any of the default conditions](.\filtering.md) by overriding the `get_default_condition_values()` method.
 
 ```php
 /**
