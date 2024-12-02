@@ -42,11 +42,12 @@ To create a new column, just create a new instance of [`reportbuilder/classes/lo
 
 And use:
 
-- **add_joins()** to add any extra SQL joins the column might need
-- **set_type()** to add the column type (All constant types are defined within the same column class)
-- **set_is_sortable()** to define if column can be sorted (For example we don't want to sort if the column shows just a picture)
-- **add_callback()** to format the output of the column
-- **add_field()** to add any db fields format callback might need
+- `add_joins()` to add any extra SQL joins the column might need
+- `set_type()` to add the column type (All constant types are defined within the same column class)
+- `set_is_sortable()` to define if column can be sorted (For example we don't want to sort if the column shows just a picture)
+- `add_callback()` to format the output of the column
+- `add_field()` to add any db fields format callback might need
+- `set_is_deprecated()` used to mark a column as deprecated, indicating it will be removed in the future. This is required in core Moodle columns if you want delete or remove one from an entity because plugins may be using the fields.
 
 ```php title="Example of code for creating a column"
 $columns[] = (new column(

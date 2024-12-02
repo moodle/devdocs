@@ -42,11 +42,12 @@ To create a new column, just create a new instance of [`reportbuilder/classes/lo
 
 And use:
 
-- **add_joins()** to add any extra SQL joins the column might need
-- **set_type()** to add the column type (All constant types are defined within the same column class)
-- **set_is_sortable()** to define if column can be sorted (For example we don't want to sort if the column shows just a picture)
-- **add_callback()** to format the output of the column
-- **add_field()** to add any db fields format callback might need
+- `add_joins()` to add any extra SQL joins the column might need
+- `set_type()` to add the column type (All constant types are defined within the same column class)
+- `set_is_sortable()` to define if column can be sorted (For example we don't want to sort if the column shows just a picture)
+- `add_callback()` to format the output of the column
+- `add_field()` to add any db fields format callback might need
+- `set_is_deprecated()` used to mark a column as deprecated, indicating it will be removed in the future. This is required in core Moodle columns if you want delete or remove one from an entity because plugins may be using the fields.
 
 ```php title="Example of code for creating a column"
 $columns[] = (new column(
@@ -374,6 +375,21 @@ Next you need to add the columns, filters and conditions that a user can add to 
 $this->add_all_from_entities();
 ```
 
+### Setup report name
+
+You will need to specify the name that is displayed to the end user for the data source.
+
+```php
+    /**
+     * Return user friendly name of the report source
+     *
+     * @return string
+     */
+    public static function get_name(): string {
+        return get_string('tasklogs', 'core_admin');
+    }
+```
+
 ### Setup default columns
 
 Once all entities have been added you need to define which columns it will show by default **they will be displayed in the order you define them**, by implementing the `get_default_columns()` method:
@@ -578,7 +594,7 @@ This would cause the report to return results for users with the first name of _
 
 The stress test uses helper methods which:
 
-- Add and remove every colum individually from a report and ensures that is still returns data without error.
+- Add and remove every colum individually from a report and ensures that is still returns data without error, it also tests the column can be sorted if that has been enabled.
 - Individually aggregates a report on each column
 - Individually applies each filter
 
