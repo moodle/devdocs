@@ -32,7 +32,7 @@ Column instances define the data captured/displayed within a report column typic
 
 #### Creating columns
 
-To create a new column, just create a new instance of [`reportbuilder/classes/local/report/column.php`](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/report/column.php) class with:
+To create a new column, just create a new instance of [`reportbuilder/classes/local/report/column.php`]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/report/column.php) class with:
 
 ```php
 * string $name
@@ -81,20 +81,20 @@ Filters & columns are entirely separate concepts in the report, and each can be 
 
 #### Filter types
 
-- **Text** ([reportbuilder/classes/local/filters/text.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/filters/text.php))
-- **Date** ([reportbuilder/classes/local/filters/date.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/filters/date.php))
-- **Number** ([reportbuilder/classes/local/filters/number.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/filters/number.php))
-- **Boolean Select** ([reportbuilder/classes/local/filters/boolean_select.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/filters/boolean_select.php))
-- **Select** ([reportbuilder/classes/local/filters/select.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/filters/select.php))
-- **Course selector** ([reportbuilder/classes/local/filters/course_selector.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/filters/course_selector.php))
-- **Duration** ([reportbuilder/classes/local/filters/duration.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/filters/duration.php))
-- **Tags** ([reportbuilder/classes/local/filters/tags.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/filters/tags.php))
-- **Autocomplete** ([reportbuilder/classes/local/filters/autocomplete.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/filters/autocomplete.php))
-- **Category** ([reportbuilder/classes/local/filters/category.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/filters/category.php))
+- **Text** ([reportbuilder/classes/local/filters/text.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/filters/text.php))
+- **Date** ([reportbuilder/classes/local/filters/date.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/filters/date.php))
+- **Number** ([reportbuilder/classes/local/filters/number.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/filters/number.php))
+- **Boolean Select** ([reportbuilder/classes/local/filters/boolean_select.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/filters/boolean_select.php))
+- **Select** ([reportbuilder/classes/local/filters/select.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/filters/select.php))
+- **Course selector** ([reportbuilder/classes/local/filters/course_selector.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/filters/course_selector.php))
+- **Duration** ([reportbuilder/classes/local/filters/duration.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/filters/duration.php))
+- **Tags** ([reportbuilder/classes/local/filters/tags.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/filters/tags.php))
+- **Autocomplete** ([reportbuilder/classes/local/filters/autocomplete.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/filters/autocomplete.php))
+- **Category** ([reportbuilder/classes/local/filters/category.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/filters/category.php))
 
 #### Creating filters
 
-To create a new filter, just create a new instance of **[reportbuilder/classes/local/report/filter.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/report/filter.php)** class with:
+To create a new filter, just create a new instance of **[reportbuilder/classes/local/report/filter.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/report/filter.php)** class with:
 
 ```php
 * string $filterclass
@@ -126,7 +126,7 @@ All report elements can be defined within the reports themselves - but entities 
 
 #### Create an entity
 
-To create an entity, the new entity class must extend **[reportbuilder/classes/local/entities/base.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/entities/base.php)** class and must include these methods:
+To create an entity, the new entity class must extend **[reportbuilder/classes/local/entities/base.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/entities/base.php)** class and must include these methods:
 
 ```php
 get_default_tables()
@@ -171,8 +171,8 @@ $join = "JOIN {user} {$useralias} ON {$useralias}.id = {$logalias}.relateduser"
 
 Check out these two entities as an example to start building reports:
 
-- **User entity**: [reportbuilder/classes/local/entities/user.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/entities/user.php)
-- **Course entity**: [reportbuilder/classes/local/entities/course.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/entities/course.php)
+- **User entity**: [reportbuilder/classes/local/entities/user.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/entities/user.php)
+- **Course entity**: [reportbuilder/classes/local/entities/course.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/local/entities/course.php)
 
 ### Actions
 
@@ -196,7 +196,7 @@ System reports are a consistent way of providing reporting data, with paging, fi
 
 ### Create a new system report using entities
 
-To create a new system report just create a new class extending [reportbuilder/classes/system_report.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/system_report.php).
+To create a new system report just create a new class extending [reportbuilder/classes/system_report.php]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/system_report.php).
 
 The first method that we need is ***initialise()*** :
 
@@ -307,8 +307,8 @@ $this->set_initial_sort_column('task_log:starttime', SORT_DESC);
 
 Check out these two system reports as an example:
 
-- **Task logs**: [`admin/classes/reportbuilder/local/systemreports/task_logs.php`](https://github.com/moodle/moodle/blob/main/admin/classes/reportbuilder/local/systemreports/task_logs.php)
-- **Config changes**: [`report/configlog/classes/reportbuilder/local/systemreports/config_changes.php`](https://github.com/moodle/moodle/blob/main/report/configlog/classes/reportbuilder/local/systemreports/config_changes.php)
+- **Task logs**: [`admin/classes/reportbuilder/local/systemreports/task_logs.php`]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/admin/classes/reportbuilder/local/systemreports/task_logs.php)
+- **Config changes**: [`report/configlog/classes/reportbuilder/local/systemreports/config_changes.php`]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/report/configlog/classes/reportbuilder/local/systemreports/config_changes.php)
 
 ## Custom reports
 
@@ -316,7 +316,7 @@ The custom reporting interface allows reports to be built with a custom view for
 
 ### Create a new data source using entities
 
-To create a data source you need to extend [`\core_reportbuilder\datasource`](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/datasource.php). Your class must be located in the `reportbuilder\datasource` namespace of your plugin or the Moodle subsystem it is for.
+To create a data source you need to extend [`\core_reportbuilder\datasource`]( https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/reportbuilder/classes/datasource.php). Your class must be located in the `reportbuilder\datasource` namespace of your plugin or the Moodle subsystem it is for.
 
 The first method you need to build is `initialise()`
 
@@ -627,5 +627,5 @@ The first parameter for each method is the fully qualified class name of the `da
 
 #### Unit test examples
 
-- **Course categories** [`/course/tests/reportbuilder/datasource/categories_test.php`](https://github.com/moodle/moodle/blob/main/course/tests/reportbuilder/datasource/categories_test.php)
-- **Badges** [`/badges/tests/reportbuilder/datasource/badges_test.php`](https://github.com/moodle/moodle/blob/main/badges/tests/reportbuilder/datasource/badges_test.php)
+- **Course categories** [`/course/tests/reportbuilder/datasource/categories_test.php`](https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/course/tests/reportbuilder/datasource/categories_test.php)
+- **Badges** [`/badges/tests/reportbuilder/datasource/badges_test.php`](https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/badges/tests/reportbuilder/datasource/badges_test.php)

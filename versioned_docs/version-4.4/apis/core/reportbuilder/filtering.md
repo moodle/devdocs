@@ -15,7 +15,7 @@ Most filter types use an `operator` for field to define which of their operators
 
 The operator you have defined will then determine which other form fields you will need to provide values for, in our example so far that would be `value` which would be defined as `'course_categotry:name_value' => 'The name of a category'` this would mean that only a category with that exact name would be returned by default.
 
-[Core report builder filter types](https://github.com/moodle/moodle/tree/main/reportbuilder/classes/local/filters) you can find what a filter type needs by looking at their `get_sql_filter()` method.
+[Core report builder filter types](https://github.com/moodle/moodle/tree/MOODLE_404_STABLE/reportbuilder/classes/local/filters) you can find what a filter type needs by looking at their `get_sql_filter()` method.
 
 ## Text filters
 
