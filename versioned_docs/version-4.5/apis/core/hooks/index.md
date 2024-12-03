@@ -126,7 +126,7 @@ If you define a hook which is _not_ in the `[component]\hook\*` namespace then y
 
 namespace mod_example;
 
-class hooks implements \core\hook\hook_discovery_agent {
+class hooks implements \core\hook\discovery_agent {
     public static function discover_hooks(): array {
         return [
             [
