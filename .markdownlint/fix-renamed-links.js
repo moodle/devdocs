@@ -28,7 +28,7 @@ const {
 const path = require('path');
 const fs = require('fs');
 
-const rootDir = path.dirname(__dirname);
+const rootDir = path.posix.dirname(__dirname);
 
 // A simple regex to capture all links which are not images.
 const linkFinder = /(?<!!)(?<description>\[[^\]]*\](?=\((?<target>[^)]*)\)|\[[^\]]*\]))/g;
@@ -67,7 +67,7 @@ const getRenamedFileMapping = (renames) => {
  * @param {string} file The file to normalise the location of
  * @returns {string} The normalised location
  */
-const getNormalisedFile = (file) => `/${path.relative(rootDir, file)}`;
+const getNormalisedFile = (file) => `/${path.posix.relative(rootDir, file)}`;
 
 /**
  * Get an absolute link relative to the root directory of the project.
@@ -86,10 +86,10 @@ const getNormalisedLink = (file, link) => {
     const normalisedFile = getNormalisedFile(file);
 
     // Get the directory that it is in.
-    const normalisedDir = path.dirname(normalisedFile);
+    const normalisedDir = path.posix.dirname(normalisedFile);
 
     // Return a link relative to the file that the link was found in.
-    return path.join(normalisedDir, link);
+    return path.posix.join(normalisedDir, link);
 };
 
 /**
@@ -152,7 +152,7 @@ const findFile = (file) => {
     ];
 
     for (const filePath of paths) {
-        const fullPath = path.join(rootDir, filePath);
+        const fullPath = path.posix.join(rootDir, filePath);
         try {
             // Allow use of fs.statSync here because it's preferable to asynchronous rule handling for markdownlint.
             // eslint-disable-next-line no-restricted-properties
@@ -190,7 +190,7 @@ const getOptimisedLink = (mappings, file, currentLink, forceRelative) => {
         // Either the link has changed, or the forceRelative configuration is set.
         // Update to point to a relative _file_ if possible.
         const updatedFileLink = findFile(updatedLink);
-        let relativeLink = path.relative(path.dirname(normalisedCurrentFile), updatedFileLink);
+        let relativeLink = path.posix.relative(path.posix.dirname(normalisedCurrentFile), updatedFileLink);
 
         if (relativeLink.length === 0) {
             // This is a link to the current document.
