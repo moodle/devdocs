@@ -151,6 +151,15 @@ const config = {
             },
         ],
 
+        // This is the GA-4 tag for all Moodle properties.
+        [
+            '@docusaurus/plugin-google-gtag',
+            {
+                id: 'central-analytics',
+                trackingID: 'G-QWYJYEY9P5',
+            },
+        ],
+
         [
             '@docusaurus/plugin-pwa',
             {
