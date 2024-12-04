@@ -264,6 +264,7 @@ privatefiles
 protectusernames
 qeupgradehelper
 quizaccess
+quizaccessrule
 randomsamatch
 recordset
 recordsets
