@@ -1,6 +1,6 @@
 ---
 title: Empty states
-sidebar_position: 5
+sidebar_position: 6
 tags:
 - Content style guide
 - UX Writing

@@ -1,6 +1,6 @@
 ---
 title: Error messages
-sidebar_position: 4
+sidebar_position: 5
 tags:
 - Content style guide
 - UX Writing

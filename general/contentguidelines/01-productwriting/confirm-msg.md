@@ -1,6 +1,6 @@
 ---
 title: Confirmation messages
-sidebar_position: 2
+sidebar_position: 3
 tags:
 - Content style guide
 - UX Writing
@@ -39,7 +39,7 @@ The title or heading of a confirmation message should focus only on one task, an
 
 </InvalidExample>
 
-Ask a clear, unambiguous question.
+Write your title as a clear, unambiguous question. This helps users understand that they're making a choice.
 
 <ValidExample title="Do">
 
