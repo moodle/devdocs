@@ -93,7 +93,6 @@ function futureRelease({ releaseData }: majorVersionData): JSX.Element {
     const today = new Date();
     const codeFreezeDate = new Date(releaseData.codeFreezeDate);
 
-    console.log(releaseData);
     return (
         <>
             <Heading as="h2">Release status</Heading>
