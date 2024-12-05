@@ -22,7 +22,7 @@ In an open source project, the end use of the codebase varies. People may have c
 - Deprecations apply to all public APIs, classes, and files.
 - Removal of a function, class, or file may only be considered after a minimum of 4 major releases since the deprecation. Example: anything deprecated in 3.2 means that it will be removed in 3.6
 - All deprecations should emit debugging notices where possible
-- All deprecations should be noted in the relevant upgrade.txt
+- All deprecations should be noted with an [upgrade note](../../upgradenotes.md).
 
 ## Moodle Core deprecation process
 
@@ -86,7 +86,7 @@ If the current version is 3.1.2, the function will be marked as deprecated in 3.
 :::
 
 - Check the body of the function being deprecated and look for additional function calls which have no other non-deprecated uses and may also be considered for deprecation. If they belong to the same code area they can be deprecated in the same issue.
-- Last but not least, every deprecation should be documented in the corresponding `upgrade.txt` files **at least** once but, **ideally**, both on this initial/immediate deprecation and also on the final deprecation/removal.
+- Last but not least, every deprecation should be documented in an [upgrade note](../../upgradenotes.md) **at least** once but, **ideally**, both on this initial/immediate deprecation and also on the final deprecation/removal.
 
 Apart from the previous points, there are a few more optional but highly recommended steps:
 
@@ -148,7 +148,7 @@ public function foobar(): void {
 - Deprecated classes must be completely removed.
 - The content of the PHPDoc should be removed, leaving only the `@deprecated` tag with the notice and, optionally, the replacement information. This includes all `@param`, `@return`, and other tags, as well as the description.
 - External functions deprecation process is different from the standard deprecation and functions should be completely removed.
-- Last but not least, every deprecation should be documented in the corresponding `upgrade.txt` files **at least** once but, **ideally**, both on the initial/immediate deprecation and also on this final deprecation/removal.
+- Last but not least, every deprecation should be documented in an [upgrade note](../../upgradenotes.md) **at least** once but, **ideally**, both on the initial/immediate deprecation and also on this final deprecation/removal.
 
 ## Parameters deprecation
 
@@ -167,7 +167,7 @@ It is strongly advised to deprecate an entire method, rather than deprecating a 
 - Update all calls to the affected function and either:
   - converting to use named parameters, removing the deprecated parameter; or
   - removing if at the end of a list of optional parameters.
-- Add a mention to the corresponding `upgrade.txt` file, documenting that the deprecated parameter should not be used any more
+- Add an [upgrade note](../../upgradenotes.md), documenting that the deprecated parameter should not be used any more
 - Add a mention to the [Developer Update notes](https://github.com/moodle/devdocs/blob/main/docs/devupdate.md), documenting that the deprecated parameter should not be used any more
 - _Where possible_:
   - If a type was previously specified it should be altered to be made nullable
