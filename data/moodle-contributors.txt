@@ -112,6 +112,7 @@ Barrett
 Barry
 Bartel
 Basset
+Bastian
 Bateson
 Baudry
 Baxter
@@ -793,6 +794,7 @@ Neosi
 Netica
 Neumann
 Newman
+Nexterday
 Nghia
 Nguyen
 Nhan
@@ -986,6 +988,7 @@ Scaramuccia
 Schach
 Schillinger
 Schmadel
+Schmidt-Kuhl
 Schrenk
 Schroeder
 Schultz
@@ -1323,6 +1326,7 @@ exe-cutor
 fabmen
 fcbsd
 fdallet
+ferran
 ferran.recio
 ferranrecio
 fhuebler
@@ -1355,6 +1359,7 @@ info@eWallah.net
 info@ewallah.net
 inigozendegi
 ishatalkin
+jacob.viertel@wunderbyte.at
 james-cnz
 jamiepratt
 jamiesensei
