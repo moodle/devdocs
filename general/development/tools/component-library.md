@@ -12,8 +12,7 @@ tags:
   - Usability
 ---
 
-
-# Component Library Overview 
+# Component Library Overview
 
 The **Component Library** is a tool designed for developers to identify frequently used user interface (UI) components and encourage their reuse within Moodle. It includes both components from **Twitter Bootstrap** and Moodle itself. The library provides an organized display of these components, showcasing them with your current Moodle theme.
 
@@ -52,7 +51,6 @@ To build the Component Library, follow these steps:
     ```
 
 This will build the **Component Library**.
-
 
 ## What Should Be Documented?
 
