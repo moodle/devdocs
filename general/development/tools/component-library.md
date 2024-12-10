@@ -12,13 +12,17 @@ tags:
   - Usability
 ---
 
-# Component Library Overview
+
+# Component Library Overview 
+
 The **Component Library** is a tool designed for developers to identify frequently used user interface (UI) components and encourage their reuse within Moodle. It includes both components from **Twitter Bootstrap** and Moodle itself. The library provides an organized display of these components, showcasing them with your current Moodle theme.
 
 This tool aims to assist developers working on Moodle themes, core features, and extensions by providing easy access to the UI components, which ultimately helps in creating more efficient and consistent user interfaces.
 
 ## Who Should Use the Component Library?
+
 The **Component Library** is useful for:
+
 - **Visual designers**
 - **Front-end developers**
 - **UX developers**
@@ -27,6 +31,7 @@ The **Component Library** is useful for:
 ## Getting Started
 
 ### Where is the Component Library?
+
 The library is built into Moodle but is only visible to developers. To access it, navigate to:
 
 - **Site administration → Development → UI Component library**
@@ -34,6 +39,7 @@ The library is built into Moodle but is only visible to developers. To access it
 If you can't see "**UI Component library**," you'll need to build it first (instructions below). You can also access the online version of the library at [Component Library Online](http://componentlibrary.moodle.com/admin/tool/componentlibrary/docspage.php/library/getting-started/).
 
 ### Building the Component Library
+
 Hugo tooling is used to create the Component Library, as is the Twitter Bootstrap framework. It includes the necessary Bootstrap libraries that correspond to the version used by Moodle.
 
 To build the Component Library, follow these steps:
@@ -47,7 +53,9 @@ To build the Component Library, follow these steps:
 
 This will build the **Component Library**.
 
+
 ## What Should Be Documented?
+
 The main goal of the **Component Library** is to enhance UI consistency across Moodle. New UI components should be documented within the library whenever:
 
 - A **new Moodle feature** is created or updated, especially when it involves UI elements.
