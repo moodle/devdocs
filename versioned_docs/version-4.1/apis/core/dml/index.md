@@ -368,6 +368,18 @@ public function get_field_sql(
 
 ## Getting field values from multiple records
 
+### get_fieldset
+
+Return values of the given field from a table record as an array where all the given conditions are met.
+
+```php
+public function get_fieldset(
+    string $table,
+    string $return,
+    ?array $conditions = null
+);
+```
+
 ### get_fieldset_select
 
 Return values of the given field as an array where the given conditions are used in the WHERE clause.
