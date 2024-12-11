@@ -132,7 +132,7 @@ export default function NavbarWrapper(props) {
                                 <div className={styles.heading}>What are you looking for?</div>
                                 <hr />
                                 <p>
-                                    Learn about Moodle&apos;s products, like Moodle LMS or Moodle Worplace,
+                                    Learn about Moodle&apos;s products, like Moodle LMS or Moodle Workplace,
                                     or find a Moodle Certified Service Provider.
                                     <br />
                                     <br />
@@ -183,7 +183,7 @@ export default function NavbarWrapper(props) {
                                 <a href="https://moodle.com">Moodle.com</a>
                                 <br />
                                 Learn about Moodle&apos;s products,
-                                like Moodle LMS or Moodle Worplace, or find a Moodle Certified Service Provider.
+                                like Moodle LMS or Moodle Workplace, or find a Moodle Certified Service Provider.
                                 <br />
                             </p>
                             <hr />
