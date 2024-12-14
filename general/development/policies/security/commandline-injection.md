@@ -25,7 +25,7 @@ However, when there is no other option, it is the standard approach of cleaning 
 
 ## What you need to do in your code
 
-- Tyy to avoid using shell commands if at all possible.
+- Try to avoid using shell commands if at all possible.
   - Many utilities are available as PHP libraries.
 - If you can't avoid shell commands, use `escapeshellcmd` and `escapeshellarg`.
 
