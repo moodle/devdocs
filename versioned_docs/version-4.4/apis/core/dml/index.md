@@ -95,7 +95,7 @@ $DB->get_record_sql(
 
 Some methods accept the <tt>$strictness</tt> parameter affecting the method behaviour. Supported modes are specified using the constants:
 
-- <tt>MUST_EXIST</tt> - In this mode, the requested record must exist and must be unique. An exception will be thrown if no record is found or multiple matching records are found.
+- <tt>MUST_EXIST</tt> - In this mode, the requested record must exist and must be unique. An exception `dml_missing_record_exception` will be thrown if no record is found or `dml_multiple_records_exception` if multiple matching records are found.
 - <tt>IGNORE_MISSING</tt> - In this mode, a missing record is not an error. False boolean is returned if the requested record is not found. If more records are found, a debugging message is displayed.
 - <tt>IGNORE_MULTIPLE</tt> - This is not a recommended mode. The function will silently ignore multiple records found and will return just the first one of them.
 
@@ -648,7 +648,7 @@ try {
      // Assuming the both inserts work, we get to the following line.
      $transaction->allow_commit();
 
-} catch(Exception $e) {
+} catch (Exception $e) {
      $transaction->rollback($e);
 }
 ```
