@@ -292,5 +292,6 @@ Named parameter arguments are available from PHP 8.0 onwards.
 - [Capabilities deprecation](/docs/apis/subsystems/access#deprecating-a-capability)
 - [Icon deprecation](./icon-deprecation.md)
 - [SCSS deprecation](./scss-deprecation.md)
+- [Behat step definition deprecation](../../tools/behat/writing.md#deprecating-a-step-definition)
 - [Process](../../process.md)
 - [Release process](../../process/release/index.md)
