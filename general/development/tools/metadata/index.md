@@ -41,13 +41,23 @@ The name and location on disk of every plugin type, and subsystem is described i
 
 ## Subplugins
 
-Any plugin which implements a subplugin must describe its subplugins by name and path in that plugins `db/subplugins.json` location.
+Any plugin which supports subplugins must describe its subplugin types by name and path in that plugins `db/subplugins.json` location.
 
-<details>
-    <summary>Example of a `db/subplugins.json`</summary>
+This file requires that subplugins be specified as a set of key and value pairs where the key is the name of the subplugin type, and the value is the path to it.
+
+- The name is the used as a prefix for all namespaces.
+- The path is the path that the plugins exist within.
+
+In the following example the subplugins used in `mod_quiz` are described.
+
+The Quiz activity module is located in `mod/quiz`. It has two subplugin types, `quiz`, and `quizaccess` which are located in `mod/quiz/report`, and `mod/quiz/accessrule` respectively.
 
 ```json title="mod/quiz/db/subplugins.json"
 {
+    "subplugintypes": {
+        "quiz": "report",
+        "quizaccess": "accessrule"
+    },
     "plugintypes": {
         "quiz": "mod/quiz/report",
         "quizaccess": "mod/quiz/accessrule"
@@ -55,7 +65,19 @@ Any plugin which implements a subplugin must describe its subplugins by name and
 }
 ```
 
-</details>
+<Since version="5.0" issueNumber="MDL-83705" />
+
+The list of subplugins should be detailed in the `subplugintypes` object which contains a list of the subplugins where the key is the component type, and the value is the path relative to the parent plugin.
+
+For Moodle versions 4.5 and earlier the `plugintypes` object is used. The same keys must be used, but the values of `subplugintypes` are relative to the plugin's root directory, whilst the value of `plugintypes` are relative to the Moodle project root.
+
+:::danger Plugins supporting Moodle 4.5 and earlier
+
+If your plugin supports subplugins and is intended for use for both Moodle 5.0 and later, and Moodle 4.5 or earlier, you should specify both the `subplugintypes` and the `plugintypes` objects.
+
+When both objects are specified the keys must match, and the paths relative to the plugin must also match.
+
+:::
 
 ## APIs
 
