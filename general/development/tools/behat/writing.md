@@ -352,6 +352,38 @@ In terms of making the Behat test work, it does not matter whether you use `@Giv
 
 When defining new Step definitions in your plugin, try to make sure the step name identifies it as belonging to your plugin. So, don't make a step called `I disable UI plugins`. Call it something like `I disable UI plugins in the CodeRunner question type`.
 
+### Deprecating a step definition
+
+Sometimes it may be desirable to remove a step definition, when it is no longer relevant due to interface changes, or when it is replaced by another step or named selector. As it is possible for other parts of the system to use any defined step, it is necessary to mark a step as deprecated before it is completely removed.
+
+To deprecate a step, create a new deprecated steps file in `tests/behat/behat_plugin_name_deprecated.php` with a class extending `behat_deprecated_base`. For example, from `qbank_comments`:
+
+```php title="tests/behat/qbank_comment_behat_deprecated.php"
+<?php
+require_once(__DIR__ . '/../../../../../lib/behat/behat_deprecated_base.php');
+
+class behat_qbank_comment_deprecated extends behat_deprecated_base {
+    /**
+     * Looks for the appropriate hyperlink comment count in the column.
+     *
+     * @Then I should see :arg1 on the comments column
+     * @param string $linkdata
+     * @deprecated Since Moodle 5.0 MDL-79122 in favour of the "qbank_comment > Comment count link" named selector.
+     * @todo Final removal in Moodle 6.0 MDL-82413.
+     */
+    public function i_should_see_on_the_column(string $linkdata): void {
+        $this->deprecated_message("Use '\"{$linkdata}\" \"qbank_comment > Comment count link\" should exist'");
+        $this->execute('behat_general::should_exist', [$linkdata, 'qbank_comment > Comment count link']);
+    }
+}
+```
+
+The deprecated step should call `$this->deprecated_message()` with a human readable example of what to do instead of using the deprecated step. It should then continue to perform its original behaviour (either using its original code, or by calling the step that replaces it) until it is completely removed.
+
+If a deprecated step is called in a test, it will fail and output the deprecation message. As a temporary measure, it is possible to run tests using deprecated steps by setting `$CFG->behat_usedeprecated` in config.php.
+
+A deprecated step should be documented and removed in accordance with the normal [deprecation process](../../policies/deprecation/index.md).
+
 ### Override behat core context for theme suite
 
 To override behat step definitions so as to run behat with specified theme, you should create a contexts within `/theme/{MYTHEME}/tests/behat/` with prefix `behat_theme_{MYTHEME}_` and suffixed with the context being overridden. For example, if you want to override `behat_mod_forum` context, then you should create a class `/theme/{MYTHEME}/tests/behat/mod_forum/behat_theme_{MYTHEME}_behat_mod_forum.php`
