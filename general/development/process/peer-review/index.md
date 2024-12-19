@@ -20,18 +20,18 @@ These are points to consider while peer-reviewing issues. Further explanation be
 [] Syntax
 [] Output
 [] Component library
+[] Icons
 [] Language
+[] Accessibility
 [] Databases
-[] Testing (instructions and automated tests)
+[] Performance and Clustering
 [] Security
 [] Privacy (see Privacy API)
-[] Performance and Clustering
+[] The Moodle mobile app / web services
+[] Third party code
 [] Documentation
 [] Git
-[] Third party code
-[] Icons
-[] The Moodle mobile app / web services
-[] Accessibility
+[] Testing (instructions and automated tests)
 [] Overall completeness and correctness
 ```
 
@@ -86,6 +86,14 @@ Ensure that any new User Interface feature in Moodle 4.0 or later which matches 
 - Has appropriate descriptions
 - Respects all Moodle-supplied themes
 
+### Icons
+
+Are new icons being introduced? If so, ensure that:
+
+- The icons abide by our icon guidelines with regards to size, design and format
+- The icons are do not unnecessarily add new ways of expressing existing concepts
+- The icons are in a pix folder that makes sense
+
 ### Language
 
 Naming things is hard. For help with wordings for new features and improvements, add the `ux_writing` label to the issue.
@@ -100,6 +108,18 @@ Ensure that:
 - Language strings have not been removed or renamed, had their meaning changed or had their parameters changed in stable branches (permitted only in main following [string deprecation policy](../../../projects/api/string-deprecation.md)); and
 - [AMOS commands](https://docs.moodle.org/dev/AMOS_commands) have been specified when moving or copying language strings.
 
+### Accessibility
+
+Moodle should be accessible to everyone. When reviewing any changes that affects the frontend, ensure that these points have been considered:
+
+- Automated tools: Does it pass automated accessibility checks? (e.g. via [axe DevTools](https://www.deque.com/axe/devtools/) or [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/))
+- Colours: Do the text have sufficient colour contrast against the background? If the patch introduces elements that convey information through colours, are there alternative means to convey this information to users with visual impairments?
+- HTML validity: Does the patch generate a page with valid HTML? (e.g. checked via [Nu HTML validator](https://validator.w3.org/nu/#textarea))
+- Keyboard navigation: Can you successfully navigate through the interface via keyboard?
+- Screen reader: When using a screen reader (e.g. [ChromeVox](https://support.google.com/chromebook/answer/7031755?hl=en), [NVDA](https://www.nvaccess.org/), [JAWS](https://www.freedomscientific.com/products/software/jaws/), etc), are the UI components being properly and clearly announced?
+
+But, remember that what you are doing here is part of a peer review. If you want to perform a systematic accessibility check, you can follow the [Accessibility checklist](./accessibility-checklist.md).
+
 ### Databases
 
 DB calls are the greatest performance bottleneck in Moodle.
@@ -111,32 +131,21 @@ Ensure that:
 - There are minimal DB calls (no excessive use of the DB); and
 - The code uses SQL compatible with all the supported DB engines (check all selected fields appear in an 'ORDER BY' clause).
 
-### Testing instructions and automated tests
+### Performance and clustering
 
-It is the developer's responsibility to test code before integration. As well as verifying that the proposed change works, good tests can and should help the peer reviewer, integration reviewer, and anyone looking at this code in future to understand how it is supposed to work. They also help verify that everything that might be affected by this change was considered.
+It is easy to write code that works sufficiently well when you are working on either small sets of data or with a small number of active users. Picking performance issues can be quite difficult and can required a complex level of understanding of both the section of code being reviewed, but also other parts that interact with it.
 
-For manual testing check that:
+Clustering is when the same code is run on different computers and an end user could send each request to a different computer. This can produce a number of concurrency issues if not thought through. One example is; If you complete an opcache_reset(), no other server except the one you ran it on knows that it happened. So data can get out of sync.
 
-- The manual testing instructions:
-  - Are in the [correct format](./testing/guide).
-  - Are clear.
-  - Are concise.
-  - Are sufficient to verify that the change is working.
-  - Have considered what else might be affected by the change. That is, we have not just make the original issue go away, but we have done that without introducing any regressions.
-  - Regarding the previous point, a common thing to overlook is the Moodle mobile app users, so please consider that.
-- Having said all that, the testing instructions should be no longer than necessary. There is no point testing essentially the same thing twice. Testers do a valuable job, but they have limited time. Please respect that.
-- In relation to that, it is OK not to write testing instructions for parts of the fix that are already covered well enough by automated tests. Just remember that automated checks cannot see every problem that a set of human eyeballs would see.
-- Look for evidence that the assignee has tested according to the instructions and verified that they are passing. (This is the responsibility of the assignee, not the peer reviewer.)
+Ensure that:
 
-For automated testing (PHPunit and Behat):
-
-- Automated tests are our way of verifying that Moodle works as expected, and that future changes do not cause unexpected regressions. Therefore, all Moodle code should come with tests.
-- If it is a bug that is being fixed, then the fact that the bug could exist means that an automated tests was missing (otherwise we would have found the bug sooner). So every bug fix should come with test coverage. (If there is a genuine reason this is impossible, this should be explained in a tracker comment.)
-- However, running automated tests takes time and energy. Check that the tests are not excessive, and that they follow best practice (e.g. Behat tests using generators, not setting things up through the UI.) Don't make MDL-15169 worse!
-- Not every change in Moodle requires an entire new test. Sometimes, it is more appropriate and efficient to add some checks in an existing tests. (But this should not be taken to excess, since that could lead to a mess where it is not clear what is being tested where.)
-- Check that the tests have been added in the best place. Are the tests in a place where someone working on related features in the future will expect to find them.
-- As part of your review, check that the unit tests pass. Hopefully this can just be done by checking GitHub actions. (If the developer has not enabled GHA yet, encourage them to do so by linking them to [the instructions](https://moodledev.io/general/development/tools/gha).)
-- Look for evidence that relevant Behat tests pass, especially when it involved UI changes. Note that Behat is not run by GitHub actions, but all the tests will be run as part of the integration process.
+- Any filesystem, database or cache accesses are done in the most efficient way.
+- That any code or function that appear expensive are not in critical paths. eg; They don't load on every page.
+- The least possible code is running to complete the task, especially looking for hidden loops. They can appear from calling functions.
+- Any code that runs is not specific to a single node. (eg opcache_reset()) This ensures clusters will run correctly.
+- If the code could affect performance at all, make sure there is a comment noting what was considered.
+  - What they did to mitigate performance impact, or why they thought it wasn't an issue.
+  - Why they made certain trade-offs.
 
 ### Security
 
@@ -169,69 +178,6 @@ Ensure that:
 See more info in [Privacy API](/docs/apis/subsystems/privacy/).
 :::
 
-### Performance and clustering
-
-It is easy to write code that works sufficiently well when you are working on either small sets of data or with a small number of active users. Picking performance issues can be quite difficult and can required a complex level of understanding of both the section of code being reviewed, but also other parts that interact with it.
-
-Clustering is when the same code is run on different computers and an end user could send each request to a different computer. This can produce a number of concurrency issues if not thought through. One example is; If you complete an opcache_reset(), no other server except the one you ran it on knows that it happened. So data can get out of sync.
-
-Ensure that:
-
-- Any filesystem, database or cache accesses are done in the most efficient way.
-- That any code or function that appear expensive are not in critical paths. eg; They don't load on every page.
-- The least possible code is running to complete the task, especially looking for hidden loops. They can appear from calling functions.
-- Any code that runs is not specific to a single node. (eg opcache_reset()) This ensures clusters will run correctly.
-- If the code could affect performance at all, make sure there is a comment noting what was considered.
-  - What they did to mitigate performance impact, or why they thought it wasn't an issue.
-  - Why they made certain trade-offs.
-
-### Documentation
-
-Work does not stop when code is integrated.
-
-Ensure that:
-
-- The PHPdoc comments on all classes, methods and fields are useful. (Comments that just repeat the function name are not helpful! Add value.)
-- Where an API has been changed significantly, the relevant upgrade.txt file has been updated with information.
-- Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but actually follow the [deprecation policy](../../policies/deprecation/index.md).
-- Appropriate [labels](../../tracker/labels.md) have been added when there has been a function change, particularly
-  - docs_required (any functional change, usually paired with `ui_change`),
-  - dev_docs_required (any change to APIs, usually paired with `api_change`),
-  - `ui_change` (any functional change, usually paired with docs_required, except ui_change remains permanently),
-  - `api_change` (any change to APIs that devs will need to know about, usually paired with dev_docs_required, except api_change remains permanently),
-  - `unit_test_required` and `acceptance_test_required`, when there are api or ui changes needing improved coverage, and
-  - `qa_test_required` (significant functional change, not covered by unit/acceptance ones).
-- Also, verify that the components for the issue are correctly set, so maintainers (subscribed by default) will be mailed about issues early in the process.
-
-### Git
-
-Ensure that:
-
-- The commit matches the [Coding style](../../policies/codingstyle/index.md#git-commits)
-- The Git history is clean and the work has been rebased to logical commits; and
-- The original author of the work provided as a patch has been given credit within the commit (as author of in the commit message if changes were made).
-
-See also the [Commit cheat sheet](https://docs.moodle.org/dev/Commit_cheat_sheet) for further guidance.
-
-### Third party code
-
-Does the change contain [third party code](../../../community/plugincontribution/thirdpartylibraries.md)? If so, ensure that:
-
-- The code is licensed under a [GPL compatible license](http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses%7C).
-- The instructions for upgrading/importing the library and contained within a readme_moodle.txt file.
-- The library is recorded in a thirdparty.xml file, including licensing information.
-- Third party code has been scanned to check for url accessible entry points that could be exploited. These should either be disabled, or if required functionality they should be checked for security weaknesses.
-- Does not duplicate the functionality of any existing api or third party library in core.
-- Any modifications to third party code are recorded in readme_moodle.txt
-
-### Icons
-
-Are new icons being introduced? If so, ensure that:
-
-- The icons abide by our icon guidelines with regards to size, design and format
-- The icons are do not unnecessarily add new ways of expressing existing concepts
-- The icons are in a pix folder that makes sense
-
 ### The Moodle mobile app
 
 The Moodle app supports most of the student-related Moodle functionality. It is important to think about how a change in that type of functionality might affect it.
@@ -244,17 +190,72 @@ Ensure that:
 - New global settings that affect new features for the app are included in the WebServices returning global settings (tool_mobile_get_config)
 - The testing instructions include testing steps for the Moodle App
 
-### Accessibility
+### Third party code
 
-Moodle should be accessible to everyone. When reviewing any changes that affects the frontend, ensure that these points have been considered:
+Does the change contain [third party code](../../../community/plugincontribution/thirdpartylibraries.md)? If so, ensure that:
 
-- Automated tools: Does it pass automated accessibility checks? (e.g. via [axe DevTools](https://www.deque.com/axe/devtools/) or [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/))
-- Colours: Do the text have sufficient colour contrast against the background? If the patch introduces elements that convey information through colours, are there alternative means to convey this information to users with visual impairments?
-- HTML validity: Does the patch generate a page with valid HTML? (e.g. checked via [Nu HTML validator](https://validator.w3.org/nu/#textarea))
-- Keyboard navigation: Can you successfully navigate through the interface via keyboard?
-- Screen reader: When using a screen reader (e.g. [ChromeVox](https://support.google.com/chromebook/answer/7031755?hl=en), [NVDA](https://www.nvaccess.org/), [JAWS](https://www.freedomscientific.com/products/software/jaws/), etc), are the UI components being properly and clearly announced?
+- The code is licensed under a [GPL compatible license](http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses%7C).
+- The instructions for upgrading/importing the library and contained within a readme_moodle.txt file.
+- The library is recorded in a thirdparty.xml file, including licensing information.
+- Third party code has been scanned to check for url accessible entry points that could be exploited. These should either be disabled, or if required functionality they should be checked for security weaknesses.
+- Does not duplicate the functionality of any existing api or third party library in core.
+- Any modifications to third party code are recorded in readme_moodle.txt
 
-But, remember that what you are doing here is part of a peer review. If you want to perform a systematic accessibility check, you can follow the [Accessibility checklist](./accessibility-checklist.md).
+### Documentation
+
+Work does not stop when code is integrated.
+
+Ensure that:
+
+- The PHPdoc comments on all classes, methods and fields are useful. (Comments that just repeat the function name are not helpful! Add value.)
+- Where an API has been changed significantly, ensure that [upgrade notes](../upgradenotes) have been written (or upgrade.txt on older branches).
+- Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but actually follow the [deprecation policy](../../policies/deprecation/index.md).
+- Appropriate [labels](../../tracker/labels.md) have been added when there has been a function change, particularly
+  - `docs_required` - any functional change, usually paired with `ui_change`
+  - `dev_docs_required` - any change to APIs, usually paired with `api_change`
+  - `ui_change` - any functional change, usually paired with docs_required, except ui_change remains permanently
+  - `api_change`- any change to APIs that devs will need to know about, usually paired with dev_docs_required, except api_change remains permanently,
+  - `unit_test_required` and `acceptance_test_required` - when there are api or ui changes needing improved coverage, and
+  - `qa_test_required` - for significant functional changes not covered by automated tests
+  - `developer_notes` - for things worth calling out in [Integration exposed!](https://moodle.org/mod/forum/view.php?id=7966)
+- Also, verify that the components for the issue are correctly set, so maintainers (subscribed by default) will be mailed about issues early in the process.
+
+### Git
+
+Ensure that:
+
+- The commit matches the [Coding style](../../policies/codingstyle/index.md#git-commits)
+- The Git history is clean and the work has been rebased to logical commits; and
+- The original author of the work provided as a patch has been given credit within the commit (as author of in the commit message if changes were made).
+
+See also the [Commit cheat sheet](https://docs.moodle.org/dev/Commit_cheat_sheet) for further guidance.
+
+### Testing instructions and automated tests
+
+It is the developer's responsibility to test code before integration. As well as verifying that the proposed change works, good tests can and should help the peer reviewer, integration reviewer, and anyone looking at this code in future to understand how it is supposed to work. They also help verify that everything that might be affected by this change was considered.
+
+For manual testing check that:
+
+- The manual testing instructions:
+  - Are in the [correct format](./testing/guide).
+  - Are clear.
+  - Are concise.
+  - Are sufficient to verify that the change is working.
+  - Have considered what else might be affected by the change. That is, we have not just make the original issue go away, but we have done that without introducing any regressions.
+  - Regarding the previous point, a common thing to overlook is the Moodle mobile app users, so please consider that.
+- Having said all that, the testing instructions should be no longer than necessary. There is no point testing essentially the same thing twice. Testers do a valuable job, but they have limited time. Please respect that.
+- In relation to that, it is OK not to write testing instructions for parts of the fix that are already covered well enough by automated tests. Just remember that automated checks cannot see every problem that a set of human eyeballs would see.
+- Look for evidence that the assignee has tested according to the instructions and verified that they are passing. (This is the responsibility of the assignee, not the peer reviewer.)
+
+For automated testing (PHPunit and Behat):
+
+- Automated tests are our way of verifying that Moodle works as expected, and that future changes do not cause unexpected regressions. Therefore, all Moodle code should come with tests.
+- If it is a bug that is being fixed, then the fact that the bug could exist means that an automated tests was missing (otherwise we would have found the bug sooner). So every bug fix should come with test coverage. (If there is a genuine reason this is impossible, this should be explained in a tracker comment.)
+- However, running automated tests takes time and energy. Check that the tests are not excessive, and that they follow best practice (e.g. Behat tests using generators, not setting things up through the UI.) Don't make MDL-15169 worse!
+- Not every change in Moodle requires an entire new test. Sometimes, it is more appropriate and efficient to add some checks in an existing tests. (But this should not be taken to excess, since that could lead to a mess where it is not clear what is being tested where.)
+- Check that the tests have been added in the best place. Are the tests in a place where someone working on related features in the future will expect to find them.
+- As part of your review, check that the unit tests pass. Hopefully this can just be done by checking GitHub actions. (If the developer has not enabled GHA yet, encourage them to do so by linking them to [the instructions](https://moodledev.io/general/development/tools/gha).)
+- Look for evidence that relevant Behat tests pass, especially when it involved UI changes. Note that Behat is not run by GitHub actions, but all the tests will be run as part of the integration process.
 
 ### Overall completeness and correctness
 
