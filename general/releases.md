@@ -90,6 +90,19 @@ Minor releases dates differ slightly from release to release depending on the ti
 
 :::
 
+## Moodle 4.6 (Experimental)
+
+Please note that Moodle 4.6 is an experimental version integrating MDL-71378 with the Moodle 4.5.x code, intended as a preview and testing release.  It is not recommended that it be used as part of general production.
+
+<ReleaseTable releaseName="4.6" />
+
+:::info
+
+Bug fixes for general core bugs in 4.6.x will end 14 April 2025 (4 months).<br/>
+Bug fixes for security issues in 4.6.x will end 14 April 2025 (4 months).
+
+:::
+
 ## Moodle 4.5 (LTS)
 
 <ReleaseTable releaseName="4.5" />

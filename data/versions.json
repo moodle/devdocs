@@ -19,6 +19,22 @@
             ]
         },
         {
+            "name": "4.6",
+            "releaseDate": "20 December 2024",
+            "generalEndDate": "14 April 2025",
+            "securityEndDate": "14 April 2025",
+            "isLTS": false,
+            "isExperimental": true,
+            "releases": [
+                {
+                    "name": "4.6.0",
+                    "releaseDate": "20 December 2024",
+                    "version": 2024102100,
+                    "upgradePath": "https://docs.moodle.org/405/en/Upgrading"
+                }
+            ]
+        },
+        {
             "name": "4.5",
             "releaseDate": "7 October 2024",
             "generalEndDate": "6 October 2025",

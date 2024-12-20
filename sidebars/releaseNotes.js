@@ -66,6 +66,10 @@ module.exports = function getReleaseNotes() {
             }
         }
 
+        if (versionData.isExperimental) {
+            return;
+        }
+
         const entry = getReleaseEntry(versionData);
         if (existsSync(path.resolve(__dirname, '..', 'general', 'releases', versionData.name))) {
             entry.items.push({

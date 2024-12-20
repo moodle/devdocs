@@ -141,8 +141,36 @@ function SecuritySupportExpiredWarning({ versionData }) {
     );
 }
 
+function ExperimentalWarning() {
+    return (
+        <Admonition
+            type="danger"
+            icon={
+                <AutoFixHighIcon fontSize="inherit" />
+            }
+            title="Experimental release"
+        >
+            <strong>
+                <Translate
+                    description="A message to indicate that the version indicated an experimental release"
+                    id="version.support.experimental"
+                >
+                    This version of Moodle is an experimental release and not intended for general production systems.
+                </Translate>
+            </strong>
+        </Admonition>
+    );
+}
+
 function VersionedSupportWarning({ versionData, moodleVersion }) {
     const releaseStatus = getReleaseStatus(versionData, moodleVersion);
+
+    if (versionData.isExperimental) {
+        // Experimental version.
+        return (
+            <ExperimentalWarning versionData={versionData} />
+        );
+    }
 
     if (releaseStatus === 'current') {
         // Still in general support.
