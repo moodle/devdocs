@@ -37,12 +37,16 @@ export interface majorVersionData {
     securityEndDate: string,
     extendedSecurityEndDate?: string,
     isLTS: boolean,
+    isExperimental: boolean,
     releases?: Array<versionInfo>
 }
 
 export const isSupported = (versionData: majorVersionData): boolean => {
     if (versionData.extendedSecurityEndDate) {
         return (new Date(versionData.extendedSecurityEndDate)) > today;
+    } else if (versionData.isExperimental) {
+        // Do not display experimental releases in the version support info.
+        return false;
     }
 
     return (new Date(versionData.securityEndDate)) > today;

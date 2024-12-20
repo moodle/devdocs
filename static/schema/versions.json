@@ -39,6 +39,9 @@
                 "isLTS": {
                     "type": "boolean"
                 },
+                "isExperimental": {
+                    "type": "boolean"
+                },
                 "releases": {
                     "type": "array",
                     "items": {
