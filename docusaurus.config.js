@@ -28,7 +28,7 @@ dotEnvConfig();
 
 const versionConfig = Object.fromEntries(Versions.map((version) => [version, {
     label: version,
-    banner: 'none',
+    banner: 'unmaintained',
 }]));
 versionConfig.current = {
     label: `main (${nextVersion.nextVersion})`,
