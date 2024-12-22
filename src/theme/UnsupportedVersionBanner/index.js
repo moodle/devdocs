@@ -21,6 +21,12 @@ import Translate from '@docusaurus/Translate';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import Admonition from '@theme/Admonition';
 import { getReleaseStatus, getVersion } from '@site/src/utils/SupportedReleases';
+import {
+    useActivePlugin,
+    useDocVersionSuggestions,
+} from '@docusaurus/plugin-content-docs/client';
+
+const getVersionMainDoc = (version) => version.docs.find((doc) => doc.id === version.mainDocId);
 
 function UnsupportedTitle() {
     return (
@@ -89,6 +95,34 @@ function GeneralSupportExpiredWarning({ versionData }) {
             </strong>
             <br />
             <UpgradeLink />
+        </Admonition>
+    );
+}
+
+function NewerVersionAvailableWarning({ versionData }) {
+    const { pluginId } = useActivePlugin({ failfast: true });
+    const { latestDocSuggestion, latestVersionSuggestion } = useDocVersionSuggestions(pluginId);
+    const latestVersionSuggestedDoc = latestDocSuggestion ?? getVersionMainDoc(latestVersionSuggestion);
+
+    return (
+        <Admonition
+            type="caution"
+            icon={
+                <AutoFixHighIcon fontSize="inherit" />
+            }
+            title="Newer Version Available"
+        >
+            <strong>
+                This documentation is for Moodle
+                {' '}
+                {versionData.name}
+                .
+            </strong>
+            <br />
+            You may also want to read the documentation for the
+            {' '}
+            <Link to={latestVersionSuggestedDoc.path}>upcoming version of Moodle</Link>
+            .
         </Admonition>
     );
 }
@@ -162,23 +196,45 @@ function ExperimentalWarning() {
     );
 }
 
-function VersionedSupportWarning({ versionData, moodleVersion }) {
+function VersionedSupportWarning({ versionData, moodleVersion, metadata }) {
     const releaseStatus = getReleaseStatus(versionData, moodleVersion);
+    const { sidebar } = metadata;
+
+    // Versions fit the following categories:
+    // - Experimental (show danger warning)
+    // - Current version (released or `main` branch)
+    //   - main branch (no warning)
+    //   - stable version information (no warning)
+    //   - stable versioned docs (indicate main branch information is available)
+    // - Security Only (show warning)
+    // - Future (show warning)
+    // - Future Stable (show warning)
+    // - Unsupported (show danger warning)
 
     if (versionData.isExperimental) {
-        // Experimental version.
+        // Experimental versions trump all.
+        // Always show this notice.
         return (
             <ExperimentalWarning versionData={versionData} />
         );
     }
 
+    if (sidebar === 'docs' && moodleVersion.version !== 'current' && metadata.slug !== '/') {
+        // This is a versioned doc page but it's not the 'current' version (main branch).
+        // Show a warning banner that that there are docs for the 'main' branch.
+        return (
+            <NewerVersionAvailableWarning versionData={versionData} />
+        );
+    }
+
     if (releaseStatus === 'current') {
-        // Still in general support.
+        // This documentation is for docs still in general support.
         return null;
     }
 
     if (releaseStatus === 'future' || releaseStatus === 'future-stable') {
-        // Not yet supported.
+        // This documentatino relates to a versino of Moodle which has yet to be released.
+        // This is probably a version about to be released.
         // TODO Add a warning banner.
         return (
             <FutureReleaseWarning versionData={versionData} />
@@ -197,8 +253,21 @@ function VersionedSupportWarning({ versionData, moodleVersion }) {
     );
 }
 
-export default function VersionInfo({ frontMatter }) {
-    const { moodleVersion = null } = frontMatter;
+const guessMoodleVersion = (frontMatter, metadata) => {
+    if (frontMatter.moodleVersion) {
+        return frontMatter.moodleVersion;
+    }
+
+    if (metadata.version) {
+        if (metadata.version.match(/^(?<seriesMajor>\d+\.\d+)(?<minor>\.\d+)?/)) {
+            return metadata.version;
+        }
+    }
+    return undefined;
+};
+
+export default function VersionInfo({ frontMatter, metadata = {} }) {
+    const moodleVersion = guessMoodleVersion(frontMatter, metadata);
 
     if (!moodleVersion) {
         // No version number found.
@@ -208,6 +277,7 @@ export default function VersionInfo({ frontMatter }) {
     const versionData = getVersion(moodleVersion);
     if (!versionData) {
         // No valid version data found.
+        // We don't know how to handle this version.
         return null;
     }
 
@@ -215,6 +285,8 @@ export default function VersionInfo({ frontMatter }) {
         <VersionedSupportWarning
             versionData={versionData}
             moodleVersion={moodleVersion}
+            metadata={metadata}
+            sidebar={metadata?.sidebar}
         />
     );
 }

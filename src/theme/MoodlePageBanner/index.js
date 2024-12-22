@@ -28,6 +28,7 @@ export default function MoodlePageBanner({ frontMatter, metadata = {} }) {
             />
             <UnsupportedVersionBanner
                 frontMatter={frontMatter}
+                metadata={metadata}
             />
         </>
     );
