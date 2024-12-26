@@ -18,6 +18,6 @@ The 'A better contribution' guides are a work-in-progress and, in time, will cov
 - [Better comments in code](./abc/comments.md).
 - Breaking a big change into logical commits
 - Better commit comments
-- Fixup commits to help get big changes through review
+- [Fixup commits when responding to review comments](./abc/fixups.md)
 
 If you have something to say, please add more.
