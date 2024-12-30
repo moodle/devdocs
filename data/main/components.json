@@ -44,8 +44,7 @@
         "local": "local",
         "h5plib": "h5p\/h5plib",
         "paygw": "payment\/gateway",
-        "smsgateway": "sms/gateway",
-        "quizaccessrule": "mod\/quiz\/accessrule"
+        "smsgateway": "sms/gateway"
     },
     "subsystems": {
         "ai": "ai",
