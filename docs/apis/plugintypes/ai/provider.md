@@ -14,6 +14,9 @@ Incoming data to the Provider plugin arrives via the Manager `core_ai\manager`.
 The Manager is the connective tissue between the Provider and the [Placement](/apis/plugintypes/ai/placement.md) plugins.
 Likewise, all responses from the Provider plugin are handed back to the Manager before being passed to the Placement plugin.
 
+A Provider plugin allows many "provider instances" to be defined, each of which can support a different set of configurations.
+This facilitates having providers for specific tasks. So, you can use a more efficient model for lightweight tasks like summarisation, and a more fully featured model for text generation. Another example is defaulting to using a cheaper model with a lower token limit, and then falling back to a more expensive model if a request is too large for the default model.
+
 :::warning The Golden Rule:
 
 Placements **do not** know about Providers, and Providers **do not** know about Placements.
@@ -28,6 +31,9 @@ The naming convention for a Provider class is `aiprovider_<plugin name>`.
 For example: `aiprovider_openai`, or `aiprovider_azureai` (with a corresponding namespace).
 
 Each Provider **must** inherit from the `\core_ai\provider` abstract class.
+
+### Required Methods
+
 They must also implement the following methods:
 
 **`get_action_list(): array`**
@@ -35,7 +41,7 @@ They must also implement the following methods:
 This is the list of Actions that are supported by this Provider, for example the `aiprovider_openai` plugin defines this as:
 
 ```php
-public function get_action_list(): array {
+public static function get_action_list(): array {
     return [
         \core_ai\aiactions\generate_text::class,
         \core_ai\aiactions\generate_image::class,
@@ -57,7 +63,7 @@ the result.
 
 ```php
 public function is_provider_configured(): bool {
-    return !empty($this->apikey) && !empty($this->apiendpoint);
+    return !empty($this->config['apikey']) && !empty($this->config['endpoint']);
 }
 ```
 
@@ -108,18 +114,34 @@ files the developer is going to use.
 
 ```console
 .
+├── amd
+│   ├── build
+│   │   ├── modelchooser.min.js
+│   │   └── modelchooser.min.js.map
+│   └── src
+│       └── modelchooser.js
 ├── classes
 │   ├── abstract_processor.php
+│   ├── aimodel
+│   │   ├── gpt4o.php
+│   │   └── o1.php
+│   ├── form
+│   │   ├── action_form.php
+│   │   ├── action_generate_image_form.php
+│   │   └── action_generate_text_form.php
+│   ├── helper.php
+│   ├── hook_listener.php
 │   ├── privacy
 │   │   └── provider.php
 │   ├── process_generate_image.php
 │   ├── process_generate_text.php
 │   ├── process_summarise_text.php
 │   └── provider.php
+├── db
+│   └── hooks.php
 ├── lang
 │   └── en
 │       └── aiprovider_openai.php
-├── settings.php
 ├── tests
 │   ├── fixtures
 │   │   ├── image_request_success.json
@@ -135,121 +157,137 @@ files the developer is going to use.
 
 </details>
 
-## Settings
+## Provider Settings
 
-Settings for the Provider should be defined in the `settings.php` file.
-Each Provider plugin should create a new admin settings page using `core_ai\admin\admin_settingspage_provider` class.
+Settings for the Provider are defined as a [Hook](/apis/core/hooks/index.md).
+Each Provider plugin should create a new `classes/hook_listener.php` file. This file should contain a class with a static method that defines the hook callback.
+create a new admin settings page using `core_ai\admin\admin_settingspage_provider` class. This class should implement a `set_form_definition_for_aiprovider_<plugin name>` method.
+
+This method should define the settings form for the provider plugin, using the provided `mform` object.
 
 For example, the `aiprovider_openai` plugin defines this:
 
 ```php
-use core_ai\admin\admin_settingspage_provider;
+namespace aiprovider_openai;
+use core_ai\hook\after_ai_provider_form_hook;
 
-if ($hassiteconfig) {
-    // Provider specific settings heading.
-    $settings = new admin_settingspage_provider(
-        'aiprovider_openai',
-        new lang_string('pluginname', 'aiprovider_openai'),
-        'moodle/site:config',
-        true,
-    );
+class hook_listener {
+
+    /**
+     * Hook listener for the Open AI instance setup form.
+     *
+     * @param after_ai_provider_form_hook $hook The hook to add to the AI instance setup.
+     */
+    public static function set_form_definition_for_aiprovider_openai(after_ai_provider_form_hook $hook): void {
+        if ($hook->plugin !== 'aiprovider_openai') {
+            return;
+        }
+
+        $mform = $hook->mform;
+
+        // Required setting to store OpenAI API key.
+        $mform->addElement(
+            'passwordunmask',
+            'apikey',
+            get_string('apikey', 'aiprovider_openai'),
+            ['size' => 75],
+        );
+        $mform->addHelpButton('apikey', 'apikey', 'aiprovider_openai');
+        $mform->addRule('apikey', get_string('required'), 'required', null, 'client');
+
+        // Setting to store OpenAI organization ID.
+        $mform->addElement(
+            'text',
+            'orgid',
+            get_string('orgid', 'aiprovider_openai'),
+            ['size' => 25],
+        );
+        $mform->setType('orgid', PARAM_TEXT);
+        $mform->addHelpButton('orgid', 'orgid', 'aiprovider_openai');
+
+    }
+
+}
+```
+
+Because a hook is used to define the settings, Provider plugins also need to have a `db/hooks.php` file  to register its hook callback.
+The specified plugin callback method is called whenever the provider instance is chosen in the provider administration settings.
+
+For example, the `aiprovider_openai` plugin defines this:
+
+```php
+defined('MOODLE_INTERNAL') || die();
+
+$callbacks = [
+    [
+        'hook' => \core_ai\hook\after_ai_provider_form_hook::class,
+        'callback' => \aiprovider_openai\hook_listener::class . '::set_form_definition_for_aiprovider_openai',
+    ],
+];
+```
+
+## Action Settings
+
+Each of the actions that a provider plugin supports can have its own settings.
+If an action requires additional settings, the provider class for the plugin should override the `get_action_settings()` method.
+The method must return an instance of `core_ai\form\action_settings_form`.
+
+For example, the `aiprovider_openai` plugin defines this:
+
+```php
+#[\Override]
+public static function get_action_settings(
+    string $action,
+    array $customdata = [],
+): action_settings_form|bool {
+    $actionname = substr($action, (strrpos($action, '\\') + 1));
+    $customdata['actionname'] = $actionname;
+    $customdata['action'] = $action;
+    if ($actionname === 'generate_text' || $actionname === 'summarise_text') {
+        return new form\action_generate_text_form(customdata: $customdata);
+    } else if ($actionname === 'generate_image') {
+        return new form\action_generate_image_form(customdata: $customdata);
+    }
+
+    return false;
+}
+```
+
+The actual settings form for the actions should be defined in the `classes/form` directory.
+For example, the `aiprovider_openai` plugin defines `action_generate_text_form` and `action_generate_image_form` classes.
+These classes should extend the `core_ai\form\action_settings_form` class, and must implement the `definition()` method.
+
+For example, the `aiprovider_openai` plugin defines this:
+
+```php
+class action_generate_text_form extends action_settings_form {
+    #[\Override]
+    protected function definition() {
+        $mform = $this->_form;
+        $actionconfig = $this->_customdata['actionconfig']['settings'] ?? [];
+        $returnurl = $this->_customdata['returnurl'] ?? null;
+        $actionname = $this->_customdata['actionname'];
+        $action = $this->_customdata['action'];
+        $providerid = $this->_customdata['providerid'] ?? 0;
+
+        // Action model to use.
+        $mform->addElement(
+            'text',
+            'model',
+            get_string("action:{$actionname}:model", 'aiprovider_openai'),
+            'maxlength="255" size="20"',
+        );
+        $mform->setType('model', PARAM_TEXT);
+        $mform->addRule('model', null, 'required', null, 'client');
+        $mform->setDefault('model', $actionconfig['model'] ?? 'gpt-4o');
+        $mform->addHelpButton('model', "action:{$actionname}:model", 'aiprovider_openai');
+
 ...
 ```
 
 ## Rate limiting
 
-It is recommended that Providers implement rate limiting to prevent abuse of the external AI services.
+Provider plugins by default implement rate limiting to prevent abuse of the external AI services.
+This is inherited from the `core_ai\provider` class. Developers don't need to implement rate limiting themselves.
 
-To assist with this, the AI subsystem provides a `core_ai\rate_limiter` class that can be used to implement rate limiting.
-This class supports both user and system level rate limiting.
-
-This should be implemented in a `is_request_allowed()` method in the Provider class. For example, from the
-`aiprovider_openai` plugin:
-
-```php
-/**
- * Check if the request is allowed by the rate limiter.
- *
- * @param aiactions\base $action The action to check.
- * @return array|bool True on success, array of error details on failure.
- */
-public function is_request_allowed(aiactions\base $action): array|bool {
-    $ratelimiter = \core\di::get(rate_limiter::class);
-    $component = \core\component::get_component_from_classname(get_class($this));
-
-    // Check the user rate limit.
-    if ($this->enableuserratelimit) {
-        if (!$ratelimiter->check_user_rate_limit(
-            component: $component,
-            ratelimit: $this->userratelimit,
-            userid: $action->get_configuration('userid')
-        )) {
-            return [
-                'success' => false,
-                'errorcode' => 429,
-                'errormessage' => 'User rate limit exceeded',
-            ];
-        }
-    }
-
-    // Check the global rate limit.
-    if ($this->enableglobalratelimit) {
-        if (!$ratelimiter->check_global_rate_limit(
-            component: $component,
-            ratelimit: $this->globalratelimit
-        )) {
-            return [
-                'success' => false,
-                'errorcode' => 429,
-                'errormessage' => 'Global rate limit exceeded',
-            ];
-        }
-    }
-
-    return true;
-    }
-```
-
-If implementing rate limiting, settings for the rate limits should be provided in the plugin settings.
-
-For example, the `aiprovider_openai` plugin provides settings for the user and global rate limits:
-
-```php
-// Setting to enable/disable global rate limiting.
-$settings->add(new admin_setting_configcheckbox(
-    'aiprovider_openai/enableglobalratelimit',
-    new lang_string('enableglobalratelimit', 'aiprovider_openai'),
-    new lang_string('enableglobalratelimit_desc', 'aiprovider_openai'),
-    0,
-));
-
-// Setting to set how many requests per hour are allowed for the global rate limit.
-// Should only be enabled when global rate limiting is enabled.
-$settings->add(new admin_setting_configtext(
-    'aiprovider_openai/globalratelimit',
-    new lang_string('globalratelimit', 'aiprovider_openai'),
-    new lang_string('globalratelimit_desc', 'aiprovider_openai'),
-    100,
-    PARAM_INT,
-));
-$settings->hide_if('aiprovider_openai/globalratelimit', 'aiprovider_openai/enableglobalratelimit', 'eq', 0);
-
-// Setting to enable/disable user rate limiting.
-$settings->add(new admin_setting_configcheckbox(
-    'aiprovider_openai/enableuserratelimit',
-    new lang_string('enableuserratelimit', 'aiprovider_openai'),
-    new lang_string('enableuserratelimit_desc', 'aiprovider_openai'),
-    0,
-));
-
-// Setting to set how many requests per hour are allowed for the user rate limit.
-// Should only be enabled when user rate limiting is enabled.
-$settings->add(new admin_setting_configtext(
-    'aiprovider_openai/userratelimit',
-    new lang_string('userratelimit', 'aiprovider_openai'),
-    new lang_string('userratelimit_desc', 'aiprovider_openai'),
-    10,
-    PARAM_INT,
-));
-$settings->hide_if('aiprovider_openai/userratelimit', 'aiprovider_openai/enableuserratelimit', 'eq', 0);
-```
+This default rate limiting behaviour can be changed by overriding the `is_request_allowed()` method `core_ai\provider` class.
