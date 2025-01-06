@@ -19,12 +19,11 @@ import React from 'react';
 import UnsupportedVersionBanner from '@theme/UnsupportedVersionBanner';
 import DraftPageBanner from '@theme/DraftPageBanner';
 
-export default function MoodlePageBanner({ frontMatter, metadata = {} }) {
+export default function MoodlePageBanner({ frontMatter }) {
     return (
         <>
             <DraftPageBanner
                 frontMatter={frontMatter}
-                metadata={metadata}
             />
             <UnsupportedVersionBanner
                 frontMatter={frontMatter}

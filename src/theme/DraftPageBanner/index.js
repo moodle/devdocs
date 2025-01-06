@@ -20,6 +20,7 @@ import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import Admonition from '@theme/Admonition';
+import { useDoc } from '@docusaurus/plugin-content-docs/client';
 
 function DraftDocumentWithLink({ documentationDraft }) {
     return (
@@ -90,8 +91,9 @@ function DraftNotice(props) {
     );
 }
 
-export default function FrontMatterBannerDraft({ frontMatter, metadata }) {
+export default function FrontMatterBannerDraft({ frontMatter }) {
     const { documentationDraft = null } = frontMatter;
+    const { metadata } = useDoc();
     const { editUrl = null } = metadata;
 
     if (!documentationDraft) {

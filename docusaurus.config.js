@@ -58,6 +58,9 @@ const getBaseUrl = () => {
 const config = {
     title: 'Moodle Developer Resources',
     tagline: 'Nurturing Moodle Developers',
+    future: {
+        experimental_faster: true,
+    },
 
     // url: 'https://develop.moodle.org',
     url: process.env?.URL || 'https://moodledev.io',
