@@ -139,10 +139,10 @@ If you would like to see an example of this being done in a really large change,
 
 ## Summary
 
-When replying to a reviewer, you can make their task easier by pushing a branch where it is easy to see what changes you made. However, for integration, we want a clean branch that is ready to be merged. It is possible to have both by pushing your changes with two different branch names/ Using a few simple git commands it is not too much trouble to make both branches.
+When replying to a reviewer, you can make their task easier by pushing a branch where it is easy to see what changes you made. However, for integration, we want a clean branch that is ready to be merged. It is possible to have both by pushing your changes with two different branch names. Using a few simple git commands it is not too much trouble to make both branches.
 
 Even though it is not that much work do to this, it is not always worth doing this. Some cases where I would not bother to do this:
 
 1. If the whole changes is small and simple, for example a one-line fix with one added unit test to verify it, then it is no trouble for someone to review the whole thing.
-2. If the requested change was really minor, for example if the review suggested you edit one comment to make it a bit clearer and you have doe that, then this is another case where just pushing the amended branch is probably fine.
+2. If the requested change was really minor, for example if the review suggested you edit one comment to make it a bit clearer and you have done that, then this is another case where just pushing the amended branch is probably fine.
 3. The other time when there is no point doing this is at the other extreme. Suppose the result of the first review was to suggest a completely different approach to the code, so you have largely re-written the change. In that case, the difference between the first and second attempted implementation is unlikely to be of any value. Just concentrate on making your second version of the code as good as possible and push that.
