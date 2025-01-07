@@ -34,7 +34,7 @@ const getImportAst = () => fromMarkdown(
 ).children[0];
 
 const getPageBannerAst = () => fromMarkdown(
-    '<MoodlePageBanner frontMatter={frontMatter} metadata={metadata} />',
+    '<MoodlePageBanner frontMatter={frontMatter} />',
     {
         extensions: [mdxJsx({ acorn, addResult: true })],
         mdastExtensions: [mdxJsxFromMarkdown()],

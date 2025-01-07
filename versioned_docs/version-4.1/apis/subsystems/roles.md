@@ -163,6 +163,7 @@ to change anything like form submissions.
 
 <details>
   <summary>Fetching a list of the role archetypes programmatically</summary>
+
   In some rare situations you may need to fetch a list of available role archetypes. You can do so using the
   `get_role_archetypes()` function, for example:
 
@@ -181,6 +182,7 @@ $context = context::instance_by_id($contextid);
 
 <details>
 <summary>Fetching roles and users who hold a capability</summary>
+
 Moodle has a flexible and detailed capability system which allows administrators to define many similar roles
 for different purposes. It is quite common to have multiple teacher-like roles but need to restrict their access
 depending on their usage. For example in a University setting you may have a lecturer who presents the course

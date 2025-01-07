@@ -38,14 +38,9 @@ Before submitting your work to the Plugins directory, you should make sure you h
 
 ## Sharing code in the Plugins directory
 
-So you have written a new plugin and want to share it now in the [Plugins directory](../../community/plugincontribution/pluginsdirectory/index.md)? Great! Shortly, the workflow of publishing and maintaining your plugin in the Plugins directory looks like this:
+So you've written a new plugin and want to share it in the [Plugins directory](../../community/plugincontribution/pluginsdirectory/index.md)? Great! The workflow of publishing and maintaining your plugin in the Plugins directory looks like this:
 
 ![Workflow of contributing a plugin into the Moodle plugins directory](_index/plugin-contribution-workflow.png)
-<figcaption>
-
-Workflow of contributing a plugin into the Moodle plugins directory ([SVG version](_index/plugin-contribution-workflow.svg))
-
-</figcaption>
 
 1. You upload the initial plugin version for approval from the [Register a new plugin](https://moodle.org/plugins/registerplugin.php) link, available  in the Navigation block in the blocks drawer on the right. To help the approval review go smoothly, please feel encouraged to review the [Plugin contribution checklist](../../community/plugincontribution/checklist.md) and follow all the guidelines there.
 1. After you submit the plugin for approval, please brace yourself with patience. You will likely wait some weeks before you get initial review results. We generally try and provide the feedback sooner, but it is not always possible. The actual approval queue stats [are available](https://moodle.org/plugins/queue.php).
