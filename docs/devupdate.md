@@ -55,3 +55,33 @@ Both of these values may be combined for plugins supporting both Moodle 4.5 and 
 ```
 
 :::
+
+## Themes
+
+<Since version="5.0" issueNumber="MDL-83725" />
+
+Themes can now customize activity icon colors using simple CSS variables. The new variables introduced are:
+
+- `$activity-icon-administration-bg`
+- `$activity-icon-assessment-bg`
+- `$activity-icon-collaboration-bg`
+- `$activity-icon-communication-bg`
+- `$activity-icon-content-bg`
+- `$activity-icon-interactivecontent-bg`
+
+All previous `$activity-icon-*-filter` elements can be removed, as they are no longer in use.
+
+:::tip Example of customizing activity icon colors
+
+Themes can customize the activity icon colors by overriding the following variables before loading the Boost scss:
+
+```scss
+$activity-icon-administration-bg: #5915b1;
+$activity-icon-assessment-bg: #17857f;
+$activity-icon-collaboration-bg: #cf7a34;
+$activity-icon-communication-bg: #c70827;
+$activity-icon-content-bg: #5915b1;
+$activity-icon-interactivecontent-bg: #c70827;
+```
+
+:::
