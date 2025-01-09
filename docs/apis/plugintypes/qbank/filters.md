@@ -224,3 +224,21 @@ constructor which receives the current `$qbank` view object, and extract some da
 For example, the
 [tag condition](https://github.com/moodle/moodle/blob/main/question/bank/tagquestion/classes/tag_condition.php)
 will find the context of the current page, and use that to control which tags are available in the filter.
+
+#### Validation
+
+<Since
+version="5.0"
+issueNumber="MDL-83862"
+/>
+
+Filters support standard [Client-side form validation](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation).
+The simplest way to implement this is to set validation properties on your inputs in the mustache template used by your `addValueSelector()` method.
+
+If you need something more advanced, you can define a `validation()` method in your filter class. This is called when the "Apply filters" button is
+clicked, giving you the opportunity to inspect the current values of the filter, and perform validation checks. If validation fails, you should
+display errors using the standard `setCustomValidity()` and `reportValidity()` methods on your filter's input elements, and return `false`.
+See `core/datafilter/filtertypes/datetime` for an example.
+
+This client-side validation is only to prevent invalid values being entered in the UI. You should also validate data received by the
+`build_query_from_filter()` method in your condition class, and throw exceptions in the event of validation failures.
