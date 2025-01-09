@@ -197,12 +197,12 @@ categories are included when parent categories are selected, you can define "Fil
 In your condition class, define `get_filteroptions()` which returns an object containing the current filter options. You will
 probably want to add some code to the constructor to read in the current filter options, and some code the `build_query_from_filter()`
 to use the option. See
-[`qbank_managecategories\category_condition`](https://github.com/moodle/moodle/blob/main/question/bank/managecategories/classes/category_condition.php#L331)
+[`qbank_managecategories\category_condition`](https://github.com/moodle/moodle/blob/main/question/bank/managecategories/classes/category_condition.php)
 as an example.
 
 You JavaScript filter class will also need to support your filter options. Override the constructor an add additional code
 for the UI required to set your filter options, and override `get filterOptions()` to return the current value for any options set
-in this UI. See [`qbank_managecategories/datafilter/filtertypes/categories`](https://github.com/moodle/moodle/blob/main/question/bank/managecategories/amd/src/datafilter/filtertypes/categories.js#L34)
+in this UI. See [`qbank_managecategories/datafilter/filtertypes/categories`](https://github.com/moodle/moodle/blob/main/question/bank/managecategories/amd/src/datafilter/filtertypes/categories.js
 as an example.
 
 #### Context-sensitive configuration
@@ -211,5 +211,5 @@ You may want your filter to behave differently depending on where it is being di
 constructor which receives the current `$qbank` view object, and extract some data that is used later on by your other methods.
 
 For example, the
-[tag condition](https://github.com/moodle/moodle/blob/main/question/bank/tagquestion/classes/tag_condition.php#L47C1-L47C49)
+[tag condition](https://github.com/moodle/moodle/blob/main/question/bank/tagquestion/classes/tag_condition.php)
 will find the context of the current page, and use that to control which tags are available in the filter.
