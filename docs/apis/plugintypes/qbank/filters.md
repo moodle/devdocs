@@ -36,7 +36,7 @@ plugin in place. For real-world examples, look for classes that extend `core_que
 
 Create a `condition` class within your plugin's namespace. For a plugin called `qbank_myplugin` this would look something like:
 
-```php
+```php title=question/bank/myplugin/classes/myfilter_condition.php
 namespace qbank_myplugin;
 
 use core_question\local\bank\condition;
@@ -48,72 +48,72 @@ class myfilter_condition extends condition {
 
 Define the `get_name` method, which returns the label displayed in the filter UI.
 
-```php
-    public function get_name(): string {
-        return get_string('myfilter_name', 'myplugin');
-    }
+```php title=question/bank/myplugin/classes/myfilter_condition.php
+public function get_name(): string {
+    return get_string('myfilter_name', 'myplugin');
+}
 ```
 
 Define `get_condition_key`, which returns a unique machine-readable ID for this filter condition, used when passing the filter
 as a parameter.
 
-```php
-    public function get_condition_key(): string {
-        return 'myfilter';
-    }
+```php title=question/bank/myplugin/classes/myfilter_condition.php
+public function get_condition_key(): string {
+    return 'myfilter';
+}
 ```
 
 To define the list of possible filter values, define `get_initial_values`, which returns an array of `['value', 'title']` for each
 option.
 
-```php
-    public function get_initial_values(): string {
-        return [
-            [
-                'value' => 0,
-                'title' => 'Option 1',
-            ],
-            [
-                'value' => 1,
-                'title' => 'Option 2',
-            ]
-        ];
-    }
+```php title=question/bank/myplugin/classes/myfilter_condition.php
+public function get_initial_values(): string {
+    return [
+        [
+            'value' => 0,
+            'title' => 'Option 1',
+        ],
+        [
+            'value' => 1,
+            'title' => 'Option 2',
+        ]
+    ];
+}
 ```
 
 To prevent additional values being added by typing them into the autocomplete, define `allow_custom` and have it return `false`.
 
-```php
-    public function allow_custom(): bool {
-        return false;
-    }
+```php title=question/bank/myplugin/classes/myfilter_condition.php
+public function allow_custom(): bool {
+    return false;
+}
 ```
 
 To actually filter the results, define `build_query_from_filter` which returns an SQL `WHERE` condition, and an array of parameters.
 The `$filter` parameter receives an array with a `'values'` key, containing an array of the selected values, and a `'jointype'` key,
 containing one of the `JOINTTYPE_ANY`, `JOINTYPE_ALL` or `JOINTYPE_NONE` constants. Use these to build your condition as required.
 
-```php
-    public function build_query_from_filter(array $filter): array {
-        $andor = ' AND ';
-        $equal = '=';
-        if ($filter['jointype'] === self::JOINTYPE_ANY) {
-            $andor = ' OR ';
-        } else if ($filter['jointype'] === self::JOINTYPE_NONE) {
-            $equal = '!=';
-        }
-        $conditions = [];
-        $params = [];
-        // In real life we'd probably use $DB->get_in_or_equal here.
-        foreach ($filter['values'] as $key => $value) {
-            $conditions[] = 'q.fieldname ' . $equal . ' :myfilter' . $key;
-            $params['myfilter' . $key] = $value;
-        }
-        return [
-            '(' . implode($andor, $conditions) . ')',
-            $params,
-        ];
+```php title=question/bank/myplugin/classes/myfilter_condition.php
+public function build_query_from_filter(array $filter): array {
+    $andor = ' AND ';
+    $equal = '=';
+    if ($filter['jointype'] === self::JOINTYPE_ANY) {
+        $andor = ' OR ';
+    } else if ($filter['jointype'] === self::JOINTYPE_NONE) {
+        $equal = '!=';
     }
+    $conditions = [];
+    $params = [];
+    // In real life we'd probably use $DB->get_in_or_equal here.
+    foreach ($filter['values'] as $key => $value) {
+        $conditions[] = 'q.fieldname ' . $equal . ' :myfilter' . $key;
+        $params['myfilter' . $key] = $value;
+    }
+    return [
+        '(' . implode($andor, $conditions) . ')',
+        $params,
+    ];
+}
 ```
 
 Following this pattern with your own fields and options will give you a basic functional filter. Most filters will require
@@ -126,13 +126,13 @@ more complex functionality, which can be achieved through additional methods.
 Not all join types are relevant to all filters. If each question will only match one of the selected values, it does not make
 sense to allow JOINTYPE_ALL. Define `get_join_list` and return an array of the applicable jointypes.
 
-```php
-    public function get_join_list(): array {
-        return [
-            datafilter::JOINTYPE_ANY,
-            datafilter::JOINTYPE_NONE,
-        ];
-    }
+```php title=question/bank/myplugin/classes/myfilter_condition.php
+public function get_join_list(): array {
+    return [
+        datafilter::JOINTYPE_ANY,
+        datafilter::JOINTYPE_NONE,
+    ];
+}
 ```
 
 #### Custom filter class
@@ -151,10 +151,10 @@ single autocomplete, you can override `addValueSelector()`.
 To tell your filter condition to use a custom filter class, override the `get_filter_class()` method to return the namespaced
 path to your JavaScript class.
 
-```php
-    public function get_filter_class(): string {
-        return 'qbank_myplugin/datafilter/filtertype/myfilter';
-    }
+```php title=question/bank/myplugin/classes/myfilter_condition.php
+public function get_filter_class(): string {
+    return 'qbank_myplugin/datafilter/filtertype/myfilter';
+}
 ```
 
 #### Allow multiple values?
@@ -162,10 +162,10 @@ path to your JavaScript class.
 By default, conditions allow multiple values to be selected and use the selected join type to decide how they are applied.
 If your condition should only allow a single value at a time, override `allow_multiple()` to return false.
 
-```php
-    public function allow_multiple(): bool {
-        return false;
-    }
+```php title=question/bank/myplugin/classes/myfilter_condition.php
+public function allow_multiple(): bool {
+    return false;
+}
 ```
 
 #### Allow empty values?
@@ -173,20 +173,20 @@ If your condition should only allow a single value at a time, override `allow_mu
 By default, conditions can be left empty, and therefore will not be included in the filter. To make it compulsory to select a
 value for this condition when it is added, override `allow_empty` to return false.
 
-```php
-    public function allow_empty(): bool {
-        return false;
-    }
+```php title=question/bank/myplugin/classes/myfilter_condition.php
+public function allow_empty(): bool {
+    return false;
+}
 ```
 
 #### Is the condition required?
 
 If it is compulsory that your condition is always displayed, override `is_required` to return true.
 
-```php
-    public function is_required(): bool {
-        return true;
-    }
+```php title=question/bank/myplugin/classes/myfilter_condition.php
+public function is_required(): bool {
+    return true;
+}
 ```
 
 #### Filter options
