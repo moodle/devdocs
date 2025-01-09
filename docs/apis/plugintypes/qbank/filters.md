@@ -46,7 +46,7 @@ class myfilter_condition extends condition {
 }
 ```
 
-Define the `get_name` method, which returns the label displayed in the filter UI.
+Define the `get_name()` method, which returns the label displayed in the filter UI.
 
 ```php title=question/bank/myplugin/classes/myfilter_condition.php
 public function get_name(): string {
@@ -54,7 +54,7 @@ public function get_name(): string {
 }
 ```
 
-Define `get_condition_key`, which returns a unique machine-readable ID for this filter condition, used when passing the filter
+Define `get_condition_key()`, which returns a unique machine-readable ID for this filter condition, used when passing the filter
 as a parameter.
 
 ```php title=question/bank/myplugin/classes/myfilter_condition.php
@@ -63,7 +63,7 @@ public function get_condition_key(): string {
 }
 ```
 
-To define the list of possible filter values, define `get_initial_values`, which returns an array of `['value', 'title']` for each
+To define the list of possible filter values, define `get_initial_values()`, which returns an array of `['value', 'title']` for each
 option.
 
 ```php title=question/bank/myplugin/classes/myfilter_condition.php
@@ -81,7 +81,7 @@ public function get_initial_values(): string {
 }
 ```
 
-To prevent additional values being added by typing them into the autocomplete, define `allow_custom` and have it return `false`.
+To prevent additional values being added by typing them into the autocomplete, define `allow_custom()` and have it return `false`.
 
 ```php title=question/bank/myplugin/classes/myfilter_condition.php
 public function allow_custom(): bool {
@@ -89,7 +89,7 @@ public function allow_custom(): bool {
 }
 ```
 
-To actually filter the results, define `build_query_from_filter` which returns an SQL `WHERE` condition, and an array of parameters.
+To actually filter the results, define `build_query_from_filter()` which returns an SQL `WHERE` condition, and an array of parameters.
 The `$filter` parameter receives an array with a `'values'` key, containing an array of the selected values, and a `'jointype'` key,
 containing one of the `JOINTTYPE_ANY`, `JOINTYPE_ALL` or `JOINTYPE_NONE` constants. Use these to build your condition as required.
 
@@ -124,7 +124,7 @@ more complex functionality, which can be achieved through additional methods.
 #### Restrict join types
 
 Not all join types are relevant to all filters. If each question will only match one of the selected values, it does not make
-sense to allow JOINTYPE_ALL. Define `get_join_list` and return an array of the applicable jointypes.
+sense to allow JOINTYPE_ALL. Define `get_join_list()` and return an array of the applicable jointypes.
 
 ```php title=question/bank/myplugin/classes/myfilter_condition.php
 public function get_join_list(): array {
@@ -171,7 +171,7 @@ public function allow_multiple(): bool {
 #### Allow empty values?
 
 By default, conditions can be left empty, and therefore will not be included in the filter. To make it compulsory to select a
-value for this condition when it is added, override `allow_empty` to return false.
+value for this condition when it is added, override `allow_empty()` to return false.
 
 ```php title=question/bank/myplugin/classes/myfilter_condition.php
 public function allow_empty(): bool {
@@ -181,7 +181,7 @@ public function allow_empty(): bool {
 
 #### Is the condition required?
 
-If it is compulsory that your condition is always displayed, override `is_required` to return true.
+If it is compulsory that your condition is always displayed, override `is_required()` to return true.
 
 ```php title=question/bank/myplugin/classes/myfilter_condition.php
 public function is_required(): bool {
@@ -195,7 +195,7 @@ If your condition supports additional options as to how the selected values are 
 categories are included when parent categories are selected, you can define "Filter options".
 
 In your condition class, define `get_filteroptions()` which returns an object containing the current filter options. You will
-probably want to add some code to the constructor to read in the current filter options, and some code the `build_query_from_filter`
+probably want to add some code to the constructor to read in the current filter options, and some code the `build_query_from_filter()`
 to use the option. See
 [`qbank_managecategories\category_condition`](https://github.com/moodle/moodle/blob/main/question/bank/managecategories/classes/category_condition.php#L331)
 as an example.
