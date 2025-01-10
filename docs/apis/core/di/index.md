@@ -219,7 +219,7 @@ The container is already reset after each test when running unit tests. It is no
 :::
 
 ```php title="Resetting the Container"
-\core\di::reset_container():
+\core\di::reset_container();
 ```
 
 :::danger
