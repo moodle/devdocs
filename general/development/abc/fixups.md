@@ -36,7 +36,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-If your only goal was to make an updated commit for integration, you could do `git commit -a --ammend`. However, to be nice to the integrator, it is better to make a separate commit:
+If your only goal was to make an updated commit for integration, you could do `git commit -a --amend`. However, to be nice to the integrator, it is better to make a separate commit:
 
 ```
 $ git commit -a -m "MDL-12345 code review changes"
