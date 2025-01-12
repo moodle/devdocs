@@ -168,7 +168,7 @@
         "location": "lib/amd/src/chartjs-lazy.js",
         "name": "Chart.js",
         "description": "Simple yet flexible JavaScript charting for designers & developers.",
-        "version": "4.4.2",
+        "version": "4.4.7",
         "license": "MIT",
         "repository": "https://github.com/chartjs/Chart.js",
         "customised": true
