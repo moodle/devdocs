@@ -304,7 +304,7 @@ new behat step definitions for your plugin, and allows you to re-use data genera
 
 Full documentation of this process and all available options can be found in the [PHPDoc for behat_generator_base](https://github.com/moodle/moodle/blob/1d4fdb0d1c60448104bc9eac79b5123863c67cbd/lib/behat/classes/behat_generator_base.php#L33). A core example of this can be found in [/mod/quiz/tests/generator](https://github.com/moodle/moodle/tree/main/mod/quiz/tests/generator) and [quiz_reset.feature](https://github.com/moodle/moodle/blob/1d4fdb0d1c60448104bc9eac79b5123863c67cbd/mod/quiz/tests/behat/quiz_reset.feature#L51). What follows is a simple example.
 
-To begin, you need a [generator](https://docs.moodle.org/dev/Writing_PHPUnit_tests#Generators) in `/*your*/*plugin*/tests/generator/lib.php`. If you are generating a type of entity called "thing", your generator will need a method called create_thing, which accepts an object:
+To begin, you need a [generator](/general/development/tools/phpunit/write#generators) in `/*your*/*plugin*/tests/generator/lib.php`. If you are generating a type of entity called "thing", your generator will need a method called create_thing, which accepts an object:
 
 ```php
 class local_myplugin_generator extends component_generator_base {
