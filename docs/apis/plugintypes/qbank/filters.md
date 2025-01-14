@@ -47,7 +47,21 @@ class myfilter_condition extends condition {
 }
 ```
 
-Define the `get_name()` method, which returns the label displayed in the filter UI.
+Modify your `plugin_feature` class to return an instance of your condition from the `get_question_filters()` method:
+
+```php title="question/bank/myplugin/classes/plugin_feature.php"
+namespace qbank_myplugin;
+
+class plugin_feature extends core_question\local\bank\plugin_features_base {
+    public function get_question_filters(?core_question\local\bank\view $qbank = null): array {
+        return [
+            new myfilter_condition($qbank),
+        ];
+    }
+}
+```
+
+Back in your `condition` class, define the `get_name()` method, which returns the label displayed in the filter UI.
 
 ```php title="Define the condition name"
 public function get_name(): string {
