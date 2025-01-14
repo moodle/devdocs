@@ -82,6 +82,10 @@ To actually filter the results, define `build_query_from_filter()` which returns
 The `$filter` parameter receives an array with a `'values'` key, containing an array of the selected values, and a `'jointype'` key,
 containing one of the `JOINTTYPE_ANY`, `JOINTYPE_ALL` or `JOINTYPE_NONE` constants. Use these to build your condition as required.
 
+The conditions from each filter are combined with the query in
+[`core_question\local\bank\view::build_query()`](https://github.com/moodle/moodle/blob/c741492c38b9945abbfc7e90dfe8f943279f8265/question/classes/local/bank/view.php#L733)
+to select the filtered question list.
+
 ```php title="Filter questions"
 public function build_query_from_filter(array $filter): array {
     $andor = ' AND ';
