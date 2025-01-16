@@ -182,7 +182,7 @@ Moodle uses a framework called [PHPUnit](https://github.com/sebastianbergmann/ph
 
 :::info
 
-For more about this, see [PHPUnit](./tools/phpunit.md).
+For more about this, see [PHPUnit](./tools/phpunit/index.md).
 
 :::
 
