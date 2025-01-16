@@ -85,3 +85,11 @@ $activity-icon-interactivecontent-bg: #c70827;
 ```
 
 :::
+
+## Unit Tests
+
+<Since version="5.0" issueNumber="MDL-83468" />
+
+Moodle has updated the version of PHPUnit used in core to version 11.4. Some tests may encounter issues as a result.
+
+Please see the [PHPUnit 11 Upgrade Guide](/general/development/tools/phpunit/upgrading-11) for assistance in updating any broken tests.
