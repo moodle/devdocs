@@ -9,6 +9,26 @@ tags:
 
 This page highlights the important changes that are coming in Moodle 5.0 for developers.
 
+## Course formats
+
+<Since version="5.0" issueNumber="MDL-83527" />
+
+All course formats created for Moodle versions prior to 4.0, which still depend on the 3.11 libraries, will be deprecated starting from Moodle 5.0 and will no longer function in Moodle 6.0. We are discontinuing the use of YUI for course editing and transitioning the course display logic to output classes.
+
+You can determine if your course format is impacted by this change by examining the `lib.php` file within your plugin directory. If the format class does not override the `supports_components` method, or if the method returns `false`, it indicates that the course format relies on the deprecated YUI libraries and requires updating.
+
+To ensure a smooth transition, we have documented the migration process in detail. Please refer to the [migration guide](./apis/plugintypes/format/migration.md) for comprehensive instructions on updating your course formats to be compatible with the latest Moodle standards.
+
+### Course action menu outputs classes
+
+<Since version="5.0" issueNumber="MDL-83527" />
+
+The section and activity action menus now utilize output classes instead of global functions. The new classes are:
+
+- `core_courseformat\output\local\content\cm\controlmenu`: the class now fully replaces the old `course_get_cm_edit_actions` function. Extend this class in your format plugin to add more options to the activity menu.
+- `core_courseformat\output\local\content\section\controlmenu`: the existing class has been refactored and now uses `action_menu_link` objects instead. If your format add more options to the section menu, you should update your code to use the new class instead of using arrays.
+- `core_courseformat\output\local\content\cm\delegatedcontrolmenu`: like the section control menu, the existing class has been refactored to use `action_menu_link` objects instead of arrays.
+
 ## Subplugins
 
 <Since version="5.0" issueNumber="MDL-83705" />
