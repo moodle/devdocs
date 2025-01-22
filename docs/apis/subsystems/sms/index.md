@@ -73,14 +73,6 @@ Sensitive content is not persisted to the database and is therefore not availabl
 
 :::
 
-:::info Availability of asynchronous message handling
-
-The ability to send messages asynchronously has not yet been implemented. The parameter is included for future compatibility.
-
-See MDL-81015 for more information on this feature.
-
-:::
-
 ### Message Truncation
 
 <Since version="5.0" issueNumber="MDL-84342" />
