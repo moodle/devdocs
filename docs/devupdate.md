@@ -9,6 +9,14 @@ tags:
 
 This page highlights the important changes that are coming in Moodle 5.0 for developers.
 
+## Activity overview page integration
+
+<Since version="5.0" issueNumber="MDL-83872" />
+
+The course navigation has been updated to include a new link to the activity overview page. This page will replace the current `index.php` page in the activity modules. By default, the overview page displays a table that includes the name of each activity, its completion status, and the grade (if applicable). Additionally, plugins can enhance this information by implementing a `mod_PLUGINNAME\courseformat\overview` class.
+
+See the [Activity overview page integration](./apis/plugintypes/mod/courseoverview) documentation for more information.
+
 ## Course formats
 
 <Since version="5.0" issueNumber="MDL-83527" />
@@ -28,6 +36,12 @@ The section and activity action menus now utilize output classes instead of glob
 - `core_courseformat\output\local\content\cm\controlmenu`: the class now fully replaces the old `course_get_cm_edit_actions` function. Extend this class in your format plugin to add more options to the activity menu.
 - `core_courseformat\output\local\content\section\controlmenu`: the existing class has been refactored and now uses `action_menu_link` objects instead. If your format add more options to the section menu, you should update your code to use the new class instead of using arrays.
 - `core_courseformat\output\local\content\cm\delegatedcontrolmenu`: like the section control menu, the existing class has been refactored to use `action_menu_link` objects instead of arrays.
+
+## Plugin type deprecation
+
+<Since version="5.0" issueNumber="MDL-79843" />
+
+A new process for plugin type and subplugin type deprecation has been introduced. See [the Plugin Type deprecation](./apis/plugintypes/index.md#deprecating-a-plugin-type) and [Subplugin deprecation](./apis/plugintypes/index.md#deprecating-a-subplugin-type) documentation for further information.
 
 ## Subplugins
 
@@ -115,9 +129,3 @@ Moodle has updated the version of PHPUnit used in core to version 11.4. Some tes
 Please see the [PHPUnit 11 Upgrade Guide](/general/development/tools/phpunit/upgrading-11) for assistance in updating any broken tests.
 
 :::
-
-## Plugin type deprecation
-
-<Since version="5.0" issueNumber="MDL-79843" />
-
-A new process for plugin type and subplugin type deprecation has been introduced. See [the Plugin Type deprecation](./apis/plugintypes/index.md#deprecating-a-plugin-type) and [Subplugin deprecation](./apis/plugintypes/index.md#deprecating-a-subplugin-type) documentation for further information.
