@@ -308,7 +308,7 @@
         "copyrightHolders": [],
         "location": "lib/editor/tiny/js/tinymce",
         "name": "Tiny",
-        "version": "6.8.3",
+        "version": "7.3.0",
         "license": "MIT",
         "repository": "https://github.com/tinymce/tinymce",
         "customised": false
