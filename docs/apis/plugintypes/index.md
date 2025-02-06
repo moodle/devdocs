@@ -139,16 +139,18 @@ foreach ($pluginman->get_plugin_types() as $type => $dir) {
 When a plugin or subplugin type is no longer needed or is replaced by another plugin type, it should be deprecated.
 Using `components.json` or `subplugins.json` plugin types and subplugin types, respectively, can be marked as deprecated.
 
-The process for plugin/subplugin type deprecation differs slightly to normal [Deprecation](/general/development/policies/deprecation) process.
+The process for plugin and subplugin type deprecation differs slightly to the normal [Deprecation](/general/development/policies/deprecation) process.
 Unlike with code deprecation, where the deprecated class or method is usually expected to remain functional during the deprecation window, deprecated plugin/subplugin types are treated as end-of-life as soon as they are deprecated.
 
-Once deprecated, core will exclude plugins of the respective plugin type when performing common core-plugin communication, such as with hooks, callbacks, events, etc.
-In the case of subplugins, the expectation is that the component code (the component under which the subplugins reside), will have been updated and all references to the subplugins removed/replaced, before the time of deprecation.
+Once deprecated, core will exclude plugins of the respective plugin type when performing common core-plugin communication, such as with hooks, callbacks, events, and-so-on.
+In the case of subplugins, the subplugin owner (the component which the subplugin belongs to), **must** have been updated to remove or replace all references to the subplugins before the time of deprecation.
 
 Class autoloading and string resolution is still supported during the deprecation window, to assist with any plugin migration scripts that may be required.
 
 :::info limitations
-Whilst both plugin and subplugin types can be deprecated, only those plugin types _not_ supporting subplugins can be deprecated presently.
+
+Whilst both plugin and subplugin types can be deprecated, only those plugin types which do _not_ support subplugins can be deprecated.
+
 :::
 
 ### Deprecation process
@@ -159,18 +161,34 @@ Deprecation follows a 3 stage process:
 2. The plugin/subplugin type is marked as deleted (a core version bump is also required).
 3. Final removal of the plugin/subplugin type from the respective config file.
 
-During first stage deprecation, plugins of the respective type may remain installed, but are deemed end-of-life. This stage gives admins time to remove the affected plugins from the site, or migrate them to their replacement plugins.
+#### First stage deprecation
 
-In second stage deprecation (deletion), if any affected plugins are still present (i.e. have not been uninstalled/migrated yet) site upgrade will be blocked. These plugins must be removed before continuing with site upgrade.
+During first stage deprecation, plugins of the respective type may remain installed, but are deemed end-of-life.
 
-In final stage deprecation (final removal), the relevant config changes supporting first and second stage deprecation can be removed from the respective config files. This removes the last reference to these plugin/subplugin types.
+This stage gives administrators time to remove the affected plugins from the site, or migrate them to their replacement plugins.
+
+#### Second stage deprecation
+
+The second stage deprecation is the deletion phase.
+
+If any affected plugins are still present (that is any which have not been uninstalled or migrated yet), the site upgrade will be blocked.
+
+These plugins **must** be removed before continuing with site upgrade.
+
+#### Final deprecation
+
+In the final deprecation stage the relevant configuration changes supporting first and second stage deprecation can be removed from the respective config files. This removes the last reference to these plugin/subplugin types.
 
 ### Deprecating a plugin type
 
-To mark a plugin type as deprecated or deleted, edit `lib/components.json`, remove the plugin type from the `plugintypes` object and add it to `deprecatedplugintypes`. To mark a plugin type for stage 2 deprecation (deletion), edit the same file and move the plugin type from the `deprecatedplugintypes` object to the `deletedplugintypes` object.
+The first phase of plugin type deprecation involves describing the plugin in the `deprecatedplugintypes` configuration in `lib/components.json`. The plugin type must also be removed from the `plugintypes` object.
+
+The second phase of plugin type deprecation involves moving the entry from  the `deprecatedplugintypes` object to the `deletedplugintypes` object.
 
 :::info Remember
+
 Don't forget to increment the core version number when marking a plugin/subplugin type for either deprecation or deletion. A version bump isn't needed for final removal.
+
 :::
 
 :::tip Example of plugin type deprecation config values
@@ -229,7 +247,9 @@ To mark a subplugin type as deprecated, edit the component's `subplugins.json` f
 Following deletion, the plugin/subplugin type can be removed from the respective JSON entirely.
 
 :::info Remember
+
 Don't forget to increment the core version number when marking a plugin/subplugin type for either deprecation or deletion. A version bump isn't needed for final removal.
+
 :::
 
 :::tip Example of subplugin type deprecation config values
