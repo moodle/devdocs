@@ -1074,7 +1074,7 @@
         "location": "lib/requirejs",
         "name": "RequireJS",
         "description": "RequireJS is a JavaScript file and module loader.",
-        "version": "2.3.5",
+        "version": "2.3.7",
         "license": "MIT",
         "repository": "https://github.com/requirejs/requirejs",
         "customised": true

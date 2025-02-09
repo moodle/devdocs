@@ -956,7 +956,7 @@ A polyfill for getallheaders
 RequireJS is a JavaScript file and module loader.
 
 - **Location**: lib/requirejs
-- **Version**: 2.3.5 (with Moodle customisations)
+- **Version**: 2.3.7 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/requirejs/requirejs](https://github.com/requirejs/requirejs)
 
