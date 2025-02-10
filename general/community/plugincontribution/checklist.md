@@ -171,7 +171,7 @@ See [Coding style#Functions and Methods](../../development/policies/codingstyle/
 ### Strings
 
 - Avoid hard-code texts in the code, always use `get_string()`.
-- Just the English strings should ship with the plugin. All other translations are supposed to be submitted as contributions at [https://lang.moodle.org](https://lang.moodle.org) once your plugin is approved - see [Translating plugins](https://docs.moodle.org/dev/Translating_plugins).
+- Just the English strings should ship with the plugin. All other translations are supposed to be submitted as contributions at [lang.moodle.org](https://lang.moodle.org) once your plugin is approved - see [Translating plugins](https://docs.moodle.org/en/Translating_plugins).
 - Your code must not rely on trailing and leading whitespace in strings.
 - The string file must be considered as pure data file with the syntax `$string[]('id') = 'value';`. No other PHP syntax such as [concatenation](http://php.net/manual/en/language.operators.string.php),  [heredoc and nowdoc](http://php.net/manual/en/language.types.string.php) is supported by the tools that we use when processing your strings (even if it may work in Moodle itself).
 - The English language pack (`lang/en/`) in Moodle does not use "Capitalised Titles".
@@ -207,6 +207,7 @@ Examples of issues that will prevent your plugin from being approved:
 1. Compliance with [security guidelines](../../development/policies/security/index.md).
 1. It integrates with an external system and does not have the privacy API correctly implemented.
 1. It is an activity module and does not have the backup and restore API implemented.
+1. You must be in compliance with the [Moodle.org Site policy](https://moodle.org/admin/tool/policy/view.php?policyid=4).
 
 ## See also
 
