@@ -703,3 +703,23 @@ $('#myTab a').on('shown.bs.tab', function () {
   // do something...
 });
 ```
+
+### SCSS helpers and utilities
+
+<Since version="5.0" issueNumber="MDL-80519" />
+
+The compatibility layer includes a selection of SCSS helpers and utilities from Bootstrap 4.
+This provision enables developers to continue using familiar class names and mixins while they work on updating their custom styles to align with Bootstrap 5's new utility API system and class structure.
+
+Some of the SCSS helpers and utilities available in the backwards-compatibility layer include:
+
+- `.media` component
+- Coloured badges using `.badge-success`, `badge-warning`, ... classes
+- Inline forms using `.form-inline` class
+- Spacing utilities like `.mr-1`, `.pl-2`, ...
+- `.sr-only` and `.sr-only-focusable` classes
+- Font utilities like `.font-weight-bold`, `.font-italic`, ...
+- Custom controls in forms using `.custom-radio`, `.custom-switch`, ...
+
+All these backwards-compatible SCSS helpers and utilities will be available until the final deprecation in Moodle 6.0.
+More details about the SCSS deprecation process can be found in [SCSS deprecation](/general/development/policies/deprecation/scss-deprecation).
