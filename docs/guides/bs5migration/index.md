@@ -723,3 +723,44 @@ Some of the SCSS helpers and utilities available in the backwards-compatibility 
 
 All these backwards-compatible SCSS helpers and utilities will be available until the final deprecation in Moodle 6.0.
 More details about the SCSS deprecation process can be found in [SCSS deprecation](/general/development/policies/deprecation/scss-deprecation).
+
+### Bootstrap 4 old data attributes syntax silent replacement
+
+<Since version="5.0" issueNumber="MDL-84450" />
+
+To minimize immediate breaking changes, the backwards-compatibility layer implements a silent replacement mechanism for Bootstrap 4's data attribute syntax.
+
+As per Bootstrap's migration guide "*Data attributes for all JavaScript plugins are now namespaced to help distinguish Bootstrap functionality from third parties and your own code. For example, we use `data-bs-toggle` instead of `data-toggle`.*"
+
+This feature can be used to translate old data attributes to their Bootstrap 5 equivalents, allowing existing markup to function without requiring immediate updates.
+
+```js title="Example of bs4-compat silent replacement in amd module"
+import initBootstrap4Compatibility from 'theme_boost/bs4-compat';
+
+[...]
+
+// Init Bootstrap 4 compatibility giving an specific element to look into.
+initBootstrap4Compatibility(document.querySelector('[data-region="my-plugin-region"]'));
+
+// Init Bootstrap 4 compatibility in the entire document.
+initBootstrap4Compatibility();
+```
+
+```mustache title="Example of bs4-compat silent replacement in a template"
+[...]
+
+{{#js}}
+// Init Bootstrap 4 compatibility in the entire document.
+require(['theme_boost/bs4-compat'], function(BS4Compat) {
+    BS4Compat();
+});
+{{/js}}
+```
+
+This will replace for example `data-toggle="tooltip"` with `data-bs-toggle="tooltip"`, or `data-target="#collapsableContent"` with `data-bs-target="#collapsableContent"`.
+
+:::warning
+
+Dynamic generated content containing old data attributes syntax will not be replaced.
+
+:::
