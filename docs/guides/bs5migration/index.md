@@ -670,3 +670,36 @@ document.querySelectorAll('[data-bs-toggle="tab"]').forEach((tab) => {
 Although Bootstrap does not need jQuery anymore, it is still possible to use it in Moodle. See MDL-84324 for more information.
 
 :::
+
+## BS4 backwards-compatibility layer
+
+The migration from Bootstrap 4 to Bootstrap 5 involves a transition period to allow third-party plugins to update gradually.
+To facilitate this, a backwards-compatibility layer has been created, ensuring that some Bootstrap 4 syntax will continue to function until final deprecation in Moodle 6.0.
+This approach aims to provide developers with sufficient time to adapt their code to the new Bootstrap 5 framework.
+
+The BS4 backwards-compatibility layer encompasses three crucial aspects to facilitate a smooth transition for third-party contributions:
+
+1. **Bootstrap jQuery support**: This allows existing plugins and components that rely on jQuery to continue functioning while developers work on updating their code to the new vanilla JavaScript approach.
+2. **SCSS helpers and utilities**: The compatibility layer includes some SCSS helpers and utilities from Bootstrap 4, enabling developers to gradually adapt their custom styles to the new Bootstrap 5.
+3. **Bootstrap 4 old data attributes syntax silent replacement**: This feature quietly replaces the old Bootstrap 4 data attribute syntax with the new Bootstrap 5 syntax, ensuring that existing markup continues to work without immediate changes.
+
+### Bootstrap jQuery support
+
+<Since version="5.0" issueNumber="MDL-84324" />
+
+To ease the transition from Bootstrap 4 to Bootstrap 5, the backwards-compatibility layer maintains support for jQuery-dependent components.
+This allows developers to continue using existing jQuery-based plugins and custom code while gradually migrating to the new vanilla JavaScript approach introduced in Bootstrap 5.
+
+The following examples illustrate how to use jQuery with Bootstrap 5 components:
+
+```js
+$('[data-bs-toggle="tooltip"]').tooltip();
+```
+
+Or with event listeners:
+
+```js
+$('#myTab a').on('shown.bs.tab', function () {
+  // do something...
+});
+```
