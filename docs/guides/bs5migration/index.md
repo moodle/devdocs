@@ -472,3 +472,201 @@ The `.font-italic` class has been replaced with `.fst-italic` for brevity and co
 ```
 
 </ValidExample>
+
+## Bootstrap 5 upgrade
+
+<Since version="5.0" issueNumber="MDL-75669" />
+
+After **Refactoring BS4 features dropped in BS5** and **Create a BS5 "bridge"**, the remaining Bootstrap breaking changes will be addressed in the upgrade to Bootstrap 5.
+
+The `bs5-bridge.scss` SCSS file will be removed as it will no longer be needed, and the Bootstrap library in theme_boost will be upgraded to version 5.3. After that the codebase will be fully compatible with Bootstrap 5.
+
+### Refactor dropdowns positioning classes
+
+Replace `.dropdown-menu-[left|right]` with `.dropdown-menu-[start|end]`.
+
+<InvalidExample title="Don't">
+
+```html
+<div class="dropdown-menu dropdown-menu-right">
+    [...]
+</div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<div class="dropdown-menu dropdown-menu-end">
+    [...]
+</div>
+```
+
+</ValidExample>
+
+### Refactor custom form elements
+
+- `.custom-check` is now `.form-check`.
+- `.custom-check.custom-switch` is now `.form-check.form-switch`.
+- `.custom-select` is now `.form-select`.
+- `.custom-file` and `.form-file` have been replaced by custom styles on top of `.form-control`.
+- `.custom-range` is now `.form-range`.
+- Dropped `.input-group-append` and `.input-group-prepend`. You can now just add buttons and `.input-group-text` as direct children of the input groups.
+
+<InvalidExample title="Don't">
+
+```html
+<select name="outcome" class="custom-select"> [...] </select>
+
+<div class="input-group">
+    <input type="text" class="form-control"> [...] </input>
+    <div class="input-group-append">
+        <button type="submit" class="btn btn-primary search-icon">
+            {{#pix}} a/search, core {{/pix}}
+            <span class="visually-hidden">{{#str}} search, core {{/str}}</span>
+        </button>
+    </div>
+</div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<select name="outcome" class="form-select"> [...] </select>
+
+<div class="input-group">
+    <input type="text" class="form-control"> [...] </input>
+    <button type="submit" class="btn btn-primary search-icon">
+        {{#pix}} a/search, core {{/pix}}
+        <span class="visually-hidden">{{#str}} search, core {{/str}}</span>
+    </button>
+</div>
+```
+
+</ValidExample>
+
+### Refactor media query mixins
+
+- `media-breakpoint-down()` uses the breakpoint itself instead of the next breakpoint (e.g., `media-breakpoint-down(lg)` instead of `media-breakpoint-down(md)` targets viewports smaller than lg).
+- In `media-breakpoint-between()` the second parameter also uses the breakpoint itself instead of the next breakpoint (e.g., `media-breakpoint-between(sm, lg)` instead of `media-breakpoint-between(sm, md)` targets viewports between sm and lg).
+
+<InvalidExample title="Don't">
+
+```css
+// This will target viewports smaller than md.
+@include media-breakpoint-down(sm) {
+    [...]
+}
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```css
+// This will target viewports smaller than md.
+@include media-breakpoint-down(md) {
+    [...]
+}
+```
+
+</ValidExample>
+
+### Refactor BS5 data attributes
+
+Data attributes for all JavaScript plugins are now namespaced to help distinguish Bootstrap functionality from our own code.
+
+<InvalidExample title="Don't">
+
+```html
+// Tooltip.
+<button class="btn btn-outline-secondary"
+        type="button"
+        data-toggle="tooltip"
+        data-html="true"
+        title="{{#str}} string_with_html, block_my_block {{/str}}"
+>
+    {{#pix}} i/info, core {{/pix}}
+</button>
+
+// Collapse.
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsableContent" aria-expanded="false" aria-controls="collapseExample">
+    Open the collapsable content
+</button>
+<div class="collapse" id="collapsableContent">
+    [...]
+</div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+// Tooltip.
+<button class="btn btn-outline-secondary"
+        type="button"
+        data-bs-toggle="tooltip"
+        data-bs-html="true"
+        title="{{#str}} string_with_html, block_my_block {{/str}}"
+>
+    {{#pix}} i/info, core {{/pix}}
+</button>
+
+// Collapse.
+<button class="btn btn-primary"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapsableContent"
+        aria-expanded="false"
+        aria-controls="collapseExample"
+>
+    Open the collapsable content
+</button>
+<div class="collapse" id="collapsableContent">
+    [...]
+</div>
+```
+
+</ValidExample>
+
+### Bootstrap 5 and Jquery
+
+Bootstrap dropped jQuery dependency and rewrote plugins to be in regular JavaScript. This means that all the jQuery Bootstrap-related code in the Moodle codebase has been rewritten in vanilla JavaScript.
+
+<InvalidExample title="Don't">
+
+```js
+import $ from 'jquery';
+
+$(document).on('shown shown.bs.tab', function(e) {
+    [...]
+    $('#my-dropdown').dropdown('toggle');
+});
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```js
+import Dropdown from 'theme_boost/bootstrap/dropdown';
+document.querySelectorAll('[data-bs-toggle="tab"]').forEach((tab) => {
+    tab.addEventListener('shown.bs.tab', (e) => {
+        [...]
+        const bootstrapDropdown = new Dropdown('#my-dropdown');
+        bootstrapDropdown.toggle();
+    });
+});
+```
+
+</ValidExample>
+
+:::info backwards compatibility
+
+Although Bootstrap does not need jQuery anymore, it is still possible to use it in Moodle. See MDL-84324 for more information.
+
+:::
