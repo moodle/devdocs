@@ -160,15 +160,19 @@ In IDEs, you may need to specify the path to the PHPUnit configuration file. Use
 
 #### Running a single test quickly (PHPUnit 9)
 
-The fastest way to run a single test in PHPUnit 9.5 and higher (Moodle 3.11 and higher) is to use the filter argument:
+The fastest way to run a single test in PHPUnit 9.5 and higher is to use the filter argument:
 
-```bash
-vendor/bin/phpunit --filter tool_dataprivacy_metadata_registry_testcase
+```bash title="Run a single test"
+vendor/bin/phpunit --filter metadata_registry_test
+```
+
+```bash title="Run a single test method"
+vendor/bin/phpunit --filter test_get_registry_metadata_count
 ```
 
 To run all tests provided by the single component, use suite and the name it has in the phpunit.xml file. Example:
 
-```bash
+```bash title="Run all tests from the workshop accumulative grading plugin"
 vendor/bin/phpunit --testsuite workshopform_accumulative_testsuite
 ```
 
@@ -186,7 +190,7 @@ vendor/bin/phpunit my/tests/filename.php
 
 so, run this command in the CLI to see a real test in action:
 
-```bash
+```bash title="Run a single test file"
 vendor/bin/phpunit cohort/tests/lib_test.php
 ```
 
