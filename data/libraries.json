@@ -1330,167 +1330,10 @@
             "2011-2021 Twitter, Inc",
             "2011-2021 The Bootstrap Authors"
         ],
-        "location": "theme/boost/amd/src/bootstrap/alert.js",
-        "name": "bootstrap-alert",
+        "location": "theme/boost/amd/src/bootstrap/",
+        "name": "Twitter Bootstrap",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "theme/boost/amd/src/bootstrap/button.js",
-        "name": "bootstrap-button",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
-        "license": "MIT",
-        "licenseversion": "",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "theme/boost/amd/src/bootstrap/carousel.js",
-        "name": "bootstrap-carousel",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "theme/boost/amd/src/bootstrap/collapse.js",
-        "name": "bootstrap-collapse",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "theme/boost/amd/src/bootstrap/dropdown.js",
-        "name": "bootstrap-dropdown",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "theme/boost/amd/src/bootstrap/modal.js",
-        "name": "bootstrap-modal",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "theme/boost/amd/src/bootstrap/popover.js",
-        "name": "bootstrap-popover",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "theme/boost/amd/src/bootstrap/scrollspy.js",
-        "name": "bootstrap-scrollspy",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "theme/boost/amd/src/bootstrap/tab.js",
-        "name": "bootstrap-tab",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "theme/boost/amd/src/bootstrap/toast.js",
-        "name": "bootstrap-toast",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "theme/boost/amd/src/bootstrap/tools/sanitizer.js",
-        "name": "bootstrap-sanitizer",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "theme/boost/amd/src/bootstrap/tooltip.js",
-        "name": "bootstrap-tooltip",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "theme/boost/amd/src/bootstrap/util.js",
-        "name": "bootstrap-util",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
+        "version": "5.3.3",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1501,9 +1344,9 @@
             "2011-2021 The Bootstrap Authors"
         ],
         "location": "theme/boost/amd/src/index.js",
-        "name": "bootstrap-util",
+        "name": "Twitter Bootstrap",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
+        "version": "5.3.3",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
@@ -1516,7 +1359,7 @@
         "location": "theme/boost/scss/bootstrap",
         "name": "Twitter Bootstrap",
         "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "4.6.2",
+        "version": "5.3.3",
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
