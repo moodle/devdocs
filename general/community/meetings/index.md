@@ -11,7 +11,7 @@ sidebar_label: Meetings
 
 Developer meetings are open to anyone interested in Moodle development.
 
-Our next developer meeting will be on April 2025.
+Our next developer meeting will be on Tuesday 25 March 2025 (time to be confirmed with presenters).
 
 If there are any topics that you would like to present or discuss, please contact [Helen](https://moodle.org/user/view.php?id=24152).
 
