@@ -17,6 +17,22 @@ The course navigation has been updated to include a new link to the activity ove
 
 See the [Activity overview page integration](./apis/plugintypes/mod/courseoverview) documentation for more information.
 
+## Calendar: New human date renderers
+
+<Since version="5.0" issueNumber="MDL-83873" />
+
+To improve date readability and user experience, the Calendar subsystem is transitioning from deprecated date rendering methods, such as `calendar_format_event_time` or `calendar_time_representation`, to a new suite of human date renderers. It enhances date display by:
+
+- Using relative terms like "Today," "Yesterday," and "Tomorrow" for nearby dates.
+- Applying alert styling to dates nearing deadlines or events.
+
+This update introduces two primary renderers:
+
+- `humandate`: This renderer presents single dates and times in a user-friendly format, automatically adapting to the user's preferred 12-hour or 24-hour time display (`CALENDAR_TF_12`/`CALENDAR_TF_24`).
+- `humantimeperiod`: Designed for displaying date/time ranges, this renderer optimizes information presentation. When the start and end dates fall on the same day, it shows the full start date and time, but only the end time, eliminating redundant date information. This logic mirrors the existing functionality of the deprecated functions, ensuring a consistent user experience.
+
+See the [Date and Time Output Classes](./apis/subsystems/output/humandate.md) documentation for more information.
+
 ## Course formats
 
 <Since version="5.0" issueNumber="MDL-83527" />
