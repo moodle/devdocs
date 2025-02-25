@@ -232,3 +232,19 @@ class overview extends activityoverviewbase {
     // Also, to handle timestamps, use $this->clock->time() instead.
 }
 ```
+
+## Redirect the index.php page to the course overview
+
+The `activityoverviewbase` class provides a static method to redirect the old `mod/PLUGINNAME/index.php` page to the new course overview. This method should be called in the `index.php` file of the activity plugin.
+
+This is an example of the `index.php` file of a plugin redirecting to the course overview:
+
+```php
+require_once("../../config.php");
+
+$courseid = required_param('id', PARAM_INT);
+
+\core_courseformat\activityoverviewbase::redirect_to_overview_page($courseid, 'YOURPLUGINNAME');
+```
+
+Once done, the plugin can deprecate any method, output or renderer related to the previous index page.
