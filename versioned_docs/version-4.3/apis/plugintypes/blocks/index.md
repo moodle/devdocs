@@ -372,7 +372,7 @@ Apart from the specific block instance configuration, the block plugin can use g
 
 :::note
 
-Global settings are not part of hte block instance and should be accessed via the global get_config method. For example:
+Global settings are not part of the block instance and should be accessed via the global get_config method. For example:
 
 ```php
 $settingvalue = get_config('block_pluginname', 'settingname');
