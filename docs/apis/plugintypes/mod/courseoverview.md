@@ -35,6 +35,21 @@ class overview extends activityoverviewbase {
 }
 ```
 
+### The `overviewitem` class
+
+The `core_courseformat\local\overview\overviewitem` class represents a specific activity overview item. Currently, items are used only as cells in the course overview table, but they may be used in other places like the course page or the activity page in the future.
+
+The class has the following mandatory properties:
+
+- **`name`** (`string`): The name of the item, used as the table header in the course overview.
+- **`value`** (`int|string|bool|null`): The value of the item, used for filtering purposes. It won't be displayed in the overview table but will be included as a data attribute.
+- **`content`** (`string|renderable|null`): The content of the item. It can be a string for simple elements, but it is highly recommended to use renderable objects to provide useful extra information depending on the context. If the content is null, the item will be displayed as '-' in the overview table.
+
+Also, the class has the following optional properties:
+
+- **`textalign`** (`core\output\local\properties\text_align`): Indicates the preferred text alignment for the parent container. Notice the type hint is not string but  `text_align` enum, this limit only to valid text alignment values.
+- **`alertcount`** (`integer`) and **`alertlabel`** (`string`): Some items may have an alert count to inform the user of pending actions. This information is not displayed in the table (must be included also in the content) but is added as a data attribute and may be used in other places in the future, such as filtering or mobile app notifications.
+
 ### Extra Overview Items
 
 To provide extra overview items, the plugin can override the `get_extra_overview_items` method. This method should return an array of `\core_courseformat\local\overview\overviewitem` objects indexed by item shortname.
