@@ -400,6 +400,13 @@ DOM view component for the CodeMirror code editor.
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/view](https://github.com/codemirror/view)
 
+### lamejs
+
+- **Location**: lib/editor/tiny/plugins/recordrtc/amd/src/lame.all.js
+- **Version**: 1.2.1
+- **License**:  LGPL
+- **URL**: [https://github.com/zhuker/lamejs](https://github.com/zhuker/lamejs)
+
 ### Emoji data
 
 Library to parse easily data and sprite sheets for emoji.
@@ -476,7 +483,7 @@ Class to draw line, point, bar, and area graphs, including numeric x-axis and do
 Guzzle is a PHP HTTP client library
 
 - **Location**: lib/guzzlehttp/guzzle
-- **Version**: 7.8.1
+- **Version**: 7.9.2
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/guzzle](https://github.com/guzzle/guzzle)
 
@@ -485,7 +492,7 @@ Guzzle is a PHP HTTP client library
 A HTTP Cache for Guzzle as a simple Middleware to be added in the HandlerStack.
 
 - **Location**: lib/guzzlehttp/kevinrob/guzzlecache
-- **Version**: 5.1.0
+- **Version**: 6.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/Kevinrob/guzzle-cache-middleware](https://github.com/Kevinrob/guzzle-cache-middleware)
 
@@ -494,7 +501,7 @@ A HTTP Cache for Guzzle as a simple Middleware to be added in the HandlerStack.
 Guzzle promises library
 
 - **Location**: lib/guzzlehttp/promises
-- **Version**: 2.0.2
+- **Version**: 2.0.4
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/promises](https://github.com/guzzle/promises)
 
@@ -503,7 +510,7 @@ Guzzle promises library
 PSR-7 message implementation that also provides common utility methods
 
 - **Location**: lib/guzzlehttp/psr7
-- **Version**: 2.6.2
+- **Version**: 2.7.0
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/psr7](https://github.com/guzzle/psr7)
 
@@ -563,7 +570,7 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 ### Serializable Closure
 
 - **Location**: lib/laravel/serializable-closure
-- **Version**: 1.3.3
+- **Version**: 2.0.3
 - **License**:  MIT
 - **URL**: [https://github.com/laravel/serializable-closure](https://github.com/laravel/serializable-closure)
 
@@ -740,27 +747,16 @@ A Parser for CSS Files written in PHP.
 ### PHP DI Invoker
 
 - **Location**: lib/php-di/invoker
-- **Version**: 2.3.4
+- **Version**: 2.3.6
 - **License**:  MIT
 - **URL**: [https://github.com/php-di/invoker](https://github.com/php-di/invoker)
 
 ### PHP Dependency Injector
 
 - **Location**: lib/php-di/php-di
-- **Version**: 7.0.6
+- **Version**: 7.0.8
 - **License**:  MIT
 - **URL**: [https://github.com/PHP-DI/PHP-DI](https://github.com/PHP-DI/PHP-DI)
-
-### php-enum
-
-PHP Enum implementation inspired from SplEnum
-
-- **Location**: lib/php-enum
-- **Version**: 1.8.4
-- **License**:  MIT
-- **URL**: [https://github.com/myclabs/php-enum](https://github.com/myclabs/php-enum)
-- **Copyright holders**:
-  - 2015 My C-Labs
 
 ### PHP-JWT
 
@@ -1010,7 +1006,7 @@ Simple Pie helps with blogs.
 A generic function and convention to trigger deprecation notices
 
 - **Location**: lib/symfony/deprecation-contracts
-- **Version**: 3.5.0
+- **Version**: 3.5.1
 - **License**:  MIT
 - **URL**: [https://github.com/symfony/deprecation-contracts](https://github.com/symfony/deprecation-contracts)
 
