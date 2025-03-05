@@ -35,6 +35,21 @@ class overview extends activityoverviewbase {
 }
 ```
 
+### The `overviewitem` class
+
+The `core_courseformat\local\overview\overviewitem` class represents a specific activity overview item. Currently, items are used only as cells in the course overview table, but they may be used in other places like the course page or the activity page in the future.
+
+The class has the following mandatory properties:
+
+- **`name`** (`string`): The name of the item, used as the table header in the course overview.
+- **`value`** (`int|string|bool|null`): The value of the item, used for filtering purposes. It won't be displayed in the overview table but will be included as a data attribute.
+- **`content`** (`string|renderable|null`): The content of the item. It can be a string for simple elements, but it is highly recommended to use renderable objects to provide useful extra information depending on the context. If the content is null, the item will be displayed as '-' in the overview table.
+
+Also, the class has the following optional properties:
+
+- **`textalign`** (`core\output\local\properties\text_align`): Indicates the preferred text alignment for the parent container. Notice the type hint is not string but  `text_align` enum, this limit only to valid text alignment values.
+- **`alertcount`** (`integer`) and **`alertlabel`** (`string`): Some items may have an alert count to inform the user of pending actions. This information is not displayed in the table (must be included also in the content) but is added as a data attribute and may be used in other places in the future, such as filtering or mobile app notifications.
+
 ### Extra Overview Items
 
 To provide extra overview items, the plugin can override the `get_extra_overview_items` method. This method should return an array of `\core_courseformat\local\overview\overviewitem` objects indexed by item shortname.
@@ -201,6 +216,38 @@ class overview extends activityoverviewbase {
     }
 }
 ```
+
+### Custom grade overview items
+
+If the activity has a grade item, the course overview will display the grade of the activity to the student. If your plugin has one single grade item, you don't need to do anything.
+
+For activities with more than one grade item (for example, mod_workshop), no grade will be shown by default because the system doesn't know the meaning of each grade item. For those cases, the plugin must implement `get_grade_item_names` to provide the generic name for each grade item. The overview report will show only the grade items with a generic name.
+
+This is an example of a plugin with two grade items:
+
+```php
+#[\Override]
+protected function get_grade_item_names(array $items): array {
+    // Add some fallback in case some grade item is missing.
+    if (count($items) != 2) {
+        return parent::get_grade_item_names($items);
+    }
+    $names = [];
+    foreach ($items as $item) {
+        // Use the itemnunmber to know which grade item is.
+        $stridentifier = ($item->itemnumber == 0) ? 'submission_gradenoun' : 'assessment_gradenoun';
+        // Names must be indexed by the grade item id.
+        $names[$item->id] = get_string($stridentifier, 'mod_YOURPLUGIN');
+    }
+    return $names;
+}
+```
+
+:::note
+
+It is not recommended to override the `get_grades_overviews` method. The method is used to provide the grade information to the course overview, but it is not intended to be used to provide extra information. If you don't want to show the grade information in your plugin, you can override the `get_grade_item_names` method and return an empty array.
+
+:::
 
 ## Dependency Injection
 
