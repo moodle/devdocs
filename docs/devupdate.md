@@ -108,6 +108,8 @@ Both of these values may be combined for plugins supporting both Moodle 4.5 and 
 
 ## Themes
 
+### Activity icon colors
+
 <Since version="5.0" issueNumber="MDL-83725" />
 
 Themes can now customize activity icon colors using simple CSS variables. The new variables introduced are:
@@ -135,6 +137,16 @@ $activity-icon-interactivecontent-bg: #c70827;
 ```
 
 :::
+
+### Bootstrap 5
+
+<Since version="5.0" issueNumber="MDL-75669" />
+
+Bootstrap has been upgraded to version 5, bringing new features and improvements.
+As part of this transition, we have implemented a backwards-compatibility layer to ensure a smooth migration for third-party plugins and custom code.
+
+For more details on the upgrade process and how to utilize the compatibility layer, please visit [Bootstrap 5 migration](./guides/bs5migration/index.md).
+This will help you adapt your projects to the latest Bootstrap version.
 
 ## Unit Tests
 
