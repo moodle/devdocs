@@ -81,6 +81,18 @@ See MDL-81015 for more information on this feature.
 
 :::
 
+### Message Truncation
+
+<Since version="5.0" issueNumber="MDL-84342" />
+
+The SMS API automatically truncates messages that exceed the maximum allowed length before sending.
+
+This is handled by the `truncate_message()` method, which ensures that messages comply with the defined length limit.
+
+The default maximum length is defined in the gateway root class, but it can be modified or overridden by any class that extends it.
+
+Additionally, the `truncate_message()` method itself can be overridden to implement custom truncation logic.
+
 ## Fetching messages
 
 Every sent message is stored in the database to support status checks, and for subsequent reporting.
@@ -140,23 +152,20 @@ graph TD
     classDef success fill:green,color:white,font-weight:bold
 
     unknown["UNKNOWN"]
-    MOS["MESSAGE_OVER_SIZE"]:::failed
     GNA["GATEWAY_NOT_AVAILABLE"]:::failed
     GQ["GATEWAY_QUEUED"]:::inprogress
     GS["GATEWAY_SENT"]:::success
     GF["GATEWAY_FAILED"]:::failed
     GR["GATEWAY_REJECTED"]:::failed
-    MLC{Message length check}
+    TRUNCATE["Truncate message"]
     GWSEL{Gateway selection}
 
     direction TB
     start[/Start/] --> |Initial state| unknown
-    unknown --> |Initial message checks| MLC
-    MLC --> |Message over length| MOS
-    MLC --> |Message within limits| GWSEL
-
+    unknown --> |Check gateway availability| GWSEL
     GWSEL --> |No gateway available to send this message| GNA
-    GWSEL --> |Message passed to Gateway| Gateway
+    GWSEL --> |Gateway selected| TRUNCATE
+    TRUNCATE --> |Message passed to Gateway| Gateway
 
     subgraph Gateway
         GQ --> |The gateway rejected the message| GR
