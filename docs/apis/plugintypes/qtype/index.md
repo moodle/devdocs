@@ -24,4 +24,5 @@ Question types have to do many things:
 11. ... check access to files for the file API.
 12. `renderer.php` - to display the key bits of this question types for the `core_question_renderer` to combine into the overall question display.
 13. Implements Backup and restore, and all the other standard parts of a Moodle plugin like DB tables.
+    - [Restore code](restore.md) requires some special considerations to avoid question duplication.
 14. Track [users preferences for the settings used for newly created questions](./qtype/newquestiondefaults).
