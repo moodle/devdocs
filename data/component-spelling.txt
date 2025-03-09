@@ -74,7 +74,6 @@ message
 mimetypes
 mlbackend
 mnet
-mnetservice
 mod
 my
 notes
