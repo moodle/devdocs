@@ -110,7 +110,7 @@ This prints the HTML for the bottom of the page. It is very important because it
 
 <Since version="5.0" issueNumber="MDL-83888" />
 
-In the example above, we used `$PAGE->get_renderer('tool_demo')` to get an instance of the renderer. This is the traditional way to get a renderer. However, if you are in a class designed for dependency injection, the use of global variables is discouraged. You can read more about dependency injection in the [Dependency Injection](../../../concepts/dependency-injection/index.md) guide.
+In the example above, we used `$PAGE->get_renderer('tool_demo')` to get an instance of the renderer. This is the traditional way to get a renderer. However, if you are in a class designed for dependency injection, the use of global variables is discouraged. You can read more about dependency injection in the [Dependency Injection](../../core/di/index.md) guide.
 
 Instead, you can use the `core\output\renderer_helper` class to get any renderer instance without using the global. This is an example of how to use the `renderer_helper` class to get a renderer instance:
 
