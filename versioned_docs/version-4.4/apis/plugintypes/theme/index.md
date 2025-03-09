@@ -95,7 +95,7 @@ All theme options are set within the `config.php` file for the theme.
  * Boost config.
  *
  * @package   theme_boost
- * @copyright 2016 Frédéric Massart
+ * @copyright Frédéric Massart
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

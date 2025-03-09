@@ -510,7 +510,7 @@ require_once("{$CFG->dirroot}/reportbuilder/tests/helpers.php");
  *
  * @package     core_course
  * @covers      \core_course\reportbuilder\datasource\categories
- * @copyright   2023 Paul Holden <paulh@moodle.com>
+ * @copyright   Paul Holden <paulh@moodle.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class categories_test extends core_reportbuilder_testcase {
