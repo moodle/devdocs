@@ -46,7 +46,7 @@ The underscore character is not supported in activity modules for legacy reasons
 
 :::
 
-<!-- cspell:ignore datapreset , ltisource , ltiservice , forumreport , accessrule , logstore -->
+<!-- cspell:ignore datapreset , ltisource , ltiservice , forumreport , accessrule , logstore, mnetservice -->
 
 | Plugin type | Component name ([Frankenstyle](/general/development/policies/codingstyle/frankenstyle)) | Moodle path | Description | Moodle versions |
 | --- | --- | --- | --- | --- |
