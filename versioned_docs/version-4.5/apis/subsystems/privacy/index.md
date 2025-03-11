@@ -975,7 +975,7 @@ class provider implements core_userlist_provider {
 ## Tips for development
 
 - While implementing the privacy API into your plugin, there are CLI scripts that can help you to test things on the fly. Just don't forget these are not supposed to replace proper unit tests. See [Privacy API/Utilities](./utils.md) for details.
-- Inherit Unit tests from the `core_privacy\tests\provider_testcase</syntaxhighlight>, not <syntaxhighlight lang="php">advanced_testcase`. Advanced test case doesn't reset the Privacy content_writer between tests!
+- Inherit Unit tests from the `core_privacy\tests\provider_testcase`, not `advanced_testcase`. Advanced test case doesn't reset the Privacy content_writer between tests!
 
 ## See also
 
