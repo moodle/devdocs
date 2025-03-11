@@ -252,5 +252,17 @@
         "licenseversion": "2.0",
         "repository": "https://github.com/box/spout/",
         "customised": false
+    },
+    {
+        "copyrightHolders": [
+            "2015 My C-Labs"
+        ],
+        "location": "lib/php-enum",
+        "name": "php-enum",
+        "description": "PHP Enum implementation inspired from SplEnum",
+        "version": "1.8.4",
+        "license": "MIT",
+        "repository": "https://github.com/myclabs/php-enum",
+        "customised": false
     }
 ]

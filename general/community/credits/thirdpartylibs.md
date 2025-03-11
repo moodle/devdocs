@@ -1451,6 +1451,23 @@ This library is not currently used in Moodle
   - 2004-2008 The PHP Group
   - 2004-2008 Stephan Schmidt
 
+### php-enum
+
+PHP Enum implementation inspired from SplEnum
+
+:::danger Outdated
+
+This library is not currently used in Moodle
+
+:::
+
+- **Location**: lib/php-enum
+- **Version**: 1.8.4
+- **License**:  MIT
+- **URL**: [https://github.com/myclabs/php-enum](https://github.com/myclabs/php-enum)
+- **Copyright holders**:
+  - 2015 My C-Labs
+
 ### PHPExcel
 
 Library to read, write and create spreadsheet documents in PHP.
