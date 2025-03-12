@@ -646,6 +646,9 @@ This directive is applied automatically to all the links and media inside of [co
 
 ```html ng2
 <a href="<% cm.url %>" core-link>Open</a>
+<a href="https://demo.mysite.at/course/view.php?id=145" core-link [capture]="true">
+    Open Moodle course within the Moodle App
+</a>
 ```
 
 ### core-external-content
