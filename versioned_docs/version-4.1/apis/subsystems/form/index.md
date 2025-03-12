@@ -228,7 +228,7 @@ public function add_action_buttons(
 
 :::important
 
-The `add_action_buttons` function is defined on `moodlform` class, and not a part of `$this->_form`, for example:
+The `add_action_buttons` function is defined on the `moodleform` class, and not a part of `$this->_form`, for example:
 
 ```php
     public function definition() {
