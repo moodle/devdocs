@@ -53,6 +53,17 @@ The section and activity action menus now utilize output classes instead of glob
 - `core_courseformat\output\local\content\section\controlmenu`: the existing class has been refactored and now uses `action_menu_link` objects instead. If your format add more options to the section menu, you should update your code to use the new class instead of using arrays.
 - `core_courseformat\output\local\content\cm\delegatedcontrolmenu`: like the section control menu, the existing class has been refactored to use `action_menu_link` objects instead of arrays.
 
+### New `core_courseformat_new_module` webservice
+
+<Since version="5.0" issueNumber="MDL-83469" />
+
+A new webservice, `core_courseformat_new_module`, has been introduced to replace the previous `core_courseformat_create_module`. The main difference between the two is that the new webservice uses the section id instead of the section number.
+
+To be sure your format plugin is not affected by the change, you must check:
+
+- If the plugin calls the deprecated webservice `core_courseformat_create_module`. If it does, you should update your code to use the new webservice.
+- The plugin has some link with `data-action` set to `addModule`. If it does, replace it by `data-action` set to `newModule` and add a `data-sectionid` attribute with the section id.
+
 ## Plugin type deprecation
 
 <Since version="5.0" issueNumber="MDL-79843" />
