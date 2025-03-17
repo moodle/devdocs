@@ -147,6 +147,7 @@ Bowman
 Boyatt
 Bozhko
 Bram
+Brandon
 Brands
 Brat
 Bravo
@@ -210,6 +211,7 @@ Cito
 Clarkson
 Claude
 Clay
+Clemens
 Clement
 Cocco
 CodeMonkey
@@ -398,6 +400,7 @@ Gomez
 Gootvilig
 Gorbatov
 Gordon
+Gosali
 Goyal
 Grabs
 Graham
@@ -972,7 +975,9 @@ Sachan
 Safat
 Sagar
 Sagie
+Saidi
 Salces
+Salem
 Salih
 Sammarco
 Sander
@@ -1121,6 +1126,7 @@ Treitinger
 Treu
 Trevor
 Trisha
+Trong
 Trouve
 Trouvé
 Troy

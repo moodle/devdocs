@@ -135,7 +135,7 @@ The process of [new feature development](#new-feature-development) is described 
 
 ### Testing
 
-During development, as new code is integrated, automated testing conducted at the [code](./tools/phpunit.md) and [interface](./tools/behat/index.md) levels, to make sure there are no regressions caused by new features.
+During development, as new code is integrated, automated testing conducted at the [code](./tools/phpunit/index.md) and [interface](./tools/behat/index.md) levels, to make sure there are no regressions caused by new features.
 
 In the last month before the release, a feature freeze is called (no new features can be added) and volunteer testers from the Moodle community perform manual [QA testing](./process/testing/qa.md) of Moodle features. The current set of functional tests is listed in [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1). The list of tests is extended as new features are added, though we're also trying to reduce the number as more automated [acceptance tests](./tools/behat/index.md) are developed.
 

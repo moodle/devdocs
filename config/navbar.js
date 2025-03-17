@@ -59,6 +59,13 @@ const navbar = {
         {
             type: 'docSidebar',
             position: 'left',
+            sidebarId: 'projects',
+            label: 'Projects',
+            docsPluginId: 'general',
+        },
+        {
+            type: 'docSidebar',
+            position: 'left',
             sidebarId: 'moodleapp',
             label: 'Moodle App',
             docsPluginId: 'general',

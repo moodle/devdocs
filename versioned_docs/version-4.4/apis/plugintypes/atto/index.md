@@ -5,7 +5,7 @@ tags: []
 
 <Since versions={["2.7"]} issueNumber="MDL-43841" />
 
-Atto is a JavaScript text editor built specifically for Moodle. It is the default text editor in Moodle from 2.7 onwards, and is implemented as a standard Moodle [text editor plugin](https://docs.moodle.org/dev/Editors). Most of the code is written in JavaScript using YUI modules.
+Atto is a JavaScript text editor built specifically for Moodle. It is the default text editor in Moodle from 2.7 onwards, and is implemented as a standard Moodle [text editor plugin](./../../subsystems/editor/index.md). Most of the code is written in JavaScript using YUI modules.
 
 All of the buttons in Atto are implemented as Moodle subplugins. This means that the subplugins can do anything a subplugin can do including, using language strings, database tables, other JavaScript, and more.
 

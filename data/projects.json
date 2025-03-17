@@ -1,6 +1,27 @@
 {
     "$schema": "../static/schema/projects.json",
     "projects": {
+        "directoryrestructure/index": {
+            "title": "Directory Restructure",
+            "status": "In Progress",
+            "owners": [
+                {
+                    "name": "Andrew Lyons",
+                    "githubUsername": "andrewnicols"
+                }
+            ],
+            "discussionLinks": [],
+            "issueLinks": [
+                {
+                    "link": "https://tracker.moodle.org/browse/MDL-83424",
+                    "title": "MDL-83424"
+                },
+                {
+                    "link": "https://tracker.moodle.org/browse/IDEA-75",
+                    "title": "Roadmap Proposal"
+                }
+            ]
+        },
         "docs/migration": {
             "title": "Dev Docs Migration",
             "status": "In Progress",

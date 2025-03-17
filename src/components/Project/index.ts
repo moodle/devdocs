@@ -23,12 +23,14 @@ export declare interface Link {
     link: string,
 }
 
+declare interface IssueLinks extends Array<Link> {}
+
 export declare interface ProjectSummaryData {
     projectName: string,
     title: string,
     owners: Array<PersonProps>,
     status: string,
-    issueLinks?: Array<Link>,
+    issueLinks?: IssueLinks,
     discussionLinks?: Array<Link>,
 }
 

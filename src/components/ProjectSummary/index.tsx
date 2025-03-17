@@ -48,6 +48,38 @@ export default function ProjectSummary(props: ProjectSummaryProps): ReactNode {
         );
     }
 
+    function getIssueLinks({ issueLinks }: ProjectSummaryData): ReactNode {
+        if (issueLinks.length === 1) {
+            return (
+                <>
+                    {issueLinks.map(({ link, title }) => (
+                        <div key={title}>
+                            <Link
+                                to={link}
+                            >
+                                {title}
+                            </Link>
+                        </div>
+                    ))}
+                </>
+            );
+        }
+
+        return (
+            <ul>
+                {issueLinks.map(({ link, title }) => (
+                    <li key={title}>
+                        <Link
+                            to={link}
+                        >
+                            {title}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
     function GetProjectSummary(projectData: ProjectSummaryData): ReactNode {
         return (
             <div className={styles.projectsummary}>
@@ -82,17 +114,7 @@ export default function ProjectSummary(props: ProjectSummaryProps): ReactNode {
                             && (
                                 <tr>
                                     <th>Issues</th>
-                                    <td>
-                                        {projectData.issueLinks.map(({ link, title }) => (
-                                            <div key={title}>
-                                                <Link
-                                                    to={link}
-                                                >
-                                                    {title}
-                                                </Link>
-                                            </div>
-                                        ))}
-                                    </td>
+                                    <td>{getIssueLinks(projectData)}</td>
                                 </tr>
                             )}
                     </tbody>

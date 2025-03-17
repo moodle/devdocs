@@ -46,7 +46,7 @@ The underscore character is not supported in activity modules for legacy reasons
 
 :::
 
-<!-- cspell:ignore datapreset , ltisource , ltiservice , forumreport , accessrule , logstore -->
+<!-- cspell:ignore datapreset , ltisource , ltiservice , forumreport , accessrule , logstore, mnetservice -->
 
 | Plugin type | Component name ([Frankenstyle](/general/development/policies/codingstyle/frankenstyle)) | Moodle path | Description | Moodle versions |
 | --- | --- | --- | --- | --- |
@@ -74,7 +74,7 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Question behaviours](https://docs.moodle.org/dev/Question_behaviours) | qbehaviour | /question/behaviour | Control how student interact with questions during an attempt | 2.1+ |
 | [Question import/export formats](https://docs.moodle.org/dev/Question_formats) | qformat | /question/format | Import and export question definitions to/from the question bank | 1.6+ |
 | [Text filters](./filter/index.md) | filter | /filter | Automatically convert, highlight, and transmogrify text posted into Moodle. | 1.4+ |
-| [Editors](https://docs.moodle.org/dev/Editors) | editor | /lib/editor | Alternative text editors for editing content | 2.0+ |
+| [Editors](./../subsystems/editor/index.md) | editor | /lib/editor | Alternative text editors for editing content | 2.0+ |
 | [Atto editor plugins](./atto/index.md) | atto | /lib/editor/atto/plugins | Extra functionality for the Atto text editor | 2.7+ |
 | [Enrolment plugins](./enrol/index.md) | enrol | /enrol | Ways to control who is enrolled in courses | 2.0+ |
 | [Authentication plugins](https://docs.moodle.org/dev/Authentication_plugins) | auth | /auth | Allows connection to external sources of authentication | 2.0+ |
@@ -131,6 +131,166 @@ foreach ($pluginman->get_plugin_types() as $type => $dir) {
 ```
 
 </details>
+
+## Plugin type deprecation
+
+<Since version="5.0" issueNumber="MDL-79843" />
+
+When a plugin or subplugin type is no longer needed or is replaced by another plugin type, it should be deprecated.
+Using `components.json` or `subplugins.json` plugin types and subplugin types, respectively, can be marked as deprecated.
+
+The process for plugin and subplugin type deprecation differs slightly to the normal [Deprecation](/general/development/policies/deprecation) process.
+Unlike with code deprecation, where the deprecated class or method is usually expected to remain functional during the deprecation window, deprecated plugin/subplugin types are treated as end-of-life as soon as they are deprecated.
+
+Once deprecated, core will exclude plugins of the respective plugin type when performing common core-plugin communication, such as with hooks, callbacks, events, and-so-on.
+In the case of subplugins, the subplugin owner (the component which the subplugin belongs to), **must** have been updated to remove or replace all references to the subplugins before the time of deprecation.
+
+Class autoloading and string resolution is still supported during the deprecation window, to assist with any plugin migration scripts that may be required.
+
+:::info limitations
+
+Whilst both plugin and subplugin types can be deprecated, only those plugin types which do _not_ support subplugins can be deprecated.
+
+:::
+
+### Deprecation process
+
+Deprecation follows a 3 stage process:
+
+1. The plugin/subplugin type is marked as deprecated (a core version bump is also required).
+2. The plugin/subplugin type is marked as deleted (a core version bump is also required).
+3. Final removal of the plugin/subplugin type from the respective config file.
+
+#### First stage deprecation
+
+During first stage deprecation, plugins of the respective type may remain installed, but are deemed end-of-life.
+
+This stage gives administrators time to remove the affected plugins from the site, or migrate them to their replacement plugins.
+
+#### Second stage deprecation
+
+The second stage deprecation is the deletion phase.
+
+If any affected plugins are still present (that is any which have not been uninstalled or migrated yet), the site upgrade will be blocked.
+
+These plugins **must** be removed before continuing with site upgrade.
+
+#### Final deprecation
+
+In the final deprecation stage the relevant configuration changes supporting first and second stage deprecation can be removed from the respective config files. This removes the last reference to these plugin/subplugin types.
+
+### Deprecating a plugin type
+
+The first phase of plugin type deprecation involves describing the plugin in the `deprecatedplugintypes` configuration in `lib/components.json`. The plugin type must also be removed from the `plugintypes` object.
+
+The second phase of plugin type deprecation involves moving the entry from  the `deprecatedplugintypes` object to the `deletedplugintypes` object.
+
+:::info Remember
+
+Don't forget to increment the core version number when marking a plugin/subplugin type for either deprecation or deletion. A version bump isn't needed for final removal.
+
+:::
+
+:::tip Example of plugin type deprecation config values
+
+To mark a plugin type as deprecated in `components.json`, the plugin type should be removed from the `plugintypes` object, and added to a new `deprecatedplugintypes` object.
+
+```json title="lib/components.json demonstrating first stage deprecation of a plugin type"
+{
+    "plugintypes": {
+        ...
+    },
+    "subsystems": {
+        ...
+    },
+    "deprecatedplugintypes": {
+        "aiplacement": "ai/placement"
+    }
+}
+```
+
+To mark a plugin type as deleted in `components.json`, the plugin type should be removed from the `deprecatedplugintypes` object, and added to a new `deletedplugintypes` object. If the `deprecatedplugintypes` object is now empty, it may be removed entirely from config.
+
+```json title="lib/components.json demonstrating second stage deprecation (deletion) of a plugin type"
+{
+    "plugintypes": {
+        ...
+    },
+    "subsystems": {
+        ...
+    },
+    "deletedplugintypes": {
+        "aiplacement": "ai/placement"
+    }
+}
+```
+
+Third stage deprecation just removes the plugin type from the `deletedplugintypes` object. If the `deletedplugintypes` object is now empty, it may be removed entirely from config.
+
+```json title="lib/components.json demonstrating final stage deprecation of a plugin type. The process is the same for subplugin types."
+{
+    "plugintypes": {
+        ...
+    },
+    "subsystems": {
+        ...
+    },
+}
+```
+
+:::
+
+### Deprecating a subplugin type
+
+To mark a subplugin type as deprecated, edit the component's `subplugins.json` file, remove the subplugin type from the `subplugintypes` object and add it to the `deprecatedsubplugintypes` object. The mark a subplugin type for stage 2 deprecation (deletion), edit the same file and move the subplugin type from the `deprecatedsubplugintypes` object to the `deletedsubplugintypes` object.
+
+Following deletion, the plugin/subplugin type can be removed from the respective JSON entirely.
+
+:::info Remember
+
+Don't forget to increment the core version number when marking a plugin/subplugin type for either deprecation or deletion. A version bump isn't needed for final removal.
+
+:::
+
+:::tip Example of subplugin type deprecation config values
+
+To mark a subplugin type as deprecated in a component's `subplugins.json`, the subplugin type should be removed from the `subplugintypes` object, and added to a new `deprecatedsubplugintypes` object.
+
+```json title="mod/lti/db/subplugins.json demonstrating first stage deprecation of a subplugin type"
+{
+    "subplugintypes": {
+        "ltiservice": "service"
+    },
+    "deprecatedsubplugintypes": {
+        "ltisource": "source"
+    }
+}
+```
+
+To mark a subplugin type as deleted in a component's `subplugins.json`, the subplugin type should be removed from the `deprecatedsubplugintypes` object, and added to a new `deletedsubplugintypes` object. If the `deprecatedsubplugintypes` object is now empty, it may be removed entirely from config.
+
+```json title="mod/lti/db/subplugins.json demonstrating second stage deprecation (deletion) of a subplugin type"
+{
+    "subplugintypes": {
+        "ltiservice": "service"
+    },
+    "deletedsubplugintypes": {
+        "ltisource": "source"
+    }
+}
+```
+
+Third stage deprecation just removes the subplugin type from the `deletedsubplugintypes` object. If this object is then empty, it may be removed entirely from config.
+
+```json title="mod/lti/db/subplugins.json demonstrating final stage deprecation of a subplugin type."
+{
+    "subplugintypes": {
+        "ltiservice": "service"
+    }
+}
+```
+
+:::
 
 ## See also
 

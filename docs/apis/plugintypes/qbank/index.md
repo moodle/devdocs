@@ -22,5 +22,6 @@ Question bank plugins can extend the question bank in many ways, including:
 - Bulk actions
 - Navigation node (tabs)
 - Question preview additions (via callback)
+- [Question filters](./filters.md)
 
 The place to start implementing most of these is with a class `classes/plugin_features.php` in your plugin, that declares which features you want to add to the question bank. Until more documentation is written, looking at the examples of the plugins in Moodle core should give you a good idea what you need to do.

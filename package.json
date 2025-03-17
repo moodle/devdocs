@@ -28,7 +28,7 @@
     "mdxfix-all": "markdownlint-cli2 --config .markdownlint/mdx/fix/.markdownlint-cli2.cjs '{docs,general}/**/*.mdx' '*.mdx'",
     "migrate": "scripts/wikimedia-fetch.mjs migrate",
     "lint": "yarn mdlint-all; yarn mdxlint-all; yarn spell",
-    "prepare": "husky install",
+    "postinstall": "husky install",
     "spell": "cspell '*.md' '*.mdx' '**/*.md' '**/*.mdx' 'docs/*.md' 'docs/*.mdx' 'docs/**/*.md' 'docs/**/*.mdx' 'general/*.md' 'general/*.mdx' 'general/**/*.md' 'general/**/*.mdx'"
   },
   "dependencies": {

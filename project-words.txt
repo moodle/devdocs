@@ -39,7 +39,9 @@ Josep
 JMeter
 JWKS
 Kanban
+Laravel
 MAINNODE
+MDK
 MDL
 MDLQA
 MDLSITE
@@ -49,6 +51,7 @@ Moodleisms
 Moodlelib
 Moodlenet
 Moodlers
+Moosh
 Multilang
 MyISAM
 MySQLi
@@ -73,6 +76,7 @@ SIGINT
 SIGTERM
 Soulier
 Stene
+Symfony
 TCPDF
 TODO
 ToBic

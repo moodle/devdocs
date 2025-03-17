@@ -24,7 +24,7 @@ Provide a great search experience without the need for external, server-side, se
 ### Roundcube Framework
 
 - **Location**: admin/tool/messageinbound/roundcube
-- **Version**: 1.6.6
+- **Version**: 1.6.10
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/roundcube/roundcubemail](https://github.com/roundcube/roundcubemail)
 - **Copyright holders**:
@@ -54,17 +54,6 @@ An easy-to-install jQuery plugin to create EU Cookie Law popups and for GDPR com
 - **URL**: [https://github.com/wimagguc/jquery-eu-cookie-law-popup](https://github.com/wimagguc/jquery-eu-cookie-law-popup)
 - **Copyright holders**:
   - 2015 Richard Dancsi
-
-### CAS
-
-phpCAS library to support CAS authentication plugin.
-
-- **Location**: auth/cas/CAS
-- **Version**: 1.6.1
-- **License**:  Apache 2.0
-- **URL**: [https://github.com/apereo/phpCAS](https://github.com/apereo/phpCAS)
-- **Copyright holders**:
-  - 2007-2020, Apereo Foundation
 
 ### IMS-BLTI
 
@@ -228,7 +217,7 @@ The AWS SDK for PHP library
 Accessibility testing engine for websites and other HTML-based user interfaces.
 
 - **Location**: lib/behat/axe
-- **Version**: 4.10.0
+- **Version**: 4.10.2
 - **License**:  MPL 2.0
 - **URL**: [https://github.com/dequelabs/axe-core](https://github.com/dequelabs/axe-core)
 - **Copyright holders**:
@@ -245,41 +234,10 @@ Bennu is an object-oriented library written in PHP that implements the iCalendar
 - **Copyright holders**:
   - 2005, Jon Papaioannou
 
-### jsbeautify
-
-Beautify HTML code in Atto.
-
-- **Location**: lib/editor/atto/plugins/html/yui/src/beautify
-- **Version**: 1.15.1
-- **License**:  MIT
-- **URL**: [https://github.com/beautify-web/js-beautify](https://github.com/beautify-web/js-beautify)
-- **Copyright holders**:
-  - 2007-2018 Einar Lielmanis, Liam Newman, and contributors.
-
-### codemirror
-
-CodeMirror is a versatile text editor implemented in JavaScript for the browser.
-
-- **Location**: lib/editor/atto/plugins/html/yui/src/codemirror
-- **Version**: 5.65.16
-- **License**:  MIT
-- **URL**: [https://github.com/codemirror/codemirror5](https://github.com/codemirror/codemirror5)
-
-### Rangy
-
-A cross-browser JavaScript range and selection library.
-
-- **Location**: lib/editor/atto/yui/src/rangy/js/*.*
-- **Version**: 1.3.1 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/timdown/rangy](https://github.com/timdown/rangy)
-- **Copyright holders**:
-  - 2014 Tim Down
-
 ### Tiny
 
 - **Location**: lib/editor/tiny/js/tinymce
-- **Version**: 6.8.3
+- **Version**: 7.3.0
 - **License**:  MIT
 - **URL**: [https://github.com/tinymce/tinymce](https://github.com/tinymce/tinymce)
 
@@ -288,7 +246,7 @@ A cross-browser JavaScript range and selection library.
 Beautifier for javascript.
 
 - **Location**: lib/editor/tiny/plugins/html/amd/src/beautify
-- **Version**: 1.15.1
+- **Version**: 1.15.3
 - **License**:  MIT
 - **URL**: [https://github.com/beautifier/js-beautify/](https://github.com/beautifier/js-beautify/)
 
@@ -306,7 +264,7 @@ CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 Autocompletion for the CodeMirror code editor.
 
 - **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
-- **Version**: 6.16.0
+- **Version**: 6.18.6
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/autocomplete](https://github.com/codemirror/autocomplete)
 
@@ -315,7 +273,7 @@ Autocompletion for the CodeMirror code editor.
 Collection of editing commands for the CodeMirror code editor.
 
 - **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
-- **Version**: 6.5.0
+- **Version**: 6.8.0
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/commands](https://github.com/codemirror/commands)
 
@@ -324,7 +282,7 @@ Collection of editing commands for the CodeMirror code editor.
 CSS language support for the CodeMirror code editor.
 
 - **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
-- **Version**: 6.2.1
+- **Version**: 6.3.1
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/lang-css](https://github.com/codemirror/lang-css)
 
@@ -342,7 +300,7 @@ HTML language support for the CodeMirror code editor.
 JavaScript language support for the CodeMirror code editor.
 
 - **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
-- **Version**: 6.2.2
+- **Version**: 6.2.3
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/lang-javascript](https://github.com/codemirror/lang-javascript)
 
@@ -360,7 +318,7 @@ XML language support for the CodeMirror code editor.
 Language support infrastructure for the CodeMirror code editor.
 
 - **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
-- **Version**: 6.10.1
+- **Version**: 6.10.8
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/language](https://github.com/codemirror/language)
 
@@ -369,7 +327,7 @@ Language support infrastructure for the CodeMirror code editor.
 Linting support for the CodeMirror code editor.
 
 - **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
-- **Version**: 6.7.1
+- **Version**: 6.8.4
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/lint](https://github.com/codemirror/lint)
 
@@ -378,7 +336,7 @@ Linting support for the CodeMirror code editor.
 Search functionality for the CodeMirror code editor.
 
 - **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
-- **Version**: 6.5.6
+- **Version**: 6.5.10
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/search](https://github.com/codemirror/search)
 
@@ -387,7 +345,7 @@ Search functionality for the CodeMirror code editor.
 Editor state data structures for the CodeMirror code editor.
 
 - **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
-- **Version**: 6.4.1
+- **Version**: 6.5.2
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/state](https://github.com/codemirror/state)
 
@@ -396,9 +354,16 @@ Editor state data structures for the CodeMirror code editor.
 DOM view component for the CodeMirror code editor.
 
 - **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
-- **Version**: 6.26.3
+- **Version**: 6.36.4
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/view](https://github.com/codemirror/view)
+
+### lamejs
+
+- **Location**: lib/editor/tiny/plugins/recordrtc/amd/src/lame.all.js
+- **Version**: 1.2.1
+- **License**:  LGPL
+- **URL**: [https://github.com/zhuker/lamejs](https://github.com/zhuker/lamejs)
 
 ### Emoji data
 
@@ -427,7 +392,7 @@ Class to safely evaluate math expressions.
 The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
 - **Location**: lib/fonts
-- **Version**: 6.5.2
+- **Version**: 6.7.2
 - **License**:  SIL OFL 1.1
 - **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
 - **Copyright holders**:
@@ -447,7 +412,7 @@ Library for creating beautiful generative background images from a string.
 ### libphonenumber for PHP (Lite)
 
 - **Location**: lib/giggsey/libphonenumber-for-php-lite
-- **Version**: 8.13.31
+- **Version**: 8.13.55
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/giggsey/libphonenumber-for-php-lite](https://github.com/giggsey/libphonenumber-for-php-lite)
 
@@ -476,7 +441,7 @@ Class to draw line, point, bar, and area graphs, including numeric x-axis and do
 Guzzle is a PHP HTTP client library
 
 - **Location**: lib/guzzlehttp/guzzle
-- **Version**: 7.8.1
+- **Version**: 7.9.2
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/guzzle](https://github.com/guzzle/guzzle)
 
@@ -485,7 +450,7 @@ Guzzle is a PHP HTTP client library
 A HTTP Cache for Guzzle as a simple Middleware to be added in the HandlerStack.
 
 - **Location**: lib/guzzlehttp/kevinrob/guzzlecache
-- **Version**: 5.1.0
+- **Version**: 6.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/Kevinrob/guzzle-cache-middleware](https://github.com/Kevinrob/guzzle-cache-middleware)
 
@@ -494,7 +459,7 @@ A HTTP Cache for Guzzle as a simple Middleware to be added in the HandlerStack.
 Guzzle promises library
 
 - **Location**: lib/guzzlehttp/promises
-- **Version**: 2.0.2
+- **Version**: 2.0.4
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/promises](https://github.com/guzzle/promises)
 
@@ -503,7 +468,7 @@ Guzzle promises library
 PSR-7 message implementation that also provides common utility methods
 
 - **Location**: lib/guzzlehttp/psr7
-- **Version**: 2.6.2
+- **Version**: 2.7.0
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/psr7](https://github.com/guzzle/psr7)
 
@@ -554,7 +519,7 @@ jQuery is a fast, small, and feature-rich JavaScript library widely used on mood
 jQuery UI is a set of user interface interactions, effects, widgets, and themes built on top of the jQuery library.
 
 - **Location**: lib/jquery
-- **Version**: 1.13.2
+- **Version**: 1.14.1
 - **License**:  MIT
 - **URL**: [https://github.com/jquery/jquery-ui](https://github.com/jquery/jquery-ui)
 - **Copyright holders**:
@@ -563,7 +528,7 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 ### Serializable Closure
 
 - **Location**: lib/laravel/serializable-closure
-- **Version**: 1.3.3
+- **Version**: 2.0.3
 - **License**:  MIT
 - **URL**: [https://github.com/laravel/serializable-closure](https://github.com/laravel/serializable-closure)
 
@@ -607,7 +572,7 @@ All rights reserved.
 Library for processing of GeoIP data files.
 
 - **Location**: lib/maxmind/GeoIp2
-- **Version**: 3.0.0
+- **Version**: 3.1.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/GeoIP2-php](https://github.com/maxmind/GeoIP2-php)
 - **Copyright holders**:
@@ -618,7 +583,7 @@ Library for processing of GeoIP data files.
 PHP API for reading MaxMind DB files.
 
 - **Location**: lib/maxmind/MaxMind
-- **Version**: 1.11.1
+- **Version**: 1.12.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/MaxMind-DB-Reader-php/](https://github.com/maxmind/MaxMind-DB-Reader-php/)
 - **Copyright holders**:
@@ -641,17 +606,6 @@ CSS path converter, in PHP
 - **Version**: 1.1.3
 - **License**:  MIT
 - **URL**: [https://github.com/matthiasmullie/path-converter](https://github.com/matthiasmullie/path-converter)
-
-### PHP-ML
-
-Machine learning library used to generate data for the Analytics system.
-
-- **Location**: lib/mlbackend/php/phpml
-- **Version**: 0.10.0
-- **License**:  MIT
-- **URL**: [https://gitlab.com/php-ai/php-ml](https://gitlab.com/php-ai/php-ml)
-- **Copyright holders**:
-  - 2016-2020 Arkadiusz Kondas arkadiusz.kondas[at]gmail
 
 ### Mustache
 
@@ -676,7 +630,7 @@ PHP library for displaying mustache templates.
 Library to read and write spreadsheet files (CSV, XLSX and ODS).
 
 - **Location**: lib/openspout
-- **Version**: 4.23.0
+- **Version**: 4.28.5
 - **License**:  MIT
 - **URL**: [https://github.com/openspout/openspout](https://github.com/openspout/openspout)
 - **Copyright holders**:
@@ -740,27 +694,16 @@ A Parser for CSS Files written in PHP.
 ### PHP DI Invoker
 
 - **Location**: lib/php-di/invoker
-- **Version**: 2.3.4
+- **Version**: 2.3.6
 - **License**:  MIT
 - **URL**: [https://github.com/php-di/invoker](https://github.com/php-di/invoker)
 
 ### PHP Dependency Injector
 
 - **Location**: lib/php-di/php-di
-- **Version**: 7.0.6
+- **Version**: 7.0.8
 - **License**:  MIT
 - **URL**: [https://github.com/PHP-DI/PHP-DI](https://github.com/PHP-DI/PHP-DI)
-
-### php-enum
-
-PHP Enum implementation inspired from SplEnum
-
-- **Location**: lib/php-enum
-- **Version**: 1.8.4
-- **License**:  MIT
-- **URL**: [https://github.com/myclabs/php-enum](https://github.com/myclabs/php-enum)
-- **Copyright holders**:
-  - 2015 My C-Labs
 
 ### PHP-JWT
 
@@ -778,7 +721,7 @@ A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming t
 Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are based upon the standard AspEmail(tm) classes.
 
 - **Location**: lib/phpmailer
-- **Version**: 6.9.1
+- **Version**: 6.9.3
 - **License**:  LGPL 2.1
 - **URL**: [https://github.com/PHPMailer/PHPMailer](https://github.com/PHPMailer/PHPMailer)
 - **Copyright holders**:
@@ -798,7 +741,7 @@ Library to read, write and create spreadsheet documents in PHP.
 A php library for building xml-rpc clients and servers
 
 - **Location**: lib/phpxmlrpc
-- **Version**: 4.10.1 (with Moodle customisations)
+- **Version**: 4.11.1 (with Moodle customisations)
 - **License**:  BSD 3-Clause
 - **URL**: [https://github.com/gggeek/phpxmlrpc](https://github.com/gggeek/phpxmlrpc)
 - **Copyright holders**:
@@ -809,7 +752,7 @@ A php library for building xml-rpc clients and servers
 PHP Implementation of Apple's PList (binary and XML).
 
 - **Location**: lib/plist
-- **Version**: 2.0.3
+- **Version**: 2.0.5
 - **License**:  MIT
 - **URL**: [https://github.com/TECLIB/CFPropertyList](https://github.com/TECLIB/CFPropertyList)
 - **Copyright holders**:
@@ -956,7 +899,7 @@ A polyfill for getallheaders
 RequireJS is a JavaScript file and module loader.
 
 - **Location**: lib/requirejs
-- **Version**: 2.3.5 (with Moodle customisations)
+- **Version**: 2.3.7 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/requirejs/requirejs](https://github.com/requirejs/requirejs)
 
@@ -1010,7 +953,7 @@ Simple Pie helps with blogs.
 A generic function and convention to trigger deprecation notices
 
 - **Location**: lib/symfony/deprecation-contracts
-- **Version**: 3.5.0
+- **Version**: 3.5.1
 - **License**:  MIT
 - **URL**: [https://github.com/symfony/deprecation-contracts](https://github.com/symfony/deprecation-contracts)
 
@@ -1019,7 +962,7 @@ A generic function and convention to trigger deprecation notices
 Class to generate PDF files
 
 - **Location**: lib/tcpdf
-- **Version**: 6.7.5 (with Moodle customisations)
+- **Version**: 6.8.2 (with Moodle customisations)
 - **License**:  LGPL 3.0-or-later
 - **URL**: [https://github.com/tecnickcom/TCPDF](https://github.com/tecnickcom/TCPDF)
 - **Copyright holders**:
@@ -1082,7 +1025,7 @@ The Gallery is a collection of modules that have been developed by the YUI commu
 PHP ZIP Streaming Library
 
 - **Location**: lib/zipstream
-- **Version**: 3.1.0
+- **Version**: 3.1.2
 - **License**:  MIT
 - **URL**: [https://github.com/maennchen/ZipStream-PHP](https://github.com/maennchen/ZipStream-PHP)
 - **Copyright holders**:
@@ -1107,7 +1050,7 @@ Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 JavaScript library that makes it easier to work with and build on HTML5 video.
 
 - **Location**: media/player/videojs/amd/src/video-lazy.js
-- **Version**: 8.17.3 (with Moodle customisations)
+- **Version**: 8.21.1 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
@@ -1151,7 +1094,7 @@ JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 JavaScript library that makes it easier to work with and build on HTML5 video
 
 - **Location**: media/player/videojs/videojs
-- **Version**: 8.17.3 (with Moodle customisations)
+- **Version**: 8.21.1 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
@@ -1179,168 +1122,24 @@ A standalone Amazon S3 (REST) client for PHP 5.2.x using CURL that does not requ
 - **Copyright holders**:
   - 2013, Donovan Schönknecht
 
-### bootstrap-alert
+### Twitter Bootstrap
 
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
-- **Location**: theme/boost/amd/src/bootstrap/alert.js
-- **Version**: 4.6.2 (with Moodle customisations)
+- **Location**: theme/boost/amd/src/bootstrap/
+- **Version**: 5.3.3 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
   - 2011-2021 Twitter, Inc
   - 2011-2021 The Bootstrap Authors
 
-### bootstrap-button
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: theme/boost/amd/src/bootstrap/button.js
-- **Version**: 4.6.2 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### bootstrap-carousel
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: theme/boost/amd/src/bootstrap/carousel.js
-- **Version**: 4.6.2 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### bootstrap-collapse
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: theme/boost/amd/src/bootstrap/collapse.js
-- **Version**: 4.6.2 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### bootstrap-dropdown
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: theme/boost/amd/src/bootstrap/dropdown.js
-- **Version**: 4.6.2 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### bootstrap-modal
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: theme/boost/amd/src/bootstrap/modal.js
-- **Version**: 4.6.2 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### bootstrap-popover
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: theme/boost/amd/src/bootstrap/popover.js
-- **Version**: 4.6.2 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### bootstrap-scrollspy
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: theme/boost/amd/src/bootstrap/scrollspy.js
-- **Version**: 4.6.2 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### bootstrap-tab
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: theme/boost/amd/src/bootstrap/tab.js
-- **Version**: 4.6.2 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### bootstrap-toast
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: theme/boost/amd/src/bootstrap/toast.js
-- **Version**: 4.6.2 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### bootstrap-sanitizer
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: theme/boost/amd/src/bootstrap/tools/sanitizer.js
-- **Version**: 4.6.2 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### bootstrap-tooltip
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: theme/boost/amd/src/bootstrap/tooltip.js
-- **Version**: 4.6.2 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### bootstrap-util
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: theme/boost/amd/src/bootstrap/util.js
-- **Version**: 4.6.2 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### bootstrap-util
+### Twitter Bootstrap
 
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/amd/src/index.js
-- **Version**: 4.6.2 (with Moodle customisations)
+- **Version**: 5.3.3 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1352,7 +1151,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
 - **Location**: theme/boost/scss/bootstrap
-- **Version**: 4.6.2 (with Moodle customisations)
+- **Version**: 5.3.3 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
 - **Copyright holders**:
@@ -1364,7 +1163,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
 - **Location**: theme/boost/scss/fontawesome
-- **Version**: 6.5.2
+- **Version**: 6.7.2
 - **License**:  (MIT)
 - **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
 - **Copyright holders**:
@@ -1651,6 +1450,23 @@ This library is not currently used in Moodle
 - **Copyright holders**:
   - 2004-2008 The PHP Group
   - 2004-2008 Stephan Schmidt
+
+### php-enum
+
+PHP Enum implementation inspired from SplEnum
+
+:::danger Outdated
+
+This library is not currently used in Moodle
+
+:::
+
+- **Location**: lib/php-enum
+- **Version**: 1.8.4
+- **License**:  MIT
+- **URL**: [https://github.com/myclabs/php-enum](https://github.com/myclabs/php-enum)
+- **Copyright holders**:
+  - 2015 My C-Labs
 
 ### PHPExcel
 

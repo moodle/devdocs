@@ -290,6 +290,7 @@ Named parameter arguments are available from PHP 8.0 onwards.
 - [Deprecation attributes](/docs/apis/core/deprecation/)
 - [External functions deprecation](/docs/apis/subsystems/external/writing-a-service#deprecation)
 - [Capabilities deprecation](/docs/apis/subsystems/access#deprecating-a-capability)
+- [Plugin type deprecation](/docs/apis/plugintypes#plugin-type-deprecation)
 - [Icon deprecation](./icon-deprecation.md)
 - [SCSS deprecation](./scss-deprecation.md)
 - [Behat step definition deprecation](../../tools/behat/writing.md#deprecating-a-step-definition)

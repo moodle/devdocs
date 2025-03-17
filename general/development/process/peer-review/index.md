@@ -254,7 +254,7 @@ For automated testing (PHPunit and Behat):
 - However, running automated tests takes time and energy. Check that the tests are not excessive, and that they follow best practice (e.g. Behat tests using generators, not setting things up through the UI.) Don't make MDL-15169 worse!
 - Not every change in Moodle requires an entire new test. Sometimes, it is more appropriate and efficient to add some checks in an existing tests. (But this should not be taken to excess, since that could lead to a mess where it is not clear what is being tested where.)
 - Check that the tests have been added in the best place. Are the tests in a place where someone working on related features in the future will expect to find them.
-- As part of your review, check that the unit tests pass. Hopefully this can just be done by checking GitHub actions. (If the developer has not enabled GHA yet, encourage them to do so by linking them to [the instructions](https://moodledev.io/general/development/tools/gha).)
+- As part of your review, check that the unit tests pass. Hopefully this can just be done by checking GitHub actions. (If the developer has not enabled GHA yet, encourage them to do so by linking them to [the instructions](../../tools/gha.md).)
 - Look for evidence that relevant Behat tests pass, especially when it involved UI changes. Note that Behat is not run by GitHub actions, but all the tests will be run as part of the integration process.
 
 ### Overall completeness and correctness
@@ -330,7 +330,7 @@ Once the issue is ready for integration, you can submit it to integration on beh
 
 ```
 Thanks for providing a patch.
-I have reviewed your code and can confirm that it addresses the reported issue. We would like to include it in core. Moodle values its contributors and tries to give them credit when possible. If you are interested in your name appearing on the https://moodle.org/dev/contributions.php page you can create a git commit that we will then pull into Moodle. You can learn more about Git and how Moodle uses it at [Git for developers|https://docs.moodle.org/dev/Git_for_developers] page. Please let me know if you want to prepare a git branch. Or if you don't have time to go through the whole process at the moment I can pick your patch myself.
+I have reviewed your code and can confirm that it addresses the reported issue. We would like to include it in core. Moodle values its contributors and tries to give them credit when possible. If you are interested in your name appearing on the https://moodle.org/dev/contributions.php page you can create a git commit that we will then pull into Moodle. You can learn more about Git and how Moodle uses it at [Git for developers|https://moodledev.io/docs/guides/git] page. Please let me know if you want to prepare a git branch. Or if you don't have time to go through the whole process at the moment I can pick your patch myself.
 ```
 
 ```
@@ -339,7 +339,7 @@ Your code looks almost ready for integration into Moodle. There are just some li
 ```
 
 ```
-I have reviewed your patch, it addresses the problem and complies with Moodle standards. I'm pushing this issue for integration. Following Moodle [Process|https://docs.moodle.org/dev/Process] it will go through integration review and testing before being included in the product. There might be additional questions from an integrator and/or a tester at those stages. It would be appreciated if you read tracker emails and can reply to questions if needed. If everything goes well during the next two stages your issue will be included in the next weekly release and your count on https://moodle.org/dev/contributions.php page will increase.
+I have reviewed your patch, it addresses the problem and complies with Moodle standards. I'm pushing this issue for integration. Following Moodle [Process|https://moodledev.io/general/development/process] it will go through integration review and testing before being included in the product. There might be additional questions from an integrator and/or a tester at those stages. It would be appreciated if you read tracker emails and can reply to questions if needed. If everything goes well during the next two stages your issue will be included in the next weekly release and your count on https://moodle.org/dev/contributions.php page will increase.
 Thanks again for your contribution.
 ```
 

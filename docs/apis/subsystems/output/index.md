@@ -106,6 +106,42 @@ echo $output->footer();
 
 This prints the HTML for the bottom of the page. It is very important because it also prints out things that were added to the `page_requirements_manager` and that need to be printed in the footer; things like JavaScript includes, navigation tree setup, closing open containers tags etc. The reason all JavaScripts are added to the footer of the page is for performance. If you add JavaScript includes to the top of the page, or inline with the content, the browser must stop and execute the JavaScript before it can render the page. See https://developers.google.com/speed/docs/insights/BlockingJS for more information.
 
+### Accessing renderers with dependency injection
+
+<Since version="5.0" issueNumber="MDL-83888" />
+
+In the example above, we used `$PAGE->get_renderer('tool_demo')` to get an instance of the renderer. This is the traditional way to get a renderer. However, if you are in a class designed for dependency injection, the use of global variables is discouraged. You can read more about dependency injection in the [Dependency Injection](../../core/di/index.md) guide.
+
+Instead, you can use the `core\output\renderer_helper` class to get any renderer instance without using the global. This is an example of how to use the `renderer_helper` class to get a renderer instance:
+
+```php
+class my_di_example {
+    public function __construct(
+        /** @var \core\output\renderer_helper $rendererhelper the renderer helper */
+        protected readonly \core\output\renderer_helper $rendererhelper,
+    ) {
+    }
+
+    public function do_something_with_my_renderer() {
+        /** @var \tool_demo\output\renderer $renderer */
+        $renderer = $this->rendererhelper->get_renderer('tool_demo');
+        // Do something with the renderer.
+    }
+
+    public function do_something_with_core_renderer() {
+        // For convenience, the renderer helper also provides a method to get the core renderer.
+        $renderer = $this->rendererhelper->get_core_renderer();
+        // Do something with the core renderer.
+    }
+}
+```
+
+:::note
+
+The `core\output\renderer_helper` class serves as a wrapper around the global `$PAGE` object. This is necessary because the `$PAGE` object can change during script execution, making direct injection impossible. Dependency injection relies on singletons, and the `renderer_helper` class provides a workaround for this limitation.
+
+:::
+
 ### Renderable
 
 In the code above, we created a renderable. This is a class that you have to add to your plugin. It holds all the data required to display something on the page. Here is the renderable for this example:

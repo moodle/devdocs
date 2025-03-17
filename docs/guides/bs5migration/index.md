@@ -472,3 +472,295 @@ The `.font-italic` class has been replaced with `.fst-italic` for brevity and co
 ```
 
 </ValidExample>
+
+## Bootstrap 5 upgrade
+
+<Since version="5.0" issueNumber="MDL-75669" />
+
+After **Refactoring BS4 features dropped in BS5** and **Create a BS5 "bridge"**, the remaining Bootstrap breaking changes will be addressed in the upgrade to Bootstrap 5.
+
+The `bs5-bridge.scss` SCSS file will be removed as it will no longer be needed, and the Bootstrap library in theme_boost will be upgraded to version 5.3. After that the codebase will be fully compatible with Bootstrap 5.
+
+### Refactor dropdowns positioning classes
+
+Replace `.dropdown-menu-[left|right]` with `.dropdown-menu-[start|end]`.
+
+<InvalidExample title="Don't">
+
+```html
+<div class="dropdown-menu dropdown-menu-right">
+    [...]
+</div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<div class="dropdown-menu dropdown-menu-end">
+    [...]
+</div>
+```
+
+</ValidExample>
+
+### Refactor custom form elements
+
+- `.custom-check` is now `.form-check`.
+- `.custom-check.custom-switch` is now `.form-check.form-switch`.
+- `.custom-select` is now `.form-select`.
+- `.custom-file` and `.form-file` have been replaced by custom styles on top of `.form-control`.
+- `.custom-range` is now `.form-range`.
+- Dropped `.input-group-append` and `.input-group-prepend`. You can now just add buttons and `.input-group-text` as direct children of the input groups.
+
+<InvalidExample title="Don't">
+
+```html
+<select name="outcome" class="custom-select"> [...] </select>
+
+<div class="input-group">
+    <input type="text" class="form-control"> [...] </input>
+    <div class="input-group-append">
+        <button type="submit" class="btn btn-primary search-icon">
+            {{#pix}} a/search, core {{/pix}}
+            <span class="visually-hidden">{{#str}} search, core {{/str}}</span>
+        </button>
+    </div>
+</div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+<select name="outcome" class="form-select"> [...] </select>
+
+<div class="input-group">
+    <input type="text" class="form-control"> [...] </input>
+    <button type="submit" class="btn btn-primary search-icon">
+        {{#pix}} a/search, core {{/pix}}
+        <span class="visually-hidden">{{#str}} search, core {{/str}}</span>
+    </button>
+</div>
+```
+
+</ValidExample>
+
+### Refactor media query mixins
+
+- `media-breakpoint-down()` uses the breakpoint itself instead of the next breakpoint (e.g., `media-breakpoint-down(lg)` instead of `media-breakpoint-down(md)` targets viewports smaller than lg).
+- In `media-breakpoint-between()` the second parameter also uses the breakpoint itself instead of the next breakpoint (e.g., `media-breakpoint-between(sm, lg)` instead of `media-breakpoint-between(sm, md)` targets viewports between sm and lg).
+
+<InvalidExample title="Don't">
+
+```css
+// This will target viewports smaller than md.
+@include media-breakpoint-down(sm) {
+    [...]
+}
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```css
+// This will target viewports smaller than md.
+@include media-breakpoint-down(md) {
+    [...]
+}
+```
+
+</ValidExample>
+
+### Refactor BS5 data attributes
+
+Data attributes for all JavaScript plugins are now namespaced to help distinguish Bootstrap functionality from our own code.
+
+<InvalidExample title="Don't">
+
+```html
+// Tooltip.
+<button class="btn btn-outline-secondary"
+        type="button"
+        data-toggle="tooltip"
+        data-html="true"
+        title="{{#str}} string_with_html, block_my_block {{/str}}"
+>
+    {{#pix}} i/info, core {{/pix}}
+</button>
+
+// Collapse.
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsableContent" aria-expanded="false" aria-controls="collapseExample">
+    Open the collapsable content
+</button>
+<div class="collapse" id="collapsableContent">
+    [...]
+</div>
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```html
+// Tooltip.
+<button class="btn btn-outline-secondary"
+        type="button"
+        data-bs-toggle="tooltip"
+        data-bs-html="true"
+        title="{{#str}} string_with_html, block_my_block {{/str}}"
+>
+    {{#pix}} i/info, core {{/pix}}
+</button>
+
+// Collapse.
+<button class="btn btn-primary"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapsableContent"
+        aria-expanded="false"
+        aria-controls="collapseExample"
+>
+    Open the collapsable content
+</button>
+<div class="collapse" id="collapsableContent">
+    [...]
+</div>
+```
+
+</ValidExample>
+
+### Bootstrap 5 and Jquery
+
+Bootstrap dropped jQuery dependency and rewrote plugins to be in regular JavaScript. This means that all the jQuery Bootstrap-related code in the Moodle codebase has been rewritten in vanilla JavaScript.
+
+<InvalidExample title="Don't">
+
+```js
+import $ from 'jquery';
+
+$(document).on('shown shown.bs.tab', function(e) {
+    [...]
+    $('#my-dropdown').dropdown('toggle');
+});
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```js
+import Dropdown from 'theme_boost/bootstrap/dropdown';
+document.querySelectorAll('[data-bs-toggle="tab"]').forEach((tab) => {
+    tab.addEventListener('shown.bs.tab', (e) => {
+        [...]
+        const bootstrapDropdown = new Dropdown('#my-dropdown');
+        bootstrapDropdown.toggle();
+    });
+});
+```
+
+</ValidExample>
+
+:::info backwards compatibility
+
+Although Bootstrap does not need jQuery anymore, it is still possible to use it in Moodle. See MDL-84324 for more information.
+
+:::
+
+## BS4 backwards-compatibility layer
+
+The migration from Bootstrap 4 to Bootstrap 5 involves a transition period to allow third-party plugins to update gradually.
+To facilitate this, a backwards-compatibility layer has been created, ensuring that some Bootstrap 4 syntax will continue to function until final deprecation in Moodle 6.0.
+This approach aims to provide developers with sufficient time to adapt their code to the new Bootstrap 5 framework.
+
+The BS4 backwards-compatibility layer encompasses three crucial aspects to facilitate a smooth transition for third-party contributions:
+
+1. **Bootstrap jQuery support**: This allows existing plugins and components that rely on jQuery to continue functioning while developers work on updating their code to the new vanilla JavaScript approach.
+2. **SCSS helpers and utilities**: The compatibility layer includes some SCSS helpers and utilities from Bootstrap 4, enabling developers to gradually adapt their custom styles to the new Bootstrap 5.
+3. **Bootstrap 4 old data attributes syntax silent replacement**: This feature quietly replaces the old Bootstrap 4 data attribute syntax with the new Bootstrap 5 syntax, ensuring that existing markup continues to work without immediate changes.
+
+### Bootstrap jQuery support
+
+<Since version="5.0" issueNumber="MDL-84324" />
+
+To ease the transition from Bootstrap 4 to Bootstrap 5, the backwards-compatibility layer maintains support for jQuery-dependent components.
+This allows developers to continue using existing jQuery-based plugins and custom code while gradually migrating to the new vanilla JavaScript approach introduced in Bootstrap 5.
+
+The following examples illustrate how to use jQuery with Bootstrap 5 components:
+
+```js
+$('[data-bs-toggle="tooltip"]').tooltip();
+```
+
+Or with event listeners:
+
+```js
+$('#myTab a').on('shown.bs.tab', function () {
+  // do something...
+});
+```
+
+### SCSS helpers and utilities
+
+<Since version="5.0" issueNumber="MDL-80519" />
+
+The compatibility layer includes a selection of SCSS helpers and utilities from Bootstrap 4.
+This provision enables developers to continue using familiar class names and mixins while they work on updating their custom styles to align with Bootstrap 5's new utility API system and class structure.
+
+Some of the SCSS helpers and utilities available in the backwards-compatibility layer include:
+
+- `.media` component
+- Coloured badges using `.badge-success`, `badge-warning`, ... classes
+- Inline forms using `.form-inline` class
+- Spacing utilities like `.mr-1`, `.pl-2`, ...
+- `.sr-only` and `.sr-only-focusable` classes
+- Font utilities like `.font-weight-bold`, `.font-italic`, ...
+- Custom controls in forms using `.custom-radio`, `.custom-switch`, ...
+
+All these backwards-compatible SCSS helpers and utilities will be available until the final deprecation in Moodle 6.0.
+More details about the SCSS deprecation process can be found in [SCSS deprecation](/general/development/policies/deprecation/scss-deprecation).
+
+### Bootstrap 4 old data attributes syntax silent replacement
+
+<Since version="5.0" issueNumber="MDL-84450" />
+
+To minimize immediate breaking changes, the backwards-compatibility layer implements a silent replacement mechanism for Bootstrap 4's data attribute syntax.
+
+As per Bootstrap's migration guide "*Data attributes for all JavaScript plugins are now namespaced to help distinguish Bootstrap functionality from third parties and your own code. For example, we use `data-bs-toggle` instead of `data-toggle`.*"
+
+This feature can be used to translate old data attributes to their Bootstrap 5 equivalents, allowing existing markup to function without requiring immediate updates.
+
+```js title="Example of bs4-compat silent replacement in amd module"
+import initBootstrap4Compatibility from 'theme_boost/bs4-compat';
+
+[...]
+
+// Init Bootstrap 4 compatibility giving an specific element to look into.
+initBootstrap4Compatibility(document.querySelector('[data-region="my-plugin-region"]'));
+
+// Init Bootstrap 4 compatibility in the entire document.
+initBootstrap4Compatibility();
+```
+
+```mustache title="Example of bs4-compat silent replacement in a template"
+[...]
+
+{{#js}}
+// Init Bootstrap 4 compatibility in the entire document.
+require(['theme_boost/bs4-compat'], function(BS4Compat) {
+    BS4Compat();
+});
+{{/js}}
+```
+
+This will replace for example `data-toggle="tooltip"` with `data-bs-toggle="tooltip"`, or `data-target="#collapsableContent"` with `data-bs-target="#collapsableContent"`.
+
+:::warning
+
+Dynamic generated content containing old data attributes syntax will not be replaced.
+
+:::

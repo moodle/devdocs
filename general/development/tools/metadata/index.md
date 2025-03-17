@@ -39,6 +39,8 @@ The name and location on disk of every plugin type, and subsystem is described i
 
 </details>
 
+Plugin types may also be marked as deprecated in this metadata. For more information, see [Plugin type deprecation](/docs/apis/plugintypes#plugin-type-deprecation).
+
 ## Subplugins
 
 Any plugin which supports subplugins must describe its subplugin types by name and path in that plugins `db/subplugins.json` location.
@@ -47,6 +49,8 @@ This file requires that subplugins be specified as a set of key and value pairs 
 
 - The name is the used as a prefix for all namespaces.
 - The path is the path that the plugins exist within.
+
+Subplugin types may also be marked as deprecated in this metadata. For more information, see [Plugin type deprecation](/docs/apis/plugintypes#plugin-type-deprecation).
 
 In the following example the subplugins used in `mod_quiz` are described.
 

@@ -46,7 +46,7 @@ The underscore character is not supported in activity modules for legacy reasons
 
 :::
 
-<!-- cspell:ignore datapreset , ltisource , ltiservice , forumreport , accessrule , logstore -->
+<!-- cspell:ignore datapreset , ltisource , ltiservice , forumreport , accessrule , logstore , mnetservice -->
 
 | Plugin type | Component name ([Frankenstyle](/general/development/policies/codingstyle/frankenstyle)) | Moodle path | Description | Moodle versions |
 | --- | --- | --- | --- | --- |
@@ -74,7 +74,7 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Question behaviours](https://docs.moodle.org/dev/Question_behaviours) | qbehaviour | /question/behaviour | Control how student interact with questions during an attempt | 2.1+ |
 | [Question import/export formats](https://docs.moodle.org/dev/Question_formats) | qformat | /question/format | Import and export question definitions to/from the question bank | 1.6+ |
 | [Text filters](./filter/index.md) | filter | /filter | Automatically convert, highlight, and transmogrify text posted into Moodle. | 1.4+ |
-| [Editors](https://docs.moodle.org/dev/Editors) | editor | /lib/editor | Alternative text editors for editing content | 2.0+ |
+| [Editors](./../subsystems/editor/index.md) | editor | /lib/editor | Alternative text editors for editing content | 2.0+ |
 | [Atto editor plugins](./atto/index.md) | atto | /lib/editor/atto/plugins | Extra functionality for the Atto text editor | 2.7+ |
 | [Enrolment plugins](./enrol/index.md) | enrol | /enrol | Ways to control who is enrolled in courses | 2.0+ |
 | [Authentication plugins](https://docs.moodle.org/dev/Authentication_plugins) | auth | /auth | Allows connection to external sources of authentication | 2.0+ |

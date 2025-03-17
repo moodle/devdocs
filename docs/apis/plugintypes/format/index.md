@@ -626,6 +626,90 @@ The following table describes the data attributes:
 | **Section action link** | `data-action={ACTIONNAME}`<br/>`data-id={SECTION.ID}` |
 | **Section info** | `data-for="sectioninfo"` |
 
+## Implementing format specific actions
+
+All course editing actions done by the user will trigger what is called "state actions" that will update the backend, but also send back information on how to update the frontend in real time. The core state actions are defined in the `core_courseformat\stateactions` class. However, each format plugin extend this class to add its own actions by placing them in the `course/format/PLUGINNAME/classes/courseformat/stateactions.php` file.
+
+All state action will receive the same parameters:
+
+- `stateupdates $updates` an object to register the state updates. This object will be used to inform the frontend about the changes.
+- `stdClass $course` the course object
+- `int[]` $ids the list of affected ids. They could be cmids or section ids depending on the action.
+- `int $targetsectionid` optional target section id. For example, when moving a course module to a new section.
+- `int $targetcmid` optional target cm id. For example, when moving a course module to a new position.
+
+The best example on how to implement a state action is to look at the `format_topics\courseformat\stateactions` class (located at `course/format/topics/classes/courseformat/stateactions.php`). The topics format incorporate two new state actions: `section_highlight` and `section_unhighlight`.
+
+Once your plugin has the integration class implemented with all the extra actions, the action will be available to be executed by the user.
+
+### Execute format specific action from the course page via Ajax
+
+Once the format provides a state action, the plugin must inform the frontend about the new action.
+
+As explained in previous sections, the course editor uses a reactive pattern to keep the course updated. The course editor will always modify the UI to represent the current state data. When a user executes an action, the course editor will send the action to the backend, wait for the state updates, and apply then to the frontend state data. This is what is known as `mutation`.
+
+The `mutations` is the only way to execute state actions from the frontend, and each plugins that implements new state actions in the backend must provide a mutation to the frontend.
+
+Once again, the best example on how to implement a mutation is to look at the `course/format/topics/amd/src/mutations.js`. The topics format incorporate two new mutations: `sectionHighlight` and `sectionUnhighlight`.
+
+The JavaScript reactive components can execute the mutation using the `this.reactive.dispatch` method.
+
+### Execute state actions via non-AJAX requests
+
+<Since
+  version="5.0"
+  issueNumber="MDL-82767"
+/>
+
+Thanks to the standard state actions parameters, it is possible to execute state actions via non-AJAX requests by access the `WWWROOT/course/format/update.php` in your instance. The URL should be called with the following parameters:
+
+- `sesskey`: the user session key.
+- `action`: the action name.
+- `courseid`: the course id.
+- `ids` (as array) or `id` as an integer: the list of affected ids (they could be section ids or course module ids depending on the action).
+- `targetsectionid`: the target section id (optional).
+- `targetcmid`: the target cm id (optional).
+- `returnurl`: the URL to redirect the user after the action is executed.
+
+For most state actions, format plugins does not need to implement any extra code to support non-AJAX requests. However, if the action requires some confirmation or extra steps, the plugin can provide an extra output class to render the confirmation forms for the custom state actions.
+
+To provide extra confirmation steps to non-AJAX alternative, the plugin can extend the default confirmation output class following those steps:
+
+1. **Create a New Class**: In your format plugin, create a new `format_PLUGINNAME\output\courseformat\courseupdate` class that extends the `core_courseformat\output\local\courseupdate` class.
+
+2. **Implement a `ACTIONNAME_confirmation_dialog` Method**: The method should return the confirmation HTML. The confirmation dialog should include a form with a submit button to `new url($this->actionurl, ['confirm' => 1])`. By adding the confirm parameter to the URL, the action will be executed.
+
+### Example
+
+```php
+// filepath: /path/to/your/format/plugin/classes/courseupdate.php
+namespace format_yourplugin;
+
+use core_courseformat\output\local\courseupdate;
+
+class courseupdate extends courseupdate {
+
+    public function section_dosomething_confirmation_dialog(
+        renderer_base $output,
+        stdClass $course,
+        array $ids = [],
+        ?int $targetsectionid = null,
+        ?int $targetcmid = null,
+    ): string {
+        return $output->confirm(
+            message: get_string('sectiondosomething', 'format_yourplugin'),
+            cancel: $this->returnurl,
+            continue: new url($this->actionurl, ['confirm' => 1]),
+            displayoptions: [
+                'confirmtitle' => get_string('sectiondosomething_title', 'format_yourplugin'),
+                'type' => single_button::BUTTON_DANGER,
+                'continuestr' => get_string('delete'),
+            ]
+        );
+    }
+}
+```
+
 ## Activity badge
 
 <Since
