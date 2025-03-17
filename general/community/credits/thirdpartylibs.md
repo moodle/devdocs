@@ -114,12 +114,12 @@ A general library that is supposed to be used in most PHP implementations of H5P
 - **Copyright holders**:
   - Joubel
 
-### AdoDB
+### ADOdb
 
 Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.
 
 - **Location**: lib/adodb
-- **Version**: 5.22.7
+- **Version**: 5.22.8
 - **License**:  BSD/LGPL 3-Clause/2.1+
 - **URL**: [https://github.com/ADOdb/ADOdb](https://github.com/ADOdb/ADOdb)
 - **Copyright holders**:
@@ -153,7 +153,7 @@ Simple yet flexible JavaScript charting for designers & developers.
 Minimal lightweight simple logging for JavaScript.
 
 - **Location**: lib/amd/src/loglevel.js
-- **Version**: 1.9.1
+- **Version**: 1.9.2
 - **License**:  MIT
 - **URL**: [https://github.com/pimterry/loglevel/](https://github.com/pimterry/loglevel/)
 - **Copyright holders**:
@@ -208,7 +208,7 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 The AWS SDK for PHP library
 
 - **Location**: lib/aws-sdk
-- **Version**: 3.318.0
+- **Version**: 3.342.2
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/aws/aws-sdk-php](https://github.com/aws/aws-sdk-php)
 
@@ -233,6 +233,17 @@ Bennu is an object-oriented library written in PHP that implements the iCalendar
 - **URL**: [https://sourceforge.net/projects/bennu/](https://sourceforge.net/projects/bennu/)
 - **Copyright holders**:
   - 2005, Jon Papaioannou
+
+### composer/pcre
+
+PCRE wrapping library that offers type-safe preg_* replacements.
+
+- **Location**: lib/composer/pcre
+- **Version**: 3.3.2
+- **License**:  MIT
+- **URL**: [https://github.com/composer/pcre](https://github.com/composer/pcre)
+- **Copyright holders**:
+  - Composer
 
 ### Tiny
 
@@ -497,7 +508,7 @@ Filters HTML.
 The JMESPath library
 
 - **Location**: lib/jmespath
-- **Version**: 2.7.0
+- **Version**: 2.8.0
 - **License**:  MIT
 - **URL**: [https://github.com/jmespath/jmespath.php](https://github.com/jmespath/jmespath.php)
 - **Copyright holders**:
@@ -710,7 +721,7 @@ A Parser for CSS Files written in PHP.
 A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
 
 - **Location**: lib/php-jwt
-- **Version**: 6.10.0
+- **Version**: 6.11.0
 - **License**:  BSD 3-Clause
 - **URL**: [https://github.com/firebase/php-jwt](https://github.com/firebase/php-jwt)
 - **Copyright holders**:
@@ -727,12 +738,30 @@ Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are 
 - **Copyright holders**:
   - 2003 Brent R. Matzelle (bmatzelle AT yahoo DOT com)
 
+### PHPComplex
+
+PHP Class Library for working with Complex numbers.
+
+- **Location**: lib/phpspreadsheet/markbaker/complex
+- **Version**: 3.0.1
+- **License**:  MIT
+- **URL**: [https://github.com/MarkBaker/PHPComplex](https://github.com/MarkBaker/PHPComplex)
+
+### PHPMatrix
+
+PHP Class for handling Matrices.
+
+- **Location**: lib/phpspreadsheet/markbaker/matrix
+- **Version**: 3.0.0
+- **License**:  MIT
+- **URL**: [https://github.com/MarkBaker/PHPMatrix](https://github.com/MarkBaker/PHPMatrix)
+
 ### PhpSpreadsheet
 
 Library to read, write and create spreadsheet documents in PHP.
 
 - **Location**: lib/phpspreadsheet/phpspreadsheet
-- **Version**: 1.29.0 (with Moodle customisations)
+- **Version**: 4.1.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/PHPOffice/PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
 
@@ -930,7 +959,7 @@ scssphp is a compiler for SCSS written in PHP.
 Simple Pie helps with blogs.
 
 - **Location**: lib/simplepie
-- **Version**: 1.8.0
+- **Version**: 1.8.1
 - **License**:  BSD
 - **URL**: [https://github.com/simplepie/simplepie](https://github.com/simplepie/simplepie)
 
@@ -983,7 +1012,7 @@ URL syntax validation using PHP and regular expressions.
 ### WebAuthn
 
 - **Location**: lib/webauthn
-- **Version**: 2.1.1
+- **Version**: 2.2.2
 - **License**:  MIT
 - **URL**: [https://github.com/lbuchs/WebAuthn](https://github.com/lbuchs/WebAuthn)
 
@@ -1105,7 +1134,7 @@ JavaScript library that makes it easier to work with and build on HTML5 video
 Collection of PHP classes facilitating developers to read pages from existing PDF documents and use them as templates in FPDF.
 
 - **Location**: mod/assign/feedback/editpdf/fpdi
-- **Version**: 2.6.0
+- **Version**: 2.6.3
 - **License**:  MIT
 - **URL**: [https://github.com/Setasign/FPDI](https://github.com/Setasign/FPDI)
 - **Copyright holders**:

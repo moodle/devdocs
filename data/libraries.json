@@ -127,9 +127,9 @@
             "2014 Damien Regad, Mark Newnham and the ADOdb community"
         ],
         "location": "lib/adodb",
-        "name": "AdoDB",
+        "name": "ADOdb",
         "description": "Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.",
-        "version": "5.22.7",
+        "version": "5.22.8",
         "license": "BSD/LGPL",
         "licenseversion": "3-Clause/2.1+",
         "repository": "https://github.com/ADOdb/ADOdb",
@@ -167,7 +167,7 @@
         "location": "lib/amd/src/loglevel.js",
         "name": "loglevel.js",
         "description": "Minimal lightweight simple logging for JavaScript.",
-        "version": "1.9.1",
+        "version": "1.9.2",
         "license": "MIT",
         "repository": "https://github.com/pimterry/loglevel/",
         "customised": false
@@ -225,7 +225,7 @@
         "location": "lib/aws-sdk",
         "name": "AWS SDK for PHP",
         "description": "The AWS SDK for PHP library",
-        "version": "3.318.0",
+        "version": "3.342.2",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/aws/aws-sdk-php",
@@ -256,6 +256,18 @@
         "licenseversion": "2.1+",
         "repository": "https://sourceforge.net/projects/bennu/",
         "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "Composer"
+        ],
+        "location": "lib/composer/pcre",
+        "name": "composer/pcre",
+        "description": "PCRE wrapping library that offers type-safe preg_* replacements.",
+        "version": "3.3.2",
+        "license": "MIT",
+        "repository": "https://github.com/composer/pcre",
+        "customised": false
     },
     {
         "copyrightHolders": [],
@@ -556,7 +568,7 @@
         "location": "lib/jmespath",
         "name": "JMESPath",
         "description": "The JMESPath library",
-        "version": "2.7.0",
+        "version": "2.8.0",
         "license": "MIT",
         "repository": "https://github.com/jmespath/jmespath.php",
         "customised": false
@@ -802,7 +814,7 @@
         "location": "lib/php-jwt",
         "name": "PHP-JWT",
         "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519",
-        "version": "6.10.0",
+        "version": "6.11.0",
         "license": "BSD",
         "licenseversion": "3-Clause",
         "repository": "https://github.com/firebase/php-jwt",
@@ -823,10 +835,30 @@
     },
     {
         "copyrightHolders": [],
+        "location": "lib/phpspreadsheet/markbaker/complex",
+        "name": "PHPComplex",
+        "description": "PHP Class Library for working with Complex numbers.",
+        "version": "3.0.1",
+        "license": "MIT",
+        "repository": "https://github.com/MarkBaker/PHPComplex",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "lib/phpspreadsheet/markbaker/matrix",
+        "name": "PHPMatrix",
+        "description": "PHP Class for handling Matrices.",
+        "version": "3.0.0",
+        "license": "MIT",
+        "repository": "https://github.com/MarkBaker/PHPMatrix",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
         "location": "lib/phpspreadsheet/phpspreadsheet",
         "name": "PhpSpreadsheet",
         "description": "Library to read, write and create spreadsheet documents in PHP.",
-        "version": "1.29.0",
+        "version": "4.1.0",
         "license": "MIT",
         "repository": "https://github.com/PHPOffice/PhpSpreadsheet",
         "customised": true
@@ -1046,7 +1078,7 @@
         "location": "lib/simplepie",
         "name": "SimplePie",
         "description": "Simple Pie helps with blogs.",
-        "version": "1.8.0",
+        "version": "1.8.1",
         "license": "BSD",
         "repository": "https://github.com/simplepie/simplepie",
         "customised": false
@@ -1108,7 +1140,7 @@
         "copyrightHolders": [],
         "location": "lib/webauthn",
         "name": "WebAuthn",
-        "version": "2.1.1",
+        "version": "2.2.2",
         "license": "MIT",
         "repository": "https://github.com/lbuchs/WebAuthn",
         "customised": false
@@ -1246,7 +1278,7 @@
         "location": "mod/assign/feedback/editpdf/fpdi",
         "name": "FPDI",
         "description": "Collection of PHP classes facilitating developers to read pages from existing PDF documents and use them as templates in FPDF.",
-        "version": "2.6.0",
+        "version": "2.6.3",
         "license": "MIT",
         "repository": "https://github.com/Setasign/FPDI",
         "customised": false
