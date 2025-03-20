@@ -363,6 +363,32 @@ public function view($submission) {
 
 The view function is called to display the entire submission to both markers and students. In this case it uses the helper function in the assignment class to write the list of files.
 
+#### submission_summary_for_email()
+
+```php
+#[\Override]
+public function submission_summary_for_messages(stdClass $submission): array {
+    global $PAGE;
+
+    $onlinetextsubmission = $this->get_onlinetext_submission($submission->id);
+    if (!$onlinetextsubmission || !$onlinetextsubmission->onlinetext) {
+        return ['', ''];
+    }
+
+    $renderer = $PAGE->get_renderer('mod_assign');
+    $templatecontext = ['wordcount' => count_words($onlinetextsubmission->onlinetext)];
+    return [
+        // Mustache strips off all trailing whitespace, but we want a newline at the end.
+        $renderer->render_from_template(
+           'assignsubmission_onlinetext/notification_text', $templatecontext) . "\n",
+        $renderer->render_from_template(
+           'assignsubmission_onlinetext/notification_html', $templatecontext),
+    ];
+}
+```
+
+This method produces a summary of what was submitted, in a form suitable to include in messages (for example, the 'You have submitted' confirmation). Moodle messages can be plain text or HTML, so you need to prepare both. It is recommended to use templates so themes can override it if they want to. As you produce your output, think about the fact that multiple Submission plugins may be in use at the same time, in which case your summary will appear alongside other summaries.
+
 #### can_upgrade()
 
 ```php
