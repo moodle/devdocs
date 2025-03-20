@@ -63,9 +63,11 @@ debugging('foobar() is deprecated. Please use foobar::blah() instead.', DEBUG_DE
 <TabItem value="core_deprecation" label="Using the \core\deprecation API from Moodle 4.4">
 
 ```php
-#[\core\attribute\deprecated('foobar::blahv()', since: '4.4', mdl: 'MDL-XXXXX')]
-public function foobar(): void {
+#[\core\attribute\deprecated('foobar::blah()', since: '4.4', mdl: 'MDL-XXXXX')]
+public function foobar(int $old, array $params): array {
     \core\deprecation::emit_deprecation_if_present([$this, __FUNCTION__]);
+    // Call new method if possible or retain existing code.
+    return foobar::blah($old, $params);
 }
 ```
 
@@ -135,8 +137,9 @@ throw new coding_exception(
 
 ```php
 #[\core\attribute\deprecated('foobar::blah()', since: '4.4', mdl: 'MDL-XXXXX', final: true)]
-public function foobar(): void {
+public function foobar(int $old, array $params): array {
     \core\deprecation::emit_deprecation_if_present([self::class, __FUNCTION__]);
+    return [];
 }
 ```
 
@@ -144,7 +147,8 @@ public function foobar(): void {
 
 </Tabs>
 
-- All function parameters should be removed.
+- Keep the existing parameters and return type for both functions and methods.
+- The deprecation 'since' tag should remain as the version where the initial deprecation happened.
 - Deprecated classes must be completely removed.
 - The content of the PHPDoc should be removed, leaving only the `@deprecated` tag with the notice and, optionally, the replacement information. This includes all `@param`, `@return`, and other tags, as well as the description.
 - External functions deprecation process is different from the standard deprecation and functions should be completely removed.
