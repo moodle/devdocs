@@ -248,7 +248,7 @@ PCRE wrapping library that offers type-safe preg_* replacements.
 ### Tiny
 
 - **Location**: lib/editor/tiny/js/tinymce
-- **Version**: 7.3.0
+- **Version**: 7.7.1
 - **License**:  MIT
 - **URL**: [https://github.com/tinymce/tinymce](https://github.com/tinymce/tinymce)
 
@@ -499,7 +499,7 @@ PHP script to convert HTML into an approximate text equivalent.
 Filters HTML.
 
 - **Location**: lib/htmlpurifier
-- **Version**: 4.17.0
+- **Version**: 4.18.0
 - **License**:  LGPL 2.1+
 - **URL**: [https://github.com/ezyang/htmlpurifier](https://github.com/ezyang/htmlpurifier)
 
@@ -696,7 +696,7 @@ Base class for other PEAR classes.
 A Parser for CSS Files written in PHP.
 
 - **Location**: lib/php-css-parser
-- **Version**: 8.4.0 (with Moodle customisations)
+- **Version**: 8.7.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/sabberworm/PHP-CSS-Parser](https://github.com/sabberworm/PHP-CSS-Parser)
 - **Copyright holders**:
@@ -948,7 +948,7 @@ RTLCSS is a framework for converting Left-To-Right (LTR) Cascading Style Sheets(
 scssphp is a compiler for SCSS written in PHP.
 
 - **Location**: lib/scssphp
-- **Version**: 1.12.1
+- **Version**: 1.12.1 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/scssphp/scssphp/](https://github.com/scssphp/scssphp/)
 - **Copyright holders**:

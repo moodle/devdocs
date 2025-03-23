@@ -273,7 +273,7 @@
         "copyrightHolders": [],
         "location": "lib/editor/tiny/js/tinymce",
         "name": "Tiny",
-        "version": "7.3.0",
+        "version": "7.7.1",
         "license": "MIT",
         "repository": "https://github.com/tinymce/tinymce",
         "customised": false
@@ -555,7 +555,7 @@
         "location": "lib/htmlpurifier",
         "name": "HTML Purifier",
         "description": "Filters HTML.",
-        "version": "4.17.0",
+        "version": "4.18.0",
         "license": "LGPL",
         "licenseversion": "2.1+",
         "repository": "https://github.com/ezyang/htmlpurifier",
@@ -784,7 +784,7 @@
         "location": "lib/php-css-parser",
         "name": "PHP-CSS-Parser",
         "description": "A Parser for CSS Files written in PHP.",
-        "version": "8.4.0",
+        "version": "8.7.0",
         "license": "MIT",
         "repository": "https://github.com/sabberworm/PHP-CSS-Parser",
         "customised": true
@@ -1071,7 +1071,7 @@
         "version": "1.12.1",
         "license": "MIT",
         "repository": "https://github.com/scssphp/scssphp/",
-        "customised": false
+        "customised": true
     },
     {
         "copyrightHolders": [],
