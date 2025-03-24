@@ -61,6 +61,9 @@ The AI Subsystem consists of the following (main) components:
   - It is the 'controller' that sits between Placement and Provider plugins.
   - It allows Placements to pass user requests to Providers and handles all the calls to the Providers, including prioritisation and logging.
   - It allows Providers to respond to action requests.
+- **Pre-defined Models**
+  - These are pre-defined models that are used by Providers to do the Actions.
+  - They are not part of the AI subsystem, but they are used by Providers.
 
 ### Placements
 
@@ -198,6 +201,12 @@ Each Action will need to define its own database schema and stored data that is 
 ```
 
 The naming convention for Action database tables is `ai_action_<action_name>`. For example: `ai_action_generate_image`, `ai_action_translate_text`.
+
+#### Pre-defined Models
+
+We can define a set of models that are available for the Actions of the Providers.
+See the [Pre-defined Models](/apis/plugintypes/ai/provider.md#predefined-models) documentation for more information
+on developing Pre-defined Models for Provider plugins.
 
 #### Responses
 
