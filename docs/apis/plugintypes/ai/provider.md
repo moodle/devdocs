@@ -285,6 +285,189 @@ class action_generate_text_form extends action_settings_form {
 ...
 ```
 
+## Predefined models
+
+Pre-defined models allow AI providers to define specific model configurations that can be selected by users.
+This provides a better user experience by offering known model options with appropriate default parameters rather than requiring manual configuration.
+
+### Creating Model Classes
+
+To implement pre-defined models, you will need to create model classes in the `[your_plugin]/classes/aimodel` directory and extend the `core_ai\aimodel\base` class.
+
+For example, `aiprovider_openai` plugin defines this:
+
+```php
+namespace aiprovider_openai\aimodel;
+
+use core_ai\aimodel\base;
+use MoodleQuickForm;
+
+class gpt4o extends base implements openai_base {
+    #[\Override]
+    public function get_model_name(): string {
+        return 'gpt-4o';
+    }
+
+    #[\Override]
+    public function get_model_display_name(): string {
+        return 'GPT-4o';
+    }
+
+    // Add other model-specific methods or properties
+}
+```
+
+### Implementing Per-Model Settings
+
+To add configurable settings for individual models:
+
+1. Override the `has_model_settings()` and `add_model_settings()` methods:
+
+    ```php
+    #[\Override]
+    public function has_model_settings(): bool {
+        return true;
+    }
+
+    #[\Override]
+    public function add_model_settings(MoodleQuickForm $mform): void {
+        $mform->addElement(
+            'text',
+            'top_p',
+            get_string('settings_top_p', 'aiprovider_openai'),
+        );
+        $mform->setType('top_p', PARAM_FLOAT);
+        $mform->addHelpButton('top_p', 'settings_top_p', 'aiprovider_openai');
+
+        // Add more model settings as needed
+        $mform->addElement(
+            'text',
+            'max_tokens',
+            get_string('settings_max_tokens', 'aiprovider_openai'),
+        );
+        $mform->setType('max_tokens', PARAM_INT);
+    }
+    ```
+
+2. Create a helper class to manage models. For example, the `aiprovider_openai` plugin defines this:
+
+    ```php
+    namespace aiprovider_openai;
+
+    class helper {
+        /**
+         * Get all model classes.
+         *
+         * @return array Array of model classes
+         */
+        public static function get_model_classes(): array {
+            $models = [];
+            $modelclasses = \core_component::get_component_classes_in_namespace('aiprovider_openai', 'aimodel');
+            foreach ($modelclasses as $class => $path) {
+                if (!class_exists($class) || !is_a($class, \core_ai\aimodel\base::class, true)) {
+                    throw new \coding_exception("Model class not valid: {$class}");
+                }
+                $models[] = $class;
+            }
+            return $models;
+        }
+
+        /**
+         * Get a specific model class instance.
+         *
+         * @param string $modelname The model name
+         * @return \core_ai\aimodel\base|null The model class or null if not found
+         */
+        public static function get_model_class(string $modelname): ?\core_ai\aimodel\base {
+            foreach (self::get_model_classes() as $modelclass) {
+                $model = new $modelclass();
+                if ($model->get_model_name() === $modelname) {
+                    return $model;
+                }
+            }
+            return null;
+        }
+    }
+    ```
+
+### Integrating with Action Settings Forms
+
+To add model settings to action forms, you will need to create a hook listener that adds the model settings to the action form.
+
+For example, the `aiprovider_openai` plugin does these:
+
+1. Create a hook listener that adds model settings to the action form:
+
+    ```php
+    public static function set_model_form_definition_for_aiprovider_openai(after_ai_action_settings_form_hook $hook): void {
+        if ($hook->plugin !== 'aiprovider_openai') {
+            return;
+        }
+
+        $mform = $hook->mform;
+        if (isset($mform->_elementIndex['modeltemplate'])) {
+            $model = $mform->getElementValue('modeltemplate');
+            if (is_array($model)) {
+                $model = $model[0];
+            }
+
+            // Handle custom model option.
+            if ($model == 'custom') {
+                $mform->addElement('header', 'modelsettingsheader', get_string('settings', 'aiprovider_openai'));
+                $mform->addElement(
+                    'textarea',
+                    'modelextraparams',
+                    get_string('extraparams', 'aiprovider_openai'),
+                    ['rows' => 5, 'cols' => 20],
+                );
+                $mform->setType('modelextraparams', PARAM_TEXT);
+            } else {
+                // Handle pre-defined model settings.
+                $targetmodel = helper::get_model_class($model);
+                if ($targetmodel && $targetmodel->has_model_settings()) {
+                    $mform->addElement('header', 'modelsettingsheader', get_string('settings', 'aiprovider_openai'));
+                    $targetmodel->add_model_settings($mform);
+                }
+            }
+        }
+    }
+    ```
+
+2. Register the hook callback in `db/hooks.php`:
+
+    ```php
+    $callbacks = [
+        [
+            'hook' => \core_ai\hook\after_ai_action_settings_form_hook::class,
+            'callback' => \aiprovider_openai\hook_listener::class . '::set_model_form_definition_for_aiprovider_openai',
+        ],
+    ];
+    ```
+
+### Model Selection UI
+
+To create a model selector UI for your action settings form, you will need to add the model selector element to your action settings form.
+
+For example, `aiprovider_openai` plugin defines this:
+
+```php
+// Create model selector options
+$models = [];
+foreach (helper::get_model_classes() as $modelclass) {
+    $model = new $modelclass();
+    $models[$model->get_model_name()] = $model->get_model_display_name();
+}
+$models['custom'] = get_string('custom_model', 'aiprovider_openai');
+
+$mform->addElement(
+    'select',
+    'modeltemplate',
+    get_string('model_template', 'aiprovider_openai'),
+    $models
+);
+$mform->setDefault('modeltemplate', 'gpt-4o');
+```
+
 ## Rate limiting
 
 Provider plugins by default implement rate limiting to prevent abuse of the external AI services.
