@@ -37,7 +37,7 @@ To deprecate SCSS code, follow these steps:
 
 1. Remove the SCSS code that is no longer in use from the original file.
 2. Add the removed SCSS code to the `deprecated.scss` file under the comment for the current version `// Deprecated since Moodle X.Y.`
-3. Add the `deprecated-styles` mixin to the removed SCSS code.
+3. Add the `deprecated-styles` mixin to the removed SCSS code, with the deprecated selector as parameter.
 4. Add a comment to the removed SCSS code explaining why it has been deprecated.
 
 :::note
@@ -51,7 +51,7 @@ If there is no section for the current version in the `deprecated.scss` file, it
 ```scss title="theme/boost/scss/moodle/deprecated.scss"
 // The class ".foo" is deprecated. Use ".bar" instead.
 .foo {
-  @include deprecated-styles();
+  @include deprecated-styles(".foo");
 
   color: $pink;
   @include border-right-radius(0);
@@ -71,7 +71,7 @@ If there is no section for the current version in the `deprecated.scss` file, it
 // The following styles are deprecated because they are no longer in use.
 // Deprecating the parent selector that contains all the deprecated styles.
 .path-course-view li.activity .foo {
-  @include deprecated-styles();
+  @include deprecated-styles(".path-course-view li.activity .foo");
 }
 .path-course-view li.activity .foo > a {
   text-decoration: none;
@@ -115,5 +115,6 @@ Run optional tests:
 If deprecated styles are being used, the test will fail with the following message:
 
 ```bash
-Deprecated style in use (Exception)
+Deprecated styles found:
+  .foo (found in: d-flex align-items-center foo)
 ```
