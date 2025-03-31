@@ -147,7 +147,9 @@ public function foobar(int $old, array $params): array {
 
 </Tabs>
 
-- Keep the existing parameters and return type for both functions and methods.
+- Function and Method signatures **must not change**, that is:
+  - keep any existing parameters; and
+  - keep any existing return type.
 - The deprecation 'since' tag should remain as the version where the initial deprecation happened.
 - Deprecated classes must be completely removed.
 - The content of the PHPDoc should be removed, leaving only the `@deprecated` tag with the notice and, optionally, the replacement information. This includes all `@param`, `@return`, and other tags, as well as the description.
