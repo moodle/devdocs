@@ -18,11 +18,22 @@ In an open source project, the end use of the codebase varies. People may have c
 
 ## What is Moodle's deprecation policy?
 
-- Deprecations should only be on main, not on stables (exceptions may be made for some external service integrations)
+- Deprecations should only be on the `main` branch, not on stables (exceptions may be made for some external service integrations)
 - Deprecations apply to all public APIs, classes, and files.
 - Removal of a function, class, or file may only be considered after a minimum of 4 major releases since the deprecation. Example: anything deprecated in 3.2 means that it will be removed in 3.6
 - All deprecations should emit debugging notices where possible
 - All deprecations should be noted with an [upgrade note](../../upgradenotes.md).
+
+:::danger What does it mean for an API to be considered "Public"
+
+When we talk about Public APIs in Moodle, we are not referring to the `public` keyword in the method definition.
+
+Instead we are considering how that API feature is used. Is that API feature intended to be, or is there a reasonable expectation that it  may be, consumed in some reasonable way including:
+
+- being called or accessed externally; or
+- being overridden in a class OOP sense.
+
+:::
 
 ## Moodle Core deprecation process
 
