@@ -296,9 +296,11 @@ Any guidelines for callback priority should be described in hook descriptions if
 
 :::caution
 
-Callbacks _are executed during system installation and all upgrades_, the callback
-methods must verify the plugin is in correct state. Often the easiest way is to
-use function during_initial_install() or version string from the plugin configuration.
+Hooks may be dispatched at any time, _including during system installation and upgrade_ (for example `before_http_headers`). Callback methods for such hooks must take extra care to ensure the plugin is properly initialised and that the database is available if database calls are made (as the database does not exist during site installation).
+
+The `during_initial_install()` function can be used to check whether the the site is currently being installed, and `get_config('your_pluginname', 'version')` are two ways to conditionally make database queries or use API functions. `isset($CFG->upgraderunning)` can also be used to test if an upgrade is running. Failing to implement these checks may render the web install/upgrade page unusable.
+
+Please note that the legacy component callback system did _not_ call the `lib.php` callbacks during installation or upgrade. As such, when porting these callbacks to hooks, you may need to implement additional checks as described above.
 
 :::
 
