@@ -18,11 +18,17 @@ In an open source project, the end use of the codebase varies. People may have c
 
 ## What is Moodle's deprecation policy?
 
-- Deprecations should only be on the `main` branch, not on stables (exceptions may be made for some external service integrations)
+- Deprecations should only be on the `main` branch, not on stables. Exceptions to this may be made in certain conditions, including:
+  - for some external service integrations
+  - where a feature is discovered to have been broken irreparably
+  - to address security issues
 - Deprecations apply to all public APIs, classes, and files.
-- Removal of a function, class, or file may only be considered after a minimum of 4 major releases since the deprecation. Example: anything deprecated in 3.2 means that it will be removed in 3.6
-- All deprecations should emit debugging notices where possible
 - All deprecations should be noted with an [upgrade note](../../upgradenotes.md).
+- Deprecations are split into three stages:
+  1. Initial deprecation
+  2. Final deprecation
+  3. Removal
+- All deprecations should emit debugging notices where possible
 
 :::danger What does it mean for an API to be considered "Public"
 
@@ -37,17 +43,17 @@ Instead we are considering how that API feature is used. Is that API feature int
 
 ## Moodle Core deprecation process
 
-Once it is decided that a function should be deprecated, a two-step process should be followed.
+Once it is decided that a function should be deprecated, a multi-step process should be followed.
 
 :::note
 
-Both steps should always happen as earlier as possible in the 6-months period between major releases, so all developers will have time to adjust their code and ensure it will work in the next release. Obviously, **no changes will be allowed after code freeze** (the APIs must remain 100% unmodified after it).
+These steps should always happen as early as possible in the 6-months period between major releases. This ensures that developers will have sufficient time to adjust their code and confirm compatibility with the next release. **After the code freeze, no changes will be allowed.** - APIs must remain completely unchanged.
 
 :::
 
-### Step 1. Immediate action
+### Step 1. Immediate action - Initial deprecation
 
-Deprecation affects only the current main version, in other words, the deprecation only becomes effective after the next [major release](../../../releases.md).
+Deprecation affects only the current `main` version, in other words, the deprecation only becomes effective after the next [major release](../../../releases.md).
 
 - If the function is not a member of a class (in other words, it is an independent function), it should be moved, with its PHPDoc and all comments, to `lib/deprecatedlib.php`, which is included everywhere. If the function is a class member, it will need to be deprecated in its current location.
   - Deprecated behat step definitions should be moved to `lib/tests/behat/behat_deprecated.php`. Steps that are part of a component should be moved to `$COMPONENT_DIRECTORY/tests/behat/behat_<COMPONENT>_deprecated.php` instead. Deprecated function should call to `behat_deprecated::deprecated_message()` proposing an alternative to the deprecated method.
@@ -58,18 +64,10 @@ Deprecation affects only the current main version, in other words, the deprecati
   - Add @deprecated tag on class level PHPDoc block
   - Add @deprecated tag on the PHPDoc block of all public methods
   - Add debugging on all of the public methods
-- Besides, if the entire class is being moved (for example, moving multiple class definitions from a monolithic file in to individual files), follow the process for [renaming classes](/docs/apis/commonfiles#dbrenamedclassesphp).
+- If the entire class is being moved (for example, moving multiple class definitions from a monolithic file in to individual files), follow the process for [renaming classes](/docs/apis/commonfiles#dbrenamedclassesphp).
 - A debugging message should be added to the function so that, when [developer debugging mode](https://docs.moodle.org/en/Debugging) is on, attention is drawn to the deprecation. The message should state that the function being called has been deprecated. The message should help a developer whose code currently calls the function that has gone. Tell them what they should do instead.
 
 <Tabs>
-
-<TabItem value="debugging" label="Deprecations using debugging">
-
-```php
-debugging('foobar() is deprecated. Please use foobar::blah() instead.', DEBUG_DEVELOPER);
-```
-
-</TabItem>
 
 <TabItem value="core_deprecation" label="Using the \core\deprecation API from Moodle 4.4">
 
@@ -80,6 +78,14 @@ public function foobar(int $old, array $params): array {
     // Call new method if possible or retain existing code.
     return foobar::blah($old, $params);
 }
+```
+
+</TabItem>
+
+<TabItem value="debugging" label="Deprecations using debugging">
+
+```php
+debugging('foobar() is deprecated. Please use foobar::blah() instead.', DEBUG_DEVELOPER);
 ```
 
 </TabItem>
@@ -124,30 +130,25 @@ The final deprecation policy for Moodle LMS has been updated to align more close
   - Functions that have been deprecated in an LTS version (the last version within a series) will be up for final deprecation on the next major version after the next LTS release (`[X+2].0`).
 
 <ValidExample title="Example">
-    - Functions deprecated in Moodle 4.4 (Series 4) and below will be up for final deprecation in Moodle 5.0 (the first Series 5 Moodle version).
+    - Functions deprecated in Moodle 4.4 (Series 4) and below will be considered for final deprecation in Moodle 5.0 (the first Series 5 Moodle version).
     - Functions deprecated in Moodle 4.5 (LTS) will be up for final deprecation in Moodle 6.0 (the first release for Series 6 right after the Moodle 5.3 (LTS) release).
 </ValidExample>
 
 #### Procedure
 
-- When a function undergoes final deprecation, all content of the function should be removed. In the skeleton that remains, an error statement should be included that indicates that the function cannot be used anymore. You can also direct developers to the new function(s) in this message.
+- When a function undergoes final deprecation, all content of the function should be removed. In the skeleton that remains, an error statement should be included that indicates that the function cannot be used anymore. You should also direct developers to the new function(s) in this message.
 
 <Tabs>
-
-<TabItem value="debugging" label="Deprecations using debugging">
-
-```php
-throw new coding_exception(
-    'foobar() can not be used any more, please use foobar::blah'
-);
-```
-
-</TabItem>
 
 <TabItem value="core_deprecation" label="Using the \core\deprecation API from Moodle 4.4">
 
 ```php
-#[\core\attribute\deprecated('foobar::blah()', since: '4.4', mdl: 'MDL-XXXXX', final: true)]
+#[\core\attribute\deprecated(
+    'foobar::blah()',
+    since: '4.4',
+    mdl: 'MDL-XXXXX',
+    final: true,
+)]
 public function foobar(int $old, array $params): array {
     \core\deprecation::emit_deprecation_if_present([self::class, __FUNCTION__]);
     return [];
@@ -156,16 +157,53 @@ public function foobar(int $old, array $params): array {
 
 </TabItem>
 
+<TabItem value="debugging" label="Deprecations using debugging">
+
+```php
+throw new coding_exception(
+    'foobar() cannot be used any more, please use foobar::blah'
+);
+```
+
+</TabItem>
+
 </Tabs>
 
-- Function and Method signatures **must not change**, that is:
+- Method signatures **must not change**, that is:
   - keep any existing parameters; and
   - keep any existing return type.
-- The deprecation 'since' tag should remain as the version where the initial deprecation happened.
+- Function signatures _may_ be removed, that is:
+  - all parameters may be removed; and
+  - and return type declaration may be removed.
+- The deprecation 'since' tag should remain as the version where the _initial_ deprecation happened.
 - Deprecated classes must be completely removed.
 - The content of the PHPDoc should be removed, leaving only the `@deprecated` tag with the notice and, optionally, the replacement information. This includes all `@param`, `@return`, and other tags, as well as the description.
 - External functions deprecation process is different from the standard deprecation and functions should be completely removed.
 - Last but not least, every deprecation should be documented in an [upgrade note](../../upgradenotes.md) **at least** once but, **ideally**, both on the initial/immediate deprecation and also on this final deprecation/removal.
+
+:::info Changes to Method Signatures
+
+Previously, this policy required removing all parameter and return type declarations from method signatures. However, this caused issues with child classes due to PHP's covariance and contravariance rules.
+
+Plugins that extended affected classes and implemented deprecated methods faced fatal errors, making it impossible to maintain a single codebase across Moodle versions.
+
+The policy no longer permits modifying method signatures.
+
+:::
+
+### Step 3. Removal
+
+#### Policy
+
+A code removal step was added to the deprecation process in Moodle 5.0 and is aligned with the LTS release cycle.
+
+- Any feature or functionality which went through the Step 2 (Final deprecation) process _before_ an LTS release, may be removed in the next major version _after_ the LTS release.
+- Removals must be documented in an [upgrade note](../../upgradenotes.md).
+
+<ValidExample title="Example">
+    - Functions initially deprecated in Moodle 4.4 (Series 4) and below will be considered for final deprecation in Moodle 5.0 (the first Series 5 Moodle version), and for removal in Moodle 6.0 (the first Series 6 Moodle version).
+    - Functions deprecated in Moodle 4.5 (LTS) will be up for final deprecation in Moodle 6.0 (the first release for Series 6 right after the Moodle 5.3 (LTS) release), and for removal in Moodle 7.0 (the first Series 7 Moodle version).
+</ValidExample>
 
 ## Parameters deprecation
 
