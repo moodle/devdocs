@@ -66,7 +66,7 @@ Here is the core libraries tag.php file for reference:
  *     $string['tagcollection_mycollection'] = 'My tag collection';
  *
  * @package   core
- * @copyright 2015 Marina Glancy
+ * @copyright Marina Glancy
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

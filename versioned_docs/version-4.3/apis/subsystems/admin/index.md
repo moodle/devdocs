@@ -86,7 +86,7 @@ This is an example of a settings.php file provided by a <tt>local_helloworld</tt
  *
  * @package     local_helloworld
  * @category    admin
- * @copyright   2020 Your Name <email@example.com>
+ * @copyright   Your Name <email@example.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
