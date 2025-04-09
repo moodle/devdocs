@@ -62,6 +62,12 @@
                     "releaseDate": "17 March 2025",
                     "version": 2024100703,
                     "notes": "Unscheduled minor release"
+                },
+                {
+                    "name": "4.5.4",
+                    "releaseDate": "14 April 2025",
+                    "version": 2024100704,
+                    "releaseNoteUrl": false
                 }
             ]
         },
@@ -114,6 +120,12 @@
                     "releaseDate": "17 March 2025",
                     "version": 2024042207,
                     "notes": "Unscheduled minor release"
+                },
+                {
+                    "name": "4.4.8",
+                    "releaseDate": "14 April 2025",
+                    "version": 2024042208,
+                    "releaseNoteUrl": false
                 }
             ]
         },
@@ -187,6 +199,12 @@
                     "releaseDate": "17 March 2025",
                     "version": 2023100911,
                     "notes": "Unscheduled minor release"
+                },
+                {
+                    "name": "4.3.12",
+                    "releaseDate": "14 April 2025",
+                    "version": 2023100912,
+                    "releaseNoteUrl": false
                 }
             ]
         },
@@ -362,6 +380,12 @@
                     "releaseDate": "17 March 2025",
                     "version": 2022112817,
                     "notes": "Unscheduled minor release"
+                },
+                {
+                    "name": "4.1.18",
+                    "releaseDate": "14 April 2025",
+                    "version": 2022112818,
+                    "releaseNoteUrl": false
                 }
             ]
         },
