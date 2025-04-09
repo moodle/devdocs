@@ -4,18 +4,26 @@
 
 # Only allow members of the integration team to approve changes to the
 # CODEOWNERS file.
-/CODEOWNERS   @moodle/iteam
+/CODEOWNERS   @moodle/documentation-owners
 
 # Only allow members of the integration team to approve changes to the
 # .github directory, including all workflows, and other sub-directories.
 # This is to ensure that arbitrary changes to GitHub workflows are not made
 # which expose the repository, or its secrets.
-/.github/     @moodle/iteam
+/.github/     @moodle/documentation-owners
 
 # Only allow members of the integration team to approve changes to the
 # scripts directory and sub-directories.
 # These scripts are called from places including Github workflows, which
 # have access to secrets.
-/scripts/     @moodle/iteam
+/scripts/     @moodle/documentation-owners
 
+# Developers on the Moodle Mobile App.
+/general/app_releases/ @moodle/mobile-developers
+/general/app/ @moodle/mobile-developers
 
+# Content Guideline Owners
+/general/contentguidelines/ @moodle/content-authors
+
+# Community
+/general/community/ @moodle/moodle-community-team
