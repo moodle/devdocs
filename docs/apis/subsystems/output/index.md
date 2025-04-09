@@ -483,7 +483,7 @@ class stored_progress_scheduled_task_example extends \core\task\scheduled_task {
         // This simulates a specific count of iterations the task will do, e.g. x number of courses to loop through and do something.
         $iterations = 100;
 
-        $this->start_stored_progress(); // This creates the stored progress record for the named task.
+        $this->start_stored_progress(); // Updates the stored progress record with a start time.
 
         for ($i = 1; $i <= $iterations; $i++) {
 
@@ -498,6 +498,9 @@ class stored_progress_scheduled_task_example extends \core\task\scheduled_task {
     }
 
 }
+
+$task = new stored_progress_scheduled_task_example();
+$task->initialise_stored_progress(); // Creates a stored progress record, so the progress can be displayed in "pending" state.
 ```
 
 With the stored progress bars, you can update the progress either via iterations, by passing in the total amount expected and then the current iteration, using `->update()`(see: previous example), this will calculate the percentage complete for you. Or you can use `->update_full()` to manually set the percentage complete.
