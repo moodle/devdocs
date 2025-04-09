@@ -562,6 +562,7 @@ Jwalit
 Jørstad
 KNDeepa
 Kabalin
+Kacper
 Kagotani
 Kaleem
 Kalinin
@@ -955,6 +956,7 @@ Roger
 Roggemans
 Rohan
 Rohith
+Rokicki
 Roman
 Roperto
 Rosenbaum
