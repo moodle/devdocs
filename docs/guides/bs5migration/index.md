@@ -38,7 +38,7 @@ Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. 
 
 ### Badges
 
-- Badge colour class helpers `.badge-*` have been replaced with background utilities (use `.bg-primary` instead of `.badge-primary`) combined with the corresponding text colour classes (`.text-dark` or `.text-white`) to meet accessibility contrast.
+- Badge colour class helpers `.badge-*` have been replaced with background utilities (use `.bg-primary` instead of `.badge-primary`) combined with the corresponding text colour classes (`.text-dark` or `.text-white`) to meet accessibility contrast. Or use the new `.text-bg-*` classes.
 - The `.badge-pill` class has been replaced with `.rounded-pill`
 
 <InvalidExample title="Don't">
@@ -52,7 +52,7 @@ Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. 
 <ValidExample title="Do">
 
 ```html
-<span class="badge bg-danger text-white rounded-pill">Error badge</span>
+<span class="badge text-bg-danger rounded-pill">Error badge</span>
 ```
 
 </ValidExample>
@@ -83,7 +83,7 @@ The `.media` component has been replaced with utility classes.
     <div class="flex-shrink-0">
         [...]
     </div>
-    <div class="flex-grow-1 ml-3">
+    <div class="flex-grow-1 ms-3">
         [...]
     </div>
 </div>
@@ -735,15 +735,15 @@ As per Bootstrap's migration guide "*Data attributes for all JavaScript plugins 
 This feature can be used to translate old data attributes to their Bootstrap 5 equivalents, allowing existing markup to function without requiring immediate updates.
 
 ```js title="Example of bs4-compat silent replacement in amd module"
-import initBootstrap4Compatibility from 'theme_boost/bs4-compat';
+import * as BS4compat from 'theme_boost/bs4-compat';
 
 [...]
 
 // Init Bootstrap 4 compatibility giving an specific element to look into.
-initBootstrap4Compatibility(document.querySelector('[data-region="my-plugin-region"]'));
+BS4compat.init(document.querySelector('[data-region="my-plugin-region"]'));
 
 // Init Bootstrap 4 compatibility in the entire document.
-initBootstrap4Compatibility();
+BS4compat.init();
 ```
 
 ```mustache title="Example of bs4-compat silent replacement in a template"
@@ -752,9 +752,13 @@ initBootstrap4Compatibility();
 {{#js}}
 // Init Bootstrap 4 compatibility in the entire document.
 require(['theme_boost/bs4-compat'], function(BS4Compat) {
-    BS4Compat();
+    BS4Compat.init();
 });
 {{/js}}
+```
+
+```php title="Example of bs4-compat silent replacement in a php file"
+$PAGE->requires->js_call_amd('theme_boost/bs4-compat', 'init');
 ```
 
 This will replace for example `data-toggle="tooltip"` with `data-bs-toggle="tooltip"`, or `data-target="#collapsableContent"` with `data-bs-target="#collapsableContent"`.
