@@ -116,7 +116,7 @@ The complete function signature for this callback is as follows:
 function [component_name]_pluginfile(
     $course,
     $cm,
-    $context.
+    $context,
     string $filearea,
     array $args,
     bool $forcedownload,
