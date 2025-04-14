@@ -13,8 +13,7 @@
                     "name": "5.0.0",
                     "releaseDate": "14 April 2025",
                     "version": 2025041400,
-                    "upgradePath": "https://docs.moodle.org/500/en/Upgrading",
-                    "releaseNoteUrl": false
+                    "upgradePath": "https://docs.moodle.org/500/en/Upgrading"
                 }
             ]
         },

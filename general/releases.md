@@ -90,6 +90,17 @@ Minor releases dates differ slightly from release to release depending on the ti
 
 :::
 
+## Moodle 5.0
+
+<ReleaseTable releaseName="5.0" />
+
+:::info
+
+Bug fixes for general core bugs in 5.0.x will end 20 April 2026 (12 months).<br/>
+Bug fixes for security issues in 5.0.x will end October 2026 (18 months).
+
+:::
+
 ## Moodle 4.6 (Experimental)
 
 Please note that Moodle 4.6 is an experimental version integrating MDL-71378 with the Moodle 4.5.x code, intended as a preview and testing release.  It is not recommended that it be used as part of general production.
