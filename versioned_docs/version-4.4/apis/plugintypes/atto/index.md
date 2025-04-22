@@ -13,7 +13,7 @@ All of the buttons in Atto are implemented as Moodle subplugins. This means that
 
 A new Editor was created for Moodle 4.1 and later using the latest version of TinyMCE.
 
-It is likely that Atto will be removed in Moodle 4.6.
+Atto has been removed in Moodle 5.0.
 
 :::
 
