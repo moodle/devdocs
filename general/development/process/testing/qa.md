@@ -261,6 +261,7 @@ If you have any questions or comments, please post in the [Testing and QA forum]
 
 Comments on tests from previous QA cycles:
 
+- [Moodle 5.0 QA](https://tracker.moodle.org/browse/MDLQA-19836)
 - [Moodle 4.5 QA](https://tracker.moodle.org/browse/MDLQA-18925)
 - [Moodle 4.4 QA](https://tracker.moodle.org/browse/MDLQA-18443)
 - [Moodle 4.3 QA](https://tracker.moodle.org/browse/MDLQA-17933)
