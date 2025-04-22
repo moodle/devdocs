@@ -114,8 +114,8 @@ $functions = [
         // The file containing the class/external function.
         // Do not use if using namespaced auto-loading classes.
         // 'classpath'   => 'local/groupmanager/externallib.php',
-    ),
-);
+    ],
+];
 ```
 
 </details>
