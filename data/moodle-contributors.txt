@@ -33,6 +33,7 @@ Alba
 Albanyan
 Albert
 Alberto
+Alec
 Aleksey
 Ales
 Alex
@@ -236,6 +237,7 @@ Cunningham
 Curry
 D'souza
 Dageförde
+Dagoberto
 Dale
 Dallimore
 Dalton
@@ -420,6 +422,7 @@ Grähn
 Guillaume
 Guillermo
 Guinoiseau
+Gullon
 Gupa
 Gupta
 Gustav
@@ -943,6 +946,7 @@ Ringer
 Ripal
 Risner
 Ritchey
+Robayo
 Robert
 Roberto
 Robot
