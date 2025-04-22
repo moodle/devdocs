@@ -46,7 +46,7 @@ For example, if you have written a service function in `[componentfolder]/classe
  *
  * @package    mod_kitchen
  * @category   external
- * @copyright  20XX Your Name
+ * @copyright  Your Name
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

@@ -1262,7 +1262,7 @@ $myarray = [
  * Long description for class (if any)...
  *
  * @package    mod_mymodule
- * @copyright  2008 Kim Bloggs
+ * @copyright  Kim Bloggs
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class sample_class {
@@ -1557,12 +1557,22 @@ Also, there are some basic rules about how to use those types:
 
 ##### `@copyright`
 
-These include the year and copyright holder (creator) of the original file. Do not change these in existing files!
+This tag should include the copyright holder (creator) of the original file. Do not change these in existing files!
+
+The Copyright holder should be the real person who originally authored the file.
+
+:::info Use of AI
+
+If the file was created by an AI assistant, the copyright should be allocated to the individual who instructed the AI assistant.
+
+:::
+
+Please do not include a Copyright Year on new files.
 
 <ValidExample>
 
 ```
-  @copyright 2008 Kim Bloggs
+  @copyright Kim Bloggs
 ```
 
 </ValidExample>
@@ -1810,7 +1820,7 @@ For files containing only one artifact, the file phpdoc block is optional as lon
  *
  * @package    mod_mymodule
  * @category   backup
- * @copyright  2008 Kim Bloggs
+ * @copyright  Kim Bloggs
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 ```
@@ -1829,7 +1839,7 @@ All classes must have a complete docblock like this:
  *
  * @package    mod_mymodule
  * @category   backup
- * @copyright  2008 Kim Bloggs
+ * @copyright  Kim Bloggs
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class policy_issue {
@@ -1839,7 +1849,7 @@ class policy_issue {
 
 For files containing only one artifact (class, interface, trait, etc.), specifically for all the files within `classes` directories, but also any other file fulfilling the condition anywhere else, it will be enough with the class phpdoc block. The file phpdoc block will be considered optional at all effects, giving to the class one precedence.
 
-The [@package](https://docs.moodle.org/dev/#@package), [@copyright](https://docs.moodle.org/dev/#@copyright) and [@license](https://docs.moodle.org/dev/#@license) tags (and the optional [@category](https://docs.moodle.org/dev/#@category) tag ), as shown in the example above, must be present always in the file (in whichever docblock, but all together).
+The [@package](#package), [@copyright](#copyright) and [@license](#license) tags (and the optional [@category](#category) tag ), as shown in the example above, must be present always in the file (in whichever docblock, but all together).
 
 ### Properties
 

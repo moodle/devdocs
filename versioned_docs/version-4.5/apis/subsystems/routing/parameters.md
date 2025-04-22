@@ -480,7 +480,7 @@ use Psr\Http\Message\ServerRequestInterface;
  * A Moodle parameter referenced in the path.
  *
  * @package    core
- * @copyright  2023 Andrew Lyons <andrew@nicols.co.uk>
+ * @copyright  Andrew Lyons <andrew@nicols.co.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class path_course extends \core\router\schema\parameters\path_parameter implements

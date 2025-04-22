@@ -175,7 +175,7 @@ Don't forget to add the built files (the ones in amd/build) to your git commits,
 // Standard license block omitted.
 /**
  * @module     block_overview/helloworld
- * @copyright  2022 Someone cool
+ * @copyright  Someone cool
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

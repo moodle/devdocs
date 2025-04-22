@@ -132,8 +132,8 @@ See the section [Coding style#Files](../../development/policies/codingstyle/inde
 
 ```php
 /**
- * @copyright 2023 John Smith <john.smith@example.com>
- * @copyright based on work by 2020 Mary Stuart <mary.stuart@example.com>
+ * @copyright John Smith <john.smith@example.com>
+ * @copyright based on work by Mary Stuart <mary.stuart@example.com>
  */
 ```
 
