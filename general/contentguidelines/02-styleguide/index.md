@@ -5,4 +5,6 @@ tags:
 - UX Writing
 ---
 
-We use this guide to help us create a clear and consistent approach to the content we produce: from our website, marketing, and communications to the actual text in Moodle products.
+The Moodle Style Guide helps us create a clear and consistent approach to the content we produce: from our website, marketing, and communications to the actual text in Moodle products.
+
+As an Australian company, we used Australian Standard English spelling and grammar conventions, unless otherwise indicated. Refer to the [Australian Government Style Manual](https://www.stylemanual.gov.au/grammar-punctuation-and-conventions) for guidance.

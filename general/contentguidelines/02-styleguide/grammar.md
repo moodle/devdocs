@@ -6,142 +6,356 @@ tags:
   - UX Writing
 ---
 
-## Capitalisation
+<!-- cspell:ignore emojipedia VLEs -->
 
-- Capitalise proper nouns: names of people, places, and organisations. Capitalise also geographic terms such as countries and cities, and historic episodes and events.
-- Use sentence case for all headlines and headings.
-- Don't use ALLCAPS unless you're writing an acronym.
-- For email addresses and website URLs, use all lowercase.
+## Structuring content
 
-## Punctuation
+### Headings
 
-### Apostrophes
+When writing headings:
 
-- To make a possessive from a noun that ends in -s, use only an apostrophe (no s).
+- Start with the most relevant keywords where possible
+- Be descriptive
+- Avoid jargon or clever wordplay
+- Use sentence case (sentence case is when the only capital letter is at the start of the heading)
+- Don't put a full stop at the end
 
-> Example: Matias' Moodle site runs on 4.3.
+## Numbers
 
-- Pluralise acronyms by adding -s.
+In general, use numerals instead of words for most numbers. Numerals are easier to scan, especially when users are skimming content.
 
-> Example: These URLs are secure.
+Write out a number only when:
 
-### Ampersands
+- It appears at the start of a sentence
+- It could be confused for a letter (for example, the numeral '1' might look like an uppercase 'I')
 
-- Don't use an ampersand (&) or a plus sign (+) to mean 'and', unless it's used in a brand name.
+### Number ranges
 
-### Contractions
+Always use the word 'to' to express a range of numbers, not a hyphen or dash, so that the sentence is read correctly by a screen reader.
 
-- Use contractions for common phrases, such as 'don't' or 'can't'.
+<ValidExample title="Do">
 
-> Example: These passwords don't match.
-> Example: Students can't see who marked their work.
+5 to 11
 
-### Commas
+</ValidExample>
 
-- When writing lists, always use the Oxford comma.
+<InvalidExample title="Don't">
 
-> Example: This includes user ID, role, and course ID.
+5 - 11
 
-### Dashes and hyphens
+</InvalidExample>
 
-- Use an em dash (—) with spaces before and after to offset an aside, and use an en dash (–) to connect a range of numbers or dates.
+### Dates
 
-> Example: The newest version of Moodle LMS —released last month— has had 200,000 downloads.
-> There will be 200-250 attendees.
+We use the Australian sequence for dates, which is: day, month, year.
 
-### Exclamation marks
+However, if you're writing for a specific audience, choose the date format that is most familiar to them.
 
-- Save exclamation marks for key moments in the user journey.
-- Don't use more than one exclamation mark.
+#### Dates in sentences
+
+When writing a date in a sentence, use DD Month YYYY. If a number has only one digit, don't include a leading zero.
+
+<ValidExample title="Do">
+
+3 November 2026
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+03 Nov 2026
+
+</InvalidExample>
+
+#### Numeric dates
+
+When writing a date using only numbers, use DD/MM/YYYY. If a number has only one digit, don't include a leading zero.
+
+<ValidExample title="Do">
+
+3/5/2026
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+03/05/2026
+
+</InvalidExample>
+
+#### Ordinal numbers
+
+Don't use ordinal numbers in dates.
+
+<ValidExample title="Do">
+
+3 November 2026
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+3rd November 2026
+
+</InvalidExample>
+
+#### Days of the week
+
+If you include the day of the week in a date, add a comma after the day.
+
+<ValidExample title="Do">
+
+Friday, August 7
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+Friday August 7
+
+</InvalidExample>
+
+### Time and time zones​
+
+In general, we use the Australian convention for time:
+
+- Use 'am' for hours from midnight to noon
+- Use 'pm' for hours from noon to midnight
+
+However, choose the 12-hour or 24-hour format depending on what's most familiar to your audience.
+
+#### Am and pm
+
+Write 'am' and 'pm' always in lowercase, with a non-breaking space (&amp;nbsp) before them and with no full stops between the letters.
+
+#### Minutes
+
+For times on the hour, include minutes.
+
+<ValidExample title="Do">
+
+6:00 pm
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+6 pm
+
+</InvalidExample>
+
+#### Time zones
+
+If you're writing about a specific time that affects people worldwide (for example, down time for a site or a deadline for a contest), always include the name of the time zone. You can also choose to include more than one time zone.
+
+<ValidExample title="Do">
+
+The contest will close at 4:00 pm AWST / 10:00 am CEST
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+The contest will close at 4:00 pm
+
+</InvalidExample>
+
+### Decimal points
+
+To indicate decimal points, use full stops.
+
+<ValidExample title="Do">
+
+3.5
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+3,5
+
+</InvalidExample>
+
+Include a leading zero before the decimal point. This helps with readability and reduces ambiguity, especially for screen readers.
+
+<ValidExample title="Do">
+
+0.75
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+.75
+
+</InvalidExample>
 
 ### Percentages
 
-- With numbers, use '%' instead of the word 'percent'.
+With numbers, use '%' instead of the word 'per cent'.
 
-> Example: You've completed 89% of the course.
+<ValidExample title="Do">
 
-### Periods
+You have completed 89% of the course.
 
-- Don't user periods in country acronyms.
+</ValidExample>
 
-> Example: Their headquarters are located in New York, USA.
+<InvalidExample title="Don't">
 
-## Dates, numbers and currencies
+You have completed 89 per cent of the course.
 
-The Moodle software allows users to customise their dates, time and numbers format to their own region and preferences. This section covers the way in which we write dates, numbers and currencies outside of the software.
+</InvalidExample>
 
-### Dates, months, and years
+### Large numbers
 
-- For long dates, use DD Month YYYY without any leading zeros.
+Large numbers, such as millions, billions and trillions, are usually easier to read when they are written out as words. When writing out large numbers as words, don't use abbreviations.
 
-> Example: 21 December 1975
+<ValidExample title="Do">
 
-- If you include the day of the week in a date, add a comma after the day.
+3 million users
 
-> Example: Friday, December 21
+</ValidExample>
 
-- For days of the week, use the following abbreviations: Mon, Tues, Weds, Thurs, Fri, Sat, Sun.
+<InvalidExample title="Don't">
 
-- Try to avoid short dates; but if you use them, use DD/MM/YYYY without any leading zeros.
+3M users
 
-> Example: 21/12/1975 or 21/3/2020
+</InvalidExample>
 
-### Time and time zones
+If you use the numeric form, include a comma every three digits for readability.
 
-- Write 'am' and 'pm' always in lowercase, with a non-breaking space (&amp;nbsp) before them and with no periods between the letters.
+<ValidExample title="Do">
 
-> Example: 2:00 pm, not 2:00pm
+3,000,000
 
-- For times on the hour, include minutes.
+</ValidExample>
 
-> Example: 6:00 pm, not 6 pm
+<InvalidExample title="Don't">
 
-- Use the 12-hour or 24-hour system depending on the audience you're writing for. If you're writing for a global audience, use the 24-hour format as it's more clear and consistent.
+3000000
 
-- If you're writing about a specific time that affects people worldwide (for example, down time for a site or a deadline for a contest), always include the name of the time zone. Or, even better, include more than one time zone.
-
-> Example: 'The contest will close at 4:00 pm AWST / 10:00 am CEST' and not 'The contest will close at 4:00 pm'.
-
-### Numbers, fractions, and units
-
-- Spell out numbers if they're the first word in a sentence.
-
-> Example: Three days left to get early bird tickets.
-
-- To separate thousands and millions, use commas.
-
-- To indicate decimal points, use periods.
-
-> Example: 1,000 (one thousand); 3.14 (three point one four)
-
-- Always use a country code with phone numbers.
-
-- For units of measure, use lowercase letters and a non-breaking space (&amp;nbsp) before the unit.
-
-> Example: 121 km, not 121km.
-
-- When you write a decimal, include a leading zero before the decimal point.
-
-> Example: 0.75, not .75.
+</InvalidExample>
 
 ### Currencies and money
 
-- For currencies, put the symbol before the amount, with no space in between.
+Put the currency symbol before the amount, not after it.
 
-> Example: €300, not 300€
+<ValidExample title="Do">
 
-- Don't use periods in currency abbreviations.
+€300
 
-> Example: AUD, not A.U.D
+</ValidExample>
 
-- Spell out thousand, million, billion, and trillion in full.
+<InvalidExample title="Don't">
 
-> Example: 3 million users, not 3M users.
-> Example 10 thousand resources, not 10K resources.
+300€
 
-## Emojis
+</InvalidExample>
 
-- Emojis can make your writing more fun, but don't go overboard with them :wink:.
-- Be mindful when using emojis that might convey negative connotations or meanings, such as 😡 😒 🤢 👹 ☠️.
+Don't use full stops in currency abbreviations.
 
-<!-- cspell:ignore ALLCAPS Matias -->
+<ValidExample title="Do">
+
+AUD
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+A.U.D
+
+</InvalidExample>
+
+### Measurement
+
+Use metric as the default measurement system. Use a non-breaking space (&amp;nbsp) between the number and the unit.
+
+<ValidExample title="Do">
+
+15 km
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+15km
+
+</InvalidExample>
+
+## Moodle-specific punctuation and language
+
+### Acronyms
+
+Spell out acronyms when you first use them.
+
+For example: *The advantages of Virtual Learning Environments (VLEs) are...*
+
+The exception is extremely common abbreviations where the abbreviated version is used more widely than the longer version, such as URL.
+
+### Ampersands
+
+Don't use an ampersand (&) to mean 'and', unless it's used in a brand name.
+
+### Contractions
+
+Use contractions for common phrases, such as 'don't' or 'can't'.
+
+### Commas
+
+Use the Oxford comma for the penultimate item in a sentence.
+
+<ValidExample title="Do">
+
+This includes user ID, role, and course ID.
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+This includes user ID, role and course ID.
+
+</InvalidExample>
+
+### Dashes and hyphens
+
+Use an em dash (—) with spaces before and after to offset an aside.
+
+<ValidExample title="Do">
+
+The newest version of Moodle LMS — released last month — has had 200,000 downloads.
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+The newest version of Moodle LMS - released last month - has had 200,000 downloads.
+
+</InvalidExample>
+
+### Emails and URLs
+
+Use lowercase for email addresses and website URLs. Don't include the 'https' part of the URL.
+
+### Emojis
+
+Use emojis sparingly. Don't use multiple emojis. Make sure you're confident in the emoji's meaning, and that it's consistent across cultures. You can check the meaning of emojis on [emojipedia.org](https://emojipedia.org).
+
+### Exclamation marks
+
+Save exclamation marks for key moments in the user journey, and don't use more than one exclamation mark.
+
+### Sentence case
+
+Use capital letters only at the beginning of sentences and for proper nouns. For headings, subheadings and calls to action, we use sentence case and not Title Case.
+
+<ValidExample title="Do">
+
+Read the full article.
+
+</ValidExample>
+
+<InvalidExample title="Don't">
+
+Read the Full Article.
+
+</InvalidExample>
