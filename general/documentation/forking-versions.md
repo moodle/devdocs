@@ -28,15 +28,20 @@ Typically this task is performed by the Integration team using the following ste
     ```
 
 1. Commit the initial changes ([Example from Moodle 4.4](https://github.com/moodle/devdocs/commit/e9e7fa0074753487c315d2f91ad64a8503f32054))
-1. Open `versioned_docs/version-[version]/intro.md` in your editor
-1. Uncomment and update the link to the release notes for this version
-1. Open `docs/devupdate.md` in your editor
-1. Clear the content of this file and update the version numbers
-1. Open `docs/intro.md` in your editor
-1. Update the occurrences of the version number for the recent release with the version number for the next major version of Moodle
-1. Open `nextVersion.js` in your editor
-1. Update the values for `nextVersion` (and `nextLTSVersion` after the release of an LTS version)
-1. Commit these changes ([Example from Moodle 4.4](https://github.com/moodle/devdocs/commit/XXaeb6385209caed38d757d53bc47f9bd66fdcfa0cY))
+1. Update non-automated version mentions:
+    1. Open `versioned_docs/version-[version]/intro.md` in your editor
+        1. Uncomment and update the link to the release notes for this version
+    1. Open `docs/devupdate.md` in your editor
+        1. Clear the content of this file and update the version numbers
+    1. Open `docs/intro.md` in your editor
+        1. Update the occurrences of the version number for the recent release with the version number for the next major version of Moodle
+    1. Open `nextVersion.js` in your editor
+        1. Update the values for `nextVersion` (and `nextLTSVersion` after the release of an LTS version)
+    1. Open `general/releases/[version].md`
+        1. Update links to the release notes in User Docs to point to the actual version
+    1. Open `/static/_redirects`
+        1. Update the `nextVersion` redirect
+1. Commit these changes ([Example from Moodle 4.4](https://github.com/moodle/devdocs/commit/aeb6385209caed38d757d53bc47f9bd66fdcfa0c))
 1. Create a pull request ([Example from Moodle 4.4](https://github.com/moodle/devdocs/pull/1006))
 
 ## Archiving a version of the docs
