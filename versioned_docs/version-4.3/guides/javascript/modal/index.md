@@ -231,7 +231,7 @@ There are two parts to this:
 
 Since Moodle 4.3, creating the Modal class is as simple as extending the `core/modal` class, and providing a `TYPE` property, and `TEMPLATE` property.
 
-For older versions of Moodle, refer to the [Moodle 4.2 documentation](https://6728347a15ea81be71bdf1d0--moodledevdocs.netlify.app/docs/4.2/guides/javascript/modal/#creating-a-custom-modal-type).
+For older versions of Moodle, refer to the [Moodle 4.2 documentation](https://672834180938720008adb671--moodledevdocs.netlify.app/docs/4.2/guides/javascript/modal/#creating-a-custom-modal-type).
 
 :::
 
