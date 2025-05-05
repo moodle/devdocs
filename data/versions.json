@@ -2,6 +2,23 @@
     "$schema": "../static/schema/versions.json",
     "versions": [
         {
+            "name": "5.1",
+            "releaseDate": "6 October 2025",
+            "generalEndDate": "5 October 2026",
+            "securityEndDate": "5 April 2027",
+            "isLTS": false,
+            "codeFreezeDate": "25 August 2025",
+            "releases": [
+                {
+                    "name": "5.1.0",
+                    "releaseDate": "6 October 2025",
+                    "version": 2025100600,
+                    "upgradePath": "https://docs.moodle.org/501/en/Upgrading",
+                    "releaseNoteUrl": false
+                }
+            ]
+        },
+        {
             "name": "5.0",
             "releaseDate": "14 April 2025",
             "generalEndDate": "20 April 2026",
