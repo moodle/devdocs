@@ -647,6 +647,6 @@ See [Developer metadata](/general/development/tools/metadata) for more informati
 
 ## Previous versions
 
-- [Moodle 4.3 developer update](/docs/4.3/devupdate)
+- [Moodle 4.3 developer update](https://681863b064dd25000810c5f2--moodledevdocs.netlify.app/docs/4.3/devupdate)
 - [Moodle 4.2 developer update](https://672834180938720008adb671--moodledevdocs.netlify.app/docs/4.2/devupdate)
 - [Moodle 4.1&4.0 developer update](/docs/4.1/devupdate)
