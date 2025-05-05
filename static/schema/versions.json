@@ -47,6 +47,9 @@
                     "items": {
                         "$ref": "#/$defs/release"
                     }
+                },
+                "hidden": {
+                    "type": "boolean"
                 }
             },
             "required": [

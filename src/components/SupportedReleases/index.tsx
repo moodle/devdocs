@@ -31,18 +31,20 @@ export {
 };
 
 export default function SupportedReleases(): JSX.Element {
-    const rows = getSupportedReleases().map((versionData: majorVersionData) => {
-        const releaseStatus = getReleaseStatus(versionData);
-        return {
-            name: versionData.name,
-            version: getVersionLabel(versionData.name, versionData.isLTS),
-            initialReleaseDate: versionData.releaseDate,
-            generalSupportEnds: versionData.generalEndDate,
-            securitySupportEnds: versionData.securityEndDate,
-            releaseStatus,
-            releaseStatusLabel: getReleaseStatusLabel(releaseStatus),
-        };
-    }).reverse();
+    const rows = getSupportedReleases()
+        .filter((versionData: majorVersionData) => versionData.hidden !== true)
+        .map((versionData: majorVersionData) => {
+            const releaseStatus = getReleaseStatus(versionData);
+            return {
+                name: versionData.name,
+                version: getVersionLabel(versionData.name, versionData.isLTS),
+                initialReleaseDate: versionData.releaseDate,
+                generalSupportEnds: versionData.generalEndDate,
+                securitySupportEnds: versionData.securityEndDate,
+                releaseStatus,
+                releaseStatusLabel: getReleaseStatusLabel(releaseStatus),
+            };
+        }).reverse();
 
     return (
         <MDXProvider>
