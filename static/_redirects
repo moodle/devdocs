@@ -78,4 +78,4 @@
 
 # Issue #955
 # Redirect /docs/* to /docs/[nextVersion]/:splat
-/docs/* /docs/5.0/:splat
+/docs/* /docs/5.1/:splat
