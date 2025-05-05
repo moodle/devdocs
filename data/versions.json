@@ -14,6 +14,12 @@
                     "releaseDate": "14 April 2025",
                     "version": 2025041400,
                     "upgradePath": "https://docs.moodle.org/500/en/Upgrading"
+                },
+                {
+                    "name": "5.0.1",
+                    "releaseDate": "9 June 2025",
+                    "version": 2025041401,
+                    "releaseNoteUrl": false
                 }
             ]
         },
@@ -71,6 +77,12 @@
                     "name": "4.5.5",
                     "releaseDate": "9 June 2025",
                     "version": 2024100705,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "4.5.6",
+                    "releaseDate": "9 June 2025",
+                    "version": 2024100706,
                     "releaseNoteUrl": false
                 }
             ]
@@ -134,6 +146,12 @@
                     "name": "4.4.9",
                     "releaseDate": "9 June 2025",
                     "version": 2024042209,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "4.4.10",
+                    "releaseDate": "9 June 2025",
+                    "version": 2024042210,
                     "releaseNoteUrl": false
                 }
             ]
@@ -398,6 +416,12 @@
                     "name": "4.1.19",
                     "releaseDate": "9 June 2025",
                     "version": 2022112819,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "4.1.20",
+                    "releaseDate": "9 June 2025",
+                    "version": 2022112820,
                     "releaseNoteUrl": false
                 }
             ]
