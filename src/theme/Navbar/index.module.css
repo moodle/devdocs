@@ -186,6 +186,22 @@
     padding-left: 0.5rem;
     background: none !important;
     border: 0 !important;
+    text-decoration: none;
+}
+.moodlesitestopnavbar .nav_link span {
+    height: 22px;
+}
+.moodlesitestopnavbar .nav_link span.active,
+.moodlesitestopnavbar .nav_link:hover span.active {
+    color: #194866;
+    border-bottom: 3px solid #f98012;
+    height: 25px;
+}
+
+.moodlesitestopnavbar .nav_link:hover span {
+  color : #000000;
+  border-bottom: 3px solid #f98012;
+  height: 25px;
 }
 
 .moodlesitestopnavbar .mobile_menu{
