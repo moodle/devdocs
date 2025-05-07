@@ -81,7 +81,7 @@ export default function NavbarWrapper(props) {
                             <a className={styles.nav_link} href="https://tracker.moodle.org"><span>Tracker</span></a>
                         </li>
                         <li>
-                            <a className={styles.nav_link} href="https://moodledev.io/"><span>Development</span></a>
+                            <a className={styles.nav_link} href="https://moodledev.io/"><span className={styles.active}>Development</span></a>
                         </li>
                         <li>
                             <a className={styles.nav_link} href="https://lang.moodle.org"><span>Translation</span></a>
@@ -121,7 +121,8 @@ export default function NavbarWrapper(props) {
                                 className={styles.nav_link}
                                 type="button"
                                 onClick={() => openMenu('waffle_menu')}
-                                aria-label="Toggle sites menu"
+                                aria-label="Other Moodle Sites"
+                                title="Other Moodle Sites"
                             >
                                 <i className={styles.fa_waffle} />
                             </button>
