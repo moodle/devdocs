@@ -145,10 +145,10 @@ This will be located in the file `local/groupmanager/classes/external/create_gro
 <?php
 namespace local_groupmanager\external;
 
-use external_function_parameters;
-use external_multiple_structure;
-use external_single_structure;
-use external_value;
+use core_external\external_function_parameters;
+use core_external\external_multiple_structure;
+use core_external\external_single_structure;
+use core_external\external_value;
 
 class create_groups extends \core_external\external_api {
 
