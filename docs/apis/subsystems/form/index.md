@@ -34,10 +34,14 @@ To create a form in Moodle, you create a class that defines the form, including 
 <summary>An example of a form definition</summary>
 
 ```php title="[path/to/plugin]/classes/form/myform.php"
+<?php
+
+namespace [plugintype]_[pluginname]\form;
+
 // moodleform is defined in formslib.php
 require_once("$CFG->libdir/formslib.php");
 
-class simplehtml_form extends moodleform {
+class simplehtml_form extends \moodleform {
     // Add elements to form.
     public function definition() {
         // A reference to the form is stored in $this->form.
