@@ -1351,7 +1351,7 @@ Drop-zone methods:
 
 - `validateDropData(Object dropdata): boolean` each time a dragged element passes through a drop-zone, the DragDrop component will call this method to decide if the dragged element is valid for this drop-zone.
 - `drop(Object dropdata): void` will be called only if a valid draggable data is dropped in the drop-zone. Important: the drop method should not re-validate the dragged data because the `DragDrop` will always call that handler after validateDropData, and only if it returns true.
-- `(optional) hideDropZone (Object dragdata, Event event): void` will be executed when valid drag data (validateDropData returns true) enters the drop-zone. This method is used to add visual clues to the user that this is a drop-zone.
+- `(optional) showDropZone (Object dragdata, Event event): void` will be executed when valid drag data (validateDropData returns true) enters the drop-zone. This method is used to add visual clues to the user that this is a drop-zone.
 - `(optional) hideDropZone (Object dragdata, Event event): void` will be executed when valid drag data (validateDropData returns true) leaves the drop-zone. This method is used to remove visual clues to the user that this is a drop-zone.
 
 The `DragDrop` element will switch on and off some CSS classes of the drop-zones:
