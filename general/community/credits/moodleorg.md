@@ -75,9 +75,9 @@ Please create an issue in this project if anyone has been missed out to add thei
 
 ## Moodle in English moderators
 
-Gareth J Barnard, Gordon Bateson, Anthony Borrow, Chris Collman, Mary Cooch, Mary Evans, Valery Fremaux, Marcus Green, Jason Hardin, Gavin Henrick, Don Hinkelman, Justin Hunt, Tim Hunt, David Jones, Mauno Korpelainen, Miriam Laidlaw, Juan Leyva, William Lu, Patrick Malley, Dan Marsden, Sam Marshall, Mark McKay, Stuart Mealor, Howard Miller, David Mudrák, Mark Nelson, Andrew Nicols, Dan Poltawski, Richard Oelmann, Daniel Palou, Bob Puffer, Visvanath Ratnaweera, Joseph Rezeau, Emma Richardson, Julian Ridden, Petr Škoda (skodak), Koen Roggemans, Itamar Tzadok, Jean-Michel Védrine, Alex Walker, Ken Wilson, A. T. Wyatt
+Gareth J Barnard, Gordon Bateson, Jon Bolton, Anthony Borrow, Chris Collman, Mary Cooch, Mary Evans, Helen Foster, Valery Fremaux, Marcus Green, Jason Hardin, Gavin Henrick, Don Hinkelman, Justin Hunt, Tim Hunt, David Jones, Mauno Korpelainen, Eloy Lafuente (stronk7), Miriam Laidlaw, Juan Leyva, William Lu, Andrew Lyons, Patrick Malley, Berta Maroto, Dan Marsden, Sam Marshall, Mark McKay, Stuart Mealor, Howard Miller, David Mudrák, Mark Nelson, Andrew Nicols, Dan Poltawski, Richard Oelmann, Daniel Palou, Bob Puffer, Visvanath Ratnaweera, Thom Rawson, Joseph Rezeau, Emma Richardson, Julian Ridden, Koen Roggemans, Petr Škoda (skodak), Koen Roggemans, Itamar Tzadok, Jean-Michel Védrine, Alex Walker, Ken Wilson, A. T. Wyatt
 
-`List updated 16:33, 7 September 2016 (AWST)`
+`List updated 08:20, 23 May 2025 (UTC)`
 
 ## Credits from the beginning of the project
 
