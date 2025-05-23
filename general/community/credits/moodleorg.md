@@ -38,8 +38,7 @@ Please create an issue in this project if anyone has been missed out to add thei
 - [Hebrew Moodle](https://moodle.org/course/view.php?id=17219) - Miki Alliel, Yaniv Cohen, Nadav Kavalerchik (previously Roy Yarkoni)
 - [Hungarian Moodle](https://moodle.org/course/view.php?id=17229) - Csaba Gloner
 - [Indonesian Moodle](https://moodle.org/course/view.php?id=40) - Adi Tedjasaputra
-- [Moodle in India](https://moodle.org/course/view.php?id=17232) - Farhan Karmali
-- [Japanese Moodle](https://moodle.org/course/view.php?id=14) - Toshihiro KITA, Haruhiko Okumura, Tatsuya Shirai, Mitsuhiro Yoshida
+- [Japanese Moodle](https://moodle.org/course/view.php?id=14) - Toshihiro Kita, Haruhiko Okumura, Tatsuya Shirai, Mitsuhiro Yoshida
 - [Moodle Brasileiro](https://moodle.org/course/view.php?id=35) - Gilvan Marques, Giovanni Farias, Daniel Neis Araujo (previously Paula de Waal)
 - [Moodle em Português](https://moodle.org/course/view.php?id=24) - Jaime Villate, António Vilela
 - [Moodle en Català](https://moodle.org/course/view.php?id=39) - Carles Bellver, Joan Queralt
@@ -53,23 +52,24 @@ Please create an issue in this project if anyone has been missed out to add thei
 - [Polski Moodle](https://moodle.org/course/view.php?id=22) - Adam Pawelczak
 - [Russian Moodle](https://moodle.org/course/view.php?id=25) - Alex Djachenko (previously Dmitry Pupinin)
 - [Serbian Moodle](https://moodle.org/course/view.php?id=53) - Bojan Milosavljević
-- [Svenska Moodle](https://moodle.org/course/view.php?id=26) - Anders Berggren, Jeff Forssell
-- [Türkçe Moodle](https://moodle.org/course/view.php?id=17) - Kemal Can, Orçun Madran (previously Ethem Evlice)
+- [Türkçe Moodle](https://moodle.org/course/view.php?id=17) - Kemal Can, Orçun Madran, Zeki Tuman (previously Ethem Evlice)
 - [Ukrainian Moodle](https://moodle.org/course/view.php?id=17228) - Alexandre Scherbyna
 - [Vietnamese Moodle](https://moodle.org/course/view.php?id=45) - Dinh Lu Giang, Hoang Duy Thien Nguyen (previously Vu Hung)
 - [Arabic Moodle](https://moodle.org/course/view.php?id=16) - Mosaab Alsiddig (previously Dr. Ali Abureesh, Ismaeel Hazzori)
 - [Persian Moodle](https://moodle.org/course/view.php?id=1008) - Shamim Rezaie
 - [简体中文 Moodle (Chinese)](https://moodle.org/course/view.php?id=27) - Dongsheng Cai, Wen-Chu Kuo
-- [한글무들(Korean Moodle)](https://moodle.org/course/view.php?id=21) - Jong-Dae Park
+- 한글무들 (Korean Moodle) - Jong-Dae Park
 - Bangla Moodle - previously Biplab Mazumder, Razib Mustafiz, Mashiur Rahman
 - Moodle in Cambodia - previously Dr.Wim Singhanart
 - Moodle in Estonian - previously Nils Austa, Tõnis Tartes
 - Finnish Moodle - previously Petri Asikainen, Samuli Karevaara
 - Moodle in Galician - previously Xosé Calvo
+- Moodle in India - Farhan Karmali
 - Icelandic Moodle - previously Sigurdur Jonsson
 - Moodle sa Pilipinas - previously Roel Cantada
 - Sinhala Moodle - previously Rashan Anushka, Harsha Balasooriya
 - Slovenian Moodle - previously Mitja Podreka
+- Svenska Moodle - Anders Berggren, Jeff Forssell
 - தமிழ் (இலங்கை) (ta-LK) - previously Sarveswaran Kengatharaiyer
 - தமிழ் Moodle (Tamil) - previously Sarveswaran Kengatharaiyer, Nagarajan Vadivel
 
