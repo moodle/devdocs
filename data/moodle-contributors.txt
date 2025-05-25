@@ -131,6 +131,7 @@ Bias
 Bicciolo
 Biggs
 Binh
+Birrell
 Bithas
 Blancas
 Blomenberg
@@ -515,6 +516,7 @@ Javed
 JayChurchward
 Jayaprakash
 Jayathissa
+Jayce
 Jaydn
 Jayesh
 Jayswal
@@ -1266,6 +1268,7 @@ agrabs
 ahmed_nabil
 ak4t0sh
 amosbot
+andelacruz
 andersbe
 andre_bln
 andreabix
