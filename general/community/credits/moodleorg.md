@@ -19,11 +19,11 @@ Please create an issue in this project if anyone has been missed out to add thei
 ## Community discussion in English:
 
 - [Using Moodle](https://moodle.org/course/view.php?id=5) - Martin Dougiamas, Helen Foster, Eloy Lafuente (stronk7)
-- [Moodle for Business Uses](https://moodle.org/course/view.php?id=32) - Ralf Hilgenstock, Stuart Mealor, (previously Chardelle Busch, Bryan Williams)
-- [Moodle for Language Teaching](https://moodle.org/course/view.php?id=31) - Anders Berggren, Bob Gettings, Glenys Hanson, Don Hinkelman, Thomas Robb, Mark Stevens, (previously Timothy Takemoto, Matthew Whelpton)
-- [Moodle Certification](https://moodle.org/course/view.php?id=48) - Ralf Hilgenstock, Stuart Mealor, Magda Aliana, Anna Krassa, Maryel Mendiola, Kim Salinas, Yiannis Arapoglou, Dag Klimas (previously Haidee Foxwell)
+- Moodle for Business Uses - Ralf Hilgenstock, Stuart Mealor, (previously Chardelle Busch, Bryan Williams)
+- Moodle Certification - Ralf Hilgenstock, Stuart Mealor, Magda Aliana, Anna Krassa, Maryel Mendiola, Kim Salinas, Yiannis Arapoglou, Dag Klimas (previously Haidee Foxwell)
 - Moodle Conferences - previously Sean Keogh
 - Moodle Exchange - previously Paula Clough, Dan Marsden, Maryel Mendiola
+- Moodle for Language Teaching - Anders Berggren, Bob Gettings, Glenys Hanson, Don Hinkelman, Thomas Robb, Mark Stevens, (previously Timothy Takemoto, Matthew Whelpton)
 - Moodle Lounge - previously Frances Bell, Mary Cooch
 - Technology and Pedagogy Study Group - previously Anders Berggren
 - Teaching and Learning with Moodle - previously Tomaz Lasic and Mary Cooch
