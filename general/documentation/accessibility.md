@@ -10,12 +10,12 @@ The Moodle Developer Resources are designed to provide equal functionality and a
 This website is built according to World Wide Web Consortium (W3C) [Web Content Accessibility Guidelines (WCAG) level AA](https://www.w3.org/WAI/WCAG21/quickref/?currentsidebar=%23col_customize&levels=aaa).
 
 This means you should be able to:
-* Enlarge text by zooming in.
-* Read the text and view images that have a high contrast to their background.
-* Change the background and text colour and fonts using browser plugins.
-* Navigate the website using only a keyboard.
-* Navigate using a screen-reader and speech-recognition software.
-* Listen to texts and image descriptions using a screen-reader (such as [NVDA](https://www.nvaccess.org/download/)).
+- Enlarge text by zooming in.
+- Read the text and view images that have a high contrast to their background.
+- Change the background and text colour and fonts using browser plugins.
+- Navigate the website using only a keyboard.
+- Navigate using a screen-reader and speech-recognition software.
+- Listen to texts and image descriptions using a screen-reader (such as [NVDA](https://www.nvaccess.org/download/)).
 
 ## Alter this website to suit your own needs
   
@@ -32,4 +32,3 @@ Please direct any questions, comments, or suggestions for improving the accessib
 ## Learn about accessibility
 
 Moodle Academy offers a number of [free short courses about accessibility](https://moodle.academy/tag/index.php?tc=2&tag=Accessibility&from=2) for the general public, teachers and programmers. Get started with the 1 hour [Introduction to Accessibility](https://moodle.academy/course/view.php?id=58) course to learn how you can communicate in a more accessible way to benefit everyone.
-
