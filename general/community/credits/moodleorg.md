@@ -49,7 +49,6 @@ Please create an issue in this project if anyone has been missed out to add thei
 - [Moodle in Italiano](https://moodle.org/course/view.php?id=23) - Andrea Bicciolo, Roberto Pinna
 - [Moodle in Thailand](https://moodle.org/course/view.php?id=36) - Dr.Wim Singhanart
 - [Nederlandstalig](https://moodle.org/course/view.php?id=13) - Koen Roggemans (previously Hans de Zwart)
-- [Norsk Moodle](https://moodle.org/course/view.php?id=54) - John Harald Gartland
 - [Polski Moodle](https://moodle.org/course/view.php?id=22) - Adam Pawelczak
 - [Russian Moodle](https://moodle.org/course/view.php?id=25) - Alex Djachenko (previously Dmitry Pupinin)
 - [Serbian Moodle](https://moodle.org/course/view.php?id=53) - Bojan Milosavljević
@@ -67,6 +66,7 @@ Please create an issue in this project if anyone has been missed out to add thei
 - Finnish Moodle - previously Petri Asikainen, Samuli Karevaara
 - Moodle in Galician - previously Xosé Calvo
 - Icelandic Moodle - previously Sigurdur Jonsson
+- Norsk Moodle - John Harald Gartland
 - Moodle sa Pilipinas - previously Roel Cantada
 - Sinhala Moodle - previously Rashan Anushka, Harsha Balasooriya
 - Slovenian Moodle - previously Mitja Podreka
