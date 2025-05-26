@@ -27,3 +27,7 @@
 
 # Community
 /general/community/ @moodle/moodle-community-team
+
+# Documentation of the Documentation
+# Both the documentation owners, and the community team have ownership of this content.
+/general/documentation/ @moodle/documentation-owners @moodle/moodle-community-team
