@@ -10,6 +10,7 @@ The Moodle Developer Resources are designed to provide equal functionality and a
 This website is built according to World Wide Web Consortium (W3C) [Web Content Accessibility Guidelines (WCAG) level AA](https://www.w3.org/WAI/WCAG21/quickref/?currentsidebar=%23col_customize&levels=aaa).
 
 This means you should be able to:
+
 - Enlarge text by zooming in.
 - Read the text and view images that have a high contrast to their background.
 - Change the background and text colour and fonts using browser plugins.
