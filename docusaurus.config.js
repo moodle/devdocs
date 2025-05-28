@@ -43,7 +43,10 @@ const remarkPlugins = [
     UnversionedDocsLinksRemark,
 ];
 
+// See https://docs.netlify.com/configure-builds/environment-variables/
 const isDeployPreview = !!process.env.NETLIFY && process.env.CONTEXT === 'deploy-preview';
+const isNetlifyProductionDeployment = process.env.NETLIFY && process.env.CONTEXT === 'production';
+const isProductionDeployment = isNetlifyProductionDeployment;
 
 const getBaseUrl = () => {
     if (typeof process.env.BASEURL !== 'undefined') {
@@ -60,6 +63,7 @@ const config = {
     tagline: 'Nurturing Moodle Developers',
     future: {
         experimental_faster: true,
+        v4: true,
     },
 
     // url: 'https://develop.moodle.org',
@@ -139,6 +143,19 @@ const config = {
     }),
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     plugins: [
+        function disableExpensiveBundlerOptimizationPlugin() {
+            // As documented in https://github.com/facebook/docusaurus/discussions/11199.
+            return {
+                name: 'disable-expensive-bundler-optimizations',
+                configureWebpack(_config, isServer) {
+                    return {
+                        optimization: {
+                            concatenateModules: isProductionDeployment ? !isServer : false,
+                        },
+                    };
+                },
+            };
+        },
         [
             '@docusaurus/plugin-content-docs',
             {

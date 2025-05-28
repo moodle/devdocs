@@ -16,10 +16,7 @@
 
 .feature-link {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 1;
   content: "";
 }
@@ -31,7 +28,7 @@
 }
 
 .card {
-  flex: 0 0 30%;
+  flex: 0 0 var(--ifm-col-width);
   padding: 1rem;
   max-width: none;
 }
