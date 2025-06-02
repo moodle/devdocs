@@ -24,6 +24,14 @@ The app can also be compiled to work with a single site, or a list of approved s
 
 Keep in mind that the application only works with moodle sites that allow it, and this is disabled by default in some sites. If you want to allow users to log into your site using the app, make sure to check that it's [enabled in the settings](https://docs.moodle.org/en/Moodle_app_guide_for_admins#Enable_mobile_services_on_your_site). If you are not the site owner, reach out to the administrators.
 
+### Technologies used
+
+The Moodle app is a hybrid app built using [Angular](https://angular.io/) and [Ionic Framework](https://ionicframework.com/). The main coding language used in the app is [Typescript](https://www.typescriptlang.org/).
+
+The [Cordova framework](https://cordova.apache.org/) is used to use native features and to compile the Android and iOS apps.
+
+The official app from MoodleHQ uses a server with [Airnotifier](https://github.com/dcai/airnotifier) to deliver push notifications to the app. The Moodle site sends the notifications to the Airnotifier server, and this server uses [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) to deliver the notifications to the devices using Google Cloud Messaging and Apple Push Notification service.
+
 ### Architecture
 
 The code of the application follows an [hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)), with core modules that include the main functionality and addon modules that provide additional features.
