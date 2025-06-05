@@ -206,7 +206,6 @@ You must define `$string['sectionname']` if your language file even if the forma
 | `get_section_number()` | Return zero if the course will deploy all sections or a section number if the current page is only presenting a single section. |
 | `get_course_display()` | Return `COURSE_DISPLAY_SINGLEPAGE` or `COURSE_DISPLAY_MULTIPAGE` depending if the course has multiple section per page or not. |
 | `get_last_section_number()` | Returns the last section |
-| `get_max_sections()` | Returns the maximum number of sections this format can contain |
 | `page_title()` | Formats can override this method to alter the page title. |
 
 ### Course features
