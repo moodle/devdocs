@@ -83,6 +83,7 @@ Ariste
 Arjen
 Arjona
 Arnaud
+Artem
 Arto
 Artur
 Ashley
@@ -131,6 +132,7 @@ Bias
 Bicciolo
 Biggs
 Binh
+Birrell
 Bithas
 Blancas
 Blomenberg
@@ -371,6 +373,7 @@ Fábio
 GUINOISEAU
 Galiszek
 Gancarz
+Garanin
 Garapati
 Gareth
 Garrett
@@ -515,6 +518,7 @@ Javed
 JayChurchward
 Jayaprakash
 Jayathissa
+Jayce
 Jaydn
 Jayesh
 Jayswal
@@ -577,6 +581,7 @@ Karl
 KarlReyesCatalyst
 Karmali
 Kassaei
+Katalin
 Kateryna
 Kathrin
 Katie
@@ -665,6 +670,7 @@ Loong
 Lorenzo
 Luca
 Lucian
+Lukacs
 Lukas
 Luke
 Lundberg
@@ -675,6 +681,7 @@ Macgirvin
 Madden
 Mady
 Magill
+Magnus
 Mahmoud
 Mahmoud.Kassaei
 Malith
@@ -987,6 +994,7 @@ Salces
 Salem
 Salih
 Sammarco
+Samuelsson
 Sander
 Sanecki
 Santos
@@ -1001,6 +1009,7 @@ Schach
 Schillinger
 Schmadel
 Schmidt-Kuhl
+Schneider
 Schrenk
 Schroeder
 Schultz
@@ -1129,6 +1138,7 @@ Topfstedt
 Torrent
 Torres
 Totaram
+Toth
 Travis
 Tregubov
 Treitinger
@@ -1176,6 +1186,7 @@ Viirsaar
 Viitasalo
 Viktor
 Villemure
+Vincent
 VinhLe
 Vinnie
 Virgil
@@ -1266,6 +1277,7 @@ agrabs
 ahmed_nabil
 ak4t0sh
 amosbot
+andelacruz
 andersbe
 andre_bln
 andreabix
@@ -1545,6 +1557,7 @@ willem
 willob99
 yair.spielmann
 yashvardhanpatel07
+yusufwib01
 zbdd
 zibas
 zpottie
