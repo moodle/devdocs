@@ -5,7 +5,7 @@ tags:
   - Accessibility
 ---
 
-At Moodle, we are committed to ensuring that the Moodle Developer Resource, powered by Docusaurus, is accessible to all users, including those with disabilities. While the Docusaurus framework does not specify a particular level of Web Content Accessibility Guidelines (WCAG) conformance, our goal is to meet WCAG 2.2 Level AA standards across our documentation site.
+At Moodle, we are committed to ensuring that the Moodle Developer Resource, powered by Docusaurus, is accessible to all users, including those with disabilities. While the Docusaurus framework does not specify a particular level of Web Content Accessibility Guidelines (WCAG) conformance, our goal is to meet WCAG 2.2 Level AA standards across the site.
 
 The Moodle Developer Resource is built and maintained through community contributions, reflecting the collective expertise and dedication of Moodle developers worldwide.
 
@@ -17,7 +17,7 @@ As part of this effort, we strive to:
 - Use accessible colour, typography, and media elements.
 - Continuously review and improve the site's accessibility based on feedback and best practices.
 
-This means you should be able to:
+You should be able to:
 
 - Enlarge text by zooming in.
 - Read the text and view images that have a high contrast to their background.
@@ -30,13 +30,9 @@ This means you should be able to:
 
 [My Computer My Way](https://mcmw.abilitynet.org.uk/) is a website by AbilityNet that helps you to set up your computer to suit your own needs.
 
-## What to do if you cannot access any part of this website
+## Problems, questions, comments or suggestions
 
-If you have problems accessing any part of the website, or require it in a different format, such as accessible PDF, large print or an audio recording, please raise an issue in our [Github devdocs repository](https://github.com/moodle/devdocs/issues) or send a message via the [Moodle Community Sites contact form](https://moodle.com/contact/support/?selection=community#form).
-
-## Questions, comments and suggestions
-
-Please direct any questions, comments, or suggestions for improving the accessibility of this website to the authors using the [Moodle Community Sites contact form](https://moodle.com/contact/support/?selection=community#form). Please include the URL (web link) to any relevant pages.
+If you have problems accessing any part of the website, or require it in a different format, or have any questions, comments or suggestions for improving the accessibility of the website, please raise an issue in our [Github devdocs repository](https://github.com/moodle/devdocs/issues) or send a message via the [Moodle Community Sites contact form](https://moodle.com/contact/support/?selection=community#form).
 
 ## Learn about accessibility
 
