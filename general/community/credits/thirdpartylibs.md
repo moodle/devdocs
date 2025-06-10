@@ -119,7 +119,7 @@ A general library that is supposed to be used in most PHP implementations of H5P
 Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.
 
 - **Location**: lib/adodb
-- **Version**: 5.22.8
+- **Version**: 5.22.9
 - **License**:  BSD/LGPL 3-Clause/2.1+
 - **URL**: [https://github.com/ADOdb/ADOdb](https://github.com/ADOdb/ADOdb)
 - **Copyright holders**:

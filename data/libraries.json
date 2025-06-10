@@ -129,7 +129,7 @@
         "location": "lib/adodb",
         "name": "ADOdb",
         "description": "Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.",
-        "version": "5.22.8",
+        "version": "5.22.9",
         "license": "BSD/LGPL",
         "licenseversion": "3-Clause/2.1+",
         "repository": "https://github.com/ADOdb/ADOdb",
