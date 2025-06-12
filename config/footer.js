@@ -62,8 +62,8 @@ module.exports = {
                     href: 'https://moodle.org/mod/forum/view.php?id=55',
                 },
                 {
-                    label: 'Twitter',
-                    href: 'https://twitter.com/moodle',
+                    label: 'X',
+                    href: 'https://x.com/moodle',
                 },
             ],
         },
@@ -73,6 +73,10 @@ module.exports = {
                 {
                     label: 'GitHub',
                     href: 'https://github.com/moodle',
+                },
+                {
+                    label: 'Accessibility statement',
+                    to: 'general/documentation/accessibility',
                 },
                 {
                     html: `
