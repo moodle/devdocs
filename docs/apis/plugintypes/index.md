@@ -35,7 +35,7 @@ If a plugin does not meet these requirements then it will be silently ignored.
 Plugin name validation takes place in `core_component::is_valid_plugin_name()` and the following regular expression is used:
 
 ```
-/^[a-z](?:[a-z0-9_](?!__))*[](a-z0-9)+$/
+/^[a-z](?:[a-z0-9_](?!__))*[a-z0-9]+$/
 ```
 
 :::
