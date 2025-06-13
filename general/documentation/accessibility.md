@@ -1,13 +1,19 @@
 ---
-title: Accessibility
+title: Accessibility statement
 description: A statement about the accessibility of the Moodle Developer Resources site.
 tags:
   - Accessibility
 ---
 
-At Moodle, we are committed to ensuring that the Moodle Developer Resource, powered by Docusaurus, is accessible to all users, including those with disabilities. While the Docusaurus framework does not specify a particular level of Web Content Accessibility Guidelines (WCAG) conformance, our goal is to meet WCAG 2.2 Level AA standards across the site.
+:::note
 
-The Moodle Developer Resource is built and maintained through community contributions, reflecting the collective expertise and dedication of Moodle developers worldwide.
+This page describes the accessibility of the Moodle Developer Resources site. For details of the accessibility conformance of Moodle products, coding standards and other developer resources related to accessibility, see [Accessibility](../development/policies/accessibility.md).
+
+:::
+
+At Moodle, we are committed to ensuring that the Moodle Developer Resources, powered by Docusaurus, is accessible to all users, including those with disabilities. While the Docusaurus framework does not specify a particular level of Web Content Accessibility Guidelines (WCAG) conformance, our goal is to meet WCAG 2.2 Level AA standards across the site.
+
+The Moodle Developer Resources are built and maintained through community contributions, reflecting the collective expertise and dedication of Moodle developers worldwide.
 
 As part of this effort, we strive to:
 
