@@ -168,5 +168,5 @@ class provider implements \core_privacy\local\metadata\null_provider, \core_cust
 
 ## See also
 
-- [MDL-64626](https://tracker.moodle.org/browse/MDL-64626) - Custom fields API (Moodle 3.7+) implementations and improvements
-- [MDL-57898](https://tracker.moodle.org/browse/MDL-57898) - Add custom field types plugin and course custom fields functionality
+- [MDL-64626](https://moodle.atlassian.net/browse/MDL-64626) - Custom fields API (Moodle 3.7+) implementations and improvements
+- [MDL-57898](https://moodle.atlassian.net/browse/MDL-57898) - Add custom field types plugin and course custom fields functionality

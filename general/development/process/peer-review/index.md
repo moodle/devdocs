@@ -10,7 +10,7 @@ sidebar_position: 3
 ---
 ## Peer review list
 
-The list of issues ready for peer review is found in the [Waiting for a peer reviewer](https://tracker.moodle.org/issues/?filter=13607) filter on the Moodle tracker.
+The list of issues ready for peer review is found in the [Waiting for a peer reviewer](https://moodle.atlassian.net/issues/?filter=13607) filter on the Moodle tracker.
 
 ## Checklist
 
@@ -302,7 +302,7 @@ Thanks for providing a patch. I think the following points require further work
 Please indicate If you are willing to continue working on this issue and complete the solution.
 ```
 
-Can you help with peer reviewing? If so, please see the [list of issues waiting for peer review](https://tracker.moodle.org/issues/?filter=13607).
+Can you help with peer reviewing? If so, please see the [list of issues waiting for peer review](https://moodle.atlassian.net/issues/?filter=13607).
 
 ### Peer review for development by HQ or a known common contributor
 

@@ -632,7 +632,7 @@ which must be used very carefully because it might break compatibility with data
 
 ::: More information
 
-For more information see [DB layer 2.0 delegated transactions](https://docs.moodle.org/dev/DB_layer_2.0_delegated_transactions) or [MDL-20625](https://tracker.moodle.org/browse/MDL-20625).
+For more information see [DB layer 2.0 delegated transactions](https://docs.moodle.org/dev/DB_layer_2.0_delegated_transactions) or [MDL-20625](https://moodle.atlassian.net/browse/MDL-20625).
 
 :::
 

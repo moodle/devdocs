@@ -55,4 +55,4 @@ result;
 
 ## Other examples
 
-You can find more examples about this type of plugins in [MOBILE-4323](https://tracker.moodle.org/browse/MOBILE-4323).
+You can find more examples about this type of plugins in [MOBILE-4323](https://moodle.atlassian.net/browse/MOBILE-4323).

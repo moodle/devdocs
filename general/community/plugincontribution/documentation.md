@@ -71,4 +71,4 @@ If any of the above sounds too complicated, please don't worry - just email Mood
 ## See also
 
 - [Wiki editing help](http://docs.moodle.org/en/Help:Editing)
-- [MDL-34035](https://tracker.moodle.org/browse/MDL-34035) A way to have more help links relative to wwwroot
+- [MDL-34035](https://moodle.atlassian.net/browse/MDL-34035) A way to have more help links relative to wwwroot

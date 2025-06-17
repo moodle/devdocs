@@ -44,7 +44,7 @@ CiBoT is not a person but a bot who monitors the tracker and performs the [Autom
 
 ### Component leads
 
-[Component leads](https://tracker.moodle.org/projects/MDL?selectedItem=com.atlassian.jira.jira-projects-plugin:components-page) are developers with some responsibility for particular components (plugins or modules) in Moodle. They have authority to decide that a particular fix is suitable and complete enough to be considered for integration in Moodle core and should be called upon to complete peer reviews for code in their components. Note that, apart from that, every component also has some [HQ Component leads](https://docs.moodle.org/dev/Component_Leads) that will specifically work on associated issues, triaging, monitoring, reviewing, fixing them.
+[Component leads](https://moodle.atlassian.net/projects/MDL?selectedItem=com.atlassian.jira.jira-projects-plugin:components-page) are developers with some responsibility for particular components (plugins or modules) in Moodle. They have authority to decide that a particular fix is suitable and complete enough to be considered for integration in Moodle core and should be called upon to complete peer reviews for code in their components. Note that, apart from that, every component also has some [HQ Component leads](https://docs.moodle.org/dev/Component_Leads) that will specifically work on associated issues, triaging, monitoring, reviewing, fixing them.
 
 ### Component leads reviewers
 
@@ -137,9 +137,9 @@ The process of [new feature development](#new-feature-development) is described 
 
 During development, as new code is integrated, automated testing conducted at the [code](./tools/phpunit/index.md) and [interface](./tools/behat/index.md) levels, to make sure there are no regressions caused by new features.
 
-In the last month before the release, a feature freeze is called (no new features can be added) and volunteer testers from the Moodle community perform manual [QA testing](./process/testing/qa.md) of Moodle features. The current set of functional tests is listed in [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1). The list of tests is extended as new features are added, though we're also trying to reduce the number as more automated [acceptance tests](./tools/behat/index.md) are developed.
+In the last month before the release, a feature freeze is called (no new features can be added) and volunteer testers from the Moodle community perform manual [QA testing](./process/testing/qa.md) of Moodle features. The current set of functional tests is listed in [MDLQA-1](https://moodle.atlassian.net/browse/MDLQA-1). The list of tests is extended as new features are added, though we're also trying to reduce the number as more automated [acceptance tests](./tools/behat/index.md) are developed.
 
-There is also a set of tests for manually testing any major theme changes - [MDLQA-11592](https://tracker.moodle.org/browse/MDLQA-11592).
+There is also a set of tests for manually testing any major theme changes - [MDLQA-11592](https://moodle.atlassian.net/browse/MDLQA-11592).
 
 For more details, see [Testing](./process/testing/index.md).
 
@@ -305,7 +305,7 @@ Occasionally within Moodle we run into policy issues where a high-level decision
 
 In these cases the process is as follows:
 
-- Create an issue in the tracker with a [Policy component](https://tracker.moodle.org/browse/MDL/component/12733) and put `POLICY:` as a prefix on the summary.
+- Create an issue in the tracker with a [Policy component](https://moodle.atlassian.net/browse/MDL/component/12733) and put `POLICY:` as a prefix on the summary.
 - In the description describe the problem clearly as well as all the options. If it's long then make a page here in Moodle Dev Docs and link to it.
 - Do not use this issue for code. If there are issues that depend on this policy decision, then add tracker links to them as dependencies.
 - Feel free to encourage people to come and talk about the policy to support various points of view. The more evidence we have (from everyone in the community) the better.
@@ -318,7 +318,7 @@ Decisions will be posted on the issue and that issue will be closed, allowing an
 - [Detailed workflow](./process/_files/workflow.jpg)
 - [Release process](./process/release)
 - [Deprecation](./policies/deprecation/index.md)
-- [Integration dashboard](http://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11350)
+- [Integration dashboard](http://moodle.atlassian.net/secure/Dashboard.jspa?selectPageId=11350)
 Walks-though of the process for contributors:
 - By Dan Poltawski, Integrator: http://www.slideshare.net/poltawski/how-to-guarantee-your-change-is-integrated-to-moodle-core, https://www.youtube.com/watch?v=836WtnM2YpM
 - By Tim Hunt, contributor: http://tjhunt.blogspot.co.uk/2012/03/fixing-bug-in-moodle-core-mechanics.html and https://www.youtube.com/watch?v=gPPA3h7OGQU and https://youtu.be/Hu8ne0NCRAg?t=11659

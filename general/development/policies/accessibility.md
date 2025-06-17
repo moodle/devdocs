@@ -16,16 +16,16 @@ As part of our ongoing commitment to accessibility and continuously improving co
 
 #### Moodle LMS
 
-Moodle LMS has been accredited to meet [WCAG 2.1 Level AA conformance](https://tracker.moodle.org/secure/attachment/147694/Moodle%20Statement%20of%20Conformance%202024.pdf).
+Moodle LMS has been accredited to meet [WCAG 2.1 Level AA conformance](https://moodle.atlassian.net/secure/attachment/147694/Moodle%20Statement%20of%20Conformance%202024.pdf).
 
 The table below provides a history of the accessibility audits performed on the Moodle LMS.
 
 | Audit period   | Target conformance | Accreditation date | Tracker epic                                             | Fixed versions               |
 |----------------|--------------------|--------------------|----------------------------------------------------------|------------------------------|
-| January 2020   | WCAG 2.1 Level AA  | 10 November 2020   | [MDL-67688](https://tracker.moodle.org/browse/MDL-67688) | v3.10, v3.9.3                |
-| September 2021 | WCAG 2.1 Level AA  | 8 November 2021    | [MDL-72657](https://tracker.moodle.org/browse/MDL-72657) | v4.0, v3.11.5, v3.10.8       |
-| May 2022       | WCAG 2.1 Level AA  | 3 May 2023         | [MDL-74624](https://tracker.moodle.org/browse/MDL-74624) | v4.2, v4.1.3, v4.0.8         |
-| August 2023    | WCAG 2.1 Level AA  | 24 January 2024    | [MDL-78185](https://tracker.moodle.org/browse/MDL-78185) | v4.4, v4.3.1, v4.2.4, v4.1.7 |
+| January 2020   | WCAG 2.1 Level AA  | 10 November 2020   | [MDL-67688](https://moodle.atlassian.net/browse/MDL-67688) | v3.10, v3.9.3                |
+| September 2021 | WCAG 2.1 Level AA  | 8 November 2021    | [MDL-72657](https://moodle.atlassian.net/browse/MDL-72657) | v4.0, v3.11.5, v3.10.8       |
+| May 2022       | WCAG 2.1 Level AA  | 3 May 2023         | [MDL-74624](https://moodle.atlassian.net/browse/MDL-74624) | v4.2, v4.1.3, v4.0.8         |
+| August 2023    | WCAG 2.1 Level AA  | 24 January 2024    | [MDL-78185](https://moodle.atlassian.net/browse/MDL-78185) | v4.4, v4.3.1, v4.2.4, v4.1.7 |
 
 <details>
 
@@ -41,7 +41,7 @@ The table below provides a history of the accessibility audits performed on the 
 
 #### Moodle App
 
-The Moodle App was accredited to meet [WCAG 2.1 Level AA conformance](https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle-mobile-app) on 9 May 2023. See [MOBILE-4182](https://tracker.moodle.org/browse/MOBILE-4182) for more details.
+The Moodle App was accredited to meet [WCAG 2.1 Level AA conformance](https://www.webkeyit.com/accessibility-services/accessibility-accreditations/moodle-mobile-app) on 9 May 2023. See [MOBILE-4182](https://moodle.atlassian.net/browse/MOBILE-4182) for more details.
 
 #### Moodle Workplace
 

@@ -34,7 +34,7 @@ Each feature is identified by a constant, which is defined in the `lib
 - `FEATURE_GROUPS` and `FEATURE_GROUPINGS`: The activity module supports groups and groupings.
 - `FEATURE_SHOW_DESCRIPTION`: The activity module supports showing the description on the course page.
 - `FEATURE_QUICKCREATE`: The activity `[modname]_add_instance()` function is able to create an instance without showing a form using the default settings. It is used by the `core_courseformat_new_module` webservice to know which activities are compatible. If this feature is supported, the activity module should provide a `quickcreatename` string in the language file that will be used as the name of the instance created.
-- `FEATURE_COMPLETION`: The activity module supports activity completion. For now this feature only affects the bulk completion settings. However, in the future ([MDL-83027](https://tracker.moodle.org/browse/MDL-83027)) activities can set to false to disable all completion settings.
+- `FEATURE_COMPLETION`: The activity module supports activity completion. For now this feature only affects the bulk completion settings. However, in the future ([MDL-83027](https://moodle.atlassian.net/browse/MDL-83027)) activities can set to false to disable all completion settings.
 
 <details>
   <summary>View example</summary>

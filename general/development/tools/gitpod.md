@@ -26,7 +26,7 @@ Gitpod is an alternative to local development and completely optional. We recomm
 
 ## How to use Gitpod with Moodle?
 
-A [Tampermonkey](https://www.tampermonkey.net/) script has been created to facilitate the initiation of a Gitpod workspace from any Moodle repository/branch. When the script is installed, a button is displayed near each branch in the [Moodle tracker](https://tracker.moodle.org/) within the Moodle repository, facilitating the initiation of a Gitpod workspace. It can be used for testing any Moodle repository/branch without requiring a local environment installed.
+A [Tampermonkey](https://www.tampermonkey.net/) script has been created to facilitate the initiation of a Gitpod workspace from any Moodle repository/branch. When the script is installed, a button is displayed near each branch in the [Moodle tracker](https://moodle.atlassian.net/) within the Moodle repository, facilitating the initiation of a Gitpod workspace. It can be used for testing any Moodle repository/branch without requiring a local environment installed.
 
 ![Gitpod integration with Moodle tracker](./_gitpod/trackerintegration.png)
 
@@ -35,7 +35,7 @@ To use it, follow these steps:
 1. Install the [Tampermonkey extension](https://www.tampermonkey.net/) for your preferred browser.
 1. Go to **Dashboard** in the Tampermonkey extension and access the **Utilities** tab.
 1. In the **Import from URL** field, paste the following Gitpod script: https://gist.githubusercontent.com/sarjona/9fc728eb2d2b41a783ea03afd6a6161e/raw/gitpod.js
-1. Go to the [Moodle Tracker](https://tracker.moodle.org/) and open any issue.
+1. Go to the [Moodle Tracker](https://moodle.atlassian.net/) and open any issue.
 1. Click the **Open in Gitpod** button that should appear near any of the branches in the issue.
 
 The first time you open a workspace, you will need to register in [gitpod.io](https://www.gitpod.io/) (you can use your Github account).

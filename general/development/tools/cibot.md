@@ -41,14 +41,14 @@ Any issue [submitted for peer review](https://github.com/moodlehq/moodle-local_c
 
 ## Are additional CiBot checks possible?
 
-Yes. It is planned to add more checks - (see [MDLSITE-3267](https://tracker.moodle.org/browse/MDLSITE-3267)) and developers are encouraged to suggest new checks in that issue. Note that some limitations exist:
+Yes. It is planned to add more checks - (see [MDLSITE-3267](https://moodle.atlassian.net/browse/MDLSITE-3267)) and developers are encouraged to suggest new checks in that issue. Note that some limitations exist:
 
 - The checks should be consistent and completely reproducible
 - The check should complete in minutes not hours (other solutions are in planning for longer term tests)
 
 ## How do I report bugs in the CiBot report?
 
-Please [file an issue](https://tracker.moodle.org/secure/CreateIssueDetails!init.jspa?pid=10020&issuetype=1&components=12431&summary=Problem%20with%20CiBot%20results%20on%20MDL-XXXXX) in the MDLSITE project, Integration component.
+Please [file an issue](https://moodle.atlassian.net/secure/CreateIssueDetails!init.jspa?pid=10020&issuetype=1&components=12431&summary=Problem%20with%20CiBot%20results%20on%20MDL-XXXXX) in the MDLSITE project, Integration component.
 
 ## The git commit summary  limit is too small
 

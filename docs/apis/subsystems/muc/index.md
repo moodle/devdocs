@@ -246,7 +246,7 @@ When the requested key cannot be found in the cache the data source will be aske
 
 :::note
 
-In Moodle versions prior to 3.8.6 and 3.9.3, if caching is disabled then *nothing* will be loaded through the data source which is probably not what you expect (rather than the data source being loaded every time but never cached). See also: [MDL-42012](https://tracker.moodle.org/browse/MDL-42012)
+In Moodle versions prior to 3.8.6 and 3.9.3, if caching is disabled then *nothing* will be loaded through the data source which is probably not what you expect (rather than the data source being loaded every time but never cached). See also: [MDL-42012](https://moodle.atlassian.net/browse/MDL-42012)
 
 :::
 
@@ -297,7 +297,7 @@ This is conceptually the same as above but has two important differences. Firstl
  $cache->get('foo');           // Get the final / shared version (which may also be stale!)
 ```
 
-But this also is imperfect if there are 3 layers of caching, see [MDL-72837](https://tracker.moodle.org/browse/MDL-72837) for a full discussion and a possible new api to handle this.
+But this also is imperfect if there are 3 layers of caching, see [MDL-72837](https://moodle.atlassian.net/browse/MDL-72837) for a full discussion and a possible new api to handle this.
 
 This method is how the course modinfo cache is localized.
 
@@ -338,7 +338,7 @@ This is especially important if you are scaling up and down the number of fronte
 
 A good rule of thumb is to pair similar types of local and shared caches together. For instance, it is very common to store the Moodle string cache in APCu because it is very heavily used, so an in-memory cache is the fastest and is well paired this a shared cache like Redis. `coursemodinfo` on the other hand is often very large so isn't as practical to store in Redis so it is usually cached on disk, so you could have a local file cache (which could often be very fast `SSD`) and pair it with a shared disk cache in `dataroot` (often much slower over `NFS` or `Gluster`).
 
-As you scale even bigger, a new bottleneck can appear when purging a shared disk cache ie when you deploy a new version. A full purge needs to iterate over and remove and sync a very large number of files, which can take some time. See [MDL-69088](https://tracker.moodle.org/browse/MDL-69088) for a proposed fix.
+As you scale even bigger, a new bottleneck can appear when purging a shared disk cache ie when you deploy a new version. A full purge needs to iterate over and remove and sync a very large number of files, which can take some time. See [MDL-69088](https://moodle.atlassian.net/browse/MDL-69088) for a proposed fix.
 
 ### Beware fast churning keys
 

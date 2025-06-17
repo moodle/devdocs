@@ -52,7 +52,7 @@ It would be good practice to also add a line like "This is a backport of MDL-YYY
 
 :::
 
-You can probably copy the testing instructions from the original issue. If so, make it clear you done this by saying something like "Copied from MDL-66327". Of course, if you can improve the instructions, feel free to edit. [MDL-66614](https://tracker.moodle.org/browse/MDL-66614) and [MDL-66327](https://tracker.moodle.org/browse/MDL-66327) are probably a reasonably good example fo what should be done.
+You can probably copy the testing instructions from the original issue. If so, make it clear you done this by saying something like "Copied from MDL-66327". Of course, if you can improve the instructions, feel free to edit. [MDL-66614](https://moodle.atlassian.net/browse/MDL-66614) and [MDL-66327](https://moodle.atlassian.net/browse/MDL-66327) are probably a reasonably good example fo what should be done.
 
 ## Polite note about bug classification
 

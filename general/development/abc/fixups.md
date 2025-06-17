@@ -90,7 +90,7 @@ To github.com:timhunt/moodle.git
 
 ## A more complex example
 
-This is [a real example from MDL-80880](https://tracker.moodle.org/browse/MDL-80880?focusedId=1065188&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-1065188) from an improvement I made. The original work comprised two commits:
+This is [a real example from MDL-80880](https://moodle.atlassian.net/browse/MDL-80880?focusedId=1065188&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-1065188) from an improvement I made. The original work comprised two commits:
 
 ```
 MDL-80880 quiz: summary of an attempt output changed to a templateable
@@ -135,7 +135,7 @@ The way to get that is to not let `git rebase -i --autosquash` do all of its mag
 
 One other tip: When you are making the separate fixup commits, if you get carried away and make a lot of the changes in your workspace, and only later think about committing them separately, have a look at [`git add -p`](https://git-scm.com/docs/git-add#Documentation/git-add.txt--p).
 
-If you would like to see an example of this being done in a really large change, see [this branch](https://github.com/timhunt/moodle/compare/main...MDL-74610-fixes-04-08), related to [this comment on MDL-74610](https://tracker.moodle.org/browse/MDL-74610?focusedId=1075220&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1075220).
+If you would like to see an example of this being done in a really large change, see [this branch](https://github.com/timhunt/moodle/compare/main...MDL-74610-fixes-04-08), related to [this comment on MDL-74610](https://moodle.atlassian.net/browse/MDL-74610?focusedId=1075220&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1075220).
 
 ## Summary
 

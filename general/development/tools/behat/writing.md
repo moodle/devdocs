@@ -20,7 +20,7 @@ These three stages match the standard [Four-phase test pattern](http://xunitpatt
 :::warning
 
 Each test should have only one use of **Given**, **When**, and **Then**.
-See [MDLSITE-3778](https://tracker.moodle.org/browse/MDLSITE-3778) for information and the policy decision on why you should not have multiple Given, When, and Then steps.
+See [MDLSITE-3778](https://moodle.atlassian.net/browse/MDLSITE-3778) for information and the policy decision on why you should not have multiple Given, When, and Then steps.
 
 :::
 

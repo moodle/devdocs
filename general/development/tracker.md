@@ -9,7 +9,7 @@ tags:
   - Tracker
 ---
 
-The [Moodle Tracker](http://tracker.moodle.org/) is our database for recording and managing all Moodle development issues: bugs (problems with the software), improvements and feature requests.
+The [Moodle Tracker](http://moodle.atlassian.net/) is our database for recording and managing all Moodle development issues: bugs (problems with the software), improvements and feature requests.
 
 ## Creating a tracker account
 
@@ -40,7 +40,7 @@ See also [Tracker tips](./tracker/tips).
 
 :::important
 
-If you see a message that you can not create an issue unless you vote for or watch an existing open issue, search a tracker for [Unresolved issues](https://tracker.moodle.org/issues/?jql=project%20%3D%20MDL%20AND%20resolution%20%3D%20Unresolved), select one that is interesting to you and click either "Watch" or "Vote" link. This is a protection against spam and also encourages reporters to search tracker first.
+If you see a message that you can not create an issue unless you vote for or watch an existing open issue, search a tracker for [Unresolved issues](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDL%20AND%20resolution%20%3D%20Unresolved), select one that is interesting to you and click either "Watch" or "Vote" link. This is a protection against spam and also encourages reporters to search tracker first.
 
 :::
 
@@ -102,7 +102,7 @@ When you create a tracker issue, you are effectively asking someone to change Mo
 
 :::tip
 
-Here are good examples of bug reports: [MDL-5688](https://tracker.moodle.org/browse/MDL-5688), [MDL-33532](https://tracker.moodle.org/browse/MDL-33532), [MDL-34440](https://tracker.moodle.org/browse/MDL-34440), [MDL-33514](https://tracker.moodle.org/browse/MDL-33514), [MDL-34475](https://tracker.moodle.org/browse/MDL-34475) - notice how quickly all of these got fixed!
+Here are good examples of bug reports: [MDL-5688](https://moodle.atlassian.net/browse/MDL-5688), [MDL-33532](https://moodle.atlassian.net/browse/MDL-33532), [MDL-34440](https://moodle.atlassian.net/browse/MDL-34440), [MDL-33514](https://moodle.atlassian.net/browse/MDL-33514), [MDL-34475](https://moodle.atlassian.net/browse/MDL-34475) - notice how quickly all of these got fixed!
 
 :::
 

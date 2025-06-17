@@ -823,7 +823,7 @@ chance of conflict with any other plugin or api, now and forever onwards.
 
 :::info
 
-These rules were agreed in [MDLSITE-4800](https://tracker.moodle.org/browse/MDLSITE-4800)
+These rules were agreed in [MDLSITE-4800](https://moodle.atlassian.net/browse/MDLSITE-4800)
 
 :::
 
@@ -1340,7 +1340,7 @@ three_arguments(1, 2, 3);
 
 Magic methods are heavily discouraged, justification will be required when used. Note: laziness will not be a valid argument.
 
-(See [MDL-52634](https://tracker.moodle.org/browse/MDL-52634) for discussion of rationale)
+(See [MDL-52634](https://moodle.atlassian.net/browse/MDL-52634) for discussion of rationale)
 
 ## Control statements
 
@@ -2054,7 +2054,7 @@ Throwing an exception has almost exactly the same effect as calling print_error(
 
 :::note
 
-Since 2021, it has been [agreed to deprecate `print_error()`](https://tracker.moodle.org/browse/MDL-69936) and, instead, to `throw moodle_exception()` is the correct way to proceed.
+Since 2021, it has been [agreed to deprecate `print_error()`](https://moodle.atlassian.net/browse/MDL-69936) and, instead, to `throw moodle_exception()` is the correct way to proceed.
 
 :::
 

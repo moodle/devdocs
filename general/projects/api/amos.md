@@ -47,7 +47,7 @@ This part of the document was the original specification used for development.
 
 - **Tracking CVS commits**. Run as a cron job. Looks for new/modified/removed strings in Moodle source code (core and contrib) and registers these changes in the AMOS database.
 - **Uploading strings**. Both English and translated strings may be registered from uploaded files. This way, 3rd modules not tracked by AMOS automatically (because they are not in our contrib) can be processed in AMOS.
-- **Translating strings via web**. AMOS provides an interface for translating stored strings ([MDL-21691](https://tracker.moodle.org/browse/MDL-21691)).
+- **Translating strings via web**. AMOS provides an interface for translating stored strings ([MDL-21691](https://moodle.atlassian.net/browse/MDL-21691)).
 - **Staging**. Strings from various sources end in a [staging area](http://en.wikipedia.org/wiki/Staging_(data)). They are stored here temporarily before they are committed into the main strings table.
 - **Committing**. A set of strings in the stage is committed into the main strings table.
 
@@ -73,7 +73,7 @@ The implementation proposal evolved from the idea by Petr Skoda [discussed at mo
    1. Translators can display the list of missing strings to translate
    1. Translators can display the list of English strings that were modified since their last translation so they should be re-checked
    1. Translators can display the history of string wording, authors of the change, commit messages explaining the change
-   1. Other useful tools and filters are available, like displaying all strings containing a given phrase etc. See [MDL-18797](https://tracker.moodle.org/browse/MDL-18797) for details
+   1. Other useful tools and filters are available, like displaying all strings containing a given phrase etc. See [MDL-18797](https://moodle.atlassian.net/browse/MDL-18797) for details
    1. After providing new or modified translations, translators "commit" their changes through the web interface, providing a commit message
 1. **Administrators** can download language packages as ZIP files from http://download.moodle.org or let them update automatically from the Moodle
    1. Packages are regenerated automatically as they are at the moment, with the only difference that the database and not CVS is used as their source

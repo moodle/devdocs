@@ -33,7 +33,7 @@ const projects = [
  */
 const getLinkFromIssueNumber = (issueNumber) => ({
     type: 'link',
-    url: `https://tracker.moodle.org/browse/${issueNumber}`,
+    url: `https://moodle.atlassian.net/browse/${issueNumber}`,
     children: [{
         type: 'text',
         value: issueNumber,

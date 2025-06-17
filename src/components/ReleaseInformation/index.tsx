@@ -67,7 +67,7 @@ export function ReleaseNoteIntro({ releaseName }: ReleaseInfoProps): JSX.Element
                 Here is
                 {' '}
                 <Link
-                    href={`https://tracker.moodle.org/secure/IssueNavigator!executeAdvanced.jspa?jqlQuery=project+%3D+mdl+AND+resolution+%3D+fixed+AND+fixVersion+in+%28%22${trackerReleaseNumber}%22%29+ORDER+BY+priority+DESC&runQuery=true&clear=true`}
+                    href={`https://moodle.atlassian.net/secure/IssueNavigator!executeAdvanced.jspa?jqlQuery=project+%3D+mdl+AND+resolution+%3D+fixed+AND+fixVersion+in+%28%22${trackerReleaseNumber}%22%29+ORDER+BY+priority+DESC&runQuery=true&clear=true`}
                 >
                     the full list of fixed issues in
                     {' '}

@@ -60,7 +60,7 @@ Plugins without a maintainer will not be accepted into the plugins database.
 
 ## I want to maintain a removed plugin
 
-If you wish to volunteer to maintain a plugin which has been removed from core, you can [create an MDLSITE issue](https://tracker.moodle.org/secure/CreateIssue.jspa?issuetype=4&pid=10020) on the Moodle Tracker.
+If you wish to volunteer to maintain a plugin which has been removed from core, you can [create an MDLSITE issue](https://moodle.atlassian.net/secure/CreateIssue.jspa?issuetype=4&pid=10020) on the Moodle Tracker.
 
 You will need to include:
 

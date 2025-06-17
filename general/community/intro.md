@@ -44,7 +44,7 @@ Some versions, every two years, are [long term supported (LTS)](https://en.wikip
 
 ## Issue tracking
 
-Issue tracking is an important part of a continuous quality control process. It involves reporting of problems (bugs), ideas for improvement, and new features. Unlike most proprietary software programs, Moodle issue reporting and tracking information is open to everyone. Moodle's issue tracking system is called the [Tracker](http://tracker.moodle.org/).
+Issue tracking is an important part of a continuous quality control process. It involves reporting of problems (bugs), ideas for improvement, and new features. Unlike most proprietary software programs, Moodle issue reporting and tracking information is open to everyone. Moodle's issue tracking system is called the [Tracker](http://moodle.atlassian.net/).
 
 All Moodle users are encouraged to be active participants when it comes to testing. Anyone with a Tracker user account can create, view, comment on, vote, and watch bugs.
 

@@ -15,4 +15,4 @@ We suggest that you read the [Moodle App Overview](./app/overview.md) before div
 - Do you want to customise your site in the app? Read the [Moodle App Customisation](./app/customisation/index.md) page.
 - Do you want to make a custom app? Read the [Custom Moodle Apps](./app/customisation/custom-apps.md) page.
 
-If you have any further questions, check out the [FAQ](./app/faq.md). If there's anything you want to share, you can do it in [the forum](https://moodle.org/mod/forum/view.php?id=7798) or [the Matrix developer room](./community/channels.md#chats). You can also report any bugs that you find in [the tracker](https://tracker.moodle.org/browse/MOBILE).
+If you have any further questions, check out the [FAQ](./app/faq.md). If there's anything you want to share, you can do it in [the forum](https://moodle.org/mod/forum/view.php?id=7798) or [the Matrix developer room](./community/channels.md#chats). You can also report any bugs that you find in [the tracker](https://moodle.atlassian.net/browse/MOBILE).

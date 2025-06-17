@@ -71,43 +71,43 @@ PHP 8.2 **can be used with** Moodle 4.2.3, Moodle 4.3 and later releases. It is 
 
 <Since versions={["4.1.2", "4.2"]} issueNumber="MDL-73016" />
 
-PHP 8.1 **can be used with** Moodle 4.1.2, Moodle 4.2 and later releases. It is also the **minimum** supported version for Moodle 4.4. See [MDL-73016](https://tracker.moodle.org/browse/MDL-73016) for details.
+PHP 8.1 **can be used with** Moodle 4.1.2, Moodle 4.2 and later releases. It is also the **minimum** supported version for Moodle 4.4. See [MDL-73016](https://moodle.atlassian.net/browse/MDL-73016) for details.
 
 ### PHP 8.0
 
 <Since versions={["3.11.8", "4.0.2"]} issueNumber="MDL-70745" />
 
-PHP 8.0 **can be used with** Moodle 3.11.8, Moodle 4.0.2 and later releases. It is also the **minimum** supported version for Moodle 4.2. See [MDL-70745](https://tracker.moodle.org/browse/MDL-70745) for details.
+PHP 8.0 **can be used with** Moodle 3.11.8, Moodle 4.0.2 and later releases. It is also the **minimum** supported version for Moodle 4.2. See [MDL-70745](https://moodle.atlassian.net/browse/MDL-70745) for details.
 
 ### PHP 7.4
 
 <Since versions={["3.8.3", "3.9"]} issueNumber="MDL-66260" />
 
-PHP 7.4 **can be used with** Moodle 3.8.3, Moodle 3.9 and later releases. It is also the **minimum** supported version for Moodle 4.1. See [MDL-66260](https://tracker.moodle.org/browse/MDL-66260) for details.
+PHP 7.4 **can be used with** Moodle 3.8.3, Moodle 3.9 and later releases. It is also the **minimum** supported version for Moodle 4.1. See [MDL-66260](https://moodle.atlassian.net/browse/MDL-66260) for details.
 
 ### PHP 7.3
 
 <Since versions={["3.6.4", "3.7"]} issueNumber="MDL-63420" />
 
-PHP 7.3 **can be used with** Moodle 3.6.4, Moodle 3.7 and later releases. It is also the **minimum** supported version for Moodle 3.11. See [MDL-63420](https://tracker.moodle.org/browse/MDL-63420) for details.
+PHP 7.3 **can be used with** Moodle 3.6.4, Moodle 3.7 and later releases. It is also the **minimum** supported version for Moodle 3.11. See [MDL-63420](https://moodle.atlassian.net/browse/MDL-63420) for details.
 
 ### PHP 7.2
 
 <Since versions={["3.4"]} issueNumber="MDL-60279" />
 
-PHP 7.2 **can be used with** Moodle 3.4 and later releases. It is also the **minimum** supported version for Moodle 3.9. See [MDL-60279](https://tracker.moodle.org/browse/MDL-60279) for details.
+PHP 7.2 **can be used with** Moodle 3.4 and later releases. It is also the **minimum** supported version for Moodle 3.9. See [MDL-60279](https://moodle.atlassian.net/browse/MDL-60279) for details.
 
 ### PHP 7.1
 
 <Since versions={["3.2"]} issueNumber="MDL-55120" />
 
-PHP 7.1 **can be used with** Moodle 3.2 and later releases. It is also the **minimum** supported version for Moodle 3.7. See [MDL-55120](https://tracker.moodle.org/browse/MDL-55120) for details.
+PHP 7.1 **can be used with** Moodle 3.2 and later releases. It is also the **minimum** supported version for Moodle 3.7. See [MDL-55120](https://moodle.atlassian.net/browse/MDL-55120) for details.
 
 ### PHP 7.0
 
 <Since versions={["3.0.1", "3.1"]} issueNumber="MDL-50565" />
 
-PHP 7.0 **can be used with** Moodle 3.0.1, Moodle 3.1 and later releases. It is also the **minimum** supported version for Moodle 3.4. See [Moodle and PHP 7.0 details](https://docs.moodle.org/dev/Moodle_and_PHP_7.0_details) and [MDL-50565](https://tracker.moodle.org/browse/MDL-50565) for details.
+PHP 7.0 **can be used with** Moodle 3.0.1, Moodle 3.1 and later releases. It is also the **minimum** supported version for Moodle 3.4. See [Moodle and PHP 7.0 details](https://docs.moodle.org/dev/Moodle_and_PHP_7.0_details) and [MDL-50565](https://moodle.atlassian.net/browse/MDL-50565) for details.
 
 ## PHP versions under development
 

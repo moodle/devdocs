@@ -133,7 +133,7 @@ To update parts of the UI in response to Ajax changes, consider using [Templates
 Important considerations when using webservices with ajax calls:
 
 1. Any call to `$PAGE->get_renderer()` requires the correct theme be set. If this is done in a webservice - it is likely that the theme needs to be a parameter to the webservice.
-1. Text returned from a webservice must be properly filtered. This means it must go through `external_format_text` or `external_format_string` (since 3.0 - see [MDL-51213](https://tracker.moodle.org/browse/MDL-51213)) with the correct context.
+1. Text returned from a webservice must be properly filtered. This means it must go through `external_format_text` or `external_format_string` (since 3.0 - see [MDL-51213](https://moodle.atlassian.net/browse/MDL-51213)) with the correct context.
 1. The correct context for 2 is the most specific context relating to the thing being output - for example, for a user's profile description the context is the user context.
 1. After adding any dynamic content to a page, Moodle's filters need to be notified via `M.core.event.FILTER_CONTENT_UPDATED`
 1. After adding or changing any webservice definition in `db/services.php` - you must bump the version number for either the plugin or Moodle and run the upgrade. This will install the webservice in the DB tables so it can be found by ajax.

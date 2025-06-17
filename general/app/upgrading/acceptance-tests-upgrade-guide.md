@@ -13,7 +13,7 @@ Depending on which version of the app you're upgrading from, you'll need to go t
 
 ## 4.3 to 4.4
 
-The application now needs to run in a secure context (https://). This change only affects your development environment, including acceptance tests, and it was necessary to [move on from the deprecated WebSQL API](https://tracker.moodle.org/browse/MOBILE-4304). Make sure to update the settings related to the app in the `config.php` of your Moodle's development environment.
+The application now needs to run in a secure context (https://). This change only affects your development environment, including acceptance tests, and it was necessary to [move on from the deprecated WebSQL API](https://moodle.atlassian.net/browse/MOBILE-4304). Make sure to update the settings related to the app in the `config.php` of your Moodle's development environment.
 
 If you were using [moodle-docker](https://github.com/moodlehq/moodle-docker), you no longer need to use the `MOODLE_DOCKER_APP_RUNTIME` env variable; but if you do, you'll also need to change it to `ionic7`.
 
@@ -39,7 +39,7 @@ If you were [using the browser console to debug tests](http://localhost:3000/dev
 
 ## 3.9.5 to 4.0
 
-There haven't been any relevant changes in this version, but make sure to run your tests against the latest version to check that they continue working properly. If you find something that stopped working, please [let us know](https://tracker.moodle.org/projects/MOBILE).
+There haven't been any relevant changes in this version, but make sure to run your tests against the latest version to check that they continue working properly. If you find something that stopped working, please [let us know](https://moodle.atlassian.net/projects/MOBILE).
 
 ## 3.9.4 to 3.9.5
 

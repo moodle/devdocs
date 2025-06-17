@@ -80,4 +80,4 @@ Now that you are familiar with the basic concepts, you understand how the applic
 - Do you want to customise your site in the app? Read the [Moodle App Customisation](./customisation/index.md) page.
 - Do you want to make a custom app? Read the [Custom Moodle Apps](./customisation/custom-apps.md) page.
 
-If you have any further questions, check out the [FAQ](./faq). If there's anything you want to share, you can do it in [the forum](https://moodle.org/mod/forum/view.php?id=7798) or [the Matrix developer room](https://docs.moodle.org/dev/Chat). You can also report any bugs that you find in [the tracker](https://tracker.moodle.org/browse/MOBILE).
+If you have any further questions, check out the [FAQ](./faq). If there's anything you want to share, you can do it in [the forum](https://moodle.org/mod/forum/view.php?id=7798) or [the Matrix developer room](https://docs.moodle.org/dev/Chat). You can also report any bugs that you find in [the tracker](https://moodle.atlassian.net/browse/MOBILE).

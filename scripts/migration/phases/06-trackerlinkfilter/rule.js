@@ -89,7 +89,7 @@ module.exports = {
                 const fixInfo = {
                     editColumn: matches.index + 1,
                     deleteCount: issueNumber.length,
-                    insertText: `[${issueNumber}](https://tracker.moodle.org/browse/${issueNumber})`,
+                    insertText: `[${issueNumber}](https://moodle.atlassian.net/browse/${issueNumber})`,
                 };
 
                 addError(

@@ -664,7 +664,7 @@ require_once(__DIR__ . '/lib/setup.php');
 
 #### Chrome specific
 
-If you are using chrome, you need to ensure that the driver matches the version of the installed chrome browser – which may change on OS updates/upgrades. Moodle or Selenium will not give the appropriate message – see [MDL-67659](https://tracker.moodle.org/browse/MDL-67659/). One solution is the one suggested in the issue and use Andrew Nicols' [Chromedriver Wrapper](https://github.com/andrewnicols/chromedriver-wrapper/) which will ensure you have the appropriate driver before running the tests.
+If you are using chrome, you need to ensure that the driver matches the version of the installed chrome browser – which may change on OS updates/upgrades. Moodle or Selenium will not give the appropriate message – see [MDL-67659](https://moodle.atlassian.net/browse/MDL-67659/). One solution is the one suggested in the issue and use Andrew Nicols' [Chromedriver Wrapper](https://github.com/andrewnicols/chromedriver-wrapper/) which will ensure you have the appropriate driver before running the tests.
 
 ## Examples
 

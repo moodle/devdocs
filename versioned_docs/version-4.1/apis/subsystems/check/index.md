@@ -67,7 +67,7 @@ None of these checks are as exhaustive as the checks in the reports below. It al
 
 Available from _/report/security/index.php_, these checks make sure that a Moodle instance is hardened correctly for you needs.
 
-For more information see [MDL-67776](https://tracker.moodle.org/browse/MDL-67776).
+For more information see [MDL-67776](https://moodle.atlassian.net/browse/MDL-67776).
 
 ### Status checks (status)
 
@@ -81,7 +81,7 @@ An additional status check is likely the most common type of check a plugin woul
 
 :::
 
-For more information see [MDL-47271](https://tracker.moodle.org/browse/MDL-47271).
+For more information see [MDL-47271](https://moodle.atlassian.net/browse/MDL-47271).
 
 ### Performance checks (performance)
 
@@ -218,7 +218,7 @@ https://github.com/moodle/moodle/blob/main/lib/classes/check/access/riskxss_resu
 
 ### Asynchronous checks
 
-Some checks are by their nature asynchronous. For instance having moodle send an email to itself and then having it processed by the inbound mail handler to make it's properly configured (see [MDL-48800](https://tracker.moodle.org/browse/MDL-48800)). In cases like these please make sure the age or staleness of the check is shown in the summary, and you should also consider turning the result status into a warning if the result is too old. If appropriate make the threshold a configurable admin setting.
+Some checks are by their nature asynchronous. For instance having moodle send an email to itself and then having it processed by the inbound mail handler to make it's properly configured (see [MDL-48800](https://moodle.atlassian.net/browse/MDL-48800)). In cases like these please make sure the age or staleness of the check is shown in the summary, and you should also consider turning the result status into a warning if the result is too old. If appropriate make the threshold a configurable admin setting.
 
 ## See also
 

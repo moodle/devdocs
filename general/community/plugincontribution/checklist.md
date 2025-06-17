@@ -23,7 +23,7 @@ Before approaching the [Moodle plugins directory](https://moodle.org/plugins) an
 
 :::info
 
-See [Releases](../../releases.md) for the list of currently maintained Moodle versions (policy issue [MDL-47579](https://tracker.moodle.org/browse/MDL-47579)).
+See [Releases](../../releases.md) for the list of currently maintained Moodle versions (policy issue [MDL-47579](https://moodle.atlassian.net/browse/MDL-47579)).
 
 :::
 

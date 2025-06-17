@@ -258,13 +258,13 @@ Theme boost now uses the `drawers.php` layout for the course index and blocks.
 
 ## Question bank changes
 
-There was a big project to deliver [Question bank improvements for Moodle 4.0](https://docs.moodle.org/dev/Question_bank_improvements_for_Moodle_4.0) which added a new plugin type for adding features to the question banks, tracking the version history for each question as it is edited (question table has been split into `question`, `question_versions` and `question_bank_entries`), and tracking where each question is going to be used, with new tables `question_references` and `question_set_references`. This work was done in Epic [MDL-70329](https://tracker.moodle.org/browse/MDL-70329) if you want to track down the details of any of the core changes.
+There was a big project to deliver [Question bank improvements for Moodle 4.0](https://docs.moodle.org/dev/Question_bank_improvements_for_Moodle_4.0) which added a new plugin type for adding features to the question banks, tracking the version history for each question as it is edited (question table has been split into `question`, `question_versions` and `question_bank_entries`), and tracking where each question is going to be used, with new tables `question_references` and `question_set_references`. This work was done in Epic [MDL-70329](https://moodle.atlassian.net/browse/MDL-70329) if you want to track down the details of any of the core changes.
 
 ### Question type plugins
 
-Amazingly, we (Safat and colleagues at Catalyst AU) managed to implement this without breaking most question type plugins, with one important exception if your questions do shuffling like multiple choice does. See [MDL-74752](https://tracker.moodle.org/browse/MDL-74752). There is a new method called `update_attempt_state_date_from_old_version` which you may need to implement.
+Amazingly, we (Safat and colleagues at Catalyst AU) managed to implement this without breaking most question type plugins, with one important exception if your questions do shuffling like multiple choice does. See [MDL-74752](https://moodle.atlassian.net/browse/MDL-74752). There is a new method called `update_attempt_state_date_from_old_version` which you may need to implement.
 
-However, the changes to the question bank, and the other Moodle 4.0 changes, probably broke the Behat tests for your plugin. To help with fixing that, [MDL-74130](https://tracker.moodle.org/browse/MDL-74130) adds navigation to key question type pages (Preview and Edit for a question, and standard question bank pages like the bank itself, import and export) which should let you fix your test efficiently, and in a way that will work in all Moodle versions since 3.9.
+However, the changes to the question bank, and the other Moodle 4.0 changes, probably broke the Behat tests for your plugin. To help with fixing that, [MDL-74130](https://moodle.atlassian.net/browse/MDL-74130) adds navigation to key question type pages (Preview and Edit for a question, and standard question bank pages like the bank itself, import and export) which should let you fix your test efficiently, and in a way that will work in all Moodle versions since 3.9.
 
 The 'most' in the first paragraph here is because more advance question types may require more effort to fix. For example `qtype_combined` which creates multi-part questions like the core `qtype_multianswer`; or `qtype_pmatch` or `qtype_stack`, which store additional data - questions tests - alongside the question itself. How should that work with versioning?) But, if you have not done weird things like that, you are probably safe. If you find anything else that causes problems, please list it here.
 
@@ -390,7 +390,7 @@ Given 100 "mod_lti > tool types" exist with the following data:
   |baseurl     |https://www.example.com/tool[](count)|
 ```
 
-Dynamic (AJAX) tabs is a new feature contributed to Moodle 4.0 by the Workplace team ([MDL-71943](https://tracker.moodle.org/browse/MDL-71943)). You can use the following step to navigate between the tabs.
+Dynamic (AJAX) tabs is a new feature contributed to Moodle 4.0 by the Workplace team ([MDL-71943](https://moodle.atlassian.net/browse/MDL-71943)). You can use the following step to navigate between the tabs.
 
 ```gherkin
 And I click on the "tab title" dynamic tab
@@ -798,7 +798,7 @@ Use:
 And I am on the "Test choice name" "choice activity editing" page
 ```
 
-There are also similar stream-lined navigation steps for accessing question bank pages. See [MDL-74130](https://tracker.moodle.org/browse/MDL-74130).
+There are also similar stream-lined navigation steps for accessing question bank pages. See [MDL-74130](https://moodle.atlassian.net/browse/MDL-74130).
 
 ## Other
 
@@ -836,7 +836,7 @@ More information about this project can be found in the [Site admin presets](htt
 
 ### JavaScript browser support changes
 
-From Moodle 4.0, Internet Explorer is no longer supported. See [MDL-73915](https://tracker.moodle.org/browse/MDL-73915) and [MDLSITE-6109](https://tracker.moodle.org/browse/MDLSITE-6109) for further information on this change.
+From Moodle 4.0, Internet Explorer is no longer supported. See [MDL-73915](https://moodle.atlassian.net/browse/MDL-73915) and [MDLSITE-6109](https://moodle.atlassian.net/browse/MDLSITE-6109) for further information on this change.
 
 This change means that changes built on 4.0 onwards (including the main branch) will be different to older versions of Moodle.
 

@@ -52,7 +52,7 @@ $records = $DB->get_records_sql($sql, ['above'=>111]);
 
 ## Subqueries
 
-There are no strict rules for subquery indentation, the deciding factor is good readability - see [MDLSITE-1914](https://tracker.moodle.org/browse/MDLSITE-1914).
+There are no strict rules for subquery indentation, the deciding factor is good readability - see [MDLSITE-1914](https://moodle.atlassian.net/browse/MDLSITE-1914).
 
 ## See also
 

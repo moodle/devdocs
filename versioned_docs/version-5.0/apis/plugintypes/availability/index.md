@@ -204,7 +204,7 @@ The Availability API generates a dialogue to allow teachers to configure the ava
 
 :::note
 
-Although JavaScript standards in Moodle have moved on, the core availability system is implemented in YUI, so for now, the plugins need to use YUI too. (Please, someone, do [MDL-69566](https://tracker.moodle.org/browse/MDL-69566)!)
+Although JavaScript standards in Moodle have moved on, the core availability system is implemented in YUI, so for now, the plugins need to use YUI too. (Please, someone, do [MDL-69566](https://moodle.atlassian.net/browse/MDL-69566)!)
 
 :::
 

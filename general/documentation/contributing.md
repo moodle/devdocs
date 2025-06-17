@@ -183,7 +183,7 @@ To work out the Mermaid syntax you need for the diagram you are trying to create
 
 ## Our Development Process
 
-While our development of Moodle is managed in the [Moodle Tracker](https://tracker.moodle.org/), all development of these Developer Resources takes place in this [GitHub repository](https://github.com/moodle/devdocs). All work takes place in public, in this repository.
+While our development of Moodle is managed in the [Moodle Tracker](https://moodle.atlassian.net/), all development of these Developer Resources takes place in this [GitHub repository](https://github.com/moodle/devdocs). All work takes place in public, in this repository.
 
 We make use of GitHub actions for our continuous integration and have a range of unit tests, end-to-end tests, style and lint tests, and build tests.
 

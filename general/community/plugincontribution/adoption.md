@@ -46,7 +46,7 @@ If you would like to become a new maintainer of a plugin that has been put up fo
 
 ### Forced adoption
 
-As discussed in [MDLSITE-5354](https://tracker.moodle.org/browse/MDLSITE-5354), there are cases when a plugin becomes effectively orphaned due to maintainer's inactivity. In most cases, we can get in touch with the maintainer and agree on putting the plugin up for adoption. In rare cases when the maintainer can't be reached, the following procedure applies.
+As discussed in [MDLSITE-5354](https://moodle.atlassian.net/browse/MDLSITE-5354), there are cases when a plugin becomes effectively orphaned due to maintainer's inactivity. In most cases, we can get in touch with the maintainer and agree on putting the plugin up for adoption. In rare cases when the maintainer can't be reached, the following procedure applies.
 
 - Given that the maintainer has not logged in to the moodle.org site for 90 or more days
 - When the maintainer does not reply to an email sent to their address (obtained from their moodle.org user profile, last commit message and tracker account) within a period of 30 days

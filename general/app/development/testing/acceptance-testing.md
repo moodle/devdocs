@@ -295,7 +295,7 @@ You can find more complex examples looking at the [tests for the app core](https
 Using this approach, there are some limitations you should be aware of:
 
 - Lack of native functionality — Fundamentally, it is not possible to test behaviour specific to native devices because tests are run in a browser.
-- Missing functionality — There are some known limitations and unsupported features, for example there is currently no obvious way to attach files. Some of these are possible, but they haven't been implemented yet. If something is missing for your use-case, you can submit feature requests in [the tracker](https://tracker.moodle.org/browse/MOBILE) using the `Behat` component.
+- Missing functionality — There are some known limitations and unsupported features, for example there is currently no obvious way to attach files. Some of these are possible, but they haven't been implemented yet. If something is missing for your use-case, you can submit feature requests in [the tracker](https://moodle.atlassian.net/browse/MOBILE) using the `Behat` component.
 
 ## Advanced
 
