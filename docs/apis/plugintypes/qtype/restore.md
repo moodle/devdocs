@@ -15,7 +15,7 @@ issueNumber="MDL-83541"
 ## What has changed?
 
 The backup and restore process has a long history of issues with shared questions, resulting in duplicates of questions being
-created, or errors upon restore. [MDL-83541](https://tracker.moodle.org/browse/MDL-83541) put in place a mechanism to resolve this by accurately matching questions being
+created, or errors upon restore. [MDL-83541](https://moodle.atlassian.net/browse/MDL-83541) put in place a mechanism to resolve this by accurately matching questions being
 restored with those already in the target context, but it requires additional information from the question type plugins to ensure
 this matching works.
 

@@ -64,7 +64,7 @@ The export and delete phases use data from the detection phase, which allows for
 
 Please refer to the inline phpdocs of the [core_privacy::manager class](https://github.com/moodle/moodle/blob/v3.5.0/privacy/classes/manager.php#L31) for detailed description of the interfaces, their hierarchy and meaning.
 
-Please note that support for locating and removing multiple users in a single context was added in [MDL-62560](https://tracker.moodle.org/browse/MDL-62560) for Moodle 3.6, 3.5.3, and 3.4.6.
+Please note that support for locating and removing multiple users in a single context was added in [MDL-62560](https://moodle.atlassian.net/browse/MDL-62560) for Moodle 3.6, 3.5.3, and 3.4.6.
 This functionality has been added to allow support for removal of user data for users subject to specific role criterion, and to support expiry of the same data by role too.
 
 ### Implementing a provider

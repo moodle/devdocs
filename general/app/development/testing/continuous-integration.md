@@ -35,6 +35,6 @@ If that's not clear enough, try to use the app against your local instance to se
 
 Also, make sure your moodle code is up to date with the latest changes. The application tests are working against the latest development version of the LMS, so if your fork is using an old version it's possible that the problem has been fixed upstream.
 
-If you're still unable to find why the tests are failing, you can reach out for help in the [developer chat](../../../../general/community/channels.md#developer-chat) or ask anyone from the [mobile developers](https://tracker.moodle.org/issues/?jql=assignee%20in%20(membersOf(mobile-developers))).
+If you're still unable to find why the tests are failing, you can reach out for help in the [developer chat](../../../../general/community/channels.md#developer-chat) or ask anyone from the [mobile developers](https://moodle.atlassian.net/issues/?jql=assignee%20in%20(membersOf(mobile-developers))).
 
-Finally, if you've made sure that the application is working properly but the Behats tests need to change, also reach out the [mobile developers](https://tracker.moodle.org/issues/?jql=assignee%20in%20(membersOf(mobile-developers))). Tests can be skipped temporarily before an issue is integrated, and updated to conform with the new behaviour afterwards.
+Finally, if you've made sure that the application is working properly but the Behats tests need to change, also reach out the [mobile developers](https://moodle.atlassian.net/issues/?jql=assignee%20in%20(membersOf(mobile-developers))). Tests can be skipped temporarily before an issue is integrated, and updated to conform with the new behaviour afterwards.

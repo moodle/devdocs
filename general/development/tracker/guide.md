@@ -4,7 +4,7 @@ sidebar_label: Guide
 tags:
   - Tracker
 ---
-The [Moodle Tracker](http://tracker.moodle.org/) is our database for recording and managing all Moodle development issues - bugs, improvements and feature requests.
+The [Moodle Tracker](http://moodle.atlassian.net/) is our database for recording and managing all Moodle development issues - bugs, improvements and feature requests.
 
 :::tip
 
@@ -12,7 +12,7 @@ For an intro guide to the tracker, see [Tracker introduction](./).
 
 :::
 
-To do anything more than browsing and searching in the tracker, you'll need to [create an account](http://tracker.moodle.org/secure/Signup%21default.jspa) and then login.
+To do anything more than browsing and searching in the tracker, you'll need to [create an account](http://moodle.atlassian.net/secure/Signup%21default.jspa) and then login.
 
 ## Tracker groups and permissions
 
@@ -38,9 +38,9 @@ You can browse a project without being logged in to Tracker, however you will be
 
 | Field  | Values  | Notes  |
 |---|---|---|
-| **Project** | <ul><li>**Moodle**<br/>For an issue relating to the Moodle codebase.</li><li>**Moodle Community Sites**<br/>For an issue on tracker.moodle.org, docs.moodle.org, demo.moodle.org, download.moodle.org, moodle.org, etc.</li><li>**Non-core contributed modules**<br/>For an issue with a contributed plugin.</li></ul><br/>There are a few more projects, but these are the main ones. | Tracker is used for multiple projects. |
+| **Project** | <ul><li>**Moodle**<br/>For an issue relating to the Moodle codebase.</li><li>**Moodle Community Sites**<br/>For an issue on moodle.atlassian.net, docs.moodle.org, demo.moodle.org, download.moodle.org, moodle.org, etc.</li><li>**Non-core contributed modules**<br/>For an issue with a contributed plugin.</li></ul><br/>There are a few more projects, but these are the main ones. | Tracker is used for multiple projects. |
 | **Issue Type**  | <ul><li>**Bug**<br/>A problem which impairs or prevents Moodle from functioning correctly.</li><li>**Improvement**<br/>An enhancement to an existing Moodle feature.</li><li>**New Feature**<br/>A new Moodle feature which has yet to be developed.</li><li>**Task**<br/>A task that needs to be completed, usually apart from coding.</li><li>**Sub-Task**<br/>Part of a greater task</li></ul> |  |
-| **Summary** | A brief, concise description of the problem. | When the issue is about applying an existing solution to another, usually older, branch (namely "[backport](../policies/backporting.md)"), please use the summary of the existing solution plus its issue number (i.e. "Fix forum alignment (backport of [MDL-99999](https://tracker.moodle.org/browse/MDL-99999))"). |
+| **Summary** | A brief, concise description of the problem. | When the issue is about applying an existing solution to another, usually older, branch (namely "[backport](../policies/backporting.md)"), please use the summary of the existing solution plus its issue number (i.e. "Fix forum alignment (backport of [MDL-99999](https://moodle.atlassian.net/browse/MDL-99999))"). |
 | **Description**  | A full and complete description of the issue including:<br/><ul><li>replication steps,</li><li>the expected result,</li><li>the actual result,</li><li>any error messages shown with [debugging](https://docs.moodle.org//en/Debugging) turned on, and</li><li>any other relevant information.</li></ul> |  |
 | **Affects Version/s** | <ul><li>For bugs: the latest released version in which the bug is found</li><li>For improvements: the latest released version</li><li>For new features: Use 'Future dev'</li></ul> |  |
 | **Component/s** | The area(s) in Moodle which is affected by the issue. | Select `Unknown` if you are unsure. |
@@ -52,7 +52,7 @@ Once an issue has been created, the following additional fields are able to be c
 
 | Field  | Values  | Notes  |
 |---|---|---|
-| **Fixed Version/s**  | <ul><li>Prior to integration, this will be blank or set to a backlog (a queue of development work), for example `Must fix for X`.</li><li>After integration, this will be set to the Moodle version(s) the issue was fixed in, for example `4.0.1`.</li><li>For more detailed information, look to the **Resolution** field below.</li></ul>  | <ul><li>This is usually set by an integrator.</li><li>Not to be confused with `Affected version`, which is used to define the Moodle version where the issue can be reproduced.</li><li>If you resolve the bug as anything but `Fixed` and, sometimes, `Done` (like `Cannot Reproduce`, `Won't Fix`, etc.) leave **Fix Version/s** blank.</li><li>**Fix version/s** are used to automatically build release notes (see the tabs on [http://tracker.moodle.org/browse/MDL](http://tracker.moodle.org/browse/MDL))</li></ul>  |
+| **Fixed Version/s**  | <ul><li>Prior to integration, this will be blank or set to a backlog (a queue of development work), for example `Must fix for X`.</li><li>After integration, this will be set to the Moodle version(s) the issue was fixed in, for example `4.0.1`.</li><li>For more detailed information, look to the **Resolution** field below.</li></ul>  | <ul><li>This is usually set by an integrator.</li><li>Not to be confused with `Affected version`, which is used to define the Moodle version where the issue can be reproduced.</li><li>If you resolve the bug as anything but `Fixed` and, sometimes, `Done` (like `Cannot Reproduce`, `Won't Fix`, etc.) leave **Fix Version/s** blank.</li><li>**Fix version/s** are used to automatically build release notes (see the tabs on [http://moodle.atlassian.net/browse/MDL](http://moodle.atlassian.net/browse/MDL))</li></ul>  |
 | **Priority**  | <ul><li>**Blocker**<br/>Blocks development or testing, prevents Moodle from running. Applicable to bugs only.</li><li>**Critical**<br/>Crashes server, loss of data, severe memory leak</li><li>**Major**<br/>Major loss of function, incorrect output</li><li>**Minor**<br/>Minor loss of function where workaround is possible</li><li>**Trivial**<br/>Cosmetic problem like misspelt words or misaligned text</li></ul>  | <ul><li>When it is reported, the priority level represents the severity of a bug.</li><li>After being reported, the priority may be promoted by HQ developers and component leads as an issue escalates.</li><li>Other users wishing to influence the priority of issues should do so by voting for the issue.</li><li>The priority of new features and improvements should generally remain at the default (Minor) level.</li></ul>  |
 | **Reporter**  | The person who logs the bug.<br/>This field is automatically filled by Tracker.  |   |
 | **Assignee**  | The person who will fix the issue. The assignee should be set when there is a definite intention to complete the issue.  | <ul><li>Developers or QA Testers can reassign issues.</li><li>Please note that even though a person may be assigned to an issue, this does not mean they are currently working on the issue, although they are likely to in future.</li></ul>  |

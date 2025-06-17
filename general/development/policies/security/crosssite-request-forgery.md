@@ -110,8 +110,8 @@ The frontend includes ever showing the sesskey in the browser URL bar or anywher
 
 Some examples to help guide how to fix these issues:
 
-- [MDL-68292](https://tracker.moodle.org/browse/MDL-68292)
-- [MDL-73295](https://tracker.moodle.org/browse/MDL-73295)
+- [MDL-68292](https://moodle.atlassian.net/browse/MDL-68292)
+- [MDL-73295](https://moodle.atlassian.net/browse/MDL-73295)
 
 ## What you need to do as an administrator
 

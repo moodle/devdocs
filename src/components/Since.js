@@ -64,7 +64,7 @@ function getSinceLabel(type, versionNumber, issueNumber) {
     if (issueNumber) {
         return (
             <Link
-                to={`https://tracker.moodle.org/browse/${issueNumber}`}
+                to={`https://moodle.atlassian.net/browse/${issueNumber}`}
                 key={`link-${type}${normalisedVersionNumber}`}
             >
                 {chip}

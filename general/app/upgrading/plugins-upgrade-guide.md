@@ -30,7 +30,7 @@ Also, the Ionic version has been upgraded to v7 (from v5), make sure to check th
 
 The Angular version has also been upgraded to v17, and it comes with new features such as [a new syntax for conditionals and loops](https://angular.dev/essentials/conditionals-and-loops) and [signals](https://angular.dev/guide/signals). Signals are not available in the app yet, but most new features like the conditionals should work. In any case, always make sure to test your code with the latest version of the app before proceeding; and keep in mind that some of your users could still be using an old version of the app. So adopt these new features with caution.
 
-Finally, the application now needs to run in a secure context (https://). This change only affects your development environment, and it was necessary to [move on from the deprecated WebSQL API](https://tracker.moodle.org/browse/MOBILE-4304).
+Finally, the application now needs to run in a secure context (https://). This change only affects your development environment, and it was necessary to [move on from the deprecated WebSQL API](https://moodle.atlassian.net/browse/MOBILE-4304).
 
 ## 4.2 to 4.3
 
@@ -52,7 +52,7 @@ There is only one thing to look after when upgrading to 4.1, so it should be a r
 
 If your plugin is not declaring any custom CSS, you can ignore this section.
 
-Starting in 4.1, mode and version classes have been moved from the `body` tag to the `html` tag. This change arose from [a bug on derived CSS variables](https://tracker.moodle.org/browse/MOBILE-4127), and it should be fairly straightforward to make.
+Starting in 4.1, mode and version classes have been moved from the `body` tag to the `html` tag. This change arose from [a bug on derived CSS variables](https://moodle.atlassian.net/browse/MOBILE-4127), and it should be fairly straightforward to make.
 
 <CodeDiff titles="4.0, 4.1">
 
@@ -86,7 +86,7 @@ In order to avoid breaking existing styles, version 4.1 will continue adding ver
 
 There haven't been any breaking changes from 3.9.5 to 4.0, but the UI of the application has changed drastically so we recommend taking special care that the UI of your plugin is still working properly. Also, remember to double check all the changes listed in [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt).
 
-Other than that, everything should continue working as expected. If you find something that doesn't, please [let us know](https://tracker.moodle.org/projects/MOBILE).
+Other than that, everything should continue working as expected. If you find something that doesn't, please [let us know](https://moodle.atlassian.net/projects/MOBILE).
 
 ## 3.9.4 to 3.9.5
 

@@ -24,7 +24,7 @@ Tidying up in current latest version wiki:
 1. Check and delete as necessary https://docs.moodle.org/en/Special:ListDuplicatedFiles
 1. Check and delete as necessary https://docs.moodle.org/en/Special:UnusedFiles
 
-Create a tracker issue for creating new en and de version wikis similar to [MDLSITE-7357](https://tracker.moodle.org/browse/MDLSITE-7357).
+Create a tracker issue for creating new en and de version wikis similar to [MDLSITE-7357](https://moodle.atlassian.net/browse/MDLSITE-7357).
 
 <!-- cspell:ignore Sitenotice -->
 

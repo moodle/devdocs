@@ -8,7 +8,7 @@ tags:
 :::info Ready to code?
 
 - [Set up your development environment](#a-quick-start-to-moodle-development)
-- See the [list of relatively easy Moodle bugs](https://tracker.moodle.org/issues/?jql=project%20%3D%20MDL%20AND%20type%20in%20(bug)%20AND%20status%20%3D%20open%20AND%20Difficulty%20%3D%20Easy%20AND%20labels%20not%20in%20(patch)%20ORDER%20BY%20created%20DESC)
+- See the [list of relatively easy Moodle bugs](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDL%20AND%20type%20in%20(bug)%20AND%20status%20%3D%20open%20AND%20Difficulty%20%3D%20Easy%20AND%20labels%20not%20in%20(patch)%20ORDER%20BY%20created%20DESC)
 - Read our guide to making [a better contribution](./abc.md)
 - [Prepare a patch](/docs/guides/git/#preparing-a-patch)
 - Read the [Coding style](./policies/codingstyle/index.md) policy

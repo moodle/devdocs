@@ -43,7 +43,7 @@ describe('trackerLinks', () => {
                     },
                     {
                         type: 'link',
-                        url: 'https://tracker.moodle.org/browse/MDL-12345',
+                        url: 'https://moodle.atlassian.net/browse/MDL-12345',
                         children: [
                             {
                                 type: 'text',
@@ -78,7 +78,7 @@ describe('trackerLinks', () => {
                     },
                     {
                         type: 'link',
-                        url: 'https://tracker.moodle.org/browse/MDL-12345',
+                        url: 'https://moodle.atlassian.net/browse/MDL-12345',
                         children: [
                             {
                                 type: 'text',
@@ -92,7 +92,7 @@ describe('trackerLinks', () => {
                     },
                     {
                         type: 'link',
-                        url: 'https://tracker.moodle.org/browse/MDL-54321',
+                        url: 'https://moodle.atlassian.net/browse/MDL-54321',
                         children: [
                             {
                                 type: 'text',
@@ -128,7 +128,7 @@ describe('trackerLinks', () => {
                     },
                     {
                         type: 'link',
-                        url: 'https://tracker.moodle.org/browse/MDL-12345',
+                        url: 'https://moodle.atlassian.net/browse/MDL-12345',
                         children: [
                             {
                                 type: 'text',
@@ -142,7 +142,7 @@ describe('trackerLinks', () => {
                     },
                     {
                         type: 'link',
-                        url: 'https://tracker.moodle.org/browse/MDL-54321',
+                        url: 'https://moodle.atlassian.net/browse/MDL-54321',
                         children: [
                             {
                                 type: 'text',
@@ -156,7 +156,7 @@ describe('trackerLinks', () => {
                     },
                     {
                         type: 'link',
-                        url: 'https://tracker.moodle.org/browse/CONTRIB-12345',
+                        url: 'https://moodle.atlassian.net/browse/CONTRIB-12345',
                         children: [
                             {
                                 type: 'text',
@@ -171,7 +171,7 @@ describe('trackerLinks', () => {
 
                     {
                         type: 'link',
-                        url: 'https://tracker.moodle.org/browse/CONTRIB-54321',
+                        url: 'https://moodle.atlassian.net/browse/CONTRIB-54321',
                         children: [
                             {
                                 type: 'text',
@@ -271,7 +271,7 @@ describe('trackerLinks', () => {
                     },
                     {
                         type: 'link',
-                        url: 'https://tracker.moodle.org/browse/MDL-54321',
+                        url: 'https://moodle.atlassian.net/browse/MDL-54321',
                         children: [
                             {
                                 type: 'text',

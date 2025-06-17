@@ -70,7 +70,7 @@ npx grunt watch
 
 Moodle's preferred module format is the ESM format, with the older AMD format also supported. All modules (defined using either syntax) are compatible with one another. Behind the scenes the ESM format is transpiled into an AMD module by Babel.
 
-Note that, for Moodle 3.10 and up (see [MDLSITE-6130](https://tracker.moodle.org/browse/MDLSITE-6130)), any new JavaScript intended for Moodle core **must** be written in the ESM format.
+Note that, for Moodle 3.10 and up (see [MDLSITE-6130](https://moodle.atlassian.net/browse/MDLSITE-6130)), any new JavaScript intended for Moodle core **must** be written in the ESM format.
 
 The call from a PHP file might look like:
 

@@ -81,7 +81,7 @@ The process of component lead review is summarised in the following process work
 
 To summarise:
 
-1. Component leads who have been allocated the CLR role are able to take issues from the [Waiting for CLR queue](https://tracker.moodle.org/) and progressed them the `CLR in progress` state.
+1. Component leads who have been allocated the CLR role are able to take issues from the [Waiting for CLR queue](https://moodle.atlassian.net/) and progressed them the `CLR in progress` state.
 1. If information, or changes are required from the original developer then they may optionally be progressed to the `Waiting for CLR feedback` status to allow the assignee time to respond.
 1. After the review has been completed, and all issues addressed, the issue status is updated to the `Waiting for Push` state.
 1. An integrator will pick issues from the push queue, and perform final superficial checks on them, before landing them.

@@ -27,7 +27,7 @@ If you are stuck with an error and you can't find a way to continue, here's a li
 
 This error can happen when the application is launched properly but there is a runtime error. If you get a network connection error, this may be the expected behaviour. Wait until you see "Compiled successfully" in the console and reload.
 
-If that's not the case and you really are getting a blank page, look at the console and you should see some error indicating why the application is not rendering properly. Keep in mind that at the moment the application is already logging some errors and warnings, so make sure that you're not stuck trying to fix something that isn't causing the problem. You can follow any updates about this on [MOBILE-3854](https://tracker.moodle.org/browse/MOBILE-3854).
+If that's not the case and you really are getting a blank page, look at the console and you should see some error indicating why the application is not rendering properly. Keep in mind that at the moment the application is already logging some errors and warnings, so make sure that you're not stuck trying to fix something that isn't causing the problem. You can follow any updates about this on [MOBILE-3854](https://moodle.atlassian.net/browse/MOBILE-3854).
 
 If you are not seeing any relevant logs, check out what to do on the [General advice](#general-advice) section.
 

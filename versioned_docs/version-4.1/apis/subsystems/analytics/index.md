@@ -132,7 +132,7 @@ Targets depend on analysers, because analysers provide them with the samples the
 
 A callback defined by the target will be executed once new predictions start coming so each target have control over the prediction results.
 
-The API supports binary classification, multi-class classification and regression, but the machine learning backends included in core do not yet support multi-class classification or regression, so only binary classifications will be initially fully supported. See [MDL-59044](https://tracker.moodle.org/browse/MDL-59044) and [MDL-60523](https://tracker.moodle.org/browse/MDL-60523) for more information.
+The API supports binary classification, multi-class classification and regression, but the machine learning backends included in core do not yet support multi-class classification or regression, so only binary classifications will be initially fully supported. See [MDL-59044](https://moodle.atlassian.net/browse/MDL-59044) and [MDL-60523](https://moodle.atlassian.net/browse/MDL-60523) for more information.
 
 Although there is no technical restriction against using core targets in your own models, in most cases each model will implement a new target. One possible case in which targets might be reused would be to create a new model using the same target and a different sets of indicators, for A/B testing
 

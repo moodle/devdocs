@@ -27,12 +27,12 @@ You'll find them in the [How do I contribute to Moodle?](https://moodle.com/faq/
 
 - Start by [searching moodle.org](http://moodle.org/public/search/) to check whether someone else has had the same idea. The Moodle community is very large, so it's quite likely you'll find someone else with the same idea as you ;-)
 - Join an existing discussion about your idea, or start a new discussion in an [appropriate forum on moodle.org](http://moodle.org/course/view.php?id=5).
-- Assuming others agree with your idea, [create a new issue in the Moodle tracker](http://tracker.moodle.org/secure/CreateIssue!default.jspa), selecting 'New feature' or 'Improvement' as the issue type. (You'll need to create a tracker account to be able to create a new issue.) Include a link to the discussion thread in the tracker issue.
+- Assuming others agree with your idea, [create a new issue in the Moodle tracker](http://moodle.atlassian.net/secure/CreateIssue!default.jspa), selecting 'New feature' or 'Improvement' as the issue type. (You'll need to create a tracker account to be able to create a new issue.) Include a link to the discussion thread in the tracker issue.
 - Post the tracker issue number in the discussion thread, to encourage others to watch, vote, comment and/or come up with a patch for it.
 
 ## What happens next?
 
-- The [list of most voted-for new features](http://tracker.moodle.org/secure/IssueNavigator.jspa?mode=hide&requestId=10512) is regularly reviewed by Moodle HQ and other core developers.
+- The [list of most voted-for new features](http://moodle.atlassian.net/secure/IssueNavigator.jspa?mode=hide&requestId=10512) is regularly reviewed by Moodle HQ and other core developers.
 - Promising ideas are added to the [Roadmap](roadmap.md) (depending on funding availability).
 - Small feature ideas and improvements may be added to core by the component maintainer.
 

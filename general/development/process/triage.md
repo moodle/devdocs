@@ -15,7 +15,7 @@ Triage initially happens shortly after the issue was reported but it can be repe
 
 ## Get involved
 
-Anyone can do triage in the form of correcting the components and/or affected versions, linking to related issues, and of course commenting asking for clarification, confirming bug, redirecting to the forums, and more. Users in **jira-developers** and **moodle-triage** groups can edit any issue, **jira-users** can comment on any issue or edit issues they reported. Please see [MDLSITE-3592](https://tracker.moodle.org/browse/MDLSITE-3592) if you are not a developer but would like to help with the triage process.
+Anyone can do triage in the form of correcting the components and/or affected versions, linking to related issues, and of course commenting asking for clarification, confirming bug, redirecting to the forums, and more. Users in **jira-developers** and **moodle-triage** groups can edit any issue, **jira-users** can comment on any issue or edit issues they reported. Please see [MDLSITE-3592](https://moodle.atlassian.net/browse/MDLSITE-3592) if you are not a developer but would like to help with the triage process.
 
 Adding the `triaged` label and placing the issue on the backlog should only be done by the component lead, or an HQ developer. Any user can remove the `triaged` label from the an issue, or replace it with `triaging_in_progress` if they want to request an additional triage.
 
@@ -37,7 +37,7 @@ First of all, identify the issues that should be closed or placed under investig
 - **Does the problem seem rational?** If not, then the problem may simply be a misunderstanding on the part of the reporter. It might be a problem exclusive to the reporter's server set-up. If you can replicate the problem quickly, do so. If you can't replicate the problem, ask the reporter to attempt to replicate the problem on [https://sandbox.moodledemo.net/](https://sandbox.moodledemo.net/). If the problem seems persistent but strange, consider asking a developer with experience working in the area to consider the problem and determine if it could be a real problem.
 - **Can the problem be replicated?** If not, or information on the issue is insufficient, ask the reporter to add error messages, screenshots, environment information (OS, web server, browser) and exact replication instructions
 
-As a result of this initial screening, up to 20% of new issues may be closed. When closing the issues make sure to set the correct resolution and write a polite comment with explanation, refer to the templates below. If you have doubts, ask the questions and always add the [`triaging_in_progress`](https://tracker.moodle.org/issues/?jql=labels%20in%20%28triaging_in_progress%29) label. Subscribe to the [My old issues in triage](https://tracker.moodle.org/issues/?jql=labels%20in%20%28triaging_in_progress%29%20AND%20project%20%3D%20MDL%20AND%20resolution%20%3D%20Unresolved%20AND%20Participants%20%3D%20currentUser%28%29%20AND%20updatedDate%20%3C%20-30d) filter and you will receive notifications after 30 days of inactivity on such issues. See [Tracker tips](../tracker/tips) about how to subscribe to filters. Often reporters never follow up on their own issues and this is a good way to find such issues. Ping the reporter again or make a final decision about closing.
+As a result of this initial screening, up to 20% of new issues may be closed. When closing the issues make sure to set the correct resolution and write a polite comment with explanation, refer to the templates below. If you have doubts, ask the questions and always add the [`triaging_in_progress`](https://moodle.atlassian.net/issues/?jql=labels%20in%20%28triaging_in_progress%29) label. Subscribe to the [My old issues in triage](https://moodle.atlassian.net/issues/?jql=labels%20in%20%28triaging_in_progress%29%20AND%20project%20%3D%20MDL%20AND%20resolution%20%3D%20Unresolved%20AND%20Participants%20%3D%20currentUser%28%29%20AND%20updatedDate%20%3C%20-30d) filter and you will receive notifications after 30 days of inactivity on such issues. See [Tracker tips](../tracker/tips) about how to subscribe to filters. Often reporters never follow up on their own issues and this is a good way to find such issues. Ping the reporter again or make a final decision about closing.
 
 ### Confirming the issue
 
@@ -64,7 +64,7 @@ When you confirm that the issue is indeed a bug or a reasonable improvement requ
 
 :::info
 
-Note that `Fix version` is no longer used during triage. If you are in the `moodle-triage` Jira group, you can use the **Triage and sprint** screen to edit only the aforementioned fields, see [MDLSITE-3592](https://tracker.moodle.org/browse/MDLSITE-3592).
+Note that `Fix version` is no longer used during triage. If you are in the `moodle-triage` Jira group, you can use the **Triage and sprint** screen to edit only the aforementioned fields, see [MDLSITE-3592](https://moodle.atlassian.net/browse/MDLSITE-3592).
 
 :::
 
@@ -139,7 +139,7 @@ You can search, re-use and adapt any of the messages in the **Canned response** 
 
 ## Triaging priorities and the Triaging Dashboard
 
-The following are the priorities for ordering issues to be triaged that are reflected on the [Triaging dashboard](http://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11153).
+The following are the priorities for ordering issues to be triaged that are reflected on the [Triaging dashboard](http://moodle.atlassian.net/secure/Dashboard.jspa?selectPageId=11153).
 
 1. Security issues - should always be reduced to 0
 2. High-priority issue - aim for blockers and critical issues to be reduced to 0
@@ -150,7 +150,7 @@ The following are the priorities for ordering issues to be triaged that are refl
 
 :::info Triaging dashboard
 
-These priorities are displayed in the same order on the [Triaging dashboard](http://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11153)
+These priorities are displayed in the same order on the [Triaging dashboard](http://moodle.atlassian.net/secure/Dashboard.jspa?selectPageId=11153)
 
 :::
 

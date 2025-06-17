@@ -70,7 +70,7 @@ Before Moodle 3.0, final deprecation was 2 major versions later. With 3.0 the po
 
 :::
 
-Take care when deprecating a string within a few weeks of `en_fix` being merged with `en`, as it can result in a conflict (as happened in [MDL-52315](https://tracker.moodle.org/browse/MDL-52315)).
+Take care when deprecating a string within a few weeks of `en_fix` being merged with `en`, as it can result in a conflict (as happened in [MDL-52315](https://moodle.atlassian.net/browse/MDL-52315)).
 
 ## What to do if you get a debugging message
 
@@ -91,4 +91,4 @@ Use the `git-blame` tool on the corresponding `lang/en/deprecated.txt` and find 
 
 ## See also
 
-- [MDL-64905](https://tracker.moodle.org/browse/MDL-64905) comments regarding introducing a new string and deprecating the old one
+- [MDL-64905](https://moodle.atlassian.net/browse/MDL-64905) comments regarding introducing a new string and deprecating the old one

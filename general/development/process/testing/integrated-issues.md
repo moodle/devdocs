@@ -61,8 +61,8 @@ Testing instructions are clear, concise, complete, and accurate. Where possible 
 
 ### Checking tests assigned to you
 
-1. Log in to [Tracker](https://tracker.moodle.org/).
-2. Visit [Issues waiting to be tested](https://tracker.moodle.org/issues/?filter=11801&jql=project%20%3D%20MDL%20AND%20Tester%20%3D%20currentUser()%20AND%20status%20%3D%20%22Waiting%20for%20testing%22) page.
+1. Log in to [Tracker](https://moodle.atlassian.net/).
+2. Visit [Issues waiting to be tested](https://moodle.atlassian.net/issues/?filter=11801&jql=project%20%3D%20MDL%20AND%20Tester%20%3D%20currentUser()%20AND%20status%20%3D%20%22Waiting%20for%20testing%22) page.
 
 ## Differences in test process during continuous integration periods
 

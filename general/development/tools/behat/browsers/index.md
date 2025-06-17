@@ -62,7 +62,7 @@ Not all the drivers can execute all of Moodle's step definitions; we tagged the 
 | | File uploads (@_file_upload) | Browser dialogs (@_alert)                                         | Switch window (@_switch_window) | Switch frame (@_switch_iframe) | Bugs in chrome (@skip_chrome_zerosize) | Bug in phantomjs (@_bug_phantomjs) |
 |------------------------------|-------------------------------------------------------------------|---------------------------------|--------------------------------|----------------------------------------|------------------------------------|
 | Firefox                      | Yes | Yes | Yes | Yes | Yes | Yes |
-| Chrome              | Yes | Yes | Yes | Yes | No (see [MDL-71108](https://tracker.moodle.org/browse/MDL-71108)) | Yes |
+| Chrome              | Yes | Yes | Yes | Yes | No (see [MDL-71108](https://moodle.atlassian.net/browse/MDL-71108)) | Yes |
 | Internet Explorer          | Yes | Yes | No | Yes | Yes | Yes |
 | Safari          | Yes | No | No | Yes | Yes | Yes |
 | PhantomJS          | No | No | Yes | Yes | Yes | No |

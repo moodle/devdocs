@@ -13,7 +13,7 @@ This documentation is from the project kick-off and has not been updated since t
 
 Through our road-map creation process of looking at highly voted tracker issues and relevant forum posts, as well as MUA interaction, an update to the activity chooser to simplify and make less intimidating, was chosen.
 
-[MDL-57828](https://tracker.moodle.org/browse/MDL-57828) was created and worked on, but unfortunately stalled, and did not complete its way through the integration process. There is a [substantial forum post](https://moodle.org/mod/forum/discuss.php?d=346664), with many suggestions and current pain points with the activity chooser. The MUA created a proposal issue ([MDL-61511](https://tracker.moodle.org/browse/MDL-61511)) to tackle the same issue.
+[MDL-57828](https://moodle.atlassian.net/browse/MDL-57828) was created and worked on, but unfortunately stalled, and did not complete its way through the integration process. There is a [substantial forum post](https://moodle.org/mod/forum/discuss.php?d=346664), with many suggestions and current pain points with the activity chooser. The MUA created a proposal issue ([MDL-61511](https://moodle.atlassian.net/browse/MDL-61511)) to tackle the same issue.
 
 We have recently been analysing how course creation is achieved. Two main ideas were tested with focus groups to try and find the best away to approach course creation. With this information we are confident that we have a user focused design that will improve the activity chooser for everyone.
 

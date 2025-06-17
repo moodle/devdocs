@@ -20,7 +20,7 @@ Please submit your findings via our **[security issue submission form](https://m
 
 The [submission form](https://moodle.org/security/report) is linked to our [Bugcrowd](https://bugcrowd.com) program, which ensures more efficient triage of incoming security issues and a smoother overall responsible disclosure process.
 
-If you are a developer and wish to submit a fix along with your submission, please feel free to [create a new issue](https://tracker.moodle.org/secure/CreateIssue.jspa?pid=10011&issuetype=1) in the Moodle Tracker instead, ensuring that you set a security level on the issue (**"Serious security issue"** or **"Minor security issue"**), which will hide it from public view. If you are submitting via Tracker and not sure whether an issue is a security issue, you should set the security level to **"Could be a security issue"**.
+If you are a developer and wish to submit a fix along with your submission, please feel free to [create a new issue](https://moodle.atlassian.net/secure/CreateIssue.jspa?pid=10011&issuetype=1) in the Moodle Tracker instead, ensuring that you set a security level on the issue (**"Serious security issue"** or **"Minor security issue"**), which will hide it from public view. If you are submitting via Tracker and not sure whether an issue is a security issue, you should set the security level to **"Could be a security issue"**.
 
 :::warning
 
@@ -32,7 +32,7 @@ In line with the responsible disclosure philosophy, please do *not* post about s
 
 1. Issues submitted via the submission form are received by Bugcrowd's triage team, who perform initial triage on the report.
 1. If the issue is confirmed valid and not a duplicate by the Bugcrowd team, the Moodle security team reviews the issue and evaluates its potential impact on all supported versions of Moodle. If the issue was submitted directly into Tracker rather than via the form, this will be the first step in the process.
-1. Valid issues are then pushed to the [Moodle Tracker](https://tracker.moodle.org) (restricted from public view).
+1. Valid issues are then pushed to the [Moodle Tracker](https://moodle.atlassian.net) (restricted from public view).
 1. The Moodle security team works with the issue reporter to resolve the problem, following the [Security issue development process](../../process.md#security-issues) and keeping details of the problem and its solution hidden until a release is made.
 1. New versions are created and tested.
 1. Meanwhile Moodle requests [CVE identifiers](http://cve.mitre.org/) for the security issue.

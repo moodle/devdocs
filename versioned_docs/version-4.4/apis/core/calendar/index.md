@@ -293,7 +293,7 @@ $refreshtask->set_custom_data($customdata);
 
 This functions accepts the same inputs as 'calendar_get_events()' but is now utilising the new Moodle Calendar API system. It respects overrides and will also add the action properties, whenever appropriate.
 
-*Note that this function will not work as expected if you pass a list of user ids as the current user session is internally used to determine which events should be visible. More info in https://tracker.moodle.org/browse/[MDL-60340](https://tracker.moodle.org/browse/MDL-60340)*
+*Note that this function will not work as expected if you pass a list of user ids as the current user session is internally used to determine which events should be visible. More info in https://moodle.atlassian.net/browse/[MDL-60340](https://moodle.atlassian.net/browse/MDL-60340)*
 
 ## Changes to Behat
 

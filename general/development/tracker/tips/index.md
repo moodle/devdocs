@@ -22,7 +22,7 @@ Quick search can pick up many other keywords, see more information on page [Usin
 
 ### Advanced search
 
-To get here either enter something in quick search or go to the link [Tracker search page](https://tracker.moodle.org/issues/?jql=) and switch it to "Advanced" mode.
+To get here either enter something in quick search or go to the link [Tracker search page](https://moodle.atlassian.net/issues/?jql=) and switch it to "Advanced" mode.
 Now you can enter queries in the Jira Query Language (JQL). Use as many AND, OR and parenthesis as you want. Some examples and interesting subqueries:
 
 | JQL | Description |
@@ -35,17 +35,17 @@ Now you can enter queries in the Jira Query Language (JQL). Use as many AND, OR 
 | `component = Assignment AND component = Gradebook` | where both Assignment and Gradebook are listed as components |
 | `labels = patch` | issues containing particular label |
 | `labels is empty OR labels not in (triaged, triaging_in_progress)` | issues NOT containing particular label(s) |
-|  [`updatedDate > -7d`](https://tracker.moodle.org/issues/?jql=updatedDate%20%3E%20-7d) | updated in the last week |
-|  [`assignee = currentUser() AND resolution = Unresolved`](https://tracker.moodle.org/issues/?jql=assignee%20%3D%20currentUser%28%29%20AND%20resolution%20%3D%20Unresolved) | open issues where you are an assignee |
-| [`reporter = currentUser()`](https://tracker.moodle.org/issues/?jql=reporter%20%3D%20currentUser%28%29) | issues reported by you |
-| [`Participants  = currentUser()`](https://tracker.moodle.org/issues/?jql=Participants%20%20%3D%20currentUser()) | issues where you commented, edited or otherwise participated |
-| [`"Component watchers" = currentUser() and resolution = Unresolved`](https://tracker.moodle.org/issues/?jql=%22Component%20watchers%22%20%3D%20currentUser()%20and%20resolution%20%3D%20Unresolved) | open issues in the components where you are an automatic watcher (only tracker admins can assign automatic watchers) |
+|  [`updatedDate > -7d`](https://moodle.atlassian.net/issues/?jql=updatedDate%20%3E%20-7d) | updated in the last week |
+|  [`assignee = currentUser() AND resolution = Unresolved`](https://moodle.atlassian.net/issues/?jql=assignee%20%3D%20currentUser%28%29%20AND%20resolution%20%3D%20Unresolved) | open issues where you are an assignee |
+| [`reporter = currentUser()`](https://moodle.atlassian.net/issues/?jql=reporter%20%3D%20currentUser%28%29) | issues reported by you |
+| [`Participants  = currentUser()`](https://moodle.atlassian.net/issues/?jql=Participants%20%20%3D%20currentUser()) | issues where you commented, edited or otherwise participated |
+| [`"Component watchers" = currentUser() and resolution = Unresolved`](https://moodle.atlassian.net/issues/?jql=%22Component%20watchers%22%20%3D%20currentUser()%20and%20resolution%20%3D%20Unresolved) | open issues in the components where you are an automatic watcher (only tracker admins can assign automatic watchers) |
 | `assignee in membersOf("hq-developers"`) | issues assigned to members of hq-developers group |
-| [`status changed to "Waiting for peer review" before startofday(-7) and status = "Waiting for peer review"`](https://tracker.moodle.org/issues/?jql=status%20changed%20to%20%22Waiting%20for%20peer%20review%22%20before%20startofday%28-7%29%20and%20status%20%3D%20%22Waiting%20for%20peer%20review%22`)` | issues waiting for peer review for over a week |
+| [`status changed to "Waiting for peer review" before startofday(-7) and status = "Waiting for peer review"`](https://moodle.atlassian.net/issues/?jql=status%20changed%20to%20%22Waiting%20for%20peer%20review%22%20before%20startofday%28-7%29%20and%20status%20%3D%20%22Waiting%20for%20peer%20review%22`)` | issues waiting for peer review for over a week |
 | `status WAS NOT "Development in progress"  BEFORE "2011/02/02"` | |
 | `issue in linkedIssues("MDL-12345")` | issues linked to particular issue |
 | `issue in linkedIssues("MDL-12345","duplicated by")` | Returns all the issues directly and indirectly duplicated by 'MDL-12345'. i.e. if there is 'MDL-12222'  duplicated by 'MDL-12345'   and 'MDL-11111'  duplicated by 'MDL-12222', both 'MDL-11111' and 'MDL-12222' will be returned as search results. |
-| [`issue in favouriteIssues()`](https://tracker.moodle.org/issues/?jql=issue%20in%20favouriteIssues%28%29) | issues that you marked as favourite |
+| [`issue in favouriteIssues()`](https://moodle.atlassian.net/issues/?jql=issue%20in%20favouriteIssues%28%29) | issues that you marked as favourite |
 
 More documentation on [Advanced searching](https://confluence.atlassian.com/jirasoftwareserver071/advanced-searching-800707146.html)
 
@@ -69,7 +69,7 @@ More documentation on [Advanced searching](https://confluence.atlassian.com/jira
 
 :::tip Manage filters and subscriptions
 
-You can manage your filters and subscriptions on [Manage filters](https://tracker.moodle.org/secure/ManageFilters.jspa) page.
+You can manage your filters and subscriptions on [Manage filters](https://moodle.atlassian.net/secure/ManageFilters.jspa) page.
 
 Watchers automatically receive notifications about the updates of the issues they are watching. Using filter subscription you can either monitor issues that you are not watching or monitor issues that are in particular state and were not updated.
 
@@ -93,7 +93,7 @@ If you're using the previous query for untriaged assignment issues, the most rec
 
 ### Useful queries
 
-- [Issues reported by me not against current versions](https://tracker.moodle.org/issues/?jql=project%20%3D%20mdl%20and%20resolution%20%3D%20unresolved%20and%20type%20in%20%28bug%29%20and%20%22Affected%20Branches%22%20!~%20MOODLE_310_STABLE%20and%20%22Affected%20Branches%22%20!~%20MOODLE_311_STABLE%20and%20reporter%20%3D%20currentUser%28%29) - make sure that you keep track of your own issues!
-- [Untriaged issues in my components](https://tracker.moodle.org/issues/?jql=component%20in%20%28componentsLeadByUser%28%29%29%20AND%20resolution%20%3D%20Unresolved%20AND%20updatedDate%20%3E%20-14d%20AND%20project%20%3D%20MDL%20AND%20%28%20labels%20is%20EMPTY%20OR%20labels%20not%20in%20%28triaged%2C%20triaging_in_progress%29%29%20ORDER%20BY%20updatedDate%20ASC) (works only for component leads)
-- [Waiting for peer review for 21 days](https://tracker.moodle.org/issues/?jql=status%20changed%20to%20%22Waiting%20for%20peer%20review%22%20before%20startofday(-21)%20and%20status%20%3D%20%22Waiting%20for%20peer%20review%22)
-- [Integrated this week](https://tracker.moodle.org/issues/?filter=19324) - subscribe to this filter on Fridays and keep yourself up-to-date with what is happening in Moodle
+- [Issues reported by me not against current versions](https://moodle.atlassian.net/issues/?jql=project%20%3D%20mdl%20and%20resolution%20%3D%20unresolved%20and%20type%20in%20%28bug%29%20and%20%22Affected%20Branches%22%20!~%20MOODLE_310_STABLE%20and%20%22Affected%20Branches%22%20!~%20MOODLE_311_STABLE%20and%20reporter%20%3D%20currentUser%28%29) - make sure that you keep track of your own issues!
+- [Untriaged issues in my components](https://moodle.atlassian.net/issues/?jql=component%20in%20%28componentsLeadByUser%28%29%29%20AND%20resolution%20%3D%20Unresolved%20AND%20updatedDate%20%3E%20-14d%20AND%20project%20%3D%20MDL%20AND%20%28%20labels%20is%20EMPTY%20OR%20labels%20not%20in%20%28triaged%2C%20triaging_in_progress%29%29%20ORDER%20BY%20updatedDate%20ASC) (works only for component leads)
+- [Waiting for peer review for 21 days](https://moodle.atlassian.net/issues/?jql=status%20changed%20to%20%22Waiting%20for%20peer%20review%22%20before%20startofday(-21)%20and%20status%20%3D%20%22Waiting%20for%20peer%20review%22)
+- [Integrated this week](https://moodle.atlassian.net/issues/?filter=19324) - subscribe to this filter on Fridays and keep yourself up-to-date with what is happening in Moodle

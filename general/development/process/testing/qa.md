@@ -19,7 +19,7 @@ Would you like to help with QA testing? If so, please make sure you have created
 
 ## Running tests
 
-1. Go to the [Moodle QA testing dashboard](https://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11454) and choose a test from the list of current QA cycle open issues. When viewing a test, if you wish, you can click the 'Assign to me' link on the right, so that nobody else chooses the same test to run. (If you then find you are unable to run the test, you can click the Assign button and set the assignee as 'Unassigned'.) Please note:
+1. Go to the [Moodle QA testing dashboard](https://moodle.atlassian.net/secure/Dashboard.jspa?selectPageId=11454) and choose a test from the list of current QA cycle open issues. When viewing a test, if you wish, you can click the 'Assign to me' link on the right, so that nobody else chooses the same test to run. (If you then find you are unable to run the test, you can click the Assign button and set the assignee as 'Unassigned'.) Please note:
    - Only assign an issue to yourself which no one else is testing (Assignee = Unassigned).
    - Only assign one issue at a time unless you plan to test a number of related issues within the next 24 hours. In other words, don't assign several issues to yourself then do nothing for several days. ;-)
    - The label `test_server_required` indicates issues that can't be tested on the QA testing site. The label `credentials_required` indicates that credentials such as an OAuth 2 service client ID and secret are required.
@@ -90,7 +90,7 @@ So you ran a test and it failed? Congratulations on finding a bug! Please do the
 
 1. Click the `Fail` button at the top of the page.
 2. Add a comment to the QA test stating that there was a problem and that you will report it as a Moodle bug.
-3. Note the MDLQA number; it will be something like [MDLQA-448](https://tracker.moodle.org/browse/MDLQA-448).
+3. Note the MDLQA number; it will be something like [MDLQA-448](https://moodle.atlassian.net/browse/MDLQA-448).
 4. Try searching for whether the bug has been reported previously, and if not create a new issue for it (as described in [Tracker introduction](../../tracker.md)).
 5. In the new Moodle (MDL) issue select 'Link' from the 'More actions' dropdown menu.
 Linking to the QA issue in the tracker
@@ -185,7 +185,7 @@ QA tests may become out-of-date due to User Interface changes, feature changes, 
 
 To update a QA test original:
 
-1. Search for the test in [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1).
+1. Search for the test in [MDLQA-1](https://moodle.atlassian.net/browse/MDLQA-1).
 2. Edit the test description.
 
 :::note
@@ -204,8 +204,8 @@ In addition, new features can benefit from exploratory testing by community volu
 
 To create a new QA test:
 
-1. If appropriate, do a quick search of [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1) to check if there is an existing test which can be updated.
-2. If not, in [MDLQA-1](https://tracker.moodle.org/browse/MDLQA-1) from the More menu select 'Create sub-task'.
+1. If appropriate, do a quick search of [MDLQA-1](https://moodle.atlassian.net/browse/MDLQA-1) to check if there is an existing test which can be updated.
+2. If not, in [MDLQA-1](https://moodle.atlassian.net/browse/MDLQA-1) from the More menu select 'Create sub-task'.
 3. Enter a summary such as 'A teacher can ...'.
 4. Select 'Original' as affected version and select appropriate components.
 5. In the description field add the test steps (usually between 3 and 10), similar to the issue's [testing instructions](./guide), starting with 'Log in as a teacher...' or similar. It's a good idea to try doing the steps yourself as you write the test.
@@ -234,7 +234,7 @@ To create a new QA test:
 
 ## Automating a test
 
-1. Choose a test from the list [MDLQA tests with label mdlqa_conversion](https://tracker.moodle.org/issues/?jql=project%20%3D%20MDLQA%20AND%20labels%20%3D%20mdlqa_conversion%20and%20status%20%3D%20Open).
+1. Choose a test from the list [MDLQA tests with label mdlqa_conversion](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDLQA%20AND%20labels%20%3D%20mdlqa_conversion%20and%20status%20%3D%20Open).
 1. Create a new MDL issue with summary `Automate MDLQA-wxyz` and component `Automated functional tests` and any MDLQA component such as `Forum` which is also an MDL component.
 1. Add the `mdlqa_conversion` label to the new MDL issue
 1. Link to the MDLQA test by selecting `Will help resolve` as the link type.
@@ -261,40 +261,40 @@ If you have any questions or comments, please post in the [Testing and QA forum]
 
 Comments on tests from previous QA cycles:
 
-- [Moodle 5.0 QA](https://tracker.moodle.org/browse/MDLQA-19836)
-- [Moodle 4.5 QA](https://tracker.moodle.org/browse/MDLQA-18925)
-- [Moodle 4.4 QA](https://tracker.moodle.org/browse/MDLQA-18443)
-- [Moodle 4.3 QA](https://tracker.moodle.org/browse/MDLQA-17933)
-- [Moodle 4.2 QA](https://tracker.moodle.org/browse/MDLQA-17385)
-- [Moodle 4.1 QA](https://tracker.moodle.org/browse/MDLQA-16759)
-- [Moodle 4.0 QA](https://tracker.moodle.org/browse/MDLQA-16122)
-- [Moodle 3.11 QA](https://tracker.moodle.org/browse/MDLQA-15457)
-- [Moodle 3.10 QA](https://tracker.moodle.org/browse/MDLQA-14813)
-- [Moodle 3.9 QA](https://tracker.moodle.org/browse/MDLQA-14131)
-- [Moodle 3.8 QA](https://tracker.moodle.org/browse/MDLQA-13517)
-- [Moodle 3.7 QA](https://tracker.moodle.org/browse/MDLQA-12911)
-- [Moodle 3.6 QA](https://tracker.moodle.org/browse/MDLQA-12282)
-- [Moodle 3.5 QA](https://tracker.moodle.org/browse/MDLQA-11698)
-- [Moodle 3.4 QA](https://tracker.moodle.org/browse/MDLQA-10999)
-- [Moodle 3.3 QA](https://tracker.moodle.org/browse/MDLQA-10403)
-- [Moodle 3.2 QA](https://tracker.moodle.org/browse/MDLQA-9827)
-- [Moodle 3.1 QA](https://tracker.moodle.org/browse/MDLQA-9267)
-- [Moodle 3.0 QA](https://tracker.moodle.org/browse/MDLQA-8205)
-- [Moodle 2.9 QA](https://tracker.moodle.org/browse/MDLQA-7660)
-- [Moodle 2.8 QA](https://tracker.moodle.org/browse/MDLQA-7170)
-- [Moodle 2.7 QA](https://tracker.moodle.org/browse/MDLQA-6693)
-- [Moodle 2.6 QA](https://tracker.moodle.org/browse/MDLQA-5740)
-- [Moodle 2.5 QA](https://tracker.moodle.org/browse/MDLQA-5267)
-- [Moodle 2.4 QA](https://tracker.moodle.org/browse/MDLQA-4602)
-- [Moodle 2.3 QA](https://tracker.moodle.org/browse/MDLQA-1814)
-- [Moodle 2.2 QA](https://tracker.moodle.org/browse/MDLQA-1190)
-- [Moodle 2.1 QA](https://tracker.moodle.org/browse/MDLQA-944)
-- [Moodle 2.0.2 QA](https://tracker.moodle.org/browse/MDLQA-540)
-- [Moodle 2.0 QA Cycle 2](https://tracker.moodle.org/browse/MDLQA-328)
-- [Moodle 2.0 QA Cycle 1](https://tracker.moodle.org/browse/MDLQA-150)
+- [Moodle 5.0 QA](https://moodle.atlassian.net/browse/MDLQA-19836)
+- [Moodle 4.5 QA](https://moodle.atlassian.net/browse/MDLQA-18925)
+- [Moodle 4.4 QA](https://moodle.atlassian.net/browse/MDLQA-18443)
+- [Moodle 4.3 QA](https://moodle.atlassian.net/browse/MDLQA-17933)
+- [Moodle 4.2 QA](https://moodle.atlassian.net/browse/MDLQA-17385)
+- [Moodle 4.1 QA](https://moodle.atlassian.net/browse/MDLQA-16759)
+- [Moodle 4.0 QA](https://moodle.atlassian.net/browse/MDLQA-16122)
+- [Moodle 3.11 QA](https://moodle.atlassian.net/browse/MDLQA-15457)
+- [Moodle 3.10 QA](https://moodle.atlassian.net/browse/MDLQA-14813)
+- [Moodle 3.9 QA](https://moodle.atlassian.net/browse/MDLQA-14131)
+- [Moodle 3.8 QA](https://moodle.atlassian.net/browse/MDLQA-13517)
+- [Moodle 3.7 QA](https://moodle.atlassian.net/browse/MDLQA-12911)
+- [Moodle 3.6 QA](https://moodle.atlassian.net/browse/MDLQA-12282)
+- [Moodle 3.5 QA](https://moodle.atlassian.net/browse/MDLQA-11698)
+- [Moodle 3.4 QA](https://moodle.atlassian.net/browse/MDLQA-10999)
+- [Moodle 3.3 QA](https://moodle.atlassian.net/browse/MDLQA-10403)
+- [Moodle 3.2 QA](https://moodle.atlassian.net/browse/MDLQA-9827)
+- [Moodle 3.1 QA](https://moodle.atlassian.net/browse/MDLQA-9267)
+- [Moodle 3.0 QA](https://moodle.atlassian.net/browse/MDLQA-8205)
+- [Moodle 2.9 QA](https://moodle.atlassian.net/browse/MDLQA-7660)
+- [Moodle 2.8 QA](https://moodle.atlassian.net/browse/MDLQA-7170)
+- [Moodle 2.7 QA](https://moodle.atlassian.net/browse/MDLQA-6693)
+- [Moodle 2.6 QA](https://moodle.atlassian.net/browse/MDLQA-5740)
+- [Moodle 2.5 QA](https://moodle.atlassian.net/browse/MDLQA-5267)
+- [Moodle 2.4 QA](https://moodle.atlassian.net/browse/MDLQA-4602)
+- [Moodle 2.3 QA](https://moodle.atlassian.net/browse/MDLQA-1814)
+- [Moodle 2.2 QA](https://moodle.atlassian.net/browse/MDLQA-1190)
+- [Moodle 2.1 QA](https://moodle.atlassian.net/browse/MDLQA-944)
+- [Moodle 2.0.2 QA](https://moodle.atlassian.net/browse/MDLQA-540)
+- [Moodle 2.0 QA Cycle 2](https://moodle.atlassian.net/browse/MDLQA-328)
+- [Moodle 2.0 QA Cycle 1](https://moodle.atlassian.net/browse/MDLQA-150)
 
 ## See also
 
-- [QA testing dashboard](https://tracker.moodle.org/secure/Dashboard.jspa?selectPageId=11454)
+- [QA testing dashboard](https://moodle.atlassian.net/secure/Dashboard.jspa?selectPageId=11454)
 - [Testing credits](../../../community/credits/testing.md)
 - [Useful tips for QA testing](https://moodle.org/mod/forum/discuss.php?d=351302)

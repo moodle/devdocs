@@ -11,10 +11,10 @@ import Link from '@docusaurus/Link';
 
 :::tip View our living Roadmap
 
-Our Roadmap is public, open, and living - you can see it at any time on our [Roadmap Kanban board](https://tracker.moodle.org/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA).
+Our Roadmap is public, open, and living - you can see it at any time on our [Roadmap Kanban board](https://moodle.atlassian.net/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA).
 
 <Link
-  to="https://tracker.moodle.org/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA"
+  to="https://moodle.atlassian.net/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA"
   title="View the current Moodle Roadmap on the Tracker"
   >
 
@@ -42,7 +42,7 @@ Before each planning week, our Product leads conduct engagement sessions with ou
 
 We curate our ideas from a wide range of sources including;
 
-1. Moodle HQ Product teams continuously review issues created by our users who can log new feature requests and ideas for improvements in our [public tracker](https://tracker.moodle.org/projects/MDL/issues/MDL-75914?filter=allopenissues). The issues can also be voted on by our community to mark interest in the suggestions made by others.
+1. Moodle HQ Product teams continuously review issues created by our users who can log new feature requests and ideas for improvements in our [public tracker](https://moodle.atlassian.net/projects/MDL/issues/MDL-75914?filter=allopenissues). The issues can also be voted on by our community to mark interest in the suggestions made by others.
 1. Our [public forums](https://moodle.org/course/) are available to all community members to obtain support and discuss ideas. They are a rich source of feedback that is used to inform our roadmap.
 1. The official voice of our users is the [Moodle Users Association](https://moodleassociation.org/), a group of passionate Moodlers from around the world who suggest and vote for new ideas to be delivered at each new release of the Moodle LMS platform.
 1. Many of our Products have Product Advisory Groups (PAGs) which meet on a regular basis to help inform the priorities of our roadmap ideas. These groups are formed by representatives from our user base and our [Moodle Partners](https://moodle.com/solutions/certified-service-providers/) network with whom we work closely to define the needs of our markets in education and workplace learning.
@@ -91,7 +91,7 @@ Providing our users with tools that optimise their efforts is paramount. We aim 
 
 ## Where can I find out more?
 
-To see all the details for our upcoming developments, you can visit the roadmap at any time simply by logging into Tracker and [viewing our public board](https://tracker.moodle.org/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA).
+To see all the details for our upcoming developments, you can visit the roadmap at any time simply by logging into Tracker and [viewing our public board](https://moodle.atlassian.net/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA).
 
 To stay up to date with all the latest developments, please keep an eye out for our Showcase Shorts, a bird's eye view of our latest design and development outcomes, announced on moodle.org [Community News](https://moodle.org/news) every few weeks.
 

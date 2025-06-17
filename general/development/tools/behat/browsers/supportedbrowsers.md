@@ -77,7 +77,7 @@ Any other valid combination should work ok, normally.<br/>(Here there is a [good
 
 Chrome >=76 can be used since Moodle 20190909 builds.
 
-Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://tracker.moodle.org/browse/MDL-71108) tags till the browser issue is fixed.
+Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://moodle.atlassian.net/browse/MDL-71108) tags till the browser issue is fixed.
 
 </td></tr>
 <tr><td>
@@ -121,7 +121,7 @@ Any other valid combination should work ok, normally.<br/>(Here there is a [good
 
 Chrome >=76 can be used since Moodle 20190909 builds.
 
-Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://tracker.moodle.org/browse/MDL-71108) tags till the browser issue is fixed.
+Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://moodle.atlassian.net/browse/MDL-71108) tags till the browser issue is fixed.
 
 </td></tr>
 <tr><td>
@@ -165,7 +165,7 @@ Any other valid combination should work ok, normally.<br/>(Here there is a [good
 
 Chrome >=76 can be used since Moodle 20190909 builds.
 
-Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://tracker.moodle.org/browse/MDL-71108) tags till the browser issue is fixed.
+Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://moodle.atlassian.net/browse/MDL-71108) tags till the browser issue is fixed.
 
 </td></tr>
 </tbody></table>
@@ -255,7 +255,7 @@ Any other valid combination should work ok, normally.<br/>(Here there is a [good
 
 Chrome >=76 can be used since Moodle 20190909 builds.
 
-Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://tracker.moodle.org/browse/MDL-71108) tags till the browser issue is fixed.
+Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://moodle.atlassian.net/browse/MDL-71108) tags till the browser issue is fixed.
 
 </td></tr>
 <tr><td>
@@ -309,7 +309,7 @@ Any other valid combination should work ok, normally.<br/>(Here there is a [good
 
 Chrome >=76 can be used since Moodle 20190909 builds.
 
-Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://tracker.moodle.org/browse/MDL-71108) tags till the browser issue is fixed.
+Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://moodle.atlassian.net/browse/MDL-71108) tags till the browser issue is fixed.
 
 </td></tr>
 <tr><td>
@@ -363,7 +363,7 @@ Any other valid combination should work ok, normally.<br/>(Here there is a [good
 
 Chrome >=76 can be used since Moodle 20190909 builds.
 
-Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://tracker.moodle.org/browse/MDL-71108) tags till the browser issue is fixed.
+Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://moodle.atlassian.net/browse/MDL-71108) tags till the browser issue is fixed.
 
 </td></tr>
 </tbody></table>
@@ -453,7 +453,7 @@ Any other valid combination should work ok, normally.<br/>(Here there is a [good
 
 Chrome >=76 can be used since Moodle 20190909 builds.
 
-Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://tracker.moodle.org/browse/MDL-71108) tags till the browser issue is fixed.
+Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://moodle.atlassian.net/browse/MDL-71108) tags till the browser issue is fixed.
 
 </td></tr>
 <tr><td>
@@ -507,7 +507,7 @@ Any other valid combination should work ok, normally.<br/>(Here there is a [good
 
 Chrome >=76 can be used since Moodle 20190909 builds.
 
-Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://tracker.moodle.org/browse/MDL-71108) tags till the browser issue is fixed.
+Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://moodle.atlassian.net/browse/MDL-71108) tags till the browser issue is fixed.
 
 </td></tr>
 <tr><td>
@@ -536,7 +536,7 @@ Any other valid combination should work ok, normally.<br/>(Here there is a [good
 
 Chrome >=76 can be used since Moodle 20190909 builds.
 
-Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://tracker.moodle.org/browse/MDL-71108) tags till the browser issue is fixed.
+Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the @skip_chrome_zerosize [MDL-71108](https://moodle.atlassian.net/browse/MDL-71108) tags till the browser issue is fixed.
 
 </td></tr>
 </tbody></table>
