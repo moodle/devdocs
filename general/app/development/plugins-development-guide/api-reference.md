@@ -79,7 +79,7 @@ These are the configuration options common to most handlers, you can find specif
 | `styles.version`            | Required    | Version number used to determine if the file needs to be downloaded again. You should change the version number every time you change the contents of the CSS file. |
 | `moodlecomponent`           | Plugin name | Name of the component implemented by the handler. <br /> <br /> Most of the time, this can be ignored because mobile support is usually included in the same plugin where custom components are defined, but it may be different in some cases. For example, imagine a local plugin called `local_myactivitymobile` is implementing mobile support for a `mod_myactivity` component. In that case, you would set this option to `"mod_myactivity"`. |
 | `restricttocurrentuser`     | `false`     | Restricts the handler to appear only for the current user. For more advanced restrictions, you can use the `restrict` and `disabled` properties returned during [JavaScript initialisation](./index.md#javascript-initialisation). |
-| `restricttoenrolledcourses` | `false`     | Restricts the handler to appear only for courses the user is enrolled in. For more advanced restrictions, you can use the `restrict` and `disabled` properties returned during [JavaScript initialisation](./index.md#javascript-initialisation). |
+| `restricttoenrolledcourses` | `true`      | Restricts the handler to appear only for courses the user is enrolled in. For more advanced restrictions, you can use the `restrict` and `disabled` properties returned during [JavaScript initialisation](./index.md#javascript-initialisation). |
 
 ### CoreMainMenuDelegate
 
