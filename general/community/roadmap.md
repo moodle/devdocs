@@ -5,16 +5,16 @@ tags:
 sidebar_position: 4
 ---
 
-Our Moodle Products roadmap is designed to provide visibility on the development priorities of the Moodle HQ Product teams and covers all the products in our open source learning platform portfolio, consisting of Moodle LMS, Moodle Workplace, MoodleCloud, Moodle Apps, Moodle Community Sites, and Moodle Academy.
+Our Moodle Products roadmap is designed to provide visibility on the development priorities of the Moodle HQ Product teams portfolio, consisting of Moodle LMS, Moodle Workplace, MoodleCloud, Moodle Apps, Moodle Community Sites, Moodle Academy and Tech Transformation.
 
 import Link from '@docusaurus/Link';
 
 :::tip View our living Roadmap
 
-Our Roadmap is public, open, and living - you can see it at any time on our [Roadmap Kanban board](https://moodle.atlassian.net/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA).
+Our Roadmap is public, open, and living - you can see it at any time on our [Roadmap Kanban board](https://moodle.atlassian.net/jira/software/c/projects/IDEA/boards/104?ignoreStickyVersion=true).
 
 <Link
-  to="https://moodle.atlassian.net/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA"
+  to="https://moodle.atlassian.net/jira/software/c/projects/IDEA/boards/104?ignoreStickyVersion=true"
   title="View the current Moodle Roadmap on the Tracker"
   >
 
@@ -91,7 +91,7 @@ Providing our users with tools that optimise their efforts is paramount. We aim 
 
 ## Where can I find out more?
 
-To see all the details for our upcoming developments, you can visit the roadmap at any time simply by logging into Tracker and [viewing our public board](https://moodle.atlassian.net/secure/RapidBoard.jspa?rapidView=260&projectKey=IDEA).
+To see all the details for our upcoming developments, you can visit the roadmap at any time simply by logging into Tracker and [viewing our public board](https://moodle.atlassian.net/jira/software/c/projects/IDEA/boards/104?ignoreStickyVersion=true).
 
 To stay up to date with all the latest developments, please keep an eye out for our Showcase Shorts, a bird's eye view of our latest design and development outcomes, announced on moodle.org [Community News](https://moodle.org/news) every few weeks.
 
