@@ -594,7 +594,7 @@ This would cause the report to return results for users with the first name of _
 
 The stress test uses helper methods which:
 
-- Add and remove every colum individually from a report and ensures that is still returns data without error, it also tests the column can be sorted if that has been enabled.
+- Add and remove every column individually from a report and ensures that is still returns data without error, it also tests the column can be sorted if that has been enabled.
 - Individually aggregates a report on each column
 - Individually applies each filter
 
