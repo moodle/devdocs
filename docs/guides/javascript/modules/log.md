@@ -2,7 +2,7 @@
 title: Log
 ---
 
-It is not recommended to use the vanila `window.console.log()` function to output Javascript logging information.
+It is not recommended to use the vanila `window.console.log()` function to output JavaScript logging information.
 
 The `core/log` module offers different levels of log output that is governed by Moodle's debugging levels.
 
