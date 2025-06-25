@@ -467,61 +467,6 @@ Care should be taken in the following scenarios:
 
 ## Preferences
 
-## Prefetch
-
-<Since versions={[ 3.9 ]} />
-
-Assets including strings, and templates, can be pre-fetched shortly after the page loads to improve the perceived performance of the page when consuming those components.
-
-```todo
-Link to jsdocs here
-```
-
-```js title="Example of fetching a string and template"
-import Prefetch from 'core/prefetch';
-
-// Prefetch the string 'discussion' from the 'mod_forum' component.
-Prefetch.prefetchString('discussion', 'mod_forum');
-
-// Prefetch the strings yes, no, and maybe from the 'core' component.
-Prefetch.prefetchStrings('core', ['yes', 'no', 'maybe']);
-
-// Prefetch the templates 'core/toast'.
-Prefetch.prefetchTemplate('core/toast');
-
-// Prefetch the templates 'core/toast' and 'core/modal'.
-Prefetch.prefetchTemplates(['core/toast', 'core/modal']);
-```
-
-## Dropzone
-
-<Since version="4.4" issueNumber="MDL-80850" />
-
-The use of the `core/dropzone` module provides a simplified developer experience for creating drop zones within Moodle.
-
-The module attempts to ensure that accessibility requirements are met, including applying the correct styles and keyboard navigation.
-
-Drop zones will trigger callbacks for common actions that occur within the drop zone for other code to listen to and react accordingly.
-
-```js title="Example of creating a dropzone"
-import Dropzone from 'core/dropzone';
-
-// Get the element that will be the dropzone.
-const dropZoneContainer = document.querySelector('#dropZoneId');
-// Create a new dropzone accepting only images.
-const dropZone = new Dropzone(
-    dropZoneContainer,
-    'image/*',
-    function(files) {
-        window.console.log(files);
-    }
-);
-// Set the custom message for the dropzone. Otherwise, it will use the default message.
-dropZone.setLabel('Drop images here');
-// Initialising the dropzone.
-dropZone.init();
-```
-
 ## Reactive state
 
 <Since versions={[ 4.0 ]} />
