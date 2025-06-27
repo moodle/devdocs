@@ -239,23 +239,23 @@ When I set the following fields to these values:
 When testing plugins with deadlines, for instance for submissions, it is often necessary to set certain time values to dates relative to today.
 You can specify a relative time enclosed within two ## blocks. For example:
 
-- `## yesterday ##`
-- `## 2 days ago ##`
+- `##yesterday##`
+- `##2 days ago##`
 You can use everything according to http://php.net/manual/en/datetime.formats.php.
 
-Especially useful are the relative formats from: http://php.net/manual/en/datetime.formats.relative.php
+Especially useful are the relative formats from: https://www.php.net/manual/en/datetime.formats.php#datetime.formats.relative
 
 Additionally, you can specify a format you want the date to be returned into:
 
-- `## yesterday ## myformat ##`
-These formats can be used as outlined in http://php.net/manual/en/function.date.php.
+- `##yesterday##myformat##`
+These formats can be used as outlined in https://www.php.net/manual/en/function.strftime.php#refsect1-function.strftime-parameters.
 This can be combined with the field groups:
 
 ```gherkin
 When I set the following fields to these values:
-  | myDate[day]   | ##yesterday##d## |
-  | myDate[month] | ##yesterday##F## |
-  | myDate[year]  | ##yesterday##Y## |
+  | myDate[day]   | ##yesterday##%d## |
+  | myDate[month] | ##yesterday##%B## |
+  | myDate[year]  | ##yesterday##%Y## |
 ```
 
 ### Writing your own steps
