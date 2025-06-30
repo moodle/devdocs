@@ -13,7 +13,7 @@ On every tracker page you can find search box. Quick search is much more powerfu
 
 Examples of the quick searches:
 
-| Quick search | Advanced search equivalent | Description ||
+| Quick search | Advanced search equivalent | Description |
 | --- | --- | --- |
 | `MDL Unresolved Bug abra cadabra` ![](./trackerquicksearch.png) | Find all unresolved Bugs in Moodle project that contain words `abra cadabra` | `project = MDL AND issuetype = Bug AND resolution = Unresolved AND text ~ "abra cadabra"` ![](./advancedsearch.png) |
 | `my Unresolved` | `resolution = Unresolved AND assignee = currentUser()` | Find all ongoing issues assigned to me |

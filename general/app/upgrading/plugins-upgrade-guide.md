@@ -16,7 +16,7 @@ As you can see in that repository, the JS and the templates are duplicated in or
 
 Depending on which version of the app you're upgrading from, you'll need to go through multiple version upgrades. This guide is divided by version ranges, so you should be able to start with your current version and build up from there.
 
-Other than the changes outlined in this document, there may be smaller API changes that aren't highlighted here. Make sure to check the [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt) file for an exhaustive list with all the changes.
+Other than the changes outlined in this document, there may be smaller API changes that aren't highlighted here. Make sure to check the [UPGRADE.md](https://github.com/moodlehq/moodleapp/blob/latest/UPGRADE.md) file for an exhaustive list with all the changes.
 
 ## 4.4 to 4.5
 
@@ -24,7 +24,7 @@ The Ionic version has been upgraded to v8 (from v7), make sure to check the rele
 
 ## 4.3 to 4.4
 
-Starting with this release, the changes listed in [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt) will only document breaking changes for APIs exposed to site plugins. Internal changes will no longer be documented. Make sure to check out the file to learn about the changes in this version.
+Starting with this release, the changes listed in [UPGRADE.md](https://github.com/moodlehq/moodleapp/blob/latest/UPGRADE.md) will only document breaking changes for APIs exposed to site plugins. Internal changes will no longer be documented. Make sure to check out the file to learn about the changes in this version.
 
 Also, the Ionic version has been upgraded to v7 (from v5), make sure to check the relevant upgrade guides for [v6](https://ionicframework.com/docs/updating/6-0) and [v7](https://ionicframework.com/docs/updating/7-0). In particular, the syntax to declare input labels has been refactored. The legacy syntax will continue working for the time being, but we recommend migrating to the [modern syntax](https://ionicframework.com/docs/api/input#migrating-from-legacy-input-syntax) as soon as possible.
 
@@ -36,7 +36,7 @@ Finally, the application now needs to run in a secure context (https://). This c
 
 Font Awesome icons have been updated to version 6.4.0, so make sure that all the icons you're using in your plugin are still supported.
 
-Other than that, there have been some changes in the APIs related to analytics. Check out [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt) to learn about the specifics.
+Other than that, there have been some changes in the APIs related to analytics. Check out [UPGRADE.md](https://github.com/moodlehq/moodleapp/blob/latest/UPGRADE.md) to learn about the specifics.
 
 ## 4.1 to 4.2
 
@@ -84,7 +84,7 @@ In order to avoid breaking existing styles, version 4.1 will continue adding ver
 
 ## 3.9.5 to 4.0
 
-There haven't been any breaking changes from 3.9.5 to 4.0, but the UI of the application has changed drastically so we recommend taking special care that the UI of your plugin is still working properly. Also, remember to double check all the changes listed in [upgrade.txt](https://github.com/moodlehq/moodleapp/blob/latest/upgrade.txt).
+There haven't been any breaking changes from 3.9.5 to 4.0, but the UI of the application has changed drastically so we recommend taking special care that the UI of your plugin is still working properly. Also, remember to double check all the changes listed in [UPGRADE.md](https://github.com/moodlehq/moodleapp/blob/latest/UPGRADE.md).
 
 Other than that, everything should continue working as expected. If you find something that doesn't, please [let us know](https://moodle.atlassian.net/projects/MOBILE).
 
