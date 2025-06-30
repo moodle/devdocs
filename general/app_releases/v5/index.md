@@ -1,10 +1,10 @@
 ---
-title: Moodle App 4
-sidebar_position: 2
+title: Moodle App 5
+sidebar_position: 1
 ---
 
 <!-- markdownlint-disable no-inline-html -->
 
 import { Redirect } from '@docusaurus/router';
 
-<Redirect to="v4/v4.0.0" />
+<Redirect to="v5/v5.0.0" />
