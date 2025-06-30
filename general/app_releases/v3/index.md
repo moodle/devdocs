@@ -1,6 +1,6 @@
 ---
 title: Moodle App 3
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 <!-- markdownlint-disable no-inline-html -->
