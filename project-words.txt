@@ -187,6 +187,7 @@ iframes
 igbinary
 importhtml
 imsenterprise
+inappbrowser
 incompleted
 inplace
 intval

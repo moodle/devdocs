@@ -23,7 +23,7 @@ Once you have everything ready, you can configure your theme by going to "Site a
 You can get started with the following example, and you should see the background of the top bar change to red once you log into the app:
 
 ```css
-html {
+:root {
     --core-header-toolbar-background: red;
 }
 ```
@@ -76,23 +76,23 @@ Each of these also define other variants: `rgb`, `contrast`, `contrast-rgb`, `sh
 For example, if you want to override the primary color, you'll need to override the following variables:
 
 ```css
-html {
-    --ion-color-primary: #006600;
+:root {
+    --primary: #006600;
 
     /* RGB list of the color */
     --ion-color-primary-rgb: 0,102,0;
 
     /* Black or white, depending on which color gives more contrast */
-    --ion-color-primary-contrast: #ffffff;
+    --primary-contrast: #ffffff;
 
     /* RGB version of the contrast color */
     --ion-color-primary-contrast-rgb: 255,255,255;
 
     /* Slightly darker color. (mix 12% of black) */
-    --ion-color-primary-shade: #005a00;
+    --primary-shade: #005a00;
 
     /* Slightly lighter color. (mix 10% of white) */
-    --ion-color-primary-tint: #1a751a;
+    --primary-tint: #1a751a;
 }
 ```
 
@@ -101,7 +101,7 @@ html {
 Other than the basic and semantic colors, other components and pages define their own variables that you can override. You can look at the source code to find more, but these are some of the most relevant:
 
 ```css
-html {
+:root {
     /* Page background */
     --background-color: white;
     --ion-background-color-rgb: 255, 255, 255;
@@ -120,27 +120,27 @@ html {
 
 ### Targeting different environments
 
-The `html` element contains classes that indicate the environment the app is running on.
+The `:root` element contains classes that indicate the environment the app is running on.
 
 #### Platform
 
-You can specify styles that will only apply to iOS by prepending them with `html.ios`, or `html.md` for Android:
+You can specify styles that will only apply to iOS by prepending them with `:root.ios`, or `:root.md` for Android:
 
 ```css
 /* Red toolbar in iOS */
-html.ios {
+:root.ios {
     --core-header-toolbar-background: red;
 }
 
 /* Green toolbar in Android */
-html.md {
+:root.md {
     --core-header-toolbar-background: green;
 }
 ```
 
 #### Moodle App and Moodle site versions
 
-You can restrict CSS rules to a specific version using one of these classes. For example, when accessing a 3.11.2 site using the 3.9.5 app the following classes will be present in the `html` element:
+You can restrict CSS rules to a specific version using one of these classes. For example, when accessing a 3.11.2 site using the 3.9.5 app the following classes will be present in the `:root` element:
 
 - `version-3`
 - `version-3-11`
@@ -153,12 +153,12 @@ And here's how to use them:
 
 ```css
 /* Red toolbar for Moodle App version 4.1.X */
-html.moodleapp-4-1 {
+:root.moodleapp-4-1 {
     --core-header-toolbar-background: red;
 }
 
 /* Green toolbar for all other versions */
-html {
+:root {
     --core-header-toolbar-background: green;
 }
 ```
@@ -170,16 +170,16 @@ Starting on Moodle App 4.4 you can restrict CSS rules to a specific site theme. 
 
 #### Application theme
 
-The application uses a light theme by default, but it adds the `dark` class to the `html` element when it is using a dark theme:
+The application uses a light theme by default, but it adds the `dark` class to the `:root` element when it is using a dark theme:
 
 ```css
 /* Red toolbar for the Light Theme */
-html {
+:root {
     --core-header-toolbar-background: red;
 }
 
 /* Green toolbar for the Dark Theme */
-html.dark {
+:root.dark {
     --core-header-toolbar-background: green;
 }
 ```
@@ -193,7 +193,7 @@ Of course, you can combine any of these classes to create more granular styles.
 Let's say you want to have a red toolbar only in iOS, with the Dark Theme, for a Moodle site running 3.11.X:
 
 ```css
-html.ios.version-3-11.dark {
+:root.ios.version-3-11.dark {
     --core-header-toolbar-background: red;
 }
 ```
@@ -305,7 +305,7 @@ core-tabs, core-tabs-outlet {
 ### Items
 
 ```css
-html {
+:root {
     /* Background */
     --ion-item-background: green;
 
@@ -354,7 +354,7 @@ page-core-mainmenu-more {
 You can personalise some colors in the Login page, but keep in mind that this only includes the credentials page (the one after you select the site).
 
 ```css
-html {
+:root {
     --core-login-background: red;
     --core-login-text-color: blue;
     --core-login-input-background: green;
@@ -365,16 +365,12 @@ html {
 ### Messages page
 
 ```css
-html {
-    --addon-messages-message-bg: white;
-    --addon-messages-message-activated-bg: gray-light;
-    --addon-messages-message-note-text: gray-dark;
-    --addon-messages-message-mine-bg: gray-light;
-    --addon-messages-message-mine-activated-bg: gray;
-    --addon-messages-discussion-badge: orange;
-    --addon-messages-discussion-badge-text: white;
-    --core-send-message-input-background: gray-light;
-    --core-send-message-input-color: black;
+:root {
+    --core-messages-message-bg: white;
+    --core-messages-message-activated-bg: gray-light;
+    --core-messages-message-note-text: gray-dark;
+    --core-messages-message-mine-bg: gray-light;
+    --core-messages-message-mine-activated-bg: gray;
 }
 ```
 
