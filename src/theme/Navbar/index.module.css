@@ -191,6 +191,16 @@
 .moodlesitestopnavbar .nav_link span {
     height: 22px;
 }
+
+.moodlesitestopnavbar .nav_tracker .nav_link span {
+    display: inline-block;
+    padding-left: 20px;
+    background-image: url("/img/Atlassian_Jira-logo.svg");
+    background-repeat: no-repeat;
+    background-position: left 2px;
+    background-size: 18px 18px;
+}
+
 .moodlesitestopnavbar .nav_link span.active,
 .moodlesitestopnavbar .nav_link:hover span.active {
     color: #194866;

@@ -72,19 +72,22 @@ export default function NavbarWrapper(props) {
                             <a className={styles.nav_link} href="https://docs.moodle.org"><span>Documentation</span></a>
                         </li>
                         <li>
+                            <a className={styles.nav_link} href="https://moodle.org/plugins"><span>Plugins</span></a>
+                        </li>
+                        <li>
                             <a className={styles.nav_link} href="https://download.moodle.org"><span>Downloads</span></a>
                         </li>
                         <li>
                             <a className={styles.nav_link} href="https://moodle.org/demo"><span>Demo</span></a>
                         </li>
                         <li>
-                            <a className={styles.nav_link} href="https://moodle.atlassian.net"><span>Tracker</span></a>
-                        </li>
-                        <li>
                             <a className={styles.nav_link} href="https://moodledev.io/"><span className={styles.active}>Development</span></a>
                         </li>
                         <li>
                             <a className={styles.nav_link} href="https://lang.moodle.org"><span>Translation</span></a>
+                        </li>
+                        <li className={styles.nav_tracker}>
+                            <a className={styles.nav_link} target="_blank" href="https://moodle.atlassian.net"><span>Tracker</span></a>
                         </li>
 
                         <div className={styles.extra_links}>
