@@ -87,7 +87,7 @@ export default function NavbarWrapper(props) {
                             <a className={styles.nav_link} href="https://lang.moodle.org"><span>Translation</span></a>
                         </li>
                         <li className={styles.nav_tracker}>
-                            <a className={styles.nav_link} target="_blank" href="https://moodle.atlassian.net"><span>Tracker</span></a>
+                            <a className={styles.nav_link} href="https://moodle.atlassian.net"><span>Tracker</span></a>
                         </li>
 
                         <div className={styles.extra_links}>
