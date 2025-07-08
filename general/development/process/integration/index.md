@@ -166,5 +166,99 @@ As a general rule, this means that if your issue has entered the 'in integration
 The Integration team will sometimes recommend squashing commits when things do not look natural (and may offer to do this for you), especially when there are "fix-commits" in the history happening before integration. You will not be forced to squash your changes because our policy is: *"If you want your history of commits to look like bad, it's your history."*.
 
 :::tip
+
 You should pay close attention to [Git_commits](../../policies/codingstyle/index.md#git-commits) and intend to *"Tell a perfect, cleaned up version of the history. As if the code was written perfectly first time."*.
+
 :::
+
+## Integration tooling
+
+Typically during the integration process no additional tooling is required, however the [`moodle-userscripts`](https://github.com/HuongNV13/moodle-userscripts) TamperMonkey scripts are a great way of generating the commands typically used during final code review.
+
+:::danger Considerations for your code review repository
+
+When reviewing code for the final review, it is important to do so in a separate checkout which you do not use for other development. This helps ensure that unrelated branches and changes are not pushed by mistake.
+
+- Before starting a review, ensure you have fetched the latest data from the Git remote
+- It is advisable to remove all unrelated branches to prevent inadvertent branch pushing
+
+:::
+
+### Useful configuration
+
+The following configuration can be applied in your global git configuration:
+
+```console title="~/.gitconfig"
+[alias]
+  # Display the name of the current branch.
+  current-branch = rev-parse --abbrev-ref HEAD
+
+  # Get a list of all other branches.
+  other-branches = !git branch | grep -v " `git current-branch`$"
+
+  # Remove all branches other than the one currently checked out.
+  remove-other-branches = !git branch -D `git other-branches`
+
+  # Fetch from the Moodle Remote and then reset the current branch.
+  integration-reset = !git fetch origin && git reset --hard origin/`git current-branch`
+
+  # Diff the current branch against the remote version of this branch, fetching first.
+  integration-diff    = !git fetch origin && git show --stat=500,300 -p origin/`git current-branch`...`git current-branch`
+
+  # Diff the current branch, ignoring whitespace, against the remote version of this branch, fetching first.
+  integration-wdiff   = !git fetch origin && git show --color-words --stat=500,300 -p origin/`git current-branch`...`git current-branch`
+```
+
+The following configuration should only be applied to the git configuration used for your final reviews.
+
+```console title="[path/to/repository/].git/config"
+[alias]
+  # This is a more aggressive form of the standard integration-reset.
+  # It should *only* be applied to your final review policy.
+  # It will remove all branches other than the currently checked out branch.
+  # DO NOT use this config on a repository you care about.
+  integration-reset   = !git fetch origin && git reset --hard origin/`git current-branch` && git remove-other-branches
+```
+
+The following are useful bash/zsh aliases which you may also find useful:
+
+```console title="~/.bashrc"
+# Alias the `id` command to perform a diff on the current branch.
+alias id='git integration-diff'
+
+# Alias the `ir` command to perform a reset for the current branch only.
+alias ir='git integration-reset'
+
+# Alias the `irm` command to check out the `main` branch and the remove all other branches.
+alias irm='git checkout main; git integration-reset'
+```
+
+### Typical workflow
+
+1. Reset your code review checkout:
+
+    ```sh
+    irm
+    ```
+
+2. Check the Test results in:
+
+    - GitHub Actions
+    - TOBIC
+    - CIBot
+
+3. For each branch under review:
+
+    1. Copy the branch details using the "Merge command" button
+    2. Paste it into the console for your code review checkout
+    3. Resolve any merge conflicts and commit the merge
+    4. Run the integration diff command:
+
+        ```sh
+        id
+        ```
+
+    5. Check the output for any problems
+
+4. Use the "Push command" button to copy a `git push` command into your paste buffer
+5. Paste it into your console, and review before pushing the code.
