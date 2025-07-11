@@ -37,7 +37,7 @@ class overview extends activityoverviewbase {
 
 ### The `overviewitem` class
 
-The `core_courseformat\local\overview\overviewitem` class represents a specific activity overview item. Currently, items are used only as cells in the course overview table, but they may be used in other places like the course page or the activity page in the future.
+The `core_courseformat\local\overview\overviewitem` class represents a specific activity overview item. Currently, items are used only as cells in the course overview table, but they may be used in other places like the course page or the activity page in the future. Also, they could be exported to the mobile APP or other external systems.
 
 The class has the following mandatory properties:
 
@@ -49,6 +49,8 @@ Also, the class has the following optional properties:
 
 - **`textalign`** (`core\output\local\properties\text_align`): Indicates the preferred text alignment for the parent container. Notice the type hint is not string but  `text_align` enum, this limit only to valid text alignment values.
 - **`alertcount`** (`integer`) and **`alertlabel`** (`string`): Some items may have an alert count to inform the user of pending actions. This information is not displayed in the table (must be included also in the content) but is added as a data attribute and may be used in other places in the future, such as filtering or mobile app notifications.
+- **`extradata`** (`stdClass`): Use this property to include any additional data your plugin needs to provide. While it is not used in the overview page, it will be included in the web service data exported for the mobile app, or for future uses.
+- **`key`** (`string`): A unique identifier for the overview item within the displayed context. Typically, the key is assigned automatically based on the context, so you do not need to specify it when instantiating an overview item. For example, the overview table will automatically set the key when retrieving activity overview items.
 
 ### Extra Overview Items
 
@@ -295,3 +297,15 @@ $courseid = required_param('id', PARAM_INT);
 ```
 
 Once done, the plugin can deprecate any method, output or renderer related to the previous index page.
+
+## Webservice and Moodle APP support
+
+<Since version="5.1" issueNumber="MDL-85509" />
+
+The Moodle Mobile app does not currently support the course overview table, but this feature is planned for future releases. All data from the overview table is already available via the `core_courseformat_get_overview_information` web service.
+
+This web service returns overview items for all activities in a course, including any extra overview items provided by plugins. To ensure your plugin is compatible with the Moodle Mobile app, follow these guidelines:
+
+- If your overview item content is a plain string, use only basic HTML tags such as `<a>`, `<span>`, `<strong>`, and `<em>`. Avoid using special CSS classes, including Bootstrap or other frameworks, as these are not supported by the app.
+- If your overview item content is a renderable object, ensure that it also implements the `exportable` interface. This interface provides a stable data structure for use in web services and is required for mobile compatibility.
+- If your plugin requires custom visual elements that need more information than the standard output class provides, use the `extradata` property to supply any additional data for the APP. This property is included in the web service response and will be accessible by your custom templates in the Moodle app when the course overview table is implemented.
