@@ -3,7 +3,7 @@
     "projects": {
         "directoryrestructure/index": {
             "title": "Directory Restructure",
-            "status": "In Progress",
+            "status": "Complete",
             "owners": [
                 {
                     "name": "Andrew Lyons",
