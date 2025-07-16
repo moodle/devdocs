@@ -378,7 +378,7 @@ location / {
     location ~ \.php {
         # Set the document root for PHP files.
         # Note: This is the same as the root above, but we need to set it again for the PHP location.
-        # The set is not inheritted from the parent location.
+        # The set is not inherited from the parent location.
         # This is not documented in the Nginx documentation -- it's documented in the nginx source code.
         set $docroot "$root/$original_site";
         if (-d "$root/$original_site/public") {
