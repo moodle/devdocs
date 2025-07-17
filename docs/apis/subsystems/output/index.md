@@ -387,10 +387,10 @@ Some interesting parameters for this function are:
 - `classes`: The classes of the paragraph. Note that this parameter is a comma-separated list of classes, not an array.
 - `id`: An optional id of the paragraph.
 
-#### sr_text()
+#### visually_hidden_text()
 
 ```php
-function sr_text(string $contents): string
+function visually_hidden_text(string $contents): string
 ```
 
 This function should be used to:
@@ -404,7 +404,7 @@ Some interesting parameters for this function are:
 In the standard Boost theme this method will output a span using the [Bootstrap screen reader class](https://getbootstrap.com/docs/4.0/getting-started/accessibility/#visually-hidden-content):
 
 ```html
-<span class="sr-only">Contents</span>
+<span class="visually-hidden">Contents</span>
 ```
 
 ### Other
@@ -504,6 +504,193 @@ $task->initialise_stored_progress(); // Creates a stored progress record, so the
 ```
 
 With the stored progress bars, you can update the progress either via iterations, by passing in the total amount expected and then the current iteration, using `->update()`(see: previous example), this will calculate the percentage complete for you. Or you can use `->update_full()` to manually set the percentage complete.
+
+## Reusing Output classes in webservices
+
+<Since version="5.1" issueNumber="MDL-85509" />
+
+The `renderable` interface with its `export_for_template` method is designed to provide data specifically for template rendering. The structure and content of the exported data are tightly coupled to the template's requirements, which may change over time. This makes the data unstable and unsuitable for webservices, where a consistent and predictable data structure is essential for API consumers.
+
+However, many output classes implements internal logics that can be reused in webservices. To achieve this, you can implement the `externable` interface in your output class. This interface is designed to provide a stable data structure for webservices, ensuring that the data remains consistent and reliable across different versions of the API.
+
+When implementing the `externable` interface, you should define an `export_for_external` method that returns a structured object `stdClass` containing the necessary data. This method should not depend on any specific template or rendering logic, but rather focus on providing a stable and predictable data structure that can be consumed by external clients.
+
+<details>
+  <summary>Here is an example of how to implement the `externable` interface in your output class.</summary>
+
+```php
+
+namespace mod_MYPLUGIN\output\myname;
+
+use cm_info;
+use core\output\externable;
+use core\output\named_templatable;
+use core\output\renderable;
+use core\output\renderer_base;
+use core_courseformat\base as course_format;
+use stdClass;
+
+class myname implements renderable, named_templatable, externable {
+    public function __construct(
+        /** @var cm_info The course module. */
+        protected cm_info $cm,
+    ) {
+    }
+
+    #[\Override]
+    public function export_for_template(renderer_base $output): stdClass {
+        // This method is used to prepare data for rendering in a template.
+        // It is related to the `templatable` interface and could return an object or array.
+        $cm = $this->cm;
+        $result = (object) [
+            'activityname' => \core_external\util::format_string($cm->name, $cm->context, true),
+            'activityurl' => $cm->url,
+            'hidden' => empty($cm->visible),
+            'extraclasses' => 'mystyle fw-bold',
+        ];
+        if ($cm->is_stealth()) {
+            $result->extrawarning = get_string('stealth', 'mod_MYPLUGIN');
+        }
+        return $result;
+    }
+
+    #[\Override]
+    public function export_for_external(renderer_base $output): stdClass {
+        // This method is used to prepare data for webservice clients.
+        // It is related to the `externable` interface and should return always an stdClass object.
+        $templatedata = $this->export_for_template($output);
+        return (object) [
+            'activityname' => \core_external\util::format_string($cm->name, $cm->context, true),
+            'activityurl' => ($cm->url) ? $cm->url->out(false) : null,
+            'hidden' => empty($cm->visible),
+            'stealth' => $cm->is_stealth(),
+        ];
+    }
+
+    #[\Override]
+    public function get_template_name(renderer_base $renderer): string {
+        // This method is used to specify the template name for rendering.
+        // It is not used for webservice clients, but it is required by the named_templatable interface.
+        return 'core_courseformat/local/overview/activityname';
+    }
+}
+```
+
+</details>
+
+:::important PHPUnitTests are required
+
+To ensure the stability of exported data, any class implementing `externable` must provide a PHPUnit test that verifies both the structure and values of the exported data. It is also recommended that all attributes in the data returned by `export_for_external` have a value, avoiding nulls or missing fields, to guarantee reliability for webservice clients.
+
+:::
+
+### Using `exporters` with `exportable` objects.
+
+When an `externable` class is used in a webservice, it is strongly recommended to also implement an exporter class. The exporters can be used to simplify the webservice code and to ensure that the data returned by the webservice is consistent with the data returned by the `export_for_external` method.
+
+<details>
+  <summary>Here is an example of how to implement an `exporter` to an `externable` output.</summary>
+
+This is an example of an exporter for the `myname` output class we created above.
+
+```php
+namespace mod_MYPLUGIN\external;
+
+use core\external\exporter;
+
+class myname_exporter extends exporter {
+    #[\Override]
+    protected static function define_properties(): array {
+        return [
+            'activityname' => [
+                'type' => PARAM_TEXT,
+                'null' => NULL_NOT_ALLOWED,
+                'description' => 'The activity name.',
+            ],
+            'activityurl' => [
+                'type' => PARAM_URL,
+                'null' => NULL_ALLOWED,
+                'description' => 'An optional activity url.',
+            ],
+            'hidden' => [
+                'type' => PARAM_BOOL,
+                'null' => NULL_NOT_ALLOWED,
+                'description' => 'Wether the activity is hidden or not.',
+            ],
+            'stealth' => [
+                'type' => PARAM_BOOL,
+                'null' => NULL_ALLOWED,
+                'default' => null,
+                'description' => 'If the activity is strealth.',
+            ],
+        ];
+    }
+
+    #[\Override]
+    protected static function define_related() {
+        // Most exporter need to define the context as related data to parse texts.
+        return [
+            'context' => 'context',
+        ];
+    }
+
+    // In case you need to add some extra data to the exported data, you can
+    // overrride define_other_properties and get_other_values to cook
+    // the data you need.
+}
+```
+
+Once the exported is implemented, the webservice can use it to return the data in a consistent.
+
+```php
+namespace mod_MYPLUGIN\external;
+
+use core_external\external_api;
+use core_external\external_function_parameters;
+use core_external\external_single_structure;
+use core_external\external_value;
+use stdClass;
+use core\output\renderer_helper;
+
+class get_my_name extends external_api {
+    public static function execute_parameters(): external_function_parameters {
+        return new external_function_parameters([
+            'cmid' => new external_value(PARAM_INT, 'Course module id', VALUE_REQUIRED),
+        ]);
+    }
+
+    public static function execute(int $cmid): stdClass {
+        [
+            'cmid' => $cmid,
+        ] = external_api::validate_parameters(self::execute_parameters(), [
+            'cmid' => $cmid,
+        ]);
+
+        [$course, $cm] = get_course_and_cm_from_cmid($cmid);
+
+        $context = \core\context\module::instance($cm->id);
+        self::validate_context($context);
+
+        $page = \core\di::get(renderer_helper::class)->get_core_renderer();
+        $exportable = new \mod_MYPLUGIN\output\myname($cm);
+
+        $exportedcontent = $exportable->export_for_external($renderer);
+        $exporter = new myname_exporter($exportedcontent, ['context' => $context]);
+        return $exporter->export($renderer);
+    }
+
+    /**
+     * Webservice returns.
+     *
+     * @return external_single_structure
+     */
+    public static function execute_returns(): external_single_structure {
+        return myname_exporter::get_read_structure();
+    }
+}
+```
+
+</details>
 
 ## See also
 
