@@ -18,7 +18,9 @@ Unless otherwise specified, this Coding Style document **will defer to [PSR-12](
 Where a **de-facto Moodle standard** is encountered but is undocumented, an appropriate **MDLSITE** issue should be raised to have the standard either documented within this Coding style guide, or rejected and the PSR recommendations adopted instead.
 
 :::info
+
 A "de-facto Moodle standard" is any coding style which is commonly and typically used in Moodle.
+
 :::
 
 ### Goals
@@ -34,7 +36,9 @@ Abstract goals we strive for:
 When considering the goals above, each situation requires an examination of the circumstances and balancing of various trade-offs.
 
 :::note
+
 Much of the existing Moodle code may not follow all of these guidelines - we continue to upgrade this code when we see it.
+
 :::
 
 For details about using the Moodle API to get things done, see the [coding guidelines](../../policies.md).
@@ -63,42 +67,6 @@ import Example_PhpTags_Good from '!!raw-loader!./_examples/phptags_good.php';
 
 </ValidExample>
 
-### Indentation
-
-Use an indent of **4 spaces** with no tab characters. Editors should be configured to treat tabs as spaces in order to prevent injection of new tab characters into the source code.
-
-**Do not** indent the main script level:
-
-<ValidExample>
-
-```php title="An example of correct indentation at the main script level"
-<?php
-require('config.php');
-$a = required_param('a', PARAM_INT);
-if ($a > 10) {
-    call_some_error($a);
-} else {
-    do_something_with($a);
-}
-```
-
-</ValidExample>
-
-<InvalidExample>
-
-```php title="An example of incorrect indentation at the main script level"
-<?php
-    require('config.php');
-    $a = required_param('a', PARAM_INT);
-    if ($a > 10) {
-        call_some_error($a);
-    } else {
-        do_something_with($a);
-    }
-```
-
-</InvalidExample>
-
 SQL queries use special indentation, see [SQL coding style](./sql.md).
 
 ### Maximum Line Length
@@ -111,7 +79,7 @@ The exception are string files in the `/lang` directory where lines `$string['id
 
 #### Wrapping lines
 
-Whenever wrapping lines, following rules should generally apply:
+Whenever wrapping lines, the following rules should generally apply:
 
 - Indent with 4 spaces by default.
 - Indent the wrapped line with control statement conditions or a function/class declaration with 4 additional spaces to visually distinguish it from the following body of the control statement or the function/class.
@@ -176,158 +144,6 @@ if (($element['object']->is_course_item() || $element['object']->is_category_ite
 ```
 
 </InvalidExample>
-
-#### Wrapping class declarations
-
-<ValidExample>
-
-```php
-class foo implements bar, baz, qux, quux, quuz, corge, grault,
-        garply, waldo, fred, plugh, xyzzy, thud {
-
-    // Class body indented with 4 spaces.
-}
-```
-
-</ValidExample>
-
-Alternatively you may want to provide each implemented interface on its own line if it helps readability:
-
-<ValidExample>
-
-```php
-class provider implements
-        // These lines are indented with 8 spaces to distinguish them visually from the class body.
-        \core_privacy\local\metadata\provider,
-        \core_privacy\local\request\subsystem\provider,
-        \core_privacy\local\request\core_userlist_provider {
-
-    // Class body indented with 4 spaces.
-}
-```
-
-</ValidExample>
-
-#### Wrapping of the function signatures
-
-<ValidExample>
-
-```php title="Wrapping function signatures with 8 spaces"
-/**
- * ...
- */
-protected function component_class_callback_failed(\Throwable $e, string $component, string $interface,
-        string $methodname, array $params) {
-    global $CFG, $DB;
-
-    if ($this->observer) {
-        // ...
-    }
-}
-```
-
-</ValidExample>
-
-<ValidExample>
-
-```php title="Wrapping function signatures following PSR-12"
-/**
- * ...
- */
-protected function component_class_callback_failed(
-    \Throwable $e,
-    string $component,
-    string $interface,
-    string $methodname,
-    array $params
-) {
-    global $CFG, $DB;
-
-    if ($this->observer) {
-        // ...
-    }
-}
-```
-
-</ValidExample>
-
-#### Wrapping parameters of a function call
-
-Normally, parameters will just fit on one line. If they eventually become too long to fit a single line or of it helps readability, indent with 4 spaces.
-
-<ValidExample>
-
-```php title="Wrapping function calls the Moodle way"
-do_something($param1, $param2, null, null,
-    $param5, null, true);
-```
-
-</ValidExample>
-
-<ValidExample>
-
-```php title="Wrapping function calls following PSR-12"
-do_something(
-    $param1,
-    $param2,
-    null,
-    null,
-    $param5,
-    null,
-    true
-);
-```
-
-</ValidExample>
-
-#### Wrapping arrays
-
-There is nothing special and the general rules apply again. Indent the wrapped line with 4 spaces.
-
-<ValidExample>
-
-```php
-$plugininfo['preferences'][$plugin] = ['id' => $plugin, 'link' => $pref_url,
-    'string' => $modulenamestr];
-```
-
-</ValidExample>
-
-In many cases, the following style with each item on its own line will make the code more readable.
-
-<ValidExample>
-
-```php
-$plugininfo['preferences'][$plugin] = [
-    'id' => $plugin,
-    'link' => $pref_url,
-    'string' => $modulenamestr,
-];
-```
-
-</ValidExample>
-
-:::note
-
-The last item has a trailing comma left there which allows to extend the list of items later with a cleaner diff.
-For the same reason, it is better not to align the assignment operators.
-
-:::
-
-#### Wrapping arrays passed as function parameter
-
-This is just an example of combining some of the examples above.
-
-<ValidExample>
-
-```php
-$url = new moodle_url('/course/loginas.php', [
-    'id' => $course->id,
-    'sesskey' => sesskey(),
-]);
-```
-
-</ValidExample>
 
 ### Line Termination
 
@@ -446,7 +262,9 @@ This has now been deprecated. Please use `stdClass` or the array instantiation i
 
 ### Functions and Methods
 
-Function names should be simple English lowercase words, and start with the [Frankenstyle](./frankenstyle.md) prefix and plugin name to avoid conflicts between plugins. Words should be separated by underscores.
+Method and function names should be simple English lowercase words. Words should be separated by underscores.
+
+In the case of legacy functions (those not placed in classes), names should start with the [Frankenstyle](./frankenstyle.md) prefix and plugin name to avoid conflicts between plugins.
 
 Verbosity is encouraged: function names should be as illustrative as is practical to enhance understanding.
 
@@ -1248,7 +1066,6 @@ $myarray = [
 - Classes must be named according to Moodle's naming conventions.
 - Classes must go under their respective "component/classes" dir to get the benefits of autoloading and [namespacing](#namespaces). There aren't such luxuries out from there.
 - Each php file will contain only one class (or interface, or trait, etc.). Unless it's part of old APIs where multi-artifact files were allowed.
-- The brace should always be written on the line beside the class name.
 - Every class must have a documentation block that conforms to the PHPDocumentor standard.
 - All code in a class must be indented with 4 spaces.
 - Placing additional code (side-effects) in class files is only permitted to require artifacts not provided via autoloading (old classes or libs out from the "classes" directories and not loaded by Moodle's bootstrap). In those cases, the use of the [`MOODLE_INTERNAL` check](#require--include) will be required.
