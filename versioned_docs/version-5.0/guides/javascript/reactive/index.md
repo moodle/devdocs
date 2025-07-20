@@ -1174,7 +1174,7 @@ Const mutations = {
     init(stateManager) {
         stateManager.addUpdateTypes({
             create: this._newCreate,
-            cefreshConcept: this._refreshConcept,
+            refreshConcept: this._refreshConcept,
         });
     }
 
