@@ -16,14 +16,14 @@ Some of Moodle's libraries were written by other people, and are being redistrib
 
 Provide a great search experience without the need for external, server-side, search services.
 
-- **Location**: admin/tool/componentlibrary/amd/src/lunr.js
+- **Location**: public/admin/tool/componentlibrary/amd/src/lunr.js
 - **Version**: 2.3.9
 - **License**:  MIT
 - **URL**: [https://github.com/olivernn/lunr.js](https://github.com/olivernn/lunr.js)
 
 ### Roundcube Framework
 
-- **Location**: admin/tool/messageinbound/roundcube
+- **Location**: public/admin/tool/messageinbound/roundcube
 - **Version**: 1.6.10
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/roundcube/roundcubemail](https://github.com/roundcube/roundcubemail)
@@ -32,14 +32,14 @@ Provide a great search experience without the need for external, server-side, se
 
 ### OTPHP
 
-- **Location**: admin/tool/mfa/factor/totp/extlib/OTPHP
+- **Location**: public/admin/tool/mfa/factor/totp/extlib/OTPHP
 - **Version**: 11.3.0
 - **License**:  MIT
 - **URL**: [https://github.com/Spomky-Labs/otphp](https://github.com/Spomky-Labs/otphp)
 
 ### Constant-Time Encoding
 
-- **Location**: admin/tool/mfa/factor/totp/extlib/ParagonIE/ConstantTime
+- **Location**: public/admin/tool/mfa/factor/totp/extlib/ParagonIE/ConstantTime
 - **Version**: 3.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/paragonie/constant_time_encoding](https://github.com/paragonie/constant_time_encoding)
@@ -48,7 +48,7 @@ Provide a great search experience without the need for external, server-side, se
 
 An easy-to-install jQuery plugin to create EU Cookie Law popups and for GDPR compliance.
 
-- **Location**: admin/tool/policy/amd/src/jquery-eu-cookie-law-popup.js
+- **Location**: public/admin/tool/policy/amd/src/jquery-eu-cookie-law-popup.js
 - **Version**: 1.1.3 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/wimagguc/jquery-eu-cookie-law-popup](https://github.com/wimagguc/jquery-eu-cookie-law-popup)
@@ -59,14 +59,14 @@ An easy-to-install jQuery plugin to create EU Cookie Law popups and for GDPR com
 
 Set of IMS-LTI tools originaly provided by IMS.
 
-- **Location**: enrol/lti/ims-blti
+- **Location**: public/enrol/lti/ims-blti
 - **Version**: 1.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/jfederico/ims-dev](https://github.com/jfederico/ims-dev)
 
 ### WeBWorK
 
-- **Location**: filter/algebra/AlgParser.pm
+- **Location**: public/filter/algebra/AlgParser.pm
 - **Version**: 2.4.9+
 - **License**:  GPL 2.0+
 
@@ -74,7 +74,7 @@ Set of IMS-LTI tools originaly provided by IMS.
 
 Prism is a lightweight, robust, and elegant syntax highlighting library. It's a spin-off project from Dabblet.
 
-- **Location**: filter/codehighlighter/amd/src/prism.js
+- **Location**: public/filter/codehighlighter/amd/src/prism.js
 - **Version**: 1.29.0
 - **License**:  MIT
 - **URL**: [https://github.com/PrismJS/prism](https://github.com/PrismJS/prism)
@@ -85,7 +85,7 @@ Prism is a lightweight, robust, and elegant syntax highlighting library. It's a 
 
 Compiled C program to convert TeX into GIFs
 
-- **Location**: filter/tex/mimetex.*
+- **Location**: public/filter/tex/mimetex.*
 - **Version**: 1.77
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/icaoberg/mimetex](https://github.com/icaoberg/mimetex)
@@ -96,7 +96,7 @@ Compiled C program to convert TeX into GIFs
 
 The general H5P library.
 
-- **Location**: h5p/h5plib/v127/joubel/core
+- **Location**: public/h5p/h5plib/v127/joubel/core
 - **Version**: moodle-1.27.0
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-php-library/](https://github.com/h5p/h5p-php-library/)
@@ -107,7 +107,7 @@ The general H5P library.
 
 A general library that is supposed to be used in most PHP implementations of H5P.
 
-- **Location**: h5p/h5plib/v127/joubel/editor
+- **Location**: public/h5p/h5plib/v127/joubel/editor
 - **Version**: moodle-1.27.0
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-editor-php-library/](https://github.com/h5p/h5p-editor-php-library/)
@@ -118,7 +118,7 @@ A general library that is supposed to be used in most PHP implementations of H5P
 
 Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.
 
-- **Location**: lib/adodb
+- **Location**: public/lib/adodb
 - **Version**: 5.22.9
 - **License**:  BSD/LGPL 3-Clause/2.1+
 - **URL**: [https://github.com/ADOdb/ADOdb](https://github.com/ADOdb/ADOdb)
@@ -130,7 +130,7 @@ Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Fo
 
 JavaScript library to insulate apps from spec changes and prefix differences in WebRTC. The prefix differences are mostly gone these days but differences in behaviour between browsers remain.
 
-- **Location**: lib/amd/src/adapter.js
+- **Location**: public/lib/amd/src/adapter.js
 - **Version**: 8.0.0
 - **License**:  BSD 3-Clause
 - **URL**: [https://github.com/webrtc/adapter](https://github.com/webrtc/adapter)
@@ -141,7 +141,7 @@ JavaScript library to insulate apps from spec changes and prefix differences in 
 
 Simple yet flexible JavaScript charting for designers & developers.
 
-- **Location**: lib/amd/src/chartjs-lazy.js
+- **Location**: public/lib/amd/src/chartjs-lazy.js
 - **Version**: 4.4.7 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/chartjs/Chart.js](https://github.com/chartjs/Chart.js)
@@ -152,7 +152,7 @@ Simple yet flexible JavaScript charting for designers & developers.
 
 Minimal lightweight simple logging for JavaScript.
 
-- **Location**: lib/amd/src/loglevel.js
+- **Location**: public/lib/amd/src/loglevel.js
 - **Version**: 1.9.2
 - **License**:  MIT
 - **URL**: [https://github.com/pimterry/loglevel/](https://github.com/pimterry/loglevel/)
@@ -163,7 +163,7 @@ Minimal lightweight simple logging for JavaScript.
 
 JS library for displaying mustache templates.
 
-- **Location**: lib/amd/src/mustache.js
+- **Location**: public/lib/amd/src/mustache.js
 - **Version**: 4.2.0
 - **License**:  MIT
 - **URL**: [https://github.com/janl/mustache.js](https://github.com/janl/mustache.js)
@@ -176,7 +176,7 @@ JS library for displaying mustache templates.
 
 A kickass library used to created Poppers in web applications.
 
-- **Location**: lib/amd/src/popper.js
+- **Location**: public/lib/amd/src/popper.js
 - **Version**: v1.12.6
 - **License**:  MIT
 - **URL**: [https://github.com/floating-ui/floating-ui](https://github.com/floating-ui/floating-ui)
@@ -187,7 +187,7 @@ A kickass library used to created Poppers in web applications.
 
 A kickass library used to created Poppers in web applications.
 
-- **Location**: lib/amd/src/popper2.js
+- **Location**: public/lib/amd/src/popper2.js
 - **Version**: v2.11.8
 - **License**:  MIT
 - **URL**: [https://github.com/floating-ui/floating-ui](https://github.com/floating-ui/floating-ui)
@@ -198,7 +198,7 @@ A kickass library used to created Poppers in web applications.
 
 Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has several options such as length, finishBlock and noBreak.
 
-- **Location**: lib/amd/src/truncate.js
+- **Location**: public/lib/amd/src/truncate.js
 - **Version**: 0.0.1 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/pathable/truncate](https://github.com/pathable/truncate)
@@ -207,7 +207,7 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 
 The AWS SDK for PHP library
 
-- **Location**: lib/aws-sdk
+- **Location**: public/lib/aws-sdk
 - **Version**: 3.342.2
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/aws/aws-sdk-php](https://github.com/aws/aws-sdk-php)
@@ -216,7 +216,7 @@ The AWS SDK for PHP library
 
 Accessibility testing engine for websites and other HTML-based user interfaces.
 
-- **Location**: lib/behat/axe
+- **Location**: public/lib/behat/axe
 - **Version**: 4.10.2
 - **License**:  MPL 2.0
 - **URL**: [https://github.com/dequelabs/axe-core](https://github.com/dequelabs/axe-core)
@@ -227,7 +227,7 @@ Accessibility testing engine for websites and other HTML-based user interfaces.
 
 Bennu is an object-oriented library written in PHP that implements the iCalendar standard (RFC 2445).
 
-- **Location**: lib/bennu
+- **Location**: public/lib/bennu
 - **Version**: 0.2-custom (with Moodle customisations)
 - **License**:  LGPL 2.1+
 - **URL**: [https://sourceforge.net/projects/bennu/](https://sourceforge.net/projects/bennu/)
@@ -238,7 +238,7 @@ Bennu is an object-oriented library written in PHP that implements the iCalendar
 
 PCRE wrapping library that offers type-safe preg_* replacements.
 
-- **Location**: lib/composer/pcre
+- **Location**: public/lib/composer/pcre
 - **Version**: 3.3.2
 - **License**:  MIT
 - **URL**: [https://github.com/composer/pcre](https://github.com/composer/pcre)
@@ -247,7 +247,7 @@ PCRE wrapping library that offers type-safe preg_* replacements.
 
 ### Tiny
 
-- **Location**: lib/editor/tiny/js/tinymce
+- **Location**: public/lib/editor/tiny/js/tinymce
 - **Version**: 7.7.1
 - **License**:  MIT
 - **URL**: [https://github.com/tinymce/tinymce](https://github.com/tinymce/tinymce)
@@ -256,7 +256,7 @@ PCRE wrapping library that offers type-safe preg_* replacements.
 
 Beautifier for javascript.
 
-- **Location**: lib/editor/tiny/plugins/html/amd/src/beautify
+- **Location**: public/lib/editor/tiny/plugins/html/amd/src/beautify
 - **Version**: 1.15.3
 - **License**:  MIT
 - **URL**: [https://github.com/beautifier/js-beautify/](https://github.com/beautifier/js-beautify/)
@@ -265,7 +265,7 @@ Beautifier for javascript.
 
 CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 
-- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Location**: public/lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
 - **Version**: 6.0.1
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/](https://github.com/codemirror/)
@@ -274,7 +274,7 @@ CodeMirror is a versatile text editor implemented in JavaScript for the browser.
 
 Autocompletion for the CodeMirror code editor.
 
-- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Location**: public/lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
 - **Version**: 6.18.6
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/autocomplete](https://github.com/codemirror/autocomplete)
@@ -283,7 +283,7 @@ Autocompletion for the CodeMirror code editor.
 
 Collection of editing commands for the CodeMirror code editor.
 
-- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Location**: public/lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
 - **Version**: 6.8.0
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/commands](https://github.com/codemirror/commands)
@@ -292,7 +292,7 @@ Collection of editing commands for the CodeMirror code editor.
 
 CSS language support for the CodeMirror code editor.
 
-- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Location**: public/lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
 - **Version**: 6.3.1
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/lang-css](https://github.com/codemirror/lang-css)
@@ -301,7 +301,7 @@ CSS language support for the CodeMirror code editor.
 
 HTML language support for the CodeMirror code editor.
 
-- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Location**: public/lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
 - **Version**: 6.4.9
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/lang-html](https://github.com/codemirror/lang-html)
@@ -310,7 +310,7 @@ HTML language support for the CodeMirror code editor.
 
 JavaScript language support for the CodeMirror code editor.
 
-- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Location**: public/lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
 - **Version**: 6.2.3
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/lang-javascript](https://github.com/codemirror/lang-javascript)
@@ -319,7 +319,7 @@ JavaScript language support for the CodeMirror code editor.
 
 XML language support for the CodeMirror code editor.
 
-- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Location**: public/lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
 - **Version**: 6.1.0
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/lang-xml](https://github.com/codemirror/lang-xml)
@@ -328,7 +328,7 @@ XML language support for the CodeMirror code editor.
 
 Language support infrastructure for the CodeMirror code editor.
 
-- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Location**: public/lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
 - **Version**: 6.10.8
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/language](https://github.com/codemirror/language)
@@ -337,7 +337,7 @@ Language support infrastructure for the CodeMirror code editor.
 
 Linting support for the CodeMirror code editor.
 
-- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Location**: public/lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
 - **Version**: 6.8.4
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/lint](https://github.com/codemirror/lint)
@@ -346,7 +346,7 @@ Linting support for the CodeMirror code editor.
 
 Search functionality for the CodeMirror code editor.
 
-- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Location**: public/lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
 - **Version**: 6.5.10
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/search](https://github.com/codemirror/search)
@@ -355,7 +355,7 @@ Search functionality for the CodeMirror code editor.
 
 Editor state data structures for the CodeMirror code editor.
 
-- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Location**: public/lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
 - **Version**: 6.5.2
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/state](https://github.com/codemirror/state)
@@ -364,14 +364,14 @@ Editor state data structures for the CodeMirror code editor.
 
 DOM view component for the CodeMirror code editor.
 
-- **Location**: lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
+- **Location**: public/lib/editor/tiny/plugins/html/amd/src/codemirror-lazy.js
 - **Version**: 6.36.4
 - **License**:  MIT
 - **URL**: [https://github.com/codemirror/view](https://github.com/codemirror/view)
 
 ### lamejs
 
-- **Location**: lib/editor/tiny/plugins/recordrtc/amd/src/lame.all.js
+- **Location**: public/lib/editor/tiny/plugins/recordrtc/amd/src/lame.all.js
 - **Version**: 1.2.1
 - **License**:  LGPL
 - **URL**: [https://github.com/zhuker/lamejs](https://github.com/zhuker/lamejs)
@@ -380,7 +380,7 @@ DOM view component for the CodeMirror code editor.
 
 Library to parse easily data and sprite sheets for emoji.
 
-- **Location**: lib/emoji-data
+- **Location**: public/lib/emoji-data
 - **Version**: 15.1.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/iamcal/emoji-data/](https://github.com/iamcal/emoji-data/)
@@ -391,7 +391,7 @@ Library to parse easily data and sprite sheets for emoji.
 
 Class to safely evaluate math expressions.
 
-- **Location**: lib/evalmath
+- **Location**: public/lib/evalmath
 - **Version**: 1.0.1 (with Moodle customisations)
 - **License**:  BSD
 - **URL**: [https://github.com/dbojdo/eval-math](https://github.com/dbojdo/eval-math)
@@ -402,7 +402,7 @@ Class to safely evaluate math expressions.
 
 The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
-- **Location**: lib/fonts
+- **Location**: public/lib/fonts
 - **Version**: 6.7.2
 - **License**:  SIL OFL 1.1
 - **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
@@ -413,7 +413,7 @@ The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, 
 
 Library for creating beautiful generative background images from a string.
 
-- **Location**: lib/geopattern-php
+- **Location**: public/lib/geopattern-php
 - **Version**: 1.1.2
 - **License**:  MIT
 - **URL**: [https://github.com/RedeyeGroup/geopattern-php](https://github.com/RedeyeGroup/geopattern-php)
@@ -422,7 +422,7 @@ Library for creating beautiful generative background images from a string.
 
 ### libphonenumber for PHP (Lite)
 
-- **Location**: lib/giggsey/libphonenumber-for-php-lite
+- **Location**: public/lib/giggsey/libphonenumber-for-php-lite
 - **Version**: 8.13.55
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/giggsey/libphonenumber-for-php-lite](https://github.com/giggsey/libphonenumber-for-php-lite)
@@ -431,7 +431,7 @@ Library for creating beautiful generative background images from a string.
 
 Library Google APIs Client Library for PHP
 
-- **Location**: lib/google
+- **Location**: public/lib/google
 - **Version**: 1.1.7 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/googleapis/google-api-php-client](https://github.com/googleapis/google-api-php-client)
@@ -440,7 +440,7 @@ Library Google APIs Client Library for PHP
 
 Class to draw line, point, bar, and area graphs, including numeric x-axis and double y-axis.
 
-- **Location**: lib/graphlib.php
+- **Location**: public/lib/graphlib.php
 - **Version**: 1.6.3
 - **License**:  GPL
 
@@ -451,7 +451,7 @@ Class to draw line, point, bar, and area graphs, including numeric x-axis and do
 
 Guzzle is a PHP HTTP client library
 
-- **Location**: lib/guzzlehttp/guzzle
+- **Location**: public/lib/guzzlehttp/guzzle
 - **Version**: 7.9.2
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/guzzle](https://github.com/guzzle/guzzle)
@@ -460,7 +460,7 @@ Guzzle is a PHP HTTP client library
 
 A HTTP Cache for Guzzle as a simple Middleware to be added in the HandlerStack.
 
-- **Location**: lib/guzzlehttp/kevinrob/guzzlecache
+- **Location**: public/lib/guzzlehttp/kevinrob/guzzlecache
 - **Version**: 6.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/Kevinrob/guzzle-cache-middleware](https://github.com/Kevinrob/guzzle-cache-middleware)
@@ -469,7 +469,7 @@ A HTTP Cache for Guzzle as a simple Middleware to be added in the HandlerStack.
 
 Guzzle promises library
 
-- **Location**: lib/guzzlehttp/promises
+- **Location**: public/lib/guzzlehttp/promises
 - **Version**: 2.0.4
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/promises](https://github.com/guzzle/promises)
@@ -478,7 +478,7 @@ Guzzle promises library
 
 PSR-7 message implementation that also provides common utility methods
 
-- **Location**: lib/guzzlehttp/psr7
+- **Location**: public/lib/guzzlehttp/psr7
 - **Version**: 2.7.0
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/psr7](https://github.com/guzzle/psr7)
@@ -487,7 +487,7 @@ PSR-7 message implementation that also provides common utility methods
 
 PHP script to convert HTML into an approximate text equivalent.
 
-- **Location**: lib/html2text
+- **Location**: public/lib/html2text
 - **Version**: 4.3.2
 - **License**:  GPL 2.0+
 - **URL**: [https://github.com/mtibben/html2text](https://github.com/mtibben/html2text)
@@ -498,7 +498,7 @@ PHP script to convert HTML into an approximate text equivalent.
 
 Filters HTML.
 
-- **Location**: lib/htmlpurifier
+- **Location**: public/lib/htmlpurifier
 - **Version**: 4.18.0
 - **License**:  LGPL 2.1+
 - **URL**: [https://github.com/ezyang/htmlpurifier](https://github.com/ezyang/htmlpurifier)
@@ -507,7 +507,7 @@ Filters HTML.
 
 The JMESPath library
 
-- **Location**: lib/jmespath
+- **Location**: public/lib/jmespath
 - **Version**: 2.8.0
 - **License**:  MIT
 - **URL**: [https://github.com/jmespath/jmespath.php](https://github.com/jmespath/jmespath.php)
@@ -518,7 +518,7 @@ The JMESPath library
 
 jQuery is a fast, small, and feature-rich JavaScript library widely used on moodle.
 
-- **Location**: lib/jquery
+- **Location**: public/lib/jquery
 - **Version**: 3.7.1
 - **License**:  MIT
 - **URL**: [https://github.com/jquery/jquery](https://github.com/jquery/jquery)
@@ -529,7 +529,7 @@ jQuery is a fast, small, and feature-rich JavaScript library widely used on mood
 
 jQuery UI is a set of user interface interactions, effects, widgets, and themes built on top of the jQuery library.
 
-- **Location**: lib/jquery
+- **Location**: public/lib/jquery
 - **Version**: 1.14.1
 - **License**:  MIT
 - **URL**: [https://github.com/jquery/jquery-ui](https://github.com/jquery/jquery-ui)
@@ -538,7 +538,7 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 
 ### Serializable Closure
 
-- **Location**: lib/laravel/serializable-closure
+- **Location**: public/lib/laravel/serializable-closure
 - **Version**: 2.0.3
 - **License**:  MIT
 - **URL**: [https://github.com/laravel/serializable-closure](https://github.com/laravel/serializable-closure)
@@ -547,7 +547,7 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 
 A library used for building IMS-certified LTI 1.3 tool providers in PHP.
 
-- **Location**: lib/lti1p3
+- **Location**: public/lib/lti1p3
 - **Version**: 6.0.0 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/packbackbooks/lti-1-3-php-library](https://github.com/packbackbooks/lti-1-3-php-library)
@@ -558,7 +558,7 @@ A library used for building IMS-certified LTI 1.3 tool providers in PHP.
 
 PHP library for communicating with learning tools as per the LTI specification.
 
-- **Location**: lib/ltiprovider
+- **Location**: public/lib/ltiprovider
 - **Version**: 3.0.2
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/1EdTech/LTI-Tool-Provider-Library-PHP](https://github.com/1EdTech/LTI-Tool-Provider-Library-PHP)
@@ -569,7 +569,7 @@ PHP library for communicating with learning tools as per the LTI specification.
 
 Functions to convert from the Markdown text format into clean XHTML.
 
-- **Location**: lib/markdown
+- **Location**: public/lib/markdown
 - **Version**: 2.0.0 (with Moodle customisations)
 - **License**:  BSD
 - **URL**: [https://github.com/michelf/php-markdown](https://github.com/michelf/php-markdown)
@@ -582,7 +582,7 @@ All rights reserved.
 
 Library for processing of GeoIP data files.
 
-- **Location**: lib/maxmind/GeoIp2
+- **Location**: public/lib/maxmind/GeoIp2
 - **Version**: 3.1.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/GeoIP2-php](https://github.com/maxmind/GeoIP2-php)
@@ -593,7 +593,7 @@ Library for processing of GeoIP data files.
 
 PHP API for reading MaxMind DB files.
 
-- **Location**: lib/maxmind/MaxMind
+- **Location**: public/lib/maxmind/MaxMind
 - **Version**: 1.12.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/MaxMind-DB-Reader-php/](https://github.com/maxmind/MaxMind-DB-Reader-php/)
@@ -604,7 +604,7 @@ PHP API for reading MaxMind DB files.
 
 CSS & JavaScript minifier, in PHP
 
-- **Location**: lib/minify/matthiasmullie-minify
+- **Location**: public/lib/minify/matthiasmullie-minify
 - **Version**: 1.3.73 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/matthiasmullie/minify](https://github.com/matthiasmullie/minify)
@@ -613,7 +613,7 @@ CSS & JavaScript minifier, in PHP
 
 CSS path converter, in PHP
 
-- **Location**: lib/minify/matthiasmullie-pathconverter
+- **Location**: public/lib/minify/matthiasmullie-pathconverter
 - **Version**: 1.1.3
 - **License**:  MIT
 - **URL**: [https://github.com/matthiasmullie/path-converter](https://github.com/matthiasmullie/path-converter)
@@ -622,7 +622,7 @@ CSS path converter, in PHP
 
 PHP library for displaying mustache templates.
 
-- **Location**: lib/mustache
+- **Location**: public/lib/mustache
 - **Version**: 2.14.2 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/bobthecow/mustache.php](https://github.com/bobthecow/mustache.php)
@@ -631,7 +631,7 @@ PHP library for displaying mustache templates.
 
 ### FastRoute
 
-- **Location**: lib/nikic/fast-route
+- **Location**: public/lib/nikic/fast-route
 - **Version**: 1.3.0
 - **License**:  BSD 3-Clause
 - **URL**: [https://github.com/nikic/FastRoute](https://github.com/nikic/FastRoute)
@@ -640,7 +640,7 @@ PHP library for displaying mustache templates.
 
 Library to read and write spreadsheet files (CSV, XLSX and ODS).
 
-- **Location**: lib/openspout
+- **Location**: public/lib/openspout
 - **Version**: 4.28.5
 - **License**:  MIT
 - **URL**: [https://github.com/openspout/openspout](https://github.com/openspout/openspout)
@@ -651,7 +651,7 @@ Library to read and write spreadsheet files (CSV, XLSX and ODS).
 
 Class with many common HTML functions (used by HTML Quickform)
 
-- **Location**: lib/pear/HTML/Common.php
+- **Location**: public/lib/pear/HTML/Common.php
 - **Version**: 1.7 (with Moodle customisations)
 - **License**:  PHP 2.0
 - **URL**: [http://pear.php.net/package/HTML_Common](http://pear.php.net/package/HTML_Common)
@@ -662,7 +662,7 @@ Class with many common HTML functions (used by HTML Quickform)
 
 Class to write forms
 
-- **Location**: lib/pear/HTML/QuickForm
+- **Location**: public/lib/pear/HTML/QuickForm
 - **Version**: 2.0 (with Moodle customisations)
 - **License**:  PHP 2.0
 - **URL**: [https://pear.php.net/package/HTML_Quickform](https://pear.php.net/package/HTML_Quickform)
@@ -673,7 +673,7 @@ Class to write forms
 
 Class to write forms
 
-- **Location**: lib/pear/HTML/QuickForm.php
+- **Location**: public/lib/pear/HTML/QuickForm.php
 - **Version**: 2.0 (with Moodle customisations)
 - **License**:  PHP 2.0
 - **URL**: [https://pear.php.net/package/HTML_Quickform](https://pear.php.net/package/HTML_Quickform)
@@ -684,7 +684,7 @@ Class to write forms
 
 Base class for other PEAR classes.
 
-- **Location**: lib/pear/PEAR.php
+- **Location**: public/lib/pear/PEAR.php
 - **Version**: 1.4.5 (with Moodle customisations)
 - **License**:  PHP 3.0
 - **URL**: [https://pear.php.net/package/PEAR](https://pear.php.net/package/PEAR)
@@ -695,7 +695,7 @@ Base class for other PEAR classes.
 
 A Parser for CSS Files written in PHP.
 
-- **Location**: lib/php-css-parser
+- **Location**: public/lib/php-css-parser
 - **Version**: 8.7.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/sabberworm/PHP-CSS-Parser](https://github.com/sabberworm/PHP-CSS-Parser)
@@ -704,14 +704,14 @@ A Parser for CSS Files written in PHP.
 
 ### PHP DI Invoker
 
-- **Location**: lib/php-di/invoker
+- **Location**: public/lib/php-di/invoker
 - **Version**: 2.3.6
 - **License**:  MIT
 - **URL**: [https://github.com/php-di/invoker](https://github.com/php-di/invoker)
 
 ### PHP Dependency Injector
 
-- **Location**: lib/php-di/php-di
+- **Location**: public/lib/php-di/php-di
 - **Version**: 7.0.8
 - **License**:  MIT
 - **URL**: [https://github.com/PHP-DI/PHP-DI](https://github.com/PHP-DI/PHP-DI)
@@ -720,7 +720,7 @@ A Parser for CSS Files written in PHP.
 
 A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
 
-- **Location**: lib/php-jwt
+- **Location**: public/lib/php-jwt
 - **Version**: 6.11.0
 - **License**:  BSD 3-Clause
 - **URL**: [https://github.com/firebase/php-jwt](https://github.com/firebase/php-jwt)
@@ -731,7 +731,7 @@ A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming t
 
 Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are based upon the standard AspEmail(tm) classes.
 
-- **Location**: lib/phpmailer
+- **Location**: public/lib/phpmailer
 - **Version**: 6.9.3
 - **License**:  LGPL 2.1
 - **URL**: [https://github.com/PHPMailer/PHPMailer](https://github.com/PHPMailer/PHPMailer)
@@ -742,7 +742,7 @@ Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are 
 
 PHP Class Library for working with Complex numbers.
 
-- **Location**: lib/phpspreadsheet/markbaker/complex
+- **Location**: public/lib/phpspreadsheet/markbaker/complex
 - **Version**: 3.0.1
 - **License**:  MIT
 - **URL**: [https://github.com/MarkBaker/PHPComplex](https://github.com/MarkBaker/PHPComplex)
@@ -751,7 +751,7 @@ PHP Class Library for working with Complex numbers.
 
 PHP Class for handling Matrices.
 
-- **Location**: lib/phpspreadsheet/markbaker/matrix
+- **Location**: public/lib/phpspreadsheet/markbaker/matrix
 - **Version**: 3.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/MarkBaker/PHPMatrix](https://github.com/MarkBaker/PHPMatrix)
@@ -760,7 +760,7 @@ PHP Class for handling Matrices.
 
 Library to read, write and create spreadsheet documents in PHP.
 
-- **Location**: lib/phpspreadsheet/phpspreadsheet
+- **Location**: public/lib/phpspreadsheet/phpspreadsheet
 - **Version**: 4.1.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/PHPOffice/PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
@@ -769,7 +769,7 @@ Library to read, write and create spreadsheet documents in PHP.
 
 A php library for building xml-rpc clients and servers
 
-- **Location**: lib/phpxmlrpc
+- **Location**: public/lib/phpxmlrpc
 - **Version**: 4.11.1 (with Moodle customisations)
 - **License**:  BSD 3-Clause
 - **URL**: [https://github.com/gggeek/phpxmlrpc](https://github.com/gggeek/phpxmlrpc)
@@ -780,7 +780,7 @@ A php library for building xml-rpc clients and servers
 
 PHP Implementation of Apple's PList (binary and XML).
 
-- **Location**: lib/plist
+- **Location**: public/lib/plist
 - **Version**: 2.0.5
 - **License**:  MIT
 - **URL**: [https://github.com/TECLIB/CFPropertyList](https://github.com/TECLIB/CFPropertyList)
@@ -792,7 +792,7 @@ PHP Implementation of Apple's PList (binary and XML).
 
 This package implements a fully-functional source transformation that takes the syntax for generators/yield from ECMAScript 2015 or ES2015 and Asynchronous Iteration proposal and spits out efficient JS-of-today (ES5) that behaves the same way.
 
-- **Location**: lib/polyfills
+- **Location**: public/lib/polyfills
 - **Version**: 0.13.7
 - **License**:  MIT
 - **URL**: [https://github.com/facebook/regenerator/](https://github.com/facebook/regenerator/)
@@ -801,7 +801,7 @@ This package implements a fully-functional source transformation that takes the 
 
 Modular standard library for JavaScript. Includes polyfills for ECMAScript up to 2021: promises, symbols, collections, iterators, typed arrays, many other features, ECMAScript proposals, some cross-platform WHATWG / W3C features and proposals like URL. You can load only required features or use it without global namespace pollution.
 
-- **Location**: lib/polyfills
+- **Location**: public/lib/polyfills
 - **Version**: 3.15.0
 - **License**:  MIT
 - **URL**: [https://github.com/zloirock/core-js](https://github.com/zloirock/core-js)
@@ -810,7 +810,7 @@ Modular standard library for JavaScript. Includes polyfills for ECMAScript up to
 
 A collection of side-effect ECMAScript modules. Minimized, mangled and extremely small thanks to Rollup - next-generation ES6 module bundler.
 
-- **Location**: lib/polyfills
+- **Location**: public/lib/polyfills
 - **Version**: 5.20.0
 - **License**:  MIT
 - **URL**: [https://github.com/msn0/mdn-polyfills](https://github.com/msn0/mdn-polyfills)
@@ -819,7 +819,7 @@ A collection of side-effect ECMAScript modules. Minimized, mangled and extremely
 
 Polyfill URL and URLSearchParams to match last WHATWG specifications.
 
-- **Location**: lib/polyfills
+- **Location**: public/lib/polyfills
 - **Version**: 1.1.12
 - **License**:  MIT
 - **URL**: [https://github.com/lifaon74/url-polyfill](https://github.com/lifaon74/url-polyfill)
@@ -828,7 +828,7 @@ Polyfill URL and URLSearchParams to match last WHATWG specifications.
 
 Clock Interface (PHP FIG PSR-20).
 
-- **Location**: lib/psr/clock
+- **Location**: public/lib/psr/clock
 - **Version**: 1.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/clock](https://github.com/php-fig/clock)
@@ -837,7 +837,7 @@ Clock Interface (PHP FIG PSR-20).
 
 Common Container Interface (PHP FIG PSR-11).
 
-- **Location**: lib/psr/container
+- **Location**: public/lib/psr/container
 - **Version**: 2.0.2
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/container](https://github.com/php-fig/container)
@@ -846,7 +846,7 @@ Common Container Interface (PHP FIG PSR-11).
 
 Provides interfaces that descirbe an event dispatching mechanism.
 
-- **Location**: lib/psr/event-dispatcher
+- **Location**: public/lib/psr/event-dispatcher
 - **Version**: 1.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/event-dispatcher](https://github.com/php-fig/event-dispatcher)
@@ -855,7 +855,7 @@ Provides interfaces that descirbe an event dispatching mechanism.
 
 Provides an abstraction that describe the components of a HTTP Client.
 
-- **Location**: lib/psr/http-client
+- **Location**: public/lib/psr/http-client
 - **Version**: 1.0.3
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/http-client](https://github.com/php-fig/http-client)
@@ -864,7 +864,7 @@ Provides an abstraction that describe the components of a HTTP Client.
 
 Provides interfaces that describe the components of a HTTP Factory.
 
-- **Location**: lib/psr/http-factory
+- **Location**: public/lib/psr/http-factory
 - **Version**: 1.1.0
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/http-factory](https://github.com/php-fig/http-factory)
@@ -873,7 +873,7 @@ Provides interfaces that describe the components of a HTTP Factory.
 
 Provide a set of common interfaces for HTTP messages as described in RFC 7230 and RFC 7231
 
-- **Location**: lib/psr/http-message
+- **Location**: public/lib/psr/http-message
 - **Version**: 2.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/http-message](https://github.com/php-fig/http-message)
@@ -882,7 +882,7 @@ Provide a set of common interfaces for HTTP messages as described in RFC 7230 an
 
 Common interface for HTTP server-side request handler
 
-- **Location**: lib/psr/http-server-handler
+- **Location**: public/lib/psr/http-server-handler
 - **Version**: 1.0.2
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/http-server-handler](https://github.com/php-fig/http-server-handler)
@@ -891,7 +891,7 @@ Common interface for HTTP server-side request handler
 
 Common interface for HTTP server-side middleware
 
-- **Location**: lib/psr/http-server-middleware
+- **Location**: public/lib/psr/http-server-middleware
 - **Version**: 1.0.2
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/http-server-middleware](https://github.com/php-fig/http-server-middleware)
@@ -900,7 +900,7 @@ Common interface for HTTP server-side middleware
 
 Common interface for logging libraries
 
-- **Location**: lib/psr/log
+- **Location**: public/lib/psr/log
 - **Version**: 3.0.2
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/log](https://github.com/php-fig/log)
@@ -909,7 +909,7 @@ Common interface for logging libraries
 
 Common interface for logging libraries
 
-- **Location**: lib/psr/simple-cache
+- **Location**: public/lib/psr/simple-cache
 - **Version**: 3.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/php-fig/simple-cache](https://github.com/php-fig/simple-cache)
@@ -918,7 +918,7 @@ Common interface for logging libraries
 
 A polyfill for getallheaders
 
-- **Location**: lib/ralouphie/getallheaders
+- **Location**: public/lib/ralouphie/getallheaders
 - **Version**: 3.0.3
 - **License**:  MIT
 - **URL**: [https://github.com/ralouphie/getallheaders](https://github.com/ralouphie/getallheaders)
@@ -927,7 +927,7 @@ A polyfill for getallheaders
 
 RequireJS is a JavaScript file and module loader.
 
-- **Location**: lib/requirejs
+- **Location**: public/lib/requirejs
 - **Version**: 2.3.7 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/requirejs/requirejs](https://github.com/requirejs/requirejs)
@@ -936,7 +936,7 @@ RequireJS is a JavaScript file and module loader.
 
 RTLCSS is a framework for converting Left-To-Right (LTR) Cascading Style Sheets(CSS) to Right-To-Left (RTL).
 
-- **Location**: lib/rtlcss
+- **Location**: public/lib/rtlcss
 - **Version**: 1.0.1
 - **License**:  MIT
 - **URL**: [https://github.com/moodlehq/rtlcss-php](https://github.com/moodlehq/rtlcss-php)
@@ -947,7 +947,7 @@ RTLCSS is a framework for converting Left-To-Right (LTR) Cascading Style Sheets(
 
 scssphp is a compiler for SCSS written in PHP.
 
-- **Location**: lib/scssphp
+- **Location**: public/lib/scssphp
 - **Version**: 1.12.1 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/scssphp/scssphp/](https://github.com/scssphp/scssphp/)
@@ -958,21 +958,21 @@ scssphp is a compiler for SCSS written in PHP.
 
 Simple Pie helps with blogs.
 
-- **Location**: lib/simplepie
+- **Location**: public/lib/simplepie
 - **Version**: 1.8.1
 - **License**:  BSD
 - **URL**: [https://github.com/simplepie/simplepie](https://github.com/simplepie/simplepie)
 
 ### Slim Framework
 
-- **Location**: lib/slim/slim
+- **Location**: public/lib/slim/slim
 - **Version**: 4.13.0
 - **License**:  MIT
 - **URL**: [https://github.com/slimphp/Slim](https://github.com/slimphp/Slim)
 
 ### PHP Cloneable
 
-- **Location**: lib/spatie/php-cloneable
+- **Location**: public/lib/spatie/php-cloneable
 - **Version**: 1.0.2
 - **License**:  MIT
 - **URL**: [https://github.com/spatie/php-cloneable](https://github.com/spatie/php-cloneable)
@@ -981,7 +981,7 @@ Simple Pie helps with blogs.
 
 A generic function and convention to trigger deprecation notices
 
-- **Location**: lib/symfony/deprecation-contracts
+- **Location**: public/lib/symfony/deprecation-contracts
 - **Version**: 3.5.1
 - **License**:  MIT
 - **URL**: [https://github.com/symfony/deprecation-contracts](https://github.com/symfony/deprecation-contracts)
@@ -990,7 +990,7 @@ A generic function and convention to trigger deprecation notices
 
 Class to generate PDF files
 
-- **Location**: lib/tcpdf
+- **Location**: public/lib/tcpdf
 - **Version**: 6.8.2 (with Moodle customisations)
 - **License**:  LGPL 3.0-or-later
 - **URL**: [https://github.com/tecnickcom/TCPDF](https://github.com/tecnickcom/TCPDF)
@@ -1002,7 +1002,7 @@ Class to generate PDF files
 
 URL syntax validation using PHP and regular expressions.
 
-- **Location**: lib/validateurlsyntax.php
+- **Location**: public/lib/validateurlsyntax.php
 - **Version**:  (with Moodle customisations)
 - **License**:  GPL 2.0+
 
@@ -1011,7 +1011,7 @@ URL syntax validation using PHP and regular expressions.
 
 ### WebAuthn
 
-- **Location**: lib/webauthn
+- **Location**: public/lib/webauthn
 - **Version**: 2.2.2
 - **License**:  MIT
 - **URL**: [https://github.com/lbuchs/WebAuthn](https://github.com/lbuchs/WebAuthn)
@@ -1020,7 +1020,7 @@ URL syntax validation using PHP and regular expressions.
 
 A Hierarchical Profiler for PHP.
 
-- **Location**: lib/xhprof
+- **Location**: public/lib/xhprof
 - **Version**: 2.3.9 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/longxinH/xhprof](https://github.com/longxinH/xhprof)
@@ -1031,7 +1031,7 @@ A Hierarchical Profiler for PHP.
 
 The Yahoo! User Interface Library is a set of utilities and controls, in JavaScript, for building richly interactive web applications using techniques such as DOM scripting, DHTML and AJAX. The YUI Library also includes several core CSS resources.Set of user-interface components using AJAX, DHTML etc. We use it for all our AJAX-related stuff.
 
-- **Location**: lib/yuilib
+- **Location**: public/lib/yuilib
 - **Version**: 3.18.1
 - **License**:  BSD
 - **URL**: [https://github.com/yui/yui3](https://github.com/yui/yui3)
@@ -1042,7 +1042,7 @@ The Yahoo! User Interface Library is a set of utilities and controls, in JavaScr
 
 The Gallery is a collection of modules that have been developed by the YUI community to enhance the capabilities of YUI.
 
-- **Location**: lib/yuilib/gallery
+- **Location**: public/lib/yuilib/gallery
 - **Version**: gallery-2013.10.02-20-26
 - **License**:  BSD
 - **URL**: [https://github.com/yui/yui3-gallery](https://github.com/yui/yui3-gallery)
@@ -1053,7 +1053,7 @@ The Gallery is a collection of modules that have been developed by the YUI commu
 
 PHP ZIP Streaming Library
 
-- **Location**: lib/zipstream
+- **Location**: public/lib/zipstream
 - **Version**: 3.1.2
 - **License**:  MIT
 - **URL**: [https://github.com/maennchen/ZipStream-PHP](https://github.com/maennchen/ZipStream-PHP)
@@ -1067,7 +1067,7 @@ PHP ZIP Streaming Library
 
 Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.
 
-- **Location**: media/player/videojs/amd/src/local/ogv/ogv.js
+- **Location**: public/media/player/videojs/amd/src/local/ogv/ogv.js
 - **Version**: 1.9.0
 - **License**:  MIT
 - **URL**: [https://github.com/bvibber/ogv.js](https://github.com/bvibber/ogv.js)
@@ -1078,7 +1078,7 @@ Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 
 JavaScript library that makes it easier to work with and build on HTML5 video.
 
-- **Location**: media/player/videojs/amd/src/video-lazy.js
+- **Location**: public/media/player/videojs/amd/src/video-lazy.js
 - **Version**: 8.21.1 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
@@ -1089,7 +1089,7 @@ JavaScript library that makes it easier to work with and build on HTML5 video.
 
 The ogv.js tech plugin for VideoJS
 
-- **Location**: media/player/videojs/amd/src/videojs-ogvjs-lazy.js
+- **Location**: public/media/player/videojs/amd/src/videojs-ogvjs-lazy.js
 - **Version**: 1.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/HuongNV13/videojs-ogvjs](https://github.com/HuongNV13/videojs-ogvjs)
@@ -1100,7 +1100,7 @@ The ogv.js tech plugin for VideoJS
 
 YouTube Playback Technology for Video.js.
 
-- **Location**: media/player/videojs/amd/src/Youtube-lazy.js
+- **Location**: public/media/player/videojs/amd/src/Youtube-lazy.js
 - **Version**: 3.0.1
 - **License**:  MIT
 - **URL**: [https://github.com/videojs/videojs-youtube](https://github.com/videojs/videojs-youtube)
@@ -1111,7 +1111,7 @@ YouTube Playback Technology for Video.js.
 
 JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/AV1 video.
 
-- **Location**: media/player/videojs/ogvjs
+- **Location**: public/media/player/videojs/ogvjs
 - **Version**: 1.9.0
 - **License**:  MIT
 - **URL**: [https://github.com/bvibber/ogv.js](https://github.com/bvibber/ogv.js)
@@ -1122,7 +1122,7 @@ JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 
 JavaScript library that makes it easier to work with and build on HTML5 video
 
-- **Location**: media/player/videojs/videojs
+- **Location**: public/media/player/videojs/videojs
 - **Version**: 8.21.1 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
@@ -1133,7 +1133,7 @@ JavaScript library that makes it easier to work with and build on HTML5 video
 
 Collection of PHP classes facilitating developers to read pages from existing PDF documents and use them as templates in FPDF.
 
-- **Location**: mod/assign/feedback/editpdf/fpdi
+- **Location**: public/mod/assign/feedback/editpdf/fpdi
 - **Version**: 2.6.3
 - **License**:  MIT
 - **URL**: [https://github.com/Setasign/FPDI](https://github.com/Setasign/FPDI)
@@ -1144,7 +1144,7 @@ Collection of PHP classes facilitating developers to read pages from existing PD
 
 A standalone Amazon S3 (REST) client for PHP 5.2.x using CURL that does not require PEAR.
 
-- **Location**: repository/s3/S3.php
+- **Location**: public/repository/s3/S3.php
 - **Version**: 0.5.1 (with Moodle customisations)
 - **License**:  BSD
 - **URL**: [https://github.com/tpyo/amazon-s3-php-class](https://github.com/tpyo/amazon-s3-php-class)
@@ -1155,7 +1155,7 @@ A standalone Amazon S3 (REST) client for PHP 5.2.x using CURL that does not requ
 
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
-- **Location**: theme/boost/amd/src/bootstrap/
+- **Location**: public/theme/boost/amd/src/bootstrap/
 - **Version**: 5.3.3 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
@@ -1167,7 +1167,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
-- **Location**: theme/boost/amd/src/index.js
+- **Location**: public/theme/boost/amd/src/index.js
 - **Version**: 5.3.3 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
@@ -1179,7 +1179,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
-- **Location**: theme/boost/scss/bootstrap
+- **Location**: public/theme/boost/scss/bootstrap
 - **Version**: 5.3.3 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
@@ -1191,7 +1191,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 
 Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
-- **Location**: theme/boost/scss/fontawesome
+- **Location**: public/theme/boost/scss/fontawesome
 - **Version**: 6.7.2
 - **License**:  (MIT)
 - **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
