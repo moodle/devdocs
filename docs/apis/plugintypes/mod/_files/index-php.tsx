@@ -21,20 +21,9 @@ import DefaultDescription from './index-php.mdx';
 
 const defaultExample = `require_once('../../config.php');
 
-// The \`id\` parameter is the course id.
-$id = required_param('id', PARAM_INT);
+$courseid = required_param('id', PARAM_INT);
 
-// Fetch the requested course.
-$course = $DB->get_record('course', ['id'=> $id], '*', MUST_EXIST);
-
-// Require that the user is logged into the course.
-require_course_login($course);
-
-$modinfo = get_fast_modinfo($course);
-
-foreach ($modinfo->get_instances_of('[modinfo]') as $instanceid => $cm) {
-    // Display information about your activity.
-}
+\core_courseformat\activityoverviewbase::redirect_to_overview_page($courseid, '[modname]');
 `;
 
 export default (initialProps: Props): ComponentFileSummary => (
