@@ -19,6 +19,21 @@ Most Moodle tooling has already been updated to support this, but minor web serv
 
 See the [Restructure documentation](./guides/restructure/index.md) for further information on some of the changes required.
 
+## Course: activity chooser footer has been changed
+
+<Since version="5.1" issueNumber="MDL-85597" />
+The activity chooser UI now features a dedicated footer button for adding the selected activity to the course. The logic for managing the activity chooser footer has moved to `course/amd/src/local/activitychooser/dialogue.js`, which now controls the visibility of the back and add buttons based on the modal's content. This update may impact plugins that implement custom activity chooser footers.
+
+**How to determine if your plugin is affected:**
+
+- Check if your plugin provides a `custom_chooser_footer` implementation. You can do this by searching your plugin's `lib.php` for a function named `PLUGINTYPE_PLUGINNAME_custom_chooser_footer`.
+- If your plugin implements this function, review your footer AMD module to see if it calls `modal.setFooter(...)`. To identify the AMD module, look at the first parameter passed when creating a new `core_course\local\entity\activity_chooser_footer` instance in your `custom_chooser_footer` function—this is the `$footerjspath`.
+
+**What you need to do:**
+
+- In most cases, simply remove the `modal.setFooter(...)` call from your AMD module, as the new activity chooser footer now manages this logic for you.
+- For more advanced customizations, ensure you use the `course/templates/local/activitychooser/footer.mustache` template to render your custom footer content.
+
 ## Course format: max sections setting is now deprecated
 
 <Since version="5.1" issueNumber="MDL-84291" />
