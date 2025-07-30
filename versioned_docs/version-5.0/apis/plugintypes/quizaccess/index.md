@@ -1,5 +1,5 @@
 ---
-title: Quiz access rule sub-plugins
+title: Quiz access rules
 tags:
   - Quiz
   - Access
@@ -11,7 +11,7 @@ tags:
 
 import { ComponentFileSummary } from '../../../_utils';
 
-Quiz access rule sub-plugins extend the ability to add conditions a user must meet to attempt a given quiz.
+Quiz access rules give the ability to add conditions a user must meet to attempt a given quiz.
 
 The following rules are readily available as part of Moodle core:
 
@@ -67,20 +67,22 @@ import RuleDescription from './_examples/rule.md';
     description={RuleDescription}
 />
 
-import RuleOverridableFile from '!!raw-loader!./_examples/rule_overridable.php';
-import RuleOverridableDescription from './_examples/rule_overridable.md';
+### classes/override_rule.php
+
+import OverrideRuleFile from '!!raw-loader!./_examples/override_rule.php';
+import OverrideRuleDescription from './_examples/override_rule.md';
 
 <ComponentFileSummary
-    filepath="/rule.php"
-    summary="Rule definition class with override"
+    filepath="/classes/override_rule.php"
+    summary="Override rule definition class"
     plugintype="quizaccessrule"
     pluginname="pluginname"
-    example={RuleOverridableFile}
-    description={RuleOverridableDescription}
+    example={OverrideRuleFile}
+    description={OverrideRuleDescription}
 />
 
 :::info
 
-Implementing `rule_overridable` is not required but can enhance the usability of the rule.
+Implementing `override_rule` is not required but can enhance the usability of the access rule.
 
 :::
