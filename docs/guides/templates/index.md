@@ -528,6 +528,22 @@ Templates can be overridden by a theme.
 1. Copy the `ratingui.mustache` file into the newly created `theme/timtam/templates/mod_wiki` and edit it.
 You should see your changes immediately if theme designer mode is on. Templates are cached just like CSS, so if you are not using theme designer mode you will need to purge all caches to see the latest version of an edited template. If the template you are overriding contains a documentation comment it is recommended to remove it. It will still show the documentation in the template library.
 
+### Paths for overriding templates
+
+#### Overriding a template from another plugin
+
+If you want to override `theme/boost/templates/navbar.mustache`, you should copy and modify it, then **save the new version at** `theme/mytheme/templates/theme_boost/navbar.mustache`.
+
+This principle applies to other plugins. For example, to override the template at `blocks/myoverview/templates/view-summary.mustache` you would place your own at `theme/mytheme/templates/block_myoverview/view-summary.mustache`.
+
+#### Overriding a template from lib/
+
+To override a core template, like, `lib/templates/notification_success.mustache:` you should have your own copy at `theme/mytheme/templates/core/notification_success.mustache`.
+
+#### Overriding a core subsystem template
+
+To override a core subsystem template, for example, `message/templates/message_preferences.mustache` place your template at `theme/mytheme/templates/core_message/message_preferences.mustache`.
+
 ## Documenting the templates
 
 Theme designers need to know the limits of what they can expect to change without breaking anything. Also, correctly documented templates can be previewed in the "Template library" tool shipped with Moodle.
