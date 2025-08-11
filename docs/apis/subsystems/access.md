@@ -190,9 +190,9 @@ function is_viewing(context $context, $user = null, $withcapability = _)
 
 #### `require_login()`
 
-Each plugin script should include require_login() or require_course_login() after setting up PAGE->url.
+If using require_login() or require_course_login(), this should be used after setting PAGE->url.
 
-This function does following:
+These functions do the following:
 
 - it verifies that user is logged in before accessing any course or activities (not-logged-in users can not enter any courses).
 - user is logged in as gu
