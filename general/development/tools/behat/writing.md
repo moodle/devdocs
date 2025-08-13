@@ -264,6 +264,70 @@ Sometimes, you will need to set up data that is specific to your plugin, or perf
 
 As well as creating completely new steps, you can also extend some of the standard steps:
 
+#### Calling other steps
+
+When writing custom steps you will often want to perform actions, such as:
+
+- clicking a link
+- pressing a button
+- typing into a field
+- calling another existing step
+
+When doing this you **should** use the `\behat_session_trait::execute()` method to call the existing step to perform the action.
+You **should not** call the `->click()` method on a `NodeElement` manually as this will bypass some of the error detection states, and pausing to wait for JavaScript actions to take place.
+
+The `\behat_session_trait::execute()` method accepts:
+
+- the name of the method to call on a behat context class; and
+- any arguments.
+
+For example:
+
+```php title="behat_general.php"
+    /**
+     * Toggles the specified admin switch.
+     *
+     * @When /^I toggle the "(?P<element_string>(?:[^"]|\\")*)" admin switch "(?P<state_string>on|off)"$/
+     * @param string $element Element we look for
+     * @param string $state The state of the switch
+     * @throws ElementNotFoundException Thrown by behat_base::find
+     */
+    public function i_toggle_admin_switch($element, $state) {
+        // First check we are running Javascript, otherwise explode.
+        if (!$this->running_javascript()) {
+            throw new \Behat\Mink\Exception\DriverException('Switches are only available with JavaScript enabled');
+        }
+
+        // Next check that the node is available.
+        $node = $this->get_selected_node('checkbox', $element);
+        $this->ensure_node_is_visible($node);
+
+        // Update the state of the switch.
+        $field = $node->getAttribute('id');
+        if ($state == "on") {
+            $this->execute('behat_forms::i_set_the_field_to', [$field, 1]);
+        } else if ($state == "off") {
+            $this->execute('behat_forms::i_set_the_field_to', [$field, 0]);
+        } else {
+            throw new \Behat\Mink\Exception\ExpectationException('Invalid state for switch: ' . $state, $this->getSession());
+        }
+    }
+```
+
+<Since issueNumber="MDL-86231" versions={["4.1.21", "4.4.11", "4.5.7", "5.0.3"]} />
+
+The `\behat_session_trait::execute()` method accepts the method on the behat context class in the callable array format:
+
+```php
+$this->execute([\behat_forms::class, 'i_set_the_field_to'], [$field, 0]);
+```
+
+:::note
+
+Only the string format, adn the array callable are supported. You cannot pass a callback method.
+
+:::
+
 #### Custom selectors (<tt>... in the "..." "..."</tt>)
 
 There are a load of different steps which can refer to specific items on-screen, for example
@@ -304,7 +368,7 @@ new behat step definitions for your plugin, and allows you to re-use data genera
 
 Full documentation of this process and all available options can be found in the [PHPDoc for behat_generator_base](https://github.com/moodle/moodle/blob/1d4fdb0d1c60448104bc9eac79b5123863c67cbd/lib/behat/classes/behat_generator_base.php#L33). A core example of this can be found in [/mod/quiz/tests/generator](https://github.com/moodle/moodle/tree/main/mod/quiz/tests/generator) and [quiz_reset.feature](https://github.com/moodle/moodle/blob/1d4fdb0d1c60448104bc9eac79b5123863c67cbd/mod/quiz/tests/behat/quiz_reset.feature#L51). What follows is a simple example.
 
-To begin, you need a [generator](https://docs.moodle.org/dev/Writing_PHPUnit_tests#Generators) in `/*your*/*plugin*/tests/generator/lib.php`. If you are generating a type of entity called "thing", your generator will need a method called create_thing, which accepts an object:
+To begin, you need a [generator](/docs/guides/testing/#generators) in `/*your*/*plugin*/tests/generator/lib.php`. If you are generating a type of entity called "thing", your generator will need a method called create_thing, which accepts an object:
 
 ```php
 class local_myplugin_generator extends component_generator_base {
