@@ -637,7 +637,7 @@ There are no rules limiting what can be used as a level 3 namespace.
 This is where a plugin or addon can make extensive use of namespaces with no
 chance of conflict with any other plugin or api, now and forever onwards.
 
-#### Namespaces within `**/tests` directories
+#### Namespaces within `**/tests` directories(#namespaces-within-tests)
 
 :::info
 
