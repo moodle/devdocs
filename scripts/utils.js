@@ -109,6 +109,7 @@ const getClient = (remoteHost) => new Bot({
     debug: !!process.env.WIKIMEDIA_DEBUG,
     username: process.env.WIKIMEDIA_USER,
     password: process.env.WIKIMEDIA_SECRET,
+    userAgent: 'MoodleBot',
 });
 
 const getLogger = () => winston.createLogger({
