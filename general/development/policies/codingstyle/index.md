@@ -1582,8 +1582,8 @@ This tag is valid and can be used optionally to indicate the method or function 
 There are some tags that are only allowed within some contexts and not globally. More precisely:
 
 - `@Given`, `@When`, `@Then`, within the [behat steps definitions](../../tools/behat/writing.md#writing-new-acceptance-test-step-definitions).
-- `@covers`, `@coversDefaultClass`, `@coversNothing`, `@uses` to better control coverage within [unit tests](https://docs.moodle.org/dev/Writing_PHPUnit_tests#Generators).
-- `@dataProvider` and `@testWith`, to provide example data and expectations, within [unit tests](https://docs.moodle.org/dev/Writing_PHPUnit_tests#Generators).
+- `@covers`, `@coversDefaultClass`, `@coversNothing`, `@uses` to better control coverage within [unit tests](/docs/guides/testing/#generators).
+- `@dataProvider` and `@testWith`, to provide example data and expectations, within [unit tests](/docs/guides/testing/#generators).
 - `@depends`, to express dependencies between tests, where each producer returned data in passed to consumers. See [`@depends` examples](https://docs.phpunit.de/en/9.6/writing-tests-for-phpunit.html#writing-tests-for-phpunit-examples-stacktest2-php) for more information.
 - `@group`, for easier collecting unit tests together, following the guidelines in the [PHPUnit MoodleDocs](../../tools/phpunit/index.md#using-the-group-annotation).
 - `@requires`, to specify unit test requirements and skip if not fulfilled. See [`@requires` usages](https://docs.phpunit.de/en/9.6/incomplete-and-skipped-tests.html#incomplete-and-skipped-tests-requires-tables-api) for more information.
