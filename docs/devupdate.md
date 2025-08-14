@@ -19,6 +19,16 @@ Most Moodle tooling has already been updated to support this, but minor web serv
 
 See the [Restructure documentation](./guides/restructure/index.md) for further information on some of the changes required.
 
+## Course format: new activity chooser rendering
+
+<Since version="5.1" issueNumber="MDL-80295" />
+
+The activity chooser in course formats has been refactored to use a new rendering approach. It now includes additional attributes such as `data-section-id` and `data-returnsectionid`, and the course renderer method for the activity chooser has changed.
+
+This update primarily affects format plugins that customize section or activity card rendering. If your plugin calls `course_section_add_cm_control`, you should update it to use the new `section_add_cm_controls` method.
+
+For themes that override activity chooser templates, ensure that the activity chooser button includes the required `data-section-id` and the `data-returnsectionid` attributes.
+
 ## Course format: max sections setting is now deprecated
 
 <Since version="5.1" issueNumber="MDL-84291" />
