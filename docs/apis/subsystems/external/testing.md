@@ -20,9 +20,17 @@ Writing unit tests for an external service function is no different to writing u
 
 ## How to write an external function PHPUnit test
 
-You should create one unit test testcase for each external service file, and it should be named after the file that it tests.
+You should create one unit test testcase for each external service class, and it should be named after the class that it tests.
 
 For example, if you have written a service function in `[componentfolder]/classes/external/get_fruit.php`, you should write a unit test in `[componentfolder]/tests/external/get_fruit_test.php`.
+
+:::note External Services Testcase
+
+An external testcase has been created to make testing external services easier.
+
+When creating your tests, you can extend the `\core_external\tests\externallib_testcase` class instead of `\advanced_testcase`.
+
+:::
 
 ```php title="mod/kitchen/tests/external/get_fruit_test.php"
 <?php
@@ -41,28 +49,20 @@ For example, if you have written a service function in `[componentfolder]/classe
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+namespace mod_kitchen\external;
+
 /**
  * Unit tests for the get_fruit function of the kitchen.
  *
  * @package    mod_kitchen
  * @category   external
- * @copyright  20XX Your Name
+ * @copyright  Your Name
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-namespace mod_kitchen\external;
-
-defined('MOODLE_INTERNAL') || die();
-
-global $CFG;
-require_once($CFG->dirroot . '/webservice/tests/helpers.php');
-
-class get_fruit_test extends externallib_advanced_testcase {
-
+#[\PHPUnit\Framework\Attributes\CoversClass(get_fruit::class)]
+class get_fruit_test extends \core_external\tests\externallib_testcase {
     /**
      * Test the execute function when capabilities are present.
-     *
-     * @covers \mod_fruit\external\get_fruit::execute
      */
     public function test_capabilities(): void {
         $this->resetAfterTest(true);
@@ -96,8 +96,6 @@ class get_fruit_test extends externallib_advanced_testcase {
 
     /**
      * Test the execute function when capabilities are missing.
-     *
-     * @covers \mod_fruit\external\get_fruit::execute
      */
     public function test_capabilities_missing(): void {
         global $USER;
