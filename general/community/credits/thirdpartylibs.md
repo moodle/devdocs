@@ -142,7 +142,7 @@ JavaScript library to insulate apps from spec changes and prefix differences in 
 Simple yet flexible JavaScript charting for designers & developers.
 
 - **Location**: public/lib/amd/src/chartjs-lazy.js
-- **Version**: 4.4.7 (with Moodle customisations)
+- **Version**: 4.5.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/chartjs/Chart.js](https://github.com/chartjs/Chart.js)
 - **Copyright holders**:
@@ -991,7 +991,7 @@ A generic function and convention to trigger deprecation notices
 Class to generate PDF files
 
 - **Location**: public/lib/tcpdf
-- **Version**: 6.8.2 (with Moodle customisations)
+- **Version**: 6.10.0 (with Moodle customisations)
 - **License**:  LGPL 3.0-or-later
 - **URL**: [https://github.com/tecnickcom/TCPDF](https://github.com/tecnickcom/TCPDF)
 - **Copyright holders**:

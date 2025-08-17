@@ -155,7 +155,7 @@
         "location": "public/lib/amd/src/chartjs-lazy.js",
         "name": "Chart.js",
         "description": "Simple yet flexible JavaScript charting for designers & developers.",
-        "version": "4.4.7",
+        "version": "4.5.0",
         "license": "MIT",
         "repository": "https://github.com/chartjs/Chart.js",
         "customised": true
@@ -1119,7 +1119,7 @@
         "location": "public/lib/tcpdf",
         "name": "TCPDF",
         "description": "Class to generate PDF files",
-        "version": "6.8.2",
+        "version": "6.10.0",
         "license": "LGPL",
         "licenseversion": "3.0-or-later",
         "repository": "https://github.com/tecnickcom/TCPDF",
