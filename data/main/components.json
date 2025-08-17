@@ -34,6 +34,7 @@
         "qbank": "public/question/bank",
         "qbehaviour": "public/question/behaviour",
         "qformat": "public/question/format",
+        "quizaccess": "public/mod/quiz/access",
         "plagiarism": "public/plagiarism",
         "tool": "public/admin/tool",
         "cachestore": "public/cache/stores",
