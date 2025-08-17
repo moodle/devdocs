@@ -106,6 +106,9 @@ Coding:
 Coding_style:
 - filePath: "/general/development/policies/codingstyle/index.md"
   slug: "/general/development/policies/codingstyle"
+Comment_API:
+- filePath: "/docs/apis/core/comment/index.md"
+  slug: "/docs/apis/core/comment/"
 Communication_Between_Components:
 - filePath: "/general/development/policies/component-communication/index.md"
   slug: "/general/development/policies/component-communication"
