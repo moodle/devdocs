@@ -9,6 +9,17 @@ tags:
 
 This page highlights the important changes that are coming in Moodle 5.1 for developers.
 
+## Activity modules: now activities can define a secondary purpose
+
+<Since version="5.1" issueNumber="MDL-85598" />
+
+From now on, activity modules can define two different features in their `PLUGINNAME_supports` function:
+
+- `FEATURE_MOD_PURPOSE`: This is the mandatory main activity purpose, and also the one that will determine the activity's icon color.
+- `FEATURE_MOD_OTHERPURPOSE`: An optional secondary purpose to be used as an extra category in the activity chooser modal.
+
+See the [Activity module support functions](./apis/plugintypes/mod#activity-module-support-functions) for further information.
+
 ## Code Structure
 
 <Since version="5.1" issueNumber="MDL-83424" />
