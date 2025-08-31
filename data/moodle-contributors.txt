@@ -670,6 +670,7 @@ Lloyd
 Lock
 Logan
 Loison
+Looi
 Loong
 Lorenzo
 Luca
@@ -1022,6 +1023,7 @@ Schroeder
 Schultz
 Schulz
 Scotson
+Scott
 ScottVerbeek
 Scribner
 Sebastian
@@ -1181,6 +1183,7 @@ Valery
 Vaughan
 Vedrine
 Venter
+Verbeek
 Verhoeven
 Verrall
 Vervoort
