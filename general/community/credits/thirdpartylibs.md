@@ -583,7 +583,7 @@ All rights reserved.
 Library for processing of GeoIP data files.
 
 - **Location**: public/lib/maxmind/GeoIp2
-- **Version**: 3.1.0
+- **Version**: 3.2.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/GeoIP2-php](https://github.com/maxmind/GeoIP2-php)
 - **Copyright holders**:
@@ -594,7 +594,7 @@ Library for processing of GeoIP data files.
 PHP API for reading MaxMind DB files.
 
 - **Location**: public/lib/maxmind/MaxMind
-- **Version**: 1.12.0
+- **Version**: 1.12.1
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/MaxMind-DB-Reader-php/](https://github.com/maxmind/MaxMind-DB-Reader-php/)
 - **Copyright holders**:
@@ -605,7 +605,7 @@ PHP API for reading MaxMind DB files.
 CSS & JavaScript minifier, in PHP
 
 - **Location**: public/lib/minify/matthiasmullie-minify
-- **Version**: 1.3.73 (with Moodle customisations)
+- **Version**: 1.3.75 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/matthiasmullie/minify](https://github.com/matthiasmullie/minify)
 
