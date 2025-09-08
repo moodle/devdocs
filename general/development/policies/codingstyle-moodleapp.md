@@ -431,6 +431,33 @@ export class MyService {
 
 </InvalidExample>
 
+If a constant needs to be used in a component template, it should be declared in the component without "static" because static properties cannot be used in templates. Please notice that the naming convention for non static properties is camelCase.
+
+<ValidExample title="Good">
+
+```ts
+export class MyComponent {
+
+    protected readonly myConstant = '...';
+
+}
+```
+
+</ValidExample>
+
+<InvalidExample title="Bad">
+
+```ts
+
+export class MyService {
+
+    protected readonly MY_CONSTANT = '...';
+
+}
+```
+
+</InvalidExample>
+
 ## Angular
 
 ### Avoid calling methods in templates
