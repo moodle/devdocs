@@ -458,6 +458,39 @@ export class MyService {
 
 </InvalidExample>
 
+### Angular Signals
+
+All signals in class properties must be defined as readonly properties to avoid overriding the whole signal by mistake. This includes input signals, computed signals, etc.
+
+<ValidExample title="Good">
+
+```ts
+export class MyComponent {
+
+    protected readonly myInput = input('...');
+    protected readonly mySignal = signal('...');
+    protected readonly myComputed = computed(() => ...);
+
+}
+```
+
+</ValidExample>
+
+<InvalidExample title="Bad">
+
+```ts
+
+export class MyComponent {
+
+    protected myInput = input('...');
+    protected mySignal = signal('...');
+    protected myComputed = computed(() => ...);
+
+}
+```
+
+</InvalidExample>
+
 ## Angular
 
 ### Avoid calling methods in templates
