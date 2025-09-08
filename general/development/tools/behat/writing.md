@@ -239,23 +239,23 @@ When I set the following fields to these values:
 When testing plugins with deadlines, for instance for submissions, it is often necessary to set certain time values to dates relative to today.
 You can specify a relative time enclosed within two ## blocks. For example:
 
-- `## yesterday ##`
-- `## 2 days ago ##`
+- `##yesterday##`
+- `##2 days ago##`
 You can use everything according to http://php.net/manual/en/datetime.formats.php.
 
-Especially useful are the relative formats from: http://php.net/manual/en/datetime.formats.relative.php
+Especially useful are the relative formats from: https://www.php.net/manual/en/datetime.formats.php#datetime.formats.relative
 
 Additionally, you can specify a format you want the date to be returned into:
 
-- `## yesterday ## myformat ##`
-These formats can be used as outlined in http://php.net/manual/en/function.date.php.
+- `##yesterday##myformat##`
+These formats can be used as outlined in https://www.php.net/manual/en/function.strftime.php#refsect1-function.strftime-parameters.
 This can be combined with the field groups:
 
 ```gherkin
 When I set the following fields to these values:
-  | myDate[day]   | ##yesterday##d## |
-  | myDate[month] | ##yesterday##F## |
-  | myDate[year]  | ##yesterday##Y## |
+  | myDate[day]   | ##yesterday##%d## |
+  | myDate[month] | ##yesterday##%B## |
+  | myDate[year]  | ##yesterday##%Y## |
 ```
 
 ### Writing your own steps
@@ -263,6 +263,70 @@ When I set the following fields to these values:
 Sometimes, you will need to set up data that is specific to your plugin, or perform steps that are specific to your plugin's UI. In this case it may be necessary to [write new step definitions](./writing.md#writing-new-acceptance-test-step-definitions), but the short version is that you define new steps as PHP methods with a special annotation inside a class called `behat_plugintype_plugingname` inside `tests/behat/behat_plugintype_plugingname.php` in your plugin.
 
 As well as creating completely new steps, you can also extend some of the standard steps:
+
+#### Calling other steps
+
+When writing custom steps you will often want to perform actions, such as:
+
+- clicking a link
+- pressing a button
+- typing into a field
+- calling another existing step
+
+When doing this you **should** use the `\behat_session_trait::execute()` method to call the existing step to perform the action.
+You **should not** call the `->click()` method on a `NodeElement` manually as this will bypass some of the error detection states, and pausing to wait for JavaScript actions to take place.
+
+The `\behat_session_trait::execute()` method accepts:
+
+- the name of the method to call on a behat context class; and
+- any arguments.
+
+For example:
+
+```php title="behat_general.php"
+    /**
+     * Toggles the specified admin switch.
+     *
+     * @When /^I toggle the "(?P<element_string>(?:[^"]|\\")*)" admin switch "(?P<state_string>on|off)"$/
+     * @param string $element Element we look for
+     * @param string $state The state of the switch
+     * @throws ElementNotFoundException Thrown by behat_base::find
+     */
+    public function i_toggle_admin_switch($element, $state) {
+        // First check we are running Javascript, otherwise explode.
+        if (!$this->running_javascript()) {
+            throw new \Behat\Mink\Exception\DriverException('Switches are only available with JavaScript enabled');
+        }
+
+        // Next check that the node is available.
+        $node = $this->get_selected_node('checkbox', $element);
+        $this->ensure_node_is_visible($node);
+
+        // Update the state of the switch.
+        $field = $node->getAttribute('id');
+        if ($state == "on") {
+            $this->execute('behat_forms::i_set_the_field_to', [$field, 1]);
+        } else if ($state == "off") {
+            $this->execute('behat_forms::i_set_the_field_to', [$field, 0]);
+        } else {
+            throw new \Behat\Mink\Exception\ExpectationException('Invalid state for switch: ' . $state, $this->getSession());
+        }
+    }
+```
+
+<Since issueNumber="MDL-86231" versions={["4.1.21", "4.4.11", "4.5.7", "5.0.3"]} />
+
+The `\behat_session_trait::execute()` method accepts the method on the behat context class in the callable array format:
+
+```php
+$this->execute([\behat_forms::class, 'i_set_the_field_to'], [$field, 0]);
+```
+
+:::note
+
+Only the string format, adn the array callable are supported. You cannot pass a callback method.
+
+:::
 
 #### Custom selectors (<tt>... in the "..." "..."</tt>)
 
@@ -304,7 +368,7 @@ new behat step definitions for your plugin, and allows you to re-use data genera
 
 Full documentation of this process and all available options can be found in the [PHPDoc for behat_generator_base](https://github.com/moodle/moodle/blob/1d4fdb0d1c60448104bc9eac79b5123863c67cbd/lib/behat/classes/behat_generator_base.php#L33). A core example of this can be found in [/mod/quiz/tests/generator](https://github.com/moodle/moodle/tree/main/mod/quiz/tests/generator) and [quiz_reset.feature](https://github.com/moodle/moodle/blob/1d4fdb0d1c60448104bc9eac79b5123863c67cbd/mod/quiz/tests/behat/quiz_reset.feature#L51). What follows is a simple example.
 
-To begin, you need a [generator](https://docs.moodle.org/dev/Writing_PHPUnit_tests#Generators) in `/*your*/*plugin*/tests/generator/lib.php`. If you are generating a type of entity called "thing", your generator will need a method called create_thing, which accepts an object:
+To begin, you need a [generator](/docs/guides/testing/#generators) in `/*your*/*plugin*/tests/generator/lib.php`. If you are generating a type of entity called "thing", your generator will need a method called create_thing, which accepts an object:
 
 ```php
 class local_myplugin_generator extends component_generator_base {

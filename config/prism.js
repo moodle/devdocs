@@ -29,5 +29,8 @@ module.exports = {
     // formatting.
         'php',
         'gherkin',
+        'diff',
+        'apacheconf',
+        'nginx',
     ],
 };

@@ -45,6 +45,7 @@
   --ifm-color-contrasting: var(--ifm-color-primary-lightest);
   --ifm-navbar-link-color: #f0c505;
   --ifm-navbar-link-hover-color: #f27e13;
+  --ifm-background-color: #1b1b1d;
 }
 
 .docusaurus-highlight-code-line {
