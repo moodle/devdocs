@@ -258,6 +258,82 @@ When I set the following fields to these values:
   | myDate[year]  | ##yesterday##%Y## |
 ```
 
+#### Configuration settings
+
+For some tests you may need special configurations to be present in you Moodle. These can be set as follows:
+
+```gherkin
+Given the following config values are set as admin:
+   | config_key | config value (as it is saved in the DB) | plugin_name  |
+```
+
+The first and the second value is mandatory. This is the settings name and
+the settings value. For core settings this is just it. There is a 3rd parameter
+for the plugin name. In the GUI for the above setting below the label you would
+see in small letters the setting name, or the plugin_name/setting_name.
+There is an optional fourth value (not used here) possible.
+
+#### Autocomplete options
+
+To test that autocomplete options appear in a list as you type (such as the course search), a test can be written
+in the following way:
+
+```gherkin
+And I open the autocomplete suggestions list
+When I type "test"
+And I should see "Some value" in the ".form-autocomplete-suggestions" "css_element"
+And I should see "Some other value" in the ".form-autocomplete-suggestions" "css_element"
+```
+
+#### Language packs
+
+For some tests it's important to have more languages installed or that a certain language is present.
+In a Behat test you may define installed language packs in this way:
+
+```gherkin
+And the following "language packs" exist:
+  | language |
+  | fr       |
+  | de       |
+  | es       |
+```
+
+This would have the additional language packs for French, German and Spanish installed on the system. English
+is still present as well.
+
+With the following test steps the user may change the language:
+
+```gherkin
+Then I follow "Preferences" in the user menu
+And I follow "Preferred language"
+And I select "de" from the "Preferred language" 
+```
+
+#### Moodle version
+
+Sometimes it's necessary that a Behat test runs on a certain version of Moodle only.
+
+A Behat test running in Moodle 4.4 and lower
+
+```gherkin
+Scenario: Check some feature in an older version.
+  Given the site is running Moodle version 4.3 or lower
+```
+
+Behat test running in Moodle 4.5 and higher
+
+```gherkin
+Scenario: Check some feature in a newer version.
+  Given the site is running Moodle version 4.5 or higher
+```
+
+Behat test running in Moodle 4.2 only
+
+```gherkin
+Scenario: Check some feature in Moodle 4.2
+  Given the site is running Moodle version 4.2
+```
+
 ### Writing your own steps
 
 Sometimes, you will need to set up data that is specific to your plugin, or perform steps that are specific to your plugin's UI. In this case it may be necessary to [write new step definitions](./writing.md#writing-new-acceptance-test-step-definitions), but the short version is that you define new steps as PHP methods with a special annotation inside a class called `behat_plugintype_plugingname` inside `tests/behat/behat_plugintype_plugingname.php` in your plugin.
