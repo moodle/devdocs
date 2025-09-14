@@ -202,6 +202,7 @@ Charles
 Charlotte
 Charsley
 Chernyavskiy
+Chimezie
 Chin
 Chris
 Christian
@@ -327,6 +328,7 @@ Eliyahu
 Elizabeth
 Elliott
 Eloy
+England
 Eoin
 Eric
 Erik
@@ -670,6 +672,7 @@ Lloyd
 Lock
 Logan
 Loison
+Looi
 Loong
 Lorenzo
 Luca
@@ -968,6 +971,7 @@ Robotta
 Robynstar
 Rodrigo
 Rodrigues
+Rodríguez
 Roes
 Roeser
 Roger
@@ -1022,6 +1026,7 @@ Schroeder
 Schultz
 Schulz
 Scotson
+Scott
 ScottVerbeek
 Scribner
 Sebastian
@@ -1181,6 +1186,7 @@ Valery
 Vaughan
 Vedrine
 Venter
+Verbeek
 Verhoeven
 Verrall
 Vervoort
@@ -1255,6 +1261,7 @@ YVANES
 Yair
 Yang
 Yannick
+Yerai
 Yeung
 Yevhenii
 Yolanda
@@ -1380,6 +1387,7 @@ gniske
 godric
 gregb_cc
 gthomas2
+guillaumebarat
 guillermogomez
 gustav_delius
 hanna
