@@ -93,6 +93,19 @@ An overview of Moodle LMS' conformance with the [WCAG 2.1](https://www.w3.org/TR
 
 An overview of Moodle Workplace's conformance with the [WCAG 2.1](https://www.w3.org/TR/WCAG21/) guidelines can be found in our [accessibility conformance report](https://docs.moodle.org/en/Moodle_Workplace_VPAT#WCAG_2.x_report).
 
+<!-- cspell:ignore IAAP -->
+<!-- cspell:ignore credly -->
+
+## IAAP membership
+
+Moodle is committed to delivering solutions that make learning accessible to all. To demonstrate this commitment, aside from regular accessibility audits of its products, [Moodle joined the International Association of Accessibility Professionals (IAAP)](https://www.accessibilityassociation.org/) in June 2025.
+
+This membership also provides our teams access to accessibility-related resources, training, and a global network of accessibility professionals.
+
+<!-- markdownlint-disable no-inline-html -->
+
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="1f6cd789-8f79-488f-9d85-d72265ed1d6b" data-share-badge-host="https://www.credly.com"></div><script type="text/JavaScript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
 ## Authoring features
 
 One of Moodle's biggest features is its ability to create and share content to other users.
