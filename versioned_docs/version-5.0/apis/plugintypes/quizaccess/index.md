@@ -27,7 +27,7 @@ The following rules are readily available as part of Moodle core:
 
 ## File structure
 
-Quiz access rule sub-plugins are located in the `/mod/quiz/accessrule` directory. A plugin should not include any custom files outside of it's own plugin folder.
+Quiz access rule sub-plugins are located in the `/public/mod/quiz/accessrule` directory. A plugin should not include any custom files outside of it's own plugin folder.
 
 Each plugin is in a separate subdirectory and consists of a number of mandatory files and any other files the developer is going to use.
 
@@ -35,7 +35,7 @@ Each plugin is in a separate subdirectory and consists of a number of mandatory 
   <summary>View an example directory layout for the `quizaccess_delaybetweenattempts` plugin.</summary>
 
 ```console
-mod/quiz/accessrule/delaybetweenattempts
+public/mod/quiz/accessrule/delaybetweenattempts
 ├── classes
 │   └── privacy
 │       └── provider.php
