@@ -449,7 +449,7 @@ export class MyComponent {
 
 ```ts
 
-export class MyService {
+export class MyComponent {
 
     protected readonly MY_CONSTANT = '...';
 
