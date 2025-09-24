@@ -134,26 +134,26 @@ Most of the steps requires values, there are methods to provide values to steps,
   - optgroup - for searching optgroup by its label
   - option - for searching an option by its content
   - dialogue - for searching a dialogue with the specified header text
-  - filemanager - for searching a filemanager by it's id or label
-  - block - for searching a Moodle block by it's English name or it's frankenstyle name
-  - section - for searching for a section on a course page by it's title or its written out date (e.g. "1 January - 7 January"). Use "frontpage" "section" for the frontpage section if it has no title (default)
-  - activity - for searching for an activity module in a course list by it's title
+  - filemanager - for searching a filemanager by its id or label
+  - block - for searching a Moodle block by its English name or its frankenstyle name
+  - section - for searching for a section on a course page by its title or its written out date (e.g. "1 January - 7 January"). Use "frontpage" "section" for the frontpage section if it has no title (default)
+  - activity - for searching for an activity module in a course list by its title
   - region - for searching a Moodle page region with that id, in fact it works with all ids for <tt>div</tt>, <tt>section</tt>, <tt>aside</tt>, <tt>header</tt> or <tt>footer</tt> elements.
   - table_row - for searching a table row which contains the specified text
   - table - for searching a table by its id or caption
   - icon - for searching an icon by its title
-  - fieldset - for searching a fieldset by it's id or legend
+  - fieldset - for searching a fieldset by its id or legend
   - css_element - for searching an element by its CSS selector
   - xpath_element - for searching an element by its XPath
 - **A text selector** similar to a selector but those are the elements that returns an area of the DOM, they are useful in steps following the format **... in the "Community finder" "block"** where you are clicking or looking for some text inside a specific area. In the 'Acceptance testing' interface you can see a drop-down menu to select one of these options:
   - dialogue - for searching a dialogue with the specified header text
-  - block - for searching a Moodle block by it's English name or it's frankenstyle name
-  - section - for searching for a section on a course page by it's title or its written out date (e.g. "1 January - 7 January"). Use "frontpage" "section" for the frontpage section if it has no title (default)
-  - activity - for searching for an activity module in a course list by it's title
+  - block - for searching a Moodle block by its English name or its frankenstyle name
+  - section - for searching for a section on a course page by its title or its written out date (e.g. "1 January - 7 January"). Use "frontpage" "section" for the frontpage section if it has no title (default)
+  - activity - for searching for an activity module in a course list by its title
   - region - for searching a Moodle page region with that id, in fact it works with all ids for <tt>div</tt>, <tt>section</tt>, <tt>aside</tt>, <tt>header</tt> or <tt>footer</tt> elements.
   - table_row - for searching a table row which contains the specified text
   - table - for searching a table by its id or caption
-  - fieldset - for searching a fieldset by it's id or legend
+  - fieldset - for searching a fieldset by its id or legend
   - list_item - for searching a list item which contains the specified text
   - css_element - for searching an element by its CSS selector
   - xpath_element - for searching an element by its XPath
@@ -185,7 +185,7 @@ Note than some tests requires files to be uploaded, in this case
 
 - The **I upload "FILEPATH_STRING" file to "FILEPICKER_FIELD_STRING" filepicker** step can be used when located in the form page
 - The file to upload should be included along with the Moodle codebase in `COMPONENTNAME/tests/fixtures/*`
-- The file to upload is specified by it's path, which should be relative to the codebase root (`lib/tests/fixtures/users.csv` for example)
+- The file to upload is specified by its path, which should be relative to the codebase root (`lib/tests/fixtures/users.csv` for example)
 - **/** should be used as directory separator and the file names can not include this **/** character as all of them would be converted to the OS-dependant directory separator to maintain the compatibility with Windows systems.
 - The scenarios that includes files uploading should be tagged using the **@_file_upload** tag
 
