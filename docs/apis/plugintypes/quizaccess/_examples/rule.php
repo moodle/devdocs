@@ -1,4 +1,3 @@
-use mod_quiz\form\edit_override_form;
 use mod_quiz\form\preflight_check_form;
 use mod_quiz\quiz_settings;
 use mod_quiz\local\access_rule_base;
