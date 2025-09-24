@@ -61,7 +61,9 @@ function [modname]_supports($feature) {
 
 :::tip
 
-To have your Activity plugin classified in the right Activity category, you must define the function `[modname]_supports` and add the `FEATURE_MOD_PURPOSE` constant:
+To have your Activity plugin classified in the right Activity category, you must define the function `[modname]_supports` and add the `FEATURE_MOD_PURPOSE` constant.
+
+Optionally, if your plugin fits in a secondary purpose, you should add the `FEATURE_MOD_OTHERPURPOSE` constant as well.
 
 <details>
   <summary>View example</summary>
@@ -69,14 +71,12 @@ To have your Activity plugin classified in the right Activity category, you must
 
 ```php
 function [modname]_supports(string $feature) {
-    switch ($feature) {
-        [...]
-        case FEATURE_MOD_PURPOSE:
-            return MOD_PURPOSE_XXXXXX;
-
-        default:
-            return null;
-    }
+    return match ($feature) {
+        // The rest of features should be listed here...
+        FEATURE_MOD_PURPOSE => MOD_PURPOSE_COLLABORATION,
+        FEATURE_MOD_OTHERPURPOSE => MOD_PURPOSE_COMMUNICATION, // Could be omitted if not needed.
+        default => null,
+    };
 }
 ```
 
