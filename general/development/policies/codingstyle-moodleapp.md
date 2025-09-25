@@ -431,7 +431,7 @@ export class MyService {
 
 </InvalidExample>
 
-If a constant needs to be used in a component template, it should be declared in the component without "static" because static properties cannot be used in templates. Please notice that the naming convention for non static properties is camelCase.
+If a constant needs to be used in a component template, it should be declared in the component without "static" because static properties cannot be used in templates. Please notice that the naming convention for non-static properties is camelCase.
 
 <ValidExample title="Good">
 
