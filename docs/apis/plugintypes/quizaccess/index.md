@@ -66,3 +66,21 @@ import RuleDescription from './_examples/rule.md';
     example={RuleFile}
     description={RuleDescription}
 />
+
+import RuleOverridableFile from '!!raw-loader!./_examples/access_override_rule_base.php';
+import RuleOverridableDescription from './_examples/access_override_rule_base.md';
+
+<ComponentFileSummary
+    filepath="/rule.php"
+    summary="Rule definition class with override"
+    plugintype="quizaccessrule"
+    pluginname="pluginname"
+    example={RuleOverridableFile}
+    description={RuleOverridableDescription}
+/>
+
+:::info
+
+Basing your rule on `access_override_rule_base` is not required but can enhance the usability of the rule.
+
+:::
