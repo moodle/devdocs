@@ -89,11 +89,11 @@ The WCAG accreditation expires after 12 months as it is recognised that software
 
 #### Moodle LMS
 
-An overview of Moodle LMS' conformance with the [WCAG 2.1](https://www.w3.org/TR/WCAG21/) guidelines can be found in our [accessibility conformance report](https://docs.moodle.org/en/VPAT#Moodle%20accessibility%20conformance%20report).
+An overview of Moodle LMS' conformance with the [WCAG 2.2](https://www.w3.org/TR/WCAG22/) guidelines can be found in the [accessibility conformance report for Moodle LMS](https://docs.moodle.org/en/VPAT#Moodle%20accessibility%20conformance%20report).
 
 #### Moodle Workplace
 
-An overview of Moodle Workplace's conformance with the [WCAG 2.1](https://www.w3.org/TR/WCAG21/) guidelines can be found in our [accessibility conformance report](https://docs.moodle.org/en/Moodle_Workplace_VPAT#WCAG_2.x_report).
+An overview of Moodle Workplace's conformance with the [WCAG 2.2](https://www.w3.org/TR/WCAG22/) guidelines can be found in the [accessibility conformance report for Moodle Workplace](https://docs.moodle.org/en/Moodle_Workplace_VPAT#WCAG_2.x_report).
 
 <!-- cspell:ignore IAAP -->
 <!-- cspell:ignore credly -->
