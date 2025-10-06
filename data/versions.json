@@ -79,7 +79,12 @@
                 {
                     "name": "5.0.3",
                     "releaseDate": "6 October 2025",
-                    "version": 2025041403,
+                    "version": 2025041403
+                },
+                {
+                    "name": "5.0.4",
+                    "releaseDate": "8 December 2025",
+                    "version": 2025041404,
                     "releaseNoteUrl": false
                 }
             ]
@@ -147,7 +152,12 @@
                 {
                     "name": "4.5.7",
                     "releaseDate": "6 October 2025",
-                    "version": 2024100707,
+                    "version": 2024100707
+                },
+                {
+                    "name": "4.5.8",
+                    "releaseDate": "8 December 2025",
+                    "version": 2024100708,
                     "releaseNoteUrl": false
                 }
             ]
@@ -220,7 +230,12 @@
                 {
                     "name": "4.4.11",
                     "releaseDate": "6 October 2025",
-                    "version": 2024042211,
+                    "version": 2024042211
+                },
+                {
+                    "name": "4.4.12",
+                    "releaseDate": "8 December 2025",
+                    "version": 2024042212,
                     "releaseNoteUrl": false
                 }
             ]
@@ -494,7 +509,12 @@
                 {
                     "name": "4.1.21",
                     "releaseDate": "6 October 2025",
-                    "version": 2022112821,
+                    "version": 2022112821
+                },
+                {
+                    "name": "4.1.22",
+                    "releaseDate": "8 December 2025",
+                    "version": 2022112822,
                     "releaseNoteUrl": false
                 }
             ]
