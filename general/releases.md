@@ -90,6 +90,17 @@ Minor releases dates differ slightly from release to release depending on the ti
 
 :::
 
+## Moodle 5.1
+
+<ReleaseTable releaseName="5.1" />
+
+:::info
+
+Bug fixes for general core bugs in 5.1.x will end 5 October 2026 (12 months).<br/>
+Bug fixes for security issues in 5.1.x will end April 2027 (18 months).
+
+:::
+
 ## Moodle 5.0
 
 <ReleaseTable releaseName="5.0" />
