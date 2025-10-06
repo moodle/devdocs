@@ -67,8 +67,8 @@ import RuleDescription from './_examples/rule.md';
     description={RuleDescription}
 />
 
-import RuleOverridableFile from '!!raw-loader!./_examples/rule_overridable.php';
-import RuleOverridableDescription from './_examples/rule_overridable.md';
+import RuleOverridableFile from '!!raw-loader!./_examples/access_override_rule_base.php';
+import RuleOverridableDescription from './_examples/access_override_rule_base.md';
 
 <ComponentFileSummary
     filepath="/rule.php"
@@ -81,6 +81,6 @@ import RuleOverridableDescription from './_examples/rule_overridable.md';
 
 :::info
 
-Implementing `rule_overridable` is not required but can enhance the usability of the rule.
+Basing your rule on `access_override_rule_base` is not required but can enhance the usability of the rule.
 
 :::
