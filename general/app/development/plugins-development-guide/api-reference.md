@@ -247,6 +247,7 @@ Add new option in the user profile page.
 | `type`              | `'listitem'` | Visual representation of the option, accepted values are `listitem` and `button`. <br /> <br /> Before 4.4, the accepted values were `newpage` and `communication` (`newpage` was the default). |
 | `priority`          | `0`          | Priority of the handler, higher priority options are displayed first. |
 | `ptrenabled`        | `true`       | Whether to enable the PTR (pull-to-refresh) gesture in the page. |
+| `displayinusermenu` | -            | Whether to display the option in the user menu (the menu displayed when the user clicks his own avatar at the top-right or top-left). Accepted values are: <ul><li>`no`: don't display the option in user menu.</li><li>`yes`: display the option in user menu. It will also be displayed in user profiles (like course participants) depending on the restrictions.</li><li>`only`: display the option only in user menu and never in user profiles.</li></ul>If not set, the option will be displayed in the user menu depending on the restricted courses and users. <br /> <br /> Only available in 5.1+. |
 
 ### CoreCourseFormatDelegate
 
