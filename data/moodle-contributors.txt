@@ -60,6 +60,7 @@ Anant
 Anastasios
 Anders
 Anderson
+Andi
 Andolo
 Andrea
 Andreas
@@ -174,6 +175,7 @@ Burnett]
 Butler
 Bösch
 C4ne
+CORDEL
 Cali
 Cameron
 Campbell
@@ -202,6 +204,7 @@ Charles
 Charlotte
 Charsley
 Chernyavskiy
+Chimezie
 Chin
 Chris
 Christian
@@ -288,6 +291,7 @@ Dias
 Dickman
 Didier
 Dieckmann
+Diego
 Dikih
 Dinesh
 Dinh
@@ -327,6 +331,7 @@ Eliyahu
 Elizabeth
 Elliott
 Eloy
+England
 Eoin
 Eric
 Erik
@@ -375,6 +380,7 @@ Fábio
 GUINOISEAU
 Galiszek
 Gancarz
+Gandraß
 Garanin
 Garapati
 Gareth
@@ -670,6 +676,7 @@ Lloyd
 Lock
 Logan
 Loison
+Looi
 Loong
 Lorenzo
 Luca
@@ -776,6 +783,7 @@ Molnar
 Monaco
 Monllao
 Monllaó
+Monroy
 Montesinos
 Moodle
 Moore
@@ -825,6 +833,7 @@ Niclas
 Nicolas
 Nicols
 Nicora
+Niels
 Nielsen
 Nieminen
 Nießen
@@ -868,6 +877,7 @@ PERF
 Pablo
 Palou
 Panagiotis
+Panchal
 Panning
 Paola
 Parry
@@ -887,6 +897,7 @@ Penner
 Penny
 Percy
 Perez
+Permana
 Pesce
 Pete
 Peter
@@ -968,11 +979,13 @@ Robotta
 Robynstar
 Rodrigo
 Rodrigues
+Rodríguez
 Roes
 Roeser
 Roger
 Roggemans
 Rohan
+Rohit
 Rohith
 Rokicki
 Roman
@@ -1022,6 +1035,7 @@ Schroeder
 Schultz
 Schulz
 Scotson
+Scott
 ScottVerbeek
 Scribner
 Sebastian
@@ -1181,6 +1195,7 @@ Valery
 Vaughan
 Vedrine
 Venter
+Verbeek
 Verhoeven
 Verrall
 Vervoort
@@ -1255,6 +1270,7 @@ YVANES
 Yair
 Yang
 Yannick
+Yerai
 Yeung
 Yevhenii
 Yolanda
@@ -1380,6 +1396,7 @@ gniske
 godric
 gregb_cc
 gthomas2
+guillaumebarat
 guillermogomez
 gustav_delius
 hanna

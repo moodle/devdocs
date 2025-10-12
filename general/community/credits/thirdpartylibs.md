@@ -217,7 +217,7 @@ The AWS SDK for PHP library
 Accessibility testing engine for websites and other HTML-based user interfaces.
 
 - **Location**: public/lib/behat/axe
-- **Version**: 4.10.2
+- **Version**: 4.10.3
 - **License**:  MPL 2.0
 - **URL**: [https://github.com/dequelabs/axe-core](https://github.com/dequelabs/axe-core)
 - **Copyright holders**:
@@ -423,7 +423,7 @@ Library for creating beautiful generative background images from a string.
 ### libphonenumber for PHP (Lite)
 
 - **Location**: public/lib/giggsey/libphonenumber-for-php-lite
-- **Version**: 8.13.55
+- **Version**: 9.0.12
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/giggsey/libphonenumber-for-php-lite](https://github.com/giggsey/libphonenumber-for-php-lite)
 
@@ -583,7 +583,7 @@ All rights reserved.
 Library for processing of GeoIP data files.
 
 - **Location**: public/lib/maxmind/GeoIp2
-- **Version**: 3.1.0
+- **Version**: 3.2.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/GeoIP2-php](https://github.com/maxmind/GeoIP2-php)
 - **Copyright holders**:
@@ -594,7 +594,7 @@ Library for processing of GeoIP data files.
 PHP API for reading MaxMind DB files.
 
 - **Location**: public/lib/maxmind/MaxMind
-- **Version**: 1.12.0
+- **Version**: 1.12.1
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/MaxMind-DB-Reader-php/](https://github.com/maxmind/MaxMind-DB-Reader-php/)
 - **Copyright holders**:
@@ -605,7 +605,7 @@ PHP API for reading MaxMind DB files.
 CSS & JavaScript minifier, in PHP
 
 - **Location**: public/lib/minify/matthiasmullie-minify
-- **Version**: 1.3.73 (with Moodle customisations)
+- **Version**: 1.3.75 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/matthiasmullie/minify](https://github.com/matthiasmullie/minify)
 
@@ -1134,7 +1134,7 @@ JavaScript library that makes it easier to work with and build on HTML5 video
 Collection of PHP classes facilitating developers to read pages from existing PDF documents and use them as templates in FPDF.
 
 - **Location**: public/mod/assign/feedback/editpdf/fpdi
-- **Version**: 2.6.3
+- **Version**: 2.6.4
 - **License**:  MIT
 - **URL**: [https://github.com/Setasign/FPDI](https://github.com/Setasign/FPDI)
 - **Copyright holders**:
