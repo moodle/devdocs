@@ -103,7 +103,7 @@ Keep calls to action as short and actionable as you can.
 
 <ValidExample title="Do">
 
-Message posted. You have 30 minutes to edit it. **See post**.
+Message posted. You have 30 minutes to edit it. **See post**
 
 </ValidExample>
 
