@@ -261,6 +261,7 @@ If you have any questions or comments, please post in the [Testing and QA forum]
 
 Comments on tests from previous QA cycles:
 
+- [Moodle 5.1 QA](https://moodle.atlassian.net/browse/MDLQA-20667)
 - [Moodle 5.0 QA](https://moodle.atlassian.net/browse/MDLQA-19836)
 - [Moodle 4.5 QA](https://moodle.atlassian.net/browse/MDLQA-18925)
 - [Moodle 4.4 QA](https://moodle.atlassian.net/browse/MDLQA-18443)
@@ -295,6 +296,6 @@ Comments on tests from previous QA cycles:
 
 ## See also
 
-- [QA testing dashboard](https://moodle.atlassian.net/secure/Dashboard.jspa?selectPageId=11454)
+- [QA testing dashboard](https://moodle.atlassian.net/jira/dashboards/10612)
 - [Testing credits](../../../community/credits/testing.md)
 - [Useful tips for QA testing](https://moodle.org/mod/forum/discuss.php?d=351302)
