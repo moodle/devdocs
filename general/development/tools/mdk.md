@@ -10,6 +10,11 @@ Every developer creates simple tools to avoid repeating cumbersome and/or boring
 
 The most important concept of MDK is that it works with Moodle instances. An instance of Moodle is a directory in which you have checked out a particular version together with a database using a specific database engine. This means that if you want to work on Moodle 4.3 and 4.2, using both MySQL and PostgreSQL, you will have four separate instance directories. This choice was made because it is the safest, clearest, and most straightforward solution.
 
+<AcademyLink
+  subject="Moodle Development Kit"
+  courseName="mdk"
+/>
+
 ## Typical workflows using MDK
 
 To discover what MDK can do for you, here are a few common tasks it can achieve. More on [MDK's wiki](https://github.com/FMCorz/mdk/wiki/Typical-workflows).
@@ -237,6 +242,7 @@ You may need to set the path variable to null:
 mdk config set path ""
 ```
 
+During the installation, a `.moodle-sdk` folder will be created containing a `config.json` file will. You can edit it to change your settings easily.
 :::
 
 ## Upgrading MDK
