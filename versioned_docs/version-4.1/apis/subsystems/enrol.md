@@ -142,7 +142,7 @@ Returns the enrolment plugin base class with the given name.
   <div>
 
 ```php
-$instance = $DB->get_record('enrol', ['courseid' => $course->id, 'enrol' => 'manual'])
+$instance = $DB->get_record('enrol', ['courseid' => $course->id, 'enrol' => 'manual']);
 $enrolplugin = enrol_get_plugin($instance->enrol);
 $enrolplugin->enrol_user($instance, $user->id, $role->id, $timestart, $timeend);
 ```
