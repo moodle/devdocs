@@ -21,10 +21,6 @@ The communication between machine learning backends and Moodle is through files 
 
 ## Backends included in Moodle core
 
-### PHP
-
-The **PHP backend** is the default predictions processor as it is written in PHP and does not have any external dependencies. It is using logistic regression.
-
 ### Python
 
 The **Python backend** requires *python* binary (either python 2 or python 3) and [moodlemlbackend python package](https://pypi.python.org/pypi?name=moodlemlbackend&version=0.0.5&:action=display) which is maintained by Moodle HQ.
