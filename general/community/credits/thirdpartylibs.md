@@ -24,7 +24,7 @@ Provide a great search experience without the need for external, server-side, se
 ### Roundcube Framework
 
 - **Location**: public/admin/tool/messageinbound/roundcube
-- **Version**: 1.6.10
+- **Version**: 1.6.11
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/roundcube/roundcubemail](https://github.com/roundcube/roundcubemail)
 - **Copyright holders**:
@@ -208,7 +208,7 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 The AWS SDK for PHP library
 
 - **Location**: public/lib/aws-sdk
-- **Version**: 3.342.2
+- **Version**: 3.356.22
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/aws/aws-sdk-php](https://github.com/aws/aws-sdk-php)
 
@@ -392,7 +392,7 @@ Library to parse easily data and sprite sheets for emoji.
 Class to safely evaluate math expressions.
 
 - **Location**: public/lib/evalmath
-- **Version**: 1.0.1 (with Moodle customisations)
+- **Version**: 1.0.2 (with Moodle customisations)
 - **License**:  BSD
 - **URL**: [https://github.com/dbojdo/eval-math](https://github.com/dbojdo/eval-math)
 - **Copyright holders**:
@@ -548,7 +548,7 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 A library used for building IMS-certified LTI 1.3 tool providers in PHP.
 
 - **Location**: public/lib/lti1p3
-- **Version**: 6.0.0 (with Moodle customisations)
+- **Version**: 6.2.0 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/packbackbooks/lti-1-3-php-library](https://github.com/packbackbooks/lti-1-3-php-library)
 - **Copyright holders**:
@@ -1054,7 +1054,7 @@ The Gallery is a collection of modules that have been developed by the YUI commu
 PHP ZIP Streaming Library
 
 - **Location**: public/lib/zipstream
-- **Version**: 3.1.2
+- **Version**: 3.2.0
 - **License**:  MIT
 - **URL**: [https://github.com/maennchen/ZipStream-PHP](https://github.com/maennchen/ZipStream-PHP)
 - **Copyright holders**:
