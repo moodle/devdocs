@@ -140,6 +140,7 @@ Clustering is when the same code is run on different computers and an end user c
 Ensure that:
 
 - Any filesystem, database or cache accesses are done in the most efficient way.
+- If a change is in a performance critical part of the code (for example the database layer, caching system, locks, SQL query changes ...) then we expect to see some attempt to measure the performance impact of the change reported in a comment in the tracker, or even better verified in the testing instructions. (Good examples: [testing instructions of MDL-82754](https://moodle.atlassian.net/browse/MDL-82754), [this comment in MDL-86601](https://moodle.atlassian.net/browse/MDL-86601?focusedCommentId=1019696); bad example MDL-80815.)
 - That any code or function that appear expensive are not in critical paths. eg; They don't load on every page.
 - The least possible code is running to complete the task, especially looking for hidden loops. They can appear from calling functions.
 - Any code that runs is not specific to a single node. (eg opcache_reset()) This ensures clusters will run correctly.
