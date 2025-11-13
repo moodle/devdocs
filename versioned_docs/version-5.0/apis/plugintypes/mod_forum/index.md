@@ -7,4 +7,4 @@ tags:
 documentationDraft: true
 ---
 
-The `mod_fporum` activity can be extended using the `forumreport` sub-plugin type. This hasn't been documented yet - perhaps you are able to help us.
+The `mod_forum` activity can be extended using the `forumreport` sub-plugin type. This hasn't been documented yet - perhaps you are able to help us.
