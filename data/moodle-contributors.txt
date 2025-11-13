@@ -125,6 +125,7 @@ Beedell
 Belgium
 Bellen
 Bence
+Benedicte
 Benjamin
 Bennett
 Benoit
@@ -491,6 +492,7 @@ Huong
 Hutchinson
 Huynh
 Hämmerle
+Héctor
 Hübler
 ISHIKAWA
 Igor
@@ -521,7 +523,9 @@ Jakub
 James
 Jamie
 Janek
+Jarad
 Jaravaza
+Jared
 Jason
 Javed
 JayChurchward
@@ -680,6 +684,7 @@ Looi
 Loong
 Lorenzo
 Luca
+Lucas
 Lucian
 Lukacs
 Lukas
@@ -913,6 +918,7 @@ Phillips
 Phoon
 Phuc
 Pichet
+Pico
 Pierre
 Piers
 Piguillem
@@ -1569,6 +1575,7 @@ viettruongq
 villate
 vinhle
 vinkmar
+vinod404
 vlad.kidanov
 vpisabeywardana
 vthung

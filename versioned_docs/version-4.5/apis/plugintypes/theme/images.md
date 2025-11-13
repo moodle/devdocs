@@ -72,7 +72,7 @@ A placeholder is used within the CSS  to allow use of a pix icon. During the CSS
 
 :::note
 
-Notice that the image file extension included. The reason for this leads us into the next topic, how to override images.
+Notice that the image file extension is not included. The reason for this leads us into the next topic, how to override images.
 
 :::
 

@@ -291,8 +291,15 @@ Support for Array notated callbacks was introduced in Moodle 4.4. If you are wri
 
 :::
 
-Hook callbacks are executed in the order of their priority from highest to lowest.
-Any guidelines for callback priority should be described in hook descriptions if necessary.
+### Hook Callback Execution Order
+
+Hook callbacks are executed according to their priority, in **descending order** — from the **highest number** to the **lowest**.
+
+- **Default priority:** `100`
+- **Higher numbers:** executed **earlier**
+- **Lower numbers (down to 0):** executed **later**
+
+If a particular hook requires callbacks to run in a specific order, its documentation should include guidelines on what priorities to use.
 
 :::caution
 

@@ -112,6 +112,20 @@ function FutureReleaseWarning({ versionData }) {
                     This version of Moodle has not yet been released.
                 </Translate>
             </strong>
+
+            <br />
+
+            {versionData.codeFreezeDate && (
+                <Translate
+                    description="A message to inform of the code freeze date"
+                    id="documentation.support.freezeDate"
+                    values={{
+                        date: versionData.codeFreezeDate,
+                    }}
+                >
+                    {'The code freeze date for this release is {date}.'}
+                </Translate>
+            )}
         </Admonition>
     );
 }
