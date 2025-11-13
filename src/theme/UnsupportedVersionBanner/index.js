@@ -115,15 +115,17 @@ function FutureReleaseWarning({ versionData }) {
 
             <br />
 
-            <Translate
-                description="A message to inform of the code freeze date"
-                id="documentation.support.freezeDate"
-                values={{
-                    date: versionData.codeFreezeDate,
-                }}
-            >
-                {' The code freeze date for this release is {date}.'}
-            </Translate>
+            {versionData.codeFreezeDate && (
+                <Translate
+                    description="A message to inform of the code freeze date"
+                    id="documentation.support.freezeDate"
+                    values={{
+                        date: versionData.codeFreezeDate,
+                    }}
+                >
+                    {'The code freeze date for this release is {date}.'}
+                </Translate>
+            )}
         </Admonition>
     );
 }
