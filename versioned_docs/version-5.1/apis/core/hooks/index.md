@@ -95,7 +95,7 @@ callbacks completely:
 ```php title="/config.php"
 $CFG->hooks_callback_overrides = [
     \mod_activity\hook\installation_finished::class => [
-        'test_otherplugin\\callbacks::activity_installation_finished' => ['disabled' => true],
+        'test_otherplugin\\hook_callbacks::activity_installation_finished' => ['disabled' => true],
     ],
 ];
 ```
