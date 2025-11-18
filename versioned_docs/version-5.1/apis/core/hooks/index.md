@@ -38,6 +38,17 @@ New hooks added to Moodle from Moodle 4.4 onwards must meet the following rules:
 
 ## General concepts
 
+### Comparison to the Events API
+
+The [Events API](https://docs.moodle.org/dev/Events_API) and the Hooks API share similarities, but they serve distinct purposes and operate differently. Key differences include:
+
+- **Communication Flow**: Events use one-way communication (from one to many), while hooks enable two-way communication (typically many to one).
+- **Data Mutation**: Event data is must not be modified, whereas hook callbacks can modify hook instance data.
+- **Execution Timing**: Events are triggered after actions, whereas hooks can be executed at any useful stage (e.g., pre-action, validation, post-action, etc.).
+- **Structure**: Events follow a fixed structure, but hooks can be arbitrary classes that may extend the base.
+- **DB Transactions**: Database transactions may cause event buffering, but the hook manager does not account for transactions.
+- **Logging**: All events are logged (this is contentious), while hooks are not logged.
+
 ### Mapping to PSR-14
 
 Moodle does not allow camelCase for naming of classes and method and Moodle already has events,
