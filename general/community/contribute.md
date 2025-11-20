@@ -40,7 +40,7 @@ You'll find them in the [How do I contribute to Moodle?](https://moodle.com/faq/
 
 Ideas with lots of votes are more likely to be implemented, however votes are not the only deciding factor.
 
-- If you're able to provide funding for your idea to be implemented, contribute to [Fund Moodle](https://fund.moodle.org/) or contact a [Moodle Partner specialising in custom development](http://moodle.com/partners/).
+- If you're able to provide funding for your idea to be implemented you can [Donate to Moodle](https://moodle.com/donations/), or contact a [Moodle Partner specialising in custom development](http://moodle.com/partners/).
 - Join the [Moodle LMS Community Product Advisory Group](https://moodle.org/lms-community-pag) to have your say in Moodle's strategic direction and contribute to guiding the Moodle LMS development roadmap.
 - If you're a developer and can create a patch for your feature idea or improvement, attach it to the tracker issue for review by the component maintainer. When you add a patch, add a "patch" label so your patch will be found in searches.
 - Moodle is modular, so the easiest way for developers to implement new features and improvements are via [new plugins](https://moodle.org/plugins/).
