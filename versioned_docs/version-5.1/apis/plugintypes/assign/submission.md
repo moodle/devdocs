@@ -19,7 +19,7 @@ An assignment submission plugin is used to display custom form fields to a stude
 
 :::tip
 
-For a good reference implementation, see the [onlinetext](https://github.com/moodle/moodle/tree/main/mod/assign/submission/onlinetext) submission plugin included with core because it uses most of the features of submission plugins.
+For a good reference implementation, see the [onlinetext](https://github.com/moodle/moodle/tree/main/public/mod/assign/submission/onlinetext) submission plugin included with core because it uses most of the features of submission plugins.
 
 :::
 
