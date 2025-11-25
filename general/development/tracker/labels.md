@@ -21,7 +21,7 @@ This is set after a bug has been [triaged](../process/triage.md) by component le
 - [`triaging_in_progress`](https://moodle.atlassian.net/issues/?jql=labels%20in%20(triaging_in_progress))<br/>
 Used to flag issues that are being triaged (sometimes an ongoing process for days or weeks). When the issue has been triaged the label should be removed and a `triaged` label should be added or when the issue is closed.
 
-- `mdlqa`<br/>
+- [`mdlqa`](#mdlqa)<br/>
 Used to flag that an issue is a direct result of a [Moodle QA test](../process/testing/qa.md), conducted just before major releases. The bug should also be linked to the original MDLQA test, so that developers/integrators can reset the original MDLQA test (for re-testing) when the MDL issue is fixed. Once all the related MDLQA tests are passing the label can be deleted.
 
 - `mdlqa_conversion`<br/>
