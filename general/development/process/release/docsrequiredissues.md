@@ -13,7 +13,7 @@ Issue descriptions should include enough details to document the new feature or 
 - What problem does this feature solve?
 - What is the goal of the user?
 - Who is the target audience (e.g. admins, teachers)?
-- How does the feature work from a user’s perspective? What are the steps?
+- How does the feature work from a user's perspective? What are the steps?
 - Are there any dependencies / other features that this new feature relies on?
 - Does the user interface change for existing users?
 - Are there any differences in an upgraded site versus a new install?
