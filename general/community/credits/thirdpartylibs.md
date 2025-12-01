@@ -248,7 +248,7 @@ PCRE wrapping library that offers type-safe preg_* replacements.
 ### Tiny
 
 - **Location**: public/lib/editor/tiny/js/tinymce
-- **Version**: 7.7.1
+- **Version**: 8.2.2
 - **License**:  MIT
 - **URL**: [https://github.com/tinymce/tinymce](https://github.com/tinymce/tinymce)
 
@@ -721,7 +721,7 @@ A Parser for CSS Files written in PHP.
 A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
 
 - **Location**: public/lib/php-jwt
-- **Version**: 6.11.0
+- **Version**: 6.11.1
 - **License**:  BSD 3-Clause
 - **URL**: [https://github.com/firebase/php-jwt](https://github.com/firebase/php-jwt)
 - **Copyright holders**:
@@ -761,7 +761,7 @@ PHP Class for handling Matrices.
 Library to read, write and create spreadsheet documents in PHP.
 
 - **Location**: public/lib/phpspreadsheet/phpspreadsheet
-- **Version**: 4.1.0 (with Moodle customisations)
+- **Version**: 5.2.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/PHPOffice/PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
 
@@ -1079,7 +1079,7 @@ Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 JavaScript library that makes it easier to work with and build on HTML5 video.
 
 - **Location**: public/media/player/videojs/amd/src/video-lazy.js
-- **Version**: 8.21.1 (with Moodle customisations)
+- **Version**: 8.23.4 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
@@ -1123,7 +1123,7 @@ JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 JavaScript library that makes it easier to work with and build on HTML5 video
 
 - **Location**: public/media/player/videojs/videojs
-- **Version**: 8.21.1 (with Moodle customisations)
+- **Version**: 8.23.4 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
