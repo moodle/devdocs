@@ -15,6 +15,16 @@ Labels can only be added by a user with permission to edit an issue, that is the
 
 ## Issue reporting and triaging
 
+- `accessibility`
+
+  Use this label only when reporting issues that meet any of the following criteria:
+
+  - Issues that violate accessibility guidelines, such as the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/).
+    - Some examples: Missing or poorly written element labels, poor colour contrast, user interface that cannot be operated using the keyboard, inaccessible navigation, keyboard focus trap, etc.
+  - Issues that create usability barriers for people with disabilities, preventing them from effectively performing tasks in Moodle.
+
+  Please avoid using this label for general bugs or design preferences unless they directly impact accessibility.
+
 - [`addon_candidate`](https://moodle.atlassian.net/issues/?jql=labels%20%3D%20addon_candidate)
 
   Used to identify suggestions for improvements/new features as possible candidates for add-on development. New and willing developers can be directed to these issues for projects.
