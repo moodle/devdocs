@@ -80,21 +80,21 @@ Once your `messages.php` is complete you need to increase the version number of 
 ```php title="The default processor can be set using an element of the array"
 'mynotification' => [
     'defaults' => [
-        'pop-up' => MESSAGE_PERMITTED + MESSAGE_DEFAULT_LOGGEDIN + MESSAGE_DEFAULT_LOGGEDOFF,
+        'pop-up' => MESSAGE_PERMITTED + MESSAGE_DEFAULT_ENABLED,
         'email' => MESSAGE_PERMITTED,
     ],
 ],
 ```
 
-With that setting email will be permitted but disabled for each user by default. It  can be turned on by each user through the `preferences/notification` preferences options (`/message/notificationpreferences.php?userid=X`)
+With that setting email will be permitted but disabled for each user by default. It can be turned on by each user through the `preferences/notification` preferences options (`/message/notificationpreferences.php?userid=X`)
 The possible values are recorded in the lib.php file of messaging
 
 ```php
 /**
  * Define contants for messaging default settings population. For unambiguity of
  * plugin developer intentions we use 4-bit value (LSB numbering):
- * bit 0 - whether to send message when user is loggedin (MESSAGE_DEFAULT_LOGGEDIN)
- * bit 1 - whether to send message when user is loggedoff (MESSAGE_DEFAULT_LOGGEDOFF)
+ * bit 0 - whether to send message (MESSAGE_DEFAULT_ENABLED)
+ * bit 1 - not used
  * bit 2..3 - messaging permission (MESSAGE_DISALLOWED|MESSAGE_PERMITTED|MESSAGE_FORCED)
  *
  * MESSAGE_PERMITTED_MASK contains the mask we use to distinguish permission setting
