@@ -156,10 +156,57 @@ Last, but not less important, a second goal for this on-sync period is:
 As part of the standard [Moodle release process](./release), at the beginning of the on-sync period, we "unhold" all bugs that were held during the last week before the release because they were unrelated to the release. At the end of the onsync period we "unhold" all new features that were submitted after the code freeze for the the release.
 
 ## Fixing issues identified during integration review/ testing
+When working on an issue that is in the integration process, it is essential to follow the correct workflow so integrators can efficiently review, merge, and track changes.
+The rules differ depending on whether the branch has been accepted into integration or the issue has already been fully integrated.
 
-When a branch has been merged by an integrator, it is important that you do not modify the existing history of your branch (e.g. by amending or squashing your commits) and instead add new commits on top. If you modify the history of your branch, it makes it extremely difficult for the integrator to merge your changes (and see the differences).
+### Fixing issues before integration (during integration review)
+Once an issue has entered the “In integration review” stage, you must not modify the existing commit history of your branch.
+This means:
+- Do not amend commits
+- Do not squash commits
+- Do not rebase or force-push updated history
 
-As a general rule, this means that if your issue has entered the 'in integration review' stage of the development process, please only add new commits on top of your existing commits. There are circumstances when your issue will be 'in integration review' but not merged (and thus possible to squash changes) but if in any doubt, please add new commits and ask the integrator to squash your changes for you.
+Rewriting history makes it difficult for integrators to verify what has changed since the last review.
+#### What to do instead
+Add new commits on top of the existing branch, using FIXUP! commit messages wherever appropriate. These commits make it clear which changes are follow-ups to earlier commits.
+
+For example:
+```console
+commit a1b2c3d First implementation of feature
+commit d4e5f6a Add missing unit tests
+commit 12ab34f FIXUP! Address review feedback: fix coding style
+commit 56cd78e FIXUP! Adjust logic after integration testing
+```
+### Fixing issues after integration (when problems are found during integration testing)
+Once the issue has been integrated, the workflow changes.
+
+At this point, the original development branch should no longer be modified.
+Instead, follow this process:
+
+#### 1. Create a new branch for the fix
+Use the format: MDL-12345-main-fix
+
+Base this branch on the integrated branch (i.e., the branch as it exists in the integration repository).
+#### 2. Add your fix as a new commit
+- Do not rebase or modify the previously integrated branch
+- Do not force push changes to the old development branch
+- If the original branch cannot be reused (e.g., conflicts), create the new branch based on the latest integration state
+- The integrator will cherry-pick the fix commits where appropriate
+
+#### 3. Add a comment to the issue with the following details
+Include the following information:
+- GitHub repository URL
+- Branch name
+- Link to the diff
+- Commit hash
+
+Example:
+```console
+Repository: github.com/username/moodle.git
+Branch: MDL-12345-main-fix
+Diff: https://github.com/username/moodle/compare/MDL-12345-main...MDL-12345-main-fix
+Commit: abcd1234ef567890
+```
 
 ## Commit squashing
 
@@ -188,26 +235,6 @@ When reviewing code for the final review, it is important to do so in a separate
 
 The following configuration can be applied in your global git configuration:
 
-```console title="~/.gitconfig"
-[alias]
-  # Display the name of the current branch.
-  current-branch = rev-parse --abbrev-ref HEAD
-
-  # Get a list of all other branches.
-  other-branches = !git branch | grep -v " `git current-branch`$"
-
-  # Remove all branches other than the one currently checked out.
-  remove-other-branches = !git branch -D `git other-branches`
-
-  # Fetch from the Moodle Remote and then reset the current branch.
-  integration-reset = !git fetch origin && git reset --hard origin/`git current-branch`
-
-  # Diff the current branch against the remote version of this branch, fetching first.
-  integration-diff    = !git fetch origin && git show --stat=500,300 -p origin/`git current-branch`...`git current-branch`
-
-  # Diff the current branch, ignoring whitespace, against the remote version of this branch, fetching first.
-  integration-wdiff   = !git fetch origin && git show --color-words --stat=500,300 -p origin/`git current-branch`...`git current-branch`
-```
 
 The following configuration should only be applied to the git configuration used for your final reviews.
 
