@@ -111,8 +111,6 @@ Since Moodle 2.0, we have a policy of release major versions (for example 4.0, 4
 
 Since Moodle 4.2, Moodle major versions (for example 4.2, 4.3, 4.4, etc.) are released every six months in April and October.
 
-Releases are in weeks 17, and 43 of the year.
-
 There will be a point release every two months following a major release. See the [General release calendar](../releases.md#general-release-calendar) for more details.
 
 :::note
