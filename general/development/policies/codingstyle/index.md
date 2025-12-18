@@ -1180,7 +1180,7 @@ Instead of a generic array of options, each option should be specified as a func
 <ValidExample>
 
 ```php
-function goodfunction(
+function good_function(
     string $text,
     ?context $context = null,
     bool $trusted = false,
