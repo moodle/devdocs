@@ -20,7 +20,7 @@ SQL fragments may be used in DML method with _select() suffix.
 - All SQL keywords are in UPPER CASE.
 - All SQL queries and fragments should be enclosed in double quotes.
 - Complex SQL queries should be on multiple lines.
-- Multiline SQL queries should be right aligned on SELECT, FROM, JOIN, WHERE, GROUPY BY and HAVING.
+- Multiline SQL queries should be right aligned on SELECT, FROM, JOIN, WHERE, GROUP BY and HAVING.
 - Use JOIN instead of INNER JOIN.
 - Do not use right joins.
 - Always use AS keyword for column aliases.
