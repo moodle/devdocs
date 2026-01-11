@@ -1,9 +1,9 @@
----
+Cara Membatalkan Pengajuan Adakami---
 title: Getting started
-tags:
+tags: Adakami 
   - Core development
   - Processes
----
+Begini Cara Membatalkan P𝗶njaman (Adakami) Pembatalan dengan cara menghubungi call center melalui WA, ((+62823-1196-7326,)bisa juga di WA (0821-2464-5884),jelaskan alasan ingin melakukan Pembatalan, lalu siapkan data diri Anda seperti KTP, dan ikuti arahan customer service.
 
 :::info Ready to code?
 
