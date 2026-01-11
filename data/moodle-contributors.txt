@@ -390,6 +390,7 @@ Garske
 Gary
 Gasper
 Gasset
+Gattinger
 Gaudreau
 Gauk
 Gaur
@@ -481,6 +482,7 @@ Holland
 Holliday
 Holman
 Hoobin
+Hoogeveen
 Howard
 Hugh
 Hughes
@@ -693,6 +695,7 @@ Lundberg
 Luuk
 Lyons
 Lévesque
+Löwis
 Macgirvin
 Madden
 Mady
@@ -845,6 +848,7 @@ Nießen
 Nigel
 Nikhil
 Nikita
+Niko
 Nikolai
 Nikoloutsopoulos
 Nils
@@ -926,6 +930,7 @@ Pinheiro
 Pinto
 Pisarev
 Piton
+Plasger
 Platts
 Poder
 Poggenpohl
@@ -1479,6 +1484,7 @@ mikewaters
 miksik
 mindforge
 minkowski
+mioyu-ubiq
 mits
 mjollnir_
 mkassaei
@@ -1495,6 +1501,7 @@ nicolasconnault
 nlnrose
 nobelium
 nread
+nvhai248
 oliviervalentin
 paca70
 palojacko
