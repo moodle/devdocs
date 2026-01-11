@@ -88,7 +88,4 @@ We write with accessibility, diversity, and respect in mind.
 
 ### Work together
 
-Good content design is a team effort. We share early, welcome feedback, and learn from each other.
-
-- If you're unsure, especially if English is not your first language, ask a teammate to review your work
-- We support one another in writing clearly and inclusively
+Good con
