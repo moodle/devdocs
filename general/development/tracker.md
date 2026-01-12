@@ -40,7 +40,7 @@ See also [Tracker tips](./tracker/tips).
 
 :::important
 
-If you see a message that you can not create an issue unless you vote for or watch an existing open issue, search a tracker for [Unresolved issues](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDL%20AND%20resolution%20%3D%20Unresolved), select one that is interesting to you and click either "Watch" or "Vote" link. This is a protection against spam and also encourages reporters to search tracker first.
+If you see a message that you can not create an issue unless you vote for or watch an existing open issue, search a tracker for [Unresolved issues](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDL%20AND%20resolution%20%3D%20Unresolved), select one that is interesting to you and click either 👁 ("watch") or 🖒 ("vote"). This is a protection against spam and also encourages reporters to search tracker first.
 
 :::
 
@@ -56,7 +56,7 @@ For new Moodle issues...
 
 To receive email notification of updates to any issue, you can add yourself as a watcher.
 
-- Click the 'Watch' link on the right of the issue page.
+- Click 👁 ("watch") in the upper-right corner of the issue page.
 
 :::note
 
@@ -84,7 +84,7 @@ If the issue is assigned to another developer then it is not possible to identif
 
 You can help determine Moodle development priorities by voting for issues that you'd most like to see fixed.
 
-- Click the 'Vote' link on the right of the issue page.
+- Click 🖒 ("vote") in the upper-right corner of the issue page.
 
 ## What makes a good tracker issue?
 
