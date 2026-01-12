@@ -18,6 +18,20 @@ Depending on which version of the app you're upgrading from, you'll need to go t
 
 Other than the changes outlined in this document, there may be smaller API changes that aren't highlighted here. Make sure to check the [UPGRADE.md](https://github.com/moodlehq/moodleapp/blob/latest/UPGRADE.md) file for an exhaustive list with all the changes.
 
+## 5.0 to 5.1
+
+In this version, the app has undergone a major framework modernization. The most significant change is the upgrade of **Angular from v17 to v20**.
+
+### Angular 20 Upgrade
+
+This is a major jump that aligns the app with the latest web standards and performance improvements. While Angular 20 maintains backward compatibility for many patterns, there is a key area you should review in your site plugins:
+
+**[New Control Flow Syntax](https://v20.angular.dev/guide/templates/control-flow):** Angular 20 stabilizes the modern control flow syntax. We recommend replacing structural directives like `*ngIf`, `*ngFor`, and `[ngSwitch]` with the new `@if`, `@for`, and `@switch` blocks. We strongly recommend migrating to this new syntax as it offers better performance, improved type safety, and is the current standard for Angular development, while the old directives have been deprecated. This new control flow can be used since Moodle app 4.4.
+
+Make sure to test your plugin thoroughly, especially any custom templates that might be affected by in newer Angular versions. Refer to the official Angular upgrade guide for a detailed list of breaking changes between v17 and v20.
+
+**Note for developers:** Please remember to check the [UPGRADE.md](https://github.com/moodlehq/moodleapp/blob/latest/UPGRADE.md) file regularly for any deprecated methods or classes within the Moodle App API to ensure your plugin remains compatible with future releases.
+
 ## 4.4 to 4.5
 
 The Ionic version has been upgraded to v8 (from v7), make sure to check the relevant upgrade guides for [v8](https://ionicframework.com/docs/updating/8-0). In particular, the legacy syntax to declare input labels that was deprecated on Ionic7 now has been removed.
