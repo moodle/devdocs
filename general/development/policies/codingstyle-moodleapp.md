@@ -601,37 +601,9 @@ There is a maximum line length of 140 characters for templates. Whenever that le
 If you are using VSCode, this should be done automatically on every save with the [configuration that ships with the app](https://github.com/moodlehq/moodleapp/blob/latest/.vscode/settings.json#L8).
 :::
 
-### Avoid default exports
-
-Using default exports should be avoided for Angular applications because they [cause issues with AOT compiler](https://stackoverflow.com/questions/45962317/why-isnt-export-default-recommended-in-angular). Technically only components have this problem, but in order to avoid the mental load of thinking about this every time, we disallow it altogether.
-
-<ValidExample title="Good">
-
-```ts
-@Component({
-    selector: 'my-component',
-    templateUrl: 'my-component.html',
-})
-export class MyComponent {}
-```
-
-</ValidExample>
-
-<InvalidExample title="Bad">
-
-```ts
-@Component({
-    selector: 'my-component',
-    templateUrl: 'my-component.html',
-})
-export default class MyComponent {}
-```
-
-</InvalidExample>
-
 ### Declaring page modules
 
-When creating a page component, it should be declared in the feature's [lazy modules](../../../general/app/development/development-guide.md#routing). Exceptionally, pages that are used by more than one module can create a page module; but this module should only declare components, it shouldn't include any routing functionality.
+When creating a page component, it should be declared as a standalone component and exported as default class so it can be easily [lazy loaded](../../../general/app/development/development-guide.md#routing).
 
 <ValidExample title="Good">
 
@@ -640,58 +612,24 @@ When creating a page component, it should be declared in the feature's [lazy mod
 @Component({
     selector: 'page-core-feature-index',
     templateUrl: 'index.html',
+    imports: [
+        CoreSharedModule,
+    ],
 })
-export class CoreFeatureIndexPageComponent {}
+export default class CoreFeatureIndexPageComponent {}
 ```
 
 ```ts
-// file: core/features/feature/feature-lazy.module.ts
+// file: core/features/feature/feature.module.ts
 const routes: Routes = [
     {
         path: 'feature',
-        component: CoreFeatureIndexPageComponent,
+        loadComponent: () => import('./pages/index/index'),
     },
 ];
-
-@NgModule({
-    imports: [
-        RouterModule.forChild(routes),
-        CoreSharedModule,
-    ],
-    declarations: [
-        CoreFeatureIndexPageComponent,
-    ],
-})
-export class CoreFeatureLazyModule {}
 ```
 
 </ValidExample>
-
-<CodeExample type="warning" title="Allowed only if the page is used in multiple modules">
-
-```ts
-// file: core/features/feature/pages/index/index.page.ts
-@Component({
-    selector: 'page-core-feature-index',
-    templateUrl: 'index.html',
-})
-export class CoreFeatureIndexPageComponent {}
-```
-
-```ts
-// file: core/features/feature/pages/index/index.module.ts
-@NgModule({
-    imports: [
-        CoreSharedModule,
-    ],
-    declarations: [
-        CoreFeatureIndexPageComponent,
-    ],
-})
-export class CoreFeatureIndexPageModule {}
-```
-
-</CodeExample>
 
 <InvalidExample title="Bad">
 
@@ -700,6 +638,7 @@ export class CoreFeatureIndexPageModule {}
 @Component({
     selector: 'page-core-feature-index',
     templateUrl: 'index.html',
+    standalone: false,
 })
 export class CoreFeatureIndexPageComponent {}
 ```
