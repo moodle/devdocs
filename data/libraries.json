@@ -273,7 +273,7 @@
         "copyrightHolders": [],
         "location": "public/lib/editor/tiny/js/tinymce",
         "name": "Tiny",
-        "version": "7.7.1",
+        "version": "8.2.2",
         "license": "MIT",
         "repository": "https://github.com/tinymce/tinymce",
         "customised": false
@@ -487,6 +487,39 @@
         "customised": true
     },
     {
+        "copyrightHolders": [],
+        "location": "public/lib/google2",
+        "name": "Google APIs",
+        "description": "Library Google APIs Client Library for PHP",
+        "version": "2.18.4",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/googleapis/google-api-php-client",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "public/lib/google2-auth",
+        "name": "Google Auth",
+        "description": "Google Auth Library for PHP",
+        "version": "1.49.0",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/googleapis/google-auth-library-php",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "public/lib/google2-service",
+        "name": "Google Client Services",
+        "description": "Google PHP API Client Services",
+        "version": "0.424.0",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/googleapis/google-api-php-client-services",
+        "customised": false
+    },
+    {
         "copyrightHolders": [
             "2000 Herman Veluwenkamp (hermanV AT mindless DOT com)"
         ],
@@ -692,16 +725,26 @@
         "customised": false
     },
     {
+        "copyrightHolders": [],
+        "location": "public/lib/monolog",
+        "name": "Monolog",
+        "description": "Monolog - Logging for PHP",
+        "version": "3.9.0",
+        "license": "MIT",
+        "repository": "https://github.com/Seldaek/monolog",
+        "customised": false
+    },
+    {
         "copyrightHolders": [
-            "2010-2016 Justin Hileman"
+            "2010-2025 Justin Hileman"
         ],
         "location": "public/lib/mustache",
         "name": "Mustache",
         "description": "PHP library for displaying mustache templates.",
-        "version": "2.14.2",
+        "version": "3.0.0",
         "license": "MIT",
         "repository": "https://github.com/bobthecow/mustache.php",
-        "customised": true
+        "customised": false
     },
     {
         "copyrightHolders": [],
@@ -814,7 +857,7 @@
         "location": "public/lib/php-jwt",
         "name": "PHP-JWT",
         "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519",
-        "version": "6.11.0",
+        "version": "6.11.1",
         "license": "BSD",
         "licenseversion": "3-Clause",
         "repository": "https://github.com/firebase/php-jwt",
@@ -858,7 +901,7 @@
         "location": "public/lib/phpspreadsheet/phpspreadsheet",
         "name": "PhpSpreadsheet",
         "description": "Library to read, write and create spreadsheet documents in PHP.",
-        "version": "4.1.0",
+        "version": "5.2.0",
         "license": "MIT",
         "repository": "https://github.com/PHPOffice/PhpSpreadsheet",
         "customised": true
@@ -927,6 +970,16 @@
         "version": "1.1.12",
         "license": "MIT",
         "repository": "https://github.com/lifaon74/url-polyfill",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "public/lib/psr/cache",
+        "name": "cache",
+        "description": "Caching Interface (PHP FIG PSR-6).",
+        "version": "3.0.0",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/cache",
         "customised": false
     },
     {
@@ -1216,7 +1269,7 @@
         "location": "public/media/player/videojs/amd/src/video-lazy.js",
         "name": "VideoJS",
         "description": "JavaScript library that makes it easier to work with and build on HTML5 video.",
-        "version": "8.21.1",
+        "version": "8.23.4",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/videojs/video.js",
@@ -1265,7 +1318,7 @@
         "location": "public/media/player/videojs/videojs",
         "name": "VideoJS support files",
         "description": "JavaScript library that makes it easier to work with and build on HTML5 video",
-        "version": "8.21.1",
+        "version": "8.23.4",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/videojs/video.js",
