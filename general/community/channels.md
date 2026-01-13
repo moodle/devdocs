@@ -33,20 +33,7 @@ Come and join us as in the [#moodledev:moodle.com](https://matrix.to/#/#moodlede
 
 :::info
 
-This chat was previously hosted on Telegram. All message history has been migrated to Matrix, and our Matrix Bot keeps the two rooms in sync. If you'd prefer to stay with Telegram during the migration process, you can do so by joining the [#moodledev](https://telegram.me/moodledev) channel.
-
-<details>
-  <summary>The Telegram <em>Matrix bot</em> user</summary>
-  <div>
-
-If you are using Telegram to access the Developer chat, you will notice the _Matrix bot_ posts on behalf of many users.
-
-Telegram prevents the bot from posting as another user, so all messages will come from _Matrix bot_ with the name of the actual sender as part of the message.
-
-  </div>
-</details>
-
-At this time we still support taking part in the discussion in either channel.
+This chat was previously hosted on Telegram. All message history has been migrated to Matrix and the Telegram variant will be sunset on Monday 19th January 2026.
 
 :::
 

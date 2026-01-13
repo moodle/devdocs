@@ -106,6 +106,18 @@
             "series": [
                 "intermediate"
             ]
+        },
+        "mdk": {
+            "id": 171,
+            "name": "Working with Moodle Development Kit (MDK)",
+            "summary": "Get to know how to use MDK to streamline your Moodle development processes",
+            "description": "This intermediate level course for developers is designed to help you fully leverage the Moodle Development Kit (MDK) to boost development efficiency, minimise manual tasks, enforce best practices in plugin creation, and establish more consistent Moodle development workflows both individually and collaboratively within a team.",
+            "tags": [
+                "development",
+                "tools"
+            ],
+            "archived": false,
+            "series": []
         }
     }
 }

@@ -26,7 +26,7 @@ sidebar_position: 7
 | 3. | &#10003; |  | <ul><li>Check [closed qa_test_required-labelled issues](https://moodle.atlassian.net/issues/?jql=labels%20%3D%20qa_test_required%20AND%20status%20%3D%20Closed) and create new QA tests as required.</li><li>Let the community know [QA testing](../testing/qa.md) starts in two weeks and how they can participate.</li></ul> | Testing Maintainer |
 | 4. | &#10003; |  | Warn external developers about the impending code freeze in a post to the [General developer forum](http://moodle.org/mod/forum/view.php?id=55). ([example](https://moodle.org/mod/forum/discuss.php?d=225854)) | Platform Manager |
 
-## 6 weeks prior
+## 5 weeks prior
 
 | # | Major | Minor | Task | Responsibility |
 | :---: | :---: | :---: | --- | --- |
@@ -35,19 +35,14 @@ sidebar_position: 7
 | 3. | &#10003; |  | Prepare a fresh installation of the [QA site](http://qa.moodle.net) based on the latest weekly/on-demand release code to make sure the site is not affected by incremental upgrade steps during the development cycle. | QA Main Site Maintainer |
 | 4. | &#10003; |  | Create the next "X.Y+1" (next dev) version in the Tracker (MDL and CONTRIB), so people can move delayed stuff to next major release if needed. | Integration Team |
 | 5. | &#10003; |  | Review the [list of features and improvements submitted before code freeze](https://moodle.atlassian.net/issues/?filter=17705&jql=filter%20%3D%2011701%20AND%20type%20!%3D%20Bug) which are awaiting integration review and decide on related QA tests to be put on hold. | Product delivery lead |
-
-## 5 weeks prior
-
-| # | Major | Minor | Task | Responsibility |
-| :---: | :---: | :---: | --- | --- |
-| 1. | &#10003; |  | Create new QA test cycle and post in moodle.org front page news forum about [QA testing](../testing/qa.md). | Testing Maintainer |
-| 2. | &#10003; |  | Invite community volunteers to start [QA testing](../testing/qa.md). | Testing maintainer |
-| 3. | &#10003; |  | Modify [Current QA cycle filter](https://moodle.atlassian.net/issues/?filter=11824) to link to the new QA test cycle | Testing Maintainer |
-| 4. | &#10003; |  | Monitor QA fails. Check each fail is real and if so ensure an MDL issue has been created and correctly linked and labelled. | Testing Maintainer |
-| 5. | &#10003; |  | Monitor MDL issues created for QA fails. Add them to the "Must fix for X.Y" list and get a developer to work on the issue immediately. | Product delivery lead |
-| 6. | &#10003; |  | Begin reviewing [new and changed English language strings](https://lang.moodle.org/mod/forum/view.php?id=7) ready for `en_fix` to be merged 2 weeks prior. | English fixes lang pack maintainer |
-| 7. | &#10003; |  | Review standards certifications (Open Badges, LTI, etc) and schedule in recertification to be performed. | Product delivery lead |
-| 8. | &#10003; |  | Bump the priority of all the minor new features and improvements being must-fix or already under IR/CLR with X.Y as only affected version. Use [this search to find them](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDL%20AND%20resolution%20%3D%20Unresolved%20%20AND%20type%20!%3D%20%22Bug%22%20AND%20priority%20%3C%20%22Major%22%20%20AND%20(fixversion%20in%20(versionMatches(%22Must%20fix%20for%20.*%22))%20OR%20(%22Component%20Lead%20Review%22%20IS%20NOT%20EMPTY%20AND%20affectedversion%20%3D%204.1))) (note that it will need to be adjusted for current X.Y version). Standard message will be used to explain the priority raise. | Integration Team |
+| 6. | &#10003; |  | Create new QA test cycle and post in moodle.org front page news forum about [QA testing](../testing/qa.md). | Testing Maintainer |
+| 7. | &#10003; |  | Invite community volunteers to start [QA testing](../testing/qa.md). | Testing maintainer |
+| 8. | &#10003; |  | Modify [Current QA cycle filter](https://moodle.atlassian.net/issues/?filter=11824) to link to the new QA test cycle | Testing Maintainer |
+| 9. | &#10003; |  | Monitor QA fails. Check each fail is real and if so ensure an MDL issue has been created and correctly linked and labelled. | Testing Maintainer |
+| 10. | &#10003; |  | Monitor MDL issues created for QA fails. Add them to the "Must fix for X.Y" list and get a developer to work on the issue immediately. | Product delivery lead |
+| 11. | &#10003; |  | Begin reviewing [new and changed English language strings](https://lang.moodle.org/mod/forum/view.php?id=7) ready for `en_fix` to be merged 2 weeks prior. | English fixes lang pack maintainer |
+| 12. | &#10003; |  | Review standards certifications (Open Badges, LTI, etc) and schedule in recertification to be performed. | Product delivery lead |
+| 13. | &#10003; |  | Bump the priority of all the minor new features and improvements being must-fix or already under IR/CLR with X.Y as only affected version. Use [this search to find them](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDL%20AND%20resolution%20%3D%20Unresolved%20%20AND%20type%20!%3D%20%22Bug%22%20AND%20priority%20%3C%20%22Major%22%20%20AND%20(fixversion%20in%20(versionMatches(%22Must%20fix%20for%20.*%22))%20OR%20(%22Component%20Lead%20Review%22%20IS%20NOT%20EMPTY%20AND%20affectedversion%20%3D%204.1))) (note that it will need to be adjusted for current X.Y version). Standard message will be used to explain the priority raise. | Integration Team |
 
 ## 4 weeks prior
 
@@ -152,7 +147,7 @@ Usually on Monday
 | 9. | &#10003; | &#10003; | Verify, 24h after tagging, that https://moodle.org/dev/contributions.php has been updated with new versions. If not, file an urgent `MDLSITE` issue, crons must be running! | Integration Team |
 | 10. | &#10003; |  | For `en` and `de` Moodle Docs, update default redirects and enable email notifications. | Moodle Docs Maintainer |
 | 11. | &#10003; |  | Go through all points listed under Day of release in [New docs version process](./newuserdocs.md). | Community Manager |
-| 12. | &#10003; |  | <ul><li>Decide the `Full demo`, `Code freeze` and `QA begins` dates for the next `X.(Y+1)` major release and put them in the [Moodle development calendar](https://www.google.com/calendar/ical/moodle.com_p4c2oe7hsb77ltaro5qtihb5d4%40group.calendar.google.com/public/basic.ics). They will be -7w, -6w and -5w before release date respectively.</li><li>Update the `Full demo`, `Code freeze`, `QA begins` and `Release` dates on the Roadmap page.</li><li>Notify the Community Manager of new dates to be added to the moodle.org calendar.</li></ul> | Product delivery lead |
+| 12. | &#10003; |  | <ul><li>Decide the `Full demo`, `Code freeze` and `QA begins` dates for the next `X.(Y+1)` major release and put them in the [Moodle development calendar](https://www.google.com/calendar/ical/moodle.com_p4c2oe7hsb77ltaro5qtihb5d4%40group.calendar.google.com/public/basic.ics). They will be -7w, -5w and -5w before release date respectively.</li><li>Update the `Full demo`, `Code freeze`, `QA begins` and `Release` dates on the Roadmap page.</li><li>Notify the Community Manager of new dates to be added to the moodle.org calendar.</li></ul> | Product delivery lead |
 | 13. | &#10003; | | Add calendar events in the [moodle.org calendar](https://moodle.org/calendar) for coming Major and Minor releases up to the next Major release. | Community Manager |
 | 14. | &#10003; | &#10003; | Update release schedule image on [Releases page](../../../releases.md#version-support) | Platform Manager |
 | 15. | &#10003; |  | Important: This must be done **once it's already release day @ UTC** (aka, after Australia/Perth 08:00) or the **queues manage with hold them again** because it's still "last week before release".<br/>The `integration_held` label will be removed only from [**bug issues** awaiting integration](https://moodle.atlassian.net/issues/?jql=filter%3D13669%20AND%20type%20in%20(bug%2C%20task%2C%20Sub-task)) and [**bug issues** awaiting component leads review](https://moodle.atlassian.net/issues/?jql=filter%3D%2023331%20AND%20type%20in%20(bug%2C%20task%2C%20Sub-task)); they correspond to last-week bugs that were held because of them being unrelated with the release. Now they can be processed, under on-sync rules. Standard message will be used to explain the un-hold. | Integration Team |

@@ -60,6 +60,7 @@ Anant
 Anastasios
 Anders
 Anderson
+Andi
 Andolo
 Andrea
 Andreas
@@ -124,6 +125,7 @@ Beedell
 Belgium
 Bellen
 Bence
+Benedicte
 Benjamin
 Bennett
 Benoit
@@ -174,6 +176,7 @@ Burnett]
 Butler
 Bösch
 C4ne
+CORDEL
 Cali
 Cameron
 Campbell
@@ -202,6 +205,7 @@ Charles
 Charlotte
 Charsley
 Chernyavskiy
+Chimezie
 Chin
 Chris
 Christian
@@ -288,6 +292,7 @@ Dias
 Dickman
 Didier
 Dieckmann
+Diego
 Dikih
 Dinesh
 Dinh
@@ -327,6 +332,7 @@ Eliyahu
 Elizabeth
 Elliott
 Eloy
+England
 Eoin
 Eric
 Erik
@@ -375,6 +381,7 @@ Fábio
 GUINOISEAU
 Galiszek
 Gancarz
+Gandraß
 Garanin
 Garapati
 Gareth
@@ -383,6 +390,7 @@ Garske
 Gary
 Gasper
 Gasset
+Gattinger
 Gaudreau
 Gauk
 Gaur
@@ -474,6 +482,7 @@ Holland
 Holliday
 Holman
 Hoobin
+Hoogeveen
 Howard
 Hugh
 Hughes
@@ -485,6 +494,7 @@ Huong
 Hutchinson
 Huynh
 Hämmerle
+Héctor
 Hübler
 ISHIKAWA
 Igor
@@ -515,7 +525,9 @@ Jakub
 James
 Jamie
 Janek
+Jarad
 Jaravaza
+Jared
 Jason
 Javed
 JayChurchward
@@ -670,9 +682,11 @@ Lloyd
 Lock
 Logan
 Loison
+Looi
 Loong
 Lorenzo
 Luca
+Lucas
 Lucian
 Lukacs
 Lukas
@@ -681,6 +695,7 @@ Lundberg
 Luuk
 Lyons
 Lévesque
+Löwis
 Macgirvin
 Madden
 Mady
@@ -776,6 +791,7 @@ Molnar
 Monaco
 Monllao
 Monllaó
+Monroy
 Montesinos
 Moodle
 Moore
@@ -825,12 +841,14 @@ Niclas
 Nicolas
 Nicols
 Nicora
+Niels
 Nielsen
 Nieminen
 Nießen
 Nigel
 Nikhil
 Nikita
+Niko
 Nikolai
 Nikoloutsopoulos
 Nils
@@ -868,6 +886,7 @@ PERF
 Pablo
 Palou
 Panagiotis
+Panchal
 Panning
 Paola
 Parry
@@ -887,6 +906,7 @@ Penner
 Penny
 Percy
 Perez
+Permana
 Pesce
 Pete
 Peter
@@ -902,6 +922,7 @@ Phillips
 Phoon
 Phuc
 Pichet
+Pico
 Pierre
 Piers
 Piguillem
@@ -909,6 +930,7 @@ Pinheiro
 Pinto
 Pisarev
 Piton
+Plasger
 Platts
 Poder
 Poggenpohl
@@ -968,11 +990,13 @@ Robotta
 Robynstar
 Rodrigo
 Rodrigues
+Rodríguez
 Roes
 Roeser
 Roger
 Roggemans
 Rohan
+Rohit
 Rohith
 Rokicki
 Roman
@@ -1022,6 +1046,7 @@ Schroeder
 Schultz
 Schulz
 Scotson
+Scott
 ScottVerbeek
 Scribner
 Sebastian
@@ -1181,6 +1206,7 @@ Valery
 Vaughan
 Vedrine
 Venter
+Verbeek
 Verhoeven
 Verrall
 Vervoort
@@ -1255,6 +1281,7 @@ YVANES
 Yair
 Yang
 Yannick
+Yerai
 Yeung
 Yevhenii
 Yolanda
@@ -1380,6 +1407,7 @@ gniske
 godric
 gregb_cc
 gthomas2
+guillaumebarat
 guillermogomez
 gustav_delius
 hanna
@@ -1456,6 +1484,7 @@ mikewaters
 miksik
 mindforge
 minkowski
+mioyu-ubiq
 mits
 mjollnir_
 mkassaei
@@ -1472,6 +1501,7 @@ nicolasconnault
 nlnrose
 nobelium
 nread
+nvhai248
 oliviervalentin
 paca70
 palojacko
@@ -1552,6 +1582,7 @@ viettruongq
 villate
 vinhle
 vinkmar
+vinod404
 vlad.kidanov
 vpisabeywardana
 vthung

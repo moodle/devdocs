@@ -45,20 +45,7 @@ If there is anything you are unsure of, such as whether to mark a test as failed
 
 :::info
 
-This chat was previously hosted on Telegram. All message history has been migrated to Matrix, and our Matrix Bot keeps the two rooms in sync. If you'd prefer to stay with Telegram during the migration process, you can do so by joining the [#moodleqa](https://t.me/moodleqa) channel. To join the room for the first time, please use the [Moodle QA Telegram invite link](https://t.me/+cXneE_ZeZ_A4ODRk)
-
-<details>
-  <summary>The Telegram <em>Matrix bot</em> user</summary>
-  <div>
-
-If you are using Telegram to access the Moodle QA chat, you will notice the _Matrix bot_ posts on behalf of many users.
-
-Telegram prevents the bot from posting as another user, so all messages will come from _Matrix bot_ with the name of the actual sender as part of the message.
-
-  </div>
-</details>
-
-At this time we still support taking part in the discussion in either channel.
+This chat was previously hosted on Telegram. All message history has been migrated to Matrix and the Telegram variant will be sunset on Monday 19th January 2026.
 
 :::
 
@@ -80,7 +67,7 @@ If you perform any test which tries to send e-mail, a debugging message will be 
 
 :::tip Admin access
 
-If you require admin access to the Moodle QA Testing Site for running certain tests, please ask in the [Moodle QA Telegram chat room](https://t.me/moodleqa) or the [Testing and QA forum](https://moodle.org/mod/forum/view.php?id=56) for someone to send you the account credentials via private message.
+If you require admin access to the Moodle QA Testing Site for running certain tests, please ask in the [Moodle QA Matrix chat room](https://matrix.to/#/#qa:moodle.com) or the [Testing and QA forum](https://moodle.org/mod/forum/view.php?id=56) for someone to send you the account credentials via private message.
 
 :::
 
@@ -261,6 +248,7 @@ If you have any questions or comments, please post in the [Testing and QA forum]
 
 Comments on tests from previous QA cycles:
 
+- [Moodle 5.1 QA](https://moodle.atlassian.net/browse/MDLQA-20667)
 - [Moodle 5.0 QA](https://moodle.atlassian.net/browse/MDLQA-19836)
 - [Moodle 4.5 QA](https://moodle.atlassian.net/browse/MDLQA-18925)
 - [Moodle 4.4 QA](https://moodle.atlassian.net/browse/MDLQA-18443)
@@ -295,6 +283,6 @@ Comments on tests from previous QA cycles:
 
 ## See also
 
-- [QA testing dashboard](https://moodle.atlassian.net/secure/Dashboard.jspa?selectPageId=11454)
+- [QA testing dashboard](https://moodle.atlassian.net/jira/dashboards/10612)
 - [Testing credits](../../../community/credits/testing.md)
 - [Useful tips for QA testing](https://moodle.org/mod/forum/discuss.php?d=351302)

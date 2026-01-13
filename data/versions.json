@@ -4,8 +4,8 @@
         {
             "name": "5.3",
             "releaseDate": "5 October 2026",
-            "generalEndDate": "11 October 2027",
-            "securityEndDate": "8 October 2029",
+            "generalEndDate": "4 October 2027",
+            "securityEndDate": "1 October 2029",
             "isLTS": true,
             "codeFreezeDate": "24 August 2026",
             "releases": [
@@ -22,9 +22,9 @@
             "name": "5.2",
             "releaseDate": "20 April 2026",
             "generalEndDate": "19 April 2027",
-            "securityEndDate": "11 October 2027",
+            "securityEndDate": "4 October 2027",
             "isLTS": false,
-            "codeFreezeDate": "9 March 2026",
+            "codeFreezeDate": "16 March 2026",
             "releases": [
                 {
                     "name": "5.2.0",
@@ -39,7 +39,7 @@
             "name": "5.1",
             "releaseDate": "6 October 2025",
             "generalEndDate": "5 October 2026",
-            "securityEndDate": "5 April 2027",
+            "securityEndDate": "19 April 2027",
             "isLTS": false,
             "codeFreezeDate": "25 August 2025",
             "releases": [
@@ -47,9 +47,19 @@
                     "name": "5.1.0",
                     "releaseDate": "6 October 2025",
                     "version": 2025100600,
-                    "upgradePath": "https://docs.moodle.org/501/en/Upgrading",
+                    "upgradePath": "https://docs.moodle.org/501/en/Upgrading"
+                },
+                {
+                    "name": "5.1.1",
+                    "releaseDate": "8 December 2025",
+                    "version": 2025100601
+                },
+                {
+                    "name": "5.1.2",
+                    "releaseDate": "9 February 2026",
+                    "version": 2025100602,
                     "releaseNoteUrl": false
-                }
+                }  
             ]
         },
         {
@@ -79,7 +89,17 @@
                 {
                     "name": "5.0.3",
                     "releaseDate": "6 October 2025",
-                    "version": 2025041403,
+                    "version": 2025041403
+                },
+                {
+                    "name": "5.0.4",
+                    "releaseDate": "8 December 2025",
+                    "version": 2025041404
+                },
+                {
+                    "name": "5.0.5",
+                    "releaseDate": "9 February 2026",
+                    "version": 2025041405,
                     "releaseNoteUrl": false
                 }
             ]
@@ -104,7 +124,7 @@
             "name": "4.5",
             "releaseDate": "7 October 2024",
             "generalEndDate": "6 October 2025",
-            "securityEndDate": "6 October 2027",
+            "securityEndDate": "4 October 2027",
             "isLTS": true,
             "releases": [
                 {
@@ -147,7 +167,17 @@
                 {
                     "name": "4.5.7",
                     "releaseDate": "6 October 2025",
-                    "version": 2024100707,
+                    "version": 2024100707
+                },
+                {
+                    "name": "4.5.8",
+                    "releaseDate": "8 December 2025",
+                    "version": 2024100708
+                },
+                {
+                    "name": "4.5.9",
+                    "releaseDate": "9 February 2026",
+                    "version": 2024100709,
                     "releaseNoteUrl": false
                 }
             ]
@@ -220,8 +250,12 @@
                 {
                     "name": "4.4.11",
                     "releaseDate": "6 October 2025",
-                    "version": 2024042211,
-                    "releaseNoteUrl": false
+                    "version": 2024042211
+                },
+                {
+                    "name": "4.4.12",
+                    "releaseDate": "8 December 2025",
+                    "version": 2024042212
                 }
             ]
         },
@@ -494,8 +528,12 @@
                 {
                     "name": "4.1.21",
                     "releaseDate": "6 October 2025",
-                    "version": 2022112821,
-                    "releaseNoteUrl": false
+                    "version": 2022112821
+                },
+                {
+                    "name": "4.1.22",
+                    "releaseDate": "8 December 2025",
+                    "version": 2022112822
                 }
             ]
         },

@@ -1159,6 +1159,63 @@ Magic methods are heavily discouraged, justification will be required when used.
 
 (See [MDL-52634](https://moodle.atlassian.net/browse/MDL-52634) for discussion of rationale)
 
+### Using arrays for options as arguments
+
+All arguments to a function should be explicitly listed out and defined with a type. Using arrays like this can result in errors as the types are not enforced as well as leading to poor documentation of the function.
+
+<InvalidExample>
+
+```php
+public function bad_function(
+    string $text,
+    ?context $context = null,
+    array $options = [],
+): string;
+```
+
+</InvalidExample>
+
+Instead of a generic array of options, each option should be specified as a function parameter. Optional arguments should provide appropriate defaults.
+
+<ValidExample>
+
+```php
+function good_function(
+    string $text,
+    ?context $context = null,
+    bool $trusted = false,
+    ?bool $clean = null,
+    bool $filter = true,
+    bool $para = true,
+    bool $newlines = true,
+    bool $overflowdiv = false,
+    bool $blanktarget = false,
+    bool $allowid = false,
+): string;
+```
+
+</ValidExample>
+
+Alternatively a dedicated options class may be used - for example:
+
+<ValidExample>
+
+```php
+public function good_function(
+    string $text,
+    ?context $context = null,
+    filter_options $options = null,
+): string;
+```
+
+</ValidExample>
+
+:::note
+
+Whilst the use of explicitly specified options, or a dedicated options class, is strongly encouraged; this may not be possible in all cases. Where a generic options array is used, this should be discussed and the reason clearly explained.
+
+:::
+
 ## Control statements
 
 In general, use white space liberally between lines to add clarity.

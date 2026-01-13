@@ -403,13 +403,13 @@ The File Picker uses Ajax calls to present the repository content. In order to i
 - To retrieve the file that the user selected from a remote server, the plugin must rewrite the `get_file()` method.
 - To provide search feature the plugin must rewrite the `search()` method.
 
-All those methods are descrived below.
+All those methods are described below.
 
 ### Functions you MUST override
 
 These functions cover the basics of initialising your plugin each time the repository is accessed and listing the files available to the user from within the plugin.
 
-#### __construct($respoitoryid, $context=SYSCONTEXTID, $options=array(), $readonly=0)
+#### __construct($repositoryid, $context=SYSCONTEXTID, $options=array(), $readonly=0)
 
 Should be overridden to do any initialisation required by the repository, including:
 

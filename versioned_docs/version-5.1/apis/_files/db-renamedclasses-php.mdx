@@ -1,0 +1,8 @@
+<!-- markdownlint-disable first-line-heading -->
+Details of classes that have been renamed to fit in with autoloading. See [forum discussion](https://moodle.org/mod/forum/discuss.php?d=262403) for details.
+
+:::note
+Adding renamed or moved classes to `renamedclasses.php` is only necessary when the class is part of the component's API where it can be reused by other components, especially by third-party plugins. This is to maintain backwards-compatibility in addition to autoloading purposes.
+
+If the renamed or moved class is private/internal to the component and is not subject for external use, there is no need to add it to `renamedclasses.php`.
+:::

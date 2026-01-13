@@ -19,7 +19,7 @@ The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/
 
 <SupportedReleases />
 
-![Release graph summarising the currently supported Moodle releases in a visual form](_releases/5002_release_graph.png)
+![Release graph summarising the currently supported Moodle releases in a visual form](_releases/5011_release_graph.png)
 
 <details>
     <summary>Release graph key</summary>
@@ -73,10 +73,10 @@ The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/
 
 These are the target dates for releases. These dates may vary slightly due to unforeseen circumstances.
 
-| Release type | Frequency | Months | Timing |
-| --- | --- | --- | --- |
-| [Major](./development/process.md#major-release-cycles) (eg. 3.x) | 6 monthly | April, and October | Weeks 17, and 43 of the year |
-| [Minor](./development/process.md#stable-maintenance-cycles) (Point) (eg. 3.x.y) | 2 monthly | February, April, June, August, October, December | Usually every 8 weeks |
+| Release type | Frequency | Months |
+| --- | --- | --- |
+| [Major](./development/process.md#major-release-cycles) (eg. 3.x) | 6 monthly | April, and October |
+| [Minor](./development/process.md#stable-maintenance-cycles) (Point) (eg. 3.x.y) | 2 monthly | February, April, June, August, October, December |
 
 :::tip
 
@@ -87,6 +87,17 @@ Upcoming release dates can be found in the Moodle development calendar, which is
 :::note
 
 Minor releases dates differ slightly from release to release depending on the timing of public holidays in Western Australia.
+
+:::
+
+## Moodle 5.1
+
+<ReleaseTable releaseName="5.1" />
+
+:::info
+
+Bug fixes for general core bugs in 5.1.x will end 5 October 2026 (12 months).<br/>
+Bug fixes for security issues in 5.1.x will end April 2027 (18 months).
 
 :::
 

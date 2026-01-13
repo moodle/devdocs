@@ -24,7 +24,7 @@ Provide a great search experience without the need for external, server-side, se
 ### Roundcube Framework
 
 - **Location**: public/admin/tool/messageinbound/roundcube
-- **Version**: 1.6.10
+- **Version**: 1.6.11
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/roundcube/roundcubemail](https://github.com/roundcube/roundcubemail)
 - **Copyright holders**:
@@ -208,7 +208,7 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 The AWS SDK for PHP library
 
 - **Location**: public/lib/aws-sdk
-- **Version**: 3.342.2
+- **Version**: 3.356.22
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/aws/aws-sdk-php](https://github.com/aws/aws-sdk-php)
 
@@ -217,7 +217,7 @@ The AWS SDK for PHP library
 Accessibility testing engine for websites and other HTML-based user interfaces.
 
 - **Location**: public/lib/behat/axe
-- **Version**: 4.10.2
+- **Version**: 4.10.3
 - **License**:  MPL 2.0
 - **URL**: [https://github.com/dequelabs/axe-core](https://github.com/dequelabs/axe-core)
 - **Copyright holders**:
@@ -248,7 +248,7 @@ PCRE wrapping library that offers type-safe preg_* replacements.
 ### Tiny
 
 - **Location**: public/lib/editor/tiny/js/tinymce
-- **Version**: 7.7.1
+- **Version**: 8.2.2
 - **License**:  MIT
 - **URL**: [https://github.com/tinymce/tinymce](https://github.com/tinymce/tinymce)
 
@@ -392,7 +392,7 @@ Library to parse easily data and sprite sheets for emoji.
 Class to safely evaluate math expressions.
 
 - **Location**: public/lib/evalmath
-- **Version**: 1.0.1 (with Moodle customisations)
+- **Version**: 1.0.2 (with Moodle customisations)
 - **License**:  BSD
 - **URL**: [https://github.com/dbojdo/eval-math](https://github.com/dbojdo/eval-math)
 - **Copyright holders**:
@@ -423,7 +423,7 @@ Library for creating beautiful generative background images from a string.
 ### libphonenumber for PHP (Lite)
 
 - **Location**: public/lib/giggsey/libphonenumber-for-php-lite
-- **Version**: 8.13.55
+- **Version**: 9.0.12
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/giggsey/libphonenumber-for-php-lite](https://github.com/giggsey/libphonenumber-for-php-lite)
 
@@ -435,6 +435,33 @@ Library Google APIs Client Library for PHP
 - **Version**: 1.1.7 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/googleapis/google-api-php-client](https://github.com/googleapis/google-api-php-client)
+
+### Google APIs
+
+Library Google APIs Client Library for PHP
+
+- **Location**: public/lib/google2
+- **Version**: 2.18.4
+- **License**:  Apache 2.0
+- **URL**: [https://github.com/googleapis/google-api-php-client](https://github.com/googleapis/google-api-php-client)
+
+### Google Auth
+
+Google Auth Library for PHP
+
+- **Location**: public/lib/google2-auth
+- **Version**: 1.49.0
+- **License**:  Apache 2.0
+- **URL**: [https://github.com/googleapis/google-auth-library-php](https://github.com/googleapis/google-auth-library-php)
+
+### Google Client Services
+
+Google PHP API Client Services
+
+- **Location**: public/lib/google2-service
+- **Version**: 0.424.0
+- **License**:  Apache 2.0
+- **URL**: [https://github.com/googleapis/google-api-php-client-services](https://github.com/googleapis/google-api-php-client-services)
 
 ### Graph Class
 
@@ -548,7 +575,7 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 A library used for building IMS-certified LTI 1.3 tool providers in PHP.
 
 - **Location**: public/lib/lti1p3
-- **Version**: 6.0.0 (with Moodle customisations)
+- **Version**: 6.2.0 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/packbackbooks/lti-1-3-php-library](https://github.com/packbackbooks/lti-1-3-php-library)
 - **Copyright holders**:
@@ -583,7 +610,7 @@ All rights reserved.
 Library for processing of GeoIP data files.
 
 - **Location**: public/lib/maxmind/GeoIp2
-- **Version**: 3.1.0
+- **Version**: 3.2.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/GeoIP2-php](https://github.com/maxmind/GeoIP2-php)
 - **Copyright holders**:
@@ -594,7 +621,7 @@ Library for processing of GeoIP data files.
 PHP API for reading MaxMind DB files.
 
 - **Location**: public/lib/maxmind/MaxMind
-- **Version**: 1.12.0
+- **Version**: 1.12.1
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/maxmind/MaxMind-DB-Reader-php/](https://github.com/maxmind/MaxMind-DB-Reader-php/)
 - **Copyright holders**:
@@ -605,7 +632,7 @@ PHP API for reading MaxMind DB files.
 CSS & JavaScript minifier, in PHP
 
 - **Location**: public/lib/minify/matthiasmullie-minify
-- **Version**: 1.3.73 (with Moodle customisations)
+- **Version**: 1.3.75 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/matthiasmullie/minify](https://github.com/matthiasmullie/minify)
 
@@ -618,16 +645,25 @@ CSS path converter, in PHP
 - **License**:  MIT
 - **URL**: [https://github.com/matthiasmullie/path-converter](https://github.com/matthiasmullie/path-converter)
 
+### Monolog
+
+Monolog - Logging for PHP
+
+- **Location**: public/lib/monolog
+- **Version**: 3.9.0
+- **License**:  MIT
+- **URL**: [https://github.com/Seldaek/monolog](https://github.com/Seldaek/monolog)
+
 ### Mustache
 
 PHP library for displaying mustache templates.
 
 - **Location**: public/lib/mustache
-- **Version**: 2.14.2 (with Moodle customisations)
+- **Version**: 3.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/bobthecow/mustache.php](https://github.com/bobthecow/mustache.php)
 - **Copyright holders**:
-  - 2010-2016 Justin Hileman
+  - 2010-2025 Justin Hileman
 
 ### FastRoute
 
@@ -721,7 +757,7 @@ A Parser for CSS Files written in PHP.
 A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519
 
 - **Location**: public/lib/php-jwt
-- **Version**: 6.11.0
+- **Version**: 6.11.1
 - **License**:  BSD 3-Clause
 - **URL**: [https://github.com/firebase/php-jwt](https://github.com/firebase/php-jwt)
 - **Copyright holders**:
@@ -761,7 +797,7 @@ PHP Class for handling Matrices.
 Library to read, write and create spreadsheet documents in PHP.
 
 - **Location**: public/lib/phpspreadsheet/phpspreadsheet
-- **Version**: 4.1.0 (with Moodle customisations)
+- **Version**: 5.2.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/PHPOffice/PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
 
@@ -823,6 +859,15 @@ Polyfill URL and URLSearchParams to match last WHATWG specifications.
 - **Version**: 1.1.12
 - **License**:  MIT
 - **URL**: [https://github.com/lifaon74/url-polyfill](https://github.com/lifaon74/url-polyfill)
+
+### cache
+
+Caching Interface (PHP FIG PSR-6).
+
+- **Location**: public/lib/psr/cache
+- **Version**: 3.0.0
+- **License**:  MIT
+- **URL**: [https://github.com/php-fig/cache](https://github.com/php-fig/cache)
 
 ### clock
 
@@ -1054,7 +1099,7 @@ The Gallery is a collection of modules that have been developed by the YUI commu
 PHP ZIP Streaming Library
 
 - **Location**: public/lib/zipstream
-- **Version**: 3.1.2
+- **Version**: 3.2.0
 - **License**:  MIT
 - **URL**: [https://github.com/maennchen/ZipStream-PHP](https://github.com/maennchen/ZipStream-PHP)
 - **Copyright holders**:
@@ -1079,7 +1124,7 @@ Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 JavaScript library that makes it easier to work with and build on HTML5 video.
 
 - **Location**: public/media/player/videojs/amd/src/video-lazy.js
-- **Version**: 8.21.1 (with Moodle customisations)
+- **Version**: 8.23.4 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
@@ -1123,7 +1168,7 @@ JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 JavaScript library that makes it easier to work with and build on HTML5 video
 
 - **Location**: public/media/player/videojs/videojs
-- **Version**: 8.21.1 (with Moodle customisations)
+- **Version**: 8.23.4 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
@@ -1134,7 +1179,7 @@ JavaScript library that makes it easier to work with and build on HTML5 video
 Collection of PHP classes facilitating developers to read pages from existing PDF documents and use them as templates in FPDF.
 
 - **Location**: public/mod/assign/feedback/editpdf/fpdi
-- **Version**: 2.6.3
+- **Version**: 2.6.4
 - **License**:  MIT
 - **URL**: [https://github.com/Setasign/FPDI](https://github.com/Setasign/FPDI)
 - **Copyright holders**:

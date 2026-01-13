@@ -227,6 +227,11 @@ Ensure that:
 - The commit matches the [Coding style](../../policies/codingstyle/index.md#git-commits)
 - The Git history is clean and the work has been rebased to logical commits; and
 - The original author of the work provided as a patch has been given credit within the commit (as author of in the commit message if changes were made).
+- Git branches have been provided for all the right Moodle branches. The [supported branches list|https://moodledev.io/general/releases#version-support] will help you decide:
+  - For improvements or new features, this means a branch based on `main` only.
+  - For normal bug fixes, this the `main` branch and all the 'Current stable' branches (that are affected by the bug).
+  - For security bugs, this is `main` and all the 'Current stable' and 'Current security' branches (but note the [special process for handling security fixes|https://moodledev.io/general/development/process#security-issues]).
+  - For improvements or new features in the Behat on PHPunit integration, this should be done on `main` and all the 'Current stable' and 'Current security' branches, providing the backporting is not too difficult.
 
 See also the [Commit cheat sheet](https://docs.moodle.org/dev/Commit_cheat_sheet) for further guidance.
 
