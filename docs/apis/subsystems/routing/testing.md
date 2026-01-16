@@ -127,3 +127,19 @@ All of these methods also accept:
 
 - any headers to provide with your request
 - any query parameters
+
+As an example, to call the route `/api/rest/v2/question/bank/{course}/question_counts`, you would do the following:
+
+```php title="Creating and processing a question_counts request"
+public function test_question_counts(): void {
+    $this->resetAfterTest();
+    $course = self::getDataGenerator()->create_course();
+
+    $this->add_class_routes_to_route_loader(
+        \core_question\route\api::class,
+        \core\router\route_loader_interface::ROUTE_GROUP_API, // This is implied for routes in an `api` namespace, but must be set for other route groups.
+    );
+
+    $response = $this->process_api_request('GET', "/bank/{$course->id}/question_counts");
+}
+```
