@@ -27,6 +27,15 @@ As part of Moodle's commitment to accessibility, bug fixes for accessibility iss
 - When the next LTS version is released, backporting of accessibility bug fixes will cease for the older LTS branch.
   - For example, accessibility bug fixes will be backported to the Moodle 4.1 LTS branch from its release up to Moodle 4.4's release. However, when Moodle 4.5 LTS is released, accessibility fixes will no longer be backported to the 4.1 LTS branch.
 
+### Other cases which will be backported whenever possible:
+
+A small set of changes will automatically be considered for backport, including to security-supported releases. These include:
+
+- changes to testing systems including both Behat and PHPUnit. This is to allow community developers to make use of features such as test helpers, transformations, generators, and-so-on for all supported versions of Moodle; and
+- additional data collected for the purposes of Site Registration. This is to ensure that Moodle has an accurate overview of the technologies powering sites that Moodle runs on in order to make technical decisions about support and direction.
+
+Care should be taken when backporting these changes, and only the minimum of change should be accepted. The introduction of new User Interfaces, for example, not supported by these cases.
+
 ## Process for requesting a non bug-fix backport
 
 Improvements or new features can be requested to be backported to the stable branches. We urge developers to consider this request carefully. In recent years, Moodle has moved to a short and predictable time based release schedule and we use a very effective distributed source control system. Both of these process changes should ensure that a change not being backported to the stable branches is not as problematic as it may have used to be.
