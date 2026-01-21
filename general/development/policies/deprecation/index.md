@@ -205,6 +205,108 @@ A code removal step was added to the deprecation process in Moodle 5.0 and is al
     - Functions deprecated in Moodle 4.5 (LTS) will be up for final deprecation in Moodle 6.0 (the first release for Series 6 right after the Moodle 5.3 (LTS) release), and for removal in Moodle 7.0 (the first Series 7 Moodle version).
 </ValidExample>
 
+## Class properties deprecation
+
+Deprecating class properties presents unique challenges compared to methods, as PHP versions before 8.4 do not provide a native mechanism to emit warnings when properties are accessed or modified.
+
+### When can a property be deprecated?
+
+The approach to deprecating a property depends on its visibility and usage:
+
+1. **Private properties**: Can be removed immediately as they are not part of the public API.
+
+2. **Protected properties in non-extensible classes**: Can be removed if there is no reasonable expectation that external code extends the class. This applies to classes where:
+   - The API is not designed to be extended
+   - It would be extremely difficult for developers to correctly extend and consume the class
+   - The protected property is not considered part of the 'public' API
+
+3. **Public properties, or protected properties in extensible classes**: Cannot be safely removed using the standard deprecation process, as there is no way to alert developers when the property is accessed in PHP versions before 8.4.
+
+### Deprecation process for properties that cannot be removed
+
+For public properties and protected properties in extensible classes, follow these steps:
+
+1. **Add the `@deprecated` PHPDoc tag** to the property documentation, including:
+   - The version it was deprecated in.
+   - The reason for deprecation.
+   - Alternative approaches or replacement properties.
+
+    ```php
+    /**
+     * @var string
+     * @deprecated since 4.4 Use get_summary() method instead
+     */
+    public string $summary;
+    ```
+
+2. **Document in upgrade notes**: Ensure the deprecation is clearly documented in the [upgrade notes](../../upgradenotes.md) for the release.
+
+3. **Add the `\core\attribute\deprecated` attribute**:
+
+    ```php
+    #[\core\attribute\deprecated(
+        since: '4.4',
+        reason: 'Direct property access is deprecated. Use get_summary() and set_summary() methods instead.',
+        mdl: 'MDL-XXXXX',
+    )]
+    public string $summary;
+    ```
+
+4. **Ensure there are no internal uses**: Remove all usage of the property within Moodle core code, replacing it with the recommended alternative (such as getter/setter methods).
+
+5. **Provide getter/setter methods as migration path**: If the property previously had direct access, create getter and setter methods that provide the same functionality and serve as the migration path for developers.
+
+   **Important**: In PHP versions before 8.4, there is no way to intercept direct property access for public properties without breaking backward compatibility. The getter/setter methods cannot emit warnings when users access the property directly (e.g., `$obj->property`). They only provide a migration path for developers who follow the deprecation guidance.
+
+    ```php
+    /**
+     * Get the summary text.
+     *
+     * @return string
+     */
+    public function get_summary(): string {
+        return $this->summary;
+    }
+
+    /**
+     * Set the summary text.
+     *
+     * @param string $summary The summary text
+     */
+    public function set_summary(string $summary): void {
+        $this->summary = $summary;
+    }
+
+    ```
+
+   Developers must rely on IDE hints from `@deprecated` tags, documentation, and upgrade notes to know they should migrate from direct property access to these methods.
+
+### Property deprecation from Moodle 6.0 onwards
+
+From Moodle 6.0, the minimum supported PHP version will be 8.4. PHP 8.4 introduces [Property Hooks](https://wiki.php.net/rfc/property-hooks), which allow proper deprecation warnings to be emitted when properties are accessed or modified.
+
+**Example using PHP 8.4 property hooks:**
+
+```php
+#[\core\attribute\deprecated(
+    since: '4.4',
+    reason: 'Direct property access to $summary is deprecated. Use get_summary() and set_summary() methods instead.',
+    mdl: 'MDL-XXXXX',
+)]
+public ?string $summary {
+    get {
+        \core\deprecation::emit_deprecation([self::class, __PROPERTY__]);
+        return $this->summary;
+    }
+    set {
+        \core\deprecation::emit_deprecation([self::class, __PROPERTY__]);
+        $this->summary = $value;
+    }
+}
+```
+
+This allows Moodle to emit proper runtime deprecation warnings when properties are read from or written to, providing the feedback mechanism that is currently unavailable in earlier PHP versions.
+
 ## Parameters deprecation
 
 Whilst it is possible to deprecate individual method parameters, care must be taken in doing so.
