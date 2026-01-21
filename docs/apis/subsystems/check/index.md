@@ -242,6 +242,85 @@ These checks are performed asynchronously, and only if the check is visible, so 
 
 You can also use checks which are not linked into one of the reports. This means you can check the connection while configuring the plugin, but before it is enabled, and only add the check to the status report page once the plugin is enabled.
 
+## Showing checks in admin settings
+
+Even though checks will appear in the corresponding report pages, it may be useful to have these show up in admin settings close to where they may be actioned. For example, showing a LDAP connection check on the same page as the LDAP connection settings.
+
+Use the `admin_setting_check` class to easily add these.
+
+```php title="mod/myplugin/settings.php"
+$settings->add(
+    new admin_setting_check(
+        'myplugin/usefulcheck',
+        new \mod\myplugin\check\usefulcheck(),
+    ),
+);
+
+// Or with multiple instances of checks.
+$settings->add(
+    new admin_setting_check(
+        'myplugin/usefulcheck1',
+        new \mod\myplugin\check\usefulcheck(1),
+    ),
+);
+$settings->add(
+    new admin_setting_check(
+        'myplugin/usefulcheck2',
+        new \mod\myplugin\check\usefulcheck(2),
+    ),
+);
+```
+
+The results of the check are fetched asynchronously using AJAX, so the page loading time is impacted as little as possible.
+
+### Utilising as a plugin configuration check
+
+Internally, the `admin_setting_check` class calls a webservice that will load the admin tree to find the check object it is linked to. Therefore it is possible to include checks here that are not included in your plugin's lib.php callback, or pass flags to your checks to change how they behave.
+
+For example, a check might look like the following:
+
+```php title="mod/myplugin/classes/connectioncheck.php"
+class connectioncheck extends check {
+
+    private $isprecheck;
+
+    public function __construct($isprecheck = false) {
+        $this->isprecheck = $isprecheck;
+    }
+
+    public function get_result(): result {
+        $enabled = get_config(...);
+
+        if ($enabled || $this->isprecheck) {
+            return new foobar_result();
+        }
+
+        return na_result();
+    }
+}
+```
+
+The lib.php callback will pass `$isprecheck = false`, so it reports N/A if the plugin is disabled in the status reports.
+
+```php title="mod/myplugin/lib.php"
+function mod_myplugin_status_checks() {
+    return [new connection_check(false)];
+}
+```
+
+But when viewed in the admin settings, `$isprecheck = true` is passed so the check runs regardless of the plugin being enabled.
+
+```php title="mod/myplugin/settings.php"
+$settings->add(
+    new admin_setting_check(
+        'myplugin/usefulcheck',
+        new \mod\myplugin\check\connectioncheck(true),
+    ),
+);
+```
+
+Users can use this to confirm they have plugin settings (such as connection details or API tokens) correct before enabling the plugin.
+
 ## See also
 
 - [Performance overview](https://docs.moodle.org/en/Performance_overview) user docs
