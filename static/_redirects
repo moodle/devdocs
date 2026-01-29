@@ -49,8 +49,6 @@
 # Issue #998
 # Redirect /apis/plugintypes/tiny/legacy to /apis/plugintypes/tiny
 /docs/apis/plugintypes/tiny/legacy /docs/apis/plugintypes/tiny
-/docs/4.4/apis/plugintypes/tiny/legacy /docs/apis/plugintypes/tiny
-/docs/4.4/apis/plugintypes/tiny/legacy /docs/apis/plugintypes/tiny
 
 # Issue #999
 /general/community/meetings/202403 /general/community/meetings/2024/03

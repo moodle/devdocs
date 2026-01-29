@@ -1355,7 +1355,7 @@ Moodle_4.0.2_release_notes:
   slug: "/general/releases/4.0/4.0.2"
 Moodle_4.0_developer_update:
 - filePath: "/docs/devupdate.md"
-  slug: "/docs/4.1/devupdate"
+  slug: "/docs/5.2/devupdate"
 Moodle_4.0_release_notes:
 - filePath: "/general/releases/4.0.md"
   slug: "/general/releases/4.0"
