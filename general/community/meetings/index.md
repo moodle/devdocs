@@ -9,9 +9,22 @@ sidebar_label: Meetings
 
 ## Upcoming developer meetings
 
-Developer meetings are open to anyone interested in Moodle development.
+After an extended break, we're pleased to announce the return of our community developer meetings! Developer meetings are open to anyone interested or involved in Moodle development.
 
-If there are any topics that you would like to present or discuss, please contact [Helen](https://moodle.org/user/view.php?id=24152).
+Our first meeting for 2026 is now scheduled as follows:
+
+- **Date:** Tuesday, 24 March
+- **Time:** [8:30 UTC](https://www.timeanddate.com/worldclock/fixedtime.html?msg=Moodle+developer+meeting+-+March+2026&iso=20260324T0830&p1=1440&am=45) (9:30 UTC+1, 16:30 UTC+8)
+- **Duration:** 45 mins
+- **Link:** [Community developer meeting room](https://moodle.org/mod/bigbluebuttonbn/view.php?id=8596)
+- **Topic:** Design System
+- **Quick topic summary:** Moodle's new Design System will both simplify how developers create a correct and consistent LMS user experience, as well as bridging the gap between product experience experts and Moodle development. This talk, presented by the Moodle Design System team, will detail the plans for the Design System, an overview of how it works, and outline what is available to use and test (at the time of the talk).
+
+This is a great topic for us to re-launch these meetings with, because it's a really exciting step forward in Moodle design and frontend development, and will have a big positive impact for all Moodle developers. You definitely don't want to miss it!
+
+### Future sessions
+
+We are also currently finalising the schedule for the next several meetings to take place this year, in **May**, **July**, **September** and **November**. If you have a topic you would like to speak about (even if you'd like to nominate for a session later in the year), please reach out via our [speaker nomination form](https://moodle.org/mod/feedback/view.php?id=8914). Alternatively, if there's a topic you would love to hear about, please let us know in the [meeting announcement forum discussion](https://moodle.org/mod/forum/discuss.php?d=472183), and we will add it to our list of potential meeting topics.
 
 ## Past meetings
 
