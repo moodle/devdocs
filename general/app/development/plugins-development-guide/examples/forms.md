@@ -18,7 +18,7 @@ class mobile {
             'templates' => [
                 [
                     'id' => 'main',
-                    'html' => $OUTPUT->render_from_template('local_hello/form', []),
+                    'html' => $OUTPUT->render_from_template('local_hello/mobileapp/form', []),
                 ],
             ],
             'otherdata' => [
