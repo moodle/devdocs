@@ -785,6 +785,34 @@ The dot operator may be used without any space to either side (as shown in the a
 
 ### Language strings
 
+#### Introducing new strings
+
+Firstly, think twice and try to think in a language other than English. Any string you introduce is supposed to be translated by translators who usually do it for free in their own time. Do not waste their time by using `get_string()` for debugging messages that are unlikely to appear in production. It is recommended to add the `ux_writing` label on the tracker issue so that Moodle HQ's UX team can review your strings in the patch. This way, we can keep the terminology and the style consistent.
+
+When introducing new strings, keep them in alphabetical order. Using self-descriptive names for the string identifier and the placeholder properties helps translators infer the context. Compare the following:
+
+```php
+$string['grade'] = 'Grade {$a}';
+```
+
+with
+
+```php
+$string['maxgradevalue'] = 'Grade {$a->value}';
+```
+
+In the first case, it is pretty difficult to guess whether the "Grade" in the string is a noun (as in "Grade 12/30") or a verb (as in "Grade submission"). In many languages, the translation depends on it. The second case is more self-descriptive as it indicates that the placeholder will contain a value.
+
+Another good example of how _not_ to name string identifiers would be something like
+
+```php
+$string['post'] = 'Post';
+```
+
+Note that there is no clue if the "post" here is used as a noun (e.g. describing one particular forum post) or a verb (such as an action of posting into a forum). In many languages, the translation is different for either case.
+
+See [Help strings](https://docs.moodle.org/dev/Help_strings) if you are introducing a new help string.
+
 #### Capitals
 
 Capitals should only be used when:

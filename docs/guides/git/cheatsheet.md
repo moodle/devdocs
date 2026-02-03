@@ -54,56 +54,6 @@ Rebase all the commits into a single commit, and add the mention `Co-authored-by
 
 Check out this commit from [MDL-64000](https://github.com/moodle/moodle/commit/fbb2196) as an example.
 
-## Provide clear and operational instructions to test your patch
-
-In the tracker issue, please describe how the change can be tested. Please avoid vague phrases like "Make sure there is no regression in the core" or "Test all places where XXX is used". Also, try to avoid requiring resources that are really difficult to gather, if possible - as in "Use production data from a server with 100.000+ students".
-
-If you have permission, edit the tracker issue and put the testing instructions into the "Testing instructions" field. If you do not have permission to edit that field, then write them in a comment on the tracker issue.
-
-It helps if you state your estimation of the testing difficulty so that testers can pick issues for them:
-
-- **Easy:** (average community member should be able to test it) - can be tested pretty easily via the web interface only at a public test site
-- **Moderate:** (knowledgeable administrator should be able to test it) - requires local installation, for example to test some 1.9 -> 2.0 upgrade steps or some non-standard environment (for example MNet features, specific platform etc)
-- **Hard:** (development skills are required to test it) - for example may require data hacking at SQL level to simulate data corruption or modifying the code to reproduce the problem
-
-<ValidExample title="Example testing instructions">
-
-(Difficulty: Easy, requires teacher access to a course)
-
-1. Log in as a teacher and go to a course
-2. Turn editing mode on
-3. TEST: Make sure that the control icons appear next to the activity titles
-4. Turn editing mode off
-5. TEST: Make sure that the control icons are not displayed now
-
-</ValidExample>
-
-## Introducing new strings
-
-Firstly, think twice and try to think in a non-English language. Any string you introduce is supposed to be translated by translators who usually do it for free in their own time. Do not waste their time by using get_string() for debugging messages that are likely to almost never appear. It is warmly recommended to let Helen review your strings before you submit them. This way we can keep the terminology and the style consistent. When introducing new strings, keep them alphabetically sorted. Using a self-descriptive names of the string identifier and the placeholder properties helps the translators to guess the context. Compare the following
-
-```php
-$string['grade'] = 'Grade {$a}';
-```
-
-with
-
-```php
-$string['maxgradevalue'] = 'Grade {$a->value}';
-```
-
-In the first case, it is pretty difficult to guess whether the "Grade" in the string is a noun (as in "Grade 12/30") or a verb (as in "Grade submission"). In many languages, the translation depends on it. The second case is more self-descriptive as it indicates that the placeholder will contain a value.
-
-Another good example of how _not_ to name string identifiers would be something like
-
-```php
-$string['post'] = 'Post';
-```
-
-Note that there is no clue if the "post" here is used as a noun (e.g. describing one particular forum post) or a verb (such as an action of posting into a forum). In many languages, the translation is different for either case.
-
-See [Help strings](https://docs.moodle.org/dev/Help_strings) if you are introducing a new help string.
-
 ## Include AMOS script in the commit if needed
 
 If you change the identifier of a string or split a string into two forks, provide a script for AMOS in the commit message. Since Moodle 2.0, the translations are kept on separated branches again. The AMOS plugin on the [Moodle Translation site](https://lang.moodle.org) tracks the changes in string files and automatically records modifications, additions and removals of strings. Therefore, strings can be re-worded freely on stable branches and should be removed from the main branch if they are not needed any more (do not remove strings from stable branches).
@@ -127,10 +77,6 @@ AMOS END
 </ValidExample>
 
 See [Automated Manipulation of Strings 2.0#AMOS script](/general/projects/api/amos#amos-script) for more details of the syntax. See [the log history](http://git.moodle.org/gw?p=moodle.git&a=search&h=HEAD&st=commit&s=AMOS+BEGIN) for actual usage examples.
-
-## Removing strings
-
-When a new feature completely replaces an existing feature, any strings which are no longer used should be removed from the code in the main branch. See [String deprecation](/general/projects/api/string-deprecation) for more information.
 
 ## Main version changes
 
