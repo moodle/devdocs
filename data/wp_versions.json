@@ -1,0 +1,1289 @@
+{
+    "$schema": "../static/schema/wp_versions.json",
+    "versions": [
+        {
+            "name": "5.1",
+            "releaseDate": "4 November 2025",
+            "generalEndDate": "20 August 2026",
+            "securityEndDate": "20 August 2026",
+            "improvementsandnewfeaturesEndDate": "21 April 2026",
+            "isLTS": false,
+            "isRolling": true,
+            "releases": [
+                {
+                    "name": "5.1.0",
+                    "releaseDate": "4 November 2025",
+                    "version": 2025110400,
+                    "upgradePath": "https://docs.moodle.org/501/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/501/en/Moodle_Workplace_rolling_release_notes"
+                },
+                {
+                    "name": "5.1.1",
+                    "releaseDate": "9 December 2025",
+                    "version": 2025110410,
+                    "releaseNoteUrl": "https://docs.moodle.org/501/en/Moodle_Workplace_rolling_release_notes#5.1.1_rolling"
+                },
+                {
+                    "name": "5.1.3",
+                    "releaseDate": "13 February 2026",
+                    "version": 2026021300,
+                    "releaseNoteUrl": false
+                }
+            ]
+        },
+        {
+            "name": "5.1",
+            "releaseDate": "4 November 2025",
+            "generalEndDate": "6 October 2026",
+            "securityEndDate": "6 April 2027",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": false,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "5.1.0",
+                    "releaseDate": "4 November 2025",
+                    "version": 2025110400,
+                    "upgradePath": "https://docs.moodle.org/501/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/501/en/Moodle_Workplace_release_notes"
+                },
+                {
+                    "name": "5.1.1",
+                    "releaseDate": "9 December 2025",
+                    "version": 2025110410,
+                    "releaseNoteUrl": "https://docs.moodle.org/501/en/Moodle_Workplace_release_notes#5.1.1"
+                },
+                {
+                    "name": "5.1.3",
+                    "releaseDate": "13 February 2026",
+                    "version": 2026021300,
+                    "releaseNoteUrl": false
+                }
+            ]
+        },
+        {
+            "name": "5.0",
+            "releaseDate": "13 May 2025",
+            "generalEndDate": "10 February 2026",
+            "securityEndDate": "10 February 2026",
+            "improvementsandnewfeaturesEndDate": "7 October 2025",
+            "isLTS": false,
+            "isRolling": true,
+            "releases": [
+                {
+                    "name": "5.0.0",
+                    "releaseDate": "13 May 2025",
+                    "version": 2025051300,
+                    "upgradePath": "https://docs.moodle.org/500/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/500/en/Moodle_Workplace_rolling_release_notes"
+                },
+                {
+                    "name": "5.0.1",
+                    "releaseDate": "10 June 2025",
+                    "version": 2025061000,
+                    "releaseNoteUrl": "https://docs.moodle.org/500/en/Moodle_Workplace_rolling_release_notes#5.0.1_rolling"
+                },
+                {
+                    "name": "5.0.2",
+                    "releaseDate": "12 August 2025",
+                    "version": 2025081200,
+                    "releaseNoteUrl": "https://docs.moodle.org/500/en/Moodle_Workplace_rolling_release_notes#5.0.2_rolling"
+                },
+                {
+                    "name": "5.0.3",
+                    "releaseDate": "7 October 2025",
+                    "version": 2025092210,
+                    "releaseNoteUrl": "https://docs.moodle.org/500/en/Moodle_Workplace_rolling_release_notes#5.0.3_rolling"
+                },
+                {
+                    "name": "5.0.4",
+                    "releaseDate": "9 December 2025",
+                    "version": 2025092220,
+                    "releaseNoteUrl": "https://docs.moodle.org/500/en/Moodle_Workplace_rolling_release_notes#5.0.4_rolling"
+                },
+                {
+                    "name": "5.0.6",
+                    "releaseDate": "13 February 2026",
+                    "version": 2025092236,
+                    "releaseNoteUrl": false
+                }
+            ]
+        },
+        {
+            "name": "5.0",
+            "releaseDate": "13 May 2025",
+            "generalEndDate": "21 April 2026",
+            "securityEndDate": "6 October 2026",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": false,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "5.0.0",
+                    "releaseDate": "13 May 2025",
+                    "version": 2025051300,
+                    "upgradePath": "https://docs.moodle.org/500/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/500/en/Moodle_Workplace_release_notes"
+                },
+                {
+                    "name": "5.0.1",
+                    "releaseDate": "10 June 2025",
+                    "version": 2025051310,
+                    "releaseNoteUrl": "https://docs.moodle.org/500/en/Moodle_Workplace_release_notes#5.0.1"
+                },
+                {
+                    "name": "5.0.2",
+                    "releaseDate": "12 August 2025",
+                    "version": 2025051320,
+                    "releaseNoteUrl": "https://docs.moodle.org/500/en/Moodle_Workplace_release_notes#5.0.2"
+                },
+                {
+                    "name": "5.0.3",
+                    "releaseDate": "7 October 2025",
+                    "version": 2025051330,
+                    "releaseNoteUrl": "https://docs.moodle.org/500/en/Moodle_Workplace_release_notes#5.0.3"
+                },
+                {
+                    "name": "5.0.4",
+                    "releaseDate": "9 December 2025",
+                    "version": 2025051340,
+                    "releaseNoteUrl": "https://docs.moodle.org/500/en/Moodle_Workplace_release_notes#5.0.4"
+                },
+                {
+                    "name": "5.0.6",
+                    "releaseDate": "13 February 2026",
+                    "version": 2025051356,
+                    "releaseNoteUrl": false
+                }
+            ]
+        },
+        {
+            "name": "4.5",
+            "releaseDate": "5 November 2024",
+            "generalEndDate": "4 November 2025",
+            "securityEndDate": "4 November 2025",
+            "improvementsandnewfeaturesEndDate": "4 March 2025",
+            "isLTS": false,
+            "isRolling": true,
+            "releases": [
+                {
+                    "name": "4.5.0",
+                    "releaseDate": "5 November 2024",
+                    "version": 2024110500,
+                    "upgradePath": "https://docs.moodle.org/405/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_rolling_release_notes"
+                },
+                {
+                    "name": "4.5.1",
+                    "releaseDate": "10 December 2024",
+                    "version": 2024121000,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_rolling_release_notes#4.5.1_rolling"
+                },
+                {
+                    "name": "4.5.2",
+                    "releaseDate": "11 February 2025",
+                    "version": 2025021100,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_rolling_release_notes#4.5.2_rolling"
+                },
+                {
+                    "name": "4.5.3",
+                    "releaseDate": "18 March 2025",
+                    "version": 2025031800,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_rolling_release_notes#4.5.3_rolling"
+                },
+                {
+                    "name": "4.5.4",
+                    "releaseDate": "15 April 2025",
+                    "version": 2025033110,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_rolling_release_notes#4.5.4_rolling"
+                },
+                {
+                    "name": "4.5.5",
+                    "releaseDate": "10 June 2025",
+                    "version": 2025033120,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_rolling_release_notes#4.5.5_rolling"
+                },
+                {
+                    "name": "4.5.6",
+                    "releaseDate": "12 August 2025",
+                    "version": 2025033130,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_rolling_release_notes#4.5.6_rolling"
+                }
+            ]
+        },
+        {
+            "name": "4.5",
+            "releaseDate": "5 November 2024",
+            "generalEndDate": "7 October 2025",
+            "securityEndDate": "5 October 2027",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": true,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "4.5.0",
+                    "releaseDate": "5 November 2024",
+                    "version": 2024110500,
+                    "upgradePath": "https://docs.moodle.org/405/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_release_notes"
+                },
+                {
+                    "name": "4.5.1",
+                    "releaseDate": "10 December 2024",
+                    "version": 2024110510,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_release_notes#4.5.1"
+                },
+                {
+                    "name": "4.5.2",
+                    "releaseDate": "11 February 2025",
+                    "version": 2024110520,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_release_notes#4.5.2"
+                },
+                {
+                    "name": "4.5.3",
+                    "releaseDate": "18 March 2025",
+                    "version": 2024110530,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_release_notes#4.5.3"
+                },
+                {
+                    "name": "4.5.4",
+                    "releaseDate": "14 April 2025",
+                    "version": 2024110540,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_release_notes#4.5.4"
+                },
+                {
+                    "name": "4.5.5",
+                    "releaseDate": "10 June 2025",
+                    "version": 2024110550,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_release_notes#4.5.5"
+                },
+                {
+                    "name": "4.5.6",
+                    "releaseDate": "12 August 2025",
+                    "version": 2024110560,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_release_notes#4.5.6"
+                },
+                {
+                    "name": "4.5.7",
+                    "releaseDate": "7 October 2025",
+                    "version": 2024110570,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_release_notes#4.5.7"
+                },
+                {
+                    "name": "4.5.8",
+                    "releaseDate": "9 December 2025",
+                    "version": 2024110580,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_release_notes#4.5.8"
+                }
+            ]
+        },
+        {
+            "name": "4.4",
+            "releaseDate": "21 May 2024",
+            "generalEndDate": "20 May 2025",
+            "securityEndDate": "20 November 2025",
+            "improvementsandnewfeaturesEndDate": "20 September 2024",
+            "isLTS": false,
+            "isRolling": true,
+            "releases": [
+                {
+                    "name": "4.4.0",
+                    "releaseDate": "21 May 2024",
+                    "version": 2024052100,
+                    "upgradePath": "https://docs.moodle.org/404/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_rolling_release_notes"
+                },
+                {
+                    "name": "4.4.1",
+                    "releaseDate": "11 June 2024",
+                    "version": 2024061100,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_rolling_release_notes#4.4.1_rolling"
+                },
+                {
+                    "name": "4.4.2",
+                    "releaseDate": "13 August 2024",
+                    "version": 2024081300,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_rolling_release_notes#4.4.2_rolling"
+                },
+                {
+                    "name": "4.4.3",
+                    "releaseDate": "3 September 2024",
+                    "version": 2024090300,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_rolling_release_notes#4.4.3_rolling"
+                },
+                {
+                    "name": "4.4.4",
+                    "releaseDate": "8 October 2024",
+                    "version": 2024093010,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_rolling_release_notes#4.4.4_rolling"
+                },
+                {
+                    "name": "4.4.5",
+                    "releaseDate": "10 December 2024",
+                    "version": 2024093020,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_rolling_release_notes#4.4.5_rolling"
+                },
+                {
+                    "name": "4.4.6",
+                    "releaseDate": "11 February 2025",
+                    "version": 2024093030,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_rolling_release_notes#4.4.6_rolling"
+                }
+            ]
+        },
+        {
+            "name": "4.4",
+            "releaseDate": "21 May 2024",
+            "generalEndDate": "20 May 2025",
+            "securityEndDate": "20 November 2025",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": false,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "4.4.0",
+                    "releaseDate": "21 May 2024",
+                    "version": 2024052100,
+                    "upgradePath": "https://docs.moodle.org/404/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_release_notes"
+                },
+                {
+                    "name": "4.4.1",
+                    "releaseDate": "11 June 2024",
+                    "version": 2024052110,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_release_notes#4.4.1"
+                },
+                {
+                    "name": "4.4.2",
+                    "releaseDate": "13 August 2024",
+                    "version": 2024052120,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_release_notes#4.4.2"
+                },
+                {
+                    "name": "4.4.3",
+                    "releaseDate": "3 September 2024",
+                    "version": 2024052130,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_release_notes#4.4.3"
+                },
+                {
+                    "name": "4.4.4",
+                    "releaseDate": "8 October 2024",
+                    "version": 2024052140,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_release_notes#4.4.4"
+                },
+                {
+                    "name": "4.4.5",
+                    "releaseDate": "10 December 2024",
+                    "version": 2024052150,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_release_notes#4.4.5"
+                },
+                {
+                    "name": "4.4.6",
+                    "releaseDate": "11 February 2025",
+                    "version": 2024052160,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_release_notes#4.4.6"
+                },
+                {
+                    "name": "4.4.7",
+                    "releaseDate": "18 March 2025",
+                    "version": 2024052170,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_release_notes#4.4.7"
+                },
+                {
+                    "name": "4.4.8",
+                    "releaseDate": "15 April 2025",
+                    "version": 2024052180,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_release_notes#4.4.8"
+                },
+                {
+                    "name": "4.4.9",
+                    "releaseDate": "10 June 2025",
+                    "version": 2024052190,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_release_notes#4.4.9"
+                },
+                {
+                    "name": "4.4.10",
+                    "releaseDate": "12 August 2025",
+                    "version": 2024052200,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_release_notes#4.4.10"
+                },
+                {
+                    "name": "4.4.11",
+                    "releaseDate": "7 October 2025",
+                    "version": 2024052210,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_release_notes#4.4.11"
+                },
+                {
+                    "name": "4.4.12",
+                    "releaseDate": "9 December 2025",
+                    "version": 2024052220,
+                    "releaseNoteUrl": "https://docs.moodle.org/404/en/Moodle_Workplace_release_notes#4.4.12"
+                }
+            ]
+        },
+        {
+            "name": "4.3",
+            "releaseDate": "9 November 2023",
+            "generalEndDate": "8 November 2024",
+            "securityEndDate": "8 May 2025",
+            "improvementsandnewfeaturesEndDate": "8 March 2024",
+            "isLTS": false,
+            "isRolling": true,
+            "releases": [
+                {
+                    "name": "4.3.0",
+                    "releaseDate": "9 November 2023",
+                    "version": 2023110900,
+                    "upgradePath": "https://docs.moodle.org/403/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_rolling_release_notes"
+                },
+                {
+                    "name": "4.3.1",
+                    "releaseDate": "12 December 2023",
+                    "version": 2023121200,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_rolling_release_notes#4.3.1_rolling"
+                },
+                {
+                    "name": "4.3.2",
+                    "releaseDate": "28 December 2023",
+                    "version": 2023122800,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_rolling_release_notes#4.3.2_rolling"
+                },
+                {
+                    "name": "4.3.3",
+                    "releaseDate": "13 February 2024",
+                    "version": 2024021300,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_rolling_release_notes#4.3.3_rolling"
+                },
+                {
+                    "name": "4.3.4",
+                    "releaseDate": "23 April 2024",
+                    "version": 2024041510,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_rolling_release_notes#4.3.4_rolling"
+                },
+                {
+                    "name": "4.3.5",
+                    "releaseDate": "11 June 2024",
+                    "version": 2024041520,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_rolling_release_notes#4.3.5_rolling"
+                },
+                {
+                    "name": "4.3.6",
+                    "releaseDate": "13 August 2024",
+                    "version": 2024041530,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_rolling_release_notes#4.3.6_rolling"
+                }
+            ]
+        },
+        {
+            "name": "4.3",
+            "releaseDate": "9 November 2023",
+            "generalEndDate": "8 November 2024",
+            "securityEndDate": "8 May 2025",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": false,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "4.3.0",
+                    "releaseDate": "9 November 2023",
+                    "version": 2023110900,
+                    "upgradePath": "https://docs.moodle.org/403/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_release_notes"
+                },
+                {
+                    "name": "4.3.1",
+                    "releaseDate": "12 December 2023",
+                    "version": 2023110910,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_release_notes#4.3.1"
+                },
+                {
+                    "name": "4.3.2",
+                    "releaseDate": "28 December 2023",
+                    "version": 2023110920,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_release_notes#4.3.2"
+                },
+                {
+                    "name": "4.3.3",
+                    "releaseDate": "13 February 2024",
+                    "version": 2023110930,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_release_notes#4.3.3"
+                },
+                {
+                    "name": "4.3.4",
+                    "releaseDate": "23 April 2024",
+                    "version": 2023110940,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_release_notes#4.3.4"
+                },
+                {
+                    "name": "4.3.5",
+                    "releaseDate": "11 June 2024",
+                    "version": 2023110950,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_release_notes#4.3.5"
+                },
+                {
+                    "name": "4.3.6",
+                    "releaseDate": "13 August 2024",
+                    "version": 2023110960,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_release_notes#4.3.6"
+                },
+                {
+                    "name": "4.3.7",
+                    "releaseDate": "3 September 2024",
+                    "version": 2023110970,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_release_notes#4.3.7"
+                },
+                {
+                    "name": "4.3.8",
+                    "releaseDate": "8 October 2024",
+                    "version": 2023110980,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_release_notes#4.3.8"
+                },
+                {
+                    "name": "4.3.9",
+                    "releaseDate": "10 December 2024",
+                    "version": 2023110990,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_release_notes#4.3.9"
+                },
+                {
+                    "name": "4.3.10",
+                    "releaseDate": "11 February 2025",
+                    "version": 2023111000,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_release_notes#4.3.10"
+                },
+                {
+                    "name": "4.3.11",
+                    "releaseDate": "18 March 2025",
+                    "version": 2023111010,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_release_notes#4.3.11"
+                },
+                {
+                    "name": "4.3.12",
+                    "releaseDate": "15 April 2025",
+                    "version": 2023111020,
+                    "releaseNoteUrl": "https://docs.moodle.org/403/en/Moodle_Workplace_release_notes#4.3.12"
+                }
+            ]
+        },
+        {
+            "name": "4.2",
+            "releaseDate": "30 May 2023",
+            "generalEndDate": "29 May 2024",
+            "securityEndDate": "29 November 2024",
+            "improvementsandnewfeaturesEndDate": "29 September 2023",
+            "isLTS": false,
+            "isRolling": true,
+            "releases": [
+                {
+                    "name": "4.2.0",
+                    "releaseDate": "30 May 2023",
+                    "version": 2023053000,
+                    "upgradePath": "https://docs.moodle.org/402/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_rolling_release_notes"
+                },
+                {
+                    "name": "4.2.1",
+                    "releaseDate": "13 June 2023",
+                    "version": 2023061300,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_rolling_release_notes#4.2.1"
+                },
+                {
+                    "name": "4.2.2",
+                    "releaseDate": "22 August 2023",
+                    "version": 2023082200,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_rolling_release_notes#4.2.2_rolling"
+                },
+                {
+                    "name": "4.2.3",
+                    "releaseDate": "10 October 2023",
+                    "version": 2023101000,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_rolling_release_notes#4.2.3_rolling"
+                },
+                {
+                    "name": "4.2.4",
+                    "releaseDate": "12 December 2023",
+                    "version": 2023101010,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_rolling_release_notes#4.2.4_rolling"
+                },
+                {
+                    "name": "4.2.5",
+                    "releaseDate": "28 December 2023",
+                    "version": 2023101020,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_rolling_release_notes#4.2.5_rolling"
+                },
+                {
+                    "name": "4.2.6",
+                    "releaseDate": "14 February 2024",
+                    "version": 2023101030,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_rolling_release_notes#4.2.6_rolling"
+                }
+            ]
+        },
+        {
+            "name": "4.2",
+            "releaseDate": "30 May 2023",
+            "generalEndDate": "29 May 2024",
+            "securityEndDate": "29 November 2024",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": false,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "4.2.0",
+                    "releaseDate": "30 May 2023",
+                    "version": 2023053000,
+                    "upgradePath": "https://docs.moodle.org/402/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_release_notes"
+                },
+                {
+                    "name": "4.2.1",
+                    "releaseDate": "13 June 2023",
+                    "version": 2023053010,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_release_notes#4.2.1"
+                },
+                {
+                    "name": "4.2.2",
+                    "releaseDate": "22 August 2023",
+                    "version": 2023053020,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_release_notes#4.2.2"
+                },
+                {
+                    "name": "4.2.3",
+                    "releaseDate": "10 October 2023",
+                    "version": 2023053030,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_release_notes#4.2.3"
+                },
+                {
+                    "name": "4.2.4",
+                    "releaseDate": "12 December 2023",
+                    "version": 2023053040,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_release_notes#4.2.4"
+                },
+                {
+                    "name": "4.2.5",
+                    "releaseDate": "28 December 2023",
+                    "version": 2023053050,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_release_notes#4.2.5"
+                },
+                {
+                    "name": "4.2.6",
+                    "releaseDate": "13 February 2024",
+                    "version": 2023053060,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_release_notes#4.2.6"
+                },
+                {
+                    "name": "4.2.7",
+                    "releaseDate": "23 April 2024",
+                    "version": 2023053070,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_release_notes#4.2.7"
+                },
+                {
+                    "name": "4.2.8",
+                    "releaseDate": "11 June 2024",
+                    "version": 2023053080,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_release_notes#4.2.8"
+                },
+                {
+                    "name": "4.2.9",
+                    "releaseDate": "13 August 2024",
+                    "version": 2023053090,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_release_notes#4.2.9"
+                },
+                {
+                    "name": "4.2.10",
+                    "releaseDate": "3 September 2024",
+                    "version": 2023053100,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_release_notes#4.2.10"
+                },
+                {
+                    "name": "4.2.11",
+                    "releaseDate": "8 October 2024",
+                    "version": 2023053110,
+                    "releaseNoteUrl": "https://docs.moodle.org/402/en/Moodle_Workplace_release_notes#4.2.11"
+                }
+            ]
+        },
+        {
+            "name": "4.1",
+            "releaseDate": "11 January 2023",
+            "generalEndDate": "10 January 2024",
+            "securityEndDate": "10 July 2024",
+            "improvementsandnewfeaturesEndDate": "10 May 2023",
+            "isLTS": false,
+            "isRolling": true,
+            "releases": [
+                {
+                    "name": "4.1.0",
+                    "releaseDate": "11 January 2023",
+                    "version": 2023011100,
+                    "upgradePath": "https://docs.moodle.org/401/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes"
+                },
+                {
+                    "name": "4.1.1",
+                    "releaseDate": "17 January 2023",
+                    "version": 2023011700,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.1"
+                },
+                {
+                    "name": "4.1.2",
+                    "releaseDate": "14 March 2023",
+                    "version": 2023031400,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.2"
+                },
+                {
+                    "name": "4.1.3",
+                    "releaseDate": "25 April 2023",
+                    "version": 2023042500,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.3"
+                },
+                {
+                    "name": "4.1.4",
+                    "releaseDate": "13 June 2023",
+                    "version": 2023042510,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.4"
+                },
+                {
+                    "name": "4.1.5",
+                    "releaseDate": "22 August 2023",
+                    "version": 2023042520,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.5"
+                }
+            ]
+        },
+        {
+            "name": "4.1",
+            "releaseDate": "11 January 2023",
+            "generalEndDate": "10 January 2024",
+            "securityEndDate": "10 January 2026",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": true,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "4.1.0",
+                    "releaseDate": "11 January 2023",
+                    "version": 2023011100,
+                    "upgradePath": "https://docs.moodle.org/401/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes"
+                },
+                {
+                    "name": "4.1.1",
+                    "releaseDate": "17 January 2023",
+                    "version": 2023011110,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.1"
+                },
+                {
+                    "name": "4.1.2",
+                    "releaseDate": "14 March 2023",
+                    "version": 2023011120,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.2"
+                },
+                {
+                    "name": "4.1.3",
+                    "releaseDate": "25 April 2023",
+                    "version": 2023011130,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.3"
+                },
+                {
+                    "name": "4.1.4",
+                    "releaseDate": "13 June 2023",
+                    "version": 2023011140,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.4"
+                },
+                {
+                    "name": "4.1.5",
+                    "releaseDate": "22 August 2023",
+                    "version": 2023011150,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.5"
+                },
+                {
+                    "name": "4.1.6",
+                    "releaseDate": "10 October 2023",
+                    "version": 2023011160,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.6"
+                },
+                {
+                    "name": "4.1.7",
+                    "releaseDate": "12 December 2023",
+                    "version": 2023011170,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.7"
+                },
+                {
+                    "name": "4.1.8",
+                    "releaseDate": "23 December 2023",
+                    "version": 2023011180,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.8"
+                },
+                {
+                    "name": "4.1.9",
+                    "releaseDate": "13 February 2024",
+                    "version": 2023011190,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.9"
+                },
+                {
+                    "name": "4.1.10",
+                    "releaseDate": "23 April 2024",
+                    "version": 2023011200,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.10"
+                },
+                {
+                    "name": "4.1.11",
+                    "releaseDate": "11 June 2024",
+                    "version": 2023011210,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.11"
+                },
+                {
+                    "name": "4.1.12",
+                    "releaseDate": "13 August 2024",
+                    "version": 2023011220,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.12"
+                },
+                {
+                    "name": "4.1.13",
+                    "releaseDate": "3 September 2024",
+                    "version": 2023011230,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.13"
+                },
+                {
+                    "name": "4.1.14",
+                    "releaseDate": "8 October 2024",
+                    "version": 2023011240,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.14"
+                },
+                {
+                    "name": "4.1.15",
+                    "releaseDate": "13 December 2024",
+                    "version": 2023011250,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.15"
+                },
+                {
+                    "name": "4.1.16",
+                    "releaseDate": "11 February 2025",
+                    "version": 2023011260,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.16"
+                },
+                {
+                    "name": "4.1.17",
+                    "releaseDate": "18 March 2025",
+                    "version": 2023011270,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.17"
+                },
+                {
+                    "name": "4.1.18",
+                    "releaseDate": "15 April 2025",
+                    "version": 2023011280,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.18"
+                },
+                {
+                    "name": "4.1.19",
+                    "releaseDate": "10 June 2025",
+                    "version": 2023011290,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.19"
+                },
+                {
+                    "name": "4.1.20",
+                    "releaseDate": "12 August 2025",
+                    "version": 2023011300,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.20"
+                },
+                {
+                    "name": "4.1.21",
+                    "releaseDate": "7 October 2025",
+                    "version": 2023011310,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.21"
+                },
+                {
+                    "name": "4.1.22",
+                    "releaseDate": "9 December 2025",
+                    "version": 2023011320,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.1_release_notes#4.1.22"
+                }
+            ]
+        },
+        {
+            "name": "4.0",
+            "releaseDate": "14 October 2022",
+            "generalEndDate": "13 October 2023",
+            "securityEndDate": "13 April 2024",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": false,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "4.0.0",
+                    "releaseDate": "14 October 2022",
+                    "version": 2022101400,
+                    "upgradePath": "https://docs.moodle.org/400/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.0_release_notes"
+                },
+                {
+                    "name": "4.0.5",
+                    "releaseDate": "15 November 2022",
+                    "version": 2022111500,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.0_release_notes#4.0.5"
+                },
+                {
+                    "name": "4.0.6",
+                    "releaseDate": "17 January 2023",
+                    "version": 2022112810,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.0_release_notes#4.0.6"
+                },
+                {
+                    "name": "4.0.7",
+                    "releaseDate": "14 March 2023",
+                    "version": 2022112811,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.0_release_notes#4.0.7"
+                },
+                {
+                    "name": "4.0.8",
+                    "releaseDate": "25 April 2023",
+                    "version": 2022112812,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.0_release_notes#4.0.8"
+                },
+                {
+                    "name": "4.0.9",
+                    "releaseDate": "13 June 2023",
+                    "version": 2022112840,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.0_release_notes#4.0.9"
+                },
+                {
+                    "name": "4.0.10",
+                    "releaseDate": "22 August 2023",
+                    "version": 2022112850,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.0_release_notes#4.0.10"
+                },
+                {
+                    "name": "4.0.11",
+                    "releaseDate": "10 October 2023",
+                    "version": 2022112860,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_4.0_release_notes#4.0.11"
+                },
+                {
+                    "name": "4.0.12",
+                    "releaseDate": "12 December 2023",
+                    "version": 2022112870,
+                    "releaseNoteUrl": false
+                }
+            ]
+        },
+        {
+            "name": "3.11",
+            "releaseDate": "8 June 2021",
+            "generalEndDate": "7 June 2022",
+            "securityEndDate": "7 December 2022",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": false,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "3.11.0",
+                    "releaseDate": "8 June 2021",
+                    "version": 2021060800,
+                    "upgradePath": "https://docs.moodle.org/311/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes"
+                },
+                {
+                    "name": "3.11.1",
+                    "releaseDate": "20 July 2021",
+                    "version": 2021072000,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes#3.11.1"
+                },
+                {
+                    "name": "3.11.2",
+                    "releaseDate": "30 July 2021",
+                    "version": 2021073000,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.11.3",
+                    "releaseDate": "20 September 2021",
+                    "version": 2021092000,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes#3.11.3"
+                },
+                {
+                    "name": "3.11.4",
+                    "releaseDate": "25 November 2021",
+                    "version": 2021112500,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes#3.11.4"
+                },
+                {
+                    "name": "3.11.5",
+                    "releaseDate": "18 January 2022",
+                    "version": 2022011800,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes#3.11.5"
+                },
+                {
+                    "name": "3.11.6",
+                    "releaseDate": "15 March 2022",
+                    "version": 2022031500,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes#3.11.6"
+                },
+                {
+                    "name": "3.11.7",
+                    "releaseDate": "10 May 2022",
+                    "version": 2022031610,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes#3.11.7"
+                },
+                {
+                    "name": "3.11.8",
+                    "releaseDate": "12 July 2022",
+                    "version": 2022031620,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes#3.11.8"
+                },
+                {
+                    "name": "3.11.9",
+                    "releaseDate": "23 August 2022",
+                    "version": 2022031630,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes#3.11.9"
+                },
+                {
+                    "name": "3.11.10",
+                    "releaseDate": "13 September 2022",
+                    "version": 2022031640,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes#3.11.10"
+                },
+                {
+                    "name": "3.11.11",
+                    "releaseDate": "15 November 2022",
+                    "version": 2022031650,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes#3.11.11"
+                },
+                {
+                    "name": "3.11.12",
+                    "releaseDate": "17 January 2023",
+                    "version": 2022031660,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes#3.11.12"
+                },
+                {
+                    "name": "3.11.13",
+                    "releaseDate": "14 March 2023",
+                    "version": 2022031670,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes#3.11.13"
+                },
+                {
+                    "name": "3.11.14",
+                    "releaseDate": "25 April 2023",
+                    "version": 2022031680,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.11_release_notes#3.11.14"
+                },
+                {
+                    "name": "3.11.15",
+                    "releaseDate": "13 June 2023",
+                    "version": 2022031690,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.11.16",
+                    "releaseDate": "22 August 2023",
+                    "version": 2022031700,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.11.17",
+                    "releaseDate": "10 October 2023",
+                    "version": 2022031710,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.11.18",
+                    "releaseDate": "12 December 2023",
+                    "version": 2022031720,
+                    "releaseNoteUrl": false
+                }
+            ]
+        },
+        {
+            "name": "3.10",
+            "releaseDate": "1 December 2020",
+            "generalEndDate": "30 November 2021",
+            "securityEndDate": "31 May 2022",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": false,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "3.10.0",
+                    "releaseDate": "1 December 2020",
+                    "version": 2020120100,
+                    "upgradePath": "https://docs.moodle.org/310/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.10_release_notes#3.10"
+                },
+                {
+                    "name": "3.10.1",
+                    "releaseDate": "19 January 2021",
+                    "version": 2021011900,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.10_release_notes#3.10.1"
+                },
+                {
+                    "name": "3.10.2",
+                    "releaseDate": "9 March 2021",
+                    "version": 2021030800,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.10_release_notes#3.10.2"
+                },
+                {
+                    "name": "3.10.3",
+                    "releaseDate": "25 March 2021",
+                    "version": 2021032500,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.10_release_notes#3.10.3"
+                },
+                {
+                    "name": "3.10.4",
+                    "releaseDate": "10 May 2021",
+                    "version": 2021051000,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.10.5",
+                    "releaseDate": "13 July 2021",
+                    "version": 2021051200,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.10.6",
+                    "releaseDate": "30 July 2021",
+                    "version": 2021051210,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.10.7",
+                    "releaseDate": "16 September 2021",
+                    "version": 2021051220,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.10.8",
+                    "releaseDate": "17 November 2021",
+                    "version": 2021051230,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.10.9",
+                    "releaseDate": "18 January 2022",
+                    "version": 2021051240,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.10.10",
+                    "releaseDate": "15 March 2022",
+                    "version": 2021051250,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.10.11",
+                    "releaseDate": "10 May 2022",
+                    "version": 2021051260,
+                    "releaseNoteUrl": false
+                }
+            ]
+        },
+        {
+            "name": "3.9",
+            "releaseDate": "30 June 2020",
+            "generalEndDate": "29 June 2021",
+            "securityEndDate": "29 December 2021",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": false,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "3.9.0",
+                    "releaseDate": "30 June 2020",
+                    "version": 2020063000,
+                    "upgradePath": "https://docs.moodle.org/309/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.9_release_notes#3.9"
+                },
+                {
+                    "name": "3.9.1",
+                    "releaseDate": "15 July 2020",
+                    "version": 2020071500,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.9_release_notes#3.9.1"
+                },
+                {
+                    "name": "3.9.2",
+                    "releaseDate": "24 September 2020",
+                    "version": 2020092400,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.9_release_notes#3.9.2"
+                },
+                {
+                    "name": "3.9.3",
+                    "releaseDate": "10 November 2020",
+                    "version": 2020111000,
+                    "releaseNoteUrl": false
+                }
+            ]
+        },
+        {
+            "name": "3.8",
+            "releaseDate": "26 November 2019",
+            "generalEndDate": "25 November 2020",
+            "securityEndDate": "25 May 2021",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": false,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "3.8.0",
+                    "releaseDate": "26 November 2019",
+                    "version": 2019112600,
+                    "upgradePath": "https://docs.moodle.org/308/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.8_release_notes#3.8"
+                },
+                {
+                    "name": "3.8.1",
+                    "releaseDate": "20 January 2020",
+                    "version": 2020012000,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.8_release_notes#3.8.1"
+                },
+                {
+                    "name": "3.8.2",
+                    "releaseDate": "10 March 2020",
+                    "version": 2020031000,
+                    "releaseNoteUrl": "https://docs.moodle.org/dev/Moodle_Workplace_3.8_release_notes#3.8.2"
+                },
+                {
+                    "name": "3.8.3",
+                    "releaseDate": "12 May 2020",
+                    "version": 2020051200,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.8.4",
+                    "releaseDate": "9 June 2020",
+                    "version": 2020060900,
+                    "releaseNoteUrl": false
+                }
+            ]
+        },
+        {
+            "name": "3.7",
+            "releaseDate": "25 June 2019",
+            "generalEndDate": "24 June 2020",
+            "securityEndDate": "24 December 2020",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": false,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "3.7.0",
+                    "releaseDate": "25 June 2019",
+                    "version": 2019062500,
+                    "upgradePath": "https://docs.moodle.org/307/en/Upgrading",
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.7.2",
+                    "releaseDate": "10 September 2019",
+                    "version": 2019091000,
+                    "releaseNoteUrl": false
+                },
+                {
+                    "name": "3.7.3",
+                    "releaseDate": "12 November 2019",
+                    "version": 2019111200,
+                    "releaseNoteUrl": false
+                }
+            ]
+        }
+    ]
+}
