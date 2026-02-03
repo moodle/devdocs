@@ -566,8 +566,8 @@ export default class extends BaseComponent {
 
     // In this case we only want the affected element.
     _refreshStudent({element}) {
-        const element = this.getElement(this.selectors.ATTEMPTS, element.id);
-        element.innerHTML = element.attempts;
+        const domElement = this.getElement(this.selectors.ATTEMPTS, element.id);
+        domElement.innerHTML = element.attempts;
     }
 
 }
@@ -668,8 +668,8 @@ export default class extends BaseComponent {
     }
 
     _refreshStudent({element}) {
-        const element = this.getElement(this.selectors.ATTEMPTS, element.id);
-        element.innerHTML = element.attempts;
+        const domElement = this.getElement(this.selectors.ATTEMPTS, element.id);
+        domElement.innerHTML = element.attempts;
     }
 
     _submitAttempt(event) {
