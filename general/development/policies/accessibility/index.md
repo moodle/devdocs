@@ -18,7 +18,7 @@ Moodle is designed to provide equal functionality and information to all people.
 
 ## Accessibility conformance
 
-As part of our ongoing commitment to accessibility and continuously improving conformance with the WCAG 2.1 Level AA success criteria, Moodle is working with an external team of accessibility specialists to review the accessibility of its products through regular accessibility audits.
+As part of our ongoing commitment to accessibility and continuously improving conformance with the WCAG 2.2 Level AA success criteria, Moodle is working with an external team of accessibility specialists to review the accessibility of its products through regular accessibility audits.
 
 ### Accessibility accreditations
 
@@ -143,13 +143,13 @@ All text that is presented needs to be displayed in a colour with sufficient con
 
 It is worth noting that colour alone **must not** be used to imply meaning. An example of a failure for this would be to display error messages in "red" with no other information to convey that this is an error message.
 
-See [the W3C advice on the use of colour](https://www.w3.org/TR/WCAG21/#use-of-color) from WCAG 2.1 for more information.
+See [the W3C advice on the use of colour](https://www.w3.org/TR/WCAG22/#use-of-color) from WCAG 2.2 for more information.
 
 ### Icons
 
 Icons (Images) can be displayed in a variety of ways, and the correct use of icons will depend on the context in which they are used.
 
-See [the WCAG 2.1 requirement for text alternatives](https://www.w3.org/TR/WCAG21/#text-alternatives) for more information.
+See [the WCAG 2.2 requirement for text alternatives](https://www.w3.org/TR/WCAG22/#text-alternatives) for more information.
 
 #### Solitary Icons
 
@@ -165,13 +165,13 @@ When multiple icons are displayed in a row as links, it is important that each i
 
 The minimum valid size for a link target is 44 by 44 pixels.
 
-See [the WCAG 2.1 requirement for target size](https://www.w3.org/TR/WCAG21/#target-size) for more information.
+See [the WCAG 2.2 requirement for target size](https://www.w3.org/TR/WCAG22/#target-size) for more information.
 
 ### Keyboard Support
 
 All components should be entirely operable through a keyboard-only interface.
 
-See [the WCAG 2.1 requirement for keyboard accessibility](https://www.w3.org/TR/WCAG21/#keyboard-accessible) for more information.
+See [the WCAG 2.2 requirement for keyboard accessibility](https://www.w3.org/TR/WCAG22/#keyboard-accessible) for more information.
 
 Some important things to consider is that all components should be focusable with the keyboard (available in the tab sequence), and should allow the focus to be moved away using only the keyboard.
 
@@ -186,13 +186,13 @@ Moodle forms created with the standard forms library are designed to be accessib
 - All form elements must have a label
 - The form must be able to be completed entirely with the keyboard
 - Invalid entries in the form fields should be indicated with the "aria-invalid" attribute set to "true"
-- Warning messages for invalid form fields should be associated with the invalid field using the "aria-describedby" attribute. See [the WCAG 2.1 success criteria for Error Identification](https://www.w3.org/TR/WCAG21/#error-identification) for further information on this.
+- Warning messages for invalid form fields should be associated with the invalid field using the "aria-describedby" attribute. See [the WCAG 2.2 success criteria for Error Identification](https://www.w3.org/TR/WCAG22/#error-identification) for further information on this.
 
 ### Presentation Only
 
 Any component that contains no information or functionality that is not provided by other components on the page can be considered decorative only. Content that meets this description can be hidden from screen readers using a suitable technique (aria-hidden or presentation role).
 
-See [the WCAG 2.1 description of pure decoration](https://www.w3.org/TR/WCAG21/#dfn-pure-decoration) for more information.
+See [the WCAG 2.2 description of pure decoration](https://www.w3.org/TR/WCAG22/#dfn-pure-decoration) for more information.
 
 ### Landmark regions
 
@@ -216,7 +216,7 @@ Some tips for providing a meaningful page title:
 
 (not to be confused with Moodle's `\core\context` class and its implementations)
 
-According to the [WCAG 2.1 Understanding Docs](https://www.w3.org/WAI/WCAG21/Understanding/on-focus.html#dfn-changes-of-context), a change in context is a major change that, if made without user awareness, can disorient users who are not able to view the entire page simultaneously. It can include changes of user agent, viewport, focus, or content that changes the meaning of the web page.
+According to the [WCAG 2.2 Understanding Docs](https://www.w3.org/WAI/WCAG22/Understanding/on-focus.html#dfn-changes-of-context), a change in context is a major change that, if made without user awareness, can disorient users who are not able to view the entire page simultaneously. It can include changes of user agent, viewport, focus, or content that changes the meaning of the web page.
 
 :::
 
@@ -276,8 +276,8 @@ This is automatically handled by `$PAGE->set_title()`.
 
 #### Useful resources
 
-- [Understanding Success Criterion 2.4.2: Page Titled (Level A)](https://www.w3.org/WAI/WCAG21/Understanding/page-titled)
-- [Technique G88: Providing descriptive titles for Web pages](https://www.w3.org/WAI/WCAG21/Techniques/general/G88)
+- [Understanding Success Criterion 2.4.2: Page Titled (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/page-titled)
+- [Technique G88: Providing descriptive titles for Web pages](https://www.w3.org/WAI/WCAG22/Techniques/general/G88)
 
 ### Advanced UX Widgets
 
@@ -294,61 +294,9 @@ When it is determined that an advanced interface is required (typically one that
 - [W3C Accessibility Standards Overview](https://www.w3.org/WAI/standards-guidelines/)
 - [Accessible Rich Internet Applications (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria-1.1/)
 - [WAI-ARIA Authoring Practices 1.1](https://www.w3.org/TR/wai-aria-practices/)
-- [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/)
+- [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/)
 - [Authoring Tool Accessibility Guidelines (ATAG) 2.0](https://www.w3.org/TR/ATAG20/)
 - [User Agent Accessibility Guidelines (UAAG) 2.0](https://www.w3.org/TR/UAAG20/)
-
-## Accessibility Testing
-
-### Screen readers
-
-Screen readers that implement the web accessibility API of their supported operating system and conform with the WCAG 2.1 Level AA guidelines should work well with Moodle products.
-
-The table below lists some of the popular screen readers available. Browsers in **bold** font indicate the best compatibility with the given screen reader compared to other compatible browsers.
-
-<!-- cspell:ignore ChromeVox -->
-
-| Screen reader                                                                                                                   | Operating system | Browser compatibility             | Used in testing on |
-|---------------------------------------------------------------------------------------------------------------------------------|------------------|-----------------------------------|--------------------|
-| [NVDA](https://www.nvaccess.org/)                                                                                               | Windows          | Chrome, Edge, Firefox             | LMS                |
-| [JAWS](http://www.freedomscientific.com/)                                                                                       | Windows          | Chrome, Edge, Firefox             | LMS                |
-| [Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1)         | Windows          | **Edge**, Chrome, Firefox         |                    |
-| [VoiceOver](https://support.apple.com/guide/voiceover)                                                                          | macOS, iOS       | **Safari**, Chrome, Edge, Firefox | LMS, App           |
-| [Talkback](https://support.google.com/accessibility/android/topic/3529932?hl=en&ref_topic=9078845&sjid=13502500306212449126-AP) | Android          | **Chrome**, Firefox               | LMS, App           |
-| [ChromeVox](https://support.google.com/chromebook/answer/7031755)                                                               | Chrome OS        | **Chrome**, Firefox               |                    |
-
-:::info Notes about screen reader testing
-
-Moodle HQ directly tests with a number of different screen readers when assessing:
-
-- Bug fixes to accessibility issues that require screen reader testing
-- New pages or user interface components that are being developed for new product features or improvements
-
-:::
-
-### Accessibility testing tools
-
-Aside from screen readers, Moodle LMS is also tested using a variety of accessibility tools:
-
-#### Built-in browser dev tools
-
-- [Chrome DevTools](https://developer.chrome.com/docs/devtools/accessibility/reference)
-- [Firefox Accessibility Inspector](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html)
-
-#### Browser Extensions
-
-- [axe DevTools](https://www.deque.com/axe/devtools/) (Chrome, Firefox)
-- [WebAIM Web Accessibility Evaluation Tool (WAVE)](https://wave.webaim.org/extension/) (Chrome, Firefox)
-
-#### HTML Validator
-
-- [Nu HTML Checker](https://github.com/validator/validator)
-
-#### Behat
-
-<!-- cspell:ignore Deque -->
-
-Moodle LMS' automated acceptance testing integrates Deque Systems' accessibility testing engine, [axe-core](https://github.com/dequelabs/axe-core), to support automated accessibility testing through Behat.
 
 ## International Legislation
 

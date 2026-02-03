@@ -7,7 +7,7 @@ tags:
 
 :::note
 
-This page describes the accessibility of the Moodle Developer Resources site. For details of the accessibility conformance of Moodle products, coding standards and other developer resources related to accessibility, see [Accessibility](../development/policies/accessibility.md).
+This page describes the accessibility of the Moodle Developer Resources site. For details of the accessibility conformance of Moodle products, coding guidelines, and other developer resources related to accessibility, see [Accessibility](../development/policies/accessibility).
 
 :::
 
