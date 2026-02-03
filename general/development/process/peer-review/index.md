@@ -233,7 +233,7 @@ Ensure that:
   - For security bugs, this is `main` and all the 'Current stable' and 'Current security' branches (but note the [special process for handling security fixes|https://moodledev.io/general/development/process#security-issues]).
   - For improvements or new features in the Behat on PHPunit integration, this should be done on `main` and all the 'Current stable' and 'Current security' branches, providing the backporting is not too difficult.
 
-See also the [Commit cheat sheet](https://docs.moodle.org/dev/Commit_cheat_sheet) for further guidance.
+See also the [Commit cheat sheet](/docs/guides/git/cheatsheet) for further guidance.
 
 ### Testing instructions and automated tests
 

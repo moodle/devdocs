@@ -2003,7 +2003,7 @@ Git commits should not:
 - Include many separate revisions to the same lines of code for a single issue
 - Arbitrarily split when part of a atomic set of logical changes
 
-For more guidance, see [Commit cheat sheet](https://docs.moodle.org/dev/Commit_cheat_sheet)
+For more guidance, see [Commit cheat sheet](/docs/guides/git/cheatsheet)
 
 ## Credits
 
