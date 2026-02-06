@@ -136,7 +136,7 @@ The final deprecation policy for Moodle LMS has been updated to align more close
 
 #### Procedure
 
-- When a function undergoes final deprecation, all content of the function should be removed. In the skeleton that remains, an error statement should be included that indicates that the function cannot be used anymore. You should also direct developers to the new function(s) in this message.
+- When a function undergoes final deprecation, all content of the function should be removed. In the skeleton that remains, an error statement should be included that indicates that the function cannot be used anymore. You should also direct developers to the new function(s) in this message, if the deprecated function has been replaced with a new function.
 
 <Tabs>
 
@@ -175,6 +175,7 @@ throw new coding_exception(
 - Function signatures _may_ be removed, that is:
   - all parameters may be removed; and
   - and return type declaration may be removed.
+- If the method or function has a typed return, it needs to return accordingly, otherwise no return is required.
 - The deprecation 'since' tag should remain as the version where the _initial_ deprecation happened.
 - Deprecated classes must be completely removed.
 - The content of the PHPDoc should be removed, leaving only the `@deprecated` tag with the notice and, optionally, the replacement information. This includes all `@param`, `@return`, and other tags, as well as the description.
