@@ -31,3 +31,10 @@
 # Documentation of the Documentation
 # Both the documentation owners, and the community team have ownership of this content.
 /general/documentation/ @moodle/documentation-owners @moodle/moodle-community-team
+
+# Community Contributions team
+# Access to approve release notes changes
+/data/versions.json @moodle/community-contributions
+/general/releases @moodle/community-contributions
+/general/releases.md @moodle/community-contributions
+/general/_releases @moodle/community-contributions
