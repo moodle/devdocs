@@ -47,3 +47,17 @@ Each field in `otherdata` must be a string, number or boolean; it cannot be an o
 ```
 
 The app will parse the string and it will be available as an array or object.
+
+## I want to display embedded content that requires the Moodle site as referer {/* #i-want-to-display-embedded-content-that-requires-the-moodle-site-as-referer */}
+
+In Moodle 5.2 ([MDL-87082](https://moodle.atlassian.net/browse/MDL-87082)), a new script was added to support embedding content in the app using the Moodle site as the referer. Moodle App 5.2 and later support this script.
+
+To use it in your plugin, there are two different approaches:
+
+1. If you're rendering HTML content using `core-format-text`, the iframe elements that need a referer should have `data-app-site-referer="true"`.
+
+2. If your plugin renders the iframe directly, use `core-iframe` with `addSiteReferer` set to true:
+
+```html ng2
+<core-iframe src="<% src %>" [addSiteReferer]="true"></core-iframe>
+```
