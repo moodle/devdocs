@@ -270,38 +270,35 @@ So if you want very high performance caching then you need to write you code so 
 Not all caches are good candidates to localize and some can have a detrimental effect if localized for the wrong reasons.
 ![When to localize a cache](./_index/When_to_localize_cache.png)
 
-### Revision numbers as key suffix
+### Versioned caches
 
-A simple method is storing a version number somewhere and appending that to your key. This is the most common method used in Moodle, simply store a number somewhere which is globally shared such as in a custom database field, or using `set_config` / `get_config`.
+When data changes, you can often identify a 'version' by either a numeric time value, or an incremented version number, in the database.
 
-One small edge case with this approach is you now need to make sure that the incrementing code is atomic, which means you should use a DB transaction, or gain a lock, before bumping the version so you don't get two conflicting changes ending up on the same version with a race condition. However if you are anticipating high turnover rate of the cache you probably have a deeper issue, see 'Fast churning keys' below.
+When you have a version number, the best way to ensure that cached data is current (the cache does not return data from old versions) is to use the `set_versioned` and `get_versioned` functions within the cache. These must be used as a pair - you cannot set data with `set_versioned` and retrieve it with `get`, or vice versa.
 
-One potential benefit of a simple version number strategy if your cache misses are very expensive, is that you can check for the presence of a version, and if it doesn't exist it is easy to simply retrieve the previous version and use it in the mean time, while you could generate the new version asynchronously. This is an advanced concept and depends on the use case and has the obvious disadvantage of showing stale data.
+The `get_versioned` function takes a required version integer, and will only return cached data that is equal to, or newer than, the required version. Optionally, you can also have it provide the actual version that was returned, in case it is newer than requested.
 
-:::info
+These functions work efficiently with multi-layer caches:
 
-An example of this strategy in Moodle is the theme versions cache: https://github.com/moodle/moodle/blob/main/lib/outputlib.php#L88-L100
+- If the correct version is available in local cache, it will be returned directly without accessing the shared cache; otherwise it will be requested from shared cache and stored in the local cache.
+- When a new value is set, it will be set in both local cache and shared cache.
+- These properties mean that if a new cache version needs to be computed, it will usually only be computed on a single server (except for race conditions, which you can avoid using locking if required) and that reading the cached data is efficient.
 
-Note this is not actually in MUC but the caching concepts are the same.
+At each point, the cache stores only a single version, which is important for large cached data such as course modinfo because the older approaches (below) can waste cache memory by storing older unnecessary versions.
 
-:::
+### Version numbers as key suffix
 
-It works best with a cache store that supports Least Recently Used garbage collection.
+An earlier approach is using the same type of version number and appending that to your key. This works, but uses more storage in the cache, especially if data items are large or change frequently.
 
-### Revision numbers as value suffix instead of key suffix
+### Version numbers as value suffix instead of key suffix
 
-This is conceptually the same as above but has two important differences. Firstly because the key itself is always the same then only a single version of some value will be stored on disk or in memory for any given cache store which makes it much more efficient in terms of storage. But secondly this comes with a higher coding complexity cost because it will no longer be guaranteed to be correct because a local cache could return a hit with a stale version. So if you need it to be correct you will need to parse out the revision from the value and then confirm the revision is correct before using the value. If it is invalid then you need to treat it as a miss and handle that. One way is to rebuild and set it, but this loses the advantage of primary and final caches (see below). A better way is to delete the local cache but not the final cache by passing a second param of false to delete, and then getting the value again which will repopulate the local cache from the shared cache:
+Another earlier approach was to store revision numbers inside the cache value. This avoids storing duplicate copies of the same cache entry but is not recommended because it is difficult to ensure correct data on multi-level caches. Instead, the versioned cache functions should now be used.
 
-```php
- $cache->delete('foo', false); // Delete the primary / local stale version
- $cache->get('foo');           // Get the final / shared version (which may also be stale!)
-```
+### Incrementing version numbers
 
-But this also is imperfect if there are 3 layers of caching, see [MDL-72837](https://moodle.atlassian.net/browse/MDL-72837) for a full discussion and a possible new api to handle this.
+If you increment a number for each version, you need to use database transactions or locks to ensure that the same number is not used twice due to race conditions.
 
-This method is how the course modinfo cache is localized.
-
-### Using time as a key suffix
+### Timestamps as version numbers
 
 Another common approach is to use a timestamp, this is how some of the core cache numbers work, see `increment_revision_number()` for some examples. This has the benefit of not needing any transaction or locking, but you do run the risk of two processes clashing if they happen to run in the same second.
 
@@ -311,7 +308,7 @@ It may look like Moodle theme-related caching uses this strategy, but actually i
 
 https://github.com/moodle/moodle/blob/main/lib/datalib.php#L1131-L1145
 
-It works best with a cache store that supports Least Recently Used garbage collection.
+It works best with a cache store that supports Least Recently Used garbage collection, or when using the versioned cache functions.
 :::
 
 ### Content hashes as keys
