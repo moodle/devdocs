@@ -25,6 +25,11 @@ useful?
   That is what really needs to be explained. For example, if something is being passed as a string,
   what formats will work?
 - An example can be worth a dozen words, as you can see in the good example below :-)
+- One way to give an example that is sometimes effective is to [link a good example elsewhere in the
+  code](https://github.com/moodle/moodle/blob/f747c15cbf1c1c963a9592a73b167b969ec33d75/public/lib/portfolio/plugin.php#L404)
+  (← see, I did it just there), perhaps using `{@see ...}`.
+  As another example (that could be improved), the comments on some of the methods mention particular
+  standard question types which give good or interesting example of how to override that method.
 
 <InvalidExample>
 
