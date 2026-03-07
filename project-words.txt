@@ -360,3 +360,4 @@ modvisible
 savechanges
 hideif
 formslib
+autoinit
