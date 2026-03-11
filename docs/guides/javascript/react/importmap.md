@@ -19,17 +19,16 @@ An import map is a JSON object, embedded in the page as a `<script type="importm
 that tells the browser how to resolve bare specifiers used in `import` statements.
 
 ```html
-<script type="importmap">
-{
-  "imports": {
-    "@moodle/lms/":           "https://example.com/esm/-1/@moodle/lms/",
-    "@moodlehq/design-system": "https://example.com/esm/-1/@moodlehq/design-system",
-    "react":                  "https://example.com/esm/-1/react",
-    "react/":                 "https://example.com/esm/-1/react/",
-    "react-dom":              "https://example.com/esm/-1/react-dom"
-  }
-}
-</script>
+<script type="importmap">{
+    "imports": {
+        "@moodle/lms/": "http://localhost/MDL-87922/r.php/core/esm/-1/@moodle/lms/",
+        "@moodlehq/design-system": "http://localhost/MDL-87922/r.php/core/esm/-1/@moodlehq/design-system",
+        "react": "http://localhost/MDL-87922/r.php/core/esm/-1/react",
+        "react/": "http://localhost/MDL-87922/r.php/core/esm/-1/react/",
+        "react-dom": "http://localhost/MDL-87922/r.php/core/esm/-1/react-dom",
+        "react-dom/": "http://localhost/MDL-87922/r.php/core/esm/-1/react-dom/"
+    }
+}</script>
 ```
 
 With this map in place, any ES module on the page can write:
@@ -74,6 +73,7 @@ The following specifiers are registered by default in `add_standard_imports()`:
 | `react` | `{loaderBase}react` | `lib/js/bundles/react/react.js` |
 | `react/` | `{loaderBase}react/` | `lib/js/bundles/react/` (prefix) |
 | `react-dom` | `{loaderBase}react-dom` | `lib/js/bundles/react-dom/react-dom.js` |
+| `react-dom/` | `{loaderBase}react-dom/` | `lib/js/bundles/react-dom/` (prefix) |
 
 The `react/` prefix entry covers all sub-specifiers such as `react/jsx-runtime`.
 
