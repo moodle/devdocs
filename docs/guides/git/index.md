@@ -474,7 +474,7 @@ The `git am -3 ../moodle_400/.patches/*` command applies all the files from the 
 ## See also {#see_also}
 
 - [Git tips](https://docs.moodle.org/dev/Git_tips)
-- [Git commit cheat sheet](https://docs.moodle.org/dev/Commit_cheat_sheet)
+- [Git commit cheat sheet](./cheatsheet.md)
 - [Moodle's Git commit policy](/general/development/policies/codingstyle#git-commits)
 - [MDK (Moodle Developer Kit)](/general/development/tools/mdk)
 - [Renaming master branch to main](/general/community/plugincontribution/master2main)
