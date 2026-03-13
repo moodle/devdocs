@@ -193,6 +193,11 @@ const sidebars = {
                 id: 'app_releases',
             },
         },
+        {
+            type: 'doc',
+            id: 'wp_releases',
+            label: 'Moodle Workplace Releases',
+        },
     ],
 };
 

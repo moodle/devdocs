@@ -1,0 +1,122 @@
+{
+    "title": "JSON schema for the Moodle Workplace Release Data",
+    "$id": "https://moodledev.io/schema/wp_versions.json",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "type": "object",
+    "properties": {
+        "versions": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/version"
+            }
+        }
+    },
+    "required": [
+        "versions"
+    ],
+    "$defs": {
+        "version": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "releaseDate": {
+                    "type": "string"
+                },
+                "codeFreezeDate": {
+                    "type": "string"
+                },
+                "improvementsandnewfeaturesEndDate": {
+                    "type": "string"
+                },
+                "generalEndDate": {
+                    "type": "string"
+                },
+                "securityEndDate": {
+                    "type": "string"
+                },
+                "extendedSecurityEndDate": {
+                    "type": "string"
+                },
+                "isLTS": {
+                    "type": "boolean"
+                },
+                "isRolling": {
+                    "type": "boolean"
+                },
+                "isExperimental": {
+                    "type": "boolean"
+                },
+                "releases": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/release"
+                    }
+                },
+                "hidden": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "name",
+                "releaseDate",
+                "generalEndDate",
+                "securityEndDate"
+            ],
+            "additionalProperties": false,
+            "unevaluatedProperties": false
+        },
+        "release": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "releaseDate": {
+                    "type": "string"
+                },
+                "version": {
+                    "oneOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "notes": {
+                    "type": "string"
+                },
+                "upgradePath": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "releaseNoteUrl": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "name",
+                "releaseDate",
+                "version"
+            ],
+            "additionalProperties": false,
+            "unevaluatedProperties": false
+        }
+    }
+}
