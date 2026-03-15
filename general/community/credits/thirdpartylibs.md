@@ -1016,7 +1016,7 @@ Simple Pie helps with blogs.
 A generic function and convention to trigger deprecation notices
 
 - **Location**: public/lib/symfony/deprecation-contracts
-- **Version**: 3.5.1
+- **Version**: 3.6.0
 - **License**:  MIT
 - **URL**: [https://github.com/symfony/deprecation-contracts](https://github.com/symfony/deprecation-contracts)
 
@@ -1046,7 +1046,7 @@ URL syntax validation using PHP and regular expressions.
 ### WebAuthn
 
 - **Location**: public/lib/webauthn
-- **Version**: 2.2.2
+- **Version**: 2.2.0
 - **License**:  MIT
 - **URL**: [https://github.com/lbuchs/WebAuthn](https://github.com/lbuchs/WebAuthn)
 
