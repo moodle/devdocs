@@ -32,7 +32,7 @@ class mobile {
 
         $course = get_course($args['courseid']);
         require_login($course);
-        $html = $OUTPUT->render_from_template('format_myformat/mobile_course', []);
+        $html = $OUTPUT->render_from_template('format_myformat/mobileapp/mobile_course', []);
 
         return [
             'templates' => [
@@ -50,7 +50,7 @@ class mobile {
 }
 ```
 
-```html handlebars title="templates/mobile_course.mustache"
+```html handlebars title="templates/mobileapp/mobile_course.mustache"
 {{=<% %>=}}
 <core-dynamic-component [component]="coreCourseFormatComponent.allSectionsComponent" [data]="data" class="format-myformat">
     @for (section of sections; track section.id) {

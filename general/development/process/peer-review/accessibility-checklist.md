@@ -95,7 +95,7 @@ Each page should have one, and only one, `H1` element. The test of the title sho
 
 Most assistive technologies can enumerate the page titles. To ensure the structure is clear, it is mandatory that all headers follow an strict heading hierarchy. For example, a `H2` element should not be followed by a `H4` element.
 
-You can read more information about page titles in this [Accessibility policies page section](../../policies/accessibility.md#page-titles).
+You can read more information about page titles in this [Accessibility policies page section](../../policies/accessibility/index.md#page-titles).
 
 ## Usability accessibility Checks
 

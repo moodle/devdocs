@@ -39,7 +39,7 @@ return [
     'templates' => [
         [
             'id' => 'main',
-            'html' => $OUTPUT->render_from_template('local_sample/groups', []),
+            'html' => $OUTPUT->render_from_template('local_sample/mobileapp/groups', []),
         ],
     ],
     'otherdata' => [
@@ -83,7 +83,7 @@ return [
     'templates' => [
         [
             'id' => 'main',
-            'html' => $OUTPUT->render_from_template('local_sample/groups', [
+            'html' => $OUTPUT->render_from_template('local_sample/mobileapp/groups', [
                 'groups' => $groups,
                 'selectedgroup' => $groups[$selectedgroup],
             ]),

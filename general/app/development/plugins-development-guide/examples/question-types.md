@@ -40,7 +40,7 @@ class mobile {
     public static function mobile_get_YOURQTYPENAME() {
         global $OUTPUT, $CFG;
 
-        $html = $OUTPUT->render_from_template('qtype_YOURQTYPENAME/mobile', []);
+        $html = $OUTPUT->render_from_template('qtype_YOURQTYPENAME/mobileapp/mobile', []);
 
         return [
             'templates' => [
@@ -49,14 +49,14 @@ class mobile {
                     'html' => $html,
                 ],
             ],
-            'javascript' => file_get_contents($CFG->dirroot . '/question/type/YOURQTYPENAME/mobile/mobile.js'),
+            'javascript' => file_get_contents($CFG->dirroot . '/question/type/YOURQTYPENAME/js/mobileapp/mobile.js'),
         ];
     }
 
 }
 ```
 
-```html handlebars title="templates/mobile.mustache"
+```html handlebars title="templates/mobileapp/mobile.mustache"
 <section class="list qtype-YOURQTYPENAME-container qtype-YOURQTYPENAME" ion-list *ngIf="question.text || question.text === ''">
     <ion-item class="addon-qtype-YOURQTYPENAME-container qtext">
         <ion-label>
@@ -71,7 +71,7 @@ class mobile {
 </section>
 ```
 
-```js title="mobile/mobile.js"
+```js title="js/mobileapp/mobile.js"
 const that = this;
 const result = {
     componentInit() {

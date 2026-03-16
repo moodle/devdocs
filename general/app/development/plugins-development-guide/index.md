@@ -111,6 +111,21 @@ As we have seen in the first example, the extension mechanism used in the app is
 
 Now you should have a basic idea of how Site Plugins work in the app. If you want to continue learning, you can keep reading this guide. When you are ready, you can check out the [Examples](./examples/index.md) page for some step-by-step guides of common scenarios; or you can directly check out the [API Reference](./api-reference.md) for a comprehensive list of all the APIs and options available in Site Plugins.
 
+## Files location
+
+To ensure your plugin code is organized and passes the specific linting required for the Moodle App, you should place your files in the following directories within your plugin:
+
+| File / Folder               | Purpose                                                                                |
+|-----------------------------|----------------------------------------------------------------------------------------|
+| `db/mobile.php`             | Configuration file to register the mobile support and define the app areas to extend.  |
+| `classes/output/mobile.php` | The main PHP class containing the logic for the mobile implementation.                 |
+| `js/mobileapp/`             | This folder should contain all the JavaScript files intended for the mobile app.       |
+| `templates/mobileapp/`      | This folder should contain all the Mustache templates intended for the mobile app.     |
+
+:::note Notice
+Currently, the linting for mobile app templates is disabled to avoid throwing warnings with Angular, Ionic or Moodle app custom directives. This will be improved in the future.
+:::
+
 ## Rendering UI
 
 Most handlers will render some custom UI using the `method` property in their configuration. They will return some templates in the [content response](./api-reference.md#content-responses), and the templates will be treated differently depending on the handler.
@@ -125,7 +140,7 @@ public static function mobile_course_view($args) {
         'templates' => [
             [
                 'id' => 'main',
-                'html' => $OUTPUT->render_from_template('local_hello/greeting', ['name' => 'John']),
+                'html' => $OUTPUT->render_from_template('local_hello/mobileapp/greeting', ['name' => 'John']),
             ],
         ],
         'otherdata' => [
@@ -135,7 +150,7 @@ public static function mobile_course_view($args) {
 }
 ```
 
-```html handlebars title="template in templates/greeting.mustache"
+```html handlebars title="template in templates/mobileapp/greeting.mustache"
 {{=<% %>=}}
 <!-- This will render "Hello, John Doe" in the app -->
 <h1 class="text-center">Hello, <% name %> {{ CONTENT_OTHERDATA.surname }}</h1>

@@ -102,7 +102,7 @@ Moodle should work well for the widest possible range of people.
 
 :::info
 
-For more about this, see [Moodle Accessibility](./policies/accessibility.md).
+For more about this, see [Moodle Accessibility](./policies/accessibility).
 
 :::
 

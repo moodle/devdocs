@@ -81,17 +81,6 @@ Prism is a lightweight, robust, and elegant syntax highlighting library. It's a 
 - **Copyright holders**:
   - 2012 Lea Verou
 
-### mimeTeX
-
-Compiled C program to convert TeX into GIFs
-
-- **Location**: public/filter/tex/mimetex.*
-- **Version**: 1.77
-- **License**:  GPL 3.0+
-- **URL**: [https://github.com/icaoberg/mimetex](https://github.com/icaoberg/mimetex)
-- **Copyright holders**:
-  - 2002-2004 John Forkosh Associates, Inc
-
 ### h5p-php-library
 
 The general H5P library.
@@ -142,11 +131,11 @@ JavaScript library to insulate apps from spec changes and prefix differences in 
 Simple yet flexible JavaScript charting for designers & developers.
 
 - **Location**: public/lib/amd/src/chartjs-lazy.js
-- **Version**: 4.5.0 (with Moodle customisations)
+- **Version**: 4.5.1 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/chartjs/Chart.js](https://github.com/chartjs/Chart.js)
 - **Copyright holders**:
-  - 2014-2022 Chart.js Contributors
+  - 2014-2025 Chart.js Contributors
 
 ### loglevel.js
 

@@ -111,7 +111,7 @@ class mobile {
             'templates' => [
                 [
                     'id' => 'main',
-                    'html' => $OUTPUT->render_from_template('mod_certificate/mobile_view_page', $data),
+                    'html' => $OUTPUT->render_from_template('mod_certificate/mobileapp/mobile_view_page', $data),
                 ],
             ],
             'files' => $issues,
@@ -125,7 +125,7 @@ In the first part of the function, we check permissions and capabilities (like a
 
 We also return a list of files to prefetch for offline use.
 
-Finally, let's implement the mustache template in `templates/mobile_view_page.mustache`:
+Finally, let's implement the mustache template in `templates/mobileapp/mobile_view_page.mustache`:
 
 ```html handlebars
 {{=<% %>=}}
@@ -228,14 +228,14 @@ public static function mobile_issues_view($args) {
         'templates' => [
             [
                 'id' => 'main',
-                'html' => $OUTPUT->render_from_template('mod_certificate/mobile_view_issues', $data),
+                'html' => $OUTPUT->render_from_template('mod_certificate/mobileapp/mobile_view_issues', $data),
             ],
         ],
     ];
 }
 ```
 
-```html handlebars title="templates/mobile_view_issues.mustache"
+```html handlebars title="templates/mobileapp/mobile_view_issues.mustache"
 {{=<% %>=}}
 <div>
     <ion-list>

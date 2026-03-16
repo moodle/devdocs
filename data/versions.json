@@ -41,7 +41,6 @@
             "generalEndDate": "5 October 2026",
             "securityEndDate": "19 April 2027",
             "isLTS": false,
-            "codeFreezeDate": "25 August 2025",
             "releases": [
                 {
                     "name": "5.1.0",
@@ -57,9 +56,20 @@
                 {
                     "name": "5.1.2",
                     "releaseDate": "9 February 2026",
-                    "version": 2025100602,
+                    "version": 2025100602
+                },
+                {
+                    "name": "5.1.3",
+                    "releaseDate": "11 February 2026",
+                    "version": 2025100603,
+                    "notes": "Unscheduled minor release"
+                },
+                {
+                    "name": "5.1.4",
+                    "releaseDate": "20 April 2026",
+                    "version": 2025100604,
                     "releaseNoteUrl": false
-                }  
+                }
             ]
         },
         {
@@ -68,7 +78,6 @@
             "generalEndDate": "20 April 2026",
             "securityEndDate": "5 October 2026",
             "isLTS": false,
-            "codeFreezeDate": "3 March 2025",
             "releases": [
                 {
                     "name": "5.0.0",
@@ -99,7 +108,18 @@
                 {
                     "name": "5.0.5",
                     "releaseDate": "9 February 2026",
-                    "version": 2025041405,
+                    "version": 2025041405
+                },
+                {
+                    "name": "5.0.6",
+                    "releaseDate": "11 February 2026",
+                    "version": 2025041406,
+                    "notes": "Unscheduled minor release"
+                },
+                {
+                    "name": "5.0.7",
+                    "releaseDate": "20 April 2026",
+                    "version": 2025041407,
                     "releaseNoteUrl": false
                 }
             ]
@@ -177,7 +197,18 @@
                 {
                     "name": "4.5.9",
                     "releaseDate": "9 February 2026",
-                    "version": 2024100709,
+                    "version": 2024100709
+                },
+                {
+                    "name": "4.5.10",
+                    "releaseDate": "11 February 2026",
+                    "version": 2024100710,
+                    "notes": "Unscheduled minor release"
+                },
+                {
+                    "name": "4.5.11",
+                    "releaseDate": "20 April 2026",
+                    "version": 2024100711,
                     "releaseNoteUrl": false
                 }
             ]

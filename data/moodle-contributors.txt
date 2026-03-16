@@ -62,6 +62,7 @@ Anders
 Anderson
 Andi
 Andolo
+Andre
 Andrea
 Andreas
 Andres
@@ -432,6 +433,7 @@ Grigory
 Groshek
 Grzegorz
 Grähn
+Guest
 Guillaume
 Guillermo
 Guinoiseau
@@ -603,6 +605,7 @@ Kathrin
 Katie
 Katrib
 Kavalerchik
+Keel
 KeenRivals
 Kelada
 Kelsh
@@ -639,6 +642,7 @@ Krista
 Krister
 Kristian
 Kristiina.Bax
+Krueger
 Kucherov
 Kudelis
 Kudriavtsev
@@ -876,6 +880,7 @@ Oosthuizen
 Opitz
 Oquist
 Ordóñez
+Ortega
 Orzu
 Osanda
 Osswald
@@ -963,6 +968,7 @@ Ramindu
 Ramiro
 Ransom
 Raphaël
+Raquel
 Rasmussen
 Rawson
 Raymond
@@ -1251,6 +1257,7 @@ Wesley
 Wharton
 Wheeler
 Whelpton
+Wibisono
 Wiese
 Wijaya
 Wijesooriya
@@ -1288,6 +1295,7 @@ Yolanda
 Yoshida
 Yuliya
 Yuriy
+Yusuf
 Zachary
 Zanatta
 Zane
@@ -1376,6 +1384,7 @@ dovix
 dpalou
 drabureesh
 dragos5436
+dustinhuynh
 dwoolhead
 eWallah
 ecastrolt

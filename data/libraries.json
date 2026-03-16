@@ -84,19 +84,6 @@
     },
     {
         "copyrightHolders": [
-            "2002-2004 John Forkosh Associates, Inc"
-        ],
-        "location": "public/filter/tex/mimetex.*",
-        "name": "mimeTeX",
-        "description": "Compiled C program to convert TeX into GIFs",
-        "version": "1.77",
-        "license": "GPL",
-        "licenseversion": "3.0+",
-        "repository": "https://github.com/icaoberg/mimetex",
-        "customised": false
-    },
-    {
-        "copyrightHolders": [
             "Joubel"
         ],
         "location": "public/h5p/h5plib/v127/joubel/core",
@@ -150,12 +137,12 @@
     },
     {
         "copyrightHolders": [
-            "2014-2022 Chart.js Contributors"
+            "2014-2025 Chart.js Contributors"
         ],
         "location": "public/lib/amd/src/chartjs-lazy.js",
         "name": "Chart.js",
         "description": "Simple yet flexible JavaScript charting for designers & developers.",
-        "version": "4.5.0",
+        "version": "4.5.1",
         "license": "MIT",
         "repository": "https://github.com/chartjs/Chart.js",
         "customised": true
