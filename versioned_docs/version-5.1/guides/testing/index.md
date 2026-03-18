@@ -715,7 +715,7 @@ There are several ways how to inject your custom settings:
 
 These constants may be then used in your test or plugin code.
 
-## Upgrading unit tests to work with Moodle 4.4 and up (PHPUnit 9.6)
+## Upgrading unit tests to work with Moodle 4.4 and up (PHPUnit 9.6) {#upgrading-unit-tests-to-work-with-moodle-4.4}
 
 With Moodle 4.4, **PHPUnit was upgraded to 9.6** (from 9.5 being used in previous versions). This was done to **warn to developers in advance** about functionality that has been deprecated in the 9.5 series and will be removed so will stop working with the next major update to PHPUnit 10.x (see [MDL-81266](https://moodle.atlassian.net/browse/MDL-81266) and linked issues for more details).
 
