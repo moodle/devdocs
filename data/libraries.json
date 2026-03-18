@@ -1146,7 +1146,7 @@
         "location": "public/lib/symfony/deprecation-contracts",
         "name": "Symfony Deprecation contracts",
         "description": "A generic function and convention to trigger deprecation notices",
-        "version": "3.5.1",
+        "version": "3.6.0",
         "license": "MIT",
         "repository": "https://github.com/symfony/deprecation-contracts",
         "customised": false
@@ -1180,7 +1180,7 @@
         "copyrightHolders": [],
         "location": "public/lib/webauthn",
         "name": "WebAuthn",
-        "version": "2.2.2",
+        "version": "2.2.0",
         "license": "MIT",
         "repository": "https://github.com/lbuchs/WebAuthn",
         "customised": false
