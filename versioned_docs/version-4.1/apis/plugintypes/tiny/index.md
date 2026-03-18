@@ -512,6 +512,7 @@ In order to make your configuration changes you must create a `Configuration` ob
 ```javascript title="Defining a Configuration"
 import * as Configuration from './configuration';
 
+// eslint-disable-next-line no-async-promise-executor
 export default new Promise(async(resolve) => {
     // ... Plugin code goes here.
 
