@@ -201,7 +201,7 @@ const sidebars = {
         },
         {
             type: 'doc',
-            id: 'wp_releases',
+            id: 'workplace/releases/index',
             label: 'Moodle Workplace Releases',
         },
     ],

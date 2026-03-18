@@ -22,7 +22,7 @@ import { program } from 'commander';
 import { readFile, writeFile } from 'fs/promises';
 import inquirer from 'inquirer';
 
-const versionData = JSON.parse(await readFile('./data/wp_versions.json'));
+const versionData = JSON.parse(await readFile('./data/workplace/versions.json'));
 
 const getMajorVersionFromData = (majorVersion, isRollingVersion) => versionData.versions.find(
     (version) => version.name === majorVersion && version.isRolling === isRollingVersion,
@@ -43,7 +43,7 @@ const updateMinorVersionWithData = (majorVersion, minorVersion, data) => {
 };
 
 const persistVersionData = async () => {
-    await writeFile('./data/wp_versions.json', JSON.stringify(versionData, null, 4));
+    await writeFile('./data/workplace/versions.json', JSON.stringify(versionData, null, 4));
 };
 
 const getFormatter = (options = {}) => new Intl.DateTimeFormat('en-AU', {
@@ -410,13 +410,13 @@ const addReleaseMarkdown = async (name, isRolling, isLTS) => {
         releaseName = `${releaseName} Rolling`;
         isRollingRelease = 'isRolling';
     }
-    const content = await readFile('./general/wp_releases.md', 'utf8');
+    const content = await readFile('./general/workplace/releases/index.md', 'utf8');
     const pointer = '<!-- START RELEASES -->';
     const newRelease = content.replace(
         pointer,
-        `${pointer}\n<br />\n## ${releaseName}\n<ReleaseTableWP releaseName="${name}" ${isRollingRelease}/>\n`,
+        `${pointer}\n<br />\n## ${releaseName}\n<ReleaseTable releaseName="${name}" ${isRollingRelease}/>\n`,
     );
-    await writeFile('./general/wp_releases.md', newRelease, 'utf8');
+    await writeFile('./general/workplace/releases/index.md', newRelease, 'utf8');
 };
 
 const addMajorRelease = async (

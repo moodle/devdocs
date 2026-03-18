@@ -1,5 +1,5 @@
 {
-    "$schema": "../static/schema/wp_versions.json",
+    "$schema": "../static/schema/workplace/versions.json",
     "versions": [
         {
             "name": "5.1",

@@ -15,7 +15,7 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import VersionData from '@site/data/wp_versions.json';
+import VersionData from '@site/data/workplace/versions.json';
 
 const Versions = VersionData.versions;
 const today = new Date();
