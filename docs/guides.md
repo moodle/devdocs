@@ -11,3 +11,4 @@ Learn about key Moodle features for developers through our Developer Guides. The
 
 - Introduction to [JavaScript](./guides/javascript/index.md) in Moodle
 - Learn about how Moodle uses [Templates](./guides/templates/index.md) to render content
+- Distribute and install Moodle plugins using [Composer](./guides/composer/index.md)

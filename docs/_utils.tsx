@@ -16,6 +16,7 @@
  */
 import React, { type ReactNode } from 'react';
 import ComponentFileSummaryGeneric, {
+    type ComponentFileSummaryDescription,
     type ComponentFileSummaryProps,
 } from '@site/src/components/ComponentFileSummary';
 import { MDXProvider } from '@mdx-js/react';
@@ -38,7 +39,7 @@ export const fillDefaultProps = (props: ComponentFileSummaryProps): ComponentFil
     ...props,
 });
 
-const normaliseDescription = (Value: ReactNode | string): null | JSX.Element => {
+const normaliseDescription = (Value: ComponentFileSummaryDescription): null | React.JSX.Element => {
     if (typeof Value === 'boolean' || !Value) {
         return null;
     }
@@ -70,7 +71,7 @@ export const getDescription = ({
     description = null,
     extraDescription = null,
     children = null,
-}: ComponentFileSummaryProps, defaultDescription?: ReactNode | string): null | ReactNode | JSX.Element => {
+}: ComponentFileSummaryProps, defaultDescription?: ComponentFileSummaryDescription): null | ReactNode | JSX.Element => {
     if (children) {
         const Description = normaliseDescription(children);
         return (
