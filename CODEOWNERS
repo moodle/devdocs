@@ -22,6 +22,9 @@
 /general/app_releases/ @moodle/mobile-developers
 /general/app/ @moodle/mobile-developers
 
+# Design System
+/general/designsystem/ @moodle/design-system
+
 # Content Guideline Owners
 /general/contentguidelines/ @moodle/content-authors
 
