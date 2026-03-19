@@ -25,13 +25,13 @@ import {
     getLatestRelease,
     getReleaseStatusLabel,
     getVersionLabel,
-} from '@site/src/utils/SupportedReleasesWP';
+} from '@site/src/utils/Workplace/SupportedReleases';
 
 export {
     styles,
 };
 
-export default function SupportedReleasesWP(): JSX.Element {
+export default function SupportedReleases(): JSX.Element {
     const rows = getSupportedReleases()
         .filter((versionData: majorVersionData) => versionData.hidden !== true)
         .map((versionData: majorVersionData) => {

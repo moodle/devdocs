@@ -19,7 +19,7 @@ import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import {
     getVersion, getVersionTitle, type versionInfo, getReleaseStatus,
-} from '@site/src/utils/SupportedReleasesWP';
+} from '@site/src/utils/Workplace/SupportedReleases';
 import Link from '@docusaurus/Link';
 import Admonition from '@theme/Admonition';
 
@@ -54,7 +54,7 @@ const releaseNoteLink = (
     return <Link to={linkTo}>{label}</Link>;
 };
 
-export default function ReleaseTableWP({ releaseName, isRolling = false }: ReleaseTableProps): JSX.Element {
+export default function ReleaseTable({ releaseName, isRolling = false }: ReleaseTableProps): JSX.Element {
     const rows = getVersion(releaseName, isRolling);
     const impAndNewFeatEndDate = isRolling ? rows.improvementsandnewfeaturesEndDate : rows.generalEndDate;
 

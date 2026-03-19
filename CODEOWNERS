@@ -25,6 +25,14 @@
 # Design System
 /general/designsystem/ @moodle/design-system
 
+# Workplace team have complete autonomy over Workplace content.
+/data/workplace/  @moodle/workplace
+/general/workplace/  @moodle/workplace
+/scripts/wp_version.mjs  @moodle/workplace
+/src/components/workplace/  @moodle/workplace
+/src/utils/workplace/  @moodle/workplace
+/static/schema/workplace/ @moodle/workplace
+
 # Content Guideline Owners
 /general/contentguidelines/ @moodle/content-authors
 

@@ -7,8 +7,7 @@ tags:
 
 <!-- markdownlint-disable no-inline-html -->
 
-import SupportedReleasesWP, { styles as ReleaseStylesWP } from '@site/src/components/SupportedReleasesWP';
-import ReleaseTableWP from '@site/src/components/ReleaseTableWP';
+import { ReleaseTable, SupportedReleases, SupportedReleasesStyles } from '@site/src/components/Workplace';
 
 This page lists all official releases of Moodle Workplace, grouped by branch in reverse chronological order.
 
@@ -24,7 +23,7 @@ These are the target dates for releases. These dates may vary slightly due to un
             <th colSpan="2" scope="col">
                 Release
             </th>
-            <th colSpan="2" scope="col" className={ReleaseStylesWP['moodle-workplace-release']}>
+            <th colSpan="2" scope="col" className={SupportedReleasesStyles['moodle-workplace-release']}>
                 Moodle Workplace
             </th>
             <th colSpan="2" scope="col">
@@ -34,15 +33,15 @@ These are the target dates for releases. These dates may vary slightly due to un
         <tr>
             <th scope="col"> Release type </th>
             <th scope="col"> Frequency </th>
-            <th scope="col" className={ReleaseStylesWP['moodle-workplace-release']}> Release </th>
-            <th scope="col" className={ReleaseStylesWP['moodle-workplace-release']}> Includes </th>
+            <th scope="col" className={SupportedReleasesStyles['moodle-workplace-release']}> Release </th>
+            <th scope="col" className={SupportedReleasesStyles['moodle-workplace-release']}> Includes </th>
             <th scope="col"> Release </th>
             <th scope="col"> Includes</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>[Major](./development/process.md#major-release-cycles) (eg. 3.x)</td>
+            <td>[Major](../../development/process.md#major-release-cycles) (eg. 3.x)</td>
             <td>6 monthly</td>
             <td>3-4 weeks after Moodle LMS major</td>
             <td>New features, improvements and bug fixes (Moodle LMS and Workplace)</td>
@@ -50,7 +49,7 @@ These are the target dates for releases. These dates may vary slightly due to un
             <td>New features, Improvements and fixes</td>
         </tr>
         <tr>
-            <td>[Minor](./development/process.md#stable-maintenance-cycles) (Point) (eg. 3.x.y)</td>
+            <td>[Minor](../../development/process.md#stable-maintenance-cycles) (Point) (eg. 3.x.y)</td>
             <td>2 monthly</td>
             <td>1 day after Moodle LMS minor</td>
             <td>Workplace new features, improvements and bug fixes and Moodle LMS fixes</td>
@@ -65,89 +64,89 @@ Starting from 4.1 release, we package two Workplace versions in every release:
 - **Standard version**: no new features in minor releases, this version is supported for bug fixes and security fixes while the corresponding version of LMS is supported
 - **Rolling version**: features are added continuously up until the new major release of LMS, after that it has bug fixes for four more months and then support stops completely (which is approximately 3 months after the next Workplace major release).
 
-![Release graph summarising the currently supported Workplace releases in a visual form](_wp_releases/1680px-workplace_releases_timeline.png)
+![Release graph summarising the currently supported Workplace releases in a visual form](_index/1680px-workplace_releases_timeline.png)
 
 ### End-of-life dates for currently supported releases
 
-<SupportedReleasesWP />
+<SupportedReleases />
 
 <!-- START RELEASES -->
 <br />
 ## Moodle Workplace 5.1 Rolling
-<ReleaseTableWP releaseName="5.1" isRolling/>
+<ReleaseTable releaseName="5.1" isRolling/>
 
 <br />
 ## Moodle Workplace 5.1
-<ReleaseTableWP releaseName="5.1" />
+<ReleaseTable releaseName="5.1" />
 
 <br />
 ## Moodle Workplace 5.0 Rolling
-<ReleaseTableWP releaseName="5.0" isRolling/>
+<ReleaseTable releaseName="5.0" isRolling/>
 
 <br />
 ## Moodle Workplace 5.0
-<ReleaseTableWP releaseName="5.0" />
+<ReleaseTable releaseName="5.0" />
 
 <br />
 ## Moodle Workplace 4.5 Rolling
-<ReleaseTableWP releaseName="4.5" isRolling/>
+<ReleaseTable releaseName="4.5" isRolling/>
 
 <br />
 ## Moodle Workplace 4.5 (LTS)
-<ReleaseTableWP releaseName="4.5" />
+<ReleaseTable releaseName="4.5" />
 
 <br />
 ## Moodle Workplace 4.4 Rolling
-<ReleaseTableWP releaseName="4.4" isRolling/>
+<ReleaseTable releaseName="4.4" isRolling/>
 
 <br />
 ## Moodle Workplace 4.4
-<ReleaseTableWP releaseName="4.4" />
+<ReleaseTable releaseName="4.4" />
 
 <br />
 ## Moodle Workplace 4.3 Rolling
-<ReleaseTableWP releaseName="4.3" isRolling/>
+<ReleaseTable releaseName="4.3" isRolling/>
 
 <br />
 ## Moodle Workplace 4.3
-<ReleaseTableWP releaseName="4.3" />
+<ReleaseTable releaseName="4.3" />
 
 <br />
 ## Moodle Workplace 4.2 Rolling
-<ReleaseTableWP releaseName="4.2" isRolling/>
+<ReleaseTable releaseName="4.2" isRolling/>
 
 <br />
 ## Moodle Workplace 4.2
-<ReleaseTableWP releaseName="4.2"/>
+<ReleaseTable releaseName="4.2"/>
 
 <br />
 ## Moodle Workplace 4.1 Rolling
-<ReleaseTableWP releaseName="4.1" isRolling/>
+<ReleaseTable releaseName="4.1" isRolling/>
 
 <br />
 ## Moodle Workplace 4.1 (LTS)
-<ReleaseTableWP releaseName="4.1"/>
+<ReleaseTable releaseName="4.1"/>
 
 <br />
 ## Moodle Workplace 4.0
-<ReleaseTableWP releaseName="4.0"/>
+<ReleaseTable releaseName="4.0"/>
 
 <br />
 ## Moodle Workplace 3.11
-<ReleaseTableWP releaseName="3.11"/>
+<ReleaseTable releaseName="3.11"/>
 
 <br />
 ## Moodle Workplace 3.10
-<ReleaseTableWP releaseName="3.10"/>
+<ReleaseTable releaseName="3.10"/>
 
 <br />
 ## Moodle Workplace 3.9
-<ReleaseTableWP releaseName="3.9"/>
+<ReleaseTable releaseName="3.9"/>
 
 <br />
 ## Moodle Workplace 3.8
-<ReleaseTableWP releaseName="3.8"/>
+<ReleaseTable releaseName="3.8"/>
 
 <br />
 ## Moodle Workplace 3.7
-<ReleaseTableWP releaseName="3.7"/>
+<ReleaseTable releaseName="3.7"/>
