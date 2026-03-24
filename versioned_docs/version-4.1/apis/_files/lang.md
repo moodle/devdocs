@@ -23,3 +23,9 @@ get_string('pluginname', '[plugintype]_[pluginname]');
 ```
 
 - See the [String API](https://docs.moodle.org/dev/String_API#Adding_language_file_to_plugin) documentation for more information on language files.
+
+:::caution
+
+Language files must **never** contain `require_once` (or any other file inclusion). They are loaded frequently during string lookups and must remain simple key-value definition files with no side-effects.
+
+:::
