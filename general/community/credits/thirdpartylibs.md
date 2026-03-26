@@ -108,7 +108,7 @@ A general library that is supposed to be used in most PHP implementations of H5P
 Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.
 
 - **Location**: public/lib/adodb
-- **Version**: 5.22.9
+- **Version**: 5.22.11
 - **License**:  BSD/LGPL 3-Clause/2.1+
 - **URL**: [https://github.com/ADOdb/ADOdb](https://github.com/ADOdb/ADOdb)
 - **Copyright holders**:
@@ -463,39 +463,39 @@ Class to draw line, point, bar, and area graphs, including numeric x-axis and do
 - **Copyright holders**:
   - 2000 Herman Veluwenkamp (hermanV AT mindless DOT com)
 
-### GuzzleHttp/Guzzle
+### guzzlehttp/guzzle
 
 Guzzle is a PHP HTTP client library
 
 - **Location**: public/lib/guzzlehttp/guzzle
-- **Version**: 7.9.2
+- **Version**: 7.10.0
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/guzzle](https://github.com/guzzle/guzzle)
 
-### Guzzle cache middleware
+### kevinrob/guzzle-cache-middleware
 
 A HTTP Cache for Guzzle as a simple Middleware to be added in the HandlerStack.
 
 - **Location**: public/lib/guzzlehttp/kevinrob/guzzlecache
-- **Version**: 6.0.0
+- **Version**: 7.0.0
 - **License**:  MIT
 - **URL**: [https://github.com/Kevinrob/guzzle-cache-middleware](https://github.com/Kevinrob/guzzle-cache-middleware)
 
-### GuzzleHttp/Promises
+### guzzlehttp/promises
 
 Guzzle promises library
 
 - **Location**: public/lib/guzzlehttp/promises
-- **Version**: 2.0.4
+- **Version**: 2.3.0
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/promises](https://github.com/guzzle/promises)
 
-### GuzzleHttp/PSR7
+### guzzlehttp/psr7
 
 PSR-7 message implementation that also provides common utility methods
 
 - **Location**: public/lib/guzzlehttp/psr7
-- **Version**: 2.7.0
+- **Version**: 2.8.0
 - **License**:  MIT
 - **URL**: [https://github.com/guzzle/psr7](https://github.com/guzzle/psr7)
 
@@ -555,7 +555,7 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 ### Serializable Closure
 
 - **Location**: public/lib/laravel/serializable-closure
-- **Version**: 2.0.3
+- **Version**: 2.0.10
 - **License**:  MIT
 - **URL**: [https://github.com/laravel/serializable-closure](https://github.com/laravel/serializable-closure)
 
@@ -768,7 +768,7 @@ Class for sending email using either sendmail, PHP mail(), or SMTP. Methods are 
 PHP Class Library for working with Complex numbers.
 
 - **Location**: public/lib/phpspreadsheet/markbaker/complex
-- **Version**: 3.0.1
+- **Version**: 3.0.2
 - **License**:  MIT
 - **URL**: [https://github.com/MarkBaker/PHPComplex](https://github.com/MarkBaker/PHPComplex)
 
@@ -777,7 +777,7 @@ PHP Class Library for working with Complex numbers.
 PHP Class for handling Matrices.
 
 - **Location**: public/lib/phpspreadsheet/markbaker/matrix
-- **Version**: 3.0.0
+- **Version**: 3.0.1
 - **License**:  MIT
 - **URL**: [https://github.com/MarkBaker/PHPMatrix](https://github.com/MarkBaker/PHPMatrix)
 
@@ -1000,7 +1000,7 @@ Simple Pie helps with blogs.
 ### Slim Framework
 
 - **Location**: public/lib/slim/slim
-- **Version**: 4.13.0
+- **Version**: 4.15.1
 - **License**:  MIT
 - **URL**: [https://github.com/slimphp/Slim](https://github.com/slimphp/Slim)
 
@@ -1220,6 +1220,17 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
 - **Copyright holders**:
   - 2011-2021 Twitter, Inc
   - 2011-2021 The Bootstrap Authors
+
+### @moodlehq/design-system
+
+The Moodle HQ design system based on React
+
+- **Location**: public/theme/boost/scss/design-system
+- **Version**: 2.1.1
+- **License**:  GNU
+- **URL**: [https://github.com/moodlehq/design-system](https://github.com/moodlehq/design-system)
+- **Copyright holders**:
+  - Moodle HQ
 
 ### Font Awesome - http://fontawesome.com
 
