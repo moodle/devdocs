@@ -57,6 +57,8 @@ const releaseNoteLink = (
 export default function ReleaseTable({ releaseName, isRolling = false }: ReleaseTableProps): JSX.Element {
     const rows = getVersion(releaseName, isRolling);
     const impAndNewFeatEndDate = isRolling ? rows.improvementsandnewfeaturesEndDate : rows.generalEndDate;
+    const endText = isRolling ? 'rolling will end' : 'will end';
+    const version = `${releaseName}.x`;
 
     return (
         <MDXProvider>
@@ -92,13 +94,18 @@ export default function ReleaseTable({ releaseName, isRolling = false }: Release
                         </>
                     ) : (
                         <>
-                            Improvements and new features will end
-                            {' '}
-                            {impAndNewFeatEndDate}
+                            {isRolling && (
+                                <>
+                                    {`Improvements and new features in ${version} `}
+                                    {`${endText} ${impAndNewFeatEndDate} (6 months).`}
+                                    <br />
+                                </>
+                            )}
+                            {`Bug fixes for general core bugs in ${version} ${endText} `}
+                            {`${rows.generalEndDate} (12 months).`}
                             <br />
-                            Bug fixes and security fixes will end
-                            {' '}
-                            {rows.securityEndDate}
+                            {`Bug fixes for security issues in ${version} ${endText} `}
+                            {`${rows.securityEndDate} (36 months).`}
                         </>
                     )}
                 </p>
