@@ -71,7 +71,6 @@ const config = {
     baseUrl: getBaseUrl(),
     trailingSlash: false,
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
     organizationName: 'moodle', // Usually your GitHub org/user name.
     projectName: 'devdocs', // Usually your repo name.
@@ -84,6 +83,9 @@ const config = {
 
     markdown: {
         mermaid: true,
+        hooks: {
+            onBrokenMarkdownLinks: 'warn',
+        },
     },
 
     themes: ['@docusaurus/theme-mermaid'],
