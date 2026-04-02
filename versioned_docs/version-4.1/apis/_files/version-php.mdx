@@ -9,3 +9,9 @@ This file contains metadata used to describe the plugin, and includes informatio
 - a list of dependencies
 - the minimum Moodle version required
 - maturity of the plugin
+
+:::caution
+
+`version.php` must **never** contain `require_once` (or any other file inclusion). It is parsed in performance-sensitive bootstrap paths and must remain a plain data file with no side-effects.
+
+:::

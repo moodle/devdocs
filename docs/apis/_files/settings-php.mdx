@@ -14,3 +14,13 @@ By following the correct naming, all settings will automatically be stored in th
 :::
 
 Full details on how to create settings are available in the [Admin settings](../subsystems/admin/index.md) documentation.
+
+:::caution
+
+`settings.php` must **not** execute any database queries at include time. Moodle includes this file in contexts where the settings are not going to be displayed or changed, so running queries unconditionally wastes resources.
+
+If you need to populate a setting's options from the database (for example, building a select list), use the lazy-loading mechanism provided by `admin_setting_configselect` and similar classes — they only fetch data when the setting is actually being rendered or saved.
+
+If you need shared library code inside `settings.php`, place it in a class within your plugin's namespace so that Moodle's autoloader handles it, rather than using `require_once`.
+
+:::

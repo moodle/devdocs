@@ -60,47 +60,57 @@ import extraLangDescription from '../_files/lang-extra.md';
 
 <LocalLib />
 
-### db/install.xml
+### db/
+
+The `db/` directory contains files related to database schema and data management, such as installation, upgrade, access control, scheduled tasks, and events.
+
+:::caution
+
+Files inside the `db/` folder (such as `install.xml`, `upgrade.php`, `access.php`, `tasks.php`, etc.) must **never** contain `require_once` (or any other file inclusion). These files are parsed by Moodle in specific, performance-sensitive contexts and must remain self-contained definition files with no side-effects.
+
+:::
+
+#### db/install.xml
 
 <DbInstallXML />
 
-### db/upgrade.php
+#### db/upgrade.php
 
 <DbUpgradePHP />
 
-### db/access.php
+#### db/access.php
 
 <DbAccessPHP />
 
-### db/install.php
+#### db/install.php
 
 <DbInstallPHP />
 
-### db/uninstall.php
+#### db/uninstall.php
 
 <DbUninstallPHP />
 
-### db/events.php
+#### db/events.php
 
 <DbEventsPHP />
 
-### db/messages.php
+#### db/messages.php
 
 <DbMessagesPHP />
 
-### db/services.php
+#### db/services.php
 
 <DbServicesPHP />
 
-### db/tasks.php
+#### db/tasks.php
 
 <DbTasksPHP />
 
-### db/renamedclasses.php
+#### db/renamedclasses.php
 
 <DbRenamedclassesPHP />
 
-### db/legacyclasses.php
+#### db/legacyclasses.php
 
 <DbLegacyclassesPHP />
 
