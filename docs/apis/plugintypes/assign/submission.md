@@ -19,13 +19,13 @@ An assignment submission plugin is used to display custom form fields to a stude
 
 :::tip
 
-For a good reference implementation, see the [onlinetext](https://github.com/moodle/moodle/tree/main/mod/assign/submission/onlinetext) submission plugin included with core because it uses most of the features of submission plugins.
+For a good reference implementation, see the [onlinetext](https://github.com/moodle/moodle/tree/main/public/mod/assign/submission/onlinetext) submission plugin included with core because it uses most of the features of submission plugins.
 
 :::
 
 ## File structure
 
-Assignment Feedback plugins are located in the `/mod/assign/submission` directory. A plugin should not include any custom files outside of it's own plugin folder.
+Assignment submission plugins are located in the `/public/mod/assign/submission` directory. A plugin should not include any custom files outside of its own plugin folder.
 
 :::important Plugin naming
 
@@ -47,7 +47,7 @@ Some of the important files are described below. See the [common plugin files](.
   <summary>View an example directory layout for the `assignfeedback_file` plugin.</summary>
 
 ```console
-mod/assign/submission/file
+public/mod/assign/submission/file
 ├── backup
 │   └── moodle2
 │       ├── backup_assignsubmission_file_subplugin.class.php
