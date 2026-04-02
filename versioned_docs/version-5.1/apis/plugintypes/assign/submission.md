@@ -25,7 +25,7 @@ For a good reference implementation, see the [onlinetext](https://github.com/moo
 
 ## File structure
 
-Assignment Feedback plugins are located in the `/mod/assign/submission` directory. A plugin should not include any custom files outside of it's own plugin folder.
+Assignment submission plugins are located in the `/public/mod/assign/submission` directory. A plugin should not include any custom files outside of its own plugin folder.
 
 :::important Plugin naming
 
@@ -47,7 +47,7 @@ Some of the important files are described below. See the [common plugin files](.
   <summary>View an example directory layout for the `assignfeedback_file` plugin.</summary>
 
 ```console
-mod/assign/submission/file
+public/mod/assign/submission/file
 ├── backup
 │   └── moodle2
 │       ├── backup_assignsubmission_file_subplugin.class.php
