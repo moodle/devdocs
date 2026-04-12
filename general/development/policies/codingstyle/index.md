@@ -2020,6 +2020,6 @@ This document was drawn from the following sources:
 - [CSS Coding Style](https://docs.moodle.org/dev/CSS_Coding_Style)
 - [SQL coding style](./sql.md)
 - [Coding](../../policies.md)
-- [CodeSniffer](../../policies/codingstyle/index.md)
+- [PHP CodeSniffer](../../tools/phpcs.md)
 - [Code Checker plugin](https://moodle.org/plugins/local_codechecker)
 - [Accessibility coding guidelines](../accessibility/index.md#coding-standards)
