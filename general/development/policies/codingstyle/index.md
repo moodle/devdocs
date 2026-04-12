@@ -2022,4 +2022,4 @@ This document was drawn from the following sources:
 - [Coding](../../policies.md)
 - [PHP CodeSniffer](../../tools/phpcs.md)
 - [Code Checker plugin](https://moodle.org/plugins/local_codechecker)
-- [Accessibility coding guidelines](../accessibility/index.md#coding-standards)
+- [Accessibility coding guidelines](../accessibility/coding-guidelines.md)
