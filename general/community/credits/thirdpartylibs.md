@@ -85,8 +85,8 @@ Prism is a lightweight, robust, and elegant syntax highlighting library. It's a 
 
 The general H5P library.
 
-- **Location**: public/h5p/h5plib/v127/joubel/core
-- **Version**: moodle-1.27.0
+- **Location**: public/h5p/h5plib/v128/joubel/core
+- **Version**: 1.28.0
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-php-library/](https://github.com/h5p/h5p-php-library/)
 - **Copyright holders**:
@@ -96,8 +96,8 @@ The general H5P library.
 
 A general library that is supposed to be used in most PHP implementations of H5P.
 
-- **Location**: public/h5p/h5plib/v127/joubel/editor
-- **Version**: moodle-1.27.0
+- **Location**: public/h5p/h5plib/v128/joubel/editor
+- **Version**: moodle-1.27.2
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/h5p/h5p-editor-php-library/](https://github.com/h5p/h5p-editor-php-library/)
 - **Copyright holders**:

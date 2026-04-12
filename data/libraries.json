@@ -86,10 +86,10 @@
         "copyrightHolders": [
             "Joubel"
         ],
-        "location": "public/h5p/h5plib/v127/joubel/core",
+        "location": "public/h5p/h5plib/v128/joubel/core",
         "name": "h5p-php-library",
         "description": "The general H5P library.",
-        "version": "moodle-1.27.0",
+        "version": "1.28.0",
         "license": "GPL",
         "licenseversion": "3.0+",
         "repository": "https://github.com/h5p/h5p-php-library/",
@@ -99,10 +99,10 @@
         "copyrightHolders": [
             "Joubel"
         ],
-        "location": "public/h5p/h5plib/v127/joubel/editor",
+        "location": "public/h5p/h5plib/v128/joubel/editor",
         "name": "h5p-editor-php-library",
         "description": "A general library that is supposed to be used in most PHP implementations of H5P.",
-        "version": "moodle-1.27.0",
+        "version": "moodle-1.27.2",
         "license": "GPL",
         "licenseversion": "3.0+",
         "repository": "https://github.com/h5p/h5p-editor-php-library/",
