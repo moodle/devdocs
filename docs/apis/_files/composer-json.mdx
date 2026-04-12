@@ -1,0 +1,17 @@
+<!-- markdownlint-disable first-line-heading -->
+The `composer.json` file allows your plugin to be distributed and installed via [Composer](https://getcomposer.org/).
+
+Moodle uses the [moodle/composer-installer](https://github.com/moodle/composer-installer) package to install Moodle plugins from Composer into the correct locations within the Moodle directory structure.
+
+The most important fields for Moodle plugin compatibility are:
+
+- `type`: the Moodle plugin type in the format `moodle-[plugintype]` (for example, `moodle-block`)
+- `name`: the Composer package name, where the package component follows the format `moodle-[plugintype]_[pluginname]` (for example, `myplugin/moodle-block_myblock`)
+- `require.moodle/moodle`: the supported Moodle version range for your plugin
+- `require.moodle/composer-installer`: a production dependency so Moodle package types are installed into the correct locations
+
+You can also declare dependencies on other Moodle plugins in `require`.
+
+Composer runtime dependencies are only guaranteed when the plugin is installed via Composer. For now, avoid introducing Composer-only runtime dependencies that would break non-Composer plugin installs.
+
+See the [Composer guide](../../guides/composer/index.md) for further information.

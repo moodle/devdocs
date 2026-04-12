@@ -17,6 +17,7 @@
 
 import AmdDir from './amd-dir';
 import BackupDir from './backup-dir';
+import ComposerJSON from './composer-json';
 import CLIDir from './cli-dir';
 import Changes from './changes';
 import ClassesDir from './classes-dir';
@@ -49,6 +50,7 @@ import YUIDir from './yui-dir';
 export {
     AmdDir,
     BackupDir,
+    ComposerJSON,
     CLIDir,
     Changes,
     ClassesDir,
