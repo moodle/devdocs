@@ -64,6 +64,7 @@ const config = {
     future: {
         faster: true,
         v4: true,
+        experimental_vcs: 'default-v2',
     },
 
     // url: 'https://develop.moodle.org',
