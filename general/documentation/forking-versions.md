@@ -17,7 +17,7 @@ Further information about this functionality is available in the [Docusaurus doc
 
 ## Creating a new version of the docs {/* #creating-a-new-version-of-the-docs */}
 
-Typically this task is performed by the Integration team using the following steps:
+Typically this task is performed using the following steps:
 
 1. Ensure that all pending appropriate merge requests have been merged
 1. Ensure that your local branch is up-to-date
@@ -48,14 +48,16 @@ Typically this task is performed by the Integration team using the following ste
 
 The archival of a set of documentation usually happens immediately after the forking of documentation for the latest version.
 
-1. After the Pull Request for this new version has been accepted, navigate to the Deploy Logs, and locate its "Permalink".
+1. Create a new branch `archive/[version]`, for example `archive/4.3`
+1. Push the branch to the authoritative GitHub repository
+1. Log in to Netlify and navigate to the [Deploy Logs](https://app.netlify.com/projects/moodledevdocs/deploys)
+1. Locate the build and copy its Permalink.
 1. Remove the entire folder from `versioned_docs` and `versioned_sidebars`:
 
     ```bash
     rm -rf versioned_docs/version-4.3 versioned_sidebars/version-4.3-*
     ```
 
-1. Commit the changes
 1. Update any remaining references to the version:
     1. Open the `versionsArchived.json` file and add the full link to the Netlify build.
     1. Open the `versions.json` file and remove the version from the list
