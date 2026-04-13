@@ -15,7 +15,7 @@ As Moodle developers, we spend a lot of time reviewing each other's code. When o
 
 Fortunately, there is a way to achieve both at the same time, and this page tells you how.
 
-## Simple example with a bug fix
+## Simple example with a bug fix {/* #simple-example-with-a-bug-fix */}
 
 Suppose you have done a bug fix as one commit:
 
@@ -88,7 +88,7 @@ To github.com:timhunt/moodle.git
    7d6f282aef0..27c92c180ca  MDL-12345_main -> MDL-12345_main
 ```
 
-## A more complex example
+## A more complex example {/* #a-more-complex-example */}
 
 This is [a real example from MDL-80880](https://moodle.atlassian.net/browse/MDL-80880?focusedId=1065188&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-1065188) from an improvement I made. The original work comprised two commits:
 
@@ -137,7 +137,7 @@ One other tip: When you are making the separate fixup commits, if you get carrie
 
 If you would like to see an example of this being done in a really large change, see [this branch](https://github.com/timhunt/moodle/compare/main...MDL-74610-fixes-04-08), related to [this comment on MDL-74610](https://moodle.atlassian.net/browse/MDL-74610?focusedId=1075220&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1075220).
 
-## Summary
+## Summary {/* #summary */}
 
 When replying to a reviewer, you can make their task easier by pushing a branch where it is easy to see what changes you made. However, for integration, we want a clean branch that is ready to be merged. It is possible to have both by pushing your changes with two different branch names. Using a few simple git commands it is not too much trouble to make both branches.
 

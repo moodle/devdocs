@@ -15,7 +15,7 @@ import { ComponentFileSummary } from '../../../_utils';
 
 Block plugins allow you to show supplemental information, and features, within different parts of Moodle.
 
-## File structure
+## File structure {/* #file-structure */}
 
 Blocks plugins are located in the `/blocks` directory.
 
@@ -40,7 +40,7 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
 
 </details>
 
-### block_pluginname.php
+### block_pluginname.php {/* #block_pluginnamephp */}
 
 import BlockFile from '!!raw-loader!./_examples/block_pluginname.php';
 
@@ -60,7 +60,7 @@ The `init` method is essential for all blocks, and its purpose is to give values
 
 :::
 
-### db/access.php
+### db/access.php {/* #dbaccessphp */}
 
 import accessExample from '!!raw-loader!./_examples/access.php';
 
@@ -71,7 +71,7 @@ import accessExample from '!!raw-loader!./_examples/access.php';
     required
 />
 
-### lang/en/block_pluginname.php
+### lang/en/block_pluginname.php {/* #langenblock_pluginnamephp */}
 
 export const langExample = `$string['pluginname'] = 'Pluginname block';
 $string['pluginname'] = 'Pluginname';
@@ -84,13 +84,13 @@ $string['pluginname:myaddinstance'] = 'Add a new pluginname block to the My Mood
     example={langExample}
 />
 
-### version.php
+### version.php {/* #versionphp */}
 
 <VersionPHP
     plugintype="block"
 />
 
-### edit_form.php
+### edit_form.php {/* #edit_formphp */}
 
 import EditForm from '!!raw-loader!./_examples/edit_form.php';
 
@@ -111,7 +111,7 @@ All your field names need to start with **"config_"**, otherwise they will not b
 
 :::
 
-## Creating a new block plugin
+## Creating a new block plugin {/* #creating-a-new-block-plugin */}
 
 The easiest way to create a new block plugin is by using the latest version of [Tool Pluginskel](https://moodle.org/plugins/tool_pluginskel). You can use the following yaml file to generate a basic block skeleton.
 
@@ -126,7 +126,7 @@ import PluginskelRecipe from '!!raw-loader!./_examples/pluginskel_recipe.yaml';
   </div>
 </details>
 
-## Block base class API methods
+## Block base class API methods {/* #block-base-class-api-methods */}
 
 All blocks must provide a main class that extends the core block class. However, there are two different types of blocks:
 
@@ -135,7 +135,7 @@ All blocks must provide a main class that extends the core block class. However,
 
 Depending on your plugin needs your main class in `blocks/pluginname/block_pluginname.php` must extend either `block_base` or `block_list`.
 
-### Block class attributes
+### Block class attributes {/* #block-class-attributes */}
 
 Once the block instance is created, there are several $this attributes that can be used:
 
@@ -145,11 +145,11 @@ Once the block instance is created, there are several $this attributes that can 
 - `$this->context` The context object that the block is being displayed in.
 - `$this->title` The title of the block.
 
-### init()
+### init() {/* #init */}
 
 The init method is called before the block is displayed. It is essential for all blocks, and its purpose is to give values to any class member variables that need instantiating. However, it is called before $this->config is set, if your plugin needs some configation value to define global attributes like the block title, it should be done in the specialization method.
 
-### specialization()
+### specialization() {/* #specialization */}
 
 This function is called on your subclass right after an instance is loaded. It is used to customize the title and other block attributes depending on the page type, context, configuration, etc.
 
@@ -172,7 +172,7 @@ function specialization() {
   </div>
 </details>
 
-### get_content(): string
+### get_content(): string {/* #get_content-string */}
 
 In order to get our block to actually display something on screen, we need to add one more method to our class (before the final closing brace in our file) inside of the block_pluginname.php script.
 
@@ -243,11 +243,11 @@ If the block content is empty (an empty string) the block will not be displayed.
 
 :::
 
-### applicable_formats(): array
+### applicable_formats(): array {/* #applicable_formats-array */}
 
 Blocks can be added to any kind of page. However, some blocks may only be displayed on certain page types. This method is used to define the page types that the block can be displayed on. See [Limit the block to specific contexts](#limit-the-block-to-specific-contexts) section below for more information.
 
-### instance_allow_multiple()
+### instance_allow_multiple() {/* #instance_allow_multiple */}
 
 By default, only one instance of each block plugin can be added to a page. However, if your plugin allows multiple instances you can overrdie the instance_allow_multiple method.
 
@@ -270,7 +270,7 @@ Even if a block itself allows multiple instances in the same page, the administr
 
 :::
 
-### hide_header(): bool
+### hide_header(): bool {/* #hide_header-bool */}
 
 Using this method each block instance can decide if the standard block header is shown or not. This method will be ignored in edit mode.
 
@@ -287,7 +287,7 @@ public function hide_header() {
   </div>
 </details>
 
-### html_attributes(): array
+### html_attributes(): array {/* #html_attributes-array */}
 
 The block base class can inject extra HTML attributes to the block wrapper. This is useful for example to add a class to the block wrapper when the block is being displayed in a specific context.
 
@@ -312,19 +312,19 @@ public function html_attributes() {
 
 This results in the block having all its normal HTML attributes, as inherited from the base block class, plus our additional class name. We can now use this class name to change the style of the block, add JavaScript events to it via YUI, and so on. And for one final elegant touch,  we have not set the class to the hard-coded value "block_simplehtml", but instead used the Blocks/Appendix_A#name.28.29| name() method to make it dynamically match our block's name.
 
-### instance_config_save(): stdClass
+### instance_config_save(): stdClass {/* #instance_config_save-stdclass */}
 
 An optional method to modify the instance configuration before it is saved. See [add instance configuration settings](#add-instance-configuration-settings) section below for more information.
 
-### has_config(): bool
+### has_config(): bool {/* #has_config-bool */}
 
 An optional method to tell Moodle that the block has a global configuration settings form. See [enabling Global Configuration](#enabling-global-configuration) section below for more information.
 
-## Add instance configuration settings
+## Add instance configuration settings {/* #add-instance-configuration-settings */}
 
 By default, block instances have no configuration settings. If you want to add some, you can add them by adding a few methods and classes to your block.
 
-### Create an edit_form.php file
+### Create an edit_form.php file {/* #create-an-edit_formphp-file */}
 
 To have a configuration form, you need to add an [edit_form.php](#edit_formphp) file into your plugin. After defining the configuration, your block's base instance will have all your settings in its [$this->config attribute](#block-class-attributes). See the [edit_form.php section above](#edit_formphp) for an example.
 
@@ -340,9 +340,9 @@ You cannot use the 'checkbox' element in the form (once set it will stay set). Y
 
 :::
 
-### Optional instance_config_save method
+### Optional instance_config_save method {/* #optional-instance_config_save-method */}
 
-By default, all config_* settings will be stored in the `block_instances` table. The complete form data will be encoded in base64 before storing it in the <!-- cspell:disable --> `configdata` <!-- cspell:enable --> field. Every time a block instance is initialized all that data will be decoded in the [$this->config attribute](#block-class-attributes).
+By default, all config_* settings will be stored in the `block_instances` table. The complete form data will be encoded in base64 before storing it in the {/* <!-- cspell:disable --> */} `configdata` {/* <!-- cspell:enable --> */} field. Every time a block instance is initialized all that data will be decoded in the [$this->config attribute](#block-class-attributes).
 
 However, for some cases like the Atto HTML editor, you may want to store them in the database instead, or to alter the config data before storing it. In that case you can create a instance_config_save method.
 
@@ -366,7 +366,7 @@ public function instance_config_save($data,$nolongerused =false) {
   </div>
 </details>
 
-## Add global settings to the block plugin
+## Add global settings to the block plugin {/* #add-global-settings-to-the-block-plugin */}
 
 Apart from the specific block instance configuration, the block plugin can use global settings to customize its behavior. Those settings can only be set in the site administration and are a great way to customize the behavior of all blocks on a site.
 
@@ -380,11 +380,11 @@ $settingvalue = get_config('block_pluginname', 'settingname');
 
 :::
 
-### create a settings.php file
+### create a settings.php file {/* #create-a-settingsphp-file */}
 
 Implementing such configuration for our block is quite similar to implementing the [instance configuration](#add-instance-configuration-settings). To enable global configuration for the block, your plugin should contain **/blocks/simplehtml/settings.php** file. This file will populate the global admin form with form field definitions for each setting. See [Common files: settings.php](../commonfiles#settingsphp) for more information.
 
-### Enabling Global Configuration
+### Enabling Global Configuration {/* #enabling-global-configuration */}
 
 While in other Moodle pulgins the existence of a settings.php is enough to enable global configuration, for the blocks plugins it is mandatory to override the has_config method in the base class.
 
@@ -401,7 +401,7 @@ function has_config() {
   </div>
 </details>
 
-## Limit the block to specific contexts
+## Limit the block to specific contexts {/* #limit-the-block-to-specific-contexts */}
 
 Some blocks are useful in some circumstances, but not in others. An example of this would be the "Social Activities" block, which is useful in courses with the "social" course format, but not courses with the "weeks" format. Moodle allows us to declare in which pages a block is available on. The information is given to Moodle as a standard associative array, with each key corresponding to a page format and defining a boolean value (true/false) that declares whether the block should be allowed to appear in that page format.
 

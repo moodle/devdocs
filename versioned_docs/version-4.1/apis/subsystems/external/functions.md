@@ -18,7 +18,7 @@ It also includes the code that will actually be executed by the function.
 
 The function definition should be located within the `external` namespace of a component.
 
-:::info Example
+:::info[Example]
 
 For a component named `local_groupmanager` located in `local/groupmanager` which is responsible for creating groups on request, you may have:
 
@@ -37,7 +37,7 @@ A service definition:
 - _must_ declare an `execute_returns` function to describe the values returned by the function
 - _may_ declare an `execute_is_deprecated` function to declare a function as deprecated
 
-### An example definition
+### An example definition {/* #an-example-definition */}
 
 ```php title="local/groupmanager/classes/external/create_groups.php"
 <?php
@@ -114,7 +114,7 @@ Available parameter types are defined in `lib/moodlelib.php` and are used by the
 
 :::
 
-## See also
+## See also {/* #see-also */}
 
 - [Core APIs](../../../apis.md)
-- [Web services API](../../../../../docs/apis/subsystems/external/writing-a-service.md)
+- [Web services API](/docs/apis/subsystems/external/writing-a-service.md)

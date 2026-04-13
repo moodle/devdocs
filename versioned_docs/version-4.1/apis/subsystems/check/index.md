@@ -33,7 +33,7 @@ Having these centralized and with a consistent contract makes it much easier to 
 php admin/cli/checks.php
 ```
 
-## Result states of a check
+## Result states of a check {/* #result-states-of-a-check */}
 
 | Status | Meaning | Example |
 | --- | --- | --- |
@@ -47,33 +47,33 @@ php admin/cli/checks.php
 
 How the various states are then leveraged is a local decision. A typical policy might be that health checks with a status of 'Error' or 'Critical' will page a system administrator 24/7, while 'Warning' only pages during business hours.
 
-## Check types and reports
+## Check types and reports {/* #check-types-and-reports */}
 
 Checks are broken down into types, which roughly map to a step life cycle of your Moodle System
 
-### Environmental checks
+### Environmental checks {/* #environmental-checks */}
 
 Available from _/admin/environment.php_, environmental checks make sure that a Moodle instance is fully configured.
 
 This page is a potential candidate to move to the new Check API but it slightly more complex than the other checks so hasn't been tackled yet. It would be a deeper change and this is intrinsically part of the install and upgrade system. It is not as critical to refactor as it is already possible for a plugin to declare its own checks, via either declarative [Environment checking](https://docs.moodle.org/dev/Environment_checking) or programmatically with a custom check:
 
-### Configuration checks
+### Configuration checks {/* #configuration-checks */}
 
 Available from _/admin/index.php?cache=1_, the Admin notifications page performs a mixture of checks, including security, status, and performance checks.
 
 None of these checks are as exhaustive as the checks in the reports below. It also does additional checks including whether the web services for the Moodle Mobile App are enabled, and whether the site has been registered.
 
-### Security checks (security)
+### Security checks (security) {/* #security-checks-security */}
 
 Available from _/report/security/index.php_, these checks make sure that a Moodle instance is hardened correctly for you needs.
 
 For more information see [MDL-67776](https://moodle.atlassian.net/browse/MDL-67776).
 
-### Status checks (status)
+### Status checks (status) {/* #status-checks-status */}
 
 Available from _/report/status/index.php_, a status check is an 'in the moment' test and covers operational tests such as 'can moodle connect to ldap'. The main core status checks are that cron is running regularly and there has been no failed tasks.
 
-:::danger Important
+:::danger[Important]
 
 It is critical to understand that Status checks are conceptually defined at the level off the application and not at a lower host level such as a docker container or node in a cluster. Checks should be defined so that whichever instance you ask you should get a consistent answer. DO NOT use the Status Checks to detect containers which need reaped and restarted. If you do, any status error will mean all containers will simultaneously be marked for reaping.
 
@@ -83,13 +83,13 @@ An additional status check is likely the most common type of check a plugin woul
 
 For more information see [MDL-47271](https://moodle.atlassian.net/browse/MDL-47271).
 
-### Performance checks (performance)
+### Performance checks (performance) {/* #performance-checks-performance */}
 
 Available from _/report/performance/index.php_, each check might simply check for certain settings which are known to slow things down, or it might actually do some sort of test like multiple reads and writes to the db or filesystem to get a performance metric.
 
-## Implementing a new check
+## Implementing a new check {/* #implementing-a-new-check */}
 
-### A check class
+### A check class {/* #a-check-class */}
 
 And make a new check class in `mod/myplugin/classes/check/foobar.php` and the only mandatory method is `get_result()`. By default it will use a set language string but you can override the `get_name()` method to reuse an existing string.
 
@@ -123,19 +123,19 @@ class foobar extends check {
 }
 ```
 
-### The result summary
+### The result summary {/* #the-result-summary */}
 
 The summary could change depending on the result of the check but for a simple check might be a fixed string, not html. Try to keep the summary to 1 line as this might typically be the thing which gets passed through to a paging system and could be truncated.
 
-### The details
+### The details {/* #the-details */}
 
 Unlike the summary the details is allowed and encouraged to be html. Often it will be a bullet list of a table of the things that it asserted which make up the check.
 
-### The action link
+### The action link {/* #the-action-link */}
 
 The action link is the place to go to help fix the issue. It should be as specific as possibly, such as a deep link into an admin settings page, and can include hash anchors.
 
-### lib.php callback
+### lib.php callback {/* #libphp-callback */}
 
 First decide if and when your new check(s) should be shown. Should it be present if your plugin is disabled? If you do not want it show if disabled then do not return it in callback below. If you do want it to show when disabled, but the check doesn't much sense then you can return a value of NA.
 
@@ -149,7 +149,7 @@ function mod_myplugin_security_checks(): array {
 }
 ```
 
-### Multiple instances of checks
+### Multiple instances of checks {/* #multiple-instances-of-checks */}
 
 Checks have been designed to be dynamic so you can return different checks depending on configuration, so auth_ldap would not return a check if the plugin is not enabled. Hypothetically if auth_ldap could be configured with 5 ldap servers then you could return 5 independent checks for each remote connection, each with different labels and information.
 
@@ -183,11 +183,11 @@ class foobar extends \core\check\check {
 }
 ```
 
-### Make checks as fast as practical
+### Make checks as fast as practical {/* #make-checks-as-fast-as-practical */}
 
 As many checks will be run and compiled into a report we want the checks themselves to be simple and as fast as possible. For instance an auth_ldap check while authenticating an end user could have a timeout of 60 seconds, and the check could warn if it takes more than 2 seconds. But the check could have a hard timeout of say 5 seconds and have a result status of ERROR for 5 or more seconds.
 
-### Lazy loading expensive result details
+### Lazy loading expensive result details {/* #lazy-loading-expensive-result-details */}
 
 Checks can provide details on a check, such as the complete list of bad records. Generally this type of information might be expensive to produce so you can defer this lookup until get_details() is called specifically rather than setting this in the constructor. It will only be loaded on demand and shown when you drill down into the check details page.
 
@@ -216,10 +216,10 @@ For a real example see:
 
 https://github.com/moodle/moodle/blob/main/lib/classes/check/access/riskxss_result.php
 
-### Asynchronous checks
+### Asynchronous checks {/* #asynchronous-checks */}
 
 Some checks are by their nature asynchronous. For instance having moodle send an email to itself and then having it processed by the inbound mail handler to make it's properly configured (see [MDL-48800](https://moodle.atlassian.net/browse/MDL-48800)). In cases like these please make sure the age or staleness of the check is shown in the summary, and you should also consider turning the result status into a warning if the result is too old. If appropriate make the threshold a configurable admin setting.
 
-## See also
+## See also {/* #see-also */}
 
 - [Performance overview](https://docs.moodle.org/en/Performance_overview) user docs

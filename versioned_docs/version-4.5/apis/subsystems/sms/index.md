@@ -20,7 +20,7 @@ Currently, the design of the SMS API features the following plugin types:
 
 - [SMS gateway](/apis/plugintypes/sms/index.md)
 
-## Sending an SMS
+## Sending an SMS {/* #sending-an-sms */}
 
 Messages can be sent using the `send()` method of the SMS Manager class, which should be fetched using Dependency Injection, for example:
 
@@ -37,7 +37,7 @@ $message = \core\di::get(\core_sms\manager::class)
     );
 ```
 
-:::info Message lengths
+:::info[Message lengths]
 
 A single SMS sent by the API may consist of up to 480 UTF-8 characters. It is up to the message _gateway plugin_ to determine how this message is sent to the recipient.
 
@@ -45,7 +45,7 @@ Any message longer than the maximum length will be immediately rejected.
 
 :::
 
-### Parameter consideration while sending messages
+### Parameter consideration while sending messages {/* #parameter-consideration-while-sending-messages */}
 
 When sending a message it's important to add the correct `component` (for example `tool_mfa`) and `messagetype` (for example `mfa code`) for record keeping purposes.
 
@@ -57,7 +57,7 @@ In future reporting will be available for messages status. See MDL-80963 for fur
 
 :::
 
-### Sending messages containing sensitive information
+### Sending messages containing sensitive information {/* #sending-messages-containing-sensitive-information */}
 
 When sending a message containing something like a 2FA login token, you should make use of the `issensitive` flag.
 
@@ -73,7 +73,7 @@ Sensitive content is not persisted to the database and is therefore not availabl
 
 :::
 
-:::info Availability of asynchronous message handling
+:::info[Availability of asynchronous message handling]
 
 The ability to send messages asynchronously has not yet been implemented. The parameter is included for future compatibility.
 
@@ -81,7 +81,7 @@ See MDL-81015 for more information on this feature.
 
 :::
 
-## Fetching messages
+## Fetching messages {/* #fetching-messages */}
 
 Every sent message is stored in the database to support status checks, and for subsequent reporting.
 
@@ -95,13 +95,13 @@ $messages = \core\di::get(\core_sms\manager::class)
     ->get_messages(['recipientuserid' => $userid]);
 ```
 
-:::note Sensitive content
+:::note[Sensitive content]
 
 If the message was sent with the `issensitive` flag the message body will not be stored.
 
 :::
 
-## Checking the status of a message
+## Checking the status of a message {/* #checking-the-status-of-a-message */}
 
 Once a message is sent, a status is recorded against it. This can be used to determine whether the message was sent successfully.
 
@@ -165,7 +165,7 @@ graph TD
     end
 ```
 
-## Getting SMS gateways
+## Getting SMS gateways {/* #getting-sms-gateways */}
 
 [SMS gateways](/apis/plugintypes/sms/index.md) are plugins that provide a way to interface with external SMS providers.
 Once a gateway is configured, any component implementing the SMS API can get a list of gateways.
@@ -181,7 +181,7 @@ $gatewayrecords = $manager->get_gateway_records(['id' => $id]);
 $gatewayrecords = $manager->get_enabled_gateway_instances();
 ```
 
-## Important hooks
+## Important hooks {/* #important-hooks */}
 
 The SMS API dispatches some [hooks](/apis/core/hooks/index.md) which should be considered when implemented by a plugin/component.
 

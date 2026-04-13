@@ -16,7 +16,7 @@ Modals will fire events for common actions that occur within the modal for other
 
 Moodle ships with several standard modal types for you to re-use including a simple cancel modal, and a save/cancel modal.
 
-## Creating a basic modal
+## Creating a basic modal {/* #creating-a-basic-modal */}
 
 <Since version="4.3"  issueNumber="MDL-78324" />
 
@@ -38,13 +38,13 @@ export const init = async () => {
 
 Other standard options are described in the JS Documentation for [the MoodleConfig type](https://jsdoc.moodledev.io/master/module-core_modal.html#~MoodleConfig).
 
-:::note Support for earlier versions
+:::note[Support for earlier versions]
 
 If you are supporting an earlier version of Moodle, then you must use the Modal Factory and register your modal.
 
 :::
 
-### Modal Factory
+### Modal Factory {/* #modal-factory */}
 
 <DeprecatedSince version="4.3"  issueNumber="MDL-78324" />
 
@@ -93,7 +93,7 @@ export const init = async () => {
 };
 ```
 
-#### Using the 'trigger'
+#### Using the 'trigger' {/* #using-the-trigger */}
 
 <DeprecatedSince version="4.3"  issueNumber="MDL-78324" />
 
@@ -115,7 +115,7 @@ export const init = async () => {
 };
 ```
 
-## Instantiating modal types
+## Instantiating modal types {/* #instantiating-modal-types */}
 
 A number of commonly used modals are available as standard, these include:
 
@@ -218,7 +218,7 @@ export const init = async () => {
 </TabItem>
 </Tabs>
 
-## Creating a custom modal type
+## Creating a custom modal type {/* #creating-a-custom-modal-type */}
 
 In some situations it is desirable to write a brand new modal.
 
@@ -227,7 +227,7 @@ There are two parts to this:
 - a new Modal class which extends the `core/modal` class; and
 - a template
 
-:::important Custom modals in Moodle 4.2 and earlier
+:::important[Custom modals in Moodle 4.2 and earlier]
 
 Since Moodle 4.3, creating the Modal class is as simple as extending the `core/modal` class, and providing a `TYPE` property, and `TEMPLATE` property.
 
@@ -287,7 +287,7 @@ export default const init = async() => {
 }
 ```
 
-### Overriding default configuration
+### Overriding default configuration {/* #overriding-default-configuration */}
 
 When creating your own modal type, you may wish to override the standard configuration. This can be achieved by overriding the `configure` class and providing your own options, for example:
 

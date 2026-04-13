@@ -18,7 +18,7 @@ The goals of the File API are to:
 - fully support Unicode file names, irrespective of the capabilities of the underlying file system
 - support alternative file systems, including cloud-based APIs
 
-## Overview
+## Overview {/* #overview */}
 
 The File API is a set of core interfaces to allow the rest of Moodle to store, serve, and manage files. It applies to all files that are part of the Moodle site's content. It is not used for internal files, such as those in the following subdirectories:
 
@@ -49,9 +49,9 @@ The API can be subdivided into the following parts:
   - print links to files
   - optionally move, rename, copy, delete, and perform other user-facing operations.
 
-## File API internals
+## File API internals {/* #file-api-internals */}
 
-### File System
+### File System {/* #file-system */}
 
 The File System API allows for files to be stored in alternative underlying file systems, for example in an cloud-based API such as [Amazon S3](https://aws.amazon.com/s3). Each file is stored and retrieved using a `contenthash`.
 
@@ -67,7 +67,7 @@ Suppose a file has a content hash of `081371cb102fa559e81993fddc230c79205232ce`,
 
 :::
 
-:::tip Validation of files
+:::tip[Validation of files]
 
 As files in the standard disk-based file storage API are named using their SHA1 hash, there is a simple way of validating files have not become corrupted using the 'sha1sum' command available in most GNU/Linux distributions.
 
@@ -89,11 +89,11 @@ Where a file has become corrupted, these will differ:
 
 :::
 
-### File Storage
+### File Storage {/* #file-storage */}
 
 The File Storage API is provided by the `\file_storage` class, and stores all metadata relating to a file. It interacts with the File System API and the `\stored_file` class to provide all low-level storage functionality.
 
-### Files table
+### Files table {/* #files-table */}
 
 The File system API stores all file records in the `files` database table. This table contains one entry for each usage of a file. Enough information is kept here so that the file can be fully identified and retrieved again if necessary.
 
@@ -107,7 +107,7 @@ The name `files` is used in the plural form, even though it goes against the [co
 
 :::
 
-## Implementation of basic operations
+## Implementation of basic operations {/* #implementation-of-basic-operations */}
 
 The low level access API is defined in the `\file_storage` class, which can be obtained using the `get_file_storage()` function, for example:
 
@@ -117,7 +117,7 @@ $fs = get_file_storage();
 
 Details of common operations are documented in the [File System API](./index.md) documentation
 
-## File serving
+## File serving {/* #file-serving */}
 
 The File serving component of the File API deals with serving files to the user. This is typically in the form of browser requests. Moodle has several main files to handle serving of files. These include:
 
@@ -137,33 +137,33 @@ Each plugin should only ever use the File Storage API to access its __own files_
 
 :::
 
-## File related user interfaces
+## File related user interfaces {/* #file-related-user-interfaces */}
 
 Files are typically selected by users and uploaded to Moodle using the File manager, and the file picker.
 
 - The **file manager** is an interface used to view, and delete existing files, and to add new files.
 - The **file picker** is an interface, often accessed using the _file manager_, to select files for upload to Moodle. The file picker makes use of [file repositories](../../plugintypes/repository/index.md).
 
-### Form fields
+### Form fields {/* #form-fields */}
 
 Moodle defines two form field types as part of the `formslib` integration, these are:
 
 - The `filepicker`; and
 - the `filemanager`.
 
-### Integration with the HTML editor
+### Integration with the HTML editor {/* #integration-with-the-html-editor */}
 
 Each instance of an HTML editor can be told to store related files in a particular file area.
 
 During editing, files are stored in a draft files area in the `user` component. Then when the form is submitted they are moved into the real file area.
 
-## Other issues
+## Other issues {/* #other-issues */}
 
-### Unicode support in zip format
+### Unicode support in zip format {/* #unicode-support-in-zip-format */}
 
 Zip format is an old standard for compressing files. It was created long before Unicode existed, and Unicode support was only recently added. There are several ways used for encoding of non-ASCII characters in path names, but unfortunately it is not very standardised. Most Windows packers use DOS encoding.
 
-#### Client software
+#### Client software {/* #client-software */}
 
 - Windows built-in compression - bundled with Windows, non-standard DOS encoding only
 - WinZip - shareware, Unicode option (since v11.2)
@@ -171,35 +171,35 @@ Zip format is an old standard for compressing files. It was created long before 
 - 7-Zip - free, Unicode or DOS encoding depending on characters used in file name (since v4.58beta)
 - Info-ZIP - free, uses some weird character set conversions
 
-#### PHP extraction
+#### PHP extraction {/* #php-extraction */}
 
 - Info-ZIP binary execution - no Unicode support at all, mangles character sets in file names (depends on OS, see docs), files must be copied to temp directory before compression and after extraction
 - PclZip PHP library - reads single byte encoded names only, problems with random problems and higher memory usage.
 - Zip PHP extension - kind of works in latest PHP versions
 
-#### Large file support
+#### Large file support {/* #large-file-support */}
 
 - PHP running under 32bit operating systems does not support files >2GB. This might be a potential problem for larger backups.
 
-#### Tar Alternative
+#### Tar Alternative {/* #tar-alternative */}
 
 - tar with gzip compression - easy to implement in PHP + zlib extension (PclTar, Tar from PEAR or custom code)
 - no problem with unicode in *nix, Windows again expects DOS encoding :-(
 - seems suitable for backup/restore - yay!
 
-#### Summary
+#### Summary {/* #summary */}
 
 1. added zip processing class that fully hides the underlying library
 1. using single byte encoding "garbage in/garbage out" approach for encoding of files in zip archives; add new `zipencoding` string into lang packs (for example `cp852` DOS charset for Czech locale) and use it during extraction (we might support true unicode later when PHP Zip extension does that)
 
-### Tar packer
+### Tar packer {/* #tar-packer */}
 
 In addition to the zip packer, a tar packer is also available. This creates
 archives in a compressed tar format (similar to the file created by `tar -czf example.tar.gz mycontent`).
 
 The packer is currently limited to ASCII filenames and individual files are limited to 8GB each, but unlike zip there is no limit on the total filesize. It uses the old POSIX format and is compatible with GNU tar using default options.
 
-## See also
+## See also {/* #see-also */}
 
 - [Repository API](../../plugintypes/repository/index.md)
 - [Portfolio API](https://docs.moodle.org/dev/Portfolio_API)

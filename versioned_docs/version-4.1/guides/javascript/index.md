@@ -19,7 +19,7 @@ ES2015 represents a big change from previous versions of the Ecma Script
 specification.
 :::
 
-## Useful References
+## Useful References {/* #useful-references */}
 
 Moodle uses vanilla JavaScript combined with helpers for performing common actions, and a small collection of libraries
 for serving and managing dependencies.
@@ -31,12 +31,12 @@ available. You may find the following references particularly useful:
 - [MDN JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference).
 - [ES2015+ Cheat-sheet](https://devhints.io/es6)
 
-## Modules
+## Modules {/* #modules */}
 
 JavaScript in Moodle is structured into ES2015 modules which are transpiled into the CommonJS format.
 
 Like our PHP classes and Mustache templates, our JavaScript modules each belong to a particular component
-and must be named according to our standard [name and namespace conventions](/general/development/policies/naming#javascript).
+and must be named according to our standard [name and namespace conventions](/general/development/policies/naming#JavaScript).
 
 The naming scheme for Moodle's JavaScript fits into the pattern:
 
@@ -91,7 +91,7 @@ directory.
 
 :::
 
-## Writing your first module
+## Writing your first module {/* #writing-your-first-module */}
 
 The convention in Moodle is to have one JavaScript Module which is your initial entrypoint.
 This usually provides a function called `init` which you then [export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) from the module.
@@ -122,7 +122,7 @@ The variable is assigned an arrow function expression which takes no
 arguments, and when executed will call the browser `console.log` function
 with the text `"Hello, world!"`.
 
-### Listen to a DOM Event
+### Listen to a DOM Event {/* #listen-to-a-dom-event */}
 
 Usually you will want to perform an action in response to a user
 interacting with the page.
@@ -244,7 +244,7 @@ You will notice several key differences in this example when compared with the p
 - One event listener is present and it checks if the Element clicked on was
   one that it's interested in.
 
-## Including JavaScript from your pages
+## Including JavaScript from your pages {/* #including-JavaScript-from-your-pages */}
 
 Once you have written a JavaScript module you need a way to include it within your content.
 
@@ -254,7 +254,7 @@ Moodle has three main ways to include your JavaScript and the best way will depe
 - from PHP via the output requirements API; and
 - from other JavaScript via `import` or `requirejs`.
 
-### Including from a template
+### Including from a template {/* #including-from-a-template */}
 
 Most recent code in Moodle makes heavy use of Mustache templates and you will often find that your JavaScript is
 directly linked to the content of one of your templates.
@@ -284,12 +284,12 @@ require(['mod_forum/discussion'], function(Discussion) {
 
 Any time that this template is rendered and placed on the page the `mod_forum/discussion` module will be fetched and the `init()` function called on it.
 
-:::note Since Moodle 4.0
+:::note[Since Moodle 4.0]
 Moodle no longer supports Internet Explorer. It's now safe to use Arrow functions.
-<!--
+{/* <!--
 TODO:
 Moodle no longer supports Internet Explorer. It's now safe to use <Term reference="arrowFunctions">Arrow functions</Term>.
--->
+--> */}
 :::
 
 Often you may want to link the JavaScript to a specific `DOMElement` in the template.
@@ -315,7 +315,7 @@ The `{{uniqid}}` tag gives a new unique string for each rendered template includ
 It isn't a true unique id and must be combined with other information in the template to make it unique.
 :::
 
-### Including from PHP
+### Including from PHP {/* #including-from-php */}
 
 Much of Moodle's code still creates HTML content in PHP directly.
 This might be a simple `echo` statement or using the `html_writer` output functions.
@@ -372,7 +372,7 @@ A limit applies to the length of the parameters passed in the third argument.
 If data is already available elsewhere in the DOM, you should avoid passing it as a parameter.
 :::
 
-## Passing data to your Module
+## Passing data to your Module {/* #passing-data-to-your-module */}
 
 You will often need to work with data as part of your JavaScript module.
 This might be simple data, like the a database id, or it may be more complex
@@ -384,7 +384,7 @@ Moodle provides several ways to achieve this:
 - you can store this data in the DOM as a data attribute which is fetched in your code
 - a Moodle Web Service can be used to fetch more complex data structures dynamically
 
-### Using data attributes
+### Using data attributes {/* #using-data-attributes */}
 
 The easiest way to pass data is to use data attributes.
 
@@ -402,7 +402,7 @@ The easiest way to pass data is to use data attributes.
 
 ```
 
-## Promises
+## Promises {/* #promises */}
 
 ```{eval-rst}
 .. TODO::
@@ -421,13 +421,13 @@ You shouldn't use the `done`, `fail`, or `always` functions on Promises.
 These are a jQuery feature which isn't present in the Native Promise implementation.
 :::
 
-### Examples
+### Examples {/* #examples */}
 
 import GetModal from '!!raw-loader!./_examples/promises/getModal';
 
 <CodeBlock language="js" title="Create a modal in a function">{GetModal}</CodeBlock>
 
-## Working with Strings
+## Working with Strings {/* #working-with-strings */}
 
 One of the most helpful core modules is `core/str` which allows you to fetch and render language Strings in JavaScript.
 
@@ -439,17 +439,17 @@ import WorkingWithStrings from '!!raw-loader!./_examples/str';
 
 <CodeBlock language="js" title="Example">{WorkingWithStrings}</CodeBlock>
 
-## Templates
+## Templates {/* #templates */}
 
-## Modals
+## Modals {/* #modals */}
 
-## Notifications
+## Notifications {/* #notifications */}
 
-## AJAX Calls
+## AJAX Calls {/* #ajax-calls */}
 
-## Preferences
+## Preferences {/* #preferences */}
 
-## Prefetch
+## Prefetch {/* #prefetch */}
 
 <Since versions={[ 3.9 ]} />
 
@@ -475,7 +475,7 @@ Prefetch.prefetchTemplate('core/toast');
 Prefetch.prefetchTemplates(['core/toast', 'core/modal']);
 ```
 
-## Reactive state
+## Reactive state {/* #reactive-state */}
 
 <Since versions={[ 4.0 ]} />
 
@@ -485,14 +485,14 @@ While third-party developers are free to use any reactive framework they want, c
 
 See the [Creating reactive UI](./javascript/reactive) for more information.
 
-## Tools
+## Tools {/* #tools */}
 
 Moodle uses common and popular tools to ensure code quality, and to improve the
 end-user experience.
 
 Most of the Moodle JavaScript tooling requires [NodeJS](/general/development/tools/nodejs).
 
-### Grunt
+### Grunt {/* #grunt */}
 
 [Grunt](https://gruntjs.com/) is a command-line tool used to compile JavaScript, and CSS, and to lint JavaScript, CSS, and Behat tests.
 
@@ -501,7 +501,7 @@ Rather than running `grunt` on the entire Moodle source every time you make chan
 in the background to build just the files you change as you write them.
 :::
 
-#### Installing grunt
+#### Installing grunt {/* #installing-grunt */}
 
 <Tabs>
 <TabItem value="global_grunt" label="Global">
@@ -513,7 +513,7 @@ npm -g install grunt-cli
 </TabItem>
 </Tabs>
 
-#### Using grunt
+#### Using grunt {/* #using-grunt */}
 
 <Tabs>
 <TabItem value="npx_grunt" label="NPX">
@@ -532,4 +532,4 @@ grunt
 </TabItem>
 </Tabs>
 
-### ESLint
+### ESLint {/* #eslint */}

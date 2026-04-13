@@ -13,9 +13,9 @@ Moodle 5.2 introduced native support for distributing and installing Moodle plug
 
 The [moodle/composer-installer](https://github.com/moodle/composer-installer) Composer plugin handles placing each Moodle plugin package into the correct location within the Moodle directory structure, based on the plugin type declared in the package's `composer.json`.
 
-## Making your plugin available via Composer
+## Making your plugin available via Composer {/* #making-your-plugin-available-via-composer */}
 
-### Adding a composer.json
+### Adding a composer.json {/* #adding-a-composerjson */}
 
 Add a `composer.json` file to the root of your plugin directory with at minimum the following fields:
 
@@ -40,13 +40,13 @@ In `require`, include a production dependency on `moodle/composer-installer`.
 
 The `type` field is what the `moodle/composer-installer` package uses to determine the installation path. For example, a package with `"type": "moodle-block"` will be installed into `blocks/myblock/` within the Moodle directory.
 
-:::tip Vendor name
+:::tip[Vendor name]
 
 The vendor prefix in the `name` field (for example, `myplugin`) is your Packagist vendor name and is independent of any Moodle conventions. The package name component (`moodle-block_myblock`) follows the Moodle convention.
 
 :::
 
-### Publishing to Packagist
+### Publishing to Packagist {/* #publishing-to-packagist */}
 
 Once your plugin has a valid `composer.json` and is in a public Git repository, you can publish it to [Packagist](https://packagist.org/):
 
@@ -61,9 +61,9 @@ composer require myplugin/moodle-block_myblock
 
 The installer will automatically place the plugin into `blocks/myblock/` within their Moodle directory.
 
-## Development tips
+## Development tips {/* #development-tips */}
 
-### Creating a development Moodle site
+### Creating a development Moodle site {/* #creating-a-development-moodle-site */}
 
 The [moodle/seed](https://github.com/moodle/seed) project provides a quick way to spin up a new Moodle site using Composer. This is particularly useful for plugin developers who want a reproducible development environment.
 
@@ -91,7 +91,7 @@ cd [yourlocation]
 composer require myplugin/moodle-block_myblock
 ```
 
-### Developing a plugin with a local path repository
+### Developing a plugin with a local path repository {/* #developing-a-plugin-with-a-local-path-repository */}
 
 When working on your plugin locally, you can tell Composer to use your local checkout instead of downloading from Packagist by adding a `path` repository to your site's `composer.json`:
 
@@ -125,9 +125,9 @@ For local path repositories, use `"*"` or `"@dev"` in your `require` constraint 
 
 :::
 
-### Declaring dependencies
+### Declaring dependencies {/* #declaring-dependencies */}
 
-:::caution Current recommendation
+:::caution[Current recommendation]
 
 Moodle currently supports plugins installed both with Composer and without Composer. Composer-declared runtime dependencies are only guaranteed to be installed when the plugin itself is installed via Composer.
 
@@ -155,7 +155,7 @@ When adding Composer metadata to your plugin, these dependency rules apply:
 
 If your plugin has required Moodle plugin dependencies, continue to declare them in `version.php` too, so dependency checks also work for non-Composer installation workflows.
 
-## See also
+## See also {/* #see-also */}
 
 - [`composer.json`](../../apis/commonfiles/index.mdx#composerjson) — common file reference for Moodle plugins
 - [moodle/composer-installer](https://github.com/moodle/composer-installer) — the Composer plugin that installs Moodle packages into the correct directory

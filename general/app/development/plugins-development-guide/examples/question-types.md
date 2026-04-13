@@ -130,7 +130,7 @@ const result = {
 result;
 ```
 
-## Other examples
+## Other examples {/* #other-examples */}
 
 - [Question type plugin template](https://github.com/marcusgreen/moodle-qtype_TEMPLATE)
 - [Gapfill question type](https://github.com/marcusgreen/moodle-qtype_gapfill)

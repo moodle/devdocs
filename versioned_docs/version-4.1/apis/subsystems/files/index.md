@@ -5,17 +5,17 @@ tags:
   - Files
 ---
 
-<!-- cspell:ignore filestore -->
+{/* <!-- cspell:ignore filestore --> */}
 
 The File API is used to control, manage, and serve all files uploaded and stored within Moodle. This page covers the core File API, which is responsible for storage, retrieval, and serving of files stored in Moodle.
 
 The following documentation is also related:
 
 - The [Repository API](../../plugintypes/repository/index.md) is responsible for the code paths associated with uploading files to Moodle. This includes Repository plugins.
-- [Using the File API in Moodle forms](https://docs.moodle.org/dev/Using_the_File_API_in_Moodle_forms)
+- [Using the File API in Moodle forms](/docs/apis/subsystems/form/usage/files)
 - Additional detail of how this API works is discussed in the [File API internals](./internals.md)
 
-## File areas
+## File areas {/* #file-areas */}
 
 Files are conceptually stored in _file areas_. A file area is uniquely identified by:
 
@@ -30,17 +30,17 @@ File areas are not listed separately anywhere, they are stored implicitly in the
 
 :::
 
-:::important Accessing files belonging to another component
+:::important[Accessing files belonging to another component]
 
 Please note that each plugin, or subsystem should only ever access its own file areas. Any other access should be made using that components own APIs. For example a file in the `mod_assign` plugin should only access files within the `mod_assign` component, and no other component should access its files.
 
 :::
 
-### Naming file areas
+### Naming file areas {/* #naming-file-areas */}
 
 The names of the file areas are not strictly defined, but it is strongly recommended to use singulars and common names of areas where possible (for example: intro, post, attachment, description).
 
-## Serving files to users
+## Serving files to users {/* #serving-files-to-users */}
 
 The serving of files to users is separated into two distinct areas:
 
@@ -51,7 +51,7 @@ This allows Moodle to have a shared file serving mechanism which is common to al
 
 When serving files you _must_ implement both parts together.
 
-### Generating a URL to your files
+### Generating a URL to your files {/* #generating-a-url-to-your-files */}
 
 You must refer to the file with a URL that includes a file-serving script, often `pluginfile.php`. This is usually generated with the `moodle_url::make_pluginfile_url()` function. For example:
 
@@ -77,7 +77,7 @@ This will remove the `itemid` from the URL entirely - this must be considered wh
 
 The final parameter (`false` here) is `forcedownload`.
 
-### Serving your file to the user
+### Serving your file to the user {/* #serving-your-file-to-the-user */}
 
 File serving is performed by a small number of file serving scripts which include:
 
@@ -223,15 +223,15 @@ function mod_myplugin_pluginfile(
 
 :::
 
-## Getting files from the user
+## Getting files from the user {/* #getting-files-from-the-user */}
 
-You will typically use the [Forms API](https://docs.moodle.org/dev/Forms_API) to accept files from users. This topic is detailed in more detail in the [Using the File API in Moodle forms](https://docs.moodle.org/dev/Using_the_File_API_in_Moodle_forms) documentation.
+You will typically use the [Forms API](https://docs.moodle.org/dev/Forms_API) to accept files from users. This topic is detailed in more detail in the [Using the File API in Moodle forms](/docs/apis/subsystems/form/usage/files) documentation.
 
-## Common uses of the file API
+## Common uses of the file API {/* #common-uses-of-the-file-api */}
 
 Although you will usually interact with the File API from other related APIs including the Form, and Repository APIs, you may find that you need to interact with files directly for a range of purposes.
 
-### Create files
+### Create files {/* #create-files */}
 
 There are several ways to created files in the Moodle file store. Each of them
 requires a `fileinfo` record, which is a `stdClass` object containing all of the
@@ -249,7 +249,7 @@ $fileinfo = [
 ];
 ```
 
-#### From a file on disk
+#### From a file on disk {/* #from-a-file-on-disk */}
 
 If you need to create a file from another file elsewhere on disk, for example a file you have downloaded into a temporary folder, you can use `create_file_from_pathname`.
 
@@ -260,7 +260,7 @@ $fs = get_file_storage();
 $fs->create_file_from_pathname($fileinfo, $requestdir . '/helloworld.txt');
 ```
 
-#### From a URL
+#### From a URL {/* #from-a-url */}
 
 If you need to fetch a file from a downloadable resource and store it straight into the Moodle filestore, you can use the `create_file_from_url()` function:
 
@@ -271,7 +271,7 @@ $fs = get_file_storage();
 $fs->create_file_from_url($fileinfo, 'https://example.com/helloworld.txt');
 ```
 
-#### From a string
+#### From a string {/* #from-a-string */}
 
 In some cases you may need to create a file from a string that you have generated, or retrieved in some other manner. For example, a string created from a Template, or image data which has been automatically generated.
 
@@ -282,7 +282,7 @@ $fs = get_file_storage();
 $fs->create_file_from_string($fileinfo, 'hello world');
 ```
 
-#### From another `stored_file`
+#### From another `stored_file` {/* #from-another-stored_file */}
 
 In some situations you may need to create a new file entry based on an existing file entry. You may need to do this when copying a file between users in a group activity.
 
@@ -293,7 +293,7 @@ $fs = get_file_storage();
 $fs->create_file_from_storedfile($fileinfo, $existingfile);
 ```
 
-### List all files in a particular file area
+### List all files in a particular file area {/* #list-all-files-in-a-particular-file-area */}
 
 You may need to fetch a list of all files in a specific file area. You can do this using the `file_storage::get_area_files()` API, which will return array of `stored_file` objects, for example:
 
@@ -307,7 +307,7 @@ foreach ($files as $file) {
 }
 ```
 
-### Access the content of a file
+### Access the content of a file {/* #access-the-content-of-a-file */}
 
 In some rare situations you may need to use the content of a file stored in the file storage API. The easiest way of doing so is using the `get_content(): string` API call:
 
@@ -343,7 +343,7 @@ You *cannot* write to a file handle fetched using the `get_content_file_handle()
 
 :::
 
-### Copy a file in the File Storage API to elsewhere on disk
+### Copy a file in the File Storage API to elsewhere on disk {/* #copy-a-file-in-the-file-storage-api-to-elsewhere-on-disk */}
 
 As the Moodle File Storage API prevents direct access to files on the disk, if you need a local copy of the file on disk, you must copy the file to a different location. You can use the `\stored_file::copy_content_to(string $destination);` function to achieved this, for example:
 
@@ -356,7 +356,7 @@ $requestdir = make_request_directory();
 $file->copy_content_to("{$requestdir}/helloworld.txt");
 ```
 
-### Delete file
+### Delete file {/* #delete-file */}
 
 You can easily remove a file from the File Storage API using the `\stored_file::delete()` function, for example:
 
@@ -367,7 +367,7 @@ $file = $fs->get_file(...);
 $file->delete();
 ```
 
-### Moving and renaming files around
+### Moving and renaming files around {/* #moving-and-renaming-files-around */}
 
 In some instances you may need to move, or copy, files to other parts of the file structure.
 
@@ -397,7 +397,7 @@ $fs->create_file_from_storedfile($filerecord, $file);
 $file->delete();
 ```
 
-### Convert between file formats (office documents)
+### Convert between file formats (office documents) {/* #convert-between-file-formats-office-documents */}
 
 This functionality requires `unoconv` to be installed and configured on the site - so it is not available on all installations.
 
@@ -430,9 +430,9 @@ if ($file) {
 }
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - [Core APIs](../../../apis.md)
 - [File API internals](./internals.md) how the File API works internally.
-- [Using the File API in Moodle forms](https://docs.moodle.org/dev/Using_the_File_API_in_Moodle_forms)
+- [Using the File API in Moodle forms](/docs/apis/subsystems/form/usage/files)
 - [Repository API](../../plugintypes/repository/index.md)

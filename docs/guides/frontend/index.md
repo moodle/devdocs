@@ -5,7 +5,7 @@ tags:
   - javascript
   - moodle
 ---
-## Overview
+## Overview {/* #overview */}
 
 Moodle now supports modern frontend development using **ECMAScript modules (ESM)**, **React**, and **TypeScript**.
 
@@ -13,9 +13,9 @@ These technologies enable component-based UI development while remaining compati
 
 This document describes the recommended approach for implementing frontend functionality in Moodle, ensuring consistency, maintainability, and compatibility with the theming system.
 
-## Mechanics: Building Frontend Features
+## Mechanics: Building Frontend Features {/* #mechanics-building-frontend-features */}
 
-### Frontend Source Structure
+### Frontend Source Structure {/* #frontend-source-structure */}
 
 Frontend source code should be located within:
 
@@ -30,7 +30,7 @@ Frontend source code should be located within:
 - Code is compiled into browser-ready JavaScript
 - Compiled files should not be edited directly
 
-### Rendering React Components from Templates
+### Rendering React Components from Templates {/* #rendering-react-components-from-templates */}
 
 React components are rendered using the **React template helper**. See the [Mustache Helper docs](./javascript/react/reactautoinit) for more details.
 
@@ -56,7 +56,7 @@ This:
 
 Templates **determine where the component appears**, while React defines the UI.
 
-### Auto initialisation
+### Auto initialisation {/* #auto-initialisation */}
 
 When the page loads:
 
@@ -66,7 +66,7 @@ When the page loads:
 
 The default function mounts the React component. This is covered in more detail on the [Mustache helper and Autoinit](./javascript/react/reactautoinit) page.
 
-### Component contract
+### Component contract {/* #component-contract */}
 
 React modules should export a **default React component**.
 
@@ -86,7 +86,7 @@ Core components follow this pattern consistently, and developers are strongly en
 
 While other patterns may work, using a React component ensures consistency, maintainability, and compatibility with Moodle's frontend architecture.
 
-### Passing Props
+### Passing Props {/* #passing-props */}
 
 Templates should pass only the minimal data required to initialise the component.
 
@@ -150,7 +150,7 @@ In some cases, small amounts of preloaded data may be passed to avoid unnecessar
 
 :::
 
-### Using Moodle APIs
+### Using Moodle APIs {/* #using-moodle-apis */}
 
 Moodle is in the process of improving support for using existing JavaScript APIs from ESM based code.
 
@@ -168,13 +168,13 @@ Developers should:
 
 Support for ESM compatible APIs will continue to improve over time.
 
-### Recommended pattern for Data Fetching
+### Recommended pattern for Data Fetching {/* #recommended-pattern-for-data-fetching */}
 
 React components should avoid directly embedding data fetching logic where possible. Instead, data should be handled through service modules.
 
 This helps keep components simple, improves reuse, and avoids duplication of API logic
 
-#### Service Modules
+#### Service Modules {/* #service-modules */}
 
 Data fetching should be implemented in dedicated service files.
 
@@ -202,7 +202,7 @@ Service modules should:
 - handle request / response transformations
 - remain independent of the UI
 
-#### Using Services in Components
+#### Using Services in Components {/* #using-services-in-components */}
 
 Components should call service functions and manage the resulting state.
 
@@ -250,13 +250,13 @@ useEffect(() => {
 
 While this example works, it tightly couples the component to the API and makes the code harder to reuse and maintain.
 
-### Styling and Theming
+### Styling and Theming {/* #styling-and-theming */}
 
 Components must remain compatible with Moodle's theming system.
 
 Although React components control their own markup, themes must still be able to customise the appearance of those components
 
-#### Use Design System and Tokens
+#### Use Design System and Tokens {/* #use-design-system-and-tokens */}
 
 Where available, components should use the Moodle design system and design tokens rather than defining custom styles.
 
@@ -268,7 +268,7 @@ Avoid:
 - hard coded spacing
 - custom styles that duplicate the design system components
 
-#### Avoid Inline Styles
+#### Avoid Inline Styles {/* #avoid-inline-styles */}
 
 Inline styles should be avoided unless absolutely necessary.
 
@@ -281,7 +281,7 @@ Instead prefer class based styling
 
 Where appropriate, components should support passing additional class names via props.
 
-#### Do Not Assume Fixed Styling
+#### Do Not Assume Fixed Styling {/* #do-not-assume-fixed-styling */}
 
 Components should not assume a specific visual appearance.
 
@@ -292,7 +292,7 @@ Avoid:
 
 Themes may significantly alter the look and feel of components.
 
-### Initialising Frontend Behaviour
+### Initialising Frontend Behaviour {/* #initialising-frontend-behaviour */}
 
 Historically, templates used the `{{#js}}` helper:
 
@@ -313,9 +313,9 @@ The `{{#js}}` helper may still be used for:
 - enhancing existing Mustache-rendered markup
 - working with legacy components
 
-## Design Philosophy
+## Design Philosophy {/* #design-philosophy */}
 
-### Templates Provide Placement, Not Structure
+### Templates Provide Placement, Not Structure {/* #templates-provide-placement-not-structure */}
 
 Historically:
 
@@ -329,7 +329,7 @@ Templates define **where a component appears**.
 
 React components define **how the UI is structured**.
 
-### Minimal Server Context
+### Minimal Server Context {/* #minimal-server-context */}
 
 Previously, PHP assembled large template contexts.
 
@@ -345,7 +345,7 @@ Component fetches data
 
 Components retrieve additional data asynchronously.
 
-### Components are Self Contained
+### Components are Self Contained {/* #components-are-self-contained */}
 
 React components should encapsulate:
 
@@ -358,7 +358,7 @@ This improves maintainability and reuse.
 
 Components should orchestrate when and how data is loaded, while delegating actual API calls to service functions (in separate files).
 
-### Maintainability and Consistency
+### Maintainability and Consistency {/* #maintainability-and-consistency */}
 
 Frontend code should prioritise:
 
@@ -367,7 +367,7 @@ Frontend code should prioritise:
 - predictable markup for theming
 - separation of concerns between server and client
 
-### Transition from Legacy Patterns
+### Transition from Legacy Patterns {/* #transition-from-legacy-patterns */}
 
 | Historical approach              | Modern approach                    |
 |----------------------------------|------------------------------------|
@@ -375,7 +375,7 @@ Frontend code should prioritise:
 | Mustache renders UI              | React renders UI                   |
 | JavaScript enhances templates    | Components manage UI and behaviour |
 
-### Relationship to Reactive UI System
+### Relationship to Reactive UI System {/* #relationship-to-reactive-ui-system */}
 
 Moodle previously introduced a custom [reactive UI system](./javascript/reactive/) to support dynamic interfaces.
 

@@ -9,7 +9,7 @@ sidebar_position: 4
 
 Moodle's Developer Resource system is built using [Docusaurus](https://docusaurus.io). Docusaurus is a static page generator aimed at technical documentation and maintained by Facebook. It is written in JavaScript, and uses React.
 
-## General structure
+## General structure {/* #general-structure */}
 
 The documentation is broken down into two key areas:
 
@@ -22,7 +22,7 @@ Sometimes it isn't immediately clear which of the two areas you should use - unl
 
 :::
 
-### Unversioned documentation
+### Unversioned documentation {/* #unversioned-documentation */}
 
 The unversioned documentation can be found in the [general](https://github.com/moodle/devdocs/tree/main/general) folder and is further broken down into several categories:
 
@@ -40,7 +40,7 @@ The unversioned documentation can be found in the [general](https://github.com/m
 
 If you are creating a page which does not fit into one of these categories, we suggest you jump into the [Developer documentation chat](../community/channels.md#developer-documentation-chat) and asking there; or [creating a new issue](https://github.com/moodle/devdocs/issues/new) in the GitHub repository to discuss the best location.
 
-### Versioned documentation
+### Versioned documentation {/* #versioned-documentation */}
 
 The versioned documentation has two locations you will need to look at:
 
@@ -70,11 +70,11 @@ The Moodle App developer documentation is currently in the `docs` location but w
 
 :::
 
-## Other key files and folders
+## Other key files and folders {/* #other-key-files-and-folders */}
 
 A number of other files are also used to form the documentation, some of these are described below.
 
-### Sidebar configuration
+### Sidebar configuration {/* #sidebar-configuration */}
 
 All pages _should_ include contextually relevant navigation in the form of a _sidebar_. The content of these sidebars is controlled from the [sidebar configuration](https://github.com/moodle/devdocs/tree/main/sidebars) with configuration for:
 
@@ -85,7 +85,7 @@ Additional sidebar configuration for older versions of Moodle will also be creat
 
 Documentation for the sidebars feature can be found on the [Docusaurus site](https://docusaurus.io/docs/next/sidebar).
 
-### Data
+### Data {/* #data */}
 
 Rather than storing machine-readable data within the documentation, we store some key information in the [data](https://github.com/moodle/devdocs/tree/main/data) folder. This includes:
 
@@ -95,7 +95,7 @@ Rather than storing machine-readable data within the documentation, we store som
 - [Project metadata](https://github.com/moodle/devdocs/tree/main/data/projects.json) used to generate project summary data, and sidebar information
 - Information about [Moodle versions](https://github.com/moodle/devdocs/tree/main/data/versions.json) used to generate the Release notes pages
 
-### Static content
+### Static content {/* #static-content */}
 
 Docusaurus generates most of the content, converting markdown files, JavaScript, TypeScript, and React component into static files. Sometimes it is still necessary to include static content too.
 
@@ -106,6 +106,6 @@ The [`static`](https://github.com/moodle/devdocs/tree/main/static) folder contai
 - a [manifest.json](https://github.com/moodle/devdocs/tree/main/static/manifest.json) file used for the [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 - a set of [JSON Schemas](https://github.com/moodle/devdocs/tree/main/schema) used to formally describe some of the [data](#data) files
 
-## See also
+## See also {/* #see-also */}
 
 - [Contributing](./contributing.md)

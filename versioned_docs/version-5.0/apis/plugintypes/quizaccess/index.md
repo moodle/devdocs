@@ -25,7 +25,7 @@ The following rules are readily available as part of Moodle core:
 - `quizaccess_securewindow`
 - `quizaccess_timelimit`
 
-## File structure
+## File structure {/* #file-structure */}
 
 Quiz access rule sub-plugins are located in the `/mod/quiz/accessrule` directory. A plugin should not include any custom files outside of it's own plugin folder.
 
@@ -52,7 +52,7 @@ mod/quiz/accessrule/delaybetweenattempts
 
 Some of the important files for the format plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
-### rule.php
+### rule.php {/* #rulephp */}
 
 import RuleFile from '!!raw-loader!./_examples/rule.php';
 import RuleDescription from './_examples/rule.md';

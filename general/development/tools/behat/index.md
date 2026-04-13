@@ -11,11 +11,11 @@ This page describes the internals of Behat and the integration with Moodle.
 
 Behat is a framework for behavior driven development (BDD) which allows us to specify Moodle functionalities (aka features) as a human-readable list of steps. It parses these steps to executable actions to simulate user interaction against headless browsers (without JavaScript support, only curl-kind requests) or user simulation tools like Selenium, which interacts with browsers and allows JavaScript events simulation.
 
-## Objective
+## Objective {/* #objective */}
 
 The aim of this integration is to allow Moodle components to have its own set of features and step definitions. This allows us to periodically execute sets of tests to detect regressions and Moodle features in different environments (browsers, DBs engines, web servers...). The Moodle QA tests will be progressively rewritten according to this format to run automatically.
 
-## How Behat works
+## How Behat works {/* #how-behat-works */}
 
 This section aims to explain the basics about BDD and Behat and a quick view of how Behat internally works from the CLI command execution to the results output.
 
@@ -80,7 +80,8 @@ Some terms used:
   }
   ```
 
-<!-- cspell:ignore Sahi, dataroot -->
+{/* <!-- cspell:ignore Sahi, dataroot --> */}
+
 - **Behat**: PHP framework and CLI application that wraps the whole process of features files loading + features files parsing + execution of actions in the browser + results output (http://behat.org/)
 - **Gherkin**: Human-readable language used to define features that can be parsed and translated into PHP methods. For more info, it's the same language used by Cucumber, the BDD Ruby framework (https://github.com/cucumber/cucumber/wiki/Gherkin)
 - **Context**: In Behat scope a context is a PHP class that groups steps definitions (as methods)
@@ -94,7 +95,7 @@ Some terms used:
   - Selector type = `"xpath"`, Locator = `"//input[](@id='id-value')"`
 All these components are written in PHP, open sourced and packaged in a single and extensible framework.
 
-### Quick view of the whole process
+### Quick view of the whole process {/* #quick-view-of-the-whole-process */}
 
 1. Behat CLI execution
    - Behat application initialization and loading of arguments (features files to execute, output format...)
@@ -121,7 +122,7 @@ All these components are written in PHP, open sourced and packaged in a single a
    - A summary with all the scenario results is displayed
    - It accepts different output formats (like JUnitXML) to it's execution in continuous integration systems (http://docs.behat.org/guides/6.cli.html#format-options)
 
-## Moodle integration
+## Moodle integration {/* #moodle-integration */}
 
 It follows the approach chosen with PHPUnit:
 
@@ -132,11 +133,11 @@ It follows the approach chosen with PHPUnit:
 - Moodle lists the features files and steps definitions of it's components in a behat.yml file, similar to the phpunit.xml manifest
 - A basic behat.yml.dist config file has been included
 
-### Alternative environment
+### Alternative environment {/* #alternative-environment */}
 
 Acceptance testing implies interaction with the browser like real users does, so it requires the site to be accessible via URL. The Moodle integration creates a new moodle site installation in parallel to the production one to run the tests in a sandbox without affecting the production environment, switching the regular `$CFG->wwwroot`, `$CFG->dataroot` and `$CFG->prefix` to alternatives, which should be only accessible from localhost or internal networks. Info about how to run the tests in [Running acceptance test](./running.md).
 
-<!-- cspell:ignore saucelabs, subcontexts -->
+{/* <!-- cspell:ignore saucelabs, subcontexts --> */}
 This default configuration is useful when developing in a local host, but to run the tests automatically with Jenkins, GHA, Saucelabs... or other CI systems we provide a few extra settings.
 
 All the behat CLI utilities we provide within the Moodle codebase (admin/tool/behat/cli/*) are using `$CFG->behat_wwwroot`, `$CFG->behat_prefix` and `$CFG->behat_dataroot` instead of `$CFG->wwwroot`, `$CFG->prefix` and `$CFG->dataroot`, this scripts are self-contained, but as we are accessing through a browser, we also need to switch the whole Moodle instance to test mode. For this there are two requirements:
@@ -148,7 +149,7 @@ All the behat CLI utilities we provide within the Moodle codebase (admin/tool/be
   - We set `$CFG->behat_wwwroot` in `config.php` and we are accessing the moodle instance through it
 The unique `$CFG->behat_wwwroot` prevents unintended execution of acceptance tests on production sites.
 
-### JavaScript
+### JavaScript {/* #JavaScript */}
 
 There are two types of tests depending on if their scenario needs a real browser capable of execute JavaScript or if they can run in a headless browser.
 
@@ -157,7 +158,7 @@ There are two types of tests depending on if their scenario needs a real browser
 
 In most of the cases a JavaScript test would be more appropriate because most of the users uses JavaScript-capable browsers, non-JavaScript tests can be useful to ensure that Moodle maintains its functionality without JavaScript enabled and to ensure there are no big issues, regressions or exceptions in general.
 
-### Admin tool "Acceptance testing"
+### Admin tool "Acceptance testing" {/* #admin-tool-acceptance-testing */}
 
 There is an admin tool to run and ease the creation of acceptance tests.
 
@@ -165,11 +166,11 @@ There is an admin tool to run and ease the creation of acceptance tests.
 - CLI: Command to enable and disable the test environment and to update the `behat.yml` file with the system tests and steps definitions (`admin/tool/behat/cli/util.php` and `admin/tool/behat/cli/init.php` for a quick start)
 ![Acceptance_testing_UI_4.0.png](./_index/Acceptance_testing_UI_4.0.png)
 
-### Available steps to create tests
+### Available steps to create tests {/* #available-steps-to-create-tests */}
 
 There are behat libraries with tons of steps definitions to run all sort of processes and interactions with the browser, some of them overlaps Moodle-specific libraries and tests writers can be confused not only by this also by the amount of steps and vague or too technical steps descriptions. Moodle provides a set of steps definitions written in a common format to make tests writers life easier. New steps definitions must follow these [guidelines](./writing.md#writing-new-acceptance-test-step-definitions)
 
-### Behat extension
+### Behat extension {/* #behat-extension */}
 
 A new Behat extension (https://github.com/moodlehq/moodle-behat-extension) has been created to maintain Behat and its dependencies as they comes from upstream.
 
@@ -183,6 +184,6 @@ The aim of this extension is:
 - Add a new formatter method based on progress (the moodle default one) to display info about the moodle site being tested
 All the other particularities of this integration can managed playing with different Behat config parameters.
 
-## Translations
+## Translations {/* #translations */}
 
 - [es - Behat](https://docs.moodle.org/es/Behat)

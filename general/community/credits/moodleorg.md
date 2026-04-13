@@ -14,9 +14,9 @@ Please create an issue in this project if anyone has been missed out to add thei
 
 :::
 
-<!-- cspell:disable -->
+{/* <!-- cspell:disable --> */}
 
-## Community discussion in English:
+## Community discussion in English: {/* #community-discussion-in-english */}
 
 - [Using Moodle](https://moodle.org/course/view.php?id=5) - Martin Dougiamas, Helen Foster, Eloy Lafuente (stronk7)
 - Moodle for Business Uses - Ralf Hilgenstock, Stuart Mealor, (previously Chardelle Busch, Bryan Williams)
@@ -28,7 +28,7 @@ Please create an issue in this project if anyone has been missed out to add thei
 - Technology and Pedagogy Study Group - previously Anders Berggren
 - Teaching and Learning with Moodle - previously Tomaz Lasic and Mary Cooch
 
-## Community discussion in other languages:
+## Community discussion in other languages: {/* #community-discussion-in-other-languages */}
 
 - [Bulgarian Moodle](https://moodle.org/course/view.php?id=43) - Vanyo Georgiev (previously Daniel Denev, Snezhina Gileva, Milena Leneva)
 - [Moodle česky](https://moodle.org/course/view.php?id=17227) - David Mudrák
@@ -73,22 +73,22 @@ Please create an issue in this project if anyone has been missed out to add thei
 - தமிழ் (இலங்கை) (ta-LK) - previously Sarveswaran Kengatharaiyer
 - தமிழ் Moodle (Tamil) - previously Sarveswaran Kengatharaiyer, Nagarajan Vadivel
 
-## Moodle in English moderators
+## Moodle in English moderators {/* #moodle-in-english-moderators */}
 
 Gareth J Barnard, Gordon Bateson, Jon Bolton, Anthony Borrow, Chris Collman, Mary Cooch, Mary Evans, Helen Foster, Valery Fremaux, Marcus Green, Jason Hardin, Gavin Henrick, Don Hinkelman, Justin Hunt, Tim Hunt, David Jones, Mauno Korpelainen, Eloy Lafuente (stronk7), Miriam Laidlaw, Juan Leyva, William Lu, Andrew Lyons, Patrick Malley, Berta Maroto, Dan Marsden, Sam Marshall, Mark McKay, Stuart Mealor, Howard Miller, David Mudrák, Mark Nelson, Andrew Nicols, Dan Poltawski, Richard Oelmann, Daniel Palou, Bob Puffer, Visvanath Ratnaweera, Thom Rawson, Joseph Rezeau, Emma Richardson, Julian Ridden, Koen Roggemans, Petr Škoda (skodak), Koen Roggemans, Itamar Tzadok, Jean-Michel Védrine, Alex Walker, Ken Wilson, A. T. Wyatt
 
 `List updated 08:20, 23 May 2025 (UTC)`
 
-## Credits from the beginning of the project
+## Credits from the beginning of the project {/* #credits-from-the-beginning-of-the-project */}
 
 Some names from the beginning of the project include (in the order they were added):
 
 Peter C. Taylor, Art Lader, Matt Hope, Tom Murdock, Sébastien Namèche, James Miller, Dustin Rue, Holger Schadeck, Giovanni Tummarello, John Windmueller, Sean Keogh, Mitsuhiro Yoshida, Greg Barnett, Mark Kimes, Mary Hunter, Russell Jungwirth, Przemyslaw Stencel, John "Captain" Eyre, Paula Edmiston, Howard Miller, Claudio Tavares, P. Timothy Ervin, Bob Calder, Ursula Raab, David Delgado, Mad Alex, Gaëtan Frenoy, Bernard Boucher, Bryan Williams, Rob Butner, Koen Roggemans, David Scotson, Torsten Anderson, Eamon Costello, Hannes Gassert, Andrew Walker, Antonio Vicent, Ethem Evlice, Chardelle Busch, Miles Berry, Steve Hyndman, Julian Ridden, Ray Lawrence, Jeffery Watkins, Teemu Sumi, Tony Hursh, Andrea Bicciolo, Ralf Hilgenstock, Stuart Mealor, Dan Stowell, Iñaki Arenaza, Bill Burgos, Jonathon Moore, Daryl Hawes, Richard Wyles
 
-## Plugin reviewers
+## Plugin reviewers {/* #plugin-reviewers */}
 
 Mary Cooch, Marcus Green, Gavin Henrick, Don Hinkelman, Tim Hunt, Frankie Kam, Dan Marsden, Stuart Mealor, Howard Miller, Joseph Rézeau, Joseph Thibault
 
 `List updated 21:34, 14 August 2015 (AWST)`
 
-<!-- cspell:enable -->
+{/* <!-- cspell:enable --> */}

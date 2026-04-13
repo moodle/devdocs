@@ -6,7 +6,7 @@ tags:
   - Moodle App
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 In the following guide, you will learn how to migrate your styles from an older version of the app.
 
@@ -14,7 +14,7 @@ However, keep in mind that not all your users will be using the latest version. 
 
 Depending on which version of the app you're upgrading from, you'll need to go through multiple version upgrades. This guide is divided by version ranges, so you should be able to start with your current version and build up from there.
 
-### Before starting the migration
+### Before starting the migration {/* #before-starting-the-migration */}
 
 We recommend prepending all conflicting CSS rules with the specific version they are targeting.
 
@@ -36,33 +36,33 @@ You can use these classes to target specific major and patch versions as well, s
 Notice that mode and version classes moved from the `body` tag to the `html` tag in version 4.1. Learn more about this when [upgrading from 4.0 to 4.1](#40-to-41).
 :::
 
-### How to upgrade my theme
+### How to upgrade my theme {/* #how-to-upgrade-my-theme */}
 
 You can follow the same process that is documented in the [Moodle App Remote Themes](../customisation/remote-themes.md#how-can-you-create-your-own-theme) page.
 
 Make sure to read it in order to understand how to style your application for newer versions of the app. If you're upgrading your styles, it is likely that the documentation has been updated since you read it. So we recommend taking a look even if you're already familiar with Remote Themes.
 
-## 4.4 to 4.5
+## 4.4 to 4.5 {/* #44-to-45 */}
 
 Ionic version has been upgraded to v8 (from v7). This shouldn't have any direct impact on remote themes, but please verify that they continue to function correctly.
 
-## 4.3 to 4.4
+## 4.3 to 4.4 {/* #43-to-44 */}
 
 Ionic version has been upgraded to v7 (from v5). This shouldn't have any direct impact in remote themes; but make sure that they are still working properly.
 
-## 4.2 to 4.3
+## 4.2 to 4.3 {/* #42-to-43 */}
 
 The only change to keep in mind for this release is that Font Awesome icons were upgraded to version 6.4.0. This shouldn't affect Remote Themes directly, but given that it affects the visuals aspects of the app, it could potentially be relevant.
 
-## 4.1 to 4.2
+## 4.1 to 4.2 {/* #41-to-42 */}
 
 The only change to keep in mind for this release is that Font Awesome icons were upgraded to version 6.3.0. This shouldn't affect Remote Themes directly, but given that it affects the visuals aspects of the app, it could potentially be relevant.
 
-## 4.0 to 4.1
+## 4.0 to 4.1 {/* #40-to-41 */}
 
 There is only one thing to look after when upgrading to 4.1, so it should be a relatively quick process.
 
-### Mode classes
+### Mode classes {/* #mode-classes */}
 
 Starting in 4.1, mode and version classes have been moved from the `body` tag to the `html` tag. This change arose from [a bug on derived CSS variables](https://moodle.atlassian.net/browse/MOBILE-4127), and it should be fairly straightforward to make.
 
@@ -94,33 +94,33 @@ html.dark {
 In order to avoid breaking existing styles, version 4.1 will continue adding version classes both to `body` and `html` tags. But using the classes from the `body` tag is considered a deprecated approach, and won't be supported in future versions. So we recommend that you update your Remote Themes now.
 :::
 
-## 3.9.5 to 4.0
+## 3.9.5 to 4.0 {/* #395-to-40 */}
 
 There haven't been any breaking changes from 3.9.5 to 4.0 in terms of theming functionality, but the UI of the application has changed drastically so we recommend going over all the customisations to see that they are still relevant in the new version.
 
-## 3.9.4 to 3.9.5
+## 3.9.4 to 3.9.5 {/* #394-to-395 */}
 
 This upgrade requires more changes than usual because the Moodle App was upgraded the underlying Ionic framework from version 3 to version 5, which introduced many breaking changes.
 
-### Windows Phone
+### Windows Phone {/* #windows-phone */}
 
 Starting with this version, Windows Phone is no longer supported so you should remove all styles using Ionic classes ending with `-wp` since they are no longer necessary.
 
-### CSS variables
+### CSS variables {/* #css-variables */}
 
 Starting with this version, it is possible to use [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) to make easier customisations, so it's likely that you won't need to override as many styles as before.
 
 You can see some examples in the sections below, and you can also look at [the theme file](https://github.com/moodlehq/moodleapp/blob/latest/src/theme/theme.light.scss) to find some of the main variables of the app.
 
-### Colors
+### Colors {/* #colors */}
 
 The main color in the app is Moodle Orange, but you can now change it by using the `--primary` variable. This will probably reduce the CSS you are applying right now, but this only covers the main color.
 
 For other colors, check out [the colors section in the main documentation](../customisation/remote-themes.md#working-with-colors).
 
-### Header toolbar
+### Header toolbar {/* #header-toolbar */}
 
-#### Border width and color (new)
+#### Border width and color (new) {/* #border-width-and-color-new */}
 
 On the header toolbar, we've added a bottom border that you can disable.
 
@@ -135,7 +135,7 @@ ion-header ion-toolbar {
 
 </ValidExample>
 
-#### Background
+#### Background {/* #background */}
 
 <CodeDiff titles="3.9.4, 3.9.5">
 
@@ -153,7 +153,7 @@ ion-header ion-toolbar {
 
 </CodeDiff>
 
-#### Text and buttons
+#### Text and buttons {/* #text-and-buttons */}
 
 <CodeDiff titles="3.9.4, 3.9.5">
 
@@ -178,9 +178,9 @@ ion-header ion-toolbar.in-toolbar h2 {
 
 </CodeDiff>
 
-### Bottom tab bar (main menu)
+### Bottom tab bar (main menu) {/* #bottom-tab-bar-main-menu */}
 
-#### Background
+#### Background {/* #background-1 */}
 
 <CodeDiff titles="3.9.4, 3.9.5">
 
@@ -200,7 +200,7 @@ ion-tab-bar.mainmenu-tabs {
 
 </CodeDiff>
 
-#### Tab icon color
+#### Tab icon color {/* #tab-icon-color */}
 
 <CodeDiff titles="3.9.4, 3.9.5">
 
@@ -219,7 +219,7 @@ ion-tab-bar.mainmenu-tabs {
 
 </CodeDiff>
 
-#### Selected tab icon color
+#### Selected tab icon color {/* #selected-tab-icon-color */}
 
 <CodeDiff titles="3.9.4, 3.9.5">
 
@@ -238,7 +238,7 @@ ion-tab-bar.mainmenu-tabs {
 
 </CodeDiff>
 
-#### Badge color and text
+#### Badge color and text {/* #badge-color-and-text */}
 
 <CodeDiff titles="3.9.4, 3.9.5">
 
@@ -258,9 +258,9 @@ ion-tab-bar.mainmenu-tabs {
 
 </CodeDiff>
 
-### Top tabs
+### Top tabs {/* #top-tabs */}
 
-#### Tabs background
+#### Tabs background {/* #tabs-background */}
 
 <CodeDiff titles="3.9.4, 3.9.5">
 
@@ -278,7 +278,7 @@ core-tabs, core-tabs-outlet {
 
 </CodeDiff>
 
-#### Individual tab background
+#### Individual tab background {/* #individual-tab-background */}
 
 <CodeDiff titles="3.9.4, 3.9.5">
 
@@ -296,7 +296,7 @@ core-tabs, core-tabs-outlet {
 
 </CodeDiff>
 
-#### Unselected tab styles
+#### Unselected tab styles {/* #unselected-tab-styles */}
 
 <CodeDiff titles="3.9.4, 3.9.5">
 
@@ -315,7 +315,7 @@ core-tabs, core-tabs-outlet {
 
 </CodeDiff>
 
-#### Selected tab styles
+#### Selected tab styles {/* #selected-tab-styles */}
 
 <CodeDiff titles="3.9.4, 3.9.5">
 
@@ -337,9 +337,9 @@ core-tabs, core-tabs-outlet {
 
 </CodeDiff>
 
-### Items
+### Items {/* #items */}
 
-#### Items background color
+#### Items background color {/* #items-background-color */}
 
 <CodeDiff titles="3.9.4, 3.9.5">
 
@@ -357,7 +357,7 @@ body {
 
 </CodeDiff>
 
-#### Item divider background color
+#### Item divider background color {/* #item-divider-background-color */}
 
 <CodeDiff titles="3.9.4, 3.9.5">
 
@@ -378,7 +378,7 @@ body {
 
 </CodeDiff>
 
-#### Empty divider background
+#### Empty divider background {/* #empty-divider-background */}
 
 <ValidExample title="3.9.5">
 
@@ -390,7 +390,7 @@ body {
 
 </ValidExample>
 
-### Progress bar
+### Progress bar {/* #progress-bar */}
 
 <ValidExample title="3.9.5">
 
@@ -405,9 +405,9 @@ core-progress-bar {
 
 </ValidExample>
 
-### More page
+### More page {/* #more-page */}
 
-#### Icons
+#### Icons {/* #icons */}
 
 The icons in the More page can now easily change their color:
 
@@ -446,7 +446,7 @@ page-core-mainmenu-more .addon-privatefiles-handler ion-icon {\
 
 </CodeDiff>
 
-#### Item border color
+#### Item border color {/* #item-border-color */}
 
 <CodeDiff titles="3.9.4, 3.9.5">
 
@@ -477,7 +477,7 @@ page-core-mainmenu-more {
 
 </ValidExample>
 
-### Login page
+### Login page {/* #login-page */}
 
 You can now personalise some colors in the Login page, but keep in mind that this only includes the credentials page (the one after you select the site).
 
@@ -494,7 +494,7 @@ body {
 
 </ValidExample>
 
-### Messages page
+### Messages page {/* #messages-page */}
 
 Message discussion page, including chat activity and comments:
 
@@ -527,7 +527,7 @@ body {
 
 </ValidExample>
 
-### Full example
+### Full example {/* #full-example */}
 
 This is a full example showcasing how to handle multiple versions:
 

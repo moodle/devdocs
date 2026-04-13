@@ -8,7 +8,7 @@ tags:
 
 Whilst we'd all like all Moodle users to be using our latest and greatest code, there is a balance to strike between improving our software and maintaining stability (both in terms of regressions, but also training and documentation materials). Large amounts of change on the stable branches make the lives difficult for institutions to manage upgrades between point releases.
 
-## General policy
+## General policy {/* #general-policy */}
 
 Our general policy is as follows:
 
@@ -17,7 +17,7 @@ Our general policy is as follows:
   - If a fix doesn't make sense to be backported to every branch, please make it clear in the issue.
 - Improvements or new features will only land in `main`.
 
-### Bug fixes for accessibility issues
+### Bug fixes for accessibility issues {/* #bug-fixes-for-accessibility-issues */}
 
 As part of Moodle's commitment to accessibility, bug fixes for accessibility issues can be backported to the latest LTS branch whenever possible, in addition to the supported stable branches.
 
@@ -27,7 +27,7 @@ As part of Moodle's commitment to accessibility, bug fixes for accessibility iss
 - When the next LTS version is released, backporting of accessibility bug fixes will cease for the older LTS branch.
   - For example, accessibility bug fixes will be backported to the Moodle 4.1 LTS branch from its release up to Moodle 4.4's release. However, when Moodle 4.5 LTS is released, accessibility fixes will no longer be backported to the 4.1 LTS branch.
 
-### Other cases which will be backported whenever possible:
+### Other cases which will be backported whenever possible: {/* #other-cases-which-will-be-backported-whenever-possible */}
 
 A small set of changes will automatically be considered for backport, including to security-supported releases. These include:
 
@@ -36,7 +36,7 @@ A small set of changes will automatically be considered for backport, including 
 
 Care should be taken when backporting these changes, and only the minimum of change should be accepted. The introduction of new User Interfaces, for example, not supported by these cases.
 
-## Process for requesting a non bug-fix backport
+## Process for requesting a non bug-fix backport {/* #process-for-requesting-a-non-bug-fix-backport */}
 
 Improvements or new features can be requested to be backported to the stable branches. We urge developers to consider this request carefully. In recent years, Moodle has moved to a short and predictable time based release schedule and we use a very effective distributed source control system. Both of these process changes should ensure that a change not being backported to the stable branches is not as problematic as it may have used to be.
 
@@ -63,11 +63,11 @@ It would be good practice to also add a line like "This is a backport of MDL-YYY
 
 You can probably copy the testing instructions from the original issue. If so, make it clear you done this by saying something like "Copied from MDL-66327". Of course, if you can improve the instructions, feel free to edit. [MDL-66614](https://moodle.atlassian.net/browse/MDL-66614) and [MDL-66327](https://moodle.atlassian.net/browse/MDL-66327) are probably a reasonably good example fo what should be done.
 
-## Polite note about bug classification
+## Polite note about bug classification {/* #polite-note-about-bug-classification */}
 
 Many issues can be appropriately classified as borderline bug-fix/improvements. We politely request that developers do not try and 'game the system' by classifying their improvements as bugs intentionally. If your fix is in a grey area, please state your case for it being a bug fix clearly. The integration team will use their discretion where necessary.
 
-## Backport fixes to unsupported branches
+## Backport fixes to unsupported branches {/* #backport-fixes-to-unsupported-branches */}
 
 - Given the [general policy](#general-policy) above, only supported stable branches are candidates normally.
 - In addition to this any security, privacy, data-loss, and regression, caused by any of the previous issue types are accepted to be fixed into security-only supported branches.
@@ -76,13 +76,13 @@ Many issues can be appropriately classified as borderline bug-fix/improvements. 
 
 A new weekly release will be performed including all the cases above, but [security issues that follow its own special process](../process.md#security-issues) and are released bi-monthly.
 
-:::note Security issues and the `security_benefit` label
+:::note[Security issues and the `security_benefit` label]
 
 Issues labelled with the [`security_benefit` labelled issues](../tracker/labels.md) are not considered to be security issues and will not be backported automatically. These are typically _improvements_ to security rather than bugs or vulnerabilities.
 
 :::
 
-## See also
+## See also {/* #see-also */}
 
 - [Integration review process](../process/integration/index.md)
 - [Process](../process.md)

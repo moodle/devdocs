@@ -17,14 +17,14 @@ Adhoc tasks are great for situations such as:
 - migrate large quantities of data between different formats
 - send forum posts as an e-mail
 
-## Creating adhoc tasks
+## Creating adhoc tasks {/* #creating-adhoc-tasks */}
 
 To create a new adhoc task you should:
 
 1. create a new class which extends the `\core\task\adhoc_task` class;
 2. queue the task
 
-### Task class
+### Task class {/* #task-class */}
 
 The class for your scheduled task, which extends the `\core\task\scheduled_task` class, should be in the `classes/task` directory of your plugin.
 
@@ -51,7 +51,7 @@ class do_something extends \core\task\adhoc_task {
 
 </details>
 
-### Queueing the task for execution
+### Queueing the task for execution {/* #queueing-the-task-for-execution */}
 
 The processing of adhoc tasks is handled by the task manager. Typically you will instantiate a copy of your class, setting any relevant data, and then use the manager to queue the task, for example:
 
@@ -73,11 +73,11 @@ $mytask->set_custom_data([
 \core\task\manager::queue_adhoc_task($mytask);
 ```
 
-### Task features
+### Task features {/* #task-features */}
 
 Adhoc tasks include a number of useful features which are important to be aware of.
 
-#### Running as a specific user
+#### Running as a specific user {/* #running-as-a-specific-user */}
 
 Unless otherwise specified, all tasks will run as the CLI admin user. This is often undesirable and, where relevant, you should specify a userid to run the task as.
 
@@ -86,7 +86,7 @@ Unless otherwise specified, all tasks will run as the CLI admin user. This is of
 $mytask->set_userid($someuser->id);
 ```
 
-#### Set a task to run at a future time
+#### Set a task to run at a future time {/* #set-a-task-to-run-at-a-future-time */}
 
 You may need to plan to run a task at a future time - for example you may queue a forum digest task to run at a particular time. This can be accomplished using the `set_next_run_time()` function before queueing the task, for example:
 
@@ -102,7 +102,7 @@ The `set_next_run_time()` function takes a unix time stamp. Tasks are not _guara
 
 :::
 
-#### Ignore duplicate adhoc tasks
+#### Ignore duplicate adhoc tasks {/* #ignore-duplicate-adhoc-tasks */}
 
 In some situations you may only wish to queue an adhoc task if an identical adhoc task does not already exist. This can be useful in situations where you are adding a set of items to a bucket for later processing and only wish to process all items once.
 
@@ -119,13 +119,13 @@ Duplicate adhoc task detection can be enabled by passing a truthy value as the s
 \core\task\manager::queue_adhoc_task($task, true);
 ```
 
-:::tip Custom data
+:::tip[Custom data]
 
 If creating tasks which will contain a subset of data which will also be run by another instance of the same task type, you should put the data into a database table rather than the task custom data.
 
 :::
 
-#### Rescheduling an adhoc task
+#### Rescheduling an adhoc task {/* #rescheduling-an-adhoc-task */}
 
 Similar to [ignoring duplicate adhoc tasks](#ignore-duplicate-adhoc-tasks) there are situations which require you re_schedule_ a matching task instead. This may happen, for example, in a situation where there is too much churn of your source data.
 

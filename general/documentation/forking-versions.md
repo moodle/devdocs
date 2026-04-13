@@ -15,7 +15,7 @@ When a version of Moodle goes out of support, its developer documentation is arc
 
 Further information about this functionality is available in the [Docusaurus documentation on the topic](https://docusaurus.io/docs/versioning).
 
-## Creating a new version of the docs
+## Creating a new version of the docs {/* #creating-a-new-version-of-the-docs */}
 
 Typically this task is performed by the Integration team using the following steps:
 
@@ -44,7 +44,7 @@ Typically this task is performed by the Integration team using the following ste
 1. Commit these changes ([Example from Moodle 4.4](https://github.com/moodle/devdocs/commit/aeb6385209caed38d757d53bc47f9bd66fdcfa0c))
 1. Create a pull request ([Example from Moodle 4.4](https://github.com/moodle/devdocs/pull/1006))
 
-## Archiving a version of the docs
+## Archiving a version of the docs {/* #archiving-a-version-of-the-docs */}
 
 The archival of a set of documentation usually happens immediately after the forking of documentation for the latest version.
 

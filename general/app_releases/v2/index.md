@@ -3,7 +3,7 @@ title: Moodle Mobile 2
 sidebar_position: 4
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 import { Redirect } from '@docusaurus/router';
 

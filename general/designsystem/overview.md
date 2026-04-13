@@ -5,13 +5,13 @@ tags:
   - Design System
 ---
 
-## The Moodle Design System
+## The Moodle Design System {/* #the-moodle-design-system */}
 
 The Moodle Design System is a shared foundation of design principles, reusable components, and token-based styling rules for building Moodle interfaces across the ecosystem.
 
 It gives teams one common reference for how UI should look, behave, and scale across products and features, helping interfaces feel consistently Moodle while improving the platform's long-term maintainability.
 
-## Why a Design System is needed
+## Why a Design System is needed {/* #why-a-design-system-is-needed */}
 
 Without a Design System, teams face recurring challenges:
 
@@ -22,7 +22,7 @@ Without a Design System, teams face recurring challenges:
 
 Design tokens introduce shared, reusable values that help address these challenges.
 
-## Relationship with Bootstrap
+## Relationship with Bootstrap {/* #relationship-with-bootstrap */}
 
 The Moodle Design System does not aim to replace Bootstrap. It works alongside Bootstrap by defining Moodle-specific design decisions in one place.
 

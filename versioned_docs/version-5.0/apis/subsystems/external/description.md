@@ -19,7 +19,7 @@ Function implementation classes consist of one class containing a number of func
 
 During a Moodle installation or upgrade, the service and function _declarations_ are parsed by a service discovery process and stored within the database. An administrative UI may be used to change _some_ configuration details of these declarations.
 
-## Service declarations
+## Service declarations {/* #service-declarations */}
 
 Each component wishing to create an external service function must declare that the function exists by describing it in the `db/services.php` file for that component.
 

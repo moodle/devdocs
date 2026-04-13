@@ -21,11 +21,11 @@ As theme designers, only the first method of introducing CSS will be used: addin
 
 :::
 
-## CSS pre-processors
+## CSS pre-processors {/* #css-pre-processors */}
 
 Browsers understand CSS well, but it is hard to write and maintain. The language does not support inheritance and reuse. [Support for variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) exists in more modern browsers only.  This is why CSS pre-processors were invented. Moodle supports SASS, which is recommended by far.
 
-:::info Information
+:::info[Information]
 
 To use SASS, define `$THEME->scss = 'filename';` in your themes `config.php`. Moodle will then use one of it's in-built CSS pre-processor to compile the CSS the first time it is loaded (or every time if `themedesignermode` is enabled in `$CFG`).
 
@@ -33,7 +33,7 @@ For more information see: [SASS (wikipedia)](https://en.wikipedia.org/wiki/Sass_
 
 :::
 
-## Core CSS organisation
+## Core CSS organisation {/* #core-css-organisation */}
 
 None of the themes provided in the standard install by Moodle use CSS stylesheets directly. Instead they use either SCSS to generate the style sheets. They all list one main SCSS file named `moodle` or scss folders and this file uses imports to load all other required files.
 
@@ -43,9 +43,9 @@ As a theme designer, it is entirely up to you how you create and organize your C
 
 :::
 
-## How to write effective CSS rules within Moodle
+## How to write effective CSS rules within Moodle {/* #how-to-write-effective-css-rules-within-moodle */}
 
-:::warning Important
+:::warning[Important]
 
 Writing good CSS rules is incredibly important.
 
@@ -53,7 +53,7 @@ Writing good CSS rules is incredibly important.
 
 Due to performance requirements and browser limitations, all of the CSS files are combined into a single CSS file that gets included every time. This means that rules need to be written in such a way as to minimise the chances of a collision leading to unwanted styles being applied. Whilst writing good CSS is something most designers strive for we have implemented several new body classes and prompt developers to use appropriate classnames.
 
-### \<body\> CSS id and classes
+### \<body\> CSS id and classes {/* #body-css-id-and-classes */}
 
 The `ID` tag that gets applied to the body will always be a representation of the URI. For example if you are looking at a forum posting and the URI is `/mod/forum/view.php` then the body tags `ID` will be `#page-mod-forum-view`.
 
@@ -78,7 +78,7 @@ The body ID and body classes described above will form the bread and butter for 
 - The course id, context id and category id are all added as in `course-11 context-616 cmid-202 category-1`.
 - The `pagelayout` is added as `pagelayout-incourse`.
 
-:::info What does all of this look like in practise?
+:::info[What does all of this look like in practise?]
 
 Using the above example `/mod/forum/view.php` this will be the body tag:
 
@@ -95,7 +95,7 @@ Using the above example `/mod/forum/view.php` this will be the body tag:
 
 :::
 
-### Writing your rules
+### Writing your rules {/* #writing-your-rules */}
 
 By following the [CSS coding style](https://docs.moodle.org/dev/CSS_coding_style) and CSS best-practices and understanding the [cascading order](http://htmlhelp.com/reference/css/structure.html#cascade) of CSS a theme developer will reduce collisions and lines of CSS that is written. CSS classes have been placed where it is believed anyone may want to apply their own styles.
 
@@ -129,7 +129,7 @@ It is also important to **write as FEW rules as possible**. CSS is extremely har
 
 Themes based on the Bootstrap CSS framework can achieve most things without writing a single additional CSS rule. Please read [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/ the Bootstrap documentation) and learn how to use Bootstrap well to avoid adding unnecessary CSS rules for things already provided by the framework.
 
-## Compiling SCSS on the fly
+## Compiling SCSS on the fly {/* #compiling-scss-on-the-fly */}
 
 <Since version="3.2" />
 

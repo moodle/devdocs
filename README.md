@@ -1,8 +1,8 @@
 # Moodle Developer Resources
 
 <p align="center">
-  <!--<a href="CONTRIBUTING.md#pull-requests"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>-->
-  <!--<a href="#license"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000"></a>-->
+  {/* <!--<a href="CONTRIBUTING.md#pull-requests"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>--> */}
+  {/* <!--<a href="#license"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000"></a>--> */}
   <a href="https://gitpod.io/#https://github.com/moodle/devdocs"><img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready-to-Code"/></a>
   <a href="https://meercode.io/moodle/devdocs"><img src="https://meercode.io/badge/moodle/devdocs?type=ci-score" alt="CI Score"></a>
   <a href="https://github.com/moodle/devdocs/actions/workflows/markdown-lint.yml"><img src="https://github.com/moodle/devdocs/actions/workflows/markdown-lint.yml/badge.svg" alt="Lint status"></a>

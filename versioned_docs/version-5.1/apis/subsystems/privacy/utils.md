@@ -6,7 +6,7 @@ tags:
 ---
 While implementing the privacy API into your plugin, there are CLI scripts that can help you to test things on the fly.
 
-:::danger Important
+:::danger[Important]
 
 These scripts are to assist during development. They are not intended to replace proper unit tests.
 
@@ -14,7 +14,7 @@ These scripts are to assist during development. They are not intended to replace
 
 Put these scripts into the root of your Moodle development installation and run them via command line. See [Privacy API](./index.md) for the full guide on implementing the API in your plugin.
 
-## Test of privacy API compliance
+## Test of privacy API compliance {/* #test-of-privacy-api-compliance */}
 
 ```php
 <?php
@@ -118,7 +118,7 @@ function check_implements($component, $interface) {
 }
 ```
 
-## Test of exporting user data
+## Test of exporting user data {/* #test-of-exporting-user-data */}
 
 ```php
 <?php
@@ -210,7 +210,7 @@ echo "== File export was uncompressed to {$exportpath}\n";
 echo "============================================================================\n";
 ```
 
-## Test of deleting user data
+## Test of deleting user data {/* #test-of-deleting-user-data */}
 
 ```php
 <?php

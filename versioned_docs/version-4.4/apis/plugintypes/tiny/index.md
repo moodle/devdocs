@@ -18,7 +18,7 @@ import {
     Lang,
 } from '../../_files';
 
-## File structure
+## File structure {/* #file-structure */}
 
 TinyMCE subplugins are located in the `/lib/editor/tiny/plugins` directory. A plugin should not include any custom files outside of its own plugin folder.
 
@@ -74,7 +74,7 @@ This separation is optional, but fits a convention demonstrate in the TinyMCE co
 
 :::
 
-## Creating a new plugin
+## Creating a new plugin {/* #creating-a-new-plugin */}
 
 We highly recommend using the [Plugin Skeleton Generator](https://moodle.org/plugins/tool_pluginskel) when creating a new plugin.
 
@@ -104,7 +104,7 @@ tiny_features:
       type: string
 ```
 
-### Generating the plugin skeleton
+### Generating the plugin skeleton {/* #generating-the-plugin-skeleton */}
 
 Once you have created a plugin skeleton configuration, you can generate your plugin using the `cli/generate.php` command:
 
@@ -114,7 +114,7 @@ php admin/tool/pluginskel/cli/generate.php tiny_example.yml
 
 This will generate a working skeleton file for your plugin. Remember that you component name must start with `tiny_`.
 
-:::note Compiled JavaScript
+:::note[Compiled JavaScript]
 
 The plugin skeleton only produces source files for JavaScript. You will need to run `grunt` to compile this code.
 
@@ -126,11 +126,11 @@ cd lib/editor/tiny/plugins/example && npx grunt amd && cd -
 
 :::
 
-## Key files
+## Key files {/* #key-files */}
 
 There are a number of key files within the generated plugin skeleton, described below.
 
-### common.js
+### common.js {/* #commonjs */}
 
 The common.js file is used to store a set of variables used by other parts of the plugin.
 
@@ -166,7 +166,7 @@ Typically this file will be included in other JS files in the plugin, usually on
 import {component, pluginName} from './common';
 ```
 
-### plugin.js
+### plugin.js {/* #pluginjs */}
 
 The plugin.js is the entrypoint to the plugin code. It is primarily responsible for registering the plugin with the TinyMCE API, and the Moodle Integration of the Editor.
 
@@ -216,7 +216,7 @@ export default new Promise(async(resolve) => {
 
 The plugin can be broadly broken down into several different areas:
 
-#### The default export
+#### The default export {/* #the-default-export */}
 
 Every plugin must return a default export containing a new Promise.
 
@@ -232,7 +232,7 @@ export default new Promise(async(resolve) => {
 });
 ```
 
-#### Preparation
+#### Preparation {/* #preparation */}
 
 The TinyMCE API does not support asynchronous code in the plugin registration. Therefore any asynchronous tasks must be complete before registering the plugin with the TinyMCE API, and before resolving the Promise.
 
@@ -252,7 +252,7 @@ const [
 ]);
 ```
 
-#### Registration of the plugin
+#### Registration of the plugin {/* #registration-of-the-plugin */}
 
 Once all of the dependencies are available, we can register the plugin with the TinyMCE PluginManager API.
 
@@ -280,7 +280,7 @@ In this example, the plugin describes a set of options which will be passed from
 
 It also has a set of 'commands', which are a generic term used to describe any Buttons, MenuItems, and related UI features of the editor.
 
-### commands.js
+### commands.js {/* #commandsjs */}
 
 TinyMCE supports a range of commands. These are further defined in the TinyMCE API: [tinymce.editor.ui.Registry](https://www.tiny.cloud/docs/tinymce/6/apis/tinymce.editor.ui.registry/).
 
@@ -351,7 +351,7 @@ export const getSetup = async() => {
 
 </details>
 
-:::important A note about synchronicity
+:::important[A note about synchronicity]
 
 The TinyMCE `PluginManager.add` function requires all code to be called synchronously - that is to say that all Promises must be resolved before it is called.
 
@@ -359,7 +359,7 @@ See more information on the Editor instance in the [tinymce.Editor](https://www.
 
 :::
 
-#### `handleAction(editor)`
+#### `handleAction(editor)` {/* #handleactioneditor */}
 
 The handleAction function is an example of one way in which the various buttons and menu items can handle their activation.
 
@@ -367,7 +367,7 @@ The action passes a reference to the _instance_ of the TinyMCE editor in the `ed
 
 It should be possible to interact with all required parts fo the TinyMCE API using this value.
 
-#### `getSetup()`
+#### `getSetup()` {/* #getsetup */}
 
 `getSetup()` function in the example above is an asynchronous function which returns a synchronous function.
 
@@ -375,13 +375,13 @@ This is important because the TinyMCE PluginManager API requires all code to be 
 
 In this example strings are fetched fro the button and menu titles, and the icon is fetched using a Mustache Template. All of these functions return a Promise and therefore we must wait for them to resolve before returning the function which uses them.
 
-#### The curried setup function
+#### The curried setup function {/* #the-curried-setup-function */}
 
 The `getSetup()` function returns a new function which is called from `plugin.js` during the instantiation of _each editor instance_. If you have five editors on a page, then this function is called five times - once per editor instance.
 
 This function is passed a partially-configured [tinymce.Editor](https://www.tiny.cloud/docs/tinymce/6/apis/tinymce.editor/) instance on which it can call the registry commands to define the various buttons.
 
-### Plugin options - `options.js` and `plugininfo.php`
+### Plugin options - `options.js` and `plugininfo.php` {/* #plugin-options---optionsjs-and-plugininfophp */}
 
 There are often times that you will want to pass options, or values stored in Moodle's PHP API, to the JavaScript API in your plugin. TinyMCE has a detailed API to support parsing and validation of per-instance options which make this relatively easy.
 
@@ -499,7 +499,7 @@ You may have multiple helpers, for example you may have a helper to process the 
 export const hasMyFirstProperty = (editor) => editor.options.isSet(myFirstPropertyName);
 ```
 
-### Editor configuration - `configuration.js`
+### Editor configuration - `configuration.js` {/* #editor-configuration---configurationjs */}
 
 The TinyMCE Editor only allows for very minimal configuration by administrators. This is a deliberate decision made to reduce the complexity of the User Interface, and to encourage consistency.
 

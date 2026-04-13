@@ -4,7 +4,7 @@ tags:
 - Bootstrap
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 Bootstrap 5 has evolved with new features, improvements, and changes in its latest version, and along with this some breaking changes also come, which need to be addressed in the migration process.
 
@@ -30,13 +30,13 @@ The migration process will be done in a gradual way, and the steps will be execu
 
 :::
 
-## Refactoring BS4 features dropped in BS5
+## Refactoring BS4 features dropped in BS5 {/* #refactoring-bs4-features-dropped-in-bs5 */}
 
 <Since version="4.4" issueNumber="MDL-79914" />
 
 Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. To prepare for this, some of the current Bootstrap 4 classes usages have been replaced with version 5 compatible classes. Doing these refactors in advance, will help us to upgrade to Bootstrap 5 in the future.
 
-### Badges
+### Badges {/* #badges */}
 
 - Badge colour class helpers `.badge-*` have been replaced with background utilities (use `.bg-primary` instead of `.badge-primary`) combined with the corresponding text colour classes (`.text-dark` or `.text-white`) to meet accessibility contrast. Or use the new `.text-bg-*` classes.
 - The `.badge-pill` class has been replaced with `.rounded-pill`
@@ -57,7 +57,7 @@ Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. 
 
 </ValidExample>
 
-### Media
+### Media {/* #media */}
 
 The `.media` component has been replaced with utility classes.
 
@@ -91,7 +91,7 @@ The `.media` component has been replaced with utility classes.
 
 </ValidExample>
 
-### Mixins
+### Mixins {/* #mixins */}
 
 The following previously deprecated mixins will be dropped in BS5, so they can be refactored:
 
@@ -136,7 +136,7 @@ The following previously deprecated mixins will be dropped in BS5, so they can b
 
 </ValidExample>
 
-### Forms
+### Forms {/* #forms */}
 
 - The `.form-group` helper class has been replaced with margins.
 - The `.form-inline` helper class has been replaced with utility classes.
@@ -165,7 +165,7 @@ The following previously deprecated mixins will be dropped in BS5, so they can b
 
 </ValidExample>
 
-### Card decks
+### Card decks {/* #card-decks */}
 
 The `.card-deck` helper class has been replaced with utility classes.
 
@@ -203,7 +203,7 @@ The `.card-deck` helper class has been replaced with utility classes.
 
 </ValidExample>
 
-## Create a BS5 "bridge"
+## Create a BS5 "bridge" {/* #create-a-bs5-bridge */}
 
 <Since version="4.5" issueNumber="MDL-79917" />
 
@@ -211,7 +211,7 @@ Some simple breaking changes could be also addressed in advance creating a BS5 "
 
 A new SCSS file `bs5-bridge.scss` has been created in the `theme/boost/scss/moodle` folder. This file will contain the necessary changes to make the codebase compatible with Bootstrap 5.
 
-:::info Example of a bridge in `bs5-bridge.scss`
+:::info[Example of a bridge in `bs5-bridge.scss`]
 
 ```css
 /* In Bootstrap 5 the .no-gutters class has been replaced with .g-0, so we can
@@ -223,7 +223,7 @@ add a new class in the bridge file to make the codebase compatible with BS5. */
 
 :::
 
-### No gutters
+### No gutters {/* #no-gutters */}
 
 The `.no-gutters` grid class has been replaced with `.g-0`.
 
@@ -249,7 +249,7 @@ The `.no-gutters` grid class has been replaced with `.g-0`.
 
 </ValidExample>
 
-### Close button
+### Close button {/* #close-button */}
 
 The `.close` class has been replaced with `.btn-close`.
 
@@ -279,7 +279,7 @@ The `.close` class has been replaced with `.btn-close`.
 
 </ValidExample>
 
-### Directional utilities
+### Directional utilities {/* #directional-utilities */}
 
 Several utilities have been renamed to use logical property names instead of directional ones.
 
@@ -312,11 +312,11 @@ Several utilities have been renamed to use logical property names instead of dir
 
 </ValidExample>
 
-### Theme color level
+### Theme color level {/* #theme-color-level */}
 
 In Bootstrap 4.x we used a function called `theme-color-level()` which was removed in Bootstrap 5. The prototype of the function was:
 
-:::info Previous version using `theme-color-level()`
+:::info[Previous version using `theme-color-level()`]
 
 ```css
 @function theme-color-level($colorname, $level) {
@@ -334,7 +334,7 @@ So, two major difference in the new version:
 - we use the color definition instead of the color name
 - we use percentages instead of levels.
 
-:::info Current version using `shift-color()`
+:::info[Current version using `shift-color()`]
 
 ```css
 @function shift-color($color, $weight) {
@@ -351,7 +351,7 @@ So instead of working with numbers (1 to 11), we now use percentages.
 To simplify this transition, Bootstrap 5 has established a new equivalency: each level increment from 1
 now corresponds to a 10% shift.
 
-:::info From absolute levels to percentages
+:::info[From absolute levels to percentages]
 
 For example, if a theme-color-level was previously set to a value of 1, it will now be set to 10%.
 A level of two will be adjusted by 20% and so on.
@@ -383,7 +383,7 @@ The `theme-color-level()` has been changed to `color-level()` and then subsequen
 In the stable 5.0 the final decision was to adopt `shift-color()` so we will use this function in the bridge file.
 :::
 
-### Rounded classes
+### Rounded classes {/* #rounded-classes */}
 
 The `.rounded-sm` and `.rounded-lg` classes have been replaced with `.rounded-1` and `.rounded-3`.
 
@@ -403,7 +403,7 @@ The `.rounded-sm` and `.rounded-lg` classes have been replaced with `.rounded-1`
 
 </ValidExample>
 
-### Screen reader utilities
+### Screen reader utilities {/* #screen-reader-utilities */}
 
 "Screen reader" classes are now "visually hidden" classes.
 
@@ -452,7 +452,7 @@ The `.rounded-sm` and `.rounded-lg` classes have been replaced with `.rounded-1`
 
 </ValidExample>
 
-### Font utility classes
+### Font utility classes {/* #font-utility-classes */}
 
 The `.font-weight-*` class has been replaced with `.fw-*` for brevity and consistency.
 The `.font-italic` class has been replaced with `.fst-italic` for brevity and consistency.
@@ -473,7 +473,7 @@ The `.font-italic` class has been replaced with `.fst-italic` for brevity and co
 
 </ValidExample>
 
-## Bootstrap 5 upgrade
+## Bootstrap 5 upgrade {/* #bootstrap-5-upgrade */}
 
 <Since version="5.0" issueNumber="MDL-75669" />
 
@@ -481,7 +481,7 @@ After **Refactoring BS4 features dropped in BS5** and **Create a BS5 "bridge"**,
 
 The `bs5-bridge.scss` SCSS file will be removed as it will no longer be needed, and the Bootstrap library in theme_boost will be upgraded to version 5.3. After that the codebase will be fully compatible with Bootstrap 5.
 
-### Refactor dropdowns positioning classes
+### Refactor dropdowns positioning classes {/* #refactor-dropdowns-positioning-classes */}
 
 Replace `.dropdown-menu-[left|right]` with `.dropdown-menu-[start|end]`.
 
@@ -505,7 +505,7 @@ Replace `.dropdown-menu-[left|right]` with `.dropdown-menu-[start|end]`.
 
 </ValidExample>
 
-### Refactor custom form elements
+### Refactor custom form elements {/* #refactor-custom-form-elements */}
 
 - `.custom-check` is now `.form-check`.
 - `.custom-check.custom-switch` is now `.form-check.form-switch`.
@@ -548,7 +548,7 @@ Replace `.dropdown-menu-[left|right]` with `.dropdown-menu-[start|end]`.
 
 </ValidExample>
 
-### Refactor media query mixins
+### Refactor media query mixins {/* #refactor-media-query-mixins */}
 
 - `media-breakpoint-down()` uses the breakpoint itself instead of the next breakpoint (e.g., `media-breakpoint-down(lg)` instead of `media-breakpoint-down(md)` targets viewports smaller than lg).
 - In `media-breakpoint-between()` the second parameter also uses the breakpoint itself instead of the next breakpoint (e.g., `media-breakpoint-between(sm, lg)` instead of `media-breakpoint-between(sm, md)` targets viewports between sm and lg).
@@ -575,7 +575,7 @@ Replace `.dropdown-menu-[left|right]` with `.dropdown-menu-[start|end]`.
 
 </ValidExample>
 
-### Refactor BS5 data attributes
+### Refactor BS5 data attributes {/* #refactor-bs5-data-attributes */}
 
 Data attributes for all JavaScript plugins are now namespaced to help distinguish Bootstrap functionality from our own code.
 
@@ -633,7 +633,7 @@ Data attributes for all JavaScript plugins are now namespaced to help distinguis
 
 </ValidExample>
 
-### Bootstrap 5 and Jquery
+### Bootstrap 5 and Jquery {/* #bootstrap-5-and-jquery */}
 
 Bootstrap dropped jQuery dependency and rewrote plugins to be in regular JavaScript. This means that all the jQuery Bootstrap-related code in the Moodle codebase has been rewritten in vanilla JavaScript.
 
@@ -665,13 +665,13 @@ document.querySelectorAll('[data-bs-toggle="tab"]').forEach((tab) => {
 
 </ValidExample>
 
-:::info backwards compatibility
+:::info[backwards compatibility]
 
 Although Bootstrap does not need jQuery anymore, it is still possible to use it in Moodle. See MDL-84324 for more information.
 
 :::
 
-## BS4 backwards-compatibility layer
+## BS4 backwards-compatibility layer {/* #bs4-backwards-compatibility-layer */}
 
 The migration from Bootstrap 4 to Bootstrap 5 involves a transition period to allow third-party plugins to update gradually.
 To facilitate this, a backwards-compatibility layer has been created, ensuring that some Bootstrap 4 syntax will continue to function until final deprecation in Moodle 6.0.
@@ -683,7 +683,7 @@ The BS4 backwards-compatibility layer encompasses three crucial aspects to facil
 2. **SCSS helpers and utilities**: The compatibility layer includes some SCSS helpers and utilities from Bootstrap 4, enabling developers to gradually adapt their custom styles to the new Bootstrap 5.
 3. **Bootstrap 4 old data attributes syntax silent replacement**: This feature quietly replaces the old Bootstrap 4 data attribute syntax with the new Bootstrap 5 syntax, ensuring that existing markup continues to work without immediate changes.
 
-### Bootstrap jQuery support
+### Bootstrap jQuery support {/* #bootstrap-jquery-support */}
 
 <Since version="5.0" issueNumber="MDL-84324" />
 
@@ -704,7 +704,7 @@ $('#myTab a').on('shown.bs.tab', function () {
 });
 ```
 
-### SCSS helpers and utilities
+### SCSS helpers and utilities {/* #scss-helpers-and-utilities */}
 
 <Since version="5.0" issueNumber="MDL-80519" />
 
@@ -724,7 +724,7 @@ Some of the SCSS helpers and utilities available in the backwards-compatibility 
 All these backwards-compatible SCSS helpers and utilities will be available until the final deprecation in Moodle 6.0.
 More details about the SCSS deprecation process can be found in [SCSS deprecation](/general/development/policies/deprecation/scss-deprecation).
 
-### Bootstrap 4 old data attributes syntax silent replacement
+### Bootstrap 4 old data attributes syntax silent replacement {/* #bootstrap-4-old-data-attributes-syntax-silent-replacement */}
 
 <Since version="5.0" issueNumber="MDL-84450" />
 

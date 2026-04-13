@@ -7,7 +7,7 @@ tags:
 
 A Moodle theme allows users to customize the appearance and functionality of their Moodle site, from overall design to specific activities. Users can create their own themes or modify existing ones, leveraging CSS and JavaScript for customization. The theme architecture ensures smooth fallbacks for minimal changes, fostering flexibility and ease of use.
 
-## File structure
+## File structure {/* #file-structure */}
 
 import {
     Lang,
@@ -55,7 +55,7 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
 
 Some of the important files for the Theme plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
-:::tip Override icons and templates
+:::tip[Override icons and templates]
 
 You can customize icons in base themes:
 
@@ -66,7 +66,7 @@ You can customize icons in base themes:
 
 Similarly, mustache templates in base themes can be overridden without impacting core code by placing them in `templates/[componentname]/[templatename].mustache`.
 
-### config.php
+### config.php {/* #configphp */}
 
 All theme options are set within the `config.php` file for the theme.
 
@@ -302,138 +302,138 @@ Have a look at the following theme options for a complete list of theme options 
   <summary>Complete theme options</summary>
   <div>
 
-#### `$THEME->blockrtlmanipulations`
+#### `$THEME->blockrtlmanipulations` {/* #theme-blockrtlmanipulations */}
 
 Allows the theme to manipulate how the blocks are displayed in a *right-to-left* language. Not recommended CSS is automatically flipped for RTL.
 
-#### `$THEME->csspostprocess`
+#### `$THEME->csspostprocess` {/* #theme-csspostprocess */}
 
 Allows the user to provide the name of a function that all CSS should be passed to before being delivered.
 
-#### `$THEME->csstreepostprocessor`
+#### `$THEME->csstreepostprocessor` {/* #theme-csstreepostprocessor */}
 
 <Since version="3.2" />
 
 Allows the user to provide the name of a function that can perform manipulations on an in-memory representation of the CSS tree. Some useful manipulations are available such as the `theme_boost\autoprefixer` which will automatically add vendor prefixes to all CSS that requires them.
 
-#### `$THEME->doctype`
+#### `$THEME->doctype` {/* #theme-doctype */}
 
 The doctype of the served documents.
 
-#### `$THEME->editor_sheets`
+#### `$THEME->editor_sheets` {/* #theme-editor_sheets */}
 
 An array of stylesheets to include just within the body of the text editors like Tiny. This is required if you want content to resemble its final appearance in the page, while it is being edited in the text editor.
 
-#### `$THEME->enablecourseajax`
+#### `$THEME->enablecourseajax` {/* #theme-enablecourseajax */}
 
 If set to false the course AJAX features will be disabled.
 
-#### `$THEME->enable_dock`
+#### `$THEME->enable_dock` {/* #theme-enable_dock */}
 
 If set to true the side dock is enabled for blocks.
 
-#### `$THEME->prescsscallback`
+#### `$THEME->prescsscallback` {/* #theme-prescsscallback */}
 
 <Since version="3.2" />
 
 The name of a function that will return some SCSS code to inject at the beginning of the SCSS file specified in `$THEME->scss`.
 
-#### `$THEME->extrascsscallback`
+#### `$THEME->extrascsscallback` {/* #theme-extrascsscallback */}
 
 <Since version="3.2" />
 
 The name of a function that will return some SCSS code to inject at the end of the SCSS file specified in `$THEME->scss`.
 
-#### `$THEME->hidefromselector`
+#### `$THEME->hidefromselector` {/* #theme-hidefromselector */}
 
 Used to hide a theme from the theme selector (unless theme designer mode is on). Accepts true or false.
 
-#### `$THEME->javascripts`
+#### `$THEME->javascripts` {/* #theme-JavaScripts */}
 
 <DeprecatedSince version=" " />
 
 An array containing the names of JavaScript files located in `/javascript/` to include in the theme.
 
-:::danger Deprecated
+:::danger[Deprecated]
 
 The `$THEME->javascripts` setting should no longer be used. Please use AMD [JavaScript Modules](../../../guides/javascript/modules.md) instead.
 
 :::
 
-#### `$THEME->javascripts_footer`
+#### `$THEME->javascripts_footer` {/* #theme-JavaScripts_footer */}
 
 <DeprecatedSince version=" " />
 
 As above but will be included in the page footer.
 
-:::danger Deprecated
+:::danger[Deprecated]
 
 The `$THEME->javascripts_footer` setting should no longer be used. Please use AMD [JavaScript Modules](../../../guides/javascript/modules.md) instead.
 
 :::
 
-#### `$THEME->layouts`
+#### `$THEME->layouts` {/* #theme-layouts */}
 
 An array setting the layouts for the theme.
 
-#### `$THEME->scss`
+#### `$THEME->scss` {/* #theme-scss */}
 
 <Since version="3.2" />
 
 The name of a SCSS file in the theme's `scss/` folder to compile on the fly. Sheets with the same name will be ignored. This can also be a function which returns SCSS, in which case all import paths will be relative to the scss folder in this theme or any of it's parents.
 
-#### `$THEME->name`
+#### `$THEME->name` {/* #theme-name */}
 
 Name of the theme. Most likely the name of the directory in which this file resides.
 
-#### `$THEME->parents`
+#### `$THEME->parents` {/* #theme-parents */}
 
 An array of themes to inherit from. If the theme you inherit from inherits from a parent as well, you need to indicate the grandparent here too.
 
-#### `$THEME->parents_exclude_javascripts`
+#### `$THEME->parents_exclude_javascripts` {/* #theme-parents_exclude_JavaScripts */}
 
 An array of JavaScript files NOT to inherit from the themes parents.
 
-#### `$THEME->parents_exclude_sheets`
+#### `$THEME->parents_exclude_sheets` {/* #theme-parents_exclude_sheets */}
 
 An array of stylesheets NOT to inherit from the themes parents.
 
-#### `$THEME->plugins_exclude_sheets`
+#### `$THEME->plugins_exclude_sheets` {/* #theme-plugins_exclude_sheets */}
 
 An array of plugin sheets to ignore and NOT include.
 
-#### `$THEME->renderfactory`
+#### `$THEME->renderfactory` {/* #theme-renderfactory */}
 
 Sets a custom render factory to use with the theme, used when working with custom renderers. You most likely want this set to `theme_overridden_renderer_factory`.
 
-#### `$THEME->sheets`
+#### `$THEME->sheets` {/* #theme-sheets */}
 
 An array of stylesheets to include for this theme. Should be located in the theme's style directory. Not required if using SCSS.
 
-#### `$THEME->yuicssmodules`
+#### `$THEME->yuicssmodules` {/* #theme-yuicssmodules */}
 
 Old setting to define a list of YUI CSS modules to be included. These files interfere with existing styles and it is recommended to set this to an empty string to prevent any files being included.
 
-:::danger Attention
+:::danger[Attention]
 
 This setting should probably be set to `''` to prevent and YUI CSS being included.
 
 :::
 
-#### `$THEME->undeletableblocktypes`
+#### `$THEME->undeletableblocktypes` {/* #theme-undeletableblocktypes */}
 
 An array of block types that must exist on all pages in this theme or this theme will be unusable. If a block type listed here is missing when a page is loaded. It will be auto-created (but only shown for themes that require it).
 
-#### `$THEME->addblockposition`
+#### `$THEME->addblockposition` {/* #theme-addblockposition */}
 
 Either `BLOCK_ADDBLOCK_POSITION_FLATNAV`, `BLOCK_ADDBLOCK_POSITION_DEFAULT` or `BLOCK_ADDBLOCK_POSITION_CUSTOM`. Defines where to put the "Add a block" controls when editing is enabled.
 
   </div>
 </details>
 
-<!-- cspell:ignore themename -->
+{/* <!-- cspell:ignore themename --> */}
 
-### lang/en/themename.php
+### lang/en/themename.php {/* #langenthemenamephp */}
 
 import langExample from '!!raw-loader!./_examples/lang.php';
 import langDescription from './_examples/lang.md';
@@ -445,15 +445,15 @@ import langDescription from './_examples/lang.md';
     description={langDescription}
 />
 
-### version.php
+### version.php {/* #versionphp */}
 
 <VersionPHP
     plugintype="theme"
 />
 
-## Insights
+## Insights {/* #insights */}
 
-### Getting your theme to appear correctly in theme selector
+### Getting your theme to appear correctly in theme selector {/* #getting-your-theme-to-appear-correctly-in-theme-selector */}
 
 If you follow the examples on this page to the letter, when you go to the `Theme Selector` page you may be discouraged to find that your theme does not appear like the other themes do. In fact, instead of your theme's name, you will see something along the lines of `[pluginname](https://docs.moodle.org/dev/pluginname)`.
 
@@ -475,13 +475,13 @@ $plugin->component = 'THEMENAME'; // Full name of the plugin (used for diagnosti
 
 The `screenshot` for the theme should be about `500 x 400 px`.
 
-### Required theme `divs`
+### Required theme `divs` {/* #required-theme-divs */}
 
 Some parts of Moodle may rely on particular `divs`, for example the div with id `page-header`. Consequently all themes must include at least the `divs` (with the same ids) that are present in the `boost` theme.
 
 Missing out these elements may result in unexpected behaviour within specific modules or other plugins.
 
-## Caching
+## Caching {/* #caching */}
 
 When Moodle is not running in theme designer mode it will look for a cached version of the compiled CSS for the current theme to serve to the browser requesting the page. If the cached file doesn't yet exist then the CSS will be built and cached during the page request.
 
@@ -501,9 +501,9 @@ Individual theme's CSS cache can be built by using the admin CLI script:
 
 The script will only increment the theme sub-revision of the theme(s) being built which means existing theme cache's remain untouched.
 
-## See also
+## See also {/* #see-also */}
 
-<!-- cspell:ignore HRDNZ -->
+{/* <!-- cspell:ignore HRDNZ --> */}
 
 - MoodleAcademy courses. For instance:
   - [Moodle Page Layout and Site Navigation](https://moodle.academy/course/view.php?id=110)

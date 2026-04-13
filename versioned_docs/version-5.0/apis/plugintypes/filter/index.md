@@ -5,10 +5,10 @@ tags:
   - Plugins
 ---
 
-<!-- cspell:ignore filtername -->
-<!-- cspell:ignore strpos -->
-<!-- cspell:ignore localconfig -->
-<!-- cspell:ignore filterlocalsettings -->
+{/* <!-- cspell:ignore filtername --> */}
+{/* <!-- cspell:ignore strpos --> */}
+{/* <!-- cspell:ignore localconfig --> */}
+{/* <!-- cspell:ignore filterlocalsettings --> */}
 
 import {
     DbAccessPHP,
@@ -31,7 +31,7 @@ Filters are one of the easiest types of plugin to create.
 
 Filters are applied to content passed into the `format_string()` and `format_text()` functions, which are part of the [Output API](../subsystems/output).
 
-## File structure
+## File structure {/* #file-structure */}
 
 Filter plugins are located in the `/filter` directory.
 
@@ -54,7 +54,7 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
 
 Some of the important files for the filter plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
-### classes/text_filter.php
+### classes/text_filter.php {/* #classestext_filterphp */}
 
 import Filter from '!!raw-loader!./_examples/filter.php';
 
@@ -68,15 +68,15 @@ import Filter from '!!raw-loader!./_examples/filter.php';
     description="The filter file contains the code for the main filter class. Unlike more complex plugins like activities or repositories, filters only have one mandatory class extending the core `\core_filters\text_filter` class."
 />
 
-### version.php
+### version.php {/* #versionphp */}
 
 <VersionPHP
     plugintype="filter"
 />
 
-### lang/en/filter_pluginname.php
+### lang/en/filter_pluginname.php {/* #langenfilter_pluginnamephp */}
 
-<!-- markdownlint-disable-next-line MD038 -->
+{/* <!-- markdownlint-disable-next-line MD038 --> */}
 export const langExample = `
  $string['filtername'] = 'Activity names auto-linking';
 `;
@@ -87,13 +87,13 @@ export const langExample = `
     example={langExample}
 />
 
-## Test a filter
+## Test a filter {/* #test-a-filter */}
 
 To enable a filter, go to the [filters administration screen](./index.md) and set the filter active to "On".
 
 Filters are applied to all text that is printed with the output functions `format_text()` and `format_string()`. To see a filter in action, add some content to a label resource. When you look at that course in the course listing, you should see that your filter has transformed the text accordingly.
 
-## Filter performance
+## Filter performance {/* #filter-performance */}
 
 It is important to note that all active filters will be called to transform every bit of text output using `format_text()` (headers and content), and `format_string()` (headers only). As a result a filter plugin can cause big performance problems. It is extremely important to use cache if your filter must retrieve data from the database, or other similar sources.
 
@@ -127,7 +127,7 @@ public function filter($text, array $options = []) {
   </div>
 </details>
 
-## Local configuration
+## Local configuration {/* #local-configuration */}
 
 Filters can use different configuration depending on the context in which they are called. For example, the glossary filter can be configured such that when displayed in Forum A it only links words from a particular glossary, while in Forum B it links words from a different glossary..
 
@@ -177,7 +177,7 @@ class text_filter extends \core_filters\text_filter {
   </div>
 </details>
 
-## Filtering dynamic content
+## Filtering dynamic content {/* #filtering-dynamic-content */}
 
 It is possible that page content is loaded by ajax after the page is loaded. In certain filter types (for example MathJax) JavaScript is required to be run on the output of the filter in order to do the final markup. For these types of filters, a JavaScript event is triggered when new content is added to the page (the content will have already been processed by the filter in php). The JavaScript for a filter can listen for these event notifications and reprocess the affected dom nodes.
 

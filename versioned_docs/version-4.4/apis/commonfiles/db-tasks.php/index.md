@@ -28,9 +28,9 @@ $tasks = [
 
 Each task configuration entry has a number of possible properties, described below.
 
-## Task configuration entries
+## Task configuration entries {/* #task-configuration-entries */}
 
-### Classname
+### Classname {/* #classname */}
 
 <LanguageProperty
     required
@@ -48,7 +48,7 @@ $tasks = [
 ]
 ```
 
-### Blocking
+### Blocking {/* #blocking */}
 
 <LanguageProperty
     types={["integer"]}
@@ -72,7 +72,7 @@ $tasks = [
 ];
 ```
 
-### Date and time fields
+### Date and time fields {/* #date-and-time-fields */}
 
 <LanguageProperty
     types={["string"]}
@@ -97,7 +97,7 @@ Each of these fields accepts one, or more values, and the format for each field 
 <random>    := R
 ```
 
-:::info Random values
+:::info[Random values]
 
 A fixed random value can be selected by using a value of `R`. By specifying this option, a random day or time is chosen when the task is installed or updated. The same value will be used each time the task is scheduled.
 
@@ -111,13 +111,13 @@ If no value is specified then the following defaults are used:
 - Hour: `*` (Every hour)
 - Minute: `*` (Every minute)
 
-:::info Day and Day of the week
+:::info[Day and Day of the week]
 
 If either field is set to `*` then use the other field, otherwise the soonest value is used.
 
 :::
 
-#### Examples
+#### Examples {/* #examples */}
 
 ```php title="Run at a fixed time each day, randomised during installation of the task"
 $tasks = [
@@ -147,7 +147,7 @@ $tasks = [
 ];
 ```
 
-### Disabled tasks
+### Disabled tasks {/* #disabled-tasks */}
 
 You can create a task that defaults to disabled by setting the field **disabled** to 1. Unless the administrator manually enables your task, it will not run.
 

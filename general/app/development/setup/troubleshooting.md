@@ -8,7 +8,7 @@ tags:
 
 This page contains a list of common errors that have been found and how to solve them. However, keep in mind that these may be platform-dependent and could not fix the problem in your machine, even if you are seeing the same error message.
 
-## General advice
+## General advice {/* #general-advice */}
 
 If you are stuck with an error and you can't find a way to continue, here's a list of things you can do:
 
@@ -23,7 +23,7 @@ If you are stuck with an error and you can't find a way to continue, here's a li
 - Try creating [a blank Ionic application](https://ionicframework.com/docs/cli/commands/start) and see if you're having the same problems. Make sure that you are using the same version of the main dependencies (Angular, Cordova, Ionic CLI, etc.).
 - If you are searching for help online, maybe your problem has nothing to do with the Moodle App in particular an it's related with Ionic, Cordova, Angular, etc. Searching using the proper context will give you better solutions.
 
-## I get a blank page when launching the app
+## I get a blank page when launching the app {/* #i-get-a-blank-page-when-launching-the-app */}
 
 This error can happen when the application is launched properly but there is a runtime error. If you get a network connection error, this may be the expected behaviour. Wait until you see "Compiled successfully" in the console and reload.
 
@@ -31,15 +31,15 @@ If that's not the case and you really are getting a blank page, look at the cons
 
 If you are not seeing any relevant logs, check out what to do on the [General advice](#general-advice) section.
 
-## Strange NPM errors
+## Strange NPM errors {/* #strange-npm-errors */}
 
 To get more debug output from npm commands, see [the available configuration flags](https://docs.npmjs.com/cli/v7/using-npm/config). In particular try adding `--loglevel verbose`, `--loglevel info` or `--loglevel silly` to the command-line.
 
-## I can't change the language
+## I can't change the language {/* #i-cant-change-the-language */}
 
 If you're getting a network error for a url like `https://localhost:8100/assets/lang/es.json`, this probably means that you haven't installed the language packs. You can install them with `npm run lang:update-langpacks`.
 
-## Error: `libsass` bindings not found. Try reinstalling node-sass?
+## Error: `libsass` bindings not found. Try reinstalling node-sass? {/* #error-libsass-bindings-not-found-try-reinstalling-node-sass */}
 
 Most of the time, running the following command will fix the problem:
 
@@ -47,7 +47,7 @@ Most of the time, running the following command will fix the problem:
 npm rebuild node-sass
 ```
 
-## com.android.dex.DexException: Multiple dex files define XXX
+## com.android.dex.DexException: Multiple dex files define XXX {/* #comandroiddexdexexception-multiple-dex-files-define-xxx */}
 
 Open the file `platforms/android/build.gradle` and add this code at the end:
 
@@ -57,11 +57,11 @@ configurations {
 }
 ```
 
-## Could not resolve all dependencies for configuration ':\_debugCompile'.
+## Could not resolve all dependencies for configuration ':\_debugCompile'. {/* #could-not-resolve-all-dependencies-for-configuration-_debugcompile */}
 
 Open the Android SDK Manager and make sure you have installed: Android Support Repository, Android Support Library, Google Play Services and Google Repository.
 
-## Could not find com.android.support:support-v4:XXX
+## Could not find com.android.support:support-v4:XXX {/* #could-not-find-comandroidsupportsupport-v4xxx */}
 
 Open the file `platforms/android/build.gradle` and add this code at the end:
 
@@ -71,7 +71,7 @@ configurations.all {
 }
 ```
 
-## ERROR: In `<declare-styleable>` FontFamilyFont, unable to find attribute android:font
+## ERROR: In `<declare-styleable>` FontFamilyFont, unable to find attribute android:font {/* #error-in-declare-styleable-fontfamilyfont-unable-to-find-attribute-androidfont */}
 
 Open the file `platforms/android/build.gradle` and add this code at the end:
 
@@ -82,11 +82,11 @@ android {
 }
 ```
 
-## Error: Could not find gradle wrapper within Android SDK. Might need to update your Android SDK.
+## Error: Could not find gradle wrapper within Android SDK. Might need to update your Android SDK. {/* #error-could-not-find-gradle-wrapper-within-android-sdk-might-need-to-update-your-android-sdk */}
 
 Download [Android Studio](https://developer.android.com/studio/) and copy the folder `android-studio/plugins/android/lib/templates` into `android-sdk-folder/Sdk/tools`.
 
-## Could not find com.android.support:support-v4:27.1.0
+## Could not find com.android.support:support-v4:27.1.0 {/* #could-not-find-comandroidsupportsupport-v42710 */}
 
 Open the file `platforms/android/build.gradle` and configure like this:
 
@@ -101,19 +101,19 @@ allprojects {
 }
 ```
 
-## Error: not found: make
+## Error: not found: make {/* #error-not-found-make */}
 
 If you see this error in Ubuntu, run `sudo apt-get install build-essential` and retry.
 
-## Current working directory is not a Cordova-based project.
+## Current working directory is not a Cordova-based project. {/* #current-working-directory-is-not-a-cordova-based-project */}
 
 If you see this error during `npm start`, run `mkdir www` and retry.
 
-## ReferenceError: internalBinding is not defined
+## ReferenceError: internalBinding is not defined {/* #referenceerror-internalbinding-is-not-defined */}
 
 This [seems to be](https://stackoverflow.com/questions/53146394/node-app-fails-to-run-on-mojave-referenceerror-internalbinding-is-not-defined) an error with `natives` prior to 1.1.6. It can be fixed by running `npm install <natives@1.1.6>`.
 
-## npm update check failed
+## npm update check failed {/* #npm-update-check-failed */}
 
 You may get the following error on Windows:
 
@@ -126,13 +126,13 @@ You may get the following error on Windows:
 
 The suggested command does not work on Windows, so the solution is to manually check the ownership of all the files in `C:\Users{username}.config\configstore`. In some cases, it can be `update-notifier-npm.json` that got changed to be owned by Administrator.
 
-## Unhandled rejection Error: Command failed: C:\cygwin64\bin\git.EXE ...
+## Unhandled rejection Error: Command failed: C:\cygwin64\bin\git.EXE ... {/* #unhandled-rejection-error-command-failed-ccygwin64bingitexe- */}
 
 This is a common issue for Cygwin user running Node. However, you just need to ensure that `Msysgit` is on your windows path and that the cygwin bin folder is not. Then always use another shell like Powershell for your Moodle App development.
 
 You don't need your Cygwin bin folder on the Windows path because it automatically gets added to the path when you launch Cygwin bash.
 
-## The product name change (`<name>` tag) in config.xml is not supported dynamically
+## The product name change (`<name>` tag) in config.xml is not supported dynamically {/* #the-product-name-change-name-tag-in-configxml-is-not-supported-dynamically */}
 
 This happens when you create the iOS platform with a certain `<name>` and then you change that name in config.xml. The solution seems to be removing and adding the iOS platform again:
 
@@ -141,7 +141,7 @@ npx ionic platform remove ios
 npx ionic platform add ios
 ```
 
-## Failed to install 'cordova-plugin-x'
+## Failed to install 'cordova-plugin-x' {/* #failed-to-install-cordova-plugin-x */}
 
 Sometimes, you may see an error message similar to this:
 
@@ -158,13 +158,13 @@ npx cordova plugin add cordova-plugin-x@x.x.x # Make sure to use the proper vers
 
 Please notice that if there is any plugin installed that depends on `cordova-plugin-x` you'll have to remove and re-add them too.
 
-## doc.find is not a function
+## doc.find is not a function {/* #docfind-is-not-a-function */}
 
 This happens in some environments, the solution is to run `npx cordova platform add ios` before running the failing command. You should do this in a clean environment, once you've seen the error running the command may not work. Try deleting `www/`, `platforms/` and `plugins/` before trying again.
 
 [Find more about this in StackOverflow](https://stackoverflow.com/questions/47404622/edit-config-for-ios-usage-descriptions-doc-find-is-not-a-function)
 
-## Mac: linker code failed with exit code 1
+## Mac: linker code failed with exit code 1 {/* #mac-linker-code-failed-with-exit-code-1 */}
 
 If you get this error when trying to build the Moodle app with XCode, some dependencies might not have installed correctly.
 
@@ -177,7 +177,7 @@ pod install
 
 Now try running the build again in XCode.
 
-## Windows: `npm start` hangs after "Starting 'watch'"
+## Windows: `npm start` hangs after "Starting 'watch'" {/* #windows-npm-start-hangs-after-starting-watch */}
 
 If you follow the above procedure to run the app on a Windows system and get repeated 'Waiting for connectivity with NPM' like this:
 

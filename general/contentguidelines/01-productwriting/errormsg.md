@@ -8,23 +8,23 @@ tags:
 
 Error messages describe issues that stop users from finishing a task, or the system from functioning properly. A good error message explains what happened, the reason why it happened, and what the user can do to move forward. They may even provide a way forward in the call to action.
 
-## Related components
+## Related components {/* #related-components */}
 
 [HTML modal](https://componentlibrary.moodle.com/admin/tool/componentlibrary/docspage.php/moodle/components/dom-modal/)
 
 [Notification](https://componentlibrary.moodle.com/admin/tool/componentlibrary/docspage.php/moodle/components/notifications/)
 
-## Basic guidelines
+## Basic guidelines {/* #basic-guidelines */}
 
 - Keep language clear and concise, and avoid jargon and technical terms.
 - Explain what happened and the reason it happened, but focus on how users can move forward.
 - Give users an error code only in cases where the error needs to be solved by a developer.
 
-## Content
+## Content {/* #content */}
 
 The structure and content of error messages will depend on the component you choose.
 
-### Title
+### Title {/* #title */}
 
 The title of your error message should be understandable on its own.
 
@@ -108,7 +108,7 @@ Authentication error.
 
 </InvalidExample>
 
-### Description
+### Description {/* #description */}
 
 The description gives users additional information about the error and, when possible, lets them know what they can do to move forward.
 
@@ -152,7 +152,7 @@ You didn't type a password.
 
 </InvalidExample>
 
-### Call to action
+### Call to action {/* #call-to-action */}
 
 Having a call to action depends on the component you choose.
 

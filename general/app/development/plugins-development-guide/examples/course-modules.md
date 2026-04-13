@@ -174,7 +174,7 @@ Finally, let's implement the mustache template in `templates/mobileapp/mobile_vi
             </ion-item>
         <%/showget%>
 
-        <!-- Call log WS when the template is loaded. -->
+        {/* <!-- Call log WS when the template is loaded. --> */}
         <span core-site-plugins-call-ws-on-load name="mod_certificate_view_certificate"
                 [params]="{certificateid: <% certificate.id %>}" [preSets]="{getFromCache: 0, saveToCache: 0}">
         </span>
@@ -255,7 +255,7 @@ The method for the new page is very similar to the first one: we check the capab
 
 The template is a simple Ionic list that will display the issued certificates. We are showing their creation date using the `coreFormatDate` pipe, and their grade.
 
-## Other examples
+## Other examples {/* #other-examples */}
 
 - [Custom certificate module](https://github.com/mdjnelson/moodle-mod_customcert)
 - [Group choice module](https://github.com/ndunand/moodle-mod_choicegroup)

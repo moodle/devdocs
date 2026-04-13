@@ -22,7 +22,7 @@ Let's clarify some points:
 - These functions will receive arguments such as `userid` and other relevant details of the app like app version or current language. Depending on the type of plugin, they will also receive some contextual data like `courseid` or `cmid`.
 - In addition to [built-in Ionic components](https://ionicframework.com/docs/components), the app also implements some [custom components](./api-reference.md#components) and [directives](./api-reference.md#components) specific to Moodle.
 
-## Getting started
+## Getting started {/* #getting-started */}
 
 If you only want to write a plugin, it is not necessary that you set up your environment to work with the Moodle App. In fact, you don't even need to compile it. You can just [use a Chromium-based browser](./setup/app-in-browser) to add mobile support to your plugins!
 
@@ -30,7 +30,7 @@ You can use the app from one of the hosted versions on [latest.apps.moodledemo.n
 
 This should suffice for developing plugins. However, if you are working on advanced functionality and you need to run the application from the source code, you can find more information in the [Moodle App Development guide](./development-guide).
 
-### Your first plugin
+### Your first plugin {/* #your-first-plugin */}
 
 Before getting into the specifics of your plugin, we recommend that you start adding a simple "Hello World" button in the app to see that everything works properly.
 
@@ -94,7 +94,7 @@ Once you've done that, try logging into your site in the app. If you open the Mo
 
 Congratulations, you have written your first Moodle plugin with mobile support!
 
-### Seeing plugin changes in the app
+### Seeing plugin changes in the app {/* #seeing-plugin-changes-in-the-app */}
 
 When you make some changes to your plugin, they won't always show up in the app immediately. This can happen because the plugin code has been cached somewhere, and you need to clear this cache to get the latest version.
 
@@ -105,13 +105,13 @@ Here's some things you can try:
 - If doing these doesn't show your changes, you may need to [purge all caches](https://docs.moodle.org/en/Developer_tools#Purge_all_caches).
 - If you still can't see your changes, you may have to log out from the site and log in again. If your changes affected plugin installation, you will also need to increase the version in your plugin's `version.php` file and upgrade the site.
 
-### Next steps
+### Next steps {/* #next-steps */}
 
 As we have seen in the first example, the extension mechanism used in the app is based on [Delegates and handlers](../../overview.md#delegates-and-handlers). That means that it is only possible to add functionality in the parts that have been made customizable. Handlers are registered in `mobile.php` under the `handlers` key, and you can declare as many as you like. If there is something missing that you'd like to customize with your plugin, we encourage you to let us know in [the forum](https://moodle.org/mod/forum/view.php?id=7798) or [the Matrix developer room](https://docs.moodle.org/dev/Chat).
 
 Now you should have a basic idea of how Site Plugins work in the app. If you want to continue learning, you can keep reading this guide. When you are ready, you can check out the [Examples](./examples/index.md) page for some step-by-step guides of common scenarios; or you can directly check out the [API Reference](./api-reference.md) for a comprehensive list of all the APIs and options available in Site Plugins.
 
-## Files location
+## Files location {/* #files-location */}
 
 To ensure your plugin code is organized and passes the specific linting required for the Moodle App, you should place your files in the following directories within your plugin:
 
@@ -122,11 +122,11 @@ To ensure your plugin code is organized and passes the specific linting required
 | `js/mobileapp/`             | This folder should contain all the JavaScript files intended for the mobile app.       |
 | `templates/mobileapp/`      | This folder should contain all the Mustache templates intended for the mobile app.     |
 
-:::note Notice
+:::note[Notice]
 Currently, the linting for mobile app templates is disabled to avoid throwing warnings with Angular, Ionic or Moodle app custom directives. This will be improved in the future.
 :::
 
-## Rendering UI
+## Rendering UI {/* #rendering-ui */}
 
 Most handlers will render some custom UI using the `method` property in their configuration. They will return some templates in the [content response](./api-reference.md#content-responses), and the templates will be treated differently depending on the handler.
 
@@ -152,13 +152,13 @@ public static function mobile_course_view($args) {
 
 ```html handlebars title="template in templates/mobileapp/greeting.mustache"
 {{=<% %>=}}
-<!-- This will render "Hello, John Doe" in the app -->
+{/* <!-- This will render "Hello, John Doe" in the app --> */}
 <h1 class="text-center">Hello, <% name %> {{ CONTENT_OTHERDATA.surname }}</h1>
 ```
 
 You can find the type of template for each handler in the [API Reference](./api-reference.md#handlers).
 
-### Dynamic templates
+### Dynamic templates {/* #dynamic-templates */}
 
 These templates are generated each time they are used in the app. This means that the PHP function will receive some contextual parameters, and the template can be rendered dynamically in the server.
 
@@ -166,13 +166,13 @@ For example, if you're developing a [course module plugin](./api-reference.md#co
 
 ![](../../_files/dynamic_templates.jpg)
 
-### Static templates
+### Static templates {/* #static-templates */}
 
 These templates are generated once when the user logs in and cached in the device. This means that the PHP function will not receive any contextual parameters, and it must return a generic template. But it doesn't mean that the UI has to be completely static in the app; it can still use JavaScript to render dynamic elements.
 
 ![](../../_files/static_templates.jpg)
 
-## Localisation
+## Localisation {/* #localisation */}
 
 You can declare the language strings used in your plugin in the `lang` property of the configuration. Normally these will be strings from your own plugin, but you can list any strings. For example, you could include `moodle.cancel` from Moodle core.
 
@@ -201,7 +201,7 @@ $addons = [
 
 Make sure to only include the strings you actually need. The Web Service that returns the plugin information will include the translations for every language, and this will be cached in the device. So listing too many strings can be wasteful.
 
-### Dynamic strings
+### Dynamic strings {/* #dynamic-strings */}
 
 If you wish to have an element that displays a localised string based on value from your template you can do something like this:
 
@@ -225,7 +225,7 @@ This will be more efficient and easier to read than handling each possibility in
 </ion-card>
 ```
 
-### Date strings
+### Date strings {/* #date-strings */}
 
 If you need to include a formatted date in a string, you can achieve it using `coreFormatDate`:
 
@@ -245,7 +245,7 @@ Make sure that you are passing milliseconds. Unix timestamp are usually expresse
 
 The following formats are available (expressed in [Moment.js format](https://momentjs.com/docs/#/displaying/format/)):
 
-:::note Notice
+:::note[Notice]
 These formats can change depending on the language in the app. You can find the translations in [AMOS](https://lang.moodle.org).
 :::
 
@@ -273,7 +273,7 @@ These formats can change depending on the language in the app. You can find the 
 | `strftimetime12`        | `h[:]mm[ ]A`                            | 4:28 PM                          |
 | `strftimetime24`        | `HH[:]mm`                               | 16:28                            |
 
-## JavaScript initialisation
+## JavaScript initialisation {/* #JavaScript-initialisation */}
 
 All handlers can specify an `init` method in their configuration, and the JavaScript from the [content response](./api-reference.md#content-responses) will be executed as soon as the plugin is retrieved. The templates can be accessible in all JavaScript scripts of the handler at `this.INIT_TEMPLATES`, and the `otherdata` object at `this.INIT_OTHERDATA`.
 
@@ -310,7 +310,7 @@ console.log(this.INIT_OTHERDATA.foo); // "bar"
 console.log(this.lorem); // "ipsum"
 ```
 
-## JavaScript overrides
+## JavaScript overrides {/* #JavaScript-overrides */}
 
 Handlers using [Static templates](#static-templates) can override the default handler methods using JavaScript. This also works for [CoreEnrolDelegate](./api-reference.md#coreenroldelegate-43) when using `self` or `guest` enrolment action.
 
@@ -359,17 +359,17 @@ var result = {
 result;
 ```
 
-## Web Services
+## Web Services {/* #web-services */}
 
 If you need to use some Web Services in your plugin, make sure to include `MOODLE_OFFICIAL_MOBILE_SERVICE` in their declaration.
 
 You can learn how to use Web Services in mobile plugins in the [Forms example](./examples/forms.md).
 
-## Testing
+## Testing {/* #testing */}
 
 You can also write automated tests for your plugin using Behat, you can read more about it on the [Acceptance testing for the Moodle App](./testing/acceptance-testing) page.
 
-## Moodle plugins with mobile support
+## Moodle plugins with mobile support {/* #moodle-plugins-with-mobile-support */}
 
 If you want to see some real examples, you can find plugins with mobile support in the plugins database:
 
@@ -384,6 +384,6 @@ If you want to see some real examples, you can find plugins with mobile support 
 
 See [the complete list](https://moodle.org/plugins/browse.php?list=award&id=6) to find more, but keep in mind  that it may contain some outdated plugins.
 
-### Mobile app support award
+### Mobile app support award {/* #mobile-app-support-award */}
 
 In order to recognise plugin developers that have added mobile support, we give a Mobile app support award in the plugins directory. If you've developed a plugin and want to receive this recognition, please contact us at [mobile@moodle.com](mailto:mobile@moodle.com). You'll need to send us a link to your plugin page and the location of its source code.

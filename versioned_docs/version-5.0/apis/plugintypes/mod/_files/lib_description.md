@@ -1,4 +1,4 @@
-<!-- markdownlint-disable first-line-heading -->
+{/* <!-- markdownlint-disable first-line-heading --> */}
 For an Activity, you _must_ define the following three functions, which are described below:
 
 ```php title="mod/[modname]/lib.php"
@@ -17,7 +17,7 @@ The `lib.php` file is one of the older parts of Moodle and functionality is grad
 
 :::
 
-##### Activity module support functions
+##### Activity module support functions {/* #activity-module-support-functions */}
 
 Activity modules can implement a global function to provide additional information about the module
 features. These functions are optional and can be used to provide additional features or to modify the behaviour of the activity module.

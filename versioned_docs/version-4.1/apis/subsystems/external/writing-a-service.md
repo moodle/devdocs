@@ -10,7 +10,7 @@ sidebar_position: 5
 
 This documentation covers the creation of a new external service for use in a web service of a fictional local plugin, `local_groupmanager`.
 
-## Functional specification
+## Functional specification {/* #functional-specification */}
 
 The `local_groupmanager` plugin has a need to create groups within a course and would like to do so using its own web service.
 
@@ -40,26 +40,26 @@ Per the Moodle naming convention for web services the name of the function shoul
 local_groupmanager_create_groups
 ```
 
-### Inputs
+### Inputs {/* #inputs */}
 
 The `local_groupmanager_create_groups` external service definition will take a list of _groups_ as its only parameters.
 
-### Outputs
+### Outputs {/* #outputs */}
 
 The service will return a list of the created groups, including the `id` element of those groups.
 
-### Exceptions and failures
+### Exceptions and failures {/* #exceptions-and-failures */}
 
 If _any_ group creation fails, the function will throw an exception, and no groups will be created.
 
-## Technical specification
+## Technical specification {/* #technical-specification */}
 
 - **the core function the external function will call**: `groups_create_group()` from [/group/lib.php](http://github.com/moodle/moodle/tree/main/moodle/group/lib.php).
 - **the parameter types**: a list of object. This object are groups, with `id`/`name`/`courseid`.
 - **the returned value types**: a list of objects (groups) with their id.
 - **the user capabilities to check**: `moodle/course:managegroups`
 
-## Declare the web service function
+## Declare the web service function {/* #declare-the-web-service-function */}
 
 An external function must be declared before it can be used in your plugin.
 Function declarations should be placed in the `db/services.php` file of your plugin. For example in our fictitious plugin this would be located in `local/groupmanager/db/services.php`.
@@ -120,7 +120,7 @@ $functions = [
 
 </details>
 
-## Write the external function descriptions
+## Write the external function descriptions {/* #write-the-external-function-descriptions */}
 
 Every web service function is mapped to an external function. External function are described in the [External functions API](./functions.md).
 Each external function is written with two other functions describing the parameters and the return values. These description functions are used by web service servers to:
@@ -139,7 +139,7 @@ This will be located in the file `local/groupmanager/classes/external/create_gro
 - `execute_parameters()`
 - `execute_return()`
 
-### Defining parameters
+### Defining parameters {/* #defining-parameters */}
 
 ```php
 <?php
@@ -272,7 +272,7 @@ We add them to the description :
 )
 ```
 
-### execute_returns()
+### execute_returns() {/* #execute_returns */}
 
 It's similar to execute_parameters(), but instead of describing the parameters, it describes the return values.
 
@@ -290,7 +290,7 @@ public static function execute_returns() {
 }
 ```
 
-### Required, Optional or Default value
+### Required, Optional or Default value {/* #required-optional-or-default-value */}
 
 A value can be `VALUE_REQUIRED`, `VALUE_OPTIONAL`, or `VALUE_DEFAULT`. If not mentioned, a value is `VALUE_REQUIRED` by default.
 
@@ -340,7 +340,7 @@ public static function get_biscuit_parameters() {
 
 :::
 
-## Implement the external function
+## Implement the external function {/* #implement-the-external-function */}
 
 We declared our web service function and we defined the external function parameters and return values. We will now implement the external function:
 
@@ -386,7 +386,7 @@ We declared our web service function and we defined the external function parame
     }
 ```
 
-### Parameter validation
+### Parameter validation {/* #parameter-validation */}
 
 ```php
 $params = self::validate_parameters(self::execute_parameters(), [
@@ -398,7 +398,7 @@ This *validate_parameters* function validates the external function parameters a
 
 **Important:** the parameters of the external function and their declaration in the description **must be the same order**. In this example we have only one parameter named $groups, so we don't need to worry about the order.
 
-### Context and Capability checks
+### Context and Capability checks {/* #context-and-capability-checks */}
 
 ```php
 // Perform security checks.
@@ -409,7 +409,7 @@ require_capability('moodle/course:managegroups', $context);
 
 Note: validate_context() is required in all external functions before operating on any data belonging to a context. This function does sanity and security checks on the context that was passed to the external function - and sets up the global $PAGE and $OUTPUT for rendering return values. Do NOT use require_login(), or $PAGE->set_context() in an external function.
 
-### Exceptions
+### Exceptions {/* #exceptions */}
 
 You can throw exceptions. These are automatically handled by Moodle web service servers.
 
@@ -420,7 +420,7 @@ You can throw exceptions. These are automatically handled by Moodle web service 
 throw new invalid_parameter_exception('Group with the same name already exists in the course');
 ```
 
-### Correct return values
+### Correct return values {/* #correct-return-values */}
 
 The return values will be validated by the Moodle web service servers:
 
@@ -429,11 +429,11 @@ The return values will be validated by the Moodle web service servers:
 - return values types don't match the description (int != PARAM_ALPHA) => the server will return an error
 **Note:** cast all your returned objects into arrays.
 
-## Bump the plugin version
+## Bump the plugin version {/* #bump-the-plugin-version */}
 
 Edit your `local/groupmanager/version.php` and increase the plugin version. This should trigger a Moodle upgrade and the new web service should be available in the administration (*Administration > Plugins > Web Services > Manage services*)
 
-## Deprecation
+## Deprecation {/* #deprecation */}
 
 External functions deprecation process is slightly different from the standard deprecation. If you are interested in deprecating any of your external functions you should **also** (apart from the applicable points detailed in the [standard deprecation docs](/general/development/policies/deprecation)) create a `FUNCTIONNAME_is_deprecated()` method in your external function class. Return true if the external function is deprecated. This is an example:
 
@@ -447,7 +447,7 @@ External functions deprecation process is slightly different from the standard d
     }
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - [Web services developer documentation](./index.md)
 - [Web services user documentation](https://docs.moodle.org/en/Web_services)

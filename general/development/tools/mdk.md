@@ -6,7 +6,7 @@ tags:
 
 Every developer creates simple tools to avoid repeating cumbersome and/or boring tasks, and that is precisely why MDK has been created: to pack all those useful tools in a portable way across systems. Initially developed in Bash, the project moved to Python to avoid dealing with inconsistencies between Unix platforms, and eventually to support Windows.
 
-## Key concept
+## Key concept {/* #key-concept */}
 
 The most important concept of MDK is that it works with Moodle instances. An instance of Moodle is a directory in which you have checked out a particular version together with a database using a specific database engine. This means that if you want to work on Moodle 4.3 and 4.2, using both MySQL and PostgreSQL, you will have four separate instance directories. This choice was made because it is the safest, clearest, and most straightforward solution.
 
@@ -15,11 +15,11 @@ The most important concept of MDK is that it works with Moodle instances. An ins
   courseName="mdk"
 />
 
-## Typical workflows using MDK
+## Typical workflows using MDK {/* #typical-workflows-using-mdk */}
 
 To discover what MDK can do for you, here are a few common tasks it can achieve. More on [MDK's wiki](https://github.com/FMCorz/mdk/wiki/Typical-workflows).
 
-### Installing a new instance
+### Installing a new instance {/* #installing-a-new-instance */}
 
 Say we need to create a new instance of Moodle 2.4 and install it with PostgreSQL. We also want the instance to be ready for development with appropriate config settings. We also want to create a bunch of user accounts.
 
@@ -78,7 +78,7 @@ You also can specify the name of the instance using the --name or -n parameter. 
 mdk create -i -v 24 -e mysqli -r dev users -n stable_24-mysql
 ```
 
-### Fixing an issue
+### Fixing an issue {/* #fixing-an-issue */}
 
 ```
 mdk fix 12345
@@ -104,7 +104,7 @@ git push github MDL-12345-24
   </div>
 </details>
 
-### Peer reviewing a patch
+### Peer reviewing a patch {/* #peer-reviewing-a-patch */}
 
 Here we want to pull a patch from a tracker issue into a new testing branch, and then run the PHPUnit tests.
 
@@ -141,7 +141,7 @@ For executing only the testcases in a file you can use:
 mdk phpunit -r -u repository/tests/repository_test.php
 ```
 
-### Backporting a fix
+### Backporting a fix {/* #backporting-a-fix */}
 
 MDK could handle for you most of the cherry-picking work when you backport a fix. To do so, you need to have installed locally instances called "stable_XX" for each version you want to backport your fix. To do so you can use commands like:
 
@@ -175,7 +175,7 @@ If for some reason one cherry pick could not finish successfully, mdk will ask y
 mdk push -t
 ```
 
-### Upgrading the instances
+### Upgrading the instances {/* #upgrading-the-instances */}
 
 Say we need to upgrade our instances, as a new weekly release has just been made available.
 
@@ -199,7 +199,7 @@ php admin/cli/upgrade.php --non-interactive --allow-unstable
   </div>
 </details>
 
-### Executing behat tests
+### Executing behat tests {/* #executing-behat-tests */}
 
 In order to get the instance ready for acceptance testing (Behat) and run the test feature(s):
 
@@ -213,11 +213,11 @@ For running only one feature or specific scenario:
 mdk behat -r -n "Name of the feature/scenario"
 ```
 
-## Features
+## Features {/* #features */}
 
 For a complete list of the commands MDK has to offer, read through the [MDK README file](https://github.com/FMCorz/mdk#command-list) and the [MDK wiki](https://github.com/FMCorz/mdk/wiki). For more detail about each command, simply run them with the flag '--help'.
 
-## Installation
+## Installation {/* #installation */}
 
 Please follow the instructions from the [README file](https://github.com/FMCorz/mdk#installation).
 
@@ -245,7 +245,7 @@ mdk config set path ""
 During the installation, a `.moodle-sdk` folder will be created containing a `config.json` file will. You can edit it to change your settings easily.
 :::
 
-## Upgrading MDK
+## Upgrading MDK {/* #upgrading-mdk */}
 
 Every Moodle release, a new version of MDK is also being released in order to prepare for the development of the next Moodle version. To upgrade MDK:
 
@@ -266,14 +266,14 @@ git fetch `mdk config show upstreamRemote`
 git reset --hard `mdk config show upstreamRemote`/main
 ```
 
-## The MDK Suite
+## The MDK Suite {/* #the-mdk-suite */}
 
 Some other tools have been developed using the name MDK as they are considered as part of the development kit but are often mistaken with the __real__ MDK. The __real__ MDK is the command line tool described above.
 
-### MDK Browser Extension
+### MDK Browser Extension {/* #mdk-browser-extension */}
 
 Available for both [Firefox](https://addons.mozilla.org/en-US/firefox/addon/mdk-browser-extension/) and [Chrome](https://chrome.google.com/webstore/detail/mdk-browser-extension/iadpkkojcdoflinpncpkbonnhdlaicnc), this is a browser extension that allows quick access to useful user-scripts. The scripts add functionality to Moodle.org, Moodle Tracker and your Moodle instances. You can find more information about it on its [public repository](https://github.com/danpoltawski/userscripts-moodle).
 
-### MDK Authentication
+### MDK Authentication {/* #mdk-authentication */}
 
 This is an authentication plugin for Moodle 2.x, which not only creates the user if it does not exist in the database yet, but also enrols it as a student, teacher or manager in all the available courses. More information about this plugin is available on the [public repository](https://github.com/FMCorz/moodle-auth_mdk).

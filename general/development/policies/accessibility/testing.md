@@ -13,28 +13,29 @@ keywords:
 
 You should perform accessibility testing when introducing features or bug fixes involving user interface (UI) changes. Combining automated and manual accessibility testing is essential to ensure accessibility of code contributions to Moodle.
 
-## Automated testing
+## Automated testing {/* #automated-testing */}
 
-### Browser extensions
+### Browser extensions {/* #browser-extensions */}
 
 The easiest way to check for common accessibility issues on the feature that you're working on is to use automated accessibility testing tools. There are browser extensions that can perform accessibility tests on a webpage, such as:
 
 - [axe DevTools](https://www.deque.com/axe/devtools/extension)
 - [WAVE Web Accessibility Evaluation Tools](https://wave.webaim.org/)
 
-### Built-in browser development tools
+### Built-in browser development tools {/* #built-in-browser-development-tools */}
 
 In addition to browser extensions, web browsers such as Chrome and Edge include built-in tools to check webpages for accessibility issues.
 
 - Google Chrome's [Lighthouse](https://developer.chrome.com/docs/lighthouse/) can audit webpages for performance, accessibility, progressive web apps, SEO, and more.
 - Microsoft Edge's [Issues tool](https://learn.microsoft.com/en-us/microsoft-edge/devtools/issues/) also provides similar functionality to Lighthouse.
 
-<!-- cspell:ignore Deque -->
-### Accessibility tests using Behat
+{/* <!-- cspell:ignore Deque --> */}
+
+### Accessibility tests using Behat {/* #accessibility-tests-using-behat */}
 
 Moodle LMS uses Deque's open-source automated accessibility testing engine, [axe-core](https://github.com/dequelabs/axe-core), which allows us to run automated accessibility testing using Behat. To write accessibility tests on Behat, it is essential to add the `@accessibility` and `@javascript` tags to the test scenario.
 
-#### Whole-page standard test
+#### Whole-page standard test {/* #whole-page-standard-test */}
 
 A standard Behat step to test the accessibility of the page that you're working on is:
 
@@ -44,7 +45,7 @@ And the page should meet accessibility standards
 
 This step performs a whole-page test against WCAG 2.0, 2.1, and 2.2 Level A and Level AA standards.
 
-#### With best-practice extra tests
+#### With best-practice extra tests {/* #with-best-practice-extra-tests */}
 
 It is also possible to specify extra tests on the accessibility Behat step. We highly recommend using the `best-practice` extra tests, which also assess the page for accessibility best practices, such as verifying proper heading levels.
 
@@ -52,7 +53,7 @@ It is also possible to specify extra tests on the accessibility Behat step. We h
 And the page should meet accessibility standards with "best-practice" extra tests
 ```
 
-#### Testing specific areas of the page
+#### Testing specific areas of the page {/* #testing-specific-areas-of-the-page */}
 
 If you are introducing a UI change to a specific part of the page, you can also test only that part. In this case, you can specify the part of the page using the:
 
@@ -60,7 +61,7 @@ If you are introducing a UI change to a specific part of the page, you can also 
 And the "<element>" "<selector>" should meet accessibility standards
 ```
 
-#### Testing against specific rules
+#### Testing against specific rules {/* #testing-against-specific-rules */}
 
 You may also test against specific [axe-core rules](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md) by listing them as comma-separated values, like below:
 
@@ -68,7 +69,7 @@ You may also test against specific [axe-core rules](https://github.com/dequelabs
 And the page should meet "wcag131, wcag141, wcag412" accessibility standards
 ```
 
-#### An example of accessibility testing on Behat
+#### An example of accessibility testing on Behat {/* #an-example-of-accessibility-testing-on-behat */}
 
 <ValidExample title="Accessibility tests on the login page">
 
@@ -85,13 +86,13 @@ Scenario: The login page must meet accessibility standards
 
 </ValidExample>
 
-## Manual testing
+## Manual testing {/* #manual-testing */}
 
 It may be tempting to think that automated accessibility checks guarantee the page's accessibility. However, this is not the case. Automated accessibility tests typically cover about 30% to 50% of accessibility issues on a web page.
 
 Combining manual accessibility testing with automated testing is essential to ensure the accessibility of the features that we implement in Moodle. Below are some examples of how we can manually test a page for accessibility issues.
 
-### Keyboard navigability and operability tests
+### Keyboard navigability and operability tests {/* #keyboard-navigability-and-operability-tests */}
 
 Ensuring that interactive elements, such as buttons, links, form elements, and custom JavaScript widgets, can be navigated to and operated with the keyboard is a strong indicator of accessibility. It helps users perform their tasks in Moodle without barriers.
 
@@ -117,13 +118,13 @@ Some practical tips to test for keyboard navigability and operability:
 - **Check for focus traps**
   - Some custom widgets trap focus when keyboard navigation is used, such as menus and modal dialogues. It is essential to verify that users don't get trapped within the widget's container and that there are options to move the focus outside the widget and onto the rest of the page. For example, modal dialogues in Moodle can be closed either by pressing the Escape key or the dialogue's close button.
 
-### Screen reader testing
+### Screen reader testing {/* #screen-reader-testing */}
 
 Screen readers are assistive technologies that help people who are blind or have low vision access digital content. They convert the page's content into speech or braille output, allowing the user to interact with the page using a keyboard or touch gestures. Screen readers rely on well-structured, semantic HTML to help users navigate and interact with the page effectively.
 
 The table below lists some popular screen readers. Browsers in **bold** font indicate the best compatibility with the given screen reader compared to other compatible browsers.
 
-<!-- cspell:ignore ChromeVox -->
+{/* <!-- cspell:ignore ChromeVox --> */}
 
 | Screen reader                                                                                                                   | Operating system | Browser compatibility             | Used in testing on |
 |---------------------------------------------------------------------------------------------------------------------------------|------------------|-----------------------------------|--------------------|
@@ -144,7 +145,7 @@ Some practical tips when testing your Moodle plugin or contribution with screen 
   - [NVDA commands quick reference](https://download.nvaccess.org/documentation/keyCommands.html)
   - [VoiceOver (MacOS) command charts](https://help.apple.com/voiceover/command-charts/)
 
-:::info Notes about screen reader testing
+:::info[Notes about screen reader testing]
 
 Moodle HQ directly tests with a number of different screen readers when assessing:
 
@@ -153,7 +154,7 @@ Moodle HQ directly tests with a number of different screen readers when assessin
 
 :::
 
-### Reflow and resize text
+### Reflow and resize text {/* #reflow-and-resize-text */}
 
 As Moodle can be used on a variety of devices with different screen sizes and orientations, it is essential to ensure that the user interface is responsive and usable when displayed on mobile devices or when zoomed in.
 
@@ -162,9 +163,9 @@ You can perform the following tests on the page:
 - Set the browser's viewport width to 1280 CSS pixels and increase the page zoom to 200%. Ensure the text resizes without losing content or functionality. This aligns with the [WCAG Level AA Success Criterion 1.4.4 Resize Text](https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html).
 - Resize the browser viewport to a width of 320 CSS pixels. Alternatively, set the viewport's width to 1280 CSS pixels and increase the page zoom to 400%. Ensure that the user interface elements reflow without causing any horizontal viewport overflow. This aligns with the [WCAG Level AA Success Criterion 1.4.10 Reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html).
 
-## Other tools for accessible design, development, and testing
+## Other tools for accessible design, development, and testing {/* #other-tools-for-accessible-design-development-and-testing */}
 
-### The accessibility tree
+### The accessibility tree {/* #the-accessibility-tree */}
 
 The accessibility tree is a representation of a webpage's semantic structure based on the Document Object Model (DOM). It contains accessibility-related information of the page's elements, such as role, state, and value.
 
@@ -177,8 +178,9 @@ Below are several resources about how you can use the accessibility tree in vari
 - Chrome and Chromium-based browsers: [Full accessibility tree in Chrome DevTools](https://developer.chrome.com/blog/full-accessibility-tree/)
 - Firefox: [Accessibility inspector](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html)
 
-<!-- cspell:ignore siegemedia -->
-### Colour contrast checkers
+{/* <!-- cspell:ignore siegemedia --> */}
+
+### Colour contrast checkers {/* #colour-contrast-checkers */}
 
 To meet colour contrast requirements, user interface elements must meet the following WCAG success criteria:
 

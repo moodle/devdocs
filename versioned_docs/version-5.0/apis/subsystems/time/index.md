@@ -15,25 +15,25 @@ The Unix Time format is defined as the number of seconds since the Unix epoch, w
 
 :::
 
-## Classifications of Time
+## Classifications of Time {/* #classifications-of-time */}
 
 In Moodle there are 2 cases to consider when working with time:
 
-### System Time
+### System Time {/* #system-time */}
 
 In Moodle, the term 'System Time' is used to describe dates on the server, for example times when executing scheduled tasks, performing background tasks, and so on. That is, anything which does not depend on the timezone of any specific user.
 
-### User Time
+### User Time {/* #user-time */}
 
 The term 'User Time' is used for times which are user-specific. That is that they are in the user's time zone.
 
 You will see these when displaying dates and times to the user in their current timezone (which may be different for each user).
 
-## The Time APIs
+## The Time APIs {/* #the-time-apis */}
 
 The main APIs for time in Moodle are the `\core\clock` class, which allows you to fetch and manipulate the current time; and the `core_date` class, which handles PHP `DateTimeZone` objects for either user time or server time as needed. You can then use the PHP `DateTime` classes to manipulate the time. You can also fetch a timestamp with `DateTime::getTimestamp()`.
 
-### Fetching and manipulating the current time
+### Fetching and manipulating the current time {/* #fetching-and-manipulating-the-current-time */}
 
 <Since issueNumber="MDL-80838" version="4.4" />
 
@@ -45,7 +45,7 @@ This is the recommended approach for fetching the current time and should be use
 $clock = \core\di::get(\core\clock::class);
 ```
 
-:::tip Why use the Clock?
+:::tip[Why use the Clock?]
 
 By using the clock interface fetched via Dependency Injection, it becomes easier to test different conditions within your code. For example you can inject a custom implementation of the clock which simulates a 5 minute gap between creation of different records, and allows you to test features such as sorting.
 
@@ -76,7 +76,7 @@ $tomorrow = \core\di::get(\core\clock::class)
     ->getTimestamp();
 ```
 
-:::danger Modifying the DateTime object
+:::danger[Modifying the DateTime object]
 
 The object returned from the `\core\clock::now()` method is an instance of `\DateTimeImmutable`.
 
@@ -99,7 +99,7 @@ The `\core\time` interface also provides a helper to fetch the current Unix Time
 $now = \core\di::get(\core\clock::class)->time();
 ```
 
-### Displaying time
+### Displaying time {/* #displaying-time */}
 
 Moodle provides a range of methods to display a Unix Timestamp in the relevant Language and Timezone.
 
@@ -125,9 +125,9 @@ Moodle provides a range of methods to display a Unix Timestamp in the relevant L
    - `usergetdate` - Given a Unix Timestamp, returns an array that represents the date-time in user time
    - `usertime` - Appends the users timezone offset to an integer timestamp
 
-## Glossary
+## Glossary {/* #glossary */}
 
-### Timezone
+### Timezone {/* #timezone */}
 
 Moodle supports the following timezone formats:
 
@@ -135,17 +135,17 @@ Moodle supports the following timezone formats:
 1. Time offsets from UTC (int +-(0-13) or float +-(0.5-12.5))
 1. World timezones (Australia/Perth)
 
-### Location
+### Location {/* #location */}
 
 Timezone depends on [Location](https://docs.moodle.org/en/Location) of the user and can be forced upon by administrator.
 
-### DST
+### DST {/* #dst */}
 
 DST is abbreviation of **Daylight Saving Time** (also known as "Day light saving" and "Summer Time"). Many countries, and sometimes just certain regions of countries, adopt daylight saving time during part of the year. Moodle automatically calculates DST for current user, depending on user location.
 
-## Examples
+## Examples {/* #examples */}
 
-### Create DateTime with date/time from a Unix Timestamp
+### Create DateTime with date/time from a Unix Timestamp {/* #create-datetime-with-datetime-from-a-unix-timestamp */}
 
 ```php
 $date = new DateTime();
@@ -153,7 +153,7 @@ $date->setTimestamp(intval($unixtime);
 echo userdate($date->getTimestamp());
 ```
 
-### Time API's for current user
+### Time API's for current user {/* #time-apis-for-current-user */}
 
 Prints the current date and time in the user's timezone:
 
@@ -185,7 +185,7 @@ echo userdate(
 );
 ```
 
-### System Time API
+### System Time API {/* #system-time-api */}
 
 Find the day of the week for the first day in this month.
 
@@ -200,7 +200,7 @@ $dayofweek = $firstdayofmonth->format('N');
 echo $dayofweek;
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - [Php DateTime class](https://www.php.net/manual/en/class.datetime)
 - [Core APIs](../../../apis.md)

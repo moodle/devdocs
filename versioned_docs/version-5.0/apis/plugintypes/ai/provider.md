@@ -17,14 +17,14 @@ Likewise, all responses from the Provider plugin are handed back to the Manager 
 A Provider plugin allows many "provider instances" to be defined, each of which can support a different set of configurations.
 This facilitates having providers for specific tasks. So, you can use a more efficient model for lightweight tasks like summarisation, and a more fully featured model for text generation. Another example is defaulting to using a cheaper model with a lower token limit, and then falling back to a more expensive model if a request is too large for the default model.
 
-:::warning The Golden Rule:
+:::warning[The Golden Rule:]
 
 Placements **do not** know about Providers, and Providers **do not** know about Placements.
 Everything should go via the Manager.
 
 :::
 
-## Class implementation
+## Class implementation {/* #class-implementation */}
 
 Providers are defined as classes in their own namespace according to their plugin name.
 The naming convention for a Provider class is `aiprovider_<plugin name>`.
@@ -32,7 +32,7 @@ For example: `aiprovider_openai`, or `aiprovider_azureai` (with a corresponding 
 
 Each Provider **must** inherit from the `\core_ai\provider` abstract class.
 
-### Required Methods
+### Required Methods {/* #required-methods */}
 
 They must also implement the following methods:
 
@@ -67,7 +67,7 @@ public function is_provider_configured(): bool {
 }
 ```
 
-## Process classes
+## Process classes {/* #process-classes */}
 
 For each action supported by the provider, the provider plugin **must** implement a `process_<action>` class,
 where `<action>` is the name of the action. For example: `process_generate_image`.

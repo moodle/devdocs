@@ -11,23 +11,23 @@ In the following guide, you will learn how to upgrade your plugins' acceptance t
 
 Depending on which version of the app you're upgrading from, you'll need to go through multiple version upgrades. This guide is divided by version ranges, so you should be able to start with your current version and build up from there.
 
-## 4.3 to 4.4
+## 4.3 to 4.4 {/* #43-to-44 */}
 
 The application now needs to run in a secure context (https://). This change only affects your development environment, including acceptance tests, and it was necessary to [move on from the deprecated WebSQL API](https://moodle.atlassian.net/browse/MOBILE-4304). Make sure to update the settings related to the app in the `config.php` of your Moodle's development environment.
 
 If you were using [moodle-docker](https://github.com/moodlehq/moodle-docker), you no longer need to use the `MOODLE_DOCKER_APP_RUNTIME` env variable; but if you do, you'll also need to change it to `ionic7`.
 
-## 4.2 to 4.3
+## 4.2 to 4.3 {/* #42-to-43 */}
 
 There haven't been any relevant changes in this version, but make sure to run your tests against the latest version to check that they continue working properly.
 
-## 4.1 to 4.2
+## 4.1 to 4.2 {/* #41-to-42 */}
 
 The default dimensions in app tests have changed from 360x720 to 500x720. If you weren't running tests in headless mode, this change won't affect you because 500 was already the minimum width for a non-headless Chrome instance. This change was made to have consistent behaviours when the tests are run in both modes.
 
 Additionally, core app tests started using the [local_behatsnapshots](https://github.com/NoelDeMartin/moodle-local_behatsnapshots/) to test against UI regressions. You can consider adopting it as well.
 
-## 4.0 to 4.1
+## 4.0 to 4.1 {/* #40-to-41 */}
 
 The only relevant change in this version is that the location of the custom Behat steps for the app have moved again. This time, they've been moved into the repository of the app itself. In order to make this usable by plugins as well, the Behat code is mirrored automatically into a plugin.
 
@@ -37,11 +37,11 @@ Your only required change should be to replace the old `local_moodlemobileapp` p
 If you were [using the browser console to debug tests](http://localhost:3000/devdocs/general/app/development/testing/acceptance-testing#debugging-tests), notice that some commands may have changed as well. We recommend heading to the documentation for writing Acceptance Tests for the Moodle App in order to learn about the new approach.
 :::
 
-## 3.9.5 to 4.0
+## 3.9.5 to 4.0 {/* #395-to-40 */}
 
 There haven't been any relevant changes in this version, but make sure to run your tests against the latest version to check that they continue working properly. If you find something that stopped working, please [let us know](https://moodle.atlassian.net/projects/MOBILE).
 
-## 3.9.4 to 3.9.5
+## 3.9.4 to 3.9.5 {/* #394-to-395 */}
 
 If you wrote tests before the app started using Ionic 5 (in version 3.9.5), it is possible that your tests are not working any longer. The [Acceptance Testing guide](../development/testing/acceptance-testing.md) has been rewritten with the latest information, so make sure to check it out to learn about the latest state of the art.
 

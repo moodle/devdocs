@@ -3,7 +3,7 @@ title: Moodle App 3
 sidebar_position: 3
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 import { Redirect } from '@docusaurus/router';
 

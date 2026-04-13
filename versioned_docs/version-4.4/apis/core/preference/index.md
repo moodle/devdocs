@@ -12,9 +12,9 @@ All of these functions operate on the current user by default, however you can s
 
 It is considered good practice to abstain from storing default values as a user preference as this creates a lot of redundancy. Instead you should apply the default value at the code level if there is no stored value for a given preference.
 
-## Primary functions
+## Primary functions {/* #primary-functions */}
 
-### get_user_preferences()
+### get_user_preferences() {/* #get_user_preferences */}
 
 This function can be used to fetch the value of a requested (via $name) preference, or if it doesn't exist the value given in the $default parameter will be returned. If you do not specify a $name then all preferences will be returned.
 
@@ -26,7 +26,7 @@ get_user_preferences(
 ): mixed;
 ```
 
-### set_user_preference()
+### set_user_preference() {/* #set_user_preference */}
 
 This function can be used to set the value of a preference named $name.
 
@@ -38,7 +38,7 @@ set_user_preference(
 ): bool;
 ```
 
-### set_user_preferences()
+### set_user_preferences() {/* #set_user_preferences */}
 
 This function takes an array or preferences containing the name and value for each preference. For each element in the array this function passes the keys and values of each element as the $name and $value parameters (respectively) in calls to `set_user_preferences()`.
 
@@ -49,7 +49,7 @@ set_user_preferences(
 ): bool;
 ```
 
-### unset_user_preference()
+### unset_user_preference() {/* #unset_user_preference */}
 
 This deletes the requested preference, specified by the $name parameter.
 
@@ -60,7 +60,7 @@ unset_user_preference(
 ): bool;
 ```
 
-## Example usage of the API
+## Example usage of the API {/* #example-usage-of-the-api */}
 
 ```php title="Set a preference and then retrieve it"
 set_user_preference('foo_nameformat', 'long');

@@ -9,7 +9,7 @@ tags:
   - Certification
 ---
 
-## Screen readers
+## Screen readers {/* #screen-readers */}
 
 VoiceOver and TalkBack are the native applications for screen reading in iOS and Android devices. In order to make the code understandable to these applications we encourage the developers to use the [Rich Internet Applications (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria-1.1/) recommendations of W3C. Those documents includes a bunch of rules to be applied to the HTML code to add semantic information to it.
 
@@ -17,7 +17,7 @@ First step on that is to [the role](https://www.w3.org/TR/wai-aria-1.1/#role_def
 
 [Here you have some examples](https://github.com/moodlehq/moodleapp/commit/b95de260ee46d6278d03cff294015aa11fd99a6b) of how to apply these attributes.
 
-## Tools and resources
+## Tools and resources {/* #tools-and-resources */}
 
 These are some tools and resources that can be useful to improve accessibility:
 

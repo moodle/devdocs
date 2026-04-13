@@ -16,9 +16,9 @@ When writing tests which only _use_ a text editor, and are not either tests spec
 
 :::
 
-## Behat
+## Behat {/* #behat */}
 
-### Tags
+### Tags {/* #tags */}
 
 If you are writing a test for the TinyMCE editor, please note that your test **must** have one or more of the following Behat tags:
 
@@ -27,21 +27,21 @@ If you are writing a test for the TinyMCE editor, please note that your test **m
 
 By using these tags appropriately, Moodle will ensure that TinyMCE is set as the default editor for the site for the duration of your test, regardless of any other editors installed.
 
-### Useful steps
+### Useful steps {/* #useful-steps */}
 
 A number of useful Behat steps have been defined in [TinyMCE Behat context](https://github.com/moodle/moodle/blob/main/lib/editor/tiny/tests/behat/behat_editor_tiny.php).
 
-:::caution Use generic steps where possible
+:::caution[Use generic steps where possible]
 
 Typically, when interacting with an Editor, you should use the _generic_ step definitions rather than writing specific steps, or writing sequences of steps to do so.
 
 :::
 
-#### Generic steps to interact with editors
+#### Generic steps to interact with editors {/* #generic-steps-to-interact-with-editors */}
 
 Most of these steps are defined in the [Behat Forms context](https://github.com/moodle/moodle/blob/main/lib/tests/behat/behat_forms.php) and this documentation should not be treated as a complete list, rather an indication of approaches that you may consider taking.
 
-##### Setting content of a field
+##### Setting content of a field {/* #setting-content-of-a-field */}
 
 ```gherkin title="Set the content of the field with the label 'Description'"
 Given I set the field "Description" to "<p>Some value which includes valid HTML</p>"
@@ -67,7 +67,7 @@ Given I set the following fields in the "Create event" "dialogue" to these value
   | Description | <p>Some value which includes valid HTML</p> |
 ```
 
-##### Checking the content of a field
+##### Checking the content of a field {/* #checking-the-content-of-a-field */}
 
 ```gherkin title="Check that the content of the field with the label 'Description' matches a value"
 Then the field "Description" matches value "<p>Some value which includes valid HTML</p>"
@@ -97,11 +97,11 @@ Then the following fields in the "Create event" "dialogue" match these values:
   | Description | <p>Some value which includes valid HTML</p> |
 ```
 
-#### TinyMCE specific steps
+#### TinyMCE specific steps {/* #tinymce-specific-steps */}
 
 If you are writing a TinyMCE plugin or feature, then you may need to interact with the editor interface, or to check and set the current value of the editor.
 
-:::note iFrames
+:::note[iFrames]
 
 Behat makes use of WebDriver to control browsers. The WebDriver specification limits the scope of a command to the current _context_ where a context is a browser Window, Frame, or iFrame.
 
@@ -111,7 +111,7 @@ Most of the steps written for TinyMCE are already aware of the iFrame.
 
 :::
 
-##### Working with toolbar buttons
+##### Working with toolbar buttons {/* #working-with-toolbar-buttons */}
 
 ```gherkin title="Expanding all toolbar buttons"
 Given I expand all toolbars for the "Description" TinyMCE editor
@@ -135,7 +135,7 @@ When I click on the "Bold" button for the "Description" TinyMCE editor
 Then the "Bold" button of the "Description" TinyMCE editor has state "true"
 ```
 
-##### Working with the menu bar
+##### Working with the menu bar {/* #working-with-the-menu-bar */}
 
 ```gherkin title="Clicking on a menu bar button"
 I click on the "Insert" menu item for the "Description" TinyMCE editor
@@ -145,7 +145,7 @@ I click on the "Insert" menu item for the "Description" TinyMCE editor
 I click on the "Insert > Image" menu item for the "Description" TinyMCE editor
 ```
 
-##### Selecting content
+##### Selecting content {/* #selecting-content */}
 
 ```gherkin title="Selecting content by tag name and index"
 I select the "p" element in position "2" of the "Description" TinyMCE editor
@@ -161,7 +161,7 @@ All content selection is performed within the context of the editor's own iframe
 
 :::
 
-### Writing your own steps
+### Writing your own steps {/* #writing-your-own-steps */}
 
 If you are writing your own steps, then we recommend that you:
 
@@ -176,6 +176,6 @@ if (!$this->has_tag('tiny_myplugin')) {
 }
 ```
 
-### Important notes
+### Important notes {/* #important-notes */}
 
 Some of these steps will be improved in coming changes. See MDL-75926 and MDL-76853 for more information.

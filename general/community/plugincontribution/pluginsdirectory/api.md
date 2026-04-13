@@ -8,7 +8,7 @@ tags:
 ---
 The Plugins directory at http://moodle.org/plugins exposes some of its features via web services layer, allowing the community to develop custom tools and integrations with other services such as GitHub Actions or Travis CI.
 
-## Access token
+## Access token {/* #access-token */}
 
 To use the web service described below, the caller (client) authenticates itself with an access token. In almost all cases, developers use their own personal token and let the scripts (clients) work on behalf of them.
 
@@ -16,7 +16,7 @@ The easiest way to obtain the access token (and some other useful information) i
 
 The token can be alternatively obtained via the *Preferences > Security keys* or programmatically via `login/token.php` script at moodle.org (however, tokens obtain that way have very short expiration in contrast with the ones generated at the dedicated page).
 
-## Plugins maintenance service
+## Plugins maintenance service {/* #plugins-maintenance-service */}
 
 The Plugins maintenance service (`plugins_maintenance`) provides functions for the plugins maintainers. The service is declared as:
 
@@ -35,7 +35,7 @@ The Plugins maintenance service (`plugins_maintenance`) provides functions for t
 ],
 ```
 
-### Getting the list of maintained plugins
+### Getting the list of maintained plugins {/* #getting-the-list-of-maintained-plugins */}
 
 The first external function `local_plugins_get_maintained_plugins` allows to read the list of all plugins and their recent versions the caller is maintainer of. It does not expect any parameters and its return structure is described as follows:
 
@@ -104,7 +104,7 @@ ${CURL} ${ENDPOINT} --data-urlencode "wstoken=${TOKEN}" --data-urlencode "wsfunc
     --data-urlencode "moodlewsrestformat=json" | jq
 ```
 
-### Releasing a new version
+### Releasing a new version {/* #releasing-a-new-version */}
 
 The second function `local_plugins_add_version` allows to release a new version to the plugin. The input parameters are described as:
 
@@ -179,6 +179,6 @@ ${CURL} ${ENDPOINT_REST} --data-urlencode "wstoken=${TOKEN}" --data-urlencode "w
     --data-urlencode "frankenstyle=${PLUGIN}" --data-urlencode "zipdrafitemtid=${ITEMID}" | jq
 ```
 
-### GitHub Actions
+### GitHub Actions {/* #github-actions */}
 
 A new workflow can be configured at GitHub Actions to automatically release a new version in the Plugins directory once a tag is pushed to the repository. Please see https://github.com/moodlehq/moodle-plugin-release for details.

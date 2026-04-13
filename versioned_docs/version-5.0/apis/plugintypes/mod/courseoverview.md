@@ -9,7 +9,7 @@ tags:
 - Course
 ---
 
-## Summary
+## Summary {/* #summary */}
 
 <Since version="5.0" issueNumber="MDL-83872" />
 
@@ -17,11 +17,11 @@ The course overview table displays a summary of all activities in a course, alon
 
 To customize the information displayed in the course overview table, activity plugins must implement their own integration class.
 
-## Overview Class Structure
+## Overview Class Structure {/* #overview-class-structure */}
 
 The integration class must be located in `mod/PLUGINNAME/classes/courseformat/overview.php` using the namespace `mod_PLUGINNAME\courseformat\overview`. The `overview` class should extend the `core_courseformat\activityoverviewbase` class and implement the necessary methods to provide the required overview data.
 
-### Class Definition
+### Class Definition {/* #class-definition */}
 
 This is an example of the class definition that do not add any extra overview items. Simply by extending the `activityoverviewbase` class, the course overview will display the activity name, the section and, if the user has completion, the completion status of the activity.
 
@@ -35,7 +35,7 @@ class overview extends activityoverviewbase {
 }
 ```
 
-### The `overviewitem` class
+### The `overviewitem` class {/* #the-overviewitem-class */}
 
 The `core_courseformat\local\overview\overviewitem` class represents a specific activity overview item. Currently, items are used only as cells in the course overview table, but they may be used in other places like the course page or the activity page in the future.
 
@@ -50,7 +50,7 @@ Also, the class has the following optional properties:
 - **`textalign`** (`core\output\local\properties\text_align`): Indicates the preferred text alignment for the parent container. Notice the type hint is not string but  `text_align` enum, this limit only to valid text alignment values.
 - **`alertcount`** (`integer`) and **`alertlabel`** (`string`): Some items may have an alert count to inform the user of pending actions. This information is not displayed in the table (must be included also in the content) but is added as a data attribute and may be used in other places in the future, such as filtering or mobile app notifications.
 
-### Extra Overview Items
+### Extra Overview Items {/* #extra-overview-items */}
 
 To provide extra overview items, the plugin can override the `get_extra_overview_items` method. This method should return an array of `\core_courseformat\local\overview\overviewitem` objects indexed by item shortname.
 
@@ -111,7 +111,7 @@ class overview extends activityoverviewbase {
 }
 ```
 
-## Fixed Overview Items
+## Fixed Overview Items {/* #fixed-overview-items */}
 
 Some activity information is especial and they will be added automatically to the course overview table without declaring them in the `get_extra_overview_items` method.
 
@@ -125,7 +125,7 @@ However, there are other fixed overview items that are considered empty unless t
 - **Due Date**: The due date of the activity. Provided by the `get_due_date_overview` method.
 - **Main action**: The main action of the activity. Provided by the `get_actions_overview` method.
 
-### Due Date Overview
+### Due Date Overview {/* #due-date-overview */}
 
 To provide a due date overview, override the `get_due_date_overview` method. This method must return an `overviewitem` object or null if there is no due date.
 
@@ -158,7 +158,7 @@ class overview extends activityoverviewbase {
 }
 ```
 
-### Main Action Overview
+### Main Action Overview {/* #main-action-overview */}
 
 The main action is always displayed as the last column in the course overview table. However, by default the column is empty and it is not rendered in the table. However, the plugin can define their own action cell to provide useful links to the user. For example, the main action could be the submissions count with a link to the submissions page.
 
@@ -217,7 +217,7 @@ class overview extends activityoverviewbase {
 }
 ```
 
-### Custom grade overview items
+### Custom grade overview items {/* #custom-grade-overview-items */}
 
 If the activity has a grade item, the course overview will display the grade of the activity to the student. If your plugin has one single grade item, you don't need to do anything.
 
@@ -249,7 +249,7 @@ It is not recommended to override the `get_grades_overviews` method. The method 
 
 :::
 
-## Dependency Injection
+## Dependency Injection {/* #dependency-injection */}
 
 The `overview` class will be loaded using [dependency injection](../../core/di/index.md). The constructor must accept a `cm_info` object to initialize the parent class, however, the constructor can also accept other dependencies that the plugin needs.
 
@@ -280,7 +280,7 @@ class overview extends activityoverviewbase {
 }
 ```
 
-## Redirect the index.php page to the course overview
+## Redirect the index.php page to the course overview {/* #redirect-the-indexphp-page-to-the-course-overview */}
 
 The `activityoverviewbase` class provides a static method to redirect the old `mod/PLUGINNAME/index.php` page to the new course overview. This method should be called in the `index.php` file of the activity plugin.
 

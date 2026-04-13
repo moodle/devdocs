@@ -14,7 +14,7 @@ import {
 import FieldController from './_files/field_controller';
 import DataController from './_files/data_controller';
 
-## File structure
+## File structure {/* #file-structure */}
 
 Custom field plugins are located in the `/customfield/field` directory. A plugin should not include any custom files outside of it's own plugin folder.
 
@@ -49,33 +49,33 @@ A custom field plugin requires two _controller_ classes:
 - a _field_ controller, which describes the field itself; and
 - a _data_ controller, which describes with interface within the context of the instance (i.e. course).
 
-### Field Controller
+### Field Controller {/* #field-controller */}
 
 The field controller defines the available configuration options that an administrator can select within the user interface to configure the field.
 
 Examples might include the prompt to show alongside the custom field element, and whether the element is required.
 
-:::note Class naming
+:::note[Class naming]
 
 The class must be named `field_controller` within your plugin's namespace (for example `customfield_myfield`) and must extend the `\core_customfield\field_controller` class.
 
 :::
 
-<!-- markdownlint-save -->
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-save --> */}
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 import fieldExample from '!!raw-loader!./_files/field_controller.php';
 
 <FieldController example={fieldExample} />
 
-<!-- markdownlint-restore -->
+{/* <!-- markdownlint-restore --> */}
 
 The `\core_customfield\field_controller` class is an abstract class and defines a number of functions which you can choose to override. At a minimum, the following two items are required:
 
 - the `TYPE` constant to match the name of the plugin; and
 - the `config_form_definition()` function.
 
-:::danger Element names
+:::danger[Element names]
 
 All element names must be in the format `$configdata[configname]` for values to be saved, for example `configdata[cfgdefault]`.
 
@@ -87,31 +87,31 @@ In addition to these requried a functions a number of other functions exist and 
 
 Details of all available functions can be found in the `\core_customfield\field_controller` class defined in `/customfield/classes/field_controller.php`.
 
-### Data Controller
+### Data Controller {/* #data-controller */}
 
 The data controller defines the user interface that teachers use within the course edit form.
 
-:::note Class naming
+:::note[Class naming]
 
 The class must be named `data_controller` within your plugin's namespace (for example `customfield_myfield`) and must extend the `\core_customfield\data_controller` class.
 
 :::
 
-<!-- markdownlint-save -->
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-save --> */}
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 import dataExample from '!!raw-loader!./_files/data_controller.php';
 
 <DataController example={dataExample} />
 
-<!-- markdownlint-restore -->
+{/* <!-- markdownlint-restore --> */}
 
 The `\core_customfield\data_controller` class is an abstract class and defines a number of functions which you can choose to override. At a minimum, the following two items are required:
 
 - the `datafield(): string` function; and
 - the `instance_form_definition()` function.
 
-#### datafield()
+#### datafield() {/* #datafield */}
 
 The `datafield()` function returns an enumerated string and describes which database field the data for the custom field is stored in. The possible options are:
 
@@ -121,11 +121,11 @@ The `datafield()` function returns an enumerated string and describes which data
 - `charvalue` - can store character values up to 1333 characters long, this field is not indexed
 - `value` - can store character values of unlimited length ("text" field in the db)
 
-#### instance_form_definition()
+#### instance_form_definition() {/* #instance_form_definition */}
 
 The `instance_form_definition()` function adds any required field elements that are displayed on the instance editing page (i.e. on the course settings page).
 
-## See Also
+## See Also {/* #see-also */}
 
 - [Custom files API](../../core/customfields/index.md)
 - [User Profile Fields](https://docs.moodle.org/dev/User_profile_fields)

@@ -29,7 +29,7 @@ This document shows you how to use Moodle forms to interact with users in a stan
 
 If you just want to write code to manipulate Moodle files internally (without user input) you can use the [File API](../../files/index.md) without involving form elements.
 
-## Form elements
+## Form elements {/* #form-elements */}
 
 There are three file-related form elements for interacting with users:
 
@@ -37,7 +37,7 @@ There are three file-related form elements for interacting with users:
 1. `filemanager` - a way to attach one or more files as a collection, using the file picker interface
 1. `editor` - a way to specify a textarea with a HTML editor, and all the handling of images and movies within that HTML
 
-### File picker
+### File picker {/* #file-picker */}
 
 The _File picker_ may be used directly to allow a user to upload _one_ file so that it can be processed, and then removed.
 
@@ -51,7 +51,7 @@ If you want a file that remains part of the Moodle storage and will reappear whe
 
 :::
 
-#### Using the filepicker element
+#### Using the filepicker element {/* #using-the-filepicker-element */}
 
 ```php
 $mform->addElement(
@@ -66,7 +66,7 @@ $mform->addElement(
 );
 ```
 
-#### Working with an uploaded file
+#### Working with an uploaded file {/* #working-with-an-uploaded-file */}
 
 To get the contents of the uploaded file:
 
@@ -100,13 +100,13 @@ To store the chosen file in the Moodle file API:
 $storedfile = $mform->save_stored_file('userfile', ...);
 ```
 
-### File manager
+### File manager {/* #file-manager */}
 
 The File Manager element improves on file picker by allowing you to manage more than one file.  It is expected that the files will be stored permanently for future use.
 
 Examples of the File manager can be found all over Moodle and include the Forum, and Glossary attachments, Course files, and more.
 
-#### Add a file manager element
+#### Add a file manager element {/* #add-a-file-manager-element */}
 
 Example:
 
@@ -129,7 +129,7 @@ $mform->addElement(
 
 When a user uploads files, these are stored into a _draft_ file area for that user. It is the developers responsibility to then move those files within the File API.
 
-#### Loading existing files into draft area
+#### Loading existing files into draft area {/* #loading-existing-files-into-draft-area */}
 
 If you are presenting a form which has previously had data saved to it, for example when editing an existing piece of content, you will need to copy all of the existing files into the draft file area used in the form. This can be achieved using the `file_prepare_draft_area` function, for example:
 
@@ -171,7 +171,7 @@ $entry->attachments = $draftitemid;
 $mform->set_data($entry);
 ```
 
-#### Store updated set of files
+#### Store updated set of files {/* #store-updated-set-of-files */}
 
 During the processing of the submitted data, the developer handling the form will need to handle storing the files in an appropriate part of the File API.
 
@@ -202,7 +202,7 @@ if ($data = $mform->get_data()) {
 }
 ```
 
-### Editors
+### Editors {/* #editors */}
 
 Another common place to handle files is within an HTML editor, such as TinyMCE.
 
@@ -225,7 +225,7 @@ All of the methods share key behaviours:
   - You must copy it into a new draft file area so that changes can be made.
   - You must rewrite the `@@PLUGINFILE@@` URL with the new draft file area.
 
-#### Simple use
+#### Simple use {/* #simple-use */}
 
 By creating a series of fields in the database, it is very easy to have standard functions fetch and store the data for this editor. For example, if you wanted to store data in a field called `textfield`, you would need to create fields in the database for:
 
@@ -304,11 +304,11 @@ You should set `$data->id` to null if data not exist yet.
 
 Real world examples can be found in `mod/glossary/edit.php` and `mod/glossary/comment.php`.
 
-#### Low-level use
+#### Low-level use {/* #low-level-use */}
 
 If you prefer, you can call the various underlying functions yourself. This is not typically required.
 
-:::caution Important
+:::caution[Important]
 
 You must call both the pre-processing, and post-processing, functions to ensure the correct behaviour.
 
@@ -321,7 +321,7 @@ You must call both the pre-processing, and post-processing, functions to ensure 
 1. after submission the changed files must be merged back into original area - `file_save_draft_area_files()`
 1. absolute links have to be replaced by relative links - `file_save_draft_area_files()`
 
-##### Prepare current data - text and files
+##### Prepare current data - text and files {/* #prepare-current-data---text-and-files */}
 
 ```php
 if (empty($entry->id)) {
@@ -359,7 +359,7 @@ Multiple files can be stored in the same virtual bucket. They will have differen
 
 :::
 
-##### Obtain text, format and save draft files
+##### Obtain text, format and save draft files {/* #obtain-text-format-and-save-draft-files */}
 
 To retrieve editor content, you need to use following code:
 
@@ -402,9 +402,9 @@ $messagetext = file_save_draft_area_files(
 
 All URLs in content that point to files managed to the File API are converted to a form that starts `@@PLUGINFILE@@/` before the content is stored in the database. That is what we mean by rewriting.
 
-## File serving
+## File serving {/* #file-serving */}
 
-### Convert internal relative links to absolute links
+### Convert internal relative links to absolute links {/* #convert-internal-relative-links-to-absolute-links */}
 
 Before text content is displayed to the user, any URLs in the `@@PLUGINFILE@@/` form in the content need to be rewritten to the real URL where the user can access the files.
 
@@ -424,17 +424,17 @@ $messagetext = file_rewrite_pluginfile_urls(
 );
 ```
 
-### Implement file serving access control
+### Implement file serving access control {/* #implement-file-serving-access-control */}
 
 Attachments and embedded images should have the same access control as the text itself. In a majority of cases these files are served using `pluginfile.php`. Access control is defined in the `[componentpath]/lib.php` file, using a function named `[componentname]_pluginfile()`.
 
-## File browsing support
+## File browsing support {/* #file-browsing-support */}
 
 Only owner of each file area is allowed to use low level File API function to access files, other parts of Moodle should use file browsing API.
 
 Activities may specify browsing support in own `module/lib.php` file by implementing functions `module_get_file_areas()` and `module_get_file_info()`.
 
-## See also
+## See also {/* #see-also */}
 
 - [File API](../../files/index.md)
 - [Using the file API](../../files/index.md)

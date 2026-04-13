@@ -62,8 +62,9 @@ const config = {
     title: 'Moodle Developer Resources',
     tagline: 'Nurturing Moodle Developers',
     future: {
-        experimental_faster: true,
+        faster: true,
         v4: true,
+        experimental_vcs: 'default-v2',
     },
 
     // url: 'https://develop.moodle.org',
@@ -71,7 +72,6 @@ const config = {
     baseUrl: getBaseUrl(),
     trailingSlash: false,
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
     organizationName: 'moodle', // Usually your GitHub org/user name.
     projectName: 'devdocs', // Usually your repo name.
@@ -84,18 +84,12 @@ const config = {
 
     markdown: {
         mermaid: true,
+        hooks: {
+            onBrokenMarkdownLinks: 'warn',
+        },
     },
 
     themes: ['@docusaurus/theme-mermaid'],
-
-    scripts: [
-        // Zipchat integration.
-        // See Martin Dougiamas for details on configuration.
-        {
-            src: 'https://zipchat.ai/widget/zipchat.js?id=gQKDVDpI9xQWW4n04W4K',
-            defer: true,
-        },
-    ],
 
     presets: [
         [

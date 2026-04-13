@@ -5,15 +5,15 @@ tags:
   - reports
 ---
 
-## Overview
+## Overview {/* #overview */}
 
-### Introduction
+### Introduction {/* #introduction */}
 
 The report builder API is a way of providing reporting data, with paging, filtering, exporting standardized across them in both system and custom reports. Once the groundwork is done in defining the report elements in entities, it's possible to implement them with minimal code just by adding entities to the report, and defining which elements you want to use from them.
 
-### Column
+### Column {/* #column */}
 
-#### Column overview
+#### Column overview {/* #column-overview */}
 
 Column instances define the data captured/displayed within a report column typically:
 
@@ -21,7 +21,7 @@ Column instances define the data captured/displayed within a report column typic
 - They type of data that is being retrieved (int, text, datetime, etc)
 - How that data should be presented in a report (for instance calling userdate() on datetime types)
 
-#### Column types
+#### Column types {/* #column-types */}
 
 - `Text`
 - `Integer` (Integer numbers)
@@ -30,7 +30,7 @@ Column instances define the data captured/displayed within a report column typic
 - `Boolean` (Yes / No values)
 - `Longtext`
 
-#### Creating columns
+#### Creating columns {/* #creating-columns */}
 
 To create a new column, just create a new instance of [`reportbuilder/classes/local/report/column.php`]( https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/reportbuilder/classes/local/report/column.php) class with:
 
@@ -62,9 +62,9 @@ $columns[] = (new column(
             ->add_callback([format::class, 'userdate']);
 ```
 
-### Filter
+### Filter {/* #filter */}
 
-#### Filter overview
+#### Filter overview {/* #filter-overview */}
 
 Report filters can be defined for a report and allow users to narrow down (filter) the data that is displayed in a report:
 
@@ -79,7 +79,7 @@ Filters & columns are entirely separate concepts in the report, and each can be 
 
 :::
 
-#### Filter types
+#### Filter types {/* #filter-types */}
 
 - **Text** ([reportbuilder/classes/local/filters/text.php]( https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/reportbuilder/classes/local/filters/text.php))
 - **Date** ([reportbuilder/classes/local/filters/date.php]( https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/reportbuilder/classes/local/filters/date.php))
@@ -92,7 +92,7 @@ Filters & columns are entirely separate concepts in the report, and each can be 
 - **Autocomplete** ([reportbuilder/classes/local/filters/autocomplete.php]( https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/reportbuilder/classes/local/filters/autocomplete.php))
 - **Category** ([reportbuilder/classes/local/filters/category.php]( https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/reportbuilder/classes/local/filters/category.php))
 
-#### Creating filters
+#### Creating filters {/* #creating-filters */}
 
 To create a new filter, just create a new instance of **[reportbuilder/classes/local/report/filter.php]( https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/reportbuilder/classes/local/report/filter.php)** class with:
 
@@ -116,15 +116,15 @@ $filters[] = (new filter(
             ->add_joins($this->get_joins());
 ```
 
-### Entity
+### Entity {/* #entity */}
 
-#### Entity overview
+#### Entity overview {/* #entity-overview */}
 
 Entities are simply collections of report elements (currently columns and filters). They allow for common elements to be defined once, and then re-used in all reports - developers can choose to use as many or as few of the elements from each entity as required. We have provided user and course entities. They can be joined to reports using standard SQL query syntax.
 
 All report elements can be defined within the reports themselves - but entities mean it's much easier to create re-usable components, and will also help in the long term with custom reports.
 
-#### Create an entity
+#### Create an entity {/* #create-an-entity */}
 
 To create an entity, the new entity class must extend **[reportbuilder/classes/local/entities/base.php]( https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/reportbuilder/classes/local/entities/base.php)** class and must include these methods:
 
@@ -134,19 +134,19 @@ get_default_entity_title()
 initialise()
 ```
 
-##### get_default_tables()
+##### get_default_tables() {/* #get_default_tables */}
 
 Defines all the database tables that must be present in the main SQL or joins added to the entity.
 
-##### get_default_entity_title()
+##### get_default_entity_title() {/* #get_default_entity_title */}
 
 Defines the default title for this entity.
 
-##### initialise()
+##### initialise() {/* #initialise */}
 
 This is where we **add** the entity columns and filters.
 
-#### Tips
+#### Tips {/* #tips */}
 
 Always add all the entities joins to each of its columns and filters; also ensure you add them before any other joins.
 
@@ -167,14 +167,14 @@ $fildname = "{$useralias).lastname";
 $join = "JOIN {user} {$useralias} ON {$useralias}.id = {$logalias}.relateduser"
 ```
 
-#### Examples
+#### Examples {/* #examples */}
 
 Check out these two entities as an example to start building reports:
 
 - **User entity**: [reportbuilder/classes/local/entities/user.php]( https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/reportbuilder/classes/local/entities/user.php)
 - **Course entity**: [reportbuilder/classes/local/entities/course.php]( https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/reportbuilder/classes/local/entities/course.php)
 
-### Actions
+### Actions {/* #actions */}
 
 ![Example of actions on the tasks logs system report](./_index/Actions.jpg)
 
@@ -190,11 +190,11 @@ Report actions can be defined in system reports to provide CTA links for each ro
   )));
 ```
 
-## System reports
+## System reports {/* #system-reports */}
 
 System reports are a consistent way of providing reporting data, with paging, filtering, exporting standardized across them. Once the groundwork is done in defining the report elements in entities, it's possible to implement them with minimal code just by adding entities to the report, and defining which elements you want to use from them
 
-### Create a new system report using entities
+### Create a new system report using entities {/* #create-a-new-system-report-using-entities */}
 
 To create a new system report just create a new class extending [reportbuilder/classes/system_report.php]( https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/reportbuilder/classes/system_report.php).
 
@@ -283,9 +283,9 @@ Once the whole report has been defined, is possible to set if the report will be
 $this->set_downloadable(true);
 ```
 
-### Use an entity
+### Use an entity {/* #use-an-entity */}
 
-### Override display name for a column
+### Override display name for a column {/* #override-display-name-for-a-column */}
 
 It's possible to override the display name of a column, if you don't want to use the value provided by the entity.
 
@@ -295,7 +295,7 @@ if ($column = $this->get_column('user:fullname')) {
 }
 ```
 
-### Set a default initial sort direction
+### Set a default initial sort direction {/* #set-a-default-initial-sort-direction */}
 
 It's possible to set a default initial sort direction for one column.
 
@@ -303,7 +303,7 @@ It's possible to set a default initial sort direction for one column.
 $this->set_initial_sort_column('task_log:starttime', SORT_DESC);
 ```
 
-#### Tips
+#### Tips {/* #tips-1 */}
 
 Always add all the entities joins to each of its columns and filters, if you do not do this there may be issues when you try to use them in reports.
 
@@ -320,18 +320,18 @@ $fildname = "{$useralias).lastname";
 $join = "JOIN {user} {$useralias} ON {$useralias}.id = {$logalias}.relateduser"
 ```
 
-### Examples
+### Examples {/* #examples-1 */}
 
 Check out these two system reports as an example:
 
 - **Task logs**: [`admin/classes/reportbuilder/local/systemreports/task_logs.php`]( https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/admin/classes/reportbuilder/local/systemreports/task_logs.php)
 - **Config changes**: [`report/configlog/classes/reportbuilder/local/systemreports/config_changes.php`]( https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/report/configlog/classes/reportbuilder/local/systemreports/config_changes.php)
 
-## Custom reports
+## Custom reports {/* #custom-reports */}
 
 The custom reporting interface allows reports to be built with a custom view for users, Moodle and plugins can define data sources that provide the basis for the reports that users can make using the system.
 
-### Create a new data source using entities
+### Create a new data source using entities {/* #create-a-new-data-source-using-entities */}
 
 To create a data source you need to extend [`\core_reportbuilder\datasource`]( https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/reportbuilder/classes/datasource.php). Your class must be located in the `reportbuilder\datasource` namespace of your plugin or the Moodle subsystem it is for.
 
@@ -392,7 +392,7 @@ Next you need to add the columns, filters and conditions that a user can add to 
 $this->add_all_from_entities();
 ```
 
-### Setup report name
+### Setup report name {/* #setup-report-name */}
 
 You will need to specify the name that is displayed to the end user for the data source.
 
@@ -407,7 +407,7 @@ You will need to specify the name that is displayed to the end user for the data
     }
 ```
 
-### Setup default columns
+### Setup default columns {/* #setup-default-columns */}
 
 Once all entities have been added you need to define which columns it will show by default **they will be displayed in the order you define them**, by implementing the `get_default_columns()` method:
 
@@ -442,7 +442,7 @@ public function get_default_column_sorting(): array {
 }
 ```
 
-### Setup default filters
+### Setup default filters {/* #setup-default-filters */}
 
 The filters allow the end user of the report to only see a subset of the data the report will normally show. You need to define the default setup for this using the `get_default_filters()` method.
 
@@ -460,7 +460,7 @@ public function get_default_filters(): array {
 }
 ```
 
-### Setup conditions
+### Setup conditions {/* #setup-conditions */}
 
 The conditions allow the user creating the report to define which data it will return. You need to define the default setup for this using the `get_default_conditions()` method.
 
@@ -495,7 +495,7 @@ public function get_default_condition_values(): array {
 }
 ```
 
-### Adding unit tests
+### Adding unit tests {/* #adding-unit-tests */}
 
 Data sources have a specific type of testcase `\core_reportbuilder_testcase` that provides several useful utility methods that will help you ensure that the data source and it's entities are working correctly.
 
@@ -523,7 +523,7 @@ The `core_reportbuilder_testcase` will not autoload so we first ensure that it i
 3. That the filters work
 4. Add the stress tests
 
-#### Testing the default report
+#### Testing the default report {/* #testing-the-default-report */}
 
 For this you want a step that sets up will return enough data allows you test all the ordering you have configured for the report.
 
@@ -559,7 +559,7 @@ It then creates a custom report and gets it's data before testing:
 - It has the expected number of rows
 - Testing after stripping out the array keys that the data returned is in the correct order and formatted correctly
 
-#### Testing the non-default columns and filtering
+#### Testing the non-default columns and filtering {/* #testing-the-non-default-columns-and-filtering */}
 
 You can create blank report can be created by passing `'default' => 0` to the `create_report()` method of the `core_reportbuilder` data generator:
 
@@ -607,7 +607,7 @@ $content = $this->get_custom_report_content($report->get('id'), 0, $filtervalues
 
 This would cause the report to return results for users with the first name of _Pedro_ only.
 
-#### The stress test
+#### The stress test {/* #the-stress-test */}
 
 The stress test uses helper methods which:
 
@@ -642,7 +642,7 @@ The test first sets up some data that the data source can return, it then uses t
 
 The first parameter for each method is the fully qualified class name of the `datasource` that should be tested. `datasource_stress_test_conditions()` has a second parameter that must be the name of a column from the `datasource`.
 
-#### Unit test examples
+#### Unit test examples {/* #unit-test-examples */}
 
 - **Course categories** [`/course/tests/reportbuilder/datasource/categories_test.php`](https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/course/tests/reportbuilder/datasource/categories_test.php)
 - **Badges** [`/badges/tests/reportbuilder/datasource/badges_test.php`](https://github.com/moodle/moodle/blob/MOODLE_404_STABLE/badges/tests/reportbuilder/datasource/badges_test.php)

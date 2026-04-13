@@ -6,7 +6,7 @@ tags:
   - Moodle App
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 In the following guide, you will learn how to upgrade your plugins to support newer versions of the app.
 
@@ -18,11 +18,11 @@ Depending on which version of the app you're upgrading from, you'll need to go t
 
 Other than the changes outlined in this document, there may be smaller API changes that aren't highlighted here. Make sure to check the [UPGRADE.md](https://github.com/moodlehq/moodleapp/blob/latest/UPGRADE.md) file for an exhaustive list with all the changes.
 
-## 5.0 to 5.1
+## 5.0 to 5.1 {/* #50-to-51 */}
 
 In this version, the app has undergone a major framework modernization. The most significant change is the upgrade of **Angular from v17 to v20**.
 
-### Angular 20 Upgrade
+### Angular 20 Upgrade {/* #angular-20-upgrade */}
 
 This is a major jump that aligns the app with the latest web standards and performance improvements. While Angular 20 maintains backward compatibility for many patterns, there is a key area you should review in your site plugins:
 
@@ -32,11 +32,11 @@ Make sure to test your plugin thoroughly, especially any custom templates that m
 
 **Note for developers:** Please remember to check the [UPGRADE.md](https://github.com/moodlehq/moodleapp/blob/latest/UPGRADE.md) file regularly for any deprecated methods or classes within the Moodle App API to ensure your plugin remains compatible with future releases.
 
-## 4.4 to 4.5
+## 4.4 to 4.5 {/* #44-to-45 */}
 
 The Ionic version has been upgraded to v8 (from v7), make sure to check the relevant upgrade guides for [v8](https://ionicframework.com/docs/updating/8-0). In particular, the legacy syntax to declare input labels that was deprecated on Ionic7 now has been removed.
 
-## 4.3 to 4.4
+## 4.3 to 4.4 {/* #43-to-44 */}
 
 Starting with this release, the changes listed in [UPGRADE.md](https://github.com/moodlehq/moodleapp/blob/latest/UPGRADE.md) will only document breaking changes for APIs exposed to site plugins. Internal changes will no longer be documented. Make sure to check out the file to learn about the changes in this version.
 
@@ -46,23 +46,23 @@ The Angular version has also been upgraded to v17, and it comes with new feature
 
 Finally, the application now needs to run in a secure context (https://). This change only affects your development environment, and it was necessary to [move on from the deprecated WebSQL API](https://moodle.atlassian.net/browse/MOBILE-4304).
 
-## 4.2 to 4.3
+## 4.2 to 4.3 {/* #42-to-43 */}
 
 Font Awesome icons have been updated to version 6.4.0, so make sure that all the icons you're using in your plugin are still supported.
 
 Other than that, there have been some changes in the APIs related to analytics. Check out [UPGRADE.md](https://github.com/moodlehq/moodleapp/blob/latest/UPGRADE.md) to learn about the specifics.
 
-## 4.1 to 4.2
+## 4.1 to 4.2 {/* #41-to-42 */}
 
 Font Awesome icons have been updated to version 6.3.0, so make sure that all the icons you're using in your plugin are still supported.
 
 Additionally, the `<core-icon>` component has been removed (it was deprecated in 3.9.5). If you were still using it, you should replace it with `<ion-icon>` which now supports [using font icons](../development/plugins-development-guide/api-reference.md#ion-icon).
 
-## 4.0 to 4.1
+## 4.0 to 4.1 {/* #40-to-41 */}
 
 There is only one thing to look after when upgrading to 4.1, so it should be a relatively quick process.
 
-### Mode classes
+### Mode classes {/* #mode-classes */}
 
 If your plugin is not declaring any custom CSS, you can ignore this section.
 
@@ -96,19 +96,19 @@ html.dark {
 In order to avoid breaking existing styles, version 4.1 will continue adding version classes both to `body` and `html` tags. But using the classes from the `body` tag is considered a deprecated approach, and won't be supported in future versions. So we recommend that you update your plugin now.
 :::
 
-## 3.9.5 to 4.0
+## 3.9.5 to 4.0 {/* #395-to-40 */}
 
 There haven't been any breaking changes from 3.9.5 to 4.0, but the UI of the application has changed drastically so we recommend taking special care that the UI of your plugin is still working properly. Also, remember to double check all the changes listed in [UPGRADE.md](https://github.com/moodlehq/moodleapp/blob/latest/UPGRADE.md).
 
 Other than that, everything should continue working as expected. If you find something that doesn't, please [let us know](https://moodle.atlassian.net/projects/MOBILE).
 
-## 3.9.4 to 3.9.5
+## 3.9.4 to 3.9.5 {/* #394-to-395 */}
 
 Starting with version 3.9.5, the Moodle App uses Ionic 5. As usual, we tried not to change our APIs and components to prevent breaking existing plugins. Unfortunately, Ionic 5 comes with a lot of breaking changes, especially related to templates. This means that plugins need to be adapted in order to look good in the new versions of the app.
 
 Please note that if your plugin doesn't use Ionic components nor JavaScript, it's possible that you don't have to adapt it. However, we recommend you to test the plugin with new versions of the app to check if everything works correctly.
 
-### Ionic changes
+### Ionic changes {/* #ionic-changes */}
 
 Previous versions of the app used Ionic 3, so the update involved an increase in two versions and Ionic changed a lot of their components, directives, and utilities.
 
@@ -158,7 +158,7 @@ Some common cases that will need to be modified are `core-mark-required` and `co
 
 </CodeDiff>
 
-### You can now use ES6
+### You can now use ES6 {/* #you-can-now-use-es6 */}
 
 The minimum platform requirements for Cordova and Ionic increased, and so it also affected the Moodle App. The new version requires Android 5.1 with WebView 61+, which means that the JavaScript for the app can now be compiled to ES6.
 
@@ -200,7 +200,7 @@ class AddonModCertificateModuleLinkHandler extends this.CoreContentLinksModuleIn
 
 </CodeDiff>
 
-### Changes in the app's code
+### Changes in the app's code {/* #changes-in-the-apps-code */}
 
 We've also done some changes to the code of the app. Most of these changes probably don't affect your plugin, but you should still check this out just in case:
 
@@ -235,7 +235,7 @@ syncOnSites('events', this.syncAllEventsFunc.bind(this, force), siteId);
 - `ionViewCanLeave` function has been renamed to `canLeave`.
 - The `onchange` method of the `Network` service is now called `onChange`.
 
-### Is there any example I can look at?
+### Is there any example I can look at? {/* #is-there-any-example-i-can-look-at */}
 
 If you used the app's code as an example to build your plugin, you can do the same. There are also some plugins that have been updated, for example, you can see the following PRs on the `choicegroup` plugin:
 
@@ -244,7 +244,7 @@ If you used the app's code as an example to build your plugin, you can do the sa
 
 You can also look at the [Moodle App Plugins development guide](../development/plugins-development-guide/index.md), it has been updated to reflect how to write plugins for the latest version of the app.
 
-## Before 3.5
+## Before 3.5 {/* #before-35 */}
 
 Before 3.5, the app was written using Ionic 1 and Moodle plugins could add mobile support by writing an Angular JS/Ionic module, compiling it to a zip, and including it in the plugin.
 

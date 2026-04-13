@@ -11,9 +11,9 @@ sidebar_position: 5
 
 This page is the top level page regarding all testing activities around the Moodle project. Testing is essential to make sure that developed code does what it is meant to do, without causing new problems.
 
-## Manual testing
+## Manual testing {/* #manual-testing */}
 
-### Code testing
+### Code testing {/* #code-testing */}
 
 Code is tested as part of reviewing at some key parts of the [Moodle development process](../../process.md).
 
@@ -21,27 +21,27 @@ Code is tested as part of reviewing at some key parts of the [Moodle development
 - `Peer review`. Developers often test each others work early in the development process
 - `Integration review`. The integration team tests code weekly while they are evaluating suitability for integration into Moodle.
 
-:::info More info
+:::info[More info]
 
 We recommend that you follow the [Testing instructions guide](./testing/guide) to help you write clear manual testing instructions.
 
 :::
 
-### Integration functional testing
+### Integration functional testing {/* #integration-functional-testing */}
 
 Moodle has a dedicated team of testers who perform most of the manual testing for integration issues. Developers submitting patches **should always cover the patch with unit tests and/or Behat behavioural tests**.
 
-:::info More info
+:::info[More info]
 
 We recommend that you follow the [Testing of integrated issues guide](./integrated-issues.md) to get a better understanding of how testing integrated issues works.
 
 :::
 
-### QA testing
+### QA testing {/* #qa-testing */}
 
 Once all major features for a new Moodle release have landed, Moodle performs a Quality Assurance test cycle. This test cycle is typically performed by volunteers from the Moodle community who systematically test each available feature to ensure that it still works as intended. This process typically lasts 4-6 weeks and happens once per Major release.
 
-:::info More info
+:::info[More info]
 
 We recommend that you follow the [QA testing guide](./qa.md) to know more about the Quality Assurance test cycle.
 
@@ -49,19 +49,19 @@ We recommend that you follow the [QA testing guide](./qa.md) to know more about 
 
 For major theme changes, additional manual tests may be run.
 
-## Automated testing
+## Automated testing {/* #automated-testing */}
 
-### Unit tests
+### Unit tests {/* #unit-tests */}
 
 PHPUnit tests are supported as part of the code from Moodle 2.3 onwards. These are automated tests of very low-level code functionality that a developer should write as part of any new code.
 
-:::info More info
+:::info[More info]
 
 We recommend that you follow [PHPUnit integration](https://docs.moodle.org/dev/PHPUnit_integration) to help you run and write unit tests.
 
 :::
 
-### Acceptance tests
+### Acceptance tests {/* #acceptance-tests */}
 
 Moodle uses a framework called Behat to automatically test the user-interface. Tests can be written for each plugin, and for Moodle core.
 
@@ -73,7 +73,7 @@ Moodle uses a framework called Behat to automatically test the user-interface. T
 Because Behat tests work through the Moodle user interface, they are a bit slow. Therefore, you should probably also use PHPUnit to test the detailed edge cases in your code.
 :::
 
-### Continuous integration testing
+### Continuous integration testing {/* #continuous-integration-testing */}
 
 As soon as code is added to the integration repository, the continuous integration server tests the new code for:
 
@@ -86,7 +86,7 @@ As soon as code is added to the integration repository, the continuous integrati
 
 A failure here notifies the integrators that the build has failed.
 
-### Regression testing
+### Regression testing {/* #regression-testing */}
 
 Every day, an automated build in a test server runs a large number of tests concerning key functions of Moodle, to make sure that everything still works and that some new fix in Moodle hasn't caused problems elsewhere.
 

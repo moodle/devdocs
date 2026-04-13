@@ -5,11 +5,11 @@ tags:
   - API
 ---
 
-<!-- cspell:ignore renderables, sometext, courseid, enabletrusttext -->
+{/* <!-- cspell:ignore renderables, sometext, courseid, enabletrusttext --> */}
 
 The Output API is responsible for visual aspects of Moodle content. This page explains how renderers, renderables, themes and templates all work together.
 
-## Page Output Journey
+## Page Output Journey {/* #page-output-journey */}
 
 Let's start with building a page that is part of an admin tool.
 
@@ -40,7 +40,7 @@ echo $output->render($renderable);
 echo $output->footer();
 ```
 
-:::info Setup of an admin page
+:::info[Setup of an admin page]
 
 On admin pages, the `admin_externalpage_setup($sectionname);` function should be called to set up and perform permission checks, for example:
 
@@ -64,7 +64,7 @@ $PAGE->set_title($title);
 $PAGE->set_heading($title);
 ```
 
-:::note What is $PAGE and where did it come from ?
+:::note[What is $PAGE and where did it come from ?]
 
 `$PAGE` is a global variable used to track the state of the page that is being returned. It is an instance of the `moodle_page` class defined in `lib/pagelib.php`. See [Page API](https://docs.moodle.org/dev/Page_API) for more information on the `$PAGE` variable.
 
@@ -106,7 +106,7 @@ echo $output->footer();
 
 This prints the HTML for the bottom of the page. It is very important because it also prints out things that were added to the `page_requirements_manager` and that need to be printed in the footer; things like JavaScript includes, navigation tree setup, closing open containers tags etc. The reason all JavaScripts are added to the footer of the page is for performance. If you add JavaScript includes to the top of the page, or inline with the content, the browser must stop and execute the JavaScript before it can render the page. See https://developers.google.com/speed/docs/insights/BlockingJS for more information.
 
-### Renderable
+### Renderable {/* #renderable */}
 
 In the code above, we created a renderable. This is a class that you have to add to your plugin. It holds all the data required to display something on the page. Here is the renderable for this example:
 
@@ -207,7 +207,7 @@ The template used in this plugin is located in the plugin's templates folder. Th
 
 This is the mustache template for this demo. It uses some bootstrap classes directly to position and style the content on the page. `{{sometext}}` is replaced with the variable from the context when this template is rendered. For more information on templates see [Templates](../../../guides/templates/index.md).
 
-## Output Functions
+## Output Functions {/* #output-functions */}
 
 This section explains how dynamic data should be sent from Moodle to the web browser in an organised and standard way.
 
@@ -221,11 +221,11 @@ Of course, these functions can be discussed, modified and new functions can arri
 
 For each of the functions below we'll try to explain when they should be used, explaining the most important parameters supported and their meaning. Let's review them!
 
-### String formatting functions
+### String formatting functions {/* #string-formatting-functions */}
 
 The `format_string` and `format_text` functions should always be used when preparing the output of information. They may also be used to process information before it is stored in the database however, filters should only be applied at output. For example, language filters must only be applied as the content is prepared for output because we don't yet know the user's preferred language.
 
-#### p() and s()
+#### p() and s() {/* #p-and-s */}
 
 ```php
 function s($var, $strip=false)
@@ -247,7 +247,7 @@ The key parameter for this function is:
 
 - `strip`: Set to `true` to strip slashes from the string. Only set this parameter to `true` when the data to be processed is not coming from the database. This should be used when the string comes from HTTP requests (forms, links, ...). (Default is `false`, so no strip will be performed)
 
-#### format_text()
+#### format_text() {/* #format_text */}
 
 ```php
 function format_text(
@@ -287,7 +287,7 @@ Some interesting parameters for this function are:
   - `options->allowid`: Set to `true` to ensure that the id attributes will not be removed, even when using HTML Purifier. (Default is `false`)
   - `options->blanktarget`: Set to `true` to have `target="_blank"` added to all `<a>` tags unless the target attribute is explicitly specified. (Default is `false`)
 
-#### format_string()
+#### format_string() {/* #format_string */}
 
 ```php
 function format_string(string $text, $striplinks = true, ['context' => $context, 'escape' => true, 'filter' => true])
@@ -309,7 +309,7 @@ Some interesting parameters for this function are:
   - `options->escape`: Set to `false` if you do not want to escape HTML entities. (Default is `true`)
   - `options->filter`: Set to `false` if you do not want to allow filters to process the text. This is ignored by `FORMAT_PLAIN` for which filters are never applied. (Default is `true`)
 
-### Simple elements rendering
+### Simple elements rendering {/* #simple-elements-rendering */}
 
 :::important
 
@@ -319,7 +319,7 @@ Those methods are designed to replace the old ```html_writer::tag(...)``` method
 
 While to render complex elements, you should use [templates](../../../guides/templates/index.md), some simple elements can be rendered using the following functions:
 
-#### container()
+#### container() {/* #container */}
 
 ```php
 function container(string $contents, ?string $classes = null, ?string $id = null): string
@@ -335,7 +335,7 @@ Some interesting parameters for this function are:
 - `classes`: The classes of the container. Note that this parameter is a comma-separated list of classes, not an array.
 - `id`: An optional id of the container.
 
-#### paragraph()
+#### paragraph() {/* #paragraph */}
 
 ```php
 function paragraph(string $contents, ?string $classes = null, ?string $id = null): string
@@ -351,7 +351,7 @@ Some interesting parameters for this function are:
 - `classes`: The classes of the paragraph. Note that this parameter is a comma-separated list of classes, not an array.
 - `id`: An optional id of the paragraph.
 
-#### sr_text()
+#### sr_text() {/* #sr_text */}
 
 ```php
 function sr_text(string $contents): string
@@ -371,7 +371,7 @@ In the standard Boost theme this method will output a span using the [Bootstrap 
 <span class="sr-only">Contents</span>
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - [HTML Guidelines](https://docs.moodle.org/dev/HTML_Guidelines)
 - [Output renderers](https://docs.moodle.org/dev/Output_renderers)

@@ -6,7 +6,7 @@ tags:
  - Moodle App
 ---
 
-## Overview
+## Overview {/* #overview */}
 
 The Moodle App supports being launched using a Custom URL Scheme. It lets you specify the URL to open, the username to use and also a token to authenticate the user.
 
@@ -14,7 +14,7 @@ Please notice that these links will only work if the app is installed in the dev
 
 If you are using a custom Moodle App you have to change `moodlemobile://` to your custom URL scheme. If you are using a [BMA (Branded Moodle App)](https://moodle.com/branded-app), please contact your [Moodle Service Provider (Moodle partner)](https://moodle.com/services) for this information.
 
-## Format
+## Format {/* #format */}
 
 The format to create the links is the following:
 
@@ -24,7 +24,7 @@ moodlemobile://https://username@domain.com?token=TOKEN&privatetoken=PRIVATETOKEN
 
 The only data required is the base URL of your site (in the example above, `https://domain.com`).
 
-### Site URL
+### Site URL {/* #site-url */}
 
 As mentioned above, this is the only required parameter. It should be the base URL of the site (wwwroot). For example, you can use this URL to open your site in the app:
 
@@ -34,7 +34,7 @@ moodlemobile://https://domain.com
 
 In the example above, if the `https://domain.com` site isn't stored in the app, the user will be redirected to the credentials screen to access the site.
 
-### Username
+### Username {/* #username */}
 
 If you want the app to be opened with a certain username you can specify it in the URL:
 
@@ -44,7 +44,7 @@ moodlemobile://https://username@domain.com
 
 In the example above, if the `username` user and the `https://domain.com` site aren't stored in the app, the user will be sent to the credentials screen to access the site (the username input will be pre-populated, but the user will be able to change it if he wants to). If the app has several users of this site stored, including "username", the right user will be loaded.
 
-### Token and Private token
+### Token and Private token {/* #token-and-private-token */}
 
 If you specify a token in the URL, the user will be authenticated automatically in the app. This is really useful for external apps and systems. For example, you can use this feature for SSO systems. The user token can be found in the database table `mdl_external_tokens`.
 
@@ -60,7 +60,7 @@ moodlemobile://https://domain.com?token=TOKEN&privatetoken=PRIVATETOKEN
 
 The token has priority over the username parameter. For example, if you specify username "u1" but the token belongs to user "u2", the user u2 will be authenticated in the app.
 
-### Redirect
+### Redirect {/* #redirect */}
 
 The redirect parameter indicates which page you want to open in the app:
 
@@ -78,6 +78,6 @@ The redirect parameter can be a relative URL based on the base URL. The example 
 moodlemobile://https://domain.com?redirect=/course/view.php?id=2
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - [Custom URL Scheme Cordova plugin used by the app](https://github.com/EddyVerbruggen/Custom-URL-scheme).

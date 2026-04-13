@@ -12,14 +12,14 @@ version="4.4.6"
 issueNumber="MDL-83541"
 />
 
-## What has changed?
+## What has changed? {/* #what-has-changed */}
 
 The backup and restore process has a long history of issues with shared questions, resulting in duplicates of questions being
 created, or errors upon restore. [MDL-83541](https://moodle.atlassian.net/browse/MDL-83541) put in place a mechanism to resolve this by accurately matching questions being
 restored with those already in the target context, but it requires additional information from the question type plugins to ensure
 this matching works.
 
-## How does the matching work?
+## How does the matching work? {/* #how-does-the-matching-work */}
 
 When a question is restored, a SHA1 hash of the question data is generated, and compared against a SHA1 hash of each question in
 the category it is being restored to. If it finds a matching hash, the question is not restored, and any references to that
@@ -33,13 +33,13 @@ database IDs.
 
 Once this structure has been produced, it is flattened and concatenated into a string, which is then hashed.
 
-## How can I tell if this affects my plugin?
+## How can I tell if this affects my plugin? {/* #how-can-i-tell-if-this-affects-my-plugin */}
 
 `mod/quiz/tests/backup/repeated_restore_test.php` contains a set of unit tests that will run against all installed `qtypes`, to
 ensure that existing questions are correctly matched with restored questions. If you run this test class on a development site with
 your qtype plugin installed, it will fail if your plugin is missing the required information.
 
-### These tests say my plugin was skipped!
+### These tests say my plugin was skipped! {/* #these-tests-say-my-plugin-was-skipped */}
 
 In order to test a plugin, you must have a test question defined in your `tests/helper.php` file that has a `form_data` method, so
 that it can be generated with the `create_question()` data generator.
@@ -50,13 +50,13 @@ If your question type does not use the standard `question_answers` table, some t
 be tested by the standard test, although you may wish to add your own test to check that a question where the question type's
 custom data has been edited results in different hashes.
 
-## What is the impact if I don't do anything?
+## What is the impact if I don't do anything? {/* #what-is-the-impact-if-i-dont-do-anything */}
 
 If your plugin does not provide the information, then each time a question is restored from a backup, a new copy will be created.
 This means that duplicating quizzes that use questions from a shared question bank will result in that question bank containing
 lots of copies of the same questions.
 
-## How do I tell what changes I need to make?
+## How do I tell what changes I need to make? {/* #how-do-i-tell-what-changes-i-need-to-make */}
 
 If your plugin just uses the standard question tables, there is a chance you don't need to do anything. Running the unit test
 mentioned above will confirm this.
@@ -110,7 +110,7 @@ public static function remove_excluded_question_data(stdClass $questiondata, arr
 }
 ```
 
-### I did all that and the tests still fail!
+### I did all that and the tests still fail! {/* #i-did-all-that-and-the-tests-still-fail */}
 
 If something is still failing and you can't tell why, the best option is to run the unit test with XDebug, and put a breakpoint on
 the `return` line of `restore_questions_parser_processor::generate_question_identity_hash()`. Most tests will hit this 3 times for
@@ -118,7 +118,7 @@ each question: Once when reading the backup the first time and creating a restor
 and finally when hashing the restored question for comparison. Comparing the contents of  `$questiondata` between those last two
 samples should help you find why they are matching incorrectly, or not matching correctly, depending on the test.
 
-## Where can I see some examples?
+## Where can I see some examples? {/* #where-can-i-see-some-examples */}
 
 - `qtype_calculated` has an example of overriding `restore_qtype_plugin::convert_backup_to_questiondata()`, to add additional
   fields from the backup to the `$questiondata` structure, to add plugin-specific options and answer fields.

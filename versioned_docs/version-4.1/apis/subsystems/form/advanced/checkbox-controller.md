@@ -11,7 +11,7 @@ The checkbox controller allows developers to group checkboxes together and add a
 
 You can add as many groups of checkboxes as you like, as long as they are uniquely named, where the name is an integer.
 
-## Checkbox groups
+## Checkbox groups {/* #checkbox-groups */}
 
 When adding checkboxes, you can add them in _groups_. Each group of checkboxes must have a unique integer name, for example:
 
@@ -37,7 +37,7 @@ public function definition(): void {
 }
 ```
 
-## API
+## API {/* #api */}
 
 The checkbox controller is described by the following mform function:
 
@@ -55,7 +55,7 @@ moodleform::add_checkbox_controller(
 - mixed  *$attributes* (optional) Either a typical HTML attribute string or an associative array.
 - int *$originalValue* (optional) Defaults to 0; The general original value of the checkboxes being controlled by this element.
 
-:::info An explanation of `$originalvalue`
+:::info[An explanation of `$originalvalue`]
 
 Imagine that you have 50 checkboxes in your form, which are all unchecked when the form first loads, except 5 or 6 of them.
 
@@ -67,7 +67,7 @@ The `$originalvalue` parameter allows you to configure the initial value and the
 
 :::
 
-### Description of functionality
+### Description of functionality {/* #description-of-functionality */}
 
 The first role of the `add_checkbox_controller` method is to add a form element. Depending on whether JavaScript is supported by the browser or not, it will either output a link with onclick behaviour for instant action, or a `nosubmit` button which will reload the page and change the state of the checkboxes, but retain the rest of the data already filled in the form by the user.
 

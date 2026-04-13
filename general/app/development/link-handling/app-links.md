@@ -6,7 +6,7 @@ tags:
  - Moodle App
 ---
 
-## Pressing a link inside the app
+## Pressing a link inside the app {/* #pressing-a-link-inside-the-app */}
 
 When a user presses a link in the Moodle app, the behaviour changes depending on whether the URL is supported by the app or not:
 
@@ -15,11 +15,11 @@ When a user presses a link in the Moodle app, the behaviour changes depending on
 - If it's a URL pointing to a local file it will be opened with an external app in Android, and an embedded viewer in iOS. For example opening a PDF within a SCORM package would open a PDF reader in Android or and embedded PDF viewer in iOS.
 - If the link is inside an iframe (and is not pointing to a local file), it will be opened within the same iframe. This behaviour can be changed by setting the link's `target` attribute to anything other than `_self`, in which case the URL will be opened in an external browser. For example, clicking a link with a `target="_blank"` attribute would open the URL in an external browser.
 
-## Extending the list of supported URLs
+## Extending the list of supported URLs {/* #extending-the-list-of-supported-urls */}
 
 The app has a defined list of supported URLs. If you have a plugin adapted to work in the app and you want to support links to your plugin you will need to create a Link Handler. For more information and examples about this, please see the [CoreContentLinksDelegate](../plugins-development-guide/api-reference.md#corecontentlinksdelegate) documentation.
 
-## Opening links in an embedded browser
+## Opening links in an embedded browser {/* #opening-links-in-an-embedded-browser */}
 
 To open a link in an embedded browser instead of an external browser you can use the `data-open-in` attribute:
 
@@ -27,11 +27,11 @@ To open a link in an embedded browser instead of an external browser you can use
 <a href="https://domain.com" data-open-in="app">
 ```
 
-:::note Notice
+:::note[Notice]
 Please notice that students cannot add data attributes to HTML elements when using the Moodle editor, only teachers and users with the right permissions are able to add them.
 :::
 
-## Adding links to any HTML element
+## Adding links to any HTML element {/* #adding-links-to-any-html-element */}
 
 Using the `data-app-url` attribute you can also add a link to any HTML element. This link will only be used when the element is clicked in the app, it won't affect the behaviour when using a browser.
 
@@ -41,7 +41,7 @@ Using the `data-app-url` attribute you can also add a link to any HTML element. 
 
 A possible use case is to define a link for elements that are handled using JavaScript in browser, since in most cases the JavaScript code used in browser won't work in the app. This way the app will open a certain page when the element is clicked, otherwise it wouldn't do anything.
 
-:::note Notice
+:::note[Notice]
 Please notice that these links will always be opened in browser or embedded browser, not inside the app.
 :::
 
@@ -72,6 +72,6 @@ An example using all the attributes:
 </button>
 ```
 
-:::note Notice
+:::note[Notice]
 Please notice that students cannot add data attributes to HTML elements when using the Moodle editor, only teachers and users with the right permissions are able to add them.
 :::

@@ -13,9 +13,9 @@ Every plugin must have a `version.php` file located in the root directory of tha
 
 It contains a number of properties, which are used during the plugin installation and upgrade process. It allows to make sure the plugin is compatible with the given Moodle site, as well as spotting whether an upgrade is needed.
 
-## Plugin version properties
+## Plugin version properties {/* #plugin-version-properties */}
 
-### Component
+### Component {/* #component */}
 
 <LanguageProperty
     required
@@ -30,7 +30,7 @@ $plugin->component = 'plugintype_pluginname';
 
 This value is used during the installation and upgrade process for diagnostics and validation purposes to make sure the plugin code has been deployed to the correct location within the Moodle code tree.
 
-### Version
+### Version {/* #version */}
 
 <LanguageProperty
     required
@@ -49,7 +49,7 @@ $plugin->version = 2022061700;
                 //         XX
 ```
 
-### Requirements
+### Requirements {/* #requirements */}
 
 <LanguageProperty
     recommended
@@ -65,7 +65,7 @@ Moodle core's version number is defined in the `version.php` file located in the
 $plugin->requires = 2022041900.00;
 ```
 
-### Supported versions
+### Supported versions {/* #supported-versions */}
 
 <LanguageProperty
     types={["integer[]"]}
@@ -85,7 +85,7 @@ $plugin->supported = [
 ];
 ```
 
-### Incompatible versions
+### Incompatible versions {/* #incompatible-versions */}
 
 <LanguageProperty
     optional
@@ -101,7 +101,7 @@ The plugin will not be installable on any versions of Moodle from this point on.
 $plugin->incompatible = 311;
 ```
 
-### Maturity
+### Maturity {/* #maturity */}
 
 <LanguageProperty
     recommended
@@ -126,7 +126,7 @@ $plugin->maturity = MATURITY_RC;
 $plugin->maturity = MATURITY_STABLE;
 ```
 
-### Release name
+### Release name {/* #release-name */}
 
 <LanguageProperty
     recommended
@@ -142,7 +142,7 @@ This can be any value you like, although it is recommended that you choose a pat
 $plugin->release = '52.0-flamethrower-1.0';
 ```
 
-### Peer dependenices
+### Peer dependenices {/* #peer-dependenices */}
 
 <LanguageProperty
     types={["string[]"]}
@@ -162,7 +162,7 @@ $plugin->dependencies = [
 ]
 ```
 
-## File template
+## File template {/* #file-template */}
 
 Here is a template for the plugin's version.php file to copy and paste:
 
@@ -205,6 +205,6 @@ $plugin->dependencies = [
 ];
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - [Moodle versions](https://docs.moodle.org/dev/Moodle_versions)

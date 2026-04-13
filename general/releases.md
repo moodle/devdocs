@@ -5,7 +5,7 @@ tags:
   - Core development
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 import SupportedReleases, { styles as ReleaseStyles } from '@site/src/components/SupportedReleases';
 import ReleaseTable from '@site/src/components/ReleaseTable';
@@ -13,7 +13,7 @@ import Link from '@docusaurus/Link';
 
 This page lists all official releases of Moodle, grouped by branch in reverse chronological order.
 
-## Version support
+## Version support {/* #version-support */}
 
 The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/Long-term_support) version is Moodle 4.5. The next LTS version will be Moodle 5.3.
 
@@ -69,7 +69,7 @@ The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/
 </div>
 </details>
 
-## General release calendar
+## General release calendar {/* #general-release-calendar */}
 
 These are the target dates for releases. These dates may vary slightly due to unforeseen circumstances.
 
@@ -90,7 +90,7 @@ Minor releases dates differ slightly from release to release depending on the ti
 
 :::
 
-## Moodle 5.1
+## Moodle 5.1 {/* #moodle-51 */}
 
 <ReleaseTable releaseName="5.1" />
 
@@ -101,7 +101,7 @@ Bug fixes for security issues in 5.1.x will end April 2027 (18 months).
 
 :::
 
-## Moodle 5.0
+## Moodle 5.0 {/* #moodle-50 */}
 
 <ReleaseTable releaseName="5.0" />
 
@@ -112,7 +112,7 @@ Bug fixes for security issues in 5.0.x will end October 2026 (18 months).
 
 :::
 
-## Moodle 4.6 (Experimental)
+## Moodle 4.6 (Experimental) {/* #moodle-46-experimental */}
 
 Please note that Moodle 4.6 is an experimental version integrating MDL-71378 with the Moodle 4.5.x code, intended as a preview and testing release.  It is not recommended that it be used as part of general production.
 
@@ -125,7 +125,7 @@ Bug fixes for security issues in 4.6.x will end 14 April 2025 (4 months).
 
 :::
 
-## Moodle 4.5 (LTS)
+## Moodle 4.5 (LTS) {/* #moodle-45-lts */}
 
 <ReleaseTable releaseName="4.5" />
 
@@ -136,7 +136,7 @@ Bug fixes for security issues in 4.5.x will end October 2027 (36 months).
 
 :::
 
-## Moodle 4.4
+## Moodle 4.4 {/* #moodle-44 */}
 
 <ReleaseTable releaseName="4.4" />
 
@@ -147,7 +147,7 @@ Bug fixes for security issues in 4.4.x will end 8 December 2025 (18 months).
 
 :::
 
-## Moodle 4.3
+## Moodle 4.3 {/* #moodle-43 */}
 
 <ReleaseTable releaseName="4.3" />
 
@@ -158,7 +158,7 @@ Bug fixes for security issues in 4.3.x will end 21 April 2025 (18 months).
 
 :::
 
-## Moodle 4.2
+## Moodle 4.2 {/* #moodle-42 */}
 
 <ReleaseTable releaseName="4.2" />
 
@@ -169,7 +169,7 @@ Bug fixes for security issues in 4.2.x ended 7 October 2024 (18 months).
 
 :::
 
-## Moodle 4.1 (LTS)
+## Moodle 4.1 (LTS) {/* #moodle-41-lts */}
 
 <ReleaseTable releaseName="4.1" />
 
@@ -180,7 +180,7 @@ Bug fixes for security issues in 4.1.x will end 8 December 2025 (37 months).
 
 :::
 
-## Moodle 4.0
+## Moodle 4.0 {/* #moodle-40 */}
 
 <ReleaseTable releaseName="4.0" />
 
@@ -191,7 +191,7 @@ Bug fixes for security issues in 4.0.x ended 11 December 2023 (19 months).
 
 :::
 
-## Moodle 3.11
+## Moodle 3.11 {/* #moodle-311 */}
 
 <ReleaseTable releaseName="3.11" />
 
@@ -202,7 +202,7 @@ Bug fixes for security issues in 3.11.x ended 11 December 2023 (18 months plus 1
 
 :::
 
-## Moodle 3.10
+## Moodle 3.10 {/* #moodle-310 */}
 
 <ReleaseTable releaseName="3.10" />
 
@@ -213,7 +213,7 @@ Bug fixes for security issues in 3.10.x ended 9 May 2022 (18 months).
 
 :::
 
-## Moodle 3.9 (LTS)
+## Moodle 3.9 (LTS) {/* #moodle-39-lts */}
 
 <ReleaseTable releaseName="3.9" />
 
@@ -224,7 +224,7 @@ Bug fixes for security issues in 3.9.x ended 11 December 2023 (36 months plus 7 
 
 :::
 
-## Moodle 3.8
+## Moodle 3.8 {/* #moodle-38 */}
 
 <ReleaseTable releaseName="3.8" />
 
@@ -235,7 +235,7 @@ Bug fixes for security issues in 3.8.x ended 10 May 2021 (18 months).
 
 :::
 
-## Moodle 3.7
+## Moodle 3.7 {/* #moodle-37 */}
 
 <ReleaseTable releaseName="3.7" />
 
@@ -246,7 +246,7 @@ Bug fixes for security issues in 3.7.x ended 9 November 2020 (18 months).
 
 :::
 
-## Moodle 3.6
+## Moodle 3.6 {/* #moodle-36 */}
 
 <ReleaseTable releaseName="3.6" />
 
@@ -257,7 +257,7 @@ Bug fixes for security issues in 3.6.x ended 11 May 2020 (18 months).
 
 :::
 
-## Moodle 3.5 (LTS)
+## Moodle 3.5 (LTS) {/* #moodle-35-lts */}
 
 <ReleaseTable releaseName="3.5" />
 
@@ -268,7 +268,7 @@ Bug fixes for security issues in 3.5.x ended 10 May 2021 (36 months).
 
 :::
 
-## Moodle 3.4
+## Moodle 3.4 {/* #moodle-34 */}
 
 <ReleaseTable releaseName="3.4" />
 
@@ -279,7 +279,7 @@ Bug fixes for security issues in 3.4.x ended 13 May 2019 (18 months).
 
 :::
 
-## Moodle 3.3
+## Moodle 3.3 {/* #moodle-33 */}
 
 <ReleaseTable releaseName="3.3" />
 
@@ -290,7 +290,7 @@ Bug fixes for security issues in 3.3.x ended 12 November 2018 (18 months).
 
 :::
 
-## Moodle 3.2
+## Moodle 3.2 {/* #moodle-32 */}
 
 <ReleaseTable releaseName="3.2" />
 
@@ -301,7 +301,7 @@ Bug fixes for security issues in 3.2.x ended 17 May 2018 (18 months).
 
 :::
 
-## Moodle 3.1 (LTS)
+## Moodle 3.1 (LTS) {/* #moodle-31-lts */}
 
 <ReleaseTable releaseName="3.1" />
 
@@ -312,7 +312,7 @@ Bug fixes for security issues in 3.1.x ended 13 May 2019 (36 months).
 
 :::
 
-## Moodle 3.0
+## Moodle 3.0 {/* #moodle-30 */}
 
 <ReleaseTable releaseName="3.0" />
 
@@ -323,7 +323,7 @@ Bug fixes for security issues in 3.0.x ended 8 May 2017 (18 months).
 
 :::
 
-## Moodle 2.9
+## Moodle 2.9 {/* #moodle-29 */}
 
 <ReleaseTable releaseName="2.9" />
 
@@ -334,7 +334,7 @@ Bug fixes for security issues in 2.9.x ended 14 November 2016 (18 months).
 
 :::
 
-## Moodle 2.8
+## Moodle 2.8 {/* #moodle-28 */}
 
 <ReleaseTable releaseName="2.8" />
 
@@ -345,7 +345,7 @@ Bug fixes for security issues in 2.8.x ended 9 May 2016 (18 months).
 
 :::
 
-## Moodle 2.7 (LTS)
+## Moodle 2.7 (LTS) {/* #moodle-27-lts */}
 
 <ReleaseTable releaseName="2.7" />
 
@@ -356,7 +356,7 @@ Bug fixes for security issues in 2.7.x ended 8 May 2017 (36 months).
 
 :::
 
-## Moodle 2.6
+## Moodle 2.6 {/* #moodle-26 */}
 
 <ReleaseTable releaseName="2.6" />
 
@@ -367,7 +367,7 @@ Bug fixes for security issues in 2.6.x ended 11 May 2015 (18 months).
 
 :::
 
-## Moodle 2.5
+## Moodle 2.5 {/* #moodle-25 */}
 
 <ReleaseTable releaseName="2.5" />
 
@@ -378,7 +378,7 @@ Bug fixes for security issues in 2.5.x ended 10 November 2014 (18 months).
 
 :::
 
-## Moodle 2.4
+## Moodle 2.4 {/* #moodle-24 */}
 
 <ReleaseTable releaseName="2.4" />
 
@@ -389,7 +389,7 @@ Bug fixes for security issues in 2.4.x ended June 2014 (18 months).
 
 :::
 
-## Moodle 2.3
+## Moodle 2.3 {/* #moodle-23 */}
 
 <ReleaseTable releaseName="2.3" />
 
@@ -400,7 +400,7 @@ Bug fixes for security issues in 2.3.x ended December 2013 (18 months).
 
 :::
 
-## Moodle 2.2
+## Moodle 2.2 {/* #moodle-22 */}
 
 <ReleaseTable releaseName="2.2" />
 
@@ -411,7 +411,7 @@ Bug fixes for security issues in 2.2.x ended June 2013 (18 months).
 
 :::
 
-## Moodle 2.1
+## Moodle 2.1 {/* #moodle-21 */}
 
 <ReleaseTable releaseName="2.1" />
 
@@ -422,7 +422,7 @@ Bug fixes for security issues in 2.1.x ended December 2012 (18 months).
 
 :::
 
-## Moodle 2.0
+## Moodle 2.0 {/* #moodle-20 */}
 
 <ReleaseTable releaseName="2.0" />
 
@@ -433,7 +433,7 @@ Bug fixes for security issues in 2.0.x ended June 2012 (18 months).
 
 :::
 
-## Moodle 1.9
+## Moodle 1.9 {/* #moodle-19 */}
 
 <ReleaseTable releaseName="1.9" />
 
@@ -450,7 +450,7 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 
 :::
 
-## Moodle 1.8
+## Moodle 1.8 {/* #moodle-18 */}
 
 - [Moodle 1.8](./releases/1.8.md) - 30 March 2007
 - [Moodle 1.8.1](./releases/1.8/1.8.1.md) - 14 June 2007
@@ -469,7 +469,7 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 - [Moodle 1.8.14](./releases/1.8/1.8.14.md) - 3 December 2010
 - Support has ended
 
-## Moodle 1.7
+## Moodle 1.7 {/* #moodle-17 */}
 
 - [Moodle 1.7](./releases/1.7.md) - 7 November 2006
 - [Moodle 1.7.1](./releases/1.7/1.7.1.md) - 17 January 2007
@@ -481,7 +481,7 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 - [Moodle 1.7.7](./releases/1.7/1.7.7.md) - 28 January 2009
 - Support has ended
 
-## Moodle 1.6
+## Moodle 1.6 {/* #moodle-16 */}
 
 - [Moodle 1.6](./releases/1.6.md) - 20 June 2006
 - [Moodle 1.6.1](./releases/1.6/1.6.1.md) - 20 July 2006
@@ -495,7 +495,7 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 - [Moodle 1.6.9](./releases/1.6/1.6.9.md) - 28 January 2009
 - Support has ended
 
-## Moodle 1.5
+## Moodle 1.5 {/* #moodle-15 */}
 
 - [Moodle 1.5](./releases/1.5.md) - 5 June 2005
 - [Moodle 1.5.1](./releases/1.5/1.5.1.md) - 8 July 2005
@@ -504,7 +504,7 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 - [Moodle 1.5.4](./releases/1.5/1.5.4.md) - 21 May 2006
 - Support has ended
 
-## Moodle 1.4
+## Moodle 1.4 {/* #moodle-14 */}
 
 - Moodle 1.4 - 31 August 2004
 - Moodle 1.4.1 - 12 September 2004
@@ -514,7 +514,7 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 - [Moodle 1.4.5](./releases/1.4/1.4.5.md) - 7 May 2005
 - Support has ended
 
-## Moodle 1.3
+## Moodle 1.3 {/* #moodle-13 */}
 
 - Moodle 1.3 - 25 May 2004
 - Moodle 1.3.1 - 4 June 2004
@@ -524,19 +524,19 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 - Moodle 1.3.5 - 9 September 2004
 - Support has ended
 
-## Moodle 1.2
+## Moodle 1.2 {/* #moodle-12 */}
 
 - Moodle 1.2 - 20 March 2004
 - Moodle 1.2.1 - 25 March 2004
 - Support has ended
 
-## Moodle 1.1
+## Moodle 1.1 {/* #moodle-11 */}
 
 - Moodle 1.1 - 29 August 2003
 - Moodle 1.1.1 - 11 September 2003
 - Support has ended
 
-## Moodle 1.0
+## Moodle 1.0 {/* #moodle-10 */}
 
 - Moodle 1.0 - 20 August 2002
 - Moodle 1.0.1 - 26 August 2002
@@ -554,14 +554,14 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 - Moodle 1.0.9 - 30 May 2003
 - Support has ended
 
-## See also
+## See also {/* #see-also */}
 
 - [Roadmap](./community/roadmap.md) - future versions
 - [Moodle versions](https://docs.moodle.org/dev/Moodle_versions) - an explanation of how our versions work plus version numbers for each release (for $plugin->requires)
 
-## Translations
+## Translations {/* #translations */}
 
-<!-- cspell:disable -->
+{/* <!-- cspell:disable --> */}
 
 - [Historique des versions](https://docs.moodle.org/fr/Historique_des_versions)
 - [dev/Historia de las versiones](https://docs.moodle.org/es/dev/Historia_de_las_versiones)

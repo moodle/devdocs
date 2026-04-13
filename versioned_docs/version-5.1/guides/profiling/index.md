@@ -12,11 +12,11 @@ PHP has two types of profiler:
 - XHProf is a standard designed for capturing profile traces on live servers. It was originally designed by engineers at Facebook and is suitable for production environments.
 - [XDebug](http://www.xdebug.org/docs/profiler) is well known. and understood, and its trace output is supported by tools like [KCachegrind](http://kcachegrind.sourceforge.net/html/Home.html). It is not recommended for production environments.
 
-## XHProf
+## XHProf {/* #xhprof */}
 
 XHProf is both a standard, and a profiler itself. Support for the standard, and two of the standard implementations of it, are built into Moodle.
 
-### XHProf Extension
+### XHProf Extension {/* #xhprof-extension */}
 
 XHProf is a function-level hierarchical profiler for PHP. The raw data collection component is implemented in C, as a PHP extension. It is capable of reporting function-level inclusive and exclusive wall times, memory usage, CPU times and number of calls for each function. Additionally, it supports ability to compare two runs (hierarchical DIFF reports), or aggregate results from multiple runs.
 
@@ -25,7 +25,7 @@ For more information, see:
 - [Installation and API Documentation](https://www.php.net/manual/en/book.xhprof.php)
 - [Change-logs and Version information](https://pecl.php.net/package/xhprof)
 
-### Export Xhprof data to plugins
+### Export Xhprof data to plugins {/* #export-xhprof-data-to-plugins */}
 
 <Since versions={["3.6"]} issueNumber="MDL-63031" />
 
@@ -35,7 +35,7 @@ To disable Moodle from writing traces to the database, add: `$CFG->disableprofil
 
 Plugins will need to provide a `store_profiling_data` function to handle the data.
 
-### Configuration within Moodle
+### Configuration within Moodle {/* #configuration-within-moodle */}
 
 Once an xhprof extension is correctly installed you will find a new "**Profiling**" option available under Settings > Site administration > Development.
 
@@ -72,12 +72,12 @@ To view a callgraph, you must have installed Graphviz, and configured the `patht
 
 Profiles can also be compared with other runs on the same page, allowing you to compare the impact of changes you make.
 
-### Further reading
+### Further reading {/* #further-reading */}
 
 - http://tjhunt.blogspot.co.uk/2013/05/performance-testing-moodle.html
 - https://docs.google.com/presentation/d/1MV4R71UBgPgzM6I9h_yDnYcxIJlgCoLBUDtJJr-TzNI/present#slide=id.i0 presentation about using XHProf
 
-## Xdebug
+## Xdebug {/* #xdebug */}
 
 [Xdebug](http://xdebug.org/docs/profiler) is a powerful PHP debugging tool which is actively maintained, and provides a range of useful debugging features.
 
@@ -92,7 +92,7 @@ This page will focus on its profiling feature, which provides developer with det
 
 Xdebug is simple to install and operate. it does not require code changes.
 
-### Installing Xdebug extension
+### Installing Xdebug extension {/* #installing-xdebug-extension */}
 
 Xdebug is available as an extension to PHP and is typically installed using pecl. Exact instructions will depend on your Operating System.
 
@@ -100,13 +100,13 @@ For full instructions, see the [Xdebug installation documentation](https://xdebu
 
 Once the Xdebug extension is installed and specified in php configuration, you should restart your webserver.
 
-:::note tip
+:::note[tip]
 
 Information about Xdebug should appear in `phpinfo()` function output. If not, make sure that `zend_extension` line is not commented out, extension file exists in specified location and refer to webserver logs for more details.
 
 :::
 
-### Configuring the Xdebug Profiler
+### Configuring the Xdebug Profiler {/* #configuring-the-xdebug-profiler */}
 
 When Xdebug extension is installed, it must be configured as a profiler.
 
@@ -136,7 +136,7 @@ This tells the xdebug extension to look for a specific variable as a trigger nam
 - `$_POST` - HTTP POST params
 - `$_COOKIE` - An HTTP cookie name
 
-:::tip Configuring the trigger
+:::tip[Configuring the trigger]
 
 By default, the content of the variable is not checked, but this can be configured with the `xdebug.trigger_value` parameter, for example:
 
@@ -159,7 +159,7 @@ cachegrind.out._moodle2_mod_forum_view_php.1289838411
 cachegrind.out._moodle2_index_php.1289837892
 ```
 
-:::tip Profiling POST and AJAX requests
+:::tip[Profiling POST and AJAX requests]
 
 Triggering profiling with POST requests or AJAX queries is also possible without code changes with a number of browser plugins available to help. Plugins are available for most browsers to insert the `XDEBUG_PROFILE` variable into cookie data, thus making profiling enabled for as long as you wish for all requests, the include:
 
@@ -169,20 +169,20 @@ Triggering profiling with POST requests or AJAX queries is also possible without
 
 :::
 
-### Analyzing Xdebug profiling files
+### Analyzing Xdebug profiling files {/* #analyzing-xdebug-profiling-files */}
 
 Profiling data is recorded in the cachegrind format, so it can be analysed using one of external tools, such as [KCachegrind](https://kcachegrind.github.io/html/Home.html), [WinCacheGrind](http://sourceforge.net/projects/wincachegrind/), [xdebugtoolkit](http://code.google.com/p/xdebugtoolkit/) or web-based analyser [Webgrind](https://github.com/jokkedk/webgrind#readme). Using these tools is pretty simple. KCachegrind includes a feature to show the matching code if the web-server is run on the same box.
 
 The Xdebug profiler documentation page has a [section](http://xdebug.org/docs/profiler#misc) about KCachegrind that worth reading for everyone who starts using KCachegrind.
 
-### Quick summary
+### Quick summary {/* #quick-summary */}
 
 1. Install Xdebug 3 extension on your server
 2. Configure xdebug
 3. When you want to profile a page, add `&XDEBUG_PROFILE` to the end of the URL
 4. Open the `cachegrind.out` file generated with one of the tools mentioned above
 
-## See also
+## See also {/* #see-also */}
 
 - [Forum thread about profiling Moodle 2.0](http://moodle.org/mod/forum/discuss.php?d=162045)
 XHProf articles:
@@ -193,4 +193,4 @@ Xdebug articles:
 - [Introducing xdebug](http://devzone.zend.com/article/2803-Introducing-xdebug)
 - [Xdebug Quick start: Profiling in PHP](http://blog.teamlazerbeez.com/2010/05/04/xdebug-quickstart-profiling-in-php/)
 
-<!-- cspell:ignore xhprof , cachegrind, pecl , xdebugtoolkit , webgrind , phpinfo , callgraph, graphviz -->
+{/* <!-- cspell:ignore xhprof , cachegrind, pecl , xdebugtoolkit , webgrind , phpinfo , callgraph, graphviz --> */}

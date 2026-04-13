@@ -11,18 +11,18 @@ tags:
 
 Since Moodle 4.5, it's possible to safely deprecate and remove icons.
 
-:::info When should icons be removed?
+:::info[When should icons be removed?]
 
 There are situations where deprecation does not make sense. For example when a whole functionality is being removed, or a very specific icon is no longer used by the code. If it is very unlikely that the icon is used by any other code, it can simply be removed without the full deprecation process.
 
 :::
 
-## How it works
+## How it works {/* #how-it-works */}
 
 A new method, `get_deprecated_icons()`, has been added to the `icon_system` class. All deprecated icons should be registered through this method.
 Plugins can implement a callback to `pluginname_get_deprecated_icons()` to register their deprecated icons too.
 
-## How to deprecate an icon
+## How to deprecate an icon {/* #how-to-deprecate-an-icon */}
 
 To deprecate an icon, follow these steps:
 
@@ -71,7 +71,7 @@ If there is no section for the current version in the `get_deprecated_icons()` m
     }
 ```
 
-## Final deprecation
+## Final deprecation {/* #final-deprecation */}
 
 When adding icons to the `get_deprecated_icons()` method, it is important to add it under the comment with the version when the code was deprecated. If that comment still doesn't exist, it should be added:
 
@@ -87,7 +87,7 @@ And alongside with that, a new issue should be created in the tracker to remove 
 
 After 4 major versions, the deprecated icons will be removed from the `get_deprecated_icons()` methods.
 
-## Check deprecated icons in Behat tests
+## Check deprecated icons in Behat tests {/* #check-deprecated-icons-in-behat-tests */}
 
 Behat tests are now checking for deprecated icons. When running Behat tests, the following message will be displayed:
 

@@ -7,9 +7,9 @@ tags:
   - Developer processes
 ---
 
-## Overview
+## Overview {/* #overview */}
 
-### Scope
+### Scope {/* #scope */}
 
 This document describes **style** guidelines for developers working on or with Moodle code. It talks purely about the mechanics of code layout and the choices we have made for Moodle. The intent of this specification is to reduce cognitive friction when scanning code from different authors. It does so by enumerating a shared set of rules and expectations about how to format PHP code.
 
@@ -23,7 +23,7 @@ A "de-facto Moodle standard" is any coding style which is commonly and typically
 
 :::
 
-### Goals
+### Goals {/* #goals */}
 
 Consistent coding style is important in any development project, and particularly when many developers are involved. A standard style helps to ensure that the code is easier to read and understand, which helps overall quality.
 
@@ -43,7 +43,7 @@ Much of the existing Moodle code may not follow all of these guidelines - we con
 
 For details about using the Moodle API to get things done, see the [coding guidelines](../../policies.md).
 
-### Useful tools
+### Useful tools {/* #useful-tools */}
 
 Several tools are available to help you in write code that conforms to this guide:
 
@@ -53,9 +53,9 @@ Several tools are available to help you in write code that conforms to this guid
 It is worth using both tools to check the code you are writing as they both perform slightly different checks.
 If you can get your code to pass both then you are well on the way to making friends with those who will be reviewing your work.
 
-## File Formatting
+## File Formatting {/* #file-formatting */}
 
-### PHP tags
+### PHP tags {/* #php-tags */}
 
 Always use "long" php tags. However, to avoid whitespace problems, DO NOT include the closing tag at the very end of the file.
 
@@ -69,7 +69,7 @@ import Example_PhpTags_Good from '!!raw-loader!./_examples/phptags_good.php';
 
 SQL queries use special indentation, see [SQL coding style](./sql.md).
 
-### Maximum Line Length
+### Maximum Line Length {/* #maximum-line-length */}
 
 The key issue is readability.
 
@@ -77,7 +77,7 @@ Aim for 132 characters if it is convenient, it is not recommended to use more th
 
 The exception are string files in the `/lang` directory where lines `$string['id'] = 'value';` should have the value defined as a single string of any length, wrapped by quotes (no concatenation operators, no heredoc and no newdoc syntax). This helps to parse and process these string files without including them as a PHP code.
 
-#### Wrapping lines
+#### Wrapping lines {/* #wrapping-lines */}
 
 Whenever wrapping lines, the following rules should generally apply:
 
@@ -86,7 +86,7 @@ Whenever wrapping lines, the following rules should generally apply:
 
 See examples in the following sections.
 
-#### Wrapping control structures
+#### Wrapping control structures {/* #wrapping-control-structures */}
 
 <ValidExample>
 
@@ -100,7 +100,7 @@ while ($fileinfolevel && $params['component'] === 'user'
 
 </ValidExample>
 
-#### Wrapping if-statement conditions
+#### Wrapping if-statement conditions {/* #wrapping-if-statement-conditions */}
 
 There is nothing special and the control structures rule would still apply.
 
@@ -145,7 +145,7 @@ if (($element['object']->is_course_item() || $element['object']->is_category_ite
 
 </InvalidExample>
 
-### Line Termination
+### Line Termination {/* #line-termination */}
 
 - Every line must be terminated by a Unix line feed character (LF, decimal 10, hexadecimal 0x0A).
 - Carriage returns (CR, decimal 13, hexadecimal 0x0D) must NOT be used alone or with LFs.
@@ -158,11 +158,11 @@ This is consistent with the conventions of [PSR-12](https://github.com/php-fig/f
 
 :::
 
-### Whitespace
+### Whitespace {/* #whitespace */}
 
 Similar to [Section 2.3 of PSR-12](https://www.php-fig.org/psr/psr-12/#23-lines), each line of code should not have trailing whitespace. This is also applicable for multiline string literals such as SQL statements.
 
-#### Assignment operator
+#### Assignment operator {/* #assignment-operator */}
 
 - One or more spaces are allowed before assignments.
 - One and only one space is allowed after assignments.
@@ -189,9 +189,9 @@ $bafoo  = 'Hello world';
 
 When making decisions about the spaces to apply before assignments, please consider both surrounding and similar code.
 
-## Naming Conventions
+## Naming Conventions {/* #naming-conventions */}
 
-### Filenames
+### Filenames {/* #filenames */}
 
 Filenames should:
 
@@ -200,7 +200,7 @@ Filenames should:
 - use lowercase letters only
 - end in `.php`, `.html`, `.js`, `.css` or `.xml`
 
-### Classes
+### Classes {/* #classes */}
 
 Class names should always be lower-case English words, separated by underscores:
 
@@ -260,7 +260,7 @@ This has now been deprecated. Please use `stdClass` or the array instantiation i
 
 :::
 
-### Functions and Methods
+### Functions and Methods {/* #functions-and-methods */}
 
 Method and function names should be simple English lowercase words. Words should be separated by underscores.
 
@@ -300,7 +300,7 @@ function forum_set_display_mode($mode = 0) {
 
 </ValidExample>
 
-#### Function Parameters
+#### Function Parameters {/* #function-parameters */}
 
 Parameters are always simple lowercase English words (sometimes more than one, like `$initialvalue`), and should always have sensible defaults if possible.
 
@@ -316,7 +316,7 @@ public function foo($required, $optional = null);
 
 However, if an optional parameter is boolean, and its logical default value should be true, or false, then using true or false is acceptable.
 
-:::note Type hinting with optional parameters
+:::note[Type hinting with optional parameters]
 
 When type-hinting optional parameters, technically the nullable hint is optional, but it is highly recommended as it leads to consistent code.
 
@@ -331,7 +331,7 @@ public function get(?string $default = null): string;
 
 :::
 
-### Web service functions
+### Web service functions {/* #web-service-functions */}
 
 Web service functions should be of the format `{fullcomponent}_{methodname}`, where
 
@@ -351,7 +351,7 @@ Web service functions should be of the format `{fullcomponent}_{methodname}`, wh
 
 </ValidExample>
 
-### Variables
+### Variables {/* #variables */}
 
 Variable names should always be easy-to-read, meaningful lower-case English words. If you really need more than one word then run them together, but keep them as short as possible. Use **plural** names for arrays of objects. Use **positive** variables names always (allow, enable not prevent, disable).
 
@@ -637,7 +637,7 @@ There are no rules limiting what can be used as a level 3 namespace.
 This is where a plugin or addon can make extensive use of namespaces with no
 chance of conflict with any other plugin or api, now and forever onwards.
 
-#### Namespaces within `**/tests` directories {#namespaces-within-tests}
+#### Namespaces within `**/tests` directories {/* #namespaces-within-tests */}
 
 :::info
 
@@ -1226,7 +1226,7 @@ Put a space before and after the control statement in brackets, and separate the
 
 Indent with four spaces.
 
-:::note Do not use `elseif`
+:::note[Do not use `elseif`]
 
 Always use the `else if` variant
 
@@ -1352,7 +1352,7 @@ All other scripts with the exception of imported 3rd party libraries and files w
 defined('MOODLE_INTERNAL') || die();
 ```
 
-:::info Side-effects
+:::info[Side-effects]
 
 The term side-effects refers to any global scope code not being:
 
@@ -1689,7 +1689,7 @@ For files containing only one artifact, the file phpdoc block is optional as lon
  */
 ```
 
-### Classes {#phpdoc-classes}
+### Classes {/* #phpdoc-classes */}
 
 All classes must have a complete docblock like this:
 
@@ -1848,10 +1848,10 @@ define('PARAM_ALPHANUM', 'alphanum');
 
 ### Inline comments
 
-<!-- vale Microsoft.Ellipses = NO -->
+{/* <!-- vale Microsoft.Ellipses = NO --> */}
 Inline comments must use the "// " (2 slashes + whitespace) style, laid out neatly so that it fits among the code and lines up with it.
 The first line of the comment must begin with a capital letter (or a digit, or '...') and the comment must end with a proper punctuation character. Permitted final characters are '.', '?' or '!'.
-<!-- vale Microsoft.Ellipses = YES -->
+{/* <!-- vale Microsoft.Ellipses = YES --> */}
 
 <ValidExample>
 

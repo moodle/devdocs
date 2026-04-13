@@ -5,7 +5,7 @@ tags:
   - Processes
 ---
 
-:::info Ready to code?
+:::info[Ready to code?]
 
 - [Set up your development environment](#a-quick-start-to-moodle-development)
 - See the [list of relatively easy Moodle bugs](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDL%20AND%20type%20in%20(bug)%20AND%20status%20%3D%20open%20AND%20Difficulty%20%3D%20Easy%20AND%20labels%20not%20in%20(patch)%20ORDER%20BY%20created%20DESC)
@@ -17,9 +17,9 @@ tags:
 
 :::
 
-<!-- cspell:ignore adminer -->
+{/* <!-- cspell:ignore adminer --> */}
 
-## A quick start to Moodle development
+## A quick start to Moodle development {/* #a-quick-start-to-moodle-development */}
 
 1. Create an account on [Moodle.org](https://moodle.org/). You will need this to access the [Moodle General Developer forum](https://moodle.org/mod/forum/view.php?f=33) and download [Moodle plugins](https://moodle.org/plugins). You can also sign up to free self-paced courses in our [Moodle Academy Developer Learning Pathway](https://moodle.academy/course/index.php?categoryid=4)
 1. Create an account on [GitHub](https://github.com/) and [install Git on your computer](/docs/guides/git/). This is the source code version control repository tool of choice for Moodle development.
@@ -63,7 +63,7 @@ And finally remember these wise words from [Michael Milette](https://moodle.org/
 >
 > Learning all of Moodle and its database takes time - maybe even years. In fact you may never come across parts of it and that's OK. Take it one step at a time and don't be afraid to ask for help when you get stuck. The only expectation by the worldwide community is that you will have tried to figure things out on your own before asking a question. Google is your friend. Just start your query with the word "moodle".
 
-## Communication
+## Communication {/* #communication */}
 
 If you have any question or want to share your ideas, there are several channels you can use to communicate with other developers:
 
@@ -71,11 +71,11 @@ If you have any question or want to share your ideas, there are several channels
 - [A Matrix room](https://matrix.to/#/%23moodledev:moodle.com) available for real-time communication. Read the [chat policies](https://docs.moodle.org/dev/Chat) before joining.
 - [Developer meetings](../community/meetings/index.md), organised periodically and open to anyone interested in Moodle development.
 
-## Developer FAQ
+## Developer FAQ {/* #developer-faq */}
 
 Visit our [Developer FAQ](./abc/faq.md) page and get answers to some of our most common questions.
 
-## See also
+## See also {/* #see-also */}
 
 - [Releases](../releases.md) - versions of Moodle that have already been released
 - [Process](./process.md)

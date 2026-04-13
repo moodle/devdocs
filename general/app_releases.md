@@ -6,14 +6,14 @@ tags:
   - Release notes
 ---
 
-## Moodle App 5.x
+## Moodle App 5.x {/* #moodle-app-5x */}
 
 | **Version name** | **Date** |
 |---|---|
 | [Moodle App 5.1.0](./app_releases/v5/v5.1.0) |  9 January 2026 |
 | [Moodle App 5.0.0](./app_releases/v5/v5.0.0) |  27 June 2025 |
 
-## Moodle App 4.x
+## Moodle App 4.x {/* #moodle-app-4x */}
 
 | **Version name** | **Date** |
 |---|---|
@@ -32,7 +32,7 @@ tags:
 - On 4.4.0 the app was based on Ionic 7 version.
 - On 4.5.0 the app was based on Ionic 8 version.
 
-## Moodle App 3.x
+## Moodle App 3.x {/* #moodle-app-3x */}
 
 Version 3 has been aligned with the Moodle LMS deployments.
 
@@ -73,7 +73,7 @@ Version 3 has been aligned with the Moodle LMS deployments.
 | [Moodle Mobile 3.1.0](./app_releases/v3/v3.1.0) | 23 May 2016 |
 | [Moodle Mobile 3.0.0](./app_releases/v3/v3.0.0) | 15 April 2016 |
 
-## Moodle Mobile 2.x
+## Moodle Mobile 2.x {/* #moodle-mobile-2x */}
 
 Version 2 was based on Ionic 1 and it supported Moodle versions from 2.4 onwards.
 
@@ -90,10 +90,10 @@ Version 2 was based on Ionic 1 and it supported Moodle versions from 2.4 onwards
 | [Moodle Mobile 2.1](./app_releases/v2/v2.1) | 28 August 2015 |
 | [Moodle Mobile 2.0](./app_releases/v2/v2.0) | 31 July 2015 |
 
-## Moodle Mobile 1.x
+## Moodle Mobile 1.x {/* #moodle-mobile-1x */}
 
 - [Moodle Mobile 1](./app_releases/v1.x)
 
-## See also
+## See also {/* #see-also */}
 
 - [Roadmap](./community/roadmap.md)

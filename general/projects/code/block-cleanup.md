@@ -16,7 +16,7 @@ import { ProjectSummary } from '@site/src';
 
 In the Add a block menu, the list of blocks is really long. This project is about figuring out how to reduce the list.
 
-## Disabling blocks if the feature is disabled
+## Disabling blocks if the feature is disabled {/* #disabling-blocks-if-the-feature-is-disabled */}
 
 Blocks such as the blog menu, blog tags and recent blog entries will be disabled if blogs are disabled in advanced features.
 
@@ -35,7 +35,7 @@ Blocks this applies to:
 - Random glossary entry
 - Tags
 
-## Disabling less useful blocks
+## Disabling less useful blocks {/* #disabling-less-useful-blocks */}
 
 Some blocks that we have disabled by default are:
 
@@ -48,7 +48,7 @@ For new installs, the above blocks will disabled by default.
 
 For upgraded sites, we check if there are any instances of the block and if not, disable it.
 
-## Letting themes define "unneeded" blocks
+## Letting themes define "unneeded" blocks {/* #letting-themes-define-unneeded-blocks */}
 
 The Administration and Navigation blocks are only needed if the Classic theme is used.
 

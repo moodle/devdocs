@@ -59,7 +59,7 @@ $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
 ```
 
-## Layout files
+## Layout files {/* #layout-files */}
 
 Layout files are used to provide a different layout of the elements of the page for different types of pages in Moodle.
 
@@ -307,7 +307,7 @@ When writing layout files, consider the variations in layouts and how the HTML u
 
 It's important to note again that when customizing an existing theme, the creation of layouts or layout files may not be necessary.
 
-## Layout types
+## Layout types {/* #layout-types */}
 
 - `base`. Most backwards compatible layout without the blocks. This is the layout used by default.
 - `standard`. Standard layout with blocks. This is recommended for most pages with general information.

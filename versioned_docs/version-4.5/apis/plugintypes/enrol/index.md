@@ -5,9 +5,9 @@ tags:
   - Plugins
 ---
 
-<!-- cspell:ignore enrolme -->
-<!-- cspell:ignore timeend -->
-<!-- cspell:ignore unenrolment -->
+{/* <!-- cspell:ignore enrolme --> */}
+{/* <!-- cspell:ignore timeend --> */}
+{/* <!-- cspell:ignore unenrolment --> */}
 
 import {
     Lang,
@@ -34,7 +34,7 @@ Enrolments and role assignments are separate concepts, you may be enrolled and n
 
 :::
 
-## File structure
+## File structure {/* #file-structure */}
 
 All enrolment plugin files must be located inside the **enrol/pluginname** folder.
 
@@ -56,7 +56,7 @@ All enrolment plugin files must be located inside the **enrol/pluginname** folde
 
 Some of the important files for the format plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
-### lib.php
+### lib.php {/* #libphp */}
 
 import LibExample from '!!raw-loader!./_examples/lib.php';
 
@@ -72,7 +72,7 @@ The plugin lib.php must contain the plugin base class.
 
 Enrolment plugins must extend `enrol_plugin` base class which is defined at the end of lib/enrollib.php. This base class contains all standard methods to define the plugin workflow.
 
-### lang/en/enrol_pluginname.php
+### lang/en/enrol_pluginname.php {/* #langenenrol_pluginnamephp */}
 
 import langExample from '!!raw-loader!./_examples/enrol_lang.php';
 
@@ -82,7 +82,7 @@ import langExample from '!!raw-loader!./_examples/enrol_lang.php';
     example={langExample}
 />
 
-### db/access.php
+### db/access.php {/* #dbaccessphp */}
 
 import RepositoryAccessExample from '!!raw-loader!./_examples/access.php';
 
@@ -102,13 +102,13 @@ Depending on the enrolment workflow, the access.php file should define the follo
 
 See [enrolment API methods](#enrolment-api-methods) for more information.
 
-### version.php
+### version.php {/* #versionphp */}
 
 <VersionPHP
     plugintype="enrol"
 />
 
-## User enrolment process
+## User enrolment process {/* #user-enrolment-process */}
 
 Manual enrolment plugins are the simplest way to handle user enrolments. In the core *enrol_manual*, users with necessary permissions may enrol or unenrol users manually. In the *enrol_flatfile* plugin allows automation of enrolment and unenrolment actions.
 
@@ -116,7 +116,7 @@ Fully automatic plugins are configured at the system level, they synchronise use
 
 Interactive enrolment plugins require user interaction during enrolment (for example: *enrol_self* and *enrol_fee*). These plugins need to override `enrol_plugin::show_enrolme_link()`, `enrol_plugin::enrol_page_hook()` and to implement adding and editing of enrol instance.
 
-## Enrolment expiration and suspending
+## Enrolment expiration and suspending {/* #enrolment-expiration-and-suspending */}
 
 User has active enrolment if all following conditions are met:
 
@@ -131,11 +131,11 @@ Most synchronisation plugins include a setting called *External unenrol action*.
 
 Plugins that set `timeend` in `user_enrolments` table may want to specify expiration action and optional expiration notification using `enrol_plugin::process_expirations()` and `enrol_plugin::send_expiry_notifications()` methods.
 
-## Enrolment API methods.
+## Enrolment API methods. {/* #enrolment-api-methods */}
 
 Each enrolment plugin can define the enrolment workflow by overriding some of the `enrol_plugin` methods.
 
-### enrol_plugin::get_user_enrolment_actions(): array
+### enrol_plugin::get_user_enrolment_actions(): array {/* #enrol_pluginget_user_enrolment_actions-array */}
 
 By default, all enrolment plugins will have *editing enrolment* and *user unenrolment* actions. However, some plugins may override this method to add extra actions.
 
@@ -173,7 +173,7 @@ public function get_user_enrolment_actions(course_enrolment_manager $manager, $u
   </div>
 </details>
 
-### enrol_plugin::allow_unenrol(): bool
+### enrol_plugin::allow_unenrol(): bool {/* #enrol_pluginallow_unenrol-bool */}
 
 This method returns true if other code allowed to unenrol everybody from one instance. This method is used on course reset and manual unenrol.
 
@@ -200,7 +200,7 @@ public function allow_unenrol(stdClass $instance) {
   </div>
 </details>
 
-### enrol_plugin::allow_unenrol_user(): bool
+### enrol_plugin::allow_unenrol_user(): bool {/* #enrol_pluginallow_unenrol_user-bool */}
 
 This method returns true if other code allowed to unenrol a specific user from one instance.
 
@@ -252,7 +252,7 @@ public function allow_unenrol_user(stdClass $instance, stdClass $userenrolment) 
   </div>
 </details>
 
-### enrol_plugin::allow_enrol(): bool
+### enrol_plugin::allow_enrol(): bool {/* #enrol_pluginallow_enrol-bool */}
 
 Define if the enrol plugin is compatible with manual enrolments.
 
@@ -279,7 +279,7 @@ public function allow_enrol(stdClass $instance) {
   </div>
 </details>
 
-### enrol_plugin::enrol_user()
+### enrol_plugin::enrol_user() {/* #enrol_pluginenrol_user */}
 
 This method is the plugin enrolment hook. It will be called when user is enrolled in the course using one of the plugin instances. It is used to alter the enrolment data (for example altering the dates or the role) and also to throw exceptions if some external condions are not met.
 
@@ -325,7 +325,7 @@ public function enrol_user(
   </div>
 </details>
 
-### enrol_plugin:allow_manage(): bool
+### enrol_plugin:allow_manage(): bool {/* #enrol_pluginallow_manage-bool */}
 
 Return true if plugin allows manual modification of user enrolments from other code. False is usually returned from plugins that synchronise data with external systems, otherwise the manual changes would be reverted immediately upon synchronisation.
 
@@ -352,7 +352,7 @@ public function allow_manage(stdClass $instance) {
   </div>
 </details>
 
-### enrol_plugin::roles_protected(): bool
+### enrol_plugin::roles_protected(): bool {/* #enrol_pluginroles_protected-bool */}
 
 Enrolment plugins can protect roles from being modified by any other plugin. Returning false will allow users to remove all roles assigned by this plugin. By default, this method returns true.
 
@@ -372,7 +372,7 @@ public function roles_protected() {
   </div>
 </details>
 
-### enrol_plugin:find_instance(): stdClass {#enrol_pluginfind_instance-stdclass}
+### enrol_plugin:find_instance(): stdClass {/* #enrol_pluginfind_instance-stdclass */}
 
 Returns enrolment instance in a given course matching provided data. If enrol plugin implements this method, then it is supported
  in CSV course upload.
@@ -417,7 +417,7 @@ public function find_instance(array $enrolmentdata, int $courseid) : ?stdClass {
   </div>
 </details>
 
-## Standard Editing UI
+## Standard Editing UI {/* #standard-editing-ui */}
 
 Moodle participants page has a standard editing UI for manual enrolments. To integrate a plugin into the start UI you need to implement the following methods:
 
@@ -440,7 +440,7 @@ import UiLib from '!!raw-loader!./_examples/ui_lib.php';
   </div>
 </details>
 
-## Sending a welcome email
+## Sending a welcome email {/* #sending-a-welcome-email */}
 
 Some enrol methods has the support for sending welcome mesages to users. To grant the enrol messages are consistent acorrs enrolments methods, the enrol API provides the `enrol_send_welcome_email_options` function. This method returns a list of all possible options for sending welcome email when the user enrol in a course and each option has a respective constant defined on **enrollib.php**:
 
@@ -462,6 +462,6 @@ import MessageLib from '!!raw-loader!./_examples/message_lib.php';
   </div>
 </details>
 
-## See also
+## See also {/* #see-also */}
 
 - [Enrolment API](../../subsystems/enrol.md)

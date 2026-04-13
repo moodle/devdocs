@@ -16,7 +16,7 @@ The most common use case for hooks is to allow customisation of standard plugins
 through hook callbacks in local plugins. For example adding a custom institution password
 policy that applies to all enabled authentication plugins through a new local plugin.
 
-## Hook Policies
+## Hook Policies {/* #hook-policies */}
 
 New hooks added to Moodle from Moodle 4.4 onwards must meet the following rules:
 
@@ -36,9 +36,9 @@ New hooks added to Moodle from Moodle 4.4 onwards must meet the following rules:
 
 </ValidExample>
 
-## General concepts
+## General concepts {/* #general-concepts */}
 
-### Mapping to PSR-14
+### Mapping to PSR-14 {/* #mapping-to-psr-14 */}
 
 Moodle does not allow camelCase for naming of classes and method and Moodle already has events,
 however the PSR-14 adherence has higher priority here.
@@ -51,12 +51,12 @@ however the PSR-14 adherence has higher priority here.
 | Dispatcher        | Hook dispatcher (implemented in Hook manager)        |
 | Listener Provider | Hook callback provider (implemented in Hook manager) |
 
-### Hook emitter
+### Hook emitter {/* #hook-emitter */}
 
 A _Hook emitter_ is a place in code where core or a plugin needs to send or receive information
 to/from any other plugins. The exact type of information flow facilitated by hooks is not defined.
 
-### Hook instance
+### Hook instance {/* #hook-instance */}
 
 Information passed between subsystem and plugins is encapsulated in arbitrary PHP class instances.
 These can be in any namespace, but generally speaking they should be placed in the `some_component\hook\*`
@@ -72,7 +72,7 @@ Hooks are encouraged to describe themselves and to provide relevant metadata to 
   - `\core\attribute\tags($a, $set, $of, $tags, ...)`
   - `\core\attribute\hook\replaces_callbacks('a_list_of_legacy_callbacks', 'that_this_hook_replaces')`
 
-### Hook callback
+### Hook callback {/* #hook-callback */}
 
 The code executing a hook does not know in advance which plugin is going to react to a hook.
 
@@ -80,7 +80,7 @@ Moodle maintains an ordered list of callbacks for each class of hook. Any plugin
 its own hook callbacks by creating a `db/hooks.php` file. The specified plugin callback method is called
 whenever a relevant hook is dispatched.
 
-### Hooks overview page
+### Hooks overview page {/* #hooks-overview-page */}
 
 The **Hooks overview page** lists all hooks that may be triggered in the system together with all
 registered callbacks. It can be accessed by developers and administrators from the Site
@@ -103,7 +103,7 @@ $CFG->hooks_callback_overrides = [
 The hooks overview page will automatically list any hook which is placed inside any `*\hook\*` namespace within any Moodle component.
 If you define a hook which is _not_ in this namespace then you **must** also define a new `\core\hook\discovery_agent` implementation in `[component]\hooks`.
 
-## Adding new hooks
+## Adding new hooks {/* #adding-new-hooks */}
 
 1. Developer first identifies a place where they need to ask or inform other plugins about something.
 1. Depending on the location a new class implementing `core\hook\described_hook` is added to `core\hook\*` or
@@ -117,7 +117,7 @@ Hook classes may be any class you like. When designing a new Hook, you should th
 
 All hook classes should be defined as final, if needed traits can help with code reuse in similar hooks.
 
-:::important Hooks not located in standard locations
+:::important[Hooks not located in standard locations]
 
 If you define a hook which is _not_ in the `[component]\hook\*` namespace then you **must** also define a new `\core\hook\discovery_agent` implementation in `[component]\hooks`.
 
@@ -140,7 +140,7 @@ class hooks implements \core\hook\discovery_agent {
 
 :::
 
-### Example of hook creation
+### Example of hook creation {/* #example-of-hook-creation */}
 
 Imagine mod_activity plugin wants to notify other plugins that it finished installation,
 then mod_activity plugin developer adds a new hook and calls it at the end of plugin
@@ -201,7 +201,7 @@ function xmldb_activity_install() {
 
 ```
 
-## Dispatching hooks
+## Dispatching hooks {/* #dispatching-hooks */}
 
 Once a hook has been created, it needs to be _dispatched_. The dispatcher is responsible for ordering all listeners and calling them with the hook data.
 
@@ -274,7 +274,7 @@ This approach is harder to test in situ.
 
 :::
 
-## Registering of hook callbacks
+## Registering of hook callbacks {/* #registering-of-hook-callbacks */}
 
 Any plugin is free to register callbacks for all core and plugin hooks.
 The registration is done by adding a `db/hooks.php` file to plugin.
@@ -283,7 +283,7 @@ Callbacks may be provided as a PHP callable in either:
 - string notation, in the form of `some\class\name::static_method`; or
 - array notation, in the form of `[\some\class\name::class, 'static_method']`.
 
-:::danger Use of array notation
+:::danger[Use of array notation]
 
 <Since version="4.4" issueNumber="MDL-81180" />
 
@@ -291,7 +291,7 @@ Support for Array notated callbacks was introduced in Moodle 4.4. If you are wri
 
 :::
 
-### Hook Callback Execution Order
+### Hook Callback Execution Order {/* #hook-callback-execution-order */}
 
 Hook callbacks are executed according to their priority, in **descending order** — from the **highest number** to the **lowest**.
 
@@ -311,7 +311,7 @@ Please note that the legacy component callback system did _not_ call the `lib.ph
 
 :::
 
-### Example of hook callback registration
+### Example of hook callback registration {/* #example-of-hook-callback-registration */}
 
 First developer needs to add a new static method to some class that accepts instance of
 a hook as parameter.
@@ -354,7 +354,7 @@ In this particular example, the developer would probably also add some code to `
 to perform the necessary action in case the hook gets called before the `local_stuff` plugin
 is installed.
 
-## Deprecation of legacy lib.php callbacks
+## Deprecation of legacy lib.php callbacks {/* #deprecation-of-legacy-libphp-callbacks */}
 
 Hooks are a direct replacement for one-to-many lib.php callback functions that were implemented
 using the `get_plugins_with_function()`, `plugin_callback()`, or `component_callback()` functions.
@@ -365,7 +365,7 @@ then developers needs to only add extra parameter to existing legacy callback fu
 and the hook manager will trigger appropriated deprecated debugging messages when
 it detects plugins that were not converted to new hooks yet.
 
-:::important Legacy fallback
+:::important[Legacy fallback]
 
 Please note **it is** possible for plugin to contain both legacy `lib.php` callback and PSR-14 hook
 callbacks.
@@ -376,7 +376,7 @@ The legacy `lib.php` callbacks are automatically ignored if hook callback is pre
 
 :::
 
-## Example how to migrate legacy callback
+## Example how to migrate legacy callback {/* #example-how-to-migrate-legacy-callback */}
 
 This example describes migration of `after_config` callback from the very end of `lib/setup.php`.
 
@@ -446,7 +446,7 @@ foreach ($pluginswithfunction as $plugins) {
 \core\di::get(\core\hook\manager::class())->dispatch(new \core\hook\after_config());
 ```
 
-## Hooks which contain data
+## Hooks which contain data {/* #hooks-which-contain-data */}
 
 It is often desirable to pass a data object when dispatching hooks.
 
@@ -486,7 +486,7 @@ $hook = new \core\hook\block_delete_pre($instance);
 \core\di::get(\core\hook\manager::class())->dispatch($hook);
 ```
 
-## Hooks which can be stopped
+## Hooks which can be stopped {/* #hooks-which-can-be-stopped */}
 
 In some situations it is desirable to allow a callback to stop execution of a hook. This can happen in situations where the hook contains that should only be set once.
 
@@ -535,7 +535,7 @@ class callbacks {
 }
 ```
 
-## Tips and Tricks
+## Tips and Tricks {/* #tips-and-tricks */}
 
 Whilst not being formal requirements, you are encouraged to:
 

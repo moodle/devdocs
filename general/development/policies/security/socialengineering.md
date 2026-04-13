@@ -13,7 +13,7 @@ This page forms part of the [Moodle security guidelines](../security).
 
 :::
 
-## What is the danger?
+## What is the danger? {/* #what-is-the-danger */}
 
 Moodle is so secure that Evil Hacker gives up on trying to crack the software. Instead, he decides that the users are the weakest link.
 
@@ -32,19 +32,19 @@ You get the idea. It can work the other way. Someone phones the help desk preten
 
 One very well known form of social engineering is [phishing](http://en.wikipedia.org/wiki/Phishing).
 
-## How Moodle avoids this problem
+## How Moodle avoids this problem {/* #how-moodle-avoids-this-problem */}
 
 This is not a problem that can be solved with technology.
 
-## What you need to do in your code
+## What you need to do in your code {/* #what-you-need-to-do-in-your-code */}
 
 - There is not a lot you can do.
 
-## What you need to do as an administrator
+## What you need to do as an administrator {/* #what-you-need-to-do-as-an-administrator */}
 
 - All you can do is to try to educate your users. However, don't be too hard on them if they are tricked. They were probably only trying to be helpful.
 
-## See also
+## See also {/* #see-also */}
 
 - [Security](../security)
 - [Coding](../../policies.md)

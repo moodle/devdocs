@@ -14,7 +14,7 @@ Location: *Site administration > Development > XMLDB editor*
 
 - Note: To be able to handle files properly, the web server needs write access to all *db* directories where the *install.xml* files reside (and to the files themselves, of course). If you cannot click either the load or create link, that means that you either have not created the /db directory, or that it is not writeable by the webserver.
 
-## Quick Start
+## Quick Start {/* #quick-start */}
 
 To use the XMLDB editor to create tables for a new plugin:
 
@@ -54,7 +54,7 @@ Choose the 'View PHP Code' option and then copy and paste the generated code.
 
 ![An image showing the XMLDB Editor, highlighting the 'View PHP Code' link](./_xmldb/xmldbeditor-showphpcode.png)
 
-## Use
+## Use {/* #use */}
 
 - The XMLDB editor is pretty easy to use so there's no need for a complete guide here. Playing with it for a while is highly recommended, viewing how it works and how it modifies the *install.xml* files.
 
@@ -70,7 +70,7 @@ Choose the 'View PHP Code' option and then copy and paste the generated code.
 
 - If you define a field as an **enum**, you should provide the enum options as a comma-separated list, with each option surrounded by single quotes. Example: **`'option1','option2','option3'`**. However, enum has been deprecated in Moodle 2.0, so it is probably better just to avoid enum types altogether.
 
-## Conventions
+## Conventions {/* #conventions */}
 
 Apart from the [Database Structures guidelines](https://docs.moodle.org/dev/Database), some more conventions should be followed:
 
@@ -94,7 +94,7 @@ Apart from the [Database Structures guidelines](https://docs.moodle.org/dev/Data
     1. Declare any fields as UNIQUE KEY (UK) only if they are going to be used as target for one FK. Create unique indexes instead.
     1. Respect Convention 1.3
 
-## See also
+## See also {/* #see-also */}
 
 - [XMLDB defining an XML structure](https://docs.moodle.org/dev/XMLDB_defining_an_XML_structure)
 - [Installing and upgrading plugin database tables](https://docs.moodle.org/dev/Installing_and_upgrading_plugin_database_tables)

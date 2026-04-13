@@ -32,14 +32,14 @@ You should be able to:
 - Navigate using a screen-reader and speech-recognition software.
 - Listen to texts and image descriptions using a screen-reader (such as [NVDA](https://www.nvaccess.org/download/)).
 
-## Alter this website to suit your own needs
+## Alter this website to suit your own needs {/* #alter-this-website-to-suit-your-own-needs */}
 
 [My Computer My Way](https://mcmw.abilitynet.org.uk/) is a website by AbilityNet that helps you to set up your computer to suit your own needs.
 
-## Problems, questions, comments or suggestions
+## Problems, questions, comments or suggestions {/* #problems-questions-comments-or-suggestions */}
 
 If you have problems accessing any part of the website, or require it in a different format, or have any questions, comments or suggestions for improving the accessibility of the website, please raise an issue in our [Github devdocs repository](https://github.com/moodle/devdocs/issues) or send a message via the [Moodle Community Sites contact form](https://moodle.com/contact/support/?selection=community#form).
 
-## Learn about accessibility
+## Learn about accessibility {/* #learn-about-accessibility */}
 
 Moodle Academy offers a number of [free short courses about accessibility](https://moodle.academy/tag/index.php?tc=2&tag=Accessibility&from=2) for the general public, teachers and programmers. Get started with the 1 hour [Introduction to Accessibility](https://moodle.academy/course/view.php?id=58) course to learn how you can communicate in a more accessible way to benefit everyone.

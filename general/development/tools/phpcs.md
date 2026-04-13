@@ -15,7 +15,7 @@ Moodle has two sets of published rule-sets intended to meet the [Moodle Coding S
 
 We recommend use of the `moodle-extra` standard, particularly when writing new code.
 
-## Installation
+## Installation {/* #installation */}
 
 The recommended method of installation is via the global composer command:
 
@@ -38,7 +38,7 @@ To apply updates:
 composer global update
 ```
 
-### Configuration
+### Configuration {/* #configuration */}
 
 <Since versions={["4.1.0", "4.0.1", "3.11.7"]} issueNumber="MDL-74511" />
 
@@ -58,7 +58,7 @@ If you would like to make use of the `moodle-extra` standard then you should cre
 
 This will extend the standard configuration, and apply the extra standard on top of it.
 
-#### Moodle 3.10 and earlier
+#### Moodle 3.10 and earlier {/* #moodle-310-and-earlier */}
 
 The easiest way to have PHP CodeSniffer pick up your preferred style is via a local configuration file.
 
@@ -86,13 +86,13 @@ Third-party library code will not be ignored with these versions of Moodle.
 
 :::
 
-:::tip Ignoring the file with Git
+:::tip[Ignoring the file with Git]
 
 We recommend configuring your code checkout to ignore the `.phpcs.xml` file by adding a local ignore record to `.git/info/exclude`
 
 :::
 
-#### Community plugins, and older Moodle versions
+#### Community plugins, and older Moodle versions {/* #community-plugins-and-older-moodle-versions */}
 
 If you are developing your own plugin outside of the main Moodle directory, or you are working with an older version of Moodle, the easiest way to configure phpcs to use the Moodle ruleset is by creating a local `phpcs.xml.dist` configuration at the root directory of your repository with the following content:
 
@@ -117,7 +117,7 @@ See the [gitignore](https://git-scm.com/docs/gitignore) documentation for more i
 
 :::
 
-#### System-side default standard
+#### System-side default standard {/* #system-side-default-standard */}
 
 Although not recommended, you can configure the Moodle ruleset as the system-wide default for phpcs:
 
@@ -125,13 +125,13 @@ Although not recommended, you can configure the Moodle ruleset as the system-wid
 phpcs --config-set default_standard moodle
 ```
 
-:::important Not recommended
+:::important[Not recommended]
 
 This approach is **not recommended** and is only preserved for reference.
 
 :::
 
-## Editor integrations
+## Editor integrations {/* #editor-integrations */}
 
 Many modern editors and IDEs will natively integrate with PHPCodeSniffer, and since Moodle versions 3.11.7, 4.0.1, and 4.1.0, no additional configuration is required.
 
@@ -139,9 +139,9 @@ For older versions many editors will allow you to manually configure the PHPCode
 
 If you get the error: 'ERROR: Referenced sniff "moodle" does not exist', you may need to specify the location of the CodeSniffer in your IDE. Note the location when installing, and add that to the settings. e.g. "Exec: Linux": "/home/xxxx/.config/composer/vendor/bin/phpcs"; and select "Automatic" as the Standard.
 
-## Advanced Usage
+## Advanced Usage {/* #advanced-usage */}
 
-### Ignoring warnings
+### Ignoring warnings {/* #ignoring-warnings */}
 
 You can run the CodeSniffer with the -n flag to ignore warnings:
 
@@ -155,7 +155,7 @@ FOUND 139 ERROR(S) AFFECTING 125 LINE(S)
 ...
 ```
 
-### Recursive analysis
+### Recursive analysis {/* #recursive-analysis */}
 
 If you give the name of a folder instead of a file, it will search, analyse and report on all PHP files found in this folder and all its subfolders. This will produce a full report for each PHP file. Since this is likely to be too much information, you may want to print only a summary report, by using the following syntax (search the files/ folder as an example):
 
@@ -183,7 +183,7 @@ PHPCBF CAN FIX 75 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
 Time: 626ms; Memory: 16MB
 ```
 
-### Other report formats
+### Other report formats {/* #other-report-formats */}
 
 CodeSniffer can export its reports in the following formats:
 
@@ -193,7 +193,7 @@ CodeSniffer can export its reports in the following formats:
 1. `csv`: Comma-separated list
 1. `checkstyle`: XML format intended for use with CruiseControl
 
-## See also
+## See also {/* #see-also */}
 
 1. [Coding](../policies.md)
 1. [Coding style](../policies/codingstyle/index.md)

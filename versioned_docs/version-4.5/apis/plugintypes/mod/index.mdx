@@ -40,7 +40,7 @@ The term `[modname]` is used as a placeholder in this documentation and should b
 
 :::
 
-## Folder layout
+## Folder layout {/* #folder-layout */}
 
 Activity modules reside in the `/mod` directory.
 
@@ -128,15 +128,15 @@ Below is an example of the file structure for the `folder` plugin.
   </div>
 </details>
 
-## Standard Files and their Functions
+## Standard Files and their Functions {/* #standard-files-and-their-functions */}
 
 There are several files that are crucial to Moodle. These files are used to install your module and then integrate it into Moodle. Each file has a particular function, some of the files are optional, and are only created if you want to use the functionality it offers. Below are the list of most commonly used files.
 
-### Backup Folder
+### Backup Folder {/* #backup-folder */}
 
 <BackupDir />
 
-### `access.php` - Capability defaults
+### `access.php` - Capability defaults {/* #accessphp---capability-defaults */}
 
 export const accessExample = `
 $capabilities = [
@@ -173,11 +173,11 @@ $capabilities = [
     extraDescription={<AccessDescription />}
 />
 
-### `events.php` - Event observers
+### `events.php` - Event observers {/* #eventsphp---event-observers */}
 
 <DbEventsPHP />
 
-### `install.xml` - Database installation
+### `install.xml` - Database installation {/* #installxml---database-installation */}
 
 <DbInstallXML
   plugintype="mod"
@@ -185,21 +185,21 @@ $capabilities = [
   extraDescription={<InstallDescription />}
 />
 
-### `upgrade.php` - Upgrade steps
+### `upgrade.php` - Upgrade steps {/* #upgradephp---upgrade-steps */}
 
 <DbUpgradePHP
   plugintype="mod"
   pluginname="[modname]"
 />
 
-### `mobile.php` - Moodle Mobile Remote Add-ons
+### `mobile.php` - Moodle Mobile Remote Add-ons {/* #mobilephp---moodle-mobile-remote-add-ons */}
 
 <DbMobilePHP
   plugintype="mod"
   pluginname="[modname]"
 />
 
-### `/lang/en/[modname].php` - Language string definitions
+### `/lang/en/[modname].php` - Language string definitions {/* #langenmodnamephp---language-string-definitions */}
 
 <Lang
   plugintype="mod"
@@ -208,32 +208,32 @@ $capabilities = [
   example={`$string['pluginname'] = 'The name of your activity';`}
 />
 
-### `lib.php` - Library functions
+### `lib.php` - Library functions {/* #libphp---library-functions */}
 
 <Lib
   extraDescription={<LibDescription />}
 />
 
-### `mod_form.php` - Instance create/edit form
+### `mod_form.php` - Instance create/edit form {/* #mod_formphp---instance-createedit-form */}
 
 <ModFormPHP />
 
-### `index.php` - Instance list
+### `index.php` - Instance list {/* #indexphp---instance-list */}
 
 <IndexPHP />
 
-### `view.php` - View an activity
+### `view.php` - View an activity {/* #viewphp---view-an-activity */}
 
 <ViewPHP />
 
-### `version.php`
+### `version.php` {/* #versionphp */}
 
 <VersionPHP
     plugintype='mod'
     pluginname='[modname]'
 />
 
-## See also
+## See also {/* #see-also */}
 
 - [Tutorial](https://docs.moodle.org/dev/Tutorial)
 - [Module visibility and display](./visibility.md)

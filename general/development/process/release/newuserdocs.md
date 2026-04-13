@@ -14,7 +14,7 @@ This page describes the procedures for creating a new Moodle user docs version w
 
 :::
 
-## 4 weeks prior
+## 4 weeks prior {/* #4-weeks-prior */}
 
 Tidying up in current latest version wiki:
 
@@ -26,9 +26,9 @@ Tidying up in current latest version wiki:
 
 Create a tracker issue for creating new en and de version wikis similar to [MDLSITE-7357](https://moodle.atlassian.net/browse/MDLSITE-7357).
 
-<!-- cspell:ignore Sitenotice -->
+{/* <!-- cspell:ignore Sitenotice --> */}
 
-## 3 weeks prior
+## 3 weeks prior {/* #3-weeks-prior */}
 
 In new version wiki:
 
@@ -46,7 +46,7 @@ In new version wiki:
 1. Add link to new version wiki to https://docs.moodle.org/en/MoodleDocs:Overview
 1. Post on moodle.org in the Moodle community sites forum about the new version wikis, for example, [Moodle Docs 4.5 English wiki now available](https://moodle.org/mod/forum/discuss.php?d=461965)
 
-## 1 week prior
+## 1 week prior {/* #1-week-prior */}
 
 In new wiki:
 
@@ -57,7 +57,7 @@ In all older version wikis:
 
 - Edit https://docs.moodle.org/en/MediaWiki:MoodleDocsVersionLinks to add the new version and remove older versions (though keeping [LTS releases](../../../releases.md))
 
-## Day of release
+## Day of release {/* #day-of-release */}
 
 Request for the new version wiki to be made default and email notification of watched pages to be enabled.
 
@@ -70,7 +70,7 @@ In previous latest version wiki:
 1. Edit https://docs.moodle.org/en/MoodleDocs:Overview and add `#REDIRECT [[:en:MoodleDocs:Overview]]` so it redirects to the latest version of the page
 1. For no longer supported versions, create MediaWiki:Sitenotice by copying content from https://docs.moodle.org/37/en/MediaWiki:Sitenotice
 
-## Final checks
+## Final checks {/* #final-checks */}
 
 1. Email notification of watched pages enabled
 1. Links without version number, for example https://docs.moodle.org/en/Main_page , redirect to the new version wiki

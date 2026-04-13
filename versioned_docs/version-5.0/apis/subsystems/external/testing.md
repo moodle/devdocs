@@ -18,7 +18,7 @@ Unit tests are the best way of checking the behaviour of your external services 
 
 Writing unit tests for an external service function is no different to writing unit tests for any other part of Moodle, which is documented in under [PHPUnit](/general/development/tools/phpunit).
 
-## How to write an external function PHPUnit test
+## How to write an external function PHPUnit test {/* #how-to-write-an-external-function-phpunit-test */}
 
 You should create one unit test testcase for each external service file, and it should be named after the file that it tests.
 

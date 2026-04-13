@@ -20,7 +20,7 @@ Originally this transition suggested the use of jQuery, but since Moodle 3.8 the
 
 The [Yahoo! User Interface (YUI)](http://yuilibrary.com) framework is a fast, powerful, modular, and [well-documented](http://yuilibrary.com/yui/docs/api/) framework with a powerful loading system.
 
-## The Basics
+## The Basics {/* #the-basics */}
 
 YUI is an extremely extensible, fast, modular, and powerful JavaScript framework with a very capable loading system.
 A number of modules are available for YUI providing a wide range of functionality to suit most situations.
@@ -49,7 +49,7 @@ Whilst accessing the global Y variable will suffice for many uses, we highly rec
 
 It is also possible to use JavaScript within a Database module - see the JavaScript template setting for further information.
 
-## Modularity
+## Modularity {/* #modularity */}
 
 YUI is extremely modular with different components, features, plugins, and tasks broken down into YUI Modules. When using YUI, you can choose which modules you wish to use and the YUI loader will go away and retrieve those modules, determining their dependencies automatically. This has the effect of separating out the load and execution phases of JavaScript component loading and also allows for asynchronous loading of the code. For a deeper dive on the benefits of this separation, it's well worth watching this video entitled [YUI3 Below the Surface](http://www.youtube.com/watch?v=XdM0GJEnlNU).
 
@@ -73,7 +73,7 @@ YUI().use('moodle-block_fruit-fruitbowl', function(Y) {
 });
 ```
 
-## Documentation and further information
+## Documentation and further information {/* #documentation-and-further-information */}
 
 Other YUI documentation you may find useful:
 
@@ -86,24 +86,24 @@ Other YUI documentation you may find useful:
 
 We will soon be adding API Documentation for Moodle-specific YUI modules in addition to the core YUI library.
 
-## Books:
+## Books: {/* #books */}
 
-<!-- cspell:ignore Zakas -->
+{/* <!-- cspell:ignore Zakas --> */}
 
 Some good books:
 
 - [YUI 3 Cookbook](http://shop.oreilly.com/product/0636920013303.do) by Evan Goer
 - [Maintainable JavaScript](http://shop.oreilly.com/product/0636920025245.do) by Nicholas C. Zakas
 
-## Useful tools
+## Useful tools {/* #useful-tools */}
 
 JavaScript authoring have moved along considerably in recent years, and we highly recommend that you look at using some of the available tools to help you in your development. Most of these tools are available through [Node.js](http://nodejs.org) which is relatively trivial to install on most operating systems:
 
-### Grunt
+### Grunt {/* #grunt */}
 
 Moodle uses [Grunt](../index.md#grunt) for most JavaScript management. We recommend reading our Grunt documentation for further information on the available commands.
 
-#### Use
+#### Use {/* #use */}
 
 There are several ways to use `grunt`.
 
@@ -119,13 +119,13 @@ To build all YUI modules across Moodle you can call `grunt` by running the follo
 npx grunt yui
 ```
 
-### JSHint
+### JSHint {/* #jshint */}
 
 [JSHint](http://jshint.com) is a JSLint derivative for checking your code. This includes checking for errors and recommended stylistic approaches to writing JavaScript.
 
 Since Moodle 2.5, a JSHint configuration is also included in the Moodle codebase to inform the tester of our preferences and recommendations.
 
-#### Use
+#### Use {/* #use-1 */}
 
 Many IDEs and editors will automatically detect if you have JSHint installed and pass your code through it for you, reporting any errors as you go.
 
@@ -135,14 +135,14 @@ To run jshint on the command line, simply pass it the file that you wish to chec
 npx jshint blocks/fruit/yui/fruitbowl/fruitbowl.js
 ```
 
-#### Documentation
+#### Documentation {/* #documentation */}
 
 There's a variety of documentation on JSHint and the error messages it returns. Start off with the jshint website:
 
 - [JSHint](http://jshint.com)
 - [JSLint Error Explanations](http://jslinterrors.com)
 
-## Moodle Settings for JavaScript Development
+## Moodle Settings for JavaScript Development {/* #moodle-settings-for-JavaScript-development */}
 
 The following settings will ensure that the js loaded by your browser is relatively readable.
 
@@ -164,7 +164,7 @@ $CFG->yuiloglevel = 'debug';
 $CFG->debug = 32767;
 ```
 
-## See Also
+## See Also {/* #see-also */}
 
 - [JavaScript Modules](../modules.md)
 - [jQuery](../jquery/index.md)

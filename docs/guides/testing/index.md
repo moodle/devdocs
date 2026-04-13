@@ -8,13 +8,13 @@ tags:
 Moodle PHPUnit integration is designed to allow easy creation of new tests.
 At the start of each test the state is automatically reset to fresh new installation (unless explicitly told not to reset).
 
-## Namespaces
+## Namespaces {/* #namespaces */}
 
 All the files under `**/tests` directories are [subject to some simple rules](/general/development/policies/codingstyle#namespaces-within-tests) when using namespaces.
 They apply to test cases, fixtures, generators and, in general, any class within those directories.
 These are the same rules that are applied to the standard `**/classes` directories.
 
-## Testcase classes
+## Testcase classes {/* #testcase-classes */}
 
 There are two basic test case classes that should be used in all other Moodle unit tests:
 
@@ -31,7 +31,7 @@ The `basic_testcase` is intended for very simple tests that do not modify the da
 
 The `advanced_testcase` is an enhanced testcase class which includes a number of test helpers for easier testing of Moodle code.
 
-:::note Creating additional test case classes
+:::note[Creating additional test case classes]
 
 Moodle supports the creation of custom testcase classes for more specific purposes.
 
@@ -39,7 +39,7 @@ These **must** be defined as abstract and **must not** contain any tests.
 
 :::
 
-## Assertions
+## Assertions {/* #assertions */}
 
 Where possible the standard PHPUnit assertions should be used.
 
@@ -54,7 +54,7 @@ The complete list of assertions can be found in the links below.
 | Moodle 3.7 - 3.9 | PHPUnit 7.5 | [Documentation](https://phpunit.readthedocs.io/en/7.5/assertions.html) |
 | Moodle 3.4 - 3.6 | PHPUnit 6.5 | [Documentation](https://phpunit.de/manual/6.5/en/assertions.html) |
 
-## Writing new test files
+## Writing new test files {/* #writing-new-test-files */}
 
 PHPUnit tests are located in the `tests` directory of each component.
 
@@ -81,7 +81,7 @@ For example:
  }
 ```
 
-## Inclusion of Moodle library files
+## Inclusion of Moodle library files {/* #inclusion-of-moodle-library-files */}
 
 Wherever possible, class autoloading _should_ be used.
 
@@ -90,7 +90,7 @@ Where autoloading of classes is not possible:
 - classes which are _required_ to define the test class _may_ be included in the file; but
 - fixtures and code under test _should_ be loaded in the `setUpBeforeClass()` method.
 
-### Automatic state reset
+### Automatic state reset {/* #automatic-state-reset */}
 
 Any test making use of the standard Moodle test cases (`advanced_testcase` and `basic_testcase`) will automatically reset the Moodle database and data root to their original state between tests, however you should make sure to call `$this->resetAfterTest()` to indicate that the database or changes of standard global variables are expected.
 
@@ -118,11 +118,11 @@ If you modify data and _do not_ call `$this->resetAfterTest()` then you will rec
  }
 ```
 
-## Generators
+## Generators {/* #generators */}
 
 Tests that need to modify default installation data may make use of data generators to create objects including courses, users, enrolments, and so on. All examples on this page should be used from test methods of a test class derived from `advanced_testcase`.
 
-:::note Use of generators in data providers
+:::note[Use of generators in data providers]
 
 If you are using PHPUnit [@dataProvider](https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html#writing-tests-for-phpunit.data-providers) functions to provide parameters to unit tests, you **can not** use the data generator or change the user etc in the data provider function.
 
@@ -132,7 +132,7 @@ The data providers are called _before_ any test has been run and the database wi
 
 :::
 
-### Creating users
+### Creating users {/* #creating-users */}
 
 At the start of each test there are only two users present - `guest` and `admin. If you need to add more test accounts use:
 
@@ -168,7 +168,7 @@ To reset back to the original state where no user is logged in you can pass a `n
  $this->setUser(null);
 ```
 
-### Creating course categories
+### Creating course categories {/* #creating-course-categories */}
 
 ```php
 $category1 = $this->getDataGenerator()->create_category();
@@ -178,7 +178,7 @@ $category2 = $this->getDataGenerator()->create_category([
 ]);
 ```
 
-### Creating courses
+### Creating courses {/* #creating-courses */}
 
 ```php
 $course1 = $this->getDataGenerator()->create_course();
@@ -190,7 +190,7 @@ $course2 = $this->getDataGenerator()->create_course([
 ]);
 ```
 
-### Creating activities
+### Creating activities {/* #creating-activities */}
 
 Some activity plugins include instance generators. The generator class are defined in plugindirectory/tests/generator/lib.php.
 
@@ -211,13 +211,13 @@ $course = $this->getDataGenerator()->create_course();
 $page = $this->getDataGenerator()->create_module('page', ['course' => $course->id]);
 ```
 
-### Creating cohorts
+### Creating cohorts {/* #creating-cohorts */}
 
 ```php
 $cohort = $this->getDataGenerator()->create_cohort();
 ```
 
-### Simplified user enrolments
+### Simplified user enrolments {/* #simplified-user-enrolments */}
 
 Instead of standard enrolment API it is possible to use simplified method in data generator. It is intended to be used with self and manual enrolment plugins.
 
@@ -232,7 +232,7 @@ $this->getDataGenerator()->enrol_user(
 );
 ```
 
-### Creating scales
+### Creating scales {/* #creating-scales */}
 
 ```php
 $this->getDataGenerator()->create_scale();
@@ -246,7 +246,7 @@ $this->getDataGenerator()->create_scale([
 ]);
 ```
 
-### Creating roles
+### Creating roles {/* #creating-roles */}
 
 ```php
 $this->getDataGenerator()->create_role();
@@ -258,7 +258,7 @@ $this->getDataGenerator()->create_role([
 ]);
 ```
 
-### Creating tags
+### Creating tags {/* #creating-tags */}
 
 ```php
 $this->getDataGenerator()->create_tag();
@@ -272,9 +272,9 @@ $this->getDataGenerator()->create_tag([
 ]);
 ```
 
-### Groups
+### Groups {/* #groups */}
 
-#### Creating groups
+#### Creating groups {/* #creating-groups */}
 
 ```php
 $this->getDataGenerator()->create_group(['courseid' => $courseid]);
@@ -286,7 +286,7 @@ $this->getDataGenerator()->create_group([
 ]);
 ```
 
-#### Adding users to groups
+#### Adding users to groups {/* #adding-users-to-groups */}
 
 ```php
 $this->getDataGenerator()->create_group_member([
@@ -301,7 +301,7 @@ $this->getDataGenerator()->create_group_member([
 ]);
 ```
 
-#### Creating groupings
+#### Creating groupings {/* #creating-groupings */}
 
 ```php
 $this->getDataGenerator()->create_grouping(['courseid' => $courseid]);
@@ -313,7 +313,7 @@ $this->getDataGenerator()->create_grouping([
 ]);
 ```
 
-#### Adding groups to groupings
+#### Adding groups to groupings {/* #adding-groups-to-groupings */}
 
 ```php
 $this->getDataGenerator()->create_grouping_group([
@@ -322,25 +322,25 @@ $this->getDataGenerator()->create_grouping_group([
 ]);
 ```
 
-### Repositories
+### Repositories {/* #repositories */}
 
 Some repository plugins include instance generators. Repositories which define a generator will have a generator defined in `path/to/repository/tests/generator/lib.php`.
 
-#### Creating repository instances
+#### Creating repository instances {/* #creating-repository-instances */}
 
 ```php
 $this->getDataGenerator()->create_repository($type, $record, $options);
 ```
 
-#### Creating repository types
+#### Creating repository types {/* #creating-repository-types */}
 
 ```php
 $this->getDataGenerator()->create_repository_type($type, $record, $options);
 ```
 
-### Creating grades
+### Creating grades {/* #creating-grades */}
 
-#### Grade categories
+#### Grade categories {/* #grade-categories */}
 
 ```php
 $this->getDataGenerator()->create_grade_category(['courseid' => $courseid]);
@@ -350,7 +350,7 @@ $this->getDataGenerator()->create_grade_category([
 ]);
 ```
 
-#### Grade items
+#### Grade items {/* #grade-items */}
 
 ```php
 $this->getDataGenerator()->create_grade_item();
@@ -363,14 +363,14 @@ $this->getDataGenerator()->create_grade_item([
 ]);
 ```
 
-#### Outcomes
+#### Outcomes {/* #outcomes */}
 
 ```php
 $this->getDataGenerator()->create_grade_outcome();
 $this->getDataGenerator()->create_grade_item(['fullname' => $fullname]);
 ```
 
-### Other types of plugin
+### Other types of plugin {/* #other-types-of-plugin */}
 
 Any other type of plugin may define their own generator.
 
@@ -380,7 +380,7 @@ The generator class **must** extend the `\component_generator_base` class, after
 $mygenerator = $this->getDataGenerator()->get_plugin_generator("my_componentname");
 ```
 
-:::note Alternatives to `\component_generator_base`
+:::note[Alternatives to `\component_generator_base`]
 
 Some plugin types, such as Activity modules (`mod_` prefix) may be a more specific class to extend, for example `testing_module_generator`.
 
@@ -390,15 +390,15 @@ Otherwise, you can create whatever methods you like on your generator, to create
 
 :::
 
-## Long tests
+## Long tests {/* #long-tests */}
 
 All standard test should execute as fast as possible. Tests that take a longer time to execute (>10s) or are otherwise expensive (such as querying external servers that might be flooded by all dev machines) should be execute only when running long tests is enabled.
 
-## Large test data
+## Large test data {/* #large-test-data */}
 
 See `\advanced_testcase::createXMLDataSet()` and `\advanced_testcase::createCsvDataSet()` and related functions there for easier ways to manage large test data sets within files rather than arrays in code. See [PHPUnit integration#Extra methods](https://docs.moodle.org/dev/PHPUnit_integration#Extra_methods)
 
-## Testing sending of messages
+## Testing sending of messages {/* #testing-sending-of-messages */}
 
 You can temporarily redirect all messages sent via `message_send()` to a message sink object. This allows developers to verify that the tested code is sending expected messages.
 
@@ -450,7 +450,7 @@ $this->assertEquals(3, count($messages));
 //.. test messages were generated in correct order with appropriate content
 ```
 
-## Testing sending of emails
+## Testing sending of emails {/* #testing-sending-of-emails */}
 
 You can temporarily redirect emails sent via `email_to_user()` to a email message sink object. This allows developers to verify that the tested code is sending expected emails.
 
@@ -466,7 +466,7 @@ $messages = $sink->get_messages();
 $this->assertEquals(1, count($messages));
 ```
 
-## Logstores
+## Logstores {/* #logstores */}
 
 You can test events which were written to a logstore, but you must disable transactions, enable at least one valid logstore, and disable logstore buffering to ensure that the events are written to the database before the tests execute.
 
@@ -477,7 +477,7 @@ set_config('buffersize', 0, 'logstore_standard');
 get_log_manager(true);
 ```
 
-## Check your coverage
+## Check your coverage {/* #check-your-coverage */}
 
 PHPUnit has the ability to generate code coverage information for your unit tests.
 
@@ -485,7 +485,7 @@ Prior to Moodle 3.7, this coverage would load all files and generate coverage fo
 
 Since Moodle 3.7 the `phpunit.xml` configuration contains generated coverage include and exclude information for each component.
 
-### Generating include and exclude configuration
+### Generating include and exclude configuration {/* #generating-include-and-exclude-configuration */}
 
 <Since verison="3.11" />
 
@@ -556,7 +556,7 @@ return new class extends phpunit_coverage_info {
 
 If a `coverage.php` file already exists, then the defaults will be added to the values already defined.
 
-### Defining covered code
+### Defining covered code {/* #defining-covered-code */}
 
 In addition to defining the files which should be considered in generating coverage reports, each test class **must** define what functions or classes it is _intended_ to cover.
 
@@ -564,14 +564,14 @@ For PHPUnit 9.6 and earlier this can be done using the [`@covers` annotation and
 
 From Moodle 5.0 and PHPUnit 10 onwards, this can alternatively be done using PHP _Attributes_.
 
-### Guidance on defining Coverage
+### Guidance on defining Coverage {/* #guidance-on-defining-coverage */}
 
 The following guidance is based on recommendation from PHPUnit documentation.
 
 - Coverage should be defined for an entire class rather than individual methods wherever possible
 - Coverage should be defined at the class level, not for individual test methods
 
-:::note Attributes
+:::note[Attributes]
 
 From PHPUnit 10, with the introduction of Attributes for coverage, the defined attributes are much more robust.
 
@@ -579,9 +579,9 @@ However, if you are writing a plugin and wish to test it on Moodle 4.5 or earlie
 
 :::
 
-#### Common issues
+#### Common issues {/* #common-issues */}
 
-#### Using the `@covers ::methodName` syntax
+#### Using the `@covers ::methodName` syntax {/* #using-the-covers-methodname-syntax */}
 
 When defining coverage for a specific method under test, it must be either:
 
@@ -601,7 +601,7 @@ class example_test extends \advanced_testcase {
 }
 ```
 
-#### Qualification of classes
+#### Qualification of classes {/* #qualification-of-classes */}
 
 When using the `@covers` annotations, all class names **must** be fully-qualified, for example:
 
@@ -626,11 +626,11 @@ namespace mod_myplugin;
 #[\PHPUnit\Framework\Attributes\CoversClass(example::class)]
 ```
 
-## Best practice
+## Best practice {/* #best-practice */}
 
 There are several best practices, suggestions, and things to avoid which you should consider when writing unit tests. Some of these are described below.
 
-### Using the magic `::class` constant
+### Using the magic `::class` constant {/* #using-the-magic-class-constant */}
 
 PHP supports the use of a magic `::class` constant to correctly and consistently define class names. This can be used in a range of situations, including:
 
@@ -639,18 +639,18 @@ PHP supports the use of a magic `::class` constant to correctly and consistently
 
 One of the benefits of using the constant is that it supports class aliasing at runtime, meaning that a plugin's codebase can support multiple versions of Moodle where class aliasing has been used to move a class to a new location.
 
-:::note Using on classes which do not exist
+:::note[Using on classes which do not exist]
 
 The class **does not** need to exist. You can use this constant on any arbitrary namespace.
 
 :::
 
-### Code coverage
+### Code coverage {/* #code-coverage */}
 
 PHPUnit has the ability to generate code coverage information for your unit tests and this is well supported since Moodle 3.7.
 We _strongly_ recommend that you consider checking the coverage of your plugins when you write your code.
 
-### Keep use of `resetAfterTest` to a minimum
+### Keep use of `resetAfterTest` to a minimum {/* #keep-use-of-resetaftertest-to-a-minimum */}
 
 Although many of the examples described above use the `resetAfterTest` nomenclature to reset the database and filesystem after your test completes, you should ideally not use this unless you have to.
 
@@ -658,7 +658,7 @@ Generally speaking you should aim to write code which is mockable, and does not 
 
 Use of `resetAfterTest` will also slow your tests down.
 
-### Be careful with shared setUp and instance variables
+### Be careful with shared setUp and instance variables {/* #be-careful-with-shared-setup-and-instance-variables */}
 
 You should be careful of how you create and use instance variables in PHPUnit tests for two main reasons:
 
@@ -667,7 +667,7 @@ You should be careful of how you create and use instance variables in PHPUnit te
 
 Existing testcases which contain setUp which either generate data, or set resetAfterTest should be phased out, and no new cases should be introduced.
 
-### Make use of the dataProvider functionality
+### Make use of the dataProvider functionality {/* #make-use-of-the-dataprovider-functionality */}
 
 The dataProvider functionality of PHPUnit is an extremely powerful and useful feature which allows you to verify a function quickly and easily with a range of different conditions.
 However, the following rules should be followed when using dataProviders:
@@ -704,7 +704,7 @@ public function foobar_provider(): \Generator {
 }
 ```
 
-## Extra test settings
+## Extra test settings {/* #extra-test-settings */}
 
 Usually the test should not interact with any external systems and it should work the same on all systems. But sometimes you need to specify some option for connection to external systems or system configuration. It is intentionally not possible to use `$CFG` settings from `config.php`.
 
@@ -715,7 +715,7 @@ There are several ways how to inject your custom settings:
 
 These constants may be then used in your test or plugin code.
 
-## Upgrading unit tests to work with Moodle 4.4 and up (PHPUnit 9.6) {#upgrading-unit-tests-to-work-with-moodle-4.4}
+## Upgrading unit tests to work with Moodle 4.4 and up (PHPUnit 9.6) {/* #upgrading-unit-tests-to-work-with-moodle-4.4 */}
 
 With Moodle 4.4, **PHPUnit was upgraded to 9.6** (from 9.5 being used in previous versions). This was done to **warn to developers in advance** about functionality that has been deprecated in the 9.5 series and will be removed so will stop working with the next major update to PHPUnit 10.x (see [MDL-81266](https://moodle.atlassian.net/browse/MDL-81266) and linked issues for more details).
 
@@ -747,7 +747,7 @@ A good summary of all the **changes and replacements to perform** is available i
   - `\PHPUnit\Framework\TestCase::getMockClass()` has been deprecated, will be removed with PHPUnit 10. No clear alternative exists and won't be investigated, because there aren't cases in core.
   - You **MUST NOT** use the `_test` suffix on abstract test case classes. Test case classes **MUST** be named with the `__testcase` suffix.
 
-## See also
+## See also {/* #see-also */}
 
 - [PHPUnit integration](https://docs.moodle.org/dev/PHPUnit_integration)
 - [PHPUnit](/general/development/tools/phpunit)

@@ -36,7 +36,7 @@ For more information on the risks of this, see the advice in [Designing usable f
 
 :::
 
-:::info Location of Show and hide links
+:::info[Location of Show and hide links]
 
 Whenever you mark a form element as advanced, then the _Show / hide advanced_  links are shown automatically at relevant points within the form.
 
@@ -44,7 +44,7 @@ The _Show advanced_ and _Hide advanced_ links are currently displayed at the top
 
 :::
 
-### Setting a name
+### Setting a name {/* #setting-a-name */}
 
 When adding a header element, the second parameter to `addElement()` is a name field. You should pass a _unique_ name for each header.
 
@@ -78,7 +78,7 @@ $mform->addElement(
 
 </InvalidExample>
 
-## Marking an entire section as advanced
+## Marking an entire section as advanced {/* #marking-an-entire-section-as-advanced */}
 
 The `setAdvanced` function can mark an entire section as advanced by specifying the name of the header at the top of the section, for example:
 

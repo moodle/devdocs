@@ -9,7 +9,7 @@ Our Moodle Products roadmap is designed to provide visibility on the development
 
 import Link from '@docusaurus/Link';
 
-:::tip View our living Roadmap
+:::tip[View our living Roadmap]
 
 Our Roadmap is public, open, and living - you can see it at any time on our [Roadmap Kanban board](https://moodle.atlassian.net/jira/software/c/projects/IDEA/boards/104?ignoreStickyVersion=true).
 
@@ -24,13 +24,13 @@ Our Roadmap is public, open, and living - you can see it at any time on our [Roa
 
 :::
 
-## What is a roadmap and why is it important?
+## What is a roadmap and why is it important? {/* #what-is-a-roadmap-and-why-is-it-important */}
 
 The Moodle Products roadmap is our shared source of truth at Moodle HQ which we use to define our product direction, priorities and progress.
 
 It is the plan that aligns our teams around common goals and outcomes.
 
-## Who creates the roadmap and how often does it get updated?
+## Who creates the roadmap and how often does it get updated? {/* #who-creates-the-roadmap-and-how-often-does-it-get-updated */}
 
 The Moodle HQ Product teams curate every idea on the roadmap during our quarterly planning processes.
 
@@ -38,7 +38,7 @@ Every three months, the team takes a week off development to complete detailed p
 
 Before each planning week, our Product leads conduct engagement sessions with our stakeholders and review a range of data sources to collect ideas and prioritise the roadmap.
 
-## Where do the ideas come from?
+## Where do the ideas come from? {/* #where-do-the-ideas-come-from */}
 
 We curate our ideas from a wide range of sources including;
 
@@ -49,7 +49,7 @@ We curate our ideas from a wide range of sources including;
 1. Each of our products offers the opportunity to provide feedback via short questionnaires, we review the responses regularly and use the insights to shape our thinking.
 1. All members of the Moodle HQ team are encouraged to share their thoughts on the future of our open source platform. From new innovations to maintenance tasks, every idea is welcomed and is considered for prioritisation during our planning process.
 
-## How should the roadmap be interpreted?
+## How should the roadmap be interpreted? {/* #how-should-the-roadmap-be-interpreted */}
 
 Our roadmap is not strictly speaking a delivery plan - we don't explicitly provide dates for each of our deliverables. The reason for this is that we know that the world around us is changing at pace, new ideas are constantly emerging and urgent issues pop up from time to time.
 
@@ -59,13 +59,13 @@ The purpose of sharing the roadmap is to drive understanding in the community on
 
 That's because, at Moodle HQ, we have to balance the needs of our broad range of stakeholders and think long-term about our products. The point of sharing the roadmap is to make our prioritisation balancing act more transparent.
 
-## What are Moodle HQ's current priorities?
+## What are Moodle HQ's current priorities? {/* #what-are-moodle-hqs-current-priorities */}
 
 Moodle is a platform that is dedicated to empowering educators, trainers and learners all around the world. Our goal is to create solutions that make learning accessible to everyone, regardless of their location or financial situation.
 
 To achieve this goal, the areas we will focus on when developing our future versions of Moodle are:
 
-### Unlocking Creativity
+### Unlocking Creativity {/* #unlocking-creativity */}
 
 We aim to empower educators and learners to shape their learning according to their imagination and aspirations, leading to a more inclusive and personalised educational experience. This will be achieved through:
 
@@ -73,7 +73,7 @@ We aim to empower educators and learners to shape their learning according to th
 - Introduction of new course experiences
 - Diversification of content creation options
 
-### Facilitating Collaboration
+### Facilitating Collaboration {/* #facilitating-collaboration */}
 
 We will focus on enabling supportive and connected learning environments by continuously improving Moodle's ability to integrate and collaborate effectively with other solutions and leverage common standards. This will be achieved through:
 
@@ -81,7 +81,7 @@ We will focus on enabling supportive and connected learning environments by cont
 - Leveraging of common standards
 - Capitalising on open source solutions
 
-### Optimising outcomes
+### Optimising outcomes {/* #optimising-outcomes */}
 
 Providing our users with tools that optimise their efforts is paramount. We aim to create a toolset that not only reduces the time and cost of managing and creating courses but also helps learners overcome challenges more effectively. This will be achieved through:
 
@@ -89,7 +89,7 @@ Providing our users with tools that optimise their efforts is paramount. We aim 
 - A more modern & leaner platform
 - New tools to support learners
 
-## Where can I find out more?
+## Where can I find out more? {/* #where-can-i-find-out-more */}
 
 To see all the details for our upcoming developments, you can visit the roadmap at any time simply by logging into Tracker and [viewing our public board](https://moodle.atlassian.net/jira/software/c/projects/IDEA/boards/104?ignoreStickyVersion=true).
 

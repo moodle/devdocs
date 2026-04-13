@@ -8,7 +8,7 @@ tags:
   - Developer processes
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 This document outlines the exceptions to the [Coding style](./codingstyle/index.md) and [JavaScript Coding Style](https://docs.moodle.org/dev/JavaScript_Coding_Style) which apply to the Moodle App and also includes rules for other technologies that are used in the app, like Typescript and Angular.
 
@@ -16,7 +16,7 @@ Unless otherwise specified, developers should follow the indications included on
 
 Most rules are enforced with [ESLint](https://github.com/typescript-eslint/typescript-eslint) and won't be mentioned in this document, make sure to integrate a linter in your development environment.
 
-## Goals
+## Goals {/* #goals */}
 
 Consistent coding style is important in any development project, and particularly when many developers are involved. A standard style helps to ensure that the code is easier to read and understand, which helps overall quality.
 
@@ -28,9 +28,9 @@ Abstract goals we strive for:
 
 Note that much of the existing code may not follow all of these guidelines — we continue to upgrade this code when we see it.
 
-## TypeScript
+## TypeScript {/* #typescript */}
 
-### Disabling ESLint rules
+### Disabling ESLint rules {/* #disabling-eslint-rules */}
 
 In some situations, it may be necessary to [disable ESLint rules using inline comments](https://eslint.org/docs/user-guide/configuring/rules#disabling-rules). Although this is discouraged, it is allowed on certain use-cases.
 
@@ -38,7 +38,7 @@ Most of the time, however, this could be solved by refactoring code. So think tw
 
 Warnings should be treated with the same severity as errors, even if they are allowed by the linter. The reasoning behind this is that warnings are useful when new rules are introduced that affect existing code, but new code should always conform to the rules or explicitly disable them.
 
-### Using async / await
+### Using async / await {/* #using-async--await */}
 
 Using async/await is encouraged, but it shouldn't be mixed with .then/.catch/.finally. Using both can make code difficult to understand. As a rule of thumb, there should only be one style in a given function.
 
@@ -87,7 +87,7 @@ Async/await is [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar) 
 
 To prevent making asynchronous operations difficult to spot, using await should be limited to simple statements such as one liners, assignments and if guards with a single condition.
 
-### If guards
+### If guards {/* #if-guards */}
 
 Using if guards is encouraged to reduce indentation levels. They should handle edge cases and leave the main indentation level for normal code.
 
@@ -121,7 +121,7 @@ getPrivateInfo() {
 
 </InvalidExample>
 
-### Avoid abusing user-defined type guards
+### Avoid abusing user-defined type guards {/* #avoid-abusing-user-defined-type-guards */}
 
 User-defined type guards are an advanced TypeScript feature that can be very useful for working in heavily typed applications. However, they can also be confusing for newcomers, so they should only be used when they are really necessary.
 
@@ -189,7 +189,7 @@ function getSecret(user: User) {
 
 </CodeExample>
 
-### Spread operator
+### Spread operator {/* #spread-operator */}
 
 The spread operator is allowed, but it's recommended to include a comment explaining what it is doing to make the code easier to understand. You can also replace it for simpler alternatives.
 
@@ -220,7 +220,7 @@ console.log(Math.max(...numbers)); // Find max number in array.
 
 </ValidExample>
 
-### String interpolation
+### String interpolation {/* #string-interpolation */}
 
 It is encouraged to use string interpolation using backticks if it makes the code more readable.
 
@@ -244,7 +244,7 @@ function greet(name: string) {
 
 </CodeExample>
 
-### Avoid declaring variables using commas
+### Avoid declaring variables using commas {/* #avoid-declaring-variables-using-commas */}
 
 In order to have cleaner diffs, it is not allowed to declare variables using commas. This also results in a better alignment of variable names, making the code more readable.
 
@@ -266,7 +266,7 @@ const foo = 'foo',
 
 </InvalidExample>
 
-### Avoiding having too many optional arguments
+### Avoiding having too many optional arguments {/* #avoiding-having-too-many-optional-arguments */}
 
 In some situations, functions end up having a lot of optional arguments and this results in unreadable code and a cumbersome developer experience (having to pass multiple null or undefined values).
 
@@ -321,7 +321,7 @@ sayHello('World', undefined, undefined, 3);
 
 </InvalidExample>
 
-### Using declaration files
+### Using declaration files {/* #using-declaration-files */}
 
 [Declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html) can be very useful in TypeScript and it is encouraged to use them when appropriate. But it's not recommended to abuse them either, here's some situations when it may be a good idea to use them:
 
@@ -329,7 +329,7 @@ sayHello('World', undefined, undefined, 3);
 - Global declarations and extensions — Any variable you add to the window object can be declared by extending the `Window` interface. The same idea applies for extending external dependencies.
 - Local declarations — Sometimes, it may be useful to create a dedicated declaration file when source files are growing too large. But this technique should not be used to substitute proper code organisation.
 
-### Using constants
+### Using constants {/* #using-constants */}
 
 In order to optimize [Code Splitting](https://webpack.js.org/guides/code-splitting/), constants that are exported should be declared in [a constants file](../../../general/app/development/development-guide.md#constants-files):
 
@@ -458,7 +458,7 @@ export class MyComponent {
 
 </InvalidExample>
 
-### Angular Signals
+### Angular Signals {/* #angular-signals */}
 
 All signals in class properties must be defined as readonly properties to avoid overriding the whole signal by mistake. This includes input signals, computed signals, etc.
 
@@ -491,9 +491,9 @@ export class MyComponent {
 
 </InvalidExample>
 
-## Angular
+## Angular {/* #angular */}
 
-### Avoid calling methods in templates
+### Avoid calling methods in templates {/* #avoid-calling-methods-in-templates */}
 
 Method calls should be avoided in template rendering, including structural directives like `ngIf` or `ngFor`. The same applies to the new control flow syntax with `@if` or `@for`.
 
@@ -505,7 +505,7 @@ In some situations, a simple method that only returns a value would be acceptabl
 
 ```html
 @if (isAdmin) {
-    <div> <!-- Show admin content --> </div>
+    <div> {/* <!-- Show admin content --> */} </div>
 }
 ```
 
@@ -515,7 +515,7 @@ In some situations, a simple method that only returns a value would be acceptabl
 
 ```html
 @if (site.isAdmin()) {
-    <div> <!-- Show admin content --> </div>
+    <div> {/* <!-- Show admin content --> */} </div>
 }
 ```
 
@@ -535,7 +535,7 @@ For example, using methods in event handlers is fine:
 
 </ValidExample>
 
-#### A warning about using getters
+#### A warning about using getters {/* #a-warning-about-using-getters */}
 
 Other frameworks have patterns to solve this problem, for example Vue has [Computed Properties](https://vuejs.org/guide/essentials/computed.html#computed-properties) and React has the [useMemo hook](https://reactjs.org/docs/hooks-reference.html#usememo).
 
@@ -555,7 +555,7 @@ get isAdmin(): boolean {
 
 Even if this looks like using a property in the template, it is still calling a method in every render.
 
-### Maximise the number of attributes per line
+### Maximise the number of attributes per line {/* #maximise-the-number-of-attributes-per-line */}
 
 There is a maximum line length of 140 characters for templates. Whenever that length is surpassed, the attributes should be distributed in multiple lines trying to reduce the number of total lines, instead of dedicating one line per attribute.
 
@@ -601,7 +601,7 @@ There is a maximum line length of 140 characters for templates. Whenever that le
 If you are using VSCode, this should be done automatically on every save with the [configuration that ships with the app](https://github.com/moodlehq/moodleapp/blob/latest/.vscode/settings.json#L8).
 :::
 
-### Declaring page modules
+### Declaring page modules {/* #declaring-page-modules */}
 
 When creating a page component, it should be declared as a standalone component and exported as default class so it can be easily [lazy loaded](../../../general/app/development/development-guide.md#routing).
 
