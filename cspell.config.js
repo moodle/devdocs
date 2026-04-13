@@ -92,6 +92,9 @@ const config = {
 
         // Ignore relative paths in markdown links.
         '/\\]([^)]*)/gm',
+
+        // Ignore mdx comments in the format {/* COMMENT */}.
+        '/\\{\\/\\*[\\s\\S]*?\\*\\/\\}/g',
     ],
 };
 
