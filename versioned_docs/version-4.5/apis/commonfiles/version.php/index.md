@@ -142,7 +142,7 @@ This can be any value you like, although it is recommended that you choose a pat
 $plugin->release = '52.0-flamethrower-1.0';
 ```
 
-### Peer dependenices {/* #peer-dependenices */}
+### Peer dependencies {/* #peer-dependencies */}
 
 <LanguageProperty
     types={["string[]"]}
