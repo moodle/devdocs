@@ -43,7 +43,7 @@ Moodle also provides a `mocking_route_loader` which can be used in unit tests to
 
 When using the mocking route loader only those routes that you explicitly add will be included.
 
-:::caution Ordering
+:::caution[Ordering]
 
 Because the router uses DI to inject routes during its initialisation, all routes must be mocked before calling `get_router()` or related methods.
 
@@ -105,7 +105,7 @@ public function test_example(): void {
 }
 ```
 
-:::note Request Groups
+:::note[Request Groups]
 
 When creating a request the default is to use the Route Group for the REST API, but any valid `ROUTE_GROUP` is supported.
 

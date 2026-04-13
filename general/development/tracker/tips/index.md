@@ -67,7 +67,7 @@ More documentation on [Advanced searching](https://confluence.atlassian.com/jira
 5. You can also add **New subscription** if you want to be notified periodically about new issues in any of the filters you've created.
 ![](./savefilter3.png)
 
-:::tip Manage filters and subscriptions
+:::tip[Manage filters and subscriptions]
 
 You can manage your filters and subscriptions on [Manage filters](https://moodle.atlassian.net/secure/ManageFilters.jspa) page.
 

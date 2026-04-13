@@ -86,7 +86,7 @@ Third-party library code will not be ignored with these versions of Moodle.
 
 :::
 
-:::tip Ignoring the file with Git
+:::tip[Ignoring the file with Git]
 
 We recommend configuring your code checkout to ignore the `.phpcs.xml` file by adding a local ignore record to `.git/info/exclude`
 
@@ -125,7 +125,7 @@ Although not recommended, you can configure the Moodle ruleset as the system-wid
 phpcs --config-set default_standard moodle
 ```
 
-:::important Not recommended
+:::important[Not recommended]
 
 This approach is **not recommended** and is only preserved for reference.
 

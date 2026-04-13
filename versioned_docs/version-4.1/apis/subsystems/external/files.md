@@ -60,7 +60,7 @@ This allows multiple files to be uploaded to the same draft file area.
 
 On every successful upload, the file/s information are returned in JSON format. If an error occurs, an error message will be sent back in JSON format too.
 
-:::note Example
+:::note[Example]
 
 To upload a file, `users.csv`, you could use curl as follows:
 

@@ -70,7 +70,7 @@ Also, remember to make this file executable by running `sudo chmod +x /usr/local
 
 For convenience, you can also define an application launch that calls this script.
 
-:::note Help wanted!
+:::note[Help wanted!]
 These instructions have only been tested in Linux. If you are using a different operative system, [let us know](https://github.com/moodle/devdocs/issues/76) how it went (or just [edit this page](https://github.com/moodle/devdocs/edit/main/general/app/development/setup/app-in-browser.md)!).
 :::
 
@@ -84,11 +84,11 @@ For example, if you have created a shortcut like we mentioned in the previous se
 export MOODLE_APP_BROWSER=/usr/local/bin/unsafe-chromium
 ```
 
-:::caution Use absolute paths
+:::caution[Use absolute paths]
 Make sure to set this variable to an absolute path, and not just the name of the binary. Even if the program is loaded in the global PATH, it will not work unless it's an absolute path.
 :::
 
-:::note Help wanted!
+:::note[Help wanted!]
 These instructions have only been tested in Linux. If you are using a different operative system, [let us know](https://github.com/moodle/devdocs/issues/76) how it went (or just [edit this page](https://github.com/moodle/devdocs/edit/main/general/app/development/setup/app-in-browser.md)!).
 :::
 

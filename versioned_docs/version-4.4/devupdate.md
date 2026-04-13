@@ -145,7 +145,7 @@ $callbacks = [
 
 </Tabs>
 
-:::danger Callbacks in earlier versions of Moodle
+:::danger[Callbacks in earlier versions of Moodle]
 
 If writing a callback for Moodle 4.3, you **must** use the string notation.
 
@@ -243,7 +243,7 @@ echo $formatter->format_string($input, ...);
 
 </Tabs>
 
-:::info Named Parameters
+:::info[Named Parameters]
 
 <Tabs>
 
@@ -553,7 +553,7 @@ Enhancements to this page:
 The activity icons have been updated to prioritize readability and transform the existing filled square shapes with white icons into outlined colored icons against a transparent background. This modification ensures that the icons are not only more accessible but also easily distinguishable for users.
 When upgrading the SVG files, the .png files have been removed.
 
-:::tip Considerations for creating/updating SVG icons
+:::tip[Considerations for creating/updating SVG icons]
 
 - Please make sure that the icons are filled with `#212529` and that the background is transparent.
 - The icons should be 24x24px. It's recommended to define width and height into the SVG files to guarantee that the icons are displayed correctly.
@@ -576,7 +576,7 @@ The available activity purposes for this feature are:
 - Resource (`MOD_PURPOSE_CONTENT`)
 - Other (`MOD_PURPOSE_OTHER`)
 
-:::danger Changes in purposes for Moodle 4.4
+:::danger[Changes in purposes for Moodle 4.4]
 
 - `MOD_PURPOSE_INTERFACE` has been deprecated, so it's not recommended to use it.
 - `MOD_PURPOSE_INTERACTIVECONTENT` has been added. In core, it's used for activities like H5P, Lesson, SCORM and IMS package.

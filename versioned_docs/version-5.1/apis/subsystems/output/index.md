@@ -40,7 +40,7 @@ echo $output->render($renderable);
 echo $output->footer();
 ```
 
-:::info Setup of an admin page
+:::info[Setup of an admin page]
 
 On admin pages, the `admin_externalpage_setup($sectionname);` function should be called to set up and perform permission checks, for example:
 
@@ -64,7 +64,7 @@ $PAGE->set_title($title);
 $PAGE->set_heading($title);
 ```
 
-:::note What is $PAGE and where did it come from ?
+:::note[What is $PAGE and where did it come from ?]
 
 `$PAGE` is a global variable used to track the state of the page that is being returned. It is an instance of the `moodle_page` class defined in `lib/pagelib.php`. See [Page API](https://docs.moodle.org/dev/Page_API) for more information on the `$PAGE` variable.
 
@@ -593,7 +593,7 @@ class myname implements externable, named_templatable, renderable {
 
 </details>
 
-:::important PHPUnitTests are required
+:::important[PHPUnitTests are required]
 
 To ensure the stability of exported data, any class implementing `externable` must provide a PHPUnit test that verifies both the structure and values of the exported data.
 

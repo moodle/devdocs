@@ -21,7 +21,7 @@ Code is tested as part of reviewing at some key parts of the [Moodle development
 - `Peer review`. Developers often test each others work early in the development process
 - `Integration review`. The integration team tests code weekly while they are evaluating suitability for integration into Moodle.
 
-:::info More info
+:::info[More info]
 
 We recommend that you follow the [Testing instructions guide](./testing/guide) to help you write clear manual testing instructions.
 
@@ -31,7 +31,7 @@ We recommend that you follow the [Testing instructions guide](./testing/guide) t
 
 Moodle has a dedicated team of testers who perform most of the manual testing for integration issues. Developers submitting patches **should always cover the patch with unit tests and/or Behat behavioural tests**.
 
-:::info More info
+:::info[More info]
 
 We recommend that you follow the [Testing of integrated issues guide](./integrated-issues.md) to get a better understanding of how testing integrated issues works.
 
@@ -41,7 +41,7 @@ We recommend that you follow the [Testing of integrated issues guide](./integrat
 
 Once all major features for a new Moodle release have landed, Moodle performs a Quality Assurance test cycle. This test cycle is typically performed by volunteers from the Moodle community who systematically test each available feature to ensure that it still works as intended. This process typically lasts 4-6 weeks and happens once per Major release.
 
-:::info More info
+:::info[More info]
 
 We recommend that you follow the [QA testing guide](./qa.md) to know more about the Quality Assurance test cycle.
 
@@ -55,7 +55,7 @@ For major theme changes, additional manual tests may be run.
 
 PHPUnit tests are supported as part of the code from Moodle 2.3 onwards. These are automated tests of very low-level code functionality that a developer should write as part of any new code.
 
-:::info More info
+:::info[More info]
 
 We recommend that you follow [PHPUnit integration](https://docs.moodle.org/dev/PHPUnit_integration) to help you run and write unit tests.
 

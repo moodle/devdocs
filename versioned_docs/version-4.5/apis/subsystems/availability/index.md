@@ -65,7 +65,7 @@ This property considers a range of factors to indicate whether the activity shou
 
 The `section_info` object also includes an `availableinfo` property which provides HTML-formatted information to explain to the user why they cannot access the activity.
 
-:::warning Checking sections and activities
+:::warning[Checking sections and activities]
 
 The `uservisible` check for an _activity_ automatically includes all relevant checks for the section that the activity is placed in.
 

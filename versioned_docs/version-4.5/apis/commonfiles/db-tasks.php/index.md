@@ -97,7 +97,7 @@ Each of these fields accepts one, or more values, and the format for each field 
 <random>    := R
 ```
 
-:::info Random values
+:::info[Random values]
 
 A fixed random value can be selected by using a value of `R`. By specifying this option, a random day or time is chosen when the task is installed or updated. The same value will be used each time the task is scheduled.
 
@@ -111,7 +111,7 @@ If no value is specified then the following defaults are used:
 - Hour: `*` (Every hour)
 - Minute: `*` (Every minute)
 
-:::info Day and Day of the week
+:::info[Day and Day of the week]
 
 If either field is set to `*` then use the other field, otherwise the soonest value is used.
 

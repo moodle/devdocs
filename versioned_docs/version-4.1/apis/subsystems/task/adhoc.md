@@ -119,7 +119,7 @@ Duplicate adhoc task detection can be enabled by passing a truthy value as the s
 \core\task\manager::queue_adhoc_task($task, true);
 ```
 
-:::tip Custom data
+:::tip[Custom data]
 
 If creating tasks which will contain a subset of data which will also be run by another instance of the same task type, you should put the data into a database table rather than the task custom data.
 

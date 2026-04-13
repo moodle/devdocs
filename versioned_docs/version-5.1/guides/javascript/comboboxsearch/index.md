@@ -111,7 +111,7 @@ export default class extends YourComponent {
 {{/js}}
 ```
 
-:::tip Generating unique id attributes
+:::tip[Generating unique id attributes]
 
 You can use the `{{uniqid}}` Mustache helper within your code to help you generate a unique id for your HTML attributes and target them in your React component.
 

@@ -71,7 +71,7 @@ For example:
 $CFG->debug_developer_editor = 'vscode';
 ```
 
-:::tip Adding your own editor
+:::tip[Adding your own editor]
 
 If your editor is not included in this list, but does support opening files using a URI handler then you can specify a callable which returns the URI, for example:
 

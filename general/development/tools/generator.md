@@ -51,7 +51,7 @@ This means:
 
 :::
 
-:::tip Example
+:::tip[Example]
 
 Some example Behat generator files can be found in [`admin/tool/generator/tests/fixtures/`](https://github.com/moodle/moodle/blob/main/admin/tool/generator/tests/fixtures/). For instance, [`testscenario/scenario.feature`](https://github.com/moodle/moodle/blob/main/admin/tool/generator/tests/fixtures/testscenario/scenario.feature) creates a course with two assignment activities and enrols one teacher along with five students.
 

@@ -6,7 +6,7 @@ tags:
 ---
 While implementing the privacy API into your plugin, there are CLI scripts that can help you to test things on the fly.
 
-:::danger Important
+:::danger[Important]
 
 These scripts are to assist during development. They are not intended to replace proper unit tests.
 

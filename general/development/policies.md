@@ -62,7 +62,7 @@ It's important that Moodle produces strict, well-formed [HTML 5](http://en.wikip
 
 CSS should be used for layout. Moodle comes with several themes installed. Beginning with version 3.7, only the 'Boost, and 'Classic' themes are included with the base Moodle code.
 
-:::note Writing your own theme
+:::note[Writing your own theme]
 
 We recommend that if you are writing your own theme that it should extend the Moodle 'Boost' theme.
 

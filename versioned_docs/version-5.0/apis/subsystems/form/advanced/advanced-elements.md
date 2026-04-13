@@ -36,7 +36,7 @@ For more information on the risks of this, see the advice in [Designing usable f
 
 :::
 
-:::info Location of Show and hide links
+:::info[Location of Show and hide links]
 
 Whenever you mark a form element as advanced, then the _Show / hide advanced_  links are shown automatically at relevant points within the form.
 

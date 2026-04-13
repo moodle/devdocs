@@ -70,7 +70,7 @@ This configuration is broken into two files:
 
 This makes it easier to support SSL configuration on your server.
 
-:::tip Generating SSL Certificates
+:::tip[Generating SSL Certificates]
 
 If you have a domain that you control, you may be able to use a DNS-based CertBot plugin such as [Route53](https://certbot-dns-route53.readthedocs.io/en/stable/) or [Cloudflare](https://certbot-dns-cloudflare.readthedocs.io/en/stable/).
 

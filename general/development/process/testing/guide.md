@@ -22,7 +22,7 @@ In addition, the following items may be included:
 4. Whether more than one browser should be used.
 5. Whether extra testing around the issue is required.
 
-:::info Information for testers
+:::info[Information for testers]
 
 You should specify which themes and browsers have tested, and attach some screenshots.
 

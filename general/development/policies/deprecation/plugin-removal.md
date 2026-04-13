@@ -22,7 +22,7 @@ Typically plugin removal will be announced in the following places:
   - [Moodle Developer Chat](https://matrix.to/#/#moodledev:moodle.com)
   - [Large scale installations](https://matrix.to/#/#bigmoodle:moodle.com)
 
-:::warning Info
+:::warning[Info]
 
 We will endeavour to make announcements as early as possible and to give appropriate time to update workflows, and dependencies, however this cannot be guaranteed in all situations.
 
@@ -52,7 +52,7 @@ If the plugin is no longer suited to Moodle LMS, in most cases it is unlikely to
 
 Where there are cases where the community feels that it should be moved to the plugins database instead, then we look for volunteers from the community to take over the maintenance of the plugin.
 
-:::warning Plugins without a maintainer
+:::warning[Plugins without a maintainer]
 
 Plugins without a maintainer will not be accepted into the plugins database.
 

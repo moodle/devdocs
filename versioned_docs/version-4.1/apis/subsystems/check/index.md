@@ -73,7 +73,7 @@ For more information see [MDL-67776](https://moodle.atlassian.net/browse/MDL-677
 
 Available from _/report/status/index.php_, a status check is an 'in the moment' test and covers operational tests such as 'can moodle connect to ldap'. The main core status checks are that cron is running regularly and there has been no failed tasks.
 
-:::danger Important
+:::danger[Important]
 
 It is critical to understand that Status checks are conceptually defined at the level off the application and not at a lower host level such as a docker container or node in a cluster. Checks should be defined so that whichever instance you ask you should get a consistent answer. DO NOT use the Status Checks to detect containers which need reaped and restarted. If you do, any status error will mean all containers will simultaneously be marked for reaping.
 

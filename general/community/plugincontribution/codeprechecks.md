@@ -19,7 +19,7 @@ If there are some formal errors or warnings detected, a label like this is displ
 
 ![Plugin code prechecks error](_codeprechecks/plugin-codeprechecks-error.png)
 
-:::info Labels information
+:::info[Labels information]
 
 The first of the two numbers gives the total number of detected errors, the second number shows the number of warnings. If there are no errors but some warnings, the label is displayed in orange colour. In case of some errors, the label is displayed in red.
 

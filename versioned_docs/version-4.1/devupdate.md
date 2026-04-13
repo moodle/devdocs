@@ -29,7 +29,7 @@ The menus have been transitioned to be rendered via templates. Refer to [`user_m
 
 The primary navigation (the navbar) apart from the existing content will now display links to the Dashboard, My Courses, Site Admin and Course search, by default. You can still add items to the navbar via the `custom menu` option. This will be displayed within the **'More'** menu.
 
-:::caution Customising the primary navigation
+:::caution[Customising the primary navigation]
 
 Not yet implemented but we are looking at allowing the full addition and removal of any of the primary navigation tabs in the boost theme config file.
 
@@ -121,7 +121,7 @@ The class has setters for the following variables which can be leveraged to modi
 
 Alternately, bulk operations can also be done by passing the above variables in an array to `set_attrs` which in turn calls the setters.
 
-:::caution Note
+:::caution[Note]
 
 Any updates to the `activityheader` needs to be performed before the call to `$OUTPUT->header`
 
@@ -165,7 +165,7 @@ With the changes in boost to incorporate the primary and secondary navigation, t
   </div>
   ```
 
-:::info Accessibility notes
+:::info[Accessibility notes]
 
 The jump to `maincontent` div is now rendered within the activity header when within an activity context.
 
@@ -331,7 +331,7 @@ Another important update on course rendering is that now all course structure is
 
 All course format output classes implements the new `named_templatable` interface, which allows the class to define its own template path using the `get_template_name` method. This new interface in combination with [mustache blocks](./guides/templates/index.md#blocks) allows the format plugins to provide alternative templates to render the course.
 
-:::tip Migrating 3.11 course formats doc
+:::tip[Migrating 3.11 course formats doc]
 
 All the new output classes and a guide on how to migrate the current third-party plugins can be found in the [Migrating 3.11 formats](./apis/plugintypes/format/migration.md) page.
 
@@ -354,7 +354,7 @@ The new course editor uses a component-based reactive pattern to keep track of t
 - Each UI element is implemented as a Component that observes the course state data and reacts to any data change
 - When any reactive component needs to modify the course, it asks the course editor to execute a mutation. Mutations encapsulate all web services calls and alter the course state data.
 
-:::tip Reactive library doc
+:::tip[Reactive library doc]
 
 The reactive library documentation, as well as the format plugin migration guide, can be found in the [Moodle 3.11 vs 4.0 course editor architecture](./guides/javascript/reactive/index.md) page.
 
@@ -440,7 +440,7 @@ The following step enables an installed plugin.
 And I enable "plugin name" "plugin type" plugin
 ```
 
-:::info For example:
+:::info[For example:]
 
 ```gherkin
 And I enable "course_summary" "block" plugin
@@ -460,7 +460,7 @@ You can use the following step to ensure a node is active in the navbar.
 And I should see "Node" is active in navigation
 ```
 
-:::info For example:
+:::info[For example:]
 
 ```gherkin
 And I should see "My courses" is active in navigation
@@ -481,7 +481,7 @@ And "item text" "selector type" should exist in the user menu
 And "item text" "selector type" should not exist in the user menu
 ```
 
-:::info For example:
+:::info[For example:]
 
 ```gherkin
 And "Language" "link" should exist in the user menu
@@ -497,7 +497,7 @@ And "item text" "selector type" should exist in the "submenu name" user submenu
 And "item text" "selector type" should not exist in the "submenu name" user submenu
 ```
 
-:::info For example:
+:::info[For example:]
 
 ```gherkin
 When I follow "Language" in the user menu
@@ -514,7 +514,7 @@ To add enrolment methods to courses you can use the following new step. The data
 And I add "enrolment method" in "course identifier" with:
 ```
 
-:::info For example:
+:::info[For example:]
 
 ```gherkin
 When I add "Self enrolment" enrolment method in "Course 1" with:
@@ -544,7 +544,7 @@ And I should see "number of comments" on the comments column
 And I click "number of comments" on the row on the comments column
 ```
 
-:::info For example:
+:::info[For example:]
 
 ```gherkin
 And I navigate to "Question bank" in current page administration
@@ -577,7 +577,7 @@ And I should not see question bulk action "action"
 
 {/* <!-- cspell:ignore deleteselected --> */}
 
-:::info For example:
+:::info[For example:]
 
 ```gherkin
 And I click on "First question" "checkbox"
@@ -602,7 +602,7 @@ There's another step related to the report builder to set a column's aggregation
 And I set the "column title" column aggregation to "aggregation method"
 ```
 
-:::info For example:
+:::info[For example:]
 
 ```gherkin
 And I set the "First name" column aggregation to "Comma separated values"
@@ -654,7 +654,7 @@ The following new step can be used to navigate to the exports page in the course
 And I navigate to "export option" export page in the course gradebook
 ```
 
-:::info For example:
+:::info[For example:]
 
 ```gherkin
 And I navigate to "XML file" export page in the course gradebook
@@ -692,7 +692,7 @@ And "item text" "selector type" should exist in the language selector menu
 And "item text" "selector type" should not exist in the language selector menu
 ```
 
-:::info For example:
+:::info[For example:]
 
 ```gherkin
 And "English &lrm;(en)&lrm;" "link" should exist in the language selector menu

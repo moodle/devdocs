@@ -9,7 +9,7 @@ Atto is a JavaScript text editor built specifically for Moodle. It is the defaul
 
 All of the buttons in Atto are implemented as Moodle subplugins. This means that the subplugins can do anything a subplugin can do including, using language strings, database tables, other JavaScript, and more.
 
-:::caution Sunset of Atto
+:::caution[Sunset of Atto]
 
 A new Editor was created for Moodle 4.1 and later using the latest version of TinyMCE.
 

@@ -91,7 +91,7 @@ Installation instructions can be found at [https://github.com/andrewnicols/chrom
 
 ## Getting started {/* #getting-started */}
 
-:::tip Environment
+:::tip[Environment]
 
 These notes assume that you have already installed a supported Java Runtime Environment, and the [moodle-browser-config](./running.md#pre-configured-browser-profiles-moodle-browser-config) tool.
 
@@ -173,7 +173,7 @@ The `geckodriver` binary must be in a directory in your `$PATH`.
    require_once('/path/to/moodle-browser-config/init.php');
    ```
 
-:::note About the behat_wwwroot
+:::note[About the behat_wwwroot]
 
 You will need to set the `behat_wwwroot` to your Moodle site, but it **must** use a different value to your `$CFG->wwwroot`.
 

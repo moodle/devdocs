@@ -12,7 +12,7 @@ SMS gateway plugins allow you to create SMS gateway providers.
 Providers are an interface between the [SMS API](/apis/subsystems/sms/index.md) and an external SMS provider (for example Amazon Web Services).
 This allows for the sending of SMS notifications to users from your Moodle instance.
 
-:::info Example
+:::info[Example]
 
 You can set up Multi-Factor Authentication (MFA)) in Moodle and choose 'AWS' as your SMS gateway provider.
 

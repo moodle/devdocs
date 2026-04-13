@@ -17,7 +17,7 @@ Likewise, all responses from the Provider plugin are handed back to the Manager 
 A Provider plugin allows many "provider instances" to be defined, each of which can support a different set of configurations.
 This facilitates having providers for specific tasks. So, you can use a more efficient model for lightweight tasks like summarisation, and a more fully featured model for text generation. Another example is defaulting to using a cheaper model with a lower token limit, and then falling back to a more expensive model if a request is too large for the default model.
 
-:::warning The Golden Rule:
+:::warning[The Golden Rule:]
 
 Placements **do not** know about Providers, and Providers **do not** know about Placements.
 Everything should go via the Manager.

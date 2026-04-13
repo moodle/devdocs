@@ -10,7 +10,7 @@ This document contains information that developers should know before starting t
 
 Please notice that this documentation is useful to develop code that will be integrated in the standard app or in a custom app. Developers that want to add mobile support to their Moodle plugins don't need to follow this.
 
-:::note Notice
+:::note[Notice]
 Before embarking on Moodle-specific documentation, we recommend that you are at least familiar with [Angular](https://angular.io/) and [Ionic Framework](https://ionicframework.com/), the core technologies used in the application. We'll reference any relevant concepts, but having a basic understanding will take you a long way in understanding the Moodle App.
 :::
 

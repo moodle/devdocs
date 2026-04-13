@@ -53,7 +53,7 @@ The documentation may also include:
 - A features overview with screenshots or videos.
 - Installation instructions
 
-:::info Plugin documentation examples
+:::info[Plugin documentation examples]
 
 - [Stamp collection](https://docs.moodle.org/en/Stamp_collection_module)
 - [Profile switches](https://docs.moodle.org/en/Profile_switches)

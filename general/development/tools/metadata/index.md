@@ -75,7 +75,7 @@ The list of subplugins should be detailed in the `subplugintypes` object which c
 
 For Moodle versions 4.5 and earlier the `plugintypes` object is used. The same keys must be used, but the values of `subplugintypes` are relative to the plugin's root directory, whilst the value of `plugintypes` are relative to the Moodle project root.
 
-:::danger Plugins supporting Moodle 4.5 and earlier
+:::danger[Plugins supporting Moodle 4.5 and earlier]
 
 If your plugin supports subplugins and is intended for use for both Moodle 5.0 and later, and Moodle 4.5 or earlier, you should specify both the `subplugintypes` and the `plugintypes` objects.
 

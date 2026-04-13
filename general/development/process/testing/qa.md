@@ -31,7 +31,7 @@ Would you like to help with QA testing? If so, please make sure you have created
    - `Fail` - Something doesn't work, or you obtain debugging messages. Add comment describing the step that doesn't work. If in doubt whether to pass a test, give it a fail and add a comment describing your doubts.
    - `Obsolete` - Test is no longer relevant in the current Moodle version. Add comment explaining why.
 
-:::info Out of date tests
+:::info[Out of date tests]
 
 If you notice that the test description is out-of-date, add a comment mentioning that it needs updating. Alternatively, if you'd like to help with updating the test yourself, see below.
 
@@ -57,7 +57,7 @@ The [Moodle QA Testing Site](https://qa.moodledemo.net/) is updated daily at aro
 
 Credentials for Teacher and student accounts are provided on the login page.
 
-:::info E-mail on the QA site
+:::info[E-mail on the QA site]
 
 No e-mail will be sent from the QA server. Tests involving e-mail **cannot** be performed on the Moodle QA Testing Site.
 
@@ -65,7 +65,7 @@ If you perform any test which tries to send e-mail, a debugging message will be 
 
 :::
 
-:::tip Admin access
+:::tip[Admin access]
 
 If you require admin access to the Moodle QA Testing Site for running certain tests, please ask in the [Moodle QA Matrix chat room](https://matrix.to/#/#qa:moodle.com) or the [Testing and QA forum](https://moodle.org/mod/forum/view.php?id=56) for someone to send you the account credentials via private message.
 
@@ -89,7 +89,7 @@ Adding details for a link to the QA issue
 
 ## Resetting tests {/* #resetting-tests */}
 
-:::info Note for integrators
+:::info[Note for integrators]
 
 After integrating a fix:
 
@@ -120,7 +120,7 @@ When entering text into a form, try things like:
 - very long strings
 - different languages, such as a RTL language
 
-:::tip For example:
+:::tip[For example:]
 
 ```
 x < 1 && x > 0
@@ -142,7 +142,7 @@ café
 
 ## New QA tests required {/* #new-qa-tests-required */}
 
-:::info Note for developers
+:::info[Note for developers]
 
 If an issue fix cannot be covered by automated tests,
 

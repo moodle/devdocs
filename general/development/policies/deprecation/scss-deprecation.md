@@ -13,7 +13,7 @@ Since Moodle 4.4, it's possible to deprecate SCSS styles and classes. This allow
 
 The most common scenarios where this functionality can be used is when specific SCSS code is not being used anywhere, when the name of a class is changed or a class should not be used in the future.
 
-:::info When should SCSS be removed?
+:::info[When should SCSS be removed?]
 
 There are situations where deprecation does not make sense. For example when a whole functionality is being removed, or a very specific SCSS class is no longer used by the code. If it is very unlikely that the SCSS class is used by any other code, it can simply be removed without the full deprecation process.
 

@@ -40,7 +40,7 @@ Plugin name validation takes place in `core_component::is_valid_plugin_name()` a
 
 :::
 
-:::danger Activity module exception
+:::danger[Activity module exception]
 
 The underscore character is not supported in activity modules for legacy reasons.
 

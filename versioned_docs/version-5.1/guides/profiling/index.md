@@ -100,7 +100,7 @@ For full instructions, see the [Xdebug installation documentation](https://xdebu
 
 Once the Xdebug extension is installed and specified in php configuration, you should restart your webserver.
 
-:::note tip
+:::note[tip]
 
 Information about Xdebug should appear in `phpinfo()` function output. If not, make sure that `zend_extension` line is not commented out, extension file exists in specified location and refer to webserver logs for more details.
 
@@ -136,7 +136,7 @@ This tells the xdebug extension to look for a specific variable as a trigger nam
 - `$_POST` - HTTP POST params
 - `$_COOKIE` - An HTTP cookie name
 
-:::tip Configuring the trigger
+:::tip[Configuring the trigger]
 
 By default, the content of the variable is not checked, but this can be configured with the `xdebug.trigger_value` parameter, for example:
 
@@ -159,7 +159,7 @@ cachegrind.out._moodle2_mod_forum_view_php.1289838411
 cachegrind.out._moodle2_index_php.1289837892
 ```
 
-:::tip Profiling POST and AJAX requests
+:::tip[Profiling POST and AJAX requests]
 
 Triggering profiling with POST requests or AJAX queries is also possible without code changes with a number of browser plugins available to help. Plugins are available for most browsers to insert the `XDEBUG_PROFILE` variable into cookie data, thus making profiling enabled for as long as you wish for all requests, the include:
 

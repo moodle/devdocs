@@ -40,7 +40,7 @@ In `require`, include a production dependency on `moodle/composer-installer`.
 
 The `type` field is what the `moodle/composer-installer` package uses to determine the installation path. For example, a package with `"type": "moodle-block"` will be installed into `blocks/myblock/` within the Moodle directory.
 
-:::tip Vendor name
+:::tip[Vendor name]
 
 The vendor prefix in the `name` field (for example, `myplugin`) is your Packagist vendor name and is independent of any Moodle conventions. The package name component (`moodle-block_myblock`) follows the Moodle convention.
 
@@ -127,7 +127,7 @@ For local path repositories, use `"*"` or `"@dev"` in your `require` constraint 
 
 ### Declaring dependencies {/* #declaring-dependencies */}
 
-:::caution Current recommendation
+:::caution[Current recommendation]
 
 Moodle currently supports plugins installed both with Composer and without Composer. Composer-declared runtime dependencies are only guaranteed to be installed when the plugin itself is installed via Composer.
 

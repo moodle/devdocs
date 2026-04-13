@@ -11,13 +11,13 @@ tags:
 
 Custom fields API allows to configure custom fields that can be added to various contexts. Each **component** (or plugin) that wants to use custom fields can define several **areas**.
 
-:::info Example
+:::info[Example]
 The `core_course` component defines an area `course` that allows to add custom fields to the courses. The same component can define another area `coursecat` that will allow to add custom fields to the course categories.
 :::
 
 Inside each area, the component/plugin can decide whether to use or not to use **itemid**.
 
-:::info Example
+:::info[Example]
 Course custom fields are the same throughout the system and they don't use `itemid` (it is always 0). But there could be an activity module that would want to configure different custom fields for each individual instance of module. Then this module would use the module id as the `itemid`, as in ([example](https://github.com/marinaglancy/moodle-mod_surveybuilder)). This would allow to create modules similar to `mod_data` and `mod_feedback` where each instance has its own set of fields.
 :::
 

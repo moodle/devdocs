@@ -81,7 +81,7 @@ During an upgrade, restrictions are placed on the functions that your upgrade co
 - In a **plugin**, upgrade code should not call **any plugin functions**. For example, if your plugin has a function that changes frog settings to 'green', and you need to do this during upgrade, then you **must not** call this function; instead, manually update the database rows so that the frog settings become green). However, **you _may_ call core functions** rather than making core changes in database.
 - In **core**, upgrade code should not even call **any core functions**. For example, if you need to add a calendar event, this should be done by inserting into a database table rather than calling a function to add the event. Certain functions marked with a comment such as `set_config` and `get_config` are excepted.
 
-:::info Rationale for these rules
+:::info[Rationale for these rules]
 
 During core upgrade the state is as follows:
 
@@ -164,7 +164,7 @@ Several functions are also available to call from within the upgrade.php script:
 
 In Moodle core, one of the standard simple rules is not to make any database changes on a stable branch. You only need to read this section in the rare situations where a database change on the stable branch is unavoidable.
 
-:::warning Advanced
+:::warning[Advanced]
 
 Suppose, in order to fix a bug, you need to make a database change in the Moodle 4.0 stable branch (and the main branch targetting Moodle 4.1). The root of the problem is that people may upgrade their Moodle in three different ways, which
 

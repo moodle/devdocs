@@ -308,7 +308,7 @@ Real world examples can be found in `mod/glossary/edit.php` and `mod/glossary/co
 
 If you prefer, you can call the various underlying functions yourself. This is not typically required.
 
-:::caution Important
+:::caution[Important]
 
 You must call both the pre-processing, and post-processing, functions to ensure the correct behaviour.
 

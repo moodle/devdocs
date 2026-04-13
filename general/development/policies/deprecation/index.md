@@ -6,7 +6,7 @@ tags:
   - Deprecation
 ---
 
-:::info What is deprecation?
+:::info[What is deprecation?]
 
 [Deprecation](http://en.wikipedia.org/wiki/Deprecation), in its programming sense, is the process of taking older code and marking it as no longer being useful within the codebase, usually because it has been superseded by newer code. The deprecated code is not immediately removed from the codebase because doing so may cause regression errors.
 
@@ -30,7 +30,7 @@ In an open source project, the end use of the codebase varies. People may have c
   3. Removal
 - All deprecations should emit debugging notices where possible
 
-:::danger What does it mean for an API to be considered "Public"
+:::danger[What does it mean for an API to be considered "Public"]
 
 When we talk about Public APIs in Moodle, we are not referring to the `public` keyword in the method definition.
 
@@ -98,7 +98,7 @@ debugging('foobar() is deprecated. Please use foobar::blah() instead.', DEBUG_DE
 - If the function is an external function, then an additional deprecation-specific method needs to be created and set to return true. See the [adding a web service to a plugin](/docs/apis/subsystems/external/writing-a-service#deprecation) docs on that process. You should continue to add the `@deprecated since x.x` tag to the docs of all three of the relevant external methods (parameters, main method, returns) to make it clear to IDEs that the function is deprecated.
 - There will need to be an issue associated with the initial part of the deprecation. A second issue needs to be created to finish the job. The first issue will be linked to second issue. The second issue needs to be a sub-task of an appropriate [deprecation META](https://moodle.atlassian.net/issues/?jql=%28summary%20~%20%22meta%22%20or%20type%20%3D%20Epic%29%20AND%20summary%20~%20%22together%20deprecated%22%20order%20by%20created&runQuery=true&clear=true).
 
-:::note Example
+:::note[Example]
 
 If the current version is 3.1.2, the function will be marked as deprecated in 3.2 and should normally be removed for 3.6, so the second issue should be an issue in a deprecation epic for the 3.6 version ([MDL-54740](https://moodle.atlassian.net/browse/MDL-54740)). This second issue should include instructions on how to remove the function so that when it comes time to do so, the task is trivial for any developer.
 
@@ -182,7 +182,7 @@ throw new coding_exception(
 - External functions deprecation process is different from the standard deprecation and functions should be completely removed.
 - Last but not least, every deprecation should be documented in an [upgrade note](../../upgradenotes.md) **at least** once but, **ideally**, both on the initial/immediate deprecation and also on this final deprecation/removal.
 
-:::info Changes to Method Signatures
+:::info[Changes to Method Signatures]
 
 Previously, this policy required removing all parameter and return type declarations from method signatures. However, this caused issues with child classes due to PHP's covariance and contravariance rules.
 
@@ -333,7 +333,7 @@ It is strongly advised to deprecate an entire method, rather than deprecating a 
   - If the default value was not already `null`, and a non-null value is provided, a debugging notice should be emitted
 - Where it is not possible to make the the type nullable, consider deprecating the method and creating a new one with the updated parameters
 
-:::caution Changes to default values and types
+:::caution[Changes to default values and types]
 
 The [Covariance and Contravariance rules for PHP](https://www.php.net/manual/en/language.oop5.variance.php) prevent changes to argument types and defaults when a class is extended and that method overridden.
 
@@ -432,7 +432,7 @@ public function greet_person(
   </Tabs>
 </ValidExample>
 
-:::note Deprecations for core methods in Moodle 4.1 and earlier
+:::note[Deprecations for core methods in Moodle 4.1 and earlier]
 
 Prior to support for PHP 8.0 in Moodle 4.2, the policy for parameter argument deprecation stated that deprecated parameters must be renamed to `$unused` or a similar name.
 

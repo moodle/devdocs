@@ -70,7 +70,7 @@ Note that `Fix version` is no longer used during triage. If you are in the `mood
 
 When commenting on the issue give more details on replication, environment or testing. Ask questions, request screenshots, add watchers, modify the description if needed. Link to as many related issues as possible. Do everything that will make the issues scope more clear and attract opinions, discussions and patches.
 
-:::tip Be grateful
+:::tip[Be grateful]
 
 Don't forget to show **Gratitude and encouragement**.  After triaging many issues, it's easy to lose sight of the fact that the reporter has contributed their time and energy to report an issue for the benefit of the community.
 
@@ -94,7 +94,7 @@ While searching the tracker you may come over issues that were reported a long t
 
 - **Is this still an issue?** If it is not applicable any more either close it or comment about it on the issue and recommend to close. Very few tracker users actually have permission to close issues but the component lead or watchers will see your comment and revisit the issue. Another good practice is to replace the `triaged` label with `triaging_in_progress` and add a comment asking if the issue can be closed.
 
-:::warning Closing issues
+:::warning[Closing issues]
 
 If users confirm that the problem was resolved, or if nobody replies in 30 days, you should close the issue.
 
@@ -130,7 +130,7 @@ In the tracker, you'll find a few **Canned responses** in the **Project template
 - **Triaged: security bug**, when a security bug is triaged.
 - **Triaging in progress: request more info**, if more information is required to decide whether to triage the issue or not.
 
-:::tip Use canned responses
+:::tip[Use canned responses]
 
 You can search, re-use and adapt any of the messages in the **Canned response** selector, placed in the tracker editor:
 ![Canned responses in Tracker](./_files/cannedresponses.png)
@@ -148,7 +148,7 @@ The following are the priorities for ordering issues to be triaged that are refl
 5. Developer-reported issues (HQ and non-HQ) - should be quick to triage
 6. Recent community bugs - should be triaged last-in-first-out
 
-:::info Triaging dashboard
+:::info[Triaging dashboard]
 
 These priorities are displayed in the same order on the [Triaging dashboard](http://moodle.atlassian.net/secure/Dashboard.jspa?selectPageId=11153)
 
@@ -158,7 +158,7 @@ These priorities are displayed in the same order on the [Triaging dashboard](htt
 
 If you are a component lead you are responsible for triaging issues that involve your component. A good way to monitor newly created issues is to create a filter in the Tracker and add a gadget on your dashboard to show the results of the filter.
 
-:::tip How to add filters in the tracker
+:::tip[How to add filters in the tracker]
 
 In the [Tracker tips and tricks](../tracker/tips#creating-a-filter) page you'll find how to create a filter and add it to a dashboard.
 

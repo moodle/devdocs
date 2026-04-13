@@ -114,7 +114,7 @@ php admin/tool/pluginskel/cli/generate.php tiny_example.yml
 
 This will generate a working skeleton file for your plugin.
 
-:::note Compiled JavaScript
+:::note[Compiled JavaScript]
 
 The plugin skeleton only produces source files for JavaScript. You will need to run `grunt` to compile this code.
 
@@ -351,7 +351,7 @@ export const getSetup = async() => {
 
 </details>
 
-:::important A note about synchronicity
+:::important[A note about synchronicity]
 
 The TinyMCE `PluginManager.add` function requires all code to be called synchronously - that is to say that all Promises must be resolved before it is called.
 

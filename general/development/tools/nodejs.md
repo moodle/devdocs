@@ -15,7 +15,7 @@ The recommended way of installing NodeJS is via the [Node Version Manager](https
 - For Linux and Mac, follow [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
 - For Windows, use [https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases) -- Note! NVM 1.1.7 for Windows has bugs. You should upgrade to at least 1.1.9.)
 
-:::tip Checking that NVM is working
+:::tip[Checking that NVM is working]
 
 You can confirm that NVM is working by checking the version, for example:
 
@@ -35,7 +35,7 @@ nvm install
 nvm use
 ```
 
-:::tip Using the correct NodeJS version for your current directory
+:::tip[Using the correct NodeJS version for your current directory]
 
 Rather than remembering to update the system version of NodeJS, you can instead have your environment install and use the correct version when you change into a directory containing a `.nvmrc`.
 

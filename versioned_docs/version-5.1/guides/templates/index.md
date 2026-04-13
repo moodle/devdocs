@@ -322,7 +322,7 @@ The helper takes two comma separated arguments. The first is the desired length 
 
 Templates are saved in `templates/*.mustache` files within core components and plugins folders. When loading them, templates are identified by their [full component name](/general/development/policies/codingstyle/frankenstyle) followed by slash and the filename without the file extension.
 
-:::info Example
+:::info[Example]
 
 A `timer` template provided by the `mod_lesson` module would be referred to as `mod_lesson/timer` and it would be located in `mod/lesson/templates/timer.mustache` file.
 

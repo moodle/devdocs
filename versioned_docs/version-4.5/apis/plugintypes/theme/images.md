@@ -43,7 +43,7 @@ A method of Moodle's output library is utilized to generate the URL to the image
 
 :::
 
-:::danger Important
+:::danger[Important]
 
 **DO NOT** include the image file extension. Moodle will work it out automatically and it will not work if you do include it.
 

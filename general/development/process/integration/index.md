@@ -127,7 +127,7 @@ Along this period we always release as many stable weeklies, both supported (alw
 - **Once rc are released**, new features or improvements "unrelated" with the release are forbidden. No unhold voting, no managers. Simply forbidden.
 - **Last week before the release**, only "related" issues to the major release will be picked for integration. Everything else will be kept out and given the "`integration_held`" label until after the release or the on-sync period. No distractions.
 
-:::info More information about the last week before the release
+:::info[More information about the last week before the release]
 
 - Issues related to the major release are:
   - Follow-up issues required/planned for the release (especially must-fix and `mdlqa` issues)
@@ -175,7 +175,7 @@ You should pay close attention to [Git_commits](../../policies/codingstyle/index
 
 Typically during the integration process no additional tooling is required, however the [`moodle-userscripts`](https://github.com/HuongNV13/moodle-userscripts) TamperMonkey scripts are a great way of generating the commands typically used during final code review.
 
-:::danger Considerations for your code review repository
+:::danger[Considerations for your code review repository]
 
 When reviewing code for the final review, it is important to do so in a separate checkout which you do not use for other development. This helps ensure that unrelated branches and changes are not pushed by mistake.
 

@@ -82,7 +82,7 @@ Use the `git-blame` tool on the corresponding `lang/en/deprecated.txt` and find 
 - If the string was renamed or moved, you will probably want to fix the caller to use the new name/location of the string.
 - You may as well copy the string to your own plugin scope and make it context-specific.
 
-:::info Git blame
+:::info[Git blame]
 
 [git blame lang/en/deprecated.txt](https://github.com/moodle/moodle/blame/main/lang/en/deprecated.txt)<br/>
 [git blame mod/quiz/lang/en/deprecated.txt](https://github.com/moodle/moodle/blame/main/mod/quiz/lang/en/deprecated.txt)

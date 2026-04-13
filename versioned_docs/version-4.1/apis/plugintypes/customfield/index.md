@@ -55,7 +55,7 @@ The field controller defines the available configuration options that an adminis
 
 Examples might include the prompt to show alongside the custom field element, and whether the element is required.
 
-:::note Class naming
+:::note[Class naming]
 
 The class must be named `field_controller` within your plugin's namespace (for example `customfield_myfield`) and must extend the `\core_customfield\field_controller` class.
 
@@ -75,7 +75,7 @@ The `\core_customfield\field_controller` class is an abstract class and defines 
 - the `TYPE` constant to match the name of the plugin; and
 - the `config_form_definition()` function.
 
-:::danger Element names
+:::danger[Element names]
 
 All element names must be in the format `$configdata[configname]` for values to be saved, for example `configdata[cfgdefault]`.
 
@@ -91,7 +91,7 @@ Details of all available functions can be found in the `\core_customfield\field_
 
 The data controller defines the user interface that teachers use within the course edit form.
 
-:::note Class naming
+:::note[Class naming]
 
 The class must be named `data_controller` within your plugin's namespace (for example `customfield_myfield`) and must extend the `\core_customfield\data_controller` class.
 

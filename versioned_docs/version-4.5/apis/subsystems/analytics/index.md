@@ -14,7 +14,7 @@ The _target_ is the event we want to predict. The _indicators_ are what we think
 
 Moodle is able to evaluate these models and, if the prediction accuracy is high enough, Moodle internally trains a machine learning algorithm by using calculations based on the defined indicators within the site data. Once new data that matches the criteria defined by the model is available, Moodle starts predicting the probability that the target event will occur. Targets are free to define what actions will be performed for each prediction, from sending messages or feeding reports to building new adaptive learning activities.
 
-:::note Example
+:::note[Example]
 
 An example of a model you may be interested in is the detection of [students who are at risk of dropping out](https://docs.moodle.org/en/Students_at_risk_of_dropping_out).
 
@@ -150,7 +150,7 @@ Indicators are not limited to a single analyser like targets are. This makes ind
 
 The calculated value can go from -1 (minimum) to 1 (maximum). This requirement prevents the creation of "raw number" indicators like *absolute number of write actions,* because we must limit the calculation to a range, e.g. -1 = 0 actions, -0.33 = some basic activity, 0.33 = activity, 1 = plenty of activity. Raw counts of an event like "posts to a forum" must be calculated in a proportion of an expected number of posts. There are several ways of doing this. One is to define a minimum desired number of events, e.g. 3 posts in a forum represents "some" activity, 6 posts represents adequate activity, and 10 or more posts represents the maximum expected activity. Another way is to compare the number of events per individual user to the mean or median value of events by all users in the same context, using statistical values. For example, a value of 0 would represent that the student posted the same number of posts as the mean of all student posts in that context; a value of -1 would indicate that the student is 2 or 3 standard deviations below the mean, and a +1 would indicate that the student is 2 or 3 standard deviations above the mean.
 
-:::danger Comparative rankings
+:::danger[Comparative rankings]
 
 This kind of comparative calculation has implications to pedagogy: it suggests that there is a ranking of students from best to worst, rather than a defined standard all students can reach. Please be aware of this when considering how indicators are presented to users.
 
@@ -160,7 +160,7 @@ This kind of comparative calculation has implications to pedagogy: it suggests t
 
 Analysis intervals define when the system will calculate predictions and the portion of activity logs that will be considered for those predictions. They are coded as PHP classes and Moodle core includes some analysis intervals you can use in your models.
 
-:::info Time-splitting methods
+:::info[Time-splitting methods]
 
 Analysis intervals were previously known as Time-splitting methods.
 
@@ -192,7 +192,7 @@ This API aims to be as extendable as possible. Any moodle component, including t
 
 An example of a possible extension would be a plugin with indicators that fetch student academic records from the Universities' student information system; the site admin could build a new model on top of the built-in 'students at risk of drop out detection' adding the SIS indicators to improve the model accuracy or for research purposes.
 
-:::note Machine learning backends
+:::note[Machine learning backends]
 
 This section does not include Machine learning backend interfaces. See [Machine learning backends](../../plugintypes/mlbackend/index.md#interfaces) for more information on these.
 
@@ -420,7 +420,7 @@ A single method must be implemented, `calculate_sample`. Most indicators make us
 abstract protected function calculate_sample($sampleid, $sampleorigin, $starttime, $endtime);
 ```
 
-:::danger Performance
+:::danger[Performance]
 
 Performance here is critical as it runs once for each sample and for each range in the time-splitting method; some tips:
 
@@ -633,7 +633,7 @@ Both indicators and targets must implement this interface. It defines the data e
 
 New models can be created and implemented in php, and can be packaged as a part of a Moodle plugin for distribution. An example of model components and models are provided at https://github.com/dmonllao/moodle-local_testanalytics.
 
-:::info Third-party plugin developers
+:::info[Third-party plugin developers]
 
 Third party plugin developers can add their new elements (for example [targets](https://docs.moodle.org/en/Learning_analytics_targets), [indicators](https://docs.moodle.org/en/Learning_analytics_indicators), and so on) to the documentation pages provided for those components. These documentation pages are linked from the web UI for editing models.
 

@@ -78,7 +78,7 @@ The `subplugins.json` file now requires a new `subplugintypes` object to define 
 
 The format of this is identical to the existing `plugintypes` object, but the value should be a path which is relative to the plugin's root directory.
 
-:::tip Example of the new `subplugintypes` values
+:::tip[Example of the new `subplugintypes` values]
 
 The Quiz Activity located in `mod/quiz` defines the `quizaccess` subplugin type.
 
@@ -134,7 +134,7 @@ Themes can now customize activity icon colors using simple CSS variables. The ne
 
 All previous `$activity-icon-*-filter` elements can be removed, as they are no longer in use.
 
-:::tip Example of customizing activity icon colors
+:::tip[Example of customizing activity icon colors]
 
 Themes can customize the activity icon colors by overriding the following variables before loading the Boost scss:
 

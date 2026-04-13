@@ -15,7 +15,7 @@ Moodle supports use of a [PSR-20](https://php-fig.org/psr/psr-20/) compatible Cl
 
 This should be used instead of `time()` to fetch the current time. This allows unit tests to mock time and therefore to test a variety of cases such as events happening at the same time, or setting an explicit time.
 
-:::tip Recommended usage
+:::tip[Recommended usage]
 
 We recommend that the Clock Interface is used consistently in your code instead of using the standard `time()` method.
 
@@ -74,7 +74,7 @@ One of the most useful benefits to making consistent use of the Clock interface 
 
 When testing code which makes use of the Clock interface, you can replace the standard system clock implementation with a testing clock which suits your needs.
 
-:::tip Container Reset
+:::tip[Container Reset]
 
 The DI container is automatically reset at the end of every test, which ensures that your clock does not bleed into subsequent tests.
 

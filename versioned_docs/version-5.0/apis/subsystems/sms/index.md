@@ -37,7 +37,7 @@ $message = \core\di::get(\core_sms\manager::class)
     );
 ```
 
-:::info Message lengths
+:::info[Message lengths]
 
 A single SMS sent by the API may consist of up to 480 UTF-8 characters. It is up to the message _gateway plugin_ to determine how this message is sent to the recipient.
 
@@ -99,7 +99,7 @@ $messages = \core\di::get(\core_sms\manager::class)
     ->get_messages(['recipientuserid' => $userid]);
 ```
 
-:::note Sensitive content
+:::note[Sensitive content]
 
 If the message was sent with the `issensitive` flag the message body will not be stored.
 

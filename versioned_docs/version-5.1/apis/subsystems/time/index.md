@@ -45,7 +45,7 @@ This is the recommended approach for fetching the current time and should be use
 $clock = \core\di::get(\core\clock::class);
 ```
 
-:::tip Why use the Clock?
+:::tip[Why use the Clock?]
 
 By using the clock interface fetched via Dependency Injection, it becomes easier to test different conditions within your code. For example you can inject a custom implementation of the clock which simulates a 5 minute gap between creation of different records, and allows you to test features such as sorting.
 
@@ -76,7 +76,7 @@ $tomorrow = \core\di::get(\core\clock::class)
     ->getTimestamp();
 ```
 
-:::danger Modifying the DateTime object
+:::danger[Modifying the DateTime object]
 
 The object returned from the `\core\clock::now()` method is an instance of `\DateTimeImmutable`.
 

@@ -11,7 +11,7 @@ Welcome to the Developer Documentation for **Moodle 4.5**.
 
 This documentation is version-specific and includes a range of useful guides and information.
 
-:::tip Where to start
+:::tip[Where to start]
 
 - If you're new to Moodle development, you should check out our [Getting started guide](/general/development/gettingstarted)
 - Look through our [guides to Moodle APIs](./apis.md)

@@ -212,7 +212,7 @@ Some tips for providing a meaningful page title:
 - If possible, it should uniquely identify the page.
 - The most identifying information should come first.
 
-:::note change of context
+:::note[change of context]
 
 (not to be confused with Moodle's `\core\context` class and its implementations)
 

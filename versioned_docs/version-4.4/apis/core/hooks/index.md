@@ -117,7 +117,7 @@ Hook classes may be any class you like. When designing a new Hook, you should th
 
 All hook classes should be defined as final, if needed traits can help with code reuse in similar hooks.
 
-:::important Hooks not located in standard locations
+:::important[Hooks not located in standard locations]
 
 If you define a hook which is _not_ in the `[component]\hook\*` namespace then you **must** also define a new `\core\hook\discovery_agent` implementation in `[component]\hooks`.
 
@@ -283,7 +283,7 @@ Callbacks may be provided as a PHP callable in either:
 - string notation, in the form of `some\class\name::static_method`; or
 - array notation, in the form of `[\some\class\name::class, 'static_method']`.
 
-:::danger Use of array notation
+:::danger[Use of array notation]
 
 <Since version="4.4" issueNumber="MDL-81180" />
 
@@ -356,7 +356,7 @@ then developers needs to only add extra parameter to existing legacy callback fu
 and the hook manager will trigger appropriated deprecated debugging messages when
 it detects plugins that were not converted to new hooks yet.
 
-:::important Legacy fallback
+:::important[Legacy fallback]
 
 Please note **it is** possible for plugin to contain both legacy `lib.php` callback and PSR-14 hook
 callbacks.

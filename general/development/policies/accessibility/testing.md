@@ -145,7 +145,7 @@ Some practical tips when testing your Moodle plugin or contribution with screen 
   - [NVDA commands quick reference](https://download.nvaccess.org/documentation/keyCommands.html)
   - [VoiceOver (MacOS) command charts](https://help.apple.com/voiceover/command-charts/)
 
-:::info Notes about screen reader testing
+:::info[Notes about screen reader testing]
 
 Moodle HQ directly tests with a number of different screen readers when assessing:
 

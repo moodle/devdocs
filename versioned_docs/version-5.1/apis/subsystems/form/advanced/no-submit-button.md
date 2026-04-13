@@ -45,7 +45,7 @@ if ($mform->is_cancelled()){
 }
 ```
 
-:::important Modifying your form in a no-submit action
+:::important[Modifying your form in a no-submit action]
 
 Because the check for a no-submit button press takes place on the defined form, the form is already defined at the point that it is checked.
 

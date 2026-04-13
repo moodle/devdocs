@@ -211,7 +211,7 @@ Some simple breaking changes could be also addressed in advance creating a BS5 "
 
 A new SCSS file `bs5-bridge.scss` has been created in the `theme/boost/scss/moodle` folder. This file will contain the necessary changes to make the codebase compatible with Bootstrap 5.
 
-:::info Example of a bridge in `bs5-bridge.scss`
+:::info[Example of a bridge in `bs5-bridge.scss`]
 
 ```css
 /* In Bootstrap 5 the .no-gutters class has been replaced with .g-0, so we can
@@ -316,7 +316,7 @@ Several utilities have been renamed to use logical property names instead of dir
 
 In Bootstrap 4.x we used a function called `theme-color-level()` which was removed in Bootstrap 5. The prototype of the function was:
 
-:::info Previous version using `theme-color-level()`
+:::info[Previous version using `theme-color-level()`]
 
 ```css
 @function theme-color-level($colorname, $level) {
@@ -334,7 +334,7 @@ So, two major difference in the new version:
 - we use the color definition instead of the color name
 - we use percentages instead of levels.
 
-:::info Current version using `shift-color()`
+:::info[Current version using `shift-color()`]
 
 ```css
 @function shift-color($color, $weight) {
@@ -351,7 +351,7 @@ So instead of working with numbers (1 to 11), we now use percentages.
 To simplify this transition, Bootstrap 5 has established a new equivalency: each level increment from 1
 now corresponds to a 10% shift.
 
-:::info From absolute levels to percentages
+:::info[From absolute levels to percentages]
 
 For example, if a theme-color-level was previously set to a value of 1, it will now be set to 10%.
 A level of two will be adjusted by 20% and so on.

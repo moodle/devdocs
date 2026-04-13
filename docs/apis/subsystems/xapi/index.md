@@ -39,7 +39,7 @@ The typical statement object is a JSON element containing:
   - The `Activity Profile` allows the storage and return of universal data about a particular activity (for instance, minimum required score, time limit, what happens if the time limit is exceeded).
   - The `State Endpoint` allows the storage and return of data about the current state of an activity for a particular learner (for instance, bookmark, state of play of the simulation, other state variables). In other words, the State Endpoint stores data about an activity/agent combination.
 
-:::tip xAPI specification
+:::tip[xAPI specification]
 
 The xAPI specification can be consulted in the xAPI specs page: https://github.com/adlnet/xAPI-Spec.
 

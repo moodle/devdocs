@@ -6,7 +6,7 @@ tags:
 ---
 This document summarises the intent, purpose, and process surrounding component lead reviews (CLR).
 
-:::warning Please note:
+:::warning[Please note:]
 
 The component lead review process (CLR) is new and currently open by invitation only.
 
@@ -31,7 +31,7 @@ The component lead review process must consider the [Integration principles](./i
 
 ## Issues appropriate for CLR {/* #issues-appropriate-for-clr */}
 
-:::caution Attention
+:::caution[Attention]
 
 You should only consider issues which belong to your own component for CLR.
 

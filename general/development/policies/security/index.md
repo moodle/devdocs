@@ -8,7 +8,7 @@ tags:
 ---
 This page describes how to write secure Moodle code that is not vulnerable to anything that evil people may try to throw at it.
 
-:::info Page organisation
+:::info[Page organisation]
 
 The page is organised around the [common types of security vulnerability](#common-types-of-security-vulnerability). For each one, it explains:
 
@@ -177,7 +177,7 @@ Similarly, clean data from other external resources like RSS feeds before use.
   - Only use `$options->noclean` if it requires a capability with `RISK_XSS` to input that content (for example web page resources).
 - Data destined for JavaScript should be escaped using `$PAGE->requires->data_for_js` (Moodle 2.0 onwards) or `addslashes_js` (Moodle 1.9).
 
-:::info More info
+:::info[More info]
 
 We recommend that you follow the [Output functions](/docs/apis/subsystems/output#output-functions) to get a better understanding of how dynamic data should be sent from Moodle to the browser.
 

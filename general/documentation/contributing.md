@@ -140,7 +140,7 @@ The migration assistant is not perfect and is not aware of all WikiText features
 
 :::
 
-:::danger After running the migration
+:::danger[After running the migration]
 
 After performing a migration it is important to review the page content. You should attempt to:
 

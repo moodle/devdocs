@@ -11,7 +11,7 @@ tags:
 
 Since Moodle 4.5, it's possible to safely deprecate and remove icons.
 
-:::info When should icons be removed?
+:::info[When should icons be removed?]
 
 There are situations where deprecation does not make sense. For example when a whole functionality is being removed, or a very specific icon is no longer used by the code. If it is very unlikely that the icon is used by any other code, it can simply be removed without the full deprecation process.
 

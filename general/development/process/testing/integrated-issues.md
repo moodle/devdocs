@@ -32,7 +32,7 @@ Your first priority as a tester should be to finish testing on the day they have
 changed.
 8. The tester who passes the issue will be set as the tester for the issue.
 
-:::info Failing a test session
+:::info[Failing a test session]
 
 For test sessions, if you encounter a failure, please fail the issue add a comment on the issue itself. If everything's good, add a comment in the session and complete the session. You may also comment on the issue and say that testing passes on your part.
 

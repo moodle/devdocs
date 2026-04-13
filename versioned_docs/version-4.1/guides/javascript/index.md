@@ -284,7 +284,7 @@ require(['mod_forum/discussion'], function(Discussion) {
 
 Any time that this template is rendered and placed on the page the `mod_forum/discussion` module will be fetched and the `init()` function called on it.
 
-:::note Since Moodle 4.0
+:::note[Since Moodle 4.0]
 Moodle no longer supports Internet Explorer. It's now safe to use Arrow functions.
 {/* <!--
 TODO:

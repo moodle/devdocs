@@ -27,7 +27,7 @@ For a good reference implementation, see the [file](https://github.com/moodle/mo
 
 Assignment Feedback plugins are located in the `/mod/assign/feedback` directory. A plugin should not include any custom files outside of it's own plugin folder.
 
-:::important Plugin naming
+:::important[Plugin naming]
 
 The plugin name should be no longer than 38 (13 before Moodle 4.3) characters - this is because the database tables for a submission plugin must be prefixed with `assignfeedback_[pluginname]` (15 chars + X) and the table names can be no longer than 53 (28 before Moodle 4.3) chars due to a limitation with PostgreSQL.
 

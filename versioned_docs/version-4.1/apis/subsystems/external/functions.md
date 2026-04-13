@@ -18,7 +18,7 @@ It also includes the code that will actually be executed by the function.
 
 The function definition should be located within the `external` namespace of a component.
 
-:::info Example
+:::info[Example]
 
 For a component named `local_groupmanager` located in `local/groupmanager` which is responsible for creating groups on request, you may have:
 

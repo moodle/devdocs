@@ -14,7 +14,7 @@ Incoming data to the Provider plugin arrives via the Manager `core_ai\manager`.
 The Manager is the connective tissue between the Provider and the [Placement](/apis/plugintypes/ai/placement.md) plugins.
 Likewise, all responses from the Provider plugin are handed back to the Manager before being passed to the Placement plugin.
 
-:::warning The Golden Rule:
+:::warning[The Golden Rule:]
 
 Placements **do not** know about Providers, and Providers **do not** know about Placements.
 Everything should go via the Manager.

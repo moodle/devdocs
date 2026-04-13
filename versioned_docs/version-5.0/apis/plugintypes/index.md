@@ -40,7 +40,7 @@ Plugin name validation takes place in `core_component::is_valid_plugin_name()` a
 
 :::
 
-:::danger Activity module exception
+:::danger[Activity module exception]
 
 The underscore character is not supported in activity modules for legacy reasons.
 
@@ -147,7 +147,7 @@ In the case of subplugins, the subplugin owner (the component which the subplugi
 
 Class autoloading and string resolution is still supported during the deprecation window, to assist with any plugin migration scripts that may be required.
 
-:::info limitations
+:::info[limitations]
 
 Whilst both plugin and subplugin types can be deprecated, only those plugin types which do _not_ support subplugins can be deprecated.
 
@@ -185,13 +185,13 @@ The first phase of plugin type deprecation involves describing the plugin in the
 
 The second phase of plugin type deprecation involves moving the entry from  the `deprecatedplugintypes` object to the `deletedplugintypes` object.
 
-:::info Remember
+:::info[Remember]
 
 Don't forget to increment the core version number when marking a plugin/subplugin type for either deprecation or deletion. A version bump isn't needed for final removal.
 
 :::
 
-:::tip Example of plugin type deprecation config values
+:::tip[Example of plugin type deprecation config values]
 
 To mark a plugin type as deprecated in `components.json`, the plugin type should be removed from the `plugintypes` object, and added to a new `deprecatedplugintypes` object.
 
@@ -246,13 +246,13 @@ To mark a subplugin type as deprecated, edit the component's `subplugins.json` f
 
 Following deletion, the plugin/subplugin type can be removed from the respective JSON entirely.
 
-:::info Remember
+:::info[Remember]
 
 Don't forget to increment the core version number when marking a plugin/subplugin type for either deprecation or deletion. A version bump isn't needed for final removal.
 
 :::
 
-:::tip Example of subplugin type deprecation config values
+:::tip[Example of subplugin type deprecation config values]
 
 To mark a subplugin type as deprecated in a component's `subplugins.json`, the subplugin type should be removed from the `subplugintypes` object, and added to a new `deprecatedsubplugintypes` object.
 

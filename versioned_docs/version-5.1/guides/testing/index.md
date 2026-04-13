@@ -31,7 +31,7 @@ The `basic_testcase` is intended for very simple tests that do not modify the da
 
 The `advanced_testcase` is an enhanced testcase class which includes a number of test helpers for easier testing of Moodle code.
 
-:::note Creating additional test case classes
+:::note[Creating additional test case classes]
 
 Moodle supports the creation of custom testcase classes for more specific purposes.
 
@@ -122,7 +122,7 @@ If you modify data and _do not_ call `$this->resetAfterTest()` then you will rec
 
 Tests that need to modify default installation data may make use of data generators to create objects including courses, users, enrolments, and so on. All examples on this page should be used from test methods of a test class derived from `advanced_testcase`.
 
-:::note Use of generators in data providers
+:::note[Use of generators in data providers]
 
 If you are using PHPUnit [@dataProvider](https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html#writing-tests-for-phpunit.data-providers) functions to provide parameters to unit tests, you **can not** use the data generator or change the user etc in the data provider function.
 
@@ -380,7 +380,7 @@ The generator class **must** extend the `\component_generator_base` class, after
 $mygenerator = $this->getDataGenerator()->get_plugin_generator("my_componentname");
 ```
 
-:::note Alternatives to `\component_generator_base`
+:::note[Alternatives to `\component_generator_base`]
 
 Some plugin types, such as Activity modules (`mod_` prefix) may be a more specific class to extend, for example `testing_module_generator`.
 
@@ -571,7 +571,7 @@ The following guidance is based on recommendation from PHPUnit documentation.
 - Coverage should be defined for an entire class rather than individual methods wherever possible
 - Coverage should be defined at the class level, not for individual test methods
 
-:::note Attributes
+:::note[Attributes]
 
 From PHPUnit 10, with the introduction of Attributes for coverage, the defined attributes are much more robust.
 
@@ -639,7 +639,7 @@ PHP supports the use of a magic `::class` constant to correctly and consistently
 
 One of the benefits of using the constant is that it supports class aliasing at runtime, meaning that a plugin's codebase can support multiple versions of Moodle where class aliasing has been used to move a class to a new location.
 
-:::note Using on classes which do not exist
+:::note[Using on classes which do not exist]
 
 The class **does not** need to exist. You can use this constant on any arbitrary namespace.
 

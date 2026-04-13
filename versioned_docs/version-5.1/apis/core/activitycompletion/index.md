@@ -205,7 +205,7 @@ When you have custom completion conditions, you need to add controls to your mod
 
 The default completion form has undergone a significant rebuild to enhance code reusability and maintainability. To prevent duplicate IDs, a suffix has been introduced to the form elements related to completion rules.
 
-:::info From Moodle 4.3 onwards
+:::info[From Moodle 4.3 onwards]
 
 Any custom completion rules added will need to use `$this->get_suffix()`.
 

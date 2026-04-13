@@ -89,7 +89,7 @@ on developing Provider plugins.
 The Subsystem Manager is the 'controller' that sits between Placements and Providers.
 In general it will be how most processes will interact with the AI subsystem.
 
-:::warning The Golden Rule:
+:::warning[The Golden Rule:]
 
 Placements **do not** know about Providers, and Providers **do not** know about Placements.
 Everything should go via the Manager.

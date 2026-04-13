@@ -38,7 +38,7 @@ export const init = async () => {
 
 Other standard options are described in the JS Documentation for [the MoodleConfig type](https://jsdoc.moodledev.io/master/module-core_modal.html#~MoodleConfig).
 
-:::note Support for earlier versions
+:::note[Support for earlier versions]
 
 If you are supporting an earlier version of Moodle, then you must use the Modal Factory and register your modal.
 
@@ -227,7 +227,7 @@ There are two parts to this:
 - a new Modal class which extends the `core/modal` class; and
 - a template
 
-:::important Custom modals in Moodle 4.2 and earlier
+:::important[Custom modals in Moodle 4.2 and earlier]
 
 Since Moodle 4.3, creating the Modal class is as simple as extending the `core/modal` class, and providing a `TYPE` property, and `TEMPLATE` property.
 

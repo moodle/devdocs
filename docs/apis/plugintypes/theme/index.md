@@ -55,7 +55,7 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
 
 Some of the important files for the Theme plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
-:::tip Override icons and templates
+:::tip[Override icons and templates]
 
 You can customize icons in base themes:
 
@@ -354,7 +354,7 @@ Used to hide a theme from the theme selector (unless theme designer mode is on).
 
 An array containing the names of JavaScript files located in `/javascript/` to include in the theme.
 
-:::danger Deprecated
+:::danger[Deprecated]
 
 The `$THEME->javascripts` setting should no longer be used. Please use AMD [JavaScript Modules](../../../guides/javascript/modules.md) instead.
 
@@ -366,7 +366,7 @@ The `$THEME->javascripts` setting should no longer be used. Please use AMD [Java
 
 As above but will be included in the page footer.
 
-:::danger Deprecated
+:::danger[Deprecated]
 
 The `$THEME->javascripts_footer` setting should no longer be used. Please use AMD [JavaScript Modules](../../../guides/javascript/modules.md) instead.
 
@@ -414,7 +414,7 @@ An array of stylesheets to include for this theme. Should be located in the them
 
 Old setting to define a list of YUI CSS modules to be included. These files interfere with existing styles and it is recommended to set this to an empty string to prevent any files being included.
 
-:::danger Attention
+:::danger[Attention]
 
 This setting should probably be set to `''` to prevent and YUI CSS being included.
 

@@ -134,7 +134,7 @@ Filter plugins and the Filter API have been updated to use the standard Moodle C
 
 To ensure that your plugin continues to work in Moodle 4.5, you should move the `filter_[pluginname]` class located in `filter/[pluginname]/filter.php` to `filter/[pluginname]/classes/text_filter.php`, setting the namespace to `filter_[pluginname]` and renaming the class to `text_filter`.
 
-:::tip Codebases supporting multiple versions of Moodle
+:::tip[Codebases supporting multiple versions of Moodle]
 
 If your codebase also supports Moodle 4.4 and earlier then you will also need to create a file in the 'old' location (`filter/[pluginname]/filter.php`) with the following content:
 
@@ -264,7 +264,7 @@ For third-party plugins utilizing their own icons via the callback `get_fontawes
 - Import/Upload actions should use the `fa-upload` icon, while Export/Download actions should use the `fa-download` icon.
 - The eye icon is used for both visibility and preview actions.
 
-:::tip Icons in Component library
+:::tip[Icons in Component library]
 
 On the Icons page of the [Component library](/general/development/tools/component-library), you can find a comprehensive list of all the icons available in Moodle core.
 

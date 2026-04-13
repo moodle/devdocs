@@ -9,7 +9,7 @@ Our Moodle Products roadmap is designed to provide visibility on the development
 
 import Link from '@docusaurus/Link';
 
-:::tip View our living Roadmap
+:::tip[View our living Roadmap]
 
 Our Roadmap is public, open, and living - you can see it at any time on our [Roadmap Kanban board](https://moodle.atlassian.net/jira/software/c/projects/IDEA/boards/104?ignoreStickyVersion=true).
 

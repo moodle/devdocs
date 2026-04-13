@@ -15,7 +15,7 @@ Routes must return one of the following types:
 
 Other types may be added in the future, for example to support rendering a template.
 
-:::danger Web Service Response types
+:::danger[Web Service Response types]
 
 Web Service responses will almost always return a `payload_reponse` to allow validation of their data.
 
@@ -73,7 +73,7 @@ class example {
 }
 ```
 
-:::tip Why a `payload_response` object is used instead of raw JSON
+:::tip[Why a `payload_response` object is used instead of raw JSON]
 
 Whilst you are _able_ to return JSON directly this is strongly discouraged because:
 

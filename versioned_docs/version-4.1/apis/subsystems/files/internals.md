@@ -67,7 +67,7 @@ Suppose a file has a content hash of `081371cb102fa559e81993fddc230c79205232ce`,
 
 :::
 
-:::tip Validation of files
+:::tip[Validation of files]
 
 As files in the standard disk-based file storage API are named using their SHA1 hash, there is a simple way of validating files have not become corrupted using the 'sha1sum' command available in most GNU/Linux distributions.
 

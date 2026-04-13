@@ -39,7 +39,7 @@ $client = \core\di::get(\core\http_client::class);
 $thing = \core\di::get(my_thing::class);
 ```
 
-:::tip Constructor Property Promotion and Readonly properties
+:::tip[Constructor Property Promotion and Readonly properties]
 
 When using constructor-based injection, you can simplify your dependency injection by making use of [Constructor Property Promotion](https://stitcher.io/blog/constructor-promotion-in-php-8), and [Readonly properties](https://stitcher.io/blog/php-81-readonly-properties).
 
@@ -198,7 +198,7 @@ class other_thing {
 }
 ```
 
-:::warning A note on injecting the Container
+:::warning[A note on injecting the Container]
 
 It is generally inadvisable to inject the Container itself. Please do not inject the `\Psr\Container\ContainerInterface`.
 
@@ -212,7 +212,7 @@ All usage of the Container _should_ be via `\core\di`, which is a wrapper around
 
 The Container is normally instantiated during the bootstrap phase of a script. In normal use it is not reset and there should be no need to reset it, however it is _possible_ to reset it if required. This usage is intended to be used for situations such as Unit Testing.
 
-:::tip Unit testing
+:::tip[Unit testing]
 
 The container is already reset after each test when running unit tests. It is not necessary nor recommended to so manually.
 

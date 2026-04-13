@@ -153,7 +153,7 @@ A new Composer build step would require that a command such as the following be 
 composer install --no-dev -o
 ```
 
-:::tip Current approach to PHP dependencies
+:::tip[Current approach to PHP dependencies]
 
 In Moodle 5.0 and earlier all PHP userland dependencies are managed manually without the use of Composer, or similar.
 
@@ -189,7 +189,7 @@ npm run build
 
 This change allows for future greater change in our JavaScript build process away from including transpiled JavaScript in the Moodle source.
 
-:::tip Current approach to building JavaScript in Moodle
+:::tip[Current approach to building JavaScript in Moodle]
 
 In Moodle 5.0 and earlier the transpilation of JavaScript is considered a development-time task, performed by core and plugin developers.
 

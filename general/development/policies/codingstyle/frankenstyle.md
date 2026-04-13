@@ -113,7 +113,7 @@ Frankenstyle component names are used in:
 
 All plugin functions must start with full frankenstyle prefix.
 
-:::note Activity modules
+:::note[Activity modules]
 
 For backwards compatibility modules may also use `modulename_` as prefix.
 
@@ -129,7 +129,7 @@ Something about global functions not being recommended. Please use an autoloaded
 
 All the component classes must be placed under the classes directory, which allows them to be ([auto-loaded](https://docs.moodle.org/dev/Automatic_class_loading)). These should be placed in a namespace according to their frankenstyle component name, and having a natural name, for example a discussion class in the forum activity should be in the `mod_forum` namespace and may have a class name of `dicussion` - `\mod_forum\discussion`.
 
-:::warning Non-namespaced classes
+:::warning[Non-namespaced classes]
 
 The use of non-namespaced classes using only the frankenstyle prefix is now deprecated.
 

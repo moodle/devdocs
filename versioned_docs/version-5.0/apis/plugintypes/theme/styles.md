@@ -25,7 +25,7 @@ As theme designers, only the first method of introducing CSS will be used: addin
 
 Browsers understand CSS well, but it is hard to write and maintain. The language does not support inheritance and reuse. [Support for variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) exists in more modern browsers only.  This is why CSS pre-processors were invented. Moodle supports SASS, which is recommended by far.
 
-:::info Information
+:::info[Information]
 
 To use SASS, define `$THEME->scss = 'filename';` in your themes `config.php`. Moodle will then use one of it's in-built CSS pre-processor to compile the CSS the first time it is loaded (or every time if `themedesignermode` is enabled in `$CFG`).
 
@@ -45,7 +45,7 @@ As a theme designer, it is entirely up to you how you create and organize your C
 
 ## How to write effective CSS rules within Moodle {/* #how-to-write-effective-css-rules-within-moodle */}
 
-:::warning Important
+:::warning[Important]
 
 Writing good CSS rules is incredibly important.
 
@@ -78,7 +78,7 @@ The body ID and body classes described above will form the bread and butter for 
 - The course id, context id and category id are all added as in `course-11 context-616 cmid-202 category-1`.
 - The `pagelayout` is added as `pagelayout-incourse`.
 
-:::info What does all of this look like in practise?
+:::info[What does all of this look like in practise?]
 
 Using the above example `/mod/forum/view.php` this will be the body tag:
 

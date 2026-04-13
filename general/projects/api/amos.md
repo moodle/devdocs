@@ -159,7 +159,7 @@ The script syntax is defined as follows. Note that amosbler keywords are case se
 
 In human language, this roughly means: the script is a block of lines starting with `AMOS BEGIN` or `AMOS START` and ending with `AMOS END` lines. Every instruction is on its own line. Instruction has its name (three capital letters like `MOV`, `CPY`, `HLP`, `RPL`, `SMS` or `GRR`) followed by comma-separated parameters.
 
-:::caution Beware
+:::caution[Beware]
 
 Every string is referenced as `[stringid,component]` **but the component is different from what we use in get_string()**. All components use fully normalized `plugintype_pluginname` syntax (see `normalize_component()` function in `moodlelib`). If `plugintype === core` and `pluginname is empty (component 'core')`, the strings are stored in `moodle.php`.
 

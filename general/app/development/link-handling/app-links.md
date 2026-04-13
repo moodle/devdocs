@@ -27,7 +27,7 @@ To open a link in an embedded browser instead of an external browser you can use
 <a href="https://domain.com" data-open-in="app">
 ```
 
-:::note Notice
+:::note[Notice]
 Please notice that students cannot add data attributes to HTML elements when using the Moodle editor, only teachers and users with the right permissions are able to add them.
 :::
 
@@ -41,7 +41,7 @@ Using the `data-app-url` attribute you can also add a link to any HTML element. 
 
 A possible use case is to define a link for elements that are handled using JavaScript in browser, since in most cases the JavaScript code used in browser won't work in the app. This way the app will open a certain page when the element is clicked, otherwise it wouldn't do anything.
 
-:::note Notice
+:::note[Notice]
 Please notice that these links will always be opened in browser or embedded browser, not inside the app.
 :::
 
@@ -72,6 +72,6 @@ An example using all the attributes:
 </button>
 ```
 
-:::note Notice
+:::note[Notice]
 Please notice that students cannot add data attributes to HTML elements when using the Moodle editor, only teachers and users with the right permissions are able to add them.
 :::

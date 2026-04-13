@@ -11,7 +11,7 @@ sidebar_position: 4
 
 This document proposes a checklist for accessibility reviews. Not all aspects of accessibility can be checked automatically, so this checklist is intended to guide reviewers when doing an accessibility check to a patch.
 
-:::tip Identify the Nature of Changes
+:::tip[Identify the Nature of Changes]
 
 1. **Are the changes on the backend only (webservices, database updates, events, hooks...)?**
     - If yes, no accessibility review is needed.
@@ -85,7 +85,7 @@ By default, Moodle overrides the focus indicator of most HTML elements to ensure
 
 Each new page should have a specific and descriptive page title.
 
-:::info Example
+:::info[Example]
 
 Use "Settings in forum ACTIVITYNAME" instead of just "Activity settings".
 

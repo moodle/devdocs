@@ -55,7 +55,7 @@ moodleform::add_checkbox_controller(
 - mixed  *$attributes* (optional) Either a typical HTML attribute string or an associative array.
 - int *$originalValue* (optional) Defaults to 0; The general original value of the checkboxes being controlled by this element.
 
-:::info An explanation of `$originalvalue`
+:::info[An explanation of `$originalvalue`]
 
 Imagine that you have 50 checkboxes in your form, which are all unchecked when the form first loads, except 5 or 6 of them.
 

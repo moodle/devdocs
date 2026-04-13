@@ -316,7 +316,7 @@ public function foo($required, $optional = null);
 
 However, if an optional parameter is boolean, and its logical default value should be true, or false, then using true or false is acceptable.
 
-:::note Type hinting with optional parameters
+:::note[Type hinting with optional parameters]
 
 When type-hinting optional parameters, technically the nullable hint is optional, but it is highly recommended as it leads to consistent code.
 
@@ -1226,7 +1226,7 @@ Put a space before and after the control statement in brackets, and separate the
 
 Indent with four spaces.
 
-:::note Do not use `elseif`
+:::note[Do not use `elseif`]
 
 Always use the `else if` variant
 
@@ -1352,7 +1352,7 @@ All other scripts with the exception of imported 3rd party libraries and files w
 defined('MOODLE_INTERNAL') || die();
 ```
 
-:::info Side-effects
+:::info[Side-effects]
 
 The term side-effects refers to any global scope code not being:
 

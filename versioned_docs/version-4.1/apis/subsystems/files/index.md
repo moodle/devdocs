@@ -30,7 +30,7 @@ File areas are not listed separately anywhere, they are stored implicitly in the
 
 :::
 
-:::important Accessing files belonging to another component
+:::important[Accessing files belonging to another component]
 
 Please note that each plugin, or subsystem should only ever access its own file areas. Any other access should be made using that components own APIs. For example a file in the `mod_assign` plugin should only access files within the `mod_assign` component, and no other component should access its files.
 

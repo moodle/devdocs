@@ -18,7 +18,7 @@ It also includes the code that will actually be executed by the function.
 
 The function definition should be located within the `external` namespace of a component.
 
-:::info Example
+:::info[Example]
 
 For a component named `local_groupmanager` located in `local/groupmanager` which is responsible for creating groups on request, you may have:
 
@@ -38,7 +38,7 @@ A service definition:
 
 <Since version="4.2" issueNumber="MDL-76583" />
 
-:::caution Writing plugins supporting Multiple Moodle versions
+:::caution[Writing plugins supporting Multiple Moodle versions]
 
 The External API subsystem was restructured in Moodle 4.2 and moved from classes within a manually-required file, to autoloaded and namespaced classes.
 

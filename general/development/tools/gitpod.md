@@ -18,7 +18,7 @@ When launching a workspace in Gitpod, it will automatically:
 
 More information about the Gitpod integration with moodle-docker, like the parameters it supports, can be found in the [project's page](https://github.com/moodlehq/moodle-docker/#quick-start-with-gitpod).
 
-:::caution Important
+:::caution[Important]
 
 Gitpod is an alternative to local development and completely optional. We recommend [setting up a local development environment](../gettingstarted#a-quick-start-to-moodle-development) if you plan to contribute regularly.
 

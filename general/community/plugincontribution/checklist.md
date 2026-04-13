@@ -143,7 +143,7 @@ See the section [Coding style#Files](../../development/policies/codingstyle/inde
 - For that reason, plugins must use properly namespaced selectors so that their style sheets can be safely combined with others without affecting other pages and elements beyond the plugin's scope.
 - Plugin specific CSS selectors are needed to make sure that your styling does not accidentally affect other parts of Moodle outside your plugin scope.
 
-:::tip Example
+:::tip[Example]
 
 Instead of the selector `.contentarea` it is better to use something like `.path-mod-mymodule .contentarea` as the `.path-\*` classes are automatically added by the Moodle core renderers to the HTML `<body>` tag.
 

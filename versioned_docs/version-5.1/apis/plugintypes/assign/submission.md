@@ -27,7 +27,7 @@ For a good reference implementation, see the [onlinetext](https://github.com/moo
 
 Assignment submission plugins are located in the `/public/mod/assign/submission` directory. A plugin should not include any custom files outside of its own plugin folder.
 
-:::important Plugin naming
+:::important[Plugin naming]
 
 The plugin name should be no longer than 36 (11 before Moodle 4.3) characters - this is because the database tables for a submission plugin must be prefixed with `assignsubmission_[pluginname]` (17 chars + X) and the table names can be no longer than 53 (28 before Moodle 4.3) chars due to a limitation with PostgreSQL.
 

@@ -192,7 +192,7 @@ These roles may both be considered a form of teacher, but they will have differe
 As a result we strongly discourage that you think in terms of which roles or users hold a capability, but rather
 whether a specific user holds a capability.
 
-:::danger There are some situations where you _do_ need to get a list of roles with a capability in a specific
+:::danger[There are some situations where you _do_ need to get a list of roles with a capability in a specific]
 context, but these are very rare. You can do so using the `get_roles_with_cap_in_context()` function:
 
 ```php title="Fetching a list of roles which hold a capability in the specified context"
@@ -210,7 +210,7 @@ For certain institutions' enrolment process might be different to a standard wor
 managed by an external system, so you might need to develop a custom
 [Enrolment Plugin](https://moodle.org/plugins/browse.php?list=category&id=22).
 
-:::danger In case of custom enrolment plugin development only
+:::danger[In case of custom enrolment plugin development only]
 
 ```php title="To get a list of roles for a user"
 $ras = get_user_roles($context, $user, $checkparentcontexts);

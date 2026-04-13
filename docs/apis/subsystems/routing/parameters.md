@@ -400,7 +400,7 @@ To use this theme name parameter, it can be provided as a path parameter instead
 )]
 ```
 
-:::tip Use of the `referenced_object` interface for reusable components
+:::tip[Use of the `referenced_object` interface for reusable components]
 
 When creating any kind of reusable component it is strongly advisable to have it implement the `\core\router\schema\referenced_object` interface.
 
@@ -455,7 +455,7 @@ In the above example, the `get_course_for_value` method can accept any of the fo
 
 All of these values will return the database record for the specified course.
 
-:::note Uniqueness of mapped property
+:::note[Uniqueness of mapped property]
 
 Mapped parameters work best with unique values. In the above example it is not advisable to use the course full name as this is not a unique value.
 

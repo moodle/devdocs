@@ -19,7 +19,7 @@ If you want to contribute to Moodle, you can start looking at the following:
 - **Assist with the translation** of Moodle. See [Translation](https://docs.moodle.org/en/Translation) page.
 - **Get involved in the developer resources**, [contributing](../documentation/contributing.md) for fixing typos and errors, migrating pages, expanding the content, etc.
 
-:::tip Searching for other ways to contribute?
+:::tip[Searching for other ways to contribute?]
 
 You'll find them in the [How do I contribute to Moodle?](https://moodle.com/faq/how-do-i-contribute-to-moodle/) page.
 

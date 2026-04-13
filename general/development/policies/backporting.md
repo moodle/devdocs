@@ -76,7 +76,7 @@ Many issues can be appropriately classified as borderline bug-fix/improvements. 
 
 A new weekly release will be performed including all the cases above, but [security issues that follow its own special process](../process.md#security-issues) and are released bi-monthly.
 
-:::note Security issues and the `security_benefit` label
+:::note[Security issues and the `security_benefit` label]
 
 Issues labelled with the [`security_benefit` labelled issues](../tracker/labels.md) are not considered to be security issues and will not be backported automatically. These are typically _improvements_ to security rather than bugs or vulnerabilities.
 

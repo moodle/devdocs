@@ -31,7 +31,7 @@ By using these tags appropriately, Moodle will ensure that TinyMCE is set as the
 
 A number of useful Behat steps have been defined in [TinyMCE Behat context](https://github.com/moodle/moodle/blob/main/lib/editor/tiny/tests/behat/behat_editor_tiny.php).
 
-:::caution Use generic steps where possible
+:::caution[Use generic steps where possible]
 
 Typically, when interacting with an Editor, you should use the _generic_ step definitions rather than writing specific steps, or writing sequences of steps to do so.
 
@@ -101,7 +101,7 @@ Then the following fields in the "Create event" "dialogue" match these values:
 
 If you are writing a TinyMCE plugin or feature, then you may need to interact with the editor interface, or to check and set the current value of the editor.
 
-:::note iFrames
+:::note[iFrames]
 
 Behat makes use of WebDriver to control browsers. The WebDriver specification limits the scope of a command to the current _context_ where a context is a browser Window, Frame, or iFrame.
 

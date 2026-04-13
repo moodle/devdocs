@@ -52,7 +52,7 @@ Some of the important files for the database field plugintype are described belo
 
 The field, its behaviours, and its properties, are defined in a class named `data_field_[pluginname]` located in `field.class.php`. This class must extend the `data_field_base` base class.
 
-:::danger Class locations
+:::danger[Class locations]
 
 The field definition is currently located in the `field.class.php` file and is not yet autoloaded by Moodle.
 

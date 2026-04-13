@@ -122,7 +122,7 @@ To ensure your plugin code is organized and passes the specific linting required
 | `js/mobileapp/`             | This folder should contain all the JavaScript files intended for the mobile app.       |
 | `templates/mobileapp/`      | This folder should contain all the Mustache templates intended for the mobile app.     |
 
-:::note Notice
+:::note[Notice]
 Currently, the linting for mobile app templates is disabled to avoid throwing warnings with Angular, Ionic or Moodle app custom directives. This will be improved in the future.
 :::
 
@@ -245,7 +245,7 @@ Make sure that you are passing milliseconds. Unix timestamp are usually expresse
 
 The following formats are available (expressed in [Moment.js format](https://momentjs.com/docs/#/displaying/format/)):
 
-:::note Notice
+:::note[Notice]
 These formats can change depending on the language in the app. You can find the translations in [AMOS](https://lang.moodle.org).
 :::
 

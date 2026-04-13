@@ -16,7 +16,7 @@ Third-party plugin developers are free to use any framework they want to impleme
 
 Nevertheless, in terms of reusability, maintainability and user experience the advantages of having a reactive UI are undeniable. For this reason Moodle has an adhoc reactive library that can be used to implement small reactive applications on any Moodle page.
 
-:::tip Example module: moodle-mod_nosferatu
+:::tip[Example module: moodle-mod_nosferatu]
 
 GitHub repository: [moodle-mod_nosferatu](https://github.com/ferranrecio/moodle-mod_nosferatu/)
 
@@ -219,7 +219,7 @@ require(['YOUR_PLUGIN/local/yourthing/childcomponent'], function(component) {
 {{/js}}
 ```
 
-:::tip Generating unique id attributes
+:::tip[Generating unique id attributes]
 
 You can use the `{{uniqid}}` Mustache helper within your code to help you generate a unique id for your HTML attributes and target them in your React component.
 
