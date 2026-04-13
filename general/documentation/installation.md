@@ -15,9 +15,9 @@ Our documentation is built using [Docusaurus](https://docusaurus.io), a powerful
 
 It's easy to get your development environment set up and if you plan to contribute regularly to our documentation, then we recommend you setup a [local development environment](#local-development) for the best results. If you're only planning to contribute as a once-off then you may want to consider trying [Gitpod](#quick-start-with-gitpod).
 
-## Installation
+## Installation {/* #installation */}
 
-### Local development
+### Local development {/* #local-development */}
 
 To set up a local development environment we recommend install [NVM](https://github.com/nvm-sh/nvm), and then running:
 
@@ -33,7 +33,7 @@ From time to time you may need to repeat this process as we update the NodeJS ve
 
 :::
 
-### Quick start with Gitpod
+### Quick start with Gitpod {/* #quick-start-with-gitpod */}
 
 Gitpod is a free, cloud-based, development environment providing VS Code and a suitable development environment right in your browser.
 
@@ -56,9 +56,9 @@ Gitpod is an alternative to local development and completely optional. We recomm
 
 :::
 
-## Useful commands
+## Useful commands {/* #useful-commands */}
 
-### Starting the development server
+### Starting the development server {/* #starting-the-development-server */}
 
 The development server is the best way to edit docs locally. Once the development server has started, the docs will open in your browser. You can then make changes to the source markdown files (`*.md` and `*.mdx`), which should be automatically live reloaded in your browser.
 
@@ -66,7 +66,7 @@ The development server is the best way to edit docs locally. Once the developmen
 yarn start
 ```
 
-### Building the docs and serving them locally
+### Building the docs and serving them locally {/* #building-the-docs-and-serving-them-locally */}
 
 This is probably only something you would do if you were developing or testing the build process.
 
@@ -75,7 +75,7 @@ yarn build
 yarn serve
 ```
 
-### Migrating a document
+### Migrating a document {/* #migrating-a-document */}
 
 For full documentation on document migration see the [notes on contributing](./contributing.md#migrating-legacy-docs)
 
@@ -83,7 +83,7 @@ For full documentation on document migration see the [notes on contributing](./c
 yarn migrate [https://docs.moodle.org/dev/Old_doc_location] [newLocation]
 ```
 
-### Linting documents
+### Linting documents {/* #linting-documents */}
 
 ```console
 yarn mdlint-all

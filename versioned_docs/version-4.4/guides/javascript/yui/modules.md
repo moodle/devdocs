@@ -15,11 +15,11 @@ As of Moodle 2.9 we are transitioning away from YUI to AMD modules. This transit
 
 <!-- cspell:ignore fruitbowl -->
 
-## YUI modules
+## YUI modules {/* #yui-modules */}
 
 You may want to [Jump straight to the complete example](#additional-functions-instead-of-anonymous-functions).
 
-### What is a module and why would I want to use one?
+### What is a module and why would I want to use one? {/* #what-is-a-module-and-why-would-i-want-to-use-one */}
 
 Many people are used to writing their JavaScript code either inline, or in a separate file included using `<script>` tags in their HTML. Although both of these are supported within Moodle, we highly recommend investing a little time in looking into the [YUI](./index.md) module system as it offers some really great features which will benefit you in the long run.
 
@@ -44,7 +44,7 @@ You may find the following resources particularly helpful:
 
 - [YUI](./index.md); and
 
-### Structure and naming
+### Structure and naming {/* #structure-and-naming */}
 
 A YUI module is structured in a particular way, both on file, and in the file itself. Before you start writing your module, you need to know a few pieces of information:
 
@@ -96,7 +96,7 @@ So in the case of `moodle-block_fruit-fruitbowl`, the JavaScript code will need 
 
 Now that you know where your code needs to be on disk, you can actually include and write it.
 
-### Including your module from your PHP code
+### Including your module from your PHP code {/* #including-your-module-from-your-php-code */}
 
 Rather than using `<script>` tags to include JavaScript code, Moodle makes
 use of the YUI loader and a single inline script tag in the page footer.
@@ -122,7 +122,7 @@ $PAGE->requires->yui_module(
 );
 ```
 
-#### Passing arguments from your PHP to your module
+#### Passing arguments from your PHP to your module {/* #passing-arguments-from-your-php-to-your-module */}
 
 You may want to pass a set of arguments to your JavaScript. You can do so
 using the optional third argument to yui_module which accepts an array of
@@ -161,13 +161,13 @@ init = function(params) {
 };
 ```
 
-### A basic module
+### A basic module {/* #a-basic-module */}
 
 The most common use-case for JavaScript in Moodle is to utilise existing modules to do something. Your module isn't intended to be reused, or extended by some other piece of code. In these cases, you want to keep things simple.
 
 This section will build up the YUI module gradually, but you can cheat and skip to the [completed example](https://docs.moodle.org/dev/#Additional_functions_instead_of_anonymous_functions).
 
-#### Namespacing
+#### Namespacing {/* #namespacing */}
 
 One of the great benefits of using YUI is the ability to sandbox code in such a way that you can be sure that it won't interfere with other JS code in Moodle, this is done by placing your object in a JavaScript object. Using our fictitious example, this namespace is very similar to the module name namespace:
 
@@ -199,7 +199,7 @@ This ensures that any existing code on the M.block_fruit object is not inadverte
 
 That's to say that, if you have already used your fruitbowl code once on the page, and have modified it in some way (for example to override a function), then the next time it is used, it will be in it's original state with the original function.
 
-#### Initialisation
+#### Initialisation {/* #initialisation */}
 
 Once you have your namespace, you'll want to create one or more functions on this namespace in which to put your code. Typically, we use an 'init' function to perform the initial setup. The amount that this code does should be kept to a minimum because every piece of JavaScript which has to be executed at page load is a piece of code slowing the page down. As a best practice:
 
@@ -222,7 +222,7 @@ NS.init = function() {
 };
 ```
 
-#### Separation of code from configuration and style (loose coupling)
+#### Separation of code from configuration and style (loose coupling) {/* #separation-of-code-from-configuration-and-style-loose-coupling */}
 
 As another best practice, we encourage you to separate out the code from configuration, and not to apply any CSS styles directly. Instead, use techniques to move the configuration out of the code itself and into variables or attributes, and use CSS classes which the theme can modify.
 
@@ -256,7 +256,7 @@ With this change, if at a later date you need to change the styling on a selecte
 
 It also means that if you need to change the class names, you can do so once in the JavaScript without making it difficult to work out the purpose of a particular line of code from git.
 
-#### Additional functions instead of anonymous functions
+#### Additional functions instead of anonymous functions {/* #additional-functions-instead-of-anonymous-functions */}
 
 Although it's often quicker to write an inline anonymous function when you write your event handlers, loops, and at other times, it's often much easier to read the code if you move it to a function on your namespace and call it accordingly.
 

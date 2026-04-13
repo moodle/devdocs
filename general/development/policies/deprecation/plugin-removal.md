@@ -28,7 +28,7 @@ We will endeavour to make announcements as early as possible and to give appropr
 
 :::
 
-## Why plugins are removed from Moodle LMS
+## Why plugins are removed from Moodle LMS {/* #why-plugins-are-removed-from-moodle-lms */}
 
 A plugin may be considered for removal from Moodle LMS for a range of reasons, including:
 
@@ -36,7 +36,7 @@ A plugin may be considered for removal from Moodle LMS for a range of reasons, i
 - it is no longer possible to maintain for some reason (for example it uses unsupported libraries); and
 - it contains integrations which are no longer active.
 
-## What happens when the plugin is removed
+## What happens when the plugin is removed {/* #what-happens-when-the-plugin-is-removed */}
 
 In most cases a plugin is removed because it is either no longer possible to support it, or because we do not believe it is widely used.
 
@@ -46,7 +46,7 @@ Typically the following takes places:
 - the GitHub repository is marked as archived; and
 - the plugin is not placed into the Plugins Database.
 
-## Why is the plugin not placed into the Plugins database?
+## Why is the plugin not placed into the Plugins database? {/* #why-is-the-plugin-not-placed-into-the-plugins-database */}
 
 If the plugin is no longer suited to Moodle LMS, in most cases it is unlikely to be useful in the plugins database either.
 
@@ -58,7 +58,7 @@ Plugins without a maintainer will not be accepted into the plugins database.
 
 :::
 
-## I want to maintain a removed plugin
+## I want to maintain a removed plugin {/* #i-want-to-maintain-a-removed-plugin */}
 
 If you wish to volunteer to maintain a plugin which has been removed from core, you can [create an MDLSITE issue](https://moodle.atlassian.net/secure/CreateIssue.jspa?issuetype=4&pid=10020) on the Moodle Tracker.
 
@@ -70,14 +70,14 @@ You will need to include:
 
 We will then assess whether the plugin can be transferred to you.
 
-## If you do not have the ability to maintain a plugin
+## If you do not have the ability to maintain a plugin {/* #if-you-do-not-have-the-ability-to-maintain-a-plugin */}
 
 If you feel that an archived plugin should be in the plugins database but you do not have the ability to maintain it yourself then you may:
 
 - look for support amongst the Moodle community; or
 - pay a Moodle partner to maintain it for you.
 
-## Useful notes for developers extract plugins
+## Useful notes for developers extract plugins {/* #useful-notes-for-developers-extract-plugins */}
 
 The following approach it typically used to extract a plugin, complete with its entire Git history into the plugins database.
 

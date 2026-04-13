@@ -30,7 +30,7 @@ $groups = [
 
 The UI we're going to implement will show a groups selector with the list of items below. With this, you should learn the intricacies of App development without getting into the weeds of group management.
 
-## Using Angular
+## Using Angular {/* #using-angular */}
 
 One approach is to send all the relevant data through `otherdata`, and filter the content using Angular:
 
@@ -70,7 +70,7 @@ return [
 
 One advantage of this approach is that it can work completely offline, once the template has been downloaded it can be cached and the selector will work without requesting new information. However, it will require performing a PTR (Pull-To-Refresh) to get the latest information.
 
-## Loading new content
+## Loading new content {/* #loading-new-content */}
 
 If we want to render new content every time the selector is changed, we can take advantage of the [functions available in templates](../api-reference.md#functions):
 

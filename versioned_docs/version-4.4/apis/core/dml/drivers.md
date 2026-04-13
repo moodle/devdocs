@@ -24,7 +24,7 @@ These drivers are supported using DML Database Driver layer, which has a number 
 - less code, easier to fix and maintain
 - and more
 
-## Query logging
+## Query logging {/* #query-logging */}
 
 The native DML drivers support logging of database queries to database table, which can be enabled in config.php:
 
@@ -41,7 +41,7 @@ $CFG->dboptions = [
 - `logslow` - log queries that take longer than specified number of seconds (float values are accepted)
 - `logerrors` - log all error queries
 
-## See also
+## See also {/* #see-also */}
 
 - [DML functions](./index.md): Where all the functions used to handle DB data ([DML](https://en.wikipedia.org/wiki/Data_Manipulation_Language)) are defined.
 - [DML exceptions](./exceptions.md): New DML code is throwing exceptions instead of returning false if anything goes wrong

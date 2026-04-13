@@ -9,7 +9,7 @@ tags:
 ---
 In the Moodle Plugins directory, uploaded plugins versions are automatically tested against a set of formal criteria. These tests typically do not check the actual plugin functionality, security or code correctness. They are more focused on formal aspects of the coding style. As such, they are most valuable for the plugin maintainers themselves.
 
-## Labels
+## Labels {/* #labels */}
 
 Plugin version with no detected errors or warnings has a label like this displayed:
 
@@ -31,7 +31,7 @@ Clicking the code prechecks label takes you to a page with details on particular
 
 Finally, clicking some of these individual test labels takes you to a page with detailed raw output of the test system.
 
-## Test types
+## Test types {/* #test-types */}
 
 - **phplint**: Checks the plugin source code for correct PHP syntax.
 - **phpcs**: Checks the plugin against the [Moodle coding style](../../development/policies/codingstyle).

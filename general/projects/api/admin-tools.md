@@ -17,7 +17,7 @@ import { ProjectSummary } from '@site/src';
 
 Admin tools are advanced plugins that are intended especially for site administrators, they are accessible via the admin site administration tree menu. Ideally most of the functionality in `/admin/` directory should be moved to separate plugins in the future.
 
-## Previous problems
+## Previous problems {/* #previous-problems */}
 
 Before 2.2, tools for administrators were created as admin reports (because we did not have better pluggable place), placed directly into `/admin/` or `/local/ directory`.
 
@@ -25,14 +25,14 @@ Before 2.2, tools for administrators were created as admin reports (because we d
 - No way to disable or remove or add custom admin tools
 - The official distribution should not include local plugins by definition (`/local/qeupgradehelper`).
 
-## Benefits
+## Benefits {/* #benefits */}
 
 - Major cleanup in `/admin/`
 - No need to abuse admin reports
 - Contrib admin tools can be distributed easier
 - It is possible to remove or replace core admin tools (no hardcoded links)
 
-## Upgrades
+## Upgrades {/* #upgrades */}
 
 How to migrate existing admin reports:
 
@@ -45,7 +45,7 @@ How to migrate existing admin reports:
 1. Grep the plugin codebase and look for any remaining `coursereport` occurrences
 1. Update CSS selectors
 
-## FAQs
+## FAQs {/* #faqs */}
 
 - **Is it necessary to migrate existing admin reports?**<br/>
 Yes. Old admin reports directory is completely ignored.
@@ -59,6 +59,6 @@ Report is a view of live or historical data, it may also contain export feature,
 - **What is the difference between admin tool and local plugin?**<br/>
 Local plugin is everything else, it may be intended for non-admin users. Examples of local plugins: event handlers, web service/function definitions, shared library hacks, new lang strings used in core hacks, etc.
 
-## See also
+## See also {/* #see-also */}
 
 - [General report plugins](https://docs.moodle.org/dev/General_report_plugins)

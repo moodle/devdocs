@@ -22,7 +22,7 @@ This document describes the proposed API changes required for plugins which will
 
 Target Audience: The intended audience for this document is Moodle plugin developers, who are aiming to ensure their plugins are updated to comply with GDPR requirements coming into effect in the EU in May, 2018.
 
-## Personal data in Moodle
+## Personal data in Moodle {/* #personal-data-in-moodle */}
 
 From the GDPR Spec, Article 4:
 
@@ -36,9 +36,9 @@ Data stored about the user includes things like ratings and comments made on a s
 
 The sections that follow outline what you need to do as a plugin developer to ensure any personal data is advertised and can be accessed and deleted according to the GDPR requirements.
 
-## Background
+## Background {/* #background */}
 
-### Architecture overview
+### Architecture overview {/* #architecture-overview */}
 
 ![UML diagram of the metadata part of the privacy subsystem](./_index/MoodlePrivacyMetadataUML.png)
 ![UML diagram of the request providers part of the privacy subsystem](./_index/MoodlePrivacyRequestUML.png)
@@ -67,7 +67,7 @@ Please refer to the inline phpdocs of the [core_privacy::manager class](https://
 Please note that support for locating and removing multiple users in a single context was added in [MDL-62560](https://moodle.atlassian.net/browse/MDL-62560) for Moodle 3.6, 3.5.3, and 3.4.6.
 This functionality has been added to allow support for removal of user data for users subject to specific role criterion, and to support expiry of the same data by role too.
 
-### Implementing a provider
+### Implementing a provider {/* #implementing-a-provider */}
 
 All plugins will need to create a concrete class which implements the relevant metadata and request providers. The exact providers you need to implement will depend on what data you store, and the type of plugin. This is covered in more detail in the following sections of the document.
 
@@ -77,7 +77,7 @@ In order to do so:
 1. This class must be created at `path/to/your/plugin/classes/privacy/provider.php`.
 1. You must have your class implement the relevant metadata and request interfaces.
 
-## Plugins which do not store personal data
+## Plugins which do not store personal data {/* #plugins-which-do-not-store-personal-data */}
 
 Many Moodle plugins do not store any personal data. This is usually the case for plugins which just add functionality, or which display the data already stored elsewhere in Moodle.
 
@@ -89,7 +89,7 @@ One examples of a plugin which does not store any data would be the Calendar mon
 
 An example of a plugin which must not use the null provider is the Comments block. The comments block is responsible for data subsequently being stored within Moodle. Although the block doesn't store anything itself, it interacts with the comments subsystem and is the only component which knows how that data maps to a user.
 
-### Implementation requirements
+### Implementation requirements {/* #implementation-requirements */}
 
 In order to let Moodle know that you have audited your plugin, and that you do not store any personal user data, you must implement the `\core_privacy\local\metadata\null_provider` interface in your plugin's provider.
 
@@ -101,7 +101,7 @@ These null providers can only be implemented where a plugin has:
 
 The `null_provider` requires you to define one function `get_reason()` which returns the language string identifier within your component.
 
-#### Example
+#### Example {/* #example */}
 
 ```php title="blocks/calendar_month/classes/privacy/provider.php"
  <?php
@@ -136,7 +136,7 @@ $string['privacy:metadata'] = 'The Calendar block only displays existing calenda
 
 That's it. Congratulations, your plugin now implements the Privacy API.
 
-## Plugins which store personal data
+## Plugins which store personal data {/* #plugins-which-store-personal-data */}
 
 Many Moodle plugins do store some form of personal data.
 
@@ -152,7 +152,7 @@ Data is described via a *metadata* provider, and it is both exported and deleted
 
 These are both explained in the sections below.
 
-### Describing the type of data you store
+### Describing the type of data you store {/* #describing-the-type-of-data-you-store */}
 
 In order to describe the type of data that you store, you must implement the `\core_privacy\local\metadata\provider` interface.
 
@@ -166,7 +166,7 @@ There are several types of item to describe the data that you store. These are f
 
 Note: All fields should include a description from a language string within your plugin.
 
-#### Example
+#### Example {/* #example-1 */}
 
 ```php title="mod/forum/classes/privacy/provider.php"
 <?php
@@ -188,7 +188,7 @@ class provider implements
 }
 ```
 
-#### Indicating that you store content in a Moodle subsystem
+#### Indicating that you store content in a Moodle subsystem {/* #indicating-that-you-store-content-in-a-moodle-subsystem */}
 
 Many plugins will use one of the core Moodle subsystems to store data.
 
@@ -196,7 +196,7 @@ As a plugin developer we do not expect you to describe those subsystems in detai
 
 You can indicate this by calling the `add_subsystem_link()` method on the `collection`.
 
-##### Relevant subsystems
+##### Relevant subsystems {/* #relevant-subsystems */}
 
 You are likely to need to indicate use of the following subsystems that store user data:
 
@@ -211,7 +211,7 @@ Some subsystems which store user data do not need to be listed:
 
 - (TBC - how about global search? Nothing lists it that I could see.)
 
-##### Example
+##### Example {/* #example-2 */}
 
 ```php title="mod/forum/classes/privacy/provider.php"
 public static function get_metadata(collection $collection): collection {
@@ -232,7 +232,7 @@ public static function get_metadata(collection $collection): collection {
 $string['privacy:metadata:core_files'] = 'The forum stores files which have been uploaded by the user to form part of a forum post.';
 ```
 
-#### Describing data stored in database tables
+#### Describing data stored in database tables {/* #describing-data-stored-in-database-tables */}
 
 Most Moodle plugins will store some form of user data in their own database tables.
 
@@ -240,7 +240,7 @@ As a plugin developer you will need to describe each database table, and each fi
 
 It is a matter of judgement which fields contain user data and which don't. Anything entered by, or directly about, the user probably counts as user data but it may be useful to include additional fields that explain the context of the data.
 
-##### Example
+##### Example {/* #example-3 */}
 
 ```php title="mod/forum/classes/privacy/provider.php"
 public static function get_metadata(collection $collection): collection {
@@ -269,7 +269,7 @@ $string['privacy:metadata:forum_discussion_subs:discussionid'] = 'The ID of the 
 $string['privacy:metadata:forum_discussion_subs:preference'] = 'The start time of the subscription.';
 ```
 
-#### Indicating that you store site-wide user preferences
+#### Indicating that you store site-wide user preferences {/* #indicating-that-you-store-site-wide-user-preferences */}
 
 Many plugins will include one or more user preferences. Unfortunately this is one of Moodle's older components and many of the values stored are not pure user preferences. Each plugin should be aware of how it handles its own preferences and is best placed to determine whether they are site-wide preferences, or per-instance preferences.
 
@@ -288,7 +288,7 @@ You can indicate this by calling the `add_user_preference()` method on the *coll
 
 Any plugin providing user preferences must also implement the `\core_privacy\local\request\user_preference_provider`.
 
-##### Example
+##### Example {/* #example-4 */}
 
 ```php title="admin/tool/usertours/classes/privacy/provider.php"
 public static function get_metadata(collection $collection): collection {
@@ -306,7 +306,7 @@ public static function get_metadata(collection $collection): collection {
 $string['privacy:metadata:tool_usertours_tour_completion_time'] = 'The time that a specific user tour was last completed by a user.';
 ```
 
-#### Indicating that you export data to an external location
+#### Indicating that you export data to an external location {/* #indicating-that-you-export-data-to-an-external-location */}
 
 Many plugins will interact with external systems - for example cloud-based services. Often this external location is configurable within the plugin either at the site or the instance level.
 
@@ -315,7 +315,7 @@ The *actual* destination does not need to be described as this can change based 
 
 You can indicate this by calling the `add_external_location_link()` method on the collection.
 
-##### Example
+##### Example {/* #example-5 */}
 
 ```php title="mod/lti/classes/privacy/provider.php"
 public static function get_metadata(collection $collection): collection {
@@ -336,7 +336,7 @@ $string['privacy:metadata:lti_client:userid'] = 'The userid is sent from Moodle 
 $string['privacy:metadata:lti_client:fullname'] = 'Your full name is sent to the remote system to allow a better user experience.';
 ```
 
-### Providing a way to export user data
+### Providing a way to export user data {/* #providing-a-way-to-export-user-data */}
 
 In order to export the user data that you store, you must implement the relevant request provider.
 
@@ -355,7 +355,7 @@ Plugins which *define* a subplugin will also be responsible for  collecting this
 
 A final category exists - plugins which store user preferences. In some cases this may be the *only* provider implemented.
 
-#### Standard plugins which store data
+#### Standard plugins which store data {/* #standard-plugins-which-store-data */}
 
 A majority of Moodle plugins will fit into this category and will be required to implement the `\core_privacy\local\request\plugin\provider` interface. This interface requires that you define four functions (the first two of which are dealt with in this section):
 
@@ -408,7 +408,7 @@ class provider implements my_userlist {
 }
 ```
 
-##### Retrieving the list of contexts
+##### Retrieving the list of contexts {/* #retrieving-the-list-of-contexts */}
 
 You are required to return the list of contexts for which the plugin stores data about the user. These are the standard Moodle contexts - CONTEXT_COURSE, CONTEXT_USER, CONTEXT_MODULE and so on. In many cases the link between the module type and the context is self-evident (e.g. activity modules). In some cases it may be less so. For example, an enrolment plugin (that stores user data, which most don't) would link to course context (users enrol in courses). Other types of plugins may be less obvious but you need to pick something. One way might to consider what context you would use when checking role capabilities. Consider that this will be used to structure the exported data and define what data is deleted when a context is expired.
 
@@ -432,7 +432,7 @@ Many plugins will interact with specific subsystems and store data within them.
 These subsystems will also provide a way in which to link the data that you have stored with your own database tables.
 At present these are still a work in progress and only the *core_ratings* subsystem includes this.
 
-###### Basic example
+###### Basic example {/* #basic-example */}
 
 The following example simply fetches the contextid for all forums where a user has a single discussion (note: this is an incomplete example):
 
@@ -469,7 +469,7 @@ public static function get_contexts_for_userid(int $userid): contextlist {
 }
 ```
 
-###### More complete example
+###### More complete example {/* #more-complete-example */}
 
 The following example includes a link to core_rating.
 It will find any forum, forum discussion, or forum post where the user has any data, including:
@@ -540,7 +540,7 @@ public static function get_contexts_for_userid(int $userid): contextlist {
 }
 ```
 
-##### Retrieving the users in a context
+##### Retrieving the users in a context {/* #retrieving-the-users-in-a-context */}
 
 You are required to return the list of users holding personal data in a context for which the plugin stores data about the user. This should only be data from that one context. Do not include subcontexts.
 This method is very similar to the `get_contexts_for_userid` function but has some important distinctions:
@@ -558,7 +558,7 @@ This method is very similar to the `get_contexts_for_userid` function but has so
 public static function get_users_in_context(userlist $userlist) {}
 ```
 
-###### Basic example
+###### Basic example {/* #basic-example-1 */}
 
 The following example simply fetches the userid for all users in a given forum context, who created a discussion or a post in that forum (note: this is an incomplete example):
 
@@ -604,7 +604,7 @@ public static function get_users_in_context(userlist $userlist) {
 }
 ```
 
-##### Exporting user data
+##### Exporting user data {/* #exporting-user-data */}
 
 After determining where in Moodle your plugin holds data about a user, the `\core_privacy\manager` will then ask your plugin to export all user data for a subset of those locations.
 
@@ -623,7 +623,7 @@ The `approved_contextlist` includes both the user record, and a list of contexts
 
 Data is exported using a `\core_privacy\local\request\content_writer`, which is described in further detail below.
 
-#### Plugins which store user preferences
+#### Plugins which store user preferences {/* #plugins-which-store-user-preferences */}
 
 Many plugins store a variety of user preferences, and must therefore export them.
 
@@ -634,7 +634,7 @@ Storing of user preferences is achieved through implementation of the `\core_pri
 
 You need to provide a description of the value of the user preference. (This description is particularly useful in cases where the value might be, say, 3, but it actually means 'Alphabetical order'.) Most likely you can use an existing language string from your plugin.
 
-##### Example
+##### Example {/* #example-6 */}
 
 ```php title="mod/forum/classes/privacy/provider.php"
 /**
@@ -659,7 +659,7 @@ public static function export_user_preferences(int $userid) {
 }
 ```
 
-#### Plugins which can have own subplugins
+#### Plugins which can have own subplugins {/* #plugins-which-can-have-own-subplugins */}
 
 Many plugin types are also able to define their own subplugins and will need to define a contract between themselves and their subplugins in order to fetch their data.
 
@@ -669,7 +669,7 @@ The parent plugin is responsible for defining the contract,  and for interacting
 
 The parent plugin should define a new interface for each type of subplugin that it defines. This interface should extend the `\core_privacy\local\request\plugin\subplugin_provider` interface.
 
-##### When a parent plugin should and should not provide the interface for its subplugins
+##### When a parent plugin should and should not provide the interface for its subplugins {/* #when-a-parent-plugin-should-and-should-not-provide-the-interface-for-its-subplugins */}
 
 There can be cases when there is no point for a plugin to provide the "subplugin_provider" based interface, even if it has own subplugins. See the Atto or TinyMCE editors as real examples.
 
@@ -677,7 +677,7 @@ If the parent plugin has no data passed through to the subplugins, there is no b
 
 Compare with something like mod_assign where the subplugins store data for the parent and that data is contextually relevant to the parent plugin. In those cases the subplugin stores data for the plugin and it only makes sense to do so in the context of its parent plugin.
 
-##### Example
+##### Example {/* #example-7 */}
 
 The following example defines the contract that assign submission subplugins may be required to implement.
 
@@ -716,7 +716,7 @@ interface assignsubmission_provider extends
 }
 ```
 
-#### Plugins which are subplugins to another plugin
+#### Plugins which are subplugins to another plugin {/* #plugins-which-are-subplugins-to-another-plugin */}
 
 If you are developing a sub-plugin of another plugin, then you will have to look at the relevant plugin in order to determine the exact contract.
 
@@ -738,7 +738,7 @@ class provider implements
 }
 ```
 
-#### Plugins which are typically called by a Moodle subsystem
+#### Plugins which are typically called by a Moodle subsystem {/* #plugins-which-are-typically-called-by-a-moodle-subsystem */}
 
 There are a number of plugintypes in Moodle which are typically called by a specific Moodle subsystem.
 
@@ -766,7 +766,7 @@ class provider implements
 }
 ```
 
-#### Exporting data
+#### Exporting data {/* #exporting-data */}
 
 Any plugin which stores data must also export it.
 
@@ -811,11 +811,11 @@ $post->message = writer::with_context($context)
 
 ```
 
-### Providing a way to delete user data
+### Providing a way to delete user data {/* #providing-a-way-to-delete-user-data */}
 
 Deleting user data is also implemented in the request interface. There are two methods that need to be created. The first one to remove all user data from a context, the other to remove user data for a specific user in a list of contexts.
 
-#### Delete for a context
+#### Delete for a context {/* #delete-for-a-context */}
 
 A context is given and all user data (for all users) is to be deleted from the plugin. This will be called when the retention period for the context has expired to adhere to the privacy by design requirement. Retention periods are set in the Data registry.
 
@@ -845,7 +845,7 @@ public static function delete_data_for_all_users_in_context(\context $context) {
 }
 ```
 
-#### Delete personal information for a specific user and context(s)
+#### Delete personal information for a specific user and context(s) {/* #delete-personal-information-for-a-specific-user-and-contexts */}
 
 An *approved_contextlist* is given and user data related to that user should either be completely deleted, or overwritten if a structure needs to be maintained. This will be called when a user has requested the right to be forgotten. All attempts should be made to delete this data where practical while still allowing the plugin to be used by other users.
 
@@ -864,7 +864,7 @@ public static function delete_data_for_user(approved_contextlist $contextlist) {
 }
 ```
 
-#### Delete personal information for several users in a specific context
+#### Delete personal information for several users in a specific context {/* #delete-personal-information-for-several-users-in-a-specific-context */}
 
 An *approved_userlist* is given and user data related to all users in the specified context should either be completely deleted, or overwritten if a structure needs to be maintained. This will be called when a user has requested the right to be forgotten when per-role overrides exist, or when performing a per-role expiry of a context. All attempts should be made to delete this data where practical while still allowing the plugin to be used by other users.
 
@@ -891,18 +891,18 @@ public static function delete_data_for_users(approved_userlist $userlist) {
 }
 ```
 
-## Difference between Moodle 3.3 and more recent versions
+## Difference between Moodle 3.3 and more recent versions {/* #difference-between-moodle-33-and-more-recent-versions */}
 
 Moodle 3.3 has a minimum requirement of php 5.6 and so type hinting and return type declarations are not supported in this version.
 Consequently the privacy API for this version does not have these features.
 
-## Common Questions
+## Common Questions {/* #common-questions */}
 
-### What to do if you have one plugin that supports multiple branches
+### What to do if you have one plugin that supports multiple branches {/* #what-to-do-if-you-have-one-plugin-that-supports-multiple-branches */}
 
 This is something that we have considered and we have put in place a polyfill. This gets around the restrictions of one version having type hinting and return type declarations while another does not.
 
-#### Example
+#### Example {/* #example-8 */}
 
 To use the polyfill include the legacy polyfill trait and create the necessary static methods but with an underscore (shown below).
 
@@ -920,13 +920,13 @@ class provider implements
     }
 ```
 
-### What to do if your plugin must implement a subplugin or subsystem plugin provider
+### What to do if your plugin must implement a subplugin or subsystem plugin provider {/* #what-to-do-if-your-plugin-must-implement-a-subplugin-or-subsystem-plugin-provider */}
 
 For subplugins (e.g. assignsubmission, assignfeedback, quiz report, quiz access rules), or subsystems which have a plugintype relationship (portfolio, plagiarism, and others), they will also define their own legacy polyfill.
 
 In this instance you will need to include the trait for both the core polyfill, and the provider polyfill as appropriate.
 
-#### Example
+#### Example {/* #example-9 */}
 
 ```php
 class provider implements
@@ -953,11 +953,11 @@ class provider implements
     }
 ```
 
-### What to do with missing userlist interfaces in legacy versions
+### What to do with missing userlist interfaces in legacy versions {/* #what-to-do-with-missing-userlist-interfaces-in-legacy-versions */}
 
 Interface core_userlist_provider does not exists is releases of Moodle pre 3.5.3, pre 3.4.6 and 3.3.*. If you want one plugin branch to support multiple Moodle branches, try next solution (proposed in https://moodle.org/mod/forum/discuss.php?d=379580#p1530295)
 
-#### Example
+#### Example {/* #example-10 */}
 
 ```php
 namespace plugin_example\privacy;
@@ -972,12 +972,12 @@ if (interface_exists('\core_privacy\local\request\core_userlist_provider')) {
 class provider implements core_userlist_provider {
 ```
 
-## Tips for development
+## Tips for development {/* #tips-for-development */}
 
 - While implementing the privacy API into your plugin, there are CLI scripts that can help you to test things on the fly. Just don't forget these are not supposed to replace proper unit tests. See [Privacy API/Utilities](./utils.md) for details.
 - Inherit Unit tests from the `core_privacy\tests\provider_testcase`, not `advanced_testcase`. Advanced test case doesn't reset the Privacy content_writer between tests!
 
-## See also
+## See also {/* #see-also */}
 
 - [Subject Access Request FAQ](./faq.md)
 - [GDPR](https://docs.moodle.org/en/GDPR) in the user documentation

@@ -27,7 +27,7 @@ Local plugins are used in cases when no standard plugin is suitable. Examples of
 - new database tables used in core hacks (**strongly discouraged**)
 - new capability definitions used in core hacks (**strongly discouraged**)
 
-## List of differences from normal plugins:
+## List of differences from normal plugins: {/* #list-of-differences-from-normal-plugins */}
 
 Local plugins have several important differences from the standard plugin types, including:
 
@@ -36,15 +36,15 @@ Local plugins have several important differences from the standard plugin types,
 - they can add admin settings to any settings page. They are loaded last when constructing admin tree to enable this.
 - they _do not need_ to have any UI. Other plugin types are usually visible somewhere within the interface.
 
-## File structure
+## File structure {/* #file-structure */}
 
 Local plugins support the [standard plugin files](../commonfiles) supported by other plugin types.
 
-## Examples
+## Examples {/* #examples */}
 
 The following examples show some ways in which you can use a local plugin.
 
-### Adding an element to the settings menu
+### Adding an element to the settings menu {/* #adding-an-element-to-the-settings-menu */}
 
 A local plugin can extend or modify the settings navigation by defining a function named `local_[pluginname]_extend_settings_navigation` in its `lib.php`. This is called when Moodle builds the settings block. For example:
 
@@ -89,7 +89,7 @@ function local_[pluginname]_extend_settings_navigation($settingsnav, $context) {
     open
 />
 
-### Removing the "Site Home" link from the navigation menu
+### Removing the "Site Home" link from the navigation menu {/* #removing-the-site-home-link-from-the-navigation-menu */}
 
 A plugin can modify existing navigation, and settings navigation, components from within the `local_[pluginname]_extend_navigation()` function, for example:
 
@@ -109,7 +109,7 @@ function local_[pluginname]_extend_navigation(global_navigation $navigation) {
     open
 />
 
-### Adding Site Wide Settings For Your Local Plugin
+### Adding Site Wide Settings For Your Local Plugin {/* #adding-site-wide-settings-for-your-local-plugin */}
 
 export const siteWideSettingsExample = `
 // Ensure the configurations for this site are set

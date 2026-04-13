@@ -21,11 +21,11 @@ We recommend that the Clock Interface is used consistently in your code instead 
 
 :::
 
-## Usage
+## Usage {/* #usage */}
 
 The usage of the Clock extends the PSR-20 Clock Interface and adds a new convenience method, `\core\clock::time(): int`, to simplify replacement of the global `time()` method.
 
-### Usage in standard classes
+### Usage in standard classes {/* #usage-in-standard-classes */}
 
 Where the calling code is not instantiated via Dependency Injection itself, the simplest way to fetch the clock is using `\core\di::get(\core\clock::class)`, for example:
 
@@ -39,7 +39,7 @@ $clock->now();
 $clock->time();
 ```
 
-### Usage via Constructor Injection
+### Usage via Constructor Injection {/* #usage-via-constructor-injection */}
 
 The recommended approach is to have the Dependency Injector inject into the constructor of a class.
 
@@ -68,7 +68,7 @@ When using DI to fetch the class, the dependencies will automatically added to t
 $post = \core\di::get(post::class);
 ```
 
-## Unit testing
+## Unit testing {/* #unit-testing */}
 
 One of the most useful benefits to making consistent use of the Clock interface is to mock data within unit tests.
 
@@ -92,7 +92,7 @@ Replacing the clock after fetching your service will have *no* effect.
 
 :::
 
-### Incrementing clock
+### Incrementing clock {/* #incrementing-clock */}
 
 The incrementing clock increases the time by one second every time it is called. It can also be instantiated with a specific start time if preferred.
 
@@ -127,7 +127,7 @@ It is also possible to specify a start time for the clock;
 $clock = $this->mock_clock_with_incrementing(12345678);
 ```
 
-### Frozen clock
+### Frozen clock {/* #frozen-clock */}
 
 The frozen clock uses a time which does not change, unless manually set. This can be useful when testing code which must handle time-based resolutions.
 
@@ -177,7 +177,7 @@ class my_test extends \advanced_testcase {
 }
 ```
 
-### Custom clock
+### Custom clock {/* #custom-clock */}
 
 If the standard cases are not suitable for you, then you can create a custom clock and inject it into the DI container.
 

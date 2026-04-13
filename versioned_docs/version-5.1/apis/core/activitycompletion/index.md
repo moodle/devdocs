@@ -15,7 +15,7 @@ Activities do not need to be changed to support conditional availability, but th
 
 If you make no changes to an activity whatsoever, it can only support 'manual' completion (where the user ticks a box).
 
-## Feature support
+## Feature support {/* #feature-support */}
 
 To support the completion system, your activity must include a `[activityname]_supports` function in its `lib.php`. Here is an example:
 
@@ -44,13 +44,13 @@ The relevant features for completion are:
 - **`FEATURE_GRADE_HAS_GRADE`** - the activity provides (or may provide, depending on settings) a grade for students. When an activity supports grades, it can support completion 'on grade', meaning that an activity becomes marked complete as soon as a user is assigned a grade.
 - **`FEATURE_COMPLETION_HAS_RULES`** - the activity has custom completion rules.
 
-## Completion on view
+## Completion on view {/* #completion-on-view */}
 
 Completion on view means that, if selected, an activity is marked as complete as soon as the user views it.
 
 'View' is usually defined as seeing the activity's main page; if you click on the activity, and there isn't an error, you have probably viewed it. However it is up to each activity precisely how they define 'view'.
 
-### How to implement
+### How to implement {/* #how-to-implement */}
 
 In your activity's `[activityname]_supports` function, return true for `FEATURE_COMPLETION_TRACKS_VIEWS`.
 
@@ -61,29 +61,29 @@ Then add this code to run whenever a user successfully views the activity. In or
  $completion->set_module_viewed($cm);
 ```
 
-### Performance issues
+### Performance issues {/* #performance-issues */}
 
 Calling this method has no significant performance cost if 'on view' completion is not enabled for the activity. If it is enabled, then the performance cost is kept low because the 'viewed' state is cached; it doesn't add a database query to every request.
 
-## Completion on grade
+## Completion on grade {/* #completion-on-grade */}
 
 Completion on grade means that, if selected, an activity is marked as complete as soon as the user receives a grade from that activity.
 
-### How to implement
+### How to implement {/* #how-to-implement-1 */}
 
 In your `[activityname]_supports` function, return true for `FEATURE_GRADE_HAS_GRADE`. No other action is necessary.
 
-### Performance issues
+### Performance issues {/* #performance-issues-1 */}
 
 When 'on grade' completion is enabled, there will be some additional database queries after a grade is assigned or changed. Unless your activity changes grades very frequently, this is unlikely to be an issue.
 
-## Custom completion rules
+## Custom completion rules {/* #custom-completion-rules */}
 
 Custom completion rules allow for activity-specific conditions. For example, the forum has custom rules so that a teacher can configure it to mark a user as having completed the activity when that user makes a certain number of posts to the forum.
 
 Implementing custom completion rules is more complex than using the system-provided 'view' or 'grade' conditions, but the instructions below should help make it clear.
 
-### Implementation overview
+### Implementation overview {/* #implementation-overview */}
 
 To implement custom completion rules, you need to:
 
@@ -96,7 +96,7 @@ To implement custom completion rules, you need to:
 1. Add function returns descriptions for the completion states.
 1. Add code so that whenever the value affecting a rule might change, you inform the completion system.
 
-### Database fields for completion settings
+### Database fields for completion settings {/* #database-fields-for-completion-settings */}
 
 When you provide a custom completion rule for a activity, that rule requires data to be stored with each activity instance: whether the rule is enabled for that instance, and any options that apply to the rule.
 
@@ -107,7 +107,7 @@ Usually the best place to store this information is your activity's main table b
 - The main table is used for most other activity options so it is a logical place for this information.
 If you are adding a basic completion condition you probably only need to add one field. To add a field to an existing activity, you need to change the db/install.xml and the db/upgrade.php in the same way as adding any other field.
 
-#### Example
+#### Example {/* #example */}
 
 Throughout this section I am using the forum as an example. The forum provides three completion options but because they all behave the same way, I am only showing one of them.
 
@@ -115,13 +115,13 @@ The forum adds this field to store a completion option:
 
 - **`completionposts`** - this may be 0 or an integer. If it's an integer, say 3, then the user needs to add 3 forum posts (either new discussions or replies) in order for the forum to count as 'completed'.
 
-### Backup and restore for completion fields
+### Backup and restore for completion fields {/* #backup-and-restore-for-completion-fields */}
 
 Activities do not need to back up the generic completion options, which are handled by the system, but they do need to back up any custom options. You should add backup and restore logic for the fields mentioned above.
 
 Remember that your restore code should handle the case when these fields are not present, setting the fields to a suitable default value.
 
-#### Example
+#### Example {/* #example-1 */}
 
 The following code in `backup_forum_stepslib.php` lists the fields to back up:
 
@@ -138,7 +138,7 @@ $forum = new backup_nested_element('forum', ['id'], [
 
 As you can see, I added the **`completionposts`** field (and the others that aren't covered in this example) to the list of fields.
 
-### Add information about the completion settings to the activities cm_info object
+### Add information about the completion settings to the activities cm_info object {/* #add-information-about-the-completion-settings-to-the-activities-cm_info-object */}
 
 You will need to add information about the custom rules into the activities `cm_info` object by either adding, or modifying the `module_get_coursemodule_info` callback
 
@@ -190,7 +190,7 @@ function forum_get_coursemodule_info($coursemodule) {
 }
 ```
 
-### Form changes for completion settings
+### Form changes for completion settings {/* #form-changes-for-completion-settings */}
 
 When you have custom completion conditions, you need to add controls to your module's settings form `mod_form.php` so that users can select these conditions. You can add any necessary controls.
 
@@ -211,7 +211,7 @@ Any custom completion rules added will need to use `$this->get_suffix()`.
 
 :::
 
-#### Example
+#### Example {/* #example-2 */}
 
 The forum offers a checkbox with a text input box beside it. You tick the checkbox to enable the rule, then type in the desired number of posts.
 
@@ -332,7 +332,7 @@ function data_preprocessing(&$default_values){
 
 Phew! That's the form done.
 
-### Completion state function
+### Completion state function {/* #completion-state-function */}
 
 When you create completion conditions, you need to write a function *module*`_get_completion_state` that checks the value of those conditions for a particular user.
 
@@ -345,7 +345,7 @@ Your function should return:
 - **`false`** if your custom completion options are enabled but the user does not yet meet the conditions.
 - `$type` (not false!) if none of your custom completion options are not enabled.
 
-#### Example
+#### Example {/* #example-3 */}
 
 Here's the function for forum (simplified to include only the one completion option):
 
@@ -387,7 +387,7 @@ Here's the function for forum (simplified to include only the one completion opt
  }
 ```
 
-### Add function returns descriptions for the completion states
+### Add function returns descriptions for the completion states {/* #add-function-returns-descriptions-for-the-completion-states */}
 
 When you create completion conditions, you need to write a function `[activityname]_get_completion_active_rule_descriptions` that gives a human-readable description of the completion state.
 
@@ -434,7 +434,7 @@ function mod_forum_get_completion_active_rule_descriptions($cm) {
 }
 ```
 
-### Notifying the completion system
+### Notifying the completion system {/* #notifying-the-completion-system */}
 
 Finally you need to notify the completion system whenever these values might have changed for a user (in the case of the forum example, whenever somebody adds or deletes a post). The completion system will end up calling the function above - but only if it needs to.
 
@@ -445,7 +445,7 @@ Finally you need to notify the completion system whenever these values might hav
   - **`COMPLETION_UNKNOWN`** - this change might have either effect. Using this option is much slower than the others, so try to avoid using it in anything that might happen frequently.
 - If the user whose completion state would be updated is not the current user, then the optional `$userid` parameter must be included. For example, if a teacher deletes a student's forum post, then it is the student's completion state which may need updating, not the teacher's.
 
-#### Example
+#### Example {/* #example-4 */}
 
 Here's the code that runs when somebody makes a new forum post:
 
@@ -457,24 +457,24 @@ if ($completion->is_enabled($cm) && $forum->completionposts) {
 }
 ```
 
-### Completion Checks in Cron Tasks
+### Completion Checks in Cron Tasks {/* #completion-checks-in-cron-tasks */}
 
 If you need to check completion as part of a cron task or another part of Moodle that does not already include the completion_info class, you will need to include it.
 
-#### Example
+#### Example {/* #example-5 */}
 
 ```php
 require_once($CFG->dirroot.'/lib/completionlib.php');
 ```
 
-## See Also
+## See Also {/* #see-also */}
 
 - [Activity completion and availability](https://docs.moodle.org/dev/Conditional_activities) - Original Specification
 - [Course completion](https://docs.moodle.org/dev/Course_completion) - Original Specification
 - [Policy - Retroactive effects of completion settings](https://docs.moodle.org/dev/Policy_-_Retroactive_effects_of_completion_settings)
 - [Core APIs](../../../apis.md)
 
-### User Docs
+### User Docs {/* #user-docs */}
 
 - [Completion Docs](https://docs.moodle.org/en/Category:Completion)
 - [Activity Completion](https://docs.moodle.org/en/Activity_completion)

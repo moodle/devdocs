@@ -9,7 +9,7 @@ tags:
 
 Form are created using the Form API. The Form API supports most standard HTML elements, including checkboxes, radio buttons, text boxes, and so on, adding additional accessibility and security features to them.
 
-## Highlights
+## Highlights {/* #highlights */}
 
 - Tested and optimised for use on major screen-readers like Dragon and JAWS.
 - Table-less layout.
@@ -21,7 +21,7 @@ Form are created using the Form API. The Form API supports most standard HTML el
 - Facility for [repeated elements](./advanced/repeat-elements.md).
 - Facility for form elements in advanced groups
 
-## Usage
+## Usage {/* #usage */}
 
 The Moodle forms API separates forms into different areas:
 
@@ -134,11 +134,11 @@ class block_yourblock extends block_base {
 }
 ```
 
-## Form elements
+## Form elements {/* #form-elements */}
 
 Moodle provides a number of basic, and advanced, form elements. These are described in more detail below.
 
-### Basic form elements
+### Basic form elements {/* #basic-form-elements */}
 
 1. [button](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#button)
 1. [checkbox](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#checkbox)
@@ -153,7 +153,7 @@ Moodle provides a number of basic, and advanced, form elements. These are descri
 1. [textarea](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#textarea)
 1. [header](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#Use_Fieldsets_to_group_Form_Elements)
 
-### Advanced form elements
+### Advanced form elements {/* #advanced-form-elements */}
 
 <!-- cspell:ignore choosecoursefile -->
 <!-- cspell:ignore modgrade -->
@@ -180,7 +180,7 @@ Moodle provides a number of basic, and advanced, form elements. These are descri
 1. [grading](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#grading)
 1. [questioncategory](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#questioncategory)
 
-### Custom form elements
+### Custom form elements {/* #custom-form-elements */}
 
 In addition to the standard form elements, you can register your own custom form elements, for example:
 
@@ -214,9 +214,9 @@ For a real-life example, see:
 - [Custom element definition](https://github.com/moodle/moodle/blob/main/admin/tool/lp/classes/course_competency_rule_form_element.php)
 - [Custom element usage](https://github.com/moodle/moodle/blob/main/admin/tool/lp/lib.php#L157-L161)
 
-## Commonly used functions
+## Commonly used functions {/* #commonly-used-functions */}
 
-### add_action_buttons()
+### add_action_buttons() {/* #add_action_buttons */}
 
 Add the standard 'action' buttons to the form - these are the standard Submit, and Cancel buttons on the form.
 
@@ -246,33 +246,33 @@ The `add_action_buttons` function is defined on the `moodleform` class, and not 
 
 :::
 
-### setDefault()
+### setDefault() {/* #setdefault */}
 
 The [setDefault()](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#setDefault_2) function can be used to set the default value for an element.
 
-### disabledIf()
+### disabledIf() {/* #disabledif */}
 
 The [disabledIf()](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#disabledIf) function can be used to conditionally _disable_ a group of elements, or and individual element depending on the state of other form elements.
 
-### hideIf()
+### hideIf() {/* #hideif */}
 
 <Since version="3.4" />
 
 The [hideif()](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#hideIf) function can be used to conditionally _hide_ a group of elements, or and individual element depending on the state of other form elements.
 
-### addRule()
+### addRule() {/* #addrule */}
 
 The [addRule()](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#addRule) function can be used to define both client-side, and server-side validation rules. For example, this can be used to validate that a text-field is required, and has a type of email.
 
-### addHelpButton()
+### addHelpButton() {/* #addhelpbutton */}
 
 The [addHelpButton()](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#addHelpButton) function can be used to add a pop-up help button to a form element.
 
-### setType()
+### setType() {/* #settype */}
 
 The [setType()](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#setType) function can be used to specify how submitted values are cleaned. The `PARAM_*` constants are used to specify the type of data that will be submitted.
 
-### disable_form_change_checker()
+### disable_form_change_checker() {/* #disable_form_change_checker */}
 
 Normally, if a user navigate away from any form and changes have been made, a popup will be shown to the user asking them to confirm that they wish to leave the page and that they may lose data.
 
@@ -289,11 +289,11 @@ public function definition() {
 }
 ```
 
-### Other features
+### Other features {/* #other-features */}
 
 In some cases you may want to [group elements](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#Use_Fieldsets_to_group_Form_Elements) into collections.
 
-## Unit testing
+## Unit testing {/* #unit-testing */}
 
 In order to test the processing of submitted form contents in unit tests, the Forms API has a `mock_submit()` function.
 
@@ -325,7 +325,7 @@ $this->assertEquals($questiondata, $actualquestiondata);
 
 </details>
 
-## See also
+## See also {/* #see-also */}
 
 - [Core APIs](../../../apis.md)
 - [lib/formslib.php Usage](./usage.md)

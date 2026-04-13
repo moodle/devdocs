@@ -43,11 +43,11 @@ Then the rendered result will look like:
 The following page provides information about the Mustache templates syntax and how to use them in Moodle.
 </details>
 
-## Syntax
+## Syntax {/* #syntax */}
 
 Mustache tags are made of two opening and closing curly braces. Their shape looks like a [moustache](https://en.wikipedia.org/wiki/Moustache), hence the name.
 
-### Variables
+### Variables {/* #variables */}
 
 ```handlebars
 {{name}}
@@ -61,7 +61,7 @@ Mustache tags are made of two opening and closing curly braces. Their shape look
 
 The value of the key `name` will be searched for in the current rendering context (and any parent contexts) and when a value is found, the entire tag will be replaced by the value (HTML escaped).
 
-### Raw unescaped variable
+### Raw unescaped variable {/* #raw-unescaped-variable */}
 
 All variables are HTML escaped by default. If you want to render raw unescaped HTML, use the triple mustache:
 
@@ -77,7 +77,7 @@ All variables are HTML escaped by default. If you want to render raw unescaped H
 
 Beware of the security implications of outputting raw HTML and make sure that the value of the variable has been processed by `format_text()` or another adequate way.
 
-### Sections
+### Sections {/* #sections */}
 
 Sections render blocks of text zero, one or more times, depending on the value of the key in the current context. The opening tag has a hash (pound) sign and the closing tag has a slash, followed by the key.
 
@@ -158,7 +158,7 @@ Inverted sections will be rendered if the key does not exist, is false, or is an
 }
 ```
 
-### Comments
+### Comments {/* #comments */}
 
 Comments begin with an exclamation mark. The whole section is ignored. Comments are used for boilerplate documentation. They can also be used to avoid having extra break-lines in the generated output.
 
@@ -168,7 +168,7 @@ Comments begin with an exclamation mark. The whole section is ignored. Comments 
 }}
 ```
 
-### Partials
+### Partials {/* #partials */}
 
 Templates can include other templates using the partial tag. Partials begin with a greater than sign. Partials are rendered at runtime and allow to split complex templates into smaller, potentially re-usable units. Moodle core provides with many templates that can be included this way.
 
@@ -181,7 +181,7 @@ Templates can include other templates using the partial tag. Partials begin with
 
 The included template uses the same rendering context as its parent template.
 
-### Blocks
+### Blocks {/* #blocks */}
 
 Mustache template system can be extended via so called [Mustache pragmas](https://github.com/bobthecow/mustache.php/wiki/Pragmas). Pragmas are non-standard extensions to the Mustache spec. Moodle 3.0 and higher has [BLOCKS pragma](https://github.com/bobthecow/mustache.php/wiki/BLOCKS-pragma) installed and enabled.
 
@@ -215,11 +215,11 @@ Particular child templates can now extend / inherit from this parent template an
 
 Blocks are particularly useful for building a library of re-usable components.
 
-## Helpers
+## Helpers {/* #helpers */}
 
 Moodle providers several Mustache helpers. Helpers tags look like sections eventually containing zero or more parameters.
 
-### str
+### str {/* #str */}
 
 The `{{#str}}` is a string helper for loading text strings from language packs. It effectively represents Mustache variant of `get_string()` calls.
 
@@ -243,7 +243,7 @@ If you want to create a **help icon**, and wondering "where is the helper for th
 
 :::
 
-### quote
+### quote {/* #quote */}
 
 The `{{#quote}}` is intended to quote non-scalar `{{#str}}` arguments.
 
@@ -266,7 +266,7 @@ There is a potential problem though. If the variable tag `itemname` evaluates to
 {{#str}} counteditems, core, { "count": {{count}}, "items": {{#quote}} {{itemname}} {{/quote}} } {{/str}}
 ```
 
-### pix
+### pix {/* #pix */}
 
 The `{{#pix}}` is a icon picture helper for generating pix icon tags.
 
@@ -278,7 +278,7 @@ The first two parameters are the icon identifier and the component name. The res
 
 See [Using images in a theme](https://docs.moodle.org/dev/Using_images_in_a_theme) and [Moodle icons](https://docs.moodle.org/dev/Moodle_icons) for some background information about pix icons in Moodle.
 
-### userdate
+### userdate {/* #userdate */}
 
 The `{{#userdate}}` helper will format UNIX timestamps into a given human readable date format while using the user's timezone settings configured (if any) in Moodle. The helper will accept hardcoded values, context variables, or other helpers.
 
@@ -298,7 +298,7 @@ This will ask the Moodle server for the string "strftimedate" and will use the v
 
 <!-- cspell:ignore shortentext -->
 
-### shortentext
+### shortentext {/* #shortentext */}
 
 The `{{#shortentext}}` helper can be used to shorten a large amount of text to a specified length and will append a trailing ellipsis to signify that the text has been shortened.
 
@@ -318,7 +318,7 @@ The helper takes two comma separated arguments. The first is the desired length 
 {{#shortentext}} 15, {{{description}}} {{/shortentext}}
 ```
 
-## Template files
+## Template files {/* #template-files */}
 
 Templates are saved in `templates/*.mustache` files within core components and plugins folders. When loading them, templates are identified by their [full component name](/general/development/policies/codingstyle/frankenstyle) followed by slash and the filename without the file extension.
 
@@ -330,7 +330,7 @@ A `timer` template provided by the `mod_lesson` module would be referred to as `
 
 Since Moodle 3.8 it is possible to use sub-directories under the `templates` directory. The first sub-directory name must meet [certain naming rules](/general/development/policies/codingstyle#rules-for-level2) (same as for class namespaces).
 
-### Mustache file boilerplate
+### Mustache file boilerplate {/* #mustache-file-boilerplate */}
 
 ```handlebars
 {{!
@@ -369,7 +369,7 @@ Since Moodle 3.8 it is possible to use sub-directories under the `templates` dir
 }}
 ```
 
-## Rendering in PHP
+## Rendering in PHP {/* #rendering-in-php */}
 
 Use the `render_from_template()` method to render the given context data with the template.
 
@@ -382,7 +382,7 @@ $data = [
 echo $OUTPUT->render_from_template($templatename, $data);
 ```
 
-### Renderers
+### Renderers {/* #renderers */}
 
 Templates can be effectively used in [renderers](https://docs.moodle.org/dev/Renderer) to generate the HTML representing the given `renderable` object. Make your `renderable` class also implement `templatable` interface. It will have to implement a new method `export_for_template(renderer_base $output)`. The method should return a JSON-serialisable object (containing only objects, arrays and scalars) that will be passed as the rendering context data to a template.
 
@@ -458,7 +458,7 @@ $output = $PAGE->get_renderer('tool_myplugin');
 echo $output->render($widget);
 ```
 
-## Rendering in JavaScript
+## Rendering in JavaScript {/* #rendering-in-JavaScript */}
 
 Rendering a template from JavaScript is fairly easy. There is a [JavaScript module](../javascript/modules.md) that can load (and cache) a template and then use it for rendering the given data.
 
@@ -488,7 +488,7 @@ Templates.renderForPromise('block_looneytunes/profile', context)
 
 Under the hood, this does a few clever things for us. It loads the template via an AJAX call if it was not cached. It finds any missing lang strings in the template and loads them in a single AJAX request. It splits the JS from the HTML and returns both in an easy to use way. Read on for how to nicely deal with that `js` parameter.
 
-## Templates requiring JavaScript
+## Templates requiring JavaScript {/* #templates-requiring-JavaScript */}
 
 Sometimes a template requires that some JavaScript runs when it is added to the page in order to give it more features. In the template we can include blocks of JavaScript, but we should use a special section tag that has a "helper" method registered to handle JavaScript carefully.
 
@@ -519,7 +519,7 @@ templates.runTemplateJS(javascript);
 
 which will run the JavaScript (by creating a new script tag and appending it to the page head).
 
-## Overriding templates in a theme
+## Overriding templates in a theme {/* #overriding-templates-in-a-theme */}
 
 Templates can be overridden by a theme.
 
@@ -528,7 +528,7 @@ Templates can be overridden by a theme.
 1. Copy the `ratingui.mustache` file into the newly created `theme/timtam/templates/mod_wiki` and edit it.
 You should see your changes immediately if theme designer mode is on. Templates are cached just like CSS, so if you are not using theme designer mode you will need to purge all caches to see the latest version of an edited template. If the template you are overriding contains a documentation comment it is recommended to remove it. It will still show the documentation in the template library.
 
-### Examples
+### Examples {/* #examples */}
 
 | Path for original template | Component | Theme override path |
 | --- | --- | --- |
@@ -537,7 +537,7 @@ You should see your changes immediately if theme designer mode is on. Templates 
 | `public/lib/templates/modal.mustache` | `core` | `public/theme/mytheme/templates/core/modal.mustache` |
 | `public/theme/boost/templates/navbar.mustache` | `theme_boost` | `public/theme/mytheme/templates/theme_boost/navbar.mustache` |
 
-## Documenting the templates
+## Documenting the templates {/* #documenting-the-templates */}
 
 Theme designers need to know the limits of what they can expect to change without breaking anything. Also, correctly documented templates can be previewed in the "Template library" tool shipped with Moodle.
 
@@ -546,19 +546,19 @@ Theme designers need to know the limits of what they can expect to change withou
 - **Context variables required for this template** - This is a description of the data that may be contained in the context that is passed to the template. Be explicit and document every attribute.
 - **Example context (JSON)** - The Template library will look for this data in your documentation comment as it allows it to render a "preview" of the template right in the Template library. This is useful for theme designers to test all the available templates in their new theme to make sure they look nice in a new theme. It is also useful to make sure the template responds to different screen sizes, languages and devices. The format is a JSON-encoded object that is passed directly into the render method for this template.
 
-## Coding style
+## Coding style {/* #coding-style */}
 
 This section documents some coding style guidelines to follow when writing templates. The reason for these guidelines is to promote consistency, and interoperability of the templates.
 
-### Include GPL at the top of each template
+### Include GPL at the top of each template {/* #include-gpl-at-the-top-of-each-template */}
 
 Templates are a form of code and it is appropriate to license them like any other code.
 
-### Include a documentation comment for each template
+### Include a documentation comment for each template {/* #include-a-documentation-comment-for-each-template */}
 
 The exception is when you are overriding a template, if the documentation from the parent still applies, you do not need to copy it to the overridden template.
 
-### Use data-attributes for JS hooks
+### Use data-attributes for JS hooks {/* #use-data-attributes-for-js-hooks */}
 
 Data attributes are ideal for adding JavaScript hooks to templates because:
 
@@ -566,19 +566,19 @@ Data attributes are ideal for adding JavaScript hooks to templates because:
 - IDs must be unique in the page, but it is not possible to control how many times the same template might be included in the page.
 - Data attributes can have meaningful names and can be efficiently queried with a selector.
 
-### Avoid custom CSS for templates
+### Avoid custom CSS for templates {/* #avoid-custom-css-for-templates */}
 
 This is not a hard rule, but a preference. We already have too much CSS in Moodle - where ever possible we should try and re-use the existing CSS instead of adding new CSS to support every new template.
 
-### Re-use core templates as much as possible
+### Re-use core templates as much as possible {/* #re-use-core-templates-as-much-as-possible */}
 
 First we need to build the core set of reusable templates - but once that is in place we should always try to re-use those core templates to build interfaces. This will make Moodle more consistent, attractive and customisable.
 
-### Do use the CSS framework classes directly in the templates
+### Do use the CSS framework classes directly in the templates {/* #do-use-the-css-framework-classes-directly-in-the-templates */}
 
 We have bootstrap in core - so lets make the most of it. There is no problem using bootstrap classes in core templates, as long as the "base" theme is also tested, and an overridden template is added there if required.
 
-### Avoid IDs for styling or JavaScript
+### Avoid IDs for styling or JavaScript {/* #avoid-ids-for-styling-or-JavaScript */}
 
 IDs should not be used for styling as they have a high CSS specificity, and so are hard to override. In addition, IDs should be unique in the page, which implies that a template could only be used once in a page. IDs are also not ideal for JavaScript, for the same reason (must be unique in a page).
 
@@ -592,11 +592,11 @@ The only acceptable case to use an ID is you need to create a one to one connect
 {{/js}}
 ```
 
-### Follow CSS coding style
+### Follow CSS coding style {/* #follow-css-coding-style */}
 
 See [CSS coding style](https://docs.moodle.org/dev/CSS_coding_style). Use hyphens as word-separators for class names. Use lower case class names.
 
-### Wrap each template in one node with a classname that matches the template name
+### Wrap each template in one node with a classname that matches the template name {/* #wrap-each-template-in-one-node-with-a-classname-that-matches-the-template-name */}
 
 Generate a class name by combining the component and template names and separating words with underscore.
 
@@ -608,9 +608,9 @@ e.g.
 </div>
 ```
 
-## Notes
+## Notes {/* #notes */}
 
-### Iterating over PHP arrays in Mustache templates
+### Iterating over PHP arrays in Mustache templates {/* #iterating-over-php-arrays-in-mustache-templates */}
 
 In PHP, both lists and hashes are implemented as arrays. But Mustache must treat them as different structures because of cross language compatibility. If the PHP array does not have the `[0]` key, or there are gaps in the keys sequence, Mustache will interpret that array as a hash and will not iterate over it.
 
@@ -620,7 +620,7 @@ So you need to make sure the elements in the list are properly indexed:
 $datafortemplate->mylist = array_values($myarraywithnonnumerickeys)
 ```
 
-### Test for non-empty array in Mustache templates
+### Test for non-empty array in Mustache templates {/* #test-for-non-empty-array-in-mustache-templates */}
 
 Short answer: you can't.
 
@@ -651,7 +651,7 @@ As a workaround, include a specific property in the context like `hasusers`.
 {{#hasusers}}
 ```
 
-### Squash whitespace in a template
+### Squash whitespace in a template {/* #squash-whitespace-in-a-template */}
 
 Sometimes whitespace is significant, for example inside a link it will show with an underline. If you need two Mustache tags from separate lines to be rendered with no whitespace between them you can use Mustache comments to squash the whitespace.
 
@@ -661,7 +661,7 @@ Sometimes whitespace is significant, for example inside a link it will show with
 }}{{name}}</a>
 ```
 
-### Access to globals
+### Access to globals {/* #access-to-globals */}
 
 In PHP you have access to the `$CFG` object to allow access to properties. Mustache rendering also exposes a globals object automatically during rendering. For example:
 
@@ -672,7 +672,7 @@ In PHP you have access to the `$CFG` object to allow access to properties. Musta
 The properties available on the `globals.config` object are the same as normally exposed for JavaScript; these are gathered from `get_config_for_javascript()` function in `lib/outputrequirementslib.php`.
 This object is only available when using client-side Mustache rendering in JavaScript; it is not added to templates rendered with the PHP Mustache engine.
 
-## Core templates
+## Core templates {/* #core-templates */}
 
 Core templates should ideally be simple generic components that can be used within other templates to create more complex page layouts. They should be flexible enough for developers and themers to easily use without having to replace the template. The templates should attempt to encapsulate some core structure for the element as well as key classes while allowing the content to be easily overridden. Ultimately we want to avoid having duplicate HTML copied from template to template where possible, particularly if the HTML element has some classes associated with it.
 

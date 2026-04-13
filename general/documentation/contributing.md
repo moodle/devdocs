@@ -17,11 +17,11 @@ If you are new to Open Source contributions, or you are interested in learning h
 - [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
 - [Building Welcoming Communities](https://opensource.guide/building-community/)
 
-## Code of Conduct
+## Code of Conduct {/* #code-of-conduct */}
 
 Moodle is in the process of updating and modernising its [Code of Conduct](./code-of-conduct.md). If you would like to be a part of this process, please see the [GitHub issue](https://github.com/moodle/devdocs/issues/47) and give us your thoughts.
 
-## Get Involved
+## Get Involved {/* #get-involved */}
 
 Anyone can get involved with, and add to, these resources - you don't have to be a developer or documentation aficionado. Here are a few ideas to get started:
 
@@ -35,7 +35,7 @@ Anyone can get involved with, and add to, these resources - you don't have to be
 
 If you need help, please reach out to us and we will do our best to advise you.
 
-## Making a small change
+## Making a small change {/* #making-a-small-change */}
 
 To make a small change, such as a typo fix:
 
@@ -48,7 +48,7 @@ To make a small change, such as a typo fix:
 7. Optional: add a description of the change.
 8. Click 'Create pull request' again.
 
-## Getting started with a development environment
+## Getting started with a development environment {/* #getting-started-with-a-development-environment */}
 
 Our documentation is built using [Docusaurus](https://docusaurus.io), a powerful open source documentation project written in JavaScript. For more detailed information, see our [installation guide](./installation.md) to install your development environment and get started.
 
@@ -69,7 +69,7 @@ Once you have made changes in your local checkout, you can commit them, and subm
 
 :::
 
-### Migrating legacy docs
+### Migrating legacy docs {/* #migrating-legacy-docs */}
 
 We are currently migrating documentation from our [legacy documentation site](https://docs.moodle.org/dev), and one of the best ways to contribute with documentation is to help with this migration process.
 
@@ -79,7 +79,7 @@ We have created a number of tools to make this a little easier and to automate a
 yarn migrate --help
 ```
 
-#### What we automate
+#### What we automate {/* #what-we-automate */}
 
 The migration assistant will:
 
@@ -102,7 +102,7 @@ The migration assistant will:
 - add the migrated page to our [list of migrated pages](https://github.com/moodle/devdocs/main/blob/data/migratedPages.yml)
 - update any links to the migrated page
 
-#### Using the assistant
+#### Using the assistant {/* #using-the-assistant */}
 
 In most circumstances you should not need to pass any special options, and you will just need to pass the name of the document you are migrating, and the path to the location you'd like to migrate it to, for example:
 
@@ -150,7 +150,7 @@ After performing a migration it is important to review the page content. You sho
 
 :::
 
-### Triaging Issues and Pull Requests
+### Triaging Issues and Pull Requests {/* #triaging-issues-and-pull-requests */}
 
 One of the many ways that you can contribute is to help triage the [list of pending issues](https://github.com/moodle/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3Aneeds-triage).
 
@@ -161,7 +161,7 @@ When doing so you should may want to:
 - Flag issues that are stale or that should be closed.
 - Review code.
 
-## Adding diagrams
+## Adding diagrams {/* #adding-diagrams */}
 
 The diagram tool [Mermaid](https://mermaid.js.org/intro/) is integrated into this docs site. This lets you define simple diagrams in the source of the page. For example:
 
@@ -181,23 +181,23 @@ flowchart LR
 
 To work out the Mermaid syntax you need for the diagram you are trying to create, the [Live editor](https://mermaid.live/) is highly recommended.
 
-## Our Development Process
+## Our Development Process {/* #our-development-process */}
 
 While our development of Moodle is managed in the [Moodle Tracker](https://moodle.atlassian.net/), all development of these Developer Resources takes place in this [GitHub repository](https://github.com/moodle/devdocs). All work takes place in public, in this repository.
 
 We make use of GitHub actions for our continuous integration and have a range of unit tests, end-to-end tests, style and lint tests, and build tests.
 
-## Issues
+## Issues {/* #issues */}
 
 When [creating a new issue](https://github.com/moodle/devdocs/issues/new/choose), always make sure to fill out the issue template.
 
-### Bugs
+### Bugs {/* #bugs */}
 
 We use [GitHub Issues](https://github.com/moodle/devdocs/issues) for our documentation bugs. If you would like to report a problem, take a look around and see if someone already opened an issue about it. If you are certain this is a new, unreported bug, you can submit a [bug report](https://github.com/moodle/devdocs/issues/new?template=documentation-bug.yml).
 
 Please provide as much information as possible and, if you are able to, provide screenshots. Fixes are always welcomed.
 
-### Documentation requests
+### Documentation requests {/* #documentation-requests */}
 
 If you would like to request documentation for new features, or the migration of documentation from the [legacy devdocs](https://docs.moodle.org/dev) you can use the appropriate issue templates.
 
@@ -206,15 +206,15 @@ If you would like to request documentation for new features, or the migration of
 
 For migrated documentation, if you can provide updated code examples, then this will make it easier to prioritise your issue.
 
-### Contributing
+### Contributing {/* #contributing */}
 
 We welcome contributions to these developer resources. If you've not contributed before and would like to do so, then you may like to look at our list of [good first issues](https://github.com/moodle/devdocs/labels/good%20first%20issue) to get you started.
 
 If you have domain-specific knowledge in an area which has outstanding documentation then the [`help wanted`](https://github.com/moodle/devdocs/labels/help%20wanted) search may give you some inspiration.
 
-## Development
+## Development {/* #development */}
 
-### Style guidelines
+### Style guidelines {/* #style-guidelines */}
 
 A set of writing and coding style guidelines for this documentation will be documented in more detail in the [style guides](./style-guides.md).
 
@@ -224,7 +224,7 @@ See our [linting and spelling](./linting.md) documentation for more information 
 
 :::
 
-### Pull Requests
+### Pull Requests {/* #pull-requests */}
 
 All pull requests should be opened against the `main` branch, and pushed to your own GitHub fork of the repository.
 
@@ -232,7 +232,7 @@ When you open your pull request we will automatically run a number of continuous
 
 The project maintainers will review your code and may provide feedback before it's merged into the project.
 
-### Commit Messages
+### Commit Messages {/* #commit-messages */}
 
 Every commit tells a story, and the commit message is the key narration of that story. It can be extremely useful to have a bit more information about your changes so try to provide any extra information that might be useful. For example:
 
@@ -253,7 +253,7 @@ We currently use the following types:
 
 The `<area>` tag is primarily used for `docs` changes to describe the section of documentation you have made changes to.
 
-### Versioned Docs
+### Versioned Docs {/* #versioned-docs */}
 
 Some of this documentation related to a specific version of Moodle:
 
@@ -263,7 +263,7 @@ Some of this documentation related to a specific version of Moodle:
 
 If you are documenting a feature which should be documented across older versions, we request that you backport it to the relevant stable versions.
 
-### Licensing
+### Licensing {/* #licensing */}
 
 By contributing to the Moodle Developer Resources, you agree that your contributions will be licensed under the GPLv3 license.
 
@@ -288,7 +288,7 @@ The following header should be present in all non-documentation code files:
  */
 ```
 
-### Linking to Moodle Academy
+### Linking to Moodle Academy {/* #linking-to-moodle-academy */}
 
 These Moodle Developer Resources are one of many key sources of information for Moodle developers. One of the other most important sources of knowledge is the [Moodle Academy](https://moodle.academy/).
 

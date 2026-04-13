@@ -30,13 +30,13 @@ The migration process will be done in a gradual way, and the steps will be execu
 
 :::
 
-## Refactoring BS4 features dropped in BS5
+## Refactoring BS4 features dropped in BS5 {/* #refactoring-bs4-features-dropped-in-bs5 */}
 
 <Since version="4.4" issueNumber="MDL-79914" />
 
 Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. To prepare for this, some of the current Bootstrap 4 classes usages have been replaced with version 5 compatible classes. Doing these refactors in advance, will help us to upgrade to Bootstrap 5 in the future.
 
-### Badges
+### Badges {/* #badges */}
 
 - Badge colour class helpers `.badge-*` have been replaced with background utilities (use `.bg-primary` instead of `.badge-primary`) combined with the corresponding text colour classes (`.text-dark` or `.text-white`) to meet accessibility contrast.
 - The `.badge-pill` class has been replaced with `.rounded-pill`
@@ -57,7 +57,7 @@ Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. 
 
 </ValidExample>
 
-### Media
+### Media {/* #media */}
 
 The `.media` component has been replaced with utility classes.
 
@@ -91,7 +91,7 @@ The `.media` component has been replaced with utility classes.
 
 </ValidExample>
 
-### Mixins
+### Mixins {/* #mixins */}
 
 The following previously deprecated mixins will be dropped in BS5, so they can be refactored:
 
@@ -136,7 +136,7 @@ The following previously deprecated mixins will be dropped in BS5, so they can b
 
 </ValidExample>
 
-### Forms
+### Forms {/* #forms */}
 
 - The `.form-group` helper class has been replaced with margins.
 - The `.form-inline` helper class has been replaced with utility classes.
@@ -165,7 +165,7 @@ The following previously deprecated mixins will be dropped in BS5, so they can b
 
 </ValidExample>
 
-### Card decks
+### Card decks {/* #card-decks */}
 
 The `.card-deck` helper class has been replaced with utility classes.
 
@@ -203,7 +203,7 @@ The `.card-deck` helper class has been replaced with utility classes.
 
 </ValidExample>
 
-## Create a BS5 "bridge"
+## Create a BS5 "bridge" {/* #create-a-bs5-bridge */}
 
 <Since version="4.5" issueNumber="MDL-79917" />
 
@@ -223,7 +223,7 @@ add a new class in the bridge file to make the codebase compatible with BS5. */
 
 :::
 
-### No gutters
+### No gutters {/* #no-gutters */}
 
 The `.no-gutters` grid class has been replaced with `.g-0`.
 
@@ -249,7 +249,7 @@ The `.no-gutters` grid class has been replaced with `.g-0`.
 
 </ValidExample>
 
-### Close button
+### Close button {/* #close-button */}
 
 The `.close` class has been replaced with `.btn-close`.
 
@@ -279,7 +279,7 @@ The `.close` class has been replaced with `.btn-close`.
 
 </ValidExample>
 
-### Directional utilities
+### Directional utilities {/* #directional-utilities */}
 
 Several utilities have been renamed to use logical property names instead of directional ones.
 
@@ -312,7 +312,7 @@ Several utilities have been renamed to use logical property names instead of dir
 
 </ValidExample>
 
-### Theme color level
+### Theme color level {/* #theme-color-level */}
 
 In Bootstrap 4.x we used a function called `theme-color-level()` which was removed in Bootstrap 5. The prototype of the function was:
 

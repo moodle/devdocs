@@ -4,7 +4,7 @@ tags:
 - tools
 ---
 
-## Use composer to download Moodle code
+## Use composer to download Moodle code {/* #use-composer-to-download-moodle-code */}
 
 `Composer.json` now includes meta information and hence composer can be used to download the Moodle code base.
 You can do it by creating `composer.json` file with following information
@@ -29,7 +29,7 @@ And then execute:
 php composer.phar install
 ```
 
-## How to prepare and submit composer changes
+## How to prepare and submit composer changes {/* #how-to-prepare-and-submit-composer-changes */}
 
 There are a number of situations where we need to update the bundled [composer.json](https://github.com/moodle/moodle/blob/main/composer.json)] in core. When we upgrade, for a given branch, [the phpunit](https://moodle.atlassian.net/browse/MDL-71036) or [the behat-extension](https://moodle.atlassian.net/browse/MDL-70637) versions... we also have to update the [composer.lock](https://github.com/moodle/moodle/blob/main/composer.lock) file, in order to guarantee that all the tests will run in a stable, verified environment.
 

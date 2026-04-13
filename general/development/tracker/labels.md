@@ -13,7 +13,7 @@ Labels can only be added by a user with permission to edit an issue, that is the
 
 :::
 
-## Issue reporting and triaging
+## Issue reporting and triaging {/* #issue-reporting-and-triaging */}
 
 - `accessibility`
 
@@ -77,7 +77,7 @@ Labels can only be added by a user with permission to edit an issue, that is the
 
   Used to flag issues that are being triaged (sometimes an ongoing process for days or weeks). When the issue has been triaged the label should be removed and a `triaged` label should be added or when the issue is closed.
 
-## Documentation
+## Documentation {/* #documentation */}
 
 - `api_change`
 
@@ -107,7 +107,7 @@ Labels can only be added by a user with permission to edit an issue, that is the
 
   Issues that need to be mentioned in the user documentation [under 'Possible issues that may affect you in Moodle X.0' (major versions).
 
-## Integration
+## Integration {/* #integration */}
 
 - `integration_held`
 
@@ -125,7 +125,7 @@ Labels can only be added by a user with permission to edit an issue, that is the
 
   Used to flag security issues that have been reviewed by integrators already but held from integration repository. These issues must be cleared during point releases.
 
-## QA and testing
+## QA and testing {/* #qa-and-testing */}
 
 - [`acceptance_test_required`](https://moodle.atlassian.net/issues/?jql=labels%20%3D%20acceptance_test_required)
 
@@ -167,7 +167,7 @@ Labels can only be added by a user with permission to edit an issue, that is the
 
   Used to flag issues that should have their own unit tests.
 
-## User experience (UX)
+## User experience (UX) {/* #user-experience-ux */}
 
 - [`ui_change`](https://moodle.atlassian.net/issues/?jql=labels%20%3D%20ui_change)
 
@@ -181,7 +181,7 @@ Labels can only be added by a user with permission to edit an issue, that is the
 
   For requesting help with naming and other wordings of new features and improvements. The issue will be added to the UX writing backlog for review and input.
 
-## See also
+## See also {/* #see-also */}
 
 - [Tracker](../tracker)
 - [Bug triage](../process/triage)

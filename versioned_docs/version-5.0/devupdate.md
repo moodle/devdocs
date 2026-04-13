@@ -9,7 +9,7 @@ tags:
 
 This page highlights the important changes that are coming in Moodle 5.0 for developers.
 
-## Activity overview page integration
+## Activity overview page integration {/* #activity-overview-page-integration */}
 
 <Since version="5.0" issueNumber="MDL-83872" />
 
@@ -17,7 +17,7 @@ The course navigation has been updated to include a new link to the activity ove
 
 See the [Activity overview page integration](./apis/plugintypes/mod/courseoverview) documentation for more information.
 
-## Calendar: New human date renderers
+## Calendar: New human date renderers {/* #calendar-new-human-date-renderers */}
 
 <Since version="5.0" issueNumber="MDL-83873" />
 
@@ -33,7 +33,7 @@ This update introduces two primary renderers:
 
 See the [Date and Time Output Classes](./apis/subsystems/output/humandate.md) documentation for more information.
 
-## Course formats
+## Course formats {/* #course-formats */}
 
 <Since version="5.0" issueNumber="MDL-83527" />
 
@@ -43,7 +43,7 @@ You can determine if your course format is impacted by this change by examining 
 
 To ensure a smooth transition, we have documented the migration process in detail. Please refer to the [migration guide](./apis/plugintypes/format/migration.md) for comprehensive instructions on updating your course formats to be compatible with the latest Moodle standards.
 
-### Course action menu outputs classes
+### Course action menu outputs classes {/* #course-action-menu-outputs-classes */}
 
 <Since version="5.0" issueNumber="MDL-83527" />
 
@@ -53,7 +53,7 @@ The section and activity action menus now utilize output classes instead of glob
 - `core_courseformat\output\local\content\section\controlmenu`: the existing class has been refactored and now uses `action_menu_link` objects instead. If your format add more options to the section menu, you should update your code to use the new class instead of using arrays.
 - `core_courseformat\output\local\content\cm\delegatedcontrolmenu`: like the section control menu, the existing class has been refactored to use `action_menu_link` objects instead of arrays.
 
-### New `core_courseformat_new_module` webservice
+### New `core_courseformat_new_module` webservice {/* #new-core_courseformat_new_module-webservice */}
 
 <Since version="5.0" issueNumber="MDL-83469" />
 
@@ -64,13 +64,13 @@ To be sure your format plugin is not affected by the change, you must check:
 - If the plugin calls the deprecated webservice `core_courseformat_create_module`. If it does, you should update your code to use the new webservice.
 - The plugin has some link with `data-action` set to `addModule`. If it does, replace it by `data-action` set to `newModule` and add a `data-sectionid` attribute with the section id.
 
-## Plugin type deprecation
+## Plugin type deprecation {/* #plugin-type-deprecation */}
 
 <Since version="5.0" issueNumber="MDL-79843" />
 
 A new process for plugin type and subplugin type deprecation has been introduced. See [the Plugin Type deprecation](./apis/plugintypes/index.md#deprecating-a-plugin-type) and [Subplugin deprecation](./apis/plugintypes/index.md#deprecating-a-subplugin-type) documentation for further information.
 
-## Subplugins
+## Subplugins {/* #subplugins */}
 
 <Since version="5.0" issueNumber="MDL-83705" />
 
@@ -117,9 +117,9 @@ Both of these values may be combined for plugins supporting both Moodle 4.5 and 
 
 :::
 
-## Themes
+## Themes {/* #themes */}
 
-### Activity icon colors
+### Activity icon colors {/* #activity-icon-colors */}
 
 <Since version="5.0" issueNumber="MDL-83725" />
 
@@ -149,7 +149,7 @@ $activity-icon-interactivecontent-bg: #c70827;
 
 :::
 
-### Bootstrap 5
+### Bootstrap 5 {/* #bootstrap-5 */}
 
 <Since version="5.0" issueNumber="MDL-75669" />
 
@@ -159,7 +159,7 @@ As part of this transition, we have implemented a backwards-compatibility layer 
 For more details on the upgrade process and how to utilize the compatibility layer, please visit [Bootstrap 5 migration](./guides/bs5migration/index.md).
 This will help you adapt your projects to the latest Bootstrap version.
 
-## Unit Tests
+## Unit Tests {/* #unit-tests */}
 
 <Since version="5.0" issueNumber="MDL-83468" />
 

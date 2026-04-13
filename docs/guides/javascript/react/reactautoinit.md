@@ -12,7 +12,7 @@ import { Since } from '@site/src/components';
 
 This page explains the combined developer contract between `mustache_react_helper` and `react_autoinit`, including how template JSON is converted into markup, how modules are resolved, and how components mount and unmount.
 
-## Purpose
+## Purpose {/* #purpose */}
 
 Use this integration when UI is produced by Mustache or fragment HTML and React components should mount automatically without manual bootstrap code.
 
@@ -21,14 +21,14 @@ Source files:
 - `public/lib/classes/output/mustache_react_helper.php`
 - `public/lib/js/esm/src/react_autoinit.ts`
 
-## End-to-end flow
+## End-to-end flow {/* #end-to-end-flow */}
 
 1. You write a `{{#react}} ... {{/react}}` block in a Mustache template.
 2. `mustache_react_helper` converts the JSON config into a `<div>` with `data-react-component` and `data-react-props` attributes.
 3. `react_autoinit` finds the element, imports the module via the browser import map, and mounts it.
 4. If the region is replaced later (AJAX/fragments), components are mounted or unmounted automatically.
 
-## Mustache helper (`{{#react}}`)
+## Mustache helper (`{{#react}}`) {/* #mustache-helper-react */}
 
 The `{{#react}}` block accepts a JSON object followed by optional fallback HTML content:
 
@@ -47,7 +47,7 @@ The `{{#react}}` block accepts a JSON object followed by optional fallback HTML 
 {{/react}}
 ```
 
-### JSON keys
+### JSON keys {/* #json-keys */}
 
 | Key | Required | Maps to |
 |-----|----------|---------|
@@ -55,7 +55,7 @@ The `{{#react}}` block accepts a JSON object followed by optional fallback HTML 
 | `props` | No | `data-react-props` attribute (JSON-encoded) |
 | Any other key | No | Regular HTML attribute (`id`, `class`, `aria-*`, etc.) |
 
-### Mustache tags inside the block
+### Mustache tags inside the block {/* #mustache-tags-inside-the-block */}
 
 The entire block is passed through the Mustache renderer before the JSON is parsed. This means any Mustache tag — including `{{#str}}`, `{{#quote}}`, template variables, and other helpers — can appear inside the JSON values:
 
@@ -74,7 +74,7 @@ The entire block is passed through the Mustache renderer before the JSON is pars
 
 The rendered output is a plain string before `mustache_react_helper` attempts JSON parsing, so any valid Mustache syntax is supported.
 
-### Parsing behaviour
+### Parsing behaviour {/* #parsing-behaviour */}
 
 - Mustache variables inside the block are rendered before the JSON is parsed.
 - Trailing commas in the JSON object are stripped automatically.
@@ -84,9 +84,9 @@ The rendered output is a plain string before `mustache_react_helper` attempts JS
 
 Boolean attribute values: if a key's value is `true`, the attribute name is emitted without a value. If `false`, the attribute is omitted.
 
-## The DOM contract
+## The DOM contract {/* #the-dom-contract */}
 
-### `data-react-component`
+### `data-react-component` {/* #data-react-component */}
 
 The component specifier must be a fully-qualified ESM import specifier in the form:
 
@@ -101,7 +101,7 @@ Examples:
 <div data-react-component="@moodle/lms/core_calendar/event_chip"></div>
 ```
 
-### `data-react-props`
+### `data-react-props` {/* #data-react-props */}
 
 An optional JSON object passed as the props to the React component:
 
@@ -114,7 +114,7 @@ An optional JSON object passed as the props to the React component:
 
 If the value is not valid JSON, `react_autoinit` logs an error and falls back to `{}`.
 
-## How module resolution works
+## How module resolution works {/* #how-module-resolution-works */}
 
 The specifier in `data-react-component` is passed directly to a dynamic `import()` call. The browser resolves it through the Moodle import map, which maps `@moodle/lms/<component>/<path>` to the built JS file under the component's `js/esm/build/` directory.
 
@@ -122,7 +122,7 @@ For example, `@moodle/lms/mod_book/viewer` resolves to `mod/book/js/esm/build/vi
 
 If the import fails, mounting is skipped and an error is logged to the console.
 
-## Export contract
+## Export contract {/* #export-contract */}
 
 `react_autoinit` expects a **default-exported React function component**:
 
@@ -144,9 +144,9 @@ export default function Viewer({title = 'Book', chapter = 'Chapter 1'}: Props) {
 
 The component is mounted with `react-dom/client` `createRoot`. If `module.default` is not found, `react_autoinit` logs a warning and skips mounting.
 
-## Lifecycle internals
+## Lifecycle internals {/* #lifecycle-internals */}
 
-### Initial run
+### Initial run {/* #initial-run */}
 
 `react_autoinit` calls `init()` automatically when the bundle loads.
 
@@ -157,15 +157,15 @@ Sequence:
 3. Mount each one.
 4. Install a single global `MutationObserver`.
 
-### Mount guard
+### Mount guard {/* #mount-guard */}
 
 Each successfully mounted element receives `dataset.reactMounted = "1"`. This prevents duplicate mounting when the same region is rescanned.
 
-### Unmount tracking
+### Unmount tracking {/* #unmount-tracking */}
 
 The cleanup function returned by `createRoot().unmount` is stored in a `WeakMap<Element, () => void>`. When the element is removed from the DOM, the cleanup function is called automatically.
 
-## Dynamic content (AJAX and fragments)
+## Dynamic content (AJAX and fragments) {/* #dynamic-content-ajax-and-fragments */}
 
 A `MutationObserver` watches `document.documentElement` with `childList: true` and `subtree: true`.
 
@@ -181,7 +181,7 @@ When content is removed:
 
 This means React components inside AJAX-loaded fragments or dynamic regions are handled automatically without any additional initializer call.
 
-## Building components
+## Building components {/* #building-components */}
 
 Run the Grunt `react` task from the Moodle root:
 
@@ -198,7 +198,7 @@ grunt react:watch
 
 The build tool discovers all `js/esm/src/**/*.{ts,tsx}` files across core and plugins automatically. No registration is required.
 
-## Debugging checklist
+## Debugging checklist {/* #debugging-checklist */}
 
 If a component does not render:
 
@@ -212,7 +212,7 @@ If a component mounts multiple times:
 1. Ensure the container element is not recreated on every re-render by the surrounding template.
 2. Do not call `createRoot` manually on an element already managed by `react_autoinit`.
 
-## See also
+## See also {/* #see-also */}
 
 - [Mustache templates](../../templates)
 - [JavaScript modules](../modules)

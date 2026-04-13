@@ -9,7 +9,7 @@ documentationDraft: true
 
 Advanced grading was introduced in Moodle 2.2 for grading of assignments. It is intended to be used for grading of other types of activities in the later versions.
 
-## Glossary
+## Glossary {/* #glossary */}
 
 In advanced grading we operate with three main entities:
 
@@ -17,23 +17,23 @@ In advanced grading we operate with three main entities:
 - a grading form definition; and
 - a grading form instance.
 
-### Grading area
+### Grading area {/* #grading-area */}
 
 The grading area is basically the area that can be graded, for example, a submission in an assignment module. Each grading area may have several grading definitions but only one for each grading method. In an assignment's edit form (or its Advanced grading page) the teacher may set one of the advanced grading methods as current. The class called **`grading_manager`** is responsible for grading method operations in the specified area.
 
-### Grading form definition
+### Grading form definition {/* #grading-form-definition */}
 
 Grading form definitions are the set of rules defining how the grading is performed. For example, in rubrics this is the set of criteria and levels and their display options. The basic information about definition is stored in the DB table grading_definitions. A separate entry is created for each grading area (that is for each module). Users with permission `moodle/grade:managegradingforms` are able to edit the definitions and mark them as "Ready".
 
-### Grading form instance
+### Grading form instance {/* #grading-form-instance */}
 
 A grading form instance is created for each evaluation of a submission, using advanced grading. One instance (usually the latest) has the status INSTANCE_STATUS_ACTIVE. Sometimes it may be the case that a teacher wants to change the definition after some students have already been graded. In this case their instances change status to `INSTANCE_STATUS_NEEDUPDATE`. The grade pushed to the gradebook remains unchanged but students will not see the grade in advanced grading format until teacher updates them. Plugins are also welcome to use these status levels.
 
-## Functions
+## Functions {/* #functions */}
 
-## Examples
+## Examples {/* #examples */}
 
-### Using advanced grading in grade-able modules
+### Using advanced grading in grade-able modules {/* #using-advanced-grading-in-grade-able-modules */}
 
 The following example is drawn from **/mod/assignment/lib.php**.
 

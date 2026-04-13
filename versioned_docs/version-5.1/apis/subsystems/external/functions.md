@@ -53,7 +53,7 @@ Please note that deprecation notices will be added to this pathway from Moodle 4
 
 :::
 
-### An example definition
+### An example definition {/* #an-example-definition */}
 
 ```php title="local/groupmanager/classes/external/create_groups.php"
 <?php
@@ -131,7 +131,7 @@ Available parameter types are defined in `lib/moodlelib.php` and are used by the
 
 :::
 
-## See also
+## See also {/* #see-also */}
 
 - [Core APIs](../../../apis.md)
 - [Web services API](./writing-a-service.md)

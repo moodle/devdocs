@@ -12,11 +12,11 @@ This should not be confused with the [completion API](../activitycompletion/inde
 
 :::
 
-## Files
+## Files {/* #files */}
 
 The main file containing all key functions is located at `lib/conditionlib.php`..
 
-## Functions and Examples
+## Functions and Examples {/* #functions-and-examples */}
 
 The class `condition_info` defined in `lib/conditionlib.php` is the main conditional API in Moodle. Following are some important methods of the above mentioned class.
 
@@ -38,7 +38,7 @@ The basic functionality of these methods can be classified as:-
 1. Adding/Updating conditional clauses to activities
 1. Deleting conditions attached to activities
 
-### Fetching information related to conditions
+### Fetching information related to conditions {/* #fetching-information-related-to-conditions */}
 
 The following functions are normally used to fetch information regarding conditions associated with activities:
 
@@ -49,7 +49,7 @@ is_available($information, $grabthelot = false, $userid = 0, $modinfo = null);
 show_availability();
 ```
 
-#### get_full_course_module()
+#### get_full_course_module() {/* #get_full_course_module */}
 
 This method can fetches and returns all necessary information as a course module object which are required to determine the availability conditions.
 
@@ -61,7 +61,7 @@ $test = new condition_info($cm, CONDITION_MISSING_EVERYTHING);
 $fullcm = $test->get_full_course_module();
 ```
 
-#### get_full_information()
+#### get_full_information() {/* #get_full_information */}
 
 This function returns a string which describes the various conditions in place for the activity in the given context.Some possible outputs can be:-
 
@@ -80,7 +80,7 @@ $ci = new condition_info($mod);
 $fullinfo = $ci->get_full_information();
 ```
 
-#### is_available()
+#### is_available() {/* #is_available */}
 
 This function is used to check if a given course module is currently available or not. A thing worth noting is that this doesn't take "visibility settings" and `viewhiddenactivities` capability into account. That is these settings should be properly checked after the result of is_available(), before dumping any data to the user.
 
@@ -91,7 +91,7 @@ $ci = new condition_info((object) ['id' => $cmid], CONDITION_MISSING_EVERYTHING)
 $bool = $ci->is_available($text, false, 0);
 ```
 
-#### show_availability()
+#### show_availability() {/* #show_availability */}
 
 This function is used to check if information regarding availability of the current module should be shown to the user or not.
 
@@ -102,7 +102,7 @@ $ci = new condition_info((object) ['id' => $cmid], CONDITION_MISSING_EVERYTHING)
 $bool = $ci->show_availability();
 ```
 
-### Adding/Updating conditional clauses to activities
+### Adding/Updating conditional clauses to activities {/* #addingupdating-conditional-clauses-to-activities */}
 
 ```php
 fill_availability_conditions($cm);
@@ -111,7 +111,7 @@ add_grade_condition($gradeitemid, $min, $max, $updateinmemory = false);
 update_cm_from_form($cm, $fromform, $wipefirst = true)
 ```
 
-#### fill_availability_conditions()
+#### fill_availability_conditions() {/* #fill_availability_conditions */}
 
 This function adds any extra availability conditions to given course module object.
 
@@ -139,7 +139,7 @@ if ($sections = $DB->get_records("course_sections", ["course" => $courseid], "se
 }
 ```
 
-#### add_completion_condition()
+#### add_completion_condition() {/* #add_completion_condition */}
 
 In Moodle availability condition of a Module or activity can depend on another activity. For example activity B will not be unlocked until activity A is successfully completed. To add such inter-dependent conditions, this function is used.
 
@@ -150,7 +150,7 @@ $test1 = new condition_info((object) ['id' => $cmid], CONDITION_MISSING_EVERYTHI
 $test1->add_completion_condition(13, 3);
 ```
 
-#### add_grade_condition()
+#### add_grade_condition() {/* #add_grade_condition */}
 
 This function is used to add a grade related restriction to an activity based on the grade secured in another activity. In the following example a minimum grade of 0.4 is required on gradeitem 666 to unlock the current activity in context.
 
@@ -161,7 +161,7 @@ $test1 = new condition_info((object) ['id' => $cmid], CONDITION_MISSING_EVERYTHI
 $test1->add_grade_condition(666, 0.4, null, true);
 ```
 
-#### update_cm_from_form()
+#### update_cm_from_form() {/* #update_cm_from_form */}
 
 This function is used to update availability conditions from a user submitted form.
 
@@ -197,7 +197,7 @@ if (!empty($fromform->update)) {
 }
 ```
 
-### Deleting conditions attached to activities
+### Deleting conditions attached to activities {/* #deleting-conditions-attached-to-activities */}
 
 we have a simple function wipe_conditions() that can erase all conditions associated with the current activity.
 consider an example:-
@@ -207,12 +207,12 @@ $ci = new condition_info($cm, CONDITION_MISSING_EVERYTHING, false);
 $ci->wipe_conditions();
 ```
 
-## See Also
+## See Also {/* #see-also */}
 
 - [Conditional activities Adding module support](https://docs.moodle.org/dev/Conditional_activities_Adding_module_support)
 - [Conditional activities](https://docs.moodle.org/dev/Conditional_activities) - original specification for this feature.
 
-### User documentation
+### User documentation {/* #user-documentation */}
 
 - [How to make a new availability condition plugin](../../plugintypes/availability/index.md).
 - [Conditional Activities](https://docs.moodle.org/en/Conditional_activities)

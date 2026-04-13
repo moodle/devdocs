@@ -23,20 +23,20 @@ If you want to contribute to Moodle, you can start looking at the following:
 
 You'll find them in the [How do I contribute to Moodle?](https://moodle.com/faq/how-do-i-contribute-to-moodle/) page.
 
-## Where to begin
+## Where to begin {/* #where-to-begin */}
 
 - Start by [searching moodle.org](https://moodle.org/public/search/) to check whether someone else has had the same idea. The Moodle community is very large, so it's quite likely you'll find someone else with the same idea as you ;-)
 - Join an existing discussion about your idea, or start a new discussion in an [appropriate forum on moodle.org](https://moodle.org/course/view.php?id=5).
 - Assuming others agree with your idea, [create a new issue in the Moodle tracker](https://moodle.atlassian.net/secure/CreateIssue!default.jspa), selecting 'New feature' or 'Improvement' as the issue type. (You'll need to create a tracker account to be able to create a new issue.) Include a link to the discussion thread in the tracker issue.
 - Post the tracker issue number in the discussion thread, to encourage others to watch, vote, comment and/or come up with a patch for it.
 
-## What happens next?
+## What happens next? {/* #what-happens-next */}
 
 - The [list of most voted-for new features](https://moodle.atlassian.net/secure/IssueNavigator.jspa?mode=hide&requestId=10512) is regularly reviewed by Moodle HQ and other core developers.
 - Promising ideas are added to the [Roadmap](roadmap.md) (depending on funding availability).
 - Small feature ideas and improvements may be added to core by the component maintainer.
 
-## How to maximise the chance of your idea being implemented
+## How to maximise the chance of your idea being implemented {/* #how-to-maximise-the-chance-of-your-idea-being-implemented */}
 
 Ideas with lots of votes are more likely to be implemented, however votes are not the only deciding factor.
 
@@ -47,7 +47,7 @@ Ideas with lots of votes are more likely to be implemented, however votes are no
 
 :::
 
-### See also
+### See also {/* #see-also */}
 
 - [Releases](../releases.md) - versions of Moodle that have already been released
 - [Process](../development/process.md)

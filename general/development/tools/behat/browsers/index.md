@@ -9,7 +9,7 @@ tags:
 ---
 This page complements [Behat](../index.md) providing info about how to run the acceptance tests suite in different browsers.
 
-## Drivers
+## Drivers {/* #drivers */}
 
 There are [Selenium drivers](http://docs.seleniumhq.org/projects/webdriver/) to run acceptance tests in different browsers:
 
@@ -23,7 +23,7 @@ There are [Selenium drivers](http://docs.seleniumhq.org/projects/webdriver/) to 
 
 Each driver should be downloaded and Selenium .jar should be started specifying the path to the driver; depending on the driver there could be other requirements.
 
-### PhantomJS
+### PhantomJS {/* #phantomjs */}
 
 PhantomJS is different as it is a headless browser as it is quite faster than other drivers, it doesn't need a GUI to run and can execute JS, it doesn't even need to be used through Selenium (you can do it though, but it's not officially supported) and you can do it
 
@@ -36,7 +36,7 @@ PhantomJS is different as it is a headless browser as it is quite faster than ot
 
 Note that 4444 is the default port used by Selenium, so you must specify another one if you want to run them together and specify the port in `$CFG->behat_config`.
 
-### Examples
+### Examples {/* #examples */}
 
 ```console title="Selenium in Linux (firefox by default + chrome)"
    java -jar /opt/selenium-server-standalone.jar -Dwebdriver.chrome.driver=/opt/chromedriver
@@ -54,7 +54,7 @@ Note that 4444 is the default port used by Selenium, so you must specify another
   /path/to/your/phantomjs/bin/phantomjs --webdriver=4444
 ```
 
-## Compatibility
+## Compatibility {/* #compatibility */}
 
 Not all the drivers can execute all of Moodle's step definitions; we tagged the step definitions that are using features not supported by all browsers and also limitations that some browsers have; refer to the following table to know which browsers can run which tags:
 
@@ -72,7 +72,7 @@ Note that, to skip some tag, you must prepend it with the <tt>~</tt> (logical NO
 - Run all tests but `@_alert</tt> ones: <tt>--tags '~@_alert'`
 - Run all chrome tests but `@skip_chrome_zerosize` ones: `--tags '@javascript&&~@skip_chrome_zerosize'`
 
-## Working combinations of OS+Browser+selenium
+## Working combinations of OS+Browser+selenium {/* #working-combinations-of-osbrowserselenium */}
 
 As OS, Browsers and Selenium keeps updating, some combination of OS+Browser+Selenium will not work on specific moodle version.
 

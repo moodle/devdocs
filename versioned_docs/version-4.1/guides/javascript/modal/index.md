@@ -16,7 +16,7 @@ Modals will fire events for common actions that occur within the modal for other
 
 Moodle ships with several standard modal types for you to re-use including a simple cancel modal, and a save/cancel modal.
 
-## Creating a basic modal
+## Creating a basic modal {/* #creating-a-basic-modal */}
 
 The Modal Factory can be used to instantiate a new Modal. The factory provides a `create` function, accepting some configuration which is used to create the modal instance, and an optional _trigger element_. The `create` function returns a Promise that is resolved with the created modal.
 
@@ -63,7 +63,7 @@ export const init = async () => {
 };
 ```
 
-### Using the 'trigger'
+### Using the 'trigger' {/* #using-the-trigger */}
 
 Moodle Modals created using the Modal Factory support an optional _trigger_ element. Whilst this is available, it is no longer recommended and support for it will likely be removed in Moodle 4.3.
 
@@ -83,7 +83,7 @@ export const init = async () => {
 };
 ```
 
-## Instantiating modal types
+## Instantiating modal types {/* #instantiating-modal-types */}
 
 A number of commonly used modals are available as standard, these include:
 
@@ -130,7 +130,7 @@ export const init = async () => {
 };
 ```
 
-## Creating a custom modal type
+## Creating a custom modal type {/* #creating-a-custom-modal-type */}
 
 In some situations it is desirable to write a brand new modal.
 

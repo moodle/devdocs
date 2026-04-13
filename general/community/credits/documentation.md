@@ -22,6 +22,6 @@ Iñaki Arenaza, Dominique Bauer, Luca Bösch, Éric Bugnet, Abel Camacho, Chris 
 
 `List updated 11:47, 17 May 2022 (UTC)`
 
-## See also
+## See also {/* #see-also */}
 
 - [Current Documentation writers in Moodle in English](https://moodle.org/user/index.php?id=5&group=178)

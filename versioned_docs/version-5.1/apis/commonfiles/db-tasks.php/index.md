@@ -28,9 +28,9 @@ $tasks = [
 
 Each task configuration entry has a number of possible properties, described below.
 
-## Task configuration entries
+## Task configuration entries {/* #task-configuration-entries */}
 
-### Classname
+### Classname {/* #classname */}
 
 <LanguageProperty
     required
@@ -48,7 +48,7 @@ $tasks = [
 ]
 ```
 
-### Blocking
+### Blocking {/* #blocking */}
 
 <LanguageProperty
     types={["integer"]}
@@ -72,7 +72,7 @@ $tasks = [
 ];
 ```
 
-### Date and time fields
+### Date and time fields {/* #date-and-time-fields */}
 
 <LanguageProperty
     types={["string"]}
@@ -117,7 +117,7 @@ If either field is set to `*` then use the other field, otherwise the soonest va
 
 :::
 
-#### Examples
+#### Examples {/* #examples */}
 
 ```php title="Run at a fixed time each day, randomised during installation of the task"
 $tasks = [
@@ -147,7 +147,7 @@ $tasks = [
 ];
 ```
 
-### Disabled tasks
+### Disabled tasks {/* #disabled-tasks */}
 
 You can create a task that defaults to disabled by setting the field **disabled** to 1. Unless the administrator manually enables your task, it will not run.
 

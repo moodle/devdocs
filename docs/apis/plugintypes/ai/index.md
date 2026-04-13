@@ -30,7 +30,7 @@ sequenceDiagram
     Placement-->>User: Action completed
 ```
 
-### Provider plugins
+### Provider plugins {/* #provider-plugins */}
 
 Providers are the interface between the [AI subsystem](/apis/subsystems/ai/index.md) and external AI.
 Their focus is on formatting actions, passing them to the external AI system, and providing the response.
@@ -43,7 +43,7 @@ Currently, Moodle supports the following AI Providers in core:
 See the [Providers](/apis/plugintypes/ai/provider.md) documentation for more information
 on developing Provider plugins.
 
-### Placement plugins
+### Placement plugins {/* #placement-plugins */}
 
 Placements provide a consistent UX and UI for users when they use AI backed functionality (e.g. generating an image).
 

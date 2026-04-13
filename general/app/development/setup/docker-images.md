@@ -11,7 +11,7 @@ tags:
 
 In order to run them, you should have [Docker](https://www.docker.com/) installed and we recommend that you have some basic understanding on how it works.
 
-## Running the images
+## Running the images {/* #running-the-images */}
 
 You can run the latest stable version of the application using the following command:
 
@@ -33,7 +33,7 @@ You can also use the development version using the `next` tag:
 docker run --rm -p 8100:443 moodlehq/moodleapp:next
 ```
 
-## Using a specific environment
+## Using a specific environment {/* #using-a-specific-environment */}
 
 By default, the application will be launched on a __production__ environment. If you only want to use the application, that will suffice. But if you are trying to debug or run some tests it may not work.
 
@@ -54,7 +54,7 @@ docker run --rm -p 8100:443 moodlehq/moodleapp:next-test
 docker run --rm -p 8100:443 moodlehq/moodleapp:next-dev
 ```
 
-## Using old versions
+## Using old versions {/* #using-old-versions */}
 
 Before version 4.4.0, images didn't run on a secure context, so you'd need to access them on `http://localhost:8100` and expose port `80` instead:
 

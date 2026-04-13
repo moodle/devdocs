@@ -7,7 +7,7 @@ tags:
 
 <Since versions={["3.7"]} issueNumber="MDL-57898" />
 
-## Custom fields API overview
+## Custom fields API overview {/* #custom-fields-api-overview */}
 
 Custom fields API allows to configure custom fields that can be added to various contexts. Each **component** (or plugin) that wants to use custom fields can define several **areas**.
 
@@ -23,7 +23,7 @@ Course custom fields are the same throughout the system and they don't use `item
 
 New plugin type `customfield` was also added as part of the Custom fields API. Additional types of custom fields can be installed into `/customfield/field/`.
 
-## How to use custom fields
+## How to use custom fields {/* #how-to-use-custom-fields */}
 
 Component/plugin that uses custom fields must define a **handler class** for each area and a **configuration page**. Handler class must be called `<PLUGINNAME>/customfield/<AREA>_handler` and be placed in autoloaded location  `<PLUGINDIR>/classes/customfield/<AREA>_handler.php`. This class must extend **\core_customfield\handler** . Configuration page may be located anywhere. For course custom fields configuration the admin settings page is used [/course/customfield.php](https://github.com/moodle/moodle/blob/main/course/customfield.php). If the area uses `itemid` this page should take `itemid` as a parameter.
 
@@ -50,7 +50,7 @@ handler::config_form_definition() // For example, the course_handler adds "locke
 handler::setup_edit_page() // Sets page context/url/breadcrumb for the customfield/edit.php page, in some cases it must be overridden.
 ```
 
-### Add custom fields to the instance edit form
+### Add custom fields to the instance edit form {/* #add-custom-fields-to-the-instance-edit-form */}
 
 Custom fields are added to the **instances**. For example, course custom fields are added to the courses, so `courseid` is the `instanceid`. In the example of [`mod_surveybuilder`](https://github.com/marinaglancy/moodle-mod_surveybuilder) we use `$USER->id` as the `instanceid` (which means that in this example one user can fill the survey in one module only once). In each case of using custom fields there should be a clear concept of an **instance**. `Instanceid` is required to save the data but it may be empty when we render the instance edit form (for example, the course is not yet created).
 
@@ -75,7 +75,7 @@ $handler->delete_instance()
 $handler->delete_all()
 ```
 
-### Retrieving instances custom fields
+### Retrieving instances custom fields {/* #retrieving-instances-custom-fields */}
 
 How custom fields are used depends entirely on the situation.
 
@@ -122,7 +122,7 @@ function get_course_metadata($courseid) {
 }
 ```
 
-### Privacy API
+### Privacy API {/* #privacy-api */}
 
 Custom fields API does not export or delete any data because it does not know how custom fields are used, what data is considered user data and if it is considered private or shared data.
 
@@ -151,7 +151,7 @@ customfield_provider::delete_customfields_configuration_for_context()
 Export of configuration was not yet implemented at the time of writing this because of difficult implementation and very unclear use case. If it is needed please feel free to contribute to Moodle.
 :::
 
-## Custom fields plugins
+## Custom fields plugins {/* #custom-fields-plugins */}
 
 Custom fields plugin type was added to allow implement different types of custom fields (somehow similar to user profile fields plugin type). Plugins are located in `/customfield/field/` and the full frankenstyle name of the plugins start with `customfield_`.
 
@@ -166,7 +166,7 @@ namespace customfield_<PLUGINNAME>\privacy;
 class provider implements \core_privacy\local\metadata\null_provider, \core_customfield\privacy\customfield_provider;
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - [MDL-64626](https://moodle.atlassian.net/browse/MDL-64626) - Custom fields API (Moodle 3.7+) implementations and improvements
 - [MDL-57898](https://moodle.atlassian.net/browse/MDL-57898) - Add custom field types plugin and course custom fields functionality

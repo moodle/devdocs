@@ -23,7 +23,7 @@ Parameters also support optional features including:
 - allowing a field to be deprecated via the boolean `deprected` property; and
 - the specification of examples by specifying an array in the `examples` property.
 
-## Path parameters
+## Path parameters {/* #path-parameters */}
 
 When defining the path in a route, it is possible to specify parts of the URI as variables using placeholders. These are known as path parameters. Each path parameter must be appropriately described in the `pathtypes` array property of the route attribute using instances of `\core\router\schema\parameters\path_parameter`.
 
@@ -56,7 +56,7 @@ class example {
 
 When a user accesses the URI the name will be validated using the `\core\param::ALPHANUM` type specified in the `path_parameter` constructor, and provided to the method.
 
-### Retrieving parameter values
+### Retrieving parameter values {/* #retrieving-parameter-values */}
 
 Path parameters can be retrieved from the request in two ways:
 
@@ -90,7 +90,7 @@ class example {
 }
 ```
 
-### Optional path parameters
+### Optional path parameters {/* #optional-path-parameters */}
 
 Path parameters can be made optional by wrapping them in `[]` braces in the path definition, for example:
 
@@ -133,7 +133,7 @@ public function get_user_information(
 
 :::
 
-#### Multiple optional parameters
+#### Multiple optional parameters {/* #multiple-optional-parameters */}
 
 In some cases it is necessary to capture multiple optional parameters. This can be achieved by adding them within the optional path braces, for example:
 
@@ -175,7 +175,7 @@ All parameters after the first optional parameter are considered to be optional.
 
 :::
 
-#### Default values
+#### Default values {/* #default-values */}
 
 The default value for an unspecified optional parameter is `null`, but an alternative default can be provided by defining the `default` property in the `path_parameter` constructor, for example:
 
@@ -198,7 +198,7 @@ Optional parameters cannot be set on a required parameter.
 
 :::
 
-## Query parameters
+## Query parameters {/* #query-parameters */}
 
 Query parameters are similar to path parameters in that they allow data to be passed in the URI, but instead of forming part of the _path_, they are specified after the path in the query section.
 
@@ -253,7 +253,7 @@ public function get_user_information(
 }
 ```
 
-### Optional query parameters
+### Optional query parameters {/* #optional-query-parameters */}
 
 Query parameters are optional by default, but can be made required by specifying the `required` flag.
 
@@ -265,7 +265,7 @@ new query_parameter(
 ),
 ```
 
-## Header values
+## Header values {/* #header-values */}
 
 In addition to path and query parameters, it is sometimes necessary to specify options as Request Headers. This is particularly common in web service requests. An example of such a request might be to determine whether Moodle Filters should be applied to text content.
 
@@ -284,7 +284,7 @@ Header parameters are defined in the route attribute in a similar way as to path
 )]
 ```
 
-### Retrieving parameter values
+### Retrieving parameter values {/* #retrieving-parameter-values-1 */}
 
 Header values may be fetched using the `getHeaders()` and `getHeaderLine()` methods in the `ServerRequest` object, for example:
 
@@ -300,7 +300,7 @@ public function example(
 }
 ```
 
-### Required and Optional header parameters
+### Required and Optional header parameters {/* #required-and-optional-header-parameters */}
 
 Headers can be made required or optional by setting the `required` flag as required, for example:
 
@@ -325,7 +325,7 @@ Headers can be made required or optional by setting the `required` flag as requi
 )]
 ```
 
-### Multiple headers
+### Multiple headers {/* #multiple-headers */}
 
 In some cases it is necessary to accept multiple header values. This can be configured using the `multiple` flag to the header object, for example:
 
@@ -352,9 +352,9 @@ public function example(
 }
 ```
 
-## Other features
+## Other features {/* #other-features */}
 
-### Reusable parameters
+### Reusable parameters {/* #reusable-parameters */}
 
 When writing endpoints it is common to reuse the same patterns frequently. This may be the same query, path, or header.
 
@@ -410,7 +410,7 @@ The primary benefit of usign this interface is to reduce the size of the generat
 
 :::
 
-### Mapped parameters
+### Mapped parameters {/* #mapped-parameters */}
 
 One very powerful feature of the Moodle Routing API is provision for 'mapped' parameters which allow a standard parameter of any type to be mapped to another value of some kind.
 
@@ -590,7 +590,7 @@ class path_course extends \core\router\schema\parameters\path_parameter implemen
 
 </details>
 
-### Examples
+### Examples {/* #examples */}
 
 When writing web services it is often desirable to give an example of the correct usage of that parameter. This can be achieved by specifying instances of the `\core\router\schema\example` to the `examples` property, for example:
 

@@ -21,7 +21,7 @@ class AddonModFooLinkHandler extends this.CoreContentLinksHandlerBase {}
 this.CoreContentLinksDelegate.registerHandler(new AddonModFooLinkHandler());
 ```
 
-## Using patterns
+## Using patterns {/* #using-patterns */}
 
 You'll most likely need to match only certain links. You can define a Regular Expression pattern to filter clicks:
 
@@ -37,7 +37,7 @@ class AddonModFooLinkHandler extends this.CoreContentLinksHandlerBase {
 }
 ```
 
-## Setting a priority
+## Setting a priority {/* #setting-a-priority */}
 
 Multiple link handlers may apply to a given link. You can define the order of precedence by setting the priority; the handler with the highest priority will be used.
 
@@ -55,7 +55,7 @@ class AddonModFooLinkHandler extends this.CoreContentLinksHandlerBase {
 }
 ```
 
-## Performing multiple actions
+## Performing multiple actions {/* #performing-multiple-actions */}
 
 Once a link has been matched, the handler's `getActions()` method determines what the link should do. This method has access to the URL and its parameters.
 
@@ -87,7 +87,7 @@ Once handlers have been matched for a link, the actions will be fetched for all 
 
 If your handler is matched with a link, but a condition assessed in the `getActions()` method determines that you want to skip it, you can invalidate it by setting its sites property to an empty array.
 
-## Complex example
+## Complex example {/* #complex-example */}
 
 This will match all URLs containing `/mod/foo/`, and force those with an id parameter that's not in the `supportedModFoos` array to open in the user's browser, rather than the app:
 

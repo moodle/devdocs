@@ -23,9 +23,9 @@ The explanation of each vulnerability is on a separate page, linked to in the li
 
 This page also summarises all the key guidelines.
 
-## Security of web applications
+## Security of web applications {/* #security-of-web-applications */}
 
-### Secure web app requirements
+### Secure web app requirements {/* #secure-web-app-requirements */}
 
 Some companies require the maximum level of security for web applications. You can often see similar general recommendations:
 
@@ -47,19 +47,19 @@ Some companies require the maximum level of security for web applications. You c
 
 :::
 
-### Balanced security
+### Balanced security {/* #balanced-security */}
 
 As you can see, many web applications today violate the security design rules. For example, web-based mail systems have to accept rich text messages with file attachments, mail messages often contain very sensitive information. In fact, the Web 2.0 idea goes directly against the security design rules, everybody is submitting content - only app designer/administrator should be adding trusted content.
 
 When designing web applications we have to find out what our users are supposed to be doing and then find some reasonable balance between features and security.
 
-## Moodle security design
+## Moodle security design {/* #moodle-security-design */}
 
 The security of web application depends on the intended use and features available for each type of user.
 
-### Types of users
+### Types of users {/* #types-of-users */}
 
-#### Administrators
+#### Administrators {/* #administrators */}
 
 Administrators have following privileges:
 
@@ -78,7 +78,7 @@ All administrators have to be fully trusted.
 
 :::
 
-#### Teachers
+#### Teachers {/* #teachers */}
 
 Teachers are usually creating course content, enrolling students and teaching. They usually need following privileges:
 
@@ -98,7 +98,7 @@ Technically it would be possible to create a system where teachers can not attac
 
 :::
 
-#### Students
+#### Students {/* #students */}
 
 Students are participating in courses, they are not trusted. Students need following privileges:
 
@@ -113,17 +113,17 @@ All student submitted text has to be sanitised before printing the text on any p
 
 :::
 
-#### Guests
+#### Guests {/* #guests */}
 
 For security reasons unregistered users can not be allowed to upload any files or submit any text that is stored in database. Guests could try to spam other users, exploit problems in HTML cleaning routines, abuse other vulnerabilities or try social engineering based attacks.
 
 Sites with enabled user sign-up via email have to take extra care in order to prevent spamming and other types of attacks.
 
-### Capability risks
+### Capability risks {/* #capability-risks */}
 
 Moodle is very flexible system, administrators may define multiple roles. Each role is a set of capabilities defined at system level, roles may be modified via overrides at lower context levels. Risks are part of description of each capability, administrators have to make sure only trusted users get potentially dangerous capabilities.
 
-## Common types of security vulnerability
+## Common types of security vulnerability {/* #common-types-of-security-vulnerability */}
 
 - [Unauthenticated access](./security/unauthenticated-access)
 - [Unauthorised access](./security/unauthorised-access)
@@ -141,24 +141,24 @@ Moodle is very flexible system, administrators may define multiple roles. Each r
 - [Buffer overruns and other platform weaknesses](./security/bufferoverruns)
 - [Social engineering](./security/socialengineering)
 
-## Summary of the guidelines
+## Summary of the guidelines {/* #summary-of-the-guidelines */}
 
-### Authenticate the user
+### Authenticate the user {/* #authenticate-the-user */}
 
 - With very few exceptions, every script should call [`require_login`](/docs/apis/subsystems/access#require_login) or [`require_course_login`](/docs/apis/subsystems/access#require_course_login) as near the start as possible.
 
-### Verify course and module access
+### Verify course and module access {/* #verify-course-and-module-access */}
 
 - All course areas have to be protected by `require_login` or `require_course_login` with correct `$course` parameter.
 - All module areas have to be protected by `require_login` or `require_course_login` with correct `$course` and `$cm` parameter
 
-### Check permissions
+### Check permissions {/* #check-permissions */}
 
 - Before allowing the user to see anything or do anything, call to [`has_capability`](/docs/apis/subsystems/access#has_capability) or [`require_capability`](/docs/apis/subsystems/access#require_capability).
 - Capabilities should be annotated with the appropriate **[risks](/docs/apis/subsystems/roles#risk-bitmask-in-capabilities)**.
 - If appropriate, restrict what people can see according to **groups**.
 
-### Don't trust any input from users
+### Don't trust any input from users {/* #dont-trust-any-input-from-users */}
 
 - Use **[moodleforms](/docs/apis/subsystems/form)** whenever possible, with an appropriate `setType` method call for each field.
 - Before performing actions, use `data_submitted() && confirm_sesskey()` to check sesskey and that you are handling a POST request.
@@ -169,7 +169,7 @@ Moodle is very flexible system, administrators may define multiple roles. Each r
 
 Similarly, clean data from other external resources like RSS feeds before use.
 
-### Clean and escape data before output
+### Clean and escape data before output {/* #clean-and-escape-data-before-output */}
 
 - Use `s` or `p` to output plain text content.
 - Use `format_string` to output content with minimal HTML like multi-lang spans (for example, course and activity names).
@@ -183,7 +183,7 @@ We recommend that you follow the [Output functions](/docs/apis/subsystems/output
 
 :::
 
-### Escape data before storing it in the database
+### Escape data before storing it in the database {/* #escape-data-before-storing-it-in-the-database */}
 
 - Use the [XMLDB](../../tools/xmldb.md) library. This takes care of most escaping issues for you.
 - When you must use custom SQL code, **use place-holders** to insert values into the queries.
@@ -191,17 +191,17 @@ We recommend that you follow the [Output functions](/docs/apis/subsystems/output
 - The `addslashes` method should no longer be use anywhere in Moodle 2.0 onwards.
 - Variables must be passed to database queries through bound parameters.
 
-### Escape data before using it in shell commands
+### Escape data before using it in shell commands {/* #escape-data-before-using-it-in-shell-commands */}
 
 - Avoid shell commands if at all possible.
   - Look to see if there is a PHP library instead.
 - If you can't avoid shell commands, use `escapeshellcmd` and `escapeshellarg`.
 
-### Log every request
+### Log every request {/* #log-every-request */}
 
 - Every script should log an [event](https://docs.moodle.org/dev/Events_API)
 
-### Other good practice
+### Other good practice {/* #other-good-practice */}
 
 ... that helps with security:
 
@@ -213,7 +213,7 @@ We recommend that you follow the [Output functions](/docs/apis/subsystems/output
 < > & &lt; &gt; &amp; ' \' 碁 \ \\
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - [Security issue process](../process#security-issues)
 - [Coding](../../policies.md)

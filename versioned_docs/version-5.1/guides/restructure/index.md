@@ -13,13 +13,13 @@ In the initial phase most code has been moved out of the directory root, and int
 
 For the most part this change has minimal impact on developers. Most existing tooling has already been updated to support the new locations of plugins, however some changes may be required.
 
-## Moodle reconfiguration
+## Moodle reconfiguration {/* #moodle-reconfiguration */}
 
 In almost all cases there is no need to reconfigure Moodle at all for this change. The existing `$CFG->wwwroot` should continue to behave as before, as should the `$CFG->dirroot`.
 
 A new read-only variable, `$CFG->root` has been introduced which points to the root of the Moodle installation.
 
-## Web server reconfiguration
+## Web server reconfiguration {/* #web-server-reconfiguration */}
 
 The purpose of this restructure is to move all web-accessible content into a new `public` directory, which in turn allows Moodle to have content which is _not_ web accessible. In the future this will be used to support installation of other software which should not be publicly available.
 
@@ -46,7 +46,7 @@ For production systems which only need to do deal with individually configured M
   </TabItem>
 </Tabs>
 
-### Developer configuration examples
+### Developer configuration examples {/* #developer-configuration-examples */}
 
 For developer systems it is reasonably common to switch between a wide variety of Moodle versions and configurations.
 

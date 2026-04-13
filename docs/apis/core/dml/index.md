@@ -12,9 +12,9 @@ This page describes the functions available to access data in the Moodle databas
 
 Where possible, tricks and examples will be documented here in order to make developers' lives a bit easier. Of course, feel free to clarify, complete and add more information to this documentation. It will be welcome, absolutely!
 
-## General concepts
+## General concepts {/* #general-concepts */}
 
-### DB object
+### DB object {/* #db-object */}
 
 - The data manipulation API is exposed via public methods of the <tt>$DB</tt> object.
 - Moodle core takes care of setting up the connection to the database according to values specified in the main config.php file.
@@ -40,7 +40,7 @@ function my_function_making_use_of_database() {
 }
 ```
 
-### Table prefix
+### Table prefix {/* #table-prefix */}
 
 - Most Moodle installations use a prefix for all the database tables, such as <tt>mdl_</tt>. This prefix is NOT to be used in the code itself.
 - All the `$table` parameters in the functions are meant to be the table name without prefixes:
@@ -55,7 +55,7 @@ $user = $DB->get_record('user', ['id' => '1']);
 $user = $DB->get_record_sql('SELECT COUNT(*) FROM {user} WHERE deleted = 1 OR suspended = 1;');
 ```
 
-### Conditions
+### Conditions {/* #conditions */}
 
 - All the `$conditions` parameters in the functions are arrays of `fieldname => fieldvalue` elements.
 - They all must be fulfilled - that is the logical <tt>AND</tt> is used to populate the actual <tt>WHERE</tt> statement
@@ -64,7 +64,7 @@ $user = $DB->get_record_sql('SELECT COUNT(*) FROM {user} WHERE deleted = 1 OR su
 $user = $DB->get_record('user', ['firstname'  => 'Martin', 'lastname'  => 'Dougiamas']);
 ```
 
-### Placeholders
+### Placeholders {/* #placeholders */}
 
 - All the `$params` parameters in the functions are arrays of values used to fill placeholders in SQL statements.
 - Placeholders help to avoid problems with SQL-injection and/or invalid quotes in SQL queries. They facilitate secure and cross-db compatible code.
@@ -91,7 +91,7 @@ $DB->get_record_sql(
 );
 ```
 
-### Strictness
+### Strictness {/* #strictness */}
 
 Some methods accept the <tt>$strictness</tt> parameter affecting the method behaviour. Supported modes are specified using the constants:
 
@@ -99,9 +99,9 @@ Some methods accept the <tt>$strictness</tt> parameter affecting the method beha
 - <tt>IGNORE_MISSING</tt> - In this mode, a missing record is not an error. False boolean is returned if the requested record is not found. If more records are found, a debugging message is displayed.
 - <tt>IGNORE_MULTIPLE</tt> - This is not a recommended mode. The function will silently ignore multiple records found and will return just the first one of them.
 
-## Getting a single record
+## Getting a single record {/* #getting-a-single-record */}
 
-### get_record
+### get_record {/* #get_record */}
 
 Return a single database record as an object where all the given conditions are met.
 
@@ -114,7 +114,7 @@ public function get_record(
 );
 ```
 
-### get_record_select
+### get_record_select {/* #get_record_select */}
 
 Return a single database record as an object where the given conditions are used in the WHERE clause.
 
@@ -128,7 +128,7 @@ public function get_record_select(
 );
 ```
 
-### get_record_sql
+### get_record_sql {/* #get_record_sql */}
 
 Return a single database record as an object using a custom SELECT query.
 
@@ -140,11 +140,11 @@ public function get_record_sql(
 );
 ```
 
-## Getting a hashed array of records
+## Getting a hashed array of records {/* #getting-a-hashed-array-of-records */}
 
 Each of the following methods return an array of objects. The array is indexed by the first column of the fields returned by the query. To assure consistency, it is a good practice to ensure that your query include an "id column" as the first field. When designing custom tables, make <tt>id</tt> their first column and primary key.
 
-### get_records
+### get_records {/* #get_records */}
 
 Return a list of records as an array of objects where all the given conditions are met.
 
@@ -159,7 +159,7 @@ public function get_records(
 );
 ```
 
-### get_records_select
+### get_records_select {/* #get_records_select */}
 
 Return a list of records as an array of objects where the given conditions are used in the WHERE clause.
 
@@ -177,7 +177,7 @@ public function get_records_select(
 
 The `$fields` parameter is a comma separated list of fields to return (optional, by default all fields are returned).
 
-### get_records_sql
+### get_records_sql {/* #get_records_sql */}
 
 Return a list of records as an array of objects using a custom SELECT query.
 
@@ -190,7 +190,7 @@ public function get_records_sql(
 );
 ```
 
-### get_records_list
+### get_records_list {/* #get_records_list */}
 
 Return a list of records as an array of objects where the given field matches one of the possible values.
 
@@ -206,9 +206,9 @@ public function get_records_list(
 )
 ```
 
-## Getting data as key/value pairs in an associative array
+## Getting data as key/value pairs in an associative array {/* #getting-data-as-keyvalue-pairs-in-an-associative-array */}
 
-### get_records_menu
+### get_records_menu {/* #get_records_menu */}
 
 Return the first two columns from a list of records as an associative array where all the given conditions are met.
 
@@ -223,7 +223,7 @@ public function get_records_menu(
 );
 ```
 
-### get_records_select_menu
+### get_records_select_menu {/* #get_records_select_menu */}
 
 Return the first two columns from a list of records as an associative array where the given conditions are used in the WHERE clause.
 
@@ -239,7 +239,7 @@ public function get_records_select_menu(
 );
 ```
 
-### get_records_sql_menu
+### get_records_sql_menu {/* #get_records_sql_menu */}
 
 Return the first two columns from a number of records as an associative array using a custom SELECT query.
 
@@ -252,9 +252,9 @@ public function get_records_sql_menu(
 );
 ```
 
-## Counting records that match the given criteria
+## Counting records that match the given criteria {/* #counting-records-that-match-the-given-criteria */}
 
-### count_records
+### count_records {/* #count_records */}
 
 Count the records in a table where all the given conditions are met.
 
@@ -265,7 +265,7 @@ public function count_records(
 );
 ```
 
-### count_records_select
+### count_records_select {/* #count_records_select */}
 
 Count the records in a table where the given conditions are used in the WHERE clause.
 
@@ -278,7 +278,7 @@ public function count_records_select(
 );
 ```
 
-### count_records_sql
+### count_records_sql {/* #count_records_sql */}
 
 Counting the records using a custom SELECT COUNT(...) query.
 
@@ -289,9 +289,9 @@ public function count_records_sql(
 );
 ```
 
-## Checking if a given record exists
+## Checking if a given record exists {/* #checking-if-a-given-record-exists */}
 
-### record_exists
+### record_exists {/* #record_exists */}
 
 Test whether a record exists in a table where all the given conditions are met.
 
@@ -302,7 +302,7 @@ public function record_exists(
 );
 ```
 
-### record_exists_select
+### record_exists_select {/* #record_exists_select */}
 
 Test whether any records exists in a table where the given conditions are used in the WHERE clause.
 
@@ -314,7 +314,7 @@ public function record_exists_select(
 );
 ```
 
-### record_exists_sql
+### record_exists_sql {/* #record_exists_sql */}
 
 Test whether the given SELECT query would return any record.
 
@@ -325,9 +325,9 @@ public function record_exists_sql(
 );
 ```
 
-## Getting a particular field value from one record
+## Getting a particular field value from one record {/* #getting-a-particular-field-value-from-one-record */}
 
-### get_field
+### get_field {/* #get_field */}
 
 Get a single field value from a table record where all the given conditions are met.
 
@@ -340,7 +340,7 @@ public function get_field(
 );
 ```
 
-### get_field_select
+### get_field_select {/* #get_field_select */}
 
 Get a single field value from a table record where the given conditions are used in the WHERE clause.
 
@@ -354,7 +354,7 @@ public function get_field_select(
 );
 ```
 
-### get_field_sql
+### get_field_sql {/* #get_field_sql */}
 
 Get a single field value (first field) using a custom SELECT query.
 
@@ -366,9 +366,9 @@ public function get_field_sql(
 );
 ```
 
-## Getting field values from multiple records
+## Getting field values from multiple records {/* #getting-field-values-from-multiple-records */}
 
-### get_fieldset
+### get_fieldset {/* #get_fieldset */}
 
 Return values of the given field from a table record as an array where all the given conditions are met.
 
@@ -380,7 +380,7 @@ public function get_fieldset(
 );
 ```
 
-### get_fieldset_select
+### get_fieldset_select {/* #get_fieldset_select */}
 
 Return values of the given field as an array where the given conditions are used in the WHERE clause.
 
@@ -393,7 +393,7 @@ public function get_fieldset_select(
 );
 ```
 
-### get_fieldset_sql
+### get_fieldset_sql {/* #get_fieldset_sql */}
 
 Return values of the first column as an array using a custom SELECT field FROM ... query.
 
@@ -404,9 +404,9 @@ public function get_fieldset_sql(
 );
 ```
 
-## Setting a field value
+## Setting a field value {/* #setting-a-field-value */}
 
-### set_field
+### set_field {/* #set_field */}
 
 Set a single field in every record where all the given conditions are met.
 
@@ -419,7 +419,7 @@ public function set_field(
 );
 ```
 
-### set_field_select
+### set_field_select {/* #set_field_select */}
 
 Set a single field in every table record where the given conditions are used in the WHERE clause.
 
@@ -433,9 +433,9 @@ public function set_field_select(
 );
 ```
 
-## Deleting records
+## Deleting records {/* #deleting-records */}
 
-### delete_records
+### delete_records {/* #delete_records */}
 
 Delete records from the table where all the given conditions are met.
 
@@ -446,7 +446,7 @@ public function delete_records(
 );
 ```
 
-### delete_records_select
+### delete_records_select {/* #delete_records_select */}
 
 Delete records from the table where the given conditions are used in the WHERE clause.
 
@@ -458,9 +458,9 @@ public function delete_records_select(
 );
 ```
 
-## Inserting records
+## Inserting records {/* #inserting-records */}
 
-### insert_record
+### insert_record {/* #insert_record */}
 
 Insert the given data object into the table and return the "id" of the newly created record.
 
@@ -473,7 +473,7 @@ public function insert_record(
 );
 ```
 
-### insert_records
+### insert_records {/* #insert_records */}
 
 Insert multiple records into the table as fast as possible. Records are inserted in the given order, but the operation is not atomic. Use transactions if necessary.
 
@@ -484,13 +484,13 @@ public function insert_records(
 );
 ```
 
-### insert_record_raw
+### insert_record_raw {/* #insert_record_raw */}
 
 For rare cases when you also need to specify the ID of the record to be inserted.
 
-## Updating records
+## Updating records {/* #updating-records */}
 
-### update_record
+### update_record {/* #update_record */}
 
 Update a record in the table. The data object must have the property "id" set.
 
@@ -502,9 +502,9 @@ public function update_record(
 );
 ```
 
-## Executing a custom query
+## Executing a custom query {/* #executing-a-custom-query */}
 
-### execute
+### execute {/* #execute */}
 
 - If you need to perform a complex update using arbitrary SQL, you can use the low level "execute" method. Only use this when no specialised method exists.
 
@@ -521,7 +521,7 @@ Do NOT use this to make changes in database structure, use the `database_manager
 
 :::
 
-## Using recordsets
+## Using recordsets {/* #using-recordsets */}
 
 If the number of records to be retrieved from DB is high, the 'get_records_xxx() functions above are far from optimal, because they load all the records into the memory via the returned array. Under those circumstances, it is highly recommended to use these `get_recordset_xxx()` functions instead. They return an iterator to iterate over all the found records and save a lot of memory.
 
@@ -545,7 +545,7 @@ if ($rs->valid()) {
 }
 ```
 
-### get_recordset
+### get_recordset {/* #get_recordset */}
 
 Return a list of records as a moodle_recordset where all the given conditions are met.
 
@@ -560,7 +560,7 @@ public function get_recordset(
 );
 ```
 
-### get_recordset_select
+### get_recordset_select {/* #get_recordset_select */}
 
 Return a list of records as a moodle_recordset where the given conditions are used in the WHERE clause.
 
@@ -576,7 +576,7 @@ public function get_recordset_select(
 );
 ```
 
-### get_recordset_sql
+### get_recordset_sql {/* #get_recordset_sql */}
 
 Return a list of records as a moodle_recordset using a custom SELECT query.
 
@@ -589,7 +589,7 @@ public function get_recordset_sql(
 );
 ```
 
-### get_recordset_list
+### get_recordset_list {/* #get_recordset_list */}
 
 Return a list of records as a moodle_recordset where the given field matches one of the possible values.
 
@@ -605,7 +605,7 @@ public function get_recordset_list(
 );
 ```
 
-## Delegated transactions
+## Delegated transactions {/* #delegated-transactions */}
 
 - Please note some databases do not support transactions (such as the MyISAM MySQL database engine), however all server administrators are strongly encouraged to migrate to databases that support transactions (such as the InnoDB MySQL database engine).
 - Previous versions supported only one level of transaction. Since Moodle 2.0, the DML layer emulates delegated transactions that allow nesting of transactions.
@@ -636,7 +636,7 @@ For more information see [DB layer 2.0 delegated transactions](https://docs.mood
 
 :::
 
-### Example
+### Example {/* #example */}
 
 ```php
 global $DB;
@@ -653,11 +653,11 @@ try {
 }
 ```
 
-## Cross-DB compatibility
+## Cross-DB compatibility {/* #cross-db-compatibility */}
 
 Moodle supports several SQL servers, including MySQL, MariaDB, PostgreSQL, MS-SQL and Oracle. These may have specific syntax in certain cases. In order to achieve cross-db compatibility of the code, the following functions must be used to generate the fragments of the query valid for the actual SQL server.
 
-### sql_bitand
+### sql_bitand {/* #sql_bitand */}
 
 Return the SQL text to be used in order to perform a bitwise AND operation between 2 integers.
 
@@ -668,7 +668,7 @@ public function sql_bitand(
 );
 ```
 
-### sql_bitnot
+### sql_bitnot {/* #sql_bitnot */}
 
 Return the SQL text to be used in order to perform a bitwise NOT operation on the given integer.
 
@@ -678,7 +678,7 @@ public function sql_bitnot(
 );
 ```
 
-### sql_bitor
+### sql_bitor {/* #sql_bitor */}
 
 Return the SQL text to be used in order to perform a bitwise OR operation between 2 integers.
 
@@ -689,7 +689,7 @@ public function sql_bitor(
 );
 ```
 
-### sql_bitxor
+### sql_bitxor {/* #sql_bitxor */}
 
 Return the SQL text to be used in order to perform a bitwise XOR operation between 2 integers.
 
@@ -700,7 +700,7 @@ public function sql_bitxor(
 );
 ```
 
-### sql_null_from_clause
+### sql_null_from_clause {/* #sql_null_from_clause */}
 
 Return an empty FROM clause required by some DBs in all SELECT statements.
 
@@ -708,7 +708,7 @@ Return an empty FROM clause required by some DBs in all SELECT statements.
 public function sql_null_from_clause()
 ```
 
-### sql_ceil
+### sql_ceil {/* #sql_ceil */}
 
 Return the correct CEIL expression applied to the given fieldname.
 
@@ -718,7 +718,7 @@ public function sql_ceil(
 );
 ```
 
-### sql_equal
+### sql_equal {/* #sql_equal */}
 
 <Since version="3.2" />
 
@@ -734,7 +734,7 @@ public function sql_equal(
 );
 ```
 
-### sql_like
+### sql_like {/* #sql_like */}
 
 Return the query fragment to perform the LIKE comparison.
 
@@ -761,7 +761,7 @@ $DB->get_records_sql(
 
 See below if you need to compare with a value submitted by the user.
 
-### sql_like_escape
+### sql_like_escape {/* #sql_like_escape */}
 
 Escape the value submitted by the user so that it can be used for partial comparison and the special characters like '_' or '%' behave as literal characters, not wildcards.
 
@@ -784,7 +784,7 @@ $DB->get_records_sql(
 );
 ```
 
-### sql_length
+### sql_length {/* #sql_length */}
 
 Return the query fragment to be used to calculate the length of the expression in characters.
 
@@ -794,7 +794,7 @@ public function sql_length(
 );
 ```
 
-### sql_modulo
+### sql_modulo {/* #sql_modulo */}
 
 Return the query fragment to be used to calculate the remainder after division.
 
@@ -805,7 +805,7 @@ public function sql_modulo(
 );
 ```
 
-### sql_position
+### sql_position {/* #sql_position */}
 
 Return the query fragment for searching a string for the location of a substring. If both needle and haystack use placeholders, you must use named placeholders.
 
@@ -816,7 +816,7 @@ public function sql_position(
 );
 ```
 
-### sql_substr
+### sql_substr {/* #sql_substr */}
 
 Return the query fragment for extracting a substring from the given expression.
 
@@ -828,7 +828,7 @@ public function sql_substr(
 );
 ```
 
-### sql_cast_char2int
+### sql_cast_char2int {/* #sql_cast_char2int */}
 
 Return the query fragment to cast a CHAR column to INTEGER
 
@@ -839,7 +839,7 @@ public function sql_cast_char2int(
 );
 ```
 
-### sql_cast_char2real
+### sql_cast_char2real {/* #sql_cast_char2real */}
 
 Return the query fragment to cast a CHAR column to REAL (float) number
 
@@ -850,7 +850,7 @@ public function sql_cast_char2real(
 );
 ```
 
-### sql_cast_to_char
+### sql_cast_to_char {/* #sql_cast_to_char */}
 
 <Since version="4.1" />
 
@@ -860,7 +860,7 @@ Return SQL for casting to char of given field/expression.
 public function sql_cast_to_char(string $field);
 ```
 
-### sql_compare_text
+### sql_compare_text {/* #sql_compare_text */}
 
 Return the query fragment to be used when comparing a TEXT (clob) column with a given string or a VARCHAR field (some RDBMs do not allow for direct comparison).
 
@@ -882,7 +882,7 @@ $todogroups = $DB->get_records_sql(
 );
 ```
 
-### sql_order_by_text
+### sql_order_by_text {/* #sql_order_by_text */}
 
 Return the query fragment to be used to get records ordered by a TEXT (clob) column. Note this affects the performance badly and should be avoided if possible.
 
@@ -893,7 +893,7 @@ public function sql_order_by_text(
 );
 ```
 
-### sql_order_by_null
+### sql_order_by_null {/* #sql_order_by_null */}
 
 <Since version="4.1" />
 
@@ -906,7 +906,7 @@ public function sql_order_by_null(
 );
 ```
 
-### sql_concat
+### sql_concat {/* #sql_concat */}
 
 Return the query fragment to concatenate all given parameters into one string.
 
@@ -934,7 +934,7 @@ public function sql_concat('requiredfield', "COALESCE(optionalfield, '')");
 
 </ValidExample>
 
-### sql_group_concat
+### sql_group_concat {/* #sql_group_concat */}
 
 <Since version="3.11" />
 
@@ -944,7 +944,7 @@ Return SQL for performing group concatenation on given field/expression.
 public function sql_group_concat(string $field, string $separator = ', ', string $sort = '')
 ```
 
-### sql_concat_join
+### sql_concat_join {/* #sql_concat_join */}
 
 Return the query fragment to concatenate all given elements into one string using the given separator.
 
@@ -955,7 +955,7 @@ public function sql_concat_join(
 );
 ```
 
-### sql_fullname
+### sql_fullname {/* #sql_fullname */}
 
 Return the query fragment to concatenate the given $firstname and $lastname
 
@@ -966,7 +966,7 @@ public function sql_fullname(
 );
 ```
 
-### sql_isempty
+### sql_isempty {/* #sql_isempty */}
 
 Return the query fragment to check if the field is empty
 
@@ -979,7 +979,7 @@ public function sql_isempty(
 );
 ```
 
-### sql_isnotempty
+### sql_isnotempty {/* #sql_isnotempty */}
 
 Return the query fragment to check if the field is not empty
 
@@ -992,7 +992,7 @@ public function sql_isnotempty(
 );
 ```
 
-### get_in_or_equal
+### get_in_or_equal {/* #get_in_or_equal */}
 
 Return the query fragment to check if a value is IN the given list of items (with a fallback to plain equal comparison if there is just one item)
 
@@ -1022,7 +1022,7 @@ An example using named params:
 $contextsql = "AND rc.contextid {$insql}";
 ```
 
-### sql_regex_supported
+### sql_regex_supported {/* #sql_regex_supported */}
 
 Does the current database driver support regex syntax when searching?
 
@@ -1030,7 +1030,7 @@ Does the current database driver support regex syntax when searching?
 public function sql_regex_supported()
 ```
 
-### sql_regex
+### sql_regex {/* #sql_regex */}
 
 Return the query fragment to perform a regex search.
 
@@ -1055,7 +1055,7 @@ if ($DB->sql_regex_supported()) {
 $pages = $DB->get_records_select('page', $select, $params, 'course', 'id, course, name');
 ```
 
-### sql_regex_get_word_beginning_boundary_marker
+### sql_regex_get_word_beginning_boundary_marker {/* #sql_regex_get_word_beginning_boundary_marker */}
 
 <Since versions={["3.11.11", "4.0.5", "4.1"]} issueNumber="MDL-74912" />
 
@@ -1067,7 +1067,7 @@ Defaults to `[[:<:]]`. On MySQL `v8.0.4+`, it returns `\\b`.
 public function sql_regex_get_word_beginning_boundary_marker()
 ```
 
-### sql_regex_get_word_end_boundary_marker
+### sql_regex_get_word_end_boundary_marker {/* #sql_regex_get_word_end_boundary_marker */}
 
 <Since versions={["3.11.11", "4.0.5", "4.1"]} issueNumber="MDL-74912" />
 
@@ -1079,7 +1079,7 @@ Defaults to `[[:>:]]`. On MySQL `v8.0.4+`, it returns `\\b`.
 public function sql_regex_get_word_end_boundary_marker()
 ```
 
-### sql_intersect
+### sql_intersect {/* #sql_intersect */}
 
 <Since version="2.8" />
 
@@ -1092,9 +1092,9 @@ public function sql_intersect(
 );
 ```
 
-## Debugging
+## Debugging {/* #debugging */}
 
-### set_debug
+### set_debug {/* #set_debug */}
 
 You can enable a debugging mode to make $DB output the SQL of every executed query, along with some timing information. This can be useful when debugging your code. Obviously, all such calls should be removed before code is submitted for integration.
 
@@ -1102,15 +1102,15 @@ You can enable a debugging mode to make $DB output the SQL of every executed que
 public function set_debug(bool $state)
 ```
 
-## Special cases
+## Special cases {/* #special-cases */}
 
-### get_course
+### get_course {/* #get_course */}
 
 From Moodle 2.5.1 onwards, you should use the `get_course` function instead of using `get_record('course', ...)` if you want to get a course record based on its ID, especially if there is a significant possibility that the course being retrieved is either the current course for the page, or the site course. Those two course records have probably already been loaded, and using this function will save a database query.
 
 Additionally, the code is shorter and easier to read.
 
-### get_courses
+### get_courses {/* #get_courses */}
 
 If you want to get all the current courses in your Moodle, use get_courses() without parameter:
 
@@ -1118,7 +1118,7 @@ If you want to get all the current courses in your Moodle, use get_courses() wit
 $courses = get_courses();
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - [SQL coding style](/general/development/policies/codingstyle/sql)
 - [Core APIs](../index.md)

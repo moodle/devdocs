@@ -8,7 +8,7 @@ Moodle has a huge community with users and contributors across the globe. We rec
 
 We also have a number of key forums, and chat rooms which we recommend you join.
 
-## Community forums
+## Community forums {/* #community-forums */}
 
 Moodle has a number of developer-related discussion forums hosted on Moodle.org, including:
 
@@ -17,7 +17,7 @@ Moodle has a number of developer-related discussion forums hosted on Moodle.org,
 - [Testing and QA](https://moodle.org/mod/forum/view.php?id=56) - this forum is a great resource for getting help with all things testing.
 - [Plugins traffic](https://moodle.org/mod/forum/view.php?id=8149) - this forum has occasional news and blog-like posts about Moodle plugin development.
 
-## Chats
+## Chats {/* #chats */}
 
 Chats are a great way to interact with other Moodle developers on a daily basis and can help you to learn about the [processes](../development/process.md), upcoming features, and to provide feedback. We encourage you to take part in the conversation as much as possible.
 
@@ -25,7 +25,7 @@ The Official Moodle chats are hosted on our Federated [Matrix](https://matrix.or
 
 We have several chat rooms within the [Moodle community](https://matrix.to/#/#moodle-community:moodle.com) space, including a [space dedicated to Moodle development](https://matrix.to/#/#development:moodle.com). The key development rooms are summarised here.
 
-### Developer chat
+### Developer chat {/* #developer-chat */}
 
 The Moodle Developer chat is the main channel for Moodle development.
 
@@ -37,21 +37,21 @@ This chat was previously hosted on Telegram. All message history has been migrat
 
 :::
 
-### Developer documentation chat
+### Developer documentation chat {/* #developer-documentation-chat */}
 
 The Moodle Developer documentation is a really important resource for developers and it also has its own dedicated chat room on matrix.
 
 Join us in the [#devdocs:moodle.com](https://matrix.to/#/#devdocs:moodle.com) room on Matrix.
 
-## Chat policies and etiquette
+## Chat policies and etiquette {/* #chat-policies-and-etiquette */}
 
 The Developer channel is a space to teach, learn, and socialise with other Moodle developers. We do have a a few policies to keep thing on topic and we ask that you follow them.
 
-### Don't use the chat to get support for using Moodle
+### Don't use the chat to get support for using Moodle {/* #dont-use-the-chat-to-get-support-for-using-moodle */}
 
 There are moodle.org forums for that, or talk to a Moodle Partner
 
-### Be nice
+### Be nice {/* #be-nice */}
 
 Help us maintain a great developer community:
 
@@ -59,22 +59,22 @@ Help us maintain a great developer community:
 - Give and accept the constructive feedback and eventually criticism, too.
 - Be honest, but not offensive.
 
-### Speak English in the chat
+### Speak English in the chat {/* #speak-english-in-the-chat */}
 
 Moodle is a global project with worldwide community and English - even on elementary level - works best for us.
 
-### Use your real name in the chat
+### Use your real name in the chat {/* #use-your-real-name-in-the-chat */}
 
 Keep it consistent with your moodle.org profile and Git commits.
 
-### Keep topics and discussions focused
+### Keep topics and discussions focused {/* #keep-topics-and-discussions-focused */}
 
 Everything you post in the chat, hits several hundreds of other people instantly. Let us not disturb each other.
 
-### Avoid funny animated gifs, memes and stickers
+### Avoid funny animated gifs, memes and stickers {/* #avoid-funny-animated-gifs-memes-and-stickers */}
 
 There are better places online for sharing them.
 
-### Advertising is generally not allowed
+### Advertising is generally not allowed {/* #advertising-is-generally-not-allowed */}
 
 The Moodle Developer chat is not an advertising space and we ask that you do not advertise there. Some exceptions may be made on a case-by-case basis. If in doubt, reach out to the room administrators before posting.

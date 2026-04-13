@@ -12,7 +12,7 @@ The Upgrade API is a core API which allows your plugin to manage features of its
 
 Correct use of this API allows Moodle to automatically create, and handle upgrades for, your database tables and other core features during an upgrade.
 
-## Key files
+## Key files {/* #key-files */}
 
 This process is controlled by three primary files within your plugin, and a number of additional optional files for optional features:
 
@@ -20,13 +20,13 @@ This process is controlled by three primary files within your plugin, and a numb
 - db/install.xml: This file describes the database tables that will be created during installation. It is only used during the initial installation of the plugin.
 - db/upgrade.php: This file is used during the upgrade process when upgrading from an older version of the plugin installed upgrades to the latest version.
 
-### version.php
+### version.php {/* #versionphp */}
 
 The version.php file describes the current version of the plugin, and additional features such as its maturity, any dependencies or requirements, and a release name.
 
 See the documentation on [version.php](../../apis/commonfiles/version.php/index.md) for further information on the features of this file.
 
-### db/install.xml
+### db/install.xml {/* #dbinstallxml */}
 
 The install.xml file describes the database tables that will be created when the plugin is installed.
 
@@ -36,7 +36,7 @@ The content of the `install.xml` file **must** be created and maintained using t
 
 :::
 
-### db/upgrade.php
+### db/upgrade.php {/* #dbupgradephp */}
 
 The upgrade.php file describes the steps used to migrate the plugin from one version to a newer version. Moodle only supports the upgrade of plugins. **Plugins can not be downgraded**.
 
@@ -73,7 +73,7 @@ function xmldb_[plugintype]_[pluginname]_upgrade($oldversion): bool {
 }
 ```
 
-## Upgrade code restrictions
+## Upgrade code restrictions {/* #upgrade-code-restrictions */}
 
 During an upgrade, restrictions are placed on the functions that your upgrade code may call. This is because Moodle has not been fully update and some APIs may have code in place relating to a future database or data format.
 
@@ -99,7 +99,7 @@ Core functions are now safe to call because the core data is in Current state. B
 
 :::
 
-## Summary
+## Summary {/* #summary */}
 
 The first time a user installs any version of your plugin, the install.xml file will be used to create all the required database tables. Therefore install.xml should always contain the definition of the up-to-date database structure. Moodle recognises this situation because there is a version.php file on disc, but there is no (*plugintype*_*pluginname*, version) value in the config_plugins table.
 
@@ -107,7 +107,7 @@ If the user already had a version of your plugin installed, and then upgrades to
 
 The contents of the install.xml and upgrade.php files should be generated using the XMLDB editor.
 
-## Other things that can be in the db folder
+## Other things that can be in the db folder {/* #other-things-that-can-be-in-the-db-folder */}
 
 See the documentation on other [common files](../../apis/commonfiles/index.mdx) that may be of use to you, in particular the following may be useful:
 
@@ -120,7 +120,7 @@ See the documentation on other [common files](../../apis/commonfiles/index.mdx) 
 - [subplugins.json](https://docs.moodle.org/dev/Subplugins#db.2Fsubplugins.json)
 - [Language files](../../apis/commonfiles/index.mdx#langenplugintype_pluginnamephp)
 
-## Upgrade API Cheat-sheet
+## Upgrade API Cheat-sheet {/* #upgrade-api-cheat-sheet */}
 
 The Upgrade API is related to _a lot_ of different files and APIs (including access, event, log, webservice, and so on) as it's the API used to install and upgrade all of those areas in the context of a specific Moodle component. The previous sections have tried to list all those dependencies when possible.
 
@@ -153,14 +153,14 @@ function xmldb_block_example_install() {
 
 We highly recommend looking at existing uses of these files within plugins included with Moodle core to understand some fo the more complex examples.
 
-### Upgrade helpers
+### Upgrade helpers {/* #upgrade-helpers */}
 
 Several functions are also available to call from within the upgrade.php script:
 
 - **upgrade_set_timeout()**: Used to increase timeouts before performing a long-running upgrade step
 - **upgrade_(main|mod|block|plugin)_savepoint()**: Used to mark an upgrade step as completed, and to  reset timeouts. This ensures that an upgrade step is only executed once.
 
-## Moodle core database upgrades within stable branches
+## Moodle core database upgrades within stable branches {/* #moodle-core-database-upgrades-within-stable-branches */}
 
 In Moodle core, one of the standard simple rules is not to make any database changes on a stable branch. You only need to read this section in the rare situations where a database change on the stable branch is unavoidable.
 
@@ -198,7 +198,7 @@ You should also think about what version numbers to put in your version.php file
 
 :::
 
-## See also
+## See also {/* #see-also */}
 
 - [Core APIs](../../apis.md)
 - [XMLDB Documentation](https://docs.moodle.org/dev/XMLDB_Documentation)

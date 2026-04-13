@@ -19,13 +19,13 @@ We strongly recommend that you read the [Analytics API](../../subsystems/analyti
 
 The communication between machine learning backends and Moodle is through files because the code that will process the dataset can be written in PHP, in Python, in other languages or even use cloud services. This needs to be scalable so they are expected to be able to manage big files and train algorithms reading input files in batches if necessary.
 
-## Backends included in Moodle core
+## Backends included in Moodle core {/* #backends-included-in-moodle-core */}
 
-### PHP
+### PHP {/* #php */}
 
 The **PHP backend** is the default predictions processor as it is written in PHP and does not have any external dependencies. It is using logistic regression.
 
-### Python
+### Python {/* #python */}
 
 The **Python backend** requires *python* binary (either python 2 or python 3) and [moodlemlbackend python package](https://pypi.python.org/pypi?name=moodlemlbackend&version=0.0.5&:action=display) which is maintained by Moodle HQ.
 
@@ -47,7 +47,7 @@ You can [view the source](https://github.com/moodlehq/moodle-mlbackend-python) o
 
 :::
 
-## File structure
+## File structure {/* #file-structure */}
 
 Machine learning backends are located in the `lib/mlbackend` directory.
 
@@ -77,7 +77,7 @@ lib/mlbackend/python
 
 Some of the important files for the mlbackend plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
 A summary of these interfaces purpose:
 
@@ -85,7 +85,7 @@ A summary of these interfaces purpose:
 - Train machine learning algorithms with the existing site data
 - Predict targets based on previously trained algorithms
 
-### Predictor
+### Predictor {/* #predictor */}
 
 This is the basic interface to be implemented by machine learning backends. Two main types are, *classifiers* and *regressors*. We provide the *Regressor* interface but it is not currently implemented by core Machine learning backends. Both of these are supervised algorithms. Each type includes methods to train, predict and evaluate datasets.
 
@@ -128,7 +128,7 @@ public function clear_model($uniqueid, $modelversionoutputdir);
 public function delete_output_dir($modeloutputdir, $uniqueid);
 ```
 
-### Classifier
+### Classifier {/* #classifier */}
 
 A [classifier](https://en.wikipedia.org/wiki/Statistical_classification) sorts input into two or more categories, based on analysis of the indicators. This is frequently used in binary predictions, e.g. course completion vs. dropout. This machine learning algorithm is "supervised": It requires a training data set of elements whose classification is known (e.g. courses in the past with a clear definition of whether the student has dropped out or not). This is an interface to be implemented by machine learning backends that support classification. It extends the *Predictor* interface.
 
@@ -169,7 +169,7 @@ public function classify($uniqueid, \stored_file $dataset, $outputdir);
 public function evaluate_classification($uniqueid, $maxdeviation, $niterations, \stored_file $dataset, $outputdir);
 ```
 
-### Regressor
+### Regressor {/* #regressor */}
 
 A [regressor](https://en.wikipedia.org/wiki/Regression_analysis) predicts the value of an outcome (or dependent) variable based on analysis of the indicators. This value is linear, such as a final grade in a course or the likelihood a student is to pass a course. This machine learning algorithm is "supervised": It requires a training data set of elements whose classification is known (e.g. courses in the past with a clear definition of whether the student has dropped out or not). This is an interface to be implemented by machine learning backends that support regression. It extends *Predictor* interface.
 

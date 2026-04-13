@@ -7,7 +7,7 @@ tags:
   - Legal
 ---
 
-## Copyright in the Moodle software and documentation
+## Copyright in the Moodle software and documentation {/* #copyright-in-the-moodle-software-and-documentation */}
 
 The overall **Moodle** _software_ package is Copyright © 1999 onwards, [Martin Dougiamas](http://dougiamas.com/) with portions contributed/copyrighted by many others (see the [Developer credits](http://moodle.org/dev/) and the source code itself) and all of it is provided under the terms of the GPL. This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either [version 2 of the License](http://www.gnu.org/licenses/gpl-2.0.txt) (for Moodle 1.x), [version 3 of the License](http://www.gnu.org/licenses/gpl-3.0.txt) (for Moodle 2.x) or (at your option) any later version, as explained in clause 14 of Version 3 reproduced below.
 
@@ -15,7 +15,7 @@ The **Moodle** _documentation_ is Copyright © 2005 onwards by the individual au
 
 Moodle and the Moodle Documentation are distributed in the hope that they will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License below for more details.
 
-## Use of Moodle Marks
+## Use of Moodle Marks {/* #use-of-moodle-marks */}
 
 The word _Moodle_ and associated Moodle logos are trademarks or registered trademarks of Moodle Pty Ltd or its related affiliates. Permitted uses are stated on our website at http://moodle.com/trademarks and the Trademark Guidelines available there. Most importantly, without prior written permission from Moodle, you cannot use the word "Moodle" or any Moodle logos (nor any derivatives thereof, or any words or marks that are deceptively or confusingly similar) for any commercial purposes, or in ways that are likely to confuse consumers about the origin of the software, or to suggest that you are in any way associated with or endorsed by Moodle.
 

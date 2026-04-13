@@ -14,7 +14,7 @@ This page forms part of the [Moodle security guidelines](../security).
 
 :::
 
-## What is the danger?
+## What is the danger? {/* #what-is-the-danger */}
 
 Suppose it is well know, at least by Evil Hacker and their friends, that certain versions of  PHP have a critical security vulnerability. Suppose it is easy for Evil Hacker to find out which version of PHP (or Apache, Linux, Windows, Moodle, ...) you are running. Suppose you are running a version that is vulnerable, then you are big trouble.
 
@@ -31,7 +31,7 @@ The `Server` line is good. Many web sites use Apache. We are not revealing much 
 
 One very common method that lets users learn a lot about how your server is set up is error messages. It is not only exact version numbers that can help an attacker. For example knowing where things are stored on the server's hard disc can also be useful information, and error messages often include file paths.
 
-## How Moodle avoids this problem
+## How Moodle avoids this problem {/* #how-moodle-avoids-this-problem */}
 
 Moodle makes it easy for you to hide error messages, or only have them sent to your log files.
 
@@ -43,16 +43,16 @@ Similarly, Moodle provides easy access to the PHP info page, which reveals almos
 
 Moodle is naughty. With the standard theme, it is easy to find out exactly which version of Moodle is being used from the site home page.
 
-## What you need to do in your code
+## What you need to do in your code {/* #what-you-need-to-do-in-your-code */}
 
 - Only reveal technical information in the parts of error messages that go into the log files. The user-facing error message should describe the problem in more general terms.
 
-## What you need to do as an administrator
+## What you need to do as an administrator {/* #what-you-need-to-do-as-an-administrator */}
 
 - Configure your sever to only send out minimal information about which platform and Moodle version you are running.
 - Make sure technical error messages are only sent to log files, not displayed on screen.
 
-## See also
+## See also {/* #see-also */}
 
 - [Security](../security)
 - [Coding](../../policies.md)

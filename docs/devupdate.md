@@ -9,7 +9,7 @@ tags:
 
 This page highlights the important changes that are coming in Moodle 5.2 for developers.
 
-## Badges API reorganisation
+## Badges API reorganisation {/* #badges-api-reorganisation */}
 
 <Since version="5.2" issueNumber="MDL-82147" />
 
@@ -21,7 +21,7 @@ To address these challenges, we're reorganising the API to significantly improve
 
 More information about the Badges API can be found in the [Badges API documentation](./apis/subsystems/badges/index.md).
 
-## Activity chooser descriptions refinement
+## Activity chooser descriptions refinement {/* #activity-chooser-descriptions-refinement */}
 
 <Since version="5.2" issueNumber="MDL-87117" />
 

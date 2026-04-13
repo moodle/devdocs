@@ -10,7 +10,7 @@ tags:
 
 This page tries to, briefly, show all the changes required to rename any branch from `master` to `main` in general. Aimed for the Moodle Community, to facilitate the transitions of all their awesome patches, plugins and integration, although, generic enough for anybody needing to rename any branch.
 
-### Moving from `master` to `main` for canonical/origin github based repositories
+### Moving from `master` to `main` for canonical/origin github based repositories {/* #moving-from-master-to-main-for-canonicalorigin-github-based-repositories */}
 
 Note that these steps are valid for all the repositories @ GitHub. That includes both the "canonical/origin/upstream" ones and, also, all the clones of them that any developer/contributor may have.
 
@@ -19,7 +19,7 @@ Note that these steps are valid for all the repositories @ GitHub. That includes
 3. Rename `master` to `main` (all associated pull requests will be migrated, also any protection rules and other bits. See https://github.com/github/renaming for more information.
 4. Time to hack (see the section)
 
-### Moving from `master` to `main` for other canonical/origin (gitlab, bitbucket, sourceforge, ...) repositories
+### Moving from `master` to `main` for other canonical/origin (gitlab, bitbucket, sourceforge, ...) repositories {/* #moving-from-master-to-main-for-other-canonicalorigin-gitlab-bitbucket-sourceforge--repositories */}
 
 1. Check if the repo supports renaming branches (similar to GitHub) or no. And verify if the utility allows the old `master` to continue working and if associated pull/merge requests and other settings are automatically moved or no.
 2. If the rename utility exists and suits your needs, use it (and skip next point).
@@ -52,7 +52,7 @@ Note that these steps are valid for all the repositories @ GitHub. That includes
     6. It's recommended to create a new issue in the repository ([link to example](https://github.com/moodlehq/moodle-local_codechecker/issues/225)), explaining the move from `master` to `main`, so everybody that is subscribed or involved gets notified. Feel free to point to this document for details.
 4. [Time to hack](#time-to-hack) (see the section).
 
-### Time to hack
+### Time to hack {/* #time-to-hack */}
 
 Let's move any `master` occurrence/dependency in the codebase to `main` ([link to example](https://github.com/moodlehq/moodle-local_codechecker/commit/a67caf8054451a6f5f69c53b1ce268eddd255aaa)).
 
@@ -60,7 +60,7 @@ Let's move any `master` occurrence/dependency in the codebase to `main` ([link t
 2. If your codebase has any other hard-coded `master` dependency (not the best idea, but) ... it will need to be analysed and fixed too.
 3. Apply changes (push, PR/MR, whatever...) ASAP.
 
-### Moving from `master` to `main` in your local clones
+### Moving from `master` to `main` in your local clones {/* #moving-from-master-to-main-in-your-local-clones */}
 
 1. Fetch all changes from remote (that has been just renamed upstream).
 

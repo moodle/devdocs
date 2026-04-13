@@ -29,7 +29,7 @@ Anecdotal feedback from a range of sources, including in-person discussions, for
 - slow interface
 - lack of offline availability
 
-## Candidate selection
+## Candidate selection {/* #candidate-selection */}
 
 As part of an internal process, several sessions were held to identify the key features required to improve the Moodle developer documentation, these included:
 
@@ -61,7 +61,7 @@ Several key documents were migrated to Sphinx, using both ReStructured Text, and
 
 Ultimately the project team selected Docusaurus as the best candidate for migration and more documents were migrated to determine whether it would be fit-for-purpose.
 
-## New features
+## New features {/* #new-features */}
 
 [Docusaurus](https://docusaurus.io) is a tool written and managed by Facebook. It is used to document a number of major projects including [React Native](https://reactnative.dev), [Algolia Docsearch](https://docsearch.algolia.com), [Jest](https://jestjs.io), [WebdriverIO](https://webdriver.io), [Redis Labs](https://developer.redis.com), [Flux](https://facebook.github.io/flux), [Gulp](https://gulpjs.com), [Home Assistant](https://developers.home-assistant.io/), and [many many more](https://docusaurus.io/showcase).
 
@@ -98,7 +98,7 @@ By hosting that repository in GitHub we can make use of GitHub actions to enable
 - Third-party libraries
 - upgrade.txt files distributed around Moodle
 
-## Migration plan
+## Migration plan {/* #migration-plan */}
 
 Migration from the [Legacy DevDocs](https://docs.moodle.org/dev) comes in three main parts:
 
@@ -113,7 +113,7 @@ In all cases, migration is a non-trivial affair. While tooling is available to h
 - updated to remove stale, incorrect, out-of-date, or irrelevant information
 - updated to meet the style of surrounding documentation
 
-### Initial data migration
+### Initial data migration {/* #initial-data-migration */}
 
 During the initial stage, the legacy wiki will remain open for changes by all contributors.
 
@@ -129,7 +129,7 @@ A number of key documents will be migrated to the new platform, including most d
 
 In some cases documentation may be marked as obsolete, or the migration may be deferred where it is more time-intensive.
 
-### Maturity and growth
+### Maturity and growth {/* #maturity-and-growth */}
 
 Once the initial phase is largely complete, banners will be added to the legacy documentation:
 
@@ -143,7 +143,7 @@ During this phase the aim is that all remaining documentation is assessed to eit
 - mark it as obsolete
 - mark it as migrated
 
-### Sunset
+### Sunset {/* #sunset */}
 
 Once all of the following criteria are met, and additional time has been allowed, the legacy documentation will be removed from service:
 
@@ -152,13 +152,13 @@ Once all of the following criteria are met, and additional time has been allowed
 
 If possible, a static copy of this documentation will be preserved for reference, history, and posterity.
 
-## Timeline
+## Timeline {/* #timeline */}
 
 The initial migration of documentation is already in progress and it is hoped that this migration will be complete by the 31st May 2022.
 
 The new documentation series only covers Moodle 4.0 onwards. The legacy documentation must remain until security support for older versions of Moodle ends. For Moodle versions 3.9, and 3.11 that is the 13th November 2023. At this time we expect to keep the legacy documentation for a 12 month period following this date.
 
-## Contributing
+## Contributing {/* #contributing */}
 
 We actively welcome community engagement on this project.
 

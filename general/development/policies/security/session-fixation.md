@@ -13,7 +13,7 @@ This page forms part of the [Moodle security guidelines](../security).
 
 :::
 
-## What is the danger?
+## What is the danger? {/* #what-is-the-danger */}
 
 <!-- cspell:ignore OWASP -->
 :::info Session fixation definition from OWASP
@@ -22,13 +22,13 @@ This page forms part of the [Moodle security guidelines](../security).
 
 :::
 
-## How Moodle avoids this problem
+## How Moodle avoids this problem {/* #how-moodle-avoids-this-problem */}
 
-## What you need to do in your code
+## What you need to do in your code {/* #what-you-need-to-do-in-your-code */}
 
-## What you need to do as an administrator
+## What you need to do as an administrator {/* #what-you-need-to-do-as-an-administrator */}
 
-## See also
+## See also {/* #see-also */}
 
 - [Security](../security)
 - [Coding](../../policies.md)

@@ -11,11 +11,11 @@ tags:
 
 Shortlinks are concise URLs that route to a fully-qualified URL in Moodle. Comprising of a smaller set of characters, their use is suitable for SMS, convenience, or where a longer URL would not be suitable.
 
-## Requirements
+## Requirements {/* #requirements */}
 
 Shortlinks require Moodle's routing system to be enabled and fully functioning as they have been fully integrated into the existing routing subsystem. Ensure routing is configured by following this [routing guide](https://docs.moodle.org/500/en/Configuring_the_Router).
 
-## URL structure
+## URL structure {/* #url-structure */}
 
 A shortlink URL will be comprised of the following:
 
@@ -25,11 +25,11 @@ A shortlink URL will be comprised of the following:
 
 A complete shortlink will look something like this: `http://yourmoodle.com/s/X8fG56aa`.
 
-## Short codes
+## Short codes {/* #short-codes */}
 
 Short codes are unique identifiers at the end of a shortlink. The characters available for building short codes is limited to the extended alpha-numeric set (ALPHANUMEXT) with the the omission of ambiguous characters (i.e. upper case 'i' and lower case 'L').
 
-## Generating shortlinks
+## Generating shortlinks {/* #generating-shortlinks */}
 
 Before a shortlink can be used, a shortlink will need to be generated. Shortlink generation is random and length can be specified when calling the relevant method.
 
@@ -38,7 +38,7 @@ There are two types of shortlinks:
 - Public shortlinks
 - Private shortlinks
 
-### Public
+### Public {/* #public */}
 
 Public shortlinks can be accessed by anyone. Their use will be designated with a `/p/` in the URL.
 
@@ -53,7 +53,7 @@ $public = \core\di::get(\core\shortlink::class)->create_shortlink(
 );
 ```
 
-### Private
+### Private {/* #private */}
 
 Private shortlinks are tied to a specific user or set of users. Their use will be designated with a `/s/` in the URL.
 
@@ -68,7 +68,7 @@ $private = \core\di::get(\core\shortlink::class)->create_shortlink_for_users(
 );
 ```
 
-## Using shortlinks
+## Using shortlinks {/* #using-shortlinks */}
 
 Each component using shortlinks will need to have a `shortlink_handler` class. There are two methods that the implemented interface requires:
 
@@ -101,6 +101,6 @@ class shortlink_handler implements shortlink_handler_interface {
 
 Assuming the shortlink has been generated, the above example would allow a shortlink URL of `http://yourmoodle.com/s/SHORTCODE` to map to `http://yourmoodle.com/mod/assign/view.php?id=IDENTIFIER`
 
-## See also
+## See also {/* #see-also */}
 
 - [Routing](../routing/index.md)

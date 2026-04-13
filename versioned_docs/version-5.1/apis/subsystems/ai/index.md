@@ -12,7 +12,7 @@ tags:
 The AI Subsystem in Moodle LMS provides a consistent and user-friendly way for users to interact with AI
 in Moodle. It has been designed for easy integration with various AI providers and the development of [AI plugins](/apis/plugintypes/ai/index.md).
 
-## What is AI in this context?
+## What is AI in this context? {/* #what-is-ai-in-this-context */}
 
 The term 'AI' is very broad and covers a range of concepts like Artificial Intelligence (AI), Machine Learning (ML),
 Large Language Models (LLMs), Generative AI, etc.
@@ -25,7 +25,7 @@ users to have information within their course summarised by the integrated AI.
 
 This is the context of the term 'AI'.
 
-## Design Overview
+## Design Overview {/* #design-overview */}
 
 ```mermaid
 sequenceDiagram
@@ -65,7 +65,7 @@ The AI Subsystem consists of the following (main) components:
   - These are pre-defined models that are used by Providers to do the Actions.
   - They are not part of the AI subsystem, but they are used by Providers.
 
-### Placements
+### Placements {/* #placements */}
 
 Placements provide a consistent UX and UI for users when they use AI backed functionality (e.g. generating an image).
 
@@ -78,7 +78,7 @@ Because Placements are plugins in their own right, it allows for greater flexibi
 See the [Placements](/apis/plugintypes/ai/placement.md) documentation for more information
 on developing Placement plugins.
 
-### Providers
+### Providers {/* #providers */}
 
 Providers are the interface between the [AI subsystem](/apis/subsystems/ai/index.md) and external AI.
 Their focus should be on converting the data requested into the format needed
@@ -87,7 +87,7 @@ by the external AI, and then correctly providing the response back.
 See the [Providers](/apis/plugintypes/ai/provider.md) documentation for more information
 on developing Provider plugins.
 
-### Subsystem Manager
+### Subsystem Manager {/* #subsystem-manager */}
 
 The Subsystem Manager is the 'controller' that sits between Placements and Providers.
 In general it will be how most processes will interact with the AI subsystem.
@@ -108,7 +108,7 @@ result of each action call.
 The Manager class also provides various utility methods, such as retrieving the list of providers for specific actions.
 These methods are useful for rendering administration settings.
 
-### Actions
+### Actions {/* #actions */}
 
 Actions provide instructions to the integrated AI.
 Placements create an Action object which is then consumed by the Provider.
@@ -116,18 +116,18 @@ Placements create an Action object which is then consumed by the Provider.
 Actions are defined as classes in the `\core_ai\aiactions` namespace.
 The naming convention for Action classes is `<verb>_<noun singular>`.
 
-#### Actions in AI subsystem
+#### Actions in AI subsystem {/* #actions-in-ai-subsystem */}
 
 - `generate_image`
 - `generate_text`
 - `summarise_text`
 
-#### Base abstract class
+#### Base abstract class {/* #base-abstract-class */}
 
 Each Action **must** inherit from the `\core_ai\aiactions\base` abstract class.
 They must also implement two methods:
 
-##### 1. `__construct()`
+##### 1. `__construct()` {/* #1-__construct */}
 
 - The constructor method is allowed to have a variable signature, so that each Action can define its own
 configuration requirements.
@@ -154,7 +154,7 @@ public function __construct(
 }
 ```
 
-##### 2. `store()`
+##### 2. `store()` {/* #2-store */}
 
 - This method is responsible for storing data related to the Action in the LMS database.
 - Each Action must store its own data that can be referenced later.
@@ -202,13 +202,13 @@ Each Action will need to define its own database schema and stored data that is 
 
 The naming convention for Action database tables is `ai_action_<action_name>`. For example: `ai_action_generate_image`, `ai_action_translate_text`.
 
-#### Pre-defined Models
+#### Pre-defined Models {/* #pre-defined-models */}
 
 We can define a set of models that are available for the Actions of the Providers.
 See the [Pre-defined Models](/apis/plugintypes/ai/provider.md#predefined-models) documentation for more information
 on developing Pre-defined Models for Provider plugins.
 
-#### Responses
+#### Responses {/* #responses */}
 
 When a Provider processes an Action it **must** return a response object.
 This allows Placements to receive an expected response for any Action call.
@@ -218,7 +218,7 @@ an instance of this response class and populate it with the data required for th
 Each Action response **must** inherit from the `\core_ai\aiactions\responses\response_base` abstract
 class. They must also implement two methods:
 
-##### 1. `set_response_data()`
+##### 1. `set_response_data()` {/* #1-set_response_data */}
 
 Taking an array of response variables (which must be defined as class variables),
 it sets these against class variables so they can be retrieved by the Manager and calling Placement.
@@ -232,7 +232,7 @@ it sets these against class variables so they can be retrieved by the Manager an
     }
 ```
 
-##### 2. `get_response_data()`
+##### 2. `get_response_data()` {/* #2-get_response_data */}
 
 Returns the set response data.
 
@@ -249,7 +249,7 @@ Returns the set response data.
 
 The naming convention for Action response classes is `response_<action_name>`. For example: `response_generate_image`, `response_translate_text`.
 
-## AI User Policy
+## AI User Policy {/* #ai-user-policy */}
 
 Inline with Moodle's AI Principles, and as guided by emerging legislation, users must accept the
 AI User Policy before using AI in LMS. As the requirements are different from a site policy,
@@ -263,29 +263,29 @@ separate policy functionality has been implemented for the AI subsystem (legisla
 
 To assist Placements with displaying the AI User Policy, the Manager provides the following functionality:
 
-### Direct call
+### Direct call {/* #direct-call */}
 
 The Manager makes the following methods available for Placements to call directly:
 
-#### `\core_ai\manager::get_user_policy_status(int $userid): bool`
+#### `\core_ai\manager::get_user_policy_status(int $userid): bool` {/* #core_aimanagerget_user_policy_statusint-userid-bool */}
 
 Given a User ID (record id in user table), returns `true` if the user has accepted the policy,
 `false` otherwise. It handles looking up the status and caching the response.
 
-#### `\core_ai\manager::user_policy_accepted(int $userid, int $contextid): bool`
+#### `\core_ai\manager::user_policy_accepted(int $userid, int $contextid): bool` {/* #core_aimanageruser_policy_acceptedint-userid-int-contextid-bool */}
 
 Given a User ID and a Context ID (context the policy was displayed in), set the policy
 acceptance.
 
-### Webservices
+### Webservices {/* #webservices */}
 
 The Manager class also makes available webservices to be used for policy setting and getting.
 This helps Placements set policy acceptance via Ajax as part of a UI workflow:
 
-#### `core_ai_get_policy_status`
+#### `core_ai_get_policy_status` {/* #core_ai_get_policy_status */}
 
 Gets the policy status for a user. Calls: `core_ai\external\get_policy_status`
 
-#### `core_ai_set_policy_status`
+#### `core_ai_set_policy_status` {/* #core_ai_set_policy_status */}
 
 Sets the policy status for a user. Calls: `core_ai\external\set_policy_status`

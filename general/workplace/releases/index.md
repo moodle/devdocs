@@ -11,7 +11,7 @@ import { ReleaseTable, SupportedReleases, SupportedReleasesStyles } from '@site/
 
 This page lists all official releases of Moodle Workplace, grouped by branch in reverse chronological order.
 
-## Release cycle
+## Release cycle {/* #release-cycle */}
 
 Moodle Workplace is based on top of Moodle LMS. Moodle Workplace releases always follow the Moodle LMS releases. The minors are normally released the next day and the majors are normally released after three-four weeks.
 
@@ -66,87 +66,87 @@ Starting from 4.1 release, we package two Workplace versions in every release:
 
 ![Release graph summarising the currently supported Workplace releases in a visual form](_index/1680px-workplace_releases_timeline.png)
 
-### End-of-life dates for currently supported releases
+### End-of-life dates for currently supported releases {/* #end-of-life-dates-for-currently-supported-releases */}
 
 <SupportedReleases />
 
 <!-- START RELEASES -->
 <br />
-## Moodle Workplace 5.1 Rolling
+## Moodle Workplace 5.1 Rolling {/* #moodle-workplace-51-rolling */}
 <ReleaseTable releaseName="5.1" isRolling/>
 
 <br />
-## Moodle Workplace 5.1
+## Moodle Workplace 5.1 {/* #moodle-workplace-51 */}
 <ReleaseTable releaseName="5.1" />
 
 <br />
-## Moodle Workplace 5.0 Rolling
+## Moodle Workplace 5.0 Rolling {/* #moodle-workplace-50-rolling */}
 <ReleaseTable releaseName="5.0" isRolling/>
 
 <br />
-## Moodle Workplace 5.0
+## Moodle Workplace 5.0 {/* #moodle-workplace-50 */}
 <ReleaseTable releaseName="5.0" />
 
 <br />
-## Moodle Workplace 4.5 Rolling
+## Moodle Workplace 4.5 Rolling {/* #moodle-workplace-45-rolling */}
 <ReleaseTable releaseName="4.5" isRolling/>
 
 <br />
-## Moodle Workplace 4.5 (LTS)
+## Moodle Workplace 4.5 (LTS) {/* #moodle-workplace-45-lts */}
 <ReleaseTable releaseName="4.5" />
 
 <br />
-## Moodle Workplace 4.4 Rolling
+## Moodle Workplace 4.4 Rolling {/* #moodle-workplace-44-rolling */}
 <ReleaseTable releaseName="4.4" isRolling/>
 
 <br />
-## Moodle Workplace 4.4
+## Moodle Workplace 4.4 {/* #moodle-workplace-44 */}
 <ReleaseTable releaseName="4.4" />
 
 <br />
-## Moodle Workplace 4.3 Rolling
+## Moodle Workplace 4.3 Rolling {/* #moodle-workplace-43-rolling */}
 <ReleaseTable releaseName="4.3" isRolling/>
 
 <br />
-## Moodle Workplace 4.3
+## Moodle Workplace 4.3 {/* #moodle-workplace-43 */}
 <ReleaseTable releaseName="4.3" />
 
 <br />
-## Moodle Workplace 4.2 Rolling
+## Moodle Workplace 4.2 Rolling {/* #moodle-workplace-42-rolling */}
 <ReleaseTable releaseName="4.2" isRolling/>
 
 <br />
-## Moodle Workplace 4.2
+## Moodle Workplace 4.2 {/* #moodle-workplace-42 */}
 <ReleaseTable releaseName="4.2"/>
 
 <br />
-## Moodle Workplace 4.1 Rolling
+## Moodle Workplace 4.1 Rolling {/* #moodle-workplace-41-rolling */}
 <ReleaseTable releaseName="4.1" isRolling/>
 
 <br />
-## Moodle Workplace 4.1 (LTS)
+## Moodle Workplace 4.1 (LTS) {/* #moodle-workplace-41-lts */}
 <ReleaseTable releaseName="4.1"/>
 
 <br />
-## Moodle Workplace 4.0
+## Moodle Workplace 4.0 {/* #moodle-workplace-40 */}
 <ReleaseTable releaseName="4.0"/>
 
 <br />
-## Moodle Workplace 3.11
+## Moodle Workplace 3.11 {/* #moodle-workplace-311 */}
 <ReleaseTable releaseName="3.11"/>
 
 <br />
-## Moodle Workplace 3.10
+## Moodle Workplace 3.10 {/* #moodle-workplace-310 */}
 <ReleaseTable releaseName="3.10"/>
 
 <br />
-## Moodle Workplace 3.9
+## Moodle Workplace 3.9 {/* #moodle-workplace-39 */}
 <ReleaseTable releaseName="3.9"/>
 
 <br />
-## Moodle Workplace 3.8
+## Moodle Workplace 3.8 {/* #moodle-workplace-38 */}
 <ReleaseTable releaseName="3.8"/>
 
 <br />
-## Moodle Workplace 3.7
+## Moodle Workplace 3.7 {/* #moodle-workplace-37 */}
 <ReleaseTable releaseName="3.7"/>

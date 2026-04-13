@@ -6,9 +6,9 @@ Moodle uses a [NodeJS](https://nodejs.org/en/) toolchain to perform a number of 
 
 Use of [NVM](#install-nvm-and-node) for installation of NodeJS is highly recommended over direct installation.
 
-## Setup and installation
+## Setup and installation {/* #setup-and-installation */}
 
-### Install NVM and Node
+### Install NVM and Node {/* #install-nvm-and-node */}
 
 The recommended way of installing NodeJS is via the [Node Version Manager](https://github.com/nvm-sh/nvm), or NVM. NVM allows you to have several different versions of NodeJS installed and in-use at once on your computer.
 
@@ -43,7 +43,7 @@ The approach for this will depend on your environment and [advice is available f
 
 :::
 
-### Install local development dependencies
+### Install local development dependencies {/* #install-local-development-dependencies */}
 
 The Moodle JavaScript toolchain currently uses the Grunt build tool, along with other common tooling including eslint. To install these build dependencies, you should use the [Node Package Manager](https://www.npmjs.com/), or NPM.
 
@@ -57,7 +57,7 @@ You may see mention of various vulnerabilities here. Moodle only uses these tool
 
 :::
 
-## Grunt
+## Grunt {/* #grunt */}
 
 As part of its build stack, Moodle uses the [Grunt](https://gruntjs.com) task runner.
 
@@ -75,7 +75,7 @@ Once you have installed the local development dependencies, you can simply run g
 $ npx grunt stylelint
 ```
 
-### Install grunt
+### Install grunt {/* #install-grunt */}
 
 JavaScript and CSS in Moodle must be processed by some build tools before they will be visible to the web browser. Grunt is a build tool written in JavaScript that runs in the [nodejs](http://nodejs.org/) environment. You will need to install NodeJS and the Grunt tools:
 
@@ -85,7 +85,7 @@ npm install
 npm install -g grunt-cli
 ```
 
-### Running grunt
+### Running grunt {/* #running-grunt */}
 
 Typical commands:
 
@@ -110,7 +110,7 @@ grunt watch                             # Run tasks on file changes
 - If used with `grunt shifter` you will have to `cd` into the `module/yui/src` folder, and to show what your lint errors are you can also use the `-v` parameter.
 - On Windows, you need to specify the path on the command line like `--root=admin/tool/templatelibrary`.
 
-### Install watchman
+### Install watchman {/* #install-watchman */}
 
 If you get an error when running "grunt watch" complaining about `watchman`, you most likely need to install it. Check out the [watchman installation](https://facebook.github.io/watchman/docs/install.html) page.
 
@@ -131,7 +131,7 @@ fs.inotify.max_user_watches = 524288
 
 And then reload running `sudo sysctl -p`.
 
-### Using Grunt in additional plugins
+### Using Grunt in additional plugins {/* #using-grunt-in-additional-plugins */}
 
 You may want to use Grunt for performing tasks in your custom Moodle plugins. For building AMD and YUI modules in a plugin, the standard configuration `Gruntfile.js` located in the Moodle root should work well. For building CSS files, you will have to set up a separate Grunt installation in the root of your plugin.
 
@@ -225,11 +225,11 @@ files: [
 ]
 ```
 
-## Common issues
+## Common issues {/* #common-issues */}
 
 A number of commons issues may be encountered depending on your environment.
 
-### MacOS issues
+### MacOS issues {/* #macos-issues */}
 
 If you are using MacOS, you may need to ensure that xcode is up-to-date.
 
@@ -237,7 +237,7 @@ If you are using MacOS, you may need to ensure that xcode is up-to-date.
 sudo xcode-select --reset
 ```
 
-#### Issues install node-sass
+#### Issues install node-sass {/* #issues-install-node-sass */}
 
 The `node-sass` module must be compiled from C. In some instances MacOS setup is incomplete or out-of-date and must be updated.
 

@@ -12,11 +12,11 @@ tags:
 
 :::
 
-## Why is deprecation needed?
+## Why is deprecation needed? {/* #why-is-deprecation-needed */}
 
 In an open source project, the end use of the codebase varies. People may have customisations and plugins that depend on a function that has been targeted for deprecation. Rather than simply removing a function, we must gracefully deprecate the function over a period covered by a number of released versions.
 
-## What is Moodle's deprecation policy?
+## What is Moodle's deprecation policy? {/* #what-is-moodles-deprecation-policy */}
 
 - Deprecations should only be on the `main` branch, not on stables. Exceptions to this may be made in certain conditions, including:
   - for some external service integrations
@@ -41,7 +41,7 @@ Instead we are considering how that API feature is used. Is that API feature int
 
 :::
 
-## Moodle Core deprecation process
+## Moodle Core deprecation process {/* #moodle-core-deprecation-process */}
 
 Once it is decided that a function should be deprecated, a multi-step process should be followed.
 
@@ -51,7 +51,7 @@ These steps should always happen as early as possible in the 6-months period bet
 
 :::
 
-### Step 1. Immediate action - Initial deprecation
+### Step 1. Immediate action - Initial deprecation {/* #step-1-immediate-action---initial-deprecation */}
 
 Deprecation affects only the current `main` version, in other words, the deprecation only becomes effective after the next [major release](../../../releases.md).
 
@@ -118,9 +118,9 @@ Longer deprecation periods can be considered for functions that are widely used.
 
 :::
 
-### Step 2. Final deprecation
+### Step 2. Final deprecation {/* #step-2-final-deprecation */}
 
-#### Policy
+#### Policy {/* #policy */}
 
 The final deprecation policy for Moodle LMS has been updated to align more closely with the LTS (long-term support) release cycle starting from Moodle 4.5 (LTS).
 
@@ -134,7 +134,7 @@ The final deprecation policy for Moodle LMS has been updated to align more close
     - Functions deprecated in Moodle 4.5 (LTS) will be up for final deprecation in Moodle 6.0 (the first release for Series 6 right after the Moodle 5.3 (LTS) release).
 </ValidExample>
 
-#### Procedure
+#### Procedure {/* #procedure */}
 
 - When a function undergoes final deprecation, all content of the function should be removed. In the skeleton that remains, an error statement should be included that indicates that the function cannot be used anymore. You should also direct developers to the new function(s) in this message, if the deprecated function has been replaced with a new function.
 
@@ -192,9 +192,9 @@ The policy no longer permits modifying method signatures.
 
 :::
 
-### Step 3. Removal
+### Step 3. Removal {/* #step-3-removal */}
 
-#### Policy
+#### Policy {/* #policy-1 */}
 
 A code removal step was added to the deprecation process in Moodle 5.0 and is aligned with the LTS release cycle.
 
@@ -206,11 +206,11 @@ A code removal step was added to the deprecation process in Moodle 5.0 and is al
     - Functions deprecated in Moodle 4.5 (LTS) will be up for final deprecation in Moodle 6.0 (the first release for Series 6 right after the Moodle 5.3 (LTS) release), and for removal in Moodle 7.0 (the first Series 7 Moodle version).
 </ValidExample>
 
-## Class properties deprecation
+## Class properties deprecation {/* #class-properties-deprecation */}
 
 Deprecating class properties presents unique challenges compared to methods, as PHP versions before 8.4 do not provide a native mechanism to emit warnings when properties are accessed or modified.
 
-### When can a property be deprecated?
+### When can a property be deprecated? {/* #when-can-a-property-be-deprecated */}
 
 The approach to deprecating a property depends on its visibility and usage:
 
@@ -223,7 +223,7 @@ The approach to deprecating a property depends on its visibility and usage:
 
 3. **Public properties, or protected properties in extensible classes**: Cannot be safely removed using the standard deprecation process, as there is no way to alert developers when the property is accessed in PHP versions before 8.4.
 
-### Deprecation process for properties that cannot be removed
+### Deprecation process for properties that cannot be removed {/* #deprecation-process-for-properties-that-cannot-be-removed */}
 
 For public properties and protected properties in extensible classes, follow these steps:
 
@@ -282,7 +282,7 @@ For public properties and protected properties in extensible classes, follow the
 
    Developers must rely on IDE hints from `@deprecated` tags, documentation, and upgrade notes to know they should migrate from direct property access to these methods.
 
-### Property deprecation from Moodle 6.0 onwards
+### Property deprecation from Moodle 6.0 onwards {/* #property-deprecation-from-moodle-60-onwards */}
 
 From Moodle 6.0, the minimum supported PHP version will be 8.4. PHP 8.4 introduces [Property Hooks](https://wiki.php.net/rfc/property-hooks), which allow proper deprecation warnings to be emitted when properties are accessed or modified.
 
@@ -308,7 +308,7 @@ public ?string $summary {
 
 This allows Moodle to emit proper runtime deprecation warnings when properties are read from or written to, providing the feedback mechanism that is currently unavailable in earlier PHP versions.
 
-## Parameters deprecation
+## Parameters deprecation {/* #parameters-deprecation */}
 
 Whilst it is possible to deprecate individual method parameters, care must be taken in doing so.
 
@@ -442,7 +442,7 @@ Named parameter arguments are available from PHP 8.0 onwards.
 
 :::
 
-## See also
+## See also {/* #see-also */}
 
 - [String deprecation](../../../projects/api/string-deprecation.md)
 - [Deprecation attributes](/docs/apis/core/deprecation/)

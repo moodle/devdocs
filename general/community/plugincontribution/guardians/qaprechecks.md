@@ -11,7 +11,7 @@ Plugin QA prechecks are for testing the functionality of plugins submitted for a
 
 Moodle community members with experience in setting up a local Moodle test environment can help with plugin QA prechecks. If you would like to help, please contact David Mudrák [david@moodle.com](mailto:david@moodle.com)
 
-## QA environment setup
+## QA environment setup {/* #qa-environment-setup */}
 
 To perform plugin QA prechecks, you need to have a test Moodle site (normally the latest stable version) installed locally. Your test site should have
 
@@ -20,7 +20,7 @@ To perform plugin QA prechecks, you need to have a test Moodle site (normally th
 
 In addition, if possible the site should run on the PostgreSQL database engine to catch potential MySQL-specific SQL statements in the code.
 
-## Process
+## Process {/* #process */}
 
 1. Choose a plugin needing an initial review from the [list of plugins awaiting approval](https://moodle.org/plugins/report/index.php?report=pendingapproval_plugins) (access restricted to members of the [Plugins guardians](../../../community/plugincontribution/guardians/index.md) group).
 1. To show that you are going to perform the QA prechecks, set yourself as the plugin approval issue assignee (CONTRIB-xxx as mentioned at the plugin page comments area).
@@ -29,7 +29,7 @@ In addition, if possible the site should run on the PostgreSQL database engine t
 1. If you detect any problems with the plugin, add a comment to the plugin page asking the plugin developer to look at the plugin approval issue.
 1. Once everything is fine, add a comment to the plugin approval issue 'Congratulations, your plugin passes the metadata and usability checks. :-) Coding checks will be done soon.'
 
-## QA prechecks
+## QA prechecks {/* #qa-prechecks */}
 
 1. Does the plugin have all the appropriate metadata as described in the [Plugin contribution checklist](../../../community/plugincontribution/checklist)?
 1. Does the plugin install nicely and not break or otherwise negatively affect the site functionality (anti-regression test)? This also checks that all eventual dependencies are already available in the plugins directory.

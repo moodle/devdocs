@@ -6,7 +6,7 @@ tags:
   - Plagiarism
 ---
 
-## Overview
+## Overview {/* #overview */}
 
 The Plagiarism API is a core set of functions that all Moodle code can use to send user submitted content to Plagiarism Prevention systems
 
@@ -18,13 +18,13 @@ A typical user story:
 1. Event handlers in the Plagiarism plugin are triggered and process anything required.
 1. Hooks for displaying information returned from the Plagiarism tools to both the user and teacher (controlled by the plugin)
 
-## Supported Modules
+## Supported Modules {/* #supported-modules */}
 
 - Assignment
 - Forum
 - Workshop
 
-## More information
+## More information {/* #more-information */}
 
 - [How to Develop a new Plagiarism Plugin](https://docs.moodle.org/dev/Developing_a_Plagiarism_Plugin)
 - [How to add support for a Plagiarism Plugin to my activity module](https://docs.moodle.org/dev/How_to_add_support_for_a_Plagiarism_Plugin_to_my_activity_module)

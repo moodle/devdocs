@@ -40,7 +40,7 @@ Some other core subsystems also need to be group-aware.
 
 :::
 
-## Group modes
+## Group modes {/* #group-modes */}
 
 There are three different group modes, these modes allow for restrictions to be put in place for access and visibility.
 
@@ -50,13 +50,13 @@ There are three different group modes, these modes allow for restrictions to be 
 
 This is explained in more detail on the [Groups access control](https://docs.moodle.org/dev/Groups_access_control) page.
 
-## File locations
+## File locations {/* #file-locations */}
 
 The Groups API is currently defined in [lib/grouplib.php](https://github.com/moodle/moodle/blob/main/lib/grouplib.php). This contains global functions which have the `groups_` prefix, for example: `groups_get_group()`.
 
-## Examples
+## Examples {/* #examples */}
 
-### How to find and use the "current" group
+### How to find and use the "current" group {/* #how-to-find-and-use-the-current-group */}
 
 This is using an example from the module forums.
 
@@ -75,7 +75,7 @@ $currentgroupname = groups_get_group_name($currentgroupid);
 // Do as you please with your newly obtained group information.
 ```
 
-### How to make sure that the current user can see a given item in your activity
+### How to make sure that the current user can see a given item in your activity {/* #how-to-make-sure-that-the-current-user-can-see-a-given-item-in-your-activity */}
 
 The following example:
 
@@ -110,7 +110,7 @@ if (!in_array($discussiongroup->groupid, array_keys($groups))) {
 // Continue on with group specific discussion
 ```
 
-### How to display a group menu
+### How to display a group menu {/* #how-to-display-a-group-menu */}
 
 The following example will display the group selection dropdown using the `groups_print_activity_menu()` function.
 
@@ -134,7 +134,7 @@ $url = new moodle_url('/mod/forum/view.php', ['id' => $cm->id]);
 groups_print_activity_menu($cm, $url);
 ```
 
-## Further reading
+## Further reading {/* #further-reading */}
 
 - [Groups FAQ](https://docs.moodle.org/en/Groups_FAQ)
 - [Groupings FAQ](https://docs.moodle.org/en/Groupings_FAQ)

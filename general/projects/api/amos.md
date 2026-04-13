@@ -26,11 +26,11 @@ The name was chosen in honour of [John Amos Comenius](http://en.wikipedia.org/wi
 
 :::
 
-## AMOS design
+## AMOS design {/* #amos-design */}
 
 This part of the document was the original specification used for development.
 
-### Overall picture
+### Overall picture {/* #overall-picture */}
 
 ![AMOS workflow](./_files/lang20amosflow.png)
 
@@ -41,7 +41,7 @@ This part of the document was the original specification used for development.
 1. The non-English strings database contains the history of the translation of all Moodle strings in all supported languages. This database is used as a source to generate the up-to-date language package in various formats (ZIP to be deployed at the servers, XML to be used by an external translation tools, etc).
 1. Moodle site administrators update their installed language packs by downloading the ZIP files generated from the database (or, in the future, they can fetch the pack in other format)
 
-### AMOS processes
+### AMOS processes {/* #amos-processes */}
 
 ![AMOS workflow](./_files/lang20amosflow2.png)
 
@@ -55,7 +55,7 @@ Thanks to this design, we have a single interface to get data from stage into th
 
 Hierarchy of classes is expected to be available for input processing. For example, the process that tracks commits history in CVS prepares a PHP file with the checkout. So we have a class that is able to convert `array $string[]()` defined in PHP file into staging area. Once we have such class, it can be used to process PHP files uploaded by developers/translators, too.
 
-### Implementation plan
+### Implementation plan {/* #implementation-plan */}
 
 The implementation proposal evolved from the idea by Petr Skoda [discussed at moodle.org](http://moodle.org/mod/forum/discuss.php?d=118707#p542197). The key point is that translators do not have direct access to the source code repository (CVS) any more. There is a central tool (known as AMOS nowadays) that looks after proper branching and keeping history of the language packs. The current proposal follows.
 
@@ -65,7 +65,7 @@ The implementation proposal evolved from the idea by Petr Skoda [discussed at mo
 1. During Moodle 2.0 beta period, translator used AMOS portal to prepare the translations of the new Moodle release.
 1. AMOS installation at http://lang.moodle.org uses its own git clone of our official git mirror to have access to the English strings. Keeping the git mirror up-to-date and synced is a prerequisition for the proper AMOS functionality.
 
-### Use cases
+### Use cases {/* #use-cases */}
 
 1. **Developers** write the code and commits it into CVS. They can create or modify English strings as needed in the current way of direct modification of the strings definition file.
 1. **Translators** come to http://lang.moodle.org to translate Moodle. No other way is possible yet.
@@ -79,13 +79,13 @@ The implementation proposal evolved from the idea by Petr Skoda [discussed at mo
    1. Packages are regenerated automatically as they are at the moment, with the only difference that the database and not CVS is used as their source
 1. **Contributors** [must think about this yet] - their plugins in `CONTRIB` can be mirrored into git (one day this will happen anyway ;-)) and then AMOS can process them easily. Or we could add a feature that the contributor can upload the file with English strings definition manually and "register" the strings this way.
 
-## Database structure
+## Database structure {/* #database-structure */}
 
 The core of the whole AMOS system is a single table containing the history of all changes of all strings from all components in all languages. This one is called amos_repository. All other operations, like committing a translation, getting the current snapshot etc., are based on this table. After an initial import of CVS history, the table contains around 3.6 millions of records.
 
 There is yet another table where the permissions to translate a language are stored, which is not so important and is trivial (therefore not documented here).
 
-### amos_repository
+### amos_repository {/* #amos_repository */}
 
 Contains all Moodle strings and their history
 
@@ -105,14 +105,14 @@ Contains all Moodle strings and their history
 | userid | int (10) unsigned | If the author is known in the local user table, store their id here |
 | userinfo | char (255) | Helps to identify the author of the change, for example a name from CVS commit |
 
-#### Keys
+#### Keys {/* #keys */}
 
 | Name | Type | Field(s) | Reference |
 | --- | --- | --- | --- |
 | primary | primary | id |  |
 | fk_user | foreign | userid | user (id) |
 
-#### Indexes
+#### Indexes {/* #indexes */}
 
 | Name | Type | Field(s) | Description |
 | --- | --- | --- | --- |
@@ -120,15 +120,15 @@ Contains all Moodle strings and their history
 | ix_lang | Not unique | lang | For getting a list of all known components. In some cases, we need to filter English records only |
 | ix_timemodified | Not unique | timemodified | This index allows to search for the recent records in the log output |
 
-## Features
+## Features {/* #features */}
 
-### Tracking the changes in the English strings
+### Tracking the changes in the English strings {/* #tracking-the-changes-in-the-english-strings */}
 
 **Implemented in**: `/local/amos/cli/parse-core.php`
 
 AMOS uses its own git clone of Moodle repository. It runs `git whatchanged` to see what files were affected by every single commit ever. Once it detects a change in a valid English string file, it checks out that revision of the file and compares its content with the current snapshot of the strings database. New record is added into the strings table for every new, modified or removed string in the checked out file. The commit hash of the last fully processed commit is stored in `$CFG->dataroot/amos/var/MOODLE_xx.startat` so that next time AMOS analyzes just new commits.
 
-### AMOS script
+### AMOS script {/* #amos-script */}
 
 AMOS script allows us to propagate changes in the English language pack into other languages.
 
@@ -211,13 +211,13 @@ More information about commit message format: https://docs.moodle.org/dev/Commit
 
 :::
 
-### Generating installer files
+### Generating installer files {/* #generating-installer-files */}
 
 Implemented, not automated yet
 
 See `cli/export-installer.php`.
 
-## Deployment settings
+## Deployment settings {/* #deployment-settings */}
 
 ```bash
 # crontab -l

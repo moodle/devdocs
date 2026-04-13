@@ -18,7 +18,7 @@ Good uses for tasks include:
 
 In general any operation that takes more than a few seconds might be a candidate for a task.
 
-## Benefits
+## Benefits {/* #benefits */}
 
 - Better user experience (give the user feedback immediately, that their task has been queued)
 - Prevent browser timeouts
@@ -32,15 +32,15 @@ Tasks will only run as often as cron is run in Moodle. It is recommended that cr
 
 :::
 
-## Types of task
+## Types of task {/* #types-of-task */}
 
-### Scheduled tasks
+### Scheduled tasks {/* #scheduled-tasks */}
 
 Scheduled tasks are tasks that will run on a regular schedule. A default schedule can be set, but administrators have the ability to change the default schedule if required.
 
 See the [scheduled tasks](./scheduled.md) page for more information on creating scheduled tasks.
 
-### Adhoc tasks
+### Adhoc tasks {/* #adhoc-tasks */}
 
 Adhoc tasks are typically used when you need to queue something to run in the background either immediately, where they would be executed as soon as possible, or as a one-off task at some future point in time.
 
@@ -52,15 +52,15 @@ Adhoc tasks are great for situations such as:
 - migrate large quantities of data between different formats
 - send forum posts as an e-mail
 
-## Usage
+## Usage {/* #usage */}
 
-### Failures
+### Failures {/* #failures */}
 
 A task, either scheduled or adhoc, can sometimes fail. An example would be updating an RSS field when the network is temporarily down. This is handled by the task system automatically - all the failing task needs to do is throw an exception. The task will be retried after 1 minute. If the task keeps failing, the retry algorithm will add more time between each successive attempts up to a max of 24 hours.
 
-### Caches
+### Caches {/* #caches */}
 
-Historically many Moodle APIs have used static caches. Whilst many of these have been replaced by the [Moodle Universal Cache](https://docs.moodle.org/dev/Cache_API), which can be cleared between runs, it is not possible to guarantee that this is always the case.
+Historically many Moodle APIs have used static caches. Whilst many of these have been replaced by the [Moodle Universal Cache](/docs/apis/subsystems/muc), which can be cleared between runs, it is not possible to guarantee that this is always the case.
 
 When working with long-running tasks, you may need to consider caching - this applies to both scheduled, and adhoc, tasks. This is particularly true for tasks related to enrolment.
 
@@ -68,7 +68,7 @@ After a long-running task completes, the next task in the queue may suffer becau
 
 You can enable this behaviour by making a call to `\core\task\manager::clear_static_caches()` at the end of your task.
 
-### Security
+### Security {/* #security */}
 
 When scheduling a task to run in the background, or creating a scheduled task, the task will run as the cron user (see `cron_setup_user()`). If you need to perform access checks in your background task, you should do so as the user that the checks relate to.
 
@@ -76,7 +76,7 @@ In the case of an adhoc task, you can call the [`set_userid`](./adhoc.md#running
 
 For scheduled tasks you should either pass the ID of the user to the `require_capability()` function, or use the `cron_setup_user()` function to switch to that user.
 
-### Legacy cron
+### Legacy cron {/* #legacy-cron */}
 
 The older syntax of cron.php or modname_cron() is still supported, and will be removed in the near future. This is because:
 
@@ -84,7 +84,7 @@ The older syntax of cron.php or modname_cron() is still supported, and will be r
 - the legacy cron functions are fragile - a failure in one cron in one plugin will prevent the cron in other functions from running at all
 - the scheduling cannot be changed by administrators
 
-### Generating output
+### Generating output {/* #generating-output */}
 
 Since Moodle 3.5 it is safe to use the [Output API](../output.md) in cron tasks. Prior to this there may be cases where the Output API has not been initialised.
 
@@ -102,7 +102,7 @@ class my_task extends \core\task\scheduled_task {
 }
 ```
 
-## For Administrators
+## For Administrators {/* #for-administrators */}
 
 Several tools exist for administrators:
 

@@ -25,7 +25,7 @@ Moodle supports automatic virus scanning of files as they are uploaded by users.
 
 A plugin to support the Open Source [ClamAV](https://www.clamav.net/) antivirus engine is included with Moodle core as standard.
 
-## File structure
+## File structure {/* #file-structure */}
 
 Antivirus plugins are located in the `/lib/antivirus` directory.
 
@@ -53,13 +53,13 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
 
 Some of the important files for the antivirus plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
-### version.php
+### version.php {/* #versionphp */}
 
 <VersionPHP
     plugintype="antivirus"
 />
 
-### settings.php
+### settings.php {/* #settingsphp */}
 
 export const settingsExample = `
 if ($ADMIN->fulltree) {
@@ -80,7 +80,7 @@ if ($ADMIN->fulltree) {
     example={settingsExample}
 />
 
-### lang/en/antivirus_scanmyfile.php
+### lang/en/antivirus_scanmyfile.php {/* #langenantivirus_scanmyfilephp */}
 
 export const langExample = `
     $string['pluginname']= 'ScanMyFile antivirus';
@@ -94,14 +94,14 @@ export const langExample = `
     example={langExample}
 />
 
-### classes/scanner.php
+### classes/scanner.php {/* #classesscannerphp */}
 
 <ScannerPHP
     plugintype="antivirus"
     pluginname="scanmyfile"
 />
 
-### tests/scanner_test.php (optional)
+### tests/scanner_test.php (optional) {/* #testsscanner_testphp-optional */}
 
 Writing unit tests is strongly encouraged as it can help to identify bugs, or changes in behaviour, that you had not anticipated.
 

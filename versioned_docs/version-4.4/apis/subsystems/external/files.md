@@ -13,7 +13,7 @@ Moodle provides two ways to fetch and upload files:
 1. A set of web service functions; and
 2. A pair of dedicated endpoints.
 
-## Web service functions
+## Web service functions {/* #web-service-functions */}
 
 You can use the following functions to upload, and fetch, file content:
 
@@ -28,14 +28,14 @@ Many devices do not have enough memory to encode and decode requests containing 
 
 :::
 
-## Dedicated endpoints
+## Dedicated endpoints {/* #dedicated-endpoints */}
 
 Moodle provides two dedicated endpoints which can be used, alongside the authentication token, to upload and fetch content. These are:
 
 - to upload a file: `/webservice/upload.php`; and
 - to fetch a file: `/webservice/pluginfile.php`.
 
-### File upload
+### File upload {/* #file-upload */}
 
 The recommended way to upload file content from an external service is by issue a `POST` request to the `/webservice/upload.php` endpoint, passing in a valid web service token for authentication.
 
@@ -94,7 +94,7 @@ An example of a webservice that accepts files is: `mod_assign_save_submission`.
 
 To accept file uploads, the service must allow "files download" (*Administration > Plugins > Web services > Manage services > Edit service > Advanced button*)
 
-## File download
+## File download {/* #file-download */}
 
 We serve the files through `/webservice/pluginfile.php`. This script requires a web service token for authentication.
 
@@ -108,7 +108,7 @@ We don't serve the files through `/pluginfile.php` for web service clients becau
 
 :::
 
-## Returning files in Web Services
+## Returning files in Web Services {/* #returning-files-in-web-services */}
 
 Since Moodle 3.2, you can return a complete file area list via Web Services using the static `get_area_files` method, defined in `external_util`.
 
@@ -131,7 +131,7 @@ public static function execute_returns(): external_multiple_structure {
 }
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - [Web services developer documentation](./index.md)
 - [Web services user documentation](https://docs.moodle.org/en/Web_services)

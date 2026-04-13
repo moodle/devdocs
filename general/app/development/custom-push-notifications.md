@@ -22,17 +22,17 @@ Messages sent using this API will only get to active app users.
 
 In both cases, please remember that the number of user devices that can receive Push Notifications is dictated by your app [subscription](https://moodle.com/app/).
 
-## Moodle's Message API
+## Moodle's Message API {/* #moodles-message-api */}
 
 Please read the official Moodle documentation, [Message API](/docs/apis/core/message/), where it is explained how to create a new message provider within a plugin.
 
 Apart from what is explained in the [Message API](/docs/apis/core/message/) please notice that it is possible to add a "customdata" field (json-encoded) with additional parameters. Those parameters are the ones described in the Airnotifier API section below.
 
-## Airnotifier API
+## Airnotifier API {/* #airnotifier-api */}
 
 Airnotifier is the name of the Push Notification server used by Moodle. It is possible to use its own API to send custom notifications from Moodle without having to use Moodle's Message API.
 
-### Payload format
+### Payload format {/* #payload-format */}
 
 **Mandatory fields:**
 
@@ -57,7 +57,7 @@ Airnotifier is the name of the Push Notification server used by Moodle. It is po
   - `appurl` (string): When notification is clicked, open this URL. It has preference over `contexturl` but it will be ignored if `extendedtext` is set.
   - `appurlopenin` (string): Where to open the previous URL `browser`, `in-app` or any other value.
 
-### Sample CURL requests
+### Sample CURL requests {/* #sample-curl-requests */}
 
 ```bash title="Simple notification, only subject and body:"
  curl AIRNOTIFIER_URL/api/v2/push -X POST -H "X-AN-APP-NAME: APP_ID" -H "X-AN-APP-KEY: AIRNOTIFIER_ACCESS_KEY" --data '{"device": "android-fcm", "token": "DEVICE_TOKEN",  "extra": {"processor" : "moodle", "notification": 1, "subject": "Title test", "fullmessage": "Message test"}}'

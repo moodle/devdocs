@@ -21,7 +21,7 @@ Once we are confident we have a stable new version that is aligned with our stak
 
 During the evaluation phase we analyse stakeholders' feedback to validate if we met their expectations.
 
-## Discovery
+## Discovery {/* #discovery */}
 
 During this first phase we analyse different stakeholders' needs and then we prioritise them so we can build a short-term roadmap for upcoming app releases.
 
@@ -35,7 +35,7 @@ We have different stakeholders (order does not indicate importance):
 - Moodle Community
 - Other Moodle Product teams
 
-### Prioritisation
+### Prioritisation {/* #prioritisation */}
 
 We use the MoSCoW method. The term MoSCoW itself is an acronym derived from the first letter of each of four prioritisation categories: M - Must have S - Should have C - Could have W - Won't have.
 
@@ -55,13 +55,13 @@ New features and improvements under the "Could have" category can be removed at 
 
 Only critical issues (bugs or MUST not properly detected such as LMS changes) can be added once the implementation phase has commenced but minor nice-to-have improvements will often be added throughout the release cycle.
 
-### Schedule
+### Schedule {/* #schedule */}
 
 We usually release between four to six versions of the Moodle App per year.
 
 Usually a few weeks after a Moodle LMS major release and also between two major LMS releases.
 
-## Shaping
+## Shaping {/* #shaping */}
 
 During this phase there are two major things happening:
 
@@ -72,7 +72,7 @@ So basically, we are defining what the feature should be doing, how it will work
 
 During this phase a developer and a designer will work together so the designer is aware of the technical limitations and the developer has a clear understanding of the high-level proposed solution to be refined during the implementation phase.
 
-## Implementation
+## Implementation {/* #implementation */}
 
 During this phase the developer and the designer will work on building the solution outlined in the Shaping phase, making decisions and choosing trade-offs about the finer details. Both the designer and the developer have full responsibility and they work autonomously unless they need specific help from other developers with more experience in certain areas.
 
@@ -80,7 +80,7 @@ Before the code gets integrated and it is ready for testing, a colleague has to 
 
 Once the code implementing the features is integrated, a tester will ensure that it works as expected. Automatic tests should be added by the developer in new features, so this step is mostly to look for regressions and to check that all the possible use cases for the solution were considered at implementation time.
 
-## QA testing
+## QA testing {/* #qa-testing */}
 
 Once all the selected new features, improvements and bugs fixes have been implemented and tested, we perform a complete review of the Moodle app functionality in order to detect possible regressions.
 
@@ -88,11 +88,11 @@ This is manually done, we go through a list of features of the Moodle app and we
 
 At the beginning of this process, we also invite our community members to do some beta testing of the upcoming new features of improvements, to do this, we use Apple TestFlight and Android Beta Testing. Our community members are able to provide feedback prior to the release that will help to detect potential issues.
 
-## Release
+## Release {/* #release */}
 
 Once the QA testing phase has finished, we move on into the Release phase which consists basically in doing a full-rollout of the new version of the app in Google Play and the Apple App Store.
 
-## Evaluation
+## Evaluation {/* #evaluation */}
 
 In this phase we basically collect feedback to see if the new features and improvements are well received by our final users. As well as using the evaluation criteria we defined in the Shaping phase.
 If something is not working as expected because it has bugs or the selected design solution is not working for most of our users we will action in the next development cycle to address the problem.

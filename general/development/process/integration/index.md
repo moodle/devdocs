@@ -8,7 +8,7 @@ tags:
 sidebar_position: 4
 ---
 
-## Purpose
+## Purpose {/* #purpose */}
 
 The purpose of the integration review is to:
 
@@ -23,7 +23,7 @@ The purpose of the integration review is to:
   - The Moodle mobile app
   - Third-party developers
 
-## Integration Principles
+## Integration Principles {/* #integration-principles */}
 
 Integration (non-technical but philosophical) principles (4-5 words determining if something has to be integrated/backported or no):
 
@@ -36,11 +36,11 @@ Integration (non-technical but philosophical) principles (4-5 words determining 
 
 If all the principles are fulfilled, the answer for "should I integrate this?" is, "yes, please!" (apart from technical findings, of course, that can lead to the issue being not integrated/reopened at last, these principles are 100% philosophical)
 
-## Component lead review process
+## Component lead review process {/* #component-lead-review-process */}
 
 Please see the [Component Lead Review](./clr.md) documentation for further information on the CLR process.
 
-## Integration Review Process
+## Integration Review Process {/* #integration-review-process */}
 
 1. Run automated pre-checks against the continuous integration server. (In future this can be automated and also moved into a publicly
 accessible domain.)
@@ -84,9 +84,9 @@ integration by the assignee.
 17. Assign the tester.
     1. Don't forget to update the weight in the testers sheet
 
-## Schedule
+## Schedule {/* #schedule */}
 
-### In normal periods
+### In normal periods {/* #in-normal-periods */}
 
 The integrators adhere to the following schedule: (links here should convert the times into your local timezone)
 
@@ -99,7 +99,7 @@ All the flow of issues to current integration is automatically controlled by the
 
 Note that under the strict schedule above, it is specially important **to be as responsive as possible**, both when the issue is being integrated and when [testing](../testing/integrated-issues.md#expectation-from-tester). Any significant delay by any of the actors involved will result in the issue being moved out from current integration.
 
-### During continuous integration/Freeze/QA period
+### During continuous integration/Freeze/QA period {/* #during-continuous-integrationfreezeqa-period */}
 
 During the continuous integration period (last 7 weeks before release) the integration team are continuously focused on producing regular builds of main to facilitate QA and fast fixes to issues identified.
 
@@ -137,7 +137,7 @@ Along this period we always release as many stable weeklies, both supported (alw
 
 :::
 
-### On-sync period
+### On-sync period {/* #on-sync-period */}
 
 Immediately after a major release and for a short period (right now, 2 weeks, matching 1st HQ sprint duration), the integration team is under the named on-sync period.
 
@@ -155,13 +155,13 @@ Last, but not less important, a second goal for this on-sync period is:
 - The **environmental requirements for next major version** [must be agreed and resolved so they can land to main](./release#2-weeks-after) early in the process, remaining defined and stable over the next, 6 months of, development cycle.
 As part of the standard [Moodle release process](./release), at the beginning of the on-sync period, we "unhold" all bugs that were held during the last week before the release because they were unrelated to the release. At the end of the onsync period we "unhold" all new features that were submitted after the code freeze for the the release.
 
-## Fixing issues identified during integration review/ testing
+## Fixing issues identified during integration review/ testing {/* #fixing-issues-identified-during-integration-review-testing */}
 
 When a branch has been merged by an integrator, it is important that you do not modify the existing history of your branch (e.g. by amending or squashing your commits) and instead add new commits on top. If you modify the history of your branch, it makes it extremely difficult for the integrator to merge your changes (and see the differences).
 
 As a general rule, this means that if your issue has entered the 'in integration review' stage of the development process, please only add new commits on top of your existing commits. There are circumstances when your issue will be 'in integration review' but not merged (and thus possible to squash changes) but if in any doubt, please add new commits and ask the integrator to squash your changes for you.
 
-## Commit squashing
+## Commit squashing {/* #commit-squashing */}
 
 The Integration team will sometimes recommend squashing commits when things do not look natural (and may offer to do this for you), especially when there are "fix-commits" in the history happening before integration. You will not be forced to squash your changes because our policy is: *"If you want your history of commits to look like bad, it's your history."*.
 
@@ -171,7 +171,7 @@ You should pay close attention to [Git_commits](../../policies/codingstyle/index
 
 :::
 
-## Integration tooling
+## Integration tooling {/* #integration-tooling */}
 
 Typically during the integration process no additional tooling is required, however the [`moodle-userscripts`](https://github.com/HuongNV13/moodle-userscripts) TamperMonkey scripts are a great way of generating the commands typically used during final code review.
 
@@ -184,7 +184,7 @@ When reviewing code for the final review, it is important to do so in a separate
 
 :::
 
-### Useful configuration
+### Useful configuration {/* #useful-configuration */}
 
 The following configuration can be applied in your global git configuration:
 
@@ -233,7 +233,7 @@ alias ir='git integration-reset'
 alias irm='git checkout main; git integration-reset'
 ```
 
-### Typical workflow
+### Typical workflow {/* #typical-workflow */}
 
 1. Reset your code review checkout:
 

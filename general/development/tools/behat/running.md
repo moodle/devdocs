@@ -13,7 +13,7 @@ Behat takes a set of Features, Scenarios, and Steps, and uses these to step thro
 
 This documentation covers how to run Behat tests within Moodle, including requirements, setup, useful tips and tricks, and basic troubleshooting.
 
-## Requirements
+## Requirements {/* #requirements */}
 
 1. Any recent OS with [supported version of Moodle](../../../releases.md) installed
 1. A recent browser (Firefox and Chrome as standard, but [other browsers](./browsers/index.md) are possible)
@@ -21,11 +21,11 @@ This documentation covers how to run Behat tests within Moodle, including requir
 1. A recent version of Selenium (Optional, but recommended)
 1. A recent Java Runtime Environment (Required if using Selenium)
 
-### Recommended extras
+### Recommended extras {/* #recommended-extras */}
 
 Some extra software is also recommended for testing with Behat.
 
-#### Pre-configured browser profiles: moodle-browser-config
+#### Pre-configured browser profiles: moodle-browser-config {/* #pre-configured-browser-profiles-moodle-browser-config */}
 
 Available for [all supported versions of Moodle](../../../releases.md), the [moodle-browser-config](https://github.com/andrewnicols/moodle-browser-config) is a recommended inclusion for Behat. This configuration tooling provides a range of standard browser profiles for testing.
 
@@ -35,7 +35,7 @@ In future, the **moodle-browser-config** tool may be included as composer depend
 
 :::
 
-##### Installation
+##### Installation {/* #installation */}
 
 1. Check out the moodle-browser-config repository:
 
@@ -49,7 +49,7 @@ In future, the **moodle-browser-config** tool may be included as composer depend
    require_once('/path/to/your/git/dir/moodle-browser-config/init.php');
    ```
 
-##### Provided profiles
+##### Provided profiles {/* #provided-profiles */}
 
 The full list of profiles which are included with `moodle-browser-config` are provided in its [own documentation](https://github.com/andrewnicols/moodle-browser-config).
 
@@ -79,7 +79,7 @@ Please note that `Safari` and `Safaridriver` are not currently supported as they
 | edgedriver | Use Edge with Edgedriver directly | No | Yes |
 | headlessedgedriver | Use Edge with Edgedriver directly, without displaying the GUI | No | No |
 
-#### chromedriver-wrapper
+#### chromedriver-wrapper {/* #chromedriver-wrapper */}
 
 When using Google Chrome, you must use the correct version of the `chromedriver` browser driver for the version of Chrome that you use.
 
@@ -89,7 +89,7 @@ To make this easier, a `chromedriver-wrapper` utility has been written. This ins
 
 Installation instructions can be found at [https://github.com/andrewnicols/chromedriver-wrapper](https://github.com/andrewnicols/chromedriver-wrapper).
 
-## Getting started
+## Getting started {/* #getting-started */}
 
 :::tip Environment
 
@@ -97,7 +97,7 @@ These notes assume that you have already installed a supported Java Runtime Envi
 
 :::
 
-### Setting up Selenium
+### Setting up Selenium {/* #setting-up-selenium */}
 
 Generally we recommend use of Selenium, though this is not a fixed requirement. You can use the browser's driver implementation directly but this is harder to setup for the first time.
 
@@ -129,7 +129,7 @@ See the help for the version of Selenium that you are using.
 
 :::
 
-### Setting up your browsers
+### Setting up your browsers {/* #setting-up-your-browsers */}
 
 Selenium is just an intelligent wrapper to start, and manage your browser sessions. It doesn't actually include any web browsers itself.
 
@@ -139,7 +139,7 @@ To use Behat, you will need a recent version of your preferred browser, as well 
 
 Both the browser, and its driver, must be placed inside your `$PATH` - this may be somewhere like `/usr/bin`, `/usr/local/bin`, or perhaps a user bin directory like `~/bin` which is present in your `$PATH`
 
-#### Chrome
+#### Chrome {/* #chrome */}
 
 You can download Google Chrome from [https://www.google.com.au/chrome](https://www.google.com.au/chrome).
 
@@ -148,7 +148,7 @@ documentation. Alternatively you can make use of the [chromedriver-wrapper utili
 
 Either the `chromedriver` binary must be in a directory in your `$PATH`, or the `chromedriver-wrapper/bin` folder must be in your `$PATH`.
 
-#### Firefox
+#### Firefox {/* #firefox */}
 
 You can download Mozilla Firefox from [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US/firefox/new/).
 
@@ -156,7 +156,7 @@ You will need the [correct version of geckodriver](https://github.com/mozilla/ge
 
 The `geckodriver` binary must be in a directory in your `$PATH`.
 
-### Setting up Moodle
+### Setting up Moodle {/* #setting-up-moodle */}
 
 1. Create a new `dataroot` area for files especially for behat
 2. Set the following in your Moodle `config.php`:
@@ -183,7 +183,7 @@ If you use Docker, then you may be able to use `host.docker.internal` where your
 
 :::
 
-### Configure Behat for Moodle
+### Configure Behat for Moodle {/* #configure-behat-for-moodle */}
 
 After setting your configuration, you can simply initialise behat:
 
@@ -195,7 +195,7 @@ This will install all required Composer dependencies, install a new Moodle site,
 
 When it finishes it will give advice on how to run Behat.
 
-### Run Behat tests
+### Run Behat tests {/* #run-behat-tests */}
 
 :::warning
 
@@ -244,7 +244,7 @@ vendor/bin/behat --config /Users/nicols/Sites/moodles/sm/moodledata_behat/behatr
 
 See the upstream documentation on Behat, and Gherkin filters for more information.
 
-#### Running using a different browser
+#### Running using a different browser {/* #running-using-a-different-browser */}
 
 The default browser in Behat is **Firefox**. To specify a different browser profile, you can add the `--profile` argument. For example, to use Chrome in Headless mode:
 
@@ -258,9 +258,9 @@ If you are using the `moodle-browser-config` utility, then you can use any profi
 
 :::
 
-### Advanced testing
+### Advanced testing {/* #advanced-testing */}
 
-#### Run tests without Selenium (chromedriver, geckodriver)
+#### Run tests without Selenium (chromedriver, geckodriver) {/* #run-tests-without-selenium-chromedriver-geckodriver */}
 
 Historically, Behat required Selenium server, however browsers now make use of their own automation layer. For example, Firefox uses `Geckodriver` and Chrome uses `Chromedriver`. As a result the use of Selenium itself is now optional.
 
@@ -290,7 +290,7 @@ After starting your preferred browser, you can then run behat and specify an alt
 vendor/bin/behat --config /Users/nicols/Sites/moodles/sm/moodledata_behat/behatrun/behat/behat.yml --profile=geckodriver
 ```
 
-#### Headless browsers
+#### Headless browsers {/* #headless-browsers */}
 
 There are a number of reasons that you may prefer to use a headless browser. It can be particularly helpful if you are running the tests on a remote system, for example over SSH, or if you do not want to be interrupted by browsers popping up on your machine.
 
@@ -306,7 +306,7 @@ These can be provided to the `--profile` argument to behat:
    vendor/bin/behat --config /Users/nicols/Sites/moodles/sm/moodledata_behat/behatrun/behat/behat.yml --profile=headlesschrome
    ```
 
-#### Parallel runs
+#### Parallel runs {/* #parallel-runs */}
 
 Out-of-the-box, Moodle will configure Behat to run a single Moodle installation with all tests run in series. This is great for developer use where you are running a single test. or a small suite of tests. However this can be quite slow. A lot of time is spent waiting in Behat for things to happen. This may be for a page to load, for additional content to load, or even explicit waits because some interactions must be deliberately slowed down. As a result, a system running behat will not have a particularly high load most of the time.
 
@@ -322,7 +322,7 @@ To support this, each of the parallels runs needs its own:
 
 Rather than using an entirely separate database, the same database is actually used, but a different `behat_prefix` is used to prefix the table names in the database differently.
 
-##### Installation
+##### Installation {/* #installation-1 */}
 
 The Behat initialisation command is responsible for preparing Moodle to run a standard run. You'll have used this before when installing for a standard run:
 
@@ -346,7 +346,7 @@ A number of advanced options are also available but you are unlikely to need the
 1. `-o` or `--optimize-runs` This option will split features with specified tags in all parallel runs, so they are executed first when parallel run gets executed.
 You can view details of all of these using the `--help` flag to `admin/tool/behat/cli/init.php`
 
-##### Running Parallel tests
+##### Running Parallel tests {/* #running-parallel-tests */}
 
 You can use the Moodle behat runner to run all tests, including Standard runs. It is an intelligent wrapper around the standard `./vendor/bin/behat` command which specifies the configuration file, and other required features.
 
@@ -378,7 +378,7 @@ And then to run all tests matching the `@tool_myplugin` tag, against the `classi
 php admin/tool/behat/cli/run.php --tags="@tool_myplugin" --suite="classic"
 ```
 
-##### Custom parameters for parallel runs
+##### Custom parameters for parallel runs {/* #custom-parameters-for-parallel-runs */}
 
 You can set following custom config options for parallel runs via $CFG->behat_parallel_run. It's an array of options where 1st array is for 1st run and so on.
 
@@ -416,7 +416,7 @@ Running parallel (headless) runs on different selenium servers avoid random focu
 
 :::
 
-#### Tests filters
+#### Tests filters {/* #tests-filters */}
 
 With the `--tags` or the `-name` Behat options you can filter which tests are going to run or which ones are going to be skipped. There are a few tags that you might be interested in:
 
@@ -428,7 +428,7 @@ With the `--tags` or the `-name` Behat options you can filter which tests are go
 - `@_cross_browser`: All the tests that should run against multiple combinations of browsers + OS in a regular basis. The features that are sensitive to different combinations of OS and browsers should be tagged as @_cross_browser.
 - `@componentname`: Moodle features uses the [Frankenstyle](../../policies/codingstyle/frankenstyle.md) component name to tag the features according to the Moodle subsystem they belong to.
 
-#### Output formats
+#### Output formats {/* #output-formats */}
 
 Behat is able to output in a number of different formats, and to different locations as required.
 
@@ -489,7 +489,7 @@ vendor/bin/behat --config /Users/nicols/Sites/moodles/sm/moodledata_behat/behatr
         --format=moodle_progress --out=std
 ```
 
-#### Rerun failed scenarios
+#### Rerun failed scenarios {/* #rerun-failed-scenarios */}
 
 With slow systems or parallel run you may experience see some random failures. These may happen when your system is too slow, when it is too fast, or where a page depends on external dependencies.
 
@@ -522,7 +522,7 @@ The Moodle behat runner also includes an `--auto-rerun` option which will automa
 
 :::
 
-#### Running behat with specified theme
+#### Running behat with specified theme {/* #running-behat-with-specified-theme */}
 
 Behat can be run with any installed theme, but it must be initialised with the `-a` or `--add-core-features-to-theme` option first.
 
@@ -550,7 +550,7 @@ vendor/bin/behat --config /Users/nicols/Sites/moodles/sm/moodledata_behat/behatr
 
 :::
 
-#### Using Docker to start selenium server
+#### Using Docker to start selenium server {/* #using-docker-to-start-selenium-server */}
 
 There are a wide range of docker images available which contain a browser with Selenium. You will probably be using the official SeleniumHQ images unless you have a specific reason not to.
 
@@ -566,7 +566,7 @@ An example usage is:
 docker run -d -p 4444:4444 -v `pwd`:`pwd` selenium/standalone-firefox:latest
 ```
 
-#### Change config.php file
+#### Change config.php file {/* #change-configphp-file */}
 
 In the Moodle `config.php` file you must change the `$CFG->behat_wwwroot` to an address that can be reached from within the docker image.
 
@@ -578,7 +578,7 @@ On some more recent versions of Docker you can use `http://host.docker.internal/
 $CFG->behat_wwwroot = 'http://host.docker.internal/sm';
 ```
 
-#### Manually configuring other browsers
+#### Manually configuring other browsers {/* #manually-configuring-other-browsers */}
 
 If you would prefer not to use the `moodle-browser-config` tool but still wish to specify different browsers then you can do so using the `$CFG->behat_profiles` array. Each key/value pair contains a profile name, and the configuration for that profile. For example:
 
@@ -593,9 +593,9 @@ $CFG->behat_profiles = [
 
 See [alternative browsers](./browsers/index.md) for more details.
 
-## Troubleshooting
+## Troubleshooting {/* #troubleshooting */}
 
-### Increasing timeouts
+### Increasing timeouts {/* #increasing-timeouts */}
 
 You may see errors such as:
 
@@ -622,7 +622,7 @@ This is usually an indicator that your development machine is not well tuned. A 
 
 :::
 
-### New step definitions or features are not executed
+### New step definitions or features are not executed {/* #new-step-definitions-or-features-are-not-executed */}
 
 If you are adding new tests or steps definitions update the tests list
 
@@ -636,18 +636,18 @@ For parallel runs, all options for initialising parallel runs are valid
 
 :::
 
-### Tests are failing
+### Tests are failing {/* #tests-are-failing */}
 
 <!-- cspell:ignore Bselenium -->
 If you followed all the steps and you receive an unknown weird error probably your browser version is not compatible with the Selenium version you are running. Please refer to [Working combinations](./browsers/index.md#compatibility) to run the acceptance test.
 
-### The tests are failing, and the error message is completely useless
+### The tests are failing, and the error message is completely useless {/* #the-tests-are-failing-and-the-error-message-is-completely-useless */}
 
 For example, it just says "Error writing to database" with no stack trace.
 
 Add `-vv` command-line option to get very verbose output.
 
-### Errors during setup (before test are launched)
+### Errors during setup (before test are launched) {/* #errors-during-setup-before-test-are-launched */}
 
 Typical errors are:
 
@@ -660,15 +660,15 @@ In order to fix those errors please check that: the `behat_dataroot` has correct
 require_once(__DIR__ . '/lib/setup.php');
 ```
 
-### Selenium server is not running
+### Selenium server is not running {/* #selenium-server-is-not-running */}
 
-#### Chrome specific
+#### Chrome specific {/* #chrome-specific */}
 
 If you are using chrome, you need to ensure that the driver matches the version of the installed chrome browser – which may change on OS updates/upgrades. Moodle or Selenium will not give the appropriate message – see [MDL-67659](https://moodle.atlassian.net/browse/MDL-67659/). One solution is the one suggested in the issue and use Andrew Nicols' [Chromedriver Wrapper](https://github.com/andrewnicols/chromedriver-wrapper/) which will ensure you have the appropriate driver before running the tests.
 
-## Examples
+## Examples {/* #examples */}
 
-### Quick setup and testing using moodle-docker
+### Quick setup and testing using moodle-docker {/* #quick-setup-and-testing-using-moodle-docker */}
 
 This is a quick guide to help locally pass tests for your developments, before submitting them:
 
@@ -702,7 +702,7 @@ Started at 09-05-2021, 06:00
 2m53.27s (47.61Mb)
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - [Acceptance testing for the mobile app](../../../app/development/testing/acceptance-testing.md)
 - Vagrant profile with Moodle and Behat preconfigured: https://github.com/mackensen/moodle-hat

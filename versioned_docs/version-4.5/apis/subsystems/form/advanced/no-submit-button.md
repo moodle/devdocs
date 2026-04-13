@@ -9,7 +9,7 @@ tags:
 
 The moodleform 'no_submit_button_pressed()' method allows you to detect if a button on your form has been pressed that is a submit button but that has been defined as a button that doesn't result in a processing of all the form data but will result in some form 'sub action' and then having the form redisplayed. This is useful for example to have an 'Add' button to add some option to a select box in the form etc. You define a button as a no submit button as in the example below (in `definition()`). This example adds a text box and a submit button in a group.
 
-## Form definition
+## Form definition {/* #form-definition */}
 
 When defining your form, you will need to call the `registerNoSubmitButton()` function with the name of the submit button mark as a non-submission button, for example:
 
@@ -23,7 +23,7 @@ $mform->addGroup($tags, 'tagsgroup', get_string('addtags','blog'), [' '], false)
 $mform->setType('tagsadd', PARAM_NOTAGS);
 ```
 
-## Form handling
+## Form handling {/* #form-handling */}
 
 When handling a no-submit button press you will need to check whether any no-submit button as pressed _before_ checking for submitted data. For example:
 

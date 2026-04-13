@@ -9,7 +9,7 @@ sidebar_position: 1
 
 This page gives an overview of the process of developing Moodle and outlines some of the basic concepts to better understand this Developer documentation.
 
-## The key players
+## The key players {/* #the-key-players */}
 
 - **[Moodle HQ](https://moodle.com/careers/)**<br />
 The team of developers who are directly funded by the Moodle project to work full-time on core developments.
@@ -20,13 +20,13 @@ Also known as Moodle Partners, these are over 100 companies around the world tha
 
 There are many other people contributing to Moodle in many ways, such as coding, testing, writing documentation, helping in the forums or translating. For a full list, see the [Moodle developer credits](http://moodle.org/dev/) page on moodle.org.
 
-## How we develop the Roadmap
+## How we develop the Roadmap {/* #how-we-develop-the-roadmap */}
 
 The [Roadmap](./roadmap.md) lists the new features being developed for the next major version. This list is derived mostly from issues with large numbers of votes in the Moodle [Tracker](../development/tracker/guide.md), so please vote for what you want!  Other influences include general discussion, surveys and feature requests at MoodleMoots and in the Moodle forums.
 
 Component leads decide on features in individual components, so make your case to them!
 
-## Moodle versions
+## Moodle versions {/* #moodle-versions */}
 
 Moodle major releases (with big new features) are on a regular 6-month cycle, in April and October. Each major release increments the version number by 0.1 (eg 3.4 -> 3.5 -> 3.6) and starts a new branch of minor releases.
 
@@ -34,7 +34,7 @@ Minor releases (with bug fixes only) are on a 2-month cycle, unless a security e
 
 The full details of these can be seen in the [Releases](../releases.md).
 
-## Support lifetime
+## Support lifetime {/* #support-lifetime */}
 
 Moodle HQ is committed to supporting major Moodle LMS releases for 12 months of general fixes (usually 6-point releases), and 18 months of security fixes.
 
@@ -42,13 +42,13 @@ That means we usually release minor versions for the most recent three major bra
 
 Some versions, every two years, are [long term supported (LTS)](https://en.wikipedia.org/wiki/Long-term_support). LTS Moodle releases are supported for 36 months, which means they have 18 additional months of security fixes compared to other versions.
 
-## Issue tracking
+## Issue tracking {/* #issue-tracking */}
 
 Issue tracking is an important part of a continuous quality control process. It involves reporting of problems (bugs), ideas for improvement, and new features. Unlike most proprietary software programs, Moodle issue reporting and tracking information is open to everyone. Moodle's issue tracking system is called the [Tracker](http://moodle.atlassian.net/).
 
 All Moodle users are encouraged to be active participants when it comes to testing. Anyone with a Tracker user account can create, view, comment on, vote, and watch bugs.
 
-## Processes
+## Processes {/* #processes */}
 
 As you might guess, a large software project like Moodle with hundreds of contributors and varied opinions can be difficult to manage.
 
@@ -56,17 +56,17 @@ Over time we have developed several well-defined processes for getting code in a
 
 See our [Process](../development/process.md) page for full information on our development processes, including how you can contribute to the project.
 
-## Coding Standards
+## Coding Standards {/* #coding-standards */}
 
 Over time we have distilled our best practice in writing code down into our [Coding Guide](../development/policies.md). These rules cover the formatting and layout of all our code to make it consistent across the code base. If you plan to write Moodle code, you need to read it thoroughly.
 
-## Plugins and APIs
+## Plugins and APIs {/* #plugins-and-apis */}
 
 Although Moodle is open source and you can change anything you want in its core code, the best and most maintainable way to extend Moodle is to write a plugin (sometimes called a module). Plugins are a directory of code that can be simply "dropped" in into any Moodle installation and it will be detected, installed and automatically made available as a tool within the Moodle interface.
 
 See our [Plugin documentation](/docs/apis/plugintypes) for full details of the various types of plugin available.
 
-## See also
+## See also {/* #see-also */}
 
 - [Finding your way into the Moodle code](https://docs.moodle.org/dev/Finding_your_way_into_the_Moodle_code)
 - [Working with the Community](https://docs.moodle.org/dev/Working_with_the_Community)

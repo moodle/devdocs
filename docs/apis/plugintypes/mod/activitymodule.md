@@ -19,48 +19,48 @@ We have recently been analysing how course creation is achieved. Two main ideas 
 
 We would like to invite everyone to express their opinion on this improvement. Course creation is a Moodle activity that is fundamental to teaching a course online, and we would like to ensure that the process is as easy and intuitive as possible.
 
-## Features
+## Features {/* #features */}
 
 The following are changes that we are planning on making in this project. We have a demo that can be viewed and interacted with.
 [Invisio mockup of the activity chooser](https://projects.invisionapp.com/share/SVSREPYNBYG#/screens/388682478).
 
 Our current work can be viewed at [activity chooser prototype](https://activitychooser.prototype.moodledemo.net/). Please take a look.
 
-### Larger display area
+### Larger display area {/* #larger-display-area */}
 
 The activity chooser will be wider and have the activities in a grid format. This allows for more activities to be seen at once.
 
-### Activities and resources are now merged
+### Activities and resources are now merged {/* #activities-and-resources-are-now-merged */}
 
 Our research found that the distinction been activities and resources was not useful to teachers and so now these two categories have been merged together.
 
-### Starred / Favourites tab
+### Starred / Favourites tab {/* #starred--favourites-tab */}
 
 The user can now select activities to be added to the Starred tab. The starred tab is shown by default to users when pulling up the activity chooser.
 
 ![The starred tab](./_activitymodule/activity-chooser-starred.png)
 
-### Recommended tab
+### Recommended tab {/* #recommended-tab */}
 
 Site administrators will now be able to set a selection of activities as recommended. These recommended activities will show up in a tab in the activity chooser for the course creator to view. If no recommendations are made then this tab will not be displayed.
 
 ![The recommended tab](./_activitymodule/activity-chooser-recommend.png)
 
-### Smart search bar
+### Smart search bar {/* #smart-search-bar */}
 
 To help find activities from the activity chooser, we will be adding a search bar, that will search through both the names of the activities, and also the information text, to try and find relevant activities that the user may want.
 
-### Other activity types
+### Other activity types {/* #other-activity-types */}
 
 Other activity types such as LTI will be able to be added to the activity chooser for the user to select.
 
-### Activity information hidden
+### Activity information hidden {/* #activity-information-hidden */}
 
 The information about an activity will be accessible through the 'i' icon. Clicking the link will show additional information about the activity. This will free up space for other activities to be shown rather than always taking up half of the activity chooser.
 
 ![Additional information about an activity](./_activitymodule/activity-chooser-info.png)
 
-## Third party plugin developers
+## Third party plugin developers {/* #third-party-plugin-developers */}
 
 Course module plugins can add items to the activity chooser by implementing the `{plugin}_get_course_content_items()` callback in their plugin lib (lib.php). This callback replaces the now deprecated `{plugin}_get_shortcuts()` method.
 

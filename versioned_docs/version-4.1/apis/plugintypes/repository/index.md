@@ -14,7 +14,7 @@ import {
 
 Repository plugin allow Moodle to bring contents into Moodle from external repositories.
 
-### Prerequisites
+### Prerequisites {/* #prerequisites */}
 
 Before starting coding, it is necessary to know how to use repository administration pages and how to use the file picker.
 
@@ -23,7 +23,7 @@ The 2 different parts to write in order to implement a full repository:
 1. Administration - You can customise the way administrators and users can configure their repositories.
 2. File picker integration - The core of your plugin, it will manage communication between Moodle and the repository service, and also the file picker display.
 
-## File structure
+## File structure {/* #file-structure */}
 
 Repository plugins are located in the `/repository` directory.
 
@@ -49,13 +49,13 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
 
 Some of the important files for the repository plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
-### version.php
+### version.php {/* #versionphp */}
 
 <VersionPHP
     plugintype="repository"
 />
 
-### lang/en/repository_pluginname.php
+### lang/en/repository_pluginname.php {/* #langenrepository_pluginnamephp */}
 
 <!-- markdownlint-disable-next-line MD038 -->
 export const langExample = `
@@ -70,7 +70,7 @@ $string['pluginname_help'] = 'A repository description';
     example={langExample}
 />
 
-### lib.php
+### lib.php {/* #libphp */}
 
 import RepositoryLibExample from '!!raw-loader!./_examples/lib.php';
 
@@ -86,7 +86,7 @@ This file contains the main repository class definition, which must extend the c
 
 </Lib>
 
-### db/access.php
+### db/access.php {/* #dbaccessphp */}
 
 import RepositoryAccessExample from '!!raw-loader!./_examples/access.php';
 
@@ -96,13 +96,13 @@ import RepositoryAccessExample from '!!raw-loader!./_examples/access.php';
     example={RepositoryAccessExample}
 />
 
-## Repository API methods
+## Repository API methods {/* #repository-api-methods */}
 
 Repository plugins can present, store, and link files in different ways depending on the type of remote system that the repository connects to.
 
 Some of the key API functions are described below.
 
-### supported_returntypes(): int
+### supported_returntypes(): int {/* #supported_returntypes-int */}
 
 Return any combination of the following values:
 
@@ -139,7 +139,7 @@ This implies that a plugin that uses a file picker is able to narrow the set of 
 In the end, which type is
 used by Moodle depends on the choices made by the end user (for example inserting a link, will result in `FILE_EXTERNAL`-related functions being used, using a 'shortcut/alias' will result in the '`FILE_REFERENCE`'-related functions being used).
 
-### supported_filetypes()
+### supported_filetypes() {/* #supported_filetypes */}
 
 If your plugin only supports certian file types, then you should implement the optional `supported_filetypes()` method.
 
@@ -180,7 +180,7 @@ function supported_filetypes() {
   </TabItem>
 </Tabs>
 
-### Course and User Repository Instances.
+### Course and User Repository Instances. {/* #course-and-user-repository-instances */}
 
 A system-wide instance of a repository is created when it is enabled. It is also possible to support both course, and user specific repositories.. This can be achieved by setting the  `enablecourseinstances` and `enableuserinstances` options.  There are three ways that this can be done:
 
@@ -188,11 +188,11 @@ A system-wide instance of a repository is created when it is enabled. It is also
 2. The plugin must provide a **get_instance_option_names** method which returns at least one instance option name. This method defined the specific instances options, if none instance attribute is needed, the system will not allow the plugin to define course and user instances. Note, you must not define the form fields for these options in the **type_config_form()** function. For example, [filesystem repository](https://github.com/moodle/moodle/blob/v4.0.0/repository/filesystem/lib.php#L439).
 3. Several 'core' repositories use the **db/install.php** to create the original repository instance by constructing an instance of the **repository_type** class.  The options can be defined in the array passed as the second parameter to the constructor. For example [Wikipedia repository](https://github.com/moodle/moodle/blob/v4.0.0/repository/wikimedia/db/install.php).
 
-### Developer-defined API
+### Developer-defined API {/* #developer-defined-api */}
 
 These are settings that are configured for the whole Moodle site and not per instance of your plugin. All of these are optional, without them there will be no configuration options in the Site administration > Plugins > Repositories > pluginname page.
 
-#### get_type_option_names(): array
+#### get_type_option_names(): array {/* #get_type_option_names-array */}
 
 This function must be declared static
 
@@ -212,7 +212,7 @@ public static function get_type_option_names() {
   </div>
 </details>
 
-#### type_config_form($mform, $classname='repository')
+#### type_config_form($mform, $classname='repository') {/* #type_config_formmform-classnamerepository */}
 
 This function must be declared static
 
@@ -237,7 +237,7 @@ public static function type_config_form($mform, $classname='repository') {
   </div>
 </details>
 
-#### type_form_validation($mform, $data, $errors)
+#### type_form_validation($mform, $data, $errors) {/* #type_form_validationmform-data-errors */}
 
 This function must be declared static
 
@@ -252,11 +252,11 @@ public static function type_form_validation($mform, $data, $errors) {
 }
 ```
 
-### Instance settings
+### Instance settings {/* #instance-settings */}
 
 These functions relate to a specific instance of your plugin (for example the URL and login details to access a specific webdav repository). All of these are optional, without them, the instance settings form will only contain a single 'name' field.
 
-#### get_instance_option_names(): array
+#### get_instance_option_names(): array {/* #get_instance_option_names-array */}
 
 This function must be declared static
 
@@ -279,7 +279,7 @@ public static function get_instance_option_names() {
   </div>
 </details>
 
-#### instance_config_form($mform)
+#### instance_config_form($mform) {/* #instance_config_formmform */}
 
 This function must be declared static
 
@@ -311,7 +311,7 @@ public static function get_instance_option_names() {
 
 :::
 
-#### instance_form_validation($mform, $data, $errors)
+#### instance_form_validation($mform, $data, $errors) {/* #instance_form_validationmform-data-errors */}
 
 This function must be declared static
 
@@ -325,7 +325,7 @@ public static function instance_form_validation($mform, $data, $errors) {
 }
 ```
 
-#### Getting / updating settings
+#### Getting / updating settings {/* #getting--updating-settings */}
 
 Both global and instance settings can be retrieved, from within the plugin, via **$this->get_option('settingname')** and updated via **$this->set_option(array('settingname' => 'value'))**.
 
@@ -335,7 +335,7 @@ You cannot call **$this** from static methods.  If you need access the non stati
 
 :::
 
-#### plugin_init()
+#### plugin_init() {/* #plugin_init */}
 
 This function must be declared static.
 
@@ -343,7 +343,7 @@ Optional. This function is called when the administrator adds the plugin. So unl
 
 Parent function does nothing.
 
-### Example of using the settings
+### Example of using the settings {/* #example-of-using-the-settings */}
 
 As an example, let's create a Flickr plugin for accessing a public flickr account. The plugin will be called "Flickr Public".
 
@@ -392,9 +392,9 @@ import FlickPublicLib from '!!raw-loader!./_examples/flickr_public_lib.php';
     description=""
 />
 
-## Repository APIs
+## Repository APIs {/* #repository-apis */}
 
-### Quick Start
+### Quick Start {/* #quick-start */}
 
 The File Picker uses Ajax calls to present the repository content. In order to integrate a repository with the the Ajax callbacks there are several possibilities:
 
@@ -405,11 +405,11 @@ The File Picker uses Ajax calls to present the repository content. In order to i
 
 All those methods are described below.
 
-### Functions you MUST override
+### Functions you MUST override {/* #functions-you-must-override */}
 
 These functions cover the basics of initialising your plugin each time the repository is accessed and listing the files available to the user from within the plugin.
 
-#### __construct($repositoryid, $context=SYSCONTEXTID, $options=array(), $readonly=0)
+#### __construct($repositoryid, $context=SYSCONTEXTID, $options=array(), $readonly=0) {/* #__constructrepositoryid-contextsyscontextid-optionsarray-readonly0 */}
 
 Should be overridden to do any initialisation required by the repository, including:
 
@@ -431,7 +431,7 @@ Calling parent::\__construct($repositoryid, $context, $options, $readonly); is e
 - this->name - as specified by $this->get_name()
 - this->returntypes - as specified by $this->supported_returntypes()
 
-#### get_listing($path="", $page="")
+#### get_listing($path="", $page="") {/* #get_listingpath-page */}
 
 This function will return a list of files to be displayed to the user, the list must be a array.
 
@@ -500,7 +500,7 @@ import FullList from '!!raw-loader!./_examples/full_list.jsonc';
   </div>
 </details>
 
-### Dynamically loading
+### Dynamically loading {/* #dynamically-loading */}
 
 Some repositories contain many files which cannot load in one time, in this case, we need dynamically loading to fetch them step by step, files in subfolder won't be listed until user click the folder in file picker treeview.
 
@@ -508,11 +508,11 @@ As a plug-in developer, if you set dynload flag as **true**, you should return f
 
 The use of the **object** tag, instead of returning a **list** of files, allows you to embed an external file chooser within the repository panel. See [Repository plugins embedding external file chooser](https://docs.moodle.org/dev/Repository_plugins_embedding_external_file_chooser) for details about how to do this.
 
-### User login (optional)
+### User login (optional) {/* #user-login-optional */}
 
 If our plugin allows a user to log in to a remote service, you can support this using the `print_login()` and `check_login` function, which are desribed below.
 
-#### print_login
+#### print_login {/* #print_login */}
 
 For plugins which need to support login to a remote service, the `print_login()` function can be used to return an array of the form elements needed to support the login.
 
@@ -644,7 +644,7 @@ public function print_login() {
   </div>
 </details>
 
-#### check_login(): bool
+#### check_login(): bool {/* #check_login-bool */}
 
 This function will return a boolean value to tell Moodle whether the user has logged in.
 By default, this function will return true.
@@ -656,7 +656,7 @@ public function check_login(): bool {
 }
 ```
 
-#### logout
+#### logout {/* #logout */}
 
 When a user clicks the logout button in file picker, this function will be called. You may clean up the session or disconnect the connection with remote server here. After this the code should return something suitable to display to the user (usually the results of calling **$this->print_login()**):
 
@@ -668,15 +668,15 @@ public function logout() {
 }
 ```
 
-### Transferring files to Moodle (optional)
+### Transferring files to Moodle (optional) {/* #transferring-files-to-moodle-optional */}
 
 These functions all relate to transferring the files into Moodle, once they have been chosen in the filepicker. All of them are optional and have default implementations which are often suitable to use as they are.
 
-#### get_file_reference($source)
+#### get_file_reference($source) {/* #get_file_referencesource */}
 
 This function takes $source as in user input, parses and cleans it (recommended to call clean_param()). It prepares the reference to the file in repository-specific format that would be passed on to methods get_file(), get_link(), get_moodle_file(), get_file_by_reference() and/or stored in DB in case of creating a shortcut to file. For the most of repositories it is just clean $source value. For has_moodle_files-repositories this function also changes encoding.
 
-#### get_file($url, $filename = "")
+#### get_file($url, $filename = "") {/* #get_fileurl-filename-- */}
 
 For FILE_INTERNAL or FILE_REFERENCE this function is called at the point when the user has clicked on the file and then on 'select this file' to add it to the filemanager / editor element. It does the actual transfer of the file from the repository and onto the Moodle server. The default implementation is to download the $url via CURL. The $url parameter is the $reference returned by get_file_reference (above, but usually the same as the 'source' returned by 'get_listing'). The $filename should usually be processed by $path = $this->prepare_file($filename), giving the full 'path' where the file should be saved locally. This function then returns an array, containing:
 
@@ -735,22 +735,22 @@ public function get_file($reference, $filename = '') {
   </TabItem>
 </Tabs>
 
-#### get_link($url)
+#### get_link($url) {/* #get_linkurl */}
 
 Used with `FILE_EXTERNAL` to convert a reference (from 'get_file_reference', but ultimately from the output of 'get_listing') into a URL that can be used directly by the end-user's browser. Usually just returns the original $url, but may need further transformation based on the internal implementation of the repository plugin.
 
-#### get_file_source_info($source)
+#### get_file_source_info($source) {/* #get_file_source_infosource */}
 
 Takes the 'source' field from 'get_listing' (as returned by the user's browser) and returns the value to be stored in files.source field in DB (regardless whether file is picked as a copy or by reference). It indicates where the file came from. It is advised to include either full URL here or indication of the repository.
 Examples: 'Dropbox: /filename.jpg', 'http://fullurl.com/path/file', etc.
 
 This value will be used to display warning message if reference can not be restored from backup.  Also it can (although not has to) be used in get_reference_details() to produce the human-readable reference source in the fileinfo dialogue in the file manager.
 
-### Search functions (optional)
+### Search functions (optional) {/* #search-functions-optional */}
 
 These functions allow you to implement search functionality within your repository.
 
-#### print_search
+#### print_search {/* #print_search */}
 
 When a user clicks the search button on file picker, this function will be called to return a search form. By default, it will create a form with single search bar - you can override it to create a advanced search form.
 
@@ -778,7 +778,7 @@ public function print_search() {
   </div>
 </details>
 
-#### search($search_text, $page = 0)
+#### search($search_text, $page = 0) {/* #searchsearch_text-page--0 */}
 
 Return the results of doing the search. Any additional parameters from the search form can be retrieved by $param = optional_param('paramname', [PARAM_INT / PARAM_TEXT);.
 
@@ -803,11 +803,11 @@ public function search($search_text, $page = 0) {
   </div>
 </details>
 
-#### global_search()
+#### global_search() {/* #global_search */}
 
 Return true if should be included in a search throughout all repositories (currently not available via the UI)
 
-### Repository support for returning file as alias/shortcut
+### Repository support for returning file as alias/shortcut {/* #repository-support-for-returning-file-as-aliasshortcut */}
 
 It is possible to link to the file from external (or internal) repository by reference. In UI it is called "create alias/shortcut". This creates a row in `files` table but the contents of the file is not stored. Although it may be cached by repository if developer wants to.
 
@@ -815,7 +815,7 @@ Make sure that function supported_returntypes() returns FILE_REFERENCE among oth
 
 Note that external file is synchronised by moodle when UI wants to show the file size.
 
-#### get_reference_file_lifetime()
+#### get_reference_file_lifetime() {/* #get_reference_file_lifetime */}
 
 Return minimum number of seconds before checking for changes to the file (default implementation = 1 day)
 
@@ -825,7 +825,7 @@ public function get_reference_file_lifetime($ref) {
 }
 ```
 
-#### sync_individual_file(stored_file $storedfile)
+#### sync_individual_file(stored_file $storedfile) {/* #sync_individual_filestored_file-storedfile */}
 
 Called after the file has reached the 'lifetime' specified above to see if it should now be synchronised (default implementation is to return true)
 
@@ -835,7 +835,7 @@ public function sync_individual_file(stored_file $storedfile) {
 }
 ```
 
-#### get_reference_details($reference, $filestatus = 0)
+#### get_reference_details($reference, $filestatus = 0) {/* #get_reference_detailsreference-filestatus--0 */}
 
 Returns human-readable information about where the original file is stored (to be displayed in the filepicker properties box).
 
@@ -863,7 +863,7 @@ public function get_reference_details($reference, $filestatus = 0) {
   </div>
 </details>
 
-#### get_file_by_reference($reference)
+#### get_file_by_reference($reference) {/* #get_file_by_referencereference */}
 
 Returns up-to-date information about the original file, only called when the 'lifetime' is reached and 'sync_individual_file' returns true.
 
@@ -926,7 +926,7 @@ public function get_file_by_reference($reference) {
   </div>
 </details>
 
-#### send_file($storedfile, $lifetime=86400, $filter=0, $forcedownload=false, array $options = null)
+#### send_file($storedfile, $lifetime=86400, $filter=0, $forcedownload=false, array $options = null) {/* #send_filestoredfile-lifetime86400-filter0-forcedownloadfalse-array-options--null */}
 
 Send the requested file back to the user's browser. The 'reference' for the file can be found via $storedfile->get_reference(). If the file is not found / no longer exists, the function 'send_file_not_found()' should be used. Otherwise the file should be output directly, via the most appropriate method:
 

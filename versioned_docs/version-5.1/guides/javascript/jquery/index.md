@@ -15,7 +15,7 @@ Moodle has supported the use of native ES6-style modules and constructs since Mo
 
 This page explains the recommended way to use jQuery in core and plugins, although other [older](https://docs.moodle.org/dev/jQuery_pre2.9) methods of including jQuery will still work these are no longer considered to be supported.
 
-## Why do we need JQuery?
+## Why do we need JQuery? {/* #why-do-we-need-jquery */}
 
 :::important
 
@@ -29,13 +29,13 @@ JQuery is useful for handling browser inconsistencies, and for utility functions
 - Promises ($.Deferred)
 - Ajax
 
-## How to use JQuery
+## How to use JQuery {/* #how-to-use-jquery */}
 
 JQuery is available via an AMD Module import and is available to all AMD JavaScript.
 
 To make use of JQuery, either list it as a dependency of your module, or use a require call to load it.
 
-### As a dependency of a module
+### As a dependency of a module {/* #as-a-dependency-of-a-module */}
 
 <Tabs>
 <TabItem value="jquery-import-es6" label="ES6 Imports">
@@ -56,7 +56,7 @@ define(['jquery'], function(jQuery) {
 });
 ```
 
-### With a require call
+### With a require call {/* #with-a-require-call */}
 
 </TabItem>
 <TabItem value="jquery-amd-require" label="AMD Requirement">
@@ -72,7 +72,7 @@ require(['jquery'], function(jQuery) {
 </TabItem>
 </Tabs>
 
-## What about JQuery UI ?
+## What about JQuery UI ? {/* #what-about-jquery-ui- */}
 
 JQuery UI is a separate project containing a library of reusable widgets that relies on JQuery. JQuery UI is available for plugins to use, but it **must not** be used in core code, and is _highly discouraged_ in plugin usage.
 
@@ -92,7 +92,7 @@ $PAGE->requires->jquery_plugin('ui');
 
 Please note that this _must_ be called before any content is output.
 
-## See also
+## See also {/* #see-also */}
 
 - [JavaScript Modules](../modules.md)
 - [Useful core JavaScript modules](https://docs.moodle.org/dev/Useful_core_Javascript_modules)

@@ -17,7 +17,7 @@ Atto has been removed in Moodle 5.0.
 
 :::
 
-## File structure
+## File structure {/* #file-structure */}
 
 import {
     Lang,
@@ -57,13 +57,13 @@ Each plugin is in a separate subdirectory and consists of a number of _mandatory
 
 Some of the important files for the Atto plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
-### version.php
+### version.php {/* #versionphp */}
 
 <VersionPHP
     plugintype="atto"
 />
 
-### lib.php
+### lib.php {/* #libphp */}
 
 import LibExample from '!!raw-loader!./_examples/lib.php';
 import LibDescription from './_examples/lib.md';
@@ -77,7 +77,7 @@ import LibDescription from './_examples/lib.md';
     optional
 />
 
-### yui/src/button/*
+### yui/src/button/* {/* #yuisrcbutton */}
 
 <!-- markdownlint-disable no-inline-html -->
 
@@ -99,7 +99,7 @@ The plugin:
 - **must** provide a constructor; and
 - ***should*** extend [Y.M.editor_atto.EditorPlugin](https://github.com/moodle/moodle/blob/MOODLE_37_STABLE/lib/editor/atto/yui/src/editor/js/editor-plugin.js).
 
-#### EditorPlugin
+#### EditorPlugin {/* #editorplugin */}
 
 It is up to the plugin author to decide how best to write their plugin, but it is highly advisable to extend `EditorPlugin` class, which provides a number of useful functions for dealing with the Editor, Toolbars, Keyboard Navigation, and other related areas.
 

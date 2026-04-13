@@ -12,9 +12,9 @@ On a technical level, it's a completely different codebase from the Moodle LMS, 
 
 Before embarking into any Moodle-specific documentation, we recommend that you are at least familiar with [Angular](https://angular.io/) and [Ionic Framework](https://ionicframework.com/). These are the core technologies used in the application. We'll reference any relevant concepts, but having a basic idea will take you a long way in understanding the Moodle App.
 
-## Basic concepts
+## Basic concepts {/* #basic-concepts */}
 
-### How does it work?
+### How does it work? {/* #how-does-it-work */}
 
 When you are accessing a Moodle site on the web, you are only capable of using one site at a time. In contrast to that, the Moodle App can be used with multiple sites at once. However, you will need to switch sessions to interact with each site, so you won't be able to use multiple sites simultaneously (but you'll continue receiving push notifications and reminders for all the sites connected in the app).
 
@@ -24,7 +24,7 @@ The app can also be compiled to work with a single site, or a list of approved s
 
 Keep in mind that the application only works with moodle sites that allow it, and this is disabled by default in some sites. If you want to allow users to log into your site using the app, make sure to check that it's [enabled in the settings](https://docs.moodle.org/en/Moodle_app_guide_for_admins#Enable_mobile_services_on_your_site). If you are not the site owner, reach out to the administrators.
 
-### Technologies used
+### Technologies used {/* #technologies-used */}
 
 The Moodle app is a hybrid app built using [Angular](https://angular.io/) and [Ionic Framework](https://ionicframework.com/). The main coding language used in the app is [Typescript](https://www.typescriptlang.org/).
 
@@ -32,7 +32,7 @@ The [Cordova framework](https://cordova.apache.org/) is used to use native featu
 
 The official app from MoodleHQ uses a server with [Airnotifier](https://github.com/dcai/airnotifier) to deliver push notifications to the app. The Moodle site sends the notifications to the Airnotifier server, and this server uses [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) to deliver the notifications to the devices using Google Cloud Messaging and Apple Push Notification service.
 
-### Architecture
+### Architecture {/* #architecture */}
 
 The code of the application follows an [hexagonal architecture](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)), with core modules that include the main functionality and addon modules that provide additional features.
 
@@ -42,7 +42,7 @@ These modules are defined as [Angular Modules](https://angular.io/guide/architec
 
 Pages and navigation are defined using [Angular Router](https://angular.io/guide/routing-overview), making heavy use of [lazy loading](https://angular.io/guide/lazy-loading-ngmodules).
 
-### Web services and caching
+### Web services and caching {/* #web-services-and-caching */}
 
 The entire communication between the app and a site happens through a layer of [web services](/docs/apis/subsystems/external/). Each time a user logs into the application, a new session starts and that session is what the concept of a "site" encapsulates in the application. For this reason, you could log multiple times into the same site and from the point of view of the application those would be different sites.
 
@@ -52,7 +52,7 @@ When a user logs out from a site, or their session expires, this data will remai
 
 In some situations, the cached data can also be refreshed. For example, many screens support the pull-to-refresh gesture, and downloaded data can be refreshed using similar controls to the ones used to prefetch in the first place.
 
-### Delegates and handlers
+### Delegates and handlers {/* #delegates-and-handlers */}
 
 Delegates and handlers are what allows some parts of the app to be easily extendable. This system allows addons to be as independent from core as possible. Since the core features don't know which addons will be active, each addon is responsible to tell core which functionality they extend.
 
@@ -65,13 +65,13 @@ The app has two types of delegates:
 - Delegates that return an array of handlers. Features related to this delegates will display a list, and so the handlers are placed in an array and ordered by priority. For example, the `CoreMainMenuDelegate` belongs to this type since we have a list of tabs to display.
 - Delegates where the handlers are indexed by a unique key. In this case, delegates will return the handler associated with the key instead of a list of handlers. For example, `CoreCourseModuleDelegate` is a delegate to handle course modules (activities or resources). Each handler needs to indicate which module it handles with the key, for example `quiz`. When the app needs to open a module, it will use the right handler.
 
-### Site plugins
+### Site plugins {/* #site-plugins */}
 
 Moodle plugins can also be adapted to work with the mobile app. Given that more than one site can be used with the app, the plugins that are activated depend on the site the app is connected to. That's why they are called site plugins.
 
 When the application connects with a site, it will fetch information about which plugins have mobile support and register their functionality using [the delegates system](#delegates-and-handlers). Plugins can be written using only PHP, but JavaScript is also supported for some advanced use-cases.
 
-## Platform Support
+## Platform Support {/* #platform-support */}
 
 The Moodle App only works with Moodle sites running version 3.5 or newer.
 
@@ -79,7 +79,7 @@ The minimum platforms supported by the application are Android 7 (with Webview 7
 
 Browsers are not officially supported, but you can use a Chromium-based browser for development if you don't need any native functionality. However, there are [some caveats](./development/setup/app-in-browser.md) you should be aware of.
 
-## Where to go next
+## Where to go next {/* #where-to-go-next */}
 
 Now that you are familiar with the basic concepts, you understand how the application works, and you've got your development environment set up; you're ready to embark into the particulars of what you're trying to achieve.
 

@@ -7,7 +7,7 @@ tags:
 - mod
 ---
 
-## Summary
+## Summary {/* #summary */}
 
 A new API allows you to customise how your module displays on the main course page:
 
@@ -20,15 +20,15 @@ In addition, existing things you could already do (like change the icon on the m
 
 The `get_fast_modinfo` function now returns specific classes which are documented and which you can use to obtain new information about modules.
 
-## Backward compatibility
+## Backward compatibility {/* #backward-compatibility */}
 
 All modules and code written for Moodle 2.0 should continue to behave in exactly the same manner. There is no need to change existing modules for this API unless you want to use the new features.
 
-## Removing your link
+## Removing your link {/* #removing-your-link */}
 
 If your module should not appear in navigation and in other lists of modules to visit or get information for, like Label, the easiest way to remove that link is to return true for `FEATURE_NO_VIEW_LINK` in your module's `_supports` function.
 
-## Customising module display, in cache
+## Customising module display, in cache {/* #customising-module-display-in-cache */}
 
 The first place you can customise your module display is in the existing `_get_coursemodule_info` API function. This function obtains information about the module which will be stored in the course cache (the `modinfo` field of the course table).
 
@@ -57,7 +57,7 @@ If you don't need the information to be cached (it can be retrieved very quickly
 
 Don't use renderers in this function (see MDL-41074). If you have data you would like to render onto the course page, put it into the custom data property and render it in the MODNAME_cm_info_view() function (see below). For an example, see mod_folder.
 
-## Customising module display, for current user
+## Customising module display, for current user {/* #customising-module-display-for-current-user */}
 
 You can customise module display dynamically (when the page loads). For example you might want to alter it based on the permissions of the current user.
 
@@ -76,7 +76,7 @@ In addition to the `set_user_visible` function shown, you can also set many othe
 
 Most things are set using functions (as above; another example would be `set_content` which sets the same content data as mentioned in the previous section) while other things can be set directly using public variables.
 
-## Customising module display, for current user, on course page only
+## Customising module display, for current user, on course page only {/* #customising-module-display-for-current-user-on-course-page-only */}
 
 Sometimes you need to display custom information for the current user that appears only on the course view page. For example, the forum module displays unread information on the view page. This information doesn't show on other pages (it isn't included in the navigation, for instance).
 
@@ -92,7 +92,7 @@ Because this function only runs when looking at the course page:
 
 - Inside this function you cannot set options which affect the appearance or access to the activity on other pages; for example, you cannot turn off the `uservisible` flag as shown in the previous example. This is because these options are required on other pages (e.g. to display navigation) so it does not make sense to set them only for the course page. If you try, you'll get a `coding_exception`.
 
-## get_fast_modinfo data
+## get_fast_modinfo data {/* #get_fast_modinfo-data */}
 
 The function `get_fast_modinfo` now returns an object of class course_modinfo, which itself contains cm_info objects about each activity. (These are entirely backward-compatible with the previous return value.)
 
@@ -118,7 +118,7 @@ By specifying cm_info in the parameter list, you'll cause PHP to give an error i
 
 Of course, this is only necessary if your function relies on a feature that is specific to cm_info, such as the `uservisible` field above. If your function only uses fields which are present in the database row, then there's no need to require cm_info.
 
-## More documentation
+## More documentation {/* #more-documentation */}
 
 All three classes for this API are in the core file `lib/modinfolib.php` and contain complete PHPdoc information for all fields and functions.
 

@@ -11,7 +11,7 @@ The Form API includes the ability to repeat a group of form elements. This is us
 
 This is achieved by adding a button to the form to handle the creation of the additional buttons using a page reload, and a zero-indexed array added to the `elementname` data returned by `get_data()`.
 
-## Overview
+## Overview {/* #overview */}
 
 Most of the necessary information is in the phpdoc comment for the repeat_elements() method:
 
@@ -40,7 +40,7 @@ Most of the necessary information is in the phpdoc comment for the repeat_elemen
  */
 ```
 
-## Configuration
+## Configuration {/* #configuration */}
 
 - The list of elements you wish to repeat is set in the `$elementobjs` array, with any options passed into the `$options` array.
 A `{no}` placeholder can be placed into strings, such as the element label or default values, to represent the item number.

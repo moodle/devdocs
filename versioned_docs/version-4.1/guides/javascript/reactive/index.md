@@ -16,7 +16,7 @@ Third-party plugin developers are free to use any framework they want to impleme
 
 Nevertheless, in terms of reusability, maintainability and user experience the advantages of having a reactive UI are undeniable. For this reason Moodle has an adhoc reactive library that can be used to implement small reactive applications on any Moodle page.
 
-## Reactive pattern highlights
+## Reactive pattern highlights {/* #reactive-pattern-highlights */}
 
 To understand the advantages (and disadvantages) of a reactive User Interface (UI) there are a few major points you must understand about reactivity:
 
@@ -53,7 +53,7 @@ Even encapsulating the logic in a few methods the complexity will increase expon
   </div>
 </details>
 
-## The basic classes
+## The basic classes {/* #the-basic-classes */}
 
 Reactive interfaces can be used in many ways, but all of them are supported by 4 main elements.
 
@@ -113,7 +113,7 @@ Reactive interfaces can be used in many ways, but all of them are supported by 4
   </TabItem>
 </Tabs>
 
-## Parts of a component
+## Parts of a component {/* #parts-of-a-component */}
 
 _React Components_ represent most of the work on building a reactive UI. In general, the _Reactive Instance_ and the _State Manager_ can be used as they are provided, and Mutations contain only the interactions with the server and the state. The React Components are where all the UI logic is implemented.
 
@@ -121,7 +121,7 @@ Components can do many things but, in general, they are not hard to implement be
 
 Let's take a look at the component anatomy.
 
-### Extending the BaseComponent class
+### Extending the BaseComponent class {/* #extending-the-basecomponent-class */}
 
 All reactive UIs are object-oriented and all components extend the BaseComponent class. This means that the default component structure is very simple. For example:
 
@@ -140,7 +140,7 @@ export default class extends BaseComponent {
   </div>
 </details>
 
-### Instantiate a Component
+### Instantiate a Component {/* #instantiate-a-component */}
 
 Any component belongs to one DOM element and is registered in a Reactive Instance. This means that to create a new instance we need to provide at least those two elements. For example:
 
@@ -176,7 +176,7 @@ $PAGE->requires->js_call_amd('YOUR_PLUGIN/main', 'init', [$domelementid]);
 
 In case no Reactive Instance is passed, the BaseComponent will try to inherit the instance from a parent DOM element. This way subcomponents can omit that param.
 
-### Initialize a component from a mustache template
+### Initialize a component from a mustache template {/* #initialize-a-component-from-a-mustache-template */}
 
 Components are easy to embed in mustache files. To do so your class must have a static "init" method that could be called inside the `{{#js}}`.
 
@@ -228,7 +228,7 @@ The init method has an id as a first param to find the main DOM Element, but it 
 
 :::
 
-### The Component lifecycle hooks
+### The Component lifecycle hooks {/* #the-component-lifecycle-hooks */}
 
 All components are registered in a Reactive Instance and, when this is done, the Component can start watching the state and ask for state mutations. However, during its life, a Component can operate differently if necessary.
 
@@ -243,7 +243,7 @@ To understand how a component works you need to understand the component lifecyc
 
 This method is used to define the main component attributes. The Component cannot interact with the Reactive Instance yet as instantiation has not yet completed.
 
-#### The `create(descriptor)` hook
+#### The `create(descriptor)` hook {/* #the-createdescriptor-hook */}
 
 The `BaseComponent` construct method will register the component in the Reactive Instance after some validations. It is quite common for components to have private attributes needed for the UI logic. Components can set their own attributes in the `create` hook method.
 
@@ -296,7 +296,7 @@ When create is called the component has an `element` attribute because it should
 
 At the moment the Reactive Instance is registering the component and asking it what parts of the state it is watching. This method returns a list of state changes the component is watching and the methods that will handle those changes, something like an event listener for state changes.
 
-#### The `getWatchers(): array` hook
+#### The `getWatchers(): array` hook {/* #the-getwatchers-array-hook */}
 
 At this moment the component can specify which state changes are watching and what methods will use to listen to those changes.
 
@@ -357,7 +357,7 @@ See the [Implement state watchers](#implementing-state-watchers) section for mor
 
 When the reactive instance has the initial state loaded. Is important to note that this method will be called even if the component is registered after the initial state is loaded. For all purposes, this method is the equivalent of a page ready for components.
 
-#### The `stateReady(state)` hook
+#### The `stateReady(state)` hook {/* #the-statereadystate-hook */}
 
 This is one of the most important hooks in the Component lifecycle. At this moment the component will get its state and it can ensure that the Reactive Instance is ready and its watchers are working.
 
@@ -377,7 +377,7 @@ The [BaseComponent helpers](#basecomponent-helpers) section will discuss this in
 
 After this method is called the Component will no longer watch the state or capture the user interactions, even if the component's main DOM element is still present on the page.
 
-#### The `destroy()` hook
+#### The `destroy()` hook {/* #the-destroy-hook */}
 
 This hook will be executed when the component is unregistered from the Reactive Instance or removed from the page (which will also unregister it). This method is used to clean some dependencies. In general, this method is used to propagate the unregister to the subcomponents when some logic is delegated.
 
@@ -408,7 +408,7 @@ destroy() {
   </TabItem>
 </Tabs>
 
-### Implementing state watchers
+### Implementing state watchers {/* #implementing-state-watchers */}
 
 Reacting to state data changes is the main way in which components can refresh the interface. The major reactive framework uses complex black-boxing to encapsulate most of the watchers and templates logic. This is why the general feeling is that they magically work. In our case, we use mustache as the main template library, meaning no dynamic refresh is available. Instead, `core/reactive` components watch low-level state events, which are faster, but less magical.
 
@@ -431,7 +431,7 @@ To facilitate the examples, all of them will suppose the following state data:
   </div>
 </details>
 
-#### State event names
+#### State event names {/* #state-event-names */}
 
 Components can subscribe to as many state events as needed. All events are identified by a string with the following formats:
 
@@ -526,7 +526,7 @@ The `state:updated` change is triggered by every state change. That is because e
 
 :::
 
-#### State event handlers
+#### State event handlers {/* #state-event-handlers */}
 
 When the event is detected the Reactive Instance will collect all the event details in a data structure and will send it to the handlers. Except for the `transaction:start` and `transaction:end` that data structure will contain always the following objects:
 
@@ -568,7 +568,7 @@ export default class extends BaseComponent {
   </div>
 </details>
 
-### Adding event listeners
+### Adding event listeners {/* #adding-event-listeners */}
 
 Most components will listen to events on their inner elements like buttons, inputs, draggable… To prevent each component from reinventing the wheel, there are some good practices every component should follow.
 
@@ -613,7 +613,7 @@ export default class extends BaseComponent {
   </div>
 </details>
 
-### Dispatching mutations from a component
+### Dispatching mutations from a component {/* #dispatching-mutations-from-a-component */}
 
 Components cannot alter the state themselves (it will raise an exception if they try). Instead, they can ask the Reactive Instance to execute a state mutation. For components mutations are just a bunch of async commands the Reactive Instance can execute to alter the state. The section Start a new reactive application will cover how to implement state mutations but for now considering them a BlackBox is enough.
 
@@ -676,7 +676,7 @@ export default class extends BaseComponent {
 
 Because the component already reacts to the state change `students.attempts:updated` the button just dispatches the mutation without changing the interface. Who dispatches the mutation does not matter because all watchers will be alerted when this happens. Even later, when more buttons dispatch the same mutation everything will work perfectly if components are well designed. That is where the reactivity pattern shines the most.
 
-### Component custom events
+### Component custom events {/* #component-custom-events */}
 
 Because all components are built more or less the same way, making them reusable is easy. With the proper selectors, any component can use another component logic for part of its interface.
 
@@ -728,11 +728,11 @@ export default class extends BaseComponent {
   </div>
 </details>
 
-### BaseComponent helpers
+### BaseComponent helpers {/* #basecomponent-helpers */}
 
 The BaseComponent class offers some helpers to standardize the components' code and make them more maintainable.
 
-#### Add event listeners
+#### Add event listeners {/* #add-event-listeners */}
 
 Reactive components are that they can be registered and unregistered (or even removed) at any moment. This implies that the Reactive Instance should have a way of unregister a component, invalidating all the event listeners and the state watchers.
 
@@ -749,7 +749,7 @@ Using those methods your code will be much clear because:
 2. The method code is more reusable as it could be used as an internal function, as an event listener, or as a watcher.
 3. The BaseComponent registers all listeners in a way that you can use this.removeEventListener or this.removeAllEventListeners to disable listeners just by passing the regular "this.METHODNAME".
 
-#### Get DOM elements
+#### Get DOM elements {/* #get-dom-elements */}
 
 Each component takes care of the main DOM element and its children. This means all the DOM queries a component uses should be inside the main DOM element but not in all the document.
 
@@ -768,7 +768,7 @@ As you may guess, getElement returns a single element while getElements return a
 - **QUERY**: this is a CSS query selector. In general, should be one of the constants of `this.selectors` defined in the create method.
 - **DATAID**: this is an optional param. If this param is passed the method will automatically add `[data-id='${dataid}']` to the query. This is a convenience param to force all components to follow the best practices like using data attributes for the logic instead of classes or other CSS reserved values.
 
-#### Unregister and remove
+#### Unregister and remove {/* #unregister-and-remove */}
 
 There are two ways in which a component can be invalidated:
 
@@ -777,7 +777,7 @@ There are two ways in which a component can be invalidated:
 
 Both methods will execute the `destroy` hook.
 
-#### Lock or unlock a component interface
+#### Lock or unlock a component interface {/* #lock-or-unlock-a-component-interface */}
 
 Sometimes a component may be waiting for some mutations to be executed. Usually, we don't want user interactions while this is happening. To prevent this from happening the `BaseCompoment` has a boolean attribute `locked` to lock/unlock the component's main DOM element. A locked component will stop listening to user interactions like clicks, selections or drag&drop.
 
@@ -797,7 +797,7 @@ Locking or unlocking an element won't add any style to the element. The componen
 
 :::
 
-#### Render a subcomponent
+#### Render a subcomponent {/* #render-a-subcomponent */}
 
 Sometimes using events to communicate components is not enough. For those cases, the BaseComponent class has a method called renderComponent.
 
@@ -841,11 +841,11 @@ For renderComponent to work, it is mandatory that the main element of the new co
 
 :::
 
-## Start a new reactive application
+## Start a new reactive application {/* #start-a-new-reactive-application */}
 
 Several reactive applications can coexist on the same page. For example, if an activity plugin implements one reactive application it will coexist with the course index, which is also a component but from the course editor reactive application. To ensure component logic doesn't interfere with one another, all the components, mutations, and the reactive state will belong to a specific reactive instance.
 
-### General workflow
+### General workflow {/* #general-workflow */}
 
 Every application works in a different way but the process to start a reactive framework is not that different from one another.
 
@@ -855,7 +855,7 @@ Every application works in a different way but the process to start a reactive f
 4. Registering components: components can be registered at any moment. The registration does not depend on the initial state or the mutations. However, the component watchers won't be effective unless the state is ready and the component cannot dispatch mutations if they are not yet loaded.
 5. The application is ready to fly.
 
-### Create the Reactive Instance
+### Create the Reactive Instance {/* #create-the-reactive-instance */}
 
 Creating a Reactive instance is as easy as doing:
 
@@ -875,7 +875,7 @@ The description structure:
 - (optional) `mutations`: an object with all the available mutations. This is an optional attribute because the mutations can be overridden (setMutations) or added (addMutations) later.
 - (optional) `state`: the initial state data if it is available at the moment of creation. The initial state can only be set one time (it will raise an exception if is done twice). If the application will get the initial state from a web service it must be set later using setInitialState method.
 
-### Implement mutations library
+### Implement mutations library {/* #implement-mutations-library */}
 
 The Reactive Instance registers all the mutations that components can dispatch. The mutations can be registered:
 
@@ -918,7 +918,7 @@ The main goal of mutations is to alter the state. This could be done in two diff
 - Manually altering the state data: assign, delete or create some parts of the state as if it is a regular variable.
 - Call a web service that returns a valid state update message: the State Manager provides a method called "processUpdates" that alters the state following an array of instructions called update message. In those cases the mutation can pass the web service return to the "stateManager.processUpdates" and the manager will handle all the hard work. See the "Controlling the state from the backend" section for more information.
 
-#### Manually altering the state
+#### Manually altering the state {/* #manually-altering-the-state */}
 
 All mutations must disable read mode before doing any change to the state data (otherwise it will raise an exception) but, most importantly, it MUST restore the read mode when all the changes are done. The StateManager must guarantee the user interface always represents a stable state so it will not notify the watchers until the read mode is restored.
 
@@ -947,7 +947,7 @@ export default class {
   </div>
 </details>
 
-#### Using `stateManager.processUpdates` to alter the state
+#### Using `stateManager.processUpdates` to alter the state {/* #using-statemanagerprocessupdates-to-alter-the-state */}
 
 When web services are designed adhoc to serve the reactive application, the backend is fully aware of the state data the frontend must display. In those cases, the mutation method is just a mere intermediary applying the changes.
 
@@ -975,7 +975,7 @@ export default class {
 
 As can be seen in the example, the mutation does not need to enable or disable the read mode because the processUpdates will handle it automatically.
 
-#### Private methods inside the mutations library
+#### Private methods inside the mutations library {/* #private-methods-inside-the-mutations-library */}
 
 JavaScript is famous for not having private methods. This means all the methods inside the mutations library will be accessible by the Reactive Instance. To prevent components from dispatch private methods the Reactive instance "dispatch" method will raise an expectation in some cases.
 
@@ -984,7 +984,7 @@ Mutation names that components cannot dispatch:
 - The "init" mutation is reserved (see the [section below](#reserved-init-mutation-method) for more information)
 - Any method name starting with "_" is considered private. For example `_callWebservice` is a method that other mutations can use internally but no Component cannot call directly.
 
-#### Reserved `init` mutation method
+#### Reserved `init` mutation method {/* #reserved-init-mutation-method */}
 
 Each application can use as many mutations as they need. However, there is a reserved mutation called `init` which has a specific meaning. If there is an `init` method in the mutations library the Reactive Component will call it at the moment the mutations are registered.
 
@@ -998,7 +998,7 @@ init(stateManager) {
 
 This init method can be used to save some global module attributes, load strings, load templates, or configure the state manager `processUpdates` (see [Controlling the state from the backend](#controlling-the-state-from-the-backend) for more information about this last case).
 
-### Set the initial state data
+### Set the initial state data {/* #set-the-initial-state-data */}
 
 All components from the same Reactive Instance will watch the same state data and react to the changes (see Implementing State Watchers for more information). Even if all the components are registered, the Reactive Instance won't do anything with them until the initial state is loaded.
 
@@ -1009,7 +1009,7 @@ The initial state can only be initialized ones, but it could be done in two diff
 
 When this happens, the components' stateReady hooks will be executed and the watchers will start working.
 
-#### Initial state data limitations
+#### Initial state data limitations {/* #initial-state-data-limitations */}
 
 While the JavaScript standard does not offer a suitable native solution for fully reactive data structures, implementing a deep reactive object will be a complex task. Depending on the depth of the changes tracked it will require many frontend resources and many lines of code to maintain. That is the main reason why most people use complex reactive frameworks for it.
 
@@ -1081,13 +1081,13 @@ All initial state root arrays must have an id attribute:
   </div>
 </details>
 
-## Controlling the state from the backend
+## Controlling the state from the backend {/* #controlling-the-state-from-the-backend */}
 
 Most of the time mutations will execute some kind of ajax call to inform the server. The web services for supporting those calls can be generic and return some random data the mutation must interpret to know what state parts must be altered.
 
 However, if the web service is aware that it is altering the state, it can send back specific instructions of the state parts that are affected. Those instructions can be executed directly by the State Manager simplifying the mutation code. Those instructions are called "state updates".
 
-### Format of a state update message
+### Format of a state update message {/* #format-of-a-state-update-message */}
 
 The `stateManager.processUpdates` can process data structures like:
 
@@ -1134,7 +1134,7 @@ The `stateManager.processUpdates` can process data structures like:
 
 The first element of the array will update or create a new element in the "students" set with the fields provided. The second element will remove the element with id 3 from the "students" set.
 
-### Available update types
+### Available update types {/* #available-update-types */}
 
 By default, the state manager can process the following actions:
 
@@ -1145,7 +1145,7 @@ By default, the state manager can process the following actions:
 - `remove`: it will delete a state element.
 - `delete`: it will delete a state element but it will raise an exception if the element is not in the state.
 
-### Implementing custom update types
+### Implementing custom update types {/* #implementing-custom-update-types */}
 
 The default update types covers most of the state actions reactive applications should need. However, more update types can be added or even overridden if needed. The State Manager has a method called "addUpdateTypes" that get and object containing all the new update types methods.
 
@@ -1200,7 +1200,7 @@ In that example:
   </div>
 </details>
 
-### Adding default values to state attributes
+### Adding default values to state attributes {/* #adding-default-values-to-state-attributes */}
 
 There are cases in which the fields of the update message are exactly the ones stored in the state. Some of the examples of it could be when:
 
@@ -1234,7 +1234,7 @@ prepareFields(stateManager, updateName, fields) {
   </div>
 </details>
 
-## Drag & drop helper component
+## Drag & drop helper component {/* #drag--drop-helper-component */}
 
 Components can delegate parts of the logic to other components. In case a component wants to implement a draggable element or a drop-zone, it can delegate all the configuration stuff to a `DragDrop` component exported in the `core/reactive` module.
 
@@ -1274,7 +1274,7 @@ export default class extends BaseComponent {
   </div>
 </details>
 
-### Implementing a draggable element
+### Implementing a draggable element {/* #implementing-a-draggable-element */}
 
 Making a standard component draggable is easy. If the parent component has a `getDraggableData` the `dragdrop` component will set up the draggable element automatically.
 
@@ -1335,7 +1335,7 @@ As can be seen in th example, no event handling is required. By default, the `Dr
   </div>
 </details>
 
-### Implementing a drop-zone component
+### Implementing a drop-zone component {/* #implementing-a-drop-zone-component */}
 
 Drop-zones are implemented similarly to the draggable elements. The DragDrop component will set up the `this.element` as a drop-zone depending on the methods of the parent component.
 

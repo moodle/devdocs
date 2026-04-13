@@ -14,7 +14,7 @@ Please notice that this documentation is useful to develop code that will be int
 Before embarking on Moodle-specific documentation, we recommend that you are at least familiar with [Angular](https://angular.io/) and [Ionic Framework](https://ionicframework.com/), the core technologies used in the application. We'll reference any relevant concepts, but having a basic understanding will take you a long way in understanding the Moodle App.
 :::
 
-## Setting up your development environment
+## Setting up your development environment {/* #setting-up-your-development-environment */}
 
 In order to get started, you'll need to prepare your development environment. We recommend that you do it before proceeding with the guide, that way you can tinker with the codebase to solidify your understanding.
 
@@ -39,7 +39,7 @@ This will launch the application in a browser, but keep in mind that it only wor
 
 Other than this, there are different things you'll need to do depending on what you are trying to achieve. We'll go over some of them briefly, but if you want to learn more about this or something isn't working as you expect, make sure to check out the full guide on [Setting up your development environment for the Moodle App](./setup/index.md).
 
-### Editing code
+### Editing code {/* #editing-code */}
 
 You can use your favorite editor to work on the application.
 
@@ -47,7 +47,7 @@ We recommend using [VSCode](https://code.visualstudio.com/) as it is the one use
 
 The code follows the [Moodle App Coding Style](../../development/policies/codingstyle-moodleapp.md), and many of the style rules are enforced with [ESLint](https://eslint.org/). If you are using VSCode, you can automatically lint your files using the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
-### Debugging
+### Debugging {/* #debugging */}
 
 While working on the app, you'll want to debug what's going on under the hood. The application uses a logging mechanism to inform of what's happening, so if you open the console during development you will see a bunch of messages that you may find useful.
 
@@ -57,7 +57,7 @@ If you are working on something that is pure logic (although it can involve comp
 
 If you need to debug how the application is interacting with a Moodle site, you'll need to take a look at the network requests. Most of the time [using the Network Panel](https://developer.chrome.com/docs/devtools/network/) should suffice, but if that isn't working take a look at the [Debugging network requests in the Moodle App](./network-debug.md) page.
 
-### Working with a Moodle site
+### Working with a Moodle site {/* #working-with-a-moodle-site */}
 
 When you are using the app, you'll need to connect with a Moodle site. You may already have your own site, but using a real site may not be the best choice for development.
 
@@ -65,39 +65,39 @@ If you're working on something that doesn't need anything specific from your sit
 
 If you need to configure something from the site, your best option is to run a Moodle site on your computer. Setting that up is outside the scope of this document, but we recommend using [moodle-docker](https://github.com/moodlehq/moodle-docker) because it comes with everything you need (and it also supports running the app!). If you need anything specific from a course, you can always replicate it on your local site using the [backup and restore functionality](https://docs.moodle.org/311/en/Backup). You can create a backup from your production site, and restore it in your local site.
 
-### Working on native functionality
+### Working on native functionality {/* #working-on-native-functionality */}
 
 Most of the time, we recommend that you develop using a browser because it's faster and easier to work with. However, sometimes you may need native functionality that is only available on a mobile device.
 
 You can learn how to set up your environment by reading Ionic's documentation for [Android](https://ionicframework.com/docs/developing/android) and [iOS](https://ionicframework.com/docs/developing/ios). The Moodle App also comes with some npm scripts used for native development. You can build and launch the app by calling `npm run dev:android` and `npm run dev:ios`.
 
-## Folders structure
+## Folders structure {/* #folders-structure */}
 
 In this section, we'll see how files and folders are organised within the `src/` folder.
 
-### index.html
+### index.html {/* #indexhtml */}
 
 This html file contains the shell where the application will be rendered. Before the app is ready, even before JavaScript is loaded, this is what the application will look like. In a mobile device, users will never see this because it is hidden by the splash screen until the application is ready. That's why there isn't any markup other than the root component that will be rendered by Angular.
 
 You won't see any script files referenced here because those are injected later in the compilation process. You can see the actual file in the `www/` folder after running the build script.
 
-### main.ts
+### main.ts {/* #maints */}
 
 This file is the main entry point of the application, the first code that runs when the application is launched. The application is bootstrapped by Angular using our root application module.
 
 You can learn more about this in the [Application Lifecycle](#application-lifecycle) section.
 
-### polyfills.ts
+### polyfills.ts {/* #polyfillsts */}
 
 This file adds [polyfills](https://en.wikipedia.org/wiki/Polyfill_(programming)) for missing functionality in the platform.
 
-### app/
+### app/ {/* #app */}
 
 This folder contains the root component and the root module of the application.
 
 You will notice that the app.module.ts file is quite small. This is because it only includes Angular and Ionic boilerplate, leaving the heavy lifting to the code within [core/](#core) and [addons/](#addons).
 
-### core/
+### core/ {/* #core */}
 
 This folder contains the basic functionality of the application, and exposes pluginable interfaces for other parts to hook into. Anything defined here can be imported anywhere since it's critical for the app and it is available everywhere (in contrast to code within [addons/](#addons)). In order to identify code from this folder, all classes start with the `Core` prefix.
 
@@ -107,7 +107,7 @@ The `shared.module.ts` file defines a [Shared Module](https://angular.io/guide/m
 
 There is also a `constants.ts` file which should follow the conventions for [constants files](#constants-files).
 
-#### core/initializers/
+#### core/initializers/ {/* #coreinitializers */}
 
 This folder contains a collection of scripts that are run within the [Angular initialisation process](https://angular.io/api/core/APP_INITIALIZER).
 
@@ -115,7 +115,7 @@ These files are automatically loaded using webpack, so it isn't necessary to imp
 
 Keep in mind that any code placed here will delay the [application startup](#application-lifecycle), so it's critical that only the essential processes are included here. If something can be initialised lazily, it should.
 
-#### core/services/
+#### core/services/ {/* #coreservices */}
 
 This folder contains [Angular services](https://angular.io/guide/architecture-services) available anywhere in the application.
 
@@ -125,7 +125,7 @@ Given that services are created on demand, none of them is guaranteed to be init
 
 And of course, service dependencies can be declared in the constructor to use Angular's built-in dependency management.
 
-#### core/components/
+#### core/components/ {/* #corecomponents */}
 
 This folder contains [Angular components](https://angular.io/guide/architecture-components) available anywhere in the application (but remember that they should be imported explicitly using `CoreSharedModule`). They are exposed to the shared module using their own module: `CoreComponentsModule`.
 
@@ -144,35 +144,35 @@ Additionally, auxiliary components that are only used locally can be defined in 
 - `recaptcha-modal.ts` — Auxiliary modal component class.
 - `core-recaptcha-modal.html` — Auxiliary modal component template.
 
-#### core/directives/ and core/pipes/
+#### core/directives/ and core/pipes/ {/* #coredirectives-and-corepipes */}
 
 These folders contain [Angular directives](https://angular.io/guide/architecture-components#directives) and [Angular pipes](https://angular.io/guide/architecture-components#pipes) available anywhere in the application (but remember that they should be imported explicitly using `CoreSharedModule`).
 
 They are exposed to the shared module using their own modules: `CoreDirectivesModule` and `CorePipesModule` respectively.
 
-#### core/guards/
+#### core/guards/ {/* #coreguards */}
 
 This folder contains [route guards](https://angular.io/guide/router#preventing-unauthorized-access) used to control access to restricted routes.
 
 Given that we are working with a mobile application, and not deploying to the web, users won't be able to access urls manually. But it is still important to have proper guards to prevent potential bugs and vulnerabilities.
 
-#### core/classes/
+#### core/classes/ {/* #coreclasses */}
 
 This folder contains classes that don't fit into any other part of the application. We must be careful not to bloat this folder and turn it into a mess. There can be subfolders to group files with related functionality.
 
 Think twice before adding anything here.
 
-#### core/utils/
+#### core/utils/ {/* #coreutils */}
 
 Same as [core/classes/](#coreclasses), but containing functional utilities instead of classes.
 
-#### core/singletons/
+#### core/singletons/ {/* #coresingletons */}
 
 This folder contains some core [Singletons](#singletons) and the logic to make Service Singletons.
 
 Other than Pure Singletons, there are also some third-party services exposed through Service Singletons. However, service Singletons for application services should be declared in the same file where the service is defined.
 
-#### core/features/
+#### core/features/ {/* #corefeatures */}
 
 This folder contains [Domain Modules](https://angular.io/guide/module-types#domain-ngmodules) for core features. Each of those modules encapsulates the functionality for a given area. Even though they can rely on each other (because anything within core is globally accessible), it should be avoided to reduce coupling.
 
@@ -202,7 +202,7 @@ In addition to these files, feature folders may contain the following:
 
 In order to distinguish code from each feature, classes will be prefixed with the feature name. For example, the home page component declared in `core/features/mainmenu/pages/home/home.ts` is called `CoreMainMenuHomePage`.
 
-### addons/
+### addons/ {/* #addons */}
 
 This folder contains [Domain Modules](https://angular.io/guide/module-types#domain-ngmodules) for additional features. Its structure is similar to [core/features/](#corefeatures), but the namespace is *`addon-{addon-name}-`* and addon modules are decoupled from core and each other. This means that any code within core shouldn't import anything from addons, and addons shouldn't import anything from each other.
 
@@ -214,15 +214,15 @@ The end goal is to make each addon as independent as possible, keeping practical
 
 In order to distinguish code from each addon, classes will be prefixed with *Addon* + the addon name. For example, the private files page component declared in `core/addons/privatefiles/pages/index/index.ts` is called `AddonPrivateFilesIndexPage`.
 
-### types/
+### types/ {/* #types */}
 
 This folder contains global [TypeScript declaration files](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html).
 
-### testing/
+### testing/ {/* #testing */}
 
 This folder contains supporting code for writing tests, but does not contain any tests. To learn where tests are located, read the [Test files](#test-files) section.
 
-### theme/
+### theme/ {/* #theme */}
 
 This folder contains general app style sheets. theme.scss is the one that will be included in the html, the rest will be imported by theme or children of this.
 
@@ -238,13 +238,13 @@ This folder contains general app style sheets. theme.scss is the one that will b
   - `globals.mixins.ionic.scss` — Imported mixins from ionic.
 - `format-text.scss` — Contains format-text tag styles.
 
-### assets/
+### assets/ {/* #assets */}
 
 This folder contains source files that are not considered app code. This includes things like fonts, images, and json files; but also external libraries that couldn't be installed using npm (for example, h5p and mathjax).
 
 An exception to this rule is `js/iframe-treat-link.js`, which is a file that can be considered app code but it is injected directly into iframes without a compilation step.
 
-### File names
+### File names {/* #file-names */}
 
 As a rule of thumb, TypeScript files should be named after the class or interface they export. Given that [it's discouraged to use default exports in Angular applications](https://stackoverflow.com/questions/45962317/why-isnt-export-default-recommended-in-angular), it is not obvious what that is for each file. But in most cases it should be fairly easy to see. In situations where there isn't a single relevant export, like a file exporting multiple functions, you should use a name that properly reflects the nature of this grouping.
 
@@ -252,7 +252,7 @@ File names should use [kebab case](https://en.wikipedia.org/wiki/Letter_case#Keb
 
 If a folder contains more than one type of TypeScript file, the type of file should be added as a suffix with a dot. For example, the `app/` folder contains multiple types of classes and that's why the file declaring the root component is named `app.component.ts`. Most components elsewhere don't have the *.component* suffix. The exception to this rule are module and test files, which must always use the *.module* and *.test* suffix respectively.
 
-### Language files
+### Language files {/* #language-files */}
 
 All feature and addon folders can contain a `lang.json` file, as well as the `core/` folder. The JSON file contains all translatable string keys with the current english text. During compilation, those files will be merged into one single file on `assets/lang/en.json` that will contain the cooked string keys (every key of those files will be prepended with the module prefix).
 
@@ -260,7 +260,7 @@ An automatic process will create the rest of the language files on the `assets/l
 
 In order to match existing Moodle language strings with the app strings the app contains a file on the scripts folder called `langindex.json`. This file contains an indexed array with the cooked string keys of the app, the value of every item is the module (file name) where to find the string in AMOS. If the value contains a slash '/' the text before the slash will correspond to the module (file name) and the text after will correspond to the string key on that file. If it does not contain a slash, the string key will be the last part of the cooked string key (splitting using dots .).
 
-### Constants files
+### Constants files {/* #constants-files */}
 
 All exported constants should be declared within a `constants.ts` file. The term "constant" in TypeScript can be somewhat misleading, given that it is often used with the `const` keyword. What we mean with "constants" is simple read-only values. Most of the time, these will be primitive values (string, number, boolean, etc.) or simple objects.
 
@@ -268,7 +268,7 @@ This may seem cumbersome at first, but it's very important in order to optimize 
 
 Additionally, because it's very likely that the content of these files ends up in the initial bundle of the application, they should seldom import anything (possibly with the exception of other constants).
 
-### Test files
+### Test files {/* #test-files */}
 
 Tests are found anywhere inside the `src/` folder, and they will be run as long as they end with *.test.ts*. As a general rule, they are placed in a folder next to the module responsible for the code being tested. And they mirror the folder structure.
 
@@ -282,11 +282,11 @@ In addition to unit test files, there is also a folder at `testing/` with setup 
 
 Learn more about unit tests in the [Testing](#testing) section.
 
-## Routing
+## Routing {/* #routing */}
 
 All core features and addons can define their own routes, and we can do that in their main module. However, those are loaded when the application starts up, and that won't be desirable in most cases. We can use [lazy loading](https://angular.io/guide/lazy-loading-ngmodules) to defer loading routes until they are necessary. To encapsulate lazy functionality, we can define a [Routed Module](https://angular.io/guide/module-types#routed) named `{feature-name}LazyModule`. For example, the *login* core feature defines both a `CoreLoginModule` (for routes that are loaded when the application starts up) and a `CoreLoginLazyModule` (for routes that are loaded only when necessary).
 
-### Dynamic Routes
+### Dynamic Routes {/* #dynamic-routes */}
 
 With the [folders structure](#folders-structure) we're using, it is often the case where different core features or addons need to define routes depending on each other. For example, the *mainmenu* feature defines the layout and routes for the tabs that are always present at the bottom of the UI. But the home tab is defined in the *home* feature. In this scenario, it would be possible to just import the pages from the *home* module within the *mainmenu*, since both are core features and are allowed to know each other. But that approach can become messy, and what happens if an addon also needs to define a tab (like *privatefiles*)?
 
@@ -298,7 +298,7 @@ It is often the case that modules using injected routes use a [RouterOutlet](htt
 
 Finally, since these routes are defined dynamically, they cannot be imported statically when defining parent routes. They will need to be encapsulated on a builder function, taking an `injector` as an argument to resolve all the injected routes. You can see an example of this in the `buildTabMainRoutes`, and how it's used across the app.
 
-### Split View Routes
+### Split View Routes {/* #split-view-routes */}
 
 Some pages in the app use a split-view pattern that consists of a navigation menu on the left, and the main content in the right (in LTR interfaces). It is typically used to display a list of items in the menu, and display the contents of the selected item in the content. For example, showing a list of settings on the left with their content on the right.
 
@@ -308,7 +308,7 @@ In order for the different behaviour to take place, routes are defined twice. On
 
 The navigation between these routes is often encapsulated within a `CoreListItemsManager` instance, that takes care of discerning the current active item and updating the route when selected items change. This manager will obtain the items from a `CoreRoutedItemsManagerSource`, which is necessary to enable [swipe navigation](#navigating-using-swipe-gestures).
 
-### Navigating between routes
+### Navigating between routes {/* #navigating-between-routes */}
 
 In order to navigate between routes, you should use the `CoreNavigator` service. It works using Angular's router under the hood, and it takes care of all the routing specific to our application.
 
@@ -324,7 +324,7 @@ Other than navigation, this service also contains some helpers that are not avai
 
 Make sure to [check out the full api](https://github.com/moodlehq/moodleapp/blob/main/src/core/services/navigator.ts) to learn more about the `CoreNavigator` service.
 
-### Navigating using swipe gestures
+### Navigating using swipe gestures {/* #navigating-using-swipe-gestures */}
 
 Most pages that use a split-view in tablets can be navigated using swipe gestures in mobile devices. The navigation is often encapsulated within a `CoreSwipeNavigationItemsManager` instance.
 
@@ -332,11 +332,11 @@ As mentioned in the [split-view section](#split-view-routes), the items used by 
 
 You can find an example of this pattern in `CoreUserParticipantsPage`, where participants can be filtered and the swipe navigation will respect the filtered results.
 
-## Singletons
+## Singletons {/* #singletons */}
 
 The application relies heavily on the [Singleton design pattern](https://en.wikipedia.org/wiki/Singleton_pattern), and there are two types of singletons used throughout the application: Pure singletons and Service singletons.
 
-### Pure Singletons
+### Pure Singletons {/* #pure-singletons */}
 
 Pure singletons, or just "singletons", are plain Typescript classes whose functionality does not depend on the lifecycle of the application. These normally contain helper or utility methods that enhance existing apis or encapsulate reusable functionality.
 
@@ -352,7 +352,7 @@ export class CoreArray {
 }
 ```
 
-### Service Singletons
+### Service Singletons {/* #service-singletons */}
 
 Service singletons are instances resolved from the [root application injector](https://angular.io/guide/hierarchical-dependency-injection). In contrast with pure singletons, these are defined as Angular services. In particular, these should be [singleton services](https://angular.io/guide/singleton-services).
 
@@ -404,7 +404,7 @@ All the nomenclature can be a bit confusing, so let's do a recap:
 - Service Singleton: An instance of a Singleton Service.
 - Singleton Proxy: An object that relays method calls to a Service Singleton instance.
 
-## Database
+## Database {/* #database */}
 
 Most of the persistent data in the application is stored in SQLite databases. In particular, there is one database for global app configuration, and one for each site. Reading and writing data is encapsulated in the `CoreDatabaseTable` class. Each table can be configured to use one of the following caching strategies:
 
@@ -414,17 +414,17 @@ Most of the persistent data in the application is stored in SQLite databases. In
 
 Something else important to note is that not all these tables are instantiated when the application is initialized, so for example even though a table may have Eager loading; it could be itself initialized lazily.
 
-### Schema migrations
+### Schema migrations {/* #schema-migrations */}
 
 Table schemas are declared using `CoreAppSchema`, `CoreSiteSchema`, and `SQLiteDBTableSchema` interfaces; and invoked using `CoreApp.createTablesFromSchema()` and `CoreSitesProvider.applySiteSchemas()`. In the case of site tables, these can be registered with the `CORE_SITE_SCHEMAS` injection token and they'll be invoked automatically when a new site is created.
 
 In order to make some changes in existing schemas, it'll be necessary to change the `version` number and implement the `migrate` method to perform any operations necessary during the migration.
 
-### Legacy
+### Legacy {/* #legacy */}
 
 Ideally, all interactions with the database would go through a `CoreDatabaseTable` instance. However, there is still some code using the previous approach through the `SQLiteDB` class. This should be avoided for new code, and eventually migrated to use the new approach to take advantage of caching.
 
-## Application Lifecycle
+## Application Lifecycle {/* #application-lifecycle */}
 
 When the application is launched, the contents of [index.html](#indexhtml) are rendered on screen. This file is intentionally concise because all the flare is added by JavaScript, and the splash screen will be covering the application UI until it has fully started. If you are developing in the browser, this will be a blank screen for you given that the splash screen is not available on the web. We are not targeting browsers in production, so it's acceptable to have this behaviour during development.
 
@@ -434,11 +434,11 @@ Once the application has finished starting up, the router will resolve the activ
 
 ![A summary of the Application Lifecycle](../_files/application_lifecycle.jpg)
 
-## Testing
+## Testing {/* #testing-1 */}
 
 There are two types of tests in the mobile app.
 
-### Unit
+### Unit {/* #unit */}
 
 Unit tests are written in JavaScript using [jest](https://jestjs.io/). If you want to create a new one, jest is already configured and you only need to create a file ending with *.test.ts* within the project. If you're going to do so, remember to follow the [file location conventions](#test-files).
 
@@ -448,7 +448,7 @@ You can write standard jest tests for the most part, but something to keep in mi
 
 You can learn more about this in the [Unit testing for the Moodle App](./testing/unit-testing.md) page.
 
-### Acceptance
+### Acceptance {/* #acceptance */}
 
 Acceptance tests are written in [Gherkin](https://en.wikipedia.org/wiki/Cucumber_(software)#Gherkin_language) using [Behat](./testing/acceptance-testing.md). These are run against the full application with a real Moodle site, so they are more heavy-handed and will take longer to run. But they are also much more realistic than unit tests.
 
@@ -460,7 +460,7 @@ You can write standard Behat tests for the most part, but there are some steps s
 
 You can learn more about this in the [Acceptance testing for the Moodle App](./testing/acceptance-testing.md) page.
 
-## See also
+## See also {/* #see-also */}
 
 - [Moodle App Accessibility](./accessibility.md)
 - [Moodle App Link Handling](./link-handling/app-links.md)

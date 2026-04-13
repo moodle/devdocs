@@ -7,7 +7,7 @@ tags:
 
 The Navigation API allows for the manipulation of the navigation system used in Moodle.
 
-## What the navigation is
+## What the navigation is {/* #what-the-navigation-is */}
 
 It's very important to understand what the navigation is exactly within Moodle. One of the goals for Moodle 2.0 was to standardise navigation throughout Moodle and try to bring order to the structure of a Moodle site.  Navigation is available through the page object `$PAGE`, against which you set the heading for the page, the title, any JavaScript requirements, etc.  The navigation structure uses the information `$PAGE` contains to generate a navigation structure for the site.  The navigation or settings blocks are interpretations of the navigation structure Moodle creates.
 
@@ -23,7 +23,7 @@ A conceptual view of the information architecture that sits behind the navigatio
 
 This diagram represents the major entities and how they are related to each other. Examples are given of the type of functions available on each kind of entity.
 
-## What the navigation is not
+## What the navigation is not {/* #what-the-navigation-is-not */}
 
 The navigation is **NOT** the navigation block or the settings block!  These two blocks were created to display the navigation structure. The navigation block looks at `$PAGE->navigation`, and the settings block looks at `$PAGE->settingsnav`.  Both blocks interpret their data into an HTML structure and render it.
 
@@ -34,7 +34,7 @@ In a model-view-controller pattern, `$PAGE->navigation`, `$PAGE->settingsnav`, a
 
 The navbar is just the path to the active navigation or settings item. The navbar is not displayed by a block; instead it is added into the theme's layout files and displayed by the core renderer.
 
-## How the navigation works
+## How the navigation works {/* #how-the-navigation-works */}
 
 The main navigation structure can be accessed through `$PAGE->navigation`.  The navigation and settings are contextual in that they will relate to the page that the user is viewing. This is determined by other `$PAGE` object properties:
 
@@ -68,9 +68,9 @@ The navigation structure cannot be generated before the `$PAGE` object is config
 
 :::
 
-## Extending the navigation
+## Extending the navigation {/* #extending-the-navigation */}
 
-### Code extension
+### Code extension {/* #code-extension */}
 
 This method of extending is when the code arbitrarily extends the navigation during its execution. Extending the navigation through this means allows you to extend the navigation anywhere easily, however it will only be shown on pages where your extending code gets called (you should probably put it in a function within `lib.php`).
 
@@ -78,9 +78,9 @@ Navigation extensions that apply all the time (even when not on pages including 
 
 These examples are taken from the [General Developer Forum: Moodle 2 - how to set up breadcrumbs for a module page](http://moodle.org/mod/forum/discuss.php?d=152391). It has further information that is well worth reading.
 
-#### Navigation
+#### Navigation {/* #navigation */}
 
-##### Extending the main navigation structure
+##### Extending the main navigation structure {/* #extending-the-main-navigation-structure */}
 
 ```php
 $previewnode = $PAGE->navigation->add(
@@ -98,7 +98,7 @@ $thingnode->make_active();
 The above lines of code adds a preview node to the bottom of the navigation and then adds a thing node to the preview node (adding a leaf to our tree).
 The final line of code makes the thing node active so that the navbar finds it however if the URL you give it is the same as the url you set for the page it will automatically be marked active and you won't need this call.
 
-##### Extending the navigation for the course
+##### Extending the navigation for the course {/* #extending-the-navigation-for-the-course */}
 
 This example assumes that you already know the course ID and have already called `require_login()`. This loads the navigation data for the specified course.
 
@@ -121,7 +121,7 @@ Moodle loads plugins in alphabetical order. This means that plugin_b can find a 
 
 :::
 
-#### Settings navigation
+#### Settings navigation {/* #settings-navigation */}
 
 Adding to the settings navigation is very similar to the general navigation, only using the `settingsnav` property of the `$PAGE` API.
 
@@ -138,7 +138,7 @@ $thingnode = $settingnode->add(
 $thingnode->make_active();
 ```
 
-##### Add Settings folder to navigation
+##### Add Settings folder to navigation {/* #add-settings-folder-to-navigation */}
 
 This example adds a settings folder to the navigation API at Site administration / Plugins / Activity modules / Assignment.
 
@@ -191,7 +191,7 @@ $ADMIN->add(
 $settings = null;
 ```
 
-#### Navbar
+#### Navbar {/* #navbar */}
 
 The following example extends the navbar navigation.
 
@@ -209,13 +209,13 @@ $PAGE->navbar->add(
 
 The above code tells the navbar to ignore the automatically detected _active page_ and to instead use what is manually added, at which point we add two items as shown.
 
-### Plugin Callbacks
+### Plugin Callbacks {/* #plugin-callbacks */}
 
 These are specific functions that the navigation looks for and calls if they exist for the plugin, presently only three plugin types can extend the navigation through these call-backs.
 
 Ideally all entries in "Administration / Site administration" tree should be done via settings.php files but sometimes it may be easier to directly modify the navigation structure created from the admin settings tree (such as when adding links to external pages).
 
-#### Module
+#### Module {/* #module */}
 
 Modules have two call-back methods, first to extend the navigation, and second to extend the settings. These call-backs get called when ever the user is viewing a page within the module and should only extend the navigation for the module.
 
@@ -263,15 +263,15 @@ function my_plugin_extend_settings_navigation($settingsnav, $context){
 }
 ```
 
-#### Course Formats
+#### Course Formats {/* #course-formats */}
 
 Course formats are able to completely redefine the way in which navigation is generated for a course, as well as this they also have several methods to ensure the navigation is generated correctly.
 
-#### Course Reports
+#### Course Reports {/* #course-reports */}
 
 By default reports don't add themselves or anything else to the navigation however there is a call-back that can be implemented to allow them to do so.
 
-#### Local Plugins
+#### Local Plugins {/* #local-plugins */}
 
 Local plugins have two call-back methods, first to extend the navigation, and second to extend the settings.
 
@@ -286,7 +286,7 @@ function local_{pluginname}_extend_settings_navigation(
 );
 ```
 
-#### Course settings
+#### Course settings {/* #course-settings */}
 
 Any plugin implementing the following callback in `lib.php` can extend the course settings navigation.
 
@@ -298,7 +298,7 @@ function <component>_extend_navigation_course(
 );
 ```
 
-#### User settings
+#### User settings {/* #user-settings */}
 
 Any plugin implementing the following callback in `lib.php` can extend the user settings navigation.
 
@@ -312,7 +312,7 @@ function <component>_extend_navigation_user_settings(
 );
 ```
 
-#### Category settings
+#### Category settings {/* #category-settings */}
 
 Any plugin implementing the following callback in `lib.php` can extend the category settings navigation.
 
@@ -323,7 +323,7 @@ function <component>_extend_navigation_category_settings(
 );
 ```
 
-#### Frontpage settings
+#### Frontpage settings {/* #frontpage-settings */}
 
 Any plugin implementing the following callback in `lib.php` can extend the frontpage settings navigation.
 
@@ -335,7 +335,7 @@ function <component>_extend_navigation_frontpage(
 );
 ```
 
-#### User profile
+#### User profile {/* #user-profile */}
 
 Any plugin implementing the following callback in `lib.php` can extend the user profile navigation.
 
@@ -349,7 +349,7 @@ function <component>_extend_navigation_user(
 );
 ```
 
-### Boost theme
+### Boost theme {/* #boost-theme */}
 
 The navigation API is specifically about allowing the manipulation of nodes in an in-memory tree structure that is used as the basis of building navigation components in the page. The navigation and settings blocks are 2 examples of such components and the flat navigation and settings menus in the Boost theme are another example. The navigation component itself can decide to show all or only part of the navigation tree in order to not overwhelm the user viewing the page. Whether a node is actually displayed depends on where in the tree the node was added, what is the current page in the navigation tree, and the specific navigation components that are used to provide navigation functionality in the current theme.
 
@@ -363,9 +363,9 @@ It is possible, but _not recommended_, for plugins to add nodes to the flat navi
 
 :::
 
-## FAQ's and troubleshooting
+## FAQ's and troubleshooting {/* #faqs-and-troubleshooting */}
 
-### **Q.** My page is on the navigation but it doesn't find it?
+### **Q.** My page is on the navigation but it doesn't find it? {/* #q-my-page-is-on-the-navigation-but-it-doesnt-find-it */}
 
 The first thing to do here is check the URL you are setting for the page. It should match the URL your page has within the navigation. If it doesn't you have two options, first change your `$PAGE->set_url()` call, or second override the URL the navigation is using to find the active node as shown below:
 
@@ -377,7 +377,7 @@ navigation_node::override_active_url(
 );
 ```
 
-### **Q.** How do I add a node to the "flat" navigation in the Boost theme?
+### **Q.** How do I add a node to the "flat" navigation in the Boost theme? {/* #q-how-do-i-add-a-node-to-the-flat-navigation-in-the-boost-theme */}
 
 After creating a node and adding it to the navigation tree - you can set the property `showinflatnavigation` to true in order for this node to be displayed in the flat navigation.
 
@@ -397,7 +397,7 @@ Consider carefully if you really need to fill an additional 230x44 pixels of eve
 
 :::
 
-## See also
+## See also {/* #see-also */}
 
 - [Core APIs](../../../apis.md)
 - [Forum discussion - adding navigation to local plugins](https://moodle.org/mod/forum/discuss.php?d=170325&parent=753095)

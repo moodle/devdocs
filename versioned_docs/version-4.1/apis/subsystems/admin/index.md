@@ -21,7 +21,7 @@ tags: []
 
 Moodle's configuration is stored in a mixture of the config, config_plugins, and a few other tables. These settings are edited through the administration screens, which can be accessed by going to the `.../admin/index.php` URL on your moodle site, or using the Administration block that appears to administrators of the Moodle front page. This page explains how the code for displaying and editing of these settings works.
 
-## Where to find the code
+## Where to find the code {/* #where-to-find-the-code */}
 
 This is explained further below, but in summary:
 
@@ -32,7 +32,7 @@ This is explained further below, but in summary:
 
 For further details refer the code.
 
-## The building blocks
+## The building blocks {/* #the-building-blocks */}
 
 All the settings are arranged into a tree structure. This tree structure is represented in memory as a tree of PHP objects.
 
@@ -48,7 +48,7 @@ admin_setting is a base class with lots of subclasses like **admin_setting_confi
 
 External pages are for things that do not fit into the normal settings structure. For example the global assign roles page, or the page for managing activity modules.
 
-## How the tree is built
+## How the tree is built {/* #how-the-tree-is-built */}
 
 When Moodle needs the admin tree, it calls admin_get_root in `lib/adminlib.php`, which
 
@@ -60,7 +60,7 @@ When Moodle needs the admin tree, it calls admin_get_root in `lib/adminlib.php`,
 
 As an optimisation, before building each bit of the tree, some capability checks are performed, and bits of the tree are skipped if the current user does not have permission to access them.
 
-## Settings file example
+## Settings file example {/* #settings-file-example */}
 
 This is an example of a settings.php file provided by a <tt>local_helloworld</tt> plugin. The file declares a single checkbox configuration variable called "showinnavigation".
 
@@ -115,7 +115,7 @@ Few things to highlight:
 - We always add the custom <tt>admin_settingpage</tt> to the tree, but the actual settings are added to that page only when <tt>$ADMIN->fulltree</tt> is set. This is to improve performance when the caller does not need the actual settings but only the administration pages structure.
 - The <tt>lang_string</tt> class instances are used as proxy objects to represent strings. This has performance benefits as there is no need to evaluate all strings in the admin settings tree unless they are actually displayed.
 
-## Individual settings
+## Individual settings {/* #individual-settings */}
 
 Let us look at a simple example: [mod/lesson/settings.php](https://github.com/moodle/moodle/blob/main/mod/lesson/settings.php). This is included by admin/settings/plugins.php, which has already created $settings, which is an admin_settingpage that we can add to. The file contains lots of lines that look a bit like:
 
@@ -150,7 +150,7 @@ This example shows a $defaultsetting that is an array.
 
 Normally, if you want a particular sort of setting, the easiest way is to look around the admin screens of your Moodle site, and find a setting like the one you want. Then go and copy the code and edit it. Therefore, we do not include a complete list of setting types here.
 
-## Locked and advanced settings for activity modules
+## Locked and advanced settings for activity modules {/* #locked-and-advanced-settings-for-activity-modules */}
 
 Admin settings are often used to define the defaults for activity settings. There is a simple way to enable admins make activity settings as "locked" (cannot be changed from the default) or "advanced" (deprecated, used before the change to "short forms").
 
@@ -180,7 +180,7 @@ at the end of the constructor to automatically set the default and lock the form
 
 Note: Locking an admin setting **will not force the value on existing settings*. Activity settings that are locked will need to be manually updated if they differ from the locked default value.
 
-## Callbacks after a setting has been updated
+## Callbacks after a setting has been updated {/* #callbacks-after-a-setting-has-been-updated */}
 
 A typical example is purging a cache after a setting has changed:
 
@@ -189,7 +189,7 @@ $setting = new admin_setting_configcheckbox(......);
 $setting->set_updatedcallback('theme_reset_all_caches');
 ```
 
-## External pages
+## External pages {/* #external-pages */}
 
 admin_externalpages represent screens of settings that do not fall into the standard pattern of admin_settings. The admin_externalpage object in the settings tree holds the URL of a PHP page that controls various settings.
 
@@ -201,7 +201,7 @@ Note that there are some subclasses of admin_externalpage, for example admin_pag
 
 Once again, to understand this in more depth, your best approach is to look at how some of the external pages in Moodle work.
 
-### When to use an admin_settings vs admin_externalpages
+### When to use an admin_settings vs admin_externalpages {/* #when-to-use-an-admin_settings-vs-admin_externalpages */}
 
 The short answer is wherever possible always try to use admin settings rather than a custom page which uses formslib for anything related to admin settings. If you need something custom investigate a custom admin_setting class before a custom external page. There are a number of reasons, some around usability but mostly related to security:
 
@@ -215,7 +215,7 @@ The short answer is wherever possible always try to use admin settings rather th
 
 An OK rule of thumb is: You can use an external page, which might use formslib, when the settings you are changing are in a custom table and not in the config tables via set_config. But you should seriously consider if and why you need a custom table first. If you are writing custom formslib elements it is usually just as easy to write a custom admin_setting instead.
 
-## See also
+## See also {/* #see-also */}
 
 - [adding settings for activity modules](https://docs.moodle.org/dev/Modules)
 - [adding admin reports to the tree](https://docs.moodle.org/dev/Admin_reports#How_your_report_gets_included_in_the_admin_tree)

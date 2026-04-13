@@ -21,7 +21,7 @@ Web Service responses will almost always return a `payload_reponse` to allow val
 
 :::
 
-## Data as a Payload Response
+## Data as a Payload Response {/* #data-as-a-payload-response */}
 
 The Moodle `\core\router\schema\response\payload_response` class represents a set of data for return to the user. By default it is serialized into JSON as part of the Response handling and is automatically checked against the schema for valid response types.
 
@@ -82,7 +82,7 @@ Whilst you are _able_ to return JSON directly this is strongly discouraged becau
 
 :::
 
-### Adding Headers to the payload
+### Adding Headers to the payload {/* #adding-headers-to-the-payload */}
 
 In some cases you may wish to provide additional data using the HTTP Response Header. This can be achieved by modifying the Response object before passing it into the `payload_response`, for example:
 

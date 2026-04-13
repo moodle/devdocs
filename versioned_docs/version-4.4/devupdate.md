@@ -9,15 +9,15 @@ tags:
 
 This page highlights the important changes that are coming in Moodle 4.4 for developers.
 
-## Core changes
+## Core changes {/* #core-changes */}
 
-### Dependency Injection
+### Dependency Injection {/* #dependency-injection */}
 
 <Since version="4.4" issueNumber="MDL-80072" />
 
 Support for PSR-11 compatible Containers has been introduced and can be accessed via the `\core\di` class. Read the [full documentation](./apis/core/di/index.md) for information on how to use Moodle's DI infrastructure.
 
-### Attributes
+### Attributes {/* #attributes */}
 
 <Since version="4.4" issueNumber="MDL-81011" />
 
@@ -57,9 +57,9 @@ $label = attribute_helper::one_from([$example, 'some_child'], label::class)?->ne
 
 Other variations of the above are also possible.
 
-### Hooks
+### Hooks {/* #hooks */}
 
-#### Hook interfaces
+#### Hook interfaces {/* #hook-interfaces */}
 
 <Since version="4.4" issueNumber="MDL-81011" />
 
@@ -93,7 +93,7 @@ It is still possible to use the `\core\hook\described_hook` and `\core\hook\depr
 
 :::
 
-#### Callable notation
+#### Callable notation {/* #callable-notation */}
 
 <Since version="4.4" issueNumber="MDL-81180" />
 
@@ -151,9 +151,9 @@ If writing a callback for Moodle 4.3, you **must** use the string notation.
 
 :::
 
-### String formatting
+### String formatting {/* #string-formatting */}
 
-#### Deprecation of format_* parameters
+#### Deprecation of format_* parameters {/* #deprecation-of-format_-parameters */}
 
 A number of legacy features and ways of calling `format_text`, and `format_string` now emit deprecation notices. These were all deprecated a long time ago but did not emit:
 
@@ -167,7 +167,7 @@ A number of legacy features and ways of calling `format_text`, and `format_strin
   - The use of `FORMAT_WIKI` as a source format now throws an exception. Previously it added debugging information to the rendered content. This was deprecated in Moodle 1.5.
   - Unknown values passed to the `$options` parameter will now emit appropriate debugging notices
 
-#### New \core\formatting class
+#### New \core\formatting class {/* #new-coreformatting-class */}
 
 <Since version="4.4" issueNumber="MDL-80072" />
 
@@ -312,7 +312,7 @@ $formatter->format_text(
 
 :::
 
-### Tasks API
+### Tasks API {/* #tasks-api */}
 
 <Since version="4.4" issueNumber="MDL-67667" />
 
@@ -343,15 +343,15 @@ $task->set_attempts_available(0);
 
 See the [detailed documentation](./apis/subsystems/task/adhoc#retrying-failing-tasks) on how to use these new APIs.
 
-### JavaScript
+### JavaScript {/* #JavaScript */}
 
 <Since version="4.4" issueNumber="MDL-80850" />
 
 A new JS module, `core/dropzone`, has been introduced to provide a standardised way to create a Drop-zone in Moodle. Read the [full documentation](./guides/javascript/index.md#dropzone) for information on how to use it.
 
-## Parameters
+## Parameters {/* #parameters */}
 
-### API Change
+### API Change {/* #api-change */}
 
 <Since version="4.4" issueNumber="MDL-80005" />
 
@@ -378,7 +378,7 @@ The existing `PARAM_*` constants, and related methods (`required_param`, `option
 
 :::
 
-### Deprecations
+### Deprecations {/* #deprecations */}
 
 <Since version="4.4" issueNumber="MDL-80005" />
 
@@ -394,7 +394,7 @@ A number of deprecated parameter types have been deprecated, these include:
 
 These param types have all been deprecated since Moodle 2.0.
 
-## Introduction of `deprecated` attribute
+## Introduction of `deprecated` attribute {/* #introduction-of-deprecated-attribute */}
 
 A new `\core\attribute\deprecated` attribute, and related `\core\deprecation` class have been introduced to provide a standardised way to emit deprecation notices.
 
@@ -453,7 +453,7 @@ This functionality is intended to simplify deprecation of features such as const
 
 This functionality does not replace the phpdoc `@deprecated` docblock.
 
-### Clock interface
+### Clock interface {/* #clock-interface */}
 
 <Since version="4.4" issueNumber="MDL-80838" />
 
@@ -461,9 +461,9 @@ Moodle now supports use of a PSR-20 compliant Clock Interface, accessed via Depe
 
 See the [detailed documentation](./apis/core/clock/index.md) on how to use this new interface.
 
-## Enrolment
+## Enrolment {/* #enrolment */}
 
-### Meta enrolment support in CSV course upload
+### Meta enrolment support in CSV course upload {/* #meta-enrolment-support-in-csv-course-upload */}
 
 <Since version="4.4" issueNumber="MDL-73852" />
 
@@ -474,7 +474,7 @@ shortname,fullname,category_idnumber,enrolment_1,enrolment_1_metacoursename
 course1,Course 1,CAT1,meta,course2
 ```
 
-### Support for multiple instances in csv course upload
+### Support for multiple instances in csv course upload {/* #support-for-multiple-instances-in-csv-course-upload */}
 
 <Since version="4.4" issueNumber="MDL-43820" />
 
@@ -523,7 +523,7 @@ shortname,fullname,category,summary,cohort,student,cohort,teacher
 
 </details>
 
-## Refactoring BS4 features dropped in BS5
+## Refactoring BS4 features dropped in BS5 {/* #refactoring-bs4-features-dropped-in-bs5 */}
 
 <Since version="4.4" issueNumber="MDL-71979" />
 
@@ -531,7 +531,7 @@ Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. 
 
 See more information in [Bootstrap 5 migration](./guides/bs5migration/index.md).
 
-## New course section page
+## New course section page {/* #new-course-section-page */}
 
 <Since version="4.4" issueNumber="MDL-79986" />
 
@@ -544,11 +544,11 @@ Enhancements to this page:
 - The `$CFG->linkcoursesections` setting has been entirely removed. Initially used for the Classic theme to empower admins in deciding whether section names in the Navigation block should be linked, this setting is now obsolete. With the introduction of the course/section.php page, dedicated to displaying content for any single section, and a convenient link from the main course page, users can seamlessly focus on section content without the need for this setting.
 - The methods `core_courseformat\base::set_section_number()` and `core_courseformat\base::get_section_number()` have been deprecated and replaced by `core_courseformat\base::set_sectionnum()` and `core_courseformat\base::get_sectionnum()`. The new methods use the null value when all the sections must be displayed (instead of 0). That way, section 0 (General), can be displayed on a single page too.
 
-## Activity icons
+## Activity icons {/* #activity-icons */}
 
 <Since version="4.4" issueNumber="MDL-78284" />
 
-### New designs
+### New designs {/* #new-designs */}
 
 The activity icons have been updated to prioritize readability and transform the existing filled square shapes with white icons into outlined colored icons against a transparent background. This modification ensures that the icons are not only more accessible but also easily distinguishable for users.
 When upgrading the SVG files, the .png files have been removed.
@@ -562,7 +562,7 @@ When upgrading the SVG files, the .png files have been removed.
 
 ![New activity icons](./_devupdate/activity-icons.png)
 
-### Activity purposes
+### Activity purposes {/* #activity-purposes */}
 
 Since Moodle 4.0, in places like the course page and the activity chooser icons have a more prominent role which is defined using the `FEATURE_MOD_PURPOSE` feature flag.
 
@@ -583,7 +583,7 @@ The available activity purposes for this feature are:
 
 :::
 
-### Branded icons
+### Branded icons {/* #branded-icons */}
 
 A new callback, `<modname>_is_branded()` has been added to the modules. Branded icons are displayed with their original colours and they are not affected by the activity purpose colours. By default, none of the modules are branded.
 
@@ -599,15 +599,15 @@ function h5pactivity_is_branded(): bool {
 }
 ```
 
-## PHPUnit 9.6 update
+## PHPUnit 9.6 update {/* #phpunit-96-update */}
 
 <Since version="4.4" issueNumber="MDL-81266" />
 
-### Intention
+### Intention {/* #intention */}
 
 The main goal of this minor update, from **PHPUnit 9.5 to 9.6**, is to start informing to developers in advance about the functionality that has been deprecated in the 9.x series and will be removed completely with the next PHPUnit 10.x update.
 
-### Deprecated stuff
+### Deprecated stuff {/* #deprecated-stuff */}
 
 Here you can find all the functionality that has been deprecated in PHPUnit 9.x and needs to be fixed, converted or removed in order to allow the tests to continue working once Moodle gets upgraded to PHPUnit 10.x:
 
@@ -635,7 +635,7 @@ Here you can find all the functionality that has been deprecated in PHPUnit 9.x 
 - `PHPUnit\Framework\TestCase::getMockClass()` has been deprecated, will be removed with PHPUnit 10. No clear alternative exists and won't be investigated, because there aren't cases in core.
 - Cannot use the `Test` suffix on abstract test case classes anymore. Proceed to rename them to end with `TestCase` instead.
 
-## Developer metadata
+## Developer metadata {/* #developer-metadata */}
 
 <Since version="4.4" issueNumber="MDL-81084" />
 
@@ -645,7 +645,7 @@ The schema for this format can be found at `/lib/plugins.schema.json`.
 
 See [Developer metadata](/general/development/tools/metadata) for more information on available metadata.
 
-## Previous versions
+## Previous versions {/* #previous-versions */}
 
 - [Moodle 4.3 developer update](https://681863b064dd25000810c5f2--moodledevdocs.netlify.app/docs/4.3/devupdate)
 - [Moodle 4.2 developer update](https://672834180938720008adb671--moodledevdocs.netlify.app/docs/4.2/devupdate)

@@ -24,7 +24,7 @@ Gitpod is an alternative to local development and completely optional. We recomm
 
 :::
 
-## How to use Gitpod with Moodle?
+## How to use Gitpod with Moodle? {/* #how-to-use-gitpod-with-moodle */}
 
 A [Tampermonkey](https://www.tampermonkey.net/) script has been created to facilitate the initiation of a Gitpod workspace from any Moodle repository/branch. When the script is installed, a button is displayed near each branch in the [Moodle tracker](https://moodle.atlassian.net/) within the Moodle repository, facilitating the initiation of a Gitpod workspace. It can be used for testing any Moodle repository/branch without requiring a local environment installed.
 
@@ -48,14 +48,14 @@ The password for the `admin` user is `test` ;-)
 
 :::
 
-## About the Gitpod workspaces
+## About the Gitpod workspaces {/* #about-the-gitpod-workspaces */}
 
 - By default, all Gitpod workspaces become inactive after 30 minutes of no activity. They can be reopened from the [Gitpod dashboard](https://gitpod.io/workspaces/).
 - Workspaces are automatically deleted after 14 days.
 - You can view a list of your workspaces on the [Gitpod dashboard](https://gitpod.io/workspaces/). From there, you can open any existing workspaces, which will be resumed with the Moodle site displayed in the IDE just as it was when it became inactive.
 - It's recommended to rename workspaces manually to something more meaningful (like the tracker issue).
 
-## What can be done with this integration?
+## What can be done with this integration? {/* #what-can-be-done-with-this-integration */}
 
 The following list is just a sample of the things that can be done with the integration of Gitpod with Moodle:
 
@@ -64,7 +64,7 @@ The following list is just a sample of the things that can be done with the inte
 - Remote development environment.
 - Run tests (behat, PHPUnit…).
 
-## See also
+## See also {/* #see-also */}
 
 - [Moodle docker](https://github.com/moodlehq/moodle-docker/#quick-start-with-gitpod)
 - [Gitpod samples](https://github.com/gitpod-samples)

@@ -11,11 +11,11 @@ import { ProjectSummary } from '@site/src';
     projectName="api/string-deprecation"
 />
 
-## Removing strings which are no longer used
+## Removing strings which are no longer used {/* #removing-strings-which-are-no-longer-used */}
 
 From Moodle 2.8 onwards, strings can be deprecated in a way very similar to how functions are  deprecated. This feature allows us to safely remove strings once we are reasonably sure they are no longer used. The process should help to remove unnecessary strings from the language packs, so translators do not waste valuable time  translating them, while protecting us from accidentally removing a string that is still being used somewhere.
 
-## How it works
+## How it works {/* #how-it-works */}
 
 There is a file with the list of deprecated strings. When a deprecated string is used (typically via the `get_string()` call), a warning message is displayed, such as:
 
@@ -27,7 +27,7 @@ Please refer to String deprecation developer docs.
 
 Note that this warning is displayed at the `DEBUG_DEVELOPER` level only (which is what Moodle developers should have selected). See below for info on what to do if you see this message.
 
-### Why and when should a string be deprecated?
+### Why and when should a string be deprecated? {/* #why-and-when-should-a-string-be-deprecated */}
 
 The most common case is that you realize that a string is not used any more in standard Moodle code. You will probably search the whole moodle.git for the string identifier and the only relevant place found is the string definition itself. Even if it seems that the given string is not used any more in the standard Moodle code, it's possible that some additional (contributed) plugins still rely on it. This is typical for semantically general strings provided by the `moodle.php` (core) component such as "Yes", "Continue", "Hidden" etc.
 
@@ -44,13 +44,13 @@ Another scenario may be that a semantically identical string was defined twice o
 
 Also, it may turn out that some strings are only vaguely defined and do not have a clear and unique context / semantics. Ideally, Moodle code should use context-sensitive strings rather than rely on one general string covering all cases. Things like [grammatical gender](http://en.wikipedia.org/wiki/Grammatical_gender) play an important role in many languages. For example, in Czech, "a role" or "a question" are of feminine gender and the correct translation of "hidden" in this case is `skrytá`, while "a badge" is of masculine gender and the correct translation is `skrytý`. So it would be better to have separate strings like `hiddenrole`, `hiddenquestion` and `hiddenbadge` even if they all read just "Hidden" in the English language pack. When you are about to split existing string into a couple of specific ones, you may wish to deprecate the general one at the end too (also, do not forget to use the [CPY](./amos.md) again).
 
-### When should a string be removed?
+### When should a string be removed? {/* #when-should-a-string-be-removed */}
 
 There are situations where deprecation does not make sense. For example when a whole functionality is being removed, or a very specific string (such as error message) is no longer used by the code. If it is very unlikely that the string is used by any other code, it can simply be removed without the full deprecation process.
 
 The same logic applies to cases when a very specific string is to be moved or renamed. In this situation, it is valid to just move it (together with the matching [MOV instruction in the AMOScript](./amos.md)).
 
-## How to deprecate a string
+## How to deprecate a string {/* #how-to-deprecate-a-string */}
 
 :::note
 
@@ -72,7 +72,7 @@ Before Moodle 3.0, final deprecation was 2 major versions later. With 3.0 the po
 
 Take care when deprecating a string within a few weeks of `en_fix` being merged with `en`, as it can result in a conflict (as happened in [MDL-52315](https://moodle.atlassian.net/browse/MDL-52315)).
 
-## What to do if you get a debugging message
+## What to do if you get a debugging message {/* #what-to-do-if-you-get-a-debugging-message */}
 
 There are two possibilities. Either the code that uses the deprecated string must be fixed, or the string should not have been deprecated and must be removed from the list.
 
@@ -89,6 +89,6 @@ Use the `git-blame` tool on the corresponding `lang/en/deprecated.txt` and find 
 
 :::
 
-## See also
+## See also {/* #see-also */}
 
 - [MDL-64905](https://moodle.atlassian.net/browse/MDL-64905) comments regarding introducing a new string and deprecating the old one

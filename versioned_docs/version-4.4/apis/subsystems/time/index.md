@@ -9,7 +9,7 @@ Internally Moodle always stores all times in unixtime format (number of seconds 
 
 The Time API is used to display proper date-time depending on user or site timezones.
 
-## Functions
+## Functions {/* #functions */}
 
 There is a class in Moodle to handle most needs of working with times. There are 2 cases to consider when working with time:
 
@@ -70,9 +70,9 @@ Other functions related to time api can be found in lib/moodlelib.php.
    - **get_user_timezone_offset** - Returns user's timezone difference from GMT in hours
    - **dst_changes_for_year** -  Calculates the required DST change and returns a Timestamp Array
 
-## Glossary
+## Glossary {/* #glossary */}
 
-### Timezone
+### Timezone {/* #timezone */}
 
 Moodle supports following timezone formats:
 
@@ -80,17 +80,17 @@ Moodle supports following timezone formats:
 1. Time offsets from UTC (int +-(0-13) or float +-(0.5-12.5))
 1. World timezones (Australia/Perth)
 
-### Location
+### Location {/* #location */}
 
 Timezone depends on [Location](https://docs.moodle.org/en/Location) of the user and can be forced upon by administrator.
 
-### DST
+### DST {/* #dst */}
 
 DST is abbreviation of **Daylight Saving Time** (also known as "Day light saving" and "Summer Time"). Many countries, and sometimes just certain regions of countries, adopt daylight saving time during part of the year. Moodle automatically calculates DST for current user, depending on user location.
 
-## Examples
+## Examples {/* #examples */}
 
-### Create DateTime with date/time from a unixtime (number of seconds)
+### Create DateTime with date/time from a unixtime (number of seconds) {/* #create-datetime-with-datetime-from-a-unixtime-number-of-seconds */}
 
 ```php
 $date = new DateTime();
@@ -98,7 +98,7 @@ $date->setTimestamp(intval($unixtime);
 echo userdate($date->getTimestamp());
 ```
 
-### Time API's for current user
+### Time API's for current user {/* #time-apis-for-current-user */}
 
 Prints the current date and time in the user's timezone:
 
@@ -121,7 +121,7 @@ $date->setTime(0, 0, 0);
 echo userdate($date->getTimestamp(), get_string('strftimedatefullshort', 'core_langconfig'));
 ```
 
-### System Time API
+### System Time API {/* #system-time-api */}
 
 Find the day of the week for the first day in this month.
 
@@ -136,7 +136,7 @@ $dayofweek = $now->format('N');
 echo $dayofweek;
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - [Php DateTime class](https://www.php.net/manual/en/class.datetime)
 - [Core APIs](../../../apis.md)

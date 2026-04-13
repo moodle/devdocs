@@ -12,7 +12,7 @@ This is the top-level page describing Moodle's coding standards and guidelines. 
 
 :::
 
-## Moodle architecture
+## Moodle architecture {/* #moodle-architecture */}
 
 Moodle tries to run on the widest possible range of platforms, for the widest possible number of people, while remaining easy to install, use, upgrade and integrate with other systems.
 
@@ -22,7 +22,7 @@ For more about this, see [Moodle architecture](https://docs.moodle.org/dev/Moodl
 
 :::
 
-## Plugins
+## Plugins {/* #plugins */}
 
 Moodle has a general philosophy of modularity.  There are nearly 30 different standard types of plugins and even more sub-plugin types, however all of these plugin types work the same way. Blocks and activities are the only small exceptions.
 
@@ -32,7 +32,7 @@ For more about this, see [Moodle plugins](https://docs.moodle.org/dev/Plugins) a
 
 :::
 
-## Coding style
+## Coding style {/* #coding-style */}
 
 Consistent [coding style](./policies/codingstyle/index.md) is important in any development project, and particularly so when many developers are involved. A standard style helps to ensure that the code is easier to read and understand, which helps overall quality.
 
@@ -44,7 +44,7 @@ For more about this, see the [Moodle coding style](./policies/codingstyle/index.
 
 :::
 
-## Security
+## Security {/* #security */}
 
 Security is about protecting the interests and data of all our users.  Moodle may not be banking software, but it is still protecting a lot of sensitive and important data such as private discussions and grades from outside eyes (or student hackers!) as well as protecting our users from spammers and other internet predators.
 
@@ -56,7 +56,7 @@ Any single script (in Moodle core or a third party module) can introduce a vulne
 
 :::
 
-## Standards
+## Standards {/* #standards */}
 
 It's important that Moodle produces strict, well-formed [HTML 5](http://en.wikipedia.org/wiki/HTML5) code (preferably backwards compatible with XHTML 1.1 if possible), compliant with all common accessibility guidelines (such as [W3C WCAG 2.0](http://www.w3.org/TR/WCAG20/), [ARIA](http://www.w3.org/TR/wai-aria-practices/)).
 
@@ -70,7 +70,7 @@ We recommend that if you are writing your own theme that it should extend the Mo
 
 This helps consistency across browsers in a nicely-degrading way (especially those using non-visual or mobile browsers), as well as improving life for theme designers.
 
-## JavaScript
+## JavaScript {/* #JavaScript */}
 
 New JavaScript in Moodle should be written as Vanilla JavaScript in the ES6 style. The use of jQuery, YUI, and other frameworks is strongly discouraged and will not be accepted into core except when dealing with legacy interfaces which require the use of those objects.
 
@@ -84,7 +84,7 @@ For more about this, see the [JavaScript guide](/docs/guides/javascript).
 
 :::
 
-## Internationalisation
+## Internationalisation {/* #internationalisation */}
 
 Moodle works in over 84 languages because we pay great attention to keeping the language strings and locale information separate from the code, in language packs.
 
@@ -96,7 +96,7 @@ For more about this, see [String API](https://docs.moodle.org/dev/String_API)
 
 :::
 
-## Accessibility
+## Accessibility {/* #accessibility */}
 
 Moodle should work well for the widest possible range of people.
 
@@ -106,7 +106,7 @@ For more about this, see [Moodle Accessibility](./policies/accessibility).
 
 :::
 
-## Component library
+## Component library {/* #component-library */}
 
 The Component library is a developer tool provided to help identify frequently-used user interface components, and encourage their re-use.
 
@@ -118,7 +118,7 @@ For more about this, see [Component library](./tools/component-library.md).
 
 :::
 
-## Performance
+## Performance {/* #performance */}
 
 The load any Moodle site can cope with will, of course, depend on the server and network hardware that it is running on. However there are some features (intended especially for developers) that are discouraged on production sites for performance reasons.
 
@@ -130,7 +130,7 @@ For more information and advice, see [Performance and scalability](https://docs.
 
 :::
 
-## Database
+## Database {/* #database */}
 
 Moodle has a powerful database abstraction layer that we wrote ourselves, called [XMLDB](https://docs.moodle.org/dev/XMLDB_Documentation).  This lets the same Moodle code work on MySQL/MariaDB, PostgreSQL, MS SQL Server and Oracle. There are known issues when using Oracle, it is not fully supported and is not recommended for production sites.
 
@@ -142,7 +142,7 @@ For more about this, see the [Moodle Database](https://docs.moodle.org/dev/Datab
 
 :::
 
-## Events
+## Events {/* #events */}
 
 In Moodle it is possible to register observers for events. An observer is notified when an event happens and receives the data related to that event. An observer can only act on the information in the event. It cannot modify the data for the event or prevent the action from occurring. The component containing the observer is communicating with the component that declared the event class. The normal rules for [inter-component communication](./policies/component-communication/index.md#event-observers) apply.
 
@@ -152,7 +152,7 @@ For more about this, see [Events API](https://docs.moodle.org/dev/Events_API). I
 
 :::
 
-## Web services
+## Web services {/* #web-services */}
 
 Web services enable other systems to login to Moodle and perform operations. They should be implemented according to [Web service API functions](https://docs.moodle.org/dev/Web_service_API_functions) and [How to contribute a web service function to core](https://docs.moodle.org/dev/How_to_contribute_a_web_service_function_to_core), including the [Naming convention](https://docs.moodle.org/dev/Web_service_API_functions#Naming_convention).
 
@@ -162,7 +162,7 @@ For more about this, see [Web services](/docs/apis/subsystems/external/).
 
 :::
 
-## Manual testing
+## Manual testing {/* #manual-testing */}
 
 All issues integrated into the core codebase are tested both during Integration, and subsequently by our testing team. While much of this testing is automated, there are many parts which cannot be automated, and manual testing is required.
 
@@ -172,7 +172,7 @@ Moodle has guidelines on [how to write clear testing instructions](./process/tes
 
 :::
 
-## Unit testing
+## Unit testing {/* #unit-testing */}
 
 [Unit testing](http://en.wikipedia.org/wiki/Unit_testing) is not simply a technique but a philosophy of software development.
 
@@ -186,7 +186,7 @@ For more about this, see [PHPUnit](./tools/phpunit/index.md).
 
 :::
 
-## Acceptance testing
+## Acceptance testing {/* #acceptance-testing */}
 
 PHPUnit covers mostly the internal implementation of functions and classes, the user interaction testing can be automated using the [Behat framework](http://behat.org).
 
@@ -196,7 +196,7 @@ For more about this, see [Acceptance testing](./tools/behat/index.md).
 
 :::
 
-## Third Party Libraries
+## Third Party Libraries {/* #third-party-libraries */}
 
 Moodle has a standard way to include third party libraries in your code.
 
@@ -206,12 +206,12 @@ For more about this, see [Third-party libraries](https://docs.moodle.org/dev/Thi
 
 :::
 
-## Other standards
+## Other standards {/* #other-standards */}
 
 Please note that Moodle coding style and design is pretty unique, it is not compatible with [PEAR coding standards](http://pear.php.net/manual/en/standards.php) or any other common PHP standards.
 
 <!-- cspell:ignore 開発 -->
 
-## Translations
+## Translations {/* #translations */}
 
 - [開発](https://docs.moodle.org/ja/開発:コーディング)

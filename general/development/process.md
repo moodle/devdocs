@@ -10,7 +10,7 @@ tags:
 
 This document summarises the various development processes used in developing Moodle. There are four main processes that overlap.
 
-## Integration workflow in the tracker
+## Integration workflow in the tracker {/* #integration-workflow-in-the-tracker */}
 
 The Moodle tracker keeps track of the status of all bug fixes and new features.
 
@@ -24,40 +24,40 @@ We use a workflow that ensures that new code receives multiple reviews by differ
 - There is a dedicated team in Moodle HQ in charge of the [integration review](./process/integration/index.md), to ensure consistent quality across the codebase.
 - Every time an issue is integrated, the [testing](./process/testing/index.md) instructions are run by a dedicated team of testers.
 
-## Roles
+## Roles {/* #roles */}
 
 A number of roles make this work:
 
-### Users
+### Users {/* #users */}
 
 Users report bugs and make feature requests directly in the tracker, by creating new issues with a summary and a description.
 
-### Developers
+### Developers {/* #developers */}
 
 Developers work on the issues in the tracker to specify solutions and write code that implements these solutions. They will often ask other developers to _peer review_ their code in the early stages to avoid problems later on.
 
 While many of the developers work for Moodle.com, a large number are part of the global development community around Moodle. If you're interested in becoming a recognised developer, see [Tracker groups and permissions](./tracker/guide#tracker-groups-and-permissions).
 
-### CiBoT
+### CiBoT {/* #cibot */}
 
 CiBoT is not a person but a bot who monitors the tracker and performs the [Automated code review](./tools/cibot.md) when issue is submitted for Peer review or when developer added `cime` label.
 
-### Component leads
+### Component leads {/* #component-leads */}
 
 [Component leads](https://moodle.atlassian.net/projects/MDL?selectedItem=com.atlassian.jira.jira-projects-plugin:components-page) are developers with some responsibility for particular components (plugins or modules) in Moodle. They have authority to decide that a particular fix is suitable and complete enough to be considered for integration in Moodle core and should be called upon to complete peer reviews for code in their components. Note that, apart from that, every component also has some [HQ Component leads](https://docs.moodle.org/dev/Component_Leads) that will specifically work on associated issues, triaging, monitoring, reviewing, fixing them.
 
-### Component leads reviewers
+### Component leads reviewers {/* #component-leads-reviewers */}
 
 Component Lead Reviewers are Component Leads who have the added responsibility of performing a second and final review of a selection of issues within their component.
 After reviewing the code, it is sent to the integration team to be pulled without further review.
 
-### Integrators
+### Integrators {/* #integrators */}
 
 From Monday to Thursday, the integration team (a small team of senior developers employed by Moodle HQ) conducts a code-level review of all issues in the integration queue. This is often called the "pull" process. If the fix is judged appropriate they will integrate the code into our git integration repository for further testing and it gets added to the testing queue.
 
 If they find problems they reject the issue and send it back to the developer for further work.
 
-### Testers
+### Testers {/* #testers */}
 
 During each week the testers look at all the issues in the testing queue, trying each fix and feature to make sure that it does actually fix the problem it was supposed to, and that there are no regressions in the web version and the Moodle mobile app.
 
@@ -65,17 +65,17 @@ If they find problems they reject the issue and integrators may remove it from t
 
 See [Testing of integrated issues](./process/testing/integrated-issues.md) for more details.
 
-### Production maintainers
+### Production maintainers {/* #production-maintainers */}
 
 On Thursday each week, production maintainers merge all the issues that passed testing into the git production repository, and it becomes available for use on production systems via git and download packages.
 
-## Stable maintenance cycles
+## Stable maintenance cycles {/* #stable-maintenance-cycles */}
 
 Moodle releases regular updates of the stable version of the software to fix bugs and other issues. Releases like 2.2.1, 2.2.2, 2.2.3 etc only include fixes based on the latest major release (2.2) and never any significant new features or database changes.
 
 At Moodle HQ there are teams of developers using the [Scrum framework](http://www.scrum.org/) to work on these issues (as well as new features for [major releases](https://docs.moodle.org/dev/#Major_release_cycles)).
 
-### Minor release (point release) timing
+### Minor release (point release) timing {/* #minor-release-point-release-timing */}
 
 After [major releases](https://docs.moodle.org/dev/#Major_release_cycles) there will be minor releases.
 
@@ -83,13 +83,13 @@ After [major releases](https://docs.moodle.org/dev/#Major_release_cycles) there 
 - There will then be another point release every two months after that.
 See the [General release calendar](../releases.md#general-release-calendar) for details.
 
-### Issue triage
+### Issue triage {/* #issue-triage */}
 
 [Issue triage](./process/triage) involves evaluating new issues, making sure that they are recorded correctly. One of the most important jobs triagers do is to identify issues that should be fixed in the stable branch. These are set with a priority ranging from _Trivial_ up to _Blocker_ and other features are checked.
 
 At Moodle HQ there are currently teams working on stable issues (mostly bugs reported by users) and improvements and new features (Partners, Moodle Association, user suggestions and Martin Dougiamas).
 
-### Scrum
+### Scrum {/* #scrum */}
 
 At Moodle HQ, every three weeks, the stable team takes a number of the most urgent issues from the backlog to work on during a period known as a _sprint_.
 
@@ -99,7 +99,7 @@ During the sprint, the team meets daily to discuss solutions and progress, as we
 
 Whenever a solution for an issue is finished, it is submitted to the standard integration workflow process described above.
 
-## Major release cycles
+## Major release cycles {/* #major-release-cycles */}
 
 Moodle release versions are in the format x.y.z where the x.y is a major release, and the z is a minor release.
 
@@ -119,19 +119,19 @@ Each release can be different, but generally the cycles work as follows.
 
 :::
 
-### Define roadmap
+### Define roadmap {/* #define-roadmap */}
 
 The roadmap is prioritised based on user research, stakeholder inputs, community wishes, third-party developments and important issues within the existing code.
 
 Sometimes new features might be based on earlier features, sometimes they may be something developed by a third party that needs to be evaluated and sometimes it might be something completely new.
 
-### Planning and development
+### Planning and development {/* #planning-and-development */}
 
 The product teams together with UX, employed at Moodle HQ, work on specifications of major new features throughout the cycle, specifying projects ahead of development time.
 
 The process of [new feature development](#new-feature-development) is described below. When specifications are in place, new code is developed during sprints, where designs and implementation are iterated as required, and goes through the standard weekly integration workflow described above.
 
-### Testing
+### Testing {/* #testing */}
 
 During development, as new code is integrated, automated testing conducted at the [code](./tools/phpunit/index.md) and [interface](./tools/behat/index.md) levels, to make sure there are no regressions caused by new features.
 
@@ -141,11 +141,11 @@ There is also a set of tests for manually testing any major theme changes - [MDL
 
 For more details, see [Testing](./process/testing/index.md).
 
-### Sprints
+### Sprints {/* #sprints */}
 
 At Moodle HQ, development takes place in sprints. The sprints are two or three-week periods during which developers to focus on a fixed list of issues. For example, sprints can be arranged within each release cycle as shown in the diagram below.
 
-### Events during cycle
+### Events during cycle {/* #events-during-cycle */}
 
 During each cycle there are a periods and events that occur between and around sprints.
 
@@ -169,11 +169,11 @@ A period after the code freeze where quality assurance testing takes place. No n
 **Release candidate** <br/>
 A point prior to the full release where a candidate is made public for wider testing.
 
-## New feature development
+## New feature development {/* #new-feature-development */}
 
 Major new features in Moodle usually should go through the following process.
 
-### Specification
+### Specification {/* #specification */}
 
 The User Experience (UX) team members create detailed wireframes and features and goals for the new feature, based on iterative user research, design sprints, user testing and co-design as part of the product team.
 
@@ -183,13 +183,13 @@ Developers create a detailed spec (here in the developer docs) outlining their g
 
 Developers should also create an issue in the tracker (linking to your docs) to keep track of the project status.
 
-### Community consultation
+### Community consultation {/* #community-consultation */}
 
 Get the community involved in looking at the spec to see if it meets their needs and to get further feedback. Please post in the [Future major features forum](http://moodle.org/mod/forum/view.php?id=8052) on moodle.org. You could also blog/tweet about it etc.
 
 Community developers proposing a new feature will want to talk with HQ core developers to make sure the ideas make sense, and possibly get some review on database design, architecture and so on.
 
-### Develop the code using Git
+### Develop the code using Git {/* #develop-the-code-using-git */}
 
 Develop your code on an open Git repository, like github.com. That enables people to see your code and to help you as it develops. Testers and early adopters also have the opportunity to try it early in the process and give you more valuable feedback.
 
@@ -197,7 +197,7 @@ Coverage with automated tests ([PHPUnit](https://docs.moodle.org/dev/PHPUnit) or
 
 It is essential that your code follows the [Moodle Coding Guide](./policies.md).
 
-### Submit your code for peer review
+### Submit your code for peer review {/* #submit-your-code-for-peer-review */}
 
 Click on _Request peer review_ button in the tracker.
 
@@ -209,31 +209,31 @@ Component leads should put issues, which affect code in their components, up for
 
 All other developers, including people who are component leads but working outside their component, should have their issues peer reviewed before they are sent to integration.
 
-### Peer review
+### Peer review {/* #peer-review */}
 
 The [HQ component leads](https://docs.moodle.org/dev/HQ_component_leads) should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
 
 Process and the list of things to check are described in [Peer reviewing](process/peer-review).
 
-### Submit the code for integration
+### Submit the code for integration {/* #submit-the-code-for-integration */}
 
 The developer is responsible for acting on the feedback from the peer reviewer. If changes have been made and the developer is satisfied that this has accommodated the feedback from the peer reviewer, then the developer can submit the issue for integration. If there have been significant changes after the peer review, or if the peer reviewer has raised concerns about the approach taken, then the developer should offer the issue up for peer review again, most often to the same peer reviewer, but not necessarily.
 
 Submitting an issue to integration is much the same as for any Moodle code. In some cases the Component Lead may perform a Component Lead Review instead of the integration team. See [Integration Review](./process/integration/index.md) and the information about the integration workflow above.
 
-## Fixing a bug
+## Fixing a bug {/* #fixing-a-bug */}
 
 Bug fixes, and minor features or enhancements should go through the following process. (The only exception is English language string typo fixes or suggested improvements, which may be contributed to the `en_fix` language pack on the [Moodle translation site](http://lang.moodle.org/).)
 
-### Make sure there is a tracker issue
+### Make sure there is a tracker issue {/* #make-sure-there-is-a-tracker-issue */}
 
 Every change must have an issue in the tracker. If you are fixing a bug, there is probably one there already, but if not, create one. [Tips for searching tracker](./tracker/tips/index.md).
 
-### Decide which branches the fix is required on
+### Decide which branches the fix is required on {/* #decide-which-branches-the-fix-is-required-on */}
 
 Bugs should normally be fixed on all the supported stable branches that are affected. New features should just go into main, but sometimes minor enhancements are made on the most recent stable branch.
 
-### Develop your change using git
+### Develop your change using git {/* #develop-your-change-using-git */}
 
 Develop your fix and push the change to an open git repository, for example on github.com. See also [Git for developers](/docs/guides/git/)
 
@@ -243,7 +243,7 @@ You will need to push one commit for each branch the fix needs to be applied to.
 
 Consider setting up [GitHub Actions integration](https://moodledev.io/general/development/tools/gha) with your repository so tests will be automatically run for you whenever you push work on your fix.
 
-### Submit your code for peer review
+### Submit your code for peer review {/* #submit-your-code-for-peer-review-1 */}
 
 Once your fix is done, it should be submitted for a peer review.
 
@@ -260,17 +260,17 @@ After your first fix is integrated you will be added to developers group and wil
 
 If you've set up [GitHub Actions integration](https://moodledev.io/general/development/tools/gha), the issue will automatically show the GHA build status for the branch(es) you've submitted for peer review.
 
-### Peer review
+### Peer review {/* #peer-review-1 */}
 
 The [HQ component leads](https://docs.moodle.org/dev/HQ_component_leads) should peer-review the change. If there is no component lead for an affected component, any other recognised developer may complete the peer review. The peer reviewer will either give you comments on the code and if it needs more work.
 
 Process and the list of things to check are described in [Peer reviewing](process/peer-review).
 
-### Submit your code for integration
+### Submit your code for integration {/* #submit-your-code-for-integration */}
 
 It will then be reviewed the following week by one of the integration team and either integrated or rejected. Once integrated, the fix will be tested, and then included in the next weekly release. For details see [Integration Review](./process/integration/index.md).
 
-## Security issues
+## Security issues {/* #security-issues */}
 
 Issues identified as [security issues](./policies/security/index.md) are resolved in a slightly different way, in order to achieve responsible disclosure as described in [Moodle security procedures](./process/security/index.md).
 
@@ -286,7 +286,7 @@ Issues identified as [security issues](./policies/security/index.md) are resolve
 - Details of security issues will not be publicly announced until one week after a minor release to allow admins to update.
 Note that not all the labelled (minor) security issues are always handled following the procedure above. It's possible that, after discussion, it's decided a given issue is not a real Moodle security problem (say external disclosures/potential attacks using Moodle as vector, not as target, discussions revealing some private details). Those issues will be processed as normal issues, generating the needed user documentation if necessary and will be part of the habitual weekly releases.
 
-### How to remove a branch from Github
+### How to remove a branch from Github {/* #how-to-remove-a-branch-from-github */}
 
 To remove a branch from Github, you can use the following command.
 
@@ -297,7 +297,7 @@ git push github :remote_branch
 Where `remote_branch` is the name of your remote branch, for example `wip-mdl-1234`.
 This effectively replaces the remote branch with nothing, removing the remote branch, but leaving the branch intact in your local Git repository. Please note that its likely that your commit will still exist on github due to the nature of git, so its best to avoid doing this in the first place.
 
-## Policy issues
+## Policy issues {/* #policy-issues */}
 
 Occasionally within Moodle we run into policy issues where a high-level decision needs to be made about how things are to be done.
 
@@ -311,7 +311,7 @@ Some time has been scheduled in the weekly Moodle HQ meeting to look at Policy i
 
 Decisions will be posted on the issue and that issue will be closed, allowing any dependent issues to continue to integration (or not). Decisions are final and bribes hardly ever work.
 
-## See also
+## See also {/* #see-also */}
 
 - [Detailed workflow](./process/_files/workflow.jpg)
 - [Release process](./process/release)

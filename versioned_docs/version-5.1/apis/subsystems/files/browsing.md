@@ -7,7 +7,7 @@ tags:
 
 The File Browser API is a supplemental API which can be used to fetch information relating to Files stored in the [Moodle File API](./index.md).
 
-### Fetch a series of breadcrumbs to the requested file
+### Fetch a series of breadcrumbs to the requested file {/* #fetch-a-series-of-breadcrumbs-to-the-requested-file */}
 
 This example demonstrates using the `filebrowser` API to fetch the parent folders of a file.
 

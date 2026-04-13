@@ -15,7 +15,7 @@ You can still call the API functions even if the system is turned off.
 
 :::
 
-## Using the API
+## Using the API {/* #using-the-api */}
 
 In most cases you do not need to use the API directly because the course and activity API already handles it for you. For example, if you are writing a module:
 
@@ -27,9 +27,9 @@ There are two special cases in which you may need to use the API directly.
 - Checking whether the current user can access an activity
 - Displaying a list of users who may be able to access the current activity
 
-### Check access for a user
+### Check access for a user {/* #check-access-for-a-user */}
 
-#### Activities
+#### Activities {/* #activities */}
 
 Some availability information can be accessed from an instance of the `cm_info` class, specifically in the `uservisible` property.
 
@@ -54,7 +54,7 @@ if ($cm->uservisible) {
 }
 ```
 
-#### Course sections
+#### Course sections {/* #course-sections */}
 
 Some availability information can be accessed from an instance of the `section_info` class, specifically in the `uservisible` property.
 
@@ -73,11 +73,11 @@ You **do not** need to check visibility and availability for _both_ the section 
 
 :::
 
-#### Accessing information for a different user
+#### Accessing information for a different user {/* #accessing-information-for-a-different-user */}
 
 The availability information in both the `cm_info` and `section_info` classes is calculated  for the current user. You can also obtain them for a different user by passing a user ID to `get_fast_modinfo`, although be aware that doing this repeatedly for different users will be slow.
 
-### Display a list of users who may be able to access the current activity
+### Display a list of users who may be able to access the current activity {/* #display-a-list-of-users-who-may-be-able-to-access-the-current-activity */}
 
 Sometimes you need to display a list of users who may be able to access the current activity.
 
@@ -109,11 +109,11 @@ The above example does not include the `$cm->visible` setting, nor does it take 
 
 :::
 
-## Using availability conditions in other areas
+## Using availability conditions in other areas {/* #using-availability-conditions-in-other-areas */}
 
 The availability API is provided for activities (course-modules) and sections. It is also possible to use it in other areas such as _within_ a module. See [Availability API for items within a module](https://docs.moodle.org/dev/Availability_API_for_items_within_a_module).
 
-## Programmatically setting availability conditions
+## Programmatically setting availability conditions {/* #programmatically-setting-availability-conditions */}
 
 In some situations you may need to _programmatically_ configure the availability conditions for an activity - for example you may have a custom enrolment plugin which creates assessable activities according to a student information system.
 
@@ -159,6 +159,6 @@ rebuild_course_cache($course->id, true);
 
 The ```$showc``` array determines if the course modules will be shown or invisible when not available.
 
-## See also
+## See also {/* #see-also */}
 
 - Writing [Availability condition](../../plugintypes/availability/index.md) plugins

@@ -26,7 +26,7 @@ The whoops UI is only used when the following conditions are met:
 - the `$CFG->debug_developer_use_pretty_exceptions` value is not `false`
 - the whoops library is available (using `composer install`)
 
-## Debugging messages
+## Debugging messages {/* #debugging-messages */}
 
 Moodle typically show debugging messages created with the `debugging()` method inline, however this can be easy to miss.
 
@@ -34,11 +34,11 @@ If Whoops is configured then `debugging()` messages will instead trigger an erro
 
 This can be controlled using the `$CFG->debug_developer_debugging_as_error` setting.
 
-## Configuration
+## Configuration {/* #configuration */}
 
 The use of whoops, and some features of it, are configurable to suit your personal preferences.
 
-### Disabling the UI
+### Disabling the UI {/* #disabling-the-ui */}
 
 If you do not wish to use the whoops interface you can disable it by setting the following:
 
@@ -47,7 +47,7 @@ If you do not wish to use the whoops interface you can disable it by setting the
 $CFG->debug_developer_use_pretty_exceptions = false;
 ```
 
-### Configuring the "Open" links for your preferred editor
+### Configuring the "Open" links for your preferred editor {/* #configuring-the-open-links-for-your-preferred-editor */}
 
 The whoops UI can be configured to allow you to easily open files in your preferred editor using the "Open file" link in the UI. This can be configured in Moodle using the `$CFG->debug_developer_editor` property.
 
@@ -83,7 +83,7 @@ For full documentation on this feature, see the [whoops documentation](https://g
 
 :::
 
-### Treating debugging as an error
+### Treating debugging as an error {/* #treating-debugging-as-an-error */}
 
 In normal circumstances Moodle will treat all calls to `debugging()` as an informational message which is shown inline in the page body.
 

@@ -25,7 +25,7 @@ Everything should go via the Manager.
 
 :::
 
-## Class implementation
+## Class implementation {/* #class-implementation */}
 
 Placements are defined as classes in their own namespace according to their plugin name.
 The naming convention for a Placement class is `aiplacement_<plugin name>`.
@@ -47,7 +47,7 @@ public function get_action_list(): array {
 }
 ```
 
-## Capabilities and permissions
+## Capabilities and permissions {/* #capabilities-and-permissions */}
 
 Placements provide a way for a user to carry out an Action.
 Placements are responsible for determining who can use a particular Action, and where it can be used.
@@ -68,7 +68,7 @@ $capabilities = [
 ...
 ```
 
-## Action processing
+## Action processing {/* #action-processing */}
 
 The following is the basic workflow in order for a placement to have an action processed for a user request:
 
@@ -80,7 +80,7 @@ sequenceDiagram
     Manager->>Placement: Pass response
 ```
 
-### Step 1
+### Step 1 {/* #step-1 */}
 
 - The Placement instantiates a new Action object of type they wish to use.
 - The Action must be instantiated with the required data. Each action will define what configuration it needs. As an example:
@@ -98,7 +98,7 @@ $action = new \core_ai\aiactions\generate_image(
 );
 ```
 
-### Step 2
+### Step 2 {/* #step-2 */}
 
 - The Placement then instantiates the Manager class `core_ai\manager`.
 - The Manager calls `process_action()`, passing in the configured Action object. As an example:
@@ -109,13 +109,13 @@ $manager = \core\di::get(\core_ai\manager::class);
 $response = $manager->process_action($action);
 ```
 
-### Step 3
+### Step 3 {/* #step-3 */}
 
 - The `process_action()` method then returns a response object (instance of `responses\response_base`).
 - It is up to the Placement to check for success/failure of the response and pass the result back to the
   user.
 
-## Plugin structure
+## Plugin structure {/* #plugin-structure */}
 
 The Placement plugins reside in the `ai/placement` directory.
 
@@ -148,7 +148,7 @@ be necessary for development.
 
 </details>
 
-## Settings
+## Settings {/* #settings */}
 
 Settings for the Placement should be defined in the `settings.php` file.
 Each Placement plugin should create a new admin settings page using `core_ai\admin\admin_settingspage_provider` class.

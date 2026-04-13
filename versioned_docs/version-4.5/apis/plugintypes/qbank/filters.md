@@ -15,7 +15,7 @@ documentationDraft: true
 
 Question bank plugins allow you define additional filters. These can be used when viewing the question bank, and are included in the URL so that a filtered view of the question bank can be shared. They are also used when defining the criteria for adding random questions to a quiz.
 
-## Creating a new filter condition
+## Creating a new filter condition {/* #creating-a-new-filter-condition */}
 
 A filter condition consists of two parts - the backend "condition" PHP class, and the frontend "filter" JavaScript class.
 
@@ -25,7 +25,7 @@ The "filter" class defines how the filter is displayed in the UI, and how values
 Each new filter condition must define a new "condition" class in the qbank plugin based on `core_question\local\bank\condition`.
 By default this will use the `core/datafilter/filtertype` "filter" class, although this can be overridden too if required.
 
-### Basic example
+### Basic example {/* #basic-example */}
 
 This outlines the bare minimum required to implement a new filter condition. This will give you a field that allows you to enter keywords and add them to a list of selected search terms, the filter the questions by that list of terms.
 This assumes that you already have the basic framework of a qbank plugin in place. For real-world examples, look for classes that extend `core_question\local\bank\condition`.
@@ -102,9 +102,9 @@ public function build_query_from_filter(array $filter): array {
 
 Following this pattern with your own fields and options will give you a basic functional filter. Most filters will require more complex functionality, which can be achieved through additional methods.
 
-### Additional options
+### Additional options {/* #additional-options */}
 
-#### Pre-defined values
+#### Pre-defined values {/* #pre-defined-values */}
 
 To define the list of possible filter values, define `get_initial_values()`, which returns an array of `['value', 'title']` for each option. These will then be searchable and selectable in the autocomplete field.
 
@@ -123,7 +123,7 @@ public function get_initial_values(): string {
 }
 ```
 
-#### Restrict custom keywords
+#### Restrict custom keywords {/* #restrict-custom-keywords */}
 
 To restrict the possible filter terms to only those returned from `get_initial_values()`, define `allow_custom()` and have it return `false`.
 
@@ -133,7 +133,7 @@ public function allow_custom(): bool {
 }
 ```
 
-#### Restrict join types
+#### Restrict join types {/* #restrict-join-types */}
 
 Not all join types are relevant to all filters. If each question will only match one of the selected values, it does not make sense to allow `JOINTYPE_ALL`. Define `get_join_list()` and return an array of the applicable join types.
 
@@ -146,7 +146,7 @@ public function get_join_list(): array {
 }
 ```
 
-#### Allow multiple values?
+#### Allow multiple values? {/* #allow-multiple-values */}
 
 By default, conditions allow multiple values to be selected and use the selected join type to decide how they are applied.
 If your condition should only allow a single value at a time, override `allow_multiple()` to return false.
@@ -157,7 +157,7 @@ public function allow_multiple(): bool {
 }
 ```
 
-#### Allow empty values?
+#### Allow empty values? {/* #allow-empty-values */}
 
 By default, conditions can be left empty, and therefore will not be included in the filter. To make it compulsory to select a value for this condition when it is added, override `allow_empty()` to return false.
 
@@ -167,7 +167,7 @@ public function allow_empty(): bool {
 }
 ```
 
-#### Is the condition required?
+#### Is the condition required? {/* #is-the-condition-required */}
 
 If it is compulsory that your condition is always displayed, override `is_required()` to return true.
 
@@ -177,7 +177,7 @@ public function is_required(): bool {
 }
 ```
 
-#### Custom filter class
+#### Custom filter class {/* #custom-filter-class */}
 
 By default, the filter will be displayed and processed using the `core/datafilter/filtertype` JavaScript class.
 This will provide a single autocomplete field for selecting one or multiple numeric IDs with textual labels.
@@ -200,7 +200,7 @@ For example, if your filter uses textual rather than numeric values, you can ove
 If you want a different UI for selecting your filter values instead of a single autocomplete, you can override `addValueSelector()`.
 This also provides flexibility over how the values provided by `get_initial_values()` are used by the UI.
 
-#### Filter options
+#### Filter options {/* #filter-options */}
 
 If your condition supports additional options as to how the selected values are applied to the query, such as whether child categories are included when parent categories are selected, you can define "Filter options".
 
@@ -210,7 +210,7 @@ See [`qbank_managecategories\category_condition`](https://github.com/moodle/mood
 You JavaScript filter class will also need to support your filter options. Override the constructor an add additional code for the UI required to set your filter options, and override `get filterOptions()` to return the current value for any options set in this UI.
 See [`qbank_managecategories/datafilter/filtertypes/categories`](https://github.com/moodle/moodle/blob/main/question/bank/managecategories/amd/src/datafilter/filtertypes/categories.js) as an example.
 
-#### Context-sensitive configuration
+#### Context-sensitive configuration {/* #context-sensitive-configuration */}
 
 You may want your filter to behave differently depending on where it is being displayed. In this case you can override the constructor which receives the current `$qbank` view object, and extract some data that is used later on by your other methods.
 

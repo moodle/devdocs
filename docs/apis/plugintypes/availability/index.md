@@ -21,7 +21,7 @@ To see this condition in action:
 - Click the **Add restriction** button
 - Click **Grouping**
 
-## File structure
+## File structure {/* #file-structure */}
 
 import {
     Lang,
@@ -61,7 +61,7 @@ All availability condition plugin files must be located inside the **/availabili
 
 Some of the important files for the format plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
-### lang/en/availability_name.php
+### lang/en/availability_name.php {/* #langenavailability_namephp */}
 
 import langExample from '!!raw-loader!./_examples/lang.php';
 import langDescription from './_examples/lang.md';
@@ -73,7 +73,7 @@ import langDescription from './_examples/lang.md';
     description={langDescription}
 />
 
-### classes/condition.php
+### classes/condition.php {/* #classesconditionphp */}
 
 This PHP class implements the back-end of the condition; in other words, this class contains the code which decides whether a user is allowed to access an activity that uses this condition, or not.
 
@@ -153,7 +153,7 @@ class condition extends \core_availability\condition {
 
 There are other functions you might also want to implement. For example, if your condition should apply to lists of users (in general, conditions which are 'permanent' such as group conditions apply to lists, whereas those which are 'temporary' such as date or grade conditions do not) then you should also implement is_applied_to_user_lists and filter_user_list functions. To see the full list, look at the PHPdoc for the condition and tree_node classes inside availability/classes.
 
-### classes/frontend.php
+### classes/frontend.php {/* #classesfrontendphp */}
 
 You will also need to write a frontend.php class which defines the behaviour of your plugin within the editing form (when a teacher is editing the activity settings).
 
@@ -198,7 +198,7 @@ class frontend extends \core_availability\frontend {
 }
 ```
 
-### YUI
+### YUI {/* #yui */}
 
 The Availability API generates a dialogue to allow teachers to configure the availability conditions. Each availability plugin can add to this form by writing a JavaScript module in the YUI format which generates its form fields, errors, and configuration.
 
@@ -210,7 +210,7 @@ Although JavaScript standards in Moodle have moved on, the core availability sys
 
 YUI does require more boilerplate configuration that AMD modules, but the same build toolset is used as for AMD modules and you can still make use of the `grunt watch` command.
 
-#### yui/src/form/meta/form.json
+#### yui/src/form/meta/form.json {/* #yuisrcformmetaformjson */}
 
 The metadata file lists any dependencies that your YUI module has on other code.
 
@@ -229,7 +229,7 @@ Typically this will include the `moodle-core_availability-form` dependency, and 
 }
 ```
 
-#### yui/src/form/build.json
+#### yui/src/form/build.json {/* #yuisrcformbuildjson */}
 
 The build.json file describes how the YUI compiler will build your YUI module.
 
@@ -250,7 +250,7 @@ Typically you should only need to set the name of your plugin in this file>
 }
 ```
 
-#### yui/src/js/form.js
+#### yui/src/js/form.js {/* #yuisrcjsformjs */}
 
 This file contains the actual JavaScript code for your plugin. It should follow the below format in order to integrate with the core JavaScript. Additional feautres are available and you can add any extra functions you like to break your code down too.
 
@@ -328,11 +328,11 @@ M.availability_name.form.fillErrors = function(errors, node) {
 };
 ```
 
-### Testing
+### Testing {/* #testing */}
 
 We strongly recommend writing both unit tests, and functional tests for your availability conditions.
 
-## See also
+## See also {/* #see-also */}
 
 - Using the [Availability API as a consumer](../../subsystems/availability/index.md)
 - [Conditional activities API](../../core/conditionalactivities/index.md)

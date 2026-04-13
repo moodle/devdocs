@@ -23,7 +23,7 @@ For a good reference implementation, see the [onlinetext](https://github.com/moo
 
 :::
 
-## File structure
+## File structure {/* #file-structure */}
 
 Assignment Feedback plugins are located in the `/mod/assign/submission` directory. A plugin should not include any custom files outside of it's own plugin folder.
 
@@ -73,7 +73,7 @@ mod/assign/submission/file
 
 </details>
 
-### settings.php
+### settings.php {/* #settingsphp */}
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable no-space-in-code -->
@@ -101,7 +101,7 @@ This example from the submission_file plugin also checks to see if there is a ma
 
 :::
 
-### locallib.php
+### locallib.php {/* #locallibphp */}
 
 <!-- markdownlint-save -->
 <!-- markdownlint-disable code-block-style -->
@@ -122,7 +122,7 @@ class assign_submission_file extends assign_submission_plugin {
 
 All submission plugins MUST define a class with the component name of the plugin that extends assign_submission_plugin.
 
-#### get_name()
+#### get_name() {/* #get_name */}
 
 ```php
 public function get_name() {
@@ -132,7 +132,7 @@ public function get_name() {
 
 Get name is abstract in submission_plugin and must be defined in your new plugin. Use the language strings to make your plugin translatable.
 
-#### get_settings()
+#### get_settings() {/* #get_settings */}
 
 ```php
 public function get_settings(MoodleQuickForm $mform) {
@@ -189,7 +189,7 @@ public function get_settings(MoodleQuickForm $mform) {
 
 The "get_settings" function is called when building the settings page for the assignment. It allows this plugin to add a list of settings to the form. Notice that the settings are prefixed by the plugin name which is good practice to avoid conflicts with other plugins.
 
-#### save_settings()
+#### save_settings() {/* #save_settings */}
 
 ```php
 public function save_settings(stdClass $data) {
@@ -201,7 +201,7 @@ public function save_settings(stdClass $data) {
 
 The "save_settings" function is called when the assignment settings page is submitted, either for a new assignment or when editing an existing one. For settings specific to a single instance of the assignment you can use the assign_plugin::set_config function shown here to save key/value pairs against this assignment instance for this plugin.
 
-#### get_form_elements()
+#### get_form_elements() {/* #get_form_elements */}
 
 ```php
 public function get_form_elements($submission, MoodleQuickForm $mform, stdClass $data) {
@@ -236,7 +236,7 @@ public function get_form_elements($submission, MoodleQuickForm $mform, stdClass 
 
 The get_form_elements function is called when building the submission form. It functions identically to the get_settings function except that the submission object is available (if there is a submission) to associate the settings with a single submission. This example also shows how to use a filemanager within a submission plugin. The function must return true if it has modified the form otherwise the assignment will not include a header for this plugin.
 
-#### save()
+#### save() {/* #save */}
 
 ```php
 public function save(stdClass $submission, stdClass $data) {
@@ -301,7 +301,7 @@ public function save(stdClass $submission, stdClass $data) {
 
 The "save" function is called to save a user submission. The parameters are the submission object and the data from the submission form. This example calls `file_postupdate_standard_filemanager` to copy the files from the draft file area to the filearea for this submission, it then uses the event api to trigger an assessable_file_uploaded event for the plagiarism api. It then records the number of files in the plugin specific "assignsubmission_file" table.
 
-#### get_files()
+#### get_files() {/* #get_files */}
 
 ```php
 public function get_files($submission) {
@@ -326,7 +326,7 @@ public function get_files($submission) {
 
 If this submission plugin produces one or more files, it should implement "get_files" so that the portfolio API can export a list of all the files from all of the plugins for this assignment submission. This is also used by the offline grading feature in the assignment.
 
-#### view_summary()
+#### view_summary() {/* #view_summary */}
 
 ```php
 public function view_summary(stdClass $submission, & $showviewlink) {
@@ -348,7 +348,7 @@ public function view_summary(stdClass $submission, & $showviewlink) {
 
 The view_summary function is called to display a summary of the submission to both markers and students. It counts the number of files submitted and if it is more that a set number, it only displays a count of how many files are in the submission - otherwise it uses a helper function to write the entire list of files. This is because we want to keep the summaries really short so they can be displayed in a table. There will be a link to view the full submission on the submission status page.
 
-#### view()
+#### view() {/* #view */}
 
 ```php
 public function view($submission) {
@@ -362,7 +362,7 @@ public function view($submission) {
 
 The view function is called to display the entire submission to both markers and students. In this case it uses the helper function in the assignment class to write the list of files.
 
-#### can_upgrade()
+#### can_upgrade() {/* #can_upgrade */}
 
 ```php
 public function can_upgrade($type, $version) {
@@ -378,7 +378,7 @@ public function can_upgrade($type, $version) {
 
 The can_upgrade function is used to identify old "Assignment 2.2" subtypes that can be upgraded by this plugin. This plugin supports upgrades from the old "upload" and "uploadsingle" assignment subtypes.
 
-#### upgrade_settings()
+#### upgrade_settings() {/* #upgrade_settings */}
 
 ```php
 public function upgrade_settings(context $oldcontext, stdClass $oldassignment, &$log) {
@@ -420,7 +420,7 @@ public function upgrade_settings(context $oldcontext, stdClass $oldassignment, &
 
 This function is called once per assignment instance to upgrade the settings from the old assignment to the new mod_assign. In this case it sets the `maxbytes`, `maxfiles` and `alwaysshowdescription` configuration settings.
 
-#### upgrade()
+#### upgrade() {/* #upgrade */}
 
 ```php
 public function upgrade($oldcontext, $oldassignment, $oldsubmission, $submission, &$log) {
@@ -456,7 +456,7 @@ public function upgrade($oldcontext, $oldassignment, $oldsubmission, $submission
 
 The "upgrade" function upgrades a single submission from the old assignment type to the new one. In this case it involves copying all the files from the old filearea to the new one. There is a helper function available in the assignment class for this (Note: the copy will be fast as it is just adding rows to the files table). If this function returns false, the upgrade will be aborted and rolled back.
 
-#### get_editor_fields()
+#### get_editor_fields() {/* #get_editor_fields */}
 
 ```php
 public function () {
@@ -468,7 +468,7 @@ public function () {
 
 This example is from assignsubmission_onlinetext. If the plugin uses a text-editor it is ideal if the plugin implements "get_editor_fields". This allows the portfolio to retrieve the text from the plugin when exporting the list of files for a submission. This is required because the text is stored in the plugin specific table that is only known to the plugin itself. If a plugin supports multiple text areas it can return the name of each of them here.
 
-#### get_editor_text()
+#### get_editor_text() {/* #get_editor_text */}
 
 ```php
 public function get_editor_text($name, $submissionid) {
@@ -485,7 +485,7 @@ public function get_editor_text($name, $submissionid) {
 
 This example is from assignsubmission_onlinetext. If the plugin uses a text-editor it is ideal if the plugin implements "get_editor_text". This allows the portfolio to retrieve the text from the plugin when exporting the list of files for a submission. This is required because the text is stored in the plugin specific table that is only known to the plugin itself. The name is used to distinguish between multiple text areas in the one plugin.
 
-#### get_editor_format()
+#### get_editor_format() {/* #get_editor_format */}
 
 ```php
 public function get_editor_format($name, $submissionid) {
@@ -502,7 +502,7 @@ public function get_editor_format($name, $submissionid) {
 
 This example is from assignsubmission_onlinetext. For the same reason as the previous function, if the plugin uses a text editor, it is ideal if the plugin implements "get_editor_format". This allows the portfolio to retrieve the text from the plugin when exporting the list of files for a submission. This is required because the text is stored in the plugin specific table that is only known to the plugin itself. The name is used to distinguish between multiple text areas in the one plugin.
 
-#### is_empty()
+#### is_empty() {/* #is_empty */}
 
 ```php
 public function is_empty(stdClass $submission) {
@@ -512,7 +512,7 @@ public function is_empty(stdClass $submission) {
 
 If a plugin has no submission data to show - it can return true from the is_empty function. This prevents a table row being added to the submission summary for this plugin. It is also used to check if a student has tried to save an assignment with no data.
 
-#### submission_is_empty()
+#### submission_is_empty() {/* #submission_is_empty */}
 
 ```php
 public function submission_is_empty() {
@@ -535,7 +535,7 @@ public function submission_is_empty() {
 
 Determine if a submission is empty. This is distinct from is_empty() in that it is intended to be used to determine if a submission made before saving is empty.
 
-#### get_file_areas()
+#### get_file_areas() {/* #get_file_areas */}
 
 ```php
 public function get_file_areas() {
@@ -545,7 +545,7 @@ public function get_file_areas() {
 
 A plugin should implement get_file_areas if it supports saving of any files to moodle - this allows the file areas to be browsed by the moodle file manager.
 
-#### copy_submission()
+#### copy_submission() {/* #copy_submission */}
 
 ```php
 public function copy_submission(stdClass $sourcesubmission, stdClass $destsubmission) {
@@ -579,7 +579,7 @@ public function copy_submission(stdClass $sourcesubmission, stdClass $destsubmis
 
 Since Moodle 2.5 - a students submission can be copied to create a new submission attempt. Plugins should implement this function if they store data associated with the submission (most plugins).
 
-#### format_for_log()
+#### format_for_log() {/* #format_for_log */}
 
 ```php
 public function format_for_log(stdClass $submission) {
@@ -591,7 +591,7 @@ public function format_for_log(stdClass $submission) {
 
 The format_for_log function lets a plugin produce a really short summary of a submission suitable for adding to a log message.
 
-#### delete_instance()
+#### delete_instance() {/* #delete_instance */}
 
 ```php
 public function delete_instance() {
@@ -607,29 +607,29 @@ public function delete_instance() {
 
 The delete_instance function is called when a plugin is deleted. Note only database records need to be cleaned up - files belonging to fileareas for this assignment will be automatically cleaned up.
 
-## Useful classes
+## Useful classes {/* #useful-classes */}
 
 A submission plugin has access to a number of useful classes in the assignment module. See the phpdocs (or the code) for more information on these classes.
 
-### assign_plugin
+### assign_plugin {/* #assign_plugin */}
 
 This abstract class is the base class for all assignment plugins (feedback or submission plugins).
 
 It provides access to the assign class which represents the current assignment instance through "$this->assignment".
 
-### assign_submission_plugin
+### assign_submission_plugin {/* #assign_submission_plugin */}
 
 This is the base class all assignment submission plugins must extend. It contains a small number of additional function that only apply to submission plugins.
 
-### assign
+### assign {/* #assign */}
 
 This is the main class for interacting with the assignment module.
 
 It contains public functions that are useful for listing users, loading and updating submissions, loading and updating grades, displaying users etc.
 
-## Other features
+## Other features {/* #other-features */}
 
-### Add calendar events
+### Add calendar events {/* #add-calendar-events */}
 
 <Since version="3.1" />
 

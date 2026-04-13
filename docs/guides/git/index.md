@@ -11,7 +11,7 @@ A reasonable knowledge of the Git basics is a good idea before you start to use 
 
 Moodle has also created a tool known as [MDK (Moodle Developer Kit)](/general/development/tools/mdk) to streamline a lot of the processes detailed on this page. It is recommended that you consider MDK as it is a very powerful tool and can be used together with Git to make Moodle development much easier.
 
-## General workflow
+## General workflow {/* #general-workflow */}
 
 A detailed explanation of Moodle's workflow can be found on the [Development process](/general/development/process) page. In short, Moodle development with Git looks like this:
 
@@ -33,29 +33,29 @@ Most Moodle developers have their public repositories hosted at [GitHub](http://
 When you first register on Moodle Tracker you can not assign issues to yourself or send them for peer review. You will be added to the developers group after your first bug fix is integrated. Before that, just comment on the issue with a link to your branch and a component lead, or another developer, will send the issue for peer review for you.
 :::
 
-## Installing Git on your computer
+## Installing Git on your computer {/* #installing-git-on-your-computer */}
 
-### Installing Git
+### Installing Git {/* #installing-git */}
 
 Most Linux distributions have Git available as a package to install.
 
-#### Debian/Ubuntu
+#### Debian/Ubuntu {/* #debianubuntu */}
 
 ```
 sudo apt-get install git
 ```
 
-#### MacOS (Homebrew)
+#### MacOS (Homebrew) {/* #macos-homebrew */}
 
 ```
 brew install git
 ```
 
-#### Windows
+#### Windows {/* #windows */}
 
 Download the latest Git installer at [Git for Windows](https://gitforwindows.org/).
 
-## Configuring Git
+## Configuring Git {/* #configuring-git */}
 
 After installation, set your name and email. Your name and email will become part of your commits and can't be changed later once your commits are accepted into Moodle code. Therefore we ask contributors to use their real names written in with proper capitalisation. E.g. "John Smith" and not "john smith", or even "john5677".
 
@@ -76,7 +76,7 @@ It's recommended to verify that the your Git installation is not performing any 
 git config --global core.autocrlf false
 ```
 
-## Setting-up your public repository
+## Setting-up your public repository {/* #setting-up-your-public-repository */}
 
 There are many different options when considering where to host your git repository. [GitHub](http://github.com/) is a popular option that many developers use because it is free and well supported. Moodle also incorporates a series of GitHub Actions that are used to verify your code automatically and can help identify issues.
 
@@ -88,7 +88,7 @@ There are many different options when considering where to host your git reposit
 
 4. Optionally, you can set up [GitHub Actions](/general/development/tools/gha) to automatically test your code. This provides the advantage of catching issues without having to set up a testing environment locally and provides helpful feedback before you submit your code for review.
 
-## Setting-up your local repository
+## Setting-up your local repository {/* #setting-up-your-local-repository */}
 
 Create a local clone of your GitHub repository by using this command in your terminal:
 
@@ -107,7 +107,7 @@ This command does several jobs for you:
 [MDK](/general/development/tools/mdk) features many commands that aid in the creation and management of your Moodle branches. If you haven't checked it out already, see how MDK can streamline your Moodle development.
 :::
 
-## Keeping your public repository up-to-date
+## Keeping your public repository up-to-date {/* #keeping-your-public-repository-up-to-date */}
 <!-- cspell:ignore forwardable -->
 Your fork at GitHub is not updated automatically. To keep it synced with the upstream Moodle repository, you have to fetch the recent changes from the official moodle.git repository. To avoid conflicts, it is strongly recommended that you never modify the standard Moodle branches. Never commit directly into `main` and `MOODLE_XXX_STABLE` branches, but instead create topic branches to work on. In Git terminology, the `main` branch and `MOODLE_XXX_STABLE` branches should always be fast-forwardable.
 
@@ -144,7 +144,7 @@ mdk update
 
 :::
 
-### How it works
+### How it works {/* #how-it-works */}
 <!-- cspell:ignore gitrevisions -->
 The `git fetch` command does not modify your current working directory. It just downloads all recent changes from a remote repository and stores them into remote-tracking branches. The `git push` command takes these remote-tracking branches from upstream and pushes them to GitHub under the same name. Understanding this fully requires a bit of knowledge and experience with Git.
 
@@ -152,7 +152,7 @@ The `git fetch` command does not modify your current working directory. It just 
 There is no need to switch your local branch during this. You can even execute this via cron at your machine. Just note that the upstream repository updates typically just once a week.
 :::
 
-### New branches
+### New branches {/* #new-branches */}
 
 Occasionally, Moodle will create a new branch that does not exist in your public repository. If you try to push this new branch, you will see an error such as the following:
 
@@ -177,9 +177,9 @@ git checkout main
 git branch -D MOODLE_99_STABLE
 ```
 
-## Preparing a patch
+## Preparing a patch {/* #preparing-a-patch */}
 
-### Creating a new branch
+### Creating a new branch {/* #creating-a-new-branch */}
 
 As mentioned earlier, you never work on standard Moodle branches directly. Every time you are going to edit something, switch to a local branch. Fork the local branch off Moodle's standard branch that you think it should be eventually merged to.
 
@@ -199,7 +199,7 @@ git branch
 
 The current branch should be highlighted in the resulting list.
 
-### Committing your changes
+### Committing your changes {/* #committing-your-changes */}
 
 Once you have worked on some code, you should commit your changes to your local branch. The commit message used should be reflective of the issue you are developing for and respect the guidelines set out in our [Coding style](/general/development/policies/codingstyle#git-commits).
 
@@ -223,13 +223,13 @@ git push origin MDL-xxxxx-main_brief_name
 
 Now your branch is published and you can ask Moodle core developers to review it and eventually integrate it into Moodle's main repository.
 
-### Changing commit messages
+### Changing commit messages {/* #changing-commit-messages */}
 
 It often happens that you make a mistake in your patch, or in the commit message, and CiBot (our CI application) directs your attention to changes that must/should be made. You can "rewrite history" and change the existing commits.
 
 There are a couple of ways this can be achieved.
 
-#### Reset all changes and commit again
+#### Reset all changes and commit again {/* #reset-all-changes-and-commit-again */}
 
 The following command will preserve your changes, but all commits on top of `main` branch will be gone and become **unstaged** and ready to be added and committed again.
 
@@ -237,7 +237,7 @@ The following command will preserve your changes, but all commits on top of `mai
 git reset --mixed origin/main
 ```
 
-#### Rebase your changes
+#### Rebase your changes {/* #rebase-your-changes */}
 
 The `git rebase` command is a powerful tool that can change the sequence of commits, change commit messages, squash commits, and more. We will not cover it all here, but there are [many articles](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) on the Internet about it.
 
@@ -267,7 +267,7 @@ A prompt will ask for your credentials. If you previously setup your SSH public 
 git remote set-url origin git@github.com:YOUR_GITHUB_USERNAME/moodle.git
 ```
 
-### Checking if a branch has already been merged
+### Checking if a branch has already been merged {/* #checking-if-a-branch-has-already-been-merged */}
 
 After some time contributing to Moodle, you will have accumulated many branches, both in your local repository and in your public repository. To prune these branches and delete those that were accepted by Moodle's upstream, use the following:
 
@@ -277,7 +277,7 @@ git branch --merged upstream/main
 git branch --merged upstream/MOODLE_XXX_STABLE
 ```
 
-#### Pruning local branches
+#### Pruning local branches {/* #pruning-local-branches */}
 
 The `git fetch upstream` command fetches the changes from your upstream repository (remember that `git fetch` does not modify your working directory, so it is safe to run it whenever). The `git branch --merged` commands displays all branches that are merged into the Moodle's upstream `main` branch and `MOODLE_XXX_STABLE` branch, respectively. To delete these local branches, use:
 
@@ -285,7 +285,7 @@ The `git fetch upstream` command fetches the changes from your upstream reposito
 git branch -d MDL-xxxxx-main_accepted_branch
 ```
 
-#### Pruning remote branches
+#### Pruning remote branches {/* #pruning-remote-branches */}
 
 A similar approach can be used to check the branches published at your origin repository (e.g. github.com).
 
@@ -312,7 +312,7 @@ git push <repository> <source ref>:<target ref>
 
 Deleting a remote branch can be understood as pushing an "empty (null) reference" to it.
 
-## Peer-reviewing someone else's code
+## Peer-reviewing someone else's code {/* #peer-reviewing-someone-elses-code */}
 
 To review a branch on someone else's public repository, you do not need to register a new remote (unless you prefer to work that way).
 
@@ -354,7 +354,7 @@ git diff ...FETCH_HEAD
 
 Once you have acquired the code and are ready to review it, reference Moodle's [Peer Review Checklist](/general/development/process/peer-review).
 
-## Rebasing a branch
+## Rebasing a branch {/* #rebasing-a-branch */}
 
 Rebasing is a process when you cut off the branch from its current start point and transplant it to another point. Let us assume the following history exists:
 
@@ -389,7 +389,7 @@ gitGraph
     commit id: "C"
 ```
 
-### A typical scenario
+### A typical scenario {/* #a-typical-scenario */}
 
 You may be asked to rebase your branch if the submitted branch was based on an outdated commit. Consider this example:
 
@@ -405,7 +405,7 @@ Note that rebasing effectively rewrites the history of the branch. **Do not reba
 All branches submitted for Moodle integration are potentially rebased and you should not base your own branches on them.
 :::
 
-### Conflicts during rebase
+### Conflicts during rebase {/* #conflicts-during-rebase */}
 
 During the rebase procedure, conflicts may appear. The `git status` command is useful for reporting any conflicting files. Investigate them carefully and fix them before adding and continuing your rebase.
 
@@ -415,7 +415,7 @@ git add conflicted.php
 git rebase --continue
 ```
 
-## Applying changes from one branch to another
+## Applying changes from one branch to another {/* #applying-changes-from-one-branch-to-another */}
 
 Most bugs are fixed on each stable branch (e.g. `MOODLE_400_STABLE`, `MOODLE_311_STABLE`). If you are working on an fix based on one of these branches, it is possible you will need to prepare a patch for other affected stable branches too.
 
@@ -423,7 +423,7 @@ In Moodle, we separately maintain the stable branches and the current developmen
 
 Let's assume you have a patch prepared, based on `MOODLE_400_STABLE`, called `MDL-xxxxx-400_topic`. It is possible to apply this patch to other stable branches. There are a few ways we could achieve this.
 
-### Cherry-picking a single commit
+### Cherry-picking a single commit {/* #cherry-picking-a-single-commit */}
 
 Let's assume we have two local Git repositories:
 
@@ -447,7 +447,7 @@ git cherry-pick FETCH_HEAD
 There's a variant of the `git cherry-pick` command that supports multiple commits. Use `$ git cherry-pick A^..B` if you want to include commits from "A" to "B" (inclusive). Commit "A" should be older than "B".
 :::
 
-### Applying a set of patches
+### Applying a set of patches {/* #applying-a-set-of-patches */}
 <!-- cspell:ignore patchset -->
 Consider the branch `MDL-xxxxx-400_topic` from the previous example. Imagine the branch consisted of several commits. It may be easier to use the `git format-patch` and `git am` commands to apply the whole set of patches (patchset).
 
@@ -471,7 +471,7 @@ git am -3 ../moodle_400/.patches/*
 
 The `git am -3 ../moodle_400/.patches/*` command applies all the files from the `.patches` directory. When a patch does not apply cleanly, the command tries to fallback on a three-way merge (see the -3 parameter). If conflicts occur during the procedure, you can resolve them and use `git am --continue`, or abort the whole procedure with `git am --abort`.
 
-## See also {#see_also}
+## See also {/* #see_also */}
 
 - [Git tips](https://docs.moodle.org/dev/Git_tips)
 - [Git commit cheat sheet](https://docs.moodle.org/dev/Commit_cheat_sheet)
@@ -479,7 +479,7 @@ The `git am -3 ../moodle_400/.patches/*` command applies all the files from the 
 - [MDK (Moodle Developer Kit)](/general/development/tools/mdk)
 - [Renaming master branch to main](/general/community/plugincontribution/master2main)
 
-### Moodle forum discussions
+### Moodle forum discussions {/* #moodle-forum-discussions */}
 
 - [GIT help needed](http://moodle.org/mod/forum/discuss.php?d=168094)
 - [Best way to manage CONTRIB code with GIT](http://moodle.org/mod/forum/discuss.php?d=165236)
@@ -488,7 +488,7 @@ The `git am -3 ../moodle_400/.patches/*` command applies all the files from the 
 - [Git help!! I don't understand rebase enough...](http://moodle.org/mod/forum/discuss.php?d=183409)
 - [add MOODLE_24_STABLE to github.com repository](http://moodle.org/mod/forum/discuss.php?d=217617)
 
-### External resources
+### External resources {/* #external-resources */}
 <!-- cspell:ignore Chacon -->
 - [Everyday GIT With 20 Commands Or So](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/giteveryday.html)
 - ['Pro Git' complete book](https://git-scm.com/book/en/v2)

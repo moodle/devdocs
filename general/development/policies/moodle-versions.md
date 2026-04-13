@@ -9,7 +9,7 @@ tags:
 
 New versions of Moodle are released approximately every six months. Moodle supports upgrading from a previous version. This policy describes how the minimum version to upgrade from is calculated.
 
-## Policy statement
+## Policy statement {/* #policy-statement */}
 
 When determining the requirements for a version of Moodle, the following rules apply to supported Moodle Versions to upgrade from:
 
@@ -25,6 +25,6 @@ When determining the requirements for a version of Moodle, the following rules a
 
 :::
 
-## See also
+## See also {/* #see-also */}
 
 - [PHP Version Policy](./php.md)

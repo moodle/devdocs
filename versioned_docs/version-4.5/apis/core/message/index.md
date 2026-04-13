@@ -7,7 +7,7 @@ tags:
   - Messaging
 ---
 
-## What is this document?
+## What is this document? {/* #what-is-this-document */}
 
 This document describes how to make use of the Moodle Messaging API to send messages to Moodle users.
 
@@ -19,27 +19,27 @@ If you are looking for instructions on the implementation of a custom message pr
 
 If you are looking for instructions on sending messages programmatically within Moodle then read on...
 
-## Overview
+## Overview {/* #overview */}
 
 Moodle components have the ability to send messages to users via the Moodle messaging system. Any type of component, for example a plugin or block, can register as a message producer then send messages to users.
 
-## File locations
+## File locations {/* #file-locations */}
 
 The Message API code is contained within `lib/messagelib.php` and is automatically included for you during page setup.
 
-## Functions
+## Functions {/* #functions */}
 
 `message_send()` is the primary point of contact for the message API. Call it to send a message to a user. See the php documentation for a full description of the arguments that must be supplied. There is also an example below.
 
-## Message pop-up
+## Message pop-up {/* #message-pop-up */}
 
 <Since versions={["2.9"]} />
 
 A JavaScript pop-up can be displayed through a link to invite a user to message another. In order to use this feature, you need to require the JavaScript libraries using `message_messenger_requirejs()` and create a link with the attributes returned by `message_messenger_sendmessage_link_params()`. More in the examples.
 
-## Examples
+## Examples {/* #examples */}
 
-### How to register as a message producer
+### How to register as a message producer {/* #how-to-register-as-a-message-producer */}
 
 The messages produced by a message provider is defined in the `/db/messages.php` file of a component. Below is code from the quiz module's `messages.php` file, shown as an example.
 
@@ -75,7 +75,7 @@ $string['messageprovider:submission'] = 'Notification of quiz submissions';
 
 Once your `messages.php` is complete you need to increase the version number of your component in its `version.php`. That will cause Moodle to check `messages.php` looking for new or changed message definitions. Log in as an admin and go to `/admin/index.php` (the Notifications page) to start the upgrade process.
 
-### Setting defaults
+### Setting defaults {/* #setting-defaults */}
 
 ```php title="The default processor can be set using an element of the array"
 'mynotification' => [
@@ -103,7 +103,7 @@ The possible values are recorded in the lib.php file of messaging
 
 Note that if you change the values in message.php and then upgrade the plugin the values will not automatically be changed in the `config_plugins` table where they are stored.
 
-### How to send a message
+### How to send a message {/* #how-to-send-a-message */}
 
 <Since versions={["2.9"]} />
 
@@ -167,7 +167,7 @@ $message->notification = 1; //this is only set to 0 for personal messages betwee
 message_send($message);
 ```
 
-### How to set-up the message pop-up
+### How to set-up the message pop-up {/* #how-to-set-up-the-message-pop-up */}
 
 Here is example code showing you how to set-up the JavaScript pop-up link.
 
@@ -182,7 +182,7 @@ $attributes = message_messenger_sendmessage_link_params($userto);
 echo html_writer::link($url, 'Send a message', $attributes);
 ```
 
-## Changes in Moodle 3.5
+## Changes in Moodle 3.5 {/* #changes-in-moodle-35 */}
 
 <Since versions={["3.5"]} />
 

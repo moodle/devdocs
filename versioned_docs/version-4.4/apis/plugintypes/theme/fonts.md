@@ -13,7 +13,7 @@ CSS3 standard introduced the possibility to specify custom fonts, see [CSS web f
 
 Moodle includes support for plugin or theme fonts. It is very similar to theme images and pix subdirectories.
 
-## Font file locations
+## Font file locations {/* #font-file-locations */}
 
 Depending on where you intend to use the font put it into one of the following locations:
 
@@ -34,7 +34,7 @@ You can also override core and plugin fonts in theme:
 
 :::
 
-### CSS placeholders
+### CSS placeholders {/* #css-placeholders */}
 
 ```css title="Use a font in a plugin"
 @font-face {
@@ -66,7 +66,7 @@ The font would be stored in `/theme/yourtheme/fonts/good_dog.woff` file.
 
 Based on previous example, if you want to use some font stored in `/lib/fonts/` directory, you have to replace `font:theme` by `font:core`.
 
-### More free fonts
+### More free fonts {/* #more-free-fonts */}
 
 Please respect all licenses for font redistribution, you can get some nice free fonts from [http://www.fontsquirrel.com](http://www.fontsquirrel.com) for example.
 

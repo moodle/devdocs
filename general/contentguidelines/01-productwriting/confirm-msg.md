@@ -10,20 +10,20 @@ Confirmation messages prompt people to confirm actions that have significant con
 
 Clear and concise confirmation messages help people feel more confident and in control of their actions within the Moodle products.
 
-## Related components
+## Related components {/* #related-components */}
 
 [HTML modal](https://componentlibrary.moodle.com/admin/tool/componentlibrary/docspage.php/moodle/components/dom-modal/)
 
-## Basic guidelines
+## Basic guidelines {/* #basic-guidelines */}
 
 - Address a single task.
 - Ask a clear, specific question.
 - Provide clear options to either confirm or cancel the action.
 - Explain the consequences of the action so people can make an informed decision.
 
-## Content
+## Content {/* #content */}
 
-### Title
+### Title {/* #title */}
 
 The title or heading of a confirmation message should focus only on one task, and mention the specific action that the user wants to perform.
 
@@ -67,7 +67,7 @@ Write your title as a clear, unambiguous question. This helps users understand t
 
 Don't include articles like 'a', 'an' or 'the', so that the question is short and easy to scan.
 
-### Description
+### Description {/* #description */}
 
 The description should explain the consequences of the action and share additional details that enable people to make a confident decision.
 
@@ -117,7 +117,7 @@ Are you sure you want to delete the activity?
 
 </InvalidExample>
 
-### Calls to action
+### Calls to action {/* #calls-to-action */}
 
 Calls to action (CTAs) should be clear and simple, and offer a straightforward way out.
 

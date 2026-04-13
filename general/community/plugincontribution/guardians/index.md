@@ -10,7 +10,7 @@ tags:
 
 **Plugins guardians** are Moodle community members who volunteer to provide peer-reviews on plugins submitted into the [Plugins directory](../../community/plugincontribution/pluginsdirectory/). Their peer-review is considerably taken into account when deciding on the plugin approval.
 
-## Mission
+## Mission {/* #mission */}
 
 These are the main principles and goals of the Plugins guardians programme:
 
@@ -20,6 +20,6 @@ These are the main principles and goals of the Plugins guardians programme:
 
 These three come in this priority order. So for example, even not-so-well-written plugins can be approved as long as it is believed the community would benefit from them and there are signs that maintainers will improve them in the future.
 
-## How to join
+## How to join {/* #how-to-join */}
 
 Moodle developers and experienced users are welcome to sign up for the Plugin guardians programme. Please email [David Mudrák](mailto:david@moodle.com) for more details. Please attach links to your Moodle development related work such as published plugins, Moodle patches, forum posts in developer forums etc.

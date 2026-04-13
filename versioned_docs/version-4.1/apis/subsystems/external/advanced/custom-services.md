@@ -25,7 +25,7 @@ If you define a web service here, then the administrator cannot add or remove an
 
 :::
 
-## Declaring a custom service declaration
+## Declaring a custom service declaration {/* #declaring-a-custom-service-declaration */}
 
 Service declarations should be placed in the `db/services.php` file of your plugin, for example `local/groupmanager/db/services.php`.
 

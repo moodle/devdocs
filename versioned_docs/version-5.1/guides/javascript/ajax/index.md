@@ -20,7 +20,7 @@ The steps required to create an ajax interaction are:
 1. Mark the service as available for ajax. To do this, you can define `'ajax' => true` in the function's definition, in `db/services.php`. Only functions that are marked for AJAX using this mechanism will be available to the ajax script.
 1. Call the web service from JavaScript in response to a user action.
 
-### Common design patterns
+### Common design patterns {/* #common-design-patterns */}
 
 In modern JavaScript in Moodle, it is common to place all code which uses the `core/ajax` module into a single `repository.js` file, for example the following fictitious example may be placed into a new repository module for the Assignment plugin:
 
@@ -64,7 +64,7 @@ Placing all AJAX interactions into a single module has a number of benefits:
 - it is easier to find places which call web services to aid in debugging and development
 - each individual web service call can has a meaningful response
 
-### Chained calls
+### Chained calls {/* #chained-calls */}
 
 It is also possible to make multiple web service calls from a single transaction, for example:
 
@@ -126,7 +126,7 @@ export const doSomething = async() => {
 }
 ```
 
-### Key considerations
+### Key considerations {/* #key-considerations */}
 
 To update parts of the UI in response to Ajax changes, consider using [Templates](https://docs.moodle.org/dev/_Templates_)
 
@@ -144,7 +144,7 @@ In some very rare cases - you can mark webservices as safe to call without a ses
 1. Pass `false` as the 3rd argument to the ajax "call" method when calling the webservice.
 The benefit to marking these safe webservice is that (a) they can be called from the login page before we have a session and (b) they will perform faster because they will bypass Moodle's session code when responding to the webservice call.
 
-## See also
+## See also {/* #see-also */}
 
 - [Templates](../../templates/index.md)
 - [JavaScript Modules](../modules.md)

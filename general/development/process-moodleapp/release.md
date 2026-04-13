@@ -9,7 +9,7 @@ tags:
 
 Moodle Mobile App Release Process – At a Glance
 
-## Pre-Release (Weeks Before Launch)
+## Pre-Release (Weeks Before Launch) {/* #pre-release-weeks-before-launch */}
 
 - **Code Freeze**: Lock in final features.
 - **Dependency Freeze**: Update and freeze npm packages.
@@ -18,13 +18,13 @@ Moodle Mobile App Release Process – At a Glance
 - **Documentation & Versioning**: Draft release notes, bump version numbers.
 - **Team Coordination**: Notify all stakeholders (Community, Docs, QA, etc.).
 
-## Release Day
+## Release Day {/* #release-day */}
 
 - **Trigger Builds**: Launch internal CI to build final versions.
 - **Testing**: Final tests and automation checks.
 - **Publish**: Submit to App Store and Google Play.
 
-## Post-Release
+## Post-Release {/* #post-release */}
 
 - **Tag & Release**: Version tagging in GitHub.
 - **Docs & Notes**: Finalize user guides and release notes.
@@ -33,6 +33,6 @@ Moodle Mobile App Release Process – At a Glance
 - **Cleanup**: Tag branches, unfreeze dependencies, update plugins.
 - **Verify**: CI pipelines healthy, QA complete.
 
-## See also
+## See also {/* #see-also */}
 
 - [Moodle App Release Notes](../../app_releases.md)

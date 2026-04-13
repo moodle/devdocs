@@ -100,7 +100,7 @@ class submit extends external_api {
 }
 ```
 
-## Using `params`
+## Using `params` {/* #using-params */}
 
 We can also achieve the same result using the `params` attribute of the `core-site-plugins-call-ws` directive instead of using `useOtherDataForWS`:
 
@@ -112,7 +112,7 @@ We can also achieve the same result using the `params` attribute of the `core-si
 </ion-button>
 ```
 
-## Using `form`
+## Using `form` {/* #using-form */}
 
 This could also be done without using `otherdata`, with the `form` attribute for the `core-site-plugins-call-ws` directive. However, keep in mind that you'd still need to use `otherdata` to set the initial value of the inputs.
 
@@ -141,7 +141,7 @@ In this example, we're not using `otherdata` at all, so the input will be empty 
 </form>
 ```
 
-## Using `core-rich-text-editor`
+## Using `core-rich-text-editor` {/* #using-core-rich-text-editor */}
 
 In some forms, you may want to use the [`core-rich-text-editor` component](../api-reference.md#core-rich-text-editor) for writing formatted content. However, you should be aware of some intricacies.
 
@@ -173,7 +173,7 @@ If you are using the second approach, including inputs in a `<form>` and using t
 </core-rich-text-editor>
 ```
 
-## Sending dynamic data
+## Sending dynamic data {/* #sending-dynamic-data */}
 
 In some situations, you may need to submit dynamic data. This means that field names won't always be the same, this happens for example in quiz forms.
 

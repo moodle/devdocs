@@ -10,6 +10,6 @@ tags:
 
 The database preset subplugin type is no longer recommended.
 
-## See also
+## See also {/* #see-also */}
 
 [en](https://docs.moodle.org/en/Database_presets)

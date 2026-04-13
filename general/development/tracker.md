@@ -11,7 +11,7 @@ tags:
 
 The [Moodle Tracker](http://moodle.atlassian.net/) is our database for recording and managing all Moodle development issues: bugs (problems with the software), improvements and feature requests.
 
-## Creating a tracker account
+## Creating a tracker account {/* #creating-a-tracker-account */}
 
 You don't need an account to browse and search for issues in the tracker. However, to add a comment or create a new issue, you'll need to create a tracker account and then login.
 
@@ -21,7 +21,7 @@ Your tracker account is different to your Moodle.org account.
 
 :::
 
-## Searching for an issue
+## Searching for an issue {/* #searching-for-an-issue */}
 
 Before creating a new issue, please try searching to check whether it has been reported previously.
 
@@ -31,7 +31,7 @@ Before creating a new issue, please try searching to check whether it has been r
 
 See also [Tracker tips](./tracker/tips).
 
-## Reporting an issue
+## Reporting an issue {/* #reporting-an-issue */}
 
 *First check whether the issue has already been reported by searching (see above).*
 
@@ -52,7 +52,7 @@ For new Moodle issues...
 2. Complete the form, making sure you include FULL STEPS that developers should take to reproduce the problem, as well as information about WHAT YOU EXPECTED and WHAT ACTUALLY HAPPENS for you. It's a good idea to check whether you can reproduce the bug on https://sandbox.moodledemo.net/ and if so, you can write in the bug report 'Bug reproduced on sandbox.moodledemo.net'.
 3. Click the 'Create' button.
 
-## Receiving email notification of issue updates
+## Receiving email notification of issue updates {/* #receiving-email-notification-of-issue-updates */}
 
 To receive email notification of updates to any issue, you can add yourself as a watcher.
 
@@ -64,7 +64,7 @@ If you report an issue, you will automatically receive email notification of upd
 
 :::
 
-## Assigning an issue
+## Assigning an issue {/* #assigning-an-issue */}
 
 When working on an issue it is important that it be assigned to yourself. If you are not working on the issue, please _do not_ assign it to yourself, and do not assign it to anyone else.
 
@@ -80,13 +80,13 @@ If the issue is assigned to another developer then it is not possible to identif
 
 :::
 
-## Helping determine development priorities
+## Helping determine development priorities {/* #helping-determine-development-priorities */}
 
 You can help determine Moodle development priorities by voting for issues that you'd most like to see fixed.
 
 - Click 🖒 ("vote") in the upper-right corner of the issue page.
 
-## What makes a good tracker issue?
+## What makes a good tracker issue? {/* #what-makes-a-good-tracker-issue */}
 
 When you create a tracker issue, you are effectively asking someone to change Moodle for you. The easier you can make it for that someone to understand your problem, the more likely it is they will be able to fix it. Here are some things that can help:
 
@@ -106,18 +106,18 @@ Here are good examples of bug reports: [MDL-5688](https://moodle.atlassian.net/b
 
 :::
 
-## What can I do if a problem remains?
+## What can I do if a problem remains? {/* #what-can-i-do-if-a-problem-remains */}
 
 If you find that a bug is still affecting a stable version of Moodle, despite the tracker issue being closed as fixed, please do as follows:
 
 1. Create a new issue for the bug
 2. Go back to the closed issue, then in the More menu select 'Link'. Enter the number of the issue you've just created and a comment. This will generate an email notification to all watchers, so they know to watch, vote or comment on the new issue from then on.
 
-## Always add a comment
+## Always add a comment {/* #always-add-a-comment */}
 
 Remember that the Tracker is a low-bandwidth communication medium based mostly on text (like old-fashioned email lists). I am sure you know what you are doing when you edit an issue, but other people cannot read your mind (probably!). It is strongly encouraged that you always add at least a short comment when changing an issue, so it is clear to all watchers what is happening.
 
-## See also
+## See also {/* #see-also */}
 
 - [Tracker tips](./tracker/tips)
 - [New feature ideas](../community/contribute.md)

@@ -8,9 +8,9 @@ tags:
 
 <!-- cspell:ignore emojipedia VLEs -->
 
-## Structuring content
+## Structuring content {/* #structuring-content */}
 
-### Headings
+### Headings {/* #headings */}
 
 When writing headings:
 
@@ -20,7 +20,7 @@ When writing headings:
 - Use sentence case (sentence case is when the only capital letter is at the start of the heading)
 - Don't put a full stop at the end
 
-## Numbers
+## Numbers {/* #numbers */}
 
 In general, use numerals instead of words for most numbers. Numerals are easier to scan, especially when users are skimming content.
 
@@ -29,7 +29,7 @@ Write out a number only when:
 - It appears at the start of a sentence
 - It could be confused for a letter (for example, the numeral '1' might look like an uppercase 'I')
 
-### Number ranges
+### Number ranges {/* #number-ranges */}
 
 Always use the word 'to' to express a range of numbers, not a hyphen or dash, so that the sentence is read correctly by a screen reader.
 
@@ -45,13 +45,13 @@ Always use the word 'to' to express a range of numbers, not a hyphen or dash, so
 
 </InvalidExample>
 
-### Dates
+### Dates {/* #dates */}
 
 We use the Australian sequence for dates, which is: day, month, year.
 
 However, if you're writing for a specific audience, choose the date format that is most familiar to them.
 
-#### Dates in sentences
+#### Dates in sentences {/* #dates-in-sentences */}
 
 When writing a date in a sentence, use DD Month YYYY. If a number has only one digit, don't include a leading zero.
 
@@ -67,7 +67,7 @@ When writing a date in a sentence, use DD Month YYYY. If a number has only one d
 
 </InvalidExample>
 
-#### Numeric dates
+#### Numeric dates {/* #numeric-dates */}
 
 When writing a date using only numbers, use DD/MM/YYYY. If a number has only one digit, don't include a leading zero.
 
@@ -83,7 +83,7 @@ When writing a date using only numbers, use DD/MM/YYYY. If a number has only one
 
 </InvalidExample>
 
-#### Ordinal numbers
+#### Ordinal numbers {/* #ordinal-numbers */}
 
 Don't use ordinal numbers in dates.
 
@@ -99,7 +99,7 @@ Don't use ordinal numbers in dates.
 
 </InvalidExample>
 
-#### Days of the week
+#### Days of the week {/* #days-of-the-week */}
 
 If you include the day of the week in a date, add a comma after the day.
 
@@ -115,7 +115,7 @@ Friday August 7
 
 </InvalidExample>
 
-### Time and time zones​
+### Time and time zones​ {/* #time-and-time-zones */}
 
 In general, we use the Australian convention for time:
 
@@ -124,11 +124,11 @@ In general, we use the Australian convention for time:
 
 However, choose the 12-hour or 24-hour format depending on what's most familiar to your audience.
 
-#### Am and pm
+#### Am and pm {/* #am-and-pm */}
 
 Write 'am' and 'pm' always in lowercase, with a non-breaking space (&amp;nbsp) before them and with no full stops between the letters.
 
-#### Minutes
+#### Minutes {/* #minutes */}
 
 For times on the hour, include minutes.
 
@@ -144,7 +144,7 @@ For times on the hour, include minutes.
 
 </InvalidExample>
 
-#### Time zones
+#### Time zones {/* #time-zones */}
 
 If you're writing about a specific time that affects people worldwide (for example, down time for a site or a deadline for a contest), always include the name of the time zone. You can also choose to include more than one time zone.
 
@@ -160,7 +160,7 @@ The contest will close at 4:00 pm
 
 </InvalidExample>
 
-### Decimal points
+### Decimal points {/* #decimal-points */}
 
 To indicate decimal points, use full stops.
 
@@ -190,7 +190,7 @@ Include a leading zero before the decimal point. This helps with readability and
 
 </InvalidExample>
 
-### Percentages
+### Percentages {/* #percentages */}
 
 With numbers, use '%' instead of the word 'per cent'.
 
@@ -206,7 +206,7 @@ You have completed 89 per cent of the course.
 
 </InvalidExample>
 
-### Large numbers
+### Large numbers {/* #large-numbers */}
 
 Large numbers, such as millions, billions and trillions, are usually easier to read when they are written out as words. When writing out large numbers as words, don't use abbreviations.
 
@@ -236,7 +236,7 @@ If you use the numeric form, include a comma every three digits for readability.
 
 </InvalidExample>
 
-### Currencies and money
+### Currencies and money {/* #currencies-and-money */}
 
 Put the currency symbol before the amount, not after it.
 
@@ -266,7 +266,7 @@ A.U.D
 
 </InvalidExample>
 
-### Measurement
+### Measurement {/* #measurement */}
 
 Use metric as the default measurement system. Use a non-breaking space (&amp;nbsp) between the number and the unit.
 
@@ -282,9 +282,9 @@ Use metric as the default measurement system. Use a non-breaking space (&amp;nbs
 
 </InvalidExample>
 
-## Moodle-specific punctuation and language
+## Moodle-specific punctuation and language {/* #moodle-specific-punctuation-and-language */}
 
-### Acronyms
+### Acronyms {/* #acronyms */}
 
 Spell out acronyms when you first use them.
 
@@ -292,15 +292,15 @@ For example: *The advantages of Virtual Learning Environments (VLEs) are...*
 
 The exception is extremely common abbreviations where the abbreviated version is used more widely than the longer version, such as URL.
 
-### Ampersands
+### Ampersands {/* #ampersands */}
 
 Don't use an ampersand (&) to mean 'and', unless it's used in a brand name.
 
-### Contractions
+### Contractions {/* #contractions */}
 
 Use contractions for common phrases, such as 'don't' or 'can't'.
 
-### Commas
+### Commas {/* #commas */}
 
 Use the Oxford comma for the penultimate item in a sentence.
 
@@ -316,7 +316,7 @@ This includes user ID, role and course ID.
 
 </InvalidExample>
 
-### Dashes and hyphens
+### Dashes and hyphens {/* #dashes-and-hyphens */}
 
 Use an em dash (—) with spaces before and after to offset an aside.
 
@@ -332,19 +332,19 @@ The newest version of Moodle LMS - released last month - has had 200,000 downloa
 
 </InvalidExample>
 
-### Emails and URLs
+### Emails and URLs {/* #emails-and-urls */}
 
 Use lowercase for email addresses and website URLs. Don't include the 'https' part of the URL.
 
-### Emojis
+### Emojis {/* #emojis */}
 
 Use emojis sparingly. Don't use multiple emojis. Make sure you're confident in the emoji's meaning, and that it's consistent across cultures. You can check the meaning of emojis on [emojipedia.org](https://emojipedia.org).
 
-### Exclamation marks
+### Exclamation marks {/* #exclamation-marks */}
 
 Save exclamation marks for key moments in the user journey, and don't use more than one exclamation mark.
 
-### Sentence case
+### Sentence case {/* #sentence-case */}
 
 Use capital letters only at the beginning of sentences and for proper nouns. For headings, subheadings and calls to action, we use sentence case and not Title Case.
 

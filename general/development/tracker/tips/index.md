@@ -5,9 +5,9 @@ tags:
   - Tracker
 ---
 
-## Searching
+## Searching {/* #searching */}
 
-### Quick search
+### Quick search {/* #quick-search */}
 
 On every tracker page you can find search box. Quick search is much more powerful than you might think.
 
@@ -20,7 +20,7 @@ Examples of the quick searches:
 
 Quick search can pick up many other keywords, see more information on page [Using quick search](https://confluence.atlassian.com/display/JIRA062/Using+Quick+Search)
 
-### Advanced search
+### Advanced search {/* #advanced-search */}
 
 To get here either enter something in quick search or go to the link [Tracker search page](https://moodle.atlassian.net/issues/?jql=) and switch it to "Advanced" mode.
 Now you can enter queries in the Jira Query Language (JQL). Use as many AND, OR and parenthesis as you want. Some examples and interesting subqueries:
@@ -49,9 +49,9 @@ Now you can enter queries in the Jira Query Language (JQL). Use as many AND, OR 
 
 More documentation on [Advanced searching](https://confluence.atlassian.com/jirasoftwareserver071/advanced-searching-800707146.html)
 
-## Using filters
+## Using filters {/* #using-filters */}
 
-### Creating a filter
+### Creating a filter {/* #creating-a-filter */}
 
 1. In tracker, select **Issues** > **Search for Issues**.
 2. Create a search and run the search query by pressing **Enter** or clicking the **Search** button to the right of the search box. For example, this is the query for untriaged issues in your component:
@@ -75,7 +75,7 @@ Watchers automatically receive notifications about the updates of the issues the
 
 :::
 
-### Adding a filter in a gadget to your dashboard
+### Adding a filter in a gadget to your dashboard {/* #adding-a-filter-in-a-gadget-to-your-dashboard */}
 
 1. In tracker, click **Dashboards** > **Manage Dashboards** and access to any of your dashboards or create one.
 2. Click **Add gadget**.
@@ -91,7 +91,7 @@ If you're using the previous query for untriaged assignment issues, the most rec
 
 :::
 
-### Useful queries
+### Useful queries {/* #useful-queries */}
 
 - [Issues reported by me not against current versions](https://moodle.atlassian.net/issues/?jql=project%20%3D%20mdl%20and%20resolution%20%3D%20unresolved%20and%20type%20in%20%28bug%29%20and%20%22Affected%20Branches%22%20!~%20MOODLE_310_STABLE%20and%20%22Affected%20Branches%22%20!~%20MOODLE_311_STABLE%20and%20reporter%20%3D%20currentUser%28%29) - make sure that you keep track of your own issues!
 - [Untriaged issues in my components](https://moodle.atlassian.net/issues/?jql=component%20in%20%28componentsLeadByUser%28%29%29%20AND%20resolution%20%3D%20Unresolved%20AND%20updatedDate%20%3E%20-14d%20AND%20project%20%3D%20MDL%20AND%20%28%20labels%20is%20EMPTY%20OR%20labels%20not%20in%20%28triaged%2C%20triaging_in_progress%29%29%20ORDER%20BY%20updatedDate%20ASC) (works only for component leads)

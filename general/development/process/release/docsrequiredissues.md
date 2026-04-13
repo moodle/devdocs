@@ -6,7 +6,7 @@ tags:
   - Processes
 ---
 
-## Information required
+## Information required {/* #information-required */}
 
 Issue descriptions should include enough details to document the new feature or improvement, ideally answering the following questions:
 
@@ -20,7 +20,7 @@ Issue descriptions should include enough details to document the new feature or 
 - Is there anything a site administrator should know about before upgrading their site?
 - Are error messages possible, and if so, how can each error be resolved?
 
-## Identifying issues
+## Identifying issues {/* #identifying-issues */}
 
 A list of key features and improvements in the new version should be created for providing content for [New features](https://docs.moodle.org/en/New_features).
 
@@ -30,7 +30,7 @@ Issues should be labelled as follows:
 - `ui_change` - significant changes to the student or teacher user interface.
 - `upgrade_notes` - issues that may affect upgraded sites such as new site admin settings, user tours, major UI changes.
 
-## Adding documentation
+## Adding documentation {/* #adding-documentation */}
 
 1. Go through the list of [closed MDL docs_required-labelled issues](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDL%20AND%20status%20%3D%20Closed%20AND%20labels%20%3D%20docs_required) and add documentation to the appropriate place in the user documentation.
 2. Go through the list of ui_change-labelled issues for the version e.g. [ui_change-labelled issues with 5.1 fix version](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDL%20AND%20resolution%20%3D%20Fixed%20AND%20fixVersion%20%3D%205.1%20AND%20labels%20%3D%20ui_change) and update existing documentation including screenshots.

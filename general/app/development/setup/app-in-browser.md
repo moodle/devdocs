@@ -10,11 +10,11 @@ Browsers are not officially supported by the application in production, but you 
 
 The Chromium version needs to be 102 or newer, because the app's use of the [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/FileSystemFileHandle/createSyncAccessHandle) during development.
 
-## Differences between Chromium and Google Chrome
+## Differences between Chromium and Google Chrome {/* #differences-between-chromium-and-google-chrome */}
 
 Google Chrome is the Chromium open source project built, packaged, and distributed by Google. We can say that Chromium is Google Chrome without the "Google" add-ons. For that reason, we recommend using Chromium instead of Google Chrome.
 
-## Advantages and disadvantages of using a browser instead of a native device
+## Advantages and disadvantages of using a browser instead of a native device {/* #advantages-and-disadvantages-of-using-a-browser-instead-of-a-native-device */}
 
 Main advantages:
 
@@ -31,7 +31,7 @@ Disadvantages:
 - You will always need to test in a native device prior to a production release.
 - You will need to verify that your CSS/layout looks the same in native devices.
 
-## Installation and configuration
+## Installation and configuration {/* #installation-and-configuration */}
 
 You can install the Chromium browser by downloading it from [the official download page](https://www.chromium.org/getting-involved/download-chromium).
 
@@ -54,7 +54,7 @@ Depending on the version of your browser, you may get a warning message saying "
 
 For more info about the user data dir, please read [the official documentation](https://chromium.googlesource.com/chromium/src/+/main/docs/user_data_dir.md).
 
-### Creating a shortcut
+### Creating a shortcut {/* #creating-a-shortcut */}
 
 We strongly recommend that you create a new shortcut and use it only for working with the app during development. In Linux, and possibly other operating systems, these arguments only work if you don't already have the same browser running. Hence if you use Google Chrome as your normal browser, you can use Chromium for development and vice versa.
 
@@ -74,7 +74,7 @@ For convenience, you can also define an application launch that calls this scrip
 These instructions have only been tested in Linux. If you are using a different operative system, [let us know](https://github.com/moodle/devdocs/issues/76) how it went (or just [edit this page](https://github.com/moodle/devdocs/edit/main/general/app/development/setup/app-in-browser.md)!).
 :::
 
-### Configuring the default browser
+### Configuring the default browser {/* #configuring-the-default-browser */}
 
 When you launch the application by running `npm start`, this will open a tab in your default browser. You can close this tab and open the url with your development browser, but if you want to do it automatically you can override the default browser by setting the `MOODLE_APP_BROWSER` environment variable.
 
@@ -92,7 +92,7 @@ Make sure to set this variable to an absolute path, and not just the name of the
 These instructions have only been tested in Linux. If you are using a different operative system, [let us know](https://github.com/moodle/devdocs/issues/76) how it went (or just [edit this page](https://github.com/moodle/devdocs/edit/main/general/app/development/setup/app-in-browser.md)!).
 :::
 
-## Handling deep links
+## Handling deep links {/* #handling-deep-links */}
 
 Using a browser, you'll realize it's not possible to handle deep links, for example if you're trying to log in using SSO.
 
@@ -102,11 +102,11 @@ To work around that, you can simulate a deep link being pressed running the foll
 handleOpenURL('moodlemobile://token=...');
 ```
 
-## Using the hosted versions of the app
+## Using the hosted versions of the app {/* #using-the-hosted-versions-of-the-app */}
 
 You can access your site using the hosted versions of the app in [latest.apps.moodledemo.net](https://latest.apps.moodledemo.net) (the latest stable version) and [main.apps.moodledemo.net](https://main.apps.moodledemo.net) (the current version in development).
 
-### Special headers
+### Special headers {/* #special-headers */}
 
 The application also relies on the [SharedArrayBuffer API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), so in case you're hosting the app yourself you'll need to return the following headers:
 
@@ -115,7 +115,7 @@ Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: require-corp
 ```
 
-## Tips & tricks
+## Tips & tricks {/* #tips--tricks */}
 
 Once you have everything set up, you should be able to develop like you would with any other front-end application. You can learn about the development tools you have available by reading the [Chrome DevTools documentation](https://developer.chrome.com/devtools/index).
 

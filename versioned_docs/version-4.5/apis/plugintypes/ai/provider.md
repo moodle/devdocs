@@ -21,7 +21,7 @@ Everything should go via the Manager.
 
 :::
 
-## Class implementation
+## Class implementation {/* #class-implementation */}
 
 Providers are defined as classes in their own namespace according to their plugin name.
 The naming convention for a Provider class is `aiprovider_<plugin name>`.
@@ -61,7 +61,7 @@ public function is_provider_configured(): bool {
 }
 ```
 
-## Process classes
+## Process classes {/* #process-classes */}
 
 For each action supported by the provider, the provider plugin **must** implement a `process_<action>` class,
 where `<action>` is the name of the action. For example: `process_generate_image`.

@@ -15,7 +15,7 @@ The programmes started in 2014 by announcing it in [a forum post](https://moodle
 
 :::
 
-### Motivation
+### Motivation {/* #motivation */}
 
 Having an additional plugin installed at a Moodle site is always a risk. One of the essential aspects (apart from the code quality itself) that potential plugin users have to consider is how well the plugin is being maintained. Does the maintainer release regular updates and bug fixes? Is the plugin updated every six months for the new Moodle major release? Is there a place to report bugs and feature requests? And when reported, are they reflected?
 
@@ -27,7 +27,7 @@ At certain moment, maintainers can realise they are not able to give enough love
 
 And that is what Moodle plugins adoption programme is about.
 
-### Programme rules for plugin maintainers
+### Programme rules for plugin maintainers {/* #programme-rules-for-plugin-maintainers */}
 
 1. It is not a shame to give up on a plugin maintenance. Unmaintained plugin is worse than no plugin. We appreciate that you as the original author do not want to harm Moodle reputation just because your old code broke someone's site.
 1. If you decide to offer your plugin for adoption, let the world know via posting into the [Plugins traffic forum](https://moodle.org/mod/forum/view.php?id=8149).
@@ -35,16 +35,16 @@ And that is what Moodle plugins adoption programme is about.
 1. Once there is a volunteer who would like to take over the maintenance, please reply to the forum. It will help if the candidate proves their skills via a reference or a patch for existing issue etc. So we all know the plugin is passed over to good hands.
 1. Finally, the successor is given the lead maintainer role for the plugin with all the permissions (edit the plugin record, release new versions etc). The previous maintainer will be still listed as the original author in the directory.
 
-### Applying to become a maintainer
+### Applying to become a maintainer {/* #applying-to-become-a-maintainer */}
 
 If you would like to become a new maintainer of a plugin that has been put up for the adoption, please reply to the relevant post in the [Plugins traffic forum](https://moodle.org/mod/forum/view.php?id=8149). It will help to demonstrate that you would be able to maintain the plugin - ideally with existing pull requests or other contributions to the plugin.
 
-### Notes
+### Notes {/* #notes */}
 
 - The `@author` tag in the phpDocs block of a file should never be changed even after the whole file is rewritten eventually. It's GPL legal statement, not a credits line.
 - If the plugin was originally using Github as its repository, it is recommended to transfer the ownership of the repo. That way, all the reported issues in the github tracker, pull requests and all other information is kept.
 
-### Forced adoption
+### Forced adoption {/* #forced-adoption */}
 
 As discussed in [MDLSITE-5354](https://moodle.atlassian.net/browse/MDLSITE-5354), there are cases when a plugin becomes effectively orphaned due to maintainer's inactivity. In most cases, we can get in touch with the maintainer and agree on putting the plugin up for adoption. In rare cases when the maintainer can't be reached, the following procedure applies.
 
@@ -53,7 +53,7 @@ As discussed in [MDLSITE-5354](https://moodle.atlassian.net/browse/MDLSITE-5354)
 - And the maintainer does not reply to a personal message sent to them via moodle.org messaging features within a period of 30 days
 - Then plugins directory curators can consider the plugin maintainer disappeared and the plugin orphaned. It is then allowed to put the plugin up for adoption on behalf of the maintainer or assign it to another maintainer.
 
-### Initiating forced adoption
+### Initiating forced adoption {/* #initiating-forced-adoption */}
 
 If you are aware of a plugin that seems abandoned and you would like to help and become a new maintainer of it:
 

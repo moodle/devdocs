@@ -16,7 +16,7 @@ Empty states are a good opportunity to make a human connection with users, showi
 
 Depending on the part of the experience where they appear, empty states may include an image, a title, a description and one or more calls-to-action.
 
-## Basic guidelines
+## Basic guidelines {/* #basic-guidelines */}
 
 - Avoid completely empty states.
 - Help users understand why there is nothing to show them.
@@ -24,9 +24,9 @@ Depending on the part of the experience where they appear, empty states may incl
 - Be clear and concise, and use friendly language.
 - You can use visuals to make empty states more engaging, but don't rely on the image alone to convey your message.
 
-## Content
+## Content {/* #content */}
 
-### Title
+### Title {/* #title */}
 
 The title is a short explanation of why the user is seeing an empty screen.
 
@@ -72,7 +72,7 @@ There are no upcoming activities in your timeline.
 
 </InvalidExample>
 
-### Description
+### Description {/* #description */}
 
 The description guides users on how to move forward with the experience.
 
@@ -108,7 +108,7 @@ You're not enrolled in any course yet.
 
 </InvalidExample>
 
-### Calls to action
+### Calls to action {/* #calls-to-action */}
 
 The call to action (CTA) in an empty state is a button or link that tells the user what to do next to 'fill' the empty state.
 
@@ -167,6 +167,6 @@ CTAs: Import entries | **Add entry**
 
 </ValidExample>
 
-### Illustration
+### Illustration {/* #illustration */}
 
 Using an illustration can help users understand the context of the empty state and make the experience more engaging and delightful. However, it's important to use illustrations only when they add value to the user experience. Never rely on the image alone to convey your message, and remember to add alt text to the image if it's essential to understanding the empty state.

@@ -24,7 +24,7 @@ The following section assumes that there are two image files in the `pix` direct
 
 The first image is an SVG, and the second a PNG located in a subdirectory.
 
-## Use images in templates
+## Use images in templates {/* #use-images-in-templates */}
 
 The following example illustrates how to make use of these images within your layout file so they can be inserted in your layout template.
 
@@ -54,7 +54,7 @@ A method of Moodle's output library is utilized to generate the URL to the image
 <img src="{{{imagetwo}}}" alt="Please give your image alt text or set the role to presentation" width="50" height="50">
 ```
 
-## Use images in CSS
+## Use images in CSS {/* #use-images-in-css */}
 
 The following is how you would use the images from within CSS/SCSS as background images.
 
@@ -76,7 +76,7 @@ Notice that the image file extension is not included. The reason for this leads 
 
 :::
 
-## Override images
+## Override images {/* #override-images */}
 
 From within a theme you can **very** easily override any standard image within Moodle by simply adding the replacement image to the theme's pix directory in the same sub directory structure as it is in Moodle.
 So, for instance, if there is a need to override the following images:

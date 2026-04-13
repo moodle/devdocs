@@ -10,7 +10,7 @@ As OS, Browsers and Selenium keeps updating, some combination might fail on diff
 
 Following combinations have been tested at the time of release of Moodle version and will be supported for that combination.
 
-## Moodle 3.9 and up
+## Moodle 3.9 and up {/* #moodle-39-and-up */}
 
 <!-- cspell:ignore Geckodriver, zerosize -->
 
@@ -176,7 +176,7 @@ Many of the combinations below, for older versions of Moodle 3.5 and up, should 
 
 :::
 
-## Moodle 3.5 and up
+## Moodle 3.5 and up {/* #moodle-35-and-up */}
 
 <table><tbody>
 <tr><td>
@@ -374,7 +374,7 @@ Many of the combinations below, for Moodle 3.1 and up, should continue working a
 
 :::
 
-## Moodle 3.4
+## Moodle 3.4 {/* #moodle-34 */}
 
 <table><tbody>
 <tr><td>
@@ -541,7 +541,7 @@ Chrome >=93 can be used since Moodle 20210916 builds and requires to exclude the
 </td></tr>
 </tbody></table>
 
-## Moodle 3.2 and 3.3
+## Moodle 3.2 and 3.3 {/* #moodle-32-and-33 */}
 
 <table><tbody>
 <tr><td>
@@ -714,7 +714,7 @@ N/A
 </td></tr>
 </tbody></table>
 
-## Moodle 3.1
+## Moodle 3.1 {/* #moodle-31 */}
 
 <table><tbody>
 <tr><td>
@@ -908,7 +908,7 @@ N/A
 </td></tr>
 </tbody></table>
 
-## Moodle 3.0 and lower
+## Moodle 3.0 and lower {/* #moodle-30-and-lower */}
 
 <table><tbody>
 <tr><td>

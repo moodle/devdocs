@@ -255,7 +255,7 @@ The method for the new page is very similar to the first one: we check the capab
 
 The template is a simple Ionic list that will display the issued certificates. We are showing their creation date using the `coreFormatDate` pipe, and their grade.
 
-## Other examples
+## Other examples {/* #other-examples */}
 
 - [Custom certificate module](https://github.com/mdjnelson/moodle-mod_customcert)
 - [Group choice module](https://github.com/ndunand/moodle-mod_choicegroup)

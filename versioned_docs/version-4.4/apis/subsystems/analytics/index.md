@@ -29,27 +29,27 @@ Moodle uses these indicators and the target for each student in a finished cours
 
 :::
 
-## Summary
+## Summary {/* #summary */}
 
-### API components
+### API components {/* #api-components */}
 
 This diagram shows the main components of the analytics API and the interactions between them.
 
 ![Analytics API components and their interactions](./_index/Inspire_API_components.png)
 
-### Data flow
+### Data flow {/* #data-flow */}
 
 The diagram below shows the different stages data goes through, from the data a Moodle site contains to actionable insights.
 
 ![Data flow at different stages](./_index/Inspire_data_flow.png)
 
-### API classes diagram
+### API classes diagram {/* #api-classes-diagram */}
 
 This is a summary of the API classes and their relationships. It groups the different parts of the framework that can be extended by 3rd parties to create your own prediction models.
 
 ![API Class Structure](./_index/Analytics_API_classes_diagram_(summary).svg)
 
-## Built-in models
+## Built-in models {/* #built-in-models */}
 
 People use Moodle in very different ways and even courses on the same site can vary significantly. Moodle core only includes models that have been proven to be good at predicting in a wide range of sites and courses. Moodle provides two built-in models:
 
@@ -60,19 +60,19 @@ To diversify the samples and to cover a wider range of cases, the Moodle HQ rese
 
 Even if the models included in Moodle core are already trained by Moodle HQ, each different site will continue training that site machine learning algorithms with its own data, which will lead to better prediction accuracy over time.
 
-## Concepts
+## Concepts {/* #concepts */}
 
 The following definitions are included for people not familiar with machine learning concepts:
 
-### Training
+### Training {/* #training */}
 
 This is the process to be run on a Moodle site before being able to predict anything. This process records the relationships found in site data from the past so the analytics system can predict what is likely to happen under the same circumstances in the future. What we train are machine learning algorithms.
 
-### Samples
+### Samples {/* #samples */}
 
 The machine learning backends we use to make predictions need to know what sort of patterns to look for, and where in the Moodle data to look. A sample is a set of calculations we make using a collection of Moodle site data. These samples are unrelated to testing data or phpunit data, and they are identified by an id matching the data element on which the calculations are based. The id of a sample can be any Moodle entity id: a course, a user, an enrolment, a quiz attempt, etc. and the calculations the sample contains depend on that element. Each type of Moodle entity used as a sample helps develop the predictions that involve that kind of entity. For example, samples based on Quiz attempts will help develop the potential insights that the analytics might offer that are related to the Quiz attempts by a particular group of students. See the [Analyser](#analyser) documentation for more information on how to use analyser classes to define what is a sample.
 
-### Prediction model
+### Prediction model {/* #prediction-model */}
 
 As explained above, a prediction model is a combination of indicators and a target. System models can be viewed in **Site administration > Analytics > Analytics models**.
 
@@ -82,7 +82,7 @@ The class `\core_analytics\model` manages all of a model's related actions. *eva
 
 `\core_analytics\model` class is not expected to be extended.
 
-#### Static models
+#### Static models {/* #static-models */}
 
 Some prediction models do not need a powerful machine learning algorithm behind them processing large quantities of data to make accurate predictions. There are obvious events that different stakeholders may be interested in knowing that we can easily calculate. These *Static model* predictions are directly calculated based on indicator values. They are based on the assumptions defined in the target, but they should still be based on indicators so all these indicators can still be reused across different prediction models. For this reason, static models are not editable through **Site administration > Analytics > Analytics models** user interface.
 
@@ -101,7 +101,7 @@ Moodle can already generate notifications for the examples above, but there are 
 - Notifications are displayed using the core insights system, which is also responsible of sending the notifications and all related actions.
 - The Analytics API tracks user actions after viewing the predictions, so we can know if insights result in actions, which insights are not useful, etc. User responses to insights could themselves be defined as an indicator.
 
-### Analyser
+### Analyser {/* #analyser */}
 
 Analysers are responsible for creating the dataset files that will be sent to the machine learning processors. They are coded as PHP classes. Moodle core includes some analysers that you can use in your models.
 
@@ -119,7 +119,7 @@ Other analyser class responsibilities:
 
 If you are introducing a new analyser, there is an important non-obvious fact you should know about: for scalability reasons, all calculations at course level are executed in per-course basis and the resulting datasets are merged together once all site courses analysis is complete. This is for performance reasons: depending on the sites' size it could take hours to complete the analysis of the entire site. This is a good way to break the process up into pieces. When coding a new analyser you need to decide if you want to extend `\core_analytics\local\analyser\by_course` (your analyser will process a list of courses), `\core_analytics\local\analyser\site-wide` (your analyser will receive just one analysable element, the site) or create your own analyser for activities, categories or any other Moodle entity.
 
-### Target
+### Target {/* #target */}
 
 Targets are the key element that defines the model. As a PHP class, targets represent the event the model is attempting to predict (the [dependent variable in supervised learning](https://en.wikipedia.org/wiki/Dependent_and_independent_variables)). They also define the actions to perform depending on the received predictions.
 
@@ -136,13 +136,13 @@ The API supports binary classification, multi-class classification and regressio
 
 Although there is no technical restriction against using core targets in your own models, in most cases each model will implement a new target. One possible case in which targets might be reused would be to create a new model using the same target and a different sets of indicators, for A/B testing
 
-#### Insights
+#### Insights {/* #insights */}
 
 Another aspect controlled by targets is insight generation. Insights represent predictions made about a specific element of the sample within the context of the analyser model. This context will be used to notify users with the `moodle/analytics:listinsights` capability (the teacher role by default) about new insights being available. These users will receive a notification with a link to the predictions page where all predictions of that context are listed.
 
 A set of suggested actions will be available for each prediction. In cases like *[Students at risk of dropping out](https://docs.moodle.org/en/Students_at_risk_of_dropping_out)* the actions can be things like sending a message to the student, viewing the student's course activity report, etc.
 
-### Indicator
+### Indicator {/* #indicator */}
 
 Indicator PHP classes are responsible for calculating indicators (predictor value or [independent variable in supervised learning](https://en.wikipedia.org/wiki/Dependent_and_independent_variables)) using the provided sample. Moodle core includes a set of indicators that can be used in your models without additional PHP coding (unless you want to extend their functionality).
 
@@ -156,7 +156,7 @@ This kind of comparative calculation has implications to pedagogy: it suggests t
 
 :::
 
-### Analysis intervals
+### Analysis intervals {/* #analysis-intervals */}
 
 Analysis intervals define when the system will calculate predictions and the portion of activity logs that will be considered for those predictions. They are coded as PHP classes and Moodle core includes some analysis intervals you can use in your models.
 
@@ -174,11 +174,11 @@ There are many different ways to split up a course into time ranges: in weeks, q
 
 Many of the analysis intervals included in Moodle assume that there is a fixed start and end date for each course, so the course can be divided into segments of equal length. This allows courses of different lengths to be included in the same prediction model, but makes these analysis intervals useless for courses without fixed start or end dates, e.g. self-paced courses. These courses might instead use fixed time lengths such as weeks to define the boundaries of prediction calculations.
 
-### Machine learning backends
+### Machine learning backends {/* #machine-learning-backends */}
 
 Documentation available in [Machine learning backends](../../plugintypes/mlbackend/index.md).
 
-## Design
+## Design {/* #design */}
 
 The system is designed as a Moodle subsystem and API. It lives in `analytics/`. All analytics base classes are located here.
 
@@ -186,7 +186,7 @@ The system is designed as a Moodle subsystem and API. It lives in `analytics/`. 
 
 Uses of the analytics API are located in different Moodle components, being core (`lib/classes/analytics`) the component that hosts general purpose uses of the API.
 
-### Interfaces
+### Interfaces {/* #interfaces */}
 
 This API aims to be as extendable as possible. Any moodle component, including third party plugins, is able to define indicators, targets, analysers and time splitting methods. Analytics API will be able to find them as long as they follow the namespace conventions described below.
 
@@ -198,7 +198,7 @@ This section does not include Machine learning backend interfaces. See [Machine 
 
 :::
 
-#### Analysable (core_analytics\analysable)
+#### Analysable (core_analytics\analysable) {/* #analysable-core_analyticsanalysable */}
 
 Analysables are those elements in Moodle that contain samples. In most of the cases an analysable will be a course, although it can also be the site or any other Moodle element, e.g. an activity. Moodle core includes two analysers `\core_analytics\course` and `\core_analytics\site`.
 
@@ -255,7 +255,7 @@ public function get_start();
 public function get_end();
 ```
 
-#### Analyser (core_analytics\local\analyser\base)
+#### Analyser (core_analytics\local\analyser\base) {/* #analyser-core_analyticslocalanalyserbase */}
 
 The get_analysables() method has been deprecated in favour of a new `get_analysables_iterator()`  for performance reasons. This method returns the whole list of analysable elements in the site. Each model will later be able to discard analysables that do not match their expectations. *e.g. if your model is only interested in quizzes with a time close the analyser will return all quizzes, your model will exclude the ones without a time close. This approach is supposed to make analysers more reusable.*
 
@@ -383,7 +383,7 @@ public static function one_sample_per_analysable() {
 }
 ```
 
-#### Indicator (core_analytics\local\indicator\base)
+#### Indicator (core_analytics\local\indicator\base) {/* #indicator-core_analyticslocalindicatorbase */}
 
 Indicators should generally extend one of these 3 classes, depending on the values they can return: *core_analytics\local\indicator\binary* for **yes/no** indicators, *core_analytics\local\indicator\linear* for indicators that return linear values and *core_analytics\local\indicator\discrete* for categorised indicators. In case you want your activity module to implement a [community of inquiry](https://docs.moodle.org/en/Students_at_risk_of_dropping_out#Indicators) indicator you can extend *core_analytics\local\indicator\community_of_inquiry_indicator* look for examples in Moodle core.
 
@@ -430,7 +430,7 @@ Performance here is critical as it runs once for each sample and for each range 
 
 :::
 
-#### Target (core_analytics\local\target\base)
+#### Target (core_analytics\local\target\base) {/* #target-core_analyticslocaltargetbase */}
 
 Targets must extend `\core_analytics\local\target\base` or its main child class `\core_analytics\local\target\binary`. Even if Moodle core includes `\core_analytics\local\target\discrete` and `\core_analytics\local\target\linear` Moodle 3.4 machine learning backends only support binary classifications. So unless you are using your own machine learning backend you need to extend `\core_analytics\local\target\binary`. Technically targets could be reused between models although it is not very recommendable and you should focus instead in having a single model with a single set of indicators that work together towards predicting accurately. The only valid use case I can think of for models in production is using different time-splitting methods for it although, again, the proper way to solve this is by using a single time-splitting method specific for your needs.
 
@@ -575,7 +575,7 @@ You can also override the URL to the insight with get_insight_context_url():
 public function get_insight_context_url($modelid, $context)
 ```
 
-#### Analysis interval (core_analytics\local\time_splitting\base)
+#### Analysis interval (core_analytics\local\time_splitting\base) {/* #analysis-interval-core_analyticslocaltime_splittingbase */}
 
 Analysis intervals are used to define when the analytics API will train the predictions processor and when it will generate predictions. As explained above in the [Analysis intervals](./index.md#analysis-intervals) documentation, they define time ranges based on analysable elements start and end timestamps.
 
@@ -623,13 +623,13 @@ They can be used to create time splitting methods with a pre-defined number of r
 The following cannot be overwritten:
 `\core_analytics\local\time_splitting\base::append_rangeindex` and `\core_analytics\local\time_splitting\base::infer_sample_info` `\core_analytics\local\analyser\base::get_most_recent_prediction_range` have been moved to `\core_analytics\local\time_splitting\base::get_most_recent_prediction_range` and it is not overridable by time splitting methods.
 
-#### Calculable (core_analytics\calculable)
+#### Calculable (core_analytics\calculable) {/* #calculable-core_analyticscalculable */}
 
 Leaving this interface for the end because it is already implemented by `\core_analytics\local\indicator\base` and `\core_analytics\local\target\base` but you can still code targets or indicators from the `\core_analytics\calculable` base if you need more control.
 
 Both indicators and targets must implement this interface. It defines the data element to be used in calculations, whether as independent (indicator) or dependent (target) variables.
 
-## How to create a model
+## How to create a model {/* #how-to-create-a-model */}
 
 New models can be created and implemented in php, and can be packaged as a part of a Moodle plugin for distribution. An example of model components and models are provided at https://github.com/dmonllao/moodle-local_testanalytics.
 
@@ -639,11 +639,11 @@ Third party plugin developers can add their new elements (for example [targets](
 
 :::
 
-### Define the problem
+### Define the problem {/* #define-the-problem */}
 
 Start by defining what you want to predict (the target) and the subjects of these predictions (the samples). You can find the descriptions of these concepts above. The API can be used for all kinds of models, though if you want to predict something like "student success," this definition should probably have some basis in pedagogy. For example, the included model [Students at risk of dropping out](https://docs.moodle.org/34/en/Students_at_risk_of_dropping_out) is based on the Community of Inquiry theoretical framework, and attempts to predict that students will complete a course based on indicators designed to represent the three components of the CoI framework (teaching presence, social presence, and cognitive presence). Start by being clear about how the target will be defined. It must be trained using known examples. This means that if, for example, you want to predict the final grade of a course per student, the courses being used to train the model must include accurate final grades.
 
-### How many predictions for each sample?
+### How many predictions for each sample? {/* #how-many-predictions-for-each-sample */}
 
 The next decision should be how many predictions you want to get for each sample (e.g. just one prediction before the course starts or a prediction every week). A single prediction for each sample is simpler than multiple predictions at different points in time in terms of how deep into the API you will need to go to code it.
 
@@ -669,11 +669,11 @@ Other analysis intervals such as "Upcoming 3 days" are also available, which do 
 
 You do not need to require a single analysis interval at this stage, and they can be changed whenever the model is trained. You do need to define whether the model will make a single prediction or multiple predictions per analysable.
 
-### Create the target
+### Create the target {/* #create-the-target */}
 
 As specified in the [Target](./index.md#target-core_analyticslocaltargetbase) section.
 
-### Create the model
+### Create the model {/* #create-the-model */}
 
 To add a new model to the system, it must be defined in a PHP file. Plugins and core subsystems declare default prediction models by describing them in their db/analytics.php file. Models should not be created manually via the db/install.php file any more. (It is also possible to execute the necessary commands in a standalone PHP file that references the Moodle config.php.)
 
@@ -713,13 +713,13 @@ Models are disabled by default because you may be interested in evaluating how g
 $model->enable();
 ```
 
-### Indicators
+### Indicators {/* #indicators */}
 
 You already know the analyser your target needs (the analyser is what provides samples) and, more or less, what time splitting method may be better for you. You can now select a list of indicators that you think will lead to accurate predictions. You may need to create your own indicators specific to the target you want to predict.
 
 You can use "'Site administration > Analytics > Analytics models"' to see the list of available indicators and add some of them to your model.
 
-## API usage examples
+## API usage examples {/* #api-usage-examples */}
 
 This is a list of prediction models and how they could be coded using the Analytics API:
 
@@ -805,7 +805,7 @@ Student will fail a quiz (based on things like other students quiz attempts, the
   - For training = the student has attempted the quiz at least X times (X because if after X attempts has not passed counts as failed) or the student passed the quiz
 - **Based on assumptions (static)**: no, it is based on previous students records
 
-## Clustered environments
+## Clustered environments {/* #clustered-environments */}
 
 The `analytics/outputdir` setting can be configured by Moodle sites with multiple frontend nodes to specify a directory shared across nodes. This directory can be used by machine learning backends to store trained algorithms (for example, its internal variables weights) to use them later to get predictions.
 

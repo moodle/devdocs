@@ -24,7 +24,7 @@ Course formats determine how the course main page looks like (/course/view.php) 
 
 Course formats also can add their own options fields to the course edit form. They can add course-dependent content to the header/footer of any page inside the course, not only /course/view.php
 
-## File structure
+## File structure {/* #file-structure */}
 
 All course format files must be located inside the **course/format/pluginname** folder.
 
@@ -52,7 +52,7 @@ All course format files must be located inside the **course/format/pluginname** 
 
 Some of the important files for the format plugintype are described below. See the [common plugin files](../commonfiles) documentation for details of other files which may be useful in your plugin.
 
-### format.php
+### format.php {/* #formatphp */}
 
 import Format from '!!raw-loader!./_examples/format.php';
 
@@ -68,7 +68,7 @@ import Format from '!!raw-loader!./_examples/format.php';
 
 As it can be seen in the example, once the format base instance is created (the return object of `core_courseformat\base::instance` function), the plugin must define any necessary setting (in the example is just set_section_number but any plugin can define its own extra methods). Once this is done, the get_output_classname will return the correct class name for the content output and the format renderer will be responsible for rendering the full course. See [Rendering a course](#rendering-a-course) for more information.
 
-### lib.php
+### lib.php {/* #libphp */}
 
 import LibExample from '!!raw-loader!./_examples/lib.php';
 
@@ -84,7 +84,7 @@ The main library of the format. It should contain a class `format_pluginname` ex
 
 The format base class is the most important part of the course format as it defines how the format interacts with both frontend and backend. Depending on the methods a format plugin overrides the course will behave in different ways.
 
-### lang/en/format_pluginname.php
+### lang/en/format_pluginname.php {/* #langenformat_pluginnamephp */}
 
 import langExample from '!!raw-loader!./_examples/format_lang.php';
 
@@ -94,7 +94,7 @@ import langExample from '!!raw-loader!./_examples/format_lang.php';
     example={langExample}
 />
 
-### classes/output/renderer.php
+### classes/output/renderer.php {/* #classesoutputrendererphp */}
 
 import Renderer from '!!raw-loader!./_examples/renderer.php';
 
@@ -122,13 +122,13 @@ Renderer methods are powerful enough to override all the rendering logic of the 
 
 Since the course format is all about the display it is very important to separate HTML and PHP. All HTML code should be in your `format_pluginname_renderer` class in renderer.php. Ideally, format.php will only call one function from the renderer. Use of renderer is required if you want to output content header and footer.
 
-### version.php
+### version.php {/* #versionphp */}
 
 <VersionPHP
     plugintype="format"
 />
 
-### classes/output/courseformat/
+### classes/output/courseformat/ {/* #classesoutputcourseformat */}
 
 <Since
   version="4.0"
@@ -137,7 +137,7 @@ Since the course format is all about the display it is very important to separat
 
 The course rendering is based on output classes and templates. Course format plugins can override specific output classes to provide alternative data to the templates. All output classes inside output/courseformat folder will override the default ones automatically. See the output structure section below for more information
 
-### templates/ and templates/local/
+### templates/ and templates/local/ {/* #templates-and-templateslocal */}
 
 <Since
   version="4.0"
@@ -146,9 +146,9 @@ The course rendering is based on output classes and templates. Course format plu
 
 The course rendering is based on output classes and templates. This folder will contain the specific mustache templates of your plugin. See the [override mustache blocks section](#override-mustache-blocks) section for more information.
 
-## Creating a new format
+## Creating a new format {/* #creating-a-new-format */}
 
-### Using tool_pluginskel
+### Using tool_pluginskel {/* #using-tool_pluginskel */}
 
 The easiest way to create a new course format using the latest version of tool_pluginskel. You can use the following yaml file to generate a basic course format skeleton. It is important to note that the "requires" attributes should be at least 4.0 in order to generate a Moodle 4.0+ version of the plugin, otherwise the resulting plugin will use a deprecated structure.
 
@@ -163,7 +163,7 @@ import PluginskelRecipe from '!!raw-loader!./_examples/pluginskel_recipe.yaml';
   </div>
 </details>
 
-### Manual option: copy the code from an existing code
+### Manual option: copy the code from an existing code {/* #manual-option-copy-the-code-from-an-existing-code */}
 
 However, if for some reason you cannot use the latest version of tool_pluginskel, you can copy the code from the topics or weeks formats. Once you do the copy you should:
 
@@ -176,19 +176,19 @@ However, if for some reason you cannot use the latest version of tool_pluginskel
 7. The new format is ready for modification.
 8. After modifying the code, check it with the Code checker.
 
-## Upgrading format to the next Moodle version
+## Upgrading format to the next Moodle version {/* #upgrading-format-to-the-next-moodle-version */}
 
 Read the files course/format/upgrade.txt, lib/upgrade.txt, and also upgrade.txt of the core APIs that you use in your course format plugin and make changes according to them. When testing don't forget to enable Developer debugging level and error display (Settings->Developer->Debugging).
 
 In case your plugin is a Moodle 3.11 compatible plugin, see the [migration guide](./format/migration) for more information.
 
-## Extending the format base class
+## Extending the format base class {/* #extending-the-format-base-class */}
 
 All format plugins require a lib.php file containing a format_pluginname class. This class should extend `core_courseformat\base` and define how the plugin will integrate with the core_courseformat subsystem.
 
 Here are the main features in course formats and responsible for them format_base functions.
 
-## Course sections
+## Course sections {/* #course-sections */}
 
 There is existing functionality in Moodle core to support organizing course modules into sections. Course format plugins do not have to use them but most of them do. Database table `course_sections` stores basic information about sections. Also section info is cached and returned by `format->get_modinfo()` (or the global function `get_fast_modinfo()`) so every action changing the sections must be followed by rebuild_course_cache(). Course module must always belong to the section. Even if your course format does not use sections, the section with the number 0 is always created.
 
@@ -209,7 +209,7 @@ You must define `$string['sectionname']` if your language file even if the forma
 | `get_max_sections()` | Returns the maximum number of sections this format can contain |
 | `page_title()` | Formats can override this method to alter the page title. |
 
-### Course features
+### Course features {/* #course-features */}
 
 The format base class has several methods to integrate the course format with the frontend course editor and its webservices.
 
@@ -223,7 +223,7 @@ The format base class has several methods to integrate the course format with th
 | `get_default_blocks()` | Course format can specify which blocks should be added to the course page when the course is created in this format.<br/>If the course format is changed during course edit, blocks are not changed.<br/>Whatever course format specifies in the method, site admin can override it with `$CFG->defaultblocks_override` or `$CFG->defaultblocks_pluginname` |
 | `extend_course_navigation()` | This function is called when a navigation tree is built.<br/>Node for the course will be created in navigationlib for you and all standard available branches like 'Participants' or 'Reports' will be added to it. After that course format can add nodes for sections and modules. There is a default implementation that adds branches for course sections and modules under them. Or if the course format does not use sections, all modules will just be placed under course mode. The course format is able to override the default navigation tree building.<br/>Note that if navigationlib can not find the node for the current course module, the node will be added automatically (after this callback). |
 
-### Course format options
+### Course format options {/* #course-format-options */}
 
 The core table `course_format_options` in Moodle database is designed to store additional options for course formats. Those options may belong for the whole course or just for course section.
 
@@ -264,7 +264,7 @@ The format base class is used for all the core_courseformat integrations, from s
 | `is_section_current()` | Returns if a specific section is marked as current (highlighted) or not. |
 | `show_editor()` | Do all the user and page validations to know if the current course display has to include editor options or not. This includes both page editing mode and user capabilities. You can pass an array of capabilities which should be checked. If none specified, will default to `moodle/course:manageactivities`. |
 
-## Rendering a course
+## Rendering a course {/* #rendering-a-course */}
 
 Each format plugin is responsible for rendering the course in the format.php file, this means each plugin can choose how to render the course content. However, there are some conventions on how a course should be rendered to integrate the plugin with the existing components.
 
@@ -277,7 +277,7 @@ The course rendering is done using four mains elements:
 
 Unless there's a reason for it, the course structure should be rendered overriding the standard outputs and mustache templates.
 
-## Format output classes and templates
+## Format output classes and templates {/* #format-output-classes-and-templates */}
 
 The following diagram shows the standard output classes structure:
 
@@ -291,7 +291,7 @@ There are three renderer methods used for refreshing fragments of the course pag
 
 By default, the base renderer methods will use the format output components to render the full course. In case your plugins have special needs, it is possible to override those three methods directly into the format renderer class.
 
-### Override output classes
+### Override output classes {/* #override-output-classes */}
 
 Instead of having several renderer methods on a single file, the core_courseformat subsystem splits the output logic through several small classes, each one for a specific UI component. Format plugins can easily override specific classes to alter the template data.
 
@@ -299,11 +299,11 @@ The course format base class has a special method called **get_output_classname*
 
 For example, if a format plugin wants to add new options to the section action menu it should override the core_courseformat\output\local\content\section\controlmenu. To do so the plugin class should be format_pluginname\output\courseformat\content\section\controlmenu. You can find an example of an overridden output in the "course/format/topics/classes/output/courseformat/content/section/controlmenu.php" file.
 
-### Creating the basic output structure
+### Creating the basic output structure {/* #creating-the-basic-output-structure */}
 
 By default, the course renderer will use the core_courseformat output classes and templates. To override some parts of the course elements the plugin must provide a minimum output classes and template structure.
 
-#### Basic output classes
+#### Basic output classes {/* #basic-output-classes */}
 
 It is recommended your plugin overrides the 3 main course format elements:
 
@@ -356,7 +356,7 @@ export const OutputCmitemProps = {
   </TabItem>
 </Tabs>
 
-#### Basic template files
+#### Basic template files {/* #basic-template-files */}
 
 Unlike output classes, mustache files cannot be extended nor overridden. To be able to alter specific mustaches your plugin must provide a minimum template structure. To allow partial overriding, the core_courseformat template uses blocks instead of inclusions to include sub templates.
 
@@ -386,7 +386,7 @@ import TemplateCmitem from '!!raw-loader!./_examples/output/cmitem.mustache';
   </TabItem>
 </Tabs>
 
-### Override mustache blocks
+### Override mustache blocks {/* #override-mustache-blocks */}
 
 Once your plugin has the basic mustache structure, you can provide extra mustache blocks to override parts of the page. To do so it is important to understand first the special way in which the course format mustaches are included.
 
@@ -453,7 +453,7 @@ Due to the fact that mustache blocks are not scoped, blocks can be overridden by
 - **[Scenario 2](#scenario-2-keep-all-the-intermediate-templates-structure):** your plugin needs a big UI change, keeping the general structure but altering several course elements.
 - **[Scenario 3](#scenario-3-just-keep-a-few-renderer-methods):** Your plugin is a completely different thing that does not follow any standard course rule. Almost everything in your format is done from scratch.
 
-#### Scenario 1: adding blocks directly on the three main mustache templates
+#### Scenario 1: adding blocks directly on the three main mustache templates {/* #scenario-1-adding-blocks-directly-on-the-three-main-mustache-templates */}
 
 If your format only overrides a few inner templates of the course, the overriding blocks can be located in one of the 3 basic templates:
 
@@ -489,7 +489,7 @@ Negatives of this approach:
 
 - Harder to maintain in the long run. Is it possible that the format must refactor the template structure if future versions require more main templates to be refreshed via ajax.
 
-#### Scenario 2: keep all the intermediate templates structure
+#### Scenario 2: keep all the intermediate templates structure {/* #scenario-2-keep-all-the-intermediate-templates-structure */}
 
 If your plugin needs a big UI change, altering a considerable number of the course elements at different levels (course, section and/or activity), the previous approach is not recommended as it may require more code refactoring in future versions.
 
@@ -573,7 +573,7 @@ Negatives of this approach:
 
 - Requires extra files to keep the structure. Most of the files are just there to ensure the course format subsystem knows how to render them if needed in the future.
 
-#### Scenario 3: just keep a few renderer methods
+#### Scenario 3: just keep a few renderer methods {/* #scenario-3-just-keep-a-few-renderer-methods */}
 
 If your plugin is a completely different thing from a regular course you are most likely on your own. Your format may use a completely different set of renderer methods or output classes and you already have your own template structure.
 
@@ -588,7 +588,7 @@ Secondly, the new frontend JS modules use renderer methods to refresh a full sec
 
 And third, consider using "local/content" as your main course template, "output\local\content" as your main output class or, if you don't use output classes, use the render_content renderer method to print a full course. Those are the expected names to render the full course. For now, they are only used in your plugin "format.php" file but nobody can guarantee this will continue this way in the future.
 
-## The course editor structure
+## The course editor structure {/* #the-course-editor-structure */}
 
 The core_courseformat provides several JavaScript modules that will be enabled when a teacher edits the course. Those libraries use a reactive pattern to keep the course updated when some edit action is executed.
 
@@ -596,7 +596,7 @@ The following diagram represents the data flow of the new architecture:
 
 ![Course editor workflow](./_files/course_editor_workflow.png)
 
-### Enabling the course editor
+### Enabling the course editor {/* #enabling-the-course-editor */}
 
 To enable the course editor in your format you should add the following method to your format base class (in your course/format/pluginname/lib.php):
 
@@ -609,7 +609,7 @@ public function supports_components() {
 }
 ```
 
-### Course elements data attributes.
+### Course elements data attributes. {/* #course-elements-data-attributes */}
 
 The course editor modules use data attributes to find the course elements in the page. If your plugin alters the default templates you should keep those attributes in your HTML structure.
 
@@ -626,7 +626,7 @@ The following table describes the data attributes:
 | **Section action link** | `data-action={ACTIONNAME}`<br/>`data-id={SECTION.ID}` |
 | **Section info** | `data-for="sectioninfo"` |
 
-## Activity badge
+## Activity badge {/* #activity-badge */}
 
 <Since
   version="4.3"

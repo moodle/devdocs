@@ -41,25 +41,25 @@ import {
 
 This page describes the common files which may be present in any Moodle subsystem or [plugin type](../plugintypes/index.md). Some of these files are mandatory and __must__ exist within a component, whilst others are optional.
 
-### version.php
+### version.php {/* #versionphp */}
 
 <VersionPHP />
 
-### lang/en/plugintype_pluginname.php
+### lang/en/plugintype_pluginname.php {/* #langenplugintype_pluginnamephp */}
 
 import extraLangDescription from '../_files/lang-extra.md';
 
 <Lang extraDescription={extraLangDescription} />
 
-### lib.php
+### lib.php {/* #libphp */}
 
 <Lib />
 
-### locallib.php
+### locallib.php {/* #locallibphp */}
 
 <LocalLib />
 
-### db/
+### db/ {/* #db */}
 
 The `db/` directory contains files related to database schema and data management, such as installation, upgrade, access control, scheduled tasks, and events.
 
@@ -69,103 +69,103 @@ Files inside the `db/` folder (such as `install.xml`, `upgrade.php`, `access.php
 
 :::
 
-#### db/install.xml
+#### db/install.xml {/* #dbinstallxml */}
 
 <DbInstallXML />
 
-#### db/upgrade.php
+#### db/upgrade.php {/* #dbupgradephp */}
 
 <DbUpgradePHP />
 
-#### db/access.php
+#### db/access.php {/* #dbaccessphp */}
 
 <DbAccessPHP />
 
-#### db/install.php
+#### db/install.php {/* #dbinstallphp */}
 
 <DbInstallPHP />
 
-#### db/uninstall.php
+#### db/uninstall.php {/* #dbuninstallphp */}
 
 <DbUninstallPHP />
 
-#### db/events.php
+#### db/events.php {/* #dbeventsphp */}
 
 <DbEventsPHP />
 
-#### db/messages.php
+#### db/messages.php {/* #dbmessagesphp */}
 
 <DbMessagesPHP />
 
-#### db/services.php
+#### db/services.php {/* #dbservicesphp */}
 
 <DbServicesPHP />
 
-#### db/tasks.php
+#### db/tasks.php {/* #dbtasksphp */}
 
 <DbTasksPHP />
 
-#### db/renamedclasses.php
+#### db/renamedclasses.php {/* #dbrenamedclassesphp */}
 
 <DbRenamedclassesPHP />
 
-### classes/
+### classes/ {/* #classes */}
 
 <ClassesDir />
 
-### cli/
+### cli/ {/* #cli */}
 
 <CLIDir />
 
-### settings.php
+### settings.php {/* #settingsphp */}
 
 <SettingsPHP />
 
-### amd/
+### amd/ {/* #amd */}
 
 <AmdDir />
 
-### yui/
+### yui/ {/* #yui */}
 
 <YUIDir />
 
-### backup/
+### backup/ {/* #backup */}
 
 <BackupDir />
 
-### styles.css
+### styles.css {/* #stylescss */}
 
 <StylesCSS />
 
-### pix/icon.svg
+### pix/icon.svg {/* #pixiconsvg */}
 
 <PixDir />
 
-### thirdpartylibs.xml
+### thirdpartylibs.xml {/* #thirdpartylibsxml */}
 
 <ThirdpartylibsXML />
 
-### readme_moodle.txt
+### readme_moodle.txt {/* #readme_moodletxt */}
 
 <ReadmeMoodleTXT />
 
-### upgrade.txt
+### upgrade.txt {/* #upgradetxt */}
 
 <UpgradeTXT />
 
-### environment.xml
+### environment.xml {/* #environmentxml */}
 
 <EnvironmentXML />
 
-### README
+### README {/* #readme */}
 
 <Readme />
 
-### CHANGES
+### CHANGES {/* #changes */}
 
 <Changes />
 
-## See also
+## See also {/* #see-also */}
 
 - [Moodle architecture](https://docs.moodle.org/dev/Moodle_architecture) - general overview of Moodle code architecture
 - [Plugin types](../plugintypes/index.md) - list of all supported plugin types

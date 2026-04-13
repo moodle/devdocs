@@ -10,7 +10,7 @@ tags:
   - Frontend
 ---
 
-## Core Search Dropdown Migration
+## Core Search Dropdown Migration {/* #core-search-dropdown-migration */}
 
 Several grade report modules have been migrated to use the new core search dropdown component. This migration provides a more consistent user experience across different grade report modules and allows for easier maintenance and updates.
 
@@ -20,13 +20,13 @@ The following grade reports were migrated within MDL-77991:
 - Grade report single view
 - Grade report grader
 
-## Third party usage
+## Third party usage {/* #third-party-usage */}
 
 Whilst working on MDL-77991, the Moodle development team also migrated the following third party plugin to use the new core search dropdown component as a proof of concept:
 
 - [Block stash](https://moodle.org/plugins/block_stash)
 
-## Quick start
+## Quick start {/* #quick-start */}
 
 To use the core components in your own Moodle module, you can follow these steps:
 

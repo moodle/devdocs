@@ -15,11 +15,11 @@ See [Question bank plugins](./apis/plugintypes/qbank/index.md).
 
 <!-- cspell:ignore settingsnav -->
 
-## Navigation changes
+## Navigation changes {/* #navigation-changes */}
 
 The core Navigation API has been left mostly untouched. The callbacks to all navigation callbacks remain unchanged and will be called as part of the regular `navigation` and `settingsnav` initialisation. Some new core classes have been created and exist within a new namespace `core/navigation` and serve as conduit to rearrange, cherry-pick existing navigation nodes from the navigation/settingsnav trees and display within the respective navigation type. As such, it is highly recommended to provide unique keys for custom navigation nodes as this helps in the cherry-picking / rearranging process within the new classes.
 
-### Primary navigation
+### Primary navigation {/* #primary-navigation */}
 
 :::note
 
@@ -35,11 +35,11 @@ Not yet implemented but we are looking at allowing the full addition and removal
 
 :::
 
-### Secondary navigation
+### Secondary navigation {/* #secondary-navigation */}
 
 The main content area shows tabs for secondary navigation with a maximum of 5 items being rendered in this **'more'** menu. A new UI component has been created to render menus like this. More information can be found in: [`/lib/templates/moremenu.mustache`](https://github.com/moodle/moodle/blob/v4.0.0/lib/templates/moremenu.mustache)
 
-#### Adding items to the navigation
+#### Adding items to the navigation {/* #adding-items-to-the-navigation */}
 
 The secondary navigation pulls information mainly from the settings navigation node from each context. Any plugin that implements the existing navigation hooks will have their items added to the secondary navigation.
 Existing navigation hooks:
@@ -50,7 +50,7 @@ Existing navigation hooks:
 - `{plugin}_extend_navigation_course`
 - `{plugin}_extend_navigation_category_settings`
 
-#### Changing the order of tabs
+#### Changing the order of tabs {/* #changing-the-order-of-tabs */}
 
 Apart from the previously mentioned functions, you can also create a custom secondary class as mentioned earlier. This will automatically be picked by getter and used to render the secondary nav within the activity. For example, `mod_assign/local/views/secondary`.
 
@@ -60,28 +60,28 @@ This is currently only possible on an activity and block level.
 
 :::
 
-### Tertiary navigation
+### Tertiary navigation {/* #tertiary-navigation */}
 
 Action buttons have been moved to the top of the page and we would encourage you to do the same.
 If you have any buttons on an activity page that go to another page, or open a form (or similar), then we encourage you to move them from the body of your activity page to the top. All of the core activities have been updated to follow this pattern. Please take a look to see how you can format your activity in a similar fashion. There is no API here. You are welcome to create the buttons and display them as you wish in this top area.
 
-### New API functions
+### New API functions {/* #new-api-functions */}
 
-#### Page API
+#### Page API {/* #page-api */}
 
 - Magic getters to fetch the primary and secondary navigation and the primary output.
 - The `secondarynav` magic getter also checks whether a custom secondary class has been defined within the module's local\views directory. Use this if you want to deviate from the standard secondary nav structure/order.
 - `set_secondarynav` - Force override the secondary navigation class
 - `set_secondary_navigation` - Sets the `_hassecondarynavigation` and optionally the `_hastablistsecondarynavigation` to indicate whether a page should render the secondary navigation, and if the secondary navigation should be rendered and behave with a tablist ARIA role (as opposed to its default which is being rendered with a menubar ARIA role).
 
-#### Navigation library
+#### Navigation library {/* #navigation-library */}
 
 - `set_show_in_secondary_navigation` - whether or not a node should be displayed in the secondary nav. Accepts a single boolean argument
 - `set_force_into_more_menu` - whether or not to force a node into the **'More'** menu. Accepts a single boolean argument
 
 <!-- cspell:ignore togglable -->
 
-#### The activity header class
+#### The activity header class {/* #the-activity-header-class */}
 
 There is a new activity header class that handles the display of information common to activities. Third party activities are not required to explicitly output this information as part of rendering individual pages.
 
@@ -132,7 +132,7 @@ Any updates to the `activityheader` needs to be performed before the call to `$O
 <!-- cspell:ignore firstcollectionlabel -->
 <!-- cspell:ignore hasblocks -->
 
-##### Theme updates
+##### Theme updates {/* #theme-updates */}
 
 With the changes in boost to incorporate the primary and secondary navigation, third party themes would need to account for the following in their templates:
 
@@ -171,7 +171,7 @@ The jump to `maincontent` div is now rendered within the activity header when wi
 
 :::
 
-## Component library
+## Component library {/* #component-library */}
 
 Each Moodle installation now ships with a Moodle User Interface (UI) Component library, a documentation system used to describe all the Bootstrap components and the custom Moodle components. The component Library is a helper tool for developers when creating user interfaces, a testing tool for theme developers and a documentation tool for core developers. The ultimate goal of having a component library is to encourage developers to create consistent user interfaces to improve Moodle's overall user experience.
 
@@ -194,7 +194,7 @@ A hosted version of the Component Library can be found at [http://componentlibra
 
 :::
 
-### Enabling the Component Library
+### Enabling the Component Library {/* #enabling-the-component-library */}
 
 Component library pages are written in the markdown language. These pages need to be compiled to HTML pages before the Component Library is visible. To compile the pages the server running Moodle needs to have [nodeJS and Grunt tools](/general/development/tools/nodejs).
 
@@ -207,7 +207,7 @@ If your server meets all requirements you can enable the library running
 
 Further installation instructions can be found in the Component Library itself.
 
-### Documenting new UI Components
+### Documenting new UI Components {/* #documenting-new-ui-components */}
 
 There are no set rules for adding new pages in the component library yet. These rules will need to be written and adopted in the integration process for Moodle code.
 
@@ -216,11 +216,11 @@ As a guideline for making this rules consideration are:
 - The component library is not about single use components, for example the Moodle grade book (a huge component with many custom features). Or about very common components like buttons, these are already covered by the Bootstrap section of the component library.
 - New features should be build keeping in mind the UI part needs to be customisable and if possible (and making sense) reusable. And example would be the new page drawers that we are introducing for the Navigation project. Or the custom primary navigation menus where overflowing items are pushed into a More section.
 
-## Theme changes
+## Theme changes {/* #theme-changes */}
 
 <!-- cspell:ignore haseditswitch -->
 
-### Edit switch
+### Edit switch {/* #edit-switch */}
 
 On theme boost the "Turn editing on" and "Customise this page" buttons have been replaced by an edit switch in the top navbar. Theme Classic will keep using the old buttons. Child themes can choose to use the edit switch if the theme config.php is using this variable
 
@@ -230,37 +230,37 @@ $THEME->haseditswitch = true;
 
 The language menu, which used to be rendered in place of the custom menu has moved to the user dropdown when the user is logged in. If not logged in it will be placed next to the search / notification / messaging icon in the top navbar.
 
-### Login page
+### Login page {/* #login-page */}
 
 The login page has been redesigned and allows the admin to configure a background image for the login page only in the theme settings page. This change is available in both Boost and Classic. The login page still has all the features with an improved layout.
 
-### The page footer
+### The page footer {/* #the-page-footer */}
 
 In large screens, the page footer button is only visible when clicking a help button at the bottom right of the screen.
 
-### User initials as profile picture placeholder
+### User initials as profile picture placeholder {/* #user-initials-as-profile-picture-placeholder */}
 
 If users do not upload a profile picture the user initials are displayed on a rounded gray background as a placeholder picture in the top navbar or any other page using a placeholder image. This change will be available in both Boost and Classic.
 
 With the introduction of this placeholder image the full username will no longer be displayed in the top navbar.
 
-### Removal of back to top link
+### Removal of back to top link {/* #removal-of-back-to-top-link */}
 
 The "back to top" link will be removed for theme boost since the new course index reduced the dependence on page scrolling. Also, the new footer is positioned where this component used to be.
 
-### Styling changes
+### Styling changes {/* #styling-changes */}
 
 By default rounded edges will be used for UI components, for the page header and main content area the borders will be removed.
 
-### New layout page
+### New layout page {/* #new-layout-page */}
 
 Theme boost now uses the `drawers.php` layout for the course index and blocks.
 
-## Question bank changes
+## Question bank changes {/* #question-bank-changes */}
 
 There was a big project to deliver [Question bank improvements for Moodle 4.0](https://docs.moodle.org/dev/Question_bank_improvements_for_Moodle_4.0) which added a new plugin type for adding features to the question banks, tracking the version history for each question as it is edited (question table has been split into `question`, `question_versions` and `question_bank_entries`), and tracking where each question is going to be used, with new tables `question_references` and `question_set_references`. This work was done in Epic [MDL-70329](https://moodle.atlassian.net/browse/MDL-70329) if you want to track down the details of any of the core changes.
 
-### Question type plugins
+### Question type plugins {/* #question-type-plugins */}
 
 Amazingly, we (Safat and colleagues at Catalyst AU) managed to implement this without breaking most question type plugins, with one important exception if your questions do shuffling like multiple choice does. See [MDL-74752](https://moodle.atlassian.net/browse/MDL-74752). There is a new method called `update_attempt_state_date_from_old_version` which you may need to implement.
 
@@ -270,23 +270,23 @@ The 'most' in the first paragraph here is because more advance question types ma
 
 The same thing should apply to question behaviour and question import/export format plugins: no significant changes required (probably just fixing the Behat tests because of the navigation changes).
 
-### New plugin type: qbank plugins
+### New plugin type: qbank plugins {/* #new-plugin-type-qbank-plugins */}
 
 This is not something that will cause problems for people upgrading from 3.x. Rather, it is an exciting possibility you can explore once you have survived process of upgrading to 4.0. There is a whole new plugin type which you can create to add new features to the question bank. For example extra columns, new actions and bulk actions, and so on. See [Question bank plugins](./apis/plugintypes/qbank/index.md).
 
-### Activities that use questions
+### Activities that use questions {/* #activities-that-use-questions */}
 
 The probable bad news is if you have an activity module which uses questions. So far, the only activity which has been fixed is `mod_quiz` in Moodle core, so we don't yet have a good picture of what fixes will be necessary in other activities. Work is about to start fixing [`mod_studentquiz`](https://github.com/studentquiz/moodle-mod_studentquiz), so watching that should give more clues. As we do that, we will try to update this section of this page. Other help writing the information required here would also be greatly appreciated.
 
-## The course format system
+## The course format system {/* #the-course-format-system */}
 
 Most of the logic for rendering and editing a course has been moved to a new subsystem called courseformat. The subsystem is located in "course/format" folder so it includes all the format plugins inside. The methods and modules which are distributed between the course and the course/format folders are now rearranged or refactored to be aligned with the current Moodle coding style.
 
-### Mandatory renderer in course formats
+### Mandatory renderer in course formats {/* #mandatory-renderer-in-course-formats */}
 
 Now format plugins renderer is not optional anymore. Legacy formats without a renderer will get a deprecation message but it will continue working however, they should create a new renderer as soon as possible. The section-based format can do it by extending the provided `core_courseformat\output\section_renderer` class which includes all the necessary methods.
 
-### New format base class
+### New format base class {/* #new-format-base-class */}
 
 The old `base_format` class (which all plugins extend) is now renamed as `core_courseformat\base`. The new class provides all the functionally of the previous `base_format` but it has been refactored to be used as a centralized source of truth for the course rendering. Legacy formats should extend the new class to avoid the deprecation message.
 
@@ -302,7 +302,7 @@ The format instance is now the main object output components will use to render 
 <!-- cspell:ignore displaysection -->
 <!-- cspell:ignore outputclass -->
 
-### New course output classes and mustache files
+### New course output classes and mustache files {/* #new-course-output-classes-and-mustache-files */}
 
 Traditionally, section-based course formats uses `print_single_section_page` and `print_multiple_section_page` to render the course content. In Moodle 4.0 most of the course rendering methods are migrated to output components and mustache templates. The old methods will get deprecation messages if they use the old renderer methods.
 
@@ -337,7 +337,7 @@ All the new output classes and a guide on how to migrate the current third-party
 
 :::
 
-### Course editor JavaScript modules and frontend components
+### Course editor JavaScript modules and frontend components {/* #course-editor-JavaScript-modules-and-frontend-components */}
 
 The majority of the JavaScript logic related to the course editing is replaced by AMD modules. Because this is a major change in the way courses are edited and rendered, by default format plugins will continue using the previous YUI modules for now. However, formats can start using the new libraries overriding the `$format->supports_components()` method.
 
@@ -360,18 +360,18 @@ The reactive library documentation, as well as the format plugin migration guide
 
 :::
 
-### Other course related 4.0 changes
+### Other course related 4.0 changes {/* #other-course-related-40-changes */}
 
 Two new web services have been added:
 
 - `core_courseformat_get_state`: user by the new JavaScript course editor to get the current course state data (containing the list of sections, activities, and other course-related data)
 - `core_courseformat_update_course`: to alter the current course content. Each call returns the parts of the course state altered by the action
 
-## Behat changes
+## Behat changes {/* #behat-changes */}
 
 <!-- cspell:ignore entitytype -->
 
-### New steps
+### New steps {/* #new-steps */}
 
 Moodle 4.0 introduces some new behat steps.
 
@@ -667,7 +667,7 @@ Similarly, there's a new step to navigate to the imports page in the course grad
 And I navigate to "import option" import page in the course gradebook
 ```
 
-### Boost steps
+### Boost steps {/* #boost-steps */}
 
 In addition to the steps listed in the previous section, there are also some Boost specific steps coming with Moodle 4.0. These steps only work in Boost or Boost child themes, so you need to make sure they are not used in scenarios that may be run by non-Boost themes.
 
@@ -699,11 +699,11 @@ And "English &lrm;(en)&lrm;" "link" should exist in the language selector menu
 
 :::
 
-### Modified steps
+### Modified steps {/* #modified-steps */}
 
 The step `I change the (window|viewport) size to "size"` now supports 2 new values for the size argument. The size argument now accepts `mobile` and `tablet` values in addition to `small`, `medium` and `large`.
 
-### Removed steps
+### Removed steps {/* #removed-steps */}
 
 Some behat steps are removed or replaced with new steps.
 
@@ -728,7 +728,7 @@ And I should see "Activity or resource name"
 And "Activity or resource name" "link" should not exist in the "region-main" "region"
 ```
 
-### Other things to consider
+### Other things to consider {/* #other-things-to-consider */}
 
 To make behat tests more readable and easy to maintain, it is recommended to use the most direct steps to get what the test needs. It is highly recommended to use
 
@@ -800,9 +800,9 @@ And I am on the "Test choice name" "choice activity editing" page
 
 There are also similar stream-lined navigation steps for accessing question bank pages. See [MDL-74130](https://moodle.atlassian.net/browse/MDL-74130).
 
-## Other
+## Other {/* #other */}
 
-### Core plugins review
+### Core plugins review {/* #core-plugins-review */}
 
 A few plugins from core Moodle LMS which are no longer or hardly used have been removed and, if appropriate, added to the Moodle plugins directory.
 
@@ -812,7 +812,7 @@ More information about this project, the list of plugins to be removed and the p
 
 :::
 
-### Core blocks cleanup
+### Core blocks cleanup {/* #core-blocks-cleanup */}
 
 In the "Add a block" menu, the list of blocks was really long. A few changes have been done to reduce this list.
 
@@ -824,7 +824,7 @@ More information about this project can be found in the [Add a block cleanup](/g
 
 <!-- cspell:ignore Pimenko -->
 
-### Site admin presets plugin
+### Site admin presets plugin {/* #site-admin-presets-plugin */}
 
 The third-party plugin [Admin presets](https://moodle.org/plugins/block_admin_presets), created by David Monllaó and maintained by developers from [Pimenko](https://pimenko.com/) has been adapted and integrated into Moodle 4.0. It stores settings and plugins status (enabled/disabled) in what's called "presets" to let admins quickly switch between different configurations.
 
@@ -834,7 +834,7 @@ More information about this project can be found in the [Site admin presets](htt
 
 :::
 
-### JavaScript browser support changes
+### JavaScript browser support changes {/* #JavaScript-browser-support-changes */}
 
 From Moodle 4.0, Internet Explorer is no longer supported. See [MDL-73915](https://moodle.atlassian.net/browse/MDL-73915) and [MDLSITE-6109](https://moodle.atlassian.net/browse/MDLSITE-6109) for further information on this change.
 
@@ -844,7 +844,7 @@ For plugin developers supporting multiple versions of Moodle using a single plug
 
 If you need to support Internet Explorer and do not wish to fork your plugin for Moodle 4.0 onwards, then it is recommended that you run `grunt` on an older version of Moodle.
 
-### The course index element
+### The course index element {/* #the-course-index-element */}
 
 The new course index feature can be themed using a set of scss variables. Use them to change the look and feel instead of adding custom CSS
 
@@ -854,7 +854,7 @@ The new course index feature can be themed using a set of scss variables. Use th
 
 With the introduction of the course index component, the previous and next links shown underneath each activity are no longer needed and they will be removed.
 
-### Activity icons
+### Activity icons {/* #activity-icons */}
 
 The icons used for activities have been redesigned and updated for all core moodle activities.
 
@@ -928,11 +928,11 @@ To customize all icon colours use this scss array and add it to the 'Raw initial
  );
 ```
 
-## I'm a developer, what do I need to know?
+## I'm a developer, what do I need to know? {/* #im-a-developer-what-do-i-need-to-know */}
 
 This section is a quick checklist of the areas in this document that you should consult when updating your plugin.
 
-### Modules
+### Modules {/* #modules */}
 
 If you are a module developer (activity / resources) then you need to review the following updates and changes:
 
@@ -943,7 +943,7 @@ If you are a module developer (activity / resources) then you need to review the
 - Update my pages to make it work with the general format of the tertiary navigation. See [the tertiary navigation](#tertiary-navigation).
 - Update my activity icon to use the API and set a purpose. See [activity icons](#activity-icons).
 
-### Themes
+### Themes {/* #themes */}
 
 If you are a theme developer then you may want to consider the following:
 
@@ -955,7 +955,7 @@ If you are a theme developer then you may want to consider the following:
 - New Site administration page and layout
 - Course settings and how they are displayed
 
-### Course format
+### Course format {/* #course-format */}
 
 There have been a lot of changes made to the course format. Most in the process of moving the course format away from using the old rendering system and towards templates.
 We recommend the following sections be read carefully:
@@ -963,7 +963,7 @@ We recommend the following sections be read carefully:
 1. [The course format](#the-course-format-system). There have been a lot of deprecations and reading this section is critical in understanding the changes made.
 1. Consider moving the rendering of your content over to the [template system](./guides/templates/index.md).
 
-### Other plugins
+### Other plugins {/* #other-plugins */}
 
 1. Are you adding settings? See the [secondary nav](#adding-items-to-the-navigation) for adding items to this navigation bar.
 1. Have a look at [secondary](#secondary-navigation) and [tertiary](#tertiary-navigation) navigation changes in general if you have a plugin that has multiple pages to navigate around.

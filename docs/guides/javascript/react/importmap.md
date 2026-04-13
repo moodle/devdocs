@@ -13,7 +13,7 @@ Moodle uses native browser import maps as the mechanism for resolving bare modul
 bundler-specific alias configuration and allows Moodle components to write standard ESM
 `import` statements that work directly in the browser.
 
-## What is an Import Map?
+## What is an Import Map? {/* #what-is-an-import-map */}
 
 An import map is a JSON object, embedded in the page as a `<script type="importmap">` tag,
 that tells the browser how to resolve bare specifiers used in `import` statements.
@@ -41,13 +41,13 @@ import { someUtil } from '@moodle/lms/core/utils';
 
 …and the browser resolves the specifier to the correct URL without any bundler step at runtime.
 
-## How Moodle generates the Import Map
+## How Moodle generates the Import Map {/* #how-moodle-generates-the-import-map */}
 
 The import map is built and injected into the page automatically by
 `page_requirements_manager::get_import_map()`, which is called during the page `<head>`
 render phase.
 
-### The `import_map` class
+### The `import_map` class {/* #the-import_map-class */}
 
 **`core\output\requirements\import_map`** is the single source of truth for all
 specifier → URL mappings and specifier → filesystem path mappings. It implements
@@ -62,7 +62,7 @@ Key responsibilities:
 - Provides `add_import()` to register additional specifiers, or to override the built-in
   ones, from a `pre_render` hook.
 
-#### Built-in specifiers
+#### Built-in specifiers {/* #built-in-specifiers */}
 
 The following specifiers are registered by default in `add_standard_imports()`:
 
@@ -89,7 +89,7 @@ revision is `-1`, the ESM controller applies short-lived cache headers so the br
 the file on every page load instead of serving a stale cached copy.
 :::
 
-#### Adding a custom specifier
+#### Adding a custom specifier {/* #adding-a-custom-specifier */}
 
 You can extend the import map from a `pre_render` hook before the page is rendered:
 
@@ -130,7 +130,7 @@ public function add_import(
   `<component>/<module>` prefix and resolved to the component's `js/esm/build/`
   directory on disk. Used internally for `@moodle/lms/`.
 
-## The ESM serving endpoint
+## The ESM serving endpoint {/* #the-esm-serving-endpoint */}
 
 All ESM files are served by `core\route\controller\esm_controller::serve`, registered
 under the route:
@@ -150,7 +150,7 @@ registry, which is the single source of truth. For a given `scriptpath` it calls
 
 If the resolved path exists on disk the file is served; otherwise a 404 is returned.
 
-### Resolving component modules
+### Resolving component modules {/* #resolving-component-modules */}
 
 Entries registered with `$loadfromcomponent = true` (i.e. `@moodle/lms/`) are resolved
 differently: the path after the prefix is split into `<component>/<module>`, the component
@@ -163,7 +163,7 @@ directory is looked up via `core\component`, and the file is resolved to:
 For example, `@moodle/lms/mod_book/viewer` resolves to
 `<dirroot>/mod/book/js/esm/build/viewer.js`.
 
-## HTTP caching
+## HTTP caching {/* #http-caching */}
 
 The controller applies the following caching strategy:
 
@@ -175,7 +175,7 @@ The controller applies the following caching strategy:
 The revision value comes from `page_requirements_manager::get_jsrev()` and changes
 whenever JavaScript files are updated, automatically busting caches.
 
-## Writing a component React module
+## Writing a component React module {/* #writing-a-component-react-module */}
 
 To expose a React module through the import map:
 
@@ -199,7 +199,7 @@ with the loader base URL, allowing the entire namespace to be served from one en
 without registering each module individually.
 :::
 
-## Overriding a built-in specifier
+## Overriding a built-in specifier {/* #overriding-a-built-in-specifier */}
 
 You can replace any of the default specifiers in a `pre_render` hook. For example, to swap
 in a local React build during development:
@@ -215,7 +215,7 @@ $importmap->add_import(
 Calling `add_import()` with the same specifier twice overwrites the previous entry, so
 ordering matters when multiple hooks are involved.
 
-## See also
+## See also {/* #see-also */}
 
 - [JavaScript Modules](../modules.md) — AMD and ESM module authoring in Moodle.
 - [MDN: Import maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap)

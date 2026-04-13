@@ -23,7 +23,7 @@ For a good reference implementation, see the [file](https://github.com/moodle/mo
 
 :::
 
-## File structure
+## File structure {/* #file-structure */}
 
 Assignment Feedback plugins are located in the `/mod/assign/feedback` directory. A plugin should not include any custom files outside of it's own plugin folder.
 
@@ -74,7 +74,7 @@ mod/assign/feedback/file
 
 </details>
 
-### settings.php
+### settings.php {/* #settingsphp */}
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable no-space-in-code -->
@@ -103,7 +103,7 @@ All feedback plugins should include one setting named 'default' to indicate if t
 
 <!-- markdownlint-restore -->
 
-### locallib.php
+### locallib.php {/* #locallibphp */}
 
 <!-- markdownlint-save -->
 <!-- markdownlint-disable code-block-style -->
@@ -121,7 +121,7 @@ This is where all the functionality for this plugin is defined. We will step thr
 class assign_feedback_file extends assign_feedback_plugin {
 ```
 
-#### get_name()
+#### get_name() {/* #get_name */}
 
 All feedback plugins MUST define a class with the component name of the plugin that extends assign_feedback_plugin.
 
@@ -133,7 +133,7 @@ public function get_name() {
 
 This function is abstract in the parent class (feedback_plugin) and must be defined in your new plugin. Use the language strings to make your plugin translatable.
 
-#### get_settings()
+#### get_settings() {/* #get_settings */}
 
 ```php
 public function get_settings(MoodleQuickForm $mform) {
@@ -147,7 +147,7 @@ public function get_settings(MoodleQuickForm $mform) {
 
 This function is called when building the settings page for the assignment. It allows this plugin to add a list of settings to the form. Notice that the settings should be prefixed by the plugin name which is good practice to avoid conflicts with other plugins. (None of the core feedback plugins have any instance settings, so this example is fictional).
 
-#### save_settings()
+#### save_settings() {/* #save_settings */}
 
 ```php
 public function save_settings(stdClass $data) {
@@ -158,7 +158,7 @@ public function save_settings(stdClass $data) {
 
 This function is called when the assignment settings page is submitted, either for a new assignment or when editing an existing one. For settings specific to a single instance of the assignment you can use the assign_plugin::set_config function shown here to save key/value pairs against this assignment instance for this plugin.
 
-#### get_form_elements_for_user()
+#### get_form_elements_for_user() {/* #get_form_elements_for_user */}
 
 ```php
 public function get_form_elements_for_user(
@@ -198,7 +198,7 @@ public function get_form_elements_for_user(
 
 This function is called when building the feedback form. It functions identically to the get_settings function except that the grade object is available (if there is a grade) to associate the settings with a single grade attempt. This example also shows how to use a filemanager within a feedback plugin. The function must return true if it has modified the form otherwise the assignment will not include a header for this plugin. Notice there is an older version of this function "get_form_elements" which does not accept a userid as a parameter - this version is less useful - not recommended.
 
-#### is_feedback_modified()
+#### is_feedback_modified() {/* #is_feedback_modified */}
 
 ```php
 public function is_feedback_modified(stdClass $grade, stdClass $data) {
@@ -220,7 +220,7 @@ public function is_feedback_modified(stdClass $grade, stdClass $data) {
 
 This function is called before feedback is saved. If feedback has not been modified then the save() method is not called. This function takes the grade object and submitted data from the grading form. In this example we are comparing the existing text comments made with the new ones. This function must return a boolean; True if the feedback has been modified; False if there has been no modification made. If this method is not overwritten then it will default to returning True.
 
-#### save()
+#### save() {/* #save */}
 
 ```php
 public function save(stdClass $grade, stdClass $data) {
@@ -257,7 +257,7 @@ public function save(stdClass $grade, stdClass $data) {
 
 This function is called to save a graders feedback. The parameters are the grade object and the data from the feedback form. This example calls `file_postupdate_standard_filemanager` to copy the files from the draft file area to the filearea for this feedback. It then records the number of files in the plugin specific `assignfeedback_file` table.
 
-#### view_summary()
+#### view_summary() {/* #view_summary */}
 
 ```php
 public function view_summary(stdClass $grade, & $showviewlink) {
@@ -279,7 +279,7 @@ public function view_summary(stdClass $grade, & $showviewlink) {
 
 This function is called to display a summary of the feedback to both markers and students. It counts the number of files and if it is more that a set number, it only displays a count of how many files are in the feedback - otherwise it uses a helper function to write the entire list of files. This is because we want to keep the summaries really short so they can be displayed in a table. There will be a link to view the full feedback on the submission status page.
 
-#### view()
+#### view() {/* #view */}
 
 ```php
 public function view(stdClass $grade) {
@@ -293,7 +293,7 @@ public function view(stdClass $grade) {
 
 This function is called to display the entire feedback to both markers and students. In this case it uses the helper function in the assignment class to write the list of files.
 
-#### can_upgrade()
+#### can_upgrade() {/* #can_upgrade */}
 
 ```php
 public function can_upgrade($type, $version) {
@@ -354,7 +354,7 @@ public function upgrade(
 
 This function upgrades a single submission from the old assignment type to the new one. In this case it involves copying all the files from the old filearea to the new one. There is a helper function available in the assignment class for this (Note: the copy will be fast as it is just adding rows to the files table). If this function returns false, the upgrade will be aborted and rolled back.
 
-#### is_empty()
+#### is_empty() {/* #is_empty */}
 
 ```php
 public function is_empty(stdClass $submission) {
@@ -364,7 +364,7 @@ public function is_empty(stdClass $submission) {
 
 If a plugin has no data to show then this function should return true from the `is_empty()` function. This prevents a table row from being added to the feedback summary for this plugin. It is also used to check if a grader has tried to save feedback with no data.
 
-#### get_file_areas()
+#### get_file_areas() {/* #get_file_areas */}
 
 ```php
 public function get_file_areas() {
@@ -374,7 +374,7 @@ public function get_file_areas() {
 
 A plugin should implement `get_file_areas` if it supports saving of any files to moodle - this allows the file areas to be browsed by the moodle file manager.
 
-#### delete_instance()
+#### delete_instance() {/* #delete_instance */}
 
 ```php
 public function delete_instance() {
@@ -390,7 +390,7 @@ public function delete_instance() {
 
 This function is called when a plugin is deleted. Note only database records need to be cleaned up - files belonging to fileareas for this assignment will be automatically cleaned up.
 
-#### Gradebook features
+#### Gradebook features {/* #gradebook-features */}
 
 ```php
 public function format_for_gradebook(stdClass $grade) {
@@ -510,9 +510,9 @@ public function grading_batch_operation($action, $users) {
 
 These two callbacks allow adding entries to the batch grading operations list (where you select multiple users in the table and choose e.g. "Lock submissions" for every user). The action is passed to "grading_batch_operation" so that multiple entries can be supported by a plugin.
 
-## Other features
+## Other features {/* #other-features */}
 
-### Add calendar events
+### Add calendar events {/* #add-calendar-events */}
 
 <Since
   version="3.1"

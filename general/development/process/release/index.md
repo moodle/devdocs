@@ -7,7 +7,7 @@ tags:
 sidebar_position: 7
 ---
 
-## 8 weeks prior
+## 8 weeks prior {/* #8-weeks-prior */}
 
 | # | Major | Minor | Task | Responsibility |
 | :---: | :---: | :---: | --- | --- |
@@ -17,7 +17,7 @@ sidebar_position: 7
 | 4. | &#10003; |  | <ul><li>Move QA tests for new features in old release with automated tests from [MDLQA-1](https://moodle.atlassian.net/browse/MDLQA-1) to [MDLQA-5249](https://moodle.atlassian.net/browse/MDLQA-5249).</li><li>Remind developers to add the `qa_test_required` label to the tracker issue of new features/improvements that get integrated without automated tests. Developers need to comment on what needs to be covered by the QA test and indicate if the issue's testing instructions, or part of it, can be used to write the QA test.</li></ul> | Testing Maintainer |
 | 5. | &#10003; |  | <ul><li>Create a "Must fix for X.Y" version in the Tracker and adjust the ["TR - Set integration priority to one"](https://ci.moodle.org/view/Tracker/job/TR%20-%20Set%20integration%20priority%20to%20one/) and ["TR - Move reopened out from current"](https://ci.moodle.org/view/Tracker/job/TR%20-%20Move%20reopened%20out%20from%20current/) jobs in **all CI servers** to point to it.</li><li>Comment about its creation within HQ so people can apply this to the "Fix Version/s" field in the Tracker.</li><li>Confirm that the following filters based on the [All "must fix" issues](https://moodle.atlassian.net/issues/?filter=21363) filter, and are used on the [Release urgent dashboard](https://moodle.atlassian.net/secure/Dashboard.jspa?selectPageId=16582), look and work as expected:<ul><li>[release urgent - Peer review list](https://moodle.atlassian.net/issues/?filter=18596)</li><li>[release urgent (must fix) - up for grabs](https://moodle.atlassian.net/issues/?filter=18594)</li><li>[release urgent- current HQ work](https://moodle.atlassian.net/issues/?filter=18861)</li></ul></li><li>Rename the [Release urgent dashboard](https://moodle.atlassian.net/secure/Dashboard.jspa?selectPageId=16582) to indicate the version for the upcoming release (QA part of the dashboard will not work yet)</li></ul> | Integration Team |
 
-## 7 weeks prior
+## 7 weeks prior {/* #7-weeks-prior */}
 
 | # | Major | Minor | Task | Responsibility |
 | :---: | :---: | :---: | --- | --- |
@@ -26,7 +26,7 @@ sidebar_position: 7
 | 3. | &#10003; |  | <ul><li>Check [closed qa_test_required-labelled issues](https://moodle.atlassian.net/issues/?jql=labels%20%3D%20qa_test_required%20AND%20status%20%3D%20Closed) and create new QA tests as required.</li><li>Let the community know [QA testing](../testing/qa.md) starts in two weeks and how they can participate.</li></ul> | Testing Maintainer |
 | 4. | &#10003; |  | Warn external developers about the impending code freeze in a post to the [General developer forum](http://moodle.org/mod/forum/view.php?id=55). ([example](https://moodle.org/mod/forum/discuss.php?d=225854)) | Platform Manager |
 
-## 5 weeks prior
+## 5 weeks prior {/* #5-weeks-prior */}
 
 | # | Major | Minor | Task | Responsibility |
 | :---: | :---: | :---: | --- | --- |
@@ -44,7 +44,7 @@ sidebar_position: 7
 | 12. | &#10003; |  | Review standards certifications (Open Badges, LTI, etc) and schedule in recertification to be performed. | Product delivery lead |
 | 13. | &#10003; |  | Bump the priority of all the minor new features and improvements being must-fix or already under IR/CLR with X.Y as only affected version. Use [this search to find them](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDL%20AND%20resolution%20%3D%20Unresolved%20%20AND%20type%20!%3D%20%22Bug%22%20AND%20priority%20%3C%20%22Major%22%20%20AND%20(fixversion%20in%20(versionMatches(%22Must%20fix%20for%20.*%22))%20OR%20(%22Component%20Lead%20Review%22%20IS%20NOT%20EMPTY%20AND%20affectedversion%20%3D%204.1))) (note that it will need to be adjusted for current X.Y version). Standard message will be used to explain the priority raise. | Integration Team |
 
-## 4 weeks prior
+## 4 weeks prior {/* #4-weeks-prior */}
 
 | # | Major | Minor | Task | Responsibility |
 | :---: | :---: | :---: | --- | --- |
@@ -57,7 +57,7 @@ sidebar_position: 7
 | 7. | &#10003; |  | Push any plugins to the plugins database which were previously a part of core. | Plugins Liaison |
 | 8. | &#10003; |  | Tidy up current latest en version of Moodle Docs prior to copying it to create new version wiki as described in [New docs version process](./newuserdocs.md). | Community Manager |
 
-## 3 weeks prior
+## 3 weeks prior {/* #3-weeks-prior */}
 
 | # | Major | Minor | Task | Responsibility |
 | :---: | :---: | :---: | --- | --- |
@@ -67,7 +67,7 @@ sidebar_position: 7
 | 4. | &#10003; |  | Review issues with labelled with [`dev_docs_required`](https://moodle.atlassian.net/issues/?filter=11824&jql=labels%20in%20%28dev_docs_required%29%20AND%20resolution%20%3D%20fixed%20ORDER%20BY%20assignee%20ASC%2C%20created%20ASC), prompting assigned developers to create/update this documentation and remove this label when relevant docs are updated. | Product delivery lead |
 | 5. | &#10003; | &#10003; | Organise a meeting to verify how everything is going and, before the end of the week, decide (dev leaders from Platform, Educational solutions, Cloud, Apps, Workplace & integrators) if there are real reasons for delaying any release. Whenever a delay is agreed, run the *"Release delaying process"* (doc) actions ASAP.<br/><br/>**Important note**: ASAP stands for as soon as possible ;-), the delay needs to happen before the last week before release begins (there are flows changing that week requiring the decision and actions to be taken and applied earlier) | Product delivery lead |
 
-## 2 weeks prior
+## 2 weeks prior {/* #2-weeks-prior */}
 
 | # | Major | Minor | Task | Responsibility |
 | :---: | :---: | :---: | --- | --- |
@@ -79,7 +79,7 @@ sidebar_position: 7
 | 6. | &#10003; | &#10003; | For major releases, use (clone if needed) [MDL-75906](https://moodle.atlassian.net/browse/MDL-75906) to keep the security.txt files in all supported branches updated. For minor releases, also check the security.txt expiry dates in all security supported branches in case known release delays will result in any security.txt expiring before the next release - in that case relevant branches should also be updated. | Security Officer |
 | 7. | &#10003; | &#10003; | Identify issues that may block the release (for example, security, must-fix issues, etc.) and confirm with team leads. This is to ensure that these issues are prioritised and allow us to be able to land them as early as possible and ensure a timely release schedule. | Integration Lead |
 
-## 1 week prior
+## 1 week prior {/* #1-week-prior */}
 
 | # | Major | Minor | Task | Responsibility |
 | :---: | :---: | :---: | --- | --- |
@@ -99,9 +99,9 @@ sidebar_position: 7
 | 14. | &#10003; |  | Go through all points listed under 1 week prior in [New docs version process](./newuserdocs.md). | Community Manager |
 | 15. | &#10003; |  | Update the `BRANCHLIST` and `VERSIONLIST` in the [JSDoc](https://github.com/moodle/jsdoc) and [PHPDoc](https://github.com/moodle/phpdoc) repositories with the list of supported versions. These are built on a Sunday so this should be done in the final week before release. | Integration Team |
 
-## Releasing
+## Releasing {/* #releasing */}
 
-### Packaging
+### Packaging {/* #packaging */}
 
 :::info
 
@@ -126,7 +126,7 @@ This should happen immediately before the next integration cycle begins on Monda
 | 13. | &#10003; |  | <ul><li>Create the new `MOODLE_XY_STABLE` and `lastbased-MOODLE_XY_STABLE` branches in the security repo (branching from the just created upstream `MOODLE_XY_STABLE` branch).</li><li>Cherry pick any security commit present in the security repository's `main` branch to the new `MOODLE_XY_STABLE` branch (note that normally there should not be any, see point #1 check list above).</li><li>Verify the new security jobs exist for the new branch and check it's working in all servers, keeping only enabled the public one.</li></ul> | Integration Team |
 | 14. | &#10003; |  | Protect the MOODLE_XY_STABLE branches in github interface to prevent non-FF accidents ( [MDLSITE-4183](https://moodle.atlassian.net/browse/MDLSITE-4183) ) | Integration Team |
 
-### Release day
+### Release day {/* #release-day */}
 
 :::info
 
@@ -152,7 +152,7 @@ Usually on Monday
 | 14. | &#10003; | &#10003; | Update release schedule image on [Releases page](../../../releases.md#version-support) | Platform Manager |
 | 15. | &#10003; |  | Important: This must be done **once it's already release day @ UTC** (aka, after Australia/Perth 08:00) or the **queues manage with hold them again** because it's still "last week before release".<br/>The `integration_held` label will be removed only from [**bug issues** awaiting integration](https://moodle.atlassian.net/issues/?jql=filter%3D13669%20AND%20type%20in%20(bug%2C%20task%2C%20Sub-task)) and [**bug issues** awaiting component leads review](https://moodle.atlassian.net/issues/?jql=filter%3D%2023331%20AND%20type%20in%20(bug%2C%20task%2C%20Sub-task)); they correspond to last-week bugs that were held because of them being unrelated with the release. Now they can be processed, under on-sync rules. Standard message will be used to explain the un-hold. | Integration Team |
 
-## 1 week after
+## 1 week after {/* #1-week-after */}
 
 | # | Major | Minor | Task | Responsibility |
 | :---: | :---: | :---: | --- | --- |
@@ -165,7 +165,7 @@ Usually on Monday
 | 7. | &#10003; |  | **Deprecations:**<ul><li>If not yet present, create the deprecation epic for the next series (`X+1.0`) similar to [MDL-79719](https://moodle.atlassian.net/browse/MDL-79719). The issue can be based/cloned from the previous deprecation epic and linked ("has to be done after") with it.</li><li>Add standard issues to it:<ul><li>Final deprecation of `lib/deprecatedlib.php` (like [MDL-79720](https://moodle.atlassian.net/browse/MDL-79720))</li><li>Removal of deprecated Behat steps (like [MDL-79721](https://moodle.atlassian.net/browse/MDL-79721))</li><li>Removal of strings (like [MDL-78078](https://moodle.atlassian.net/browse/MDL-79722)) and</li><li>Removal of renamed classes ([MDL-79723](https://moodle.atlassian.net/browse/MDL-79723)).</li></ul></li><li>Review [how previous deprecation epics are going](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDL%20AND%20text%20~%20%22Collect%20together%20deprecated%20and%20planned%20code%20changes%20for%20Moodle%22%20AND%20affectedVersion%20in%20(releasedVersions()%2C%20%22Future%20Dev%22)%20AND%20resolution%20%3D%20Unresolved%20ORDER%20BY%20issuekey%20%20DESC) and share about them.</li></ul><br/>**Libraries:**<ul><li>Create the next third party libraries epic for `X.Y+1`, similar to [MDL-81653](https://moodle.atlassian.net/browse/MDL-81653). The issue should refer to the list of [Moodle libraries credits](../../../community/credits/thirdpartylibs.md). The issue can be based/cloned on the previous one and linked ("has to be done after") with it. **Drag/link opened issues from the previous one**, avoiding leaving unfinished stuff.</li><li>Review [how previous library review epics are going](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDL%20AND%20(summary%20~%20%22Review%20third%20party%20libraries%20for%20new%20versions%22%20OR%20summary%20~%20%22Review%20third-party%20libraries%20for%20upgrade%22)%20AND%20affectedVersion%20in%20(releasedVersions()%2C%20%22Future%20Dev%22)%20AND%20resolution%20%3D%20Unresolved%20ORDER%20BY%20issuekey%20%20DESC) and share about them.</li></ul> | Integration Team |
 | 8. | &#10003; |  | Update test matrix at [moodle-plugin-ci](https://github.com/moodlehq/moodle-plugin-ci/) GHA and Travis tests workflows. For `X.` release also update `*.dist.yml` templates to reflect current major branch. | Integration Team / moodle-plugin-ci maintainer |
 
-## 2 weeks after
+## 2 weeks after {/* #2-weeks-after */}
 
 | # | Major | Minor | Task | Responsibility |
 | :---: | :---: | :---: | --- | --- |
@@ -176,7 +176,7 @@ Usually on Monday
 | 5. | &#10003; |  | <p>Prepare for the next version of PHP.</p> <p>We need to ensure that the Moodle versions that will support the next version of PHP are compatible with it.</p> <ul><li>If an epic has not been created yet, create an epic issue for it (see [MDL-80117](https://moodle.atlassian.net/browse/MDL-80117) as an example)</li> <li>Go through the list of changes for the upcoming PHP version, identify potential breaking changes in Moodle and add them to the epic.</li></ul> <p>Related links:</p> <ul><li>[PHP versions](https://www.php.net/supported-versions.php)</li> <li>[PHP.Watch](https://php.watch/versions)</li> </ul> | Integration team |
 | 6. | &#10003; |  | [Create a fork](../../../documentation/forking-versions.md) in Developer documentation for the major release. | Integration Team |
 
-## 1 month after
+## 1 month after {/* #1-month-after */}
 
 | # | Major | Minor | Task | Responsibility |
 | :---: | :---: | :---: | --- | --- |
@@ -184,6 +184,6 @@ Usually on Monday
 | 2. | &#10003; |  | Upgrade all the Moodle CI sites to recent major release by configuring the "Moodle CI Auto Upgrade" job in all them. | Integration Team |
 | 3. | &#10003; |  | Confirm that there isn't any remaining [`integration_held`](https://moodle.atlassian.net/issues/?jql=filter%3D13669%20OR%20filter%3D23331) issue from latest release, proceeding to un-hold them immediately. Note that there may exist [other "held" issues](https://moodle.atlassian.net/issues/?filter=13669&jql=project%20%3D%20MDL%20AND%20labels%20in%20(integration_held)%20ORDER%20BY%20%22Integration%20priority%22%20DESC%2C%20priority%20DESC%2C%20votes%20DESC%2C%20%22Last%20comment%20date%22%20ASC), unrelated with latest release. This process step does not affect them. | Integration Team |
 
-## See also
+## See also {/* #see-also */}
 
 - [Deprecation process](../../policies/deprecation/index.md)

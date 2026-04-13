@@ -11,12 +11,12 @@ This document uses a hypothetical module plugin named `myplugin` as the focal po
 
 There is also a [Cache API - Quick reference](https://docs.moodle.org/dev/Cache_API_-_Quick_reference) if you would rather read that.
 
-## Basic usage
+## Basic usage {/* #basic-usage */}
 
 Getting started with the Cache API is exceptionally straightforward. It's designed for quick and easy usage, emphasizing self-containment.
 All you need to do is add a definition for your cache and you are ready to start working with the Cache API.
 
-### Creating a definition
+### Creating a definition {/* #creating-a-definition */}
 
 Cache definitions exist within the `db/caches.php` file for a component/plugin.
 
@@ -57,7 +57,7 @@ Using the example above you would have to define:
 $string['cachedef_somedata'] = 'This is the description of the cache somedata';
 ```
 
-### Getting a cache object
+### Getting a cache object {/* #getting-a-cache-object */}
 
 Once your definition has been created you should bump the version number so that Moodle upgrades and processes the definitions file at which point your definition will be useable.
 
@@ -69,7 +69,7 @@ $cache = cache::make('mod_myplugin', 'somedata');
 
 The `cache::make()` method is a factory method, it will create a cache object to allow you to work with your cache. The cache object will be one of several classes chosen by the API based upon what your definition contains. All of these classes will extend the base cache class, and in nearly all cases you will get one of `cache_application`, `cache_session`, or `cache_request` depending upon the mode you selected.
 
-### Using your cache object
+### Using your cache object {/* #using-your-cache-object */}
 
 Once you have a cache object (will extend the cache class and implements `cache_loader`) you are ready to start interacting with the cache.
 
@@ -125,7 +125,7 @@ $result = $cache->delete_many(['key1', 'key3']);
 That covers the basic operation of the Cache API.<br />
 In many situations there is not going to be any more to it than that.
 
-## Ad-hoc Caches
+## Ad-hoc Caches {/* #ad-hoc-caches */}
 
 This is the alternative method of using the cache API.<br />
 It involves creating a cache using just the required params at the time that it is required. It doesn't require that a definition exists making it quicker and easier to use, however it can only use the default settings and is only recommended for insignificant caches (rarely used during operation, never to be mapped or customised, only existing in a single place in code).
@@ -144,7 +144,7 @@ Don't be lazy, if you don't have a good reason to use an ad-hoc cache you should
 
 :::
 
-## The definition
+## The definition {/* #the-definition */}
 
 The above section illustrated how to create a basic definition, specifying just the area name (the key) and the mode for the definition. Those being the two required properties for a definition.
 
@@ -182,7 +182,7 @@ $definitions = [
 ];
 ```
 
-### Setting requirements
+### Setting requirements {/* #setting-requirements */}
 
 The definition can specify several requirements for the cache.
 
@@ -200,7 +200,7 @@ If true the keys won't be hashed before being passed to the cache store for gets
 - `requirelockingread`: [bool] If set to true then a lock will be gained before reading from the cache store. It is recommended not to use this setting unless 100% absolutely positively required.
 - `requirelockingbeforewrite`:[bool] If set to true then a lock must be gained and held during expensive computation such as the generation of modinfo before writing to the cache store by the calling code. This is to prevent cache stampedes. After gaining the lock code must check to ensure the cache hasn't already been updated by another process. This is so far only used by course `modinfo` application caches presently.
 
-### Cache modifiers
+### Cache modifiers {/* #cache-modifiers */}
 
 You are also to modify the way in which the cache is going to operate when working for your definition.
 
@@ -220,7 +220,7 @@ As well as persistence you can also set a maximum number of items that the cache
 - `maxsize`: [int] If set this will be used as the maximum number of entries within the cache store for this definition.<br />It's important to note that cache stores don't actually have to acknowledge this setting or maintain it as a hard limit.
 - `canuselocalstore`: [bool] This setting specifies whether the cache can safely be local to each frontend in a cluster which can avoid latency costs to a shared central cache server. The cache needs to be carefully written for this to be safe. It is conceptually similar to using `$CFG->localcachedir` (can be local) vs `$CFG->cachedir` (must be shared). Look at `purify_html()` in `lib/weblib.php` for an example.
 
-### Overriding a cache loader
+### Overriding a cache loader {/* #overriding-a-cache-loader */}
 
 :::danger
 
@@ -233,7 +233,7 @@ It allows you to create your own cache loader and have it be used instead of the
 - `overrideclass`: [string] A class to use as the loader for this cache. This is an advanced setting and will allow the developer of the definition to take 100% control of the caching solution.<br />Any class used here must inherit the `cache_loader` interface and must extend default cache loader for the mode they are using.
 - `overrideclassfile`: [string] Suplements the above setting indicated the file containing the class to be used. This file is included when required.
 
-### Specifying a data source
+### Specifying a data source {/* #specifying-a-data-source */}
 
 This is a great wee feature, especially if your code is object orientated.
 
@@ -250,7 +250,7 @@ In Moodle versions prior to 3.8.6 and 3.9.3, if caching is disabled then *nothin
 
 :::
 
-### Misc settings
+### Misc settings {/* #misc-settings */}
 
 The following are stand along settings that don't fall into any of the above categories.
 
@@ -259,18 +259,18 @@ The following are stand along settings that don't fall into any of the above cat
 - `sharingoptions`: [int] The sharing options that are appropriate for this definition. Should be the sum of the possible options.
 - `defaultsharing`: [int] The default sharing option to use. It's highly recommended that you don't set this unless there is a very specific reason not to use the system default.
 
-## Localized stores for distributed high performance caching
+## Localized stores for distributed high performance caching {/* #localized-stores-for-distributed-high-performance-caching */}
 
 Most cache definitions are simple in that the code expects to be able to purge the cache, or update it, and for this to be universally available from then on to all code which loads from this cache again. But as you scale up having a single mega shared cache store doesn't work well for a variety of reasons, including extra latency between multiple front ends and the shared cache service, the number of connections the cache server can handle, the cost of IO between services, and depending on the cache definition issues with locking while writing.
 
 So if you want very high performance caching then you need to write you code so that it can support being distributed, or localized, which means that each front end can have it's own independent cache store. But this architecture means that you have no direct way to communicate from code running in one place to invalidate the caches on all the other front ends. In order to achieve this you need to carefully construct cache keys so that if the content changes then it uses a new cache key, which will of course be a cache miss and then it will regenerate using fresh data. There are multiple ways to achieve this, a couple common example strategies are below.
 
-### When should you localize?
+### When should you localize? {/* #when-should-you-localize */}
 
 Not all caches are good candidates to localize and some can have a detrimental effect if localized for the wrong reasons.
 ![When to localize a cache](./_index/When_to_localize_cache.png)
 
-### Versioned caches
+### Versioned caches {/* #versioned-caches */}
 
 When data changes, you can often identify a 'version' by either a numeric time value, or an incremented version number, in the database.
 
@@ -286,19 +286,19 @@ These functions work efficiently with multi-layer caches:
 
 At each point, the cache stores only a single version, which is important for large cached data such as course modinfo because the older approaches (below) can waste cache memory by storing older unnecessary versions.
 
-### Version numbers as key suffix
+### Version numbers as key suffix {/* #version-numbers-as-key-suffix */}
 
 An earlier approach is using the same type of version number and appending that to your key. This works, but uses more storage in the cache, especially if data items are large or change frequently.
 
-### Version numbers as value suffix instead of key suffix
+### Version numbers as value suffix instead of key suffix {/* #version-numbers-as-value-suffix-instead-of-key-suffix */}
 
 Another earlier approach was to store revision numbers inside the cache value. This avoids storing duplicate copies of the same cache entry but is not recommended because it is difficult to ensure correct data on multi-level caches. Instead, the versioned cache functions should now be used.
 
-### Incrementing version numbers
+### Incrementing version numbers {/* #incrementing-version-numbers */}
 
 If you increment a number for each version, you need to use database transactions or locks to ensure that the same number is not used twice due to race conditions.
 
-### Timestamps as version numbers
+### Timestamps as version numbers {/* #timestamps-as-version-numbers */}
 
 Another common approach is to use a timestamp, this is how some of the core cache numbers work, see `increment_revision_number()` for some examples. This has the benefit of not needing any transaction or locking, but you do run the risk of two processes clashing if they happen to run in the same second.
 
@@ -311,7 +311,7 @@ https://github.com/moodle/moodle/blob/main/lib/datalib.php#L1131-L1145
 It works best with a cache store that supports Least Recently Used garbage collection, or when using the versioned cache functions.
 :::
 
-### Content hashes as keys
+### Content hashes as keys {/* #content-hashes-as-keys */}
 
 A great strategy is to use a digest or hash such as `sha1` / `sha256` of the content stored inside the cache, or in even more advanced scenarios a hash of the dependencies of the content in the cache. This guarantees that the key will be unique, and can be truly distributed without any synchronous communication between the front ends.
 
@@ -327,7 +327,7 @@ This is a very common strategy is many distributed systems, outside of the conte
 
 This strategy works well if you may periodically change back and forth to previous states which will still be present and so be immediate hits without re-warming. It works best with a cache store that supports Least Recently Used garbage collection.
 
-### Primary and Final caches
+### Primary and Final caches {/* #primary-and-final-caches */}
 
 Because HTTP requests are generally assigned randomly or round-robin to front ends, when a cache item version changes you will now effectively have an empty cache on every front end. As you get the same cache item again and again on each front end it will continue to be a cache miss on each local box until they are all warm, which can ironically mean that on average for a fast-changing, but not often requested cache item, your cache hit rate will be very low and much worse than if you had a shared cache. The solution here is to have multiple levels of caches set up, a local cache backed by a shared cache. You do not need to do anything special in the code to support this if your cache is already localizable, the MUC manages this for you, ie if you request a key missing from the local cache it will then request it from the shared cache. If present it will copy it back to the local cache and then return the value. If it is not present in either then your fallback code will generate the item, and it will be written to both cache stores at the same time.
 
@@ -337,16 +337,16 @@ A good rule of thumb is to pair similar types of local and shared caches togethe
 
 As you scale even bigger, a new bottleneck can appear when purging a shared disk cache ie when you deploy a new version. A full purge needs to iterate over and remove and sync a very large number of files, which can take some time. See [MDL-69088](https://moodle.atlassian.net/browse/MDL-69088) for a proposed fix.
 
-### Beware fast churning keys
+### Beware fast churning keys {/* #beware-fast-churning-keys */}
 
 A big concern when designing a cache is how fast you anticipate it changing. If it contains very fast moving data but sparsely requested data (see above) then you can end up in a situation where you are effectively just using the shared final cache, and wasting latency and space and IO cloning data to the local cache where is may not be hit again very much. As always caching is a balancing act trading off between CPU, time and disk, and ultimately money.
 
 Even if your cache is able to use a local store that doesn't mean it actually will be configured to be local (and your code can't tell either way). So a wasteful cache item will consume much more space storing all the previous versions of its items even if it isn't localized, and it will be much worse if it is.
 
-### Time-To-Live for distributed caches
+### Time-To-Live for distributed caches {/* #time-to-live-for-distributed-caches */}
 
 Another consideration is the total size of your cache stores across all the front ends. As cache keys change they are never be invalidated or purged. So you should have in place some process to garbage collect stale items. This is more a concern for the cache store implementations and the configuration but worth considering. Some stores are deleted on upgrade, or have a Time-To-Live or a Least Recently Used strategy for deleting stale items.
 
-## Miscellaneous
+## Miscellaneous {/* #miscellaneous */}
 
 - Checkout important [discussion about the Cache API at the Moodle developer chat](https://moodle.org/local/chatlogs/index.php?q=cache)

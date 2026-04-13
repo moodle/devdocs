@@ -15,7 +15,7 @@ Tasks will only run as often as cron is run in Moodle. It is recommended that cr
 
 :::
 
-## Creating scheduled tasks
+## Creating scheduled tasks {/* #creating-scheduled-tasks */}
 
 To create a new scheduled task and set its default configuration you should:
 
@@ -23,7 +23,7 @@ To create a new scheduled task and set its default configuration you should:
 2. create an entry for your scheduled task in the `db/tasks.php` file within your plugin; and
 3. increment the version number for your plugin.
 
-### Task class
+### Task class {/* #task-class */}
 
 The class for your scheduled task, which extends the `\core\task\scheduled_task` class, should be in the `classes/task` directory of your plugin.
 
@@ -59,19 +59,19 @@ class do_something extends \core\task\scheduled_task {
 
 </details>
 
-### db/tasks.php
+### db/tasks.php {/* #dbtasksphp */}
 
 <!-- markdownlint-disable no-inline-html -->
 import { DbTasksPHP } from '../../_files';
 
 <DbTasksPHP />
 
-## Running tasks for disabled plugins
+## Running tasks for disabled plugins {/* #running-tasks-for-disabled-plugins */}
 
 In rare cases, you may want the scheduled tasks for a plugin to run, even when the plugin is disabled. One example use-case is in Enrolment plugins where a disabled plugin must still clear up data.
 
 To support this, your scheduled task must override the `get_run_if_component_disabled()` method to return `true`.
 
-## Debugging
+## Debugging {/* #debugging */}
 
 When called from the command line for testing purposes errors can be hidden and a misleading error about locks can be displayed. You can view more information of the error using the [`--showdebugging`](https://docs.moodle.org/en/Administration_via_command_line#Scheduled_tasks) parameter when calling the scheduled task from the CLI.

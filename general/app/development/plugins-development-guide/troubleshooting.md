@@ -6,11 +6,11 @@ tags:
  - Moodle App
 ---
 
-## Plugin changes are not picked up in the app
+## Plugin changes are not picked up in the app {/* #plugin-changes-are-not-picked-up-in-the-app */}
 
 Remember to go through the list of tips in the [Seeing plugin changes in the app](./index.md#seeing-plugin-changes-in-the-app) section.
 
-## Invalid response received
+## Invalid response received {/* #invalid-response-received */}
 
 You might get this error when using the [core-site-plugins-call-ws](./api-reference.md#core-site-plugins-call-ws) directive or similar.
 
@@ -32,7 +32,7 @@ Similarly, if the Web Service returns `null` you need to tell the app not to exp
 </ion-button>
 ```
 
-## I can't return an object or array in `otherdata`
+## I can't return an object or array in `otherdata` {/* #i-cant-return-an-object-or-array-in-otherdata */}
 
 If you try to return an object or an array in any field inside `otherdata` in [content responses](./api-reference.md#content-responses), the Web Service call will fail with the following error:
 

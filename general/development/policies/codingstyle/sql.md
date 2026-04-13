@@ -14,7 +14,7 @@ Full SQL queries are used in `$DB->get_records_sql()`, `$DB->get_recordset_sql()
 
 SQL fragments may be used in DML method with _select() suffix.
 
-## General rules
+## General rules {/* #general-rules */}
 
 - Use parameter placeholders.
 - All SQL keywords are in UPPER CASE.
@@ -27,7 +27,7 @@ SQL fragments may be used in DML method with _select() suffix.
 - Never use AS keyword for table aliases.
 - Use `<>` for comparing if values are not equals and do not use `!=`.
 
-## Double quotes
+## Double quotes {/* #double-quotes */}
 
 All sql queries and fragments should be enclosed in double quotes, do not concat SQL from multiple parts if possible. The single quotes are used for sql strings, it also helps with visual highlighting and SQL code completion in some IDEs.
 
@@ -35,7 +35,7 @@ All sql queries and fragments should be enclosed in double quotes, do not concat
 $records = $DB->get_records_select('some_table', "id > ?", [111]);
 ```
 
-## Parameter placeholders
+## Parameter placeholders {/* #parameter-placeholders */}
 
 All variable query parameters must be specified via placeholders. It is possible to use three different types of placeholders: `:named`, `?` and `$1`. It is recommended to use named parameters if there is more than one parameter.
 
@@ -46,15 +46,15 @@ $sql = "SELECT *
 $records = $DB->get_records_sql($sql, ['above'=>111]);
 ```
 
-## Indentation
+## Indentation {/* #indentation */}
 
 ![sql_indentation.png](./_sql/sql_indentation.png)
 
-## Subqueries
+## Subqueries {/* #subqueries */}
 
 There are no strict rules for subquery indentation, the deciding factor is good readability - see [MDLSITE-1914](https://moodle.atlassian.net/browse/MDLSITE-1914).
 
-## See also
+## See also {/* #see-also */}
 
 - [Data manipulation API](/docs/apis/core/dml)
 - [Database](https://docs.moodle.org/dev/Database)

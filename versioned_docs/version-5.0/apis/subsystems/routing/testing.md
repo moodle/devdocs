@@ -7,7 +7,7 @@ tags:
 
 One of the benefits of using routes is how easy they are to unit test. It is also possible to test [parameters](./parameters.md) for validation, which is especially useful for [mapped parameters](./parameters.md#mapped-parameters).
 
-## The `\route_testcase` testcase class
+## The `\route_testcase` testcase class {/* #the-route_testcase-testcase-class */}
 
 When testing routes your test should extend the `\route_testcase` base testcase, which is loaded as part of the PHPUnit Bootstrap.
 
@@ -15,7 +15,7 @@ This testcase provides a number of helper methods to create environments to test
 
 When unit testing code it is usually desirable to test only your code without all of the additional unrelated code typically included in the setup of routes. To make this easier the testcase includes methods to create a simplified router, to add one or more routes from a class, to create requests, and to route requests through the router to the relevant route.
 
-## Creating a simplified app
+## Creating a simplified app {/* #creating-a-simplified-app */}
 
 You can quickly and easily create a copy of the Moodle Router using the `route_testcase::get_router()` method.
 
@@ -35,7 +35,7 @@ This router contains _all_ possible routes in Moodle. When writing unit tests it
 
 :::
 
-## Specifying routes to include
+## Specifying routes to include {/* #specifying-routes-to-include */}
 
 When calling `get_router()` the Router will use [Dependency Injection](../../core/di/index.md) to inject all dependencies of the router. Amongst these dependencies is an implementation of    the `\core\router\route_loader_interface`. The default implementation of this is the `\core\route\route_loader`.
 
@@ -49,7 +49,7 @@ Because the router uses DI to inject routes during its initialisation, all route
 
 :::
 
-### Adding existing routes
+### Adding existing routes {/* #adding-existing-routes */}
 
 You can easily add existing routes to mocking route loader either individually, or by including all routes in a class.
 
@@ -83,7 +83,7 @@ final class my_test extends \route_testcase {
 
 ```
 
-### Using the app to handle a request
+### Using the app to handle a request {/* #using-the-app-to-handle-a-request */}
 
 The `\route_testcase` also includes several methods to simplify generating a Request object, and having routing it within the Router.
 

@@ -13,11 +13,11 @@ tags:
 
 Real users systematically try each feature in Moodle and ensure that it works in the current version of the Moodle code. These tests are repeated in a series of cycles, around 4 - 6 weeks before each major release, once all major features have landed.
 
-## Getting involved
+## Getting involved {/* #getting-involved */}
 
 Would you like to help with QA testing? If so, please make sure you have created an account in the [Moodle tracker](../../tracker.md) and you're subscribed to the [Testing and QA forum](https://moodle.org/mod/forum/view.php?id=56) in order to receive QA testing news updates.
 
-## Running tests
+## Running tests {/* #running-tests */}
 
 1. Go to the [Moodle QA testing dashboard](https://moodle.atlassian.net/jira/dashboards/10612) and choose a test from the list of current QA cycle open issues. When viewing a test, if you wish, you can click the 'Assign to me' link on the right, so that nobody else chooses the same test to run. (If you then find you are unable to run the test, you can click the Assign button and set the assignee as 'Unassigned'.) Please note:
    - Only assign an issue to yourself which no one else is testing (Assignee = Unassigned).
@@ -37,7 +37,7 @@ If you notice that the test description is out-of-date, add a comment mentioning
 
 :::
 
-## Any questions?
+## Any questions? {/* #any-questions */}
 
 If there is anything you are unsure of, such as whether to mark a test as failed, or you have any other questions, please ask in one of the following places:
 
@@ -51,7 +51,7 @@ This chat was previously hosted on Telegram. All message history has been migrat
 
 - [Testing and QA forum](https://moodle.org/mod/forum/view.php?id=56)
 
-## Moodle QA Testing Site
+## Moodle QA Testing Site {/* #moodle-qa-testing-site */}
 
 The [Moodle QA Testing Site](https://qa.moodledemo.net/) is updated daily at around 13:00 UTC with the latest bug fixes to enable you to re-run QA tests.
 
@@ -71,7 +71,7 @@ If you require admin access to the Moodle QA Testing Site for running certain te
 
 :::
 
-## Failed tests
+## Failed tests {/* #failed-tests */}
 
 So you ran a test and it failed? Congratulations on finding a bug! Please do the following.
 
@@ -87,7 +87,7 @@ Adding details for a link to the QA issue
 8. (Optional) Add yourself as a watcher to the MDL issue so that you receive email notification when the issue is fixed.
 9. When the MDL issue is fixed, hopefully within a day or two, the QA test can be reset and can then be run again.
 
-## Resetting tests
+## Resetting tests {/* #resetting-tests */}
 
 :::info Note for integrators
 
@@ -101,7 +101,7 @@ After integrating a fix:
 
 The tester will then receive email notification that the bug is fixed and will hopefully decide to run the test again soon.
 
-## Fixing existing bugs
+## Fixing existing bugs {/* #fixing-existing-bugs */}
 
 At the beginning of the QA cycle, all bugs identified (both new and existing) are investigated promptly and hopefully fixed.
 
@@ -109,7 +109,7 @@ When we are close to the scheduled release date (1-2 weeks prior), developers mu
 
 Thus, at this point in the QA cycle, any bugs which also affect existing versions of Moodle are labelled `qa_identified` (and the label `mdlqa` removed) for investigation after the release.
 
-## Testing tips
+## Testing tips {/* #testing-tips */}
 
 When entering text into a form, try things like:
 
@@ -140,7 +140,7 @@ café
 
 :::
 
-## New QA tests required
+## New QA tests required {/* #new-qa-tests-required */}
 
 :::info Note for developers
 
@@ -153,7 +153,7 @@ If an issue fix cannot be covered by automated tests,
 
 QA tests will then be written and included in the next QA cycle. For issues with long testing instructions, several QA tests will be written to cover the issue. If appropriate, activities etc. will be set up on the [Moodle QA Testing Site](https://qa.moodledemo.net/) to enable the issue to be easily tested in future.
 
-### New features, and improvements
+### New features, and improvements {/* #new-features-and-improvements */}
 
 Where a new features or improvements would benefit from exploratory testing, you should:
 
@@ -166,7 +166,7 @@ When the next QA cycle is prepared, any issue with the `qa_test_required` label 
 
 :::
 
-## Updating tests
+## Updating tests {/* #updating-tests */}
 
 QA tests may become out-of-date due to User Interface changes, feature changes, and new features. If you would like to help with updating tests, you'll need to be a member of the test writers group in the Tracker.
 
@@ -181,7 +181,7 @@ If a test in the current QA cycle is marked as failed because it is out-of-date,
 
 :::
 
-## Writing new tests
+## Writing new tests {/* #writing-new-tests */}
 
 Would you like to help with writing new QA tests? To write new QA tests you will need to be a member of the test writers group in the Tracker.
 
@@ -219,7 +219,7 @@ To create a new QA test:
 
 :::
 
-## Automating a test
+## Automating a test {/* #automating-a-test */}
 
 1. Choose a test from the list [MDLQA tests with label mdlqa_conversion](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDLQA%20AND%20labels%20%3D%20mdlqa_conversion%20and%20status%20%3D%20Open).
 1. Create a new MDL issue with summary `Automate MDLQA-wxyz` and component `Automated functional tests` and any MDLQA component such as `Forum` which is also an MDL component.
@@ -234,7 +234,7 @@ When a test is automated, it needs to be moved from MDLQA-1 to MDLQA-5249.
 
 :::
 
-## Feedback
+## Feedback {/* #feedback */}
 
 Feedback on all aspects of our QA testing process is welcome.
 
@@ -244,7 +244,7 @@ If you have any questions or comments, please post in the [Testing and QA forum]
 
 :::
 
-## Previous QA cycles
+## Previous QA cycles {/* #previous-qa-cycles */}
 
 Comments on tests from previous QA cycles:
 
@@ -281,7 +281,7 @@ Comments on tests from previous QA cycles:
 - [Moodle 2.0 QA Cycle 2](https://moodle.atlassian.net/browse/MDLQA-328)
 - [Moodle 2.0 QA Cycle 1](https://moodle.atlassian.net/browse/MDLQA-150)
 
-## See also
+## See also {/* #see-also */}
 
 - [QA testing dashboard](https://moodle.atlassian.net/jira/dashboards/10612)
 - [Testing credits](../../../community/credits/testing.md)

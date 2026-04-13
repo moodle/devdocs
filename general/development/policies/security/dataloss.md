@@ -13,7 +13,7 @@ This page forms part of the [Moodle security guidelines](../security).
 
 :::
 
-## What is the danger?
+## What is the danger? {/* #what-is-the-danger */}
 
 This is more a symptom or other vulnerabilities, than a vulnerability in its own right.
 
@@ -21,12 +21,12 @@ For example, Evil Hacker can use cross-site request forgery or SQL injection to 
 
 However, it is also possible for users to accidentally destroy lots of data if the user-interface is badly designed and confusing.
 
-## How Moodle avoids this problem
+## How Moodle avoids this problem {/* #how-moodle-avoids-this-problem */}
 
 - Writing secure code so that data cannot be destroyed maliciously.
 - Trying to design clear interfaces, so that users understand the effects of their actions.
 
-## What you need to do in your code
+## What you need to do in your code {/* #what-you-need-to-do-in-your-code */}
 
 - Actions that destroy a significant amount of data should have a confirmation step.
   - Capabilities that let people destroy a lot of information should have `RISK_DATALOSS`.
@@ -37,11 +37,11 @@ However, it is also possible for users to accidentally destroy lots of data if t
   - [Command-line injection](./commandline-injection)
   - and so on.
 
-## What you need to do as an administrator
+## What you need to do as an administrator {/* #what-you-need-to-do-as-an-administrator */}
 
 - Be careful!
 
-## See also
+## See also {/* #see-also */}
 
 - [Security](../security)
 - [Coding](../../policies.md)
