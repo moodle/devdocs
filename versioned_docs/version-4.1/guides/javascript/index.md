@@ -36,7 +36,7 @@ available. You may find the following references particularly useful:
 JavaScript in Moodle is structured into ES2015 modules which are transpiled into the CommonJS format.
 
 Like our PHP classes and Mustache templates, our JavaScript modules each belong to a particular component
-and must be named according to our standard [name and namespace conventions](/general/development/policies/naming#javascript).
+and must be named according to our standard [name and namespace conventions](/general/development/policies/naming#JavaScript).
 
 The naming scheme for Moodle's JavaScript fits into the pattern:
 

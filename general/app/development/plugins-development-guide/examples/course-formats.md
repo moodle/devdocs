@@ -127,7 +127,7 @@ Then filter the list of sections in your template:
 
 ## Using JavaScript {/* #using-JavaScript */}
 
-You can also register custom formats using [JavaScript initialisation](../index.md#javascript-initialisation).
+You can also register custom formats using [JavaScript initialisation](../index.md#JavaScript-initialisation).
 
 For example, you can implement a single activity format returning the following data:
 

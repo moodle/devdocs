@@ -73,13 +73,13 @@ These are the configuration options common to most handlers, you can find specif
 |-----------------------------|-------------|-------------|
 | `delegate`                  | -           | Name of the delegate to register the handler in. See the following sections for available delegates. |
 | `method`                    | -           | Name of the PHP method used to retrieve the page content. |
-| `init`                      | -           | Name of the PHP method used during [JavaScript initialisation](./index.md#javascript-initialisation). |
+| `init`                      | -           | Name of the PHP method used during [JavaScript initialisation](./index.md#JavaScript-initialisation). |
 | `styles`                    | -           | An associative array with configuration options for CSS styles. |
 | `styles.url`                | Required    | URL pointing to a CSS file, either using an absolute URL or a relative URL. The CSS will be downloaded and applied to the whole app, so it's recommended to include styles scoped to your plugin templates. |
 | `styles.version`            | Required    | Version number used to determine if the file needs to be downloaded again. You should change the version number every time you change the contents of the CSS file. |
 | `moodlecomponent`           | Plugin name | Name of the component implemented by the handler. <br /> <br /> Most of the time, this can be ignored because mobile support is usually included in the same plugin where custom components are defined, but it may be different in some cases. For example, imagine a local plugin called `local_myactivitymobile` is implementing mobile support for a `mod_myactivity` component. In that case, you would set this option to `"mod_myactivity"`. |
-| `restricttocurrentuser`     | `false`     | Restricts the handler to appear only for the current user. For more advanced restrictions, you can use the `restrict` and `disabled` properties returned during [JavaScript initialisation](./index.md#javascript-initialisation). |
-| `restricttoenrolledcourses` | `true`      | Restricts the handler to appear only for courses the user is enrolled in. For more advanced restrictions, you can use the `restrict` and `disabled` properties returned during [JavaScript initialisation](./index.md#javascript-initialisation). |
+| `restricttocurrentuser`     | `false`     | Restricts the handler to appear only for the current user. For more advanced restrictions, you can use the `restrict` and `disabled` properties returned during [JavaScript initialisation](./index.md#JavaScript-initialisation). |
+| `restricttoenrolledcourses` | `true`      | Restricts the handler to appear only for courses the user is enrolled in. For more advanced restrictions, you can use the `restrict` and `disabled` properties returned during [JavaScript initialisation](./index.md#JavaScript-initialisation). |
 
 ### CoreMainMenuDelegate {/* #coremainmenudelegate */}
 
@@ -141,7 +141,7 @@ Add new option in the course page, either as a tab or in the course summary. For
 
 Add support for activity modules or resources.
 
-The following functions can be declared in the object evaluated in the last statement of the [JavaScript initialisation](./index.md#javascript-initialisation) in order to implement additional functionality:
+The following functions can be declared in the object evaluated in the last statement of the [JavaScript initialisation](./index.md#JavaScript-initialisation) in order to implement additional functionality:
 
 - `supportsFeature(feature: string): any`: Check whether the module supports a given feature.
 - `manualCompletionAlwaysShown(module: CoreCourseModuleData): Promise<boolean>`: Check whether to show the manual completion regardless of the course's `showcompletionconditions` setting.
@@ -394,43 +394,43 @@ Add support for a custom assign feedback.
 
 Add support for a custom workshop assessment strategy.
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [AddonWorkshopAssessmentStrategyHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/addons/mod/workshop/services/assessment-strategy-delegate.ts#L26..L76).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [AddonWorkshopAssessmentStrategyHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/addons/mod/workshop/services/assessment-strategy-delegate.ts#L26..L76).*
 
 ### CoreContentLinksDelegate {/* #corecontentlinksdelegate */}
 
 Allows you to intercept what happens when links are clicked. For example, you can open a plugin page when a link is clicked. The Moodle app automatically creates some link handlers for module plugins, you can learn more about this and how to use link handlers in the [Link Handlers example](./examples/link-handlers.md).
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [CoreContentLinksHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/contentlinks/services/contentlinks-delegate.ts#L27..L95).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [CoreContentLinksHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/contentlinks/services/contentlinks-delegate.ts#L27..L95).*
 
 ### CorePushNotificationsDelegate {/* #corepushnotificationsdelegate */}
 
 Allows you to intercept what happens when push notifications are clicked.
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [CorePushNotificationsClickHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/pushnotifications/services/push-delegate.ts#L27..L59).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [CorePushNotificationsClickHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/pushnotifications/services/push-delegate.ts#L27..L59).*
 
 ### CoreCourseModulePrefetchDelegate {/* #corecoursemoduleprefetchdelegate */}
 
 Allows you to implement custom logic to prefetch module content. You can learn more about this in the [Prefetch Handlers example](./examples/prefetch-handlers.md).
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [CoreCourseModulePrefetchHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/course/services/module-prefetch-delegate.ts#L1410..L1568).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [CoreCourseModulePrefetchHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/course/services/module-prefetch-delegate.ts#L1410..L1568).*
 
 ### CoreFileUploaderDelegate {/* #corefileuploaderdelegate */}
 
 Add new option in the upload file picker.
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [CoreFileUploaderHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/fileuploader/services/fileuploader-delegate.ts#L26..L46).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [CoreFileUploaderHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/fileuploader/services/fileuploader-delegate.ts#L26..L46).*
 
 ### CorePluginFileDelegate {/* #corepluginfiledelegate */}
 
 Perform operations with files such as listening to file events (download, deletion, etc.) or using a different URL when downloading.
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [CorePluginFileHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/services/plugin-file-delegate.ts#L296..L389).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [CorePluginFileHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/services/plugin-file-delegate.ts#L296..L389).*
 
 ### CoreFilterDelegate {/* #corefilterdelegate */}
 
 Add support for a custom filter. Note that you'll only need this if you have to manipulate the content with JavaScript, PHP filters are applied in the content before sending the HTML to the app.
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [CoreFilterHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/filter/services/filter-delegate.ts#L28..L76).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [CoreFilterHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/filter/services/filter-delegate.ts#L28..L76).*
 
 ### CoreEnrolDelegate `4.3+` {/* #coreenroldelegate-43 */}
 
@@ -446,7 +446,7 @@ This delegate was introduced in version 4.3 of the app.
 
 | Name                    | Default     | Description |
 |-------------------------|-------------|-------------|
-| `enrolmentAction`       | `'browser'` | Action performed by the handler. Possible values are: `browser`, `self`, and `guest`. <br /> <br /> `browser` opens the browser to perform the enrolment in the LMS, outside of the app. <br /> <br /> `self` requires implementing the `enrol` function in JavaScript. Also, the PHP class extending `enrol_plugin` must return some data in the `get_enrol_info` method. <br /> <br /> `guest` allows users to enter the course as guests. It requires implementing the `canAccess` and `validateAccess` functions in the [JavaScript initialisation](./index.md#javascript-initialisation) JavaScript. Also, the PHP class extending `enrol_plugin` must return some data in the `get_enrol_info` method. |
+| `enrolmentAction`       | `'browser'` | Action performed by the handler. Possible values are: `browser`, `self`, and `guest`. <br /> <br /> `browser` opens the browser to perform the enrolment in the LMS, outside of the app. <br /> <br /> `self` requires implementing the `enrol` function in JavaScript. Also, the PHP class extending `enrol_plugin` must return some data in the `get_enrol_info` method. <br /> <br /> `guest` allows users to enter the course as guests. It requires implementing the `canAccess` and `validateAccess` functions in the [JavaScript initialisation](./index.md#JavaScript-initialisation) JavaScript. Also, the PHP class extending `enrol_plugin` must return some data in the `get_enrol_info` method. |
 | `infoIcons`             | `[]`        | Array of icons related to enrolment to display next to the course. These can also be calculated dynamically in JavaScript using course information. |
 | `infoIcons[].icon`      | Required    | The icon to use. See the [ion-icon](#ion-icon) documentation for available values. |
 | `infoIcons[].label`     | Required    | Language string identifier to use in the aria-label of the icon. See the [localisation](./index.md#localisation) documentation to learn more. |
