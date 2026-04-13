@@ -6,7 +6,7 @@ tags:
   - subplugin
   - deprecated
 ---
-<!-- cspell:ignore datapreset -->
+{/* <!-- cspell:ignore datapreset --> */}
 
 The database preset subplugin type is no longer recommended.
 

@@ -113,4 +113,4 @@ Be the first to add an entry.
 The adjective "first" acts like a noun, which means it will need a gender in many languages.
 </InvalidExample>
 
-<!-- cspell:ignore substantivised -->
+{/* <!-- cspell:ignore substantivised --> */}

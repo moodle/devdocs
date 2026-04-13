@@ -79,7 +79,7 @@ import LibDescription from './_examples/lib.md';
 
 ### yui/src/button/* {/* #yuisrcbutton */}
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 <Button
     pluginname="media"

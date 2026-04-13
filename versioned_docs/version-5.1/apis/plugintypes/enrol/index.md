@@ -5,9 +5,9 @@ tags:
   - Plugins
 ---
 
-<!-- cspell:ignore enrolme -->
-<!-- cspell:ignore timeend -->
-<!-- cspell:ignore unenrolment -->
+{/* <!-- cspell:ignore enrolme --> */}
+{/* <!-- cspell:ignore timeend --> */}
+{/* <!-- cspell:ignore unenrolment --> */}
 
 import {
     Lang,

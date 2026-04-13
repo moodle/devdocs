@@ -120,7 +120,7 @@ Then filter the list of sections in your template:
 ```html
 @for (section of sections; track $index) {
     @if (section.id in CONTENT_OTHERDATA.displaysections) {
-        <!-- code to display the section goes here -->
+        {/* <!-- code to display the section goes here --> */}
     }
 }
 ```

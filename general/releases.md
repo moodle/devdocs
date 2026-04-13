@@ -5,7 +5,7 @@ tags:
   - Core development
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 import SupportedReleases, { styles as ReleaseStyles } from '@site/src/components/SupportedReleases';
 import ReleaseTable from '@site/src/components/ReleaseTable';
@@ -561,7 +561,7 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 
 ## Translations {/* #translations */}
 
-<!-- cspell:disable -->
+{/* <!-- cspell:disable --> */}
 
 - [Historique des versions](https://docs.moodle.org/fr/Historique_des_versions)
 - [dev/Historia de las versiones](https://docs.moodle.org/es/dev/Historia_de_las_versiones)

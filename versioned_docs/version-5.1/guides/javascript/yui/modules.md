@@ -13,7 +13,7 @@ As of Moodle 2.9 we are transitioning away from YUI to AMD modules. This transit
 
 :::
 
-<!-- cspell:ignore fruitbowl -->
+{/* <!-- cspell:ignore fruitbowl --> */}
 
 ## YUI modules {/* #yui-modules */}
 

@@ -11,12 +11,12 @@ import { ProjectSummary } from '@site/src';
     projectName="api/amos"
 />
 
-<!-- cspell:ignore stringid -->
-<!-- cspell:ignore timemodified -->
-<!-- cspell:ignore commitmsg -->
-<!-- cspell:ignore commithash -->
-<!-- cspell:ignore userid -->
-<!-- cspell:ignore userinfo -->
+{/* <!-- cspell:ignore stringid --> */}
+{/* <!-- cspell:ignore timemodified --> */}
+{/* <!-- cspell:ignore commitmsg --> */}
+{/* <!-- cspell:ignore commithash --> */}
+{/* <!-- cspell:ignore userid --> */}
+{/* <!-- cspell:ignore userinfo --> */}
 
 **AMOS** stands for Automated Manipulation of Strings. AMOS is a central repository of Moodle strings and their history. It tracks the addition of English strings into Moodle code, gathers translations, handles common translation tasks and generates language packages to be deployed on Moodle servers.
 

@@ -8,7 +8,7 @@ tags:
 
 The [General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) (GDPR) is an EU directive that provides users with more control over their data and how it is processed. This regulation came into effect on 25th of May 2018 and covers any citizen or permanent resident of the European Union. The directive is respected by a number of other countries outside of the European Union.
 
-<!-- cspell:ignore contextlist, subcontext, subcontexts, userlist -->
+{/* <!-- cspell:ignore contextlist, subcontext, subcontexts, userlist --> */}
 
 To help institutions become compliant with this new regulation we are adding functionality to Moodle. This includes a number of components, amongst others these include a user's right to:
 

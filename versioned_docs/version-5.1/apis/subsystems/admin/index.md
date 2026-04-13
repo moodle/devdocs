@@ -2,22 +2,22 @@
 title: Admin settings
 tags: []
 ---
-<!-- cspell:ignore hassiteconfig -->
-<!-- cspell:ignore settingpage -->
-<!-- cspell:ignore fulltree -->
-<!-- cspell:ignore configtext -->
-<!-- cspell:ignore mediawidth -->
-<!-- cspell:ignore visiblename -->
-<!-- cspell:ignore defaultsetting -->
-<!-- cspell:ignore paramtype -->
-<!-- cspell:ignore settingstree -->
-<!-- cspell:ignore mymodule -->
-<!-- cspell:ignore externalpages -->
-<!-- cspell:ignore externalpage -->
-<!-- cspell:ignore pagename -->
-<!-- cspell:ignore managemods -->
-<!-- cspell:ignore preventexecpath -->
-<!-- cspell:ignore configexecutable -->
+{/* <!-- cspell:ignore hassiteconfig --> */}
+{/* <!-- cspell:ignore settingpage --> */}
+{/* <!-- cspell:ignore fulltree --> */}
+{/* <!-- cspell:ignore configtext --> */}
+{/* <!-- cspell:ignore mediawidth --> */}
+{/* <!-- cspell:ignore visiblename --> */}
+{/* <!-- cspell:ignore defaultsetting --> */}
+{/* <!-- cspell:ignore paramtype --> */}
+{/* <!-- cspell:ignore settingstree --> */}
+{/* <!-- cspell:ignore mymodule --> */}
+{/* <!-- cspell:ignore externalpages --> */}
+{/* <!-- cspell:ignore externalpage --> */}
+{/* <!-- cspell:ignore pagename --> */}
+{/* <!-- cspell:ignore managemods --> */}
+{/* <!-- cspell:ignore preventexecpath --> */}
+{/* <!-- cspell:ignore configexecutable --> */}
 
 Moodle's configuration is stored in a mixture of the config, config_plugins, and a few other tables. These settings are edited through the administration screens, which can be accessed by going to the `.../admin/index.php` URL on your moodle site, or using the Administration block that appears to administrators of the Moodle front page. This page explains how the code for displaying and editing of these settings works.
 

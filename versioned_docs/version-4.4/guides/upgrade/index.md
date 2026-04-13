@@ -8,7 +8,7 @@ tags:
 
 The Upgrade API is a core API which allows your plugin to manage features of its own installation, and upgrade. Every plugin includes a [version](../../apis/commonfiles/version.php/index.md) which allows the Upgrade API to apply only the required changes.
 
-<!-- cspell:ignore myqtype, newcol, upgradelib, oldversion, savepoint -->
+{/* <!-- cspell:ignore myqtype, newcol, upgradelib, oldversion, savepoint --> */}
 
 Correct use of this API allows Moodle to automatically create, and handle upgrades for, your database tables and other core features during an upgrade.
 

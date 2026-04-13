@@ -1,4 +1,4 @@
-<!-- markdownlint-disable first-line-heading -->
+{/* <!-- markdownlint-disable first-line-heading --> */}
 An optional file which can be used to implement optional component callbacks.
 
 The available callbacks are:

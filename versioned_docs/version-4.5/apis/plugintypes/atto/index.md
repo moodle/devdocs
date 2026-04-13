@@ -59,7 +59,7 @@ Some of the important files for the Atto plugintype are described below. See the
 
 ### version.php {/* #versionphp */}
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 <VersionPHP
     plugintype="atto"

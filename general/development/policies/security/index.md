@@ -219,5 +219,5 @@ We recommend that you follow the [Output functions](/docs/apis/subsystems/output
 - [Coding](../../policies.md)
 - The [2010 CWE/SANS Top 25 Most Dangerous Programming Errors](http://cwe.mitre.org/top25/) - this is a generic list of common security mistakes, produced by a group of security experts. The above Moodle-specific guidelines cover most of these general points.
 - [PHP Security Cheat Sheet](https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet)
-<!--cspell:ignore OWASP -->
+{/* <!--cspell:ignore OWASP --> */}
 - [The Open Web Application Security Project (OWASP)](https://www.owasp.org/index.php/Main_Page) - Large collection of documentation and code samples about preventing security issues while using web technologies.

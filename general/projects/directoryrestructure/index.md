@@ -11,7 +11,7 @@ import { ProjectSummary } from '@site/src';
     projectName="directoryrestructure/index"
 />
 
-<!-- cspell:ignore directoryrestructure -->
+{/* <!-- cspell:ignore directoryrestructure --> */}
 
 Like many applications of its time, Moodle currently places all of its source in a web-accessible root directory.
 

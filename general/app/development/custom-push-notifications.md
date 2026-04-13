@@ -6,7 +6,7 @@ tags:
   - Moodle App
 ---
 
-<!-- cspell:ignore customdata -->
+{/* <!-- cspell:ignore customdata --> */}
 
 There are two ways to send custom Push Notifications to the Moodle app users:
 

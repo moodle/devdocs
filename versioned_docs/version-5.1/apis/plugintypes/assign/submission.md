@@ -75,11 +75,11 @@ public/mod/assign/submission/file
 
 ### settings.php {/* #settingsphp */}
 
-<!-- markdownlint-capture -->
-<!-- markdownlint-disable no-space-in-code -->
-<!-- markdownlint-disable blanks-around-fences -->
-<!-- markdownlint-disable code-block-style -->
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-capture --> */}
+{/* <!-- markdownlint-disable no-space-in-code --> */}
+{/* <!-- markdownlint-disable blanks-around-fences --> */}
+{/* <!-- markdownlint-disable code-block-style --> */}
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 import settingsExample from '!!raw-loader!./_files/submission_settings.php';
 
@@ -94,7 +94,7 @@ All submission plugins should include one setting named 'default' to indicate if
     extraDescription={settingsExtra}
 />
 
-<!-- markdownlint-restore -->
+{/* <!-- markdownlint-restore --> */}
 
 :::info
 
@@ -104,8 +104,8 @@ This example from the submission_file plugin also checks to see if there is a ma
 
 ### locallib.php {/* #locallibphp */}
 
-<!-- markdownlint-save -->
-<!-- markdownlint-disable code-block-style -->
+{/* <!-- markdownlint-save --> */}
+{/* <!-- markdownlint-disable code-block-style --> */}
 
 <LocalLib
     required
@@ -114,7 +114,7 @@ This example from the submission_file plugin also checks to see if there is a ma
 >
 </LocalLib>
 
-<!-- markdownlint-disable first-line-heading -->
+{/* <!-- markdownlint-disable first-line-heading --> */}
 This is where all the functionality for this plugin is defined. We will step through this file and describe each part as we go.
 
 ```php

@@ -6,7 +6,7 @@ tags:
   - Getting started
 ---
 
-<!-- cspell:ignore HRDNZ -->
+{/* <!-- cspell:ignore HRDNZ --> */}
 
 ## Help for new coders {/* #help-for-new-coders */}
 

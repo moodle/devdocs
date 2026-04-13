@@ -57,7 +57,7 @@ At this time, no paid public bug bounty program is offered.
 
 ## Translations {/* #translations */}
 
-<!-- cspell:disable -->
+{/* <!-- cspell:disable --> */}
 
 - [Sicherheitsprozeduren](https://docs.moodle.org/de/Sicherheitsprozeduren)
 - [Procedimientos de seguridad en Moodle](https://docs.moodle.org/es/Procedimientos_de_seguridad_en_Moodle)

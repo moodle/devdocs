@@ -14,7 +14,7 @@ Please create an issue in this project if anyone has been missed out to add thei
 
 :::
 
-<!-- cspell:disable -->
+{/* <!-- cspell:disable --> */}
 
 ## Community discussion in English: {/* #community-discussion-in-english */}
 
@@ -91,4 +91,4 @@ Mary Cooch, Marcus Green, Gavin Henrick, Don Hinkelman, Tim Hunt, Frankie Kam, D
 
 `List updated 21:34, 14 August 2015 (AWST)`
 
-<!-- cspell:enable -->
+{/* <!-- cspell:enable --> */}

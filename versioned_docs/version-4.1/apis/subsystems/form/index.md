@@ -155,9 +155,9 @@ Moodle provides a number of basic, and advanced, form elements. These are descri
 
 ### Advanced form elements {/* #advanced-form-elements */}
 
-<!-- cspell:ignore choosecoursefile -->
-<!-- cspell:ignore modgrade -->
-<!-- cspell:ignore questioncategory -->
+{/* <!-- cspell:ignore choosecoursefile --> */}
+{/* <!-- cspell:ignore modgrade --> */}
+{/* <!-- cspell:ignore questioncategory --> */}
 
 1. [Autocomplete](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#autocomplete) - A select box that allows you to start typing to narrow the list of options, or search for results.
 1. [advcheckbox](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition#advcheckbox) - Advance checkbox

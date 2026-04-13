@@ -17,7 +17,7 @@ tags:
 
 :::
 
-<!-- cspell:ignore adminer -->
+{/* <!-- cspell:ignore adminer --> */}
 
 ## A quick start to Moodle development {/* #a-quick-start-to-moodle-development */}
 

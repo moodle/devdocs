@@ -6,7 +6,7 @@ tags:
   - Moodle App
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 In the following guide, you will learn how to upgrade your plugins to support newer versions of the app.
 

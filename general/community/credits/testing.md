@@ -6,7 +6,7 @@ tags:
   - Quality Assurance
   - Testing
 ---
-<!-- cspell:disable -->
+{/* <!-- cspell:disable --> */}
 
 The following people have helped with [Quality Assurance (QA) testing](../../development/process/testing/qa):
 
@@ -134,7 +134,7 @@ Jes Ackland-Snow, Andrea Bicciolo, Ashley Blakeston, Anthony Borrow, Mónico Bri
 
 Andrea Bicciolo, Ashley Blakeston, Anthony Borrow, Stephen Bourget, Mónico Briseño Cortés, Chris Collman, Mary Cooch, Emanuel Delgado, Debra Dotson, Buddy Ethridge, Teresa Gibbison, Amy Groshek, Elena Ivanova, Matt Jenner, Brent Lee, Nicolas Martignoni, Colin Matheson, Mark McCall, Chad Outten, Joseph Rézeau, Michael Spall, Joseph Thibault, Jon Witts
 
-<!-- cspell:enable -->
+{/* <!-- cspell:enable --> */}
 
 ## See also {/* #see-also */}
 

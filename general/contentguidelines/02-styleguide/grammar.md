@@ -6,7 +6,7 @@ tags:
   - UX Writing
 ---
 
-<!-- cspell:ignore emojipedia VLEs -->
+{/* <!-- cspell:ignore emojipedia VLEs --> */}
 
 ## Structuring content {/* #structuring-content */}
 

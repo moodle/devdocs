@@ -106,7 +106,7 @@ However, make sure you installed the behat test site first!
 
 #### IDE integration {/* #ide-integration */}
 
-<!-- cspell:ignore IntelliJ, textareas,  -->
+{/* <!-- cspell:ignore IntelliJ, textareas,  --> */}
 In PhpStorm or IntelliJ you can install the behat extension. Then you get auto completions within feature files, which helps a lot during behat test development.
 
 ### Providing values to steps {/* #providing-values-to-steps */}

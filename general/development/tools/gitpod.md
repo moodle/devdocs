@@ -4,7 +4,7 @@ tags:
   - tools
   - Gitpod
 ---
-<!-- cspell:ignore Tampermonkey -->
+{/* <!-- cspell:ignore Tampermonkey --> */}
 
 [Gitpod](https://www.gitpod.io/) is a free, cloud-based platform with IDE integration that provides a suitable development environment directly in a browser.
 

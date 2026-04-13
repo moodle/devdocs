@@ -5,7 +5,7 @@ tags:
   - Library
 ---
 
-<!-- cspell:ignore unenrolment -->
+{/* <!-- cspell:ignore unenrolment --> */}
 
 The enrolment API gives access to the enrolment methods and also to [enrolment plugins](../plugintypes/enrol/index.md) instances.
 

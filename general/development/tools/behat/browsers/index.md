@@ -58,7 +58,7 @@ Note that 4444 is the default port used by Selenium, so you must specify another
 
 Not all the drivers can execute all of Moodle's step definitions; we tagged the step definitions that are using features not supported by all browsers and also limitations that some browsers have; refer to the following table to know which browsers can run which tags:
 
-<!-- cspell:ignore zerosize -->
+{/* <!-- cspell:ignore zerosize --> */}
 | | File uploads (@_file_upload) | Browser dialogs (@_alert)                                         | Switch window (@_switch_window) | Switch frame (@_switch_iframe) | Bugs in chrome (@skip_chrome_zerosize) | Bug in phantomjs (@_bug_phantomjs) |
 |------------------------------|-------------------------------------------------------------------|---------------------------------|--------------------------------|----------------------------------------|------------------------------------|
 | Firefox                      | Yes | Yes | Yes | Yes | Yes | Yes |

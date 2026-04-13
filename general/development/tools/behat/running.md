@@ -55,9 +55,9 @@ The full list of profiles which are included with `moodle-browser-config` are pr
 
 The following is a summary of the profiles that most users may be interested in.
 
-<!-- cspell:ignore Browserstack, Saucelabs, headlessfirefox, geckodriver, Geckodriver, chromedriver, Chromedriver -->
-<!-- cspell:ignore headlessgeckodriver, headlesschrome, headlesschromedriver, headlessedge, Edgedriver, edgedriver -->
-<!-- cspell:ignore headlessedgedriver, MYTHEME, rehomed -->
+{/* <!-- cspell:ignore Browserstack, Saucelabs, headlessfirefox, geckodriver, Geckodriver, chromedriver, Chromedriver --> */}
+{/* <!-- cspell:ignore headlessgeckodriver, headlesschrome, headlesschromedriver, headlessedge, Edgedriver, edgedriver --> */}
+{/* <!-- cspell:ignore headlessedgedriver, MYTHEME, rehomed --> */}
 
 You can also provide your own custom profiles, including for remote services such as Browserstack, and Saucelabs, as
 well as for other browsers supporting the W3C Webdriver specification.
@@ -638,7 +638,7 @@ For parallel runs, all options for initialising parallel runs are valid
 
 ### Tests are failing {/* #tests-are-failing */}
 
-<!-- cspell:ignore Bselenium -->
+{/* <!-- cspell:ignore Bselenium --> */}
 If you followed all the steps and you receive an unknown weird error probably your browser version is not compatible with the Selenium version you are running. Please refer to [Working combinations](./browsers/index.md#compatibility) to run the acceptance test.
 
 ### The tests are failing, and the error message is completely useless {/* #the-tests-are-failing-and-the-error-message-is-completely-useless */}

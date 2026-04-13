@@ -5,7 +5,7 @@ tags:
 - Moodle 4.4
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 This page highlights the important changes that are coming in Moodle 4.4 for developers.
 

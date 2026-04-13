@@ -61,14 +61,14 @@ The class must be named `field_controller` within your plugin's namespace (for e
 
 :::
 
-<!-- markdownlint-save -->
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-save --> */}
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 import fieldExample from '!!raw-loader!./_files/field_controller.php';
 
 <FieldController example={fieldExample} />
 
-<!-- markdownlint-restore -->
+{/* <!-- markdownlint-restore --> */}
 
 The `\core_customfield\field_controller` class is an abstract class and defines a number of functions which you can choose to override. At a minimum, the following two items are required:
 
@@ -97,14 +97,14 @@ The class must be named `data_controller` within your plugin's namespace (for ex
 
 :::
 
-<!-- markdownlint-save -->
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-save --> */}
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 import dataExample from '!!raw-loader!./_files/data_controller.php';
 
 <DataController example={dataExample} />
 
-<!-- markdownlint-restore -->
+{/* <!-- markdownlint-restore --> */}
 
 The `\core_customfield\data_controller` class is an abstract class and defines a number of functions which you can choose to override. At a minimum, the following two items are required:
 

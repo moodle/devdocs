@@ -91,7 +91,7 @@ The WCAG accreditation expires after 12 months as it is recognised that software
 
 :::
 
-<!-- cspell:ignore VPAT -->
+{/* <!-- cspell:ignore VPAT --> */}
 
 ### Voluntary Product Accessibility Template (VPAT) {/* #voluntary-product-accessibility-template-vpat */}
 
@@ -107,8 +107,8 @@ An overview of Moodle Workplace's conformance with the [WCAG 2.2](https://www.w3
 
 An overview of Moodle App's conformance with the [WCAG 2.2](https://www.w3.org/TR/WCAG22/) guidelines can be found in the [Moodle App accessibility conformance report](https://docs.moodle.org/en/Moodle_app_VPAT#WCAG_2.x_report).
 
-<!-- cspell:ignore IAAP -->
-<!-- cspell:ignore credly -->
+{/* <!-- cspell:ignore IAAP --> */}
+{/* <!-- cspell:ignore credly --> */}
 
 ## IAAP membership {/* #iaap-membership */}
 
@@ -116,7 +116,7 @@ Moodle is committed to delivering solutions that make learning accessible to all
 
 This membership also provides our teams access to accessibility-related resources, training, and a global network of accessibility professionals.
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="1f6cd789-8f79-488f-9d85-d72265ed1d6b" data-share-badge-host="https://www.credly.com"></div><script type="text/JavaScript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
@@ -288,8 +288,8 @@ When it is determined that an advanced interface is required (typically one that
 
 ## External Resources {/* #external-resources */}
 
-<!-- cspell:ignore ATAG -->
-<!-- cspell:ignore UAAG -->
+{/* <!-- cspell:ignore ATAG --> */}
+{/* <!-- cspell:ignore UAAG --> */}
 
 - [W3C Accessibility Standards Overview](https://www.w3.org/WAI/standards-guidelines/)
 - [Accessible Rich Internet Applications (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria-1.1/)
@@ -308,7 +308,7 @@ Moodle aims to comply with the following international legislation where possibl
 
 ### UK {/* #uk */}
 
-<!-- cspell:ignore SENDA -->
+{/* <!-- cspell:ignore SENDA --> */}
 
 - [Equality Act 2010](http://www.legislation.gov.uk/ukpga/2010/15/contents)
 - [Public sector equality duty](http://www.equalityhumanrights.com/advice-and-guidance/public-sector-equality-duty/)
@@ -316,20 +316,20 @@ Moodle aims to comply with the following international legislation where possibl
 
 ### Germany {/* #germany */}
 
-<!-- cspell:ignore Barrierefreie -->
-<!-- cspell:ignore Informationstechnik -->
-<!-- cspell:ignore Verordnung -->
-<!-- cspell:ignore BITV -->
+{/* <!-- cspell:ignore Barrierefreie --> */}
+{/* <!-- cspell:ignore Informationstechnik --> */}
+{/* <!-- cspell:ignore Verordnung --> */}
+{/* <!-- cspell:ignore BITV --> */}
 
 - [Barrierefreie Informationstechnik-Verordnung - BITV](http://www.einfach-fuer-alle.de/artikel/bitv/)
 
 ### France {/* #france */}
 
-<!-- cspell:ignore Référentiel -->
-<!-- cspell:ignore Général -->
-<!-- cspell:ignore d'Accessibilité -->
-<!-- cspell:ignore des -->
-<!-- cspell:ignore RGAA -->
+{/* <!-- cspell:ignore Référentiel --> */}
+{/* <!-- cspell:ignore Général --> */}
+{/* <!-- cspell:ignore d'Accessibilité --> */}
+{/* <!-- cspell:ignore des --> */}
+{/* <!-- cspell:ignore RGAA --> */}
 
 - [Référentiel Général d'Accessibilité des Administrations - RGAA](https://references.modernisation.gouv.fr/rgaa-accessibilite/)
 

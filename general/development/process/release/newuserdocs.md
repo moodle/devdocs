@@ -26,7 +26,7 @@ Tidying up in current latest version wiki:
 
 Create a tracker issue for creating new en and de version wikis similar to [MDLSITE-7357](https://moodle.atlassian.net/browse/MDLSITE-7357).
 
-<!-- cspell:ignore Sitenotice -->
+{/* <!-- cspell:ignore Sitenotice --> */}
 
 ## 3 weeks prior {/* #3-weeks-prior */}
 

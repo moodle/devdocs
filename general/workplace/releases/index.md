@@ -5,7 +5,7 @@ tags:
   - Release notes
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 import { ReleaseTable, SupportedReleases, SupportedReleasesStyles } from '@site/src/components/Workplace';
 
@@ -70,9 +70,11 @@ Starting from 4.1 release, we package two Workplace versions in every release:
 
 <SupportedReleases />
 
-<!-- START RELEASES -->
+{/* <!-- START RELEASES --> */}
 <br />
+
 ## Moodle Workplace 5.1 Rolling {/* #moodle-workplace-51-rolling */}
+
 <ReleaseTable releaseName="5.1" isRolling/>
 
 <br />

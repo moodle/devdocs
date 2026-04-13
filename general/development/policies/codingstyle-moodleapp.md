@@ -8,7 +8,7 @@ tags:
   - Developer processes
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 This document outlines the exceptions to the [Coding style](./codingstyle/index.md) and [JavaScript Coding Style](https://docs.moodle.org/dev/JavaScript_Coding_Style) which apply to the Moodle App and also includes rules for other technologies that are used in the app, like Typescript and Angular.
 
@@ -505,7 +505,7 @@ In some situations, a simple method that only returns a value would be acceptabl
 
 ```html
 @if (isAdmin) {
-    <div> <!-- Show admin content --> </div>
+    <div> {/* <!-- Show admin content --> */} </div>
 }
 ```
 
@@ -515,7 +515,7 @@ In some situations, a simple method that only returns a value would be acceptabl
 
 ```html
 @if (site.isAdmin()) {
-    <div> <!-- Show admin content --> </div>
+    <div> {/* <!-- Show admin content --> */} </div>
 }
 ```
 

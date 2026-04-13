@@ -4,7 +4,7 @@ tags:
   - Access
 ---
 
-<!-- cspell:ignore NEWMODULE -->
+{/* <!-- cspell:ignore NEWMODULE --> */}
 
 The Access API gives you functions so you can determine what the current user is allowed to do. It also allows plugins to extend Moodle with new capabilities.
 

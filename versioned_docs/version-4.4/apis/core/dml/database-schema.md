@@ -6,7 +6,7 @@ tags:
   - XMLDB
 ---
 
-<!-- cspell:ignore Giampani Cueto -->
+{/* <!-- cspell:ignore Giampani Cueto --> */}
 
 The files available here are in [DBDesigner4](http://fabforce.net/dbdesigner4/) format. DBDesigner4 is a schema drawing program released under GPL.
 

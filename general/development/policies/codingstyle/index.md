@@ -1848,10 +1848,10 @@ define('PARAM_ALPHANUM', 'alphanum');
 
 ### Inline comments
 
-<!-- vale Microsoft.Ellipses = NO -->
+{/* <!-- vale Microsoft.Ellipses = NO --> */}
 Inline comments must use the "// " (2 slashes + whitespace) style, laid out neatly so that it fits among the code and lines up with it.
 The first line of the comment must begin with a capital letter (or a digit, or '...') and the comment must end with a proper punctuation character. Permitted final characters are '.', '?' or '!'.
-<!-- vale Microsoft.Ellipses = YES -->
+{/* <!-- vale Microsoft.Ellipses = YES --> */}
 
 <ValidExample>
 

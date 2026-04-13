@@ -13,7 +13,7 @@ This page highlights the important changes that are coming in Moodle 4.0 for dev
 
 See [Question bank plugins](./apis/plugintypes/qbank/index.md).
 
-<!-- cspell:ignore settingsnav -->
+{/* <!-- cspell:ignore settingsnav --> */}
 
 ## Navigation changes {/* #navigation-changes */}
 
@@ -79,7 +79,7 @@ If you have any buttons on an activity page that go to another page, or open a f
 - `set_show_in_secondary_navigation` - whether or not a node should be displayed in the secondary nav. Accepts a single boolean argument
 - `set_force_into_more_menu` - whether or not to force a node into the **'More'** menu. Accepts a single boolean argument
 
-<!-- cspell:ignore togglable -->
+{/* <!-- cspell:ignore togglable --> */}
 
 #### The activity header class {/* #the-activity-header-class */}
 
@@ -111,7 +111,7 @@ The following layout level options that can be defined:
 
 The class has a page level getter which you can use to fetch the current version of the class. The base state is initialised within the constructor with the completion information only fetched when data is exported for the template.
 
-<!-- cspell:ignore hidecompletion -->
+{/* <!-- cspell:ignore hidecompletion --> */}
 
 The class has setters for the following variables which can be leveraged to modify the header for a particular page in the format `set_{variable_name}`:
 
@@ -127,10 +127,10 @@ Any updates to the `activityheader` needs to be performed before the call to `$O
 
 :::
 
-<!-- cspell:ignore flatnav -->
-<!-- cspell:ignore templatecontext -->
-<!-- cspell:ignore firstcollectionlabel -->
-<!-- cspell:ignore hasblocks -->
+{/* <!-- cspell:ignore flatnav --> */}
+{/* <!-- cspell:ignore templatecontext --> */}
+{/* <!-- cspell:ignore firstcollectionlabel --> */}
+{/* <!-- cspell:ignore hasblocks --> */}
 
 ##### Theme updates {/* #theme-updates */}
 
@@ -218,7 +218,7 @@ As a guideline for making this rules consideration are:
 
 ## Theme changes {/* #theme-changes */}
 
-<!-- cspell:ignore haseditswitch -->
+{/* <!-- cspell:ignore haseditswitch --> */}
 
 ### Edit switch {/* #edit-switch */}
 
@@ -299,8 +299,8 @@ Now, the plugin format class provides information such as:
 
 The format instance is now the main object output components will use to render a course (see next section for more information).
 
-<!-- cspell:ignore displaysection -->
-<!-- cspell:ignore outputclass -->
+{/* <!-- cspell:ignore displaysection --> */}
+{/* <!-- cspell:ignore outputclass --> */}
 
 ### New course output classes and mustache files {/* #new-course-output-classes-and-mustache-files */}
 
@@ -369,7 +369,7 @@ Two new web services have been added:
 
 ## Behat changes {/* #behat-changes */}
 
-<!-- cspell:ignore entitytype -->
+{/* <!-- cspell:ignore entitytype --> */}
 
 ### New steps {/* #new-steps */}
 
@@ -574,7 +574,8 @@ And I click on question bulk action "action"
 And I should see question bulk action "action"
 And I should not see question bulk action "action"
 ```
-<!-- cspell:ignore deleteselected -->
+
+{/* <!-- cspell:ignore deleteselected --> */}
 
 :::info For example:
 
@@ -822,7 +823,7 @@ More information about this project can be found in the [Add a block cleanup](/g
 
 :::
 
-<!-- cspell:ignore Pimenko -->
+{/* <!-- cspell:ignore Pimenko --> */}
 
 ### Site admin presets plugin {/* #site-admin-presets-plugin */}
 
@@ -901,7 +902,7 @@ Customising the activity icon can be done in an alternative way. For example usi
 
 In the example below the activity plugin developer chooses to keep the coloured icon for the activity and render it as large as the coloured background on the core activities
 
-<!-- cspell:ignore activityiconcontainer -->
+{/* <!-- cspell:ignore activityiconcontainer --> */}
 
 ```css
  .modicon_subcourse.activityiconcontainer {

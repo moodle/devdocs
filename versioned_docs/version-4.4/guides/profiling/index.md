@@ -193,4 +193,4 @@ Xdebug articles:
 - [Introducing xdebug](http://devzone.zend.com/article/2803-Introducing-xdebug)
 - [Xdebug Quick start: Profiling in PHP](http://blog.teamlazerbeez.com/2010/05/04/xdebug-quickstart-profiling-in-php/)
 
-<!-- cspell:ignore xhprof , cachegrind, pecl , xdebugtoolkit , webgrind , phpinfo , callgraph, graphviz -->
+{/* <!-- cspell:ignore xhprof , cachegrind, pecl , xdebugtoolkit , webgrind , phpinfo , callgraph, graphviz --> */}

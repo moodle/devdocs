@@ -57,7 +57,7 @@ Some of the important files for the repository plugintype are described below. S
 
 ### lang/en/repository_pluginname.php {/* #langenrepository_pluginnamephp */}
 
-<!-- markdownlint-disable-next-line MD038 -->
+{/* <!-- markdownlint-disable-next-line MD038 --> */}
 export const langExample = `
 $string['pluginname']= 'Example repository';
 $string['configplugin'] = 'Configuration for Example repository';
@@ -381,7 +381,7 @@ At this point we have created everything necessary for the administration pages.
 
 That's all - the administration part of our Flickr Public plugin is done. For your information, Box.net, Flickr, and Flickr Public all have similar administration APIs.
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 import FlickPublicLib from '!!raw-loader!./_examples/flickr_public_lib.php';
 
@@ -963,4 +963,4 @@ public function send_file($stored_file, $lifetime=86400 , $filter=0, $forcedownl
 
 An example of caching files within the Moodle filesystem can be found in repository_dropbox.
 
-<!-- cspell:ignore Myrepository , filestatus -->
+{/* <!-- cspell:ignore Myrepository , filestatus --> */}

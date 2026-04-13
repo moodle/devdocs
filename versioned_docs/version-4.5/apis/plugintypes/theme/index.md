@@ -431,7 +431,7 @@ Either `BLOCK_ADDBLOCK_POSITION_FLATNAV`, `BLOCK_ADDBLOCK_POSITION_DEFAULT` or `
   </div>
 </details>
 
-<!-- cspell:ignore themename -->
+{/* <!-- cspell:ignore themename --> */}
 
 ### lang/en/themename.php {/* #langenthemenamephp */}
 
@@ -503,7 +503,7 @@ The script will only increment the theme sub-revision of the theme(s) being buil
 
 ## See also {/* #see-also */}
 
-<!-- cspell:ignore HRDNZ -->
+{/* <!-- cspell:ignore HRDNZ --> */}
 
 - MoodleAcademy courses. For instance:
   - [Moodle Page Layout and Site Navigation](https://moodle.academy/course/view.php?id=110)

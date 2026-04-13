@@ -12,7 +12,7 @@ Following combinations have been tested at the time of release of Moodle version
 
 ## Moodle 3.9 and up {/* #moodle-39-and-up */}
 
-<!-- cspell:ignore Geckodriver, zerosize -->
+{/* <!-- cspell:ignore Geckodriver, zerosize --> */}
 
 <table><tbody>
 <tr><td>

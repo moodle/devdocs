@@ -99,4 +99,4 @@ Thi scan be further configured by setting the `$CFG->debug_developer_debugging_a
 - `$CFG->debug_developer_debugging_as_error = true;` - always treat debugging calls as an error, whether whoops is available or not;
 - `$CFG->debug_developer_debugging_as_error = false;` - never treat debugging calls as an Error, even when whoops is available.
 
-<!-- cspell:ignore macvim,textmate -->
+{/* <!-- cspell:ignore macvim,textmate --> */}

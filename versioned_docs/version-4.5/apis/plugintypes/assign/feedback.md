@@ -77,9 +77,9 @@ mod/assign/feedback/file
 
 ### settings.php {/* #settingsphp */}
 
-<!-- markdownlint-capture -->
-<!-- markdownlint-disable no-space-in-code -->
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-capture --> */}
+{/* <!-- markdownlint-disable no-space-in-code --> */}
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 export const settingsExample = `
 $settings->add(
@@ -103,13 +103,13 @@ All feedback plugins should include one setting named 'default' to indicate if t
     extraDescription={settingsExtra}
 />
 
-<!-- markdownlint-restore -->
+{/* <!-- markdownlint-restore --> */}
 
 ### locallib.php {/* #locallibphp */}
 
-<!-- markdownlint-save -->
-<!-- markdownlint-disable code-block-style -->
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-save --> */}
+{/* <!-- markdownlint-disable code-block-style --> */}
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 <LocalLib
     required
@@ -117,7 +117,7 @@ All feedback plugins should include one setting named 'default' to indicate if t
     defaultDescription={false}
 />
 
-<!-- markdownlint-disable first-line-heading -->
+{/* <!-- markdownlint-disable first-line-heading --> */}
 This is where all the functionality for this plugin is defined. We will step through this file and describe each part as we go.
 
 ```php

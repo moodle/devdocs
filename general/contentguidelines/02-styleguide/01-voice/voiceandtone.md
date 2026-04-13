@@ -46,4 +46,4 @@ Audience: Users
 Tone: Helpful, informative and conversational
 > Looks like you typed the wrong site address. Check for typos and try again.
 
-<!-- cspell:ignore ALTC -->
+{/* <!-- cspell:ignore ALTC --> */}

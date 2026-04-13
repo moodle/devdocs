@@ -1,4 +1,4 @@
-<!-- markdownlint-disable first-line-heading -->
+{/* <!-- markdownlint-disable first-line-heading --> */}
 For activities the following capabilities are _required_:
 
 - `mod/[modname]:addinstance`: Controls whether a user may create a new instance of the activity

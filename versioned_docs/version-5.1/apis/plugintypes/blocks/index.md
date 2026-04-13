@@ -342,7 +342,7 @@ You cannot use the 'checkbox' element in the form (once set it will stay set). Y
 
 ### Optional instance_config_save method {/* #optional-instance_config_save-method */}
 
-By default, all config_* settings will be stored in the `block_instances` table. The complete form data will be encoded in base64 before storing it in the <!-- cspell:disable --> `configdata` <!-- cspell:enable --> field. Every time a block instance is initialized all that data will be decoded in the [$this->config attribute](#block-class-attributes).
+By default, all config_* settings will be stored in the `block_instances` table. The complete form data will be encoded in base64 before storing it in the {/* <!-- cspell:disable --> */} `configdata` {/* <!-- cspell:enable --> */} field. Every time a block instance is initialized all that data will be decoded in the [$this->config attribute](#block-class-attributes).
 
 However, for some cases like the Atto HTML editor, you may want to store them in the database instead, or to alter the config data before storing it. In that case you can create a instance_config_save method.
 

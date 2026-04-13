@@ -61,7 +61,7 @@ class do_something extends \core\task\scheduled_task {
 
 ### db/tasks.php {/* #dbtasksphp */}
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 import { DbTasksPHP } from '../../_files';
 
 <DbTasksPHP />

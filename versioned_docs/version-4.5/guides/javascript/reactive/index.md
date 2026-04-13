@@ -6,9 +6,9 @@ tags:
   - Frontend
 ---
 
-<!-- cspell:ignore statemanager -->
-<!-- cspell:ignore METHODNAME -->
-<!-- cspell:ignore DATAID -->
+{/* <!-- cspell:ignore statemanager --> */}
+{/* <!-- cspell:ignore METHODNAME --> */}
+{/* <!-- cspell:ignore DATAID --> */}
 
 <Since versions={[ 4.0 ]} />
 

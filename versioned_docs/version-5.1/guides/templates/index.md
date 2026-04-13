@@ -296,7 +296,7 @@ It is recommended to use the string helper to get one of the core Moodle formats
 
 This will ask the Moodle server for the string "strftimedate" and will use the value (which in this case is "%d %B %Y" in case of English) to format the user date. So the resulting formatted timestamp from the userdate helper would be like "13 August 2021".
 
-<!-- cspell:ignore shortentext -->
+{/* <!-- cspell:ignore shortentext --> */}
 
 ### shortentext {/* #shortentext */}
 
@@ -495,7 +495,7 @@ Sometimes a template requires that some JavaScript runs when it is added to the 
 Example
 
 ```handlebars
-<!-- HTML here -->>
+{/* <!-- HTML here --> */}>
 {{^element.frozen}}
 {{#js}}
 require(['theme_boost/form-display-errors'], function(module) {

@@ -5,10 +5,10 @@ tags:
   - Plugins
 ---
 
-<!-- cspell:ignore filtername -->
-<!-- cspell:ignore strpos -->
-<!-- cspell:ignore localconfig -->
-<!-- cspell:ignore filterlocalsettings -->
+{/* <!-- cspell:ignore filtername --> */}
+{/* <!-- cspell:ignore strpos --> */}
+{/* <!-- cspell:ignore localconfig --> */}
+{/* <!-- cspell:ignore filterlocalsettings --> */}
 
 import {
     DbAccessPHP,
@@ -75,7 +75,7 @@ import Filter from '!!raw-loader!./_examples/filter.php';
 
 ### lang/en/filter_pluginname.php {/* #langenfilter_pluginnamephp */}
 
-<!-- markdownlint-disable-next-line MD038 -->
+{/* <!-- markdownlint-disable-next-line MD038 --> */}
 export const langExample = `
  $string['filtername'] = 'Activity names auto-linking';
 `;

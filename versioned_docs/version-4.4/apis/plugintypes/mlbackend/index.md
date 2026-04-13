@@ -6,8 +6,8 @@ tags:
   - plugintype
 ---
 
-<!-- cspell:ignore tensorboard -->
-<!-- cspell:ignore moodlemlbackend -->
+{/* <!-- cspell:ignore tensorboard --> */}
+{/* <!-- cspell:ignore moodlemlbackend --> */}
 
 Machine learning backends process the datasets generated from the indicators and targets calculated by the [Analytics API](../../subsystems/analytics/index.md). They are used for machine learning training, prediction and models evaluation.
 

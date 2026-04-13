@@ -80,7 +80,8 @@ Some terms used:
   }
   ```
 
-<!-- cspell:ignore Sahi, dataroot -->
+{/* <!-- cspell:ignore Sahi, dataroot --> */}
+
 - **Behat**: PHP framework and CLI application that wraps the whole process of features files loading + features files parsing + execution of actions in the browser + results output (http://behat.org/)
 - **Gherkin**: Human-readable language used to define features that can be parsed and translated into PHP methods. For more info, it's the same language used by Cucumber, the BDD Ruby framework (https://github.com/cucumber/cucumber/wiki/Gherkin)
 - **Context**: In Behat scope a context is a PHP class that groups steps definitions (as methods)
@@ -136,7 +137,7 @@ It follows the approach chosen with PHPUnit:
 
 Acceptance testing implies interaction with the browser like real users does, so it requires the site to be accessible via URL. The Moodle integration creates a new moodle site installation in parallel to the production one to run the tests in a sandbox without affecting the production environment, switching the regular `$CFG->wwwroot`, `$CFG->dataroot` and `$CFG->prefix` to alternatives, which should be only accessible from localhost or internal networks. Info about how to run the tests in [Running acceptance test](./running.md).
 
-<!-- cspell:ignore saucelabs, subcontexts -->
+{/* <!-- cspell:ignore saucelabs, subcontexts --> */}
 This default configuration is useful when developing in a local host, but to run the tests automatically with Jenkins, GHA, Saucelabs... or other CI systems we provide a few extra settings.
 
 All the behat CLI utilities we provide within the Moodle codebase (admin/tool/behat/cli/*) are using `$CFG->behat_wwwroot`, `$CFG->behat_prefix` and `$CFG->behat_dataroot` instead of `$CFG->wwwroot`, `$CFG->prefix` and `$CFG->dataroot`, this scripts are self-contained, but as we are accessing through a browser, we also need to switch the whole Moodle instance to test mode. For this there are two requirements:

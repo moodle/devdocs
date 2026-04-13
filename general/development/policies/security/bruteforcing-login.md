@@ -7,7 +7,7 @@ tags:
   - Security
 ---
 
-<!-- cspell:ignore OWASP -->
+{/* <!-- cspell:ignore OWASP --> */}
 
 :::note
 

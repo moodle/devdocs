@@ -45,8 +45,8 @@ Different options were assessed, including the option to introduce new features 
 
 As part of the process the working group assessed several other solutions, including:
 
-<!-- cspell:ignore yari -->
-<!-- cspell:ignore mkdocs -->
+{/* <!-- cspell:ignore yari --> */}
+{/* <!-- cspell:ignore mkdocs --> */}
 
 - MDN's Yari tool, used to create the MDN Documentation
   - Discarded as it is heavily tied to MDN at this time

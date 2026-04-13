@@ -5,9 +5,9 @@ tags:
  - Routing
 ---
 
-<!-- cspell:ignore shortlink -->
-<!-- cspell:ignore shortlinks -->
-<!-- cspell:ignore ALPHANUMEXT -->
+{/* <!-- cspell:ignore shortlink --> */}
+{/* <!-- cspell:ignore shortlinks --> */}
+{/* <!-- cspell:ignore ALPHANUMEXT --> */}
 
 Shortlinks are concise URLs that route to a fully-qualified URL in Moodle. Comprising of a smaller set of characters, their use is suitable for SMS, convenience, or where a longer URL would not be suitable.
 

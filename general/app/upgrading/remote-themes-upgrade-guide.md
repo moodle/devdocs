@@ -6,7 +6,7 @@ tags:
   - Moodle App
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 In the following guide, you will learn how to migrate your styles from an older version of the app.
 

@@ -104,7 +104,8 @@ adding activities. They could then use any type of XSS attack to gain full admin
 The solution has two parts: educate admins and teachers about the risks associated with each capability and
 optionally allow central management of risks.
 
-<!-- cspell:ignore bitmask, bitmasks, MANAGETRUST, DATALOSS -->
+{/* <!-- cspell:ignore bitmask, bitmasks, MANAGETRUST, DATALOSS --> */}
+
 #### Risk bitmask in capabilities {/* #risk-bitmask-in-capabilities */}
 
 Adds a risk bitmask field to each capability. Each bit indicates presence of different risk associated with

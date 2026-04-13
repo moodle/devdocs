@@ -5,7 +5,7 @@ tags:
   - API
 ---
 
-<!-- cspell:ignore renderables, sometext, courseid, enabletrusttext -->
+{/* <!-- cspell:ignore renderables, sometext, courseid, enabletrusttext --> */}
 
 The Output API is responsible for visual aspects of Moodle content. This page explains how renderers, renderables, themes and templates all work together.
 

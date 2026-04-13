@@ -286,10 +286,10 @@ Any time that this template is rendered and placed on the page the `mod_forum/di
 
 :::note Since Moodle 4.0
 Moodle no longer supports Internet Explorer. It's now safe to use Arrow functions.
-<!--
+{/* <!--
 TODO:
 Moodle no longer supports Internet Explorer. It's now safe to use <Term reference="arrowFunctions">Arrow functions</Term>.
--->
+--> */}
 :::
 
 Often you may want to link the JavaScript to a specific `DOMElement` in the template.

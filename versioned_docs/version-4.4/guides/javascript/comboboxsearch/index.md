@@ -186,7 +186,8 @@ Handle our base case of keyboard handlers i.e. opening and closing the dropdown,
 #### registerInputHandlers() {/* #registerInputHandlers */}
 
 Register the text input handlers for the search input and debounce the input so that we don't need to fire a bunch of calls as the user is still typing.
-<!-- cspell:ignore filterrenderpipe -->
+{/* <!-- cspell:ignore filterrenderpipe --> */}
+
 #### filterrenderpipe() {/* #filterrenderpipe */}
 
 Combine the filter and render methods into a single method to be called by the input handlers as a QoL shorthand call.

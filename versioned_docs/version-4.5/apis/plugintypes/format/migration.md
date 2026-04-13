@@ -5,10 +5,10 @@ tags:
   - Format
 ---
 
-<!-- cspell:ignore cmitem -->
-<!-- cspell:ignore controlmenu -->
-<!-- cspell:ignore courseeditor -->
-<!-- cspell:ignore dndupload -->
+{/* <!-- cspell:ignore cmitem --> */}
+{/* <!-- cspell:ignore controlmenu --> */}
+{/* <!-- cspell:ignore courseeditor --> */}
+{/* <!-- cspell:ignore dndupload --> */}
 
 import { getExample } from '@site/src/moodleBridge';
 

@@ -152,7 +152,7 @@ public static function mobile_course_view($args) {
 
 ```html handlebars title="template in templates/mobileapp/greeting.mustache"
 {{=<% %>=}}
-<!-- This will render "Hello, John Doe" in the app -->
+{/* <!-- This will render "Hello, John Doe" in the app --> */}
 <h1 class="text-center">Hello, <% name %> {{ CONTENT_OTHERDATA.surname }}</h1>
 ```
 

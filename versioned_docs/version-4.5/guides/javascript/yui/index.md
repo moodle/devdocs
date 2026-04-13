@@ -88,7 +88,7 @@ We will soon be adding API Documentation for Moodle-specific YUI modules in addi
 
 ## Books: {/* #books */}
 
-<!-- cspell:ignore Zakas -->
+{/* <!-- cspell:ignore Zakas --> */}
 
 Some good books:
 

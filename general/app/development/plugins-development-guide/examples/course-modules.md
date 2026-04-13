@@ -174,7 +174,7 @@ Finally, let's implement the mustache template in `templates/mobileapp/mobile_vi
             </ion-item>
         <%/showget%>
 
-        <!-- Call log WS when the template is loaded. -->
+        {/* <!-- Call log WS when the template is loaded. --> */}
         <span core-site-plugins-call-ws-on-load name="mod_certificate_view_certificate"
                 [params]="{certificateid: <% certificate.id %>}" [preSets]="{getFromCache: 0, saveToCache: 0}">
         </span>

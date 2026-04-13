@@ -29,7 +29,8 @@ In addition to browser extensions, web browsers such as Chrome and Edge include 
 - Google Chrome's [Lighthouse](https://developer.chrome.com/docs/lighthouse/) can audit webpages for performance, accessibility, progressive web apps, SEO, and more.
 - Microsoft Edge's [Issues tool](https://learn.microsoft.com/en-us/microsoft-edge/devtools/issues/) also provides similar functionality to Lighthouse.
 
-<!-- cspell:ignore Deque -->
+{/* <!-- cspell:ignore Deque --> */}
+
 ### Accessibility tests using Behat {/* #accessibility-tests-using-behat */}
 
 Moodle LMS uses Deque's open-source automated accessibility testing engine, [axe-core](https://github.com/dequelabs/axe-core), which allows us to run automated accessibility testing using Behat. To write accessibility tests on Behat, it is essential to add the `@accessibility` and `@javascript` tags to the test scenario.
@@ -123,7 +124,7 @@ Screen readers are assistive technologies that help people who are blind or have
 
 The table below lists some popular screen readers. Browsers in **bold** font indicate the best compatibility with the given screen reader compared to other compatible browsers.
 
-<!-- cspell:ignore ChromeVox -->
+{/* <!-- cspell:ignore ChromeVox --> */}
 
 | Screen reader                                                                                                                   | Operating system | Browser compatibility             | Used in testing on |
 |---------------------------------------------------------------------------------------------------------------------------------|------------------|-----------------------------------|--------------------|
@@ -177,7 +178,8 @@ Below are several resources about how you can use the accessibility tree in vari
 - Chrome and Chromium-based browsers: [Full accessibility tree in Chrome DevTools](https://developer.chrome.com/blog/full-accessibility-tree/)
 - Firefox: [Accessibility inspector](https://firefox-source-docs.mozilla.org/devtools-user/accessibility_inspector/index.html)
 
-<!-- cspell:ignore siegemedia -->
+{/* <!-- cspell:ignore siegemedia --> */}
+
 ### Colour contrast checkers {/* #colour-contrast-checkers */}
 
 To meet colour contrast requirements, user interface elements must meet the following WCAG success criteria:

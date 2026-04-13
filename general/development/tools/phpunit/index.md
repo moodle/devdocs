@@ -66,7 +66,7 @@ The following table shows what PHPUnit version is installed in which Moodle vers
 
 ## Initialisation of test environment {/* #initialisation-of-test-environment */}
 
-<!-- cspell:ignore testsuite, testsuites -->
+{/* <!-- cspell:ignore testsuite, testsuites --> */}
 
 Our PHPUnit integration requires a dedicated database and data root folder. First, add a new data root directory and prefix into your config.php, you can find examples in config-dist.php.
 

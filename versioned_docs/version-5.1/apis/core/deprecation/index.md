@@ -4,7 +4,7 @@ tags:
 - deprecation
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 <Since version="4.4" issueNumbers="MDL-80005" />
 

@@ -36,13 +36,13 @@ Where you encounter such a spelling and need it to be ignored, you should either
 To ignore a spelling error within a single file, you can use an HTML comment:
 
 ```html title="Ignoring a single word"
-<!-- cspell:ignore yourword -->
+{/* <!-- cspell:ignore yourword --> */}
 ```
 
 You can ignore multiple words in the same comment by separating them with a comma, for example:
 
 ```html title="Ignoring multiple words"
-<!-- cspell:ignore yourword,goeshere -->
+{/* <!-- cspell:ignore yourword,goeshere --> */}
 ```
 
 If the word you are using is a word which will be frequently used across the project, then you should add it to the relevant [spelling list](#spelling-lists).

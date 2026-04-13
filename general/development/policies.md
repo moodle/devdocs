@@ -210,7 +210,7 @@ For more about this, see [Third-party libraries](https://docs.moodle.org/dev/Thi
 
 Please note that Moodle coding style and design is pretty unique, it is not compatible with [PEAR coding standards](http://pear.php.net/manual/en/standards.php) or any other common PHP standards.
 
-<!-- cspell:ignore 開発 -->
+{/* <!-- cspell:ignore 開発 --> */}
 
 ## Translations {/* #translations */}
 

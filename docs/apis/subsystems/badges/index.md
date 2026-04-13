@@ -4,7 +4,7 @@ tags:
   - API
   - Badges
 ---
-<!-- cspell:ignore Instructure's -->
+{/* <!-- cspell:ignore Instructure's --> */}
 
 The Moodle Badges API facilitates the creation and management of site and course-specific badges, enabling their export to external Open Badges compliant platforms, often referred to as "backpacks".
 

@@ -57,7 +57,7 @@ Some of the important files for the repository plugintype are described below. S
 
 ### lang/en/repository_pluginname.php {/* #langenrepository_pluginnamephp */}
 
-<!-- markdownlint-disable-next-line MD038 -->
+{/* <!-- markdownlint-disable-next-line MD038 --> */}
 export const langExample = `
 $string['pluginname']= 'Example repository';
 $string['configplugin'] = 'Configuration for Example repository';

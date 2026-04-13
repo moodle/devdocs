@@ -7,7 +7,7 @@ tags:
 sidebar_position: 4
 ---
 
-<!-- cspell:ignore ACTIVITYNAME, Deque -->
+{/* <!-- cspell:ignore ACTIVITYNAME, Deque --> */}
 
 This document proposes a checklist for accessibility reviews. Not all aspects of accessibility can be checked automatically, so this checklist is intended to guide reviewers when doing an accessibility check to a patch.
 

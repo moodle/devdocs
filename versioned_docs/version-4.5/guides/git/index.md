@@ -4,8 +4,8 @@ tags:
   - Git
 ---
 
-<!-- cspell:ignore pushpull -->
-<!-- cspell:ignore unstaged -->
+{/* <!-- cspell:ignore pushpull --> */}
+{/* <!-- cspell:ignore unstaged --> */}
 
 A reasonable knowledge of the Git basics is a good idea before you start to use it for development. If you are new to Git, you are encouraged to go to the [See also](#see_also) section on this page for some more general reading.
 
@@ -108,7 +108,8 @@ This command does several jobs for you:
 :::
 
 ## Keeping your public repository up-to-date {/* #keeping-your-public-repository-up-to-date */}
-<!-- cspell:ignore forwardable -->
+
+{/* <!-- cspell:ignore forwardable --> */}
 Your fork at GitHub is not updated automatically. To keep it synced with the upstream Moodle repository, you have to fetch the recent changes from the official moodle.git repository. To avoid conflicts, it is strongly recommended that you never modify the standard Moodle branches. Never commit directly into `main` and `MOODLE_XXX_STABLE` branches, but instead create topic branches to work on. In Git terminology, the `main` branch and `MOODLE_XXX_STABLE` branches should always be fast-forwardable.
 
 ![git-sync-github.png](./_index/git-sync-github.png)
@@ -145,7 +146,8 @@ mdk update
 :::
 
 ### How it works {/* #how-it-works */}
-<!-- cspell:ignore gitrevisions -->
+
+{/* <!-- cspell:ignore gitrevisions --> */}
 The `git fetch` command does not modify your current working directory. It just downloads all recent changes from a remote repository and stores them into remote-tracking branches. The `git push` command takes these remote-tracking branches from upstream and pushes them to GitHub under the same name. Understanding this fully requires a bit of knowledge and experience with Git.
 
 :::note
@@ -448,7 +450,8 @@ There's a variant of the `git cherry-pick` command that supports multiple commit
 :::
 
 ### Applying a set of patches {/* #applying-a-set-of-patches */}
-<!-- cspell:ignore patchset -->
+
+{/* <!-- cspell:ignore patchset --> */}
 Consider the branch `MDL-xxxxx-400_topic` from the previous example. Imagine the branch consisted of several commits. It may be easier to use the `git format-patch` and `git am` commands to apply the whole set of patches (patchset).
 
 Firstly, you will need to export all commits from the topic branch to separate files.
@@ -489,7 +492,9 @@ The `git am -3 ../moodle_400/.patches/*` command applies all the files from the 
 - [add MOODLE_24_STABLE to github.com repository](http://moodle.org/mod/forum/discuss.php?d=217617)
 
 ### External resources {/* #external-resources */}
-<!-- cspell:ignore Chacon -->
+
+{/* <!-- cspell:ignore Chacon --> */}
+
 - [Everyday GIT With 20 Commands Or So](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/giteveryday.html)
 - ['Pro Git' complete book](https://git-scm.com/book/en/v2)
 - [Getting git by Scott Chacon](http://vimeo.com/14629850) - an recording of an excellent 1-hour presentation that introducing git, including a simple introduction to what is going on under the hood.

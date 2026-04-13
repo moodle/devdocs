@@ -1,4 +1,4 @@
-<!-- markdownlint-disable first-line-heading -->
+{/* <!-- markdownlint-disable first-line-heading --> */}
 For an Activity, you _must_ define the following three functions, which are described below:
 
 ```php title="mod/[modname]/lib.php"

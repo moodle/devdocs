@@ -170,7 +170,8 @@ This allows compliance with regulation such as the General Data Protection Regul
 
 The [Rating API](https://docs.moodle.org/dev/Rating_API) lets you create AJAX rating interfaces so that users can rate items in your plugin. In an activity module, you may choose to aggregate ratings to form grades.
 
-<!-- cspell:ignore reportbuilder -->
+{/* <!-- cspell:ignore reportbuilder --> */}
+
 ### Report builder API (reportbuilder) {/* #report-builder-api-reportbuilder */}
 
 The [Report builder API](/docs/apis/core/reportbuilder/index.md) allows you to create reports in your plugin, as well as providing custom reporting data which users can use to build their own reports.
@@ -249,7 +250,8 @@ The [Question API](https://docs.moodle.org/dev/Question_API) (which can be divid
 
 ## See also {/* #see-also */}
 
-<!-- cspell:ignore codingstyle -->
+{/* <!-- cspell:ignore codingstyle --> */}
+
 - [Plugins](https://docs.moodle.org/dev/Plugins) - plugin types also have their own APIs
 - [Callbacks](https://docs.moodle.org/dev/Callbacks) - list of all callbacks in Moodle
 - [Coding style](/general/development/policies/codingstyle) - general information about writing PHP code for Moodle

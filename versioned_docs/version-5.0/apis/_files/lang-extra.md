@@ -1,4 +1,4 @@
-<!-- markdownlint-disable MD041 -->
+{/* <!-- markdownlint-disable MD041 --> */}
 
 :::caution Activity modules are different
 

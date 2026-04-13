@@ -5,10 +5,10 @@ tags:
   - Format
 ---
 
-<!-- cspell:ignore pluginskel -->
-<!-- cspell:ignore navigationlib -->
-<!-- cspell:ignore cmitem -->
-<!-- cspell:ignore controlmenu -->
+{/* <!-- cspell:ignore pluginskel --> */}
+{/* <!-- cspell:ignore navigationlib --> */}
+{/* <!-- cspell:ignore cmitem --> */}
+{/* <!-- cspell:ignore controlmenu --> */}
 
 import { getExample } from '@site/src/moodleBridge';
 import { ComponentFileSummary } from '../../../_utils';
