@@ -34,12 +34,16 @@ In an open source project, the end use of the codebase varies. People may have c
 
 When we talk about Public APIs in Moodle, we are not referring to the `public` keyword in the method definition.
 
-Instead we are considering how that API feature is used. Is that API feature intended to be, or is there a reasonable expectation that it  may be, consumed in some reasonable way including:
+Instead we are considering how that API feature is used. Is that API feature intended to be, or is there a reasonable expectation that it may be, consumed in some reasonable way including:
 
 - being called or accessed externally; or
 - being overridden in a class OOP sense.
 
 :::
+
+Deprecation applies to all Moodle code, including PHP, JavaScript, templates, React components, web services, and so on.
+
+The Deprecation policy also applies when code is _changed_ in a way that may break other code. This includes the impact it may have upon areas such as themes, hook subscribers, callbacks, and child templates.
 
 ## Moodle Core deprecation process {/* #moodle-core-deprecation-process */}
 
