@@ -268,6 +268,23 @@ In the case of legacy functions (those not placed in classes), names should star
 
 Verbosity is encouraged: function names should be as illustrative as is practical to enhance understanding.
 
+:::tip[Overriding parent methods]
+
+When writing a method which overrides a method in a parent Class, Interface, or Trait, it is strongly recommended that the `#[\Override]` attribute be used, for example:
+
+```php title="Example of a method which overrides a third-party method"
+class example extends \Some\Vendor\ExampleClass {
+    #[\Override]
+    public function makeRequest(): void {
+        // ...
+    }
+}
+```
+
+In Moodle's coding standard, this attribute is also used by PHPCS rules as a signal that the method is a genuine override, so some sniffs relating to documentation and to the naming of the overridden method and its parameters are not applied.
+
+:::
+
 The uses of type hints and return type declarations is required in PHP in all possible locations for all new code. There will be necessary exclusions, such as code extending existing non-compliant code and implementing things where it is not available. Progressive approach will be applied.
 
 :::note
@@ -286,7 +303,7 @@ function report_participation_get_overviews(string $action, ?int userid): ?array
 
 </ValidExample>
 
-There is an exception for [activity modules](/docs/apis/plugintypes/mod) modules|activity modules]] that still use only plugin name as the prefix for legacy reasons.
+There is an exception for [activity modules](/docs/apis/plugintypes/mod) that still use only plugin name as the prefix for legacy reasons.
 
 <ValidExample>
 
