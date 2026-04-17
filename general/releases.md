@@ -90,6 +90,17 @@ Minor releases dates differ slightly from release to release depending on the ti
 
 :::
 
+## Moodle 5.2 {/* #moodle-52 */}
+
+<ReleaseTable releaseName="5.2" />
+
+:::info
+
+Bug fixes for general core bugs in 5.2.x will end 19 April 2027 (12 months).<br/>
+Bug fixes for security issues in 5.2.x will end 4 October 2027 (18 months).
+
+:::
+
 ## Moodle 5.1 {/* #moodle-51 */}
 
 <ReleaseTable releaseName="5.1" />
@@ -97,7 +108,7 @@ Minor releases dates differ slightly from release to release depending on the ti
 :::info
 
 Bug fixes for general core bugs in 5.1.x will end 5 October 2026 (12 months).<br/>
-Bug fixes for security issues in 5.1.x will end April 2027 (18 months).
+Bug fixes for security issues in 5.1.x will end 19 April 2027 (18 months).
 
 :::
 
@@ -108,7 +119,7 @@ Bug fixes for security issues in 5.1.x will end April 2027 (18 months).
 :::info
 
 Bug fixes for general core bugs in 5.0.x ended 20 April 2026 (12 months).<br/>
-Bug fixes for security issues in 5.0.x will end October 2026 (18 months).
+Bug fixes for security issues in 5.0.x will end 5 October 2026 (18 months).
 
 :::
 
@@ -132,7 +143,7 @@ Bug fixes for security issues in 4.6.x ended 14 April 2025 (4 months).
 :::info
 
 Bug fixes for general core bugs in 4.5.x ended 6 October 2025 (12 months).<br/>
-Bug fixes for security issues in 4.5.x will end October 2027 (36 months).
+Bug fixes for security issues in 4.5.x will end 4 October 2027 (36 months).
 
 :::
 
