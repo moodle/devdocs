@@ -19,7 +19,7 @@ The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/
 
 <SupportedReleases />
 
-![Release graph summarising the currently supported Moodle releases in a visual form](_releases/5013_release_graph.png)
+![Release graph summarising the currently supported Moodle releases in a visual form](_releases/5020_release_graph.png)
 
 <details>
     <summary>Release graph key</summary>
@@ -107,7 +107,7 @@ Bug fixes for security issues in 5.1.x will end April 2027 (18 months).
 
 :::info
 
-Bug fixes for general core bugs in 5.0.x will end 20 April 2026 (12 months).<br/>
+Bug fixes for general core bugs in 5.0.x ended 20 April 2026 (12 months).<br/>
 Bug fixes for security issues in 5.0.x will end October 2026 (18 months).
 
 :::
@@ -120,8 +120,8 @@ Please note that Moodle 4.6 is an experimental version integrating MDL-71378 wit
 
 :::info
 
-Bug fixes for general core bugs in 4.6.x will end 14 April 2025 (4 months).<br/>
-Bug fixes for security issues in 4.6.x will end 14 April 2025 (4 months).
+Bug fixes for general core bugs in 4.6.x ended 14 April 2025 (4 months).<br/>
+Bug fixes for security issues in 4.6.x ended 14 April 2025 (4 months).
 
 :::
 
@@ -131,7 +131,7 @@ Bug fixes for security issues in 4.6.x will end 14 April 2025 (4 months).
 
 :::info
 
-Bug fixes for general core bugs in 4.5.x will end 6 October 2025 (12 months).<br/>
+Bug fixes for general core bugs in 4.5.x ended 6 October 2025 (12 months).<br/>
 Bug fixes for security issues in 4.5.x will end October 2027 (36 months).
 
 :::
@@ -142,8 +142,8 @@ Bug fixes for security issues in 4.5.x will end October 2027 (36 months).
 
 :::info
 
-Bug fixes for general core bugs in 4.4.x will end 21 April 2025 (12 months).<br/>
-Bug fixes for security issues in 4.4.x will end 8 December 2025 (18 months).
+Bug fixes for general core bugs in 4.4.x ended 21 April 2025 (12 months).<br/>
+Bug fixes for security issues in 4.4.x ended 8 December 2025 (18 months).
 
 :::
 
@@ -154,7 +154,7 @@ Bug fixes for security issues in 4.4.x will end 8 December 2025 (18 months).
 :::info
 
 Bug fixes for general core bugs in 4.3.x ended 7 October 2024 (12 months).<br/>
-Bug fixes for security issues in 4.3.x will end 21 April 2025 (18 months).
+Bug fixes for security issues in 4.3.x ended 21 April 2025 (18 months).
 
 :::
 
@@ -176,7 +176,7 @@ Bug fixes for security issues in 4.2.x ended 7 October 2024 (18 months).
 :::info
 
 Bug fixes for general core bugs in 4.1.x ended 11 December 2023 (13 months).<br/>
-Bug fixes for security issues in 4.1.x will end 8 December 2025 (37 months).
+Bug fixes for security issues in 4.1.x ended 8 December 2025 (37 months).
 
 :::
 
