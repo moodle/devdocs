@@ -30,7 +30,12 @@
                     "name": "5.2.0",
                     "releaseDate": "20 April 2026",
                     "version": 2026042000,
-                    "upgradePath": "https://docs.moodle.org/502/en/Upgrading",
+                    "upgradePath": "https://docs.moodle.org/502/en/Upgrading"
+                },
+                {
+                    "name": "5.2.1",
+                    "releaseDate": "8 June 2026",
+                    "version": 2026042001,
                     "releaseNoteUrl": false
                 }
             ]
