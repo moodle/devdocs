@@ -67,7 +67,12 @@
                 {
                     "name": "5.1.4",
                     "releaseDate": "20 April 2026",
-                    "version": 2025100604,
+                    "version": 2025100604
+                },
+                {
+                    "name": "5.1.5",
+                    "releaseDate": "8 June 2026",
+                    "version": 2025100605,
                     "releaseNoteUrl": false
                 }
             ]
@@ -119,7 +124,12 @@
                 {
                     "name": "5.0.7",
                     "releaseDate": "20 April 2026",
-                    "version": 2025041407,
+                    "version": 2025041407
+                },
+                {
+                    "name": "5.0.8",
+                    "releaseDate": "8 June 2026",
+                    "version": 2025041408,
                     "releaseNoteUrl": false
                 }
             ]
@@ -208,7 +218,12 @@
                 {
                     "name": "4.5.11",
                     "releaseDate": "20 April 2026",
-                    "version": 2024100711,
+                    "version": 2024100711
+                },
+                {
+                    "name": "4.5.12",
+                    "releaseDate": "8 June 2026",
+                    "version": 2024100712,
                     "releaseNoteUrl": false
                 }
             ]
