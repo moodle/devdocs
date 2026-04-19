@@ -494,11 +494,27 @@ Note that this also implies that the Given, When and Then keywords should be use
 
 The setup is not what you are really testing here. Therefore, it should be as quick and reliable as possible. The way to achieve this is with steps like `And the following "Thing" exist:` which directly insert the data into the database. If necessary, write extra steps for your plugin to setup the things you need.
 
-### Don't use XPath or CSS selectors - fix your Accessibility bugs {/* #dont-use-xpath-or-css-selectors---fix-your-accessibility-bugs */}
+### Avoid using XPath or CSS selectors - fix accessibility issues instead {/* #dont-use-xpath-or-css-selectors---fix-your-accessibility-bugs */}
 
-If, the only way you can identify something in the page that you want to manipulate is with a step like `I set the field with xpath "//textarea['answer')](contains(@name,)" to "frog"`, then this is probably the sign that you have an Accessibility bug, because Behat accesses the page very like a screen-reader user would.
+Behat interacts with the page in a way close to how a screen-reader user would experience it. If, the only way you can identify something in the page that you want to manipulate is with a step like `I set the field with xpath "//textarea[@name='answer']" to "frog"`, then this is probably the sign that you have an Accessibility issue.
 
-You should be able to refer to things with steps like `I set the field "Answer" to "frog"'` or `I click on "True" "radio" in the "First question" "question"`. If not, you should probably think about fixing the accessibility bug, rather than resorting to unreadable selectors in your Behat test.
+<InvalidExample title="Don't">
+
+```
+I set the field with xpath "//textarea[@name='answer']" to "frog"
+And I click on "True" "radio" in the "#question-1" "css_element"
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```
+I set the field "Answer" to "frog"
+I click on "True" "radio" in the "First question" "question"
+```
+
+</ValidExample>
 
 ### When you define more steps in your plugin, make it clear they come from your plugin {/* #when-you-define-more-steps-in-your-plugin-make-it-clear-they-come-from-your-plugin */}
 
