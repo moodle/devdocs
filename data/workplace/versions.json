@@ -20,7 +20,7 @@
                 {
                     "name": "5.1.1",
                     "releaseDate": "9 December 2025",
-                    "version": 2025110410,
+                    "version": 2025120900,
                     "releaseNoteUrl": "https://docs.moodle.org/501/en/Moodle_Workplace_rolling_release_notes#5.1.1_rolling"
                 },
                 {
@@ -28,6 +28,12 @@
                     "releaseDate": "13 February 2026",
                     "version": 2026021300,
                     "releaseNoteUrl": "https://docs.moodle.org/501/en/Moodle_Workplace_rolling_release_notes#5.1.3_rolling"
+                },
+                {
+                    "name": "5.1.4",
+                    "releaseDate": "21 April 2026",
+                    "version": 2026040610,
+                    "releaseNoteUrl": "https://docs.moodle.org/501/en/Moodle_Workplace_rolling_release_notes#5.1.4_rolling"
                 }
             ]
         },
@@ -56,8 +62,14 @@
                 {
                     "name": "5.1.3",
                     "releaseDate": "13 February 2026",
-                    "version": 2026021300,
+                    "version": 2025110426,
                     "releaseNoteUrl": "https://docs.moodle.org/501/en/Moodle_Workplace_release_notes#5.1.3"
+                },
+                {
+                    "name": "5.1.4",
+                    "releaseDate": "21 April 2026",
+                    "version": 2025110440,
+                    "releaseNoteUrl": "https://docs.moodle.org/501/en/Moodle_Workplace_release_notes#5.1.4"
                 }
             ]
         },
@@ -154,6 +166,12 @@
                     "releaseDate": "13 February 2026",
                     "version": 2025051356,
                     "releaseNoteUrl": "https://docs.moodle.org/500/en/Moodle_Workplace_release_notes#5.0.6"
+                },
+                {
+                    "name": "5.0.7",
+                    "releaseDate": "21 April 2026",
+                    "version": 2025051370,
+                    "releaseNoteUrl": "https://docs.moodle.org/500/en/Moodle_Workplace_release_notes#5.0.7"
                 }
             ]
         },
@@ -280,6 +298,12 @@
                     "releaseDate": "13 February 2026",
                     "version": 2024110592,
                     "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_release_notes#4.5.10"
+                },
+                {
+                    "name": "4.5.11",
+                    "releaseDate": "21 April 2026",
+                    "version": 2024110602,
+                    "releaseNoteUrl": "https://docs.moodle.org/405/en/Moodle_Workplace_release_notes#4.5.11"
                 }
             ]
         },

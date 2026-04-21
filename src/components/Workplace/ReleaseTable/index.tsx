@@ -54,10 +54,19 @@ const releaseNoteLink = (
     return <Link to={linkTo}>{label}</Link>;
 };
 
+const getEndText = (supportDate: string, isRolling: boolean) => {
+    const now = new Date();
+    const supportDateFormatted = new Date(supportDate);
+
+    if (isRolling) {
+        return supportDateFormatted < now ? 'rolling ended' : 'rolling will end';
+    }
+    return supportDateFormatted < now ? 'ended' : 'will end';
+};
+
 export default function ReleaseTable({ releaseName, isRolling = false }: ReleaseTableProps): JSX.Element {
     const rows = getVersion(releaseName, isRolling);
     const impAndNewFeatEndDate = isRolling ? rows.improvementsandnewfeaturesEndDate : rows.generalEndDate;
-    const endText = isRolling ? 'rolling will end' : 'will end';
     const version = `${releaseName}.x`;
 
     return (
@@ -97,15 +106,15 @@ export default function ReleaseTable({ releaseName, isRolling = false }: Release
                             {isRolling && (
                                 <>
                                     {`Improvements and new features in ${version} `}
-                                    {`${endText} ${impAndNewFeatEndDate} (6 months).`}
+                                    {`${getEndText(impAndNewFeatEndDate, isRolling)} ${impAndNewFeatEndDate}.`}
                                     <br />
                                 </>
                             )}
-                            {`Bug fixes for general core bugs in ${version} ${endText} `}
-                            {`${rows.generalEndDate} (12 months).`}
+                            {`Bug fixes for general core bugs in ${version} `}
+                            {`${getEndText(rows.generalEndDate, isRolling)} ${rows.generalEndDate}.`}
                             <br />
-                            {`Bug fixes for security issues in ${version} ${endText} `}
-                            {`${rows.securityEndDate} (36 months).`}
+                            {`Bug fixes for security issues in ${version} `}
+                            {`${getEndText(rows.securityEndDate, isRolling)} ${rows.securityEndDate}.`}
                         </>
                     )}
                 </p>
