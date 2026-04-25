@@ -256,6 +256,10 @@ The [Plagiarism API](./apis/subsystems/plagiarism.md) allows your activity modul
 
 The [Question API](https://docs.moodle.org/dev/Question_API) (which can be divided into the Question bank API and the Question engine API), can be used by activities that want to use questions from the question bank.
 
+### Open Telemetry {/* #otel */}
+
+The [Open Telemetry integration](./apis/telemetry/index.mdx) allows administrators to observe the impact of various Moodle features and functionality.
+
 ## See also {/* #see-also */}
 
 {/* <!-- cspell:ignore codingstyle --> */}
