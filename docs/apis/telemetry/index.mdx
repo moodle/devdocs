@@ -1,0 +1,75 @@
+---
+title: Open Telemetry
+tags:
+  - telemetry
+---
+
+<Since version="5.2" />
+
+Moodle added support for Open Telemetry in version 5.2. This allows Moodle to collect telemetry data and send it to a telemetry backend for analysis and monitoring.
+
+The Moodle Open Telemetry integration sits outside of Moodle core and follows the same pattern as other Open Telemetry integrations for PHP.
+
+## Installation
+
+To install the Open Telemetry integration for Moodle, you can use Composer to require the `moodlehq/moodle-package-otel` package.
+
+In addition to the Moodle Open Telemetry integration, you will also need to set up the following components:
+
+- The [PHP Open Telemetry Extension](https://github.com/open-telemetry/opentelemetry-php-instrumentation), which provides the necessary instrumentation for collecting telemetry data from Moodle.
+- An Open Telemetry Transport, such as HTTP (included) or [open-telemetry/transport-grpc](https://packagist.org/packages/open-telemetry/transport-grpc)
+- An Open Telemetry Exporter, such as [open-telemetry/exporter-otlp](https://packagist.org/packages/open-telemetry/exporter-otlp)
+- An Open Telemetry Collector, which is responsible for receiving telemetry data from Moodle and forwarding it to the telemetry backend. The Open Telemetry Collector can be deployed as a standalone service or as part of a larger monitoring infrastructure.
+- A telemetry backend that supports the Open Telemetry protocol, such as [SigNoz](https://signoz.io/), [Jaeger](https://www.jaegertracing.io/), [Zipkin](https://zipkin.io/), or [Prometheus](https://prometheus.io/), to receive and analyze the telemetry data collected from Moodle.
+
+## What is included
+
+The Moodle Open Telemetry integration includes the following features:
+
+- The creation of a root span for all:
+  - web requests
+  - CLI commands
+- Specific instrumentation for:
+  - the Moodle Tasks API (Scheduled and Adhoc tasks) (`moodlelms.cronlistener`);
+  - Moodle events (`moodlelms.eventlistener`);
+  - Web Service function calls (`moodlelms.externalapilistener`).
+
+## Configuration
+
+The Moodle Open Telemetry integration can be configured using the PHP configuration file (php.ini) or by setting environment variables (for example in your web server).
+
+The current Moodle Open Telemetry integration can be disabled by setting the `OTEL_PHP_DISABLED_INSTRUMENTATIONS` setting to `moodlelms`, for example:
+
+```ini
+OTEL_PHP_DISABLED_INSTRUMENTATIONS=moodlelms
+```
+
+This will disable the Moodle Open Telemetry integration, whilst allowing other Open Telemetry integrations to continue collecting telemetry data and sending it to the telemetry backend.
+
+Individual Moodle instrumentations can be disabled by setting the `OTEL_PHP_DISABLED_INSTRUMENTATIONS` setting to the specific instrumentation name, for example:
+
+```ini
+OTEL_PHP_DISABLED_INSTRUMENTATIONS=moodlelms.cronlistener
+```
+
+Multiple instrumentations can be disabled by separating the instrumentation names with a comma, for example:
+
+```ini
+OTEL_PHP_DISABLED_INSTRUMENTATIONS=moodlelms.cronlistener,moodlelms.eventlistener
+```
+
+## Writing additional instrumentation
+
+When writing additional instrumentation for Moodle there are two options:
+
+- write a standard Open Telemetry instrumentation package for PHP, which can be used in any PHP application, including Moodle. This would involve creating a new package that follows the Open Telemetry instrumentation guidelines and can be installed via Composer.
+- write a Moodle-specific instrumentation package that extends the base class provided by the Moodle Open Telemetry integration. This would involve creating a new package that extends the base class provided by the Moodle Open Telemetry integration and can be installed via Composer.
+
+### Moodle-specific instrumentation
+
+To create your own Moodle-specific instrumentation, you should:
+
+- specify a package type of `moodle-package-otelhook`;
+- define your listeners with each listener implementing the `Moodlehq\MoodlePackageOtel\Instrumentation\MoodleListenerInterface` interface and optionally using the `Moodlehq\MoodlePackageOtel\Instrumentation\MoodleListenerTrait` trait
+- define a `\Namespace\Instrumentation\ListenersDescriber` class which implements `Moodlehq\MoodlePackageOtel\Instrumentation\ListenersDescriberInterface`
+- define your listeners in the `ListenersDescriber` class
