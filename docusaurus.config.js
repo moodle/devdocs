@@ -115,6 +115,11 @@ const config = {
                         trackingID: 'G-L9EE8RW5B1',
                     }
                     : undefined,
+                sitemap: {
+                    lastmod: 'date',
+                    priority: null,
+                    changefreq: null,
+                },
             }),
         ],
     ],
