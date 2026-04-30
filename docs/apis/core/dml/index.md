@@ -201,8 +201,8 @@ public function get_records_list(
     array $values,
     $sort = *,
     $fields = '*',
-    $limitfrom = *,
-    $limitnum = ''
+    $limitfrom = 0,
+    $limitnum = 0
 )
 ```
 
