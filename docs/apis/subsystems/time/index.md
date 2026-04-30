@@ -125,6 +125,15 @@ Moodle provides a range of methods to display a Unix Timestamp in the relevant L
    - `usergetdate` - Given a Unix Timestamp, returns an array that represents the date-time in user time
    - `usertime` - Appends the users timezone offset to an integer timestamp
 
+### Relative time {/* #relative-time */}
+
+1. Time constants
+   - See the time related [constants here](https://github.com/moodle/moodle/blob/4da09fd5082b7d0c05331ebeed6fb6dc70fc55ae/public/lib/moodlelib.php#L38-L73).
+   - These constants should be used when presenting options for relative time in the user interface.
+   - They should never be used for the actual calculation of relative times because they cannot account for leap years, DST, etc.
+1. Calculation of relative time
+   - In order to calculate relative time, one of the PHP `\DateTime` classes should be used, e.g. [`\DateTimeImmutable`](https://www.php.net/manual/en/class.datetimeimmutable.php).
+
 ## Glossary {/* #glossary */}
 
 ### Timezone {/* #timezone */}
