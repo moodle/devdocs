@@ -212,7 +212,7 @@
         "location": "public/lib/aws-sdk",
         "name": "AWS SDK for PHP",
         "description": "The AWS SDK for PHP library",
-        "version": "3.356.22",
+        "version": "3.369.22",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/aws/aws-sdk-php",
