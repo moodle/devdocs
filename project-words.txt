@@ -72,6 +72,7 @@ Quicklist
 Recaptcha
 RDBM
 RDBMS
+SigNoz
 SIGINT
 SIGTERM
 Soulier
@@ -86,6 +87,7 @@ WCAG
 Xdebug
 XMLDB
 XMPPHP
+Zipkin
 accessallgroups
 activeusers
 activitynames
