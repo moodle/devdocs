@@ -630,6 +630,15 @@ namespace mod_myplugin;
 
 There are several best practices, suggestions, and things to avoid which you should consider when writing unit tests. Some of these are described below.
 
+### Respect encapsulation
+
+As a general principle, testing should not compromise encapsulation. Most behaviour should be verifiable through public methods without need of using `ReflectionClass`. If substantial logic exists only behind private or protected methods, this may indicate that responsibilities should be extracted into a separate class with own public API.
+
+- Avoid changing API visibility in core code solely to simplify testing.
+- Prefer testing public APIs, as this avoids relying on internal implementation details while preserving encapsulation.
+- When protected functionality requires direct testing, use inheritance-based approaches.
+- Using reflection may be considered as a last resort.
+
 ### Using the magic `::class` constant {/* #using-the-magic-class-constant */}
 
 PHP supports the use of a magic `::class` constant to correctly and consistently define class names. This can be used in a range of situations, including:
