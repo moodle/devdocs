@@ -19,28 +19,28 @@ This checklist helps reviewers perform an accessibility review of a patch. It is
 
 :::
 
-## Quick-reference checklist
+## Quick-reference checklist {/* #quick-reference-checklist */}
 
 Use this as a quick scan. If any item fails or you are unsure, refer to the detailed section linked in each item.
 
-### Automated
+### Automated {/* #automated */}
 
 - [ ] Run [Axe DevTools](https://www.deque.com/axe/devtools/) or [WAVE](https://wave.webaim.org/) on the affected page(s). Fix any issues before continuing.
 
-### Structure and semantics
+### Structure and semantics {/* #structure-and-semantics */}
 
 - [ ] The page has a descriptive, unique **page title** with the most specific information first. ([Details](#page-title-and-headings))
 - [ ] There is exactly one **`h1`** heading and the heading hierarchy has no skipped levels. ([Details](#page-title-and-headings))
 - [ ] **Semantic HTML** elements are used (for example, `<button>` for buttons, `<nav>` for navigation). ([Details](#buttons))
 
-### Keyboard and focus
+### Keyboard and focus {/* #keyboard-and-focus */}
 
 - [ ] All interactive elements are **reachable and operable** using only the keyboard. ([Details](#keyboard-operability))
 - [ ] No element uses `tabindex` greater than `0`. ([Details](#tabindex-values))
 - [ ] Every focused element has a clearly **visible focus indicator**. ([Details](#visible-focus-indicators))
 - [ ] No component **traps** keyboard focus. ([Details](#keyboard-operability))
 
-### Visual presentation
+### Visual presentation {/* #visual-presentation */}
 
 - [ ] Text and interactive elements meet **colour contrast** requirements. ([Details](#colour-and-contrast))
 - [ ] The page is **usable at 200% and 400% zoom** without overlap or horizontal scrolling. ([Details](#zoom-and-reflow))
@@ -48,30 +48,30 @@ Use this as a quick scan. If any item fails or you are unsure, refer to the deta
 - [ ] CSS **visual order matches DOM order**, or custom keyboard handling compensates. ([Details](#css-order-versus-dom-order))
 - [ ] CSS animations respect `prefers-reduced-motion`. ([Details](#animations))
 
-### Content and alternatives
+### Content and alternatives {/* #content-and-alternatives */}
 
 - [ ] **Icons** inside buttons/links are hidden from assistive technologies; the accessible name is on the interactive element. ([Details](#icons-and-images))
 - [ ] Decorative images have `alt=""`. Informative images have meaningful alt text. ([Details](#icons-and-images))
 - [ ] **Link text** is descriptive — no "click here" or "read more". ([Details](#link-text))
 - [ ] **Buttons** without visible text have an accessible name (`aria-label` or visually hidden text). ([Details](#buttons))
 
-### Dynamic content and custom widgets
+### Dynamic content and custom widgets {/* #dynamic-content-and-custom-widgets */}
 
 - [ ] Dynamic updates use **`aria-live`** regions so screen readers are notified. ([Details](#dynamic-content))
 - [ ] Custom widgets follow an [ARIA APG pattern](https://www.w3.org/WAI/ARIA/apg/patterns/) with correct roles, states, and keyboard interactions. ([Details](#custom-components))
 
-### Forms
+### Forms {/* #forms-checklist */}
 
 - [ ] Every form field has a **`<label>`** (with matching `for`/`id`). ([Details](#forms))
 - [ ] Invalid fields use `aria-invalid` and error messages are linked via `aria-describedby`. ([Details](#forms))
 
 ---
 
-## Detailed guidance
+## Detailed guidance {/* #detailed-guidance */}
 
 The sections below provide more context for each checklist item. For full explanations and code examples, refer to the [Accessibility coding guidelines](../../policies/accessibility/coding-guidelines.md).
 
-### Run an automated check
+### Run an automated check {/* #run-an-automated-check */}
 
 Run an automated accessibility checker on the affected page(s) before starting the manual review:
 
@@ -87,7 +87,7 @@ Any reported issues must be fixed before continuing with the manual review.
 
 </details>
 
-### Page title and headings
+### Page title and headings {/* #page-title-and-headings */}
 
 - The page must have a descriptive, unique **page title**. The most specific information should come first (for example, "Submit assignment | Kinetics problem set 1 | Physics 101" rather than "Physics 101 | Activity").
 - There must be exactly **one `h1`** heading on the page. It should reflect the page title.
@@ -101,7 +101,7 @@ Any reported issues must be fixed before continuing with the manual review.
 
 </details>
 
-### Keyboard operability
+### Keyboard operability {/* #keyboard-operability */}
 
 - **Tab** through every interactive element on the page. Ensure all buttons, links, form fields, and custom widgets are reachable.
 - **Activate** elements using `Enter` and/or `Space` as appropriate.
@@ -116,7 +116,7 @@ Any reported issues must be fixed before continuing with the manual review.
 
 </details>
 
-### `tabindex` values
+### `tabindex` values {/* #tabindex-values */}
 
 - `tabindex` greater than `0` (for example, `tabindex="1"`) is **always wrong**. Only `0` and `-1` are acceptable.
 - If `tabindex="0"` is on a natively focusable element (`<button>`, `<a>`, `<input>`, etc.), it should be removed.
@@ -129,7 +129,7 @@ Any reported issues must be fixed before continuing with the manual review.
 
 </details>
 
-### Visible focus indicators
+### Visible focus indicators {/* #visible-focus-indicators */}
 
 - Every interactive element must show a **clearly visible focus indicator** when focused via keyboard.
 - Moodle overrides default browser focus styles. For custom components, use CSS utility classes such as `.aalink` and `.aabtn`, or add custom focus styles.
@@ -142,7 +142,7 @@ Any reported issues must be fixed before continuing with the manual review.
 
 </details>
 
-### Colour and contrast
+### Colour and contrast {/* #colour-and-contrast */}
 
 - Text and interactive elements must meet the required **contrast ratios** (4.5:1 for normal text, 3:1 for large text).
 - Colour must **not be the only** means of conveying information. If colour indicates a state (for example, red for errors), an additional cue such as text or an icon must also be present.
@@ -155,7 +155,7 @@ Any reported issues must be fixed before continuing with the manual review.
 
 </details>
 
-### Zoom and reflow
+### Zoom and reflow {/* #zoom-and-reflow */}
 
 - Set the browser viewport to **1280px wide** and zoom to **200%**. Verify the page remains usable.
 - Set the viewport to **320px wide** (or 1280px at **400% zoom**). Verify content reflows into a single column without horizontal scrolling or overlapping elements.
@@ -168,7 +168,7 @@ Any reported issues must be fixed before continuing with the manual review.
 
 </details>
 
-### CSS order versus DOM order
+### CSS order versus DOM order {/* #css-order-versus-dom-order */}
 
 If CSS visually reorders elements (for example, using Flexbox `order`), keyboard navigation will still follow the DOM order. This discrepancy confuses keyboard users. Ensure the visual order matches the DOM order, or provide custom keyboard navigation.
 
@@ -179,7 +179,7 @@ If CSS visually reorders elements (for example, using Flexbox `order`), keyboard
 
 </details>
 
-### Animations
+### Animations {/* #animations */}
 
 CSS animations should respect the user's `prefers-reduced-motion` setting. From Moodle 4.3 onwards, use the `optional-animation` SCSS mixin to mark animations as non-essential.
 
@@ -223,7 +223,7 @@ CSS animations should respect the user's `prefers-reduced-motion` setting. From 
 
 </details>
 
-### Link text
+### Link text {/* #link-text */}
 
 - Link text must clearly describe the link's purpose. Avoid "click here", "read more", "here", or "more info".
 - If multiple links share the same visible text but go to different destinations, add visually hidden text to make each link unique.
@@ -235,7 +235,7 @@ CSS animations should respect the user's `prefers-reduced-motion` setting. From 
 
 </details>
 
-### Custom components
+### Custom components {/* #custom-components */}
 
 When the patch introduces custom interactive widgets (for example, tabs, modals, dropdown menus), check that:
 
@@ -252,7 +252,7 @@ When the patch introduces custom interactive widgets (for example, tabs, modals,
 
 </details>
 
-### Dynamic content
+### Dynamic content {/* #dynamic-content */}
 
 If parts of the page are updated dynamically via JavaScript, check that:
 
@@ -268,7 +268,7 @@ If parts of the page are updated dynamically via JavaScript, check that:
 
 </details>
 
-### Forms
+### Forms {/* #forms */}
 
 Unless the patch uses custom form fields, Moodle forms (moodleforms) are already accessible. For **custom forms**, check:
 
@@ -286,12 +286,12 @@ When a patch introduces ad-hoc forms, ensure they follow the [forms guidelines](
 
 </details>
 
-### Other visual checks
+### Other visual checks {/* #other-visual-checks */}
 
 - **Visual structure**: If empty space, indentation, or colour is used to convey hierarchy, the same structure must be represented in the HTML (for example, nested lists, headings, or [`role="list"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/List_role)).
 - **Hover/focus-only elements**: If elements only appear on hover, ensure keyboard users can also reveal them. Moodle provides the `focus-control` (on the parent) and `v-parent-focus` (on the child) CSS classes for this.
 
-## Provide feedback
+## Provide feedback {/* #provide-feedback */}
 
 If accessibility issues are found, explain:
 
@@ -299,7 +299,7 @@ If accessibility issues are found, explain:
 2. **Why** it is a problem (who is affected).
 3. **How** to fix it (with a reference to the relevant [WCAG success criterion](https://www.w3.org/TR/WCAG22/) or [coding guideline](../../policies/accessibility/coding-guidelines.md) section where possible).
 
-## Further reading
+## Further reading {/* #further-reading */}
 
 - [Accessibility coding guidelines](../../policies/accessibility/coding-guidelines.md) — detailed guidance with code examples
 - [Accessibility testing](../../policies/accessibility/testing.md) — automated and manual testing techniques

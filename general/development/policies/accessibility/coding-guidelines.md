@@ -10,7 +10,7 @@ keywords:
 
 All features in Moodle _must_ be accessible to all users regardless of their abilities. Therefore, accessibility must be built in from the planning and design stage through to development and testing, to ensure we release features that are accessible by default.
 
-## Semantic HTML
+## Semantic HTML {/* #semantic-html */}
 
 It is highly recommended to use [semantic HTML](https://developer.mozilla.org/en-US/curriculum/core/semantic-html/). Doing so is important because using HTML elements for their intended purpose (for example, using `<button>` for a button and `<h1>` for a main heading) provides essential information to assistive technologies like screen readers. This helps users of these technologies understand and interact with the user interface components effectively.
 
@@ -51,7 +51,7 @@ Below are some examples of using a semantic HTML button element in Mustache temp
 
 </ValidExample>
 
-:::warning Using non-semantic HTML: A link element as a button
+:::warning[Using non-semantic HTML: A link element as a button]
 
 Consider the following example where a link element is used as a button:
 
@@ -65,7 +65,7 @@ For assistive technologies to properly recognise the link element as a button, w
 
 :::
 
-## Accessible Rich Internet Applications (ARIA)
+## Accessible Rich Internet Applications (ARIA) {/* #accessible-rich-internet-applications-aria */}
 
 ARIA is a set of special attributes added to HTML to improve accessibility. It bridges the gap between HTML's native accessibility and the complex interactions of modern web applications.
 
@@ -79,7 +79,7 @@ It defines:
 
 to communicate what elements are and how they behave, and it is especially useful for making custom widgets and dynamic content accessible.
 
-### When to use ARIA?
+### When to use ARIA? {/* #when-to-use-aria */}
 
 We typically use ARIA when creating interactive widgets for which there is no native HTML equivalent. Some examples include autocomplete form elements, searchable combo boxes, dropdown menus, and tabbed interfaces.
 
@@ -87,7 +87,7 @@ We also use ARIA attributes to clarify relationships between elements on the pag
 
 Another use of ARIA attributes is to enhance dynamic content updates, such as defining `aria-live` regions on parts of the page that are updated dynamically. This is especially important for assistive technology users, so they are promptly notified of changes when performing actions on the page.
 
-### What ARIA is not
+### What ARIA is not {/* #what-aria-is-not */}
 
 ARIA is not a replacement for semantic HTML. Sure, we can create a button element using a `<span>` tag and assign it an ARIA role of `button`, but we already have the semantic `<button>` HTML element that works out of the box. We should use semantic HTML as much as possible and utilise ARIA as necessary to further enhance the element.
 
@@ -119,17 +119,17 @@ For this to work and behave as a button, we need to do the following:
 
 </InvalidExample>
 
-## Bootstrap
+## Bootstrap {/* #bootstrap */}
 
 Moodle uses [Bootstrap](https://getbootstrap.com/) as its front-end framework. Bootstrap's pre-designed components make it easy for Moodle developers to build responsive user interfaces for Moodle core and plugins, and help us meet zoom-related accessibility requirements, such as the WCAG Success Criteria [1.4.10 Reflow (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html) and [1.4.4 Resize Text (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html).
 
 However, while Bootstrap's components are designed to be [operable by touch, mouse, and keyboard](https://getbootstrap.com/docs/5.3/getting-started/accessibility/), we need to ensure that the Bootstrap components we use are accessible enough to convey the intended functionality to assistive technology users. Where necessary, we need to implement additional JavaScript to update the relevant ARIA attributes or improve keyboard operability. The default Boost theme includes an `aria` JavaScript module that enhances the accessibility of Bootstrap components, such as dropdown menus, combo boxes, toolbars, etc.
 
-## Developing accessible Moodle features
+## Developing accessible Moodle features {/* #developing-accessible-moodle-features */}
 
 Moodle is committed to accessibility. As Moodle developers, we must ensure that the features that we create for Moodle and its plugins are designed and developed with accessibility in mind. Below are some ways to help you develop accessible features for your plugin or core contribution.
 
-### Page titles
+### Page titles {/* #page-titles */}
 
 The page title is the first piece of information announced by screen readers when the page is loaded. Therefore, it is essential to ensure that page titles are unique, concise, and informative enough to convey the page's purpose without requiring the user to read the content.
 
@@ -144,7 +144,7 @@ Some tips for providing a meaningful page title:
 4. **Front-loaded**
    - Put the most identifying information first (Example: "`Gradebook setup | Physics 101`" rather than "`Physics 101 | Gradebook setup`").
 
-:::note change of context
+:::note[change of context]
 
 (not to be confused with Moodle's `\core\context` class and its implementations)
 
@@ -152,7 +152,7 @@ According to the [WCAG Understanding docs](https://www.w3.org/WAI/WCAG22/Underst
 
 :::
 
-#### Example
+#### Example {/* #example */}
 
 Consider that a student is on the submission page of an assignment activity called `Kinetics problem set 1` in the `Physics 101` course on the `Mount Orange School` Moodle site.
 
@@ -174,7 +174,7 @@ The most unique identifying information first represented by the name of the sub
 
 </ValidExample>
 
-#### Separating components of a page title
+#### Separating components of a page title {/* #separating-components-of-a-page-title */}
 
 To separate the components of the page title, use the `moodle_page::TITLE_SEPARATOR` constant.
 
@@ -192,7 +192,7 @@ $PAGE->set_title($pagename . moodle_page::TITLE_SEPARATOR . $coursename);
 
 </ValidExample>
 
-#### Site name on the page title
+#### Site name on the page title {/* #site-name-on-the-page-title */}
 
 There is no need to add the name of the site when setting the page title using `$PAGE->set_title()`. The site name is automatically appended to the end of the page title in the correct format when using `$PAGE->set_title()`.
 
@@ -206,12 +206,12 @@ Administrators can use the `sitenameinititle` configuration setting to configure
 This is automatically handled by `$PAGE->set_title()`.
 :::
 
-#### Useful resources
+#### Useful resources {/* #useful-resources */}
 
 - [Understanding Success Criterion 2.4.2: Page Titled (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/page-titled)
 - [Technique G88: Providing descriptive titles for Web pages](https://www.w3.org/WAI/WCAG22/Techniques/general/G88)
 
-### Headings
+### Headings {/* #headings */}
 
 A proper heading structure on a page helps screen reader users navigate the page easily by heading. To enable this, we must use semantic headings, such as `h1`-`h6` heading tags. We should not use fake headings, which are text designed to look like headings via CSS but lack semantic meaning.
 
@@ -240,12 +240,12 @@ echo $OUTPUT->heading(get_string('someheading', 'mod_yourmodulename'), 3);
 
 </ValidExample>
 
-#### Useful resources
+#### Useful resources {/* #useful-resources-1 */}
 
 - [Understanding Success Criterion 1.3.1: Info and Relationships (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html)
 - [Understanding Success Criterion 2.4.6: Headings and Labels (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html)
 
-### Colours and contrast
+### Colours and contrast {/* #colours-and-contrast */}
 
 All text must be displayed in a colour with sufficient contrast against its background colour so that it is legible for all users. The required contrast ratio depends on the size of the text:
 
@@ -254,7 +254,7 @@ All text must be displayed in a colour with sufficient contrast against its back
 
 For more information about testing colour contrast, check out the [Accessibility testing > Colour contrast checkers](./testing#colour-contrast-checkers) developer documentation.
 
-#### Do not rely on colour alone to convey meaning
+#### Do not rely on colour alone to convey meaning {/* #do-not-rely-on-colour-alone-to-convey-meaning */}
 
 Colour alone **must not** be used to convey information, indicate an action, prompt a response, or distinguish a visual element. When colour is used to communicate meaning, an additional visual cue (such as text, an icon, or a pattern) must also be provided.
 
@@ -281,12 +281,12 @@ In this example, the error message includes an error icon and is explicitly pref
 
 </ValidExample>
 
-#### Useful resources
+#### Useful resources {/* #useful-resources-2 */}
 
 - [Understanding Success Criterion 1.4.3: Contrast (Minimum) (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
 - [Understanding Success Criterion 1.4.1: Use of Color (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)
 
-### Icons
+### Icons {/* #icons */}
 
 Icons in Moodle are typically used as part of an interactive element, such as a button or a link, to visually represent the action that will be performed when the element is activated. Icons within interactive elements are considered decorative content and should be hidden from assistive technologies. The accessible name should be placed within the button or link itself. This can be achieved using an `aria-label` attribute, or a visually hidden text label within the element itself and not the icon's markup.
 
@@ -331,7 +331,7 @@ This example markup for a link that opens in a new window uses a decorative icon
 
 </ValidExample>
 
-#### Informative icons
+#### Informative icons {/* #informative-icons */}
 
 In some cases, an icon may be used to provide additional information that is not already conveyed by the text. For example, an icon next to a form field label to indicate that the field is required. In this case, the icon should have an appropriate accessible name to convey its meaning.
 
@@ -353,19 +353,19 @@ This renders an icon with an accessible name "Required" (or the equivalent in th
 
 </ValidExample>
 
-#### Target size
+#### Target size {/* #target-size */}
 
 It is important to ensure that an icon button's/link's target size (the clickable/touch area) is large enough and has sufficient spacing around it so that it can be easily activated by mouse, touch, and other pointer inputs.
 
 - The minimum target size for interactive elements is **24 by 24 CSS pixels**, as specified by [WCAG 2.2 Success Criterion 2.5.8: Target Size (Minimum) (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html).
 - For an enhanced experience, a target size of **44 by 44 CSS pixels** is recommended, as outlined in [WCAG 2.2 Success Criterion 2.5.5: Target Size (Enhanced) (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html).
 
-#### Useful resources
+#### Useful resources {/* #useful-resources-3 */}
 
 - [Understanding Success Criterion 1.1.1: Non-text Content (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html)
 - [Understanding Success Criterion 2.5.8: Target Size (Minimum) (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html)
 
-### Keyboard support
+### Keyboard support {/* #keyboard-support */}
 
 All interactive components must be fully operable through a keyboard-only interface. This ensures that users who cannot use a mouse, including those who rely on assistive technologies, can access and interact with all features.
 
@@ -376,39 +376,39 @@ Some important things to keep in mind:
   - For example, if a modal dialogue is open, the user should be able to close it (for example, by pressing `Escape` or activating a `Close` button) and return focus to the element that triggered the dialogue using only the keyboard.
 - The element that currently has focus must have a visible focus indicator.
 
-#### The `tabindex` attribute
+#### The `tabindex` attribute {/* #the-tabindex-attribute */}
 
 The `tabindex` attribute controls whether and how an element participates in the tab sequence. Only the following values should be used:
 
 - `tabindex="0"`: Adds the element to the natural tab order. Use this when a non-interactive element (such as a `<div>` or `<span>`) needs to be focusable. Interactive elements like `<button>`, `<a>`, and `<input>` are already focusable by default and do not need `tabindex="0"`.
 - `tabindex="-1"`: Removes the element from the tab order but allows it to be focused programmatically via JavaScript (using `element.focus()`). This is useful for managing focus within custom widgets.
 
-:::warning Avoid positive `tabindex` values
+:::warning[Avoid positive `tabindex` values]
 
 Using `tabindex` values greater than `0` (for example, `tabindex="1"`, `tabindex="5"`) is an anti-pattern. Positive values override the natural tab order, making keyboard navigation unpredictable and confusing, especially for sighted keyboard users who expect focus to follow the visual layout.
 
 :::
 
-#### Visible focus indicators
+#### Visible focus indicators {/* #visible-focus-indicators */}
 
 The element that currently has keyboard focus must have a clearly visible focus indicator. Moodle overrides the default browser focus styles on most elements to ensure sufficient visibility.
 
 However, when creating custom components, you may need to add additional CSS rules or use CSS utility classes for rendering accessible focus indicators, such as `.aalink` and `.aabtn` classes.
 
-#### Focus management in composite components
+#### Focus management in composite components {/* #focus-management-in-composite-components */}
 
 In some cases, a single component contains many smaller focusable elements (for example, a toolbar with multiple buttons). To keep the tab sequence manageable, only the parent component should exist in the tab order. Focus among child elements should then be managed using arrow key navigation. This can be implemented using either the **roving `tabindex`** technique or the **`aria-activedescendant`** technique.
 
 For more information, see the W3C's guidance on [keyboard navigation inside components](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#keyboardnavigationinsidecomponents).
 
-#### Useful resources
+#### Useful resources {/* #useful-resources-4 */}
 
 - [Understanding Success Criterion 2.1.1: Keyboard (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html)
 - [Understanding Success Criterion 2.1.2: No Keyboard Trap (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html)
 - [Understanding Success Criterion 2.4.7: Focus Visible (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html)
 - [ARIA APG: Developing a Keyboard Interface](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/)
 
-### Links
+### Links {/* #links */}
 
 Links should have descriptive, meaningful text that clearly conveys the purpose of the link without requiring the surrounding context. Avoid generic link text such as "click here", "read more", "more info", "learn more," or "here".
 
@@ -450,16 +450,16 @@ If multiple links on the same page share identical visible text but point to dif
 
 </ValidExample>
 
-#### Useful resources
+#### Useful resources {/* #useful-resources-5 */}
 
 - [Understanding Success Criterion 2.4.4: Link Purpose (In Context) (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context.html)
 - [Technique G91: Providing link text that describes the purpose of a link](https://www.w3.org/WAI/WCAG22/Techniques/general/G91)
 
-### Forms
+### Forms {/* #forms */}
 
 Moodle forms created with the standard [Moodle Forms API (moodleform)](/docs/apis/subsystems/form) are designed to be accessible. However, any custom form, whether built in PHP, JavaScript, or a Mustache template, must also meet accessibility requirements.
 
-#### Form labels
+#### Form labels {/* #form-labels */}
 
 Every form field must have a corresponding label.
 
@@ -483,11 +483,11 @@ There are several ways to label form elements:
 
 </ValidExample>
 
-#### Keyboard operability
+#### Keyboard operability {/* #keyboard-operability */}
 
 All form fields must be focusable and operable using only the keyboard. The form must be submittable without a mouse.
 
-#### Error identification and messaging
+#### Error identification and messaging {/* #error-identification-and-messaging */}
 
 When a form field contains an invalid entry:
 
@@ -507,13 +507,13 @@ When a form field contains an invalid entry:
 
 </ValidExample>
 
-#### Useful resources
+#### Useful resources {/* #useful-resources-6 */}
 
 - [Understanding Success Criterion 1.3.1: Info and Relationships (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html)
 - [Understanding Success Criterion 3.3.1: Error Identification (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html)
 - [Understanding Success Criterion 3.3.2: Labels or Instructions (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html)
 
-### Decorative content
+### Decorative content {/* #decorative-content */}
 
 Any component that is purely decorative — meaning it conveys no information or functionality that is not already provided by other elements on the page — can be hidden from assistive technologies.
 
@@ -531,7 +531,7 @@ To hide decorative content from screen readers, use one of the following techniq
 
 </ValidExample>
 
-:::note A layout table
+:::note[A layout table]
 
 Before the days of responsive CSS, tables in Moodle were often used for page layout. When using tables for layout purposes, the table must be hidden from assistive technologies by adding `role="presentation"` to the `<table>` element.
 
@@ -557,12 +557,12 @@ Only use these techniques on truly decorative content. Hiding meaningful content
 
 :::
 
-#### Useful resources
+#### Useful resources {/* #useful-resources-7 */}
 
 - [Understanding Success Criterion 1.1.1: Non-text Content (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html)
 - [WCAG definition of "pure decoration"](https://www.w3.org/TR/WCAG22/#dfn-pure-decoration)
 
-### Landmark regions
+### Landmark regions {/* #landmark-regions */}
 
 The layout of each page should be divided into meaningful landmark regions, where each region has the correct landmark role and a unique label. Landmarks help screen reader users understand the structure of the page and quickly navigate to different sections.
 
@@ -598,16 +598,16 @@ In Moodle, landmark regions are typically defined in the layout files of the the
 
 :::
 
-#### Useful resources
+#### Useful resources {/* #useful-resources-8 */}
 
 - [ARIA Landmarks Example](https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/general-principles.html)
 - [Understanding Success Criterion 1.3.1: Info and Relationships (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html)
 
-### Dynamic content
+### Dynamic content {/* #dynamic-content */}
 
 When parts of a page are updated dynamically via JavaScript (for example, loading search results, updating a status message, or refreshing a list), it is important to ensure that these changes are communicated to assistive technology users.
 
-#### Live regions
+#### Live regions {/* #live-regions */}
 
 Use ARIA live regions to announce dynamic content changes to screen readers. A live region is defined by adding the `aria-live` attribute to a container element. When the content within that container changes, screen readers will announce the update.
 
@@ -624,7 +624,7 @@ Use ARIA live regions to announce dynamic content changes to screen readers. A l
 
 </ValidExample>
 
-#### Busy states
+#### Busy states {/* #busy-states */}
 
 While content within a live region is being updated, set `aria-busy="true"` on the container to prevent screen readers from announcing intermediate or incomplete updates. Once the update is complete, remove the attribute or set it to `false`.
 
@@ -646,19 +646,19 @@ Once the content has finished loading:
 
 </ValidExample>
 
-#### Focus management
+#### Focus management {/* #focus-management */}
 
 When dynamic updates significantly change the page content (for example, opening a modal dialog or navigating to new content), focus must be managed appropriately:
 
 - Move focus to the new content so the user is aware of the change.
 - When the new content is dismissed (for example, closing a modal), return focus to the element that triggered the change.
 
-#### Useful resources
+#### Useful resources {/* #useful-resources-9 */}
 
 - [MDN: ARIA live regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions)
 - [Understanding Success Criterion 4.1.3: Status Messages (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html)
 
-### Advanced UX widgets
+### Advanced UX widgets {/* #advanced-ux-widgets */}
 
 When building advanced interactive components that rely on JavaScript (such as custom dropdown menus, tabbed interfaces, tree views, or modal dialogs), a set of accessibility principles must be applied to ensure the feature provides equal functionality and information to all users.
 
@@ -698,38 +698,36 @@ In addition to the HTML structure, the following keyboard interactions must be i
 
 </ValidExample>
 
-#### Useful resources
+#### Useful resources {/* #useful-resources-10 */}
 
 - [ARIA Authoring Practices Guide (APG) Patterns](https://www.w3.org/WAI/ARIA/apg/patterns/)
 - [ARIA APG: Developing a Keyboard Interface](https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/)
 
-### CSS and visual presentation
+### CSS and visual presentation {/* #css-and-visual-presentation */}
 
 CSS choices can have a direct impact on accessibility. The following areas require particular attention.
 
-#### Zoom and reflow
+#### Zoom and reflow {/* #zoom-and-reflow */}
 
 Pages must remain usable when zoomed to 200% and 400%. Content should reflow into a single column at 400% zoom without horizontal scrolling or overlapping elements. Using Bootstrap's responsive grid system and relative units (such as `rem` and `em`) helps meet this requirement.
 
-#### CSS order versus DOM order
+#### CSS order versus DOM order {/* #css-order-versus-dom-order */}
 
 If CSS is used to visually reorder elements differently from the DOM order (for example, using `order` in Flexbox or Grid), keyboard navigation will still follow the DOM order. This discrepancy can confuse keyboard users. Ensure that the visual order matches the DOM order, or provide custom keyboard navigation to account for the difference.
 
-#### Animations
+#### Animations {/* #animations */}
 
 CSS animations and transitions can cause discomfort for users with vestibular disorders. From Moodle 4.3 onwards, CSS animations can be marked as non-essential by using the `optional-animation` SCSS mixin, which respects the user's `prefers-reduced-motion` system setting.
 
-#### Useful resources
+#### Useful resources {/* #useful-resources-11 */}
 
 - [Understanding Success Criterion 1.4.4: Resize Text (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html)
 - [Understanding Success Criterion 1.4.10: Reflow (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
 - [Understanding Success Criterion 2.3.3: Animation from Interactions (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html)
 
-## External resources
+## External resources {/* #external-resources */}
 
-<!-- cspell:ignore ATAG -->
-<!-- cspell:ignore Deque -->
-<!-- cspell:ignore UAAG -->
+{/* <!-- cspell:ignore ATAG, Deque, UAAG --> */}
 
 - [W3C Accessibility Standards Overview](https://www.w3.org/WAI/standards-guidelines/)
 - [Accessible Rich Internet Applications (WAI-ARIA) 1.2](https://www.w3.org/TR/wai-aria-1.2/)
