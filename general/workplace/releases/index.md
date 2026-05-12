@@ -71,10 +71,17 @@ Starting from 4.1 release, we package two Workplace versions in every release:
 <SupportedReleases />
 
 {/* <!-- START RELEASES --> */}
+
 <br />
+## Moodle Workplace 5.2 Rolling {/* #moodle-workplace-52-rolling */}
+<ReleaseTable releaseName="5.2" isRolling/>
 
+<br />
+## Moodle Workplace 5.2 {/* #moodle-workplace-52 */}
+<ReleaseTable releaseName="5.2" />
+
+<br />
 ## Moodle Workplace 5.1 Rolling {/* #moodle-workplace-51-rolling */}
-
 <ReleaseTable releaseName="5.1" isRolling/>
 
 <br />

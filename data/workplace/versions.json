@@ -2,6 +2,42 @@
     "$schema": "../static/schema/workplace/versions.json",
     "versions": [
         {
+            "name": "5.2",
+            "releaseDate": "12 May 2026",
+            "generalEndDate": "9 February 2027",
+            "securityEndDate": "9 February 2027",
+            "improvementsandnewfeaturesEndDate": "6 October 2026",
+            "isLTS": false,
+            "isRolling": true,
+            "releases": [
+                {
+                    "name": "5.2.0",
+                    "releaseDate": "12 May 2026",
+                    "version": 2026051200,
+                    "upgradePath": "https://docs.moodle.org/502/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/502/en/Moodle_Workplace_rolling_release_notes"
+                }
+            ]
+        },
+        {
+            "name": "5.2",
+            "releaseDate": "12 May 2026",
+            "generalEndDate": "20 April 2027",
+            "securityEndDate": "5 October 2027",
+            "improvementsandnewfeaturesEndDate": "",
+            "isLTS": false,
+            "isRolling": false,
+            "releases": [
+                {
+                    "name": "5.2.0",
+                    "releaseDate": "12 May 2026",
+                    "version": 2026051200,
+                    "upgradePath": "https://docs.moodle.org/502/en/Upgrading",
+                    "releaseNoteUrl": "https://docs.moodle.org/502/en/Moodle_Workplace_release_notes"
+                }
+            ]
+        },
+        {
             "name": "5.1",
             "releaseDate": "4 November 2025",
             "generalEndDate": "20 August 2026",
@@ -41,7 +77,7 @@
             "name": "5.1",
             "releaseDate": "4 November 2025",
             "generalEndDate": "6 October 2026",
-            "securityEndDate": "6 April 2027",
+            "securityEndDate": "20 April 2027",
             "improvementsandnewfeaturesEndDate": "",
             "isLTS": false,
             "isRolling": false,
