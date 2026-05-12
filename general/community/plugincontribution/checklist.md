@@ -208,6 +208,8 @@ Examples of issues that will prevent your plugin from being approved:
 1. It integrates with an external system and does not have the privacy API correctly implemented.
 1. It is an activity module and does not have the backup and restore API implemented.
 1. You must be in compliance with the [Moodle.org Site policy](https://moodle.org/admin/tool/policy/view.php?policyid=4).
+1. The plugin replicates or directly competes with functionality offered by Moodle commercial products (for example, Moodle Workplace). See the [Commercial Listing Policy](https://moodle.atlassian.net/wiki/external/Mjk2NzgwYjAzY2Q4NDAyNmJlYWY4OTRhOWVmY2ExYjc) for details.
+1. Use of Moodle trademarks in a way that violates the [Moodle Trademarks Policy](https://moodle.com/trademarks/).
 
 ## See also {/* #see-also */}
 
