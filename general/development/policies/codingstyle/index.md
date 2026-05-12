@@ -1913,11 +1913,15 @@ function forum_get_ratings_mean($postid, $scale, $ratings = null) {
 
 </InvalidExample>
 
-If your comment is due to some MDL issue, please feel free to include the correct MDL-12345 in your comment. This makes it easier to track down decisions and discussions about things.
+:::note
+
+Do not include MDL tracker references in standard inline comments (except in TODO comments, which must include a tracker reference). Inline comments should explain the logic and purpose of the code, not historical tracker context.
+
+:::
 
 #### Using TODO
 
-This is especially important if you know an issue still exists in that code that should be dealt with later. Use a TODO along with a MDL code to mark this. For example:
+This is especially important if you know an issue still exists in that code that should be dealt with later. Use a TODO along with an MDL tracker reference to mark this. A TODO without an MDL tracker reference is invalid. For example:
 
 <ValidExample>
 
