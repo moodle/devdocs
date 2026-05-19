@@ -199,7 +199,7 @@ public function get_records_list(
     $table,
     $field,
     array $values,
-    $sort = *,
+    $sort = '',
     $fields = '*',
     $limitfrom = 0,
     $limitnum = 0
