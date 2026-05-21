@@ -1,0 +1,12 @@
+{{!
+  Include the core content/section template.
+}}
+{{< core_courseformat/local/content/section }}
+    {{!
+        Add any section blocks override here.
+    }}
+    {{! Mandatory cmitem override }}
+    {{$ core_courseformat/local/content/section/cmitem }}
+        {{> format_pluginname/local/content/section/cmitem }}
+    {{/ core_courseformat/local/content/section/cmitem }}
+{{/ core_courseformat/local/content/section }}
