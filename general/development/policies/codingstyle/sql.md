@@ -48,7 +48,9 @@ $records = $DB->get_records_sql($sql, ['above'=>111]);
 
 ## Indentation {/* #indentation */}
 
-![sql_indentation.png](./_sql/sql_indentation.png)
+![Example of SQL indentation with SELECT, FROM, JOIN, and WHERE clauses aligned vertically for readability.](./_sql/sql_indentation.png)
+
+Example of SQL indentation with SELECT, FROM, JOIN, and WHERE clauses aligned vertically for readability.
 
 ## Subqueries {/* #subqueries */}
 
