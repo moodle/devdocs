@@ -15,6 +15,11 @@ This section provides an end-to-end overview of React development in Moodle, inc
 
 The build documentation explains how React source code is compiled, bundled, and prepared for use in Moodle. It also covers the supporting build tools and common setup requirements.
 
-## See also {/* #see-also */}
+## Unit testing
+
+Jest is the JavaScript unit testing framework for React and ESM TypeScript components. The testing guide covers running tests, writing mocks for AMD modules and language strings, module path aliases, and CI integration.
+
+## See also
 
 - [Build tools](./buildtools.md)
+- [JavaScript unit testing](./testing.md)
