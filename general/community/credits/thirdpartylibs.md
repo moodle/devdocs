@@ -173,7 +173,7 @@ A kickass library used to created Poppers in web applications.
 - **Copyright holders**:
   - 2016 Federico Zivolo and contributors
 
-### Popper.js {/* #popperjs-1 */}
+### Popper.js {/* #popperjs */}
 
 A kickass library used to created Poppers in web applications.
 
@@ -426,7 +426,7 @@ Library Google APIs Client Library for PHP
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/googleapis/google-api-php-client](https://github.com/googleapis/google-api-php-client)
 
-### Google APIs {/* #google-apis-1 */}
+### Google APIs {/* #google-apis */}
 
 Library Google APIs Client Library for PHP
 
@@ -673,7 +673,7 @@ Library to read and write spreadsheet files (CSV, XLSX and ODS).
 - **Copyright holders**:
   - OpenSpout
 
-### Pear_HTML_Common {/* #pear_html_common */}
+### Pear_HTML_Common {/* #pearhtmlcommon */}
 
 Class with many common HTML functions (used by HTML Quickform)
 
@@ -684,7 +684,7 @@ Class with many common HTML functions (used by HTML Quickform)
 - **Copyright holders**:
   - 2004 Adam Daniel, Bertrand Mansion, Klaus Guenther, Alexey Borzov
 
-### Pear_HTML_QuickForm {/* #pear_html_quickform */}
+### Pear_HTML_QuickForm {/* #pearhtmlquickform */}
 
 Class to write forms
 
@@ -695,7 +695,7 @@ Class to write forms
 - **Copyright holders**:
   - 2004 Bertrand Mansion, Adam Daniel, Alexey Borzov
 
-### Pear_HTML_QuickForm.php {/* #pear_html_quickformphp */}
+### Pear_HTML_QuickForm.php {/* #pearhtmlquickformphp */}
 
 Class to write forms
 
@@ -1198,7 +1198,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
   - 2011-2021 Twitter, Inc
   - 2011-2021 The Bootstrap Authors
 
-### Twitter Bootstrap {/* #twitter-bootstrap-1 */}
+### Twitter Bootstrap {/* #twitter-bootstrap */}
 
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
@@ -1210,7 +1210,7 @@ HTML, CSS, and JavaScript framework for developing responsive, mobile-first proj
   - 2011-2021 Twitter, Inc
   - 2011-2021 The Bootstrap Authors
 
-### Twitter Bootstrap {/* #twitter-bootstrap-2 */}
+### Twitter Bootstrap {/* #twitter-bootstrap */}
 
 HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
 
@@ -1233,7 +1233,7 @@ The Moodle HQ design system based on React
 - **Copyright holders**:
   - Moodle HQ
 
-### Font Awesome - http://fontawesome.com {/* #font-awesome---httpfontawesomecom-1 */}
+### Font Awesome - http://fontawesome.com {/* #font-awesome---httpfontawesomecom */}
 
 Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
@@ -1271,7 +1271,7 @@ It is currently loaded from the Cloudflare CDN by default.
 
 Provide a great search experience without the need for external, server-side, search services.
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1288,7 +1288,7 @@ This library is not currently used in Moodle
 
 Class that can be used to connect and communicate with any SMTP server. It implements all the SMTP functions defined in RFC821 except TURN.
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1305,7 +1305,7 @@ This library is not currently used in Moodle
 
 JavaScript/HTML script to put a GUI editor in textareas on Internet Explorer and Mozilla.
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1322,7 +1322,7 @@ This library is not currently used in Moodle
 
 PHP scripts to show the location of an IP address on a map.
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1339,7 +1339,7 @@ This library is not currently used in Moodle
 
 Provide a great search experience without the need for external, server-side, search services.
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1356,7 +1356,7 @@ This library is not currently used in Moodle
 
 Library used to migrate older jQuery to jQuery 3.0
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1369,11 +1369,11 @@ This library is not currently used in Moodle
 - **Copyright holders**:
   - 2016 The jQuery Foundation and other contributors
 
-### Services_JSON {/* #services_json */}
+### Services_JSON {/* #servicesjson */}
 
 Allows PHP->JS communication via JSON
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1390,7 +1390,7 @@ This library is not currently used in Moodle
 
 HTML/XHTML filter that only allows some elements and attributes
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1407,7 +1407,7 @@ This library is not currently used in Moodle
 
 The less.php is a PHP port of the official LESS processor used by moodle themes.
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1425,7 +1425,7 @@ This library is not currently used in Moodle
 
 Flash movie to play streaming MP3s
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1442,7 +1442,7 @@ This library is not currently used in Moodle
 
 JavaScript library to enable DHTML popups, floating windows, events etc.
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1460,7 +1460,7 @@ This library is not currently used in Moodle
 
 Class to create, manage and unpack zip files.
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1477,7 +1477,7 @@ This library is not currently used in Moodle
 
 This package allows reading and writing of OLE (Object Linking and Embedding) compound documents. This format is used as container for Excel (.xls), Word (.doc) and other Microsoft file formats.
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1494,7 +1494,7 @@ This library is not currently used in Moodle
 
 Class to write Excel files
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1508,11 +1508,11 @@ This library is not currently used in Moodle
   - 2004 Xavier Noguer
   - 2004 Mika Tuupola
 
-### XML_Parser {/* #xml_parser */}
+### XML_Parser {/* #xmlparser */}
 
 Class implementing one handy (sax-expat) XML parser
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1530,7 +1530,7 @@ This library is not currently used in Moodle
 
 PHP Enum implementation inspired from SplEnum
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1547,7 +1547,7 @@ This library is not currently used in Moodle
 
 Library to read, write and create spreadsheet documents in PHP.
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1564,7 +1564,7 @@ This library is not currently used in Moodle
 
 A PHP net client
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1581,7 +1581,7 @@ This library is not currently used in Moodle
 
 PHP code coverage reporting tool
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1598,7 +1598,7 @@ This library is not currently used in Moodle
 
 Library for importing and exporting csv / excel / ODS files.
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1615,7 +1615,7 @@ This library is not currently used in Moodle
 
 Class for conversion between charsets and multibyte-savy operations with strings.
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 
@@ -1632,7 +1632,7 @@ This library is not currently used in Moodle
 
 Custom Flash Player for VideoJS.
 
-:::danger[Outdated]
+:::danger Outdated
 
 This library is not currently used in Moodle
 

@@ -146,9 +146,10 @@ const renderLibraryData = (libraryData, isOutdated) => {
     const libraryCustomised = libraryData.customised;
     const libraryCopyrightHolders = libraryData.copyrightHolders || [];
     const libraryUrl = libraryData.repository || '';
+    const libraryAnchor = libraryName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z\d\-]/g, '');
 
     return `
-### ${libraryName}
+### ${libraryName} {/* #${libraryAnchor} */}
 
 ${libraryDescription}
 
