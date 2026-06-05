@@ -48,7 +48,7 @@ $records = $DB->get_records_sql($sql, ['above'=>111]);
 
 ## Indentation {/* #indentation */}
 
-![](./_sql/sql_indentation.png) 
+![](./_sql/sql_indentation.png)
 
 This image is a visual example of SQL indentation. It shows spaces used to horizontally align the last letter of the `SELECT`, `FROM`, `JOIN`, and `WHERE` keywords into the same vertical column.
 
