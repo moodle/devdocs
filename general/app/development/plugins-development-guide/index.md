@@ -386,4 +386,4 @@ See [the complete list](https://moodle.org/plugins/browse.php?list=award&id=6) t
 
 ### Mobile app support award {/* #mobile-app-support-award */}
 
-In order to recognise plugin developers that have added mobile support, we give a Mobile app support award in the plugins directory. If you've developed a plugin and want to receive this recognition, please contact us at [mobile@moodle.com](mailto:mobile@moodle.com). You'll need to send us a link to your plugin page and the location of its source code.
+In order to recognise plugin developers that have added mobile support, we give a Mobile app support award in the plugins directory. If you've developed a plugin and want to receive this recognition, please contact us at [mobile+plugins@moodle.com](mailto:mobile+plugins@moodle.com). You'll need to send us a link to your plugin page and the location of its source code.
