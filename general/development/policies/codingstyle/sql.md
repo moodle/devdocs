@@ -48,9 +48,9 @@ $records = $DB->get_records_sql($sql, ['above'=>111]);
 
 ## Indentation {/* #indentation */}
 
-![Example of SQL indentation with SELECT, FROM, JOIN, and WHERE clauses aligned vertically for readability.](./_sql/sql_indentation.png)
+![](./_sql/sql_indentation.png) 
 
-Example of SQL indentation with SELECT, FROM, JOIN, and WHERE clauses aligned vertically for readability.
+This image is a visual example of SQL indentation. It shows spaces used to horizontally align the last letter of the `SELECT`, `FROM`, `JOIN`, and `WHERE` keywords into the same vertical column.
 
 ## Subqueries {/* #subqueries */}
 
