@@ -24,7 +24,6 @@
             "generalEndDate": "19 April 2027",
             "securityEndDate": "4 October 2027",
             "isLTS": false,
-            "codeFreezeDate": "16 March 2026",
             "releases": [
                 {
                     "name": "5.2.0",
@@ -35,7 +34,12 @@
                 {
                     "name": "5.2.1",
                     "releaseDate": "8 June 2026",
-                    "version": 2026042001,
+                    "version": 2026042001
+                },
+                {
+                    "name": "5.2.2",
+                    "releaseDate": "10 August 2026",
+                    "version": 2026042002,
                     "releaseNoteUrl": false
                 }
             ]
@@ -77,7 +81,12 @@
                 {
                     "name": "5.1.5",
                     "releaseDate": "8 June 2026",
-                    "version": 2025100605,
+                    "version": 2025100605
+                },
+                {
+                    "name": "5.1.6",
+                    "releaseDate": "10 August 2026",
+                    "version": 2025100606,
                     "releaseNoteUrl": false
                 }
             ]
@@ -134,7 +143,12 @@
                 {
                     "name": "5.0.8",
                     "releaseDate": "8 June 2026",
-                    "version": 2025041408,
+                    "version": 2025041408
+                },
+                {
+                    "name": "5.0.9",
+                    "releaseDate": "10 August 2026",
+                    "version": 2025041409,
                     "releaseNoteUrl": false
                 }
             ]
@@ -228,7 +242,12 @@
                 {
                     "name": "4.5.12",
                     "releaseDate": "8 June 2026",
-                    "version": 2024100712,
+                    "version": 2024100712
+                },
+                {
+                    "name": "4.5.13",
+                    "releaseDate": "10 August 2026",
+                    "version": 2024100713,
                     "releaseNoteUrl": false
                 }
             ]
