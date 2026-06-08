@@ -43,34 +43,53 @@ npm test -- --coverage
 
 Test files must match the glob `**/esm/tests/**/*.test.{ts,tsx}`. Place them alongside the source they test:
 
-```
-public
-└── lib
-    └── js
-        └── esm
-            ├── src
-            │   └── output
-            │       └── ExampleComponent.tsx
-            └── tests
-                └── output
-                    └── ExampleComponent.test.ts
-```
+import FileTree from '@site/src/components/FileTree';
+
+<FileTree structure={{
+    "public": {
+        "lib": {
+            "js": {
+                "esm": {
+                    "src": {
+                        "output": {
+                            "ExampleComponent.tsx": "The source file being tested"
+                        }
+                    },
+                    "tests": {
+                        "output": {
+                            "ExampleComponent.test.ts": "The test for ExampleComponent.tsx"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}} />
 
 The same convention applies to plugin components:
 
-```
-public
-└── mod
-    └── forum
-        └── js
-            └── esm
-                ├── src
-                │   └── output
-                │       └── ExampleComponent.tsx
-                └── tests
-                    └── output
-                        └── ExampleComponent.test.ts
-```
+<FileTree structure={{
+    "public": {
+        "mod": {
+            "forum": {
+                "js": {
+                    "esm": {
+                        "src": {
+                            "output": {
+                                "ExampleComponent.tsx": "The source file being tested"
+                            }
+                        },
+                        "tests": {
+                            "output": {
+                                "ExampleComponent.test.ts": "The test for ExampleComponent.tsx"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}} />
 
 ## Writing a test
 
