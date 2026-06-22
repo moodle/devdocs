@@ -6,6 +6,13 @@ tags:
   - Plugin documentation
   - Plugins
 ---
+
+:::warning[The plugins guardians programme is currently paused]
+
+We plan to bring it back for Moodle Marketplace. We'll let the community know when updated guidance is available.
+
+:::
+
 ![thumb](./_index/plugins-guardian-logo.png)
 
 **Plugins guardians** are Moodle community members who volunteer to provide peer-reviews on plugins submitted into the [Plugins directory](../../community/plugincontribution/pluginsdirectory/). Their peer-review is considerably taken into account when deciding on the plugin approval.

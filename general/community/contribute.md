@@ -14,7 +14,7 @@ If you want to contribute to Moodle, you can start looking at the following:
 - **Found a bug?** [Report an issue](../development/tracker.md#reporting-an-issue) in our bug tracker.
 - **Want to learn and extend your Moodle development skills**? Sign up to free self-paced courses in our [Moodle Academy Developer Learning Pathway](https://moodle.academy/course/index.php?categoryid=4).
 - **Ready to help coding**? Check the [getting started](../development/gettingstarted.md) page.
-- **Share your plugins** in the [Plugins directory](https://moodle.org/plugins).
+- **Share your plugins** in [Moodle Marketplace](https://marketplace.moodle.com).
 - **Adopt an existing plugin**. Look at the [list of plugins seeking a new maintainer](https://moodle.org/plugins/browse.php?list=set&id=61) and read the [Plugins adoption programme](https://moodle.org/mod/forum/discuss.php?d=260354).
 - **Assist with the translation** of Moodle. See [Translation](https://docs.moodle.org/en/Translation) page.
 - **Get involved in the developer resources**, [contributing](../documentation/contributing.md) for fixing typos and errors, migrating pages, expanding the content, etc.
@@ -43,7 +43,7 @@ Ideas with lots of votes are more likely to be implemented, however votes are no
 - If you're able to provide funding for your idea to be implemented you can [Donate to Moodle](https://moodle.com/donations/), or contact a [Moodle Partner specialising in custom development](https://moodle.com/partners/).
 - Join the [Moodle LMS Community Product Advisory Group](https://moodle.org/lms-community-pag) to have your say in Moodle's strategic direction and contribute to guiding the Moodle LMS development roadmap.
 - If you're a developer and can create a patch for your feature idea or improvement, attach it to the tracker issue for review by the component maintainer. When you add a patch, add a "patch" label so your patch will be found in searches.
-- Moodle is modular, so the easiest way for developers to implement new features and improvements are via [new plugins](https://moodle.org/plugins/).
+- Moodle is modular, so the easiest way for developers to implement new features and improvements are via [new plugins](https://marketplace.moodle.com).
 
 :::
 
