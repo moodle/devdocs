@@ -667,6 +667,25 @@ Generally speaking you should aim to write code which is mockable, and does not 
 
 Use of `resetAfterTest` will also slow your tests down.
 
+#### Where to call `resetAfterTest` {/* #where-to-call-resetaftertest */}
+
+The call to `resetAfterTest` must be made **immediately before the first insertion of data on a given execution path**, in either:
+
+- a test function, or
+- a helper called from a test function
+
+It is valid to call `resetAfterTest` multiple times within a single test, for example when a helper conditionally inserts data, so this pattern is fine.
+
+:::danger[Do not call `resetAfterTest` in shared setUp]
+
+Calling `resetAfterTest` (or creating any fixtures that require cleanup) inside a shared `setUp` method is **banned**. Shared `setUp` should not create anything that must be tidied up.
+
+Placing `resetAfterTest` in `setUp` forces the database reset to apply to every test in the suite, even those that do not need it. This makes it impossible to add lightweight tests to the same class without paying the full reset cost, slows the entire suite, and makes test interdependencies harder to reason about.
+
+Existing test cases that call `resetAfterTest` inside `setUp` must be phased out. No new cases should be introduced.
+
+:::
+
 ### Be careful with shared setUp and instance variables {/* #be-careful-with-shared-setup-and-instance-variables */}
 
 You should be careful of how you create and use instance variables in PHPUnit tests for two main reasons:
