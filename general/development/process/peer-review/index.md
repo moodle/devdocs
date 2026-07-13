@@ -208,6 +208,8 @@ Work does not stop when code is integrated.
 Ensure that:
 
 - The PHPdoc comments on all classes, methods and fields are useful. (Comments that just repeat the function name are not helpful! Add value.)
+- Standard inline comments do not include MDL tracker references and should focus on explaining logic and intent.
+- Every TODO comment includes a corresponding MDL issue code to track the work that still needs to be done.
 - Where an API has been changed significantly, ensure that [upgrade notes](../upgradenotes) have been written (or upgrade.txt on older branches).
 - Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but actually follow the [deprecation policy](../../policies/deprecation/index.md).
 - Appropriate [labels](../../tracker/labels.md) have been added when there has been a function change, particularly
