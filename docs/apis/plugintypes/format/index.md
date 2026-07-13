@@ -197,6 +197,7 @@ You must define `$string['sectionname']` if your language file even if the forma
 | `core_courseformat\base` Overridable method  | Description  |
 |---|---|
 | `uses_sections()` | returns true or false if the format uses sections or not. There is a global function <br/> `course_format_uses_sections()` that invokes it. It affects default navigation tree building. Various modules and reports may call this function to know whether to display the section name for the particular module or not. |
+| `uses_linear_navigation()` | Returns true if the course format explicitly supports the sequential linear navigation footer. If it returns false, linear navigation is completely deactivated for the format. |
 | `get_default_section_name()` | This method gets the default section name if the user has not provided a value for the section name. In format_base, it basically calls `get_section_name()`, which returns the `$string['sectionname']` + the section number of the current section, if available, or blank, otherwise. It can be used in conjunction with your course format's `get_section_name()` implementation. For reference, please refer to the implementations in format_topics and format_weeks classes. |
 | `get_section_name()` | Returns the name for a particular section. This function may be called often so it should use only fields cached in section_info object (field course_sections.name is always cached) <br/> In 3.0+, it checks if the `$string['sectionname']` is available in the lang file. If the section name string is not available, it returns an empty string. |
 | `get_view_url()` | Returns the URL for a particular section, it can be either anchored on course view page or separate page. See parent function PHPdocs for more details |
@@ -236,7 +237,7 @@ Webservices expect course format options to be passed in additional entities but
 
 | `core_courseformat\base` Overridable method  | Description  |
 |---|---|
-| `course_format_options()` | By overriding this method course format specifies which additional options it has for course |
+| `course_format_options()` | By overriding this method course format specifies which additional options it has for course. It can also be used to inject linear navigation defaults using `\core_courseformat\local\linearnavigationsettings::get_course_format_options_default()`. |
 | `section_format_options()` | By overriding this method course format specifies which additional options it has for course section. Note that since section information is cached you may want to cache some additional options as well. See PHPdocs for more information |
 | `get_format_options()` | (usually no need to override) low level function to retrieve course format options values. It is more convenient to use methods get_course() and get_section() |
 | `create_edit_form_elements()` | This function is called to alter course edit form and standard section edit form. The default implementation creates simple form elements for each option defined in either `course_format_options()` or `section_format_options()`. Overwrite it if you want to have more comprehensive form elements or if you do not want options to appear in edit forms, etc. |
@@ -262,6 +263,10 @@ The format base class is used for all the core_courseformat integrations, from s
 | `get_output_classname()` | This method gets a relative output class path (for example, "content\\section") and returns the correct output class namespace depending on if the format has overridden outputs or not. See [overriding output classes](#override-output-classes) section for more information. |
 | `is_section_current()` | Returns if a specific section is marked as current (highlighted) or not. |
 | `show_editor()` | Do all the user and page validations to know if the current course display has to include editor options or not. This includes both page editing mode and user capabilities. You can pass an array of capabilities which should be checked. If none specified, will default to `moodle/course:manageactivities`. |
+
+:::tip[Linear navigation feature integration]
+For a comprehensive integration guide, structural configuration examples, and admin `settings.php` file entry setups, see the [Linear navigation support guide](./linear_navigation.md).
+:::
 
 ## Rendering a course {/* #rendering-a-course */}
 
