@@ -134,3 +134,24 @@ And the course linear navigation should be visible
 # Or to verify the disabled state:
 And the course linear navigation should not be visible
 ```
+
+## Adding supplementary content to the sticky footer
+
+<Since version="5.3" issueNumber="MDL-88601" />
+
+Independently of whether the current course format supports linear navigation, any part of Moodle can request additional content to be displayed in the sticky footer by calling `moodle_page->set_supplementary_content()` with an `action_link` instance:
+
+```php
+$PAGE->set_supplementary_content(
+    new action_link(
+        new moodle_url('/mod/forum/view.php', ['id' => $cm->id]),
+        get_string('gotoalldiscussions', 'mod_forum'),
+    )
+);
+```
+
+When supplementary content is set, the sticky footer is displayed even if the course format does not support linear navigation, or the setting is disabled, showing only the supplementary content. If linear navigation is also enabled, both the navigation controls and the supplementary content are rendered together in the footer, separated by a border.
+
+Use `moodle_page->get_supplementary_content()` to retrieve the current value, which returns `null` if none has been set. The value is automatically reset whenever `moodle_page->reset_theme_and_output()` is called.
+
+This feature is used, for example, by `mod_forum` to add a "Go to all discussions" link when viewing an individual discussion.
