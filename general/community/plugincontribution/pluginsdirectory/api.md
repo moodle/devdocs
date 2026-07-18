@@ -6,6 +6,15 @@ tags:
   - Plugins
   - Plugin documentation
 ---
+
+:::warning
+
+This page describes the Plugins Directory API, not Moodle Marketplace APIs.
+
+Moodle Marketplace API guidance will be added later. For current Moodle Marketplace documentation, see [Moodle Marketplace documentation](https://moodle.atlassian.net/wiki/external/YTI4MmY4MWU2MDQyNDk5MTllZWY4YTBiNjA5ZDRjNWY).
+
+:::
+
 The Plugins directory at http://moodle.org/plugins exposes some of its features via web services layer, allowing the community to develop custom tools and integrations with other services such as GitHub Actions or Travis CI.
 
 ## Access token {/* #access-token */}

@@ -371,7 +371,7 @@ You can also write automated tests for your plugin using Behat, you can read mor
 
 ## Moodle plugins with mobile support {/* #moodle-plugins-with-mobile-support */}
 
-If you want to see some real examples, you can find plugins with mobile support in the plugins database:
+If you want to see some real examples, you can find plugins with mobile support Moodle Marketplace:
 
 - [Custom certificate module](https://github.com/mdjnelson/moodle-mod_customcert)
 - [Group choice module](https://github.com/ndunand/moodle-mod_choicegroup)

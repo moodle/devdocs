@@ -15,6 +15,12 @@ The **Moodle** _documentation_ is Copyright © 2005 onwards by the individual au
 
 Moodle and the Moodle Documentation are distributed in the hope that they will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License below for more details.
 
+## Licensing of plugins and third-party add-ons {/* #licensing-of-plugins-and-third-party-add-ons */}
+
+The GPL licence applies to the Moodle Platform and its core codebase. It does not automatically extend to plugins, themes, or other add-ons developed for use with Moodle.
+
+Plugins distributed through the Moodle Marketplace are licensed individually by their respective developers. The licence terms for each plugin are stated on its Moodle Marketplace listing and, where applicable, included as a licence file within the plugin package. Developers publishing plugins are responsible for determining the correct licence for their plugin and accurately disclosing it.
+
 ## Use of Moodle Marks {/* #use-of-moodle-marks */}
 
 The word _Moodle_ and associated Moodle logos are trademarks or registered trademarks of Moodle Pty Ltd or its related affiliates. Permitted uses are stated on our website at http://moodle.com/trademarks and the Trademark Guidelines available there. Most importantly, without prior written permission from Moodle, you cannot use the word "Moodle" or any Moodle logos (nor any derivatives thereof, or any words or marks that are deceptively or confusingly similar) for any commercial purposes, or in ways that are likely to confuse consumers about the origin of the software, or to suggest that you are in any way associated with or endorsed by Moodle.

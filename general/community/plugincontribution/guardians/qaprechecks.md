@@ -7,6 +7,13 @@ tags:
   - Plugin documentation
   - QA
 ---
+
+:::warning[The plugins guardians programme is currently paused]
+
+This page describes Plugin QA prechecks from the previous Plugins Directory review process. We plan to bring plugin review guidance back for Moodle Marketplace in the future. We'll let the community know when updated guidance is available.
+
+:::
+
 Plugin QA prechecks are for testing the functionality of plugins submitted for approval in the Moodle Plugins directory. Together with [code prechecks](../../../community/plugincontribution/codeprechecks), they are part of the plugin [approval process](../../../community/plugincontribution#sharing-code-in-the-plugins-directory).
 
 Moodle community members with experience in setting up a local Moodle test environment can help with plugin QA prechecks. If you would like to help, please contact David Mudrák [david@moodle.com](mailto:david@moodle.com)

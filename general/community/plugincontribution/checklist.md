@@ -7,6 +7,15 @@ tags:
   - Plugins
   - Plugin documentation
 ---
+
+:::warning[Legacy guidance: Plugins Directory has moved to Moodle Marketplace]
+
+The Plugins Directory has moved to Moodle Marketplace. This checklist describes the legacy Plugins Directory approval process and should not be used for new plugin submissions.
+
+For current requirements, see [Moodle Marketplace Plugin Submission Guidelines](https://moodle.atlassian.net/wiki/external/ODRhYjAyNTY4NDVmNGJlNjljN2ViMzkwYzdmYmIwMGI).
+
+:::
+
 Before approaching the [Moodle plugins directory](https://moodle.org/plugins) and submitting your plugin (or a new plugin version), you are encouraged to go through the checklists below and fix eventual issues with your plugin. Doing so will make the reviewer of your plugin happy :-) and may have impact on how long your plugin has to spend in the approval queue before it lands smoothly.
 
 ## Meta-data {/* #meta-data */}

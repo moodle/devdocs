@@ -7,6 +7,13 @@ tags:
   - Plugins
   - Plugin documentation
 ---
+
+:::warning[The plugins adoption programme is currently paused]
+
+We plan to bring the programme back for Moodle Marketplace in the future. We'll let the community know when updated guidance is available.
+
+:::
+
 The Plugins adoption programme is a process for making it clear that a plugin is orphaned and is looking for a new maintainer. The programme is one of the mechanisms helping to minimise the risks of relying on additional plugins. The programme helps to find new maintainers for plugins whose original authors can't work on the plugin fully any more.
 
 :::info

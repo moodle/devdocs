@@ -5,7 +5,16 @@ tags:
   - Plugins
   - Plugin documentation
 ---
-This page describes how to contribute your code into the [Plugins directory](../../community/plugincontribution/pluginsdirectory/index.md) to share it with the Moodle community.
+
+This page describes how to contribute your code into the [Plugins directory](../../community/plugincontribution/pluginsdirectory/index.md).
+
+:::warning[Legacy guidance: Plugins Directory has moved to Moodle Marketplace]
+
+The Plugins Directory has moved to Moodle Marketplace. The process on this page is legacy guidance and should not be used for new plugin submissions.
+
+For current guidance, see [Moodle Marketplace provider documentation](https://[moodledev.io/docs](https://moodle.atlassian.net/wiki/external/YTI4MmY4MWU2MDQyNDk5MTllZWY4YTBiNjA5ZDRjNWY).
+
+:::
 
 ## Why {/* #why */}
 
