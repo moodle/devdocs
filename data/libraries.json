@@ -149,18 +149,6 @@
     },
     {
         "copyrightHolders": [
-            "2019 Tim Perry"
-        ],
-        "location": "public/lib/amd/src/loglevel.js",
-        "name": "loglevel.js",
-        "description": "Minimal lightweight simple logging for JavaScript.",
-        "version": "1.9.2",
-        "license": "MIT",
-        "repository": "https://github.com/pimterry/loglevel/",
-        "customised": false
-    },
-    {
-        "copyrightHolders": [
             "2009 Chris Wanstrath (Ruby)",
             "2010-2014 Jan Lehnardt (JavaScript)",
             "2010-2015 The mustache.js community"
@@ -186,18 +174,6 @@
         "customised": false
     },
     {
-        "copyrightHolders": [
-            "2016 Federico Zivolo and contributors"
-        ],
-        "location": "public/lib/amd/src/popper2.js",
-        "name": "Popper.js",
-        "description": "A kickass library used to created Poppers in web applications.",
-        "version": "v2.11.8",
-        "license": "MIT",
-        "repository": "https://github.com/floating-ui/floating-ui",
-        "customised": false
-    },
-    {
         "copyrightHolders": [],
         "location": "public/lib/amd/src/truncate.js",
         "name": "Truncate.js",
@@ -212,7 +188,7 @@
         "location": "public/lib/aws-sdk",
         "name": "AWS SDK for PHP",
         "description": "The AWS SDK for PHP library",
-        "version": "3.356.22",
+        "version": "3.369.22",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/aws/aws-sdk-php",
@@ -427,19 +403,6 @@
         "license": "BSD",
         "repository": "https://github.com/dbojdo/eval-math",
         "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2023 Fonticons, Inc"
-        ],
-        "location": "public/lib/fonts",
-        "name": "Font Awesome - http://fontawesome.com",
-        "description": "The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.",
-        "version": "6.7.2",
-        "license": "SIL OFL",
-        "licenseversion": "1.1",
-        "repository": "https://github.com/FortAwesome/Font-Awesome",
-        "customised": false
     },
     {
         "copyrightHolders": [
@@ -1337,65 +1300,15 @@
     },
     {
         "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
+            "2022 The Noto Project Authors"
         ],
-        "location": "public/theme/boost/amd/src/bootstrap/",
-        "name": "Twitter Bootstrap",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "5.3.3",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "public/theme/boost/amd/src/index.js",
-        "name": "Twitter Bootstrap",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "5.3.3",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "public/theme/boost/scss/bootstrap",
-        "name": "Twitter Bootstrap",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "5.3.3",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "Moodle HQ"
-        ],
-        "location": "public/theme/boost/scss/design-system",
-        "name": "@moodlehq/design-system",
-        "description": "The Moodle HQ design system based on React",
-        "version": "2.1.1",
-        "license": "GNU",
-        "repository": "https://github.com/moodlehq/design-system",
-        "customised": false
-    },
-    {
-        "copyrightHolders": [
-            "2023 Fonticons, Inc"
-        ],
-        "location": "public/theme/boost/scss/fontawesome",
-        "name": "Font Awesome - http://fontawesome.com",
-        "description": "Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.",
-        "version": "6.7.2",
-        "license": "(MIT)",
-        "repository": "https://github.com/FortAwesome/Font-Awesome",
+        "location": "public/theme/boost/fonts/noto-sans",
+        "name": "Noto Sans",
+        "description": "Noto Sans is a global font family by Google, designed to support all languages with harmonious visual quality.",
+        "version": "2.015",
+        "license": "OFL",
+        "licenseversion": "1.1",
+        "repository": "https://github.com/notofonts/latin-greek-cyrillic",
         "customised": false
     }
 ]
