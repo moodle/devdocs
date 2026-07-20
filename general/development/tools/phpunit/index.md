@@ -103,7 +103,7 @@ Then you need to initialise the test environment using following command.
 
 ```
  cd /home/example/moodle
- php admin/tool/phpunit/cli/init.php
+ php public/admin/tool/phpunit/cli/init.php
 ```
 
 This command has to be repeated after any upgrade, plugin (un)installation or if you have added tests to a plugin you are developing:
@@ -249,7 +249,7 @@ It's easy to create alternative `phpunit.xml` files defining which tests must be
 Also, for commodity, you can use this command:
 
 ```
- php admin/tool/phpunit/cli/util.php --buildcomponentconfigs
+ php public/admin/tool/phpunit/cli/util.php --buildcomponentconfigs
 ```
 
 It will, automatically, create one valid `phpunit.xml` file within each component (plugin or subsystem) and other important directories, so later you will be able to execute tests like
