@@ -16,7 +16,6 @@ There are [Selenium drivers](http://docs.seleniumhq.org/projects/webdriver/) to 
 - Firefox - https://code.google.com/p/selenium/wiki/FirefoxDriver
 - Chrome - https://code.google.com/p/selenium/wiki/ChromeDriver
 - Safari - https://code.google.com/p/selenium/wiki/SafariDriver
-- Internet Explorer - https://code.google.com/p/selenium/wiki/InternetExplorerDriver
 - Microsoft Edge - https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 - PhantomJS (Webkit) - http://phantomjs.org/
 - IPhone - https://code.google.com/p/selenium/wiki/IPhoneDriver
@@ -46,7 +45,7 @@ Note that 4444 is the default port used by Selenium, so you must specify another
   java -jar /Users/moodle/Downloads/selenium-server-standalone.jar -Dwebdriver.chrome.driver=/Users/moodle/Downloads/chromedriver
 ```
 
-```console title="Selenium in Windows (started using git bash) (firefox by default + chrome + internet explorer)"
+```console title="Selenium in Windows (started using git bash) (firefox by default + chrome)"
   java -jar /c/seleniumdrivers/selenium-server-standalone.jar -Dwebdriver.chrome.driver=/c/seleniumdrivers/chromedriver.exe -Dwebdriver.ie.driver=/c/seleniumdrivers/IEDriverServer.exe
 ```
 
@@ -60,16 +59,15 @@ Not all the drivers can execute all of Moodle's step definitions; we tagged the 
 
 {/* <!-- cspell:ignore zerosize --> */}
 | | File uploads (@_file_upload) | Browser dialogs (@_alert)                                         | Switch window (@_switch_window) | Switch frame (@_switch_iframe) | Bugs in chrome (@skip_chrome_zerosize) | Bug in phantomjs (@_bug_phantomjs) |
-|------------------------------|-------------------------------------------------------------------|---------------------------------|--------------------------------|----------------------------------------|------------------------------------|
+|------------------------------|-------------------------------------------------------------------|---------------------------------|--------------------------------|----------------------------------------|------------------------------------|---|
 | Firefox                      | Yes | Yes | Yes | Yes | Yes | Yes |
 | Chrome              | Yes | Yes | Yes | Yes | No (see [MDL-71108](https://moodle.atlassian.net/browse/MDL-71108)) | Yes |
-| Internet Explorer          | Yes | Yes | No | Yes | Yes | Yes |
 | Safari          | Yes | No | No | Yes | Yes | Yes |
 | PhantomJS          | No | No | Yes | Yes | Yes | No |
 
-Note that, to skip some tag, you must prepend it with the <tt>~</tt> (logical NOT) character. Examples:
+Note that to skip some tag you must prepend it with the `~` (logical NOT) character. Examples:
 
-- Run all tests but `@_alert</tt> ones: <tt>--tags '~@_alert'`
+- Run all tests but `@_alert` ones: `--tags '~@_alert'`
 - Run all chrome tests but `@skip_chrome_zerosize` ones: `--tags '@javascript&&~@skip_chrome_zerosize'`
 
 ## Working combinations of OS+Browser+selenium {/* #working-combinations-of-osbrowserselenium */}
