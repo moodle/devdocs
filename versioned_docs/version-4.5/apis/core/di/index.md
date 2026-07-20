@@ -83,7 +83,7 @@ The callback must be linked to the hook by specifying a callback in the plugin's
 $callbacks = [
     [
         'hook' => \core\hook\di_configuration::class,
-        'callback' => \mod_example\hook_listener::class . '::inject_dependencies',
+        'callback' => [\mod_example\hook_listener::class, 'inject_dependencies'],
     ],
 ];
 ```
