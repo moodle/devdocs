@@ -10,21 +10,21 @@ tags:
 
 :::info
 
-This page describes the procedures for creating a new Moodle user docs version wiki.
+This page describes the process for creating a new user documentation wiki for the upcoming major release.
+
+The new user documentation wiki should be available three weeks before the release date to give developers, including community developers, time to document new features and improvements. QA testers can also benefit from the new documentation during the QA testing cycle.
 
 :::
 
 ## 4 weeks prior {/* #4-weeks-prior */}
 
-Tidying up in current latest version wiki:
+Before cloning the existing user documentation wiki to use as a basis for the new wiki, complete the following clean-up tasks:
 
-1. Delete https://docs.moodle.org/en/Special:BrokenRedirects
-1. Edit https://docs.moodle.org/en/Special:DoubleRedirects (ignoring redirects to dev docs)
-1. Check and delete as necessary https://docs.moodle.org/en/Special:NewFiles
-1. Check and delete as necessary https://docs.moodle.org/en/Special:ListDuplicatedFiles
-1. Check and delete as necessary https://docs.moodle.org/en/Special:UnusedFiles
+1. Review [Broken redirects](https://docs.moodle.org/en/Special:BrokenRedirects) and delete broken redirects (ignoring pages with a prefix 'Development').
+1. Review [Double redirects](https://docs.moodle.org/en/Special:DoubleRedirects) and edit the pages so they redirect directly.
+1. Review [List of files with duplicates](https://docs.moodle.org/en/Special:ListDuplicatedFiles) and delete any duplicated files.
 
-Create a tracker issue for creating new en and de version wikis similar to [MDLSITE-7357](https://moodle.atlassian.net/browse/MDLSITE-7357).
+Create a tracker issue for setting up the new user documentation wiki e.g. [MDLSITE-8325](https://moodle.atlassian.net/browse/MDLSITE-8325).
 
 {/* <!-- cspell:ignore Sitenotice --> */}
 
