@@ -490,13 +490,27 @@ Grading actions appear in the select menu above the grading table and apply to t
 
 ```php
 /**
- * Return a list of the batch grading operations supported by this plugin.
+ * Return a list of detailed batch grading operations supported by this plugin.
  *
- * @return array - An array of action and description strings.
- *                 The action will be passed to grading_batch_operation.
+ * @return array - An array of objects containing batch operation details. Each object should contain:
+ *                  - 'key': the action identifier (string)
+ *                  - 'label': the button label (string)
+ *                  - 'icon': the button icon (string)
+ *                  - 'confirmationtitle': the title for the confirmation modal (string)
+ *                  - 'confirmationquestion': the question for the confirmation modal (string)
  */
-public function get_grading_batch_operations() {
-    return [];
+public function get_grading_batch_operation_details() {
+    global $OUTPUT;
+
+    return [
+        (object) [
+            'key' => 'uploadfiles',
+            'label' => get_string('batchoperationuploadfiles', 'assignfeedback_file'),
+            'icon' => $OUTPUT->pix_icon('i/upload', ''),
+            'confirmationtitle' => get_string('uploadfiles', 'assignfeedback_file'),
+            'confirmationquestion' => get_string('batchoperationconfirmuploadfiles', 'assignfeedback_file'),
+        ],
+    ];
 }
 
 /**
