@@ -238,6 +238,13 @@ const config = {
                 ],
             },
         ],
+
+        [
+            'docusaurus-plugin-llms',
+            {
+                processingBatchSize: 50,
+            },
+        ],
     ],
 };
 
