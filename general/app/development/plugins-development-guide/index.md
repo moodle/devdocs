@@ -382,7 +382,7 @@ If you want to see some real examples, you can find plugins with mobile support 
 - [ForumNG module](https://github.com/moodleou/moodle-mod_forumng)
 - [News block](https://github.com/moodleou/moodle-block_news)
 
-See [the complete list](https://moodle.org/plugins/browse.php?list=award&id=6) to find more, but keep in mind  that it may contain some outdated plugins.
+See [the complete list](https://docs.moodle.org/en/Plugins_with_mobile_app_support) to find more, but keep in mind  that it may contain some outdated plugins.
 
 ### Mobile app support award {/* #mobile-app-support-award */}
 
