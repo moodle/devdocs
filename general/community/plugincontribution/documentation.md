@@ -11,7 +11,7 @@ Plugin developers, maintainers and users are welcome to include documentation ab
 
 ## Where should the documentation go? {/* #where-should-the-documentation-go */}
 
-To create a page for your documentation, type in the browser address bar: `https://docs.moodle.org/en/Plugin_name` (where *Plugin name* is the name of the plugin in the plugins directory).
+To create a page for your documentation, type in the browser address bar: `https://docs.moodle.org/en/Plugin_name` (where *Plugin name* is the name of the plugin in Moodle Marketplace).
 
 If your plugin has a page in Moodle, you can redirect this page to your documentation page as follows:
 
@@ -26,7 +26,7 @@ Copy and complete the following template code to obtain an infobox listing detai
 ```
 {{Infobox plugin
 |type = Enter the plugin type e.g. activity, block, filter
-|entry = Enter the plugins directory link
+|entry = Enter the Moodle Marketplace link
 |tracker = Enter the bug tracker URL
 |discussion = Enter the link to the forum or discussion thread
 |maintainer = [Maintainer name](https://docs.moodle.org/User/Maintainer_name)
