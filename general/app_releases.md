@@ -10,6 +10,8 @@ tags:
 
 | **Version name** | **Date** |
 |---|---|
+| [Moodle App 5.2.1](./app_releases/v5/v5.2.1) |  10 July 2026 |
+| [Moodle App 5.2.0](./app_releases/v5/v5.2.0) |  29 May 2026 |
 | [Moodle App 5.1.0](./app_releases/v5/v5.1.0) |  9 January 2026 |
 | [Moodle App 5.0.0](./app_releases/v5/v5.0.0) |  27 June 2025 |
 
