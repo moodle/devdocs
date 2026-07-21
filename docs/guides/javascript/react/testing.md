@@ -19,6 +19,12 @@ JavaScript unit testing with Jest was introduced in Moodle 5.3 ([MDL-87781](http
 
 :::
 
+:::danger[Tests are required]
+
+All new TypeScript and TSX code **must** be accompanied by Jest unit tests, with a minimum of **80% coverage** of the new code. See [Coding conventions](./conventions.md#unit-testing-requirement) for the full policy, and [file naming conventions](./conventions.md#file-naming) for how to name your components and test files.
+
+:::
+
 ## Running tests
 
 ```bash
@@ -184,6 +190,7 @@ A `Jest` job runs in the GitHub Action pipeline (`.github/workflows/push.yml`) i
 
 ## See also
 
+- [Coding conventions](./conventions.md)
 - [Build tools](./buildtools.md)
 - [Modules](../modules.md)
 - [Writing PHPUnit tests](../../testing/index.md)
