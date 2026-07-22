@@ -11,7 +11,8 @@ description: Fetching the current time
 
 <Since version="4.4" issueNumber="MDL-80838" />
 
-Moodle supports use of a [PSR-20](https://php-fig.org/psr/psr-20/) compatible Clock interface, which should be accessed using Dependency Injection.
+Moodle provides a [PSR-20](https://php-fig.org/psr/psr-20/) compatible Clock interface. Classes which need the current time
+should receive `\core\clock` through constructor injection.
 
 This should be used instead of `time()` to fetch the current time. This allows unit tests to mock time and therefore to test a variety of cases such as events happening at the same time, or setting an explicit time.
 
@@ -23,34 +24,22 @@ We recommend that the Clock Interface is used consistently in your code instead 
 
 ## Usage {/* #usage */}
 
-The usage of the Clock extends the PSR-20 Clock Interface and adds a new convenience method, `\core\clock::time(): int`, to simplify replacement of the global `time()` method.
+The Moodle Clock extends the PSR-20 Clock Interface and adds the convenience method `\core\clock::time(): int` to simplify
+replacement of the global `time()` function.
 
-### Usage in standard classes {/* #usage-in-standard-classes */}
+### Usage via constructor injection {/* #usage-via-constructor-injection */}
 
-Where the calling code is not instantiated via Dependency Injection itself, the simplest way to fetch the clock is using `\core\di::get(\core\clock::class)`, for example:
+Declare the clock as a constructor dependency:
 
-```php title="Usage in legacy code"
-$clock = \core\di::get(\core\clock::class);
-
-// Fetch the current time as a \DateTimeImmutable.
-$clock->now();
-
-// Fetch the current time as a Unix Time Stamp.
-$clock->time();
-```
-
-### Usage via Constructor Injection {/* #usage-via-constructor-injection */}
-
-The recommended approach is to have the Dependency Injector inject into the constructor of a class.
-
-```php title="Usage in injected classes"
+```php title="Using an injected clock"
 namespace mod_example;
 
 class post {
     public function __construct(
         protected readonly \core\clock $clock,
         protected readonly \moodle_database $db,
-    )
+    ) {
+    }
 
     public function create_thing(\stdClass $data): \stdClass {
         $data->timecreated = $this->clock->time();
@@ -62,17 +51,41 @@ class post {
 }
 ```
 
-When using DI to fetch the class, the dependencies will automatically added to the constructor arguments:
+At the application boundary, obtain the highest-level service. The container supplies its clock and database dependencies:
 
 ```php title="Obtaining the injected class"
-$post = \core\di::get(post::class);
+$post = \core\di::get(\mod_example\post::class);
 ```
+
+Do not call `\core\di::get(\core\clock::class)` from inside `post`. That hides the dependency and uses the container as a
+service locator.
+
+### Legacy and procedural boundaries {/* #usage-in-standard-classes */}
+
+Code which cannot receive constructor dependencies without a backwards-incompatible change may fetch the clock at its
+procedural or static boundary:
+
+```php title="Compatibility usage in legacy code"
+$clock = \core\di::get(\core\clock::class);
+
+// Fetch the current time as a \DateTimeImmutable.
+$clock->now();
+
+// Fetch the current time as a Unix timestamp.
+$clock->time();
+```
+
+Keep this lookup at the boundary. Pass the clock into any objects created below it.
 
 ## Unit testing {/* #unit-testing */}
 
-One of the most useful benefits to making consistent use of the Clock interface is to mock data within unit tests.
+One of the most useful benefits of consistently using the Clock interface is the ability to control time in unit tests.
 
-When testing code which makes use of the Clock interface, you can replace the standard system clock implementation with a testing clock which suits your needs.
+Calling either `advanced_testcase` helper described below performs the complete replacement: it creates a test clock, calls
+`\core\di::set(\core\clock::class, $clock)` to replace the container's clock for the test, and returns that same object. No
+additional container configuration is required. Any container-managed service resolved afterwards receives the replacement
+clock through constructor injection. This is an example of
+[replacing a dependency before obtaining the aggregate root](../di/index.md#unit-testing).
 
 :::tip[Container Reset]
 
@@ -82,13 +95,10 @@ The DI container is automatically reset at the end of every test, which ensures 
 
 Moodle provides two standard test clocks, but you are welcome to create any other, as long as it implements the `\core\clock` interface.
 
-:::warning
+:::warning[Call the helper before resolving the service]
 
-When mocking the clock, you _must_ do so _before_ fetching your service.
-
-Any injected value within your service will persist for the lifetime of that service.
-
-Replacing the clock after fetching your service will have *no* effect.
+The helper call is the replacement step. Call it before obtaining the service from the container because replacing
+`\core\clock` does not rewrite the clock already stored in an existing service object.
 
 :::
 
@@ -96,7 +106,8 @@ Replacing the clock after fetching your service will have *no* effect.
 
 The incrementing clock increases the time by one second every time it is called. It can also be instantiated with a specific start time if preferred.
 
-A helper method, `mock_clock_with_incrementing(?int $starttime = null): \core\clock`, is provided within the standard testcase:
+The standard testcase provides
+`mock_clock_with_incrementing(?int $starttime = null): \incrementing_clock`:
 
 ```php title="Obtaining the incrementing clock"
 class my_test extends \advanced_testcase {
@@ -104,9 +115,11 @@ class my_test extends \advanced_testcase {
         // This class inserts data into the database.
         $this->resetAfterTest(true);
 
+        // Create the test clock, replace \core\clock in the container, and return that replacement.
         $clock = $this->mock_clock_with_incrementing();
 
-        $post = \core\di::get(post::class);
+        // Because post is resolved afterwards, the container injects $clock into it.
+        $post = \core\di::get(\mod_example\post::class);
         $posta = $post->create_thing((object) [
             'name' => 'a',
         ]);
@@ -115,7 +128,7 @@ class my_test extends \advanced_testcase {
         ]);
 
         // The incrementing clock automatically advanced by one second each time it is called.
-        $this->assertGreaterThan($postb->timecreated, $posta->timecreated);
+        $this->assertGreaterThan($posta->timecreated, $postb->timecreated);
         $this->assertLessThan($clock->time(), $postb->timecreated);
     }
 }
@@ -131,7 +144,7 @@ $clock = $this->mock_clock_with_incrementing(12345678);
 
 The frozen clock uses a time which does not change, unless manually set. This can be useful when testing code which must handle time-based resolutions.
 
-A helper method, `mock_clock_with_frozen(?int $time = null): \core\clock`, is provided within the standard testcase:
+The standard testcase provides `mock_clock_with_frozen(?int $time = null): \frozen_clock`:
 
 ```php title="Obtaining and using the frozen clock"
 class my_test extends \advanced_testcase {
@@ -141,7 +154,7 @@ class my_test extends \advanced_testcase {
 
         $clock = $this->mock_clock_with_frozen();
 
-        $post = \core\di::get(post::class);
+        $post = \core\di::get(\mod_example\post::class);
         $posta = $post->create_thing((object) [
             'name' => 'a',
         ]);
@@ -179,7 +192,7 @@ class my_test extends \advanced_testcase {
 
 ### Custom clock {/* #custom-clock */}
 
-If the standard cases are not suitable for you, then you can create a custom clock and inject it into the DI container.
+If the standard cases are not suitable, create a custom clock and register it with the DI container as a replacement.
 
 ```php title="Creating a custom clock"
 class my_clock implements \core\clock {
@@ -191,7 +204,7 @@ class my_clock implements \core\clock {
 
     public function now(): \DateTimeImmutable {
         $time = new \DateTimeImmutable('@' . $this->time);
-        $this->time = $this->time += 5;
+        $this->time += 5;
 
         return $time;
     }
@@ -203,10 +216,12 @@ class my_clock implements \core\clock {
 
 class my_test extends \advanced_testcase {
     public function test_my_thing(): void {
-        $clock = new my_clock();
-        \core\di:set(\core\clock::class, $clock);
+        $this->resetAfterTest(true);
 
-        $post = \core\di::get(post::class);
+        $clock = new my_clock();
+        \core\di::set(\core\clock::class, $clock);
+
+        $post = \core\di::get(\mod_example\post::class);
         $posta = $post->create_thing((object) [
             'name' => 'a',
         ]);

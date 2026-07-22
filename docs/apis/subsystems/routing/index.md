@@ -23,7 +23,11 @@ Routes may optionally describe additional metadata including:
 - Responses
 - Examples
 
-When invoked, any parameter to the route method will be resolved using a combination of [Dependency Injection](../../core/di/index.md) and resolution of path, query, and header parameters.
+The Routing subsystem is a framework-owned [composition root](../../core/di/index.md#composition-root). It constructs route
+classes through the Dependency Injection container. Dependencies used throughout the class should normally be declared in
+its constructor; a dependency needed by only one route may instead be a typed route-method parameter. When invoked, the
+router resolves those service parameters alongside path, query, and header parameters. Route code therefore does not need to
+call `\core\di::get()`.
 
 ## Using the `route` attribute {/* #using-the-route-attribute */}
 
