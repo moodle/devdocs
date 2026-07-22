@@ -72,7 +72,7 @@ export default function NavbarWrapper(props) {
                             <a className={styles.nav_link} href="https://docs.moodle.org"><span>Documentation</span></a>
                         </li>
                         <li>
-                            <a className={styles.nav_link} href="https://moodle.org/plugins"><span>Plugins</span></a>
+                            <a className={styles.nav_link} href="https://marketplace.moodle.com"><span>Moodle Marketplace</span></a>
                         </li>
                         <li>
                             <a className={styles.nav_link} href="https://download.moodle.org"><span>Downloads</span></a>
