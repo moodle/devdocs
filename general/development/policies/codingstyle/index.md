@@ -2038,7 +2038,7 @@ This document was drawn from the following sources:
 ## See also
 
 - [JavaScript Coding Style](https://docs.moodle.org/dev/Javascript/Coding_Style)
-- [CSS Coding Style](https://docs.moodle.org/dev/CSS_Coding_Style)
+- [CSS Coding Style](./css.md)
 - [SQL coding style](./sql.md)
 - [Coding](../../policies.md)
 - [PHP CodeSniffer](../../tools/phpcs.md)
