@@ -1129,8 +1129,6 @@ Functions must be named according to the Moodle function naming conventions.
 
 Methods inside classes must always declare their visibility by using one of the private, protected, or public modifiers.
 
-As with classes, the brace should always be written on same line as the function name.
-
 Don't leave spaces between the function name and the opening parenthesis for the arguments.
 
 The return value must not be enclosed in parentheses. This can hinder readability, in additional to breaking code if a method is later changed to return by reference.
@@ -1249,7 +1247,7 @@ Always use the `else if` variant
 
 :::
 
-Always use braces (even if the block is one line and PHP doesn't require it). The opening brace of a block is always placed on the same line as its corresponding statement or declaration.
+Always use braces (even if the block is one line and PHP doesn't require it). For control structures, the opening brace is always placed on the same line as its corresponding statement.
 
 <ValidExample>
 
