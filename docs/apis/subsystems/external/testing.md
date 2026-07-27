@@ -57,14 +57,16 @@ defined('MOODLE_INTERNAL') || die();
 global $CFG;
 require_once($CFG->dirroot . '/webservice/tests/helpers.php');
 
-class get_fruit_test extends externallib_advanced_testcase {
+class get_fruit_test extends externallib_advanced_testcase
+{
 
     /**
      * Test the execute function when capabilities are present.
      *
      * @covers \mod_fruit\external\get_fruit::execute
      */
-    public function test_capabilities(): void {
+    public function test_capabilities(): void
+    {
         $this->resetAfterTest(true);
 
         $course = $this->getDataGenerator()->create_course();
@@ -99,7 +101,8 @@ class get_fruit_test extends externallib_advanced_testcase {
      *
      * @covers \mod_fruit\external\get_fruit::execute
      */
-    public function test_capabilities_missing(): void {
+    public function test_capabilities_missing(): void
+    {
         global $USER;
 
         $this->resetAfterTest(true);

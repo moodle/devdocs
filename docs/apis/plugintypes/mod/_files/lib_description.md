@@ -41,7 +41,8 @@ Each feature is identified by a constant, which is defined in the `lib
   <div>
 
 ```php
-function [modname]_supports($feature) {
+function [modname]_supports($feature)
+{
     return match ($feature) {
         FEATURE_GROUPS => true,
         FEATURE_GROUPINGS => true,
@@ -70,7 +71,8 @@ Optionally, if your plugin fits in a secondary purpose, you should add the `FEAT
   <div>
 
 ```php
-function [modname]_supports(string $feature) {
+function [modname]_supports(string $feature)
+{
     return match ($feature) {
         // The rest of features should be listed here...
         FEATURE_MOD_PURPOSE => MOD_PURPOSE_COLLABORATION,

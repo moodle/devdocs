@@ -77,7 +77,8 @@ Deprecation affects only the current `main` version, in other words, the depreca
 
 ```php
 #[\core\attribute\deprecated('foobar::blah()', since: '4.4', mdl: 'MDL-XXXXX')]
-public function foobar(int $old, array $params): array {
+public function foobar(int $old, array $params): array
+{
     \core\deprecation::emit_deprecation_if_present([$this, __FUNCTION__]);
     // Call new method if possible or retain existing code.
     return foobar::blah($old, $params);
@@ -153,7 +154,8 @@ The final deprecation policy for Moodle LMS has been updated to align more close
     mdl: 'MDL-XXXXX',
     final: true,
 )]
-public function foobar(int $old, array $params): array {
+public function foobar(int $old, array $params): array
+{
     \core\deprecation::emit_deprecation_if_present([self::class, __FUNCTION__]);
     return [];
 }
