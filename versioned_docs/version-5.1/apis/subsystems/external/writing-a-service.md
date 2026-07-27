@@ -150,13 +150,15 @@ use core_external\external_multiple_structure;
 use core_external\external_single_structure;
 use core_external\external_value;
 
-class create_groups extends \core_external\external_api {
+class create_groups extends \core_external\external_api
+{
 
     /**
      * Returns description of method parameters
      * @return external_function_parameters
      */
-    public static function execute_parameters() {
+    public static function execute_parameters()
+    {
         return new external_function_parameters([
             'groups' => new external_multiple_structure(
                 new external_single_structure([
@@ -187,7 +189,8 @@ A web service function without parameters will have a parameter description func
  * Returns description of method parameters
  * @return external_function_parameters
  */
-public static function execute_parameters(): external_function_parameters {
+public static function execute_parameters(): external_function_parameters
+{
     return new external_function_parameters([
         // If this function had any parameters, they would be described here.
         // This example has no parameters, so the array is empty.
@@ -208,7 +211,8 @@ Our `create_groups()` function expects one parameter named `groups`, so we will 
  * Returns description of method parameters
  * @return external_function_parameters
  */
-public static function execute_parameters(): external_function_parameters {
+public static function execute_parameters(): external_function_parameters
+{
     return new external_function_parameters([
         'groups' => ...
     ]);
@@ -280,7 +284,8 @@ We add them to the description :
 It's similar to execute_parameters(), but instead of describing the parameters, it describes the return values.
 
 ```php
-public static function execute_returns() {
+public static function execute_returns()
+{
     return new external_multiple_structure(
         new external_single_structure([
             'id' => new external_value(PARAM_INT, 'group record id'),
@@ -312,7 +317,8 @@ Because some web service protocols are strict about the number and types of argu
 <InvalidExample>
 
 ```php
-public static function get_biscuit_parameters() {
+public static function get_biscuit_parameters()
+{
     return new external_function_parameters([
         'chocolatechips' => new external_value(
             PARAM_BOOL,
@@ -340,7 +346,8 @@ public static function get_biscuit_parameters() {
 <ValidExample>
 
 ```php
-public static function get_biscuit_parameters() {
+public static function get_biscuit_parameters()
+{
     return new external_function_parameters([
         'ifeellike' => new external_single_structure([
                 'chocolatechips' => new external_value(
@@ -379,7 +386,8 @@ We declared our web service function and we defined the external function parame
      * @param array $groups array of group description arrays (with keys groupname and courseid)
      * @return array of newly created groups
      */
-    public static function execute($groups) {
+    public static function execute($groups)
+    {
         global $CFG, $DB;
         require_once("$CFG->dirroot/group/lib.php");
 
@@ -471,7 +479,8 @@ External functions deprecation process is slightly different from the standard d
      * Mark the function as deprecated.
      * @return bool
      */
-    public static function execute_is_deprecated() {
+    public static function execute_is_deprecated()
+    {
         return true;
     }
 ```

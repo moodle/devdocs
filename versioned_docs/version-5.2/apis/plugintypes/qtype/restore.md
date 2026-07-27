@@ -83,7 +83,8 @@ an array of fields to  remove from the `$questiondata` structure. For example, i
 records with the fields `id`, `questionid`  and `data`, you might need to define the following:
 
 ```php title="question/type/example/backup/moodle2/restore_qtype_example_plugin.class.php"
-protected function define_excluded_identity_hash_fields(): array {
+protected function define_excluded_identity_hash_fields(): array
+{
     return [
         '/options/extradata/id',
         '/options/extradata/questionid',
@@ -102,7 +103,8 @@ additional data, then passes `$questiondata` on to the parent method. For exampl
 setting at `$questiondata->options->pluginconfig`, you might need to define the following:
 
 ```php title="question/type/example/backup/moodle2/restore_qtype_example_plugin.class.php"
-public static function remove_excluded_question_data(stdClass $questiondata, array $excludefields = []): stdClass {
+public static function remove_excluded_question_data(stdClass $questiondata, array $excludefields = []): stdClass
+{
     if (isset($questiondata->options->pluginconfig)) {
         unset($questiondata->options->pluginconfig);
     }

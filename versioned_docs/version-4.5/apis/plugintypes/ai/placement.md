@@ -39,7 +39,8 @@ They must also implement the following methods:
 This is the list of Actions that are supported by this Placement, for example the `aiplacement_editor` plugin defines this as:
 
 ```php
-public function get_action_list(): array {
+public function get_action_list(): array
+{
     return [
         \core_ai\aiactions\generate_text::class,
         \core_ai\aiactions\generate_image::class,

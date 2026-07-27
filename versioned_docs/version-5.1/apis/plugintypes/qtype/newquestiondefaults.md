@@ -41,7 +41,8 @@ $mform->setDefault('shuffleanswers', $this->get_default_value('shuffleanswers', 
 Here we need to override the method `save_defaults_for_new_questions` to save the values these settings. For example:
 
 ```php
-    public function save_defaults_for_new_questions(stdClass $fromform): void {
+    public function save_defaults_for_new_questions(stdClass $fromform): void
+    {
         parent::save_defaults_for_new_questions($fromform);
         $this->set_default_value('shuffleanswers', $fromform->shuffleanswers);
     }

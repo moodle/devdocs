@@ -17,7 +17,8 @@ The best way is to explain the usage on a simple example. Imagine we have plugin
 Define a callback in `/admin/tool/mytest/lib.php` that starts with the plugin name and ends with `_inplace_editable`:
 
 ```php title="admin/tool/mytest/lib.php"
-function tool_mytest_inplace_editable($itemtype, $itemid, $newvalue) {
+function tool_mytest_inplace_editable($itemtype, $itemid, $newvalue)
+{
     global $DB;
 
     if ($itemtype === 'mytestname') {
@@ -80,13 +81,15 @@ This was a very simplified example, in the real life you will probably want to:
 
 ```php title="admin/tool/mytest/classes/local/inplace_edit_text.php"
 
-class inplace_edit_text extends \core\output\inplace_editable {
+class inplace_edit_text extends \core\output\inplace_editable
+{
     /**
      * Constructor.
      *
      * @param object $record
      */
-    public function __construct($record) {
+    public function __construct($record)
+    {
         parent::__construct(
             component: 'tool_mytest',
             // The item type as managed your plugin.
@@ -119,7 +122,8 @@ class inplace_edit_text extends \core\output\inplace_editable {
      * @param mixed $newvalue
      * @return \self
      */
-    public static function update($itemid, $newvalue) {
+    public static function update($itemid, $newvalue)
+    {
         // Clean the new value.
         $newvalue = clean_param($newvalue, PARAM_INT);
 
@@ -194,13 +198,15 @@ $tmpl->set_type_toggle([0, 1]);
   <div>
 
 ```php title="admin/tool/mytest/classes/local/inplace_edit_select.php"
-class inplace_edit_select extends \core\output\inplace_editable {
+class inplace_edit_select extends \core\output\inplace_editable
+{
     /**
      * Constructor.
      *
      * @param \stdClass $record
      */
-    public function __construct($record) {
+    public function __construct($record)
+    {
         // Get the options for inplace_edit select box.
         // The array needs the format:
         //     $options = [
@@ -241,7 +247,8 @@ class inplace_edit_select extends \core\output\inplace_editable {
      * @param mixed $newvalue
      * @return \self
      */
-    public static function update($itemid, $newvalue) {
+    public static function update($itemid, $newvalue)
+    {
         // Clean the new value.
         $newvalue = clean_param($newvalue, PARAM_INT);
 

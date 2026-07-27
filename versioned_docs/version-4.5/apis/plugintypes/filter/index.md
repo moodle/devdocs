@@ -107,7 +107,8 @@ If a filter uses a special syntax or it is based on an appearance of a substring
 /**
  * Example of a filter that uses <a> links in some way.
  */
-public function filter($text, array $options = []) {
+public function filter($text, array $options = [])
+{
 
     if (!is_string($text) or empty($text)) {
         // Non-string data can not be filtered anyway.
@@ -138,8 +139,10 @@ To support this behaviour, a filter plugin must provide a `filterlocalsettings.p
   <div>
 
 ```php title="filterlocalsettings.php"
-class pluginfile_filter_local_settings_form extends \core_filters\form\local_settings_form {
-    protected function definition_inner(\MoodleQuickForm $mform) {
+class pluginfile_filter_local_settings_form extends \core_filters\form\local_settings_form
+{
+    protected function definition_inner(\MoodleQuickForm $mform)
+    {
         $mform->addElement(
             'text',
             'word',
@@ -164,8 +167,10 @@ All the local configurations can be accessed in the main filter class in the `$t
 <?php
 namespace filter_pluginname;
 
-class text_filter extends \core_filters\text_filter {
-    public function filter(string $text, array $options = []) {
+class text_filter extends \core_filters\text_filter
+{
+    public function filter(string $text, array $options = [])
+    {
         global $CFG;
 
         $search = $this->localconfig['word'] ?? 'default';

@@ -76,9 +76,11 @@ Each component using shortlinks will need to have a `shortlink_handler` class. T
 - `process_shortlink()`
 
 ```php
-class shortlink_handler implements shortlink_handler_interface {
+class shortlink_handler implements shortlink_handler_interface
+{
     #[\Override]
-    public function get_valid_linktypes(): array {
+    public function get_valid_linktypes(): array
+    {
         return [
             'view',
         ];

@@ -37,21 +37,24 @@ namespace mod_example\task;
 /**
  * An example of a scheduled task.
  */
-class do_something extends \core\task\scheduled_task {
+class do_something extends \core\task\scheduled_task
+{
 
     /**
      * Return the task's name as shown in admin screens.
      *
      * @return string
      */
-    public function get_name() {
+    public function get_name()
+    {
         return get_string('dosomething', 'mod_example');
     }
 
     /**
      * Execute the task.
      */
-    public function execute() {
+    public function execute()
+    {
         // Call your own api
     }
 }

@@ -126,8 +126,10 @@ If you define a hook which is _not_ in the `[component]\hook\*` namespace then y
 
 namespace mod_example;
 
-class hooks implements \core\hook\discovery_agent {
-    public static function discover_hooks(): array {
+class hooks implements \core\hook\discovery_agent
+{
+    public static function discover_hooks(): array
+    {
         return [
             [
                 'class' => \mod_example\local\entitychanges\create_example::class,
@@ -156,7 +158,8 @@ namespace mod_activity\hook;
 
 #[\core\attribute\label('Hook dispatched at the very end of installation of mod_activity plugin.')]
 #[\core\attribute\tags('installation')]
-final class installation_finished {
+final class installation_finished
+{
     public function __construct(
         public readonly string $version,
     ) {
@@ -172,17 +175,20 @@ final class installation_finished {
 <?php
 namespace mod_activity\hook;
 
-final class installation_finished implements \core\hook\described_hook {
+final class installation_finished implements \core\hook\described_hook
+{
     public function __construct(
         public readonly string $version,
     ) {
     }
 
-    public static function get_hook_description(): string {
+    public static function get_hook_description(): string
+    {
         return 'Hook dispatched at the very end of installation of mod_activity plugin.';
     }
 
-    public static function get_hook_tags(): array {
+    public static function get_hook_tags(): array
+    {
         return ['installation'];
     }
 }
@@ -194,7 +200,8 @@ final class installation_finished implements \core\hook\described_hook {
 
 ```php title="/mod/activity/db/install.php"
 <?php
-function xmldb_activity_install() {
+function xmldb_activity_install()
+{
     $hook = new \mod_activity\hook\installation_finished();
     \core\di::get(\core\hook\manager::class)->dispatch($hook);
 }
@@ -219,7 +226,8 @@ Using DI for dependency injection has the benefit that the hook manager can use 
 
 ```php title="Mocking a hook listener"
 // Unit test.
-public function test_before_standard_footer_html_hooked(): void {
+public function test_before_standard_footer_html_hooked(): void
+{
     // Load the callback classes.
     require_once(__DIR__ . '/fixtures/core_renderer/before_standard_footer_html_callbacks.php');
 
@@ -242,7 +250,8 @@ public function test_before_standard_footer_html_hooked(): void {
 }
 
 // fixtures/core_renderer/before_standard_footer_html_callbacks.php
-final class before_standard_footer_html_callbacks {
+final class before_standard_footer_html_callbacks
+{
     public static function before_standard_footer_html(
         \core\hook\output\before_standard_footer_html $hook,
     ): void {
@@ -314,8 +323,10 @@ a hook as parameter.
 namespace local_stuff\local;
 use \mod_activity\hook\installation_finished;
 
-class hook_callbacks {
-    public static function activity_installation_finished(installation_finished $hook): void {
+class hook_callbacks
+{
+    public static function activity_installation_finished(installation_finished $hook): void
+    {
         if (during_initial_install()) {
             return;
         }
@@ -388,7 +399,8 @@ use core\attribute;
 #[attribute\label('Hook dispatched at the very end of lib/setup.php')]
 #[attribute\tags('config')]
 #[attribute\hook\replaces_callbacks('after_config')]
-final class after_config {
+final class after_config
+{
 }
 ```
 
@@ -400,16 +412,20 @@ final class after_config {
 <?php
 namespace core\hook;
 
-final class after_config implements described_hook, deprecated_callback_replacement {
-    public static function get_hook_description(): string {
+final class after_config implements described_hook, deprecated_callback_replacement
+{
+    public static function get_hook_description(): string
+    {
         return 'Hook dispatched at the very end of lib/setup.php';
     }
 
-    public static function get_hook_tags(): array {
+    public static function get_hook_tags(): array
+    {
         return ['config'];
     }
 
-    public static function get_deprecated_plugin_callbacks(): array {
+    public static function get_deprecated_plugin_callbacks(): array
+    {
         return ['after_config'];
     }
 }
@@ -456,7 +472,8 @@ use core\attribute;
 
 #[attribute\label('A hook dispatched just before a block instance is deleted')]
 #[attribute\hook\replaces_callbacks('pre_block_delete')]
-final class block_delete_pre {
+final class block_delete_pre
+{
     public function __construct(
         public readonly \stdClass $blockinstance,
     ) {}
@@ -503,11 +520,13 @@ final class block_delete_pre implements
         public readonly \stdClass $blockinstance,
     ) {}
 
-    public function isPropagationStopped(): bool {
+    public function isPropagationStopped(): bool
+    {
         return $this->stopped;
     }
 
-    public function stop(): void {
+    public function stop(): void
+    {
         $this->stopped = true;
     }
 }
@@ -520,8 +539,10 @@ A callback will only be called if the hook was not stopped before-hand. Dependin
 
 namespace local_myplugin;
 
-class callbacks {
-    public static function block_pre_delete(\core\hook\block_delete_pre $hook): void {
+class callbacks
+{
+    public static function block_pre_delete(\core\hook\block_delete_pre $hook): void
+    {
         // ...
         $hook->stop();
     }
