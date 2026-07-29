@@ -168,9 +168,17 @@ Same as [core/classes/](#coreclasses), but containing functional utilities inste
 
 #### core/singletons/ {/* #coresingletons */}
 
-This folder contains some core [Singletons](#singletons) and the logic to make Service Singletons.
+This folder contains the logic to make [Service Singletons](#service-singletons).
 
-Other than Pure Singletons, there are also some third-party services exposed through Service Singletons. However, service Singletons for application services should be declared in the same file where the service is defined.
+There are also some third-party services exposed through Service Singletons. However, Service Singletons for application services should be declared in the same file where the service is defined.
+
+#### core/static/ {/* #corestatic */}
+
+This folder contains some core static classes. These utility classes are intended to be used throughout the whole application.
+
+These classes are intentionally implemented as static rather than Angular services.
+
+The rationale is that these classes provide stateless, low-level utility functions that have no dependencies on Angular or the application's dependency injection (DI) system. Since they are purely functional, there is no expectation that they will need to be substituted, extended, or mocked in tests.
 
 #### core/features/ {/* #corefeatures */}
 
@@ -334,27 +342,11 @@ You can find an example of this pattern in `CoreUserParticipantsPage`, where par
 
 ## Singletons {/* #singletons */}
 
-The application relies heavily on the [Singleton design pattern](https://en.wikipedia.org/wiki/Singleton_pattern), and there are two types of singletons used throughout the application: Pure singletons and Service singletons.
-
-### Pure Singletons {/* #pure-singletons */}
-
-Pure singletons, or just "singletons", are plain Typescript classes whose functionality does not depend on the lifecycle of the application. These normally contain helper or utility methods that enhance existing apis or encapsulate reusable functionality.
-
-Their implementations usually consist of a collection of static methods (so technically they are not singletons, but in practice this is easier to work with).
-
-```typescript
-export class CoreArray {
-
-    static contains<T>(items: T[], item: T): boolean {
-        return items.indexOf(item) !== -1;
-    }
-
-}
-```
+The application relies heavily on the [Singleton design pattern](https://en.wikipedia.org/wiki/Singleton_pattern). Right now the app only uses the singleton pattern for Angular Services, what we call "Service Singleton".
 
 ### Service Singletons {/* #service-singletons */}
 
-Service singletons are instances resolved from the [root application injector](https://angular.io/guide/hierarchical-dependency-injection). In contrast with pure singletons, these are defined as Angular services. In particular, these should be [singleton services](https://angular.io/guide/singleton-services).
+Service Singletons are instances resolved from the [root application injector](https://angular.io/guide/hierarchical-dependency-injection). In contrast with pure singletons, these are defined as Angular services. In particular, these should be [singleton services](https://angular.io/guide/singleton-services).
 
 The motivation behind using this pattern to access service instances is improving the development experience (easier auto-imports) and delaying the instantiation of services until they are really needed.
 
