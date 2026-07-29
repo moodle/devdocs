@@ -3,6 +3,7 @@ title: Linear navigation support
 tags:
   - Plugins
   - Format
+  - Activity
   - Linear navigation
 ---
 
@@ -124,6 +125,96 @@ if ($linearnavigationenabled) {
     // Custom structural adjustments
 }
 ```
+
+## Next and previous activity navigation
+
+<Since version="5.2" issueNumber="MDL-87467" />
+
+The "Previous" and "Next" controls displayed on an activity page do not link to the target activity directly. Instead, they link to two routes handled by the `\core_course\route\controller\course_navigation` controller (`/cms/{cm}/previous` and `/cms/{cm}/next`), which calculate the destination when the link is followed and then redirect the user.
+
+This means the destination is always calculated with the current user's access rules, and it also means that these links require the [routing system](../../subsystems/routing/index.md) to be configured.
+
+If you need to build these links yourself, obtain them from the routing subsystem instead of hard-coding any path:
+
+```php
+$nexturl = \core\router\util::get_path_for_callable(
+    [\core_course\route\controller\course_navigation::class, 'cm_next_element'],
+    ['cm' => $cm->id],
+);
+```
+
+### Activities skipped by the navigation
+
+When resolving the destination, the controller walks through the ordered list of activities of the current section (activities inside subsections are included, in the position where the subsection appears) and redirects to the first one considered navigable. An activity is skipped when:
+
+- it has no navigation URL, either because it has no view page (such as Label), or because the activity has explicitly suppressed it (see [Overriding the navigation URL](#overriding-the-navigation-url-of-an-activity));
+- it is not visible on the course page for the current user (`cm_info::is_visible_on_course_page()`);
+- it is a stealth activity and the user does not have the `moodle/course:viewhiddenactivities` capability;
+- its module type does not support `FEATURE_CAN_DISPLAY`, checked via `\core_course\modinfo::is_mod_type_visible_on_course()` ([MDL-88003](https://moodle.atlassian.net/browse/MDL-88003)). This is the case, for instance, of the Question bank activity.
+
+When no navigable activity is left in the section, the user is redirected to the next or previous available section page, and finally to the course page when there is nothing else to navigate to.
+
+### Overriding the navigation URL of an activity
+
+<Since version="5.2" issueNumber="MDL-87984" />
+
+Activity modules can define a navigation URL which is different from the URL used to link the activity on the course page. This is useful when the standard activity link takes the user out of the course, but the linear navigation should keep them inside it.
+
+The following `\core_course\cm_info` methods are available:
+
+| Method | Description |
+| --- | --- |
+| `get_navigation_url(): ?url` | Returns the navigation URL of the activity. When no override has been set, it falls back to `get_url()`. |
+| `set_navigation_url(?url $navigationurl): void` | Sets the navigation URL. Passing `null` removes the activity from the linear navigation flow. |
+| `reset_navigation_url(): void` | Discards any override, so `get_navigation_url()` falls back to `get_url()` again. |
+
+The value is also available through the read-only `navigationurl` magic property, in the same way as the existing `url` property:
+
+```php
+$modinfo = get_fast_modinfo($course);
+$cm = $modinfo->get_cm($cmid);
+$navigationurl = $cm->navigationurl;
+```
+
+Overrides are normally defined in the `MODNAME_cm_info_dynamic()` callback of your plugin's `lib.php`. For example, both `mod_resource` and `mod_url` append the `forceview` parameter so that, when the activity is configured to open in a new window or in a popup, the linear navigation still renders the activity view page in the current window:
+
+```php title="mod/mymodule/lib.php"
+/**
+ * Sets dynamic information about a course module.
+ *
+ * @param cm_info $cm
+ */
+function mod_mymodule_cm_info_dynamic(cm_info $cm) {
+    // Update the navigation URL to guarantee the user will see the content even if the module
+    // is set to open in a new window or popup.
+    $cm->set_navigation_url(
+        new \core\url($cm->get_navigation_url(), ['forceview' => 1])
+    );
+}
+```
+
+:::caution
+
+`set_navigation_url()` and `reset_navigation_url()` cannot be called from the `MODNAME_cm_info_view()` callback, because the navigation URL is also used on pages other than the course page. Doing so throws a `coding_exception`. Use `MODNAME_cm_info_dynamic()` instead.
+
+Bear in mind that `MODNAME_cm_info_dynamic()` runs on every page of the course, so it must not perform database queries or any other slow operation.
+
+:::
+
+### Excluding an activity from the linear navigation
+
+To keep an activity out of the linear navigation flow entirely, set its navigation URL to `null`:
+
+```php title="mod/mymodule/lib.php"
+function mod_mymodule_cm_info_dynamic(cm_info $cm) {
+    // This activity should never be a "Previous" or "Next" destination.
+    $cm->set_navigation_url(null);
+}
+```
+
+The "Previous" and "Next" controls then skip the activity and move to the closest navigable one. This only affects the linear navigation: the activity is still displayed on the course page, in the course index, and in other navigation elements, and its own `url` remains unchanged.
+
+Users viewing such an activity directly still get working "Previous" and "Next" controls, as the exclusion only applies when the activity is evaluated as a possible destination.
 
 ## Behat integration
 

@@ -15,6 +15,8 @@ This page highlights the important changes that are coming in Moodle 5.3 for dev
 
 Moodle 5.3 introduces support for sequential linear navigation controls within course views. By default, third-party course formats do not display linear navigation elements. To explicitly opt in and declare support for this feature, course formats must override the `uses_linear_navigation()` method.
 
+Activity modules can also take part in this navigation: the `\core_course\cm_info` class provides `get_navigation_url()`, `set_navigation_url()`, and `reset_navigation_url()` methods so a module can override the URL the "Previous" and "Next" controls lead to, or remove itself from the navigation flow altogether.
+
 For a comprehensive integration guide, structural configuration examples, and page-state API controls, see the [Linear navigation support guide](./apis/plugintypes/format/linear_navigation.md).
 
 ## Supplementary content in the sticky footer
