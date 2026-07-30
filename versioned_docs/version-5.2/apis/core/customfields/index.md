@@ -27,7 +27,7 @@ New plugin type `customfield` was also added as part of the Custom fields API. A
 
 Component/plugin that uses custom fields must define a **handler class** for each area and a **configuration page**. Handler class must be called `<PLUGINNAME>/customfield/<AREA>_handler` and be placed in autoloaded location  `<PLUGINDIR>/classes/customfield/<AREA>_handler.php`. This class must extend **\core_customfield\handler** . Configuration page may be located anywhere. For course custom fields configuration the admin settings page is used [/course/customfield.php](https://github.com/moodle/moodle/blob/main/course/customfield.php). If the area uses `itemid` this page should take `itemid` as a parameter.
 
-Handler has protected constructor, to get a handler call `create()` method. Some areas may choose to return a singleton here:
+Handler has protected constructor, to get a handler call `create()` method. The base class implementation returns a cached instance (static cache) here:
 
 ```php
 $handler = HANDLERCLASS::create($itemid);
