@@ -167,7 +167,8 @@ By default checks the capabilities of the current user, but you can pass a diffe
 Function require_capability() is very similar, it is throwing access control exception if user does not have the capability.
 
 ```php
-function require_capability($capability, context $context, $userid = null, $doanything = true, $errormessage = 'nopermissions', $stringfile = _) {
+function require_capability($capability, context $context, $userid = null, $doanything = true, $errormessage = 'nopermissions', $stringfile = _)
+{
 ```
 
 ### Enrolment functions {/* #enrolment-functions */}

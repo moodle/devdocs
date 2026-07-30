@@ -40,7 +40,8 @@ The following example is drawn from **/mod/assignment/lib.php**.
 1. In order for module to support advanced grading, its function **`[activityname]_supports(FEATURE_ADVANCED_GRADING)`** must return true.
 
     ```php title="mod/[activityname]/lib.php"
-    function [activityname]_supports(string $feature): ?bool {
+    function [activityname]_supports(string $feature): ?bool
+    {
         switch ($feature) {
             // ...
             case FEATURE_ADVANCED_GRADING:

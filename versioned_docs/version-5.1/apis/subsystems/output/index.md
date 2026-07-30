@@ -115,20 +115,23 @@ In the example above, we used `$PAGE->get_renderer('tool_demo')` to get an insta
 Instead, you can use the `core\output\renderer_helper` class to get any renderer instance without using the global. This is an example of how to use the `renderer_helper` class to get a renderer instance:
 
 ```php
-class my_di_example {
+class my_di_example
+{
     public function __construct(
         /** @var \core\output\renderer_helper $rendererhelper the renderer helper */
         protected readonly \core\output\renderer_helper $rendererhelper,
     ) {
     }
 
-    public function do_something_with_my_renderer() {
+    public function do_something_with_my_renderer()
+    {
         /** @var \tool_demo\output\renderer $renderer */
         $renderer = $this->rendererhelper->get_renderer('tool_demo');
         // Do something with the renderer.
     }
 
-    public function do_something_with_core_renderer() {
+    public function do_something_with_core_renderer()
+    {
         // For convenience, the renderer helper also provides a method to get the core renderer.
         $renderer = $this->rendererhelper->get_core_renderer();
         // Do something with the core renderer.
@@ -157,11 +160,13 @@ use renderer_base;
 use templatable;
 use stdClass;
 
-class index_page implements renderable, templatable {
+class index_page implements renderable, templatable
+{
     /** @var string $sometext Some text to show how to pass data to a template. */
     private $sometext = null;
 
-    public function __construct($sometext): void {
+    public function __construct($sometext): void
+    {
         $this->sometext = $sometext;
     }
 
@@ -170,7 +175,8 @@ class index_page implements renderable, templatable {
      *
      * @return stdClass
      */
-    public function export_for_template(renderer_base $output): stdClass {
+    public function export_for_template(renderer_base $output): stdClass
+    {
         $data = new stdClass();
         $data->sometext = $this->sometext;
         return $data;
@@ -193,7 +199,8 @@ If you wish to use a specific template to render the content you may specify any
      *
      * @return string
      */
-    public function get_template_name(\renderer_base $renderer): string {
+    public function get_template_name(\renderer_base $renderer): string
+    {
          return 'tool_demo/index_page';
     }
 ```
@@ -208,7 +215,8 @@ namespace tool_demo\output;
 
 use plugin_renderer_base;
 
-class renderer extends plugin_renderer_base {
+class renderer extends plugin_renderer_base
+{
     /**
      * Defer to template.
      *
@@ -216,7 +224,8 @@ class renderer extends plugin_renderer_base {
      *
      * @return string html for the page
      */
-    public function render_index_page($page): string {
+    public function render_index_page($page): string
+    {
         $data = $page->export_for_template($this);
         return parent::render_from_template('tool_demo/index_page', $data);
     }
@@ -474,11 +483,13 @@ mtrace('DONE');
 Or a scheduled or adhoc task, via a trait. Example:
 
 ```php
-class stored_progress_scheduled_task_example extends \core\task\scheduled_task {
+class stored_progress_scheduled_task_example extends \core\task\scheduled_task
+{
 
     use \core\task\stored_progress_task_trait;
 
-    public function execute() {
+    public function execute()
+    {
 
         // This simulates a specific count of iterations the task will do, e.g. x number of courses to loop through and do something.
         $iterations = 100;
@@ -537,7 +548,8 @@ use core_courseformat\base as course_format;
 use mod_MYPLUGIN\external\myname_exporter;
 use stdClass;
 
-class myname implements externable, named_templatable, renderable {
+class myname implements externable, named_templatable, renderable
+{
     public function __construct(
         /** @var cm_info The course module. */
         public cm_info $cm,
@@ -545,7 +557,8 @@ class myname implements externable, named_templatable, renderable {
     }
 
     #[\Override]
-    public function export_for_template(renderer_base $output): stdClass {
+    public function export_for_template(renderer_base $output): stdClass
+    {
         // This method is used to prepare data for rendering in a template.
         // It is related to the `templatable` interface and could return an object or array.
         $cm = $this->cm;
@@ -562,14 +575,16 @@ class myname implements externable, named_templatable, renderable {
     }
 
     #[\Override]
-    public function get_template_name(renderer_base $renderer): string {
+    public function get_template_name(renderer_base $renderer): string
+    {
         // This method is used to specify the template name for rendering.
         // It is not used for webservice clients, but it is required by the named_templatable interface.
         return 'core_courseformat/local/overview/activityname';
     }
 
     #[\Override]
-    public function get_exporter(?\core\context $context = null): myname_exporter {
+    public function get_exporter(?\core\context $context = null): myname_exporter
+    {
         $context = $context ?? \core\context\system::instance();
         return new myname_exporter($this, ['context' => $context]);
     }
@@ -583,7 +598,8 @@ class myname implements externable, named_templatable, renderable {
     }
 
     #[\Override]
-    public static function read_properties_definition(): array {
+    public static function read_properties_definition(): array
+    {
         return myname_exporter::read_properties_definition();
     }
 
@@ -614,7 +630,8 @@ namespace mod_MYPLUGIN\external;
 use core\external\exporter;
 use mod_MYPLUGIN\output\myname;
 
-class myname_exporter extends exporter {
+class myname_exporter extends exporter
+{
     /**
      * Constructor with parameter type hints.
      *
@@ -629,12 +646,14 @@ class myname_exporter extends exporter {
     }
 
     #[\Override]
-    protected static function define_properties(): array {
+    protected static function define_properties(): array
+    {
         return [];
     }
 
     #[\Override]
-    protected static function define_related() {
+    protected static function define_related()
+    {
         // Most exporter need to define the context as related data to parse texts.
         return [
             'context' => 'context',
@@ -642,7 +661,8 @@ class myname_exporter extends exporter {
     }
 
     #[\Override]
-    protected static function define_other_properties() {
+    protected static function define_other_properties()
+    {
         return [
             'activityname' => [
                 'type' => PARAM_TEXT,
@@ -663,7 +683,8 @@ class myname_exporter extends exporter {
     }
 
     #[\Override]
-    protected function get_other_values(\renderer_base $output) {
+    protected function get_other_values(\renderer_base $output)
+    {
         /** @var \cm_info $cm */
         $cm = $this->data->cm;
 
@@ -694,14 +715,17 @@ use core\output\renderer_helper;
 use mod_MYPLUGIN\output\myname;
 use stdClass;
 
-class get_my_name extends external_api {
-    public static function execute_parameters(): external_function_parameters {
+class get_my_name extends external_api
+{
+    public static function execute_parameters(): external_function_parameters
+    {
         return new external_function_parameters([
             'cmid' => new external_value(PARAM_INT, 'Course module id', VALUE_REQUIRED),
         ]);
     }
 
-    public static function execute(int $cmid): stdClass {
+    public static function execute(int $cmid): stdClass
+    {
         [
             'cmid' => $cmid,
         ] = external_api::validate_parameters(self::execute_parameters(), [
@@ -727,7 +751,8 @@ class get_my_name extends external_api {
      *
      * @return external_single_structure
      */
-    public static function execute_returns(): external_single_structure {
+    public static function execute_returns(): external_single_structure
+    {
         return myname::get_read_structure();
     }
 }

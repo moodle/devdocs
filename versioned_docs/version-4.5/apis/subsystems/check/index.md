@@ -103,14 +103,17 @@ namespace mod_myplugin\check;
 use core\check\check;
 use core\check\result;
 
-class foobar extends check {
+class foobar extends check
+{
 
-    public function get_action_link(): ?\action_link {
+    public function get_action_link(): ?\action_link
+    {
         $url = new \moodle_url('/mod/myplugin/dosomething.php');
         return new \action_link($url, get_string('sitepolicies', 'admin'));
     }
 
-    public function get_result(): result {
+    public function get_result(): result
+    {
         if (some_check()) {
             $status = result::ERROR;
             $summary = get_string('check_foobar_error', 'mod_myplugin');
@@ -145,7 +148,8 @@ Next decide on what type of check it should be which determines what report it w
 Implement the right callback in lib.php for the report you want to add it to, and return an array (usually with only 1 item) of check objects:
 
 ```php title="/mod/myplugin/lib.php"
-function mod_myplugin_security_checks(): array {
+function mod_myplugin_security_checks(): array
+{
     return [new \mod_myplugin\check\foobar()];
 }
 ```
@@ -157,7 +161,8 @@ Checks have been designed to be dynamic so you can return different checks depen
 If you plan to return multiple instances of a check class, make sure that each instance has a unique id.
 
 ```php
-function mod_myplugin_security_checks(): array {
+function mod_myplugin_security_checks(): array
+{
     return [
         new \mod_myplugin\check\foobar('one'),
         new \mod_myplugin\check\foobar('two'),
@@ -170,14 +175,17 @@ Set the internal id in a way which is unique across all instances in your compon
 ```php
 namespace mod_myplugin\check;
 
-class foobar extends \core\check\check {
+class foobar extends \core\check\check
+{
     protected $id = '';
 
-    public function __construct($id) {
+    public function __construct($id)
+    {
         $this->id = "foobar{$id}";
     }
 
-    public function get_id(): string {
+    public function get_id(): string
+    {
         return $this->id;
     }
     ...
@@ -197,17 +205,21 @@ Checks can provide details on a check, such as the complete list of bad records.
 
 namespace mod_myplugin\check;
 
-class foobar extends \core\check\check {
-    public function get_result(): result {
+class foobar extends \core\check\check
+{
+    public function get_result(): result
+    {
         return new foobar_result();
     }
 }
 ```
 
 ```php
-class foobar_result extends \core\check\result {
+class foobar_result extends \core\check\result
+{
     ...
-    public function get_details(): string {
+    public function get_details(): string
+    {
         // Do expensive lookups in here.
     }
 }

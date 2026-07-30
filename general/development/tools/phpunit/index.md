@@ -227,7 +227,8 @@ namespace qtype_stack;
  * Unit tests for {@link stack_cas_keyval} @ qtype/stack/tests/cas_keyval_test.php.
  * @group qtype_stack
  */
-class cas_keyval_test extends \basic_testcase {
+class cas_keyval_test extends \basic_testcase
+{
 ```
 
 to all the classes in your plugin, then you can run just the tests for your plugin by doing

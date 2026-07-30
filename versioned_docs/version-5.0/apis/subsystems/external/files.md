@@ -119,7 +119,8 @@ $forum->introfiles = external_util::get_area_files($context->id, 'mod_forum', 'i
 You can also use the `external_files` structure definition in combination with the method to return the most common file fields required by WS clients.
 
 ```php
-public static function execute_returns(): external_multiple_structure {
+public static function execute_returns(): external_multiple_structure
+{
     return new external_multiple_structure(
         new external_single_structure([
             'id' => new external_value(PARAM_INT, 'Forum id'),

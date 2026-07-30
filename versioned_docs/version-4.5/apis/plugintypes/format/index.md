@@ -532,8 +532,10 @@ In the example the extra output classes can look like:
 <?php
 namespace format_pluginname\output\courseformat\content;
 
-class cm extends \core_courseformat\output\local\content\cm {
-    public function get_template_name(\renderer_base $renderer): string {
+class cm extends \core_courseformat\output\local\content\cm
+{
+    public function get_template_name(\renderer_base $renderer): string
+    {
         return 'format_pluginname/local/content/cm;
     }
 }
@@ -543,8 +545,10 @@ class cm extends \core_courseformat\output\local\content\cm {
 <?php
 namespace format_pluginname\output\courseformat\content\cm;
 
-class activity extends \core_courseformat\output\local\content\cm\activity {
-    public function get_template_name(\renderer_base $renderer): string {
+class activity extends \core_courseformat\output\local\content\cm\activity
+{
+    public function get_template_name(\renderer_base $renderer): string
+    {
         return 'format_pluginname/local/content/cm/activity;
     }
 }
@@ -554,8 +558,10 @@ class activity extends \core_courseformat\output\local\content\cm\activity {
 <?php
 namespace format_pluginname\output\courseformat\content\cm;
 
-class badge extends \core_courseformat\output\local\content\cm\badge {
-    public function get_template_name(\renderer_base $renderer): string {
+class badge extends \core_courseformat\output\local\content\cm\badge
+{
+    public function get_template_name(\renderer_base $renderer): string
+    {
         return 'format_pluginname/local/content/cm/badge;
     }
 }
@@ -604,7 +610,8 @@ To enable the course editor in your format you should add the following method t
 /**
  * Enable the component based content.
  */
-public function supports_components() {
+public function supports_components()
+{
     return true;
 }
 ```
@@ -648,7 +655,8 @@ Plugins can implement `mod_PLUGINNAME\output\courseformat\activitybadge` that ex
 ```php title="course/format/classes/output/activitybadge.php"
 namespace core_courseformat\output;
 
-abstract class activitybadge implements named_templatable, \renderable {
+abstract class activitybadge implements named_templatable, \renderable
+{
 
     /** @var array Badge defined styles. */
     public const STYLES = [
@@ -694,9 +702,11 @@ This feature has been implemented by:
     ```php title="mod/forum/classes/output/courseformat/activitybadge.php"
     namespace mod_forum\output\courseformat;
 
-    class activitybadge extends \core_courseformat\output\activitybadge {
+    class activitybadge extends \core_courseformat\output\activitybadge
+    {
 
-        protected function update_content(): void {
+        protected function update_content(): void
+        {
             global $CFG;
 
             require_once($CFG->dirroot . '/mod/forum/lib.php');
@@ -720,9 +730,11 @@ This feature has been implemented by:
     ```php title="mod/resource/classes/output/courseformat/activitybadge.php"
     namespace mod_resource\output\courseformat;
 
-    class activitybadge extends \core_courseformat\output\activitybadge {
+    class activitybadge extends \core_courseformat\output\activitybadge
+    {
 
-        protected function update_content(): void {
+        protected function update_content(): void
+        {
             $options = (object) ['displayoptions' => $this->cminfo->customdata['displayoptions']];
             $this->content = resource_get_optional_filetype($options, $this->cminfo);
         }

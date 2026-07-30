@@ -21,7 +21,8 @@ Dependencies are stored using a string id attribute, which is typically the clas
 When accessing dependencies within a class, it is advisable to inject them into the constructor, for example:
 
 ```php title="Fetching a instance of the \core\http_client class from within a class"
-class my_thing {
+class my_thing
+{
     public function __construct(
         protected readonly \core\http_client $client,
     ) {
@@ -48,7 +49,8 @@ The use of readonly properties is also highly recommended as it ensures that dep
 These language features are available in all Moodle versions supporting Dependency Injection.
 
 ```php
-class example_without_promotion {
+class example_without_promotion
+{
     protected \core\http_client $client;
 
     public function __construct(
@@ -58,7 +60,8 @@ class example_without_promotion {
     }
 }
 
-class example_with_promotion {
+class example_with_promotion
+{
     public function __construct(
         protected readonly \core\http_client $client,
     ) {
@@ -101,8 +104,10 @@ namespace mod_example;
 
 use core\hook\di_configuration;
 
-class hook_listener {
-    public static function inject_dependencies(di_configuration $hook): void {
+class hook_listener
+{
+    public static function inject_dependencies(di_configuration $hook): void
+    {
         $hook->add_definition(
             id: complex_client::class,
             definition: function (
@@ -139,8 +144,10 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Response;
 
-class example_test extends \advanced_testcase {
-    public function test_the_thing(): void {
+class example_test extends \advanced_testcase
+{
+    public function test_the_thing(): void
+    {
         // Mock our responses to the http_client.
         $handlerstack = HandlerStack::create(new MockHandler([
             new Response(200, [], json_encode(['name' => 'Colin'])),
@@ -170,13 +177,15 @@ Dependencies can be usually be easily injected into classes which are themselves
 In most cases in Moodle, this should be via the class constructor, for example:
 
 ```php title="Injecting via the constructor"
-class thing_manager {
+class thing_manager
+{
     public function __construct(
         protected readonly \moodle_database $db,
     ) {
     }
 
-    public function get_things(): array {
+    public function get_things(): array
+    {
         return $this->db->get_records('example_things');
     }
 }
@@ -186,13 +195,15 @@ $manager = \core\di::get(thing_manager::class);
 $things = $manager->get_things();
 
 // Using it in a child class:
-class other_thing {
+class other_thing
+{
     public function __construct(
         protected readonly thing_manager $manager,
     ) {
     }
 
-    public function manage_things(): void {
+    public function manage_things(): void
+    {
         $this->manager->get_things();
     }
 }

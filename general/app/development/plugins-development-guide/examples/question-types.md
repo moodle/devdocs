@@ -35,9 +35,11 @@ $addons = [
 ```
 
 ```php title="classes/output/mobile.php"
-class mobile {
+class mobile
+{
 
-    public static function mobile_get_YOURQTYPENAME() {
+    public static function mobile_get_YOURQTYPENAME()
+    {
         global $OUTPUT, $CFG;
 
         $html = $OUTPUT->render_from_template('qtype_YOURQTYPENAME/mobileapp/mobile', []);

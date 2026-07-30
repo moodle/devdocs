@@ -16,7 +16,8 @@ You can add as many groups of checkboxes as you like, as long as they are unique
 When adding checkboxes, you can add them in _groups_. Each group of checkboxes must have a unique integer name, for example:
 
 ```php title="classes/form/example_form.php"
-public function definition(): void {
+public function definition(): void
+{
     // These two elements are part of group 1.
     $mform->addElement('advcheckbox', 'test1', 'Test 1', null, ['group' => 1]);
     $mform->addElement('advcheckbox', 'test2', 'Test 2', null, ['group' => 1]);

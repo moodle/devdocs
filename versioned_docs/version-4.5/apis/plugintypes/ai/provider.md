@@ -35,7 +35,8 @@ They must also implement the following methods:
 This is the list of Actions that are supported by this Provider, for example the `aiprovider_openai` plugin defines this as:
 
 ```php
-public function get_action_list(): array {
+public function get_action_list(): array
+{
     return [
         \core_ai\aiactions\generate_text::class,
         \core_ai\aiactions\generate_image::class,
@@ -56,7 +57,8 @@ For example, the `aiprovider_azureai` provider checks values are set for `$this-
 the result.
 
 ```php
-public function is_provider_configured(): bool {
+public function is_provider_configured(): bool
+{
     return !empty($this->apikey) && !empty($this->apiendpoint);
 }
 ```
@@ -173,7 +175,8 @@ This should be implemented in a `is_request_allowed()` method in the Provider cl
  * @param aiactions\base $action The action to check.
  * @return array|bool True on success, array of error details on failure.
  */
-public function is_request_allowed(aiactions\base $action): array|bool {
+public function is_request_allowed(aiactions\base $action): array|bool
+{
     $ratelimiter = \core\di::get(rate_limiter::class);
     $component = \core\component::get_component_from_classname(get_class($this));
 

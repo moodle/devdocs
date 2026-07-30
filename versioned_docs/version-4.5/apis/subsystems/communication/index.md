@@ -291,8 +291,10 @@ This method accepts the following parameters:
 For example, we have a form where we want to have the communication settings, we can use the below code to add the form elements to the form.
 
 ```php
-class configure_form extends \moodleform {
-    public function definition() {
+class configure_form extends \moodleform
+{
+    public function definition()
+    {
         $mform = $this->_form;
         $communication = \core_communication\api::load_by_instance(
             context: $context,
