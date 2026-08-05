@@ -145,6 +145,110 @@ define('TEST_LDAPLIB_BIND_PW', '*');
 define('TEST_LDAPLIB_DOMAIN', 'dc=yourcomputer,dc=local');
 ```
 
+## Maintaining the test environment {/* #maintaining-the-test-environment */}
+
+{/* <!-- cspell:ignore dataroot, filedir, dbtype, mysnapshot --> */}
+
+Once the environment has been initialised, the `admin/tool/phpunit/cli/util.php` script can manage it without a full re-initialisation via `init.php`. Run it with `--help` to see all of the available options:
+
+```
+php public/admin/tool/phpunit/cli/util.php --help
+```
+
+### Upgrading the environment after a change {/* #upgrading-the-environment-after-a-change */}
+
+<Since version="5.3" issueNumber="MDL-88495" />
+
+When you add, remove, or change a plugin (including bumping a plugin's version number), the test environment no longer matches the code and PHPUnit will refuse to run:
+
+```
+Moodle PHPUnit environment was initialised for different version, please use:
+ php public/admin/tool/phpunit/cli/init.php
+ or php public/admin/tool/phpunit/cli/util.php --upgrade
+```
+
+Instead of re-initialising the whole environment, you can upgrade just the installed plugins in place, which is significantly faster:
+
+```
+php public/admin/tool/phpunit/cli/util.php --upgrade
+```
+
+This runs the standard non-core upgrade against the existing test database — installing new plugins, running their upgrade steps, and applying plugin default settings — in the same way that completing an upgrade from the notifications page does on a normal site.
+
+### Snapshots {/* #snapshots */}
+
+<Since version="5.3" issueNumber="MDL-88495" />
+
+Initialising the test environment from scratch is slow because it installs the full Moodle database. In continuous integration, where the same vanilla install is rebuilt for every job, this can dominate the run time. Snapshots let you capture an initialised environment once and restore it almost instantly on later runs.
+
+A snapshot is a single `.zip` archive containing the test database structure and data together with the `filedir`. Snapshots are stored under `<phpunit_dataroot>/snapshots/` and are keyed by database type and Moodle version, so a snapshot taken for one version is not used against another.
+
+#### Creating a snapshot {/* #creating-a-snapshot */}
+
+Initialise the environment as usual, then create a snapshot:
+
+```
+php public/admin/tool/phpunit/cli/util.php --snapshot
+```
+
+By default the snapshot is named `<dbtype>-snapshot-<version>` (for example `pgsql-snapshot-2026072200`). You can give it a custom name with `--snapshot=NAME`:
+
+```
+php public/admin/tool/phpunit/cli/util.php --snapshot=mysnapshot
+```
+
+#### Listing snapshots {/* #listing-snapshots */}
+
+```
+php public/admin/tool/phpunit/cli/util.php --list
+```
+
+The names printed are exactly the values to pass to `--restore`:
+
+```
+Available snapshots (use the full name shown with --restore=NAME):
+ - pgsql-mysnapshot-2026072200
+ - pgsql-snapshot-2026072200
+```
+
+#### Restoring a snapshot {/* #restoring-a-snapshot */}
+
+The database must be empty before restoring, so drop it first:
+
+```
+php public/admin/tool/phpunit/cli/util.php --drop
+php public/admin/tool/phpunit/cli/util.php --restore=pgsql-snapshot-2026072200
+```
+
+`--restore` rebuilds the database and `filedir` from the snapshot, which is much faster than a full `init.php`. Pass the exact name shown by `--list` (without the `.zip` extension). Snapshots are preserved by `--drop`, so you can drop and restore repeatedly.
+
+#### Example CI workflow {/* #example-ci-workflow */}
+
+The snapshot archive is intended to be cached by your CI system (GitHub Actions, GitLab CI, Jenkins, and so on). How the archive is stored between jobs is out of scope for Moodle and depends on your CI provider.
+
+1. On a vanilla Moodle, initialise the environment and take a snapshot, then cache the archive from `<phpunit_dataroot>/snapshots/` keyed by the Moodle version:
+
+   ```
+   php public/admin/tool/phpunit/cli/init.php
+   php public/admin/tool/phpunit/cli/util.php --snapshot
+   ```
+
+2. On subsequent runs, restore the cached snapshot instead of re-installing:
+
+   ```
+   php public/admin/tool/phpunit/cli/util.php --restore=<name>
+   ```
+
+3. Install the plugin under test, then upgrade the environment in place:
+
+   ```
+   php public/admin/tool/phpunit/cli/util.php --upgrade
+   ```
+
+4. Run the tests.
+
+If a new Moodle version is released the cached snapshot no longer matches, and the workflow should fall back to a fresh `init.php` before taking a new snapshot.
+
 ## Test execution {/* #test-execution */}
 
 To execute all test suites from main configuration file execute the `vendor/bin/phpunit` script from your `$CFG->dirroot` directory.
