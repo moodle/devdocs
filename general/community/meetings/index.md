@@ -9,11 +9,17 @@ sidebar_label: Meetings
 
 ## Upcoming developer meetings {/* #upcoming-developer-meetings */}
 
-Our next meeting is scheduled for May 2026, details TBC.
+We have several more community developer meetings booked in for 2026. The following sessions are now confirmed:
+
+- **19 August 2026 08:00 UTC** - [Moodle LMS front-end evolution](./2026/08.md) - What theme and plugin developers need to know
+- **09 September 2026 09:00 UTC** - [Moodle LMS QA cycle](./2026/09.md) - How community contributions to QA testing ensure smooth major releases and strengthen Moodle LMS for us all *(and how to get involved!)*
+- **14 October 2026 08:00 UTC** - [Accessible Moodle development](./2026/10.md) - How to develop with accessibility in mind, common issues, and testing
 
 ### Future sessions {/* #future-sessions */}
 
-We are currently finalising the schedule for the next several meetings to take place this year, in **May**, **July**, **September** and **November**. If you have a topic you would like to speak about (even if you'd like to nominate for a session later in the year), please reach out via our [speaker nomination form](https://moodle.org/mod/feedback/view.php?id=8914). Alternatively, if there's a topic you would love to hear about, please let us know in the [meeting announcement forum discussion](https://moodle.org/mod/forum/discuss.php?d=472183), and we will add it to our list of potential meeting topics.
+We will be holding community developer meetings regularly, with a meeting at least every 3 months (more often if we have additional topics or those that benefit from a specific point in our release cycle etc). After the October 2026 session, our next meetings is scheduled for 13 January, further details will be confirmed closer to the date.
+
+If you have a topic you would like volunteer to speak about, please reach out via our [speaker nomination form](https://moodle.org/mod/feedback/view.php?id=8914). Alternatively, if there's a topic you would love to hear about, please let us know in the [meeting announcement forum discussion](https://moodle.org/mod/forum/discuss.php?d=472183), and we will add it to our list of potential meeting topics.
 
 ## Past meetings {/* #past-meetings */}
 
