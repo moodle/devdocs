@@ -107,7 +107,47 @@ describe('getString', () => {
 });
 ```
 
-## Mocking AMD modules
+## Mocking
+
+Mocking of class and module dependencies of your unit under test is strongly encouraged. In some cases it is mandatory.
+
+Some functionality, such as the ability to mock strings and AMD modules, is provided as part of the Moodle core and these mocks are reset between tests.
+
+You should not need to clean mocks up manually. Each test starts with a fresh state.
+
+You can clear up any additional test state within your test file using:
+
+- `beforeEach()`
+- `afterEach()`
+
+See the [Jest Setup and Teardown](https://jestjs.io/docs/setup-teardown) documentation for further information.
+
+### Mocking strings
+
+Because of the way in which Moodle's string module fetches strings using a web service, all strings are mocked to a standard value of:
+
+```
+[identifier, component]
+```
+
+For cases where your tests expect a specific string value, you can mock values using the global `mockString` method:
+
+```typescript
+describe('@moodle/lms/mod_example/Example', () => {
+    beforeEach(() => {
+        mockString('dofabuluousthings', 'more_example', 'Do something fabulous!!');
+    });
+    it('Renders an Example component', () => {
+        await act(async() => {
+            render(<Example />);
+        });
+
+        expect(screen.getByText('Do something fabulous!!!')).toBeInTheDocument();
+    });
+});
+```
+
+### Mocking AMD modules
 
 AMD modules (anything loaded via `requirejs`) **cannot** run inside Jest. The Jest module system and the AMD loader are completely separate environments, so `requirejs`, `M`, jQuery, and other Moodle globals are not available.
 
@@ -130,9 +170,9 @@ describe('my component', () => {
 });
 ```
 
-:::note
+:::danger[Unmocked AMD modules]
 
-If code under test calls `requireAsync` or `requireManyAsync` with a module that has not been registered via `mockAmdModule`, the test will throw:
+If code under test calls `requireAsync` or `requireManyAsync` with a module that has not been registered using `mockAmdModule` then the test will throw an error:
 
 ```
 Error: Unexpected call to requireAsync with module name: core/notification
@@ -142,37 +182,40 @@ This is intentional: missing mocks produce a hard failure rather than silent wro
 
 :::
 
-### Registrations reset between tests
+## Handling redirects
 
-Mocks and test fixtures, such as the AMD module map, and the string map, are cleared between each test using the `afterEach` notation.
-
-You do not need to clean up manually. Each test starts with a fresh state.
-
-You can clear up any additional test state within your test file using:
-
-- `beforeEach()`
-- `afterEach()`
-
-See the [Jest Setup and Teardown](https://jestjs.io/docs/setup-teardown) documentation for further information.
-
-## Mocking language strings
-
-`mockString(identifier, component, resolved)` registers a resolved value for a specific `(identifier, component)` pair. This delegates to the default `core/str` mock that is already registered in `.jest/globalSetup.ts`.
+If your code causes the page to redirect, then it must use the `@moodle/lms/core/location` module's `redirect` method, for example:
 
 ```typescript
-mockString('submit', 'core', 'Submit');
-mockString('cancel', 'core', 'Cancel');
+import {redirect} from '@moodle/lms/core/location';
 
-await expect(getString('submit', 'core')).resolves.toBe('Submit');
+export default function () {
+    redirect('https://example.com');
+}
 ```
 
-For any string that was not registered, the default mock returns `[identifier, component]`:
+Moodle automatically mocks the `redirect` function and allows you to specify the expected value before calling your method using the `expectRedirect()` helper:
 
 ```typescript
-await expect(getString('other', 'core')).resolves.toBe('[other, core]');
+import Example from '@moodle/lms/mod_example/Example';
+
+describe('@moodle/lms/mod_example/Example', () => {
+    it('Redirects to the user documentation', () => {
+        expectRedirect({urlContains: 'example.com'});
+
+        Example();
+    });
+});
 ```
 
-This default is useful for snapshot tests and assertions that only care whether a string key was requested, not its exact value.
+The `expectRedirect` method accepts:
+
+- a `url` parameter with an exact matching URL; or
+- a `urlContains` parameter with a partial match.
+
+If a redirect occurs without an `expectRedirect()` call, an Error will be thrown.
+
+Expected redirects are reset between tests.
 
 ## Module path aliases
 
