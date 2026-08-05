@@ -80,7 +80,7 @@ Once your `messages.php` is complete you need to increase the version number of 
 ```php title="The default processor can be set using an element of the array"
 'mynotification' => [
     'defaults' => [
-        'pop-up' => MESSAGE_PERMITTED + MESSAGE_DEFAULT_ENABLED,
+        'popup' => MESSAGE_PERMITTED + MESSAGE_DEFAULT_ENABLED,
         'email' => MESSAGE_PERMITTED,
     ],
 ],
