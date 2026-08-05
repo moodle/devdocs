@@ -141,7 +141,7 @@ Labels can only be added by a user with permission to edit an issue, that is the
 
 - `mdlqa`
 
-  Used to flag that an issue is a direct result of a [Moodle QA test](../process/testing/qa.md), conducted just before major releases. The bug should also be linked to the original MDLQA test, so that developers/integrators can reset the original MDLQA test (for re-testing) when the MDL issue is fixed. Once all the related MDLQA tests are passing the label can be deleted.
+  Used to flag an issue that was found as a direct result of a [Moodle QA test](../process/testing/qa.md) conducted before a major release. The issue should also be linked to the original MDLQA test, so developers and integrators can reset that test for re-testing once the issue is fixed. Keep this label while the issue is still affecting the QA cycle. Once all related MDLQA tests are passing, remove this label and add qa_identified so we retain a record that the issue was found during the QA cycle.
 
 - `mdlqa_conversion`
 
@@ -151,9 +151,17 @@ Labels can only be added by a user with permission to edit an issue, that is the
 
   Used to identify new tests in the current QA cycle for volunteers from the community to use as a basis for exploratory testing.
 
+- [`qa_help_needed`](https://moodle.atlassian.net/issues/?jql=labels%20%3D%20qa_help_needed)
+
+  Used to flag an issue where a tester needs assistance. Add this label when the test steps are unclear, incomplete, or ambiguous, and include a comment describing the question or point that needs clarification. Remove the label once the clarification has been provided.
+
 - [`qa_identified`](https://moodle.atlassian.net/issues/?jql=labels%20%3D%20qa_identified)
 
-  Used to flag issues identified in QA testing which we were not able to fix before the release. Hopefully such issues can be worked on shortly after release, removing the label once the issue is fixed.
+  Used to flag issues identified during QA testing of past releases. This label provides a permanent record of bugs found during the QA cycle, including both issues that were not fixed before release and issues that were fixed later. Unlike mdlqa, this label should not be removed after the issue is fixed.
+
+- [`qa_instructions_update`](https://moodle.atlassian.net/issues/?jql=labels%20%3D%20qa_instructions_update)
+
+  Used to flag an issue where the testing instructions need to be updated. Add this label when the steps are incorrect, incomplete, outdated, or do not match the current behaviour, and include a comment describing what needs to be changed. Remove the label once the testing instructions have been updated.
 
 - [`qa_test_required`](https://moodle.atlassian.net/issues/?jql=labels%20%3D%20qa_test_required)
 
