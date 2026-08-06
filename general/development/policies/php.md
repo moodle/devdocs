@@ -59,7 +59,7 @@ PHP 8.4 **can be used with** Moodle 5.0 and later releases. See MDL-80117 for de
 
 <Since versions={["4.4"]} issueNumber="MDL-76426" />
 
-PHP 8.3 **can be used with** Moodle 4.4 and later releases. See MDL-76426 for details.
+PHP 8.3 **can be used with** Moodle 4.4 and later releases. It is also the **minimum** supported version for Moodle 5.2. See MDL-76426 for details.
 
 ### PHP 8.2 {/* #php-82 */}
 
