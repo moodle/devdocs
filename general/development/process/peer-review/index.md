@@ -180,7 +180,7 @@ See more info in [Privacy API](/docs/apis/subsystems/privacy/).
 
 ### The Moodle mobile app {/* #the-moodle-mobile-app */}
 
-The Moodle app supports most of the student-related Moodle functionality. It is important to think about how a change in that type of functionality might affect it.
+The Moodle app supports most of the student-related Moodle functionality. It is important to think about how a change in that type of functionality might affect it. See the [mobile app rule of thumb](../../process-moodleapp/lms-developer-guide.md#the-mobile-app-rule-of-thumb) for examples of the kind of changes that tend to affect it.
 
 Ensure that:
 
