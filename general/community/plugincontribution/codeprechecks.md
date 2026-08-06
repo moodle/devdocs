@@ -36,7 +36,7 @@ Finally, clicking some of these individual test labels takes you to a page with 
 - **phplint**: Checks the plugin source code for correct PHP syntax.
 - **phpcs**: Checks the plugin against the [Moodle coding style](../../development/policies/codingstyle).
 - **js**: Checks the plugin against the [JavaScript coding style](/docs/guides/javascript/).
-- **css**: Checks the plugin against the [CSS coding style](https://docs.moodle.org/dev/CSS_Coding_Style).
+- **css**: Checks the plugin against the [CSS coding style](../../development/policies/codingstyle/css.md).
 - **phpdoc**: Checks that the plugin files, classes and functions are documented in the source code.
 - **savepoint**: Reports issues detected with the handling of [upgrade savepoints](/docs/guides/upgrade/).
 - **thirdparty**: Reports issues with the [thirdpartylibs.xml](/docs/apis/commonfiles#thirdpartylibsxml) file.
