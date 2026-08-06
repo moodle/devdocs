@@ -78,6 +78,8 @@ In general code should be written to avoid displaying interfaces which are remov
 
 All JavaScript must be accessible.
 
+All new TypeScript and TSX code, including React components, must follow Moodle's [file naming conventions](/docs/guides/javascript/react/conventions#file-naming) and must be accompanied by Jest unit tests with a minimum of 80% coverage. See the [React coding conventions](/docs/guides/javascript/react/conventions) for details.
+
 :::info
 
 For more about this, see the [JavaScript guide](/docs/guides/javascript).
