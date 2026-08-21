@@ -28,3 +28,17 @@ The `moodle_page` class now includes `set_supplementary_content()` and `get_supp
 For instance, `mod_forum` uses this new mechanism to display a "Go to all discussions" link in the sticky footer when viewing an individual discussion.
 
 For more information, see the [Adding supplementary content to the sticky footer](./apis/plugintypes/format/linear_navigation.md#adding-supplementary-content-to-the-sticky-footer) section.
+
+## Tagged, accessible PDF generation
+
+<Since version="5.3" issueNumber="MDL-83411" />
+
+Moodle 5.3 adds the [tc-lib-pdf](https://github.com/tecnickcom/tc-lib-pdf) library, and a new `\core\pdf\document` class that wraps it with the Moodle defaults for language, metadata, fonts and local file access. It emits tagged PDF/UA output by default, so documents generated through it are accessible to assistive technology.
+
+`\core\pdf\document` is now the preferred way to generate a PDF. The `\pdf` class in `lib/pdflib.php`, which wraps TCPDF, is unchanged and still supported, so plugins that extend it keep working. It is, however, discouraged for new code, because TCPDF cannot produce tagged output. Whether TCPDF is eventually removed is being tracked separately.
+
+`dataformat_pdf` is the first core output to be converted, so report exports are now tagged tables rather than grids of unrelated cells. The remaining core PDF output (PDF annotation, the Brickfield accessibility report, and QR code generation) is unchanged for now, and conversion of each is being tracked separately.
+
+Note that sites which added their own fonts for PDF export have to convert them again from the original `.ttf` or `.otf` file, using the new `admin/cli/convert_pdf_font.php` script. The two libraries read different font metrics formats, so a font prepared for TCPDF is invisible to the new one and exports silently fall back to the default font.
+
+For usage, the accessibility rules, font handling and a migration table, see the [PDF API guide](./apis/core/pdf/index.md).

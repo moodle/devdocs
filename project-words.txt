@@ -25,6 +25,7 @@ Docsearch
 Docusaurus
 Equella
 Filepool
+FPDI
 Gapfill
 Gifreu
 GSOC
