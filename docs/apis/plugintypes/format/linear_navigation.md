@@ -34,69 +34,24 @@ class format_mycustomformat extends \core_courseformat\base {
 }
 ```
 
-## Adding format-level configuration
+## Adding an administration setting
 
-If your course format requires configuration at the course settings level (similar to how `format_topics` and `format_weeks` handle it), you should integrate it into your format's native settings framework (`course_format_options`).
-
-```php title="course/format/mycustomformat/lib.php"
-    /**
-     * Define the format options for a course.
-     *
-     * @param bool $foreditform True if it's being requested for the course edit form.
-     * @return array Array of options.
-     */
-    public function course_format_options($foreditform = false) {
-        static $courseformatoptions = false;
-        // Initialise the course format options array if it hasn't been done yet with the default values.
-        if ($courseformatoptions === false) {
-            // Get course format's settings.
-            $courseformatoptions = [];
-
-            // Add linear navigation settings if enabled for the format.
-            $courseformatoptions = array_merge(
-                \core_courseformat\local\linearnavigationsettings::get_course_format_options_default(self::get_format()),
-                $courseformatoptions,
-            );
-
-        }
-
-        if ($foreditform) {
-            // Get the edit form options for the format.
-            $courseformatoptionsedit = [];
-
-            // Add course format settings.
-
-            // Append your format's explicit linear navigation setting override if desired,
-            // or rely on the core 'enablelinearnav' setting configuration.
-            $courseformatoptions = array_merge_recursive(
-                $courseformatoptionsedit,
-                \core_courseformat\local\linearnavigationsettings::get_course_format_options_edit_form(self::get_format()),
-            );
-        }
-        return $courseformatoptions;
-    }
-```
-
-:::info[Adding site-wide administration settings]
-
-To allow administrators to enable, disable, or define the default state for linear navigation within your custom format, add the configuration option to your plugin's settings.php file.
+Linear navigation is controlled by an `enablelinearnav` setting in each course format's own component. A format which does not define the setting has linear navigation enabled.
 
 ```php title="course/format/mycustomformat/settings.php"
-    $options = [
-        1 => get_string('yes'),
-        0 => get_string('no'),
-    ];
+$options = [
+    1 => get_string('yes'),
+    0 => get_string('no'),
+];
 
-    $settings->add(new admin_setting_configselect(
-        'format_mycustomformat/enablelinearnav',
-        new lang_string('linearnavigationsettings', 'core_courseformat'),
-        new lang_string('linearnavigationsettings_help', 'core_courseformat'),
-        1,
-        $options
-    ));
+$settings->add(new admin_setting_configselect(
+    'format_mycustomformat/enablelinearnav',
+    new lang_string('linearnavigationsettings', 'core_courseformat'),
+    new lang_string('linearnavigationsettings_help', 'core_courseformat'),
+    1,
+    $options,
+));
 ```
-
-:::
 
 ## Controlling the page state rendering
 
@@ -117,7 +72,7 @@ if (\core_courseformat\local\linearnavigationsettings::show_navigation_footer($P
 }
 
 // Check if linear navigation is enabled for the course.
-// It only checks the course format and the linear navigation format option, regardless of any
+// It only checks the course format and the site-level setting for that format, regardless of any
 // page-level state. It is useful for activities that need to adapt their output (for example,
 // hiding navigation controls of their own) when linear navigation is enabled.
 $linearnavigationenabled = \core_courseformat\local\linearnavigationsettings::is_linear_navigation_enabled($course);
