@@ -218,6 +218,94 @@ export const init = async () => {
 </TabItem>
 </Tabs>
 
+## Heading structure {/* #heading-structure */}
+
+The `core/modal` template renders the dialogue title as a level 2 heading:
+
+```mustache title="The title element in core/modal"
+<h2 id="{{uniqid}}-modal-title" class="modal-title fs-5 text-truncate" data-region="title">Test title</h2>
+```
+
+The level is deliberately fixed at `<h2>`. A dialogue can be opened from anywhere in a page, so it cannot know what the surrounding heading structure is, and the page behind it already provides the single `<h1>`. Placing the title at level 2 keeps it directly beneath that `<h1>` wherever the dialogue is opened from.
+
+Its appearance comes from the `fs-5` [Bootstrap font size utility class](https://getbootstrap.com/docs/5.3/utilities/text/#font-size), not from the element. Never change the heading element to make a title look bigger or smaller -- change the utility class.
+
+:::info[Why `<h2>` and not `<h1>`?]
+
+[Bootstrap's own documentation](https://getbootstrap.com/docs/5.3/components/modal/) uses an `<h1>` for the modal title, on the basis that a dialogue is its own document context. Moodle uses an `<h2>` instead because the page behind the dialogue already has an `<h1>`, and accessibility auditing tools commonly report a second `<h1>` as a failure.
+
+:::
+
+### Headings within a dialogue {/* #headings-within-a-dialogue */}
+
+Because the title is an `<h2>`, the first heading level available to you inside the body or footer of a dialogue is `<h3>`:
+
+```mustache title="mod/example/templates/my_modal.mustache"
+{{< core/modal }}
+    {{$title}}{{#str}} pluginname, mod_example {{/str}}{{/title}}
+    {{$body}}
+        <h3>{{#str}} settings, mod_example {{/str}}</h3>
+        {{! ... }}
+        <h4>{{#str}} advancedsettings, mod_example {{/str}}</h4>
+        {{! ... }}
+    {{/body}}
+{{/ core/modal }}
+```
+
+Skipping a level -- going straight from the `<h2>` title to an `<h4>`, for example -- breaks the heading hierarchy that assistive technology users rely on to navigate the dialogue. See the [heading requirements](/general/development/process/peer-review/accessibility-checklist#page-headers-and-title) in the accessibility peer review checklist.
+
+This applies to content that is rendered *into* a dialogue as much as to the dialogue's own template. If a language string, filter, or renderer emits headings, and that output can be displayed in a dialogue, its heading levels must fit beneath the `<h2>` title too. The `modulename_help` strings shown by the activity chooser are one example: their Markdown headings start at `####` (`<h4>`) so that they nest correctly under the activity name.
+
+:::tip[Sizing nested headings]
+
+If a nested heading needs to look smaller than its level implies, apply an `fs-*` utility class, or set the size in your theme's SCSS. Choose the heading element for its meaning and the class for its appearance.
+
+:::
+
+### Overriding the header {/* #overriding-the-header */}
+
+The `core/modal` template exposes a `header` block, which replaces the whole `modal-header` region including the title element. If you override it, you must render your own heading and it must keep the same level, id, and `modal-title` class, otherwise the dialogue loses the accessible name that `aria-labelledby` points at:
+
+```mustache title="Overriding the header block"
+{{< core/modal }}
+    {{$header}}
+        <h2 id="{{uniqid}}-modal-title" class="modal-title fs-5 text-truncate" data-region="title">
+            {{#str}} pluginname, mod_example {{/str}}
+        </h2>
+        {{! Any additional header content. }}
+    {{/header}}
+{{/ core/modal }}
+```
+
+In most cases you should override the `title` block instead, and leave the heading itself to `core/modal`.
+
+:::note[Dialogues that are not built with `core/modal`]
+
+Some dialogue-like components render their own `modal-header` markup rather than extending `core/modal` -- `tool_usertours` tour steps are one example in core. These follow the same rule: the title is an `<h2 class="modal-title fs-5">`, and content headings start at `<h3>`.
+
+:::
+
+### Testing the heading structure {/* #testing-the-heading-structure */}
+
+The `best-practice` axe ruleset checks heading order, so an `@accessibility` Behat scenario is the simplest way to guard the structure of a dialogue:
+
+```gherkin
+@accessibility
+Scenario: The example dialogue has a valid heading structure
+  Given I open the example dialogue
+  Then the "Example dialogue" "dialogue" should meet accessibility standards with "best-practice" extra tests
+```
+
+Assert on the semantics rather than the presentation. `"h2.modal-title" "css_element"` is a stable assertion; including the `fs-5` utility class in the selector is not, because the class that sets the title's size may change.
+
+See [Accessibility testing](/general/development/policies/accessibility/testing) for more on writing accessibility tests.
+
+:::note[Earlier releases]
+
+Before [MDL-75699](https://tracker.moodle.org/browse/MDL-75699) the dialogue title was an `<h5>`, and headings inside a dialogue were expected to nest beneath that. If you are writing code that must also run on releases from before that fix, be aware that the same markup produces a different heading hierarchy there.
+
+:::
+
 ## Creating a custom modal type {/* #creating-a-custom-modal-type */}
 
 In some situations it is desirable to write a brand new modal.
