@@ -346,6 +346,16 @@ A number of advanced options are also available but you are unlikely to need the
 1. `-o` or `--optimize-runs` This option will split features with specified tags in all parallel runs, so they are executed first when parallel run gets executed.
 You can view details of all of these using the `--help` flag to `admin/tool/behat/cli/init.php`
 
+<Since version="5.3" issueNumber="MDL-68037" />
+
+The `--colourmode` option sets the colour mode for every test run after it, on themes which support colour modes, such as Boost:
+
+```console
+php admin/tool/behat/cli/init.php --colourmode=dark
+```
+
+`util.php --enable` accepts the same option. See [Colour modes](/docs/guides/colourmodes) for what this affects and how to test a plugin in both modes.
+
 ##### Running Parallel tests {/* #running-parallel-tests */}
 
 You can use the Moodle behat runner to run all tests, including Standard runs. It is an intelligent wrapper around the standard `./vendor/bin/behat` command which specifies the configuration file, and other required features.
