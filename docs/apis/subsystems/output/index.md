@@ -70,15 +70,16 @@ $PAGE->set_heading($title);
 
 :::
 
-The most important properties stored in `$PAGE` are the page context, URL, layout, title and headings. `$PAGE` also gives access to some other important classes such as `$PAGE->requires`, which is an instance of the `page_requirements_manager` (`lib/outputrequirementslib.php`). The `page_requirements_manager` class lets us set dependencies on e.g. JavaScript and CSS to be inserted in the correct place in the page (The order in which things are inserted into the page is hugely important for performance).
+The most important properties stored in `$PAGE` are the page context, URL, layout, title and headings. `$PAGE` also gives access to some other important classes such as `$PAGE->requires`, which is an instance of the `\core\output\requirements\page_requirements_manager` . The `page_requirements_manager` class lets us set dependencies for code such as JavaScript and CSS to be inserted
+correctly into the page (The order in which things are inserted into the page is hugely important for performance).
 
-`$PAGE` also lets us load specific renderers for a plugin, or plugin and subtype. We will cover renderers in more detail next.
+`$PAGE` also allows us to load specific renderers for a plugin, or plugin and subtype.
 
 ```php
 $output = $PAGE->get_renderer('tool_demo');
 ```
 
-This gets an instance of the `plugin_renderer_base` class that we use to create all output for our page. Themers can subclass this renderer to override specific render methods in order to customise Moodle's output. See [Output renderers](https://docs.moodle.org/dev/Output_renderers) for more information, and [Overriding a renderer](https://docs.moodle.org/dev/Overriding_a_renderer) for information about how themers can customise a renderer.
+This gets an instance of the `plugin_renderer_base` class that we use to create all output for our page. Theme designers can subclass this renderer to override specific render methods in order to customise Moodle's output. See [Output renderers](https://docs.moodle.org/dev/Output_renderers) for more information, and [Overriding a renderer](https://docs.moodle.org/dev/Overriding_a_renderer) for information about how themers can customise a renderer.
 
 :::important
 
@@ -106,7 +107,7 @@ echo $output->footer();
 
 This prints the HTML for the bottom of the page. It is very important because it also prints out things that were added to the `page_requirements_manager` and that need to be printed in the footer; things like JavaScript includes, navigation tree setup, closing open containers tags etc. The reason all JavaScripts are added to the footer of the page is for performance. If you add JavaScript includes to the top of the page, or inline with the content, the browser must stop and execute the JavaScript before it can render the page. See https://developers.google.com/speed/docs/insights/BlockingJS for more information.
 
-### Accessing renderers with dependency injection {/* #accessing-renderers-with-dependency-injection */}
+### Accessing renderers using dependency injection {/* #accessing-renderers-with-dependency-injection */}
 
 <Since version="5.0" issueNumber="MDL-83888" />
 
@@ -142,118 +143,250 @@ The `core\output\renderer_helper` class serves as a wrapper around the global `$
 
 :::
 
-### Renderable {/* #renderable */}
+## Renderables {/* #renderables */}
 
-In the code above, we created a renderable. This is a class that you have to add to your plugin. It holds all the data required to display something on the page. Here is the renderable for this example:
+In the code above we rendered a `renderable`. This class holds all the data required to display that item on the page.
 
-```php title="/admin/tool/demo/classes/output/index_page.php"
-<?php
-// Standard GPL and phpdocs
+There are several different ways to render a renderable. These are detailed below.
 
+### React component renderables {/* #react-component-renderables */}
+
+<Since issueNumber="MDL-89296" version="5.3" />
+
+Where the user interface has been written as a React component, the `\core\output\react_component_renderable` can be used to simplify rendering the component.  This is useful where the server still prepares the initial props.
+
+:::caution[A note on React properties]
+
+For React components we **strongly** encourage you to limit the properties to only the initial configuration and preferences.
+
+React properties **should not** contain any data.
+
+Historically it was often necessary to include a range of additional properties when writing Mustache template context properties because of limitations in the way that Mustache works. For example it was often necessary to provide certain strings, as well as some hard-to-fetch data. These limitations are not present in React.
+
+:::
+
+If a `renderable` implements the `\core\output\react_component_renderable` interface then Moodle will automatically render it as a React mount placeholder.
+
+The `\core\output\react_component_renderable` interface requires two methods:
+
+- `get_react_component_name()`: Returns the component path within the `@moodle/lms` package (for example, `core/example`).
+- `get_react_component_props(\core\output\renderer_base $renderer)`: Returns a `stdClass` containing the props to pass to the component.
+
+```php title="Example react_component_renderable implementation"
 namespace tool_demo\output;
 
-use renderable;
-use renderer_base;
-use templatable;
-use stdClass;
-
-class index_page implements renderable, templatable {
-    /** @var string $sometext Some text to show how to pass data to a template. */
-    private $sometext = null;
-
-    public function __construct($sometext): void {
-        $this->sometext = $sometext;
+class my_react_widget implements
+    \core\output\react_component_renderable,
+    \core\output\renderable
+{
+    #[\Override]
+    public function get_react_component_name(): string {
+        return 'core/example';
     }
 
-    /**
-     * Export this data so it can be used as the context for a mustache template.
-     *
-     * @return stdClass
-     */
-    public function export_for_template(renderer_base $output): stdClass {
-        $data = new stdClass();
-        $data->sometext = $this->sometext;
-        return $data;
+    #[\Override]
+    public function get_react_component_props(
+        \core\output\renderer_base $renderer,
+    ): \stdClass {
+        return (object) [
+            'filter' => get_user_preference('tool_demo/widget_filter', 'all'),
+            'limit' => get_user_preference('tool_demo/widget_result_limit', 25),
+        ];
     }
 }
 ```
 
-This class implements the:
+To render this renderable you can pass it into the standard `render()`:
 
-- `renderable` interface, which has no methods
-- `templatable` interface, which means that this class could be rendered with a template, so it must implement the `export_for_template` method
+```php title="Rendering a react_component_renderable implementation"
+$widget = new my_react_widget();
 
-In this example, the class accepts data via it's constructor, and stores that data in class variables. It does nothing else with the data in this example (but it could). Note that the `export_for_template` function should only return simple types (`arrays`, `stdClass`, `bool`, `int`, `float`, `string`), or those that implement the [`Stringable`](https://www.php.net/manual/en/class.stringable.php) interface.
-
-If you wish to use a specific template to render the content you may specify anyone by replacing `templatable` with `named_templatable`, which extends templatable and requires that you implement a `get_template_name()` method that returns the name of the template you wish to use.
-
-```php title="Example implementation of get_template_name()"
-    /**
-     * Gets the name of the mustache template used to render the data.
-     *
-     * @return string
-     */
-    public function get_template_name(\renderer_base $renderer): string {
-         return 'tool_demo/index_page';
-    }
+$renderer = $PAGE->get_renderer('tool_demo');
+$renderer->render($widget);
 ```
 
-Now let's look at the renderer for this plugin.
+:::info[An alternative to a React Renderable]
+
+As an alternative to writing a renderable which implements the `react_component_renderable` interface you can also use the [`\core\output\html_writer::react_component()`](../core/htmlwriter#react-component) method.
+
+:::
+
+### Using templates with renderables {/* #using-templates-with-renderables */}
+
+Moodle makes use of the Mustache templating system and provides the following interfaces to simplify rendering a Mustache template:
+
+- `\core\output\named_templatable` - an implementation which automatically renders a specific template;
+- `\core\output\templatable` - a basic implementation which attempts to render based on a guessed template name.
+
+#### Named Templatables {/* #named-templatable */}
+
+If you wish to use a specific template to render the content you should implement the  `\core\output\named_templatable` on your renderable. This interface requires that you implement:
+
+- the `get_template_name()` method, which returns the name of the template you wish to use; and
+- the `export_for_template()` method, which returns the template context.
+
+```php title="Example named_templatable implementation"
+namespace tool_demo\output;
+
+class my_react_widget implements
+    \core\output\named_templatable,
+    \core\output\renderable
+{
+    #[\Override]
+    public function get_template_name(
+        \core\output\renderer_base $renderer,
+    ): string {
+        return 'tool_demo/widget_name';
+    }
+
+    #[\Override]
+    public function export_for_template(
+        \core\output\renderer_base $renderer,
+    ): \stdClass {
+        return (object) [
+            'foo' => 'bar',
+        ];
+    }
+}
+```
+
+To render this renderable you can call the generic `render()` method:
+
+```php title="Rendering a named templatable implementation"
+$widget = new my_named_templatable_widget();
+
+$renderer = $PAGE->get_renderer('tool_demo');
+$renderer->render($widget);
+```
+
+#### Renderables implementing the `templatable` interface {/* #renderables-implementing-the-templatables-interface */}
+
+Similar to the `named_templatable` you can use the simpler `templatable` interface. This is similar to the `named_templatable`, but Moodle guesses the template name based on the name of the renderable.
+
+This interface requires that you implement:
+
+- the `export_for_template()` method, which returns the template context.
+
+```php title="Example named_templatable implementation"
+namespace tool_demo\output;
+
+class my_react_widget implements
+    \core\output\templatable,
+    \core\output\renderable
+{
+    #[\Override]
+    public function export_for_template(
+        \core\output\renderer_base $renderer,
+    ): \stdClass {
+        return (object) [
+            'foo' => 'bar',
+        ];
+    }
+}
+```
+
+To render this renderable you can call the generic `render()` method:
+
+```php title="Rendering a templatable implementation"
+$widget = new my_templatable_widget();
+
+$renderer = $PAGE->get_renderer('tool_demo');
+$renderer->render($widget);
+```
+
+Alternatively you can render this renderable using `render_from_template()` method:
+
+```php title="Rendering a templatable implementation"
+$widget = new my_templatable_widget();
+
+$renderer = $PAGE->get_renderer('tool_demo');
+$renderer->render_from_template(
+    'template_name',
+    $widget->export_for_template($renderer),
+);
+```
+
+This code may be placed within the renderer:
+
+```php title="Rendering a templatable implementation from the renderer"
+$widget = new my_templatable_widget();
+
+$renderer = $PAGE->get_renderer('tool_demo');
+echo $renderer->render($widget);
+
+// public/admin/tool/demo/classes/output/renderer.php
+use core\output\plugin_renderer_base;
+
+class renderer extends plugin_renderer_base {
+    public function render_my_templatable_widget(
+        my_templatable_widget $widget,
+    ) {
+        return $this->render_from_template(
+            'template_name',
+            $widget->export_for_template($this),
+        );
+    }
+}
+```
+
+### Summary of Renderable types {/* #summary-of-renderable-types */}
+
+When a renderer calls `$renderer->render($widget)`, the rendering priority is:
+
+1. A matching `render_<classname>()` method on the renderer.
+2. A class which implements the `react_component_renderable` interface.
+3. A class which implements the `named_templatable` interface.
+4. A class which implements the `templatable` interface.
+
+:::note
+
+Moodle supports this wide range of options for rendering your interface because of historical requirements.
+
+Most implementations should use either the `react_component_renderable` implementation for newer React code, or thd `named_templatable` implementation for Mustache.
+
+Use of the `templatable` system is preserved, but not recommended as it is not as clear.
+
+:::
+
+## Renderers {/* #renderers */}
+
+Renderers exist to allow renderables to be rendered, and also provide an override point for themes to modify the render path.
+
+In its basic form the renderer class simply needs to exist.
 
 ```php title="admin/tool/demo/classes/output/renderer.php"
 <?php
-// Standard GPL and phpdocs
-
 namespace tool_demo\output;
 
-use plugin_renderer_base;
-
-class renderer extends plugin_renderer_base {
-    /**
-     * Defer to template.
-     *
-     * @param index_page $page
-     *
-     * @return string html for the page
-     */
-    public function render_index_page($page): string {
-        $data = $page->export_for_template($this);
-        return parent::render_from_template('tool_demo/index_page', $data);
-    }
+class renderer extends \core\output\plugin_renderer_base {
 }
 ```
 
-The renderer exists to provide `render_<page>` methods for all renderables used in the plugin. A theme designer can provide a custom version of this renderer that changes the behaviour of any of the render methods and so to customize their theme. In this example, the render method for the index page (`render_index_page`) does 2 things. It asks the renderable to export it's data so that it is suitable for passing as the context to a template, and then renders a specific template with this context. A theme designer could either manipulate the data in the render method (e.g. removing menu entries), or change the template (change the generated HTML) to customize the output.
+Renderers _may_ provide a `render_<renderable>` methods for all renderables used in the plugin.
 
-You do not need to implement a renderer for a plugin if you are using templates and you either:
+A theme designer can provide a custom version of this renderer that changes the behaviour of any of the render methods.
 
-1. Use the `templatable` interface and have a template with the same name in the same namespace
-2. Use the `named_templatable` interface
+In this example, the render method for the index page (`render_index_page`) does 2 things. It asks the renderable to export it's data so that it is suitable for passing as the context to a template, and then renders a specific template with this context. A theme designer could either manipulate the data in the render method (e.g. removing menu entries), or change the template (change the generated HTML) to customize the output.
 
-In these cases the data from the renderable will be automatically routed to the correct template, however if you do implement a render method that will be used in preference to the default routing.
+:::important
 
-The template used in this plugin is located in the plugin's templates folder. The template can also be overridden by a theme designer.
+You **do not** need to implement a render method for a renderable if you are using a react interface, or templates and you either:
 
-```xml title="admin/tool/demo/templates/index_page.mustache"
-<div class="hero-unit">
-  <h1>Heading</h1>
-  <p>{{sometext}}</p>
-</div>
-```
-
-This is the mustache template for this demo. It uses some bootstrap classes directly to position and style the content on the page. `{{sometext}}` is replaced with the variable from the context when this template is rendered. For more information on templates see [Templates](../../../guides/templates/index.md).
+1. Use the `react_component_renderable` interface;
+2. Use the `templatable` interface and have a template with the same name in the same namespace; or
+3. Use the `named_templatable` interface
 
 ## Output Functions {/* #output-functions */}
 
 This section explains how dynamic data should be sent from Moodle to the web browser in an organised and standard way.
 
 :::important
+
 It is possible to have your own output methods but, thinking that you are going to share your code (yep, this is an OpenSource project!) and in the collaborative way we try to build and maintain the system every day, it would be really better to follow the basic guidelines explained below.
 
 By using them you will be helping to have better, more secure and readable code. Spend some minutes trying to understand them, please!
-:::
 
-Of course, these functions can be discussed, modified and new functions can arrive if there are some good reasons for it. Just discuss it in the [General developer forum](http://moodle.org/mod/forum/view.php?id=55).
+:::
 
 For each of the functions below we'll try to explain when they should be used, explaining the most important parameters supported and their meaning. Let's review them!
 
@@ -406,6 +539,12 @@ In the standard Boost theme this method will output a span using the [Bootstrap 
 ```html
 <span class="visually-hidden">Contents</span>
 ```
+
+#### react_component() {/* #react_component */}
+
+For method-specific details of `html_writer::react_component()`, see the [HTML Writer API](../../core/htmlwriter/index.md#react-component).
+
+When you render a `react_component_renderable` through `renderer_base::render()`, Moodle calls `html_writer::react_component()` automatically and prefixes the component name with `@moodle/lms/`.
 
 ### Other {/* #other */}
 
