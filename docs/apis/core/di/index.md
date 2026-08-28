@@ -54,7 +54,7 @@ $thing1 = \core\di::make(my_thing::class);
 $thing2 = \core\di::make(my_thing::class);
 ```
 
-Optional parameters can also be passed to force specific constructor arguments to specific values. Any constructor parameters not provided are resolved using the container as normal:
+Parameters can also be passed to force specific constructor arguments to specific values. Any constructor parameters not provided are resolved using the container as normal:
 
 ```php title="Building a new instance with specific parameters"
 $renderer = \core\di::make(\core\output\core_renderer::class, [
@@ -242,6 +242,12 @@ class example_class {
     private \core\formatting $formatter;
 }
 ```
+
+:::note[Readonly classes and properties]
+
+Classes, and unjected properties cannot be declared as `readonly` because they are populated after construction.
+
+:::
 
 The property is populated automatically whenever the class is built through the container, whether the instance is fetched using `\core\di::get()`, or a new instance is built using `\core\di::make()`:
 
