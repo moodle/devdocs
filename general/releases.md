@@ -567,7 +567,7 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 
 ## See also {/* #see-also */}
 
-- [Roadmap](./community/roadmap.md) - future versions
+- [Roadmap](./community/roadmap/index.md) - future versions
 - [Moodle versions](https://docs.moodle.org/dev/Moodle_versions) - an explanation of how our versions work plus version numbers for each release (for $plugin->requires)
 
 ## Translations {/* #translations */}

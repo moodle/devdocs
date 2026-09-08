@@ -98,4 +98,4 @@ Version 2 was based on Ionic 1 and it supported Moodle versions from 2.4 onwards
 
 ## See also {/* #see-also */}
 
-- [Roadmap](./community/roadmap.md)
+- [Roadmap](./community/roadmap/index.md)

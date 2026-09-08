@@ -164,3 +164,9 @@ ul ol {
   /* Prevent overlapping custom components, such as ProjectSummary */
   clear: both;
 }
+
+.roadmap-table table tbody tr:nth-child(1) { background-color: #baf3db; }
+.roadmap-table table tbody tr:nth-child(2) { background-color: #dcfff1; }
+.roadmap-table table tbody tr:nth-child(3) { background-color: #fef7c8; }
+.roadmap-table table tbody tr:nth-child(4) { background-color: #ffeceb; }
+.roadmap-table table tbody tr:nth-child(5) { background-color: #f8eefe; }

@@ -33,7 +33,7 @@ You'll find them in the [How do I contribute to Moodle?](https://moodle.com/faq/
 ## What happens next? {/* #what-happens-next */}
 
 - The [list of most voted-for new features](https://moodle.atlassian.net/secure/IssueNavigator.jspa?mode=hide&requestId=10512) is regularly reviewed by Moodle HQ and other core developers.
-- Promising ideas are added to the [Roadmap](roadmap.md) (depending on funding availability).
+- Promising ideas are added to the [Roadmap](./roadmap/index.md) (depending on funding availability).
 - Small feature ideas and improvements may be added to core by the component maintainer.
 
 ## How to maximise the chance of your idea being implemented {/* #how-to-maximise-the-chance-of-your-idea-being-implemented */}
