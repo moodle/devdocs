@@ -37,11 +37,11 @@
 /general/contentguidelines/ @moodle/content-authors
 
 # Community
-/general/community/ @moodle/moodle-community-team
+/general/community/ @moodle/community-contributions
 
 # Documentation of the Documentation
 # Both the documentation owners, and the community team have ownership of this content.
-/general/documentation/ @moodle/documentation-owners @moodle/moodle-community-team
+/general/documentation/ @moodle/documentation-owners @moodle/community-contributions
 
 # Community Contributions team
 # Access to approve release notes changes
