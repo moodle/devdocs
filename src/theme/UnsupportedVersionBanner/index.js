@@ -32,6 +32,16 @@ function UnsupportedTitle() {
     );
 }
 
+function SecurityOnlyTitle() {
+    return (
+        <Translate
+            id="version.securityonly.warning.title"
+        >
+            Security Support Only Moodle Version
+        </Translate>
+    );
+}
+
 function UnreleasedTitle() {
     return (
         <Translate
@@ -68,6 +78,32 @@ function UpgradeLink() {
     );
 }
 
+function ReleasesLink() {
+    return (
+        <Translate
+            id="documentation.versionSecurityWarning.content"
+            description={'A banner used to indicate that the current page relates to '
+                + 'a version of Moodle no longer in general support'}
+            values={{
+                releases: (
+                    <Link to="/general/releases">
+                        <strong>
+                            <Translate
+                                id="releases"
+                                description="Link label for releases list"
+                            >
+                                releases
+                            </Translate>
+                        </strong>
+                    </Link>
+                ),
+            }}
+        >
+            {'You may view the {releases} page to see the support status of all Moodle versions.'}
+        </Translate>
+    );
+}
+
 function GeneralSupportExpiredWarning({ versionData }) {
     return (
         <Admonition
@@ -76,7 +112,7 @@ function GeneralSupportExpiredWarning({ versionData }) {
                 <AutoFixHighIcon fontSize="inherit" />
             }
             title={
-                <UnsupportedTitle versionData={versionData} />
+                <SecurityOnlyTitle versionData={versionData} />
             }
         >
             <strong>
@@ -84,11 +120,11 @@ function GeneralSupportExpiredWarning({ versionData }) {
                     description="A heading to indicate that the Moodle version is only in security support"
                     id="documentation.support.securityOnly"
                 >
-                    This version of Moodle is no longer supported for general bug fixes.
+                    This version of Moodle receives security fixes, but is no longer supported for general bug fixes.
                 </Translate>
             </strong>
             <br />
-            <UpgradeLink />
+            <ReleasesLink />
         </Admonition>
     );
 }
@@ -206,6 +242,7 @@ function VersionedSupportWarning({ versionData, moodleVersion }) {
         );
     }
 
+    // 'security' is the remaining option.
     return (
         <GeneralSupportExpiredWarning versionData={versionData} />
     );
