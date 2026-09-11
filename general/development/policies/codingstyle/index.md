@@ -1986,6 +1986,16 @@ PHP includes multiple questionable features that are highly discouraged because 
 1. do not use `goto`, neither the operator neither labels - use other programming techniques to control the execution flow.
 1. do not use `unserialize`, can lead to unintended PHP execution if not used properly with user supplied data - there are better methods of data exchange.
 
+## JavaScript and TypeScript {/* #js-and-ts */}
+
+This document focuses on PHP. For JavaScript and TypeScript style, see the [JavaScript guide](/docs/guides/javascript) and the [React guide](/docs/guides/javascript/react).
+
+:::danger[Unit tests are required]
+
+All new TypeScript and TSX code **must** be accompanied by Jest unit tests, with a minimum of **80% coverage** of the new code. See [Coding conventions](/docs/guides/javascript/react/conventions#unit-testing-requirement) for the full policy.
+
+:::
+
 ## Policy about coding-style only fixes
 
 Way before this coding-style guide was defined and agreed, a lot of code had been written already. Obviously such code does not follow the coding-style at all. While **we enforce conformance for all the new code**, we are not paranoid about the status of all the previous one.
@@ -2038,6 +2048,7 @@ This document was drawn from the following sources:
 ## See also
 
 - [JavaScript Coding Style](https://docs.moodle.org/dev/Javascript/Coding_Style)
+- [React coding conventions](/docs/guides/javascript/react/conventions)
 - [CSS Coding Style](https://docs.moodle.org/dev/CSS_Coding_Style)
 - [SQL coding style](./sql.md)
 - [Coding](../../policies.md)
