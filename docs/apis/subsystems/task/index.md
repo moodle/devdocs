@@ -54,6 +54,22 @@ Adhoc tasks are great for situations such as:
 
 ## Usage {/* #usage */}
 
+### Dependency Injection {/* #dependency-injection */}
+
+<Since issueNumber="MDL-89528" version="5.3" />
+
+Instances of the task class are now constructed with Dependency Injection. Task classes can now use constructor injection to obtain properties:
+
+```php title="Injecting a dependency into a task"
+class discussion_formatter extends \core\task\adhoc_task {
+    public function __construct(
+        private \core\formatting $formatter,
+    ) {}
+}
+```
+
+Constructor injection is supported for both Adhoc and Scheduled tasks.
+
 ### Failures and error handling {/* #failures-and-error-handling */}
 
 A task, either scheduled or adhoc, can sometimes fail. An example would be updating an RSS field when the network is temporarily down. This is handled by the task system automatically - all the failing task needs to do is throw an exception. The task will be retried after 1 minute. If the task keeps failing, the retry algorithm will add more time between each successive attempts up to a max of 24 hours.
