@@ -40,7 +40,7 @@
 /general/community/ @moodle/community-contributions
 
 # Documentation of the Documentation
-# Both the documentation owners, and the community team have ownership of this content.
+# Both the documentation owners, and the Community Contributions team have ownership of this content.
 /general/documentation/ @moodle/documentation-owners @moodle/community-contributions
 
 # Community Contributions team
