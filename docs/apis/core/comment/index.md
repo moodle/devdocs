@@ -94,7 +94,8 @@ This is an example of a possible callback for plugin `mod_myplugin`:
  * @param stdClass $args
  * @return boolean
  */
-function mod_myplugin_comment_display(stdClass $comments, stdClass $args): stdClass {
+function mod_myplugin_comment_display(stdClass $comments, stdClass $args): stdClass
+{
     if ($args->commentarea != 'entry_comments') {
         throw new comment_exception('invalidcommentarea');
     }

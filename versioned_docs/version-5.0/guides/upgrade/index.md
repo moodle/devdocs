@@ -52,7 +52,8 @@ The following example shows the structure of the upgrade.php file:
 ```php title="Example upgrade.php file"
 <?php
 
-function xmldb_[plugintype]_[pluginname]_upgrade($oldversion): bool {
+function xmldb_[plugintype]_[pluginname]_upgrade($oldversion): bool
+{
     global $CFG, $DB;
 
     $dbman = $DB->get_manager(); // Loads ddl manager and xmldb classes.
@@ -161,7 +162,8 @@ For example, if you are defining an installation behaviour in the `install.php` 
 <?php
 // ...
 
-function xmldb_block_example_install() {
+function xmldb_block_example_install()
+{
     // ...
 }
 ```

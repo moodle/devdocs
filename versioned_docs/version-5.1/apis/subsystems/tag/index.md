@@ -151,7 +151,8 @@ If you have created a course activity that uses tags you should also remember to
  *
  * @param moodleform $mform
  */
-function book_reset_course_form_definition(&$mform) {
+function book_reset_course_form_definition(&$mform)
+{
     $mform->addElement('header', 'bookheader', get_string('modulenameplural', 'book'));
     $mform->addElement('checkbox', 'reset_book_tags', get_string('removeallbooktags', 'book'));
 }
@@ -161,7 +162,8 @@ function book_reset_course_form_definition(&$mform) {
  * @param $data the data submitted from the reset course.
  * @return array status array
  */
-function book_reset_userdata($data) {
+function book_reset_userdata($data)
+{
     global $DB;
 
     $status = [];
@@ -207,7 +209,8 @@ When you tag contents inside the course the plugin has to hook into backup and r
 You can choose to backup and restore tags for each item individually (as it is done in mod_wiki) OR backup all tags in the context at once (as it is done in mod_glossary or mod_forum). Second option is preferable for performance reasons. Make sure to take into account `$userinfo` (whether user information is backed up / restored), for example wiki pages is not user information but glossary entries are, tags on them follow the same rule.
 
 ```php title="mod/glossary/backup_glossary_stepslib.php"
-protected function define_structure() {
+protected function define_structure()
+{
     // ...
     $tags = new backup_nested_element('entriestags');
     $tag = new backup_nested_element('tag', ['id'], ['itemid', 'rawname']);
@@ -232,7 +235,8 @@ protected function define_structure() {
 ```
 
 ```php title="mod/glossary/restore_glossary_stepslib.php"
-protected function define_structure() {
+protected function define_structure()
+{
     // ...
     if ($userinfo) {
         $paths[] = new restore_path_element('glossary_entry_tag', '/activity/glossary/entriestags/tag');
@@ -240,7 +244,8 @@ protected function define_structure() {
     // ...
 }
 
-protected function process_glossary_entry_tag($data) {
+protected function process_glossary_entry_tag($data)
+{
     $data = (object)$data;
 
     if (!core_tag_tag::is_enabled('mod_glossary', 'glossary_entries')) { // Tags disabled on this site, nothing to process.
@@ -265,7 +270,8 @@ Given a user searches for any items tagged with a specified tag, only the items 
 To limit the performance impact of checking user access against items the following class ``core_tag_index_builder()`` can assist with the retrieval and caching of records, especially within both course and activity modules.
 
 ```php
-function mod_wiki_get_tagged_pages($tag, $exclusivemode = false, $fromctx = 0, $ctx = 0, $rec = 1, $page = 0) {
+function mod_wiki_get_tagged_pages($tag, $exclusivemode = false, $fromctx = 0, $ctx = 0, $rec = 1, $page = 0)
+{
     // Find items.
     // Please refer to existing callbacks in core for examples.
 

@@ -122,7 +122,8 @@ Return any combination of the following values:
   <TabItem value="code" label="View code" default>
 
 ```php
-function supported_returntypes() {
+function supported_returntypes()
+{
     return FILE_INTERNAL | FILE_EXTERNAL | FILE_REFERENCE | FILE_CONTROLLED_LINK;
 }
 ```
@@ -151,7 +152,8 @@ Supported file types can be specified using standard mimetypes (such as `image/g
   <TabItem value="all" label="All files" default>
 
 ```php
-function supported_filetypes() {
+function supported_filetypes()
+{
     // Allow any kind of file.
     return '*';
 }
@@ -161,7 +163,8 @@ function supported_filetypes() {
   <TabItem value="mimetypes" label="Filter mimetypes">
 
 ```php
-function supported_filetypes() {
+function supported_filetypes()
+{
     // Example of image mimetypes.
     return ['image/gif', 'image/jpeg', 'image/png'];
 }
@@ -171,7 +174,8 @@ function supported_filetypes() {
   <TabItem value="groups" label="Filter file groups">
 
 ```php
-function supported_filetypes() {
+function supported_filetypes()
+{
     // Example of a file group.
     return ['web_image'];
 }
@@ -204,7 +208,8 @@ Parent function returns an array with a single item - pluginname.
   <div>
 
 ```php
-public static function get_type_option_names() {
+public static function get_type_option_names()
+{
    return array_merge(parent::get_type_option_names(), ['rootpath']);
 }
 ```
@@ -225,7 +230,8 @@ Optional. This is for modifying the Moodle form displaying the plugin settings. 
 For example, to display the standard repository plugin settings along with the custom ones use:
 
 ```php
-public static function type_config_form($mform, $classname='repository') {
+public static function type_config_form($mform, $classname='repository')
+{
     parent::type_config_form($mform);
 
     $rootpath = get_config('repository_pluginname', 'rootpath');
@@ -244,7 +250,8 @@ This function must be declared static
 Optional. Use this function if you need to validate some variables submitted by plugin settings form. To use it, check through the associative array of data provided ('settingname' => value) for any errors. Then push the items to $error array in the format ("fieldname" => "human readable error message") to have them highlighted in the form.
 
 ```php
-public static function type_form_validation($mform, $data, $errors) {
+public static function type_form_validation($mform, $data, $errors)
+{
     if (!is_dir($data['rootpath'])) {
         $errors['rootpath'] = get_string('invalidrootpath', 'repository_pluginname');
     }
@@ -271,7 +278,8 @@ Parent function returns an empty array. This is equivalent to **get_type_option_
   <div>
 
 ```php
-public static function get_instance_option_names() {
+public static function get_instance_option_names()
+{
     return ['fs_path']; // From repository_filesystem
 }
 ```
@@ -292,7 +300,8 @@ Optional. This is for modifying the Moodle form displaying the settings specific
 For example, to add a required text box called email_address:
 
 ```php
-public static function get_instance_option_names() {
+public static function get_instance_option_names()
+{
     $mform->addElement(
         'text',
         'email_address',
@@ -318,7 +327,8 @@ This function must be declared static
 Optional. This allows us to validate what has been submitted in the instance configuration form. This is equivalent to ''type_form_validation($mform, $data, $errors), but for instances. For example:
 
 ```php
-public static function instance_form_validation($mform, $data, $errors) {
+public static function instance_form_validation($mform, $data, $errors)
+{
     if (empty($data['email_address'])) {
         $errors['email_address'] = get_string('invalidemailsettingname', 'repository_flickr_public');
     }
@@ -357,7 +367,8 @@ Firstly the skeleton:
  *
  * @license http://www.gnu.org/copyleft/gpl.html GNU Public License
 */
-class repository_flickr_public extends repository {
+class repository_flickr_public extends repository
+{
 }
 ```
 
@@ -453,7 +464,8 @@ This function will return a list of files to be displayed to the user, the list 
  * @param string $page
  * @return array the list of files, including meta information
  */
-public function get_listing($encodedpath = '', $page = '') {
+public function get_listing($encodedpath = '', $page = '')
+{
     // This methods
     return [
         //this will be used to build navigation bar.
@@ -578,7 +590,8 @@ For plugins that do not fully process the login via a popup window, the submitte
   <div>
 
 ```php title="lib/alfresco/lib.php"
-public function __construct($repositoryid, $context = SYSCONTEXTID, $options = []) {
+public function __construct($repositoryid, $context = SYSCONTEXTID, $options = [])
+{
     global $SESSION;
 
     /* Skipping code that is not relevant to user login */
@@ -618,7 +631,8 @@ Many types include a single element of type 'popup' with the param 'url' pointin
   <div>
 
 ```php title="Code taken from repository_boxnet"
-public function print_login() {
+public function print_login()
+{
     $ticket = $this->boxclient->getTicket();
     if ($this->options['ajax']) {
         $loginbtn = (object)[
@@ -652,7 +666,8 @@ This function will return a boolean value to tell Moodle whether the user has lo
 By default, this function will return true.
 
 ```php
-public function check_login(): bool {
+public function check_login(): bool
+{
     global $SESSION;
     return !empty($SESSION->{$this->sessname});
 }
@@ -663,7 +678,8 @@ public function check_login(): bool {
 When a user clicks the logout button in file picker, this function will be called. You may clean up the session or disconnect the connection with remote server here. After this the code should return something suitable to display to the user (usually the results of calling **$this->print_login()**):
 
 ```php title="lib/alfresco/lib.php"
-public function logout() {
+public function logout()
+{
     global $SESSION;
     unset($SESSION->{$this->sessname});
     return $this->print_login();
@@ -689,7 +705,8 @@ For FILE_INTERNAL or FILE_REFERENCE this function is called at the point when th
   <TabItem value="generic" label="Basic example" default>
 
 ```php
-public function get_file($url, $filename = '') {
+public function get_file($url, $filename = '')
+{
 // Default implementation from the base 'repository' class
     $path = $this->prepare_file($filename); // Generate a unique temporary filename
     $curlobject = new curl();
@@ -707,7 +724,8 @@ public function get_file($url, $filename = '') {
 Slightly extended version taken from repository_equella
 
 ```php
-public function get_file($reference, $filename = '') {
+public function get_file($reference, $filename = '')
+{
     global $USER;
     // Replace the line below by any method your plugin have to check a reference.
     $details = example_external_server::get_details_by_reference($reference->reference));
@@ -768,7 +786,8 @@ A custom search form must include the following:
   <div>
 
 ```php title="The default implementation in class 'repository'"
-public function print_search() {
+public function print_search()
+{
     global $PAGE;
     $renderer = $PAGE->get_renderer('core', 'files');
     return $renderer->repository_default_searchform();
@@ -793,7 +812,8 @@ The return should return an array containing:
   <div>
 
 ```php title="Example from repoistory_googledocs"
-public function search($search_text, $page = 0) {
+public function search($search_text, $page = 0)
+{
     $gdocs = new google_docs($this->googleoauth);
     return [
         'dynload' => true,
@@ -822,7 +842,8 @@ Note that external file is synchronised by moodle when UI wants to show the file
 Return minimum number of seconds before checking for changes to the file (default implementation = 1 day)
 
 ```php
-public function get_reference_file_lifetime($ref) {
+public function get_reference_file_lifetime($ref)
+{
     return DAYSECS; // One day, 60 * 60 * 24 seconds.
 }
 ```
@@ -832,7 +853,8 @@ public function get_reference_file_lifetime($ref) {
 Called after the file has reached the 'lifetime' specified above to see if it should now be synchronised (default implementation is to return true)
 
 ```php
-public function sync_individual_file(stored_file $storedfile) {
+public function sync_individual_file(stored_file $storedfile)
+{
     return true;
 }
 ```
@@ -851,7 +873,8 @@ This is usually prefixed with the repository name, and a semicolon. For example:
   <div>
 
 ```php title="lib.php"
-public function get_reference_details($reference, $filestatus = 0) {
+public function get_reference_details($reference, $filestatus = 0)
+{
     if (!$filestatus) {
         // Replace the line below by any method your plugin have to check a reference.
         $details = example_external_server::get_details_by_reference($reference);
@@ -879,7 +902,8 @@ Returns up-to-date information about the original file, only called when the 'li
   <div>
 
 ```php title="/lib.php"
-public function get_file_by_reference($reference) {
+public function get_file_by_reference($reference)
+{
     global $USER;
     // Replace the line below by any method your plugin have to check a reference.
     $details = example_external_server::get_details_by_reference($reference->reference));
@@ -946,7 +970,8 @@ It is up to the repository developer to decide whether to actually download the 
   <div>
 
 ```php title="/lib.php"
-public function send_file($stored_file, $lifetime=86400 , $filter=0, $forcedownload=false, array $options = null) {
+public function send_file($stored_file, $lifetime=86400 , $filter=0, $forcedownload=false, array $options = null)
+{
     // Replace the line below by any method your plugin have to check a reference.
     $details  = example_external_server::get_details_by_reference($stored_file->get_reference()));
     $url = $this->appendtoken($details->url);

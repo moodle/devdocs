@@ -41,9 +41,11 @@ namespace [plugintype]_[pluginname]\form;
 // moodleform is defined in formslib.php
 require_once("$CFG->libdir/formslib.php");
 
-class simplehtml_form extends \moodleform {
+class simplehtml_form extends \moodleform
+{
     // Add elements to form.
-    public function definition() {
+    public function definition()
+    {
         // A reference to the form is stored in $this->form.
         // A common convention is to store it in a variable, such as `$mform`.
         $mform = $this->_form; // Don't forget the underscore!
@@ -59,7 +61,8 @@ class simplehtml_form extends \moodleform {
     }
 
     // Custom validation should be added here.
-    function validation($data, $files) {
+    function validation($data, $files)
+    {
         return [];
     }
 }
@@ -99,12 +102,15 @@ If you wish to use the form within a block then you should consider using the re
 Note that the render method does the same as the display method, except returning the HTML rather than outputting it to the browser, as with above make sure you've included the file which contains the class for your Moodle form.
 
 ```php
-class block_yourblock extends block_base {
-    public function init(){
+class block_yourblock extends block_base
+{
+    public function init()
+    {
         $this->title = 'Your Block';
     }
 
-    public function get_content(){
+    public function get_content()
+    {
         $this->content = (object) [
             'text' => '',
         ];
@@ -237,7 +243,8 @@ public function add_action_buttons(
 The `add_action_buttons` function is defined on the `moodleform` class, and not a part of `$this->_form`, for example:
 
 ```php
-    public function definition() {
+    public function definition()
+    {
         // Add your form elements here.
         $this->_form->addElement(...);
 
@@ -296,7 +303,8 @@ In some cases this is not the desired behaviour, in which case the [disable_form
 For example:
 
 ```php
-public function definition() {
+public function definition()
+{
     // Your definition goes here.
 
     // Disable the form change checker for this form.
@@ -313,7 +321,8 @@ Only header names would be accepted and added to `_shownonlyelements` array.
 Headers included in `_shownonlyelements` will be shown expanded in the form. The rest of the headers will be hidden.
 
 ```php
-public function filter_shown_headers(array $shownonly): void {
+public function filter_shown_headers(array $shownonly): void
+{
     $this->_shownonlyelements = [];
     if (empty($shownonly)) {
         return;

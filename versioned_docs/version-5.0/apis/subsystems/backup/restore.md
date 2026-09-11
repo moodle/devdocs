@@ -41,9 +41,11 @@ Here is a minimalistic task:
 ```php
 require_once($CFG->dirroot . '/backup/moodle2/restore_tool_plugin.class.php');
 
-class restore_tool_foobar_plugin extends restore_tool_plugin {
+class restore_tool_foobar_plugin extends restore_tool_plugin
+{
 
-    protected function define_course_plugin_structure() {
+    protected function define_course_plugin_structure()
+    {
         $paths = array();
         $this->step->log('Yay, restore!', backup::LOG_DEBUG);
         return $paths;

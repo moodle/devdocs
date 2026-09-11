@@ -292,7 +292,8 @@ For example:
      * @param string $state The state of the switch
      * @throws ElementNotFoundException Thrown by behat_base::find
      */
-    public function i_toggle_admin_switch($element, $state) {
+    public function i_toggle_admin_switch($element, $state)
+    {
         // First check we are running Javascript, otherwise explode.
         if (!$this->running_javascript()) {
             throw new \Behat\Mink\Exception\DriverException('Switches are only available with JavaScript enabled');
@@ -371,8 +372,10 @@ Full documentation of this process and all available options can be found in the
 To begin, you need a [generator](/docs/guides/testing/#generators) in `/*your*/*plugin*/tests/generator/lib.php`. If you are generating a type of entity called "thing", your generator will need a method called create_thing, which accepts an object:
 
 ```php
-class local_myplugin_generator extends component_generator_base {
-    public function create_thing($thing) {
+class local_myplugin_generator extends component_generator_base
+{
+    public function create_thing($thing)
+    {
         global $DB;
         $DB->insert_record('local_myplugin_things', $thing);
     }
@@ -382,9 +385,11 @@ class local_myplugin_generator extends component_generator_base {
 Next, you will need to define your behat generator in `/*your*/*plugin*/tests/generator/behat_*your_plugin*_generator.php`, with the `method get_createable_entitites()` method:
 
 ```php
-class behat_local_myplugin_generator extends behat_generator_base {
+class behat_local_myplugin_generator extends behat_generator_base
+{
 
-    protected function get_creatable_entities(): array {
+    protected function get_creatable_entities(): array
+    {
         return [
             'things' => [
                 'datagenerator' => 'thing',
@@ -426,7 +431,8 @@ To deprecate a step, create a new deprecated steps file in `tests/behat/behat_pl
 <?php
 require_once(__DIR__ . '/../../../../../lib/behat/behat_deprecated_base.php');
 
-class behat_qbank_comment_deprecated extends behat_deprecated_base {
+class behat_qbank_comment_deprecated extends behat_deprecated_base
+{
     /**
      * Looks for the appropriate hyperlink comment count in the column.
      *
@@ -435,7 +441,8 @@ class behat_qbank_comment_deprecated extends behat_deprecated_base {
      * @deprecated Since Moodle 5.0 MDL-79122 in favour of the "qbank_comment > Comment count link" named selector.
      * @todo Final removal in Moodle 6.0 MDL-82413.
      */
-    public function i_should_see_on_the_column(string $linkdata): void {
+    public function i_should_see_on_the_column(string $linkdata): void
+    {
         $this->deprecated_message("Use '\"{$linkdata}\" \"qbank_comment > Comment count link\" should exist'");
         $this->execute('behat_general::should_exist', [$linkdata, 'qbank_comment > Comment count link']);
     }

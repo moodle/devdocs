@@ -74,8 +74,10 @@ For example:
 ```php title="mod/myplugin/tests/sample_test.php"
  namespace mod_myplugin;
 
- class sample_test extends \advanced_testcase {
-     public function test_adding() {
+ class sample_test extends \advanced_testcase
+ {
+     public function test_adding()
+     {
          $this->assertEquals(2, 1+2);
      }
  }
@@ -101,8 +103,10 @@ If you modify data and _do not_ call `$this->resetAfterTest()` then you will rec
 ```php title="Demonstration of database reset"
  namespace mod_myplugin;
 
- class test_something extends \advanced_testcase {
-     public function test_deleting() {
+ class test_something extends \advanced_testcase
+ {
+     public function test_deleting()
+     {
          global $DB;
 
          $this->resetAfterTest(true);
@@ -110,7 +114,8 @@ If you modify data and _do not_ call `$this->resetAfterTest()` then you will rec
          $this->assertEmpty($DB->get_records('user'));
      }
 
-     public function test_user_table_was_reset() {
+     public function test_user_table_was_reset()
+     {
          global $DB;
 
          $this->assertEquals(2, $DB->count_records('user', array()));
@@ -592,12 +597,15 @@ When defining coverage for a specific method under test, it must be either:
 /**
  * @coversDefaultClass \mod_myplugin\example
  */
-class example_test extends \advanced_testcase {
+class example_test extends \advanced_testcase
+{
     /**
      * This test will cover \mod_myplugin\example::some_method
      * @covers ::some_method
      */
-    public function test_some_method(): void {}
+    public function test_some_method(): void
+    {
+    }
 }
 ```
 
@@ -711,7 +719,8 @@ However, the following rules should be followed when using dataProviders:
  * @param int $foor
  * @param int $bar
  */
-public function test_foobar(int $foo, int $bar) {
+public function test_foobar(int $foo, int $bar)
+{
     // Perform the tests here.
 }
 
@@ -720,7 +729,8 @@ public function test_foobar(int $foo, int $bar) {
  *
  * @return array List of data sets - (string) data set name => (array) data
  */
-public function foobar_provider(): \Generator {
+public function foobar_provider(): \Generator
+{
     yield 'Same numbers' => [
         'foo' => 42,
         'bar' => 42,

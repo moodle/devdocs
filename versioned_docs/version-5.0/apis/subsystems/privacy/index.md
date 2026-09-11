@@ -119,7 +119,8 @@ class provider implements
      *
      * @return  string
      */
-    public static function get_reason(): string {
+    public static function get_reason(): string
+    {
         return 'privacy:metadata';
     }
 }
@@ -179,7 +180,8 @@ class provider implements
         // This plugin does store personal user data.
         \core_privacy\local\metadata\provider {
 
-    public static function get_metadata(collection $collection): collection {
+    public static function get_metadata(collection $collection): collection
+    {
 
         // Here you will add more items into the collection.
 
@@ -214,7 +216,8 @@ Some subsystems which store user data do not need to be listed:
 ##### Example {/* #example-2 */}
 
 ```php title="mod/forum/classes/privacy/provider.php"
-public static function get_metadata(collection $collection): collection {
+public static function get_metadata(collection $collection): collection
+{
 
     $collection->add_subsystem_link(
         'core_files',
@@ -243,7 +246,8 @@ It is a matter of judgement which fields contain user data and which don't. Anyt
 ##### Example {/* #example-3 */}
 
 ```php title="mod/forum/classes/privacy/provider.php"
-public static function get_metadata(collection $collection): collection {
+public static function get_metadata(collection $collection): collection
+{
 
     $collection->add_database_table(
         'forum_discussion_subs',
@@ -291,7 +295,8 @@ Any plugin providing user preferences must also implement the `\core_privacy\loc
 ##### Example {/* #example-4 */}
 
 ```php title="admin/tool/usertours/classes/privacy/provider.php"
-public static function get_metadata(collection $collection): collection {
+public static function get_metadata(collection $collection): collection
+{
 
     $collection->add_user_preference('tool_usertours_tour_completion_time',
         'privacy:metadata:preference:tool_usertours_tour_completion_time');
@@ -318,7 +323,8 @@ You can indicate this by calling the `add_external_location_link()` method on th
 ##### Example {/* #example-5 */}
 
 ```php title="mod/lti/classes/privacy/provider.php"
-public static function get_metadata(collection $collection): collection {
+public static function get_metadata(collection $collection): collection
+{
     $collection->add_external_location_link('lti_client', [
             'userid' => 'privacy:metadata:lti_client:userid',
             'fullname' => 'privacy:metadata:lti_client:fullname',
@@ -385,15 +391,16 @@ if (interface_exists('\core_privacy\local\request\userlist')) {
 }
 
 
-class provider implements my_userlist {
+class provider implements my_userlist
+{
 
     /**
      * Get the list of users who have data within a context.
      *
      * @param   userlist    $userlist   The userlist containing the list of users who have data in this context/plugin combination.
      */
-    public static function get_users_in_context(userlist $userlist) {
-
+    public static function get_users_in_context(userlist $userlist)
+    {
     }
 
     /**
@@ -401,8 +408,8 @@ class provider implements my_userlist {
      *
      * @param   approved_userlist       $userlist The approved context and user information to delete information for.
      */
-    public static function delete_data_for_users(approved_userlist $userlist) {
-
+    public static function delete_data_for_users(approved_userlist $userlist)
+    {
     }
 
 }
@@ -421,7 +428,9 @@ Contexts are retrieved using the `get_contexts_for_userid` function which takes 
  * @param   int           $userid       The user to search.
  * @return  contextlist   $contextlist  The list of contexts used in this plugin.
  */
-public static function get_contexts_for_userid(int $userid): contextlist {}
+public static function get_contexts_for_userid(int $userid): contextlist
+{
+}
 ```
 
 The function returns a `\core_privacy\local\request\contextlist` which is used to keep a set of contexts together in a fixed fashion.
@@ -443,7 +452,8 @@ The following example simply fetches the contextid for all forums where a user h
  * @param   int           $userid       The user to search.
  * @return  contextlist   $contextlist  The list of contexts used in this plugin.
  */
-public static function get_contexts_for_userid(int $userid): contextlist {
+public static function get_contexts_for_userid(int $userid): contextlist
+{
     $contextlist = new \core_privacy\local\request\contextlist();
 
     $sql = "SELECT c.id
@@ -490,7 +500,8 @@ In the case of the rating data, this will include any post where the user has ra
  * @param   int           $userid       The user to search.
  * @return  contextlist   $contextlist  The list of contexts used in this plugin.
  */
-public static function get_contexts_for_userid(int $userid): contextlist {
+public static function get_contexts_for_userid(int $userid): contextlist
+{
     $ratingsql = \core_rating\privacy\provider::get_sql_join('rat', 'mod_forum', 'post', 'p.id', $userid);
     // Fetch all forum discussions, and forum posts.
     $sql = "SELECT c.id
@@ -555,7 +566,9 @@ This method is very similar to the `get_contexts_for_userid` function but has so
  *
  * @param userlist $userlist The userlist containing the list of users who have data in this context/plugin combination.
  */
-public static function get_users_in_context(userlist $userlist) {}
+public static function get_users_in_context(userlist $userlist)
+{
+}
 ```
 
 ###### Basic example {/* #basic-example-1 */}
@@ -568,8 +581,8 @@ The following example simply fetches the userid for all users in a given forum c
  *
  * @param userlist $userlist The userlist containing the list of users who have data in this context/plugin combination.
  */
-public static function get_users_in_context(userlist $userlist) {
-
+public static function get_users_in_context(userlist $userlist)
+{
     $context = $userlist->get_context();
 
     if (!$context instanceof \context_module) {
@@ -616,7 +629,9 @@ This is achieved through use of the `export_user_data` function which takes the 
  *
  * @param   approved_contextlist    $contextlist    The approved contexts to export information for.
  */
-public static function export_user_data(approved_contextlist $contextlist) {}
+public static function export_user_data(approved_contextlist $contextlist)
+{
+}
 ```
 
 The `approved_contextlist` includes both the user record, and a list of contexts, which can be retrieved by either processing it as an Iterator, or by calling `get_contextids()` or `get_contexts()` as required.
@@ -642,7 +657,8 @@ You need to provide a description of the value of the user preference. (This des
  *
  * @param   int         $userid The userid of the user whose data is to be exported.
  */
-public static function export_user_preferences(int $userid) {
+public static function export_user_preferences(int $userid)
+{
     $markasreadonnotification = get_user_preferences('markasreadonnotification', null, $userid);
     if (null !== $markasreadonnotification) {
         switch ($markasreadonnotification) {
@@ -829,7 +845,8 @@ When expiring content for a high-level context such as a course context, the fun
  *
  * @param context $context Context to delete data from.
  */
-public static function delete_data_for_all_users_in_context(\context $context) {
+public static function delete_data_for_all_users_in_context(\context $context)
+{
     global $DB;
 
     if ($context->contextlevel != CONTEXT_MODULE) {
@@ -850,7 +867,8 @@ public static function delete_data_for_all_users_in_context(\context $context) {
 An *approved_contextlist* is given and user data related to that user should either be completely deleted, or overwritten if a structure needs to be maintained. This will be called when a user has requested the right to be forgotten. All attempts should be made to delete this data where practical while still allowing the plugin to be used by other users.
 
 ```php title="mod/choice/classes/privacy/provider.php"
-public static function delete_data_for_user(approved_contextlist $contextlist) {
+public static function delete_data_for_user(approved_contextlist $contextlist)
+{
     global $DB;
 
     if (empty($contextlist->count())) {
@@ -874,7 +892,8 @@ An *approved_userlist* is given and user data related to all users in the specif
  *
  * @param approved_userlist $userlist The approved context and user information to delete information for.
  */
-public static function delete_data_for_users(approved_userlist $userlist) {
+public static function delete_data_for_users(approved_userlist $userlist)
+{
     global $DB;
 
     $context = $userlist->get_context();
@@ -915,7 +934,8 @@ class provider implements
     use \core_privacy\local\legacy_polyfill;
 
     // The required methods must be in this format starting with an underscore.
-    public static function _get_metadata(collection $collection) {
+    public static function _get_metadata(collection $collection)
+    {
         // Code for returning metadata goes here.
     }
 ```
@@ -943,12 +963,14 @@ class provider implements
     use \core_plagiarism\privacy\plagiarism_provider\legacy_polyfill;
 
     // The required methods must be in this format starting with an underscore.
-    public static function _get_metadata(collection $collection) {
+    public static function _get_metadata(collection $collection)
+    {
         // Code for returning metadata goes here.
     }
 
     // This is one of the polyfilled methods from the plagiarism provider.
-    public static function _export_plagiarism_user_data($userid, \context $context, array $subcontext, array $linkarray) {
+    public static function _export_plagiarism_user_data($userid, \context $context, array $subcontext, array $linkarray)
+    {
         // ...
     }
 ```
@@ -969,7 +991,8 @@ if (interface_exists('\core_privacy\local\request\core_userlist_provider')) {
     interface core_userlist_provider {}
 }
 
-class provider implements core_userlist_provider {
+class provider implements core_userlist_provider
+{
 ```
 
 ## Tips for development {/* #tips-for-development */}

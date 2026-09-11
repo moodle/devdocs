@@ -108,7 +108,8 @@ foreach ($list->good as $component) {
 
 echo "\n\n== Done ==\n";
 
-function check_implements($component, $interface) {
+function check_implements($component, $interface)
+{
     $manager = new \core_privacy\manager();
     $rc = new \ReflectionClass(\core_privacy\manager::class);
     $rcm = $rc->getMethod('component_implements');

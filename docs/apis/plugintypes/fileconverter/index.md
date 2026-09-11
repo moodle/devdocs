@@ -54,7 +54,8 @@ This function informs the File Converter API whether the system requirements of 
 It should be lightweight to call and cache where required.
 
 ```php title="Example implementation"
-public static function are_requirements_met() {
+public static function are_requirements_met()
+{
     return extension_loaded('my_php_extension');
 }
 ```
@@ -72,9 +73,11 @@ The `start_document_conversion()` function starts a conversion, whilst `poll_con
 This function allows the plugin to answer whether it supports conversion between two formats. It is typically only used internally by the File Conversion subsystem.
 
 ```php title="Example implementation"
-class converter implements \core_files\converter_interface {
+class converter implements \core_files\converter_interface
+{
     // ...
-    public static function supports($from, $to) {
+    public static function supports($from, $to)
+    {
         // This plugin supports conversion from doc and docx to pdf only.
         if ($from !== 'doc' && $from !== 'docx') {
             return false;

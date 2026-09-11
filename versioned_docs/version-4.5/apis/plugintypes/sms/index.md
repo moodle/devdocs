@@ -65,7 +65,8 @@ namespace smsgateway_aws;
 
 use smsgateway_aws\local\service\aws_sns;
 
-class gateway extends \core_sms\gateway {
+class gateway extends \core_sms\gateway
+{
     #[\Override]
     public function send(
         message $message,
@@ -95,7 +96,8 @@ class gateway extends \core_sms\gateway {
         );
     }
 
-    private function get_gateway_service(\stdClass $config): string {
+    private function get_gateway_service(\stdClass $config): string
+    {
         return match ($config->gateway) {
             'aws_sns' => aws_sns::class,
             default => throw new moodle_exception("Unknown Message Handler {$config->gateway}"),
@@ -103,7 +105,8 @@ class gateway extends \core_sms\gateway {
     }
 
     #[\Override]
-    public function get_send_priority(message $message): int {
+    public function get_send_priority(message $message): int
+    {
         return 50;
     }
 }
@@ -120,7 +123,8 @@ It is necessary for plugins developers to assess these hooks and implement accor
 This hook will allow plugins to add required form fields to assist users in configuring their SMS gateway.
 
 ```php title="Listener method for after_sms_gateway_form_hook"
-public static function set_form_definition_for_aws_sms_gateway(after_sms_gateway_form_hook $hook): void {
+public static function set_form_definition_for_aws_sms_gateway(after_sms_gateway_form_hook $hook): void
+{
     if ($hook->plugin !== 'smsgateway_example') {
         return;
     }

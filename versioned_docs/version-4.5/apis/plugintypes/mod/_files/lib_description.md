@@ -41,7 +41,8 @@ Each feature is identified by a constant, which is defined in the `lib
   <div>
 
 ```php
-function [modname]_supports($feature) {
+function [modname]_supports($feature)
+{
     return match ($feature) {
         FEATURE_GROUPS => true,
         FEATURE_GROUPINGS => true,
@@ -68,7 +69,8 @@ To have your Activity plugin classified in the right Activity category, you must
   <div>
 
 ```php
-function [modname]_supports(string $feature) {
+function [modname]_supports(string $feature)
+{
     switch ($feature) {
         [...]
         case FEATURE_MOD_PURPOSE:

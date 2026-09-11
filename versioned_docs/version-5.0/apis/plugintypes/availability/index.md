@@ -83,12 +83,14 @@ Here's an outline of the code (with standard PHPdoc comments omitted to save spa
 // You must use the right namespace (matching your plugin component name).
 namespace availability_name;
 
-class condition extends \core_availability\condition {
+class condition extends \core_availability\condition
+{
     // Any data associated with the condition can be stored in member
     // variables. Here's an example variable:
     protected $allow;
 
-    public function __construct($structure) {
+    public function __construct($structure)
+    {
         // Retrieve any necessary data from the $structure here. The
         // structure is extracted from JSON data stored in the database
         // as part of the tree structure of conditions relating to an
@@ -100,7 +102,8 @@ class condition extends \core_availability\condition {
         // throw a coding_exception if the structure is wrong.
     }
 
-    public function save() {
+    public function save()
+    {
         // Save back the data into a plain array similar to $structure above.
         return (object)array('type' => 'name', 'allow' => $this->allow);
     }
@@ -142,7 +145,8 @@ class condition extends \core_availability\condition {
         return $allow ? 'Users are allowed' : 'Users not allowed';
     }
 
-    protected function get_debug_string() {
+    protected function get_debug_string()
+    {
         // This function is only normally used for unit testing and
         // stuff like that. Just make a short string representation
         // of the values of the condition, suitable for developers.
@@ -162,9 +166,11 @@ The class is required, but all the functions are theoretically optional; you can
 ```php
 namespace availability_name;
 
-class frontend extends \core_availability\frontend {
+class frontend extends \core_availability\frontend
+{
 
-    protected function get_javascript_strings() {
+    protected function get_javascript_strings()
+    {
         // You can return a list of names within your language file and the
         // system will include them here.
         // Should you need strings from another language file, you can also

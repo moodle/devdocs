@@ -397,7 +397,8 @@ The following example shows a renderable using the `mywidget.mustache` template 
  * @param renderer_base $output
  * @return stdClass
  */
-public function export_for_template(renderer_base $output) {
+public function export_for_template(renderer_base $output)
+{
     $data = new stdClass();
     $data->canmanage = $this->canmanage;
     $data->things = [];
@@ -424,7 +425,8 @@ Example of the method added to tell a renderable to use the `mywidget.mustache` 
  * @param renderer_base $output
  * @return string
  */
-public function get_template_name(\renderer_base $renderer): string {
+public function get_template_name(\renderer_base $renderer): string
+{
     return 'tool_myplugin/mywidget';
 }
 ```
@@ -445,7 +447,8 @@ The rendering method can now use templates to render the object:
  *
  * @return string HTML
  */
-protected function render_mywidget(mywidget $widget) {
+protected function render_mywidget(mywidget $widget)
+{
     $data = $widget->export_for_template($this);
     return $this->render_from_template('tool_myplugin/mywidget', $data);
 }

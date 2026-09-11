@@ -204,7 +204,8 @@ The first method that we need is ***initialise()*** :
 /**
 * Initialise report, we need to set the main table, load our entities and set columns/filters
 */
-protected function initialise(): void {
+protected function initialise(): void
+{
 ```
 
 The initialise method needs to get the main entity, set the main table it needs to use and add the entity to the report:
@@ -324,7 +325,8 @@ The first method you need to build is `initialise()`
 /**
 * Initialise report, we need to set the main table, load our entities and set columns/filters
 */
-protected function initialise(): void {
+protected function initialise(): void
+{
 ```
 
 The initialise method needs to get the main entity, set the main table it needs to use and add the entity to the report:
@@ -385,7 +387,8 @@ You will need to specify the name that is displayed to the end user for the data
      *
      * @return string
      */
-    public static function get_name(): string {
+    public static function get_name(): string
+    {
         return get_string('tasklogs', 'core_admin');
     }
 ```
@@ -400,7 +403,8 @@ Once all entities have been added you need to define which columns it will show 
  *
  * @return string[]
  */
-public function get_default_columns(): array {
+public function get_default_columns(): array
+{
     return [
         'task_log:name',
         'task_log:starttime',
@@ -418,7 +422,8 @@ You may also optionally define the sorting that will be applied to the default r
  *
  * @return int[]
  */
-public function get_default_column_sorting(): array {
+public function get_default_column_sorting(): array
+{
     return [
         'task_log:starttime' => SORT_DESC,
     ];
@@ -435,7 +440,8 @@ The filters allow the end user of the report to only see a subset of the data th
  *
  * @return string[]
  */
-public function get_default_filters(): array {
+public function get_default_filters(): array
+{
     return [
         'task_log:timestart',
         'task_log:result',
@@ -453,7 +459,8 @@ The conditions allow the user creating the report to define which data it will r
  *
  * @return string[]
  */
-public function get_default_conditions(): array {
+public function get_default_conditions(): array
+{
     return [
         'task_log:type',
         'task_log:timestart',
@@ -470,7 +477,8 @@ You may also optionally define the [initial values for any of the default condit
  *
  * @return array
  */
-public function get_default_condition_values(): array {
+public function get_default_condition_values(): array
+{
     return [
         'task_log:type_operator' => select::EQUAL_TO,
         'task_log:type_value' => \core\task\database_logger::TYPE_SCHEDULED,
@@ -496,7 +504,8 @@ require_once("{$CFG->dirroot}/reportbuilder/tests/helpers.php");
  * @copyright   2023 Paul Holden <paulh@moodle.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class categories_test extends core_reportbuilder_testcase {
+class categories_test extends core_reportbuilder_testcase
+{
 ```
 
 The `core_reportbuilder_testcase` will not autoload so we first ensure that it is loaded with the `require_once`. After this there are a few things you should look to test:
@@ -514,7 +523,8 @@ For this you want a step that sets up will return enough data allows you test al
     /**
      * Test default datasource
      */
-    public function test_datasource_default(): void {
+    public function test_datasource_default(): void
+    {
         $this->resetAfterTest();
 
         $category = $this->getDataGenerator()->create_category(['name' => 'Zoo', 'idnumber' => 'Z01']);
@@ -606,7 +616,8 @@ None of these tests checks that the data is what you want, but will ensure that 
      *
      * In order to execute this test PHPUNIT_LONGTEST should be defined as true in phpunit.xml or directly in config.php
      */
-    public function test_stress_datasource(): void {
+    public function test_stress_datasource(): void
+    {
         if (!PHPUNIT_LONGTEST) {
             $this->markTestSkipped('PHPUNIT_LONGTEST is not defined');
         }
