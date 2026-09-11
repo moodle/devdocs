@@ -606,18 +606,6 @@ public function copy_submission(stdClass $sourcesubmission, stdClass $destsubmis
 
 Since Moodle 2.5 - a students submission can be copied to create a new submission attempt. Plugins should implement this function if they store data associated with the submission (most plugins).
 
-#### format_for_log() {/* #format_for_log */}
-
-```php
-public function format_for_log(stdClass $submission) {
-    // Format the information for each submission plugin add_to_log
-    $filecount = $this->count_files($submission->id, ASSIGNSUBMISSION_FILE_FILEAREA);
-    return ' the number of file(s) : ' . $filecount . " file(s).<br>";
-}
-```
-
-The format_for_log function lets a plugin produce a really short summary of a submission suitable for adding to a log message.
-
 #### delete_instance() {/* #delete_instance */}
 
 ```php
