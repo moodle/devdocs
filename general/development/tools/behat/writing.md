@@ -260,7 +260,7 @@ When I set the following fields to these values:
 
 ### Writing your own steps {/* #writing-your-own-steps */}
 
-Sometimes, you will need to set up data that is specific to your plugin, or perform steps that are specific to your plugin's UI. In this case it may be necessary to [write new step definitions](./writing.md#writing-new-acceptance-test-step-definitions), but the short version is that you define new steps as PHP methods with a special annotation inside a class called `behat_plugintype_plugingname` inside `tests/behat/behat_plugintype_plugingname.php` in your plugin.
+Sometimes, you will need to set up data that is specific to your plugin, or perform steps that are specific to your plugin's UI. In this case it may be necessary to [write new step definitions](./writing.md#writing-new-acceptance-test-step-definitions), but the short version is that you define new steps as PHP methods with a special annotation inside a class called `behat_plugintype_pluginname` inside `tests/behat/behat_plugintype_pluginname.php` in your plugin.
 
 As well as creating completely new steps, you can also extend some of the standard steps:
 
@@ -338,7 +338,7 @@ And I click on "Submit all and finish" "button" in the "Confirmation" "dialogue"
 
 Here, 'button' and 'dialogue' are examples of selectors, and 'Submit all and finish' and 'Confirmation' are the locators which say which button or dialogue it is. When the test runs, this gets converted to an XPath expression, which is what the Behat system actually uses to locate the right element on the page.
 
-You can define new types of selector (for example `core_message > Message`) by implementing functions like `behat_component_named_selector` in your plugin's `behat_plugintype_plugingname` class. The detailed instructions for how to do this are in [the PHPdoc comments on the base class](https://github.com/moodle/moodle/blob/33da028c27607354981cd8e62ecabb7b973c6637/lib/behat/behat_base.php#L1111).
+You can define new types of selector (for example `core_message > Message`) by implementing functions like `behat_component_named_selector` in your plugin's `behat_plugintype_pluginname` class. The detailed instructions for how to do this are in [the PHPdoc comments on the base class](https://github.com/moodle/moodle/blob/33da028c27607354981cd8e62ecabb7b973c6637/lib/behat/behat_base.php#L1111).
 
 The reasons you might want to do this are:
 
@@ -354,7 +354,7 @@ Given I am on the "Quiz 1" "mod_quiz > View" page logged in as "manager"
 Given I am on the "C1" "Course" page
 ```
 
-To make this work, in your plugin's `behat_plugintype_plugingname` class, you need to implement the functions `resolve_page_url` and `resolve_page_instance_url` methods. Once again, the detailed instructions about how this works are given in [the PHPdoc comments on the base class](https://github.com/moodle/moodle/blob/a0fc902eb184cd4097c8ab453ddc57964cd2dbd4/lib/behat/behat_base.php#L1093).
+To make this work, in your plugin's `behat_plugintype_pluginname` class, you need to implement the functions `resolve_page_url` and `resolve_page_instance_url` methods. Once again, the detailed instructions about how this works are given in [the PHPdoc comments on the base class](https://github.com/moodle/moodle/blob/a0fc902eb184cd4097c8ab453ddc57964cd2dbd4/lib/behat/behat_base.php#L1093).
 
 There are two reasons why it is good to use these steps:
 
