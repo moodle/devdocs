@@ -138,17 +138,6 @@ Simple yet flexible JavaScript charting for designers & developers.
 - **Copyright holders**:
   - 2014-2025 Chart.js Contributors
 
-### loglevel.js {/* #logleveljs */}
-
-Minimal lightweight simple logging for JavaScript.
-
-- **Location**: public/lib/amd/src/loglevel.js
-- **Version**: 1.9.2
-- **License**:  MIT
-- **URL**: [https://github.com/pimterry/loglevel/](https://github.com/pimterry/loglevel/)
-- **Copyright holders**:
-  - 2019 Tim Perry
-
 ### Mustache.js {/* #mustachejs */}
 
 JS library for displaying mustache templates.
@@ -173,17 +162,6 @@ A kickass library used to created Poppers in web applications.
 - **Copyright holders**:
   - 2016 Federico Zivolo and contributors
 
-### Popper.js {/* #popperjs */}
-
-A kickass library used to created Poppers in web applications.
-
-- **Location**: public/lib/amd/src/popper2.js
-- **Version**: v2.11.8
-- **License**:  MIT
-- **URL**: [https://github.com/floating-ui/floating-ui](https://github.com/floating-ui/floating-ui)
-- **Copyright holders**:
-  - 2016 Federico Zivolo and contributors
-
 ### Truncate.js {/* #truncatejs */}
 
 Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has several options such as length, finishBlock and noBreak.
@@ -198,7 +176,7 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 The AWS SDK for PHP library
 
 - **Location**: public/lib/aws-sdk
-- **Version**: 3.356.22
+- **Version**: 3.369.22
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/aws/aws-sdk-php](https://github.com/aws/aws-sdk-php)
 
@@ -387,17 +365,6 @@ Class to safely evaluate math expressions.
 - **URL**: [https://github.com/dbojdo/eval-math](https://github.com/dbojdo/eval-math)
 - **Copyright holders**:
   - Miles Kaufmann
-
-### Font Awesome - http://fontawesome.com {/* #font-awesome---httpfontawesomecom */}
-
-The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
-
-- **Location**: public/lib/fonts
-- **Version**: 6.7.2
-- **License**:  SIL OFL 1.1
-- **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
-- **Copyright holders**:
-  - 2023 Fonticons, Inc
 
 ### GeoPattern {/* #geopattern */}
 
@@ -679,7 +646,7 @@ Class with many common HTML functions (used by HTML Quickform)
 
 - **Location**: public/lib/pear/HTML/Common.php
 - **Version**: 1.7 (with Moodle customisations)
-- **License**:  PHP 2.0
+- **License**:  PHP 2.02 or v4 (BSD-3-Clause)
 - **URL**: [http://pear.php.net/package/HTML_Common](http://pear.php.net/package/HTML_Common)
 - **Copyright holders**:
   - 2004 Adam Daniel, Bertrand Mansion, Klaus Guenther, Alexey Borzov
@@ -690,7 +657,7 @@ Class to write forms
 
 - **Location**: public/lib/pear/HTML/QuickForm
 - **Version**: 2.0 (with Moodle customisations)
-- **License**:  PHP 2.0
+- **License**:  PHP 2.02/3.01 or v4 (BSD-3-Clause)
 - **URL**: [https://pear.php.net/package/HTML_Quickform](https://pear.php.net/package/HTML_Quickform)
 - **Copyright holders**:
   - 2004 Bertrand Mansion, Adam Daniel, Alexey Borzov
@@ -701,7 +668,7 @@ Class to write forms
 
 - **Location**: public/lib/pear/HTML/QuickForm.php
 - **Version**: 2.0 (with Moodle customisations)
-- **License**:  PHP 2.0
+- **License**:  PHP 2.02 or v4 (BSD-3-Clause)
 - **URL**: [https://pear.php.net/package/HTML_Quickform](https://pear.php.net/package/HTML_Quickform)
 - **Copyright holders**:
   - 2004 Bertrand Mansion, Adam Daniel, Alexey Borzov
@@ -712,7 +679,7 @@ Base class for other PEAR classes.
 
 - **Location**: public/lib/pear/PEAR.php
 - **Version**: 1.4.5 (with Moodle customisations)
-- **License**:  PHP 3.0
+- **License**:  BSD 3-Clause
 - **URL**: [https://pear.php.net/package/PEAR](https://pear.php.net/package/PEAR)
 - **Copyright holders**:
   - 2001-2006 The PHP Group. All rights reserved
@@ -1186,63 +1153,27 @@ A standalone Amazon S3 (REST) client for PHP 5.2.x using CURL that does not requ
 - **Copyright holders**:
   - 2013, Donovan Schönknecht
 
-### Twitter Bootstrap {/* #twitter-bootstrap */}
+### Noto Sans {/* #noto-sans */}
 
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
+Noto Sans is a global font family by Google, designed to support all languages with harmonious visual quality.
 
-- **Location**: public/theme/boost/amd/src/bootstrap/
-- **Version**: 5.3.3 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
+- **Location**: public/theme/boost/fonts/noto-sans
+- **Version**: 2.015
+- **License**:  OFL 1.1
+- **URL**: [https://github.com/notofonts/latin-greek-cyrillic](https://github.com/notofonts/latin-greek-cyrillic)
 - **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
+  - 2022 The Noto Project Authors
 
-### Twitter Bootstrap {/* #twitter-bootstrap */}
+### Noto Sans JP {/* #noto-sans-jp */}
 
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
+Noto Sans JP is a Japanese font family by Google, designed to support Japanese characters.
 
-- **Location**: public/theme/boost/amd/src/index.js
-- **Version**: 5.3.3 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
+- **Location**: public/theme/boost/fonts/noto-sans-jp
+- **Version**: 2.004
+- **License**:  OFL 1.1
+- **URL**: [https://github.com/notofonts/noto-cjk](https://github.com/notofonts/noto-cjk)
 - **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### Twitter Bootstrap {/* #twitter-bootstrap */}
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: public/theme/boost/scss/bootstrap
-- **Version**: 5.3.3 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### @moodlehq/design-system {/* #moodlehqdesign-system */}
-
-The Moodle HQ design system based on React
-
-- **Location**: public/theme/boost/scss/design-system
-- **Version**: 2.1.1
-- **License**:  GNU
-- **URL**: [https://github.com/moodlehq/design-system](https://github.com/moodlehq/design-system)
-- **Copyright holders**:
-  - Moodle HQ
-
-### Font Awesome - http://fontawesome.com {/* #font-awesome---httpfontawesomecom */}
-
-Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
-
-- **Location**: public/theme/boost/scss/fontawesome
-- **Version**: 6.7.2
-- **License**:  (MIT)
-- **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
-- **Copyright holders**:
-  - 2023 Fonticons, Inc
+  - 2022 The Noto Project Authors
 
 ## Other libraries {/* #other-libraries */}
 
