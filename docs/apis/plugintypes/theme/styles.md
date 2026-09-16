@@ -21,6 +21,12 @@ As theme designers, only the first method of introducing CSS will be used: addin
 
 :::
 
+:::info[Colour modes]
+
+Boost can render a site in a light or a dark colour mode. Any colour written as a literal keeps its value in both, so a theme or a plugin has to take its colours from the theme's custom properties in order to follow the mode. See [Colour modes](../../../guides/colourmodes/index.md).
+
+:::
+
 ## CSS pre-processors {/* #css-pre-processors */}
 
 Browsers understand CSS well, but it is hard to write and maintain. The language does not support inheritance and reuse. [Support for variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) exists in more modern browsers only.  This is why CSS pre-processors were invented. Moodle supports SASS, which is recommended by far.
