@@ -68,6 +68,19 @@ class example_with_promotion {
 
 :::
 
+## Creating instances {/* #creating-instances */}
+
+<Since version="5.3" issueNumber="MDL-89528" />
+
+Use `\core\di::make()` to create a new instance of a class on each call, with dependencies resolved by the container. `\core\di::get()` returns a shared instance.
+
+Pass constructor argument overrides as a named array in the optional second argument:
+
+```php
+$thing = \core\di::make(my_thing::class);
+$thing = \core\di::make(my_thing::class, ['client' => $client]);
+```
+
 ## Configuring dependencies {/* #configuring-dependencies */}
 
 In some rare cases you may need to supply additional configuration for a dependency to work properly. This is usually in the case of legacy code, and can be achieved with the `\core\hook\di_configuration` hook.
@@ -203,6 +216,21 @@ class other_thing {
 It is generally inadvisable to inject the Container itself. Please do not inject the `\Psr\Container\ContainerInterface`.
 
 :::
+
+## Attribute-based injection {/* #attribute-based-injection */}
+
+<Since version="5.3" issueNumber="MDL-89528" />
+
+Use `#[\DI\Attribute\Inject]` to inject dependencies into typed properties. This is the recommended approach for controllers.
+
+```php
+class example_class {
+    #[\DI\Attribute\Inject]
+    private \core\formatting $formatter;
+}
+
+$example = \core\di::get(example_class::class);
+```
 
 ## Advanced usage {/* #advanced-usage */}
 

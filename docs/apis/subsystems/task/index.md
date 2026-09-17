@@ -54,6 +54,55 @@ Adhoc tasks are great for situations such as:
 
 ## Usage {/* #usage */}
 
+### Dependency injection {/* #dependency-injection */}
+
+<Since version="5.3" issueNumber="MDL-89528" />
+
+Adhoc and scheduled tasks can declare dependencies in their constructors using [dependency injection](../../core/di/index.md#fetching-dependencies). Moodle's DI container supplies the dependencies when it creates the task:
+
+```php
+namespace mod_example\task;
+
+class do_something extends \core\task\adhoc_task {
+    public function __construct(
+        protected readonly \core\clock $clock,
+    ) {
+    }
+
+    public function execute(): void {
+        $now = $this->clock->time();
+        mtrace("Task started at {$now}");
+    }
+}
+```
+
+In tests, use `\core\di::set()` to replace the clock in the container:
+
+```php
+$clock = $this->createMock(\core\clock::class);
+$clock->method('time')->willReturn(1234567890);
+\core\di::set(\core\clock::class, $clock);
+
+// The manager creates the task via the container, which supplies the mock clock.
+$task = \core\task\manager::adhoc_task_from_record((object) [
+    'classname' => \mod_example\task\do_something::class,
+]);
+
+$this->expectOutputString("Task started at 1234567890\n");
+$task->execute();
+```
+
+You can also test the task directly by passing the mock clock to its constructor:
+
+```php
+$clock = $this->createMock(\core\clock::class);
+$clock->method('time')->willReturn(1234567890);
+
+$task = new \mod_example\task\do_something($clock);
+$this->expectOutputString("Task started at 1234567890\n");
+$task->execute();
+```
+
 ### Failures and error handling {/* #failures-and-error-handling */}
 
 A task, either scheduled or adhoc, can sometimes fail. An example would be updating an RSS field when the network is temporarily down. This is handled by the task system automatically - all the failing task needs to do is throw an exception. The task will be retried after 1 minute. If the task keeps failing, the retry algorithm will add more time between each successive attempts up to a max of 24 hours.
