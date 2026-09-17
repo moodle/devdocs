@@ -119,22 +119,24 @@ The `set_next_run_time()` function takes a unix time stamp. Tasks are not _guara
 
 :::
 
-#### Ignore duplicate adhoc tasks {/* #ignore-duplicate-adhoc-tasks */}
+#### Preventing duplicate adhoc tasks {/* #ignore-duplicate-adhoc-tasks */}
 
-In some situations you may only wish to queue an adhoc task if an identical adhoc task does not already exist. This can be useful in situations where you are adding a set of items to a bucket for later processing and only wish to process all items once.
-
-When requested, the `queue_adhoc_task()` function will ignore any task where all of the following match an existing task in the queue:
+Pass `true` as the second argument to `queue_adhoc_task()` to reuse a queued task with matching values for:
 
 - `classname` - the class defining the task to be processed
-- `component` - the component that the task belongs
+- `component` - the component that the task belongs to
 - `customdata` - any custom data for this instance
 - `userid` - the user that the task will be run as
 
-Duplicate adhoc task detection can be enabled by passing a truthy value as the second argument to `queue_adhoc_task()`, for example:
-
 ```php
-\core\task\manager::queue_adhoc_task($task, true);
+$taskid = \core\task\manager::queue_adhoc_task($task, true);
 ```
+
+<Since version="5.3" issueNumber="MDL-86422" />
+
+On success, `queue_adhoc_task()` returns the ID of the newly queued or matching task, including a matching task already running. Before Moodle 5.3, finding a matching task returned `false`.
+
+If a matching task has exhausted its retries, it is reactivated with the supplied task's retry count, its failure delay is cleared, and it is scheduled to run immediately.
 
 :::tip[Custom data]
 
@@ -144,16 +146,10 @@ If creating tasks which will contain a subset of data which will also be run by 
 
 #### Rescheduling an adhoc task {/* #rescheduling-an-adhoc-task */}
 
-Similar to [ignoring duplicate adhoc tasks](#ignore-duplicate-adhoc-tasks) there are situations which require you re_schedule_ a matching task instead. This may happen, for example, in a situation where there is too much churn of your source data.
-
-The `reschedule_or_queue_adhoc_task()` function will locate any existing task matching the following fields, and update its time with the time from the new entry:
-
-- `classname` - the class defining the task to be processed
-- `component` - the component that the task belongs
-- `customdata` - any custom data for this instance
-- `userid` - the user that the task will be run as
+The `reschedule_or_queue_adhoc_task()` function uses the same [duplicate detection](#ignore-duplicate-adhoc-tasks) to queue a task or update the next run time of a matching task:
 
 ```php
+$task->set_next_run_time($futuretime);
 \core\task\manager::reschedule_or_queue_adhoc_task($task);
 ```
 
