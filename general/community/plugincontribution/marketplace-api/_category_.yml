@@ -1,0 +1,9 @@
+# The rest of this directory is generated from the Marketplace OpenAPI spec by
+# docusaurus-plugin-openapi-docs (see the `openapi` script in package.json) and is
+# git-ignored. This file is the only committed one: it turns the generated docs
+# into a single sidebar entry that opens the API introduction page.
+label: Moodle Marketplace API
+position: 2
+link:
+  type: doc
+  id: moodle-marketplace-api
