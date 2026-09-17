@@ -28,3 +28,13 @@ The `moodle_page` class now includes `set_supplementary_content()` and `get_supp
 For instance, `mod_forum` uses this new mechanism to display a "Go to all discussions" link in the sticky footer when viewing an individual discussion.
 
 For more information, see the [Adding supplementary content to the sticky footer](./apis/plugintypes/format/linear_navigation.md#adding-supplementary-content-to-the-sticky-footer) section.
+
+## Scopes for API routes
+
+<Since version="5.3" issueNumber="MDL-89710" />
+
+API routes can now declare the scopes required to call them, using the `#[scopeset]` attribute alongside the existing `#[route]` attribute. When a request is authenticated with an OAuth2 access token or Personal Access Token, the router checks that the token was granted a scope combination which satisfies the route's requirements, in addition to any existing capability checks.
+
+Every API route **must** now declare its scope requirements, either with one or more `#[scopeset]` attributes, or by explicitly opting out with `#[unscoped_resource]`. This is enforced by a core PHPUnit test that scans all routes in the `route\api` namespace, so any new route which omits this declaration will fail the test suite.
+
+For details on declaring scopes on a route, and on defining new scope classes for a subsystem, see [Scopes](./apis/subsystems/routing/scopes.md) and [Defining Scopes](./apis/subsystems/routing/defining-scopes.md).
