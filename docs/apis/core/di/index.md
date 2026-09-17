@@ -5,6 +5,7 @@ tags:
   - Container
   - PSR-11
   - PSR
+  - Attribute
 description: The use of PSR-11 compatible Dependency Injection in Moodle
 ---
 
@@ -38,6 +39,31 @@ $client = \core\di::get(\core\http_client::class);
 // Fetching an instance of a class which is managed using DI.
 $thing = \core\di::get(my_thing::class);
 ```
+
+`\core\di::get()` always returns the same shared instance for a given entry. When a fresh instance is required each time, for example when replacing `new $classname()` in legacy factory code, use [`\core\di::make()`](#building-a-new-instance) instead.
+
+### Building a new instance each time {/* #building-a-new-instance */}
+
+<Since version="5.3" issueNumber="MDL-89528" />
+
+`\core\di::make()` behaves like `\core\di::get()`, except that it resolves the entry again on every call. If the entry is a class, a new instance is built each time, making the container behave like a factory:
+
+```php title="Building a new instance using \core\di::make()"
+// Each call returns a brand new instance of my_thing.
+$thing1 = \core\di::make(my_thing::class);
+$thing2 = \core\di::make(my_thing::class);
+```
+
+Optional parameters can also be passed to force specific constructor arguments to specific values. Any constructor parameters not provided are resolved using the container as normal:
+
+```php title="Building a new instance with specific parameters"
+$renderer = \core\di::make(\core\output\core_renderer::class, [
+    'page' => new \moodle_page(),
+    'target' => \RENDERER_TARGET_CLI,
+]);
+```
+
+`\core\di::make()` is particularly useful for legacy entry points which directly instantiate a class (for example `new $classname()`), and for factories, where a new object is expected on each call.
 
 :::tip[Constructor Property Promotion and Readonly properties]
 
@@ -201,6 +227,37 @@ class other_thing {
 :::warning[A note on injecting the Container]
 
 It is generally inadvisable to inject the Container itself. Please do not inject the `\Psr\Container\ContainerInterface`.
+
+:::
+
+## Attribute-based injection {/* #attribute-based-injection */}
+
+<Since version="5.3" issueNumber="MDL-89528" />
+
+As an alternative to constructor injection, dependencies can be injected directly onto a property using the PHP-DI `#[\DI\Attribute\Inject]` attribute:
+
+```php title="Injecting a dependency onto a property using an attribute"
+class example_class {
+    #[\DI\Attribute\Inject]
+    private \core\formatting $formatter;
+}
+```
+
+The property is populated automatically whenever the class is built through the container, whether the instance is fetched using `\core\di::get()`, or a new instance is built using `\core\di::make()`:
+
+```php title="Fetching a class which uses attribute-based injection"
+// Fetch the example class using the `get` method for entries stored in the container.
+$example1 = \core\di::get(example_class::class);
+
+// Fetch the example class using the `make` method for entries built on each call.
+$example2 = \core\di::make(example_class::class);
+```
+
+Attribute-based injection is the recommended approach for use in controllers, and makes it easier to support the use of Dependency Injection in other areas of the codebase, such as legacy code and factories using the `make` method, without needing to change how the class is constructed.
+
+:::tip[Constructor injection is still preferred]
+
+Where possible, prefer constructor injection over attribute-based injection as it makes a class's dependencies explicit and keeps the class usable without the container, for example directly within unit tests. Attribute-based injection is most useful where a class is already constructed by other code and its constructor signature cannot easily be changed.
 
 :::
 
