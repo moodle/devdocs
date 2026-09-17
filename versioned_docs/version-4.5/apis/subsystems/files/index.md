@@ -293,6 +293,16 @@ $fs = get_file_storage();
 $fs->create_file_from_storedfile($fileinfo, $existingfile);
 ```
 
+#### Before file creation {/* #before-file-creation */}
+
+<Since version="4.5" issueNumber="MDL-83245" />
+
+The `\core_files\hook\before_file_created` hook allows plugins to inspect or modify file content before it is stored. Register a callback in `db/hooks.php` using the [Hooks API](../../core/hooks/index.md#registering-of-hook-callbacks).
+
+Use `get_filerecord()` to access the file metadata (`stdClass|null`). For content supplied as a file, use `has_filepath()` and `get_filepath()`; for content supplied as a string, use `has_filecontent()` and `get_filecontent()`.
+
+Call `update_filepath()` or `update_filecontent()` to supply replacement content. Throw an exception to reject the file, for example when enforcing a quota.
+
 ### List all files in a particular file area {/* #list-all-files-in-a-particular-file-area */}
 
 You may need to fetch a list of all files in a specific file area. You can do this using the `file_storage::get_area_files()` API, which will return array of `stored_file` objects, for example:
