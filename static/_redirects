@@ -63,6 +63,10 @@
 /general/community/meetings/202210 /general/community/meetings/2022/10
 /general/community/meetings/202206 /general/community/meetings/2022/06
 
+# MKPL-1735
+# Redirect the old hand-written Moodle Marketplace API page to the generated API reference
+/general/community/plugincontribution/moodlemarketplaceapi /general/community/plugincontribution/marketplace-api/moodle-marketplace-api
+
 ############################################################################
 # Splats should go later for performance
 ############################################################################

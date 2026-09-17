@@ -1,0 +1,55 @@
+name: "Scheduled - Update Moodle Marketplace API spec"
+
+on:
+  # Run on cron, every day at 6:00am UTC.
+  schedule:
+    - cron: '0 6 * * *'
+
+  # Run on request.
+  workflow_dispatch:
+
+jobs:
+  run:
+    # Only run on the canonical repository.
+    if: github.repository == 'moodle/devdocs'
+
+    name: Fetch the Moodle Marketplace OpenAPI spec
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout DevDocs repo
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Fetch the spec
+        run: |
+          yarn openapi-fetch
+
+      # Pull requests opened with the default token don't trigger other workflows, so
+      # check here that the reference can still be generated from the new spec.
+      - name: Generate the API reference
+        run: |
+          yarn openapi
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@38e0b6e68b4c852a5500a94740f0e535e0d7ba54 # v4.2.4
+        with:
+          add-paths: |
+            data/marketplace/openapi.json
+
+          # Dedicated branch: the default (create-pull-request/patch) is shared with
+          # update-moodle-metadata.yml, and the two jobs would overwrite each other's PRs.
+          branch: create-pull-request/marketplace-api-spec
+          commit-message: "[repo] Update Moodle Marketplace API spec"
+          title: "[repo] Update Moodle Marketplace API spec"
+          signoff: false
+          delete-branch: true
