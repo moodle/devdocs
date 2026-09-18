@@ -55,6 +55,7 @@ The underscore character is not supported in activity modules for legacy reasons
 | [Assignment submission plugins](./assign/submission.md) | assignsubmission | /mod/assign/submission | Different forms of assignment submissions | 2.3+ |
 | [Assignment feedback plugins](./assign/feedback.md) | assignfeedback | /mod/assign/feedback | Different forms of assignment feedbacks | 2.3+ |
 | [Book tools](./mod_book/index.md) | booktool | /mod/book/tool | Small information-displays or tools that can be moved around pages | 2.1+ |
+| [BigBlueButton activity extensions](./mod_bigbluebuttonbn/index.md) | bbbext | /mod/bigbluebuttonbn/extension | Extend or override the behaviour of the BigBlueButton activity — settings form fields, completion rules, meeting URL parameters, meeting events, settings navigation, and the activity view page — without modifying core | 4.3+ |
 | [Custom fields](./customfield/index.md) | customfield | /customfield/field | Custom field types, used in Custom course fields | 3.7+ |
 | [Database fields](./mod_data/fields.md) | datafield | /mod/data/field | Different types of data that may be added to the Database activity module | 1.6+ |
 | [Database presets](./mod_data/presets.md) | datapreset | /mod/data/preset | Pre-defined templates for the Database activity module | 1.6+ |
