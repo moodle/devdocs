@@ -67,9 +67,11 @@ namespace local_hello\output;
 
 defined('MOODLE_INTERNAL') || die();
 
-class mobile {
+class mobile
+{
 
-    public static function view_hello() {
+    public static function view_hello()
+    {
         return [
             'templates' => [
                 [
@@ -133,7 +135,8 @@ Most handlers will render some custom UI using the `method` property in their co
 Templates will be rendered in the app using Angular, but you can still process them using mustache in your PHP code by using `$OUTPUT->render_from_template`. However, keep in mind that the `{{ }}` syntax is also used for interpolating values in Angular. We recommend switching Mustache's interpolation syntax in mobile templates to `<% %>`. This can be achieved by adding `{{=<% %>=}}` at the beginning of the file. Here's an example:
 
 ```php title="method in classes/output/mobile.php"
-public static function mobile_course_view($args) {
+public static function mobile_course_view($args)
+{
     global $OUTPUT;
 
     return [
@@ -286,7 +289,8 @@ You can find which APIs are available in JavaScript in the [Services](./api-refe
 Here's an example using `templates`, `otherdata`, and custom properties:
 
 ```php title="PHP init method"
-public static function my_init() {
+public static function my_init()
+{
     return [
         'templates' => [
             [

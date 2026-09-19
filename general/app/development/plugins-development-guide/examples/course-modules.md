@@ -45,9 +45,11 @@ Of course, this only includes viewing the pages; but any interaction that requir
 Now, let's implement the [content response](../api-reference.md#content-responses) in `classes/output/mobile.php`:
 
 ```php
-class mobile {
+class mobile
+{
 
-    public static function mobile_course_view($args) {
+    public static function mobile_course_view($args)
+    {
         global $OUTPUT, $USER, $DB;
 
         $args = (object) $args;
@@ -194,7 +196,8 @@ Here's some things to pay attention to:
 Now, let's implement the page to view the individual certificates:
 
 ```php title="classes/output/mobile.php"
-public static function mobile_issues_view($args) {
+public static function mobile_issues_view($args)
+{
     global $OUTPUT, $USER, $DB;
 
     $args = (object) $args;

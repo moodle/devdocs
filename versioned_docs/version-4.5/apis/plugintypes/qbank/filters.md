@@ -37,7 +37,8 @@ namespace qbank_myplugin;
 
 use core_question\local\bank\condition;
 
-class myfilter_condition extends condition {
+class myfilter_condition extends condition
+{
 
 }
 ```
@@ -47,8 +48,10 @@ Modify your `plugin_feature` class to return an instance of your condition from 
 ```php title="question/bank/myplugin/classes/plugin_feature.php"
 namespace qbank_myplugin;
 
-class plugin_feature extends core_question\local\bank\plugin_features_base {
-    public function get_question_filters(?core_question\local\bank\view $qbank = null): array {
+class plugin_feature extends core_question\local\bank\plugin_features_base
+{
+    public function get_question_filters(?core_question\local\bank\view $qbank = null): array
+    {
         return [
             new myfilter_condition($qbank),
         ];
@@ -59,7 +62,8 @@ class plugin_feature extends core_question\local\bank\plugin_features_base {
 Back in your `condition` class, define the `get_name()` method, which returns the label displayed in the filter UI.
 
 ```php title="Define the condition name"
-public function get_name(): string {
+public function get_name(): string
+{
     return get_string('myfilter_name', 'myplugin');
 }
 ```
@@ -67,7 +71,8 @@ public function get_name(): string {
 Define `get_condition_key()`, which returns a unique machine-readable ID for this filter condition, used when passing the filter as a parameter.
 
 ```php title="Define the condition key"
-public function get_condition_key(): string {
+public function get_condition_key(): string
+{
     return 'myfilter';
 }
 ```
@@ -78,7 +83,8 @@ The `$filter` parameter receives an array with a `'values'` key, containing an a
 The conditions from each filter are combined with the query in [`core_question\local\bank\view::build_query()`](https://github.com/moodle/moodle/blob/c741492c38b9945abbfc7e90dfe8f943279f8265/question/classes/local/bank/view.php#L733)
 
 ```php title="Filter questions"
-public function build_query_from_filter(array $filter): array {
+public function build_query_from_filter(array $filter): array
+{
     $andor = ' AND ';
     $equal = '=';
     if ($filter['jointype'] === self::JOINTYPE_ANY) {
@@ -109,7 +115,8 @@ Following this pattern with your own fields and options will give you a basic fu
 To define the list of possible filter values, define `get_initial_values()`, which returns an array of `['value', 'title']` for each option. These will then be searchable and selectable in the autocomplete field.
 
 ```php title="Define initial filter values"
-public function get_initial_values(): string {
+public function get_initial_values(): string
+{
     return [
         [
             'value' => 0,
@@ -128,7 +135,8 @@ public function get_initial_values(): string {
 To restrict the possible filter terms to only those returned from `get_initial_values()`, define `allow_custom()` and have it return `false`.
 
 ```php title="Disable custom terms"
-public function allow_custom(): bool {
+public function allow_custom(): bool
+{
     return false;
 }
 ```
@@ -138,7 +146,8 @@ public function allow_custom(): bool {
 Not all join types are relevant to all filters. If each question will only match one of the selected values, it does not make sense to allow `JOINTYPE_ALL`. Define `get_join_list()` and return an array of the applicable join types.
 
 ```php title="Define a restricted list of join types"
-public function get_join_list(): array {
+public function get_join_list(): array
+{
     return [
         datafilter::JOINTYPE_ANY,
         datafilter::JOINTYPE_NONE,
@@ -152,7 +161,8 @@ By default, conditions allow multiple values to be selected and use the selected
 If your condition should only allow a single value at a time, override `allow_multiple()` to return false.
 
 ```php title="Disable selection of multiple values"
-public function allow_multiple(): bool {
+public function allow_multiple(): bool
+{
     return false;
 }
 ```
@@ -162,7 +172,8 @@ public function allow_multiple(): bool {
 By default, conditions can be left empty, and therefore will not be included in the filter. To make it compulsory to select a value for this condition when it is added, override `allow_empty()` to return false.
 
 ```php title="Disable empty values"
-public function allow_empty(): bool {
+public function allow_empty(): bool
+{
     return false;
 }
 ```
@@ -172,7 +183,8 @@ public function allow_empty(): bool {
 If it is compulsory that your condition is always displayed, override `is_required()` to return true.
 
 ```php title="Make the condition compulsory"
-public function is_required(): bool {
+public function is_required(): bool
+{
     return true;
 }
 ```
@@ -188,7 +200,8 @@ You can either use a different core filter type from `/lib/amd/src/datafilter/fi
 To tell your filter condition to use a different filter class, override the `get_filter_class()` method to return the namespaced path to your JavaScript class.
 
 ```php title="Override the default filter class"
-public function get_filter_class(): string {
+public function get_filter_class(): string
+{
     return 'qbank_myplugin/datafilter/filtertype/myfilter';
 }
 ```

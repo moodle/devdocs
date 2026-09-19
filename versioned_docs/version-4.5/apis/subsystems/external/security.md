@@ -22,7 +22,8 @@ To do so you should call the `validate_parameters()` function, passing in the re
 The `validate_parameters()` function is defined on the `\core_external\external_api` class, and can be called as follows:
 
 ```php title="local/groupmanager/classes/external/create_groups.php"
-public static function execute(array $groups): array {
+public static function execute(array $groups): array
+{
     [
         'groups' => $groups,
     ] = self::validate_parameters(self::execute_parameters(), [
@@ -45,7 +46,8 @@ If your function operates on multiple contexts (like a list of courses), you mus
 The `validate_context()` function is defined on the `\core_external\external_api` class, and can be called as follows:
 
 ```php title="local/groupmanager/classes/external/create_groups.php"
-public static function execute(array $groups): array {
+public static function execute(array $groups): array
+{
     // ...
     foreach ($groups as $group) {
         $coursecontext = \context_course::instance($group['courseid']);

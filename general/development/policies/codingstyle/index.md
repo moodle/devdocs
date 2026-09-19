@@ -207,8 +207,10 @@ Class names should always be lower-case English words, separated by underscores:
 <ValidExample>
 
 ```php
-class some_custom_class {
-    function class_method() {
+class some_custom_class
+{
+    function class_method()
+    {
         echo 'foo';
     }
 }
@@ -273,9 +275,11 @@ Verbosity is encouraged: function names should be as illustrative as is practica
 When writing a method which overrides a method in a parent Class, Interface, or Trait, it is strongly recommended that the `#[\Override]` attribute be used, for example:
 
 ```php title="Example of a method which overrides a third-party method"
-class example extends \Some\Vendor\ExampleClass {
+class example extends \Some\Vendor\ExampleClass
+{
     #[\Override]
-    public function makeRequest(): void {
+    public function makeRequest(): void
+    {
         // ...
     }
 }
@@ -296,7 +300,8 @@ There is no space between the function name and the following (brackets). There 
 <ValidExample>
 
 ```php
-function report_participation_get_overviews(string $action, ?int userid): ?array {
+function report_participation_get_overviews(string $action, ?int userid): ?array
+{
     // Actual function code goes here.
 }
 ```
@@ -308,7 +313,8 @@ There is an exception for [activity modules](/docs/apis/plugintypes/mod) that st
 <ValidExample>
 
 ```php
-function forum_set_display_mode($mode = 0) {
+function forum_set_display_mode($mode = 0)
+{
     global $USER, $CFG;
 
     // Actual function code goes here.
@@ -430,17 +436,21 @@ The use of a [Frankenstyle prefix on class names](./frankenstyle.md#class-names)
 // A namespace for the `mod_forum` plugin.
 
 namespace mod_forum;
-class example {
+class example
+{
 }
 
 // A namespace for the `external` subsystem usage in the `mod_forum` plugin.
 namespace mod_forum\external;
-class example {
+class example
+{
 }
 
 // A namespace for the `core_user` core subsystem.
 namespace core_user;
-class example {}
+class example
+{
+}
 ```
 
 </ValidExample>
@@ -449,13 +459,16 @@ class example {}
 
 ```php title="Incorrect use of namespaces"
 // Namespaced classes are no longer allowed for new code, except where it is unavoidable.
-class mod_forum_example {
+class mod_forum_example
+{
 }
 
-class mod_forum_external_example {
+class mod_forum_external_example
+{
 }
 
-class core_user_example {
+class core_user_example
+{
 }
 ```
 
@@ -479,7 +492,8 @@ The use of namespaces must conform to the following rules:
 
 namespace mod_porridge\local\equipment;
 
-class spoon {
+class spoon
+{
     // Your code here.
 }
 ```
@@ -494,13 +508,15 @@ BAD:
 <?php
 namespace mod_porridge\local\equipment;
 
-class spoon {
+class spoon
+{
     // Your code here.
 }
 
 namespace mod_porridge\local\procedures; // We are changing the namespace here, do not do it.
 
-class eat {
+class eat
+{
     // Another code here.
 }
 
@@ -578,7 +594,8 @@ namespace {
 ```php title="Correct: Use the maximum level of detail in the namespace"
 namespace xxxx\yyyy; // xxxx is the component, yyyy is the api.
 
-class zzzz {
+class zzzz
+{
 }
 ```
 
@@ -940,7 +957,8 @@ Returning empty objects
  *
  * @return stdClass
  */
-function foo() {
+function foo()
+{
     return (object) [];
 }
 
@@ -949,7 +967,8 @@ function foo() {
  *
  * @return stdClass
  */
-function bar() {
+function bar()
+{
     return new stdClass();
 }
 ```
@@ -1099,7 +1118,8 @@ $myarray = [
  * @copyright  2008 Kim Bloggs
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class sample_class {
+class sample_class
+{
     // All contents of class
     // must be indented 4 spaces.
 }
@@ -1129,8 +1149,6 @@ Functions must be named according to the Moodle function naming conventions.
 
 Methods inside classes must always declare their visibility by using one of the private, protected, or public modifiers.
 
-As with classes, the brace should always be written on same line as the function name.
-
 Don't leave spaces between the function name and the opening parenthesis for the arguments.
 
 The return value must not be enclosed in parentheses. This can hinder readability, in additional to breaking code if a method is later changed to return by reference.
@@ -1143,12 +1161,13 @@ Return should only be one data type. It is discouraged to have multiple return t
 /**
  * Documentation Block Here
  */
-class sample_class {
-
+class sample_class
+{
     /**
      * Documentation Block Here
      */
-    public function sample_function() {
+    public function sample_function()
+    {
         // All contents of function
         // must be indented four spaces.
         return true;
@@ -1249,7 +1268,7 @@ Always use the `else if` variant
 
 :::
 
-Always use braces (even if the block is one line and PHP doesn't require it). The opening brace of a block is always placed on the same line as its corresponding statement or declaration.
+Always use braces (even if the block is one line and PHP doesn't require it). For control structures, the opening brace is always placed on the same line as its corresponding statement.
 
 <ValidExample>
 
@@ -1723,7 +1742,8 @@ All classes must have a complete docblock like this:
  * @copyright  2008 Kim Bloggs
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class policy_issue {
+class policy_issue
+{
 ```
 
 </ValidExample>
@@ -1739,7 +1759,8 @@ All properties should have a docblock with the following minimum information:
 <ValidExample>
 
 ```php
-class example {
+class example
+{
     /** @var string This variable does something */
     protected $something;
 }
@@ -1752,7 +1773,8 @@ or
 <ValidExample>
 
 ```php
-class example {
+class example
+{
     /**
      * This variable does something and has a very long description which can
      * wrap on multiple lines
@@ -1769,7 +1791,8 @@ Even if there are several properties all sharing something in common, do not use
 <ValidExample>
 
 ```php
-class zebra {
+class zebra
+{
     /** @var int The number of white stripes */
     protected $whitestripes = 0;
 
@@ -1790,7 +1813,8 @@ Class constants should be documented in the following way:
 <ValidExample>
 
 ```php
-class sam {
+class sam
+{
    /**
     * This is used when Sam is in a good mood.
     */
@@ -1832,10 +1856,12 @@ An exception is made for overridden methods which make no change to the meaning 
 <ValidExample>
 
 ```php
-class example implements templatable {
+class example implements templatable
+{
 
     #[\Override]
-    public function export_for_template(renderer_base $output) {
+    public function export_for_template(renderer_base $output)
+    {
         return ['foo' => 'bar'];
     }
 }
@@ -1873,7 +1899,8 @@ The first line of the comment must begin with a capital letter (or a digit, or '
 <ValidExample>
 
 ```php
-function forum_get_ratings_mean($postid, $scale, $ratings = null) {
+function forum_get_ratings_mean($postid, $scale, $ratings = null)
+{
     if (!$ratings) {
 
         $ratings = [];     // Initialize the empty array.

@@ -46,13 +46,15 @@ The recommended approach is to have the Dependency Injector inject into the cons
 ```php title="Usage in injected classes"
 namespace mod_example;
 
-class post {
+class post
+{
     public function __construct(
         protected readonly \core\clock $clock,
         protected readonly \moodle_database $db,
     )
 
-    public function create_thing(\stdClass $data): \stdClass {
+    public function create_thing(\stdClass $data): \stdClass
+    {
         $data->timecreated = $this->clock->time();
 
         $data->id = $this->db->insert_record('example_thing', $data);
@@ -99,8 +101,10 @@ The incrementing clock increases the time by one second every time it is called.
 A helper method, `mock_clock_with_incrementing(?int $starttime = null): \core\clock`, is provided within the standard testcase:
 
 ```php title="Obtaining the incrementing clock"
-class my_test extends \advanced_testcase {
-    public function test_create_thing(): void {
+class my_test extends \advanced_testcase
+{
+    public function test_create_thing(): void
+    {
         // This class inserts data into the database.
         $this->resetAfterTest(true);
 
@@ -134,8 +138,10 @@ The frozen clock uses a time which does not change, unless manually set. This ca
 A helper method, `mock_clock_with_frozen(?int $time = null): \core\clock`, is provided within the standard testcase:
 
 ```php title="Obtaining and using the frozen clock"
-class my_test extends \advanced_testcase {
-    public function test_create_thing(): void {
+class my_test extends \advanced_testcase
+{
+    public function test_create_thing(): void
+    {
         // This class inserts data into the database.
         $this->resetAfterTest(true);
 
@@ -182,27 +188,33 @@ class my_test extends \advanced_testcase {
 If the standard cases are not suitable for you, then you can create a custom clock and inject it into the DI container.
 
 ```php title="Creating a custom clock"
-class my_clock implements \core\clock {
+class my_clock implements \core\clock
+{
     public int $time;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->time = time();
     }
 
-    public function now(): \DateTimeImmutable {
+    public function now(): \DateTimeImmutable
+    {
         $time = new \DateTimeImmutable('@' . $this->time);
         $this->time = $this->time += 5;
 
         return $time;
     }
 
-    public function time(): int {
+    public function time(): int
+    {
         return $this->now()->getTimestamp();
     }
 }
 
-class my_test extends \advanced_testcase {
-    public function test_my_thing(): void {
+class my_test extends \advanced_testcase
+{
+    public function test_my_thing(): void
+    {
         $clock = new my_clock();
         \core\di:set(\core\clock::class, $clock);
 

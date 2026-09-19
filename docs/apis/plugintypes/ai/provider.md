@@ -41,7 +41,8 @@ They must also implement the following methods:
 This is the list of Actions that are supported by this Provider, for example the `aiprovider_openai` plugin defines this as:
 
 ```php
-public static function get_action_list(): array {
+public static function get_action_list(): array
+{
     return [
         \core_ai\aiactions\generate_text::class,
         \core_ai\aiactions\generate_image::class,
@@ -62,7 +63,8 @@ For example, the `aiprovider_azureai` provider checks values are set for `$this-
 the result.
 
 ```php
-public function is_provider_configured(): bool {
+public function is_provider_configured(): bool
+{
     return !empty($this->config['apikey']) && !empty($this->config['endpoint']);
 }
 ```
@@ -171,14 +173,16 @@ For example, the `aiprovider_openai` plugin defines this:
 namespace aiprovider_openai;
 use core_ai\hook\after_ai_provider_form_hook;
 
-class hook_listener {
+class hook_listener
+{
 
     /**
      * Hook listener for the Open AI instance setup form.
      *
      * @param after_ai_provider_form_hook $hook The hook to add to the AI instance setup.
      */
-    public static function set_form_definition_for_aiprovider_openai(after_ai_provider_form_hook $hook): void {
+    public static function set_form_definition_for_aiprovider_openai(after_ai_provider_form_hook $hook): void
+    {
         if ($hook->plugin !== 'aiprovider_openai') {
             return;
         }
@@ -260,9 +264,11 @@ These classes should extend the `core_ai\form\action_settings_form` class, and m
 For example, the `aiprovider_openai` plugin defines this:
 
 ```php
-class action_generate_text_form extends action_settings_form {
+class action_generate_text_form extends action_settings_form
+{
     #[\Override]
-    protected function definition() {
+    protected function definition()
+    {
         $mform = $this->_form;
         $actionconfig = $this->_customdata['actionconfig']['settings'] ?? [];
         $returnurl = $this->_customdata['returnurl'] ?? null;
@@ -302,14 +308,17 @@ namespace aiprovider_openai\aimodel;
 use core_ai\aimodel\base;
 use MoodleQuickForm;
 
-class gpt4o extends base implements openai_base {
+class gpt4o extends base implements openai_base
+{
     #[\Override]
-    public function get_model_name(): string {
+    public function get_model_name(): string
+    {
         return 'gpt-4o';
     }
 
     #[\Override]
-    public function get_model_display_name(): string {
+    public function get_model_display_name(): string
+    {
         return 'GPT-4o';
     }
 
@@ -325,12 +334,14 @@ To add configurable settings for individual models:
 
     ```php
     #[\Override]
-    public function has_model_settings(): bool {
+    public function has_model_settings(): bool
+    {
         return true;
     }
 
     #[\Override]
-    public function add_model_settings(MoodleQuickForm $mform): void {
+    public function add_model_settings(MoodleQuickForm $mform): void
+    {
         $mform->addElement(
             'text',
             'top_p',
@@ -354,13 +365,15 @@ To add configurable settings for individual models:
     ```php
     namespace aiprovider_openai;
 
-    class helper {
+    class helper
+    {
         /**
          * Get all model classes.
          *
          * @return array Array of model classes
          */
-        public static function get_model_classes(): array {
+        public static function get_model_classes(): array
+        {
             $models = [];
             $modelclasses = \core_component::get_component_classes_in_namespace('aiprovider_openai', 'aimodel');
             foreach ($modelclasses as $class => $path) {
@@ -378,7 +391,8 @@ To add configurable settings for individual models:
          * @param string $modelname The model name
          * @return \core_ai\aimodel\base|null The model class or null if not found
          */
-        public static function get_model_class(string $modelname): ?\core_ai\aimodel\base {
+        public static function get_model_class(string $modelname): ?\core_ai\aimodel\base
+        {
             foreach (self::get_model_classes() as $modelclass) {
                 $model = new $modelclass();
                 if ($model->get_model_name() === $modelname) {
@@ -399,7 +413,8 @@ For example, the `aiprovider_openai` plugin does these:
 1. Create a hook listener that adds model settings to the action form:
 
     ```php
-    public static function set_model_form_definition_for_aiprovider_openai(after_ai_action_settings_form_hook $hook): void {
+    public static function set_model_form_definition_for_aiprovider_openai(after_ai_action_settings_form_hook $hook): void
+    {
         if ($hook->plugin !== 'aiprovider_openai') {
             return;
         }

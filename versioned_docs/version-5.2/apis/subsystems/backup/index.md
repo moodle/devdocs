@@ -95,9 +95,11 @@ Here is a minimalistic task:
 ```php
 require_once($CFG->dirroot . '/backup/moodle2/backup_tool_plugin.class.php');
 
-class backup_tool_foobar_plugin extends backup_tool_plugin {
+class backup_tool_foobar_plugin extends backup_tool_plugin
+{
 
-    protected function define_course_plugin_structure() {
+    protected function define_course_plugin_structure()
+    {
         $this->step->log('Yay, backup!', backup::LOG_DEBUG);
         return $plugin;
     }

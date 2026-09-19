@@ -92,8 +92,10 @@ Since Moodle 3.5 it is safe to use the [Output API](../output/index.md) in cron 
 In order to improve debugging information, it is good practice to call `mtrace` to log what's going on within a task execution:
 
 ```php
-class my_task extends \core\task\scheduled_task {
-    public function execute() {
+class my_task extends \core\task\scheduled_task
+{
+    public function execute()
+    {
          mtrace("My task started");
 
          // Do some work.

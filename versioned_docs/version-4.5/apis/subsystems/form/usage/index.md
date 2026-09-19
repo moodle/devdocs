@@ -79,7 +79,8 @@ In most cases you can place this in an auto-loadable class, in which case it sho
 
 namespace mod_forum\form;
 
-class myform extends \moodleform {
+class myform extends \moodleform
+{
     // ...
 }
 ```
@@ -127,8 +128,10 @@ Moodle has a set of standard form elements used by all Activity modules. These a
 The `standard_coursemodule_elements()` function is used to add these common elements, and it should be called _before_ the standard action elements are added, for example:
 
 ```php
-class mod_example_mod_form extends \moodleform_mod {
-    public function definition() {
+class mod_example_mod_form extends \moodleform_mod
+{
+    public function definition()
+    {
         // Add the various form elements.
         $this->_form->addElement( ... );
 

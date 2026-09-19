@@ -398,7 +398,8 @@ use context;
 use editor_tiny\plugin;
 use editor_tiny\plugin_with_configuration;
 
-class plugininfo extends plugin implements plugin_with_configuration {
+class plugininfo extends plugin implements plugin_with_configuration
+{
     public static function get_plugin_configuration_for_context(
         context $context,
         array $options,

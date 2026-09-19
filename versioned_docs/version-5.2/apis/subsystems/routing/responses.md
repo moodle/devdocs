@@ -49,7 +49,8 @@ use core\router\schema\response\payload_response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class example {
+class example
+{
     #[\core\router\route(
         // Resolves to https://example.com/moodle/api/rest/v2/mod_example/example
         path: '/example',

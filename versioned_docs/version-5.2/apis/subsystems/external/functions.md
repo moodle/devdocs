@@ -65,8 +65,10 @@ use core_external\external_multiple_structure;
 use core_external\external_single_structure;
 use core_external\external_value;
 
-class create_groups extends \core_external\external_api {
-    public static function execute_parameters(): external_function_parameters {
+class create_groups extends \core_external\external_api
+{
+    public static function execute_parameters(): external_function_parameters
+    {
         return new external_function_parameters([
             'groups' => new external_multiple_structure(
                 new external_single_structure([
@@ -92,7 +94,8 @@ class create_groups extends \core_external\external_api {
         ]);
     }
 
-    public static function execute(array $groups): array {
+    public static function execute(array $groups): array
+    {
         // Validate all of the parameters.
         [
             'groups' => $groups,
@@ -114,7 +117,8 @@ class create_groups extends \core_external\external_api {
         ];
     }
 
-    public static function execute_returns(): external_single_structure {
+    public static function execute_returns(): external_single_structure
+    {
         return new external_single_structure([
             'groups' => new external_multiple_structure([
                 'id' => new external_value(PARAM_INT, 'Id of the created user'),

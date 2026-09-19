@@ -151,7 +151,8 @@ By default, all enrolment plugins will have *editing enrolment* and *user unenro
  * @param stdClass $userenrolment
  * @return array An array of user_enrolment_actions
  */
-public function get_user_enrolment_actions(course_enrolment_manager $manager, $userenrolment) {
+public function get_user_enrolment_actions(course_enrolment_manager $manager, $userenrolment)
+{
     $actions = parent::get_user_enrolment_actions($manager, $userenrolment);
     $context = $manager->get_context();
     $instance = $userenrolment->enrolmentinstance;
@@ -191,7 +192,8 @@ The unenrol action will allow resetif all following conditions are met:
   <div>
 
 ```php
-public function allow_unenrol(stdClass $instance) {
+public function allow_unenrol(stdClass $instance)
+{
     // Add any extra validation here.
     return true;
 }
@@ -224,7 +226,8 @@ The unenrol action will be displayed if all following conditions are met:
   <div>
 
 ```php
-public function allow_unenrol_user(stdClass $instance, stdClass $userenrolment) {
+public function allow_unenrol_user(stdClass $instance, stdClass $userenrolment)
+{
     // Add any extra validation here.
     return true;
 }
@@ -241,7 +244,8 @@ It is quite common in enrolment plugins to allow unenrol only if the user enrolm
   <div>
 
 ```php
-public function allow_unenrol_user(stdClass $instance, stdClass $userenrolment) {
+public function allow_unenrol_user(stdClass $instance, stdClass $userenrolment)
+{
     if ($userenrolment->status == ENROL_USER_SUSPENDED) {
         return true;
     }
@@ -270,7 +274,8 @@ The edit manual enrolment action will be displayed if if all following condition
   <div>
 
 ```php
-public function allow_enrol(stdClass $instance) {
+public function allow_enrol(stdClass $instance)
+{
     // Add any extra validation here.
     return true;
 }
@@ -343,7 +348,8 @@ The edit enrolment action in the participants list will be displayed if if all f
   <div>
 
 ```php
-public function allow_manage(stdClass $instance) {
+public function allow_manage(stdClass $instance)
+{
     // Add any extra validation here.
     return true;
 }
@@ -363,7 +369,8 @@ Enrolment plugins can protect roles from being modified by any other plugin. Ret
   <div>
 
 ```php
-public function roles_protected() {
+public function roles_protected()
+{
     // Add any extra validation here if necessary.
     return false;
 }
@@ -393,7 +400,8 @@ The only exception is *enrol_self* - although it is not possible to uniquely ide
   <div>
 
 ```php
-public function find_instance(array $enrolmentdata, int $courseid) : ?stdClass {
+public function find_instance(array $enrolmentdata, int $courseid) : ?stdClass
+{
     global $DB;
     $instances = enrol_get_instances($courseid, false);
 

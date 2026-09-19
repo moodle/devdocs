@@ -118,7 +118,8 @@ This example from the submission_file plugin also checks to see if there is a ma
 This is where all the functionality for this plugin is defined. We will step through this file and describe each part as we go.
 
 ```php
-class assign_submission_file extends assign_submission_plugin {
+class assign_submission_file extends assign_submission_plugin
+{
 ```
 
 All submission plugins MUST define a class with the component name of the plugin that extends assign_submission_plugin.
@@ -126,7 +127,8 @@ All submission plugins MUST define a class with the component name of the plugin
 #### get_name() {/* #get_name */}
 
 ```php
-public function get_name() {
+public function get_name()
+{
     return get_string('file', 'assignsubmission_file');
 }
 ```
@@ -136,7 +138,8 @@ Get name is abstract in submission_plugin and must be defined in your new plugin
 #### get_settings() {/* #get_settings */}
 
 ```php
-public function get_settings(MoodleQuickForm $mform) {
+public function get_settings(MoodleQuickForm $mform)
+{
     global $CFG, $COURSE;
 
     $defaultmaxfilesubmissions = $this->get_config('maxfilesubmissions');
@@ -193,7 +196,8 @@ The "get_settings" function is called when building the settings page for the as
 #### save_settings() {/* #save_settings */}
 
 ```php
-public function save_settings(stdClass $data) {
+public function save_settings(stdClass $data)
+{
     $this->set_config('maxfilesubmissions', $data->assignsubmission_file_maxfiles);
     $this->set_config('maxsubmissionsizebytes', $data->assignsubmission_file_maxsizebytes);
     return true;
@@ -205,7 +209,8 @@ The "save_settings" function is called when the assignment settings page is subm
 #### get_form_elements() {/* #get_form_elements */}
 
 ```php
-public function get_form_elements($submission, MoodleQuickForm $mform, stdClass $data) {
+public function get_form_elements($submission, MoodleQuickForm $mform, stdClass $data)
+{
     if ($this->get_config('maxfilesubmissions') <= 0) {
         return false;
     }
@@ -240,7 +245,8 @@ The get_form_elements function is called when building the submission form. It f
 #### save() {/* #save */}
 
 ```php
-public function save(stdClass $submission, stdClass $data) {
+public function save(stdClass $submission, stdClass $data)
+{
     global $USER, $DB;
 
     $fileoptions = $this->get_file_options();
@@ -305,7 +311,8 @@ The "save" function is called to save a user submission. The parameters are the 
 #### get_files() {/* #get_files */}
 
 ```php
-public function get_files($submission) {
+public function get_files($submission)
+{
     $result = [];
     $fs = get_file_storage();
 
@@ -330,7 +337,8 @@ If this submission plugin produces one or more files, it should implement "get_f
 #### view_summary() {/* #view_summary */}
 
 ```php
-public function view_summary(stdClass $submission, & $showviewlink) {
+public function view_summary(stdClass $submission, & $showviewlink)
+{
     $count = $this->count_files($submission->id, ASSIGNSUBMISSION_FILE_FILEAREA);
 
     // Show we show a link to view all files for this plugin.
@@ -352,7 +360,8 @@ The view_summary function is called to display a summary of the submission to bo
 #### view() {/* #view */}
 
 ```php
-public function view($submission) {
+public function view($submission)
+{
     return $this->assignment->render_area_files(
         'assignsubmission_file',
         ASSIGNSUBMISSION_FILE_FILEAREA,
@@ -367,7 +376,8 @@ The view function is called to display the entire submission to both markers and
 
 ```php
 #[\Override]
-public function submission_summary_for_messages(stdClass $submission): array {
+public function submission_summary_for_messages(stdClass $submission): array
+{
     global $PAGE;
 
     $onlinetextsubmission = $this->get_onlinetext_submission($submission->id);
@@ -392,7 +402,8 @@ This method produces a summary of what was submitted, in a form suitable to incl
 #### can_upgrade() {/* #can_upgrade */}
 
 ```php
-public function can_upgrade($type, $version) {
+public function can_upgrade($type, $version)
+{
     $uploadsingle_type ='uploadsingle';
     $upload_type ='upload';
 
@@ -408,7 +419,8 @@ The can_upgrade function is used to identify old "Assignment 2.2" subtypes that 
 #### upgrade_settings() {/* #upgrade_settings */}
 
 ```php
-public function upgrade_settings(context $oldcontext, stdClass $oldassignment, &$log) {
+public function upgrade_settings(context $oldcontext, stdClass $oldassignment, &$log)
+{
     global $DB;
 
     if ($oldassignment->assignmenttype == 'uploadsingle') {
@@ -450,7 +462,8 @@ This function is called once per assignment instance to upgrade the settings fro
 #### upgrade() {/* #upgrade */}
 
 ```php
-public function upgrade($oldcontext, $oldassignment, $oldsubmission, $submission, &$log) {
+public function upgrade($oldcontext, $oldassignment, $oldsubmission, $submission, &$log)
+{
     global $DB;
 
     $filesubmission = (object) [
@@ -486,7 +499,8 @@ The "upgrade" function upgrades a single submission from the old assignment type
 #### get_editor_fields() {/* #get_editor_fields */}
 
 ```php
-public function () {
+public function ()
+{
     return [
         'onlinetext' => get_string('pluginname', 'assignsubmission_comments'),
     ];
@@ -498,7 +512,8 @@ This example is from assignsubmission_onlinetext. If the plugin uses a text-edit
 #### get_editor_text() {/* #get_editor_text */}
 
 ```php
-public function get_editor_text($name, $submissionid) {
+public function get_editor_text($name, $submissionid)
+{
     if ($name == 'onlinetext') {
         $onlinetextsubmission = $this->get_onlinetext_submission($submissionid);
         if ($onlinetextsubmission) {
@@ -515,7 +530,8 @@ This example is from assignsubmission_onlinetext. If the plugin uses a text-edit
 #### get_editor_format() {/* #get_editor_format */}
 
 ```php
-public function get_editor_format($name, $submissionid) {
+public function get_editor_format($name, $submissionid)
+{
     if ($name == 'onlinetext') {
         $onlinetextsubmission = $this->get_onlinetext_submission($submissionid);
         if ($onlinetextsubmission) {
@@ -532,7 +548,8 @@ This example is from assignsubmission_onlinetext. For the same reason as the pre
 #### is_empty() {/* #is_empty */}
 
 ```php
-public function is_empty(stdClass $submission) {
+public function is_empty(stdClass $submission)
+{
     return $this->count_files($submission->id, ASSIGNSUBMISSION_FILE_FILEAREA) == 0;
 }
 ```
@@ -542,7 +559,8 @@ If a plugin has no submission data to show - it can return true from the is_empt
 #### submission_is_empty() {/* #submission_is_empty */}
 
 ```php
-public function submission_is_empty() {
+public function submission_is_empty()
+{
     global $USER;
     $fs = get_file_storage();
 
@@ -565,7 +583,8 @@ Determine if a submission is empty. This is distinct from is_empty() in that it 
 #### get_file_areas() {/* #get_file_areas */}
 
 ```php
-public function get_file_areas() {
+public function get_file_areas()
+{
     return [ASSIGNSUBMISSION_FILE_FILEAREA=>$this->get_name()];
 }
 ```
@@ -575,7 +594,8 @@ A plugin should implement get_file_areas if it supports saving of any files to m
 #### copy_submission() {/* #copy_submission */}
 
 ```php
-public function copy_submission(stdClass $sourcesubmission, stdClass $destsubmission) {
+public function copy_submission(stdClass $sourcesubmission, stdClass $destsubmission)
+{
     global $DB;
 
     // Copy the files across.
@@ -609,7 +629,8 @@ Since Moodle 2.5 - a students submission can be copied to create a new submissio
 #### format_for_log() {/* #format_for_log */}
 
 ```php
-public function format_for_log(stdClass $submission) {
+public function format_for_log(stdClass $submission)
+{
     // Format the information for each submission plugin add_to_log
     $filecount = $this->count_files($submission->id, ASSIGNSUBMISSION_FILE_FILEAREA);
     return ' the number of file(s) : ' . $filecount . " file(s).<br>";
@@ -621,7 +642,8 @@ The format_for_log function lets a plugin produce a really short summary of a su
 #### delete_instance() {/* #delete_instance */}
 
 ```php
-public function delete_instance() {
+public function delete_instance()
+{
     global $DB;
     // Will throw exception on failure
     $DB->delete_records('assignsubmission_file', [

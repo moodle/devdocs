@@ -21,13 +21,15 @@ To support linear navigation, your course format must override the `uses_linear_
 /**
  * Custom course format class.
  */
-class format_mycustomformat extends \core_courseformat\base {
+class format_mycustomformat extends \core_courseformat\base
+{
     /**
      * Determines whether the course format supports linear navigation.
      *
      * @return bool True if linear navigation is supported, false otherwise.
      */
-    public static function uses_linear_navigation(): bool {
+    public static function uses_linear_navigation(): bool
+    {
         // Return true to unconditionally enable it.
         return true;
     }
@@ -45,7 +47,8 @@ If your course format requires configuration at the course settings level (simil
      * @param bool $foreditform True if it's being requested for the course edit form.
      * @return array Array of options.
      */
-    public function course_format_options($foreditform = false) {
+    public function course_format_options($foreditform = false)
+    {
         static $courseformatoptions = false;
         // Initialise the course format options array if it hasn't been done yet with the default values.
         if ($courseformatoptions === false) {

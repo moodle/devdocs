@@ -38,12 +38,13 @@ namespace mod_example\task;
 /**
  * An example of an adhoc task.
  */
-class do_something extends \core\task\adhoc_task {
-
+class do_something extends \core\task\adhoc_task
+{
     /**
      * Execute the task.
      */
-    public function execute() {
+    public function execute()
+    {
         // Call your own api
     }
 }
@@ -62,8 +63,8 @@ It can be fetched using the `get_custom_data(): mixed` method.
 We recommend only ever calling `set_custom_data()` from within a factory method in the task class itself.
 
 ```php
-class do_something extends \core\task\adhoc_task {
-
+class do_something extends \core\task\adhoc_task
+{
     public static function instance(
         int $id,
         string $status,
@@ -77,7 +78,8 @@ class do_something extends \core\task\adhoc_task {
         return $task;
     }
 
-    public function execute() {
+    public function execute()
+    {
         $data = $this->get_custom_data();
         mtrace($data->id);
         mtrace($data->status);
@@ -177,7 +179,8 @@ $task->get_attempts_available();
 Tasks are retried by default, but this behaviour can be modified by overriding the `retry_until_success()` method in your task class, for example:
 
 ```php
-public function retry_until_success(): bool {
+public function retry_until_success(): bool
+{
     return false;
 }
 ```

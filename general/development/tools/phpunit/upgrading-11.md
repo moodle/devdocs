@@ -135,7 +135,8 @@ PHPUnit has always supported _static_ data providers, but also supported non-sta
 That is, the following was accepted:
 
 ```php
-protected function my_data_provider(): array {
+protected function my_data_provider(): array
+{
     return [...];
 }
 ```
@@ -165,7 +166,8 @@ The [moodle-cs](../phpcs.md) coding style rules for phpcs can help you to fix th
 If you have a data provider such as the following:
 
 ```php
-public static function my_provider(): array {
+public static function my_provider(): array
+{
     return [
         [
             'foo' => 'bar',
@@ -181,7 +183,8 @@ Then the test that uses this data provider must have the same parameter names:
 /**
  * @dataProvider my_provider
  */
-public function test_my_test(string $foo, string $baz) {
+public function test_my_test(string $foo, string $baz)
+{
     ...
 }
 ```
