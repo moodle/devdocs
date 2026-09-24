@@ -39,7 +39,8 @@ If there is no section for the current version in the `get_deprecated_icons()` m
 
 ```php title="lib/classes/output/icon_system_fontawesome.php"
     #[\Override]
-    public function get_deprecated_icons(): array {
+    public function get_deprecated_icons(): array
+    {
         // Add deprecated core icons to parent deprecated icons.
         return array_merge(
             parent::get_deprecated_icons(),
@@ -61,7 +62,8 @@ If there is no section for the current version in the `get_deprecated_icons()` m
      *
      * @return array with the deprecated key icons.
      */
-    function mod_forum_get_deprecated_icons(): array {
+    function mod_forum_get_deprecated_icons(): array
+    {
         return [
             //
             // Deprecated since Moodle 4.5.

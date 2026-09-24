@@ -33,7 +33,8 @@ require(__DIR__ . '/config.php');
 ```php title="example.php"
 <?php
 
-function my_function_making_use_of_database() {
+function my_function_making_use_of_database()
+{
     global $DB;
 
     // You can access the database via the $DB method calls here.

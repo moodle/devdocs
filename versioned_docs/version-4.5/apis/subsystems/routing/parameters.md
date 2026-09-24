@@ -36,7 +36,8 @@ use core\param;
 use core\router\route;
 use core\router\schema\parameters\path_parameter;
 
-class example {
+class example
+{
     #[route(
         path: '/users/{username}',
         pathtypes: [
@@ -70,7 +71,8 @@ use core\param;
 use core\router\route;
 use core\router\schema\parameters\path_parameter;
 
-class example {
+class example
+{
     #[route(
         path: '/users/{username}',
         pathtypes: [
@@ -533,7 +535,8 @@ class path_course extends \core\router\schema\parameters\path_parameter implemen
      * @return object
      * @throws not_found_exception If the course cannot be found
      */
-    protected function get_course_for_value(string $value): mixed {
+    protected function get_course_for_value(string $value): mixed
+    {
         global $DB;
 
         $data = false;
@@ -572,7 +575,8 @@ class path_course extends \core\router\schema\parameters\path_parameter implemen
     }
 
     #[\Override]
-    public function get_schema_from_type(param $type): \stdClass {
+    public function get_schema_from_type(param $type): \stdClass
+    {
         $schema = parent::get_schema_from_type($type);
 
         $schema->pattern = "^(";

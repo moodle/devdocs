@@ -22,8 +22,10 @@ You can quickly and easily create a copy of the Moodle Router using the `route_t
 This is a fully-configured copy of the Moodle Router, and allows to handle requests directly.
 
 ```php
-final class my_test extends \route_testcase {
-    public function test_example(): void {
+final class my_test extends \route_testcase
+{
+    public function test_example(): void
+    {
         $router = $this->get_router();
     }
 }
@@ -56,8 +58,10 @@ You can easily add existing routes to mocking route loader either individually, 
 To add an individual route, you can use the `\route_testcase::add_route_to_route_loader()` method, for example:
 
 ```php title="Adding a single route to the route loader"
-final class my_test extends \route_testcase {
-    public function test_example(): void {
+final class my_test extends \route_testcase
+{
+    public function test_example(): void
+    {
         $this->add_route_to_route_loader(
             my_route::class,
             'my_route_method',
@@ -71,8 +75,10 @@ final class my_test extends \route_testcase {
 You can also add all routes in a class to the route loader using the `\route_testcase::add_class_routes_to_route_loader()` method, for example:
 
 ```php title="Adding all routes in a class to the route loader"
-final class my_test extends \route_testcase {
-    public function test_example(): void {
+final class my_test extends \route_testcase
+{
+    public function test_example(): void
+    {
         $this->add_class_routes_to_route_loader(
             my_route::class,
         );
@@ -90,7 +96,8 @@ The `\route_testcase` also includes several methods to simplify generating a Req
 You can create a request and manually pass it to Router using the `\route_testcase::create_request()` method, for example:
 
 ```php title="Creating an example request and processing it"
-public function test_example(): void {
+public function test_example(): void
+{
     $this->add_class_routes_to_route_loader(
         my_route::class,
     );
@@ -114,7 +121,8 @@ When creating a request the default is to use the Route Group for the REST API, 
 The `\route_testcase::process_request()` and `\route_testcsae::process_api_request()` methods act as a shortcut for creating the request, fetching the router, and the app, and handling the request to return a response. The above example can therefore be simplified to:
 
 ```php title="Creating and processing an example request"
-public function test_example(): void {
+public function test_example(): void
+{
     $this->add_class_routes_to_route_loader(
         my_route::class,
     );
@@ -131,7 +139,8 @@ All of these methods also accept:
 As an example, to call the route `/api/rest/v2/question/bank/{course}/question_counts`, you would do the following:
 
 ```php title="Creating and processing a question_counts request"
-public function test_question_counts(): void {
+public function test_question_counts(): void
+{
     $this->resetAfterTest();
     $course = self::getDataGenerator()->create_course();
 

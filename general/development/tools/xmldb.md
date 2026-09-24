@@ -36,7 +36,8 @@ After the initial installation of a plugin, for subsequent updates to the plugin
 ```php
 <?php
 
-function xmldb_mymodule_upgrade($oldversion) {
+function xmldb_mymodule_upgrade($oldversion)
+{
     global $CFG;
 
     $result = TRUE;

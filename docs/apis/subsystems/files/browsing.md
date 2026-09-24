@@ -12,7 +12,8 @@ The File Browser API is a supplemental API which can be used to fetch informatio
 This example demonstrates using the `filebrowser` API to fetch the parent folders of a file.
 
 ```php
-public function get_file_breadcrumbs(\stored_file $file): ?array {
+public function get_file_breadcrumbs(\stored_file $file): ?array
+{
     $browser = get_file_browser();
     $context = get_system_context();
 

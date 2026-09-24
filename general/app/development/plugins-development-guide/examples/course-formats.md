@@ -25,9 +25,11 @@ $addons = [
 ```
 
 ```php title="classes/output/mobile.php"
-class mobile {
+class mobile
+{
 
-    public static function mobile_course_view($args) {
+    public static function mobile_course_view($args)
+    {
         global $OUTPUT, $CFG;
 
         $course = get_course($args['courseid']);
@@ -92,9 +94,11 @@ When your course page loads, the sections array contains all of the sections on 
 You can achieve this by returning the list of sections to display along with the template in the rendering method:
 
 ```php
-class mobile {
+class mobile
+{
 
-    public static function mobile_course_view($args) {
+    public static function mobile_course_view($args)
+    {
        // ...
 
        $displaysections = myformat\helper::get_list_of_section_ids($courseid);

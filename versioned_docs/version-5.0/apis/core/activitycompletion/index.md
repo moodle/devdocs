@@ -26,7 +26,8 @@ To support the completion system, your activity must include a `[activityname]_s
   * @param string $feature
   * @return null|bool
   */
-function forum_supports(string $feature): bool {
+function forum_supports(string $feature): bool
+{
     switch($feature) {
         case FEATURE_COMPLETION_TRACKS_VIEWS:
             return true;
@@ -154,7 +155,8 @@ You will need to add information about the custom rules into the activities `cm_
  * @return cached_cm_info An object on information that the courses
  *                        will know about (most noticeably, an icon).
  */
-function forum_get_coursemodule_info($coursemodule) {
+function forum_get_coursemodule_info($coursemodule)
+{
     global $DB;
 
     $dbparams = ['id' => $coursemodule->instance];
@@ -224,7 +226,8 @@ First, the function that adds these controls:
  * @category completion
  * @return array List of added element names, or names of wrapping group elements.
  */
-public function add_completion_rules() {
+public function add_completion_rules()
+{
 
     $mform = $this->_form;
 
@@ -264,7 +267,8 @@ public function add_completion_rules() {
     return [$this->get_suffixed_name('completionpostsgroup')];
 }
 
-protected function get_suffixed_name(string $fieldname): string {
+protected function get_suffixed_name(string $fieldname): string
+{
     return $fieldname . $this->get_suffix();
 }
 ```
@@ -284,7 +288,8 @@ Next, a function for checking whether the user selected this option:
  * @param array $data Input data not yet validated.
  * @return bool True if one or more rules is enabled, false if none are.
  */
-public function completion_rule_enabled($data) {
+public function completion_rule_enabled($data)
+{
     return (!empty($data[$this->get_suffixed_name('completionpostsenabled')]) &&
             $data[$this->get_suffixed_name('completionposts')] != 0);
 }
@@ -295,7 +300,8 @@ public function completion_rule_enabled($data) {
 That's all the 'required' functions, but we need to add some extra code to support the checkbox behaviour. I overrode `get_data` so that if there is a value in the edit field, but the checkbox is not ticked, the value counts as zero (the rule will not be enabled).
 
 ```php
-function get_data() {
+function get_data()
+{
     $data = parent::get_data();
     if (!$data) {
         return $data;
@@ -316,7 +322,8 @@ You may have noticed the `completionunlocked` check. When some users have alread
 Finally, forum already had a `data_preprocessing` function but I added code to this to set up the checkboxes when the form is displayed, and to make the default value of the text fields 1 instead of 0:
 
 ```php
-function data_preprocessing(&$default_values){
+function data_preprocessing(&$default_values)
+{
     // [Existing code, not shown]
 
     // Set up the completion checkboxes which aren't part of standard data.
@@ -360,7 +367,8 @@ Here's the function for forum (simplified to include only the one completion opt
   * @param bool $type Type of comparison (or/and; can be used as return value if no conditions)
   * @return bool True if completed, false if not, $type if conditions not set.
   */
- function forum_get_completion_state($course, $cm, $userid, $type) {
+ function forum_get_completion_state($course, $cm, $userid, $type)
+ {
      global $CFG,$DB;
 
      // Get forum details
@@ -402,7 +410,8 @@ You need to return an array of strings for each completion rule that is active.
  * @param cm_info|stdClass $cm object with fields ->completion and ->customdata['customcompletionrules']
  * @return array $descriptions the array of descriptions for the custom rules.
  */
-function mod_forum_get_completion_active_rule_descriptions($cm) {
+function mod_forum_get_completion_active_rule_descriptions($cm)
+{
     // Values will be present in cm_info, and we assume these are up to date.
     if (empty($cm->customdata['customcompletionrules']) || $cm->completion != COMPLETION_TRACKING_AUTOMATIC) {
         return [];

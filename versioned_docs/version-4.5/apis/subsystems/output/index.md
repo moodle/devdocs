@@ -121,11 +121,13 @@ use renderer_base;
 use templatable;
 use stdClass;
 
-class index_page implements renderable, templatable {
+class index_page implements renderable, templatable
+{
     /** @var string $sometext Some text to show how to pass data to a template. */
     private $sometext = null;
 
-    public function __construct($sometext): void {
+    public function __construct($sometext): void
+    {
         $this->sometext = $sometext;
     }
 
@@ -134,7 +136,8 @@ class index_page implements renderable, templatable {
      *
      * @return stdClass
      */
-    public function export_for_template(renderer_base $output): stdClass {
+    public function export_for_template(renderer_base $output): stdClass
+    {
         $data = new stdClass();
         $data->sometext = $this->sometext;
         return $data;
@@ -157,7 +160,8 @@ If you wish to use a specific template to render the content you may specify any
      *
      * @return string
      */
-    public function get_template_name(\renderer_base $renderer): string {
+    public function get_template_name(\renderer_base $renderer): string
+    {
          return 'tool_demo/index_page';
     }
 ```
@@ -172,7 +176,8 @@ namespace tool_demo\output;
 
 use plugin_renderer_base;
 
-class renderer extends plugin_renderer_base {
+class renderer extends plugin_renderer_base
+{
     /**
      * Defer to template.
      *
@@ -180,7 +185,8 @@ class renderer extends plugin_renderer_base {
      *
      * @return string html for the page
      */
-    public function render_index_page($page): string {
+    public function render_index_page($page): string
+    {
         $data = $page->export_for_template($this);
         return parent::render_from_template('tool_demo/index_page', $data);
     }
@@ -438,11 +444,13 @@ mtrace('DONE');
 Or a scheduled or adhoc task, via a trait. Example:
 
 ```php
-class stored_progress_scheduled_task_example extends \core\task\scheduled_task {
+class stored_progress_scheduled_task_example extends \core\task\scheduled_task
+{
 
     use \core\task\stored_progress_task_trait;
 
-    public function execute() {
+    public function execute()
+    {
 
         // This simulates a specific count of iterations the task will do, e.g. x number of courses to loop through and do something.
         $iterations = 100;

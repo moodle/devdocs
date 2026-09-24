@@ -235,7 +235,8 @@ function {modulename}_extend_settings_navigation(
 You may be required to add a node in a specified order within the menu navigation menus. To do this you need to examine the node object as given in the respective parameters in the functions above, then find the key of the child node you wish to place the link before. For example, applying the code below will put a direct link to grade report.
 
 ```php
-function my_plugin_extend_settings_navigation($settingsnav, $context){
+function my_plugin_extend_settings_navigation($settingsnav, $context)
+{
     $addnode = $context->contextlevel === 50;
     $addnode = $addnode && has_capability('gradereport/grader:view', $context);
     if ($addnode) {

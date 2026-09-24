@@ -105,7 +105,8 @@ The list of fields is cached in the handler and these two functions can be calle
 :::
 
 ```php title="Example code for course custom fields. This function will return all the custom fields for a given courseid"
-function get_course_metadata($courseid) {
+function get_course_metadata($courseid)
+{
     $handler = \core_customfield\handler::get_handler('core_course', 'course');
     // This is equivalent to the line above.
     //$handler = \core_course\customfield\course_handler::create();

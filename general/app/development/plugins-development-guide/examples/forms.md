@@ -9,9 +9,11 @@ In this example, we are going to see how to display a form and send the data to 
 First, we return the initial values of the form in `otherdata`:
 
 ```php
-class mobile {
+class mobile
+{
 
-    public static function view_form($args) {
+    public static function view_form($args)
+    {
         global $OUTPUT;
 
         return [
@@ -76,22 +78,26 @@ $functions = [
 ```
 
 ```php title="classes/external/submit.php"
-class submit extends external_api {
+class submit extends external_api
+{
 
-    public static function execute_parameters(): external_function_parameters {
+    public static function execute_parameters(): external_function_parameters
+    {
         return new external_function_parameters([
             'name' => new external_value(PARAM_RAW_TRIMMED, 'Name'),
         ]);
     }
 
-    public static function execute($name) {
+    public static function execute($name)
+    {
         $validatedparams = self::validate_parameters(self::execute_parameters(), compact('name'));
         [$name] = array_values($validatedparams);
 
         return ['message' => "Hello, $name!"];
     }
 
-    public static function execute_returns(): external_description {
+    public static function execute_returns(): external_description
+    {
         return new external_single_structure([
             'message' => new external_value(PARAM_RAW, 'Message'),
         ]);
@@ -180,7 +186,8 @@ In some situations, you may need to submit dynamic data. This means that field n
 One challenge with this approach is that Moodle Web Services don't accept dynamic parameters, so we'll need to send them in an array of objects with the field names and values:
 
 ```php title="classes/external/submit.php"
-public static function execute_parameters(): external_function_parameters {
+public static function execute_parameters(): external_function_parameters
+{
     return new external_single_structure([
         'data' => new external_multiple_structure(
             new external_single_structure(

@@ -24,7 +24,8 @@ Of course, feel free to clarify, complete and add more info to all this document
 - All the function calls in this page are public methods of the **database manager**, accessible from the $DB global object. You will need to "import" it within the upgrade function of your **upgrade.php** main function using the `global` keyword, for example:
 
 ```php
-function xmldb_xxxx_upgrade {
+function xmldb_xxxx_upgrade
+{
     global $DB;
 
     // Load the DDL manager and xmldb API.

@@ -378,7 +378,8 @@ You can overwrite a `new one_sample_per_analysable()` method if the analysables 
  *
  * @return bool
  */
-public static function one_sample_per_analysable() {
+public static function one_sample_per_analysable()
+{
     return true;
 }
 ```
@@ -398,7 +399,8 @@ You can use `required_sample_data` to specify what your indicator needs to be ca
  *
  * @return null|string[] Name of the required elements (use the database tablename)
  */
-public static function required_sample_data() {
+public static function required_sample_data()
+{
     return null;
 }
 ```

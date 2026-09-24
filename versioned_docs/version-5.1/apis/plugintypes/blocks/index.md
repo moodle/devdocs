@@ -160,7 +160,8 @@ This function is called on your subclass right after an instance is loaded. It i
 Example of a specialization method using the instance configuration.
 
 ```php
-function specialization() {
+function specialization()
+{
     if (isset($this->config->title)) {
         $this->title = format_string($this->config->title, true, ['context' => $this->context]);
     } else {
@@ -180,11 +181,13 @@ In order to get our block to actually display something on screen, we need to ad
   <TabItem value="basecontent" label="block_base block" default>
 
 ```php
-class block_pluginname extends block_base {
+class block_pluginname extends block_base
+{
 
     // (...)
 
-    public function get_content() {
+    public function get_content()
+    {
         if ($this->content !== null) {
             return $this->content;
         }
@@ -202,11 +205,13 @@ class block_pluginname extends block_base {
   <TabItem value="listcontent" label="block_list block">
 
 ```php
-class block_pluginname extends block_list {
+class block_pluginname extends block_list
+{
 
     // (...)
 
-    public function get_content() {
+    public function get_content()
+    {
         global $OUTPUT;
         if ($this->content !== null) {
             return $this->content;
@@ -256,7 +261,8 @@ By default, only one instance of each block plugin can be added to a page. Howev
   <div>
 
 ```php
-public function instance_allow_multiple() {
+public function instance_allow_multiple()
+{
     return true;
 }
 ```
@@ -279,7 +285,8 @@ Using this method each block instance can decide if the standard block header is
   <div>
 
 ```php
-public function hide_header() {
+public function hide_header()
+{
     return true;
 }
 ```
@@ -298,7 +305,8 @@ By default, each block section in the page will use a standard `block` class and
   <div>
 
 ```php
-public function html_attributes() {
+public function html_attributes()
+{
     // Get default values.
     $attributes = parent::html_attributes();
     // Append our class to class attribute.
@@ -351,7 +359,8 @@ However, for some cases like the Atto HTML editor, you may want to store them in
   <div>
 
 ```php title="Example of adding data before storing it
-public function instance_config_save($data,$nolongerused =false) {
+public function instance_config_save($data,$nolongerused =false)
+{
     // Example of add new data.
     $data->somenewattribute = 'Some new value';
 
@@ -393,7 +402,8 @@ While in other Moodle pulgins the existence of a settings.php is enough to enabl
   <div>
 
 ```php"
-function has_config() {
+function has_config()
+{
     return true;
 }
 ```
@@ -421,7 +431,8 @@ Each page in Moodle can define it's own page type name. However, there are some 
   <div>
 
 ```php
-public function applicable_formats() {
+public function applicable_formats()
+{
     return [
         'admin' => false,
         'site-index' => false,

@@ -159,7 +159,8 @@ public function __construct(
 
 ```php title="Example: The store() method for the generate_image Action"
 #[\Override]
-public function store(response_base $response): int {
+public function store(response_base $response): int
+{
     global $DB;
 
     $responsearr = $response->get_response_data();
@@ -216,7 +217,8 @@ it sets these against class variables so they can be retrieved by the Manager an
 
 ```php title="Example: The set_response_data() for the generate_image Action response"
     #[\Override]
-    public function set_response_data(array $response): void {
+    public function set_response_data(array $response): void
+    {
         $this->draftfile = $response['draftfile'] ?? null;
         $this->revisedprompt = $response['revisedprompt'] ?? null;
         $this->sourceurl = $response['sourceurl'] ?? null;
@@ -229,7 +231,8 @@ Returns the set response data.
 
 ```php title="Example: The get_response_data() for the generate_image Action response"
     #[\Override]
-    public function get_response_data(): array {
+    public function get_response_data(): array
+    {
         return [
             'draftfile' => $this->draftfile,
             'revisedprompt' => $this->revisedprompt,

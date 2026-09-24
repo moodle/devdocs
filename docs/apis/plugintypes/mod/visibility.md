@@ -37,7 +37,8 @@ The course cache is only updated when somebody edits a module, so it can't be us
 The function should return a value of class `cached_cm_info`. For example:
 
 ```php
-function mod_frog_get_coursemodule_info($cm) {
+function mod_frog_get_coursemodule_info($cm)
+{
     $info = new cached_cm_info();
     $info->content = '<p>This will display below the module.</p>';
     return $info;
@@ -62,7 +63,8 @@ Don't use renderers in this function (see MDL-41074). If you have data you would
 You can customise module display dynamically (when the page loads). For example you might want to alter it based on the permissions of the current user.
 
 ```php
-function mod_frog_cm_info_dynamic(cm_info $cm) {
+function mod_frog_cm_info_dynamic(cm_info $cm)
+{
     $context = get_context_instance(CONTEXT_MODULE, $cm->id);
     if (!has_capability('some/capability', $context)) {
         $cm->set_user_visible(false);
@@ -81,7 +83,8 @@ Most things are set using functions (as above; another example would be `set_con
 Sometimes you need to display custom information for the current user that appears only on the course view page. For example, the forum module displays unread information on the view page. This information doesn't show on other pages (it isn't included in the navigation, for instance).
 
 ```php
-function mod_frog_cm_info_view(cm_info $cm) {
+function mod_frog_cm_info_view(cm_info $cm)
+{
     $cm->set_after_link('Last tadpole: 22:17');
 }
 ```
@@ -106,7 +109,8 @@ $cm = $modinfo->get_cm($cmid);
 The cm_info objects contain additional information that is not present in the course_modules database row, such as the module's name, and the icon and associated content mentioned above. In order to distinguish these from the plain database objects, you can specify the cm_info class in a function definition:
 
 ```php
-function my_clever_function(cm_info $cm) {
+function my_clever_function(cm_info $cm)
+{
     if (!$cm->uservisible) {
         // The module is not visible or available to current user,
         // so do something clever instead.

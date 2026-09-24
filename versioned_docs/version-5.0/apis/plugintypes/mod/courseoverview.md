@@ -30,7 +30,8 @@ namespace mod_PLUGINNAME\courseformat;
 
 use core_courseformat\activityoverviewbase;
 
-class overview extends activityoverviewbase {
+class overview extends activityoverviewbase
+{
     // Implement methods here.
 }
 ```
@@ -63,9 +64,11 @@ use core_courseformat\activityoverviewbase;
 use core_courseformat\local\overview\overviewitem;
 use core\output\pix_icon;
 
-class overview extends activityoverviewbase {
+class overview extends activityoverviewbase
+{
     #[\Override]
-    public function get_extra_overview_items(): array {
+    public function get_extra_overview_items(): array
+    {
         return [
             'submitted' => $this->get_extra_submitted_overview(),
         ];
@@ -76,7 +79,8 @@ class overview extends activityoverviewbase {
      *
      * @return overviewitem|null
      */
-    private function get_extra_submitted_overview(): ?overviewitem {
+    private function get_extra_submitted_overview(): ?overviewitem
+    {
         // Validate if the user needs this overview information. Return null otherwise.
         if (!has_capability('mod/PLUGINNAME:complete', $this->context)) {
             return null;
@@ -135,9 +139,11 @@ namespace mod_PLUGINNAME\courseformat;
 use core_courseformat\activityoverviewbase;
 use core_courseformat\local\overview\overviewitem;
 
-class overview extends activityoverviewbase {
+class overview extends activityoverviewbase
+{
     #[\Override]
-    public function get_due_date_overview(): ?overviewitem {
+    public function get_due_date_overview(): ?overviewitem
+    {
         // Implement here how to get the due date of the activity.
         $duedate = DO_SOMETHING_TO_GET_YOUR_PLUGIN_DUE_DATE();
 
@@ -175,9 +181,11 @@ use core\output\action_link;
 use core\output\local\properties\button;
 use core\output\local\properties\text_align;
 
-class overview extends activityoverviewbase {
+class overview extends activityoverviewbase
+{
     #[\Override]
-    public function get_actions_overview(): ?overviewitem {
+    public function get_actions_overview(): ?overviewitem
+    {
         // Validate if the user can do the action. Return null otherwise.
         if (!has_capability('mod/PLUGINNAME:viewreports', $this->context)) {
             return null;
@@ -227,7 +235,8 @@ This is an example of a plugin with two grade items:
 
 ```php
 #[\Override]
-protected function get_grade_item_names(array $items): array {
+protected function get_grade_item_names(array $items): array
+{
     // Add some fallback in case some grade item is missing.
     if (count($items) != 2) {
         return parent::get_grade_item_names($items);
@@ -260,7 +269,8 @@ namespace mod_PLUGINNAME\courseformat;
 
 use core_course\activityoverviewbase;
 
-class overview extends activityoverviewbase {
+class overview extends activityoverviewbase
+{
     public function __construct(
         /** @var cm_info $cm the activity course module. */
         cm_info $cm,

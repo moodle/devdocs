@@ -103,7 +103,8 @@ where '$prioritiesforeventtype1' is an associative array that has the timestamp 
  * @param int $lessonid The lesson ID.
  * @return array|null Array of group override priorities for open and close times. Null if there are no group overrides.
  */
-function lesson_get_group_override_priorities($lessonid) {
+function lesson_get_group_override_priorities($lessonid)
+{
     global $DB;
 
     // Fetch group overrides.
@@ -182,7 +183,8 @@ This callback determines if an event should be visible throughout the site. For 
  * @param calendar_event $event
  * @return bool Returns true if the event is visible to the current user, false otherwise.
  */
-function mod_assign_core_calendar_is_event_visible(calendar_event $event) {
+function mod_assign_core_calendar_is_event_visible(calendar_event $event)
+{
     global $CFG, $USER;
 
     require_once($CFG->dirroot . '/mod/assign/locallib.php');
@@ -259,7 +261,8 @@ Eg.
  * @param int $itemcount The item count associated with the action event.
  * @return bool
  */
-function mod_assign_core_calendar_event_action_shows_item_count(calendar_event $event, $itemcount = 0) {
+function mod_assign_core_calendar_event_action_shows_item_count(calendar_event $event, $itemcount = 0)
+{
     // List of event types where the action event's item count should be shown.
     $eventtypesshowingitemcount = [
         ASSIGN_EVENT_TYPE_GRADINGDUE
@@ -320,7 +323,8 @@ This callback handles updating the activity instance based on the changed action
 Example:
 
 ```php
-function mod_feedback_core_calendar_event_timestart_updated(\calendar_event $event, \stdClass $feedback) {
+function mod_feedback_core_calendar_event_timestart_updated(\calendar_event $event, \stdClass $feedback)
+{
     global $CFG, $DB;
 
     if (empty($event->instance) || $event->modulename != 'feedback') {
@@ -406,7 +410,8 @@ If the calendar event has no valid `timestart` values then the callback should r
 Example:
 
 ```php
-function mod_feedback_core_calendar_get_valid_event_timestart_range(\calendar_event $event, \stdClass $instance) {
+function mod_feedback_core_calendar_get_valid_event_timestart_range(\calendar_event $event, \stdClass $instance)
+{
     $mindate = null;
     $maxdate = null;
 
