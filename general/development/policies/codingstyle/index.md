@@ -73,7 +73,7 @@ SQL queries use special indentation, see [SQL coding style](./sql.md).
 
 The key issue is readability.
 
-Aim for 132 characters if it is convenient, it is not recommended to use more than 180 characters.
+While there is no hard limit on line length, lines should not be longer than 80 characters, and lines longer than that should be split into multiple subsequent lines of no more than 80 characters each. If this is inconvenient, or impacts readability, aim to keep lines under 120 characters as much as possible.
 
 The exception are string files in the `/lang` directory where lines `$string['id'] = 'value';` should have the value defined as a single string of any length, wrapped by quotes (no concatenation operators, no heredoc and no newdoc syntax). This helps to parse and process these string files without including them as a PHP code.
 
