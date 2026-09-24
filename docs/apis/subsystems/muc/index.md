@@ -9,7 +9,7 @@ This document provides an in-depth overview of the Cache API, also known as MUC 
 
 This document uses a hypothetical module plugin named `myplugin` as the focal point.
 
-There is also a [Cache API - Quick reference](https://docs.moodle.org/dev/Cache_API_-_Quick_reference) if you would rather read that.
+There is also a [Cache API - Quick reference](./quick-reference/quick-reference.md) if you would rather read that.
 
 ## Basic usage {/* #basic-usage */}
 
