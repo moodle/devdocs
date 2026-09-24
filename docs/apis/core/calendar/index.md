@@ -3,7 +3,9 @@ title: Calendar API
 tags: []
 ---
 
-This page documents the Calendar API as it is in Moodle 3.3 and later. For the API in older versions of Moodle, see [Calendar API old](https://docs.moodle.org/dev/Calendar_API_old).
+_This article is about **calendar events**, meant for conveying time-related information to users. For the unrelated concept of events used by **event handlers** / **observers** and **logging**, see **[Events API](https://moodledev.io/docs/5.3/apis#events-api-event)**._
+
+_This page documents the Calendar API as it is in Moodle 3.3 and later. For the API in older versions of Moodle, see [Calendar API old](https://docs.moodle.org/dev/Calendar_API_old)._
 
 The Calendar API allows you to add, modify and delete events in the calendar for user, groups, courses and the site. As of 3.3 it also allows you to provide actions for these events so that they are then displayed on block_myoverview, which by default is shown on users' dashboard.
 
