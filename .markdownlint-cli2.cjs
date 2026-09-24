@@ -266,6 +266,10 @@ config.renamedLinks = {
 
 module.exports = {
     config,
+    // Generated from the Marketplace OpenAPI spec at build time; not hand-written Markdown.
+    ignores: [
+        'general/community/plugincontribution/marketplace-api/**',
+    ],
     customRules: [
         path.join(__dirname, '.markdownlint/no-directional-quotation-marks'),
         path.join(__dirname, '.markdownlint/fix-migrated-links'),
