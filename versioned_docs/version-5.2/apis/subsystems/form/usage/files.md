@@ -202,6 +202,8 @@ if ($data = $mform->get_data()) {
 }
 ```
 
+> **Known issue — MDL-84230:** there is a reported Moodle bug involving an optional `filemanager` when the `maxfiles` option is defined. A field created, for example, with `'maxfiles' => 3` may report that no more than three files can be uploaded even when the field is optional and no file was submitted. `maxfiles` should only limit the number of files when the user actually uses the field; it should not make the element required or trigger an error for an empty `filemanager`. See [MDL-84230](https://moodle.atlassian.net/browse/MDL-84230).
+
 ### Editors {/* #editors */}
 
 Another common place to handle files is within an HTML editor, such as TinyMCE.
