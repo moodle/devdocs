@@ -466,7 +466,7 @@ class stored_progress_scheduled_task_example extends \core\task\scheduled_task {
 
 With the stored progress bars, you can update the progress either via iterations, by passing in the total amount expected and then the current iteration, using `->update()`(see: previous example), this will calculate the percentage complete for you. Or you can use `->update_full()` to manually set the percentage complete.
 
-The web page polls for updates via the `core_output_poll_stored_progress` web service, at an interval controlled by the `$CFG->progresspollinterval` setting (in seconds, default `5`). A scheduled task, `\core\task\stored_progress_bar_cleanup_task`, runs daily to delete any stored progress records which have not been updated within the last 24 hours.
+The web page polls for updates via the `core_output_poll_stored_progress` web service, at an interval controlled by the `$CFG->progresspollinterval` setting (in seconds, default `5`). A scheduled task, `\core\task\stored_progress_bar_cleanup_task`, runs daily to delete stored progress records with a `lastupdate` older than 24 hours.
 
 ## See also {/* #see-also */}
 
