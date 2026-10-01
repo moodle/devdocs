@@ -88,6 +88,9 @@ Blocks:
 Bug_triage:
 - filePath: "/general/development/process/triage.md"
   slug: "/general/development/process/triage"
+CSS_Coding_Style:
+- filePath: "/general/development/policies/codingstyle/css"
+  slug: "/general/development/policies/codingstyle/css"
 Cache_API:
 - filePath: "/docs/apis/subsystems/muc/index.md"
   slug: "/docs/apis/subsystems/muc/"
@@ -145,6 +148,7 @@ Creating_mobile_question_types:
 Credits:
 - filePath: "/general/community/credits/index.md"
   slug: "/general/community/credits"
+
 Custom_Moodle_Apps:
 - filePath: "/general/app/customisation/custom-apps.md"
   slug: "/general/app/customisation/custom-apps"
