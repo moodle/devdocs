@@ -13,7 +13,7 @@ import Link from '@docusaurus/Link';
 Our Moodle Marketplace roadmap is public, open, and living - you can see them at any time by clicking on the links below.
 
 <Link
-  to="https://moodle.atlassian.net/jira/discovery/share/views/7fc6e7cf-e7ca-433d-a13b-d0682301a1fa)"
+  to="https://moodle.atlassian.net/jira/discovery/share/views/7fc6e7cf-e7ca-433d-a13b-d0682301a1fa"
   title="Moodle Marketplace Public Roadmap"
   >
 
