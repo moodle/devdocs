@@ -40,6 +40,7 @@ JMeter
 JWKS
 Kanban
 Laravel
+Lomman
 MAINNODE
 MDK
 MDL
@@ -310,6 +311,7 @@ tablespace
 tasklogs
 templatable
 temptables
+testingbadge
 texteditor
 themers
 thirdparty

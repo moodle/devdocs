@@ -19,7 +19,7 @@ The most recent [long-term support release (LTS)](https://en.wikipedia.org/wiki/
 
 <SupportedReleases />
 
-![Release graph summarising the currently supported Moodle releases in a visual form](_releases/5021_release_graph.png)
+![Release graph summarising the currently supported Moodle releases in a visual form](_releases/5023_release_graph.png)
 
 <details>
     <summary>Release graph key</summary>
@@ -567,7 +567,7 @@ Bug fixes for security issues in 1.9.19+ branch by [Catalyst IT](http://catalyst
 
 ## See also {/* #see-also */}
 
-- [Roadmap](./community/roadmap.md) - future versions
+- [Roadmap](./community/roadmap/index.md) - future versions
 - [Moodle versions](https://docs.moodle.org/dev/Moodle_versions) - an explanation of how our versions work plus version numbers for each release (for $plugin->requires)
 
 ## Translations {/* #translations */}

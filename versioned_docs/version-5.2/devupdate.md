@@ -34,3 +34,12 @@ The help descriptions within the Activity Chooser have been significantly update
 - A new optional string, `modulename_tip`, is available for a supplemental section for best practices, advice, or effective usage tips.
 
 Third-party activity modules and resources can adopt the same structure by adding these language strings (`modulename_summary`, `modulename_help`, and `modulename_tip`) to their plugin's language files. These strings should be placed in the plugin's language file, for example, `mod/pluginname/lang/en/pluginname.php`.
+
+## Custom fields base handler caching {/* #custom-fields-base-handler-caching */}
+
+<Since version="5.2" issueNumber="MDL-88176" />
+
+The base `\core_customfield\handler::create(...)` method now handles static caching and cache reset internally, so any custom caching logic
+in `create()` overrides in extending classes should be removed.
+
+More information about the Custom fields API can be found in the [Custom fields API documentation](./apis/core/customfields/index.md).

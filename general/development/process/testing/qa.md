@@ -23,13 +23,15 @@ Would you like to help with QA testing? If so, please make sure you have created
    - Only assign an issue to yourself which no one else is testing (Assignee = Unassigned).
    - Only assign one issue at a time unless you plan to test a number of related issues within the next 24 hours. In other words, don't assign several issues to yourself then do nothing for several days. ;-)
    - The label `test_server_required` indicates issues that can't be tested on the QA testing site. The label `credentials_required` indicates that credentials such as an OAuth 2 service client ID and secret are required.
-2. Using either the [Moodle QA Testing Site](https://qa.moodledemo.net/) or your own test site running the latest Moodle 4.2dev (available from Git on the integration/main branch git://git.moodle.org/integration.git) with [debugging](https://docs.moodle.org/dev/debugging) set to developer, perform each of the steps listed in the test.
-3. Please *attach screenshots of the steps where you verify or check something*.
-4. If it makes sense, please test using the currently supported themes, Boost and Classic.
-5. Choose an appropriate workflow action:
+2. When you are ready to start testing a particular test case, select the workflow action `Start Testing`. If you decide that you can't perform the test, then you just select the workflow action `Cancel testing` and the test will go back into the test backlog, available for testing.
+3. Using either the [Moodle QA Testing Site](https://qa.moodledemo.net/) or your own test site running the latest Moodle 4.2dev (available from Git on the integration/main branch git://git.moodle.org/integration.git) with [debugging](https://docs.moodle.org/dev/debugging) set to developer, perform each of the steps listed in the test.
+4. Please *attach screenshots of the steps where you verify or check something*.
+5. Please test using the currently supported Boost theme.
+6. Choose an appropriate workflow action:
    - `Pass` - Test runs perfectly. Add comment such as feedback about a new feature, browsers used for testing (if applicable; example: "This test passes on Q&A site with Teacher role using Boost theme"), or simply "This test passes - yippee!"
    - `Fail` - Something doesn't work, or you obtain debugging messages. Add comment describing the step that doesn't work. If in doubt whether to pass a test, give it a fail and add a comment describing your doubts.
    - `Obsolete` - Test is no longer relevant in the current Moodle version. Add comment explaining why.
+   - `Hold` - Test isn't ready to run yet, usually because its blocked by another issue. Add a comment explaining why its blocked and what that issue is. Testers shouldn't pickup any test that's been marked as `On Hold`.
 
 :::info[Out of date tests]
 
@@ -248,6 +250,7 @@ If you have any questions or comments, please post in the [Testing and QA forum]
 
 Comments on tests from previous QA cycles:
 
+- [Moodle 5.2 QA](https://moodle.atlassian.net/browse/MDLQA-21163)
 - [Moodle 5.1 QA](https://moodle.atlassian.net/browse/MDLQA-20667)
 - [Moodle 5.0 QA](https://moodle.atlassian.net/browse/MDLQA-19836)
 - [Moodle 4.5 QA](https://moodle.atlassian.net/browse/MDLQA-18925)

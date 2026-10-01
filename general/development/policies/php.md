@@ -59,19 +59,19 @@ PHP 8.4 **can be used with** Moodle 5.0 and later releases. See MDL-80117 for de
 
 <Since versions={["4.4"]} issueNumber="MDL-76426" />
 
-PHP 8.3 **can be used with** Moodle 4.4 and later releases. See MDL-76426 for details.
+PHP 8.3 **can be used with** Moodle 4.4 and later releases. It is also the **minimum** supported version for Moodle 5.2 and Moodle 5.3. See MDL-76426 for details.
 
 ### PHP 8.2 {/* #php-82 */}
 
 <Since versions={["4.2.3", "4.3"]} issueNumber="MDL-76405" />
 
-PHP 8.2 **can be used with** Moodle 4.2.3, Moodle 4.3 and later releases. It is also the **minimum** supported version for Moodle 5.0. See MDL-76405 for details.
+PHP 8.2 **can be used with** Moodle 4.2.3, Moodle 4.3 and later releases. It is also the **minimum** supported version for Moodle 5.0 and Moodle 5.1. See MDL-76405 for details.
 
 ### PHP 8.1 {/* #php-81 */}
 
 <Since versions={["4.1.2", "4.2"]} issueNumber="MDL-73016" />
 
-PHP 8.1 **can be used with** Moodle 4.1.2, Moodle 4.2 and later releases. It is also the **minimum** supported version for Moodle 4.4. See [MDL-73016](https://moodle.atlassian.net/browse/MDL-73016) for details.
+PHP 8.1 **can be used with** Moodle 4.1.2, Moodle 4.2 and later releases. It is also the **minimum** supported version for Moodle 4.4 and Moodle 4.5. See [MDL-73016](https://moodle.atlassian.net/browse/MDL-73016) for details.
 
 ### PHP 8.0 {/* #php-80 */}
 
@@ -111,9 +111,9 @@ PHP 7.0 **can be used with** Moodle 3.0.1, Moodle 3.1 and later releases. It is 
 
 ## PHP versions under development {/* #php-versions-under-development */}
 
-### PHP 8.4 {/* #php-84-1 */}
+### PHP 8.5 {/* #php-85 */}
 
-PHP 8.4 support **is currently being implemented** for Moodle 5.0 and later releases. Hence it's still **incomplete and only for development purposes**. See MDL-80117 for details.
+PHP 8.5 support **is currently being implemented** for Moodle 5.3 and later releases. Hence it's still **incomplete and only for development purposes**. See MDL-84684 for details.
 
 ## See also {/* #see-also */}
 

@@ -8,9 +8,9 @@ tags:
   - Plugin documentation
 ---
 
-:::warning[The plugins adoption programme is currently paused]
+:::warning[Legacy guidance: Plugins Directory has moved to Moodle Marketplace]
 
-We plan to bring the programme back for Moodle Marketplace in the future. We'll let the community know when updated guidance is available.
+This page still contains references to the former Plugins Directory. The plugins adoption programme continues, but guidance and terminology on this page does not yet reflect Moodle Marketplace. We're updating the documentation.
 
 :::
 

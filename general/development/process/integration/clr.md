@@ -65,6 +65,7 @@ The Component lead review process requires you to:
 1. Ensure backwards compatibility is maintained. As a starting point backwards compatibility must always be maintained. Where backwards compatibility is affected it should be:
    1. Well discussed with evidence of justification
    1. Documented and communicated to the community
+   1. Changes which may alter existing grades must follow the [gradebook calculation changes](../gradebook-calculation-changes.md) process
 1. Ensure backwards compatibility with the Moodle mobile app. Especially in areas where the Moodle app uses pre-rendered content from the site (like Quiz or Lesson)
 1. Verify that components are correct and check the right people have been involved (for example, component maintainers)
 1. Tests - must be written to guide tester to verify the fix is working.

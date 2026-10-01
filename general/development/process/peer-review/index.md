@@ -24,6 +24,7 @@ These are points to consider while peer-reviewing issues. Further explanation be
 [] Language
 [] Accessibility
 [] Databases
+[] Gradebook calculations
 [] Performance and Clustering
 [] Security
 [] Privacy (see Privacy API)
@@ -130,6 +131,10 @@ Ensure that:
 
 - There are minimal DB calls (no excessive use of the DB); and
 - The code uses SQL compatible with all the supported DB engines (check all selected fields appear in an 'ORDER BY' clause).
+
+### Gradebook calculations {/* #gradebook-calculations */}
+
+If a change may alter existing grades, ensure that it follows the [gradebook calculation changes](../gradebook-calculation-changes.md) process.
 
 ### Performance and clustering {/* #performance-and-clustering */}
 

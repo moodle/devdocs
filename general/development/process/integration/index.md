@@ -56,6 +56,7 @@ accessible domain.)
 compatibility is affected it should be:
    1. Well discussed with evidence of justification
    2. Documented and communicated to the community
+   3. Changes which may alter existing grades must follow the [gradebook calculation changes](../gradebook-calculation-changes.md) process
 6. Ensure backwards compatibility with the Moodle mobile app. Especially in areas where the Moodle app uses pre-rendered content from
 the site (like Quiz or Lesson)
 7. Verify that components are correct and check the right people have been involved (e.g. component maintainers)

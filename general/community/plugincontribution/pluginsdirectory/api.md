@@ -9,9 +9,9 @@ tags:
 
 :::warning
 
-This page describes the Plugins Directory API, not Moodle Marketplace APIs.
+This page describes the Plugins Directory API, not [Moodle Marketplace APIs](general/community/plugincontribution/moodlemarketplaceapi.md).
 
-Moodle Marketplace API guidance will be added later. For current Moodle Marketplace documentation, see [Moodle Marketplace documentation](https://moodle.atlassian.net/wiki/external/YTI4MmY4MWU2MDQyNDk5MTllZWY4YTBiNjA5ZDRjNWY).
+For current Moodle Marketplace documentation, see [Moodle Marketplace documentation](https://moodle.atlassian.net/wiki/external/YTI4MmY4MWU2MDQyNDk5MTllZWY4YTBiNjA5ZDRjNWY).
 
 :::
 

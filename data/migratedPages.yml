@@ -333,6 +333,9 @@ Grunt:
 Hardening_new_Roles_system:
 - filePath: "/docs/apis/subsystems/roles.md"
   slug: "/docs/apis/subsystems/roles"
+How_to_fix_gradebook_issues:
+- filePath: "/general/development/process/gradebook-calculation-changes.md"
+  slug: "/general/development/process/gradebook-calculation-changes"
 Inplace_editable:
 - filePath: "/docs/apis/subsystems/output/inplace.md"
   slug: "/docs/apis/subsystems/output/inplace"

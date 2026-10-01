@@ -1,6 +1,6 @@
 ---
 title: Plugin contribution checklist
-sidebar_position: 2
+sidebar_position: 4
 sidebar_label: Checklist
 tags:
   - Guidelines for contributors
