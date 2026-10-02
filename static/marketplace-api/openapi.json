@@ -1,0 +1,421 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Moodle Marketplace API",
+    "description": "Programmatic access to the Moodle Marketplace: browse the plugin catalogue and submit new\nversions of the plugins you maintain.\n\n## Authenticating\n\nEvery request needs a bearer token. Create one from your account's\n[security settings](https://marketplace.next.moodle.org/account/security), under **API tokens**.\n\n> The raw token is shown **once**, in a dialog that stops offering it after 60 seconds. It is\n> stored hashed and cannot be retrieved later, only replaced. You may hold up to **10 active\n> tokens**; past that, revoke one before creating another.\n\nSend it on every call:\n\n```\nAuthorization: Bearer YOUR_TOKEN\n```\n\nTo try the endpoints from this page, click **Authorize** above and paste the raw token — with\nno `Bearer ` prefix, Swagger adds it for you.\n\nA missing, malformed, expired or revoked token gives `401`. Tokens act as you: an endpoint\nreturns exactly what your user account is allowed to see or do.\n\n## Responses\n\nEverything is plain JSON (`application/json`). Collections are **bare JSON arrays**.\n\nThere is **no pagination**: a collection returns everything you are allowed to see in one\nresponse.\n\n## Errors\n\nFailures answer with the appropriate status code and an\n[RFC 9457](https://www.rfc-editor.org/rfc/rfc9457) `application/problem+json` body. There is no\nsuccess flag to check in the body — the status code is the answer.\n\n```json\n{\n  \"status\": 422,\n  \"title\": \"An error occurred\",\n  \"detail\": \"file: The archive does not contain a valid version.php.\",\n  \"violations\": [\n    { \"propertyPath\": \"file\", \"message\": \"The archive does not contain a valid version.php.\" }\n  ]\n}\n```\n\n| Status | Meaning |\n| --- | --- |\n| `400` Bad request | The request itself was malformed. |\n| `401` Unauthorized | No token, or the token is not valid. |\n| `403` Forbidden | Authenticated, but not allowed to see or change this resource. |\n| `404` Not found | No such resource. |\n| `406` Not acceptable | You asked for a media type this API does not serve. |\n| `409` Conflict | The resource is in a state that does not allow this operation. |\n| `422` Unprocessable Content | The request was well formed but its contents were rejected. See `violations`. |\n\n`violations` lists one entry per problem, each with the offending `propertyPath` and a\nhuman-readable `message`. Show those to the user; do not parse the messages.\n\n## Stability\n\nThis is version 1 of a young API and it will grow. **New fields may be added to any response\nwithout notice**, so parse defensively and ignore what you do not recognise. Fields will not be\nremoved or change meaning within `v1`.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/api/plugins/{frankenStyle}/versions": {
+      "post": {
+        "operationId": "api_plugins_frankenStyleversions_post",
+        "tags": [
+          "Version"
+        ],
+        "responses": {
+          "201": {
+            "description": "The plugin version was submitted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VersionCreate"
+                }
+              }
+            },
+            "links": {}
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "links": {}
+          },
+          "401": {
+            "description": "Missing or invalid token."
+          },
+          "403": {
+            "description": "You do not have permission to maintain this plugin."
+          },
+          "404": {
+            "description": "No plugin with that frankenStyle exists."
+          },
+          "409": {
+            "description": "The plugin state does not accept new versions."
+          },
+          "422": {
+            "description": "The archive was rejected, or the request named no usable source for it. See \"violations\".",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConstraintViolation"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConstraintViolation"
+                }
+              }
+            },
+            "links": {}
+          }
+        },
+        "summary": "Adds a new version release of a plugin",
+        "description": "Submits a new version of a plugin you have permission to maintain, as `multipart/form-data`.\n\nGive the archive **exactly one** way: upload it in `file`, or point at it over HTTPS in `fileUrl`. Sending both, or neither, is a 422.\n\nThe build number, release name, maturity and supported Moodle versions are read out of the archive's `version.php` — do not send them, they cannot be overridden. The remaining fields are optional and are the only things the archive cannot tell us.\n\nOn success you get **201** with the created version. Its `status` normally reads `in_testing` rather than `uploaded`: submitting a version queues it for automated pre-check straight away, so `uploaded` is never observable. Do not poll for it.\n\nA rejected archive answers **422** with one entry per problem under `violations`. The same shape covers a bad URL, an unreachable one, and an archive over the size limit.",
+        "parameters": [
+          {
+            "name": "frankenStyle",
+            "in": "path",
+            "description": "Component name of the plugin in its full frankenstyle format.",
+            "required": true,
+            "deprecated": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple",
+            "explode": false
+          }
+        ],
+        "requestBody": {
+          "description": "The new VersionCreate resource",
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/VersionCreate.VersionCreateInput.multipart"
+              }
+            }
+          },
+          "required": true
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ConstraintViolation": {
+        "type": "object",
+        "description": "Unprocessable entity",
+        "properties": {
+          "status": {
+            "default": 422,
+            "type": "integer"
+          },
+          "violations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "propertyPath": {
+                  "type": "string",
+                  "description": "The property path of the violation"
+                },
+                "message": {
+                  "type": "string",
+                  "description": "The message associated with the violation"
+                },
+                "code": {
+                  "type": "string",
+                  "description": "The code of the violation"
+                },
+                "hint": {
+                  "type": "string",
+                  "description": "An extra hint to understand the violation"
+                },
+                "payload": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "description": "The serialized payload of the violation"
+                }
+              },
+              "required": [
+                "propertyPath",
+                "message"
+              ]
+            }
+          },
+          "detail": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "type": {
+            "readOnly": true,
+            "type": "string"
+          },
+          "title": {
+            "readOnly": true,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "instance": {
+            "readOnly": true,
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "description": "A representation of common errors.",
+        "properties": {
+          "title": {
+            "readOnly": true,
+            "description": "A short, human-readable summary of the problem.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "detail": {
+            "readOnly": true,
+            "description": "A human-readable explanation specific to this occurrence of the problem.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "examples": [
+              404
+            ],
+            "default": 400
+          },
+          "instance": {
+            "readOnly": true,
+            "description": "A URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if dereferenced.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "readOnly": true,
+            "description": "A URI reference that identifies the problem type",
+            "type": "string"
+          }
+        }
+      },
+      "VersionCreate": {
+        "type": "object",
+        "description": "Adds a new version release of a plugin",
+        "properties": {
+          "id": {
+            "description": "Marketplace identifier for this version.",
+            "example": 871,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "version": {
+            "description": "The 10-digit build number declared in version.php.",
+            "example": "2025082100",
+            "type": "string"
+          },
+          "releaseName": {
+            "description": "Human-readable release name, from version.php.",
+            "example": "1.4.0",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "maturity": {
+            "description": "Moodle maturity level declared by the release.",
+            "example": "STABLE",
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "ALPHA",
+              "BETA",
+              "RC",
+              "STABLE"
+            ]
+          },
+          "status": {
+            "description": "Release lifecycle state.",
+            "example": "ci_passed",
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "uploaded",
+              "in_testing",
+              "ci_passed",
+              "ci_failed",
+              "discarded"
+            ]
+          },
+          "releaseNotes": {
+            "description": "What changed in this release, as supplied by the maintainer.",
+            "example": "Fixes the grade calculation for group submissions.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "moodleVersions": {
+            "description": "Moodle release names this version supports, from version.php.",
+            "example": [
+              "4.5",
+              "5.0"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "vcsRepositoryUrl": {
+            "description": "Repository this release was built from.",
+            "example": "https://github.com/example/moodle-mod_quiz",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "vcsBranch": {
+            "description": "Branch this release was built from.",
+            "example": "main",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "vcsTag": {
+            "description": "Tag this release was built from.",
+            "example": "v1.4.0",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAt": {
+            "description": "When the version was submitted, ISO 8601.",
+            "example": "2025-08-21T14:03:00+00:00",
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        }
+      },
+      "VersionCreate.VersionCreateInput.multipart": {
+        "type": "object",
+        "description": "Adds a new version release of a plugin",
+        "properties": {
+          "file": {
+            "description": "The plugin zip, uploaded directly. Give this **or** `fileUrl`, not both.",
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "binary"
+          },
+          "fileUrl": {
+            "format": "uri",
+            "description": "HTTPS URL the Marketplace should download the plugin zip from. Give this **or** `file`, not both. Must be https and must resolve to a public address.",
+            "externalDocs": {
+              "url": "https://schema.org/url"
+            },
+            "example": "https://github.com/example/moodle-mod_quiz/releases/download/v1.4.0/mod_quiz.zip",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "releaseNotes": {
+            "maxLength": 10000,
+            "description": "What changed in this release. Optional.",
+            "example": "Fixes the grade calculation for group submissions.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "vcsRepositoryUrl": {
+            "format": "uri",
+            "maxLength": 255,
+            "description": "Repository this release was built from. Optional.",
+            "externalDocs": {
+              "url": "https://schema.org/url"
+            },
+            "example": "https://github.com/example/moodle-mod_quiz",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "vcsBranch": {
+            "maxLength": 255,
+            "description": "Branch this release was built from. Optional.",
+            "example": "main",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "vcsTag": {
+            "maxLength": 255,
+            "description": "Tag this release was built from. Optional.",
+            "example": "v1.4.0",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "responses": {},
+    "parameters": {},
+    "examples": {},
+    "requestBodies": {},
+    "headers": {},
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "description": "Value for the http bearer parameter.",
+        "scheme": "bearer",
+        "bearerFormat": "Opaque token"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Version",
+      "description": "A released version of a plugin."
+    }
+  ],
+  "webhooks": {}
+}
