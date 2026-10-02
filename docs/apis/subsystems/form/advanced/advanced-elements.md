@@ -32,8 +32,6 @@ $mform->setAdvanced('display', false);
 
 You should be careful about marking too many elements as advanced.
 
-For more information on the risks of this, see the advice in [Designing usable forms](/general/development/policies/designing-usable-forms#use-show-moreless-advanced-settings-sparingly).
-
 :::
 
 :::info Location of Show and hide links

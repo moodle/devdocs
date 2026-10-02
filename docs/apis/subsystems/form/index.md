@@ -388,6 +388,5 @@ $this->assertEquals($questiondata, $actualquestiondata);
 - [Core APIs](../../../apis.md)
 - [lib/formslib.php Usage](./usage/index.md)
 - [lib/formslib.php Form Definition](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition)
-- [Designing usable forms](/general/development/policies/designing-usable-forms)
 - [Fragment](https://docs.moodle.org/dev/Fragment)
 - [MForm Modal](https://docs.moodle.org/dev/MForm_Modal)
