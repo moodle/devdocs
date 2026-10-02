@@ -310,6 +310,7 @@ subplugins
 tablespace
 tasklogs
 templatable
+templatables
 temptables
 testingbadge
 texteditor
