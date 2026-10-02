@@ -237,7 +237,7 @@ Webservices expect course format options to be passed in additional entities but
 
 | `core_courseformat\base` Overridable method  | Description  |
 |---|---|
-| `course_format_options()` | By overriding this method course format specifies which additional options it has for course. It can also be used to inject linear navigation defaults using `\core_courseformat\local\linearnavigationsettings::get_course_format_options_default()`. |
+| `course_format_options()` | By overriding this method course format specifies which additional options it has for course |
 | `section_format_options()` | By overriding this method course format specifies which additional options it has for course section. Note that since section information is cached you may want to cache some additional options as well. See PHPdocs for more information |
 | `get_format_options()` | (usually no need to override) low level function to retrieve course format options values. It is more convenient to use methods get_course() and get_section() |
 | `create_edit_form_elements()` | This function is called to alter course edit form and standard section edit form. The default implementation creates simple form elements for each option defined in either `course_format_options()` or `section_format_options()`. Overwrite it if you want to have more comprehensive form elements or if you do not want options to appear in edit forms, etc. |
