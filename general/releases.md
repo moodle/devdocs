@@ -90,6 +90,17 @@ Minor releases dates differ slightly from release to release depending on the ti
 
 :::
 
+## Moodle 5.3 {/* #moodle-53 */}
+
+<ReleaseTable releaseName="5.3" />
+
+:::info
+
+Bug fixes for general core bugs in 5.3.x will end 4 October 2027 (12 months).<br/>
+Bug fixes for security issues in 5.3.x will end 1 October 2029 (36 months).
+
+:::
+
 ## Moodle 5.2 {/* #moodle-52 */}
 
 <ReleaseTable releaseName="5.2" />
