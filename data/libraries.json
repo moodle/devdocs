@@ -15,17 +15,17 @@
         ],
         "location": "public/admin/tool/messageinbound/roundcube",
         "name": "Roundcube Framework",
-        "version": "1.6.11",
+        "version": "1.7.4",
         "license": "GPL",
         "licenseversion": "3.0+",
         "repository": "https://github.com/roundcube/roundcubemail",
-        "customised": false
+        "customised": true
     },
     {
         "copyrightHolders": [],
         "location": "public/admin/tool/mfa/factor/totp/extlib/OTPHP",
         "name": "OTPHP",
-        "version": "11.3.0",
+        "version": "11.5.0",
         "license": "MIT",
         "repository": "https://github.com/Spomky-Labs/otphp",
         "customised": false
@@ -34,7 +34,7 @@
         "copyrightHolders": [],
         "location": "public/admin/tool/mfa/factor/totp/extlib/ParagonIE/ConstantTime",
         "name": "Constant-Time Encoding",
-        "version": "3.0.0",
+        "version": "3.1.3",
         "license": "MIT",
         "repository": "https://github.com/paragonie/constant_time_encoding",
         "customised": false
@@ -77,7 +77,7 @@
         "location": "public/filter/codehighlighter/amd/src/prism.js",
         "name": "PrismJS",
         "description": "Prism is a lightweight, robust, and elegant syntax highlighting library. It's a spin-off project from Dabblet.",
-        "version": "1.29.0",
+        "version": "1.30.0",
         "license": "MIT",
         "repository": "https://github.com/PrismJS/prism",
         "customised": false
@@ -120,7 +120,7 @@
         "license": "BSD/LGPL",
         "licenseversion": "3-Clause/2.1+",
         "repository": "https://github.com/ADOdb/ADOdb",
-        "customised": false
+        "customised": true
     },
     {
         "copyrightHolders": [
@@ -149,18 +149,6 @@
     },
     {
         "copyrightHolders": [
-            "2019 Tim Perry"
-        ],
-        "location": "public/lib/amd/src/loglevel.js",
-        "name": "loglevel.js",
-        "description": "Minimal lightweight simple logging for JavaScript.",
-        "version": "1.9.2",
-        "license": "MIT",
-        "repository": "https://github.com/pimterry/loglevel/",
-        "customised": false
-    },
-    {
-        "copyrightHolders": [
             "2009 Chris Wanstrath (Ruby)",
             "2010-2014 Jan Lehnardt (JavaScript)",
             "2010-2015 The mustache.js community"
@@ -186,18 +174,6 @@
         "customised": false
     },
     {
-        "copyrightHolders": [
-            "2016 Federico Zivolo and contributors"
-        ],
-        "location": "public/lib/amd/src/popper2.js",
-        "name": "Popper.js",
-        "description": "A kickass library used to created Poppers in web applications.",
-        "version": "v2.11.8",
-        "license": "MIT",
-        "repository": "https://github.com/floating-ui/floating-ui",
-        "customised": false
-    },
-    {
         "copyrightHolders": [],
         "location": "public/lib/amd/src/truncate.js",
         "name": "Truncate.js",
@@ -212,7 +188,7 @@
         "location": "public/lib/aws-sdk",
         "name": "AWS SDK for PHP",
         "description": "The AWS SDK for PHP library",
-        "version": "3.356.22",
+        "version": "3.369.22",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/aws/aws-sdk-php",
@@ -225,7 +201,7 @@
         "location": "public/lib/behat/axe",
         "name": "axe-core",
         "description": "Accessibility testing engine for websites and other HTML-based user interfaces.",
-        "version": "4.10.3",
+        "version": "4.13.0",
         "license": "MPL",
         "licenseversion": "2.0",
         "repository": "https://github.com/dequelabs/axe-core",
@@ -260,7 +236,7 @@
         "copyrightHolders": [],
         "location": "public/lib/editor/tiny/js/tinymce",
         "name": "Tiny",
-        "version": "8.2.2",
+        "version": "8.9.0",
         "license": "MIT",
         "repository": "https://github.com/tinymce/tinymce",
         "customised": false
@@ -270,7 +246,7 @@
         "location": "public/lib/editor/tiny/plugins/html/amd/src/beautify",
         "name": "js-beautify",
         "description": "Beautifier for javascript.",
-        "version": "1.15.3",
+        "version": "2.0.3",
         "license": "MIT",
         "repository": "https://github.com/beautifier/js-beautify/",
         "customised": false
@@ -411,7 +387,7 @@
         "location": "public/lib/emoji-data",
         "name": "Emoji data",
         "description": "Library to parse easily data and sprite sheets for emoji.",
-        "version": "15.1.2",
+        "version": "16.0.0",
         "license": "MIT",
         "repository": "https://github.com/iamcal/emoji-data/",
         "customised": true
@@ -427,19 +403,6 @@
         "license": "BSD",
         "repository": "https://github.com/dbojdo/eval-math",
         "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2023 Fonticons, Inc"
-        ],
-        "location": "public/lib/fonts",
-        "name": "Font Awesome - http://fontawesome.com",
-        "description": "The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.",
-        "version": "6.7.2",
-        "license": "SIL OFL",
-        "licenseversion": "1.1",
-        "repository": "https://github.com/FortAwesome/Font-Awesome",
-        "customised": false
     },
     {
         "copyrightHolders": [
@@ -478,7 +441,7 @@
         "location": "public/lib/google2",
         "name": "Google APIs",
         "description": "Library Google APIs Client Library for PHP",
-        "version": "2.18.4",
+        "version": "2.19.4",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/googleapis/google-api-php-client",
@@ -489,7 +452,7 @@
         "location": "public/lib/google2-auth",
         "name": "Google Auth",
         "description": "Google Auth Library for PHP",
-        "version": "1.49.0",
+        "version": "1.53.0",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/googleapis/google-auth-library-php",
@@ -500,7 +463,7 @@
         "location": "public/lib/google2-service",
         "name": "Google Client Services",
         "description": "Google PHP API Client Services",
-        "version": "0.424.0",
+        "version": "0.457.0",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/googleapis/google-api-php-client-services",
@@ -575,7 +538,7 @@
         "location": "public/lib/htmlpurifier",
         "name": "HTML Purifier",
         "description": "Filters HTML.",
-        "version": "4.18.0",
+        "version": "4.19.0",
         "license": "LGPL",
         "licenseversion": "2.1+",
         "repository": "https://github.com/ezyang/htmlpurifier",
@@ -621,7 +584,7 @@
         "copyrightHolders": [],
         "location": "public/lib/laravel/serializable-closure",
         "name": "Serializable Closure",
-        "version": "2.0.10",
+        "version": "2.0.16",
         "license": "MIT",
         "repository": "https://github.com/laravel/serializable-closure",
         "customised": false
@@ -750,7 +713,7 @@
         "location": "public/lib/openspout",
         "name": "OpenSpout",
         "description": "Library to read and write spreadsheet files (CSV, XLSX and ODS).",
-        "version": "4.28.5",
+        "version": "4.32.0",
         "license": "MIT",
         "repository": "https://github.com/openspout/openspout",
         "customised": false
@@ -764,7 +727,7 @@
         "description": "Class with many common HTML functions (used by HTML Quickform)",
         "version": "1.7",
         "license": "PHP",
-        "licenseversion": "2.0",
+        "licenseversion": "2.02 or v4 (BSD-3-Clause)",
         "repository": "http://pear.php.net/package/HTML_Common",
         "customised": true
     },
@@ -777,7 +740,7 @@
         "description": "Class to write forms",
         "version": "2.0",
         "license": "PHP",
-        "licenseversion": "2.0",
+        "licenseversion": "2.02/3.01 or v4 (BSD-3-Clause)",
         "repository": "https://pear.php.net/package/HTML_Quickform",
         "customised": true
     },
@@ -790,7 +753,7 @@
         "description": "Class to write forms",
         "version": "2.0",
         "license": "PHP",
-        "licenseversion": "2.0",
+        "licenseversion": "2.02 or v4 (BSD-3-Clause)",
         "repository": "https://pear.php.net/package/HTML_Quickform",
         "customised": true
     },
@@ -802,8 +765,8 @@
         "name": "Pear.php",
         "description": "Base class for other PEAR classes.",
         "version": "1.4.5",
-        "license": "PHP",
-        "licenseversion": "3.0",
+        "license": "BSD",
+        "licenseversion": "3-Clause",
         "repository": "https://pear.php.net/package/PEAR",
         "customised": true
     },
@@ -823,7 +786,7 @@
         "copyrightHolders": [],
         "location": "public/lib/php-di/invoker",
         "name": "PHP DI Invoker",
-        "version": "2.3.6",
+        "version": "2.3.7",
         "license": "MIT",
         "repository": "https://github.com/php-di/invoker",
         "customised": false
@@ -832,7 +795,7 @@
         "copyrightHolders": [],
         "location": "public/lib/php-di/php-di",
         "name": "PHP Dependency Injector",
-        "version": "7.0.8",
+        "version": "7.1.1",
         "license": "MIT",
         "repository": "https://github.com/PHP-DI/PHP-DI",
         "customised": false
@@ -954,7 +917,7 @@
         "location": "public/lib/polyfills",
         "name": "url-polyfill",
         "description": "Polyfill URL and URLSearchParams to match last WHATWG specifications.",
-        "version": "1.1.12",
+        "version": "1.1.14",
         "license": "MIT",
         "repository": "https://github.com/lifaon74/url-polyfill",
         "customised": false
@@ -1084,7 +1047,7 @@
         "location": "public/lib/requirejs",
         "name": "RequireJS",
         "description": "RequireJS is a JavaScript file and module loader.",
-        "version": "2.3.7",
+        "version": "2.3.8",
         "license": "MIT",
         "repository": "https://github.com/requirejs/requirejs",
         "customised": true
@@ -1118,7 +1081,7 @@
         "location": "public/lib/simplepie",
         "name": "SimplePie",
         "description": "Simple Pie helps with blogs.",
-        "version": "1.8.1",
+        "version": "1.9.0",
         "license": "BSD",
         "repository": "https://github.com/simplepie/simplepie",
         "customised": false
@@ -1127,7 +1090,7 @@
         "copyrightHolders": [],
         "location": "public/lib/slim/slim",
         "name": "Slim Framework",
-        "version": "4.15.1",
+        "version": "4.15.2",
         "license": "MIT",
         "repository": "https://github.com/slimphp/Slim",
         "customised": false
@@ -1192,7 +1155,7 @@
         "location": "public/lib/xhprof",
         "name": "XHProf",
         "description": "A Hierarchical Profiler for PHP.",
-        "version": "2.3.9",
+        "version": "2.3.10",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/longxinH/xhprof",
@@ -1256,7 +1219,7 @@
         "location": "public/media/player/videojs/amd/src/video-lazy.js",
         "name": "VideoJS",
         "description": "JavaScript library that makes it easier to work with and build on HTML5 video.",
-        "version": "8.23.4",
+        "version": "8.24.0",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/videojs/video.js",
@@ -1305,7 +1268,7 @@
         "location": "public/media/player/videojs/videojs",
         "name": "VideoJS support files",
         "description": "JavaScript library that makes it easier to work with and build on HTML5 video",
-        "version": "8.23.4",
+        "version": "8.24.0",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/videojs/video.js",
@@ -1337,65 +1300,28 @@
     },
     {
         "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
+            "2022 The Noto Project Authors"
         ],
-        "location": "public/theme/boost/amd/src/bootstrap/",
-        "name": "Twitter Bootstrap",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "5.3.3",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "public/theme/boost/amd/src/index.js",
-        "name": "Twitter Bootstrap",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "5.3.3",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "2011-2021 Twitter, Inc",
-            "2011-2021 The Bootstrap Authors"
-        ],
-        "location": "public/theme/boost/scss/bootstrap",
-        "name": "Twitter Bootstrap",
-        "description": "HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.",
-        "version": "5.3.3",
-        "license": "MIT",
-        "repository": "https://github.com/twbs/bootstrap",
-        "customised": true
-    },
-    {
-        "copyrightHolders": [
-            "Moodle HQ"
-        ],
-        "location": "public/theme/boost/scss/design-system",
-        "name": "@moodlehq/design-system",
-        "description": "The Moodle HQ design system based on React",
-        "version": "2.1.1",
-        "license": "GNU",
-        "repository": "https://github.com/moodlehq/design-system",
+        "location": "public/theme/boost/fonts/noto-sans",
+        "name": "Noto Sans",
+        "description": "Noto Sans is a global font family by Google, designed to support all languages with harmonious visual quality.",
+        "version": "2.015",
+        "license": "OFL",
+        "licenseversion": "1.1",
+        "repository": "https://github.com/notofonts/latin-greek-cyrillic",
         "customised": false
     },
     {
         "copyrightHolders": [
-            "2023 Fonticons, Inc"
+            "2022 The Noto Project Authors"
         ],
-        "location": "public/theme/boost/scss/fontawesome",
-        "name": "Font Awesome - http://fontawesome.com",
-        "description": "Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.",
-        "version": "6.7.2",
-        "license": "(MIT)",
-        "repository": "https://github.com/FortAwesome/Font-Awesome",
+        "location": "public/theme/boost/fonts/noto-sans-jp",
+        "name": "Noto Sans JP",
+        "description": "Noto Sans JP is a Japanese font family by Google, designed to support Japanese characters.",
+        "version": "2.004",
+        "license": "OFL",
+        "licenseversion": "1.1",
+        "repository": "https://github.com/notofonts/noto-cjk",
         "customised": false
     }
 ]
