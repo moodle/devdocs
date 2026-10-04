@@ -25,7 +25,7 @@ Provide a great search experience without the need for external, server-side, se
 ### Roundcube Framework {/* #roundcube-framework */}
 
 - **Location**: public/admin/tool/messageinbound/roundcube
-- **Version**: 1.6.11
+- **Version**: 1.7.4 (with Moodle customisations)
 - **License**:  GPL 3.0+
 - **URL**: [https://github.com/roundcube/roundcubemail](https://github.com/roundcube/roundcubemail)
 - **Copyright holders**:
@@ -34,14 +34,14 @@ Provide a great search experience without the need for external, server-side, se
 ### OTPHP {/* #otphp */}
 
 - **Location**: public/admin/tool/mfa/factor/totp/extlib/OTPHP
-- **Version**: 11.3.0
+- **Version**: 11.5.0
 - **License**:  MIT
 - **URL**: [https://github.com/Spomky-Labs/otphp](https://github.com/Spomky-Labs/otphp)
 
 ### Constant-Time Encoding {/* #constant-time-encoding */}
 
 - **Location**: public/admin/tool/mfa/factor/totp/extlib/ParagonIE/ConstantTime
-- **Version**: 3.0.0
+- **Version**: 3.1.3
 - **License**:  MIT
 - **URL**: [https://github.com/paragonie/constant_time_encoding](https://github.com/paragonie/constant_time_encoding)
 
@@ -76,7 +76,7 @@ Set of IMS-LTI tools originaly provided by IMS.
 Prism is a lightweight, robust, and elegant syntax highlighting library. It's a spin-off project from Dabblet.
 
 - **Location**: public/filter/codehighlighter/amd/src/prism.js
-- **Version**: 1.29.0
+- **Version**: 1.30.0
 - **License**:  MIT
 - **URL**: [https://github.com/PrismJS/prism](https://github.com/PrismJS/prism)
 - **Copyright holders**:
@@ -109,7 +109,7 @@ A general library that is supposed to be used in most PHP implementations of H5P
 Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.
 
 - **Location**: public/lib/adodb
-- **Version**: 5.22.11
+- **Version**: 5.22.11 (with Moodle customisations)
 - **License**:  BSD/LGPL 3-Clause/2.1+
 - **URL**: [https://github.com/ADOdb/ADOdb](https://github.com/ADOdb/ADOdb)
 - **Copyright holders**:
@@ -138,17 +138,6 @@ Simple yet flexible JavaScript charting for designers & developers.
 - **Copyright holders**:
   - 2014-2025 Chart.js Contributors
 
-### loglevel.js {/* #logleveljs */}
-
-Minimal lightweight simple logging for JavaScript.
-
-- **Location**: public/lib/amd/src/loglevel.js
-- **Version**: 1.9.2
-- **License**:  MIT
-- **URL**: [https://github.com/pimterry/loglevel/](https://github.com/pimterry/loglevel/)
-- **Copyright holders**:
-  - 2019 Tim Perry
-
 ### Mustache.js {/* #mustachejs */}
 
 JS library for displaying mustache templates.
@@ -173,17 +162,6 @@ A kickass library used to created Poppers in web applications.
 - **Copyright holders**:
   - 2016 Federico Zivolo and contributors
 
-### Popper.js {/* #popperjs */}
-
-A kickass library used to created Poppers in web applications.
-
-- **Location**: public/lib/amd/src/popper2.js
-- **Version**: v2.11.8
-- **License**:  MIT
-- **URL**: [https://github.com/floating-ui/floating-ui](https://github.com/floating-ui/floating-ui)
-- **Copyright holders**:
-  - 2016 Federico Zivolo and contributors
-
 ### Truncate.js {/* #truncatejs */}
 
 Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has several options such as length, finishBlock and noBreak.
@@ -198,7 +176,7 @@ Dead simple HTML-safe truncation via the DOM. It truncates HTML code, and has se
 The AWS SDK for PHP library
 
 - **Location**: public/lib/aws-sdk
-- **Version**: 3.356.22
+- **Version**: 3.369.22
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/aws/aws-sdk-php](https://github.com/aws/aws-sdk-php)
 
@@ -207,7 +185,7 @@ The AWS SDK for PHP library
 Accessibility testing engine for websites and other HTML-based user interfaces.
 
 - **Location**: public/lib/behat/axe
-- **Version**: 4.10.3
+- **Version**: 4.13.0
 - **License**:  MPL 2.0
 - **URL**: [https://github.com/dequelabs/axe-core](https://github.com/dequelabs/axe-core)
 - **Copyright holders**:
@@ -238,7 +216,7 @@ PCRE wrapping library that offers type-safe preg_* replacements.
 ### Tiny {/* #tiny */}
 
 - **Location**: public/lib/editor/tiny/js/tinymce
-- **Version**: 8.2.2
+- **Version**: 8.9.0
 - **License**:  MIT
 - **URL**: [https://github.com/tinymce/tinymce](https://github.com/tinymce/tinymce)
 
@@ -247,7 +225,7 @@ PCRE wrapping library that offers type-safe preg_* replacements.
 Beautifier for javascript.
 
 - **Location**: public/lib/editor/tiny/plugins/html/amd/src/beautify
-- **Version**: 1.15.3
+- **Version**: 2.0.3
 - **License**:  MIT
 - **URL**: [https://github.com/beautifier/js-beautify/](https://github.com/beautifier/js-beautify/)
 
@@ -371,7 +349,7 @@ DOM view component for the CodeMirror code editor.
 Library to parse easily data and sprite sheets for emoji.
 
 - **Location**: public/lib/emoji-data
-- **Version**: 15.1.2 (with Moodle customisations)
+- **Version**: 16.0.0 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/iamcal/emoji-data/](https://github.com/iamcal/emoji-data/)
 - **Copyright holders**:
@@ -387,17 +365,6 @@ Class to safely evaluate math expressions.
 - **URL**: [https://github.com/dbojdo/eval-math](https://github.com/dbojdo/eval-math)
 - **Copyright holders**:
   - Miles Kaufmann
-
-### Font Awesome - http://fontawesome.com {/* #font-awesome---httpfontawesomecom */}
-
-The Font Awesome font. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
-
-- **Location**: public/lib/fonts
-- **Version**: 6.7.2
-- **License**:  SIL OFL 1.1
-- **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
-- **Copyright holders**:
-  - 2023 Fonticons, Inc
 
 ### GeoPattern {/* #geopattern */}
 
@@ -431,7 +398,7 @@ Library Google APIs Client Library for PHP
 Library Google APIs Client Library for PHP
 
 - **Location**: public/lib/google2
-- **Version**: 2.18.4
+- **Version**: 2.19.4
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/googleapis/google-api-php-client](https://github.com/googleapis/google-api-php-client)
 
@@ -440,7 +407,7 @@ Library Google APIs Client Library for PHP
 Google Auth Library for PHP
 
 - **Location**: public/lib/google2-auth
-- **Version**: 1.49.0
+- **Version**: 1.53.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/googleapis/google-auth-library-php](https://github.com/googleapis/google-auth-library-php)
 
@@ -449,7 +416,7 @@ Google Auth Library for PHP
 Google PHP API Client Services
 
 - **Location**: public/lib/google2-service
-- **Version**: 0.424.0
+- **Version**: 0.457.0
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/googleapis/google-api-php-client-services](https://github.com/googleapis/google-api-php-client-services)
 
@@ -516,7 +483,7 @@ PHP script to convert HTML into an approximate text equivalent.
 Filters HTML.
 
 - **Location**: public/lib/htmlpurifier
-- **Version**: 4.18.0
+- **Version**: 4.19.0
 - **License**:  LGPL 2.1+
 - **URL**: [https://github.com/ezyang/htmlpurifier](https://github.com/ezyang/htmlpurifier)
 
@@ -556,7 +523,7 @@ jQuery UI is a set of user interface interactions, effects, widgets, and themes 
 ### Serializable Closure {/* #serializable-closure */}
 
 - **Location**: public/lib/laravel/serializable-closure
-- **Version**: 2.0.10
+- **Version**: 2.0.16
 - **License**:  MIT
 - **URL**: [https://github.com/laravel/serializable-closure](https://github.com/laravel/serializable-closure)
 
@@ -667,7 +634,7 @@ PHP library for displaying mustache templates.
 Library to read and write spreadsheet files (CSV, XLSX and ODS).
 
 - **Location**: public/lib/openspout
-- **Version**: 4.28.5
+- **Version**: 4.32.0
 - **License**:  MIT
 - **URL**: [https://github.com/openspout/openspout](https://github.com/openspout/openspout)
 - **Copyright holders**:
@@ -679,7 +646,7 @@ Class with many common HTML functions (used by HTML Quickform)
 
 - **Location**: public/lib/pear/HTML/Common.php
 - **Version**: 1.7 (with Moodle customisations)
-- **License**:  PHP 2.0
+- **License**:  PHP 2.02 or v4 (BSD-3-Clause)
 - **URL**: [http://pear.php.net/package/HTML_Common](http://pear.php.net/package/HTML_Common)
 - **Copyright holders**:
   - 2004 Adam Daniel, Bertrand Mansion, Klaus Guenther, Alexey Borzov
@@ -690,7 +657,7 @@ Class to write forms
 
 - **Location**: public/lib/pear/HTML/QuickForm
 - **Version**: 2.0 (with Moodle customisations)
-- **License**:  PHP 2.0
+- **License**:  PHP 2.02/3.01 or v4 (BSD-3-Clause)
 - **URL**: [https://pear.php.net/package/HTML_Quickform](https://pear.php.net/package/HTML_Quickform)
 - **Copyright holders**:
   - 2004 Bertrand Mansion, Adam Daniel, Alexey Borzov
@@ -701,7 +668,7 @@ Class to write forms
 
 - **Location**: public/lib/pear/HTML/QuickForm.php
 - **Version**: 2.0 (with Moodle customisations)
-- **License**:  PHP 2.0
+- **License**:  PHP 2.02 or v4 (BSD-3-Clause)
 - **URL**: [https://pear.php.net/package/HTML_Quickform](https://pear.php.net/package/HTML_Quickform)
 - **Copyright holders**:
   - 2004 Bertrand Mansion, Adam Daniel, Alexey Borzov
@@ -712,7 +679,7 @@ Base class for other PEAR classes.
 
 - **Location**: public/lib/pear/PEAR.php
 - **Version**: 1.4.5 (with Moodle customisations)
-- **License**:  PHP 3.0
+- **License**:  BSD 3-Clause
 - **URL**: [https://pear.php.net/package/PEAR](https://pear.php.net/package/PEAR)
 - **Copyright holders**:
   - 2001-2006 The PHP Group. All rights reserved
@@ -731,14 +698,14 @@ A Parser for CSS Files written in PHP.
 ### PHP DI Invoker {/* #php-di-invoker */}
 
 - **Location**: public/lib/php-di/invoker
-- **Version**: 2.3.6
+- **Version**: 2.3.7
 - **License**:  MIT
 - **URL**: [https://github.com/php-di/invoker](https://github.com/php-di/invoker)
 
 ### PHP Dependency Injector {/* #php-dependency-injector */}
 
 - **Location**: public/lib/php-di/php-di
-- **Version**: 7.0.8
+- **Version**: 7.1.1
 - **License**:  MIT
 - **URL**: [https://github.com/PHP-DI/PHP-DI](https://github.com/PHP-DI/PHP-DI)
 
@@ -846,7 +813,7 @@ A collection of side-effect ECMAScript modules. Minimized, mangled and extremely
 Polyfill URL and URLSearchParams to match last WHATWG specifications.
 
 - **Location**: public/lib/polyfills
-- **Version**: 1.1.12
+- **Version**: 1.1.14
 - **License**:  MIT
 - **URL**: [https://github.com/lifaon74/url-polyfill](https://github.com/lifaon74/url-polyfill)
 
@@ -963,7 +930,7 @@ A polyfill for getallheaders
 RequireJS is a JavaScript file and module loader.
 
 - **Location**: public/lib/requirejs
-- **Version**: 2.3.7 (with Moodle customisations)
+- **Version**: 2.3.8 (with Moodle customisations)
 - **License**:  MIT
 - **URL**: [https://github.com/requirejs/requirejs](https://github.com/requirejs/requirejs)
 
@@ -994,14 +961,14 @@ scssphp is a compiler for SCSS written in PHP.
 Simple Pie helps with blogs.
 
 - **Location**: public/lib/simplepie
-- **Version**: 1.8.1
+- **Version**: 1.9.0
 - **License**:  BSD
 - **URL**: [https://github.com/simplepie/simplepie](https://github.com/simplepie/simplepie)
 
 ### Slim Framework {/* #slim-framework */}
 
 - **Location**: public/lib/slim/slim
-- **Version**: 4.15.1
+- **Version**: 4.15.2
 - **License**:  MIT
 - **URL**: [https://github.com/slimphp/Slim](https://github.com/slimphp/Slim)
 
@@ -1056,7 +1023,7 @@ URL syntax validation using PHP and regular expressions.
 A Hierarchical Profiler for PHP.
 
 - **Location**: public/lib/xhprof
-- **Version**: 2.3.9 (with Moodle customisations)
+- **Version**: 2.3.10 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/longxinH/xhprof](https://github.com/longxinH/xhprof)
 - **Copyright holders**:
@@ -1114,7 +1081,7 @@ Javascript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 JavaScript library that makes it easier to work with and build on HTML5 video.
 
 - **Location**: public/media/player/videojs/amd/src/video-lazy.js
-- **Version**: 8.23.4 (with Moodle customisations)
+- **Version**: 8.24.0 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
@@ -1158,7 +1125,7 @@ JavaScript media decoder and player for Ogg Vorbis/Opus/Theora and WebM VP8/VP9/
 JavaScript library that makes it easier to work with and build on HTML5 video
 
 - **Location**: public/media/player/videojs/videojs
-- **Version**: 8.23.4 (with Moodle customisations)
+- **Version**: 8.24.0 (with Moodle customisations)
 - **License**:  Apache 2.0
 - **URL**: [https://github.com/videojs/video.js](https://github.com/videojs/video.js)
 - **Copyright holders**:
@@ -1186,63 +1153,27 @@ A standalone Amazon S3 (REST) client for PHP 5.2.x using CURL that does not requ
 - **Copyright holders**:
   - 2013, Donovan Schönknecht
 
-### Twitter Bootstrap {/* #twitter-bootstrap */}
+### Noto Sans {/* #noto-sans */}
 
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
+Noto Sans is a global font family by Google, designed to support all languages with harmonious visual quality.
 
-- **Location**: public/theme/boost/amd/src/bootstrap/
-- **Version**: 5.3.3 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
+- **Location**: public/theme/boost/fonts/noto-sans
+- **Version**: 2.015
+- **License**:  OFL 1.1
+- **URL**: [https://github.com/notofonts/latin-greek-cyrillic](https://github.com/notofonts/latin-greek-cyrillic)
 - **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
+  - 2022 The Noto Project Authors
 
-### Twitter Bootstrap {/* #twitter-bootstrap */}
+### Noto Sans JP {/* #noto-sans-jp */}
 
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
+Noto Sans JP is a Japanese font family by Google, designed to support Japanese characters.
 
-- **Location**: public/theme/boost/amd/src/index.js
-- **Version**: 5.3.3 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
+- **Location**: public/theme/boost/fonts/noto-sans-jp
+- **Version**: 2.004
+- **License**:  OFL 1.1
+- **URL**: [https://github.com/notofonts/noto-cjk](https://github.com/notofonts/noto-cjk)
 - **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### Twitter Bootstrap {/* #twitter-bootstrap */}
-
-HTML, CSS, and JavaScript framework for developing responsive, mobile-first projects on the web.
-
-- **Location**: public/theme/boost/scss/bootstrap
-- **Version**: 5.3.3 (with Moodle customisations)
-- **License**:  MIT
-- **URL**: [https://github.com/twbs/bootstrap](https://github.com/twbs/bootstrap)
-- **Copyright holders**:
-  - 2011-2021 Twitter, Inc
-  - 2011-2021 The Bootstrap Authors
-
-### @moodlehq/design-system {/* #moodlehqdesign-system */}
-
-The Moodle HQ design system based on React
-
-- **Location**: public/theme/boost/scss/design-system
-- **Version**: 2.1.1
-- **License**:  GNU
-- **URL**: [https://github.com/moodlehq/design-system](https://github.com/moodlehq/design-system)
-- **Copyright holders**:
-  - Moodle HQ
-
-### Font Awesome - http://fontawesome.com {/* #font-awesome---httpfontawesomecom */}
-
-Font Awesome CSS, LESS, and Sass files. Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
-
-- **Location**: public/theme/boost/scss/fontawesome
-- **Version**: 6.7.2
-- **License**:  (MIT)
-- **URL**: [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
-- **Copyright holders**:
-  - 2023 Fonticons, Inc
+  - 2022 The Noto Project Authors
 
 ## Other libraries {/* #other-libraries */}
 
