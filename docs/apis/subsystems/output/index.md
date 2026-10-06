@@ -647,15 +647,15 @@ class stored_progress_scheduled_task_example extends \core\task\scheduled_task {
         for ($i = 1; $i <= $iterations; $i++) {
 
             // Here we just update and tell it which one we are on and it will work out % from those.
-            $this->progress->update($i, $iterations, 'i am at ' . $i  . ' of ' . $iterations);
+            $this->progress->update($i, $iterations, get_string('processingitem', 'mod_yourplugin', [
+                'current' => $i,
+                'total' => $iterations,
+            ]));
             sleep(1);
-
         }
 
         return true;
-
     }
-
 }
 
 $task = new stored_progress_scheduled_task_example();
@@ -663,6 +663,8 @@ $task->initialise_stored_progress(); // Creates a stored progress record, so the
 ```
 
 With the stored progress bars, you can update the progress either via iterations, by passing in the total amount expected and then the current iteration, using `->update()`(see: previous example), this will calculate the percentage complete for you. Or you can use `->update_full()` to manually set the percentage complete.
+
+The web page polls for updates via the `core_output_poll_stored_progress` web service, at an interval controlled by the `$CFG->progresspollinterval` setting (in seconds, default `5`). A scheduled task, `\core\task\stored_progress_bar_cleanup_task`, runs daily to delete stored progress records with a `lastupdate` older than 24 hours.
 
 ## Reusing Output Classes in Web Services {/* #reusing-output-classes-in-web-services */}
 
