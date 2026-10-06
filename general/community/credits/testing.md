@@ -10,6 +10,10 @@ tags:
 
 The following people have helped with [Quality Assurance (QA) testing](../../development/process/testing/qa):
 
+## Moodle 5.3 QA {/* #moodle-53-qa */}
+
+Adrian Greeve, Alain Corbière, Alexander Sanchez, Alistair Spark, Andi Permana, Anna Poniatowska, Anupama Sarjoshi, Avi Levy, Becker Zwane, Blas Franco, Carlos Escobedo, David Woloszyn, Eli Zard, Emilio Lozano, Eric Yullu, Fernando Acedo, Gemma, Georgina Yacopetti, Hugo Ribeiro, Isabel Renedo, Jayce Birrell, Jean-Roch Meurisse, Jonathan Miroshnik, Jose Manuel Cordoba, Juan Leyva, Kim Jared Lucas, Lauren Goodman, Laurent David, Luiggi Sansonetti, Łukasz Mucha, Marie Achour, Matheus Mathias, Matt Porritt, Meirza Arson, Michael Hawkins, Michelle Lomman, Mihail Geshoski, Mikel Martín Corrales, Minh Hanh Nguyen, Muhammad Arnaldo, Nadav Kavalerchik, Nicolas Martignoni, Nofar Bart, Paul Holden, Rajeshwar Shanigarapu, Rajneel Totaram, Raquel Ortega, Rex Robert Delacruz, Ron Carl Alfon Yu, Simey Lameze, Swathy Edakkepravan Puthenveedu, Tomasz Szkutnik, Travis Windsor, Vika ablogeev, Yerai Rodriguez, Yusuf Wibisono
+
 ## Moodle 5.2 QA {/* #moodle-52-qa */}
 
 Alain Corbière, Andi Permana, Anupama Sarjoshi, Avi Levy, Chen Levy, Dag Klimas, David Woloszyn, Eduardo Domínguez Vázquez, Fernando Acedo, Hugo Ribeiro, Héctor Benedicte, Isabel Renedo, Kim Jared Lucas, Luiggi Sansonetti, Mary Cooch, Meirza Arson, Michelle Lomman, Mihail Geshoski, Miri Lipson, Muhammad Arnaldo, Nicolas Martignoni, Nofar Bart, Rajneel Totaram, Raquel Ortega, Rex Robert Delacruz, Ron Carl Alfon Yu, Sabina Abellan, Shamim Rezaie, Simey Lameze, Yusuf Wibisono
