@@ -13,7 +13,12 @@
                     "name": "5.3.0",
                     "releaseDate": "5 October 2026",
                     "version": 2026100500,
-                    "upgradePath": "https://docs.moodle.org/503/en/Upgrading",
+                    "upgradePath": "https://docs.moodle.org/503/en/Upgrading"
+                },
+                {
+                    "name": "5.3.1",
+                    "releaseDate": "7 December 2026",
+                    "version": 2026100501,
                     "releaseNoteUrl": false
                 }
             ]
@@ -50,7 +55,12 @@
                 {
                     "name": "5.2.4",
                     "releaseDate": "5 October 2026",
-                    "version": 2026042004,
+                    "version": 2026042004
+                },
+                {
+                    "name": "5.2.5",
+                    "releaseDate": "7 December 2026",
+                    "version": 2026042005,
                     "releaseNoteUrl": false
                 }
             ]
@@ -108,7 +118,12 @@
                 {
                     "name": "5.1.8",
                     "releaseDate": "5 October 2026",
-                    "version": 2025100608,
+                    "version": 2025100608
+                },
+                {
+                    "name": "5.1.9",
+                    "releaseDate": "7 December 2026",
+                    "version": 2025100609,
                     "releaseNoteUrl": false
                 }
             ]
@@ -181,8 +196,7 @@
                 {
                     "name": "5.0.11",
                     "releaseDate": "5 October 2026",
-                    "version": 2025041411,
-                    "releaseNoteUrl": false
+                    "version": 2025041411
                 }
             ]
         },
@@ -291,7 +305,12 @@
                 {
                     "name": "4.5.15",
                     "releaseDate": "5 October 2026",
-                    "version": 2024100715,
+                    "version": 2024100715
+                },
+                {
+                    "name": "4.5.16",
+                    "releaseDate": "7 December 2026",
+                    "version": 2024100716,
                     "releaseNoteUrl": false
                 }
             ]
