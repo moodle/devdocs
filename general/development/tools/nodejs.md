@@ -93,7 +93,8 @@ Typical commands:
 grunt amd                               # Alias for "ignorefiles", "eslint:amd", "rollup"
 grunt js                                # Alias for "amd", "yui" tasks.
 grunt css                               # Alias for "scss", "rawcss" tasks.
-grunt react                             # Build all React components.
+grunt react                             # Lint, then build all React components.
+grunt xo                                # Lint TypeScript with XO. Add --fix to apply fixes.
 grunt shifter                           # Run Shifter
 grunt componentlibrary                  # Build the component library
 grunt eslint --show-lint-warnings       # Show pedantic lint warnings for JS
