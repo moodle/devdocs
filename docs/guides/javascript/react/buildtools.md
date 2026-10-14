@@ -46,8 +46,9 @@ files. This is intentionally separate from `grunt watch` — esbuild maintains a
 incremental build graph internally, so rebuilds reuse the previous parse result
 rather than restarting from scratch on every change.
 
-After each rebuild, ESLint runs on the changed source files in check-only mode
-(no `--fix`) to avoid re-triggering esbuild with auto-fixed rewrites.
+Before each rebuild, XO lints the sources in check-only mode (no `--fix`), so a
+rewrite never re-triggers esbuild. If XO reports an error, the rebuild is skipped
+and the existing bundles are left as they are.
 
 ```bash
 grunt react:watch
@@ -61,7 +62,11 @@ grunt react:watch
 
 ### React linting {/* #react-linting */}
 
-- `grunt eslint:react` — runs ESLint with `fix: true` (auto-fix)
+React sources are linted with [XO](/general/development/policies/codingstyle/typescript),
+not ESLint. `grunt react` lints first and does not build if XO reports an error.
+
+- `grunt xo` — lint only
+- `grunt xo --fix` — apply the fixes XO can make itself
 
 ### Cross-component alias generation is automatic {/* #cross-component-alias-generation-is-automatic */}
 
@@ -126,10 +131,11 @@ grunt react:dev
 # Watch React files with esbuild native watch
 grunt react:watch
 
-# React lint with auto-fix
-grunt eslint:react
+# Lint React sources with XO, applying the fixes it can make
+grunt xo --fix
 ```
 
 ## See also {/* #see-also */}
 
 - [Grunt](/general/development/tools/nodejs#grunt) - How to install Grunt and Watchman
+- [TypeScript coding style](/general/development/policies/codingstyle/typescript) - The XO rules and Moodle's overrides

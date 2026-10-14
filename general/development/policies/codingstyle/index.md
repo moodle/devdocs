@@ -2039,6 +2039,7 @@ This document was drawn from the following sources:
 
 - [JavaScript Coding Style](https://docs.moodle.org/dev/Javascript/Coding_Style)
 - [CSS Coding Style](./css.md)
+- [TypeScript coding style](./typescript.md)
 - [SQL coding style](./sql.md)
 - [Coding](../../policies.md)
 - [PHP CodeSniffer](../../tools/phpcs.md)
