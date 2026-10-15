@@ -28,13 +28,14 @@ Moodle LMS has been accredited to meet [WCAG 2.2 Level AA conformance](https://w
 
 The table below provides a history of the accessibility audits performed on the Moodle LMS.
 
-| Audit period   | Target conformance | Accreditation date | Tracker epic                                               | Fixed versions               |
-|----------------|--------------------|--------------------|------------------------------------------------------------|------------------------------|
-| January 2020   | WCAG 2.1 Level AA  | 10 November 2020   | [MDL-67688](https://moodle.atlassian.net/browse/MDL-67688) | v3.10, v3.9.3                |
-| September 2021 | WCAG 2.1 Level AA  | 8 November 2021    | [MDL-72657](https://moodle.atlassian.net/browse/MDL-72657) | v4.0, v3.11.5, v3.10.8       |
-| May 2022       | WCAG 2.1 Level AA  | 3 May 2023         | [MDL-74624](https://moodle.atlassian.net/browse/MDL-74624) | v4.2, v4.1.3, v4.0.8         |
-| August 2023    | WCAG 2.1 Level AA  | 24 January 2024    | [MDL-78185](https://moodle.atlassian.net/browse/MDL-78185) | v4.4, v4.3.1, v4.2.4, v4.1.7 |
-| January 2025   | WCAG 2.2 Level AA  | 3 October 2025     | [MDL-84362](https://moodle.atlassian.net/browse/MDL-84362) | v5.1, v5.0.3, v4.5.7         |
+| Audit period   | Target conformance | Accreditation date | Tracker epic                                               | Fixed versions                |
+|----------------|--------------------|--------------------|------------------------------------------------------------|-------------------------------|
+| January 2020   | WCAG 2.1 Level AA  | 10 November 2020   | [MDL-67688](https://moodle.atlassian.net/browse/MDL-67688) | v3.10, v3.9.3                 |
+| September 2021 | WCAG 2.1 Level AA  | 8 November 2021    | [MDL-72657](https://moodle.atlassian.net/browse/MDL-72657) | v4.0, v3.11.5, v3.10.8        |
+| May 2022       | WCAG 2.1 Level AA  | 3 May 2023         | [MDL-74624](https://moodle.atlassian.net/browse/MDL-74624) | v4.2, v4.1.3, v4.0.8          |
+| August 2023    | WCAG 2.1 Level AA  | 24 January 2024    | [MDL-78185](https://moodle.atlassian.net/browse/MDL-78185) | v4.4, v4.3.1, v4.2.4, v4.1.7  |
+| January 2025   | WCAG 2.2 Level AA  | 3 October 2025     | [MDL-84362](https://moodle.atlassian.net/browse/MDL-84362) | v5.1, v5.0.3, v4.5.7          |
+| May 2026       | WCAG 2.2 Level AA  | 30 September 2026  | [MDL-88926](https://moodle.atlassian.net/browse/MDL-88926) | v5.3, v5.2.3, v5.1.7, v4.5.14 |
 
 <details>
 
@@ -62,6 +63,7 @@ The table below provides a history of the accessibility audits performed on Mood
 |--------------|--------------------|--------------------|------------------------|
 | August 2023  | WCAG 2.1 Level AA  | 27 June 2024       | v4.4, v4.3, v4.2, v4.1 |
 | January 2025 | WCAG 2.2 Level AA  | 3 October 2025     | v5.1, v5.0, v4.5       |
+| May 2026     | WCAG 2.2 Level AA  | 30 September 2026  | v5.2, v5.1, v4.5       |
 
 <details>
 
@@ -97,15 +99,15 @@ The WCAG accreditation expires after 12 months as it is recognised that software
 
 #### Moodle LMS {/* #moodle-lms-1 */}
 
-An overview of Moodle LMS' conformance with the [WCAG 2.2](https://www.w3.org/TR/WCAG22/) guidelines can be found in the [accessibility conformance report for Moodle LMS](https://docs.moodle.org/en/VPAT#Moodle%20accessibility%20conformance%20report).
+An overview of Moodle LMS' conformance with the [WCAG 2.2](https://www.w3.org/TR/WCAG22/) guidelines can be found in the [accessibility conformance report for Moodle LMS](https://moodle.com/accessibility/lms-vpat/).
 
 #### Moodle Workplace {/* #moodle-workplace-1 */}
 
-An overview of Moodle Workplace's conformance with the [WCAG 2.2](https://www.w3.org/TR/WCAG22/) guidelines can be found in the [accessibility conformance report for Moodle Workplace](https://docs.moodle.org/en/Moodle_Workplace_VPAT#WCAG_2.x_report).
+An overview of Moodle Workplace's conformance with the [WCAG 2.2](https://www.w3.org/TR/WCAG22/) guidelines can be found in the [accessibility conformance report for Moodle Workplace](https://moodle.com/accessibility/workplace-vpat/).
 
 #### Moodle App {/* #moodle-app-1 */}
 
-An overview of Moodle App's conformance with the [WCAG 2.2](https://www.w3.org/TR/WCAG22/) guidelines can be found in the [Moodle App accessibility conformance report](https://docs.moodle.org/en/Moodle_app_VPAT#WCAG_2.x_report).
+An overview of Moodle App's conformance with the [WCAG 2.2](https://www.w3.org/TR/WCAG22/) guidelines can be found in the [Moodle App accessibility conformance report](https://moodle.com/accessibility/app-vpat/).
 
 {/* <!-- cspell:ignore IAAP --> */}
 {/* <!-- cspell:ignore credly --> */}
