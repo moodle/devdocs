@@ -116,7 +116,7 @@ export const ExampleComponent = (props) => {
 
 When overriding a component you must be careful not to introduce circular dependencies by loading the themed version of the _same_ component.
 
-:::critical
+:::danger
 
 Never use the bare `@moodle/lms/` alias to load the wrapped code inside an override file to reference the component you are overriding.
 
