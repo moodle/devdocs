@@ -36,7 +36,9 @@
     "@docusaurus/faster": "^3.10.2",
     "@docusaurus/plugin-pwa": "^3.10.2",
     "@docusaurus/preset-classic": "^3.10.2",
+    "@docusaurus/theme-common": "^3.10.2",
     "@docusaurus/theme-mermaid": "^3.10.2",
+    "@docusaurus/utils": "^3.10.2",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mdx-js/react": "^3.0.0",
@@ -58,6 +60,7 @@
     "react": "19",
     "react-dom": "19",
     "react-player": "^2.16.0",
+    "redocusaurus": "^2.5.2",
     "unist-util-find": "^3.0.0",
     "unist-util-visit": "^5.0.0"
   },

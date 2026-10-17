@@ -21,6 +21,7 @@ import MoodleBannerRemark from './src/remark/moodleBanner.js';
 import TrackerLinksRemark from './src/remark/trackerLinks.js';
 import UnversionedDocsLinksRemark from './src/remark/unversionedDocsLinks.js';
 import * as nextVersion from './nextVersion.js';
+import { updateMarketplaceApiSpec } from './src/utils/marketplaceApiSpec.js';
 
 // eslint-disable global-require
 
@@ -121,6 +122,25 @@ const config = {
                     changefreq: null,
                 },
             }),
+        ],
+
+        // Moodle Marketplace API reference.
+        // Rendered with Redoc in general/community/plugincontribution/moodlemarketplaceapi.mdx.
+        // The spec is refreshed from the Marketplace on every build (see the default export below).
+        [
+            'redocusaurus',
+            {
+                specs: [
+                    {
+                        id: 'marketplace-api',
+                        spec: 'static/marketplace-api/openapi.json',
+                        url: '/marketplace-api/openapi.json',
+                    },
+                ],
+                theme: {
+                    primaryColor: '#bd5b00',
+                },
+            },
         ],
     ],
 
@@ -241,4 +261,10 @@ const config = {
     ],
 };
 
-export default config;
+export default async function createConfig() {
+    // Keep the Marketplace API reference up to date.
+    // The committed copy is used if the Marketplace is unreachable.
+    await updateMarketplaceApiSpec();
+
+    return config;
+}

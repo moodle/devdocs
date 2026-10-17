@@ -143,6 +143,9 @@ html {
   footer.theme-doc-footer .theme-doc-footer-edit-meta-row {
     position: sticky;
     bottom: 0;
+
+    /* Stay above positioned page content, such as the Redoc API reference. */
+    z-index: 2;
     background-color: var(--ifm-background-color);
     margin-top: 0.5rem;
     padding-top: 0.5rem;
@@ -170,3 +173,13 @@ ul ol {
 .roadmap-table table tbody tr:nth-child(3) { background-color: #fef7c8; }
 .roadmap-table table tbody tr:nth-child(4) { background-color: #ffeceb; }
 .roadmap-table table tbody tr:nth-child(5) { background-color: #f8eefe; }
+
+/* Show the Redoc menu on the right, like the table of contents on other pages. */
+.redocusaurus .redoc-wrap {
+  flex-direction: row-reverse;
+}
+
+.redocusaurus .menu-content {
+  border-right: none;
+  border-left: 1px solid var(--ifm-toc-border-color);
+}
