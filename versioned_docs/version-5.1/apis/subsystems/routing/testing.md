@@ -7,9 +7,9 @@ tags:
 
 One of the benefits of using routes is how easy they are to unit test. It is also possible to test [parameters](./parameters.md) for validation, which is especially useful for [mapped parameters](./parameters.md#mapped-parameters).
 
-## The `\route_testcase` testcase class {/* #the-route_testcase-testcase-class */}
+## The `\core\tests\router\route_testcase` testcase class {/* #the-route_testcase-testcase-class */}
 
-When testing routes your test should extend the `\route_testcase` base testcase, which is loaded as part of the PHPUnit Bootstrap.
+When testing routes your test should extend the `\core\tests\router\route_testcase` base testcase, which is loaded as part of the PHPUnit Bootstrap.
 
 This testcase provides a number of helper methods to create environments to test your routes.
 
@@ -17,12 +17,12 @@ When unit testing code it is usually desirable to test only your code without al
 
 ## Creating a simplified app {/* #creating-a-simplified-app */}
 
-You can quickly and easily create a copy of the Moodle Router using the `route_testcase::get_router()` method.
+You can quickly and easily create a copy of the Moodle Router using the `\core\tests\router\route_testcase::get_router()` method.
 
 This is a fully-configured copy of the Moodle Router, and allows to handle requests directly.
 
 ```php
-final class my_test extends \route_testcase {
+final class my_test extends \core\tests\router\route_testcase {
     public function test_example(): void {
         $router = $this->get_router();
     }
@@ -53,10 +53,10 @@ Because the router uses DI to inject routes during its initialisation, all route
 
 You can easily add existing routes to mocking route loader either individually, or by including all routes in a class.
 
-To add an individual route, you can use the `\route_testcase::add_route_to_route_loader()` method, for example:
+To add an individual route, you can use the `\core\tests\router\route_testcase::add_route_to_route_loader()` method, for example:
 
 ```php title="Adding a single route to the route loader"
-final class my_test extends \route_testcase {
+final class my_test extends \core\tests\router\route_testcase {
     public function test_example(): void {
         $this->add_route_to_route_loader(
             my_route::class,
@@ -68,10 +68,10 @@ final class my_test extends \route_testcase {
 }
 ```
 
-You can also add all routes in a class to the route loader using the `\route_testcase::add_class_routes_to_route_loader()` method, for example:
+You can also add all routes in a class to the route loader using the `\core\tests\router\route_testcase::add_class_routes_to_route_loader()` method, for example:
 
 ```php title="Adding all routes in a class to the route loader"
-final class my_test extends \route_testcase {
+final class my_test extends \core\tests\router\route_testcase {
     public function test_example(): void {
         $this->add_class_routes_to_route_loader(
             my_route::class,
@@ -85,9 +85,9 @@ final class my_test extends \route_testcase {
 
 ### Using the app to handle a request {/* #using-the-app-to-handle-a-request */}
 
-The `\route_testcase` also includes several methods to simplify generating a Request object, and having routing it within the Router.
+The `\core\tests\router\route_testcase` also includes several methods to simplify generating a Request object, and having routing it within the Router.
 
-You can create a request and manually pass it to Router using the `\route_testcase::create_request()` method, for example:
+You can create a request and manually pass it to Router using the `\core\tests\router\route_testcase::create_request()` method, for example:
 
 ```php title="Creating an example request and processing it"
 public function test_example(): void {
@@ -111,7 +111,7 @@ When creating a request the default is to use the Route Group for the REST API, 
 
 :::
 
-The `\route_testcase::process_request()` and `\route_testcsae::process_api_request()` methods act as a shortcut for creating the request, fetching the router, and the app, and handling the request to return a response. The above example can therefore be simplified to:
+The `\core\tests\router\route_testcase::process_request()` and `\core\tests\router\route_testcase::process_api_request()` methods act as a shortcut for creating the request, fetching the router, and the app, and handling the request to return a response. The above example can therefore be simplified to:
 
 ```php title="Creating and processing an example request"
 public function test_example(): void {
