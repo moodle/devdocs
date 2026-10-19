@@ -119,7 +119,7 @@ To keep your public repository up-to-date, we will register the remote repositor
 To register the upstream remote use the following command in your Moodle installation root folder:
 
 ```
-git remote add upstream git://git.moodle.org/moodle.git
+git remote add upstream https://github.com/moodle/moodle.git
 ```
 
 The following commands can be used to keep the your forked Moodle branches at your GitHub repository synced with Moodle's upstream repository. You may wish to store them in a script so that you can run it every week after the upstream repository is updated.

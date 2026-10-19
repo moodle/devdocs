@@ -22,7 +22,7 @@ Your first priority as a tester should be to finish testing on the day they have
 
 :::
 
-1. Pull latest integration from [git://git.moodle.org/integration.git](git://git.moodle.org/integration.git)
+1. Pull latest integration from [https://github.com/moodle/integration.git](https://github.com/moodle/integration.git)
 2. Test issue by following the **Testing instructions**
 3. Select `Pass test` or `Fail test` as appropriate, adding a short description of what was tested if not obvious
 4. If you find you cannot finish testing a particular issue, click `Stop testing` and let the Integration team know about it.
@@ -80,7 +80,7 @@ Moodle uses two Git repositories for its source code. Their names are moodle.git
 To obtain the code from the integration.git repository, follow the instructions at [Git for Administrators page](https://docs.moodle.org/dev/Git_for_Administrators_page). But instead of cloning from git://github.com/moodle/moodle.git, use
 
 ```git
-git clone git://git.moodle.org/integration.git
+git clone https://github.com/moodle/integration.git
 ```
 
 as the very first command.
