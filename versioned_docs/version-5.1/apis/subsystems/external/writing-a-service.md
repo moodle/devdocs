@@ -464,17 +464,43 @@ Edit your `local/groupmanager/version.php` and increase the plugin version. This
 
 ## Deprecation {/* #deprecation */}
 
-External functions deprecation process is slightly different from the standard deprecation. If you are interested in deprecating any of your external functions you should **also** (apart from the applicable points detailed in the [standard deprecation docs](/general/development/policies/deprecation)) create a `FUNCTIONNAME_is_deprecated()` method in your external function class. Return true if the external function is deprecated. This is an example:
+The deprecation process for external functions is different from the [standard deprecation](/general/development/policies/deprecation) process. To deprecate an external function, you must do **both** of the following:
+
+1. Create a `FUNCTIONNAME_is_deprecated()` method in your external function class, returning `true`. The web service framework uses this method to flag the function as deprecated.
+1. Add the `@deprecated` PHPDoc tag, documenting the version it was deprecated in and the MDL issue, so that IDEs show the function as deprecated:
+    - When the whole class is deprecated (for example, a class with a single `execute()` external function), add the tag to the class PHPDoc.
+    - Otherwise, add the tag to each of the deprecated methods (`FUNCTIONNAME_parameters()`, `FUNCTIONNAME()` and `FUNCTIONNAME_returns()`).
 
 ```php
+/**
+ * Create groups.
+ *
+ * @package    local_groupmanager
+ * @copyright  2026 Your Name <you@example.com>
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @deprecated since 5.1 MDL-XXXXX
+ */
+class create_groups extends \core_external\external_api {
+    // ...
+
     /**
      * Mark the function as deprecated.
+     *
      * @return bool
      */
-    public static function execute_is_deprecated() {
+    public static function execute_is_deprecated(): bool {
         return true;
     }
+}
 ```
+
+:::danger
+
+Do **not** add the `\core\attribute\deprecated` attribute, nor call `\core\deprecation::emit_deprecation()` or `\core\deprecation::emit_deprecation_if_present()`, in external functions. The `FUNCTIONNAME_is_deprecated()` method is the only mechanism needed to mark them as deprecated at runtime.
+
+:::
+
+The remaining applicable points of the [standard deprecation](/general/development/policies/deprecation) process (such as creating the follow-up issue for the final deprecation and adding an upgrade note) still apply.
 
 ## See also {/* #see-also */}
 
