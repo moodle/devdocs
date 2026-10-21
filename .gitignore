@@ -7,6 +7,11 @@
 # Generated files
 .docusaurus
 .cache-loader
+# Marketplace OpenAPI spec fetched by scripts/marketplace-openapi.mjs and the reference
+# docusaurus-plugin-openapi-docs generates from it (see the `openapi` script in package.json)
+/.openapi
+/general/community/plugincontribution/marketplace-api/*
+!/general/community/plugincontribution/marketplace-api/_category_.yml
 
 # Misc
 .DS_Store
