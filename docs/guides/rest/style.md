@@ -236,7 +236,7 @@ Appending the resource path after the component keeps a consistent, predictable 
 
 Resource names MUST:
 
-- use plural nouns
+- use plural nouns for collections
 - use lowercase
 - use kebab-case
 - avoid verbs
@@ -261,9 +261,22 @@ Resource names MUST:
 
 Resource path segments MUST use kebab-case even when equivalent JSON fields use concatenated lowercase words.
 
+Genuine singleton sub-resources MAY use singular nouns. A singleton MUST identify one subordinate resource within its parent rather than a collection whose members have separate identifiers.
+
+#### SINGLETON EXAMPLES
+
+```http
+/user/users/{userId}/profile
+/user/users/{userId}/password
+```
+
+Collections such as `/user/users` and `/user/users/{userId}/password-resets` MUST retain plural nouns. Singleton names MUST remain nouns, not action commands.
+
 #### RATIONALE
 
 Plural nouns describe collections consistently regardless of operation, and kebab-case is the de facto web convention for URL path segments because it's case-insensitive-safe, readable, and avoids URL-encoding issues that spaces or underscores can cause in some contexts. Path casing is deliberately decoupled from JSON body casing (see section 9.1) because URIs and JSON serialization follow different ecosystem conventions, and mixing them would force clients to guess which convention applies where.
+
+A user's profile and managed password are single subordinate resources, not artificial collections of profiles or passwords. Singular singleton names express that distinction without weakening plural collection naming or permitting action-based paths.
 
 ---
 
