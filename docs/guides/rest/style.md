@@ -670,6 +670,10 @@ The response MUST include:
 - Location header
 - created resource representation
 
+The created representation MAY be limited to fields the caller is authorised to receive, including identifiers and values supplied by the caller. Creation MUST NOT require an additional read scope solely to return this representation. Credentials and other write-only fields MUST NOT be returned.
+
+Documented processing-result metadata MAY accompany the representation. Such metadata MUST be distinguished from persistent resource attributes, and partial side-effect failures MUST NOT be reported as though resource creation was rolled back.
+
 #### RATIONALE
 
 Returning 201 with a Location header follows HTTP semantics for resource creation and gives clients the canonical URI of the new resource without them having to construct it themselves. Requiring the created representation in the response saves a follow-up GET, and mandating transactional integrity and duplicate handling protects Moodle's data integrity when, for example, two requests attempt to create the same course simultaneously.
@@ -731,7 +735,7 @@ Checking for updates or computing a state delta is a read-only query, not a muta
 
 ### 11.6 Declarative Property Representation Pattern
 
-Payload objects for mutation requests using `POST`, `PUT`, and `PATCH` MUST pass exclusively state attributes that describe the final structural configuration of the target resource data model at rest rather than execution routines, transition directions, or step calculations.
+Payload objects for mutation requests using `POST`, `PUT`, and `PATCH` MUST describe the intended state of the target resource rather than relative transitions or step calculations. Documented processing controls MAY accompany resource attributes under section 11.8. Distinct workflows SHOULD be modelled as resources under section 11.9.
 
 #### REQUIRED Declarative Architecture
 
@@ -761,7 +765,7 @@ Declarative payloads describe what the resource should look like afterwards, whi
 
 ### 11.7 Declarative Resource Modification Pattern
 
-State alterations, resource updates, lifecycle suspensions, and value updates MUST target the resource noun directly using standard mutation verbs without appending procedural execution flags or custom action sub-resource extensions to path strings.
+State alterations, resource updates, lifecycle suspensions, and value updates MUST target the resource noun directly using standard mutation verbs without appending procedural execution flags or custom action sub-resource extensions to path strings. Processing controls permitted by section 11.8 MUST NOT substitute for directly expressible resource-state changes.
 
 #### REQUIRED Mutation Architecture
 
@@ -784,6 +788,140 @@ PATCH /api/rest/v{version}/course/activities/40
 #### RATIONALE
 
 This reinforces section 11.6 specifically for lifecycle state changes such as visibility or suspension: an "action": "hide" flag is really just an RPC verb smuggled into the request body, violating the resource-oriented principle in section 3.1 just as surely as putting a verb in the URI would. Setting the actual field value directly, such as "visible": false, keeps the operation declarative, idempotent, and self-documenting from the payload alone.
+
+---
+
+### 11.8 Mutation Processing Controls
+
+Mutation requests MAY include processing controls for ancillary behaviour, such as notification delivery. Creation requests MAY additionally specify one-time initialisation policy, such as generation of initial credentials.
+
+Processing controls:
+
+- MUST be documented separately from persistent resource attributes, including their applicability, defaults, validation, side effects, and failure behaviour.
+- MUST have the same meaning wherever they are reused.
+- MUST NOT be silently ignored when unsupported or incompatible with other supplied values.
+- MUST NOT replace a directly expressible state change with an execution command.
+- MUST NOT imply that external side effects, such as email delivery, are atomic with a database transaction.
+- MUST have documented duplicate-request behaviour, including whether a retry repeats notifications or generates new credentials.
+
+Domain-specific processing controls SHOULD be explicit properties of the JSON request body. DELETE requests SHOULD NOT require a body; controls for such requests MAY use documented query parameters or request headers. Changing a control's location MUST NOT change its semantics or bypass these requirements.
+
+Ignorable HTTP preferences, such as those expressed with `Prefer`, MUST NOT be used for requirements whose omission would violate the requested behaviour, such as suppressing a credential email.
+
+#### EXAMPLE
+
+```http
+POST /api/rest/v2/user/users
+Content-Type: application/json
+
+{
+  "username": "new.student",
+  "firstName": "New",
+  "lastName": "Student",
+  "email": "new.student@example.invalid",
+  "generatePassword": true,
+  "sendPasswordEmail": false
+}
+```
+
+Here, `generatePassword` and `sendPasswordEmail` are creation-time controls, not readable user attributes. Suppressing email does not imply that the generated password is returned.
+
+#### RATIONALE
+
+Notification delivery and initial credential generation are legitimate provisioning concerns, but do not describe persistent user attributes. Explicitly distinguishing these controls avoids pretending that they are resource state or hiding them in transport metadata to evade the declarative rules. The same distinction applies to notifications accompanying updates or deletions.
+
+---
+
+### 11.9 Workflow Resources
+
+Mutations that initiate a distinct workflow or repeat-sensitive operation SHOULD create an appropriate resource using `POST`, rather than encode an execution command in `PATCH`. Setting an explicit password MAY use a credential-resource mutation; generating a new password for an existing account SHOULD create a password-reset resource.
+
+Workflow resources:
+
+- MUST have a defined identity, result representation, and lifecycle.
+- MUST document result retention and access permissions if the result is retrievable.
+- MUST distinguish workflow success from ancillary delivery success.
+- MUST NOT expose credentials in their result representations.
+- MUST document duplicate-request behaviour under section 15.2.
+- MAY complete synchronously; creating a workflow resource does not require a background job.
+
+Public account-recovery requests MUST follow section 11.10 instead of exposing an account-specific workflow receipt.
+
+#### EXAMPLE
+
+```http
+POST /api/rest/v2/user/users/42/password-resets
+Content-Type: application/json
+
+{
+  "sendPasswordEmail": true
+}
+```
+
+```http
+201 Created
+Location: /api/rest/v2/user/users/42/password-resets/123
+Content-Type: application/json
+
+{
+  "id": 123,
+  "userId": 42,
+  "createdAt": "2026-10-22T15:00:00+00:00",
+  "expiresAt": "2026-10-23T15:00:00+00:00",
+  "status": "completed",
+  "credentialEmailStatus": "sent"
+}
+```
+
+#### RATIONALE
+
+Retrying a password-generation command can replace credentials again and send another email. A reset resource makes that operation and its non-secret result explicit without promising that POST is safe to retry. Ordinary state updates remain declarative; operations with their own lifecycle receive an appropriate resource model.
+
+---
+
+### 11.10 Public Account Recovery
+
+An API MAY accept an unauthenticated request to initiate account recovery, as an explicit exception to section 14.2. Public recovery requests MUST NOT change credentials before the recipient proves control through the recovery mechanism.
+
+Public recovery endpoints:
+
+- MUST use `POST` to accept a recovery request.
+- MUST return the same generic `202 Accepted` representation for matching, missing, ambiguous and ineligible accounts, including account-specific delivery failures.
+- MUST NOT expose account identifiers, recovery secrets, delivery status or account-specific result lookup URLs.
+- MUST use a common response path and deferred delivery, or equivalent timing protection, to avoid disclosing account-dependent outcomes through response timing.
+- MUST apply abuse controls, including request throttling and per-identifier delivery limits, without revealing whether an identifier belongs to an account.
+- MUST log account-specific delivery failures privately rather than include them in the public response.
+- MUST use time-limited, single-use recovery credentials and the site's supported recovery eligibility and password-policy rules.
+- MUST NOT return a password.
+- SHOULD reuse the existing recovery and token-redemption lifecycle rather than introduce a second token system.
+- MAY return account-independent request-validation errors, throttling responses or service-wide availability errors.
+
+Public recovery requests MAY return `202` without a `Location` header or retrievable request resource. Acceptance MUST NOT be described as confirmation of account existence or email delivery.
+
+#### EXAMPLE
+
+```http
+POST /api/rest/v2/user/password-reset-requests
+Content-Type: application/json
+
+{
+  "email": "student@example.invalid"
+}
+```
+
+```http
+202 Accepted
+Cache-Control: no-store
+Content-Type: application/json
+
+{
+  "message": "If an eligible account matches, password-reset instructions will be sent."
+}
+```
+
+#### RATIONALE
+
+People recovering an account may have no usable authentication credential. Requiring an API scope would make the recovery path inaccessible, while reporting ordinary account-specific success or failure would allow account enumeration. A generic acceptance response and protected reset-link redemption preserve recovery access without exposing account details. This is distinct from an authorised administrative operation that immediately replaces credentials and can return a private result.
 
 ---
 
@@ -909,7 +1047,7 @@ OAuth2 and service tokens are stateless credentials that travel with each reques
 
 ### 14.2 Authorization
 
-Authorization MUST be scope-based.
+Authorization MUST be scope-based for protected endpoints. Public account-recovery endpoints MAY omit authentication and required scopes only under section 11.10.
 
 #### REQUIRED
 
@@ -918,9 +1056,11 @@ core_course:course:content:read
 core_course:course:content:write
 ```
 
-All endpoints MUST define:
+All protected endpoints MUST define:
 
 - sets of required scopes
+
+Public recovery endpoints MUST explicitly document their unauthenticated access and abuse protections.
 
 #### RATIONALE
 
