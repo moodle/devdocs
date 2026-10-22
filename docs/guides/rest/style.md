@@ -1012,6 +1012,12 @@ User creation and profile updates can fail on several independent fields. Keepin
 
 ### 12.3 Error Code Rules
 
+Documented application-specific problems that clients need to distinguish MUST include a top-level `code` extension in the RFC 9457 problem object. Generic HTTP or framework failures MAY rely on `status` and `type` without a code.
+
+The `type` member MUST retain its RFC 9457 meaning and MAY identify a documented problem-type URI. Application codes MUST NOT be copies of HTTP status numbers or disclose information deliberately hidden by an endpoint's error contract.
+
+Existing deprecated numeric `errorcode` members MAY remain until their normal removal. Their meaning MUST NOT be changed in place to introduce the application-code convention.
+
 Error codes MUST:
 
 - remain stable
@@ -1029,6 +1035,18 @@ Error codes MUST NOT:
 
 - "coursenotfound"
 
+#### EXAMPLE
+
+```json
+{
+  "type": "about:blank",
+  "title": "Conflict",
+  "status": 409,
+  "code": "usernameexists",
+  "detail": "The username is already in use."
+}
+```
+
 #### PROHIBITED
 
 - "course_not_found"
@@ -1038,6 +1056,8 @@ Error codes MUST NOT:
 #### RATIONALE
 
 Error codes are meant to be matched programmatically by client logic, so they must stay stable across releases and be casing-convention-free to avoid clients hardcoding fragile casing assumptions; this also matches Moodle's existing legacy convention of lowercase exception and string identifiers, such as coursenotfound in language files. Avoiding localization in the code itself keeps it a stable identifier, while the separate message field, see section 12.1, carries the human-readable, localizable text.
+
+A user-creation client needs to distinguish a duplicate username from other conflicts without parsing translated text. A top-level application code provides that distinction without repurposing the problem-type URI or changing an existing numeric compatibility field. Public recovery still conceals account-specific outcomes rather than exposing them through codes.
 
 ---
 
