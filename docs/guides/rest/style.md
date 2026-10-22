@@ -666,11 +666,25 @@ GET /api/rest/v{version}/<component>/<resource>/<identifier>
 - authorization validation
 - 404 handling
 - capability enforcement
-- expansion support
+
+#### OPTIONAL Expansion
+
+Single-resource endpoints MAY support expansion of related resources where there is a clear use case. Expansion MUST NOT be required solely to satisfy this endpoint pattern.
+
+Endpoints offering expansion MUST document:
+
+- parameter syntax and allowed relationships
+- response shape
+- permission and field-visibility filtering
+- cost and depth limits
+
+Expansion MUST NOT bypass scopes, capabilities, or field-visibility rules. Related resources MAY remain independently addressable without an expansion mechanism.
 
 #### RATIONALE
 
 Retrieving a single resource by identifier still requires the same authorization and capability checks as a collection, just scoped to one record; making this explicit prevents implementers from assuming that fetching one thing is lower risk than listing many and skipping checks. Standardizing 404 handling also ensures a consistently shaped error response, per section 12, rather than each endpoint inventing its own not-found behaviour.
+
+Separate user profile and custom-field resources already allow clients to retrieve those representations without requiring every user read to support embedding them. Making expansion optional avoids an unnecessary response and authorisation contract while requiring explicit limits and permission filtering wherever embedding is useful.
 
 ---
 
