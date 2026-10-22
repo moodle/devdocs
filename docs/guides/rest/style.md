@@ -963,28 +963,37 @@ A single, predictable error envelope across every endpoint means client code and
 
 ### 12.2 Validation Errors
 
-Validation errors MUST include field-level details.
+Validation errors MUST retain the RFC 9457 problem object and include a top-level `details` array of field errors. Each field error MUST contain:
+
+- `field`: the request-field path, using the request's camelCase property names, such as `profile.country` or `customFields.fields.studentcode`.
+- `code`: a stable, non-localised lowercase identifier under section 12.3.
+- `message`: a human-readable explanation that MAY be translated.
+
+Validation errors MUST NOT introduce a separate nested `error` envelope or echo passwords, recovery tokens, or other secrets. Independent field failures SHOULD be collected where practical; responses MUST NOT imply that every possible error has been found.
 
 #### REQUIRED
 
 ```json
 {
-  "error": {
-    "code": "validationerror",
-    "message": "Invalid input",
-    "details": [
-      {
-        "field": "shortname",
-        "message": "Must be unique"
-      }
-    ]
-  }
+  "type": "about:blank",
+  "title": "Unprocessable Content",
+  "status": 422,
+  "detail": "Some fields are invalid.",
+  "details": [
+    {
+      "field": "email",
+      "code": "invalidemail",
+      "message": "Enter a valid email address."
+    }
+  ]
 }
 ```
 
 #### RATIONALE
 
 A generic "invalid input" message forces the client, or a human filling out a form, to guess which field failed and why. Field-level details let clients map errors directly back to the offending form field, which is essential for building usable client UIs on top of the API, especially for Moodle's own forms and mobile app.
+
+User creation and profile updates can fail on several independent fields. Keeping their details inside the standard problem object gives clients one error envelope, while stable field codes and request-field paths support both automated handling and translated form messages without exposing credentials.
 
 ---
 
