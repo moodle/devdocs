@@ -1027,7 +1027,7 @@ Error codes are meant to be matched programmatically by client logic, so they mu
 | 201  | Created  |
 | 202  | Accepted  |
 | 204  | No Content  |
-| 400  | Invalid request  |
+| 400  | Malformed request  |
 | 401  | Unauthenticated  |
 | 403  | Unauthorized  |
 | 404  | Resource not found  |
@@ -1037,9 +1037,17 @@ Error codes are meant to be matched programmatically by client logic, so they mu
 | 429  | Rate limited  |
 | 500  | Internal error  |
 
+Requests that cannot be parsed or structurally interpreted, such as malformed JSON, MUST return `400 Bad Request`.
+
+Well-formed input that fails field validation MUST return `422 Unprocessable Content`. This includes missing required fields, invalid email addresses or time zones, unknown or read-only fields, password-policy failures, and incompatible processing options. Router and handler validation MUST apply the same distinction.
+
+Permission failures and locked-field restrictions MUST return `403 Forbidden`. Uniqueness conflicts MUST return `409 Conflict`. Failed ETag preconditions MUST return `412 Precondition Failed`.
+
 ### RATIONALE
 
 Using standard HTTP status codes for their documented meaning, rather than always returning 200 with an error object in the body as much legacy Moodle web service code does, lets generic HTTP infrastructure, such as proxies, monitoring, and client libraries, correctly interpret success and failure without inspecting the response body first.
+
+For example, a user update containing malformed JSON cannot be interpreted, whereas a valid JSON object containing an invalid email address can be understood but fails validation. A duplicate username conflicts with existing state, and an authentication-plugin field lock is an authorisation restriction, not invalid field syntax. Keeping these outcomes distinct lets clients choose the appropriate recovery.
 
 ---
 
