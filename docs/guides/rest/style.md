@@ -270,7 +270,7 @@ Genuine singleton sub-resources MAY use singular nouns. A singleton MUST identif
 /user/users/{userId}/password
 ```
 
-Collections such as `/user/users` and `/user/users/{userId}/password-resets` MUST retain plural nouns. Singleton names MUST remain nouns, not action commands.
+Collections such as `/user/users` and `/user/users/{userId}/custom-fields` MUST retain plural nouns. Singleton names MUST remain nouns, not action commands.
 
 #### RATIONALE
 
@@ -876,11 +876,15 @@ Notification delivery and initial credential generation are legitimate provision
 
 ### 11.9 Workflow Resources
 
-Mutations that initiate a distinct workflow or repeat-sensitive operation SHOULD create an appropriate resource using `POST`, rather than encode an execution command in `PATCH`. Setting an explicit password MAY use a credential-resource mutation; generating a new password for an existing account SHOULD create a password-reset resource.
+Mutations that initiate a distinct workflow or repeat-sensitive operation SHOULD use `POST` to an appropriate resource, rather than encode an execution command in `PATCH`. Setting an explicit password MAY use a credential-resource mutation; generating a new password for an existing account SHOULD submit to a password-reset resource.
+
+A workflow MAY be represented by a singleton processing resource with a singular noun, such as `/user/users/{userId}/password-reset` or the public `/user/password-reset`. A completed synchronous submission that creates no separately addressable resource MUST return `200` with its outcome or `204` without a body, rather than imply resource creation with `201` and `Location`. Accepted asynchronous processing MAY return `202`.
+
+Workflow submissions MUST NOT require historical result records, identifiers, retention periods, or result GET endpoints solely to justify collection naming. Workflows that create independently addressable resources MUST follow section 11.3 and use plural collection names.
 
 Workflow resources:
 
-- MUST have a defined identity, result representation, and lifecycle.
+- MUST define the target resource, processing behaviour, and outcome.
 - MUST document result retention and access permissions if the result is retrievable.
 - MUST distinguish workflow success from ancillary delivery success.
 - MUST NOT expose credentials in their result representations.
@@ -892,7 +896,7 @@ Public account-recovery requests MUST follow section 11.10 instead of exposing a
 #### EXAMPLE
 
 ```http
-POST /api/rest/v2/user/users/42/password-resets
+POST /api/rest/v2/user/users/42/password-reset
 Content-Type: application/json
 
 {
@@ -901,15 +905,11 @@ Content-Type: application/json
 ```
 
 ```http
-201 Created
-Location: /api/rest/v2/user/users/42/password-resets/123
+200 OK
+Cache-Control: no-store
 Content-Type: application/json
 
 {
-  "id": 123,
-  "userId": 42,
-  "createdAt": "2026-10-22T15:00:00+00:00",
-  "expiresAt": "2026-10-23T15:00:00+00:00",
   "status": "completed",
   "credentialEmailStatus": "sent"
 }
@@ -917,7 +917,7 @@ Content-Type: application/json
 
 #### RATIONALE
 
-Retrying a password-generation command can replace credentials again and send another email. A reset resource makes that operation and its non-secret result explicit without promising that POST is safe to retry. Ordinary state updates remain declarative; operations with their own lifecycle receive an appropriate resource model.
+Retrying a password-generation command can replace credentials again and send another email. A singleton reset resource makes that processing and its immediate non-secret outcome explicit without promising that POST is safe to retry or inventing a historical reset collection. Ordinary state updates remain declarative; independently addressable workflow results still receive an appropriate collection model.
 
 ---
 
@@ -943,7 +943,7 @@ Public recovery requests MAY return `202` without a `Location` header or retriev
 #### EXAMPLE
 
 ```http
-POST /api/rest/v2/user/password-reset-requests
+POST /api/rest/v2/user/password-reset
 Content-Type: application/json
 
 {
