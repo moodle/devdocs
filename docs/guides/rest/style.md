@@ -881,7 +881,7 @@ Retrying a password-generation command can replace credentials again and send an
 
 ### 11.10 Public Account Recovery
 
-An API MAY accept an unauthenticated request to initiate account recovery, as an explicit exception to section 14.2. Public recovery requests MUST NOT change credentials before the recipient proves control through the recovery mechanism.
+An API MAY accept an unauthenticated request to initiate account recovery under the public-endpoint rules in section 14.2. Public recovery requests MUST NOT change credentials before the recipient proves control through the recovery mechanism.
 
 Public recovery endpoints:
 
@@ -1047,7 +1047,7 @@ OAuth2 and service tokens are stateless credentials that travel with each reques
 
 ### 14.2 Authorization
 
-Authorization MUST be scope-based for protected endpoints. Public account-recovery endpoints MAY omit authentication and required scopes only under section 11.10.
+Authorization MUST be scope-based for scoped endpoints. Public endpoints, such as fetching templates, fetching language strings, or requesting a password-reset email, MAY omit authentication and required scopes where their access policy permits.
 
 #### REQUIRED
 
@@ -1056,17 +1056,32 @@ core_course:course:content:read
 core_course:course:content:write
 ```
 
-All protected endpoints MUST define:
+All scoped endpoints MUST define:
 
 - sets of required scopes
 
-Public recovery endpoints MUST explicitly document their unauthenticated access and abuse protections.
+Endpoints that do not require scopes MUST explicitly declare `#[\core\router\scope\unscoped_resource]` on the route handler method in their PHP definition. Omitting scope attributes MUST NOT be treated as an implicit declaration of unscoped access.
+
+An unscoped declaration MUST NOT implicitly disable authentication, capability checks, or other access restrictions. These requirements MUST be defined separately.
+
+Public endpoints MUST explicitly document their access policy and applicable abuse protections. Public account recovery MUST additionally follow section 11.10.
+
+#### EXAMPLE
+
+```php
+#[\core\router\scope\unscoped_resource]
+public function fetch_public_resource(): ResponseInterface {
+    // Return a resource permitted by the endpoint's access policy.
+}
+```
 
 #### RATIONALE
 
 Scope-based authorization decouples "who the caller is", established by authentication in section 14.1, from "what the caller is allowed to do", letting a single OAuth2 or personal access token be issued with only the narrow set of permissions an integration actually needs, following the principle of least privilege.
 
 Naming scopes after their component and resource, for example `core_course:course:content:read`, keeps them self-describing and consistent with the component-namespacing rules in section 8, and lets tooling and documentation enumerate exactly which endpoints a given scope unlocks. Declaring required scopes per endpoint also allows authorization to be checked and audited consistently, independent of a caller's individual Moodle capabilities, which may change over time.
+
+Explicitly marking unscoped handlers distinguishes intentional public or otherwise unscoped access from accidentally missing scope definitions. Authentication and scope requirements are separate: an unscoped resource is not necessarily anonymous.
 
 ---
 
@@ -1105,7 +1120,7 @@ Optimistic concurrency lets Moodle avoid locking rows for the duration of an edi
 | POST  | No  |
 | PATCH  | No  |
 
-Retryable POST operations SHOULD support:
+POST operations intended to support retries SHOULD support:
 
 ```http
 Idempotency-Key
