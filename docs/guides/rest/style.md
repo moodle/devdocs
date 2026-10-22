@@ -463,9 +463,24 @@ camelCase is the prevailing convention in modern JSON APIs and matches JavaScrip
 - Arrays SHOULD NOT contain null values
 - Nullable fields SHOULD only exist when semantically required
 
+Response fields MAY use `null` for values that are unavailable or hidden from the caller, preserving a stable response shape without distinguishing those reasons. This meaning MUST be documented, and OpenAPI response schemas MUST explicitly include `null` in the permitted types.
+
+Readable empty strings MUST remain distinct from `null`. Response nullability MUST NOT implicitly permit `null` in mutation requests; request schemas MUST define their own nullability.
+
+#### EXAMPLE
+
+```json
+{
+  "type": ["string", "null"],
+  "description": "The email address, or null if unavailable to this caller."
+}
+```
+
 #### RATIONALE
 
 Explicitly declaring which fields are nullable, rather than leaving it ambiguous, lets OpenAPI schemas and generated client types be accurate, so consumers can rely on strict typing instead of defensive null checks everywhere. Avoiding null inside arrays and only allowing nullable fields where a genuine "no value" state exists in the data model keeps payloads predictable and avoids nulls being used as a stand-in for missing or not-yet-implemented data.
+
+A user response can expose an email address only to authorised callers, or have no recorded last-access time. Declaring these response fields nullable represents the actual contract without revealing why a value is unavailable. It does not imply that sending `null` in a user update clears the field.
 
 ---
 
