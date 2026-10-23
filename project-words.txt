@@ -99,6 +99,7 @@ allcountrycodes
 allowcaching
 assignfeedback
 assignsubmission
+bbbext
 behat
 behats
 behatsnapshots
