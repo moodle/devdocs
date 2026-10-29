@@ -138,6 +138,20 @@ static Promise<T>(
 
 Use a block (`eslint-disable` and `eslint-enable`) only when several lines in a row need the same exception, and give the reason on the opening comment.
 
+### Disabling a rule for a whole file {/* #disabling-a-rule-for-a-whole-file */}
+
+When a rule cannot apply anywhere in a file, such as generated code, disable it at the very top of the `.ts` or `.tsx` file, without an `eslint-enable`. Name each rule and give the reason, as for an inline disable. The rest of the rules still apply to the file.
+
+<ValidExample>
+
+```ts
+/* eslint-disable no-var -- Generated file. */
+```
+
+</ValidExample>
+
+XO rejects an `eslint-disable` that names no rule, because it would turn off every rule for the file. To skip a file entirely, list it in the plugin's `.eslintignore` instead, as described below.
+
 ## Excluding a file in a plugin {/* #excluding-a-file-in-a-plugin */}
 
 A plugin can exclude whole files from linting with an `.eslintignore` file in its root. XO and ESLint both read it, so one list covers the TypeScript and the AMD sources. Use it for a file that cannot pass yet, such as generated code or a file you are still migrating, rather than turning linting off for the whole plugin.
