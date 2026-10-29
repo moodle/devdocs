@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Moodle Marketplace API",
-    "description": "Programmatic access to the Moodle Marketplace: browse the plugin catalogue and submit new\nversions of the plugins you maintain.\n\n## Authenticating\n\nEvery request needs a bearer token. Create one from your account's\n[security settings](/account/security), under **API tokens**.\n\n> The raw token is shown **once**, in a dialog that stops offering it after 60 seconds. It is\n> stored hashed and cannot be retrieved later, only replaced. You may hold up to **10 active\n> tokens**; past that, revoke one before creating another.\n\nSend it on every call:\n\n```\nAuthorization: Bearer YOUR_TOKEN\n```\n\nTo try the endpoints from this page, click **Authorize** above and paste the raw token — with\nno `Bearer ` prefix, Swagger adds it for you.\n\nA missing, malformed, expired or revoked token gives `401`. Tokens act as you: an endpoint\nreturns exactly what your user account is allowed to see or do.\n\n## Responses\n\nEverything is plain JSON (`application/json`). Collections are **bare JSON arrays**.\n\nThere is **no pagination**: a collection returns everything you are allowed to see in one\nresponse.\n\n## Errors\n\nFailures answer with the appropriate status code and an\n[RFC 9457](https://www.rfc-editor.org/rfc/rfc9457) `application/problem+json` body. There is no\nsuccess flag to check in the body — the status code is the answer.\n\n```json\n{\n  \"status\": 422,\n  \"title\": \"An error occurred\",\n  \"detail\": \"file: The archive does not contain a valid version.php.\",\n  \"violations\": [\n    { \"propertyPath\": \"file\", \"message\": \"The archive does not contain a valid version.php.\" }\n  ]\n}\n```\n\n| Status | Meaning |\n| --- | --- |\n| `400` Bad request | The request itself was malformed. |\n| `401` Unauthorized | No token, or the token is not valid. |\n| `403` Forbidden | Authenticated, but not allowed to see or change this resource. |\n| `404` Not found | No such resource. |\n| `406` Not acceptable | You asked for a media type this API does not serve. |\n| `409` Conflict | The resource is in a state that does not allow this operation. |\n| `422` Unprocessable Content | The request was well formed but its contents were rejected. See `violations`. |\n\n`violations` lists one entry per problem, each with the offending `propertyPath` and a\nhuman-readable `message`. Show those to the user; do not parse the messages.\n\n## Stability\n\nThis is version 1 of a young API and it will grow. **New fields may be added to any response\nwithout notice**, so parse defensively and ignore what you do not recognise. Fields will not be\nremoved or change meaning within `v1`.",
+    "description": "Programmatic access to the Moodle Marketplace: browse the plugin catalogue and submit new\nversions of the plugins you maintain.\n\n## Authenticating\n\nEvery request needs a bearer token. Create one from your account's\n[security settings](/account/security), under **API tokens**.\n\n> The raw token is shown **once**, in a dialog that stops offering it after 60 seconds. It is\n> stored hashed and cannot be retrieved later, only replaced. You may hold up to **10 active\n> tokens**; past that, revoke one before creating another.\n\nSend it on every call:\n\n```\nAuthorization: Bearer YOUR_TOKEN\n```\n\nA missing, malformed, expired or revoked token gives `401`. Tokens act as you: an endpoint\nreturns exactly what your user account is allowed to see or do.\n\n## Responses\n\nEverything is plain JSON (`application/json`). Collections are **bare JSON arrays**.\n\nThere is **no pagination**: a collection returns everything you are allowed to see in one\nresponse.\n\n## Errors\n\nFailures answer with the appropriate status code and an\n[RFC 9457](https://www.rfc-editor.org/rfc/rfc9457) `application/problem+json` body. There is no\nsuccess flag to check in the body — the status code is the answer.\n\n```json\n{\n  \"status\": 422,\n  \"title\": \"An error occurred\",\n  \"detail\": \"file: The archive does not contain a valid version.php.\",\n  \"violations\": [\n    { \"propertyPath\": \"file\", \"message\": \"The archive does not contain a valid version.php.\" }\n  ]\n}\n```\n\n| Status | Meaning |\n| --- | --- |\n| `400` Bad request | The request itself was malformed. |\n| `401` Unauthorized | No token, or the token is not valid. |\n| `403` Forbidden | Authenticated, but not allowed to see or change this resource. |\n| `404` Not found | No such resource. |\n| `406` Not acceptable | You asked for a media type this API does not serve. |\n| `409` Conflict | The resource is in a state that does not allow this operation. |\n| `422` Unprocessable Content | The request was well formed but its contents were rejected. See `violations`. |\n\n`violations` lists one entry per problem, each with the offending `propertyPath` and a\nhuman-readable `message`. Show those to the user; do not parse the messages.\n\n## Stability\n\nThis is version 1 of a young API and it will grow. **New fields may be added to any response\nwithout notice**, so parse defensively and ignore what you do not recognise. Fields will not be\nremoved or change meaning within `v1`.",
     "version": "1.0.0"
   },
   "servers": [
@@ -14,7 +14,7 @@
   "paths": {
     "/api/plugins/maintained": {
       "get": {
-        "operationId": "api_pluginsmaintained_get_collection",
+        "operationId": "listMaintainedPlugins",
         "tags": [
           "Plugin"
         ],
@@ -164,7 +164,7 @@
     },
     "/api/plugins/{frankenStyle}/versions/{version}/download": {
       "get": {
-        "operationId": "download_version_by_frankenstyle_and_build",
+        "operationId": "downloadVersionByFrankenstyleAndBuild",
         "tags": [
           "Version"
         ],
@@ -180,9 +180,6 @@
               }
             }
           },
-          "204": {
-            "description": "VersionDownload resource"
-          },
           "401": {
             "description": "Missing or invalid token."
           },
@@ -193,11 +190,11 @@
             "description": "You do not have permission to download this plugin."
           },
           "404": {
-            "description": "No plugin with that frankenStyle exists."
+            "description": "No such plugin or version."
           }
         },
-        "summary": "Download a version release of a plugin",
-        "description": "Download a version of a plugin you have permission to download.\n\nOn success you get **200** with the found version file.",
+        "summary": "Download a plugin version by frankenstyle and build number",
+        "description": "Download a version of a plugin you have permission to download, identified by the plugin's frankenstyle component name and the version's build number from version.php.\n\nOn success you get **200** with the found version file.",
         "parameters": [
           {
             "name": "frankenStyle",
@@ -228,7 +225,7 @@
     },
     "/api/plugins/{pluginId}/versions/{versionId}/download": {
       "get": {
-        "operationId": "download_version_by_plugin_and_version_id",
+        "operationId": "downloadVersionByPluginAndVersionId",
         "tags": [
           "Version"
         ],
@@ -244,9 +241,6 @@
               }
             }
           },
-          "204": {
-            "description": "VersionDownload resource"
-          },
           "401": {
             "description": "Missing or invalid token."
           },
@@ -257,11 +251,11 @@
             "description": "You do not have permission to download this plugin."
           },
           "404": {
-            "description": "No plugin with that frankenStyle exists."
+            "description": "No such plugin or version."
           }
         },
-        "summary": "Download a version release of a plugin",
-        "description": "Download a version of a plugin you have permission to download.\n\nOn success you get **200** with the found version file.",
+        "summary": "Download a plugin version by Marketplace ids",
+        "description": "Download a version of a plugin you have permission to download, identified by the Marketplace plugin id and version id, as returned in the `id` fields of the plugin listings.\n\nOn success you get **200** with the found version file.",
         "parameters": [
           {
             "name": "pluginId",
