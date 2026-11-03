@@ -1,0 +1,14 @@
+{{!
+  Include the core content template.
+  This is the top template for a course.
+}}
+{{< core_courseformat/local/content }}
+    {{!
+        Add any general structure blocks override here.
+    }}
+
+    {{! Mandatory the content/section block. }}
+    {{$ core_courseformat/local/content/section }}
+        {{> format_pluginname/local/content/section }}
+    {{/ core_courseformat/local/content/section }}
+{{/ core_courseformat/local/content }}
