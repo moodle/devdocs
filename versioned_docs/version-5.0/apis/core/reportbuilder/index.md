@@ -124,6 +124,14 @@ Entities are simply collections of report elements (currently columns and filter
 
 All report elements can be defined within the reports themselves - but entities mean it's much easier to create re-usable components, and will also help in the long term with custom reports.
 
+#### Access control {/* #access-control */}
+
+Entities define reusable report data; they are not an access-control boundary. In Moodle 5.0, the [entity base class](https://github.com/moodle/moodle/blob/MOODLE_500_STABLE/reportbuilder/classes/local/entities/base.php) does not define an `is_available()` method. Adding that method to a custom entity will not make Report Builder hide the entity or restrict the rows it returns.
+
+The similarly named static [`is_available()` method on the report base class](https://github.com/moodle/moodle/blob/MOODLE_500_STABLE/reportbuilder/classes/local/report/base.php#L148-L156) indicates whether a report class can be used, for example when an optional dependency is missing. It is not a per-user capability check.
+
+Use Moodle's [Access API](../../subsystems/access.md) to check capabilities in the code that exposes or operates on the report, using the context that applies to the data. If users must see different records, enforce that restriction in the data query for every way the report can be viewed or exported. A report filter or an entity's presence in the interface must not be treated as a security check.
+
 #### Create an entity {/* #create-an-entity */}
 
 To create an entity, the new entity class must extend **[reportbuilder/classes/local/entities/base.php](https://github.com/moodle/moodle/blob/main/reportbuilder/classes/local/entities/base.php)** class and must include these methods:
