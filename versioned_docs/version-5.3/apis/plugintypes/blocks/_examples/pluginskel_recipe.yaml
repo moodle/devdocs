@@ -1,0 +1,103 @@
+## This is an example recipe file that you can use as a template for your own plugins.
+## See the list of all files it would generate:
+##
+##     php generate.php example.yaml --list-files
+##
+## View a particular file contents without actually writing it to the disk:
+##
+##     php generate.php example.yaml --file=version.php
+##
+## To see the full list of options, run:
+##
+##     php generate.php --help
+##
+---
+## Frankenstyle component name.
+component: block_pluginname
+
+## Human readable name of the plugin.
+name: Example block
+
+## Human readable release number.
+release: "0.1.0"
+
+## Plugin version number, e.g. 2016062100. Will be set to current date if left empty.
+#version: 2016121200
+
+## Required Moodle version, e.g. 2015051100 or "2.9".
+requires: "3.11"
+
+## Plugin maturity level. Possible options are MATURIY_ALPHA, MATURITY_BETA,
+## MATURITY_RC or MATURIY_STABLE.
+maturity: MATURITY_BETA
+
+## Copyright holder(s) of the generated files and classes.
+copyright: Year, You Name <your@email.address>
+
+## Features flags can control generation of optional files/code fragments.
+features:
+  readme: true
+  license: true
+
+  ## Privacy API implementation
+privacy:
+  haspersonaldata: false
+  uselegacypolyfill: false
+
+block_features:
+  ## Creates the file edit_form.php
+  edit_form: true
+
+  ## Allows multiple instances of the block on the same course.
+  instance_allow_multiple: false
+
+  ## Choose where to display the block.
+  applicable_formats:
+    - page: all
+      allowed: false
+    - page: course-view
+      allowed: true
+    - page: course-view-social
+      allowed: false
+
+  ## Backup the block plugin.
+  backup_moodle2:
+    restore_task: true
+    restore_stepslib: true
+    backup_stepslib: true
+    settingslib: true
+    backup_elements:
+      - name: elt
+    restore_elements:
+      - name: elt
+        path: /path/to/file
+
+## Capabilities defined by the plugin.
+capabilities:
+  ## Required by block plugins.
+  - name: myaddinstance
+    title: Add a new pluginname block to the My dashboard
+    captype: write
+    contextlevel: CONTEXT_SYSTEM
+    archetypes:
+      - role: user
+        permission: CAP_ALLOW
+    clonepermissionsfrom: moodle/my:manageblocks
+
+  - name: addinstance
+    title: Add a new pluginname block
+    captype: write
+    contextlevel: CONTEXT_BLOCK
+    archetypes:
+      - role: editingteacher
+        permission: CAP_ALLOW
+      - role: manager
+        permission: CAP_ALLOW
+    clonepermissionsfrom: moodle/site:manageblocks
+
+## Explicitly added strings
+lang_strings:
+  - id: mycustomstring
+    text: You can add 'extra' strings via the recipe file.
+  - id: mycustomstring2
+    text: Another string with {$a->some} placeholder.
