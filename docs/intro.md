@@ -1,13 +1,13 @@
 ---
 id: introduction
 title: Introduction
-description: Developer documentation for Moodle 5.3.
+description: Developer documentation for Moodle 6.0.
 slug: /
 tags:
   - Getting started
 ---
 
-Welcome to the Developer Documentation for **Moodle 5.3**.
+Welcome to the Developer Documentation for **Moodle 6.0**.
 
 This documentation is version-specific and includes a range of useful guides and information.
 
@@ -23,4 +23,4 @@ This documentation is version-specific and includes a range of useful guides and
 
 import ReleaseStateSummary from '@site/src/components/ReleaseStateSummary';
 
-<ReleaseStateSummary releaseName="5.3" />
+<ReleaseStateSummary releaseName="6.0" />

@@ -15,8 +15,8 @@
  * along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-const nextVersion = '5.3';
-const nextLTSVersion = '5.3';
+const nextVersion = '6.0';
+const nextLTSVersion = '6.3';
 const nextVersionRoot = `/docs/${nextVersion}`;
 
 module.exports = {
