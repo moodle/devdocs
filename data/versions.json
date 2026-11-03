@@ -2,6 +2,40 @@
     "$schema": "../static/schema/versions.json",
     "versions": [
         {
+            "name": "6.1",
+            "releaseDate": "4 October 2027",
+            "generalEndDate": "3 October 2028",
+            "securityEndDate": "3 April 2029",
+            "isLTS": false,
+            "codeFreezeDate": "30 August 2027",
+            "releases": [
+                {
+                    "name": "6.1.0",
+                    "releaseDate": "4 October 2027",
+                    "version": 2027100400,
+                    "upgradePath": "https://docs.moodle.org/601/en/Upgrading",
+                    "releaseNoteUrl": false
+                }
+            ]
+        },
+        {
+            "name": "6.0",
+            "releaseDate": "19 April 2027",
+            "generalEndDate": "18 April 2028",
+            "securityEndDate": "18 October 2028",
+            "isLTS": false,
+            "codeFreezeDate": "15 March 2027",
+            "releases": [
+                {
+                    "name": "6.0.0",
+                    "releaseDate": "19 April 2027",
+                    "version": 2027041900,
+                    "upgradePath": "https://docs.moodle.org/600/en/Upgrading",
+                    "releaseNoteUrl": false
+                }
+            ]
+        },
+        {
             "name": "5.3",
             "releaseDate": "5 October 2026",
             "generalEndDate": "4 October 2027",
