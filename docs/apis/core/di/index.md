@@ -94,6 +94,15 @@ class example_with_promotion {
 
 :::
 
+## Accessing shared Moodle state {/* #accessing-shared-moodle-state */}
+
+Injectable services are available for accessing state traditionally read through globals:
+
+- [The database proxy](../dml/database-proxy.md): inject `\core\dml\database_proxy` to use the DML API. Each call is forwarded to the current global database instance.
+- [The current user accessor](../user/current-user.md): inject `\core\current_user` to read the current user, check capabilities, or obtain their effective timezone.
+
+Both services resolve their backing global state when used, rather than capturing its value when the container first constructs them. They can therefore be retained across changes to that state, including in tests. Resolving them does not initialize a database connection or authenticate a user.
+
 ## Configuring dependencies {/* #configuring-dependencies */}
 
 In some rare cases you may need to supply additional configuration for a dependency to work properly. This is usually in the case of legacy code, and can be achieved with the `\core\hook\di_configuration` hook.

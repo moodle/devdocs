@@ -7,6 +7,8 @@ documentationDraft: true
 
 This is a collection of miscellaneous APIs that can help with doing things with lists of users.
 
+For an injectable accessor to the logged-in user, see [Accessing the current user](current-user.md).
+
 :::note
 
 Please note that, in many cases, more specific APIs may be more appropriate, for example:

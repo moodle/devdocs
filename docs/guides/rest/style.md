@@ -508,6 +508,12 @@ ISO-8601 strings are self-describing and human-readable in logs and API explorer
 
 ## 10. Collection Standards
 
+:::note[Router implementation]
+
+See [Collections and pagination](../../apis/subsystems/routing/collections.md) for the collection route attribute, pagination request helpers, and collection response envelope.
+
+:::
+
 ### 10.1 Response Format
 
 Collection endpoints MUST return:
@@ -933,6 +939,12 @@ Naming scopes after their component and resource, for example `core_course:cours
 ## 15. Concurrency and Idempotency
 
 ### 15.1 Concurrency Control
+
+:::note[Router implementation]
+
+See [ETags and conditional requests](../../apis/subsystems/routing/conditional-requests.md) for generating ETags, checking conditional headers, and documenting responses. Checking a precondition does not itself make a subsequent write atomic.
+
+:::
 
 Mutable resources SHOULD support optimistic concurrency control.
 

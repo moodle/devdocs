@@ -15,6 +15,8 @@ Routes must return one of the following types:
 
 Other types may be added in the future, for example to support rendering a template.
 
+For paginated data, use a [collection response](collections.md). For individual resources supporting conditional requests, see [ETags and conditional requests](conditional-requests.md).
+
 :::danger[Web Service Response types]
 
 Web Service responses will almost always return a `payload_reponse` to allow validation of their data.
