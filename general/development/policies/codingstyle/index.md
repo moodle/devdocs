@@ -268,8 +268,6 @@ In the case of legacy functions (those not placed in classes), names should star
 
 Verbosity is encouraged: function names should be as illustrative as is practical to enhance understanding.
 
-:::tip[Overriding parent methods]
-
 When writing a method which overrides a method in a parent Class, Interface, or Trait, it is strongly recommended that the `#[\Override]` attribute be used, for example:
 
 ```php title="Example of a method which overrides a third-party method"
@@ -281,7 +279,13 @@ class example extends \Some\Vendor\ExampleClass {
 }
 ```
 
-In Moodle's coding standard, this attribute is also used by PHPCS rules as a signal that the method is a genuine override, so some sniffs relating to documentation and to the naming of the overridden method and its parameters are not applied.
+In Moodle's coding standard, the `#[\Override]` attribute is also used by PHPCS rules as a signal that the method is a genuine override, so some sniffs relating to documentation and to the naming of the overridden method and its parameters are not applied.
+
+:::danger
+
+When documenting an overriding method, prefer the child method's more specific or useful documentation over vague, generic, or incomplete documentation from the parent method.
+
+If a patch provides useful documentation, advice should not be given to remove it unless it should be moved to the parent method.
 
 :::
 
