@@ -40,6 +40,7 @@ JMeter
 JWKS
 Kanban
 Laravel
+Lomman
 MAINNODE
 MDK
 MDL
@@ -72,6 +73,7 @@ Quicklist
 Recaptcha
 RDBM
 RDBMS
+SigNoz
 SIGINT
 SIGTERM
 Soulier
@@ -86,6 +88,7 @@ WCAG
 Xdebug
 XMLDB
 XMPPHP
+Zipkin
 accessallgroups
 activeusers
 activitynames
@@ -307,7 +310,9 @@ subplugins
 tablespace
 tasklogs
 templatable
+templatables
 temptables
+testingbadge
 texteditor
 themers
 thirdparty
@@ -360,3 +365,5 @@ modvisible
 savechanges
 hideif
 formslib
+autoinit
+unminified

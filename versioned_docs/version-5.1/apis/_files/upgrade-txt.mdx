@@ -1,4 +1,4 @@
-<!-- markdownlint-disable first-line-heading -->
+{/* <!-- markdownlint-disable first-line-heading --> */}
 Each component and subsystem may make use of an `upgrade.txt` file in the top level folder. A section title is used to identify the Moodle version where the change was introduced, and significant changes for that version relating to that component or subsystem are noted.
 
 For example, given an API change is applied for the upcoming Moodle version 4.1 which is still in the **main** branch (4.1dev), the version number on the `upgrade.txt`'s section title will be set to **4.1**.
@@ -8,7 +8,7 @@ For example, given an API change is applied for the upcoming Moodle version 4.1 
 An API change to empower educators!
 ```
 
-#### Changes applied to multiple branches
+#### Changes applied to multiple branches {/* #changes-applied-to-multiple-branches */}
 
 When changes are integrated to multiple branches, for example a stable version and the main branch, then the relevant versions used to describe the change in the `upgrade.txt` file should be the next version to be released _for each branch_. The **main** branch should always use the next major version.
 
@@ -19,7 +19,7 @@ For example, if a change is applied to the **MOODLE_400_STABLE** during the deve
 An API change to empower educators!
 ```
 
-#### Mentioning other Moodle versions the change applies to
+#### Mentioning other Moodle versions the change applies to {/* #mentioning-other-moodle-versions-the-change-applies-to */}
 
 Multiple versions within the section title are **not** allowed. However, developers may note the Moodle versions that the change applies to within the upgrade note text itself.
 
@@ -38,7 +38,7 @@ An API change to empower educators! (This was fixed in 4.1 and 4.0.2)
 An API change to empower educators!
 ```
 
-#### Exception during parallel development
+#### Exception during parallel development {/* #exception-during-parallel-development */}
 
 When Moodle is developing two major versions in parallel, for example Moodle 3.11.0, and Moodle 4.0.0, then the
 version in the earliest of the major version development branches will be used for both branches.

@@ -5,9 +5,9 @@ tags:
   - GitHub
 ---
 
-## Moodle core
+## Moodle core {/* #moodle-core */}
 
-### Background
+### Background {/* #background */}
 
 Moodle is regularly tested against a matrix of Databases, PHP Versions, and operating systems, however many developers do not have the resources available to run on many of these combinations before pushing an issue for integration as they are time-consuming to both set up and to run.
 
@@ -21,7 +21,7 @@ Moodle HQ uses the Jenkins CI platform and this should be seen as the [canonical
 
 :::
 
-### Usage
+### Usage {/* #usage */}
 
 GitHub Actions are available and enabled by default for all public repositories at GitHub. You can enable or disable them from your GitHub fork of the moodle.git repository by navigating to the Settings tab, and selecting Actions from the side menu. Please use the "Allow all" option as far as the integration reuses actions from different sources.
 
@@ -29,7 +29,7 @@ GitHub Actions are available and enabled by default for all public repositories 
 
 For the purpose of this documentation, it is assumed that you are pushing to a public Moodle repository on GitHub. Other integrations are supported, but the service available from GitHub Actions is only available to GitHub public repositories.
 
-### How do I start a build?
+### How do I start a build? {/* #how-do-i-start-a-build */}
 
 Whenever you push a change to any branch in your repository... a build will be queued and executed. You can see how all your builds are progressing by visiting your moodle.git clone page at GitHub, then selecting the actions tab. From there you can filter by branch, by status, access to every build, see failures, relaunch jobs...
 
@@ -39,10 +39,10 @@ You will receive notifications (by email or web) whenever a build fails - this c
 
 And that's all, pretty nice, simple and effective.
 
-### How do I configure the PHPUnit executions
+### How do I configure the PHPUnit executions {/* #how-do-i-configure-the-phpunit-executions */}
 
 Since Moodle 3.11.8 and 4.0.2, it's possible to configure the PHPUnit executions by creating a [GitHub repository secret](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) named `phpunit_options`. Just setup its value to the options that you want to pass to PHPUnit and they will come into effect for all runs. For a list of [PHPUnit available options](https://docs.phpunit.de/en/9.6/textui.html#command-line-options) use the `vendor/bin/phpunit --help` command.
 
-## Moodle plugins
+## Moodle plugins {/* #moodle-plugins */}
 
 See [the instructions in the Moodle Plugin CI repository](https://moodlehq.github.io/moodle-plugin-ci/#github-actions).

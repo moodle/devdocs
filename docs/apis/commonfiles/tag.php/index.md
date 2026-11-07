@@ -13,7 +13,7 @@ import { LanguageProperty } from '@site/src/components';
 There are more options such as specifying the default value for "Standard tags", having a fixed collection or excluding from search.
 :::
 
-## Example file
+## Example file {/* #example-file */}
 
 Here is the core libraries tag.php file for reference:
 

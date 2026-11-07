@@ -12,7 +12,7 @@ tags:
 
 Unit tests are written in JavaScript using [Jest](https://jestjs.io/). If you want to create a new one, Jest is already configured and you only need to create a file ending with `.test.ts` within the project. If you're going to do so, remember to follow the [file location conventions](../development-guide#test-files).
 
-## Running tests
+## Running tests {/* #running-tests */}
 
 The easiest way to run the entire test suite is to execute the `npm test` command. This will run all the tests in the project. If you want to look at code coverage, you can run `npm run test:coverage`.
 
@@ -25,7 +25,7 @@ If you are using VSCode, you can use [the built-in debugger](https://code.visual
 
 If you are using the default key bindings, these can be re-run automatically pressing the F5 key.
 
-## Testing plain TypeScript
+## Testing plain TypeScript {/* #testing-plain-typescript */}
 
 When you are writing tests, a good part of those will be testing plain TypeScript code. You can use all the [common techniques used in Jest](https://jestjs.io/docs/using-matchers), and we also offer a couple of helpers.
 
@@ -72,7 +72,7 @@ it('Greets users', () => {
 
 Notice how we used the `mock` helper to create a mock that is properly typed as a `User`, we indicated that we want to mock the `greet` method, and we initialised the mock instance to have a name of "John".
 
-## Testing services
+## Testing services {/* #testing-services */}
 
 If you are testing some code that uses [Service Singletons](../development-guide.md#service-singletons), it is likely that you want to mock some of them. You can achieve it by using the `mockSingleton` helper. This method takes a Service Singleton and creates a mock for the instance underneath, mocking the methods and properties that you specify along the way.
 
@@ -126,7 +126,7 @@ it('Copies data to clipboard', async () => {
 
 Most services will be instantiated properly without mocks, but sometimes you may see the error "XX is not a function", or some service property that is undefined. This happens because if it's not possible to instantiate a service with an empty constructor, it will be provided as an empty object by default. If that happens, you just need to mock the methods and properties that are used in your test. Some basic services like `Platform` and `Network` already come with some basic mocks, but they are not exhaustive.
 
-## Testing components
+## Testing components {/* #testing-components */}
 
 Angular components have a strong graphical part, but that doesn't mean that you can't test their logic and markup rendering using unit tests with Jest. You can follow [Angular's best practices for testing components](https://angular.dev/guide/testing/components-scenarios), and we also provide a couple of helpers that make things easier.
 
@@ -198,7 +198,7 @@ it('Renders a list of users', async () => {
 });
 ```
 
-## What about integration tests?
+## What about integration tests? {/* #what-about-integration-tests */}
 
 Although this guide talks about unit tests, we don't follow the strict definition of a unit test (which is that a unit test should test a single unit in isolation).
 

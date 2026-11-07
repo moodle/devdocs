@@ -4,12 +4,12 @@ tags:
   - Policies
 ---
 
-## Components
+## Components {/* #components */}
 
-## JavaScript
+## JavaScript {/* #JavaScript */}
 
-## Web services
+## Web services {/* #web-services */}
 
 Until it is migrated, you can find the rules here: https://docs.moodle.org/dev/Web_service_API_functions#Naming_convention
 
-## Events
+## Events {/* #events */}

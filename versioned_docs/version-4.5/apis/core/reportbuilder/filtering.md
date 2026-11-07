@@ -17,15 +17,15 @@ The operator you have defined will then determine which other form fields you wi
 
 [Core report builder filter types](https://github.com/moodle/moodle/tree/MOODLE_405_STABLE/reportbuilder/classes/local/filters) you can find what a filter type needs by looking at their `get_sql_filter()` method.
 
-## Text filters
+## Text filters {/* #text-filters */}
 
-### Operators with no additional data
+### Operators with no additional data {/* #operators-with-no-additional-data */}
 
 - `ANY_VALUE`
 - `IS_EMPTY`
 - `IS_NOT_EMPTY`
 
-## Operators with a single value
+## Operators with a single value {/* #operators-with-a-single-value */}
 
 A string should be sent in `value` for:
 
@@ -43,15 +43,15 @@ A string should be sent in `value` for:
 'my:text2_value1' => 'This exact thing',
 ```
 
-## Number filter
+## Number filter {/* #number-filter */}
 
-### Operators with no additional data
+### Operators with no additional data {/* #operators-with-no-additional-data-1 */}
 
 - `ANY_VALUE`
 - `IS_NOT_EMPTY`
 - `IS_EMPTY`
 
-### Operators with a single value
+### Operators with a single value {/* #operators-with-a-single-value-1 */}
 
 A number should be passed in `value1` for:
 
@@ -68,9 +68,9 @@ A number should be passed in `value1` for:
 'my:number2_value1' => 15.6,
 ```
 
-### Operators with complex data
+### Operators with complex data {/* #operators-with-complex-data */}
 
-#### RANGE
+#### RANGE {/* #range */}
 
 - `value1` number for the lower bound
 - `value2` number for the upper bound
@@ -81,7 +81,7 @@ A number should be passed in `value1` for:
 'my:number_value2' => 600,
 ```
 
-## Date filter
+## Date filter {/* #date-filter */}
 
 The date filter has several constants used to define the amount of time:
 
@@ -92,7 +92,7 @@ The date filter has several constants used to define the amount of time:
 - `DATE_UNIT_MONTH`
 - `DATE_UNIT_YEAR`
 
-### Operators with no additional data
+### Operators with no additional data {/* #operators-with-no-additional-data-2 */}
 
 - `DATE_ANY`
 - `DATE_NOT_EMPTY`
@@ -100,7 +100,7 @@ The date filter has several constants used to define the amount of time:
 - `DATE_PAST`
 - `DATE_FUTURE`
 
-### Operators with one value
+### Operators with one value {/* #operators-with-one-value */}
 
 The `unit` should be sent defining the amount of time that should be considered.
 
@@ -111,7 +111,7 @@ The `unit` should be sent defining the amount of time that should be considered.
 'my:date_unit' => date::DATE_UNIT_DAY,
 ```
 
-### Operators with two values
+### Operators with two values {/* #operators-with-two-values */}
 
 These operators can all accept two values:
 
@@ -132,9 +132,9 @@ These operators can all accept two values:
 'my:date2_unit' => date::DATE_UNIT_MINUTE,
 ```
 
-### Operators with complex values
+### Operators with complex values {/* #operators-with-complex-values */}
 
-#### DATE_RANGE
+#### DATE_RANGE {/* #date_range */}
 
 The date range should have a unix timestamp in one or more of the following:
 
@@ -147,13 +147,13 @@ The date range should have a unix timestamp in one or more of the following:
 'my:date_to' => 1732893669,
 ```
 
-## Select filter
+## Select filter {/* #select-filter */}
 
-### Operators with no additional data
+### Operators with no additional data {/* #operators-with-no-additional-data-3 */}
 
 - `ANY_VALUE`
 
-### Operators with one value
+### Operators with one value {/* #operators-with-one-value-1 */}
 
 The value of the select should be sent in `value` to:
 
@@ -167,15 +167,15 @@ The value of the select should be sent in `value` to:
 'my:select2_value' => 'textkey',
 ```
 
-## Boolean select filter
+## Boolean select filter {/* #boolean-select-filter */}
 
-### Operators with no additional data
+### Operators with no additional data {/* #operators-with-no-additional-data-4 */}
 
 - `ANY_VALUE`
 - `CHECKED`
 - `NOT_CHECKED`
 
-## Duration filter
+## Duration filter {/* #duration-filter */}
 
 For units the filter uses the standard Moodle defines:
 
@@ -186,11 +186,11 @@ For units the filter uses the standard Moodle defines:
 
 It also allows the integer value 1 to represent seconds.
 
-### Operators with no additional data
+### Operators with no additional data {/* #operators-with-no-additional-data-5 */}
 
 - `DURATION_ANY`
 
-### Operators with two values
+### Operators with two values {/* #operators-with-two-values-1 */}
 
 These operators can all accept two values:
 
@@ -209,7 +209,7 @@ These operators can all accept two values:
 'my:duration_unit' => DAYSECS,
 ```
 
-## Autocomplete filter
+## Autocomplete filter {/* #autocomplete-filter */}
 
 This filter type does not use `operator`, it requires that `values` contains an array of keys that the autocompletion element would return.
 
@@ -218,9 +218,9 @@ This filter type does not use `operator`, it requires that `values` contains an 
 'my:autocomplete2_values' => [42],
 ```
 
-## Category filter
+## Category filter {/* #category-filter */}
 
-### Operators with complex values
+### Operators with complex values {/* #operators-with-complex-values-1 */}
 
 Both the available operators for this have two values:
 
@@ -239,7 +239,7 @@ Both the available operators for this have two values:
 'my:category2_subcategories' => false,
 ```
 
-## Course_select filter
+## Course_select filter {/* #course_select-filter */}
 
 This filter type does not use `operator`, it requires that `values` contains an array of database ids for courses.
 
@@ -248,7 +248,7 @@ This filter type does not use `operator`, it requires that `values` contains an 
 'my:course2_values' => [42],
 ```
 
-## Cohort filter
+## Cohort filter {/* #cohort-filter */}
 
 This filter type does not use `operator`, it requires that `values` contains an array of database ids for cohorts.
 
@@ -257,7 +257,7 @@ This filter type does not use `operator`, it requires that `values` contains an 
 'my:cohort2_values' => [42],
 ```
 
-## Filesize filter
+## Filesize filter {/* #filesize-filter */}
 
 The filter defines several units for filesize as constants:
 
@@ -265,11 +265,11 @@ The filter defines several units for filesize as constants:
 - `SIZE_UNIT_MEGABYTE`
 - `SIZE_UNIT_GIGABYTE`
 
-### Operators with no additional data
+### Operators with no additional data {/* #operators-with-no-additional-data-6 */}
 
 - `ANY_VALUE`
 
-### Operators with two values
+### Operators with two values {/* #operators-with-two-values-2 */}
 
 1. `value1` The size of the file in the unit
 2. `unit` The type of unit (as defined by the filter constants)
@@ -286,15 +286,15 @@ The filter defines several units for filesize as constants:
 'my:filesize2_unit' => filesize::SIZE_UNIT_GIGABYTE,
 ```
 
-## Tags filter
+## Tags filter {/* #tags-filter */}
 
-### Operators with no additional data
+### Operators with no additional data {/* #operators-with-no-additional-data-7 */}
 
 - `ANY_VALUE`
 - `NOT_EMPTY`
 - `EMPTY`
 
-### Operators with one value
+### Operators with one value {/* #operators-with-one-value-2 */}
 
 An array of tag database ids should be sent in `value` to:
 
@@ -308,14 +308,14 @@ An array of tag database ids should be sent in `value` to:
 'my:tags2_value' => [1],
 ```
 
-## User filter
+## User filter {/* #user-filter */}
 
-### Operators with no additional data
+### Operators with no additional data {/* #operators-with-no-additional-data-8 */}
 
 - `USER_ANY`
 - `USER_CURRENT`
 
-### Operators with one value
+### Operators with one value {/* #operators-with-one-value-3 */}
 
 An array of user database ids should be sent in `value` to:
 

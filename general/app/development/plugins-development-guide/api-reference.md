@@ -6,7 +6,7 @@ tags:
  - Moodle App
 ---
 
-## Content responses
+## Content responses {/* #content-responses */}
 
 Methods defined in the `classes/output/mobile.php` class will be called through the `tool_mobile_get_content` Web Service, and should have the following structure in their response:
 
@@ -23,7 +23,7 @@ Methods defined in the `classes/output/mobile.php` class will be called through 
 | `restrict.courses` | All courses | List of allowed course IDs. |
 | `disabled`         | `false`     | Whether to disable the handler entirely. <br /> <br /> This is only used in `init` responses. |
 
-### Functions
+### Functions {/* #functions */}
 
 The JavaScript returned by content responses, as well as the JavaScript executed in Angular within templates, has access to the following functions:
 
@@ -47,7 +47,7 @@ The JavaScript returned by content responses, as well as the JavaScript executed
 
 You can learn how to use these functions in the [Group Selector example](./examples/groups-selector.md#loading-new-content).
 
-### Lifecycle
+### Lifecycle {/* #lifecycle */}
 
 For content used to render pages, it is possible to hook into [Ionic Life Cycle Hooks](https://ionicframework.com/docs/api/router-outlet#life-cycle-hooks) in JavaScript.
 
@@ -63,7 +63,7 @@ this.canLeave = function() {
 };
 ```
 
-## Handlers
+## Handlers {/* #handlers */}
 
 Handlers are configured under the `handlers` property in `mobile.php` using an associative array with the name of the handler and configuration options. The handler name should be an alphanumeric string.
 
@@ -73,15 +73,15 @@ These are the configuration options common to most handlers, you can find specif
 |-----------------------------|-------------|-------------|
 | `delegate`                  | -           | Name of the delegate to register the handler in. See the following sections for available delegates. |
 | `method`                    | -           | Name of the PHP method used to retrieve the page content. |
-| `init`                      | -           | Name of the PHP method used during [JavaScript initialisation](./index.md#javascript-initialisation). |
+| `init`                      | -           | Name of the PHP method used during [JavaScript initialisation](./index.md#JavaScript-initialisation). |
 | `styles`                    | -           | An associative array with configuration options for CSS styles. |
 | `styles.url`                | Required    | URL pointing to a CSS file, either using an absolute URL or a relative URL. The CSS will be downloaded and applied to the whole app, so it's recommended to include styles scoped to your plugin templates. |
 | `styles.version`            | Required    | Version number used to determine if the file needs to be downloaded again. You should change the version number every time you change the contents of the CSS file. |
 | `moodlecomponent`           | Plugin name | Name of the component implemented by the handler. <br /> <br /> Most of the time, this can be ignored because mobile support is usually included in the same plugin where custom components are defined, but it may be different in some cases. For example, imagine a local plugin called `local_myactivitymobile` is implementing mobile support for a `mod_myactivity` component. In that case, you would set this option to `"mod_myactivity"`. |
-| `restricttocurrentuser`     | `false`     | Restricts the handler to appear only for the current user. For more advanced restrictions, you can use the `restrict` and `disabled` properties returned during [JavaScript initialisation](./index.md#javascript-initialisation). |
-| `restricttoenrolledcourses` | `true`      | Restricts the handler to appear only for courses the user is enrolled in. For more advanced restrictions, you can use the `restrict` and `disabled` properties returned during [JavaScript initialisation](./index.md#javascript-initialisation). |
+| `restricttocurrentuser`     | `false`     | Restricts the handler to appear only for the current user. For more advanced restrictions, you can use the `restrict` and `disabled` properties returned during [JavaScript initialisation](./index.md#JavaScript-initialisation). |
+| `restricttoenrolledcourses` | `true`      | Restricts the handler to appear only for courses the user is enrolled in. For more advanced restrictions, you can use the `restrict` and `disabled` properties returned during [JavaScript initialisation](./index.md#JavaScript-initialisation). |
 
-### CoreMainMenuDelegate
+### CoreMainMenuDelegate {/* #coremainmenudelegate */}
 
 Adds a new item to the main menu. Main Menu handlers are always displayed in the More menu (the three dots), they cannot be displayed as tabs in the main navigation bar.
 
@@ -89,7 +89,7 @@ Adds a new item to the main menu. Main Menu handlers are always displayed in the
 **JavaScript overrides:** None <br />
 **JavaScript component:** None
 
-#### Options
+#### Options {/* #options */}
 
 | Name                | Default  | Description |
 |---------------------|----------|-------------|
@@ -100,7 +100,7 @@ Adds a new item to the main menu. Main Menu handlers are always displayed in the
 | `priority`          | `0`      | Priority of the handler, higher priority items are displayed first. |
 | `ptrenabled`        | `true`   | Whether to enable the PTR (pull-to-refresh) gesture in the page. |
 
-### CoreMainMenuHomeDelegate
+### CoreMainMenuHomeDelegate {/* #coremainmenuhomedelegate */}
 
 Adds new tabs in the home page. By default, the app is displaying the "Dashboard" and "Site home" tabs.
 
@@ -108,7 +108,7 @@ Adds new tabs in the home page. By default, the app is displaying the "Dashboard
 **JavaScript overrides:** None <br />
 **JavaScript component:** None
 
-#### Options
+#### Options {/* #options-1 */}
 
 | Name                | Default  | Description |
 |---------------------|----------|-------------|
@@ -118,7 +118,7 @@ Adds new tabs in the home page. By default, the app is displaying the "Dashboard
 | `priority`          | `0`      | Priority of the handler, higher priority tabs are displayed first. |
 | `ptrenabled`        | `true`   | Whether to enable the PTR (pull-to-refresh) gesture in the page. |
 
-### CoreCourseOptionsDelegate
+### CoreCourseOptionsDelegate {/* #corecourseoptionsdelegate */}
 
 Add new option in the course page, either as a tab or in the course summary. For example, the tab will appear alongside Participants and Grades. And the course summary can be opened using the info icon in the header.
 
@@ -126,7 +126,7 @@ Add new option in the course page, either as a tab or in the course summary. For
 **JavaScript overrides:** None <br />
 **JavaScript component:** None
 
-#### Options
+#### Options {/* #options-2 */}
 
 | Name                | Default  | Description |
 |---------------------|----------|-------------|
@@ -137,11 +137,11 @@ Add new option in the course page, either as a tab or in the course summary. For
 | `ismenuhandler`     | `false`  | Whether to show the option in the course summary. |
 | `ptrenabled`        | `true`   | Whether to enable the PTR (pull-to-refresh) gesture in the page. |
 
-### CoreCourseModuleDelegate
+### CoreCourseModuleDelegate {/* #corecoursemoduledelegate */}
 
 Add support for activity modules or resources.
 
-The following functions can be declared in the object evaluated in the last statement of the [JavaScript initialisation](./index.md#javascript-initialisation) in order to implement additional functionality:
+The following functions can be declared in the object evaluated in the last statement of the [JavaScript initialisation](./index.md#JavaScript-initialisation) in order to implement additional functionality:
 
 - `supportsFeature(feature: string): any`: Check whether the module supports a given feature.
 - `manualCompletionAlwaysShown(module: CoreCourseModuleData): Promise<boolean>`: Check whether to show the manual completion regardless of the course's `showcompletionconditions` setting.
@@ -152,7 +152,7 @@ You can learn more about this in the [Course Modules example](./examples/course-
 **JavaScript overrides:** None <br />
 **JavaScript component:** None
 
-#### Options
+#### Options {/* #options-3 */}
 
 | Name                   | Default  | Description |
 |------------------------|----------|-------------|
@@ -173,7 +173,7 @@ You can learn more about this in the [Course Modules example](./examples/course-
 | `supportedfeatures`    | `[]`     | Associative array with configuration for the features supported in the plugin. If you need to calculate these dynamically, you can implement the `supportsFeature` function in the JavaScript. <br /> <br /> Some features are not available in the app and they will be ignored. The available features are `FEATURE_MOD_ARCHETYPE`, `FEATURE_MOD_PURPOSE`, `FEATURE_GRADE_HAS_GRADE`, `FEATURE_SHOW_DESCRIPTION`, and `FEATURE_NO_VIEW_LINK`. <br /> <br /> You can find some [examples below](#example-supportedfeatures-values). |
 | `ptrenabled`           | `true`   | Whether to enable the PTR (pull-to-refresh) gesture in the page. |
 
-#### Example `offlinefunctions` values
+#### Example `offlinefunctions` values {/* #example-offlinefunctions-values */}
 
 Using PHP method names:
 
@@ -193,7 +193,7 @@ Using Web Services:
 ]
 ```
 
-#### Example `updatesnames` values
+#### Example `updatesnames` values {/* #example-updatesnames-values */}
 
 The following regular expression would only consider the "grades" and "gradeitems" fields in module updates to consider a module outdated:
 
@@ -201,7 +201,7 @@ The following regular expression would only consider the "grades" and "gradeitem
 '/^grades$|^gradeitems$/'
 ```
 
-#### Example `supportedfeatures` values
+#### Example `supportedfeatures` values {/* #example-supportedfeatures-values */}
 
 ```php
 [
@@ -210,7 +210,7 @@ The following regular expression would only consider the "grades" and "gradeitem
 ]
 ```
 
-#### Example `supportedFeatures()` JavaScript definition
+#### Example `supportedFeatures()` JavaScript definition {/* #example-supportedfeatures-JavaScript-definition */}
 
 ```js
 var result = {
@@ -228,7 +228,7 @@ var result = {
 result;
 ```
 
-### CoreUserDelegate
+### CoreUserDelegate {/* #coreuserdelegate */}
 
 Add new option in the user profile page.
 
@@ -236,7 +236,7 @@ Add new option in the user profile page.
 **JavaScript overrides:** None <br />
 **JavaScript component:** None
 
-#### Options
+#### Options {/* #options-4 */}
 
 | Name                | Default      | Description |
 |---------------------|--------------|-------------|
@@ -249,7 +249,7 @@ Add new option in the user profile page.
 | `ptrenabled`        | `true`       | Whether to enable the PTR (pull-to-refresh) gesture in the page. |
 | `displayinusermenu` | -            | Whether to display the option in the user menu (the menu displayed when the user clicks his own avatar at the top-right or top-left). Accepted values are: <ul><li>`no`: don't display the option in user menu.</li><li>`yes`: display the option in user menu. It will also be displayed in user profiles (like course participants) depending on the restrictions.</li><li>`only`: display the option only in user menu and never in user profiles.</li></ul>If not set, the option will be displayed in the user menu depending on the restricted courses and users. <br /> <br /> Only available in 5.1+. |
 
-### CoreCourseFormatDelegate
+### CoreCourseFormatDelegate {/* #corecourseformatdelegate */}
 
 Add support for a custom course format. The template returned by this handler also has access to the following properties:
 
@@ -266,14 +266,14 @@ You can learn more about this in the [Course Formats example](./examples/course-
 **JavaScript overrides:** None <br />
 **JavaScript component:** None
 
-#### Options
+#### Options {/* #options-5 */}
 
 | Name                     | Default     | Description |
 |--------------------------|-------------|-------------|
 | `canviewallsections`     | `true`      | Whether the course format allows seeing all sections in a single page.|
 | `displaycourseindex`     | `true`      | Whether the course index should be displayed. |
 
-### CoreSettingsDelegate
+### CoreSettingsDelegate {/* #coresettingsdelegate */}
 
 Add new option in the settings page.
 
@@ -281,7 +281,7 @@ Add new option in the settings page.
 **JavaScript overrides:** None <br />
 **JavaScript component:** None
 
-#### Options
+#### Options {/* #options-6 */}
 
 | Name                | Default     | Description |
 |---------------------|-------------|-------------|
@@ -292,7 +292,7 @@ Add new option in the settings page.
 | `priority`          | `0`         | Priority of the handler, higher priority options are displayed first. |
 | `ptrenabled`        | `true`      | Whether to enable the PTR (pull-to-refresh) gesture in the page. |
 
-### AddonMessageOutputDelegate
+### AddonMessageOutputDelegate {/* #addonmessageoutputdelegate */}
 
 Add support for custom user notification settings. This will add a new option in the actions menu of the user notifications page (User menu > Preferences > Notifications).
 
@@ -300,7 +300,7 @@ Add support for custom user notification settings. This will add a new option in
 **JavaScript overrides:** None <br />
 **JavaScript component:** None
 
-#### Options
+#### Options {/* #options-7 */}
 
 | Name                | Default     | Description |
 |---------------------|-------------|-------------|
@@ -310,7 +310,7 @@ Add support for custom user notification settings. This will add a new option in
 | `priority`          | `0`         | Priority of the handler, higher priority options are displayed first. |
 | `ptrenabled`        | `true`      | Whether to enable the PTR (pull-to-refresh) gesture in the page. |
 
-### CoreBlockDelegate
+### CoreBlockDelegate {/* #coreblockdelegate */}
 
 Add support for a custom block. Blocks can be displayed in Site Home, Dashboard and Course page.
 
@@ -318,7 +318,7 @@ Add support for a custom block. Blocks can be displayed in Site Home, Dashboard 
 **JavaScript overrides:** None <br />
 **JavaScript component:** None
 
-#### Options
+#### Options {/* #options-8 */}
 
 | Name                | Default                | Description |
 |---------------------|------------------------|-------------|
@@ -328,7 +328,7 @@ Add support for a custom block. Blocks can be displayed in Site Home, Dashboard 
 | `displaydata.type`  | -                      | Predefined type of block to render, available options are `title` and `prerendered`. <br /> <br /> `title` blocks will render a single button with the name of the block, and they will open a page rendered using the `method`. <br /> <br /> `prerendered` blocks will use the pre-rendered content and footer returned by the Web Services (like `core_block_get_course_blocks`). <br /> <br /> When this option is missing, the block will be rendered using `method` or `fallback`. |
 | `fallback`          | -                      | Name of another block to use in order to render the block in the app. This can be useful for custom blocks that have the same graphical interface as other block, even if they are technically different blocks. |
 
-### CoreQuestionDelegate
+### CoreQuestionDelegate {/* #corequestiondelegate */}
 
 Add support for a custom question type.
 
@@ -340,7 +340,7 @@ You can learn more about this in the [Question Types example](./examples/questio
 
 *This handler does not have any specific options.*
 
-### CoreQuestionBehaviourDelegate
+### CoreQuestionBehaviourDelegate {/* #corequestionbehaviourdelegate */}
 
 Add support for a custom question behaviour.
 
@@ -350,7 +350,7 @@ Add support for a custom question behaviour.
 
 *This handler does not have any specific options.*
 
-### CoreUserProfileFieldDelegate
+### CoreUserProfileFieldDelegate {/* #coreuserprofilefielddelegate */}
 
 Add support for a custom user profile field.
 
@@ -360,7 +360,7 @@ Add support for a custom user profile field.
 
 *This handler does not have any specific options.*
 
-### AddonModQuizAccessRuleDelegate
+### AddonModQuizAccessRuleDelegate {/* #addonmodquizaccessruledelegate */}
 
 Add support for a custom quiz access rule.
 
@@ -370,7 +370,7 @@ Add support for a custom quiz access rule.
 
 *This handler does not have any specific options.*
 
-### AddonModAssignSubmissionDelegate
+### AddonModAssignSubmissionDelegate {/* #addonmodassignsubmissiondelegate */}
 
 Add support for a custom assign submission.
 
@@ -380,7 +380,7 @@ Add support for a custom assign submission.
 
 *This handler does not have any specific options.*
 
-### AddonModAssignFeedbackDelegate
+### AddonModAssignFeedbackDelegate {/* #addonmodassignfeedbackdelegate */}
 
 Add support for a custom assign feedback.
 
@@ -390,49 +390,49 @@ Add support for a custom assign feedback.
 
 *This handler does not have any specific options.*
 
-### AddonWorkshopAssessmentStrategyDelegate
+### AddonWorkshopAssessmentStrategyDelegate {/* #addonworkshopassessmentstrategydelegate */}
 
 Add support for a custom workshop assessment strategy.
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [AddonWorkshopAssessmentStrategyHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/addons/mod/workshop/services/assessment-strategy-delegate.ts#L26..L76).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [AddonWorkshopAssessmentStrategyHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/addons/mod/workshop/services/assessment-strategy-delegate.ts#L26..L76).*
 
-### CoreContentLinksDelegate
+### CoreContentLinksDelegate {/* #corecontentlinksdelegate */}
 
 Allows you to intercept what happens when links are clicked. For example, you can open a plugin page when a link is clicked. The Moodle app automatically creates some link handlers for module plugins, you can learn more about this and how to use link handlers in the [Link Handlers example](./examples/link-handlers.md).
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [CoreContentLinksHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/contentlinks/services/contentlinks-delegate.ts#L27..L95).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [CoreContentLinksHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/contentlinks/services/contentlinks-delegate.ts#L27..L95).*
 
-### CorePushNotificationsDelegate
+### CorePushNotificationsDelegate {/* #corepushnotificationsdelegate */}
 
 Allows you to intercept what happens when push notifications are clicked.
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [CorePushNotificationsClickHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/pushnotifications/services/push-delegate.ts#L27..L59).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [CorePushNotificationsClickHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/pushnotifications/services/push-delegate.ts#L27..L59).*
 
-### CoreCourseModulePrefetchDelegate
+### CoreCourseModulePrefetchDelegate {/* #corecoursemoduleprefetchdelegate */}
 
 Allows you to implement custom logic to prefetch module content. You can learn more about this in the [Prefetch Handlers example](./examples/prefetch-handlers.md).
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [CoreCourseModulePrefetchHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/course/services/module-prefetch-delegate.ts#L1410..L1568).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [CoreCourseModulePrefetchHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/course/services/module-prefetch-delegate.ts#L1410..L1568).*
 
-### CoreFileUploaderDelegate
+### CoreFileUploaderDelegate {/* #corefileuploaderdelegate */}
 
 Add new option in the upload file picker.
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [CoreFileUploaderHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/fileuploader/services/fileuploader-delegate.ts#L26..L46).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [CoreFileUploaderHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/fileuploader/services/fileuploader-delegate.ts#L26..L46).*
 
-### CorePluginFileDelegate
+### CorePluginFileDelegate {/* #corepluginfiledelegate */}
 
 Perform operations with files such as listening to file events (download, deletion, etc.) or using a different URL when downloading.
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [CorePluginFileHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/services/plugin-file-delegate.ts#L296..L389).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [CorePluginFileHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/services/plugin-file-delegate.ts#L296..L389).*
 
-### CoreFilterDelegate
+### CoreFilterDelegate {/* #corefilterdelegate */}
 
 Add support for a custom filter. Note that you'll only need this if you have to manipulate the content with JavaScript, PHP filters are applied in the content before sending the HTML to the app.
 
-*This handler can only be registered using [JavaScript initialisation](./index.md#javascript-initialisation), you can find more about it in the [CoreFilterHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/filter/services/filter-delegate.ts#L28..L76).*
+*This handler can only be registered using [JavaScript initialisation](./index.md#JavaScript-initialisation), you can find more about it in the [CoreFilterHandler interface declaration](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/filter/services/filter-delegate.ts#L28..L76).*
 
-### CoreEnrolDelegate `4.3+`
+### CoreEnrolDelegate `4.3+` {/* #coreenroldelegate-43 */}
 
 Add support for custom enrolment methods. You can see an example of customizing the default behaviour using JavaScript in the [Self Enrolment example](./examples/self-enrolment.md).
 
@@ -442,27 +442,27 @@ This delegate was introduced in version 4.3 of the app.
 **JavaScript overrides:** [CoreEnrolHandler](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/enrol/services/enrol-delegate.ts#L33..L59) (only when `enrolmentAction` is `self` or `guest`) <br />
 **JavaScript component:** None
 
-#### Options
+#### Options {/* #options-9 */}
 
 | Name                    | Default     | Description |
 |-------------------------|-------------|-------------|
-| `enrolmentAction`       | `'browser'` | Action performed by the handler. Possible values are: `browser`, `self`, and `guest`. <br /> <br /> `browser` opens the browser to perform the enrolment in the LMS, outside of the app. <br /> <br /> `self` requires implementing the `enrol` function in JavaScript. Also, the PHP class extending `enrol_plugin` must return some data in the `get_enrol_info` method. <br /> <br /> `guest` allows users to enter the course as guests. It requires implementing the `canAccess` and `validateAccess` functions in the [JavaScript initialisation](./index.md#javascript-initialisation) JavaScript. Also, the PHP class extending `enrol_plugin` must return some data in the `get_enrol_info` method. |
+| `enrolmentAction`       | `'browser'` | Action performed by the handler. Possible values are: `browser`, `self`, and `guest`. <br /> <br /> `browser` opens the browser to perform the enrolment in the LMS, outside of the app. <br /> <br /> `self` requires implementing the `enrol` function in JavaScript. Also, the PHP class extending `enrol_plugin` must return some data in the `get_enrol_info` method. <br /> <br /> `guest` allows users to enter the course as guests. It requires implementing the `canAccess` and `validateAccess` functions in the [JavaScript initialisation](./index.md#JavaScript-initialisation) JavaScript. Also, the PHP class extending `enrol_plugin` must return some data in the `get_enrol_info` method. |
 | `infoIcons`             | `[]`        | Array of icons related to enrolment to display next to the course. These can also be calculated dynamically in JavaScript using course information. |
 | `infoIcons[].icon`      | Required    | The icon to use. See the [ion-icon](#ion-icon) documentation for available values. |
 | `infoIcons[].label`     | Required    | Language string identifier to use in the aria-label of the icon. See the [localisation](./index.md#localisation) documentation to learn more. |
 | `infoIcons[].className` | -           | A CSS class to add in the icon. |
 
-## Components
+## Components {/* #components */}
 
 In addition to built-in Angular and [Ionic Components](https://ionicframework.com/docs/components), the following are also available in the Moodle App.
 
 Please note that this list is not exhaustive, you can find all the components available in the app under [src/core/components](https://github.com/moodlehq/moodleapp/tree/latest/src/core/components).
 
-### core-format-text
+### core-format-text {/* #core-format-text */}
 
 Formats the text and adds functionality specific for the app. For example, it adds [core-link](#core-link) to links, [core-external-content](#core-external-content) to embedded media, applies [filters](https://docs.moodle.org/en/Filters), etc.
 
-#### Attributes
+#### Attributes {/* #attributes */}
 
 | Name                | Default         | Description |
 |---------------------|-----------------|-------------|
@@ -484,18 +484,18 @@ Formats the text and adds functionality specific for the app. For example, it ad
 | `hideIfEmpty`       | `false`         | Whether to hide the element when the text is empty. |
 | `disabled`          | `false`         | Whether to disable elements with autoplay. |
 
-#### Examples
+#### Examples {/* #examples */}
 
 ```html ng2
 <core-format-text text="<% cm.description %>" component="mod_certificate" componentId="<% cm.id %>">
 </core-format-text>
 ```
 
-### core-navbar-buttons
+### core-navbar-buttons {/* #core-navbar-buttons */}
 
 Adds buttons to the header of the current page.
 
-#### Attributes
+#### Attributes {/* #attributes-1 */}
 
 | Name      | Default | Description |
 |-----------|---------|-------------|
@@ -503,7 +503,7 @@ Adds buttons to the header of the current page.
 | `hidden`  | -       | When this attribute is present, with any value, all the buttons are hidden. |
 | `prepend` | -       | When this attribute is present, with any value, the buttons will be added to the beginning. Otherwise, they are added at the end. |
 
-#### Examples
+#### Examples {/* #examples-1 */}
 
 ```html ng2
 <core-navbar-buttons slot="end">
@@ -526,11 +526,11 @@ You can also use it to add options to the context menu:
 </core-navbar-buttons>
 ```
 
-### core-file
+### core-file {/* #core-file */}
 
 Handles a remote file. It shows the file name, icon (depending on mime type), and a button to download or refresh it. Users can identify if the file is downloaded or not based on the button.
 
-#### Attributes
+#### Attributes {/* #attributes-2 */}
 
 | Name                | Default  | Description |
 |---------------------|----------|-------------|
@@ -549,7 +549,7 @@ Handles a remote file. It shows the file name, icon (depending on mime type), an
 | `showTime`          | `true`   | Whether show the time modified. |
 | `onDelete`          | -        | Listener for the file being deleted. |
 
-#### Examples
+#### Examples {/* #examples-2 */}
 
 ```html ng2
 <core-file
@@ -564,13 +564,13 @@ Handles a remote file. It shows the file name, icon (depending on mime type), an
 </core-file>
 ```
 
-### core-rich-text-editor
+### core-rich-text-editor {/* #core-rich-text-editor */}
 
 Text editor to write rich content including formatting text, inserting links and images, uploading files, etc.
 
 Using this component may require setting up a `FormControl`, you can learn more about this in the [Forms example](./examples/forms.md#using-core-rich-text-editor).
 
-#### Attributes
+#### Attributes {/* #attributes-3 */}
 
 | Name                | Default                   | Description |
 |---------------------|---------------------------|-------------|
@@ -585,7 +585,7 @@ Using this component may require setting up a `FormControl`, you can learn more 
 | `elementId`         | -                         | ID to set to the element. |
 | `draftExtraParams`  | -                         | Extra parameters to identify the draft. |
 
-### ion-icon
+### ion-icon {/* #ion-icon */}
 
 Even though [ion-icon](https://ionicframework.com/docs/api/icon) is a built-in Ionic component, it has additional functionality in the Moodle App. In particular, it's possible to use more icons besides [Ionicons](https://ionic.io/ionicons).
 
@@ -600,7 +600,7 @@ This can be achieved using different prefixes in the `name` attribute:
 
 We encourage the use of Font Awesome icons to match the appearance of the LMS website.
 
-#### Examples
+#### Examples {/* #examples-3 */}
 
 Show the "pizza-slice" icon from Font Awesome regular library:
 
@@ -608,19 +608,19 @@ Show the "pizza-slice" icon from Font Awesome regular library:
 <ion-icon name="fas-pizza-slice"></ion-icon>
 ```
 
-## Directives
+## Directives {/* #directives */}
 
 In addition to built-in [Angular Directives](https://angular.dev/guide/directives), the following are also available in the Moodle App.
 
 Please note that this list is not exhaustive, you can find all the components available in the app under [src/core/directives](https://github.com/moodlehq/moodleapp/tree/latest/src/core/directives).
 
-### collapsible-item
+### collapsible-item {/* #collapsible-item */}
 
 Makes an element collapsible.
 
 This directive takes a single argument, which is optional, to indicate the max height to render the content box. The minimum accepted value is 56. Using the argument will force `display: block` to calculate the height better. If you want to avoid this, use `class="inline"` at the same time to use `display: inline-block`.
 
-#### Examples
+#### Examples {/* #examples-4 */}
 
 ```html
 <div collapsible-item>
@@ -628,13 +628,13 @@ This directive takes a single argument, which is optional, to indicate the max h
 </div>
 ```
 
-### core-link
+### core-link {/* #core-link */}
 
 Performs several checks upon link navigation, like launching a browser instead of overriding the app.
 
 This directive is applied automatically to all the links and media inside of [core-format-text](#core-format-text) components.
 
-#### Attributes
+#### Attributes {/* #attributes-4 */}
 
 | Name                 | Default   | Description |
 |----------------------|-----------|-------------|
@@ -643,7 +643,7 @@ This directive is applied automatically to all the links and media inside of [co
 | `autoLogin`          | `'check'` | Whether to open the link with auto-login. Possible values are `yes`, `no`, and `check` (Auto-login only if the link belongs to the current site) |
 | `showBrowserWarning` | `true`    | Whether to show a warning before opening browser. |
 
-#### Examples
+#### Examples {/* #examples-5 */}
 
 ```html ng2
 <a href="<% cm.url %>" core-link>Open</a>
@@ -652,7 +652,7 @@ This directive is applied automatically to all the links and media inside of [co
 </a>
 ```
 
-### core-external-content
+### core-external-content {/* #core-external-content */}
 
 Handle links to files and embedded files. This directive should be used in any link to a file or any embedded file that you want to have available when the app is offline.
 
@@ -660,7 +660,7 @@ If a file is downloaded, its URL will be replaced by the local file URL.
 
 This directive is applied automatically to all the links and media inside of [core-format-text](#core-format-text) components.
 
-#### Attributes
+#### Attributes {/* #attributes-5 */}
 
 | Name          | Default         | Description |
 |---------------|-----------------|-------------|
@@ -668,36 +668,36 @@ This directive is applied automatically to all the links and media inside of [co
 | `component`   | -               | Component to use when downloading embedded files. |
 | `componentId` | -               | ID to use in conjunction with the component. |
 
-#### Examples
+#### Examples {/* #examples-6 */}
 
 ```html ng2
 <img src="<% event.iconurl %>" core-external-content component="mod_certificate" componentId="<% event.id %>">
 ```
 
-### core-user-link
+### core-user-link {/* #core-user-link */}
 
 Open user profile when clicked.
 
-#### Attributes
+#### Attributes {/* #attributes-6 */}
 
 | Name       | Default  | Description |
 |------------|----------|-------------|
 | `userId`   | Required | User ID to open the profile. |
 | `courseId` | -        | Course id to show the user info related to that course. |
 
-#### Examples
+#### Examples {/* #examples-7 */}
 
 ```html ng2
 <a ion-item core-user-link userId="<% userid %>">Open user profile</a>
 ```
 
-### core-download-file
+### core-download-file {/* #core-download-file */}
 
 Download and open a file when clicked.
 
 For most cases, it is recommended to use the [core-file](#core-file) component instead because it will display some useful information about the file.
 
-#### Attributes
+#### Attributes {/* #attributes-7 */}
 
 | Name                              | Default  | Description |
 |-----------------------------------|----------|-------------|
@@ -709,7 +709,7 @@ For most cases, it is recommended to use the [core-file](#core-file) component i
 | `component`                       | -        | Component related with the file. |
 | `componentId`                     | -        | ID to use in conjunction with the component. |
 
-#### Examples
+#### Examples {/* #examples-8 */}
 
 ```html ng2
 <ion-button
@@ -724,11 +724,11 @@ For most cases, it is recommended to use the [core-file](#core-file) component i
 </ion-button>
 ```
 
-### core-course-download-module-main-file
+### core-course-download-module-main-file {/* #core-course-download-module-main-file */}
 
 Download and open the main file of a module when clicked. This directive is intended for modules like `mod_resource`.
 
-#### Attributes
+#### Attributes {/* #attributes-8 */}
 
 | Name          | Default           | Description |
 |---------------|-------------------|-------------|
@@ -739,7 +739,7 @@ Download and open the main file of a module when clicked. This directive is inte
 | `componentId` | -                 | ID to use in conjunction with the component. |
 | `files`       | `module.contents` | List of files of the module. |
 
-#### Examples
+#### Examples {/* #examples-9 */}
 
 ```html ng2
 <ion-button expand="block" core-course-download-module-main-file moduleId="<% cmid %>"
@@ -754,11 +754,11 @@ Download and open the main file of a module when clicked. This directive is inte
 </ion-button>
 ```
 
-### core-site-plugins-new-content
+### core-site-plugins-new-content {/* #core-site-plugins-new-content */}
 
 Open new content when clicked. This content can be displayed in a new page or in the current page, if the current page is already displaying plugin content. This directive is typically used to navigate through plugin pages.
 
-#### Attributes
+#### Attributes {/* #attributes-9 */}
 
 | Name           | Default  | Description |
 |----------------|----------|-------------|
@@ -773,7 +773,7 @@ Open new content when clicked. This content can be displayed in a new page or in
 | `jsData`       | -        | JavaScript variables to pass to the new page so they can be used in the template or JavaScript. This attribute can also be set to `true`, in which case all initial variables from current page will be used. |
 | `ptrEnabled`   | `true`   | Whether to enable PTR (pull-to-refresh) in the new page. |
 
-#### Examples
+#### Examples {/* #examples-10 */}
 
 A button that loads content in a new page:
 
@@ -795,7 +795,7 @@ A button that loads content in the current page, and includes `userid` from `oth
 </ion-button>
 ```
 
-### core-site-plugins-call-ws
+### core-site-plugins-call-ws {/* #core-site-plugins-call-ws */}
 
 Calls a Web Service when clicked. Depending on the response, the current page will be refreshed, a message will be displayed, or the application will navigate back to the previous page.
 
@@ -803,7 +803,7 @@ If you'd rather load new content when the Web Service request is done, use [core
 
 You can see this directive in use in the [Forms example](./examples/forms.md).
 
-#### Attributes
+#### Attributes {/* #attributes-10 */}
 
 | Name                | Default  | Description |
 |---------------------|----------|-------------|
@@ -821,7 +821,7 @@ You can see this directive in use in the [Forms example](./examples/forms.md).
 | `onError`           | -        | A function to call when the Web Service call fails (HTTP call fails or an exception is returned). |
 | `onDone`            | -        | A function to call when the Web Service call finishes (either success or fail). |
 
-#### Examples
+#### Examples {/* #examples-11 */}
 
 A button to send some data to the server without using cache, displaying default messages and refreshing on success:
 
@@ -860,13 +860,13 @@ this.certificateViewed = function(result) {
 };
 ```
 
-### core-site-plugins-call-ws-new-content
+### core-site-plugins-call-ws-new-content {/* #core-site-plugins-call-ws-new-content */}
 
 Calls a Web Service when clicked and loads new content passing the Web Service result as arguments. This content can be displayed in a new page or in the current page, if the current page is already displaying plugin content.
 
 If you don't need to load new content, use [core-site-plugins-call-ws](#core-site-plugins-call-ws) instead.
 
-#### Attributes
+#### Attributes {/* #attributes-11 */}
 
 | Name                | Default  | Description |
 |---------------------|----------|-------------|
@@ -890,7 +890,7 @@ If you don't need to load new content, use [core-site-plugins-call-ws](#core-sit
 | `onDone`            | -        | A function to call when the Web Service call finishes (either success or fail). |
 | `ptrEnabled`        | `true`   | Whether to enable PTR (pull-to-refresh) in the new page. |
 
-#### Examples
+#### Examples {/* #examples-12 */}
 
 A button to get some data from the server without using cache, showing default confirm and displaying a new page:
 
@@ -934,13 +934,13 @@ this.callDone = function(result) {
 };
 ```
 
-### core-site-plugins-call-ws-on-load
+### core-site-plugins-call-ws-on-load {/* #core-site-plugins-call-ws-on-load */}
 
 Call a Web Service as soon as the template is loaded. This directive is meant for actions to do in the background, like calling logging Web Services.
 
 If you want to call a Web Service when the user clicks on a certain element, use [core-site-plugins-call-ws](#core-site-plugins-call-ws) instead.
 
-#### Attributes
+#### Attributes {/* #attributes-12 */}
 
 | Name              | Default  | Description |
 |-------------------|----------|-------------|
@@ -953,7 +953,7 @@ If you want to call a Web Service when the user clicks on a certain element, use
 | onError           | -        | A function to call when the Web Service call fails (HTTP call fails or an exception is returned). |
 | onDone            | -        | A function to call when the Web Service call finishes (either success or fail). |
 
-#### Examples
+#### Examples {/* #examples-13 */}
 
 ```html ng2 title="Template"
 <span core-site-plugins-call-ws-on-load
@@ -968,7 +968,7 @@ this.callDone = function(result) {
 };
 ```
 
-## Services
+## Services {/* #services */}
 
 When writing JavaScript in plugins, many of the app services are available as well.
 

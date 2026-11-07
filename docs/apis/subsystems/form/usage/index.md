@@ -23,7 +23,7 @@ Some good examples of usage of the Forms API can be found at the following locat
 
 Whilst much of the API originates in the PEAR package, all interaction with the library should be via the `moodleform` class, which acts as a controlling wrapper to HTML_QuickForm.
 
-## Basic Usage in A Normal Page
+## Basic Usage in A Normal Page {/* #basic-usage-in-a-normal-page */}
 
 Generally the structure of a page with a form on it looks like this:
 
@@ -68,7 +68,7 @@ echo $OUTPUT->footer();
 
 You are encouraged to look at `lib/formslib.php` to see what additional functions and parameters are available. Available functions are well commented.
 
-## Defining Your Form Class
+## Defining Your Form Class {/* #defining-your-form-class */}
 
 The form class tells us about the structure of the form.
 
@@ -94,11 +94,11 @@ One example of this is in the activity edit form, which must be named `mod_[modn
 
 The name you give the class is used as the `id` attribute of your form in html. Any trailing '_form' is removed. Your form class name should be unique in order for it to be selectable in CSS by theme designers who may want to adjust the css just for that form.
 
-### definition()
+### definition() {/* #definition */}
 
 Form definition is defined in further detail in the [Form definition](https://docs.moodle.org/dev/lib/formslib.php_Form_Definition) documentation.
 
-## Use in Activity Modules Add / Update Forms
+## Use in Activity Modules Add / Update Forms {/* #use-in-activity-modules-add--update-forms */}
 
 The same form is used to create or edit an activity, but some legacy constraints still apply:
 
@@ -108,19 +108,19 @@ The same form is used to create or edit an activity, but some legacy constraints
   - `mod/[modname]/classes/mod_form.php`
 - The form _must_ extend the `moodleform_mod` class.
 
-### defaults_preprocessing
+### defaults_preprocessing {/* #defaults_preprocessing */}
 
 Since the data for the activity editing form is automatically filled from the database, you may need to pre-process this data to set values for some form fields. For example, in the Forum activity, in some situations a Unix Time Stamp is used to set a boolean checkbox.
 
 This can be achieved using the `defaults_preprocessing` method.
 
-### Post Processing
+### Post Processing {/* #post-processing */}
 
 Whilst the pre-processing stage is performed in the `defaults_preprocessing` function, all post-processing is perform in the `[modname]_add_instance` and `[modname]_update_instance` functions in the activities `lib.php`.
 
 These are called _after_ data bas been validated by the Forms API.
 
-### Standard activity form elements
+### Standard activity form elements {/* #standard-activity-form-elements */}
 
 Moodle has a set of standard form elements used by all Activity modules. These allow for consistent control over activity visibility, group modes, and other common APIs.
 

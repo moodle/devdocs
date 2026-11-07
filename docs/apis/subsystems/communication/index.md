@@ -32,7 +32,7 @@ Please follow the steps to enable the feature.
 
 :::
 
-## Hooks
+## Hooks {/* #hooks */}
 
 The Communication API takes advantage of the [Hooks API](../../plugintypes/communication/index.md) with actions performed in the following way:
 
@@ -41,11 +41,11 @@ The Communication API takes advantage of the [Hooks API](../../plugintypes/comm
 3. Callbacks are then listened for inside the Communication API's hook listener (`communication\hook_listener`) where all the logic is performed.
 4. To identify the ones Communication API is using, the callbacks will be methods from Communication API's hook listener (`communication\hook_listener`).
 
-## Important features of the API
+## Important features of the API {/* #important-features-of-the-api */}
 
 The below are the important methods/features of the API. These methods/features are the ones which can be used to interact with the communication API.
 
-### Loading a communication instance
+### Loading a communication instance {/* #loading-a-communication-instance */}
 
 To load a communication instance, you must use the `communication\api::load_by_instance()` method. This method will return a communication instance which can be
 used to interact with the communication API and its related methods. The below example shows how to load a communication instance for a course, where the
@@ -64,7 +64,7 @@ $communication = \core_communication\api::load_by_instance(
 );
 ```
 
-### Create and configure a room
+### Create and configure a room {/* #create-and-configure-a-room */}
 
 `$communication->create_and_configure_room()` method is used to add an ad-hoc to create a room in the communication provider and configure it with the required settings.
 
@@ -111,7 +111,7 @@ $communication->create_and_configure_room(
 );
 ```
 
-### Update a room and its associated information
+### Update a room and its associated information {/* #update-a-room-and-its-associated-information */}
 
 `$communication->update_room()` method is used to add an ad-hoc to update a room in the communication provider and configure it with the required settings.
 
@@ -152,7 +152,7 @@ $communication->update_room(
 );
 ```
 
-### Delete a room
+### Delete a room {/* #delete-a-room */}
 
 `$communication->delete_room()` method is used to add an ad-hoc to delete a room in the communication provider. The associated task for this also removes all the members from
 the room before deleting the room.
@@ -163,7 +163,7 @@ This is destructive and might remove all the messages and other data associated 
 
 :::
 
-### Create and configure a room according to the provider
+### Create and configure a room according to the provider {/* #create-and-configure-a-room-according-to-the-provider */}
 
 There are cases where the provider is changed for a communication instance.
 For example, previously the provider was set to _Provider B_ and now it has changed to _Provider A_.
@@ -194,7 +194,7 @@ $communication->configure_room_and_membership_by_provider(
             );
 ```
 
-### Add members to a room
+### Add members to a room {/* #add-members-to-a-room */}
 
 `$communication->add_members_to_room()` method is used to add an ad-hoc to add members to a room in the communication provider. The user id of each user to be added to
 the provider room is also stored in the communication_user table for user mapping with the provider.
@@ -226,7 +226,7 @@ $communication->add_members_to_room(
 );
 ```
 
-### Update the membership of a room
+### Update the membership of a room {/* #update-the-membership-of-a-room */}
 
 `$communication->update_room_membership()` method is used to add an ad-hoc to update the membership of a room in the communication provider.
 The user mapping for each of the users are also reset to allow task to update the users from the task.
@@ -240,7 +240,7 @@ public function update_room_membership(
 
 This method accepts the same parameters as the `add_members_to_room()` method and the usage is also the same.
 
-### Remove members from a room
+### Remove members from a room {/* #remove-members-from-a-room */}
 
 `$communication->remove_members_from_room()` method is used to add an ad-hoc to remove members from a room in the communication provider.
 The users are flagged as deleted in the communication_user table to allow the task to remove the users from the provider room.
@@ -262,13 +262,13 @@ Both `$communication->remove_all_members_from_room()` and `$communication->remov
 
 :::
 
-### Show the communication room creation status notification
+### Show the communication room creation status notification {/* #show-the-communication-room-creation-status-notification */}
 
 `$communication->show_communication_room_status_notification()` is a special method to have a UI element to show the status of the room creation. If the room is ready, it will
 return the notification as a string. If the room is not ready, it will return pending status. Course have this implemented and shows the status after the communication instance
 is configured. Please note, the status notification relies on the creation of room, not the memberships of the room.
 
-### Communication instance setup using form/configuration page
+### Communication instance setup using form/configuration page {/* #communication-instance-setup-using-formconfiguration-page */}
 
 The communication API allows to have settings to configure the basic information like room name, selection of provider etc. `$communication->form_definition()` method
 is used to get the form definition for the settings form. If the form elements are used in another form to include the communication form elements, `form_definition()` method
@@ -306,7 +306,7 @@ class configure_form extends \moodleform {
 }
 ```
 
-## Building a communication plugin
+## Building a communication plugin {/* #building-a-communication-plugin */}
 
 Communication API also provides a bunch of interfaces for a communication plugin to consume. Every plugin should implement these interfaces according to the features they
 support.

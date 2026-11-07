@@ -12,7 +12,7 @@ Normally you do not need to use this API directly because you can include editor
 
 :::
 
-## How to set up a text editor
+## How to set up a text editor {/* #how-to-set-up-a-text-editor */}
 
 To set up a text editor on an existing HTML text area field:
 
@@ -26,17 +26,17 @@ $editor = editors_get_preferred_editor(FORMAT_HTML);
 $editor->use_editor('mytextareaid');
 ```
 
-## Editor options
+## Editor options {/* #editor-options */}
 
 The use_editor function allows an options array to be supplied.
 
-### General options
+### General options {/* #general-options */}
 
 - `context`: set to the current context object
 - `enable_filemanagement`: set false to disable the file management plugin
 - `autosave`: set false to disable autosave
 
-### Atto-specific options
+### Atto-specific options {/* #atto-specific-options */}
 
 - `toolbar`: set to override which icons appear on the toolbar (normally it uses the admin setting - this is for special cases for example if you want a minimal editor in a particular plugin).
 

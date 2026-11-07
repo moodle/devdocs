@@ -13,7 +13,7 @@ import {
     Since,
 } from '@site/src/components';
 
-## Plugin types and subsystems
+## Plugin types and subsystems {/* #plugin-types-and-subsystems */}
 
 The name and location on disk of every plugin type, and subsystem is described in [`lib/components.json`](https://github.com/moodle/moodle/blob/main/lib/components.json).
 
@@ -41,7 +41,7 @@ The name and location on disk of every plugin type, and subsystem is described i
 
 Plugin types may also be marked as deprecated in this metadata. For more information, see [Plugin type deprecation](/docs/apis/plugintypes#plugin-type-deprecation).
 
-## Subplugins
+## Subplugins {/* #subplugins */}
 
 Any plugin which supports subplugins must describe its subplugin types by name and path in that plugins `db/subplugins.json` location.
 
@@ -75,7 +75,7 @@ The list of subplugins should be detailed in the `subplugintypes` object which c
 
 For Moodle versions 4.5 and earlier the `plugintypes` object is used. The same keys must be used, but the values of `subplugintypes` are relative to the plugin's root directory, whilst the value of `plugintypes` are relative to the Moodle project root.
 
-:::danger Plugins supporting Moodle 4.5 and earlier
+:::danger[Plugins supporting Moodle 4.5 and earlier]
 
 If your plugin supports subplugins and is intended for use for both Moodle 5.0 and later, and Moodle 4.5 or earlier, you should specify both the `subplugintypes` and the `plugintypes` objects.
 
@@ -83,7 +83,7 @@ When both objects are specified the keys must match, and the paths relative to t
 
 :::
 
-## APIs
+## APIs {/* #apis */}
 
 <Since version="4.2" issueNumber="MDL-71096" />
 
@@ -134,7 +134,7 @@ A JSON schema for this file can be found at [`/lib/apis.schema.json`](https://gi
 
 :::
 
-## Standard Plugins
+## Standard Plugins {/* #standard-plugins */}
 
 <Since version="4.4" issueNumber="MDL-81084" />
 

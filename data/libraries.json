@@ -84,25 +84,12 @@
     },
     {
         "copyrightHolders": [
-            "2002-2004 John Forkosh Associates, Inc"
-        ],
-        "location": "public/filter/tex/mimetex.*",
-        "name": "mimeTeX",
-        "description": "Compiled C program to convert TeX into GIFs",
-        "version": "1.77",
-        "license": "GPL",
-        "licenseversion": "3.0+",
-        "repository": "https://github.com/icaoberg/mimetex",
-        "customised": false
-    },
-    {
-        "copyrightHolders": [
             "Joubel"
         ],
-        "location": "public/h5p/h5plib/v127/joubel/core",
+        "location": "public/h5p/h5plib/v128/joubel/core",
         "name": "h5p-php-library",
         "description": "The general H5P library.",
-        "version": "moodle-1.27.0",
+        "version": "1.28.0",
         "license": "GPL",
         "licenseversion": "3.0+",
         "repository": "https://github.com/h5p/h5p-php-library/",
@@ -112,10 +99,10 @@
         "copyrightHolders": [
             "Joubel"
         ],
-        "location": "public/h5p/h5plib/v127/joubel/editor",
+        "location": "public/h5p/h5plib/v128/joubel/editor",
         "name": "h5p-editor-php-library",
         "description": "A general library that is supposed to be used in most PHP implementations of H5P.",
-        "version": "moodle-1.27.0",
+        "version": "moodle-1.27.2",
         "license": "GPL",
         "licenseversion": "3.0+",
         "repository": "https://github.com/h5p/h5p-editor-php-library/",
@@ -129,7 +116,7 @@
         "location": "public/lib/adodb",
         "name": "ADOdb",
         "description": "Database abstraction library for MySQL, PostgreSQL, MSSQL, Oracle, Interbase, Foxpro, Access, ADO, Sybase, DB2 and ODBC.",
-        "version": "5.22.9",
+        "version": "5.22.11",
         "license": "BSD/LGPL",
         "licenseversion": "3-Clause/2.1+",
         "repository": "https://github.com/ADOdb/ADOdb",
@@ -150,12 +137,12 @@
     },
     {
         "copyrightHolders": [
-            "2014-2022 Chart.js Contributors"
+            "2014-2025 Chart.js Contributors"
         ],
         "location": "public/lib/amd/src/chartjs-lazy.js",
         "name": "Chart.js",
         "description": "Simple yet flexible JavaScript charting for designers & developers.",
-        "version": "4.5.0",
+        "version": "4.5.1",
         "license": "MIT",
         "repository": "https://github.com/chartjs/Chart.js",
         "customised": true
@@ -273,7 +260,7 @@
         "copyrightHolders": [],
         "location": "public/lib/editor/tiny/js/tinymce",
         "name": "Tiny",
-        "version": "7.7.1",
+        "version": "8.2.2",
         "license": "MIT",
         "repository": "https://github.com/tinymce/tinymce",
         "customised": false
@@ -487,6 +474,39 @@
         "customised": true
     },
     {
+        "copyrightHolders": [],
+        "location": "public/lib/google2",
+        "name": "Google APIs",
+        "description": "Library Google APIs Client Library for PHP",
+        "version": "2.18.4",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/googleapis/google-api-php-client",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "public/lib/google2-auth",
+        "name": "Google Auth",
+        "description": "Google Auth Library for PHP",
+        "version": "1.49.0",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/googleapis/google-auth-library-php",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "public/lib/google2-service",
+        "name": "Google Client Services",
+        "description": "Google PHP API Client Services",
+        "version": "0.424.0",
+        "license": "Apache",
+        "licenseversion": "2.0",
+        "repository": "https://github.com/googleapis/google-api-php-client-services",
+        "customised": false
+    },
+    {
         "copyrightHolders": [
             "2000 Herman Veluwenkamp (hermanV AT mindless DOT com)"
         ],
@@ -500,9 +520,9 @@
     {
         "copyrightHolders": [],
         "location": "public/lib/guzzlehttp/guzzle",
-        "name": "GuzzleHttp/Guzzle",
+        "name": "guzzlehttp/guzzle",
         "description": "Guzzle is a PHP HTTP client library",
-        "version": "7.9.2",
+        "version": "7.10.0",
         "license": "MIT",
         "repository": "https://github.com/guzzle/guzzle",
         "customised": false
@@ -510,9 +530,9 @@
     {
         "copyrightHolders": [],
         "location": "public/lib/guzzlehttp/kevinrob/guzzlecache",
-        "name": "Guzzle cache middleware",
+        "name": "kevinrob/guzzle-cache-middleware",
         "description": "A HTTP Cache for Guzzle as a simple Middleware to be added in the HandlerStack.",
-        "version": "6.0.0",
+        "version": "7.0.0",
         "license": "MIT",
         "repository": "https://github.com/Kevinrob/guzzle-cache-middleware",
         "customised": false
@@ -520,9 +540,9 @@
     {
         "copyrightHolders": [],
         "location": "public/lib/guzzlehttp/promises",
-        "name": "GuzzleHttp/Promises",
+        "name": "guzzlehttp/promises",
         "description": "Guzzle promises library",
-        "version": "2.0.4",
+        "version": "2.3.0",
         "license": "MIT",
         "repository": "https://github.com/guzzle/promises",
         "customised": false
@@ -530,9 +550,9 @@
     {
         "copyrightHolders": [],
         "location": "public/lib/guzzlehttp/psr7",
-        "name": "GuzzleHttp/PSR7",
+        "name": "guzzlehttp/psr7",
         "description": "PSR-7 message implementation that also provides common utility methods",
-        "version": "2.7.0",
+        "version": "2.8.0",
         "license": "MIT",
         "repository": "https://github.com/guzzle/psr7",
         "customised": false
@@ -601,7 +621,7 @@
         "copyrightHolders": [],
         "location": "public/lib/laravel/serializable-closure",
         "name": "Serializable Closure",
-        "version": "2.0.3",
+        "version": "2.0.10",
         "license": "MIT",
         "repository": "https://github.com/laravel/serializable-closure",
         "customised": false
@@ -692,16 +712,26 @@
         "customised": false
     },
     {
+        "copyrightHolders": [],
+        "location": "public/lib/monolog",
+        "name": "Monolog",
+        "description": "Monolog - Logging for PHP",
+        "version": "3.9.0",
+        "license": "MIT",
+        "repository": "https://github.com/Seldaek/monolog",
+        "customised": false
+    },
+    {
         "copyrightHolders": [
-            "2010-2016 Justin Hileman"
+            "2010-2025 Justin Hileman"
         ],
         "location": "public/lib/mustache",
         "name": "Mustache",
         "description": "PHP library for displaying mustache templates.",
-        "version": "2.14.2",
+        "version": "3.0.0",
         "license": "MIT",
         "repository": "https://github.com/bobthecow/mustache.php",
-        "customised": true
+        "customised": false
     },
     {
         "copyrightHolders": [],
@@ -814,7 +844,7 @@
         "location": "public/lib/php-jwt",
         "name": "PHP-JWT",
         "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519",
-        "version": "6.11.0",
+        "version": "6.11.1",
         "license": "BSD",
         "licenseversion": "3-Clause",
         "repository": "https://github.com/firebase/php-jwt",
@@ -838,7 +868,7 @@
         "location": "public/lib/phpspreadsheet/markbaker/complex",
         "name": "PHPComplex",
         "description": "PHP Class Library for working with Complex numbers.",
-        "version": "3.0.1",
+        "version": "3.0.2",
         "license": "MIT",
         "repository": "https://github.com/MarkBaker/PHPComplex",
         "customised": false
@@ -848,7 +878,7 @@
         "location": "public/lib/phpspreadsheet/markbaker/matrix",
         "name": "PHPMatrix",
         "description": "PHP Class for handling Matrices.",
-        "version": "3.0.0",
+        "version": "3.0.1",
         "license": "MIT",
         "repository": "https://github.com/MarkBaker/PHPMatrix",
         "customised": false
@@ -858,7 +888,7 @@
         "location": "public/lib/phpspreadsheet/phpspreadsheet",
         "name": "PhpSpreadsheet",
         "description": "Library to read, write and create spreadsheet documents in PHP.",
-        "version": "4.1.0",
+        "version": "5.2.0",
         "license": "MIT",
         "repository": "https://github.com/PHPOffice/PhpSpreadsheet",
         "customised": true
@@ -927,6 +957,16 @@
         "version": "1.1.12",
         "license": "MIT",
         "repository": "https://github.com/lifaon74/url-polyfill",
+        "customised": false
+    },
+    {
+        "copyrightHolders": [],
+        "location": "public/lib/psr/cache",
+        "name": "cache",
+        "description": "Caching Interface (PHP FIG PSR-6).",
+        "version": "3.0.0",
+        "license": "MIT",
+        "repository": "https://github.com/php-fig/cache",
         "customised": false
     },
     {
@@ -1087,7 +1127,7 @@
         "copyrightHolders": [],
         "location": "public/lib/slim/slim",
         "name": "Slim Framework",
-        "version": "4.13.0",
+        "version": "4.15.1",
         "license": "MIT",
         "repository": "https://github.com/slimphp/Slim",
         "customised": false
@@ -1106,7 +1146,7 @@
         "location": "public/lib/symfony/deprecation-contracts",
         "name": "Symfony Deprecation contracts",
         "description": "A generic function and convention to trigger deprecation notices",
-        "version": "3.5.1",
+        "version": "3.6.0",
         "license": "MIT",
         "repository": "https://github.com/symfony/deprecation-contracts",
         "customised": false
@@ -1140,7 +1180,7 @@
         "copyrightHolders": [],
         "location": "public/lib/webauthn",
         "name": "WebAuthn",
-        "version": "2.2.2",
+        "version": "2.2.0",
         "license": "MIT",
         "repository": "https://github.com/lbuchs/WebAuthn",
         "customised": false
@@ -1216,7 +1256,7 @@
         "location": "public/media/player/videojs/amd/src/video-lazy.js",
         "name": "VideoJS",
         "description": "JavaScript library that makes it easier to work with and build on HTML5 video.",
-        "version": "8.21.1",
+        "version": "8.23.4",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/videojs/video.js",
@@ -1265,7 +1305,7 @@
         "location": "public/media/player/videojs/videojs",
         "name": "VideoJS support files",
         "description": "JavaScript library that makes it easier to work with and build on HTML5 video",
-        "version": "8.21.1",
+        "version": "8.23.4",
         "license": "Apache",
         "licenseversion": "2.0",
         "repository": "https://github.com/videojs/video.js",
@@ -1333,6 +1373,18 @@
         "license": "MIT",
         "repository": "https://github.com/twbs/bootstrap",
         "customised": true
+    },
+    {
+        "copyrightHolders": [
+            "Moodle HQ"
+        ],
+        "location": "public/theme/boost/scss/design-system",
+        "name": "@moodlehq/design-system",
+        "description": "The Moodle HQ design system based on React",
+        "version": "2.1.1",
+        "license": "GNU",
+        "repository": "https://github.com/moodlehq/design-system",
+        "customised": false
     },
     {
         "copyrightHolders": [

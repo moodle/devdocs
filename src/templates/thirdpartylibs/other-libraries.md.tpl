@@ -1,6 +1,6 @@
-## Other libraries
+## Other libraries {/* #other-libraries */}
 
-### MathJax
+### MathJax {/* #mathjax */}
 
 JavaScript filter library for displaying LaTeX, AsciiMath notation, and MathML.
 

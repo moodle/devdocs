@@ -8,11 +8,11 @@ tags:
 sidebar_position: 3
 
 ---
-## Peer review list
+## Peer review list {/* #peer-review-list */}
 
 The list of issues ready for peer review is found in the [Waiting for a peer reviewer](https://moodle.atlassian.net/issues/?filter=13607) filter on the Moodle tracker.
 
-## Checklist
+## Checklist {/* #checklist */}
 
 These are points to consider while peer-reviewing issues. Further explanation below.
 
@@ -24,6 +24,7 @@ These are points to consider while peer-reviewing issues. Further explanation be
 [] Language
 [] Accessibility
 [] Databases
+[] Gradebook calculations
 [] Performance and Clustering
 [] Security
 [] Privacy (see Privacy API)
@@ -37,7 +38,7 @@ These are points to consider while peer-reviewing issues. Further explanation be
 
 Acceptable check-marks are Y (for yes), N (for no) or - (for not applicable). All N check-marks should be accompanied by an explanation of the problem that still needs to be addressed.
 
-### Syntax
+### Syntax {/* #syntax */}
 
 To allow the community of Moodle developers to work together, conventions should be followed.
 
@@ -53,7 +54,7 @@ To allow the community of Moodle developers to work together, conventions should
 See the [Coding style guide](../../policies/codingstyle/index.md) for details. Most of the previous items list are checked automatically by the CiBot (Automated code review). So in this case it's recommended to review the execution results to validate that there aren't errors. However, take into account that for now, CiBot is not checking all file types (it happens, for instance, with the JavaScript files).
 :::
 
-### Output
+### Output {/* #output */}
 
 Output needs to be controlled by renderers to achieve consistency and correct application of themes.
 
@@ -68,7 +69,7 @@ Ensure that:
 - All visual output has a RTL alternative included
 - Feedback any notices (E_STRICT, etc) seen into the MDL.
 
-### Component library
+### Component library {/* #component-library */}
 
 Any improvement or new feature that introduces UI features to Moodle core from Moodle 4.0 onwards must be documented within the [Component library](../../tools/component-library.md).
 
@@ -86,7 +87,7 @@ Ensure that any new User Interface feature in Moodle 4.0 or later which matches 
 - Has appropriate descriptions
 - Respects all Moodle-supplied themes
 
-### Icons
+### Icons {/* #icons */}
 
 Are new icons being introduced? If so, ensure that:
 
@@ -94,7 +95,7 @@ Are new icons being introduced? If so, ensure that:
 - The icons are do not unnecessarily add new ways of expressing existing concepts
 - The icons are in a pix folder that makes sense
 
-### Language
+### Language {/* #language */}
 
 Naming things is hard. For help with wordings for new features and improvements, add the `ux_writing` label to the issue.
 
@@ -108,7 +109,7 @@ Ensure that:
 - Language strings have not been removed or renamed, had their meaning changed or had their parameters changed in stable branches (permitted only in main following [string deprecation policy](../../../projects/api/string-deprecation.md)); and
 - [AMOS commands](https://docs.moodle.org/dev/AMOS_commands) have been specified when moving or copying language strings.
 
-### Accessibility
+### Accessibility {/* #accessibility */}
 
 Moodle should be accessible to everyone. When reviewing any changes that affects the frontend, ensure that these points have been considered:
 
@@ -120,7 +121,7 @@ Moodle should be accessible to everyone. When reviewing any changes that affects
 
 But, remember that what you are doing here is part of a peer review. If you want to perform a systematic accessibility check, you can follow the [Accessibility checklist](./accessibility-checklist.md).
 
-### Databases
+### Databases {/* #databases */}
 
 DB calls are the greatest performance bottleneck in Moodle.
 
@@ -131,7 +132,11 @@ Ensure that:
 - There are minimal DB calls (no excessive use of the DB); and
 - The code uses SQL compatible with all the supported DB engines (check all selected fields appear in an 'ORDER BY' clause).
 
-### Performance and clustering
+### Gradebook calculations {/* #gradebook-calculations */}
+
+If a change may alter existing grades, ensure that it follows the [gradebook calculation changes](../gradebook-calculation-changes.md) process.
+
+### Performance and clustering {/* #performance-and-clustering */}
 
 It is easy to write code that works sufficiently well when you are working on either small sets of data or with a small number of active users. Picking performance issues can be quite difficult and can required a complex level of understanding of both the section of code being reviewed, but also other parts that interact with it.
 
@@ -147,7 +152,7 @@ Ensure that:
   - What they did to mitigate performance impact, or why they thought it wasn't an issue.
   - Why they made certain trade-offs.
 
-### Security
+### Security {/* #security */}
 
 The user community relies on Moodle being responsibly secure.
 
@@ -161,7 +166,7 @@ Ensure that:
   - Ensure that the fix is **not** available in a public repository (ie. a personal Github account); stand-alone patches should be provided instead.
   - The issue will not be integrated until just before the next minor version release.
 
-### Privacy
+### Privacy {/* #privacy */}
 
 The user community relies on Moodle keeping user's privacy.
 
@@ -178,7 +183,7 @@ Ensure that:
 See more info in [Privacy API](/docs/apis/subsystems/privacy/).
 :::
 
-### The Moodle mobile app
+### The Moodle mobile app {/* #the-moodle-mobile-app */}
 
 The Moodle app supports most of the student-related Moodle functionality. It is important to think about how a change in that type of functionality might affect it.
 
@@ -190,7 +195,7 @@ Ensure that:
 - New global settings that affect new features for the app are included in the WebServices returning global settings (tool_mobile_get_config)
 - The testing instructions include testing steps for the Moodle App
 
-### Third party code
+### Third party code {/* #third-party-code */}
 
 Does the change contain [third party code](../../../community/plugincontribution/thirdpartylibraries.md)? If so, ensure that:
 
@@ -201,13 +206,15 @@ Does the change contain [third party code](../../../community/plugincontribution
 - Does not duplicate the functionality of any existing api or third party library in core.
 - Any modifications to third party code are recorded in readme_moodle.txt
 
-### Documentation
+### Documentation {/* #documentation */}
 
 Work does not stop when code is integrated.
 
 Ensure that:
 
 - The PHPdoc comments on all classes, methods and fields are useful. (Comments that just repeat the function name are not helpful! Add value.)
+- Standard inline comments do not include MDL tracker references and should focus on explaining logic and intent.
+- Every TODO comment includes a corresponding MDL issue code to track the work that still needs to be done.
 - Where an API has been changed significantly, ensure that [upgrade notes](../upgradenotes) have been written (or upgrade.txt on older branches).
 - Where something has been deprecated, that the comments don't just say "do NOT use this any more!!!" but actually follow the [deprecation policy](../../policies/deprecation/index.md).
 - Appropriate [labels](../../tracker/labels.md) have been added when there has been a function change, particularly
@@ -220,22 +227,25 @@ Ensure that:
   - `developer_notes` - for things worth calling out in [Integration exposed!](https://moodle.org/mod/forum/view.php?id=7966)
 - Also, verify that the components for the issue are correctly set, so maintainers (subscribed by default) will be mailed about issues early in the process.
 
-### Git
+### Git {/* #git */}
 
 Ensure that:
 
 - The commit matches the [Coding style](../../policies/codingstyle/index.md#git-commits)
 - The Git history is clean and the work has been rebased to logical commits; and
 - The original author of the work provided as a patch has been given credit within the commit (as author of in the commit message if changes were made).
-- Git branches have been provided for all the right Moodle branches. The [supported branches list|https://moodledev.io/general/releases#version-support] will help you decide:
+- Git branches have been provided for all the right Moodle branches. The [supported branches list](../../../releases.md#version-support) will help you decide:
   - For improvements or new features, this means a branch based on `main` only.
   - For normal bug fixes, this the `main` branch and all the 'Current stable' branches (that are affected by the bug).
-  - For security bugs, this is `main` and all the 'Current stable' and 'Current security' branches (but note the [special process for handling security fixes|https://moodledev.io/general/development/process#security-issues]).
+  - For security bugs, this is `main` and all the 'Current stable' and 'Current security' branches (but note the [special process for handling security fixes](../../process.md#security-issues)).
   - For improvements or new features in the Behat on PHPunit integration, this should be done on `main` and all the 'Current stable' and 'Current security' branches, providing the backporting is not too difficult.
 
-See also the [Commit cheat sheet](https://docs.moodle.org/dev/Commit_cheat_sheet) for further guidance.
+See also the following for further guidance:
 
-### Testing instructions and automated tests
+- [Commit cheat sheet](https://docs.moodle.org/dev/Commit_cheat_sheet)
+- [Backporting policy](../../policies/backporting.md)
+
+### Testing instructions and automated tests {/* #testing-instructions-and-automated-tests */}
 
 It is the developer's responsibility to test code before integration. As well as verifying that the proposed change works, good tests can and should help the peer reviewer, integration reviewer, and anyone looking at this code in future to understand how it is supposed to work. They also help verify that everything that might be affected by this change was considered.
 
@@ -262,7 +272,7 @@ For automated testing (PHPunit and Behat):
 - As part of your review, check that the unit tests pass. Hopefully this can just be done by checking GitHub actions. (If the developer has not enabled GHA yet, encourage them to do so by linking them to [the instructions](../../tools/gha.md).)
 - Look for evidence that relevant Behat tests pass, especially when it involved UI changes. Note that Behat is not run by GitHub actions, but all the tests will be run as part of the integration process.
 
-### Overall completeness and correctness
+### Overall completeness and correctness {/* #overall-completeness-and-correctness */}
 
 Ensure that:
 
@@ -273,11 +283,11 @@ Ensure that:
 - If any version numbers have been changed in [version.php](https://docs.moodle.org/dev/version.php) files, then the changes follow [the rule for updating version numbers in core](https://docs.moodle.org/dev/Moodle_versions#How_to_increment_version_numbers_in_core).
 - There are comments on tracker explaining why current approach was taken and why other options (especially large issues). If not comment asking them to explain.
 
-## Process
+## Process {/* #process */}
 
 Peer review process helps to prepare the issue for integration. The peer reviewer is another developer who was not involved in the development process on the issue and therefore can take a fresh look and notice something that original developer might have forgotten during development. It is important to check that the bug actually is present and the code fixes it without creating new regressions.
 
-### Completing Peer review as a community member
+### Completing Peer review as a community member {/* #completing-peer-review-as-a-community-member */}
 
 Any other developer can review any change. That is why it is called 'peer' review. However, not everyone has the necessary permissions in the tracker to click the buttons 'Start peer review', 'Finish peer review' etc. This should not discourage you from looking at other contributors code and providing comments and feedback. The issue will still need to wait for someone with the right permissions to come along and click the buttons, but they can read your review and then need do no more than double-check some points, which will save a lot of time.
 
@@ -309,7 +319,7 @@ Please indicate If you are willing to continue working on this issue and complet
 
 Can you help with peer reviewing? If so, please see the [list of issues waiting for peer review](https://moodle.atlassian.net/issues/?filter=13607).
 
-### Peer review for development by HQ or a known common contributor
+### Peer review for development by HQ or a known common contributor {/* #peer-review-for-development-by-hq-or-a-known-common-contributor */}
 
 When code comes from a HQ developer or external developer who has been contributing significantly to Moodle and is well acquainted with Moodle standards, peer review is limited to checking the code according to the Checklist below.
 
@@ -317,7 +327,7 @@ If everything is fine, the peer reviewer submits the issue for integration.
 
 If some additional work is needed or the author specifically asked not to submit for integration yet, the peer reviewer clicks on "Finish peer review" and the issue state returns to "Development in progress". Usually the name of the peer reviewer stays on the issue and if a second peer review is requested it is expected that the same Peer reviewer picks it up. If the peer reviewer is not able to do the second review, they should remove their name and comment about it. Otherwise the issue does not appear on "waiting for peer review" dashboard. Please remember that not all jira users have permission to submit for integration.
 
-### Peer review for external developers
+### Peer review for external developers {/* #peer-review-for-external-developers */}
 
 When the code has come from an external developer, the peer reviewer will also help the developer to lead the issue to integration. In this case the peer reviewer should not use "Finish peer review" button.
 
@@ -331,7 +341,7 @@ If the issue has passed peer review but the integrator or tester has raised some
 
 Once the issue is ready for integration, you can submit it to integration on behalf of the developer. Most external developers (those who are not in the jira-developers group) do not have permission to submit their own issues to integration so cannot do it themselves.
 
-#### Replies templates
+#### Replies templates {/* #replies-templates */}
 
 ```
 Thanks for providing a patch.
@@ -359,6 +369,6 @@ I have spent some time reviewing the patch and I would recommend that you .....
 Please let me know If you are willing to continue working on this issue and complete the solution.
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - [Code checker plugin](http://moodle.org/plugins/view.php?plugin=local_codechecker)

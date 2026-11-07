@@ -14,7 +14,7 @@ This page forms part of the [Moodle security guidelines](../security).
 
 :::
 
-## What is the danger?
+## What is the danger? {/* #what-is-the-danger */}
 
 Evil Hacker somehow gets access to your server some time and installs some nasty code. For example, they could add some code to the login page that records every username and password entered, and sends it back to `evel-hacker.com`.
 
@@ -22,15 +22,15 @@ Unfortunately, you have no procedures in place for detecting that this is happen
 
 Another problem is not updating to the latest Moodle release, which means that you will be running a version of Moodle with know security holes.
 
-## How Moodle avoids this problem
+## How Moodle avoids this problem {/* #how-moodle-avoids-this-problem */}
 
 This is not really a problem that can be solved from within Moodle code. However, any Moodle code that does install other PHP code (for example, `admin/langimport.php`) must be written with extreme care.
 
-## What you need to do in your code
+## What you need to do in your code {/* #what-you-need-to-do-in-your-code */}
 
 - If you are writing code like `admin/langimport.php`, make sure you know what you are doing.
 
-## What you need to do as an administrator
+## What you need to do as an administrator {/* #what-you-need-to-do-as-an-administrator */}
 
 - Keep up-to-date with the latest Moodle release from whichever branch you are using.
   - Register your Moodle site, so you get notified of security problems before the general public.
@@ -38,7 +38,7 @@ This is not really a problem that can be solved from within Moodle code. However
   - Alternatively, if you upload the Moodle code manually, delete all the old code except `config.php` before you upload a new version.
 - Be very careful who can access your servers.
 
-## See also
+## See also {/* #see-also */}
 
 - [Security](../security)
 - [Coding](../../policies.md)

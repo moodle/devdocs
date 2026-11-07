@@ -20,9 +20,9 @@ There is no documentation for most of this class. Please read [HTML Writer Class
 
 :::
 
-## Methods
+## Methods {/* #methods */}
 
-### div
+### div {/* #div */}
 
 ```php
 html_writer::div(content, class="", attributes="");
@@ -42,14 +42,14 @@ html_writer::div('Mr', 'toad', array('id' => 'tophat'));
 // <div class="toad" id="tophat">Mr/div>
 ```
 
-### span
+### span {/* #span */}
 
 ```php
 html_writer::start_span('zombie') . 'BRAINS' . html_writer::end_span();
 // <span class="zombie">BRAINS</span>
 ```
 
-### Generic tags
+### Generic tags {/* #generic-tags */}
 
 ```php
 html_writer::tag(tag_name, contents, attributes=null);

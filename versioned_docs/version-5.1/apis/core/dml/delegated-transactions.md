@@ -9,7 +9,7 @@ tags:
 
 Moodle allows data manipulation to take place within a database transaction, known as a *Delegated transaction*. This allows you to perform CRUD[^1] operations, and roll them back if a failure takes place.
 
-## General principles
+## General principles {/* #general-principles */}
 
 1. These **delegated transactions** work in a way that, when nested, the outer levels have control over the inner ones.
 2. Code should **not** rely on a rollback happening. It is only a measure to reduce (not to eliminate) DB[^2] garbled information
@@ -19,7 +19,7 @@ Moodle allows data manipulation to take place within a database transaction, kno
 6. It will be **optional** to catch exceptions when using transactions, but if they are caught, then it is mandatory to mark the transaction for `rollback()`
 7. Any explicit `rollback()` call will pass the exception originating from it, as in `rollback($exception)`, to be re-thrown
 
-## The API
+## The API {/* #the-api */}
 
 1. All the handling must go, exclusively, to a `moodle_database` object, leaving real drivers only implementing (protected) the old begin/commit/rollback_sql() functions
 2. One array of objects of type `moodle_transaction` will be stored / checked from `$DB`
@@ -56,7 +56,7 @@ Moodle allows data manipulation to take place within a database transaction, kno
     $DB->transactions_forbidden();
     ```
 
-## The Flow
+## The Flow {/* #the-flow */}
 
 ![The flow of transactions in diagram format](./_delegated-transactions/TransactionsAndExceptionsFlow.png)
 

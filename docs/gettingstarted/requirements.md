@@ -6,7 +6,7 @@ Moodle is a PHP Application, which is backed by a relational database.
 
 Five database types are supported, and several versions of PHP.
 
-## PHP
+## PHP {/* #php */}
 
 Moodle 4.0 supports the following PHP versions:
 
@@ -34,7 +34,7 @@ The following PHP extensions are required (most of which are installed and enabl
 - [`hash`](https://www.php.net/book.hash)
 - [`fileinfo`](https://www.php.net/book.fileinfo)
 
-## Relational Database
+## Relational Database {/* #relational-database */}
 
 The following relational database servers are supported. The relevant PHP extension will also be required.
 

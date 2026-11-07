@@ -15,13 +15,13 @@ The terms _settings_ and _fields_ are used interchangeably here because these in
 
 :::
 
-## Labelling settings
+## Labelling settings {/* #labelling-settings */}
 
 All fields in a form should have a descriptive label (not too long) that gives a clear idea of what the setting is for.
 
 Do not rely on _Help_ popups to compensate for a poor label. If the user has to open and read the _Help_ popup to find out what the setting is about, then your label is not clear enough.
 
-## Naming sections
+## Naming sections {/* #naming-sections */}
 
 Moodle has the ability to collapse sections in a form to simplify those forms. However, having collapsible sections to simplify the forms is not enough. **Properly named sections is a key factor of usable forms.**
 
@@ -31,7 +31,7 @@ If the user has to expand the section to know what it contains, the section name
 
 :::
 
-### Be accurate, clear, and concise
+### Be accurate, clear, and concise {/* #be-accurate-clear-and-concise */}
 
 Use short, clear and concise section names.
 
@@ -43,33 +43,33 @@ Keep in mind that if section names are too long, scanning the form will become m
 
 :::
 
-### Avoid ambiguous names
+### Avoid ambiguous names {/* #avoid-ambiguous-names */}
 
 It is easy to find yourself declaring a new section named *Miscellaneous*, *Advanced settings* or even *Additional options*, but you _must_ definitely avoid this. It is sometimes very difficult to re-arrange your sections to prevent ambiguous ones, but remember that a user should be able to guess the content of the section just by reading its name.
 
 If the section name is too ambiguous, the user will not remember what was part of the section when visiting your form for a second, third, or subsequent time... thus ruining your efforts of improving the user experience.
 
-## Re-use existing names
+## Re-use existing names {/* #re-use-existing-names */}
 
 - **General**: Often used to name the first section (expanded by default), except when inappropriate or too vague
 - **Content**: Describes a section defining the content, for example, the files available in a File resource, or the visual content of a Page resource.
 - **Appearance**: A section which contains options affecting appearance and display.
 - **Availability**: Contains the options affecting the availability of the content.
 
-### Avoid using 'Options' or 'Settings'
+### Avoid using 'Options' or 'Settings' {/* #avoid-using-options-or-settings */}
 
 It is usually implied that a section contains settings or options, so you should not use these terms in any of your sections names. However, in some rare occasions, you might want to be more descriptive when another section uses a similar name.
 
 - Wrong: *Appearance settings* (should be *Appearance*)
 - Acceptable: *Submission options* (when you have another section called *Submission types*, for example)
 
-### Merging sections
+### Merging sections {/* #merging-sections */}
 
 If you end up with two sections with few settings inside them, it is sometimes preferable to merge them into one section. But how do we keep an accurate section name then?
 
 Well, if the section name is still concise when it includes two subjects (e.g. *Foo & bar*), then the settings related to 'Foo' and 'Bar' could probably be placed in that one section.
 
-## Use 'Show more/less' advanced settings sparingly
+## Use 'Show more/less' advanced settings sparingly {/* #use-show-moreless-advanced-settings-sparingly */}
 
 If you are tempted to use the 'Show more/less' functionality, it is probably because you have a section with many settings inside it. If so, you could probably try to split the section into multiple sections.
 
@@ -85,7 +85,7 @@ A section should never contain *only* advanced settings.
 
 Try your best to avoid using this feature where possible.
 
-## Adequate number of fields and sections
+## Adequate number of fields and sections {/* #adequate-number-of-fields-and-sections */}
 
 Do not overload a section with too many settings. If you have too many settings it is likely that your section could be split into more sections. An average of 5 to 6 settings per section seems to be a good compromise; it allows the user to quickly scan the content of the section without missing anything.
 
@@ -93,7 +93,7 @@ There is nothing wrong in having only a few settings in a section. You can even 
 
 In the same way that too many settings in one section is not good practice, a form with too many sections is not good practice either. Try to find a right balance between both.
 
-## Expanding more sections
+## Expanding more sections {/* #expanding-more-sections */}
 
 A form with 2 sections or less will expand its sections by default. Once there are more than 2 sections, all the sections but the first one will be collapsed. Any other section containing required settings will be expanded by default as well.
 
@@ -101,7 +101,7 @@ You should not change this default behaviour if it is avoidable, but if you do, 
 
 And if you end up with a section being expanded by default because it contains a single required setting, you might want to consider moving this setting into a more important section, which is already expanded by default.
 
-## Think about the flow
+## Think about the flow {/* #think-about-the-flow */}
 
 The flow of a form is important. Think about the user who will land on the page and scan through the form.
 

@@ -5,13 +5,13 @@ tags:
 - Moodle 4.5
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 This page highlights the important changes that are coming in Moodle 4.5 for developers.
 
-## Badges
+## Badges {/* #badges */}
 
-### Deprecated `badges/newbadge.php`
+### Deprecated `badges/newbadge.php` {/* #deprecated-badgesnewbadgephp */}
 
 <Since version="4.5" issueNumber="MDL-43938" />
 
@@ -31,7 +31,7 @@ https://yourmoodlesite/badges/edit.php?courseid=x&mode=new
 
 :::
 
-### Deprecated `badges/view.php`
+### Deprecated `badges/view.php` {/* #deprecated-badgesviewphp */}
 
 <Since version="4.5" issueNumber="MDL-82503" />
 
@@ -53,11 +53,11 @@ https://yourmoodlesite/badges/index.php?type=x&id=x
 
 :::
 
-## Core changes
+## Core changes {/* #core-changes */}
 
-### Autoloader
+### Autoloader {/* #autoloader */}
 
-#### `ABORT_AFTER_CONFIG`
+#### `ABORT_AFTER_CONFIG` {/* #abort_after_config */}
 
 <Since version="4.5" issueNumber="MDL-80275" />
 
@@ -71,7 +71,7 @@ Please note that the same limitations regarding access to the Database, Session,
 
 :::
 
-#### Autoloading legacy classes
+#### Autoloading legacy classes {/* #autoloading-legacy-classes */}
 
 <Since version="4.5" issueNumber="MDL-81919" />
 
@@ -92,13 +92,13 @@ $legacyclasses = [
 
 See MDL-81919 for further information on the rationale behind this change.
 
-### SMS API
+### SMS API {/* #sms-api */}
 
 A new SMS API was introduced. See the [SMS API documentation](./apis/subsystems/sms/index.md) for more information.
 
-## Course
+## Course {/* #course */}
 
-### Reset course page
+### Reset course page {/* #reset-course-page */}
 
 The reset course page has been improved. The words "Delete", and "Remove" have been removed from all options to make it easier to focus on the type of data to be removed and avoid inconsistencies and duplicated information.
 Third party plugins implementing reset methods might need to:
@@ -118,15 +118,15 @@ Check changes in any of the core plugins that implement the reset course method.
 
 :::
 
-## Deprecations
+## Deprecations {/* #deprecations */}
 
-### Icon deprecation
+### Icon deprecation {/* #icon-deprecation */}
 
 <Since version="4.5" issueNumber="MDL-82212" />
 
 A new mechanism for deprecating icons has been introduced. More information can be found in the [icon deprecation documentation](/general/development/policies/deprecation/icon-deprecation).
 
-## Filter Plugins
+## Filter Plugins {/* #filter-plugins */}
 
 <Since version="4.5" issueNumber="MDL-82427" />
 
@@ -134,7 +134,7 @@ Filter plugins and the Filter API have been updated to use the standard Moodle C
 
 To ensure that your plugin continues to work in Moodle 4.5, you should move the `filter_[pluginname]` class located in `filter/[pluginname]/filter.php` to `filter/[pluginname]/classes/text_filter.php`, setting the namespace to `filter_[pluginname]` and renaming the class to `text_filter`.
 
-:::tip Codebases supporting multiple versions of Moodle
+:::tip[Codebases supporting multiple versions of Moodle]
 
 If your codebase also supports Moodle 4.4 and earlier then you will also need to create a file in the 'old' location (`filter/[pluginname]/filter.php`) with the following content:
 
@@ -146,13 +146,13 @@ This will ensure that the plugin class is available at both the old and new loca
 
 :::
 
-## TinyMCE plugins
+## TinyMCE plugins {/* #tinymce-plugins */}
 
 The `helplinktext` language string is no longer required by editor plugins, instead the `pluginname` will be used in the help dialogue
 
-## Theme
+## Theme {/* #theme */}
 
-### Context header
+### Context header {/* #context-header */}
 
 <Since version="4.5" issueNumber="MDL-82160" />
 
@@ -216,7 +216,7 @@ class core_renderer extends \core_renderer {
 
 </Tabs>
 
-### Refactoring BS4 features dropped in BS5 using a "bridge"
+### Refactoring BS4 features dropped in BS5 using a "bridge" {/* #refactoring-bs4-features-dropped-in-bs5-using-a-bridge */}
 
 <Since version="4.5" issueNumber="MDL-79917" />
 
@@ -224,7 +224,7 @@ Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. 
 
 See more information in [Bootstrap 5 migration](./guides/bs5migration/index.md).
 
-### Support FontAwesome families
+### Support FontAwesome families {/* #support-fontawesome-families */}
 
 <Since version="4.5" issueNumber="MDL-82210" />
 
@@ -246,7 +246,7 @@ Icons can add the FontAwesome family (`fa-regular`, `fa-brands`, `fa-solid`) nea
 
 ```
 
-### FontAwesome icons updated
+### FontAwesome icons updated {/* #fontawesome-icons-updated */}
 
 <Since version="4.5" issueNumber={"MDL-77537"} />
 
@@ -264,7 +264,7 @@ For third-party plugins utilizing their own icons via the callback `get_fontawes
 - Import/Upload actions should use the `fa-upload` icon, while Export/Download actions should use the `fa-download` icon.
 - The eye icon is used for both visibility and preview actions.
 
-:::tip Icons in Component library
+:::tip[Icons in Component library]
 
 On the Icons page of the [Component library](/general/development/tools/component-library), you can find a comprehensive list of all the icons available in Moodle core.
 

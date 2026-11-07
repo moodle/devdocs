@@ -11,7 +11,7 @@ that a user is allowed to perform on certain system levels. A **capability** def
 role can add activities to a course, as well as managing course participants and grading course modules, while
 a user with a Non-editing Teacher role can only manage course participants and grade them, but not manage activities.
 
-## Definitions
+## Definitions {/* #definitions */}
 
 - A **role** is an identifier of the user's status in some context. Teacher, Student and Forum moderator are all examples of possible roles.
 
@@ -30,7 +30,7 @@ a user with a Non-editing Teacher role can only manage course participants and g
   - an activity
   - a block
 
-### Roles
+### Roles {/* #roles */}
 
 A role is defined with a list of permissions - each role definition is global defined and applies equally to all
 context levels, but these can be overridden in individual contexts. For example, a 'Student' role may not normally
@@ -40,7 +40,7 @@ activities, and so on)
 
 Roles can be applied to users in a **context** (for example to assign Fred as a Teacher in a particular course)
 
-### Context
+### Context {/* #context */}
 
 Here are the possible contexts, listed from the most general to the most specific.
 
@@ -57,7 +57,7 @@ An authorized user will be able to assign an arbitrary number of roles to each u
 
 See [Roles and modules#Context](https://docs.moodle.org/dev/Roles_and_modules#Context) for more information.
 
-### Capabilities
+### Capabilities {/* #capabilities */}
 
 Capabilities can have the following permissions:
 
@@ -74,7 +74,7 @@ contexts, we say that we are overriding the capability in the more specific cont
 
 :::
 
-### Capability conflicts
+### Capability conflicts {/* #capability-conflicts */}
 
 Since the capabilities in each role could be different, there can be conflicts in capabilities.
 
@@ -93,7 +93,7 @@ the following settings are possible:
 - The `moodle/site:accessallgroups` capability is granted to the Teacher in the category, but is prevented for the Student
 in the course
 
-### Hardening Roles system
+### Hardening Roles system {/* #hardening-roles-system */}
 
 Hardening a role, refers to limiting the ability of a role to assign or to acquire permissions.
 
@@ -104,8 +104,9 @@ adding activities. They could then use any type of XSS attack to gain full admin
 The solution has two parts: educate admins and teachers about the risks associated with each capability and
 optionally allow central management of risks.
 
-<!-- cspell:ignore bitmask, bitmasks, MANAGETRUST, DATALOSS -->
-#### Risk bitmask in capabilities
+{/* <!-- cspell:ignore bitmask, bitmasks, MANAGETRUST, DATALOSS --> */}
+
+#### Risk bitmask in capabilities {/* #risk-bitmask-in-capabilities */}
 
 Adds a risk bitmask field to each capability. Each bit indicates presence of different risk associated with
 given capability. Basic risks are
@@ -138,7 +139,7 @@ $capabilities = [
 ];
 ```
 
-## Programming Interface
+## Programming Interface {/* #programming-interface */}
 
 - Moodle comes with a list of predefined roles, including a Student, Teacher, Non-editing teacher, and Course
 Manager role. Each of these roles are based on a **role archetype**, which acts as a template for roles.
@@ -191,7 +192,7 @@ These roles may both be considered a form of teacher, but they will have differe
 As a result we strongly discourage that you think in terms of which roles or users hold a capability, but rather
 whether a specific user holds a capability.
 
-:::danger There are some situations where you _do_ need to get a list of roles with a capability in a specific
+:::danger[There are some situations where you _do_ need to get a list of roles with a capability in a specific]
 context, but these are very rare. You can do so using the `get_roles_with_cap_in_context()` function:
 
 ```php title="Fetching a list of roles which hold a capability in the specified context"
@@ -209,7 +210,7 @@ For certain institutions' enrolment process might be different to a standard wor
 managed by an external system, so you might need to develop a custom
 [Enrolment Plugin](https://moodle.org/plugins/browse.php?list=category&id=22).
 
-:::danger In case of custom enrolment plugin development only
+:::danger[In case of custom enrolment plugin development only]
 
 ```php title="To get a list of roles for a user"
 $ras = get_user_roles($context, $user, $checkparentcontexts);
@@ -222,7 +223,7 @@ role_assign($roleid, $userid, $contextid, $component, $enrolmentpluginid);
 :::
 </details>
 
-## See also
+## See also {/* #see-also */}
 
 - Relevant discussions on [moodle.org](https://moodle.org/):
   - [Roles and Capabilities forum](http://moodle.org/mod/forum/view.php?f=941)

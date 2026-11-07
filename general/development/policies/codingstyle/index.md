@@ -7,9 +7,9 @@ tags:
   - Developer processes
 ---
 
-## Overview
+## Overview {/* #overview */}
 
-### Scope
+### Scope {/* #scope */}
 
 This document describes **style** guidelines for developers working on or with Moodle code. It talks purely about the mechanics of code layout and the choices we have made for Moodle. The intent of this specification is to reduce cognitive friction when scanning code from different authors. It does so by enumerating a shared set of rules and expectations about how to format PHP code.
 
@@ -23,7 +23,7 @@ A "de-facto Moodle standard" is any coding style which is commonly and typically
 
 :::
 
-### Goals
+### Goals {/* #goals */}
 
 Consistent coding style is important in any development project, and particularly when many developers are involved. A standard style helps to ensure that the code is easier to read and understand, which helps overall quality.
 
@@ -43,7 +43,7 @@ Much of the existing Moodle code may not follow all of these guidelines - we con
 
 For details about using the Moodle API to get things done, see the [coding guidelines](../../policies.md).
 
-### Useful tools
+### Useful tools {/* #useful-tools */}
 
 Several tools are available to help you in write code that conforms to this guide:
 
@@ -53,9 +53,9 @@ Several tools are available to help you in write code that conforms to this guid
 It is worth using both tools to check the code you are writing as they both perform slightly different checks.
 If you can get your code to pass both then you are well on the way to making friends with those who will be reviewing your work.
 
-## File Formatting
+## File Formatting {/* #file-formatting */}
 
-### PHP tags
+### PHP tags {/* #php-tags */}
 
 Always use "long" php tags. However, to avoid whitespace problems, DO NOT include the closing tag at the very end of the file.
 
@@ -69,7 +69,7 @@ import Example_PhpTags_Good from '!!raw-loader!./_examples/phptags_good.php';
 
 SQL queries use special indentation, see [SQL coding style](./sql.md).
 
-### Maximum Line Length
+### Maximum Line Length {/* #maximum-line-length */}
 
 The key issue is readability.
 
@@ -77,7 +77,7 @@ Aim for 132 characters if it is convenient, it is not recommended to use more th
 
 The exception are string files in the `/lang` directory where lines `$string['id'] = 'value';` should have the value defined as a single string of any length, wrapped by quotes (no concatenation operators, no heredoc and no newdoc syntax). This helps to parse and process these string files without including them as a PHP code.
 
-#### Wrapping lines
+#### Wrapping lines {/* #wrapping-lines */}
 
 Whenever wrapping lines, the following rules should generally apply:
 
@@ -86,7 +86,7 @@ Whenever wrapping lines, the following rules should generally apply:
 
 See examples in the following sections.
 
-#### Wrapping control structures
+#### Wrapping control structures {/* #wrapping-control-structures */}
 
 <ValidExample>
 
@@ -100,7 +100,7 @@ while ($fileinfolevel && $params['component'] === 'user'
 
 </ValidExample>
 
-#### Wrapping if-statement conditions
+#### Wrapping if-statement conditions {/* #wrapping-if-statement-conditions */}
 
 There is nothing special and the control structures rule would still apply.
 
@@ -145,7 +145,7 @@ if (($element['object']->is_course_item() || $element['object']->is_category_ite
 
 </InvalidExample>
 
-### Line Termination
+### Line Termination {/* #line-termination */}
 
 - Every line must be terminated by a Unix line feed character (LF, decimal 10, hexadecimal 0x0A).
 - Carriage returns (CR, decimal 13, hexadecimal 0x0D) must NOT be used alone or with LFs.
@@ -158,11 +158,11 @@ This is consistent with the conventions of [PSR-12](https://github.com/php-fig/f
 
 :::
 
-### Whitespace
+### Whitespace {/* #whitespace */}
 
 Similar to [Section 2.3 of PSR-12](https://www.php-fig.org/psr/psr-12/#23-lines), each line of code should not have trailing whitespace. This is also applicable for multiline string literals such as SQL statements.
 
-#### Assignment operator
+#### Assignment operator {/* #assignment-operator */}
 
 - One or more spaces are allowed before assignments.
 - One and only one space is allowed after assignments.
@@ -189,9 +189,9 @@ $bafoo  = 'Hello world';
 
 When making decisions about the spaces to apply before assignments, please consider both surrounding and similar code.
 
-## Naming Conventions
+## Naming Conventions {/* #naming-conventions */}
 
-### Filenames
+### Filenames {/* #filenames */}
 
 Filenames should:
 
@@ -200,7 +200,7 @@ Filenames should:
 - use lowercase letters only
 - end in `.php`, `.html`, `.js`, `.css` or `.xml`
 
-### Classes
+### Classes {/* #classes */}
 
 Class names should always be lower-case English words, separated by underscores:
 
@@ -260,13 +260,34 @@ This has now been deprecated. Please use `stdClass` or the array instantiation i
 
 :::
 
-### Functions and Methods
+### Functions and Methods {/* #functions-and-methods */}
 
 Method and function names should be simple English lowercase words. Words should be separated by underscores.
 
 In the case of legacy functions (those not placed in classes), names should start with the [Frankenstyle](./frankenstyle.md) prefix and plugin name to avoid conflicts between plugins.
 
 Verbosity is encouraged: function names should be as illustrative as is practical to enhance understanding.
+
+When writing a method which overrides a method in a parent Class, Interface, or Trait, you should use the [`#[\Override]`](https://www.php.net/manual/en/class.override.php) attribute to indicate that the parent method is expected to exist. If the parent method is removed in a future change a compile-time error will be thrown alerting you to this fact.
+
+```php title="Example of a method which overrides a third-party method"
+class example extends \Some\Vendor\ExampleClass {
+    #[\Override]
+    public function makeRequest(): void {
+        // ...
+    }
+}
+```
+
+In Moodle's coding standard, the `#[\Override]` attribute is also used by PHPCS rules as a signal that the method is a genuine override, so some sniffs relating to documentation and to the naming of the overridden method and its parameters are not applied.
+
+:::danger
+
+When documenting an overriding method, prefer the child method's more specific or useful documentation over vague, generic, or incomplete documentation from the parent method.
+
+If a patch provides useful documentation, advice should not be given to remove it unless it should be moved to the parent method.
+
+:::
 
 The uses of type hints and return type declarations is required in PHP in all possible locations for all new code. There will be necessary exclusions, such as code extending existing non-compliant code and implementing things where it is not available. Progressive approach will be applied.
 
@@ -286,7 +307,7 @@ function report_participation_get_overviews(string $action, ?int userid): ?array
 
 </ValidExample>
 
-There is an exception for [activity modules](/docs/apis/plugintypes/mod) modules|activity modules]] that still use only plugin name as the prefix for legacy reasons.
+There is an exception for [activity modules](/docs/apis/plugintypes/mod) that still use only plugin name as the prefix for legacy reasons.
 
 <ValidExample>
 
@@ -300,7 +321,7 @@ function forum_set_display_mode($mode = 0) {
 
 </ValidExample>
 
-#### Function Parameters
+#### Function Parameters {/* #function-parameters */}
 
 Parameters are always simple lowercase English words (sometimes more than one, like `$initialvalue`), and should always have sensible defaults if possible.
 
@@ -316,7 +337,7 @@ public function foo($required, $optional = null);
 
 However, if an optional parameter is boolean, and its logical default value should be true, or false, then using true or false is acceptable.
 
-:::note Type hinting with optional parameters
+:::note[Type hinting with optional parameters]
 
 When type-hinting optional parameters, technically the nullable hint is optional, but it is highly recommended as it leads to consistent code.
 
@@ -331,7 +352,7 @@ public function get(?string $default = null): string;
 
 :::
 
-### Web service functions
+### Web service functions {/* #web-service-functions */}
 
 Web service functions should be of the format `{fullcomponent}_{methodname}`, where
 
@@ -351,7 +372,7 @@ Web service functions should be of the format `{fullcomponent}_{methodname}`, wh
 
 </ValidExample>
 
-### Variables
+### Variables {/* #variables */}
 
 Variable names should always be easy-to-read, meaningful lower-case English words. If you really need more than one word then run them together, but keep them as short as possible. Use **plural** names for arrays of objects. Use **positive** variables names always (allow, enable not prevent, disable).
 
@@ -637,7 +658,7 @@ There are no rules limiting what can be used as a level 3 namespace.
 This is where a plugin or addon can make extensive use of namespaces with no
 chance of conflict with any other plugin or api, now and forever onwards.
 
-#### Namespaces within `**/tests` directories(#namespaces-within-tests)
+#### Namespaces within `**/tests` directories {/* #namespaces-within-tests */}
 
 :::info
 
@@ -1159,6 +1180,63 @@ Magic methods are heavily discouraged, justification will be required when used.
 
 (See [MDL-52634](https://moodle.atlassian.net/browse/MDL-52634) for discussion of rationale)
 
+### Using arrays for options as arguments
+
+All arguments to a function should be explicitly listed out and defined with a type. Using arrays like this can result in errors as the types are not enforced as well as leading to poor documentation of the function.
+
+<InvalidExample>
+
+```php
+public function bad_function(
+    string $text,
+    ?context $context = null,
+    array $options = [],
+): string;
+```
+
+</InvalidExample>
+
+Instead of a generic array of options, each option should be specified as a function parameter. Optional arguments should provide appropriate defaults.
+
+<ValidExample>
+
+```php
+function good_function(
+    string $text,
+    ?context $context = null,
+    bool $trusted = false,
+    ?bool $clean = null,
+    bool $filter = true,
+    bool $para = true,
+    bool $newlines = true,
+    bool $overflowdiv = false,
+    bool $blanktarget = false,
+    bool $allowid = false,
+): string;
+```
+
+</ValidExample>
+
+Alternatively a dedicated options class may be used - for example:
+
+<ValidExample>
+
+```php
+public function good_function(
+    string $text,
+    ?context $context = null,
+    filter_options $options = null,
+): string;
+```
+
+</ValidExample>
+
+:::note
+
+Whilst the use of explicitly specified options, or a dedicated options class, is strongly encouraged; this may not be possible in all cases. Where a generic options array is used, this should be discussed and the reason clearly explained.
+
+:::
+
 ## Control statements
 
 In general, use white space liberally between lines to add clarity.
@@ -1169,7 +1247,7 @@ Put a space before and after the control statement in brackets, and separate the
 
 Indent with four spaces.
 
-:::note Do not use `elseif`
+:::note[Do not use `elseif`]
 
 Always use the `else if` variant
 
@@ -1295,7 +1373,7 @@ All other scripts with the exception of imported 3rd party libraries and files w
 defined('MOODLE_INTERNAL') || die();
 ```
 
-:::info Side-effects
+:::info[Side-effects]
 
 The term side-effects refers to any global scope code not being:
 
@@ -1632,7 +1710,7 @@ For files containing only one artifact, the file phpdoc block is optional as lon
  */
 ```
 
-### Classes {#phpdoc-classes}
+### Classes {/* #phpdoc-classes */}
 
 All classes must have a complete docblock like this:
 
@@ -1791,10 +1869,10 @@ define('PARAM_ALPHANUM', 'alphanum');
 
 ### Inline comments
 
-<!-- vale Microsoft.Ellipses = NO -->
+{/* <!-- vale Microsoft.Ellipses = NO --> */}
 Inline comments must use the "// " (2 slashes + whitespace) style, laid out neatly so that it fits among the code and lines up with it.
 The first line of the comment must begin with a capital letter (or a digit, or '...') and the comment must end with a proper punctuation character. Permitted final characters are '.', '?' or '!'.
-<!-- vale Microsoft.Ellipses = YES -->
+{/* <!-- vale Microsoft.Ellipses = YES --> */}
 
 <ValidExample>
 
@@ -1839,11 +1917,15 @@ function forum_get_ratings_mean($postid, $scale, $ratings = null) {
 
 </InvalidExample>
 
-If your comment is due to some MDL issue, please feel free to include the correct MDL-12345 in your comment. This makes it easier to track down decisions and discussions about things.
+:::note
+
+Do not include MDL tracker references in standard inline comments (except in TODO comments, which must include a tracker reference). Inline comments should explain the logic and purpose of the code, not historical tracker context.
+
+:::
 
 #### Using TODO
 
-This is especially important if you know an issue still exists in that code that should be dealt with later. Use a TODO along with a MDL code to mark this. For example:
+This is especially important if you know an issue still exists in that code that should be dealt with later. Use a TODO along with an MDL tracker reference to mark this. A TODO without an MDL tracker reference is invalid. For example:
 
 <ValidExample>
 
@@ -1906,6 +1988,7 @@ PHP includes multiple questionable features that are highly discouraged because 
 1. do not use `preg_replace()` with /e modifier - use callbacks in order to prevent unintended PHP execution.
 1. do not use backticks for shell command execution.
 1. do not use `goto`, neither the operator neither labels - use other programming techniques to control the execution flow.
+1. do not use `unserialize`, can lead to unintended PHP execution if not used properly with user supplied data - there are better methods of data exchange.
 
 ## Policy about coding-style only fixes
 
@@ -1959,9 +2042,10 @@ This document was drawn from the following sources:
 ## See also
 
 - [JavaScript Coding Style](https://docs.moodle.org/dev/Javascript/Coding_Style)
-- [CSS Coding Style](https://docs.moodle.org/dev/CSS_Coding_Style)
+- [CSS Coding Style](./css.md)
+- [TypeScript coding style](./typescript.md)
 - [SQL coding style](./sql.md)
 - [Coding](../../policies.md)
-- [CodeSniffer](../../policies/codingstyle/index.md)
+- [PHP CodeSniffer](../../tools/phpcs.md)
 - [Code Checker plugin](https://moodle.org/plugins/local_codechecker)
-- [Accessibility coding guidelines](../accessibility.md#coding-standards)
+- [Accessibility coding guidelines](../accessibility/index.md#coding-standards)

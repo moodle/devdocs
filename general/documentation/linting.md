@@ -17,7 +17,7 @@ Helper scripts are included to make this easier and, where possible, to automati
 
 We also attempt to perform these as pre-commit checks which prevent your from commit invalid changes.
 
-## Spelling
+## Spelling {/* #spelling */}
 
 All documentation is checked using [CSpell](https://cspell.org) against the en-GB dictionary.
 
@@ -36,20 +36,20 @@ Where you encounter such a spelling and need it to be ignored, you should either
 To ignore a spelling error within a single file, you can use an HTML comment:
 
 ```html title="Ignoring a single word"
-<!-- cspell:ignore yourword -->
+{/* <!-- cspell:ignore yourword --> */}
 ```
 
 You can ignore multiple words in the same comment by separating them with a comma, for example:
 
 ```html title="Ignoring multiple words"
-<!-- cspell:ignore yourword,goeshere -->
+{/* <!-- cspell:ignore yourword,goeshere --> */}
 ```
 
 If the word you are using is a word which will be frequently used across the project, then you should add it to the relevant [spelling list](#spelling-lists).
 
-### Spelling lists
+### Spelling lists {/* #spelling-lists */}
 
-#### Contributors
+#### Contributors {/* #contributors */}
 
 A list of [Moodle Contributors](https://github.com/moodle/devdocs/blob/main/data/moodle-contributors.txt) is compiled from the Moodle git repository. This allows you use the name of any contributor in the documentation without any errors being generated.
 
@@ -61,7 +61,7 @@ This list **should not** be updated manually.
 
 :::
 
-#### Component and plugin types
+#### Component and plugin types {/* #component-and-plugin-types */}
 
 A list of all [Moodle Component types and plugin types](https://github.com/moodle/devdocs/blob/main/data/components-spelling.txt) is compiled from the Moodle git repository.
 
@@ -81,7 +81,7 @@ This will be included at a later date. See [#282](https://github.com/moodle/devd
 
 :::
 
-#### Plugin names
+#### Plugin names {/* #plugin-names */}
 
 Plugin names are currently _not_ generated automatically (but will be in the future). As a result, if you need to specify a plugin which does not have a valid spelling then it should be added to the [manually-controlled list of spellings](https://github.com/moodle/devdocs/blob/main/data/plugin-names.txt).
 
@@ -93,13 +93,13 @@ This file will be kept for third-party plugins.
 
 :::
 
-#### Project words
+#### Project words {/* #project-words */}
 
 In many situations we use words which are not 'real' words. This could be because they are concatenations of words, abbreviations, Moodle-isms, people's names, the names of organisations, or a host of other reasons.
 
 For any words which does not fit into the above categories, you can place it into the [project-words.txt](https://github.com/moodle/devdocs/blob/main/project-words.txt) file.
 
-## Markdown Checks
+## Markdown Checks {/* #markdown-checks */}
 
 We make use of [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) to run a number of style and validation checks on all files with both the `.md` and `.mdx` file extensions.
 
@@ -134,13 +134,13 @@ This command should be extremely fast to run, but you may also wish to check jus
 yarn lint general/documentation/linting.md
 ```
 
-### Ignoring lint issues
+### Ignoring lint issues {/* #ignoring-lint-issues */}
 
 Although it should rarely happen, you will occasinoally need to ignore markdownlint failures instead of fixing them.
 
 See the [markdownlint documentation](https://github.com/DavidAnson/markdownlint#configuration) for examples of the different syntax available to do this.
 
-## Broken link checks
+## Broken link checks {/* #broken-link-checks */}
 
 When we build the documentation using Docusaurus, the build system checks for any broken internal links.
 

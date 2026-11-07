@@ -12,7 +12,7 @@ Read the excellent guide at
 
 - [PHPUnit Manual](https://phpunit.de/documentation.html)
 
-## Installation of PHPUnit via Composer
+## Installation of PHPUnit via Composer {/* #installation-of-phpunit-via-composer */}
 
 - Install Composer
 Instructions for installing composer on all platforms are here: https://getcomposer.org/download/
@@ -49,7 +49,7 @@ Detailed instructions:
 - [PHPUnit installation in Windows](https://docs.moodle.org/dev/PHPUnit_installation_in_Windows)
 - [PHPUnit installation in OS X](https://docs.moodle.org/dev/PHPUnit_installation_in_OS_X)
 
-## PHPUnit versions
+## PHPUnit versions {/* #phpunit-versions */}
 
 The following table shows what PHPUnit version is installed in which Moodle version when using the default composer setup.
 
@@ -64,9 +64,9 @@ The following table shows what PHPUnit version is installed in which Moodle vers
 | Moodle 3.2 - 3.3 | PHPUnit 5.5 | [Documentation](https://phpunit.de/manual/5.5/en/)      |
 | Moodle 3.1 | PHPUnit 4.8.27 | [Documentation 4.8](https://phpunit.de/manual/4.8/en/)  |
 
-## Initialisation of test environment
+## Initialisation of test environment {/* #initialisation-of-test-environment */}
 
-<!-- cspell:ignore testsuite, testsuites -->
+{/* <!-- cspell:ignore testsuite, testsuites --> */}
 
 Our PHPUnit integration requires a dedicated database and data root folder. First, add a new data root directory and prefix into your config.php, you can find examples in config-dist.php.
 
@@ -103,14 +103,14 @@ Then you need to initialise the test environment using following command.
 
 ```
  cd /home/example/moodle
- php admin/tool/phpunit/cli/init.php
+ php public/admin/tool/phpunit/cli/init.php
 ```
 
 This command has to be repeated after any upgrade, plugin (un)installation or if you have added tests to a plugin you are developing:
 
 **NOTE:** make sure that your php cli executable (or the one you want to use) is correctly on your path as the individual init scripts will call it repeatedly. Also, ensure en_AU locale is installed on your server.
 
-### LDAP
+### LDAP {/* #ldap */}
 
 If you want to run LDAP unit tests you must have a working, configured LDAP environment on your test server. There must be a basic LDAP tree structure in place or tests will fail with "Search: No such object". Build an LDAP tree structure in a new shell prompt:
 
@@ -145,7 +145,111 @@ define('TEST_LDAPLIB_BIND_PW', '*');
 define('TEST_LDAPLIB_DOMAIN', 'dc=yourcomputer,dc=local');
 ```
 
-## Test execution
+## Maintaining the test environment {/* #maintaining-the-test-environment */}
+
+{/* <!-- cspell:ignore dataroot, filedir, dbtype, mysnapshot --> */}
+
+Once the environment has been initialised, the `admin/tool/phpunit/cli/util.php` script can manage it without a full re-initialisation via `init.php`. Run it with `--help` to see all of the available options:
+
+```
+php public/admin/tool/phpunit/cli/util.php --help
+```
+
+### Upgrading the environment after a change {/* #upgrading-the-environment-after-a-change */}
+
+<Since version="5.3" issueNumber="MDL-88495" />
+
+When you add, remove, or change a plugin (including bumping a plugin's version number), the test environment no longer matches the code and PHPUnit will refuse to run:
+
+```
+Moodle PHPUnit environment was initialised for different version, please use:
+ php public/admin/tool/phpunit/cli/init.php
+ or php public/admin/tool/phpunit/cli/util.php --upgrade
+```
+
+Instead of re-initialising the whole environment, you can upgrade just the installed plugins in place, which is significantly faster:
+
+```
+php public/admin/tool/phpunit/cli/util.php --upgrade
+```
+
+This runs the standard non-core upgrade against the existing test database — installing new plugins, running their upgrade steps, and applying plugin default settings — in the same way that completing an upgrade from the notifications page does on a normal site.
+
+### Snapshots {/* #snapshots */}
+
+<Since version="5.3" issueNumber="MDL-88495" />
+
+Initialising the test environment from scratch is slow because it installs the full Moodle database. In continuous integration, where the same vanilla install is rebuilt for every job, this can dominate the run time. Snapshots let you capture an initialised environment once and restore it almost instantly on later runs.
+
+A snapshot is a single `.zip` archive containing the test database structure and data together with the `filedir`. Snapshots are stored under `<phpunit_dataroot>/snapshots/` and are keyed by database type and Moodle version, so a snapshot taken for one version is not used against another.
+
+#### Creating a snapshot {/* #creating-a-snapshot */}
+
+Initialise the environment as usual, then create a snapshot:
+
+```
+php public/admin/tool/phpunit/cli/util.php --snapshot
+```
+
+By default the snapshot is named `<dbtype>-snapshot-<version>` (for example `pgsql-snapshot-2026072200`). You can give it a custom name with `--snapshot=NAME`:
+
+```
+php public/admin/tool/phpunit/cli/util.php --snapshot=mysnapshot
+```
+
+#### Listing snapshots {/* #listing-snapshots */}
+
+```
+php public/admin/tool/phpunit/cli/util.php --list
+```
+
+The names printed are exactly the values to pass to `--restore`:
+
+```
+Available snapshots (use the full name shown with --restore=NAME):
+ - pgsql-mysnapshot-2026072200
+ - pgsql-snapshot-2026072200
+```
+
+#### Restoring a snapshot {/* #restoring-a-snapshot */}
+
+The database must be empty before restoring, so drop it first:
+
+```
+php public/admin/tool/phpunit/cli/util.php --drop
+php public/admin/tool/phpunit/cli/util.php --restore=pgsql-snapshot-2026072200
+```
+
+`--restore` rebuilds the database and `filedir` from the snapshot, which is much faster than a full `init.php`. Pass the exact name shown by `--list` (without the `.zip` extension). Snapshots are preserved by `--drop`, so you can drop and restore repeatedly.
+
+#### Example CI workflow {/* #example-ci-workflow */}
+
+The snapshot archive is intended to be cached by your CI system (GitHub Actions, GitLab CI, Jenkins, and so on). How the archive is stored between jobs is out of scope for Moodle and depends on your CI provider.
+
+1. On a vanilla Moodle, initialise the environment and take a snapshot, then cache the archive from `<phpunit_dataroot>/snapshots/` keyed by the Moodle version:
+
+   ```
+   php public/admin/tool/phpunit/cli/init.php
+   php public/admin/tool/phpunit/cli/util.php --snapshot
+   ```
+
+2. On subsequent runs, restore the cached snapshot instead of re-installing:
+
+   ```
+   php public/admin/tool/phpunit/cli/util.php --restore=<name>
+   ```
+
+3. Install the plugin under test, then upgrade the environment in place:
+
+   ```
+   php public/admin/tool/phpunit/cli/util.php --upgrade
+   ```
+
+4. Run the tests.
+
+If a new Moodle version is released the cached snapshot no longer matches, and the workflow should fall back to a fresh `init.php` before taking a new snapshot.
+
+## Test execution {/* #test-execution */}
 
 To execute all test suites from main configuration file execute the `vendor/bin/phpunit` script from your `$CFG->dirroot` directory.
 
@@ -157,9 +261,9 @@ To execute all test suites from main configuration file execute the `vendor/bin/
 The rest of examples uses `phpunit`, please substitute it with `vendor/bin/phpunit` or create a shortcut in your `$CFG->dirroot`.
 In IDEs, you may need to specify the path to the PHPUnit configuration file. Use the absolute path to `phpunit.xml` from your `$CFG->dirroot`.
 
-### How to run only some tests
+### How to run only some tests {/* #how-to-run-only-some-tests */}
 
-#### Running a single test quickly (PHPUnit 9)
+#### Running a single test quickly (PHPUnit 9) {/* #running-a-single-test-quickly-phpunit-9 */}
 
 The fastest way to run a single test in PHPUnit 9.5 and higher is to use the filter argument:
 
@@ -217,7 +321,7 @@ vendor/bin/phpunit --testsuite core_privacy_testsuite
 vendor/bin/phpunit --testsuite core_privacy_testsuite --filter test_component_is_compliant
 ```
 
-#### Using the @group annotation
+#### Using the @group annotation {/* #using-the-group-annotation */}
 
 If you add annotations like
 
@@ -238,7 +342,7 @@ to all the classes in your plugin, then you can run just the tests for your plug
 
 Therefore, it is suggested that you annotate all your tests with the Frankenstyle name of your plugin.
 
-#### Using multiple phpunit.xml files
+#### Using multiple phpunit.xml files {/* #using-multiple-phpunitxml-files */}
 
 It's easy to create alternative `phpunit.xml` files defining which tests must be run together. For reference, take a look to the default `phpunit.xml` available in your base directory once the testing environment has been initialised. After creating the custom file you will be able to run those tests with
 
@@ -249,7 +353,7 @@ It's easy to create alternative `phpunit.xml` files defining which tests must be
 Also, for commodity, you can use this command:
 
 ```
- php admin/tool/phpunit/cli/util.php --buildcomponentconfigs
+ php public/admin/tool/phpunit/cli/util.php --buildcomponentconfigs
 ```
 
 It will, automatically, create one valid `phpunit.xml` file within each component (plugin or subsystem) and other important directories, so later you will be able to execute tests like
@@ -269,7 +373,7 @@ or, also
  phpunit
 ```
 
-## External test resources
+## External test resources {/* #external-test-resources */}
 
 By default Moodle phpunit tests contact http://download.moodle.org server when testing curl related functionality. Optionally you may checkout a local copy of the test scripts and access it instead:
 
@@ -280,20 +384,20 @@ By default Moodle phpunit tests contact http://download.moodle.org server when t
 define('TEST_EXTERNAL_FILES_HTTP_URL', 'http://localhost/moodle-exttests');
 ```
 
-## Writing new tests
+## Writing new tests {/* #writing-new-tests */}
 
 - read [official PHPUnit online documentation](https://docs.phpunit.de/en/9.6/)
 - see [Writing PHPUnit tests](/docs/guides/testing/)
 
-## PHPUnit support in IDEs
+## PHPUnit support in IDEs {/* #phpunit-support-in-ides */}
 
 - [Setting up PhpStorm](https://docs.moodle.org/dev/Setting_up_PhpStorm)
 
-## Common Unit Test Problems
+## Common Unit Test Problems {/* #common-unit-test-problems */}
 
 [Common unit test problems](https://docs.moodle.org/dev/Common_unit_test_problems)
 
-## Command line tips
+## Command line tips {/* #command-line-tips */}
 
 - Display each test name before running it (useful e.g. if it crashes before the end and you want to know which test it was running at that point)
 

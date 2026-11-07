@@ -47,7 +47,7 @@ To initialize and run your tests, please follow the instructions of [Running acc
 
 :::
 
-## Create your own tests
+## Create your own tests {/* #create-your-own-tests */}
 
 Behat tests are located within the directory tests/behat of your plugin.
 The different tests are defined in files with the ending `*.feature`.
@@ -78,7 +78,7 @@ Tags that are specified in your feature's header automatically apply to all scen
 
 :::
 
-### Multiple Scenarios
+### Multiple Scenarios {/* #multiple-scenarios */}
 
 You can have an arbitrary amount of scenarios within a test. Please make sure they all belong to the same feature.
 If you have certain steps, which should be executed for every scenario of a feature, you can define them using a background:
@@ -95,21 +95,21 @@ Background:
 
 This is usually used, to define the different `Given` steps.
 
-### Use existing steps
+### Use existing steps {/* #use-existing-steps */}
 
 There are different ways how to effectively browse the available existing steps:
 
-#### Moodle Administration
+#### Moodle Administration {/* #moodle-administration */}
 
 Moodle offers within its administration menu under Site Administration > Development > Acceptance Testing a complete and searchable list of all available step definitions.
 However, make sure you installed the behat test site first!
 
-#### IDE integration
+#### IDE integration {/* #ide-integration */}
 
-<!-- cspell:ignore IntelliJ, textareas,  -->
+{/* <!-- cspell:ignore IntelliJ, textareas,  --> */}
 In PhpStorm or IntelliJ you can install the behat extension. Then you get auto completions within feature files, which helps a lot during behat test development.
 
-### Providing values to steps
+### Providing values to steps {/* #providing-values-to-steps */}
 
 Most of the steps requires values, there are methods to provide values to steps, the method depends on the step specification.
 
@@ -134,31 +134,31 @@ Most of the steps requires values, there are methods to provide values to steps,
   - optgroup - for searching optgroup by its label
   - option - for searching an option by its content
   - dialogue - for searching a dialogue with the specified header text
-  - filemanager - for searching a filemanager by it's id or label
-  - block - for searching a Moodle block by it's English name or it's frankenstyle name
-  - section - for searching for a section on a course page by it's title or its written out date (e.g. "1 January - 7 January"). Use "frontpage" "section" for the frontpage section if it has no title (default)
-  - activity - for searching for an activity module in a course list by it's title
+  - filemanager - for searching a filemanager by its id or label
+  - block - for searching a Moodle block by its English name or its frankenstyle name
+  - section - for searching for a section on a course page by its title or its written out date (e.g. "1 January - 7 January"). Use "frontpage" "section" for the frontpage section if it has no title (default)
+  - activity - for searching for an activity module in a course list by its title
   - region - for searching a Moodle page region with that id, in fact it works with all ids for <tt>div</tt>, <tt>section</tt>, <tt>aside</tt>, <tt>header</tt> or <tt>footer</tt> elements.
   - table_row - for searching a table row which contains the specified text
   - table - for searching a table by its id or caption
   - icon - for searching an icon by its title
-  - fieldset - for searching a fieldset by it's id or legend
+  - fieldset - for searching a fieldset by its id or legend
   - css_element - for searching an element by its CSS selector
   - xpath_element - for searching an element by its XPath
 - **A text selector** similar to a selector but those are the elements that returns an area of the DOM, they are useful in steps following the format **... in the "Community finder" "block"** where you are clicking or looking for some text inside a specific area. In the 'Acceptance testing' interface you can see a drop-down menu to select one of these options:
   - dialogue - for searching a dialogue with the specified header text
-  - block - for searching a Moodle block by it's English name or it's frankenstyle name
-  - section - for searching for a section on a course page by it's title or its written out date (e.g. "1 January - 7 January"). Use "frontpage" "section" for the frontpage section if it has no title (default)
-  - activity - for searching for an activity module in a course list by it's title
+  - block - for searching a Moodle block by its English name or its frankenstyle name
+  - section - for searching for a section on a course page by its title or its written out date (e.g. "1 January - 7 January"). Use "frontpage" "section" for the frontpage section if it has no title (default)
+  - activity - for searching for an activity module in a course list by its title
   - region - for searching a Moodle page region with that id, in fact it works with all ids for <tt>div</tt>, <tt>section</tt>, <tt>aside</tt>, <tt>header</tt> or <tt>footer</tt> elements.
   - table_row - for searching a table row which contains the specified text
   - table - for searching a table by its id or caption
-  - fieldset - for searching a fieldset by it's id or legend
+  - fieldset - for searching a fieldset by its id or legend
   - list_item - for searching a list item which contains the specified text
   - css_element - for searching an element by its CSS selector
   - xpath_element - for searching an element by its XPath
 
-#### Checking table values
+#### Checking table values {/* #checking-table-values */}
 
 You can check if specific value exists or not in a table row/column by using:
 
@@ -175,17 +175,17 @@ Then the following should exist in the "TABLE_ID" table:
     | VALUE_IN_ROW_2 | VALUE_IN_ROW_2 |
 ```
 
-### Advanced use cases
+### Advanced use cases {/* #advanced-use-cases */}
 
 Most of the time the usage of existing step definitions is straight forward. However, there are some exceptions were it might get complicated. Some of them are listed here:
 
-#### Uploading files
+#### Uploading files {/* #uploading-files */}
 
 Note than some tests requires files to be uploaded, in this case
 
 - The **I upload "FILEPATH_STRING" file to "FILEPICKER_FIELD_STRING" filepicker** step can be used when located in the form page
 - The file to upload should be included along with the Moodle codebase in `COMPONENTNAME/tests/fixtures/*`
-- The file to upload is specified by it's path, which should be relative to the codebase root (`lib/tests/fixtures/users.csv` for example)
+- The file to upload is specified by its path, which should be relative to the codebase root (`lib/tests/fixtures/users.csv` for example)
 - **/** should be used as directory separator and the file names can not include this **/** character as all of them would be converted to the OS-dependant directory separator to maintain the compatibility with Windows systems.
 - The scenarios that includes files uploading should be tagged using the **@_file_upload** tag
 
@@ -206,7 +206,7 @@ Feature: Add media to Atto
 ...
 ```
 
-#### Field groups
+#### Field groups {/* #field-groups */}
 
 This section describes how you can use the step definitions
 
@@ -234,7 +234,7 @@ When I set the following fields to these values:
   | myDuration[unit]        | days   |
 ```
 
-#### Human-readable and relative dates
+#### Human-readable and relative dates {/* #human-readable-and-relative-dates */}
 
 When testing plugins with deadlines, for instance for submissions, it is often necessary to set certain time values to dates relative to today.
 You can specify a relative time enclosed within two ## blocks. For example:
@@ -258,13 +258,13 @@ When I set the following fields to these values:
   | myDate[year]  | ##yesterday##%Y## |
 ```
 
-### Writing your own steps
+### Writing your own steps {/* #writing-your-own-steps */}
 
-Sometimes, you will need to set up data that is specific to your plugin, or perform steps that are specific to your plugin's UI. In this case it may be necessary to [write new step definitions](./writing.md#writing-new-acceptance-test-step-definitions), but the short version is that you define new steps as PHP methods with a special annotation inside a class called `behat_plugintype_plugingname` inside `tests/behat/behat_plugintype_plugingname.php` in your plugin.
+Sometimes, you will need to set up data that is specific to your plugin, or perform steps that are specific to your plugin's UI. In this case it may be necessary to [write new step definitions](./writing.md#writing-new-acceptance-test-step-definitions), but the short version is that you define new steps as PHP methods with a special annotation inside a class called `behat_plugintype_pluginname` inside `tests/behat/behat_plugintype_pluginname.php` in your plugin.
 
 As well as creating completely new steps, you can also extend some of the standard steps:
 
-#### Calling other steps
+#### Calling other steps {/* #calling-other-steps */}
 
 When writing custom steps you will often want to perform actions, such as:
 
@@ -328,7 +328,7 @@ Only the string format, adn the array callable are supported. You cannot pass a 
 
 :::
 
-#### Custom selectors (<tt>... in the "..." "..."</tt>)
+#### Custom selectors (<tt>... in the "..." "..."</tt>) {/* #custom-selectors-tt-in-the--tt */}
 
 There are a load of different steps which can refer to specific items on-screen, for example
 
@@ -338,14 +338,14 @@ And I click on "Submit all and finish" "button" in the "Confirmation" "dialogue"
 
 Here, 'button' and 'dialogue' are examples of selectors, and 'Submit all and finish' and 'Confirmation' are the locators which say which button or dialogue it is. When the test runs, this gets converted to an XPath expression, which is what the Behat system actually uses to locate the right element on the page.
 
-You can define new types of selector (for example `core_message > Message`) by implementing functions like `behat_component_named_selector` in your plugin's `behat_plugintype_plugingname` class. The detailed instructions for how to do this are in [the PHPdoc comments on the base class](https://github.com/moodle/moodle/blob/33da028c27607354981cd8e62ecabb7b973c6637/lib/behat/behat_base.php#L1111).
+You can define new types of selector (for example `core_message > Message`) by implementing functions like `behat_component_named_selector` in your plugin's `behat_plugintype_pluginname` class. The detailed instructions for how to do this are in [the PHPdoc comments on the base class](https://github.com/moodle/moodle/blob/33da028c27607354981cd8e62ecabb7b973c6637/lib/behat/behat_base.php#L1111).
 
 The reasons you might want to do this are:
 
 - It makes your tests easier to read, which makes it easier to be sure that the test is testing the right thing, and being able to read the tests helps people understand your features.
 - If the HTML structure you output changes, then you only need to update the selector definition in one place.
 
-#### Custom navigation targets (<tt>And I am on the "..." "..." page</tt>)
+#### Custom navigation targets (<tt>And I am on the "..." "..." page</tt>) {/* #custom-navigation-targets-ttand-i-am-on-the---pagett */}
 
 There are two related steps:
 
@@ -354,14 +354,14 @@ Given I am on the "Quiz 1" "mod_quiz > View" page logged in as "manager"
 Given I am on the "C1" "Course" page
 ```
 
-To make this work, in your plugin's `behat_plugintype_plugingname` class, you need to implement the functions `resolve_page_url` and `resolve_page_instance_url` methods. Once again, the detailed instructions about how this works are given in [the PHPdoc comments on the base class](https://github.com/moodle/moodle/blob/a0fc902eb184cd4097c8ab453ddc57964cd2dbd4/lib/behat/behat_base.php#L1093).
+To make this work, in your plugin's `behat_plugintype_pluginname` class, you need to implement the functions `resolve_page_url` and `resolve_page_instance_url` methods. Once again, the detailed instructions about how this works are given in [the PHPdoc comments on the base class](https://github.com/moodle/moodle/blob/a0fc902eb184cd4097c8ab453ddc57964cd2dbd4/lib/behat/behat_base.php#L1093).
 
 There are two reasons why it is good to use these steps:
 
 - You are trying to test that your feature works, not Moodle navigation. In the pase we have had many occasions when Moodle navigation changed, and lots of tests failed and had to be fixed. It is better for your tests to start on your feature. (Except, perhaps, it might be appropriate to have one test for the expected method for users to navigate to your feature.)
 - It is much faster because you load fewer irrelevant pages, and in particular the normal log in step leaves you on the Dashboard page, which is **very** slow to load.
 
-#### Custom entity generators (<tt>And the following "..." exist:</tt>)
+#### Custom entity generators (<tt>And the following "..." exist:</tt>) {/* #custom-entity-generators-ttand-the-following--existtt */}
 
 It is possible to extend the `Given the following "entities" exist` step to support your plugin's data generators. This avoids having to write new whole
 new behat step definitions for your plugin, and allows you to re-use data generators between PHPUnit and Behat tests.
@@ -406,7 +406,7 @@ Given the following "local_myplugin > things" exist:
   | thing2 |
 ```
 
-### Writing new acceptance test step definitions
+### Writing new acceptance test step definitions {/* #writing-new-acceptance-test-step-definitions */}
 
 As well as using the already existing steps , you can also define new steps.
 
@@ -416,7 +416,7 @@ In terms of making the Behat test work, it does not matter whether you use `@Giv
 
 When defining new Step definitions in your plugin, try to make sure the step name identifies it as belonging to your plugin. So, don't make a step called `I disable UI plugins`. Call it something like `I disable UI plugins in the CodeRunner question type`.
 
-### Deprecating a step definition
+### Deprecating a step definition {/* #deprecating-a-step-definition */}
 
 Sometimes it may be desirable to remove a step definition, when it is no longer relevant due to interface changes, or when it is replaced by another step or named selector. As it is possible for other parts of the system to use any defined step, it is necessary to mark a step as deprecated before it is completely removed.
 
@@ -448,11 +448,11 @@ If a deprecated step is called in a test, it will fail and output the deprecatio
 
 A deprecated step should be documented and removed in accordance with the normal [deprecation process](../../policies/deprecation/index.md).
 
-### Override behat core context for theme suite
+### Override behat core context for theme suite {/* #override-behat-core-context-for-theme-suite */}
 
 To override behat step definitions so as to run behat with specified theme, you should create a contexts within `/theme/{MYTHEME}/tests/behat/` with prefix `behat_theme_{MYTHEME}_` and suffixed with the context being overridden. For example, if you want to override `behat_mod_forum` context, then you should create a class `/theme/{MYTHEME}/tests/behat/mod_forum/behat_theme_{MYTHEME}_behat_mod_forum.php`
 
-### Disable behat context or features to run in theme suite
+### Disable behat context or features to run in theme suite {/* #disable-behat-context-or-features-to-run-in-theme-suite */}
 
 To disable specific contexts and features from being executed by a specific theme/suite you can create a `/theme/{MYTHEME}/tests/behat/blacklist.json` file with following format.
 
@@ -474,13 +474,13 @@ The above will:
 1. disable the use of step_definitions from `behat_grade` and `behat_navigation` while running theme suite
 1. disable running of scenarios in `auth/tests/behat/login.feature` and `grade/tests/behat/grade_hidden_items.feature`.
 
-### Override core behat selectors
+### Override core behat selectors {/* #override-core-behat-selectors */}
 
 To override behat selectors in specific theme, you should create a class `behat_theme_{MYTHEME}_behat_selectors` in `/theme/{MYTHEME}/tests/behat/behat_theme_{MYTHEME}_behat_selectors.php` extending behat_selectors.
 
-## Good practice
+## Good practice {/* #good-practice */}
 
-### Test one thing per scenario
+### Test one thing per scenario {/* #test-one-thing-per-scenario */}
 
 The ideal that you should strive for, is that each scenario tests just one specific bit of functionality. Therefore, if one test fails, the scenario name should tell you exactly what the bug is. Also, any bug should cause just one scenario to fail, not lots of unrelated ones. If you can achieve this, then the idea is that it minimises the time from seeing a test fail to having fixed the bug that was detected. Of course, this ideal is not always achievable, but in my experience it is worth striving for.
 
@@ -490,20 +490,36 @@ Note that this also implies that the Given, When and Then keywords should be use
 
 :::
 
-### Set-up (Given) should not use the UI
+### Set-up (Given) should not use the UI {/* #set-up-given-should-not-use-the-ui */}
 
 The setup is not what you are really testing here. Therefore, it should be as quick and reliable as possible. The way to achieve this is with steps like `And the following "Thing" exist:` which directly insert the data into the database. If necessary, write extra steps for your plugin to setup the things you need.
 
-### Don't use XPath or CSS selectors - fix your Accessibility bugs
+### Avoid using XPath or CSS selectors - fix accessibility issues instead {/* #dont-use-xpath-or-css-selectors---fix-your-accessibility-bugs */}
 
-If, the only way you can identify something in the page that you want to manipulate is with a step like `I set the field with xpath "//textarea['answer')](contains(@name,)" to "frog"`, then this is probably the sign that you have an Accessibility bug, because Behat accesses the page very like a screen-reader user would.
+Behat interacts with the page in a way close to how a screen-reader user would experience it. If, the only way you can identify something in the page that you want to manipulate is with a step like `I set the field with xpath "//textarea[@name='answer']" to "frog"`, then this is probably the sign that you have an Accessibility issue.
 
-You should be able to refer to things with steps like `I set the field "Answer" to "frog"'` or `I click on "True" "radio" in the "First question" "question"`. If not, you should probably think about fixing the accessibility bug, rather than resorting to unreadable selectors in your Behat test.
+<InvalidExample title="Don't">
 
-### When you define more steps in your plugin, make it clear they come from your plugin
+```
+I set the field with xpath "//textarea[@name='answer']" to "frog"
+And I click on "True" "radio" in the "#question-1" "css_element"
+```
+
+</InvalidExample>
+
+<ValidExample title="Do">
+
+```
+I set the field "Answer" to "frog"
+I click on "True" "radio" in the "First question" "question"
+```
+
+</ValidExample>
+
+### When you define more steps in your plugin, make it clear they come from your plugin {/* #when-you-define-more-steps-in-your-plugin-make-it-clear-they-come-from-your-plugin */}
 
 When defining new Step definitions in your plugin, try to make sure the step name identifies it as belonging to your plugin. So, don't make a step called `I disable UI plugins`. Call it something like `I disable UI plugins in the CodeRunner question type`.
 
-### PHPDoc comments to map scenario steps
+### PHPDoc comments to map scenario steps {/* #phpdoc-comments-to-map-scenario-steps */}
 
 PHPDoc style comments before functions can be used to map to your .scenario files. Read more about this here https://behat.org/en/latest/user_guide/context/definitions.html

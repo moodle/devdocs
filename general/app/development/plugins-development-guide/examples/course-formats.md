@@ -32,7 +32,7 @@ class mobile {
 
         $course = get_course($args['courseid']);
         require_login($course);
-        $html = $OUTPUT->render_from_template('format_myformat/mobile_course', []);
+        $html = $OUTPUT->render_from_template('format_myformat/mobileapp/mobile_course', []);
 
         return [
             'templates' => [
@@ -50,7 +50,7 @@ class mobile {
 }
 ```
 
-```html handlebars title="templates/mobile_course.mustache"
+```html handlebars title="templates/mobileapp/mobile_course.mustache"
 {{=<% %>=}}
 <core-dynamic-component [component]="coreCourseFormatComponent.allSectionsComponent" [data]="data" class="format-myformat">
     @for (section of sections; track section.id) {
@@ -86,7 +86,7 @@ With this, you will have something similar to the core format plugin: a list of 
 
 To find more about the specific properties and configuration options, make sure to read the [CoreCourseFormatDelegate](../api-reference.md#corecourseformatdelegate) reference.
 
-## Filtering sections
+## Filtering sections {/* #filtering-sections */}
 
 When your course page loads, the sections array contains all of the sections on the course. However, you might not want to display all of these sections on one page.
 You can achieve this by returning the list of sections to display along with the template in the rendering method:
@@ -120,14 +120,14 @@ Then filter the list of sections in your template:
 ```html
 @for (section of sections; track $index) {
     @if (section.id in CONTENT_OTHERDATA.displaysections) {
-        <!-- code to display the section goes here -->
+        {/* <!-- code to display the section goes here --> */}
     }
 }
 ```
 
-## Using JavaScript
+## Using JavaScript {/* #using-JavaScript */}
 
-You can also register custom formats using [JavaScript initialisation](../index.md#javascript-initialisation).
+You can also register custom formats using [JavaScript initialisation](../index.md#JavaScript-initialisation).
 
 For example, you can implement a single activity format returning the following data:
 

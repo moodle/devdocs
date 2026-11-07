@@ -8,20 +8,20 @@ tags:
 
 The `humandate` and `humantimeperiod` classes in Moodle are designed to render timestamps and time periods in a human-readable format. These classes provide functionality to display dates as "Today", "Yesterday", "Tomorrow", and apply alert styling if the date is near the current date.
 
-## Using human time representation output classes
+## Using human time representation output classes {/* #using-human-time-representation-output-classes */}
 
 Both classes can be used as a normal output class in Moodle. Each class represent way of show dates and time in a human readable way:
 
 - `humandate`: This renderer presents single dates and times in a user-friendly format, automatically adapting to the user's preferences and with some extra customization options.
 - `humantimeperiod`: Designed for displaying date/time ranges, this renderer optimizes information presentation, eliminating redundant date information and representing time in a more user friendly way.
 
-### `humandate` Class
+### `humandate` Class {/* #humandate-class */}
 
 The `humandate` class is used to render a single timestamp as a human-readable date.
 
 ![inplace editable example.png](./_humandate/humandate_example.png)
 
-### Example Usage
+### Example Usage {/* #example-usage */}
 
 ```php title='This will output "Today" if the timestamp is for the current day.'
 use core_calendar\output\humandate;
@@ -48,13 +48,13 @@ $humandate = humandate::create_from_timestamp(
 echo $renderer->render($humandate);
 ```
 
-### `humantimeperiod` Class
+### `humantimeperiod` Class {/* #humantimeperiod-class */}
 
 The `humantimeperiod` class is used to render a time period in a human-readable format.
 
 ![inplace editable example.png](./_humandate/humandate_example.png)
 
-### Example Usage
+### Example Usage {/* #example-usage-1 */}
 
 ```php
 use core_calendar\output\humantimeperiod;

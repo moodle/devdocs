@@ -7,21 +7,21 @@ tags:
 ---
 This is information for people who want to performing a penetration test of their Moodle instance as well as information for pen testers.
 
-## Preparing for a penetration test
+## Preparing for a penetration test {/* #preparing-for-a-penetration-test */}
 
-### Set debugging to normal
+### Set debugging to normal {/* #set-debugging-to-normal */}
 
 Either turn off all debugging which can disclose stacktraces etc, or show the pen testers how this can be toggled.
 
-### Setup the environment like production
+### Setup the environment like production {/* #setup-the-environment-like-production */}
 
 Sometimes a dedicated penetration test environment is setup and it is setup more like a dev / uat / stage environment which might have things like debugging on (see above). Generally a penetration test env should mirror a production configuration to avoid wasting pen testers time.
 
-## Common non-issues
+## Common non-issues {/* #common-non-issues */}
 
 There are a number of things which pen testers often flag as issues which are more just the way Moodle works and are often misunderstood.
 
-### XSS risks and capabilities
+### XSS risks and capabilities {/* #xss-risks-and-capabilities */}
 
 Moodle has a fine grained capabilities and roles system for providing access control to the whole system. Various capabilities inherently have an XSS risk, for instance an admin setting which allows an admin to inject arbitrary html and js into the sites header or footer. This is both known, and should be considered a feature and not a bug. So the presence of an XSS risk in itself is not a new or unknown issue.
 
@@ -44,7 +44,7 @@ See the [Roles and permissions](https://docs.moodle.org/en/Roles_and_permissions
 
 :::
 
-### The sesskey param is a CSRF token
+### The sesskey param is a CSRF token {/* #the-sesskey-param-is-a-csrf-token */}
 
 Many penetration tests highlight the use of the `?sesskey=xxx` HTTP parameter as a security issue, claiming that it leaks the session ID. This should generally be considered a false positive as Moodle's `sesskey` is not actually a session key, but a poorly-named CSRF token. The Moodle session ID is stored separately in a normal cookie.
 

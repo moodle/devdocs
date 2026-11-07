@@ -2,19 +2,19 @@
 title: Mission
 sidebar_position: 2
 ---
-## Our Mission
+## Our Mission {/* #our-mission */}
 
 The mission of the Moodle project (including Moodle HQ and all Moodle software) is:
 
 *Empowering educators to improve our world.*
 
-## Our Vision
+## Our Vision {/* #our-vision */}
 
 Our goals for the future are simple:
 
 *To give the world the most effective platform for learning.*
 
-## Our Values
+## Our Values {/* #our-values */}
 
 These are the values that we encourage each other to uphold, for the good of the educators we serve and each other:
 

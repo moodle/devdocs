@@ -6,7 +6,7 @@ tags:
 ---
 The term 'Frankenstyle component names' refers to the naming convention that is used to uniquely identify a Moodle plugin based on the type of plugin and its name.  They are used throughout the Moodle code (with a notable exception being the css class names in the themes).
 
-## Format
+## Format {/* #format */}
 
 Frankenstyle component names have a prefix and then a folder name, separated by an underscore.
 
@@ -15,13 +15,13 @@ Frankenstyle component names have a prefix and then a folder name, separated by 
 
 So the frankenstyle component name for the quiz module is **mod_quiz**.
 
-## Plugin types
+## Plugin types {/* #plugin-types */}
 
 See [Plugin types](/docs/apis/plugintypes/) page for the list of all supported plugin types in Moodle and their frankenstyle prefix.
 
 To get a definitive list in your version of Moodle 2.x, use a small Moodle script with <tt>print_object(get_plugin_types());</tt>.
 
-## Core subsystems
+## Core subsystems {/* #core-subsystems */}
 
 Subsystems in Moodle are not plugins themselves but can be referred to using **core_[subsystem.]** where the subsystem defined in get_core_subsystems().
 
@@ -105,15 +105,15 @@ Core subsystems can provide own strings via a file stored in `lang/en/{subsystem
 | User key | core_userkey |  |
 | Web service | core_webservice | /webservice |
 
-## Usage
+## Usage {/* #usage */}
 
 Frankenstyle component names are used in:
 
-### Function names
+### Function names {/* #function-names */}
 
 All plugin functions must start with full frankenstyle prefix.
 
-:::note Activity modules
+:::note[Activity modules]
 
 For backwards compatibility modules may also use `modulename_` as prefix.
 
@@ -125,11 +125,11 @@ Something about global functions not being recommended. Please use an autoloaded
 
 :::
 
-### Class names
+### Class names {/* #class-names */}
 
 All the component classes must be placed under the classes directory, which allows them to be ([auto-loaded](https://docs.moodle.org/dev/Automatic_class_loading)). These should be placed in a namespace according to their frankenstyle component name, and having a natural name, for example a discussion class in the forum activity should be in the `mod_forum` namespace and may have a class name of `dicussion` - `\mod_forum\discussion`.
 
-:::warning Non-namespaced classes
+:::warning[Non-namespaced classes]
 
 The use of non-namespaced classes using only the frankenstyle prefix is now deprecated.
 
@@ -139,7 +139,7 @@ For example, the class. name `mod_forum_example` should be written as `mod_forum
 
 :::
 
-### Constants
+### Constants {/* #constants */}
 
 All plugin constants must start with uppercase frankenstyle prefix, for example `MOD_FORUM_XXXX`.
 
@@ -151,7 +151,7 @@ This allows uses of the constant to autoload the content without needing to manu
 
 :::
 
-### Table names
+### Table names {/* #table-names */}
 
 All table names for a plugin must begin with its frankenstyle name (after the standard Moodle table prefix).
 
@@ -167,11 +167,11 @@ Examples:
 - `local_coolreport_users`
 - `forum` - for the mod_forum component
 
-### Plugin configuration table
+### Plugin configuration table {/* #plugin-configuration-table */}
 
 In the **config_plugins** table, column **plugin**, the frankenstyle name is used.
 
-### Capabilities
+### Capabilities {/* #capabilities */}
 
 All capabilities for a plugin use the frankenstyle name, except with a / instead of a _.
 
@@ -180,7 +180,7 @@ For example:
 - `mod/quiz:viewattempt`
 - `block/library:readbook`
 
-### Language files
+### Language files {/* #language-files */}
 
 The main language file for each plugin (with the notable exception of activity modules) is the frankenstyle component name.
 
@@ -189,13 +189,13 @@ For example:
 - `/blocks/participants/lang/en/block_participants.php`
 - `/mod/quiz/lang/en/quiz.php`
 
-### Renderers
+### Renderers {/* #renderers */}
 
-### Module Subplugins
+### Module Subplugins {/* #module-subplugins */}
 
 It is possible to extend modules without having to change the basic module's code. See [Subplugins](https://docs.moodle.org/dev/Subplugins) for details.
 
-### Other places (TODO)
+### Other places (TODO) {/* #other-places-todo */}
 
 - @package declarations in phpdocs, see [Coding style#PHPDoc](./index.md#phpdoc)
 - [web service function names](https://docs.moodle.org/dev/Web_services_Roadmap)
@@ -205,11 +205,11 @@ It is possible to extend modules without having to change the basic module's cod
 
 Please add more as they come up.
 
-## Theme name variants
+## Theme name variants {/* #theme-name-variants */}
 
 Themes are typically a derivatives of some other theme. Where this is the case, you should _avoid_ including the parent theme name in your theme's name.
 
-## See also
+## See also {/* #see-also */}
 
 - [Plugins](https://docs.moodle.org/dev/Plugins)
 - [Subplugins](https://docs.moodle.org/dev/Subplugins)

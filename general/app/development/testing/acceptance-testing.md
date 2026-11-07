@@ -20,7 +20,7 @@ The main advantages of this approach are:
 - Where institutions run tests automatically, it should be relatively easy to include some app tests within the existing approach.
 - This system does not require any mobile device hardware and should work on all common platforms.
 
-## Installation
+## Installation {/* #installation */}
 
 In order to run tests for the app, you will need to run both a Moodle site and the Moodle App.
 
@@ -30,13 +30,13 @@ We recommend that you use [moodle-docker](https://github.com/moodlehq/moodle-doc
 
 Nevertheless, if you still have to run the projects in your local machine, you can read the following instructions.
 
-### Configuring the Moodle site
+### Configuring the Moodle site {/* #configuring-the-moodle-site */}
 
 You can learn how to run a Moodle site locally in [Setting up development environment](../../../development/gettingstarted.md).
 
 Remember to install the [`local_moodleappbehat`](https://github.com/moodlehq/moodle-local_moodleappbehat/) plugin with the same version that you're using for the mobile app.
 
-### Configuring the Moodle App
+### Configuring the Moodle App {/* #configuring-the-moodle-app */}
 
 If you are going to modify the application code, you can learn how to run it locally in [Setting up your development environment for the Moodle App](../setup/index.md). You only need to run the application in a browser, so you can skip the instructions for Android/iOS. Make sure to launch the application on the testing environment, running `npm run serve:test`.
 
@@ -44,7 +44,7 @@ If you only intend to run the app with the goal of executing Behat tests, you ca
 
 However you set up the environment, if you change the version of the app you'll need to re-run the Behat init command so that your Moodle site knows about it.
 
-### Configuring Behat
+### Configuring Behat {/* #configuring-behat */}
 
 In order to enable app testing, you need to add the following configuration to your site's `config.php` file:
 
@@ -79,7 +79,7 @@ $CFG->behat_profiles = [
 
 If everything is configured properly, you should see "Configured app tests for version X.X.X" after running `admin/tool/behat/cli/init.php`.
 
-## Running Behat
+## Running Behat {/* #running-behat */}
 
 To run mobile tests in Behat, simply launch Behat in the usual way. The app tests all have the `@app` tag, so if you want to run all the mobile tests you can use `--tags=@app`.
 
@@ -97,17 +97,17 @@ npx gulp watch-behat
 
 If you're using [moodle-docker](https://github.com/moodlehq/moodle-docker), this should guess your plugins path automatically. If you haven't or prefer to use another location, you can always set the `MOODLE_APP_BEHAT_PLUGIN_PATH` env variable.
 
-## Writing tests
+## Writing tests {/* #writing-tests */}
 
 This page assumes you already know all about [Writing acceptance tests](../../../development/tools/behat/writing.md) in general.
 
-### Test structure
+### Test structure {/* #test-structure */}
 
 Mobile app test scenarios should be marked `@app` and `@javascript` in addition to any other tags.
 
 You are writing a normal Behat test and this is likely to require background steps, such as creating courses, users, groups, etc.
 
-### Start the app
+### Start the app {/* #start-the-app */}
 
 When you want to get started testing the application, you can use the following step to launch the application:
 
@@ -128,7 +128,7 @@ After this step completes, if it is the first time you ran the app inside this s
 
 You can also use this step if you are already using the app and it will restart it.
 
-### Log in to the app
+### Log in to the app {/* #log-in-to-the-app */}
 
 To log in, you can use the following step:
 
@@ -140,7 +140,7 @@ This is the same step that's used to log into standard Moodle, and it works in t
 
 You will then be left at the start page.
 
-### Standard steps
+### Standard steps {/* #standard-steps */}
 
 Technically, you can use any standard Behat action in the app. However, most of them will probably not work as you expect because the app runs on a different environment. It is still a website, but it's built using [Ionic Framework](https://ionicframework.com/docs/).
 
@@ -156,7 +156,7 @@ Having said that, here's a list of steps that work and you can use reliably.
 - `I change viewport size to "{width}x{height}"` — You can use this step to simulate switching between portrait and landscape formats.
 - `I pause` — This step works and it is very useful to debug your scenario.
 
-### Actions
+### Actions {/* #actions */}
 
 ```gherkin
 When I press "Course 1" in the app
@@ -221,7 +221,7 @@ When I upload "stub1.txt" to "File" ".action-sheet-button" in the app
 
 This step can be used to set files on a file input in the app. The stub file should be placed in a `fixtures/` folder at the same level than the `.feature` file.
 
-### Assertions
+### Assertions {/* #assertions */}
 
 Like actions, there are some Behat assertions that are specific to the app.
 
@@ -253,13 +253,13 @@ Then "Item 1" near "Unique text" should not be selected in the app
 
 You can use these steps to assert whether radio buttons, check boxes, and such are selected or not.
 
-### Leaving the app
+### Leaving the app {/* #leaving-the-app */}
 
 If you want to leave the app and go back to Moodle within a scenario, simply use a Moodle step that goes to a page. For example, use `I am on site homepage` or `I am on "Course 1" course homepage`.
 
 You only need to do this if you want to carry out actions within Moodle after using the app, within the scenario. At the end of your scenario, there is no need to explicitly leave the app; Moodle will automatically start the next scenario on the Moodle start page as usual.
 
-### A complete example
+### A complete example {/* #a-complete-example */}
 
 This example is a complete feature file that loads the app, opens a course, and asserts that the app is showing the course page:
 
@@ -290,16 +290,16 @@ Feature: Test app (demo)
 
 You can find more complex examples looking at the [tests for the app core](https://github.com/moodlehq/moodleapp/blob/latest/src/core/features/login/tests/behat/signup.feature) (search for files ending with `*.feature`).
 
-## Limitations
+## Limitations {/* #limitations */}
 
 Using this approach, there are some limitations you should be aware of:
 
 - Lack of native functionality — Fundamentally, it is not possible to test behaviour specific to native devices because tests are run in a browser.
 - Missing functionality — There are some known limitations and unsupported features, for example there is currently no obvious way to attach files. Some of these are possible, but they haven't been implemented yet. If something is missing for your use-case, you can submit feature requests in [the tracker](https://moodle.atlassian.net/browse/MOBILE) using the `Behat` component.
 
-## Advanced
+## Advanced {/* #advanced */}
 
-### Versioning
+### Versioning {/* #versioning */}
 
 Behat tests can relate to particular versions of the mobile app. For these situations, there are two types of tags you can add to your scenario or feature:
 
@@ -318,7 +318,7 @@ Keep in mind that these tags will only take effect after using the `I enter the 
 
 Also, after changing the app version used for testing, make sure you re-run Behat init. It is the initialisation process that stores which version of the app you're using.
 
-### Testing against multiple app versions
+### Testing against multiple app versions {/* #testing-against-multiple-app-versions */}
 
 If you need to run tests against multiple versions of the app, you can do it in two ways:
 
@@ -329,7 +329,7 @@ In both cases, you'll need to re-run the Behat init command and run the tests ag
 
 Unfortunately, the only way to run this in parallel is to have separate Moodle installations with their own configurations.
 
-### Debugging tests
+### Debugging tests {/* #debugging-tests */}
 
 If you pause a test (for example, using the `I wait "2000" seconds` step) and open the developer tools, you can debug the application like you would during development. You can learn how to do that in [Using the Moodle App in a browser](../setup/app-in-browser.md).
 
@@ -363,7 +363,7 @@ behat.pressStandard('back');
 
 If you're using `moodle-docker`, remember that you can interact with the browser [using VNC](https://github.com/moodlehq/moodle-docker#using-vnc-to-view-behat-tests). With a VNC client you can view in real-time what behat is doing in the browser.
 
-### Writing custom steps
+### Writing custom steps {/* #writing-custom-steps */}
 
 If you find something missing to test your code, you can always implement custom steps.
 
@@ -371,7 +371,7 @@ If you're writing a plugin, you can include a new class under `tests/behat/behat
 
 You can learn more about writing custom steps in the [Writing new acceptance test step definitions](https://docs.moodle.org/dev/Writing_new_acceptance_test_step_definitions) page, and if you want to see how the steps that are specific to the app work, you should look into [behat_app.php](https://github.com/moodlehq/moodleapp/blob/latest/local_moodleappbehat/tests/behat/behat_app.php) and [behat-runtime.ts](https://github.com/moodlehq/moodleapp/tree/latest/src/testing/services/behat-runtime.ts).
 
-### Testing graphical regressions
+### Testing graphical regressions {/* #testing-graphical-regressions */}
 
 If you want to test against graphical regressions, you can use the [local_behatsnapshots](https://github.com/NoelDeMartin/moodle-local_behatsnapshots/) plugin. It allows you to store UI snapshots in your repository and check against them every time Behat tests are run:
 
@@ -382,9 +382,9 @@ Then the UI should match the snapshot
 
 Learn more about it in the [plugin documentation](https://github.com/NoelDeMartin/moodle-local_behatsnapshots/#behat-snapshots-plugin).
 
-## Troubleshooting
+## Troubleshooting {/* #troubleshooting */}
 
-### General advice
+### General advice {/* #general-advice */}
 
 If you are stuck with an error and you can't find a way to continue, here's a list of things you can do:
 
@@ -393,21 +393,21 @@ If you are stuck with an error and you can't find a way to continue, here's a li
 - It is possible that your tests break if you're using an unstable version of the app. Try to use stable versions using the `latest` branch if you're working with the source code or tagged releases if you're using Docker.
 - Mobile Behat tests don't work well with XDebug, so if you're using it, turn it off in `php.ini` while running the tests. Also, remember to restart Apache if necessary.
 
-### Unable to load app version from https://localhost:8100/assets/env.json
+### Unable to load app version from https://localhost:8100/assets/env.json {/* #unable-to-load-app-version-from-httpslocalhost8100assetsenvjson */}
 
 This message appears when the Moodle site is not able to reach the app. Make sure that the url is available from the host you're running the Behat commands from. Also make sure that the app is actually running at the specified url.
 
-### The plugins required by this course could not be loaded correctly...
+### The plugins required by this course could not be loaded correctly... {/* #the-plugins-required-by-this-course-could-not-be-loaded-correctly */}
 
 This means either some activity on the course is not adapted to support the moodle app or there is a timeout in the request to your behat site.
 
 To clear the timeout message, open the app in your [development browser](../setup/app-in-browser.md), open the Inspector, open the Application tab, select Clear storage, press Clear site data, close Inspector, close the tab with mobile site, re-open mobile site in new tab and log in. Then in a separate tab, log in to your behat site (you can find the url in `$CFG->behat_wwwroot` within your `config.php` file) and make sure you can get into the course without seeing the error.
 
-### Fatal error: Maximum execution time of 30 seconds exceeded in...
+### Fatal error: Maximum execution time of 30 seconds exceeded in... {/* #fatal-error-maximum-execution-time-of-30-seconds-exceeded-in */}
 
 This means that your local site has not been updated/visited since an upgrade. Just go to your local behat site (you can find the url in `$CFG->behat_wwwroot` within your `config.php` file), log in as admin and run notifications, then visit a course. Do this step often to avoid timeouts!
 
-### Test fails because of the browser language
+### Test fails because of the browser language {/* #test-fails-because-of-the-browser-language */}
 
 If your operating system is in a different language than English, the tests may fail.
 
@@ -415,12 +415,12 @@ Chrome does not have an easy way to force the browser language to English, so th
 
 To do so, just set the `forcedefaultlanguage` attribute to `"en"` in your `moodle.config.json` file in the app.
 
-### Application build gets killed without any error information
+### Application build gets killed without any error information {/* #application-build-gets-killed-without-any-error-information */}
 
 In some situations, it is possible that you see `Killed` in the console and a command suddenly stops without any further information. In these situations, make sure to check the [General advice](#general-advice) section, but it is possible that your computer is running out of memory.
 
 If you are running the scripts inside of a Docker container, make sure that Docker is allocated enough memory. If you are using Docker desktop (for example, on a Mac), you can inspect these settings under Preferences > Resources > Advanced > Memory.
 
-### MacOS: running moodle-docker commands show grep usage options and do nothing else
+### MacOS: running moodle-docker commands show grep usage options and do nothing else {/* #macos-running-moodle-docker-commands-show-grep-usage-options-and-do-nothing-else */}
 
 This is [a known issue](https://github.com/moodlehq/moodle-docker/issues/188) in moodle-docker for Mac. The workaround for now is just to explicitly initialize the `MOODLE_DOCKER_APP_RUNTIME` variable in your local environment.

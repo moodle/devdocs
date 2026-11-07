@@ -7,21 +7,21 @@ tags:
 - Accessibility
 ---
 
-## What does accessibility mean?
+## What does accessibility mean? {/* #what-does-accessibility-mean */}
 
 At Moodle, we prioritise accessibility, ensuring our software meets the latest standards. Accessibility means that everyone can access the same information and participate in the same activities in a similar amount of time and effort. This includes people with disabilities and those who use assistive technologies, such as screen readers or voice recognition software. Making something accessible also makes it easier to use for everyone, improving the overall experience.
 
 Our [content principles](./contentprinciples.md) make sure that we write in an accessible, useful, and inclusive way. While these principles already incorporate accessibility best practices, this section highlights key writing guidelines specifically aimed at meeting WCAG 2.2 AA compliance. Use these guidelines to create accessible product experiences in Moodle.
 
-## Writing accessible interfaces
+## Writing accessible interfaces {/* #writing-accessible-interfaces */}
 
-### Links
+### Links {/* #links */}
 
 Clear and descriptive links help users understand the purpose of each link without needing extra context. People using assistive technologies often navigate a page by moving from link to link using the tab key, or generating a list of links for quick navigation. Meaningful link text ensures these users can easily find what they need.
 
 To make your link text meaningful and useful:
 
-#### Describe the destination of the link
+#### Describe the destination of the link {/* #describe-the-destination-of-the-link */}
 
 Use clear language to let the user know where the link will take them.
 
@@ -37,7 +37,7 @@ Click here
 
 </InvalidExample>
 
-#### Avoid using generic phrases
+#### Avoid using generic phrases {/* #avoid-using-generic-phrases */}
 
 Generic phrases such as 'Read more' are ambiguous, so use descriptive text instead. Screen readers often allow users to navigate from link to link in isolation, meaning they will not hear the surrounding text for context. Descriptive link text ensures users know where the link will take them, even without additional context.
 
@@ -57,17 +57,17 @@ Even if this link is under a section called 'Our plans', people using screen rea
 
 </InvalidExample>
 
-#### Don't use the same link text for different destinations
+#### Don't use the same link text for different destinations {/* #dont-use-the-same-link-text-for-different-destinations */}
 
 This is confusing for users, especially those using screen readers, as they might assume the links lead to the same place. If you must use the same link text, make sure each link has a descriptive aria-label that clearly explains its purpose.
 
-#### Be consistent with link text for the same destination
+#### Be consistent with link text for the same destination {/* #be-consistent-with-link-text-for-the-same-destination */}
 
 Use the same text for the same destination, even if the link appears in different places or components on the page.
 
 For example, if a link to a map appears in a paragraph and also in a button, you should use the same link text. This helps users recognise repeated links, understand their purpose, and navigate with confidence.
 
-#### Match the link text to the title of the destination page
+#### Match the link text to the title of the destination page {/* #match-the-link-text-to-the-title-of-the-destination-page */}
 
 This helps users know they are in the right place.
 
@@ -83,7 +83,7 @@ A link with the text **Assign system roles** takes to a page with the title **Ma
 
 </InvalidExample>
 
-#### Avoid links opening in new windows
+#### Avoid links opening in new windows {/* #avoid-links-opening-in-new-windows */}
 
 Opening links in new windows can confuse users, especially those with cognitive difficulties, as it disables the back button.
 
@@ -91,7 +91,7 @@ The only exception to opening links in new windows is when the link provides hel
 
 For more information, see [WebAim: Links to New Windows, Pop-ups, Other Frames, or External Web Sites](https://webaim.org/techniques/hypertext/hypertext_links#new_window).
 
-### Headings
+### Headings {/* #headings */}
 
 Use headings to organise content hierarchically.
 
@@ -99,7 +99,7 @@ Headings must provide a clear outline of the content, to make it easier for ever
 
 To ensure your headings are effective:
 
-#### Follow a logic hierarchy
+#### Follow a logic hierarchy {/* #follow-a-logic-hierarchy */}
 
 Use H1 for the main title of the page, H2 for main sections, H3 for subsections, and so on.
 
@@ -115,7 +115,7 @@ Pick headings or paragraphs based on font size or style.
 
 </InvalidExample>
 
-#### Don't skip heading levels
+#### Don't skip heading levels {/* #dont-skip-heading-levels */}
 
 Skipping from H1 to H3, for instance, breaks the reading order and can be confusing for people using assistive technologies.
 
@@ -140,23 +140,23 @@ Skipping from H1 to H3, for instance, breaks the reading order and can be confus
 
 For more information, see [WebAIM: Headings](https://webaim.org/techniques/headings/).
 
-### Alternative (alt) text
+### Alternative (alt) text {/* #alternative-alt-text */}
 
 Alt text, or alternative text, is a short description of an image. It is read aloud by screen readers to make content accessible to people with visual impairments. It also appears if the image fails to load. Alt text should provide meaning and context without unnecessary detail.
 
 To make your alt text effective:
 
-#### Be specific and concise
+#### Be specific and concise {/* #be-specific-and-concise */}
 
 Keep alt text short and to the point.
 
 If an image conveys so much information that it requires more than three sentences to describe, provide a more detailed explanation in the surrounding text, or link to an accessible format, such as a long description.
 
-#### Focus on the image's purpose
+#### Focus on the image's purpose {/* #focus-on-the-images-purpose */}
 
 Describe what the image does, not what it looks like. If an image is not necessary for the user to complete a task or understand information, it most likely doesn't need alt text.
 
-#### Avoid redundancy
+#### Avoid redundancy {/* #avoid-redundancy */}
 
 Consider the context of the image and avoid repeating information already provided in nearby text. For example, if you write a clear, detailed description on how to do something, and also include a screenshot to illustrate it, adding alt text may be redundant.
 
@@ -166,7 +166,7 @@ Example:
 
 In this case, the alt text 'A mouse hand drags an activity in the course index to reorder it' would be redundant with the image caption.
 
-#### Skip decorative images
+#### Skip decorative images {/* #skip-decorative-images */}
 
 Images that don't provide essential information don't need alternative text.
 
@@ -185,13 +185,13 @@ Without alternative text, screen readers may announce the image's file name or t
 
 For more information, see [WebAIM: Alternative text](https://webaim.org/techniques/alttext/).
 
-### ARIA labels
+### ARIA labels {/* #aria-labels */}
 
 ARIA labels ensure that people who use assistive technologies, like screen readers, can fully understand and interact with all the elements on our site, such as buttons or forms.
 
 When writing aria labels:
 
-#### Avoid redundancy
+#### Avoid redundancy {/* #avoid-redundancy-1 */}
 
 If an element already has visible text, don't repeat it in the ARIA label. For example, a button that reads "Submit" does not need an ARIA label because it's already accessible.
 
@@ -213,7 +213,7 @@ No aria-label needed, because the button already explains the action.
 
 </InvalidExample>
 
-#### Focus on purpose, not appearance
+#### Focus on purpose, not appearance {/* #focus-on-purpose-not-appearance */}
 
 Describe what the element does, not what it looks like or what it is. For example, for a search icon, use "Search the site" instead of "Magnifying glass icon".
 
@@ -229,7 +229,7 @@ Describe what the element does, not what it looks like or what it is. For exampl
 
 </InvalidExample>
 
-#### Be precise and informative
+#### Be precise and informative {/* #be-precise-and-informative */}
 
 Instead of generic labels like "Close", use "Close menu" or "Close dialog" to provide context.
 
@@ -247,15 +247,15 @@ Instead of generic labels like "Close", use "Close menu" or "Close dialog" to pr
 
 For more information, see [WebAIM: ARIA Labels and Descriptions](https://webaim.org/techniques/aria/#labeling).
 
-### HTML page titles
+### HTML page titles {/* #html-page-titles */}
 
 The HTML 'title' element sets the page title that is displayed in browser tabs, and is the first thing screen reader users hear when they access a page.
 
 To ensure users can easily identify and navigate between different pages, do the following when writing page titles:
 
-#### Write a short title
+#### Write a short title {/* #write-a-short-title */}
 
-#### Describe the purpose or topic of the page
+#### Describe the purpose or topic of the page {/* #describe-the-purpose-or-topic-of-the-page */}
 
 This helps the user understand where they are and what they can do there.
 
@@ -271,7 +271,7 @@ Password | [Site short name]
 
 </InvalidExample>
 
-#### Make page titles specific and unique
+#### Make page titles specific and unique {/* #make-page-titles-specific-and-unique */}
 
 Write a title that is specific to the page and not easily used on other pages of your site or related sites.
 
@@ -287,7 +287,7 @@ Edit activity
 
 </InvalidExample>
 
-#### Put important, unique information at the beginning
+#### Put important, unique information at the beginning {/* #put-important-unique-information-at-the-beginning */}
 
 This makes the important information visible in the browser tab, and also means screen readers will read that first.
 
@@ -303,7 +303,7 @@ Edit Assignment: [Assignment name] | [Course name] | [Site short name]
 
 </InvalidExample>
 
-#### Reflect the page status
+#### Reflect the page status {/* #reflect-the-page-status */}
 
 Make sure the title indicates the current status of the page. For example, if a page involves editing, the title should clearly state this:
 
@@ -323,7 +323,7 @@ This title doesn't tell users that they're editing an assignment.
 
 </InvalidExample>
 
-#### Maintain consistency with link text
+#### Maintain consistency with link text {/* #maintain-consistency-with-link-text */}
 
 When users click a link, the title of the page they navigate to should match the link they clicked. This reinforces their sense of continuity and location.
 
@@ -341,7 +341,7 @@ Users click on a link with the text **Course participants**, and the destination
 
 For more information, see [WEBAIM: Page titles](https://webaim.org/techniques/pagetitle/).
 
-## References
+## References {/* #references */}
 
 We encourage you to read these comprehensive guidelines for more detailed information, specific examples, and a deeper understanding of general accessibility best practices.
 

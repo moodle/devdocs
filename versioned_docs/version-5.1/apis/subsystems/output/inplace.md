@@ -10,7 +10,7 @@ The `inplace_editable` element is a mini-API which allows developers to easily s
 
 ![inplace editable example.png](./_inplace/inplace_editable_example.png)
 
-## Implementing inplace_editable in a plugin
+## Implementing inplace_editable in a plugin {/* #implementing-inplace_editable-in-a-plugin */}
 
 The best way is to explain the usage on a simple example. Imagine we have plugin `tool_mytest` that needs to implement in-place editing of a field 'name' from db table `tool_mytest_mytable`. We are going to call this itemtype `mytestname`. Each plugin (or core component) may use as many item types as it needs.
 
@@ -136,7 +136,7 @@ class inplace_edit_text extends \core\output\inplace_editable {
 </div>
 </details>
 
-## Toggles and dropdowns
+## Toggles and dropdowns {/* #toggles-and-dropdowns */}
 
 You may choose to set the UI for your inplace editable element to be a string value (default), toggle or dropdown.
 
@@ -301,7 +301,7 @@ In the examples above, `core/inplace_edit` can also be used as a partial in anot
 
 :::
 
-## How does it work
+## How does it work {/* #how-does-it-work */}
 
 `inplace_editable` consists of
 
@@ -318,7 +318,7 @@ All four call each other so it's hard to decide where we start explaining this c
 
 3. **JavaScript module** registers a listener to when the edit link is clicked and then it replaces the display value with the text input box that allows to edit value. When user presses "Enter" the AJAX request is called to the web service and code from the component is executed. If web service throws an exception it is displayed for user as a popup.
 
-## Events
+## Events {/* #events */}
 
 Plugin page can listen to JQuery events that are triggered on successful update or when update failed. Example of the listeners (as inline JS code):
 

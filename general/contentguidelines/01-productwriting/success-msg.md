@@ -8,20 +8,20 @@ tags:
 
 Success messages tell users that they've completed a task or achieved a goal, or that an action within the system has been successfully completed.
 
-## Related components
+## Related components {/* #related-components */}
 
 [Notification](https://componentlibrary.moodle.com/admin/tool/componentlibrary/docspage.php/moodle/components/notifications/)
 
-## Basic guidelines
+## Basic guidelines {/* #basic-guidelines */}
 
 - Keep success messages short and scannable.
 - Focus on what the user has achieved or the system has completed.
 - Avoid technical jargon.
 - Add a full stop at the end of success messages.
 
-## Content
+## Content {/* #content */}
 
-### Message
+### Message {/* #message */}
 
 Use the short form of passive instead of the full form.
 
@@ -95,7 +95,7 @@ Message delivery successful.
 
 </InvalidExample>
 
-### Calls to action
+### Calls to action {/* #calls-to-action */}
 
 Use a call to action only if there are any next steps that users can take. For example, seeing something new they have created.
 

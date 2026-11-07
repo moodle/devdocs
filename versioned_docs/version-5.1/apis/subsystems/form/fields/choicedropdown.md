@@ -7,13 +7,13 @@ tags:
 
 The `choicedropdown` form field creates a dropdown list with multiple options. It is different from a standard select dropdown in that each option can have extra icons and descriptions. This field is often used in forms to facilitate the selection of a non-trivial option that demands additional information.
 
-## Using the `choicedropdown` Form Field
+## Using the `choicedropdown` Form Field {/* #using-the-choicedropdown-form-field */}
 
 While most form API fields use primitive data types, the `choicedropdown` form field uses a particular data definition called `choicelist`. This data definition is an abstraction that represents a user choice list and is used in other UI components like `core\output\local\dropdown\status` or `core\output\local\action_menu\subpanel`.
 
 The `choicelist` class provides a way to define a list of options with additional information such as icons, descriptions, the currently selected option, or the ability to disable specific options.
 
-## Example Usage
+## Example Usage {/* #example-usage */}
 
 To create a `choicedropdown` form field, you need to:
 

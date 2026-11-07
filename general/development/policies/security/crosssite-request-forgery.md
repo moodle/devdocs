@@ -13,7 +13,7 @@ This page forms part of the [Moodle security guidelines](../security).
 
 :::
 
-## What is the danger?
+## What is the danger? {/* #what-is-the-danger */}
 
 When you put a web application on the Internet, you are making it available so that anyone can send requests to it, and any request can be simply encoded as a URL.
 
@@ -29,9 +29,9 @@ It is also possible to fake POST requests, you can simple put the form on extern
 
 It may be a bit surprising, but this type of attack may be used against servers behind firewall on private network. It is not important where is the exploiting code, you can attack any server users may access from their browsers.
 
-## How Moodle avoids this problem
+## How Moodle avoids this problem {/* #how-moodle-avoids-this-problem */}
 
-### Session key (CSRF token) {#session-key}
+### Session key (CSRF token) {/* #session-key */}
 
 The most important protection is the concept CSRF token, which is for historic reasons called **`sesskey`** in Moodle.
 
@@ -45,7 +45,7 @@ The `sesskey` should not be confused with Moodle Session ID, which a PHP session
 
 :::
 
-### Use HTTP correctly
+### Use HTTP correctly {/* #use-http-correctly */}
 
 Web applications use HTTP to encode requests from the user. In HTTP, there are various types of request. The two most important are GET and POST.
 
@@ -56,7 +56,7 @@ When you click a link or load an image, it is always a GET request. When you sub
 
 Moodle should only process changes in response to a POST request. If that is the case, then it does Evil Hacker no good to trick a user into clicking on a link or viewing an embedded image. They have to trick a user into clicking a form submit button, which is harder.
 
-## What you need to do in your code
+## What you need to do in your code {/* #what-you-need-to-do-in-your-code */}
 
 Use the [Form API](/docs/apis/subsystems/form) whenever possible for handling HTML forms. This automatically checks the sesskey and request method for you.
 
@@ -82,21 +82,21 @@ if ($delete) {
 
 Note that when using standard elements like `$OUTPUT->continue_button()` and other elements based on the `single_button widget` submitted via POST method, the sesskey can be implicitly added to submitted parameters. Still, it is your duty to explicitly check the submitted value is valid.
 
-## Ensure your code does not expose the sesskey inadvertently
+## Ensure your code does not expose the sesskey inadvertently {/* #ensure-your-code-does-not-expose-the-sesskey-inadvertently */}
 
 There are various ways that the sesskey could be leaked, and if this happens then it opens the door to types of risks that would be otherwise be mitigated by the sesskey: [https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
 
 There are broadly two ways it could be leaked, in the frontend and in the backend.
 
-### Backend leaking
+### Backend leaking {/* #backend-leaking */}
 
 This is things such as the sesskey appearing in various server logs. If your infrastructure is locked down well this should not be a major concern. Either way this generally cannot be addressed by a developer in the code of Moodle or your plugin, instead it is best addressed at the infrastructure level for example by stripping it out these params from urls before they are logged in your server configuration. A similar level of care needs to be taken when logging other things, for example logging the cookies in your access logs has a risk of allowing a session take over by anyone who has access to those logs.
 
-### Frontend leaking
+### Frontend leaking {/* #frontend-leaking */}
 
 The frontend includes ever showing the sesskey in the browser URL bar or anywhere else visible to the end user in a way that could then leak to a third-party. An example might be accidentally disclosing it during a screen sharing session or even at a desktop being watched or filmed. Another important hole is leaking the sesskey as part of the url in the referrer header when linking or interacting from another domain.
 
-### Guidelines for removing the sesskey from visible URLs
+### Guidelines for removing the sesskey from visible URLs {/* #guidelines-for-removing-the-sesskey-from-visible-urls */}
 
 1. First don't remove the requirement for checking the sesskey if it is actually needed.
 2. If the page doesn't change any state on the server, then the sesskey check can be removed along with the query param. For example, any URLs for `pluginfile.php` should not have a sesskey param.
@@ -106,18 +106,18 @@ The frontend includes ever showing the sesskey in the browser URL bar or anywher
     2. This page doesn't load any sub resources on another domain and where the sesskey could leak through the referrer header.
     3. If the request will ALWAYS do something very quickly and then redirect away. But generally speaking these should be a HTTP post instead. If it takes a long time then it runs the risk of the URL being visible and lengthens the window of opportunity for a leak.
 
-### Examples of sesskey fixed in core
+### Examples of sesskey fixed in core {/* #examples-of-sesskey-fixed-in-core */}
 
 Some examples to help guide how to fix these issues:
 
 - [MDL-68292](https://moodle.atlassian.net/browse/MDL-68292)
 - [MDL-73295](https://moodle.atlassian.net/browse/MDL-73295)
 
-## What you need to do as an administrator
+## What you need to do as an administrator {/* #what-you-need-to-do-as-an-administrator */}
 
 - This is really only a code issue, but try not to fall for Evil Hacker's tricks ;-).
 
-## See also
+## See also {/* #see-also */}
 
 - [Security](../security)
 - [Coding](../../policies.md)

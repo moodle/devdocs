@@ -4,7 +4,7 @@ tags:
 - deprecation
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 <Since version="4.4" issueNumbers="MDL-80005" />
 
@@ -28,7 +28,7 @@ The attribute can be used to specify information including:
 - the reason for deprecation
 - whether the deprecation is final
 
-## The `deprecated` attribute
+## The `deprecated` attribute {/* #the-deprecated-attribute */}
 
 The attribute is a Moodle PHP Attribute and can be applied to:
 
@@ -63,7 +63,7 @@ enum example {
 }
 ```
 
-## Inspecting the attribute
+## Inspecting the attribute {/* #inspecting-the-attribute */}
 
 The `\core\deprecation` class contains helper methods to inspect for use of the deprecated attribute and allows usage including:
 

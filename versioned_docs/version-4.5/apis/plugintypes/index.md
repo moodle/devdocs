@@ -10,11 +10,11 @@ Moodle is a powerful, and very extensible, Learning Management System. One of it
 
 A wider range of plugin types are available and these should be selected depending on your needs.
 
-## Things you can find in all plugins
+## Things you can find in all plugins {/* #things-you-can-find-in-all-plugins */}
 
 Although there are many different types of plugin, there are some things that work the same way in all plugin types. Please see the [Plugin files](./commonfiles) documentation that describes common files which are found in many plugin types.
 
-## Naming conventions
+## Naming conventions {/* #naming-conventions */}
 
 Plugins typically have at least two names:
 
@@ -40,13 +40,13 @@ Plugin name validation takes place in `core_component::is_valid_plugin_name()` a
 
 :::
 
-:::danger Activity module exception
+:::danger[Activity module exception]
 
 The underscore character is not supported in activity modules for legacy reasons.
 
 :::
 
-<!-- cspell:ignore datapreset , ltisource , ltiservice , forumreport , accessrule , logstore , mnetservice -->
+{/* <!-- cspell:ignore datapreset , ltisource , ltiservice , forumreport , accessrule , logstore , mnetservice --> */}
 
 | Plugin type | Component name ([Frankenstyle](/general/development/policies/codingstyle/frankenstyle)) | Moodle path | Description | Moodle versions |
 | --- | --- | --- | --- | --- |
@@ -132,7 +132,7 @@ foreach ($pluginman->get_plugin_types() as $type => $dir) {
 
 </details>
 
-## See also
+## See also {/* #see-also */}
 
 - [Guidelines for contributing code](https://docs.moodle.org/dev/Guidelines_for_contributed_code)
 - [Core APIs](../../apis.md)

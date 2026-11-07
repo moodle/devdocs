@@ -16,14 +16,16 @@
  */
 
 /* eslint-disable react/no-unused-prop-types */
-import React, { type ReactNode } from 'react';
+import React, { type ComponentType, type ReactElement, type ReactNode } from 'react';
 import Chip from '@mui/material/Chip';
 import Tooltip from '@mui/material/Tooltip';
 import Grid from '@mui/material/Grid';
 import Details from '@theme/Details';
 import { MDXProvider } from '@mdx-js/react';
 
-const getBadge = (title, description, colour = 'info'): JSX.Element => (
+type BadgeColour = 'info' | 'success' | 'warning' | 'error';
+
+const getBadge = (title, description, colour: BadgeColour = 'info'): React.JSX.Element => (
     <Grid item key={title}>
         <Tooltip title={description}>
             <Chip
@@ -40,7 +42,7 @@ function getBadges({
     deprecated = false,
     refreshedDuringUpgrade = false,
     refreshedDuringPurge = false,
-}): Array<typeof Grid> {
+}): React.JSX.Element[] {
     const badges = [];
     if (refreshedDuringUpgrade) {
         // This file is re-read during an upgrade and configuration will be re-applied.
@@ -109,14 +111,30 @@ function getExamples(props) {
     return null;
 }
 
+export type ComponentFileSummaryDescription = string | ReactElement | ComponentType;
+
+const normaliseDescription = (value?: ComponentFileSummaryDescription): null | ReactNode => {
+    if (typeof value === 'boolean' || !value) {
+        return null;
+    }
+
+    if (typeof value === 'string' || React.isValidElement(value)) {
+        return value;
+    }
+
+    const Description = value;
+
+    return <Description />;
+};
+
 export interface ComponentFileSummaryProps {
-    description?: string | ReactNode,
-    defaultDescription?: string | ReactNode,
+    description?: ComponentFileSummaryDescription,
+    defaultDescription?: ComponentFileSummaryDescription,
     defaultExample?: string | ReactNode,
-    example?: string | ReactNode | JSX.Element,
+    example?: string | ReactNode,
     exampleFilepath?: string,
     examplePurpose?: string,
-    extraDescription?: string,
+    extraDescription?: ComponentFileSummaryDescription,
     filepath?: string,
     filetype?: string,
     modulename?: string,
@@ -132,7 +150,7 @@ export interface ComponentFileSummaryProps {
     refreshedDuringPurge?: boolean,
 }
 
-export default function ComponentFileSummary(props: ComponentFileSummaryProps): JSX.Element {
+export default function ComponentFileSummary(props: ComponentFileSummaryProps): React.JSX.Element {
     const {
         filepath,
         summary,
@@ -141,10 +159,12 @@ export default function ComponentFileSummary(props: ComponentFileSummaryProps): 
     const badges = getBadges(props);
 
     const description = (() => {
-        if (props.description) {
+        const content = normaliseDescription(props.description);
+
+        if (content) {
             return (
                 <Grid item xs={12}>
-                    {props.description}
+                    {content}
                 </Grid>
             );
         }

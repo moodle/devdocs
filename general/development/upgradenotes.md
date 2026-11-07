@@ -13,7 +13,7 @@ The following advice applies to Moodle core code. Developers of third-party plug
 Prior to Moodle 4.5, these upgrade notes are located in a file named `upgrade.txt`.
 From Moodle 4.5 a new tool, `upgradenotes` has been created to help improve upgrade notes.
 
-## Tips for writing good upgrade notes
+## Tips for writing good upgrade notes {/* #tips-for-writing-good-upgrade-notes */}
 
 - Consider the audience:
   - Upgrade notes are primarily intended for plugin developers looking for things that may break their plugins
@@ -23,7 +23,7 @@ From Moodle 4.5 a new tool, `upgradenotes` has been created to help improve upgr
   - most bug fixes do not need to be noted unless they change an API
 - When deprecating a feature, the replacement should also be mentioned. To put it another way: what developers want to know is the right way to do things in the future, so focus on explaining that.
 
-## Using `upgradenotes`
+## Using `upgradenotes` {/* #using-upgradenotes */}
 
 <Since issueNumber="MDL-81125" version="4.5"/>
 
@@ -32,7 +32,7 @@ The `upgradenotes` tool is capable of performing two primary tasks:
 - generating the content of a new upgrade note
 - converting the upgrade notes and their metadata into Markdown
 
-### Creating a new note
+### Creating a new note {/* #creating-a-new-note */}
 
 To create an upgrade note, you should use the `create` command:
 
@@ -60,7 +60,7 @@ Full help is available for the command:
 .grunt/upgradenotes.mjs create -h
 ```
 
-### Previewing upgrade notes
+### Previewing upgrade notes {/* #previewing-upgrade-notes */}
 
 You can generate a preview of the upgrade notes using the `summmary` command:
 
@@ -81,7 +81,7 @@ These files are ignored by git and you do not need to check them in with your co
 
 :::
 
-### Generating upgrade notes for a release
+### Generating upgrade notes for a release {/* #generating-upgrade-notes-for-a-release */}
 
 :::tip
 
@@ -107,9 +107,9 @@ For a minor or major release, the `-d` argument should also be passed to remove 
 .grunt/upgradenotes.mjs release -d
 ```
 
-## FAQ
+## FAQ {/* #faq */}
 
-### Which files should I check in to Git?
+### Which files should I check in to Git? {/* #which-files-should-i-check-in-to-git */}
 
 **Only the files in the `.upgradenotes` directory.**
 
@@ -127,7 +127,7 @@ git add .upgradenotes
 
 :::
 
-### Why is Moodle making this change?
+### Why is Moodle making this change? {/* #why-is-moodle-making-this-change */}
 
 This change is made in response to a number of issues with the current approach using `upgrade.txt` files, including:
 
@@ -138,6 +138,6 @@ This change is made in response to a number of issues with the current approach 
 
 By switching to a prompted and validated system we can ensure that relevant metadata is included, for example the issue number. By storing the data in a machine-readable file format (YAML) it can be processed in different ways to produce multiple output formats and files.
 
-### What should I do about Moodle 4.4 and earlier?
+### What should I do about Moodle 4.4 and earlier? {/* #what-should-i-do-about-moodle-44-and-earlier */}
 
 For Moodle 4.4 and earlier the previous system of noting relevant changes in an `upgrade.txt` file will continue to be the only supported mechanism.

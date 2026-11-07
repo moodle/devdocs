@@ -13,15 +13,15 @@ Bug triage is a similar process where tracker issues are screened and prioritise
 
 Triage initially happens shortly after the issue was reported but it can be repeated later if the initial assumptions were wrong, the issue was resolved in another way, the affected versions need updating, or there are other reasons to review the issue.
 
-## Get involved
+## Get involved {/* #get-involved */}
 
 Anyone can do triage in the form of correcting the components and/or affected versions, linking to related issues, and of course commenting asking for clarification, confirming bug, redirecting to the forums, and more. Users in **jira-developers** and **moodle-triage** groups can edit any issue, **jira-users** can comment on any issue or edit issues they reported. Please see [MDLSITE-3592](https://moodle.atlassian.net/browse/MDLSITE-3592) if you are not a developer but would like to help with the triage process.
 
 Adding the `triaged` label and placing the issue on the backlog should only be done by the component lead, or an HQ developer. Any user can remove the `triaged` label from the an issue, or replace it with `triaging_in_progress` if they want to request an additional triage.
 
-## The triage process
+## The triage process {/* #the-triage-process */}
 
-### Initial screening
+### Initial screening {/* #initial-screening */}
 
 First of all, identify the issues that should be closed or placed under investigation. Ask the following questions:
 
@@ -39,7 +39,7 @@ First of all, identify the issues that should be closed or placed under investig
 
 As a result of this initial screening, up to 20% of new issues may be closed. When closing the issues make sure to set the correct resolution and write a polite comment with explanation, refer to the templates below. If you have doubts, ask the questions and always add the [`triaging_in_progress`](https://moodle.atlassian.net/issues/?jql=labels%20in%20%28triaging_in_progress%29) label. Subscribe to the [My old issues in triage](https://moodle.atlassian.net/issues/?jql=labels%20in%20%28triaging_in_progress%29%20AND%20project%20%3D%20MDL%20AND%20resolution%20%3D%20Unresolved%20AND%20Participants%20%3D%20currentUser%28%29%20AND%20updatedDate%20%3C%20-30d) filter and you will receive notifications after 30 days of inactivity on such issues. See [Tracker tips](../tracker/tips) about how to subscribe to filters. Often reporters never follow up on their own issues and this is a good way to find such issues. Ping the reporter again or make a final decision about closing.
 
-### Confirming the issue
+### Confirming the issue {/* #confirming-the-issue */}
 
 When you confirm that the issue is indeed a bug or a reasonable improvement request that was not reported previously, make sure that the following is accurate:
 
@@ -70,7 +70,7 @@ Note that `Fix version` is no longer used during triage. If you are in the `mood
 
 When commenting on the issue give more details on replication, environment or testing. Ask questions, request screenshots, add watchers, modify the description if needed. Link to as many related issues as possible. Do everything that will make the issues scope more clear and attract opinions, discussions and patches.
 
-:::tip Be grateful
+:::tip[Be grateful]
 
 Don't forget to show **Gratitude and encouragement**.  After triaging many issues, it's easy to lose sight of the fact that the reporter has contributed their time and energy to report an issue for the benefit of the community.
 
@@ -80,7 +80,7 @@ It is easy to become defensive of Moodle if reports are seen as criticism (and s
 
 It is also important to encourage reporters to continue being involved with the issue after it is triaged. We must not give the sense that we are taking the issue ownership away from the reporter. Instead the reporter should be encouraged to discover the cause of the problem and present a solution; this is appropriate in an open-source project. It is amazing that such a challenge can lead to a sense of purpose for the reporters.
 
-### Following up on issues
+### Following up on issues {/* #following-up-on-issues */}
 
 The Moodle Tracker is set up so that when you comment on, or edit an issue, you become an automatic watcher and any later changes to the issue will be emailed to you. This is a user preference and you can disable it if you prefer.
 
@@ -88,13 +88,13 @@ If you have encouraged the reporter well, they may **submit a patch** or somebod
 
 Users may also comment with additional details, screenshots, replicating instructions. It may happen that the issue gets re-evaluated and priority or summary changed.
 
-### Revisiting old issues
+### Revisiting old issues {/* #revisiting-old-issues */}
 
 While searching the tracker you may come over issues that were reported a long time ago but still remain open. Again, ask the following questions:
 
 - **Is this still an issue?** If it is not applicable any more either close it or comment about it on the issue and recommend to close. Very few tracker users actually have permission to close issues but the component lead or watchers will see your comment and revisit the issue. Another good practice is to replace the `triaged` label with `triaging_in_progress` and add a comment asking if the issue can be closed.
 
-:::warning Closing issues
+:::warning[Closing issues]
 
 If users confirm that the problem was resolved, or if nobody replies in 30 days, you should close the issue.
 
@@ -113,7 +113,7 @@ Always create links between duplicates or related issues, whether you close an i
 
 - **Does the issue have an assignee who forgot about it or a misleading status (for example `Development in progress` for a long time)?** Due to some process changes in 2013 some issues still have a real user in the **Assignee** field but this user does not actually work on the issue. Sometimes the **Assignee** remains filled after failing `Peer review`, sometimes developers simply forget that the issue was assigned to them. If you suspect that the **Assignee** is not actually working on the issue, comment asking they about it and in some cases remove the **Assignee** completely. Allow somebody else to work on the issue without feeling that the issue is "taken". Please also note that for some time the tracker had a restriction that **Assignee** could not be empty so you can find lots of issues assigned to **moodle.com** or **Nobody**. Do not modify such issues as this creates unnecessary activity, emails to watchers and irrelevant change in the "Last update date".
 
-### Comments templates
+### Comments templates {/* #comments-templates */}
 
 In the tracker, you'll find a few **Canned responses** in the **Project templates** section with some of the most typical messages you can re-use and adapt to deal with the previous scenarios. For instance:
 
@@ -130,14 +130,14 @@ In the tracker, you'll find a few **Canned responses** in the **Project template
 - **Triaged: security bug**, when a security bug is triaged.
 - **Triaging in progress: request more info**, if more information is required to decide whether to triage the issue or not.
 
-:::tip Use canned responses
+:::tip[Use canned responses]
 
 You can search, re-use and adapt any of the messages in the **Canned response** selector, placed in the tracker editor:
 ![Canned responses in Tracker](./_files/cannedresponses.png)
 
 :::
 
-## Triaging priorities and the Triaging Dashboard
+## Triaging priorities and the Triaging Dashboard {/* #triaging-priorities-and-the-triaging-dashboard */}
 
 The following are the priorities for ordering issues to be triaged that are reflected on the [Triaging dashboard](http://moodle.atlassian.net/secure/Dashboard.jspa?selectPageId=11153).
 
@@ -148,23 +148,23 @@ The following are the priorities for ordering issues to be triaged that are refl
 5. Developer-reported issues (HQ and non-HQ) - should be quick to triage
 6. Recent community bugs - should be triaged last-in-first-out
 
-:::info Triaging dashboard
+:::info[Triaging dashboard]
 
 These priorities are displayed in the same order on the [Triaging dashboard](http://moodle.atlassian.net/secure/Dashboard.jspa?selectPageId=11153)
 
 :::
 
-## Creating a filter and gadget for triaging
+## Creating a filter and gadget for triaging {/* #creating-a-filter-and-gadget-for-triaging */}
 
 If you are a component lead you are responsible for triaging issues that involve your component. A good way to monitor newly created issues is to create a filter in the Tracker and add a gadget on your dashboard to show the results of the filter.
 
-:::tip How to add filters in the tracker
+:::tip[How to add filters in the tracker]
 
 In the [Tracker tips and tricks](../tracker/tips#creating-a-filter) page you'll find how to create a filter and add it to a dashboard.
 
 :::
 
-## See also
+## See also {/* #see-also */}
 
 - [Tracker guide](../tracker/guide.md)
 - [Process](./)

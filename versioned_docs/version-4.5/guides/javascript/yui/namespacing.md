@@ -13,7 +13,7 @@ As of Moodle 2.9 we are transitioning away from YUI to AMD modules. This transit
 
 :::
 
-## Introduction and Rationale
+## Introduction and Rationale {/* #introduction-and-rationale */}
 
 One of the many fantastic features of YUI is that it supports sandboxing of individual modules. This means that a third-party plugin cannot interfere with core plugins in such a way that will have undesired consequences to anything using the core code.
 
@@ -23,7 +23,7 @@ To benefit from this sandboxing fully however, we must write our YUI modules und
 
 To keep things consistent and clear, all Moodle-specific modules should be under a single Namespace. Ideally this namespace should be short, but still clear that it relates to Moodle.
 
-## Proposed namespace
+## Proposed namespace {/* #proposed-namespace */}
 
 The proposed namespace fits into:
 
@@ -39,7 +39,7 @@ The ** YUI_modulename** should match module name
 
 The *optional* **YUI_submodule** should match the submodule if relevant
 
-## Examples
+## Examples {/* #examples */}
 
 | YUI Module | Namespace |
 | --- | --- |

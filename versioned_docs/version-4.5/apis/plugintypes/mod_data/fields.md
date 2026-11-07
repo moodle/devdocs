@@ -16,7 +16,7 @@ The [Database activity](https://docs.moodle.org/en/Database_module) included wit
 
 import { ComponentFileSummary } from '../../../_utils';
 
-## File structure
+## File structure {/* #file-structure */}
 
 Database field sub-plugins are located in the `/mod/data/field` directory.
 
@@ -42,7 +42,7 @@ mod/data/field/number
 
 Some of the important files for the database field plugintype are described below. See the [common plugin files](../../commonfiles/index.mdx) documentation for details of other files which may be useful in your plugin.
 
-### Field class
+### Field class {/* #field-class */}
 
 <ComponentFileSummary
     filepath="/field.class.php"
@@ -52,7 +52,7 @@ Some of the important files for the database field plugintype are described belo
 
 The field, its behaviours, and its properties, are defined in a class named `data_field_[pluginname]` located in `field.class.php`. This class must extend the `data_field_base` base class.
 
-:::danger Class locations
+:::danger[Class locations]
 
 The field definition is currently located in the `field.class.php` file and is not yet autoloaded by Moodle.
 
@@ -66,7 +66,7 @@ The base class defines some simple behaviours which you can override in your plu
 - `get_sort_sql($fieldname)` - Specify SQL for how this field should be sorted
 - `get_content_value($value)` - Useful if the info stored in the database if different from the info that ends up being presented to the user
 
-### Field configuration form
+### Field configuration form {/* #field-configuration-form */}
 
 <ComponentFileSummary
     filepath="/mod.html"

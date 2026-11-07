@@ -1,1 +1,1 @@
-<!-- cspell:enable -->
+{/* <!-- cspell:enable --> */}

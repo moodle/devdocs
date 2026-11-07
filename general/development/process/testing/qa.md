@@ -13,31 +13,33 @@ tags:
 
 Real users systematically try each feature in Moodle and ensure that it works in the current version of the Moodle code. These tests are repeated in a series of cycles, around 4 - 6 weeks before each major release, once all major features have landed.
 
-## Getting involved
+## Getting involved {/* #getting-involved */}
 
 Would you like to help with QA testing? If so, please make sure you have created an account in the [Moodle tracker](../../tracker.md) and you're subscribed to the [Testing and QA forum](https://moodle.org/mod/forum/view.php?id=56) in order to receive QA testing news updates.
 
-## Running tests
+## Running tests {/* #running-tests */}
 
 1. Go to the [Moodle QA testing dashboard](https://moodle.atlassian.net/jira/dashboards/10612) and choose a test from the list of current QA cycle open issues. When viewing a test, if you wish, you can click the 'Assign to me' link on the right, so that nobody else chooses the same test to run. (If you then find you are unable to run the test, you can click the Assign button and set the assignee as 'Unassigned'.) Please note:
    - Only assign an issue to yourself which no one else is testing (Assignee = Unassigned).
    - Only assign one issue at a time unless you plan to test a number of related issues within the next 24 hours. In other words, don't assign several issues to yourself then do nothing for several days. ;-)
    - The label `test_server_required` indicates issues that can't be tested on the QA testing site. The label `credentials_required` indicates that credentials such as an OAuth 2 service client ID and secret are required.
-2. Using either the [Moodle QA Testing Site](https://qa.moodledemo.net/) or your own test site running the latest Moodle 4.2dev (available from Git on the integration/main branch git://git.moodle.org/integration.git) with [debugging](https://docs.moodle.org/dev/debugging) set to developer, perform each of the steps listed in the test.
-3. Please *attach screenshots of the steps where you verify or check something*.
-4. If it makes sense, please test using the currently supported themes, Boost and Classic.
-5. Choose an appropriate workflow action:
+2. When you are ready to start testing a particular test case, select the workflow action `Start Testing`. If you decide that you can't perform the test, then you just select the workflow action `Cancel testing` and the test will go back into the test backlog, available for testing.
+3. Using either the [Moodle QA Testing Site](https://qa.moodledemo.net/) or your own test site running the latest Moodle 4.2dev (available from Git on the integration/main branch https://github.com/moodle/integration.git) with [debugging](https://docs.moodle.org/dev/debugging) set to developer, perform each of the steps listed in the test.
+4. Please *attach screenshots of the steps where you verify or check something*.
+5. Please test using the currently supported Boost theme.
+6. Choose an appropriate workflow action:
    - `Pass` - Test runs perfectly. Add comment such as feedback about a new feature, browsers used for testing (if applicable; example: "This test passes on Q&A site with Teacher role using Boost theme"), or simply "This test passes - yippee!"
    - `Fail` - Something doesn't work, or you obtain debugging messages. Add comment describing the step that doesn't work. If in doubt whether to pass a test, give it a fail and add a comment describing your doubts.
    - `Obsolete` - Test is no longer relevant in the current Moodle version. Add comment explaining why.
+   - `Hold` - Test isn't ready to run yet, usually because its blocked by another issue. Add a comment explaining why its blocked and what that issue is. Testers shouldn't pickup any test that's been marked as `On Hold`.
 
-:::info Out of date tests
+:::info[Out of date tests]
 
 If you notice that the test description is out-of-date, add a comment mentioning that it needs updating. Alternatively, if you'd like to help with updating the test yourself, see below.
 
 :::
 
-## Any questions?
+## Any questions? {/* #any-questions */}
 
 If there is anything you are unsure of, such as whether to mark a test as failed, or you have any other questions, please ask in one of the following places:
 
@@ -45,32 +47,19 @@ If there is anything you are unsure of, such as whether to mark a test as failed
 
 :::info
 
-This chat was previously hosted on Telegram. All message history has been migrated to Matrix, and our Matrix Bot keeps the two rooms in sync. If you'd prefer to stay with Telegram during the migration process, you can do so by joining the [#moodleqa](https://t.me/moodleqa) channel. To join the room for the first time, please use the [Moodle QA Telegram invite link](https://t.me/+cXneE_ZeZ_A4ODRk)
-
-<details>
-  <summary>The Telegram <em>Matrix bot</em> user</summary>
-  <div>
-
-If you are using Telegram to access the Moodle QA chat, you will notice the _Matrix bot_ posts on behalf of many users.
-
-Telegram prevents the bot from posting as another user, so all messages will come from _Matrix bot_ with the name of the actual sender as part of the message.
-
-  </div>
-</details>
-
-At this time we still support taking part in the discussion in either channel.
+This chat was previously hosted on Telegram. All message history has been migrated to Matrix and the Telegram variant will be sunset on Monday 19th January 2026.
 
 :::
 
 - [Testing and QA forum](https://moodle.org/mod/forum/view.php?id=56)
 
-## Moodle QA Testing Site
+## Moodle QA Testing Site {/* #moodle-qa-testing-site */}
 
 The [Moodle QA Testing Site](https://qa.moodledemo.net/) is updated daily at around 13:00 UTC with the latest bug fixes to enable you to re-run QA tests.
 
 Credentials for Teacher and student accounts are provided on the login page.
 
-:::info E-mail on the QA site
+:::info[E-mail on the QA site]
 
 No e-mail will be sent from the QA server. Tests involving e-mail **cannot** be performed on the Moodle QA Testing Site.
 
@@ -78,13 +67,13 @@ If you perform any test which tries to send e-mail, a debugging message will be 
 
 :::
 
-:::tip Admin access
+:::tip[Admin access]
 
-If you require admin access to the Moodle QA Testing Site for running certain tests, please ask in the [Moodle QA Telegram chat room](https://t.me/moodleqa) or the [Testing and QA forum](https://moodle.org/mod/forum/view.php?id=56) for someone to send you the account credentials via private message.
+If you require admin access to the Moodle QA Testing Site for running certain tests, please ask in the [Moodle QA Matrix chat room](https://matrix.to/#/#qa:moodle.com) or the [Testing and QA forum](https://moodle.org/mod/forum/view.php?id=56) for someone to send you the account credentials via private message.
 
 :::
 
-## Failed tests
+## Failed tests {/* #failed-tests */}
 
 So you ran a test and it failed? Congratulations on finding a bug! Please do the following.
 
@@ -100,9 +89,9 @@ Adding details for a link to the QA issue
 8. (Optional) Add yourself as a watcher to the MDL issue so that you receive email notification when the issue is fixed.
 9. When the MDL issue is fixed, hopefully within a day or two, the QA test can be reset and can then be run again.
 
-## Resetting tests
+## Resetting tests {/* #resetting-tests */}
 
-:::info Note for integrators
+:::info[Note for integrators]
 
 After integrating a fix:
 
@@ -114,7 +103,7 @@ After integrating a fix:
 
 The tester will then receive email notification that the bug is fixed and will hopefully decide to run the test again soon.
 
-## Fixing existing bugs
+## Fixing existing bugs {/* #fixing-existing-bugs */}
 
 At the beginning of the QA cycle, all bugs identified (both new and existing) are investigated promptly and hopefully fixed.
 
@@ -122,7 +111,7 @@ When we are close to the scheduled release date (1-2 weeks prior), developers mu
 
 Thus, at this point in the QA cycle, any bugs which also affect existing versions of Moodle are labelled `qa_identified` (and the label `mdlqa` removed) for investigation after the release.
 
-## Testing tips
+## Testing tips {/* #testing-tips */}
 
 When entering text into a form, try things like:
 
@@ -133,7 +122,7 @@ When entering text into a form, try things like:
 - very long strings
 - different languages, such as a RTL language
 
-:::tip For example:
+:::tip[For example:]
 
 ```
 x < 1 && x > 0
@@ -153,9 +142,9 @@ café
 
 :::
 
-## New QA tests required
+## New QA tests required {/* #new-qa-tests-required */}
 
-:::info Note for developers
+:::info[Note for developers]
 
 If an issue fix cannot be covered by automated tests,
 
@@ -166,7 +155,7 @@ If an issue fix cannot be covered by automated tests,
 
 QA tests will then be written and included in the next QA cycle. For issues with long testing instructions, several QA tests will be written to cover the issue. If appropriate, activities etc. will be set up on the [Moodle QA Testing Site](https://qa.moodledemo.net/) to enable the issue to be easily tested in future.
 
-### New features, and improvements
+### New features, and improvements {/* #new-features-and-improvements */}
 
 Where a new features or improvements would benefit from exploratory testing, you should:
 
@@ -179,7 +168,7 @@ When the next QA cycle is prepared, any issue with the `qa_test_required` label 
 
 :::
 
-## Updating tests
+## Updating tests {/* #updating-tests */}
 
 QA tests may become out-of-date due to User Interface changes, feature changes, and new features. If you would like to help with updating tests, you'll need to be a member of the test writers group in the Tracker.
 
@@ -194,7 +183,7 @@ If a test in the current QA cycle is marked as failed because it is out-of-date,
 
 :::
 
-## Writing new tests
+## Writing new tests {/* #writing-new-tests */}
 
 Would you like to help with writing new QA tests? To write new QA tests you will need to be a member of the test writers group in the Tracker.
 
@@ -232,7 +221,7 @@ To create a new QA test:
 
 :::
 
-## Automating a test
+## Automating a test {/* #automating-a-test */}
 
 1. Choose a test from the list [MDLQA tests with label mdlqa_conversion](https://moodle.atlassian.net/issues/?jql=project%20%3D%20MDLQA%20AND%20labels%20%3D%20mdlqa_conversion%20and%20status%20%3D%20Open).
 1. Create a new MDL issue with summary `Automate MDLQA-wxyz` and component `Automated functional tests` and any MDLQA component such as `Forum` which is also an MDL component.
@@ -247,7 +236,7 @@ When a test is automated, it needs to be moved from MDLQA-1 to MDLQA-5249.
 
 :::
 
-## Feedback
+## Feedback {/* #feedback */}
 
 Feedback on all aspects of our QA testing process is welcome.
 
@@ -257,10 +246,12 @@ If you have any questions or comments, please post in the [Testing and QA forum]
 
 :::
 
-## Previous QA cycles
+## Previous QA cycles {/* #previous-qa-cycles */}
 
 Comments on tests from previous QA cycles:
 
+- [Moodle 5.3 QA](https://moodle.atlassian.net/browse/MDLQA-22014)
+- [Moodle 5.2 QA](https://moodle.atlassian.net/browse/MDLQA-21163)
 - [Moodle 5.1 QA](https://moodle.atlassian.net/browse/MDLQA-20667)
 - [Moodle 5.0 QA](https://moodle.atlassian.net/browse/MDLQA-19836)
 - [Moodle 4.5 QA](https://moodle.atlassian.net/browse/MDLQA-18925)
@@ -294,7 +285,7 @@ Comments on tests from previous QA cycles:
 - [Moodle 2.0 QA Cycle 2](https://moodle.atlassian.net/browse/MDLQA-328)
 - [Moodle 2.0 QA Cycle 1](https://moodle.atlassian.net/browse/MDLQA-150)
 
-## See also
+## See also {/* #see-also */}
 
 - [QA testing dashboard](https://moodle.atlassian.net/jira/dashboards/10612)
 - [Testing credits](../../../community/credits/testing.md)

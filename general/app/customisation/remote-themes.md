@@ -6,13 +6,13 @@ tags:
   - Moodle App
 ---
 
-## How do Remote themes work?
+## How do Remote themes work? {/* #how-do-remote-themes-work */}
 
 When you enter a site, it downloads any file configured on the `mobilecssurl` administration field and injects the styles in the app. Every time you change between sites, each style will be enabled or disabled appropriately.
 
 The styles will remain enabled in the login page, but any other page that is not related with a specific site will use the default styles. For example, pages to add or remove sites cannot be customised with Remote themes.
 
-## How can you create your own theme?
+## How can you create your own theme? {/* #how-can-you-create-your-own-theme */}
 
 First of all, Remote themes are only available for sites that purchased a Premium subscription for the Moodle App. You can check the different plans in [the Apps Portal](https://apps.moodle.com). If you want, you can follow the instructions in this document without purchasing a subscription and it will work in your development environment.
 
@@ -28,13 +28,13 @@ You can get started with the following example, and you should see the backgroun
 }
 ```
 
-### Applying theme changes during development
+### Applying theme changes during development {/* #applying-theme-changes-during-development */}
 
 For performance reasons, the app caches the styles after you log in for the first time. So if you make any changes, you won't see them unless you log out and log in again. However, there is a faster way to update them. You can also open the Preferences page in the app and click on the "Synchronise now" button. This will download the files again, and you can use this method to iterate on your styles while you make the theme.
 
 The file can also be cached by the browser, so when you do this make sure to [disable network cache](https://developer.chrome.com/docs/devtools/network/reference/#disable-cache) as well.
 
-### Knowing what to style
+### Knowing what to style {/* #knowing-what-to-style */}
 
 Depending on how much you want to customise the UI, you'll need to do different things.
 
@@ -46,18 +46,18 @@ Finally, if you need to style something even more specific, you can always [brow
 
 Notice that you will often need to use `!important` if you're overriding component styles directly, without using any variables. That's because the default styles are usually scoped to the Angular component, and you won't be able to provide more [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) in your selectors.
 
-### Working with colors
+### Working with colors {/* #working-with-colors */}
 
 The main color of the app is Moodle Orange, but you can change it by using the `--primary` variable. Other than the overall brand color, there are also some specific variables for other colors.
 
-#### Basic shades
+#### Basic shades {/* #basic-shades */}
 
 These are the variables used to define the basic color palette used throughout the app:
 
 - `--white` and `--black`.
 - Gray shades `--gray-100`, `--gray-200` ... `--gray-900`. Where the greater, the darker.
 
-#### Semantic colors
+#### Semantic colors {/* #semantic-colors */}
 
 The named colors are not directly used. Instead, the following semantic colors are used:
 
@@ -96,7 +96,7 @@ For example, if you want to override the primary color, you'll need to override 
 }
 ```
 
-#### Specific colors
+#### Specific colors {/* #specific-colors */}
 
 Other than the basic and semantic colors, other components and pages define their own variables that you can override. You can look at the source code to find more, but these are some of the most relevant:
 
@@ -118,11 +118,11 @@ Other than the basic and semantic colors, other components and pages define thei
 }
 ```
 
-### Targeting different environments
+### Targeting different environments {/* #targeting-different-environments */}
 
 The `:root` element contains classes that indicate the environment the app is running on.
 
-#### Platform
+#### Platform {/* #platform */}
 
 You can specify styles that will only apply to iOS by prepending them with `:root.ios`, or `:root.md` for Android:
 
@@ -138,7 +138,7 @@ You can specify styles that will only apply to iOS by prepending them with `:roo
 }
 ```
 
-#### Moodle App and Moodle site versions
+#### Moodle App and Moodle site versions {/* #moodle-app-and-moodle-site-versions */}
 
 You can restrict CSS rules to a specific version using one of these classes. For example, when accessing a 3.11.2 site using the 3.9.5 app the following classes will be present in the `:root` element:
 
@@ -163,12 +163,12 @@ And here's how to use them:
 }
 ```
 
-#### Moodle site theme
+#### Moodle site theme {/* #moodle-site-theme */}
 
 Starting on Moodle App 4.4 you can restrict CSS rules to a specific site theme. So, when accessing to your site, the app will retrieve the name of the site theme and will add a class to HTML tag following the next pattern:
 `theme-site-MYTHEME` and you can use this selector to filter your rules.
 
-#### Application theme
+#### Application theme {/* #application-theme */}
 
 The application uses a light theme by default, but it adds the `dark` class to the `:root` element when it is using a dark theme:
 
@@ -186,7 +186,7 @@ The application uses a light theme by default, but it adds the `dark` class to t
 
 Bear in mind that you can disable Dark Mode for all your users following [the guide for admins (Disabled features)](https://docs.moodle.org/en/Moodle_app_guide_for_admins#Disabled_features).
 
-#### Combining classes
+#### Combining classes {/* #combining-classes */}
 
 Of course, you can combine any of these classes to create more granular styles.
 
@@ -198,7 +198,7 @@ Let's say you want to have a red toolbar only in iOS, with the Dark Theme, for a
 }
 ```
 
-### Styling the shadow DOM
+### Styling the shadow DOM {/* #styling-the-shadow-dom */}
 
 Ionic is a set of web components and uses the [shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) to encapsulate them and make them more opaque to developers and users (hiding markup structure, style, and behaviour), thus avoiding conflicts with existing rules.
 
@@ -229,15 +229,15 @@ You can learn more about the shadow DOM in the following resources:
 - [CSS Shadow Parts - Ionic Documentation](https://ionicframework.com/docs/theming/css-shadow-parts)
 - [Shadow DOM in Ionic (and Why it's Awesome) - Ionic Blog](https://ionicframework.com/blog/shadow-dom-in-ionic-and-why-its-awesome/)
 
-### Supporting older versions of the app
+### Supporting older versions of the app {/* #supporting-older-versions-of-the-app */}
 
 If you need to support different versions of the app, or you're upgrading your theme from an older version, you should read the [Moodle App Remote themes upgrade guide](../upgrading/remote-themes-upgrade-guide.md).
 
-## Common customisations
+## Common customisations {/* #common-customisations */}
 
 In this section you will find a list of some common customisations you may want to add to your Remote theme.
 
-### Header toolbar
+### Header toolbar {/* #header-toolbar */}
 
 The header toolbar has a bottom border that you can disable or customise, along with other parts:
 
@@ -264,7 +264,7 @@ ion-header ion-toolbar.in-toolbar h2 {
 }
 ```
 
-### Bottom tab bar (main menu)
+### Bottom tab bar (main menu) {/* #bottom-tab-bar-main-menu */}
 
 ```css
 ion-tab-bar.mainmenu-tabs {
@@ -284,7 +284,7 @@ ion-tab-bar.mainmenu-tabs {
 }
 ```
 
-### Top tabs
+### Top tabs {/* #top-tabs */}
 
 ```css
 core-tabs, core-tabs-outlet {
@@ -302,7 +302,7 @@ core-tabs, core-tabs-outlet {
 }
 ```
 
-### Items
+### Items {/* #items */}
 
 ```css
 :root {
@@ -318,7 +318,7 @@ core-tabs, core-tabs-outlet {
 }
 ```
 
-### Progress bar
+### Progress bar {/* #progress-bar */}
 
 ```css
 core-progress-bar {
@@ -329,7 +329,7 @@ core-progress-bar {
 }
 ```
 
-### More page
+### More page {/* #more-page */}
 
 ```css
 /* Icons */
@@ -349,7 +349,7 @@ page-core-mainmenu-more {
 }
 ```
 
-### Login page
+### Login page {/* #login-page */}
 
 You can personalise some colors in the Login page, but keep in mind that this only includes the credentials page (the one after you select the site).
 
@@ -362,7 +362,7 @@ You can personalise some colors in the Login page, but keep in mind that this on
 }
 ```
 
-### Messages page
+### Messages page {/* #messages-page */}
 
 ```css
 :root {
@@ -374,7 +374,7 @@ You can personalise some colors in the Login page, but keep in mind that this on
 }
 ```
 
-### Showing course summary image on course page
+### Showing course summary image on course page {/* #showing-course-summary-image-on-course-page */}
 
 By default, course summary images are hidden to reduce scrolling when entering a course. If you want to change this behaviour, you can include the following CSS in your Remote theme:
 
@@ -384,7 +384,7 @@ ion-app core-course-format .core-format-progress-list .core-course-thumb {
 }
 ```
 
-## Updating your theme after release
+## Updating your theme after release {/* #updating-your-theme-after-release */}
 
 Once you have configured your theme, some users may already have downloaded previous styles and they will be cached.
 
@@ -396,7 +396,7 @@ https://mysite.com/mobile/mobiletheme.css?version=1
 
 Every time you make some changes in your theme and you want the file to be re-downloaded in the app, just increase this number.
 
-## Difference between Remote themes and Branded Apps
+## Difference between Remote themes and Branded Apps {/* #difference-between-remote-themes-and-branded-apps */}
 
 Remote theme styles can be tricky to modify. There are lots of CSS rules and some of them can change between versions. Using your own Branded App, you will have better integrations because you can also use Sass variables to change colors and styles. Additionally, you will get your custom application icon and the theming will cover the entire application, not just pages using your site.
 

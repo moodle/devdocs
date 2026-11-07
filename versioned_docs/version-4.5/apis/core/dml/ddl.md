@@ -19,7 +19,7 @@ In this page you'll see a complete list of such functions, with some explanation
 
 Of course, feel free to clarify, complete and add more info to all this documentation. It will be welcome, absolutely!
 
-## Main info
+## Main info {/* #main-info */}
 
 - All the function calls in this page are public methods of the **database manager**, accessible from the $DB global object. You will need to "import" it within the upgrade function of your **upgrade.php** main function using the `global` keyword, for example:
 
@@ -49,9 +49,9 @@ The use of these functions is **restricted** to the upgrade processes and it sho
 
 :::
 
-## The functions
+## The functions {/* #the-functions */}
 
-### Handling tables
+### Handling tables {/* #handling-tables */}
 
 ```php
 // Detect if a table exists.
@@ -67,7 +67,7 @@ $dbman->drop_table($table, $continue = true, $feedback = true)
 $dbman->rename_table($table, $newname, $continue = true, $feedback = true)
 ```
 
-### Handling fields
+### Handling fields {/* #handling-fields */}
 
 ```php
 // Detect if a field exists.
@@ -98,7 +98,7 @@ $dbman->change_field_default($table, $field, $continue = true, $feedback = true)
 $dbman->rename_field($table, $field, $newname, $continue = true, $feedback = true)
 ```
 
-### Handling indexes
+### Handling indexes {/* #handling-indexes */}
 
 ```php
 // Detect if an index exists.
@@ -114,7 +114,7 @@ $dbman->add_index($table, $index, $continue = true, $feedback = true)
 $dbman->drop_index($table, $index, $continue = true, $feedback = true)
 ```
 
-## Some considerations
+## Some considerations {/* #some-considerations */}
 
 1. The `$table`, `$field`, and `$index` parameters are, always, XMLDB objects.
 1. The `$newtablename`, and `$newfieldname` parameters are, always, simple strings.
@@ -122,7 +122,7 @@ $dbman->drop_index($table, $index, $continue = true, $feedback = true)
 1. If any issue is encountered during execution of these functions, an Exception will be thrown and the upgrade process will stop.
 1. Always use the [XMLDB Editor](/general/development/tools/xmldb) to generate the PHP code automatically.
 
-## See also
+## See also {/* #see-also */}
 
 - [Core APIs](../../../apis.md)
 - [XMLDB Documentation](https://docs.moodle.org/dev/XMLDB_Documentation): Main page of the whole XMLDB documentation, where all the process is defined and all the related information resides.

@@ -12,7 +12,7 @@ SMS gateway plugins allow you to create SMS gateway providers.
 Providers are an interface between the [SMS API](/apis/subsystems/sms/index.md) and an external SMS provider (for example Amazon Web Services).
 This allows for the sending of SMS notifications to users from your Moodle instance.
 
-:::info Example
+:::info[Example]
 
 You can set up Multi-Factor Authentication (MFA)) in Moodle and choose 'AWS' as your SMS gateway provider.
 
@@ -20,7 +20,7 @@ This enables users to receive SMS notifications as part of the authentication pr
 
 :::
 
-## File structure
+## File structure {/* #file-structure */}
 
 SMS gateway plugins are located in the `/sms/gateway` directory. A plugin should not include any custom files outside its own plugin folder.
 
@@ -47,14 +47,14 @@ sms/gateway/example
 
 </details>
 
-## Key files
+## Key files {/* #key-files */}
 
 There are a number of key files within the SMS gateway plugin which will need to be configured for correct functionality.
 
 - `gateway.php`
 - `hook_listener.php`
 
-### gateway.php
+### gateway.php {/* #gatewayphp */}
 
 Each plugin must create a class called `gateway` which extends the `\core_sms\gateway` class.
 The SMS API will use the extended methods from this class.
@@ -110,12 +110,12 @@ class gateway extends \core_sms\gateway {
 
 ```
 
-### hook_listener.php
+### hook_listener.php {/* #hook_listenerphp */}
 
 [Hooks](/apis/core/hooks/index.md) can be dispatched from the SMS API which the plugin can then listened to.
 It is necessary for plugins developers to assess these hooks and implement accordingly.
 
-#### after_sms_gateway_form_hook
+#### after_sms_gateway_form_hook {/* #after_sms_gateway_form_hook */}
 
 This hook will allow plugins to add required form fields to assist users in configuring their SMS gateway.
 

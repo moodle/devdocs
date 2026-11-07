@@ -5,16 +5,16 @@ tags:
   - Format
 ---
 
-<!-- cspell:ignore cmitem -->
-<!-- cspell:ignore controlmenu -->
-<!-- cspell:ignore courseeditor -->
-<!-- cspell:ignore dndupload -->
+{/* <!-- cspell:ignore cmitem --> */}
+{/* <!-- cspell:ignore controlmenu --> */}
+{/* <!-- cspell:ignore courseeditor --> */}
+{/* <!-- cspell:ignore dndupload --> */}
 
 import { getExample } from '@site/src/moodleBridge';
 
 The new course editor introduced in Moodle 4.0 reimplements most of the previous webservices, AMD modules, and internal logic of the course rendering. However, all formats since 3.11 will use the previous libraries by default until its final deprecation in Moodle 4.3. This document collects the main adaptations any 3.11 course format will require to continue working when this happens.
 
-## Changes summary
+## Changes summary {/* #changes-summary */}
 
 The main areas affected by the new 4.0 course editor are:
 
@@ -32,7 +32,7 @@ The main areas affected by the new 4.0 course editor are:
 - Course formats now can implement the `core_courseformat\base::delete_format_data`  hook to clean data when the course is deleted.
 - The course `format_base` class now provides a method `show_editor` to know if the user is editing or not the course depending on the page editing and the user capabilities. This method should be used instead of the previous `$PAGE->user_is_editing() && has_capability('moodle/course:manageactivities', $coursecontext)`. If you need to check for different capabilities, you can pass an array of them. If not specified, defaults to only `moodle:course/manageactivities`.
 
-## Moodle 3.11 vs 4.0 course editor architecture
+## Moodle 3.11 vs 4.0 course editor architecture {/* #moodle-311-vs-40-course-editor-architecture */}
 
 The 4.0 course editor follows a completely new pattern that is not compatible with the previous one. That new pattern is called **reactive components**.
 
@@ -57,7 +57,7 @@ The following diagram represents the data flow of the new architecture:
 
 ![Course editor workflow](./_files/course_editor_workflow.png)
 
-## First steps to migrate a 3.11 course format to 4.0
+## First steps to migrate a 3.11 course format to 4.0 {/* #first-steps-to-migrate-a-311-course-format-to-40 */}
 
 From 4.0 the course/format folder has its own subsystem called core_courseformat. This subsystem contains all the course rendering logic (only some minor elements are still in the original location for retro compatibility until Moodle 4.3).
 
@@ -69,7 +69,7 @@ To ensure your format plugin is integrated with the new subsystem:
 
 In summary, the first two things you need to adapt to your format are:
 
-### Point 1: create a renderer class
+### Point 1: create a renderer class {/* #point-1-create-a-renderer-class */}
 
 Now renderer classes are mandatory for course format plugins. Here there are two scenarios:
 
@@ -94,13 +94,13 @@ export const RendererProps = {
   </div>
 </details>
 
-### Point 2: fix your base class
+### Point 2: fix your base class {/* #point-2-fix-your-base-class */}
 
 All Moodle 3.11 formats have a base format class extending format_base class from core_course. In Moodle 4.0 this class has been moved to `core_courseformat\base`. This means that you should replace the existing extends to avoid the deprecation message.
 
 For compatibility reasons, the base class does not use a namespace and should be located in your plugin "lib.php" file. This could change after Moodle 4.3 when most old course rendering methods will be removed from core.
 
-## The new output architecture
+## The new output architecture {/* #the-new-output-architecture */}
 
 When the debug messages are enabled, all 3.11 format plugins will show several deprecation messages. Most of them are due to the fact that almost all previous renderer methods are now deprecated. The full list can be found in the **course/upgrade.txt** file.
 
@@ -116,11 +116,11 @@ The following diagram represents the new output structure compared to the 3.11 o
 
 ![Output classes structure](./_files/course_format_output.png)
 
-## Migrating old renderer methods to outputs
+## Migrating old renderer methods to outputs {/* #migrating-old-renderer-methods-to-outputs */}
 
 The process of migrating a renderer method to output can be complex depending on the element your format overrides. For these reasons, Moodle 3.11 formats will remain using the old renderer methods until they explicitly use the new outputs.
 
-### Step 1: start using output components and renderers
+### Step 1: start using output components and renderers {/* #step-1-start-using-output-components-and-renderers */}
 
 As in Moodle 3.11 formats, all the course view is initialized and rendered in the "course/format/pluginname/format.php" file. However, the way the outputs are initialized is quite different from the previous version.
 
@@ -163,7 +163,7 @@ Some important notes about the code:
 - Format plugins can override any core_courseformat output class (see sections below for more details). To get the correct output you need to use `$format->get_output_classname` method.
 - As you may notice, the output class is rendered directly using the render method, not the `render_from_template` one. This is possible because all output classes implement the new Moodle 4.0 `named_templatable` interface.
 
-### Step 2: override any output class to alter the template data to your plugin needs
+### Step 2: override any output class to alter the template data to your plugin needs {/* #step-2-override-any-output-class-to-alter-the-template-data-to-your-plugin-needs */}
 
 Instead of having several renderer methods on a single file, the core_courseformat subsystem splits the output logic through several small classes, each one for a specific UI component. Format plugins can easily override specific classes to alter the template data.
 
@@ -171,7 +171,7 @@ The course format base class has a special method called get_output_classname th
 
 For example, if a format plugin wants to add new options to the section action menu it should override the core_courseformat\output\local\content\section\controlmenu. To do so the plugin class should be format_topics\output\courseformat\content\section\controlmenu. You can find an example of an overridden output in the "course/format/topics/classes/output/courseformat/content/section/controlmenu.php" file.
 
-### Step 3: create the basic mustache structure
+### Step 3: create the basic mustache structure {/* #step-3-create-the-basic-mustache-structure */}
 
 Unlike output classes, mustache files cannot be extended nor overridden. To be able to alter specific mustaches your plugin must provide a minimum template structure. Furthermore, your plugin must provide some overridden output classes providing the alternative mustache templates location.
 
@@ -185,11 +185,11 @@ The course format subsystem requires a minimum of 3 mustaches to render a course
 
 The first thing your plugin needs is to create that structure and link it to the output components. Follow the guide on the [create format plugin page](./index.md#creating-the-basic-output-structure) to know how to create the basic structure.
 
-### Step 4: create your own custom mustache blocks
+### Step 4: create your own custom mustache blocks {/* #step-4-create-your-own-custom-mustache-blocks */}
 
 Once your plugin has the basic mustache structure, you can provide extra mustache blocks to override parts of the page. Follow the [Override mustache blocks](./index.md#override-mustache-blocks) on the Creating a course format page to know how to do it.
 
-## Enabling course index in your format
+## Enabling course index in your format {/* #enabling-course-index-in-your-format */}
 
 If your course format plugin uses a sections-activity structure it is possible to enable the course index. Add the course index in your format is as easy as overriding a method on your format base class:
 
@@ -214,7 +214,7 @@ It is important to note that the course index drawer is only available in Boost 
 
 See the course index section in the create format plugin page for more information.
 
-## Enabling reactive components
+## Enabling reactive components {/* #enabling-reactive-components */}
 
 Moodle 4.0 introduced a new reactive course editor for the frontend. However, the new modules are not compatible with the previous YUI ones. To prevent errors in the 3.11 formats the new libraries are opt-in, meaning plugins must adapt their code before using it.
 
@@ -233,7 +233,7 @@ To adapt your plugin to the new editor you must add the proper data attributes. 
 | Section action link | `.section_action_menu` | `data-action={ACTIONNAME}`<br/>`data-id={SECTION.ID}` |
 | Section info | `.section_availability` | `data-for="sectioninfo"` |
 
-### Step 2: enable supports components feature
+### Step 2: enable supports components feature {/* #step-2-enable-supports-components-feature */}
 
 Once your plugin has all the necessary data attributes you can disable the old YUI editor and enable the new reactive one by adding this method to your plugin base class:
 
@@ -254,7 +254,7 @@ export const BaseComponentsProps = {
   </div>
 </details>
 
-### Step 3: check the reactive components are enabled.
+### Step 3: check the reactive components are enabled. {/* #step-3-check-the-reactive-components-are-enabled */}
 
 In principle, if you create the basic mustache structure as described in the previous chapter the course editor should work as expected. However, to check if they are working properly:
 

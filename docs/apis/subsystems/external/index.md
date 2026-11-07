@@ -31,7 +31,7 @@ sequenceDiagram
     Protocol Server ->> Client: Validated data returned to Client
 ```
 
-## Developer documentation
+## Developer documentation {/* #developer-documentation */}
 
 The External Service API has two categories of documentation:
 
@@ -47,12 +47,12 @@ In addition to the standard API endpoints, several additional API endpoints are 
 - [Web services files handling](./files.md)
 - [Web service Listing & Roadmap](https://docs.moodle.org/dev/Web_services_Roadmap)
 
-## Specification and brainstorming
+## Specification and brainstorming {/* #specification-and-brainstorming */}
 
 - [External services security](./security.md)
 - [External services description](./description.md)
 
-## See also
+## See also {/* #see-also */}
 
 - [Web service API functions](https://docs.moodle.org/dev/Web_service_API_functions)
 - [Web services FAQ](https://docs.moodle.org/en/Web_services_FAQ)

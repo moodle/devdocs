@@ -73,6 +73,13 @@ const navbar = {
         {
             type: 'docSidebar',
             position: 'left',
+            sidebarId: 'designsystem',
+            label: 'Design System',
+            docsPluginId: 'general',
+        },
+        {
+            type: 'docSidebar',
+            position: 'left',
             sidebarId: 'releaseNotes',
             label: 'Releases',
             docsPluginId: 'general',

@@ -9,7 +9,7 @@ tags:
 
 The Tag API allows you to assign labels to information in Moodle. This makes finding this information easier and also facilitates the grouping of similar information. The Tag API allows you to create, modify, delete and search tags in the Moodle system. The main tag related functions can be found in the `tag/classes/tag.php file`. For a thorough overview of all of the functions available for working with Tags please see methods in `core_tag_tag`, `core_tag_collection` and `core_tag_area classes`, however, the following examples should give you a general understanding of how to get started with tags.
 
-## Tag API usage
+## Tag API usage {/* #tag-api-usage */}
 
 When a user tags something a **tag instance** is created in the database linking the item to the actual **tag**. If the tag did not exist before it is created automatically. Do not confuse these two entities - deleting the tag instance does not normally delete tag, however deleting tag deletes all tag instances associated with it.
 
@@ -24,7 +24,7 @@ Developers define **tag areas** the areas that can be tagged, examples are:
 
 Each tag area is identified by two attributes - component and itemtype. *Itemtype must be a name of a table in the database.* Component is the core component or plugin responsible for the tagging. This way the same DB table (for example 'user' or 'course') may be independently tagged by several components. Administrator or manager is able to manage the tag areas, collections and tags inside them on the [Managing tags](https://docs.moodle.org/en/Managing_tags) page. Users are able to search tags and view all items tagged with them that they have access to.
 
-### Defining a tag area
+### Defining a tag area {/* #defining-a-tag-area */}
 
 First, developer must define the tag areas in the file **db/tag.php**. This will usually look like:
 
@@ -52,7 +52,7 @@ There are more options such as specifying the default value for "Standard tags",
 After making changes to `db/tag.php`, you must bump the plugin version in **version.php** and perform a Moodle upgrade.
 :::
 
-### Adding tags element to the editing form
+### Adding tags element to the editing form {/* #adding-tags-element-to-the-editing-form */}
 
 After the tag area is defined it should appear on the "Manage tags" page. Now it is time to allow users to add/change tags when editing the item. Here is an example from Wiki module:
 
@@ -113,7 +113,7 @@ Always test the code with tag area enabled and disabled.
 
 :::
 
-### Displaying tags next to the item
+### Displaying tags next to the item {/* #displaying-tags-next-to-the-item */}
 
 Example of displaying of the tags are user interests on the user profile page. User can see the list of interests, each of them is a link that leads to the page that shows all items tagged with this tag.
 
@@ -135,7 +135,7 @@ echo $OUTPUT->tag_list(
 To prevent an performance regression, Use `core_tag_tag::get_items_tags()` to fetch tags against multiple item ids.
 :::
 
-### Deleting and clearing tags
+### Deleting and clearing tags {/* #deleting-and-clearing-tags */}
 
 Cron will automatically remove tag instances that point to non existing items, however it is a good habit to delete tags when the record is deleted.
 
@@ -143,7 +143,7 @@ Cron will automatically remove tag instances that point to non existing items, h
 If you have created a course activity that uses tags you should also remember to delete the tags during a course reset by adding code to the reset course callbacks. First you want to add a checkbox that a user can check if they wish to delete the tags, then code that handles the case when the checkbox has been checked.
 :::
 
-#### Example
+#### Example {/* #example */}
 
 ```php title="What does this example do, and why is it in the "Deleting and clearing tags" section?
 /**
@@ -200,7 +200,7 @@ core_tag_tag::remove_all_item_tags($component, $itemtype, $itemid, $tiuserid = 0
 core_tag_tag::delete_instances($component, $itemtype = null, $contextid = null);
 ```
 
-### Backup and restore
+### Backup and restore {/* #backup-and-restore */}
 
 When you tag contents inside the course the plugin has to hook into backup and restore and process necessary tags. This is especially important for the contents inside activity modules, such as wiki pages or forum posts. Questions in the course question bank also backup and restore their tags.
 
@@ -258,7 +258,7 @@ protected function process_glossary_entry_tag($data) {
 }
 ```
 
-### Search callback
+### Search callback {/* #search-callback */}
 
 Given a user searches for any items tagged with a specified tag, only the items that the user has access to must be returned.
 
@@ -299,20 +299,20 @@ function mod_wiki_get_tagged_pages($tag, $exclusivemode = false, $fromctx = 0, $
 }
 ```
 
-### User-specific tags
+### User-specific tags {/* #user-specific-tags */}
 
 It is possible that each tagged item can be tagged by each user independently. Before Moodle 3.0 this was how courses were tagged however from 3.0 tagging courses became more standard. The functionality remains in the API (argument `$tiuser` to the tagging functions).  In this case both tag list and tag cloud will display all tag instances added by all users but each user will be able to edit only their own.
 
 If developer chooses to implement it in the plugin, they need to also implement the UI when admin or other privileged user can remove or edit the instances of another user. Otherwise if teacher has tagged the course and later resigned there will be no way to change their tags. Also such tag instances need special treatment during backup and restore - they are now considered "user data" and user id mapping should be performed.
 
-### Advanced usages
+### Advanced usages {/* #advanced-usages */}
 
 Custom plugins may go beyond the standard tags handling and use them without mixing with regular course/user/wiki/blogs tags, hide them from the "Tag search" page and "Tags" block but instead have their own interface to search/categorise using tags. This can be achieved by defining tag collection, make it not searchable and specify a custom URL to link to when the tag is actually displayed. This all can be defined in db/tag.php, see the comments in [Core library tag.php](../../commonfiles/tag.php/index.md)
 
 - **tag_area::get_collection($component, $itemtype)** - will return you the collection that your tag area is in
 - **tag_collection::get_tag_cloud()** - will return all tags in the collection. There are no API methods to get the tags used in the tag area - this is actually the purpose of tag collections.
 
-## See also
+## See also {/* #see-also */}
 
 - [Core APIs](../../../apis.md)
 - [Core library tag.php](../../commonfiles/tag.php/index.md)

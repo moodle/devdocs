@@ -16,7 +16,7 @@ The Component Library is a tool designed for developers to identify frequently u
 
 This tool aims to assist developers working on Moodle themes, core features, and extensions by providing easy access to the UI components, which ultimately helps in creating more efficient and consistent user interfaces.
 
-## Who should use the Component Library?
+## Who should use the Component Library? {/* #who-should-use-the-component-library */}
 
 The Component Library is useful for:
 
@@ -25,9 +25,9 @@ The Component Library is useful for:
 - UX developers
 - Anyone working on core Moodle code or creating Moodle extensions.
 
-## Getting started
+## Getting started {/* #getting-started */}
 
-### Where is the Component Library?
+### Where is the Component Library? {/* #where-is-the-component-library */}
 
 The library is built into Moodle but is only visible to developers. To access it, navigate to:
 
@@ -35,7 +35,7 @@ The library is built into Moodle but is only visible to developers. To access it
 
 If you can't see "**UI Component library**," you'll need to build it first (instructions below). You can also access the online version of the library at [Component Library online](http://componentlibrary.moodle.com/admin/tool/componentlibrary/docspage.php/library/getting-started/).
 
-### Building the Component Library
+### Building the Component Library {/* #building-the-component-library */}
 
 `Hugo` tooling is used to create the Component Library, as is the `Twitter Bootstrap` framework. It includes the necessary `Bootstrap` libraries that correspond to the version used by Moodle.
 
@@ -50,7 +50,7 @@ To build the Component Library, follow these steps:
 
 This will build the Component Library.
 
-## What should be documented?
+## What should be documented? {/* #what-should-be-documented */}
 
 The main goal of the Component Library is to enhance UI consistency across Moodle. New UI components should be documented within the library whenever:
 

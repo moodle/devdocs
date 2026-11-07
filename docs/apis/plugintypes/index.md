@@ -10,11 +10,11 @@ Moodle is a powerful, and very extensible, Learning Management System. One of it
 
 A wider range of plugin types are available and these should be selected depending on your needs.
 
-## Things you can find in all plugins
+## Things you can find in all plugins {/* #things-you-can-find-in-all-plugins */}
 
 Although there are many different types of plugin, there are some things that work the same way in all plugin types. Please see the [Plugin files](./commonfiles) documentation that describes common files which are found in many plugin types.
 
-## Naming conventions
+## Naming conventions {/* #naming-conventions */}
 
 Plugins typically have at least two names:
 
@@ -40,13 +40,13 @@ Plugin name validation takes place in `core_component::is_valid_plugin_name()` a
 
 :::
 
-:::danger Activity module exception
+:::danger[Activity module exception]
 
 The underscore character is not supported in activity modules for legacy reasons.
 
 :::
 
-<!-- cspell:ignore datapreset , ltisource , ltiservice , forumreport , accessrule , logstore, mnetservice -->
+{/* <!-- cspell:ignore datapreset , ltisource , ltiservice , forumreport , accessrule , logstore, mnetservice --> */}
 
 | Plugin type | Component name ([Frankenstyle](/general/development/policies/codingstyle/frankenstyle)) | Moodle path | Description | Moodle versions |
 | --- | --- | --- | --- | --- |
@@ -132,7 +132,7 @@ foreach ($pluginman->get_plugin_types() as $type => $dir) {
 
 </details>
 
-## Plugin type deprecation
+## Plugin type deprecation {/* #plugin-type-deprecation */}
 
 <Since version="5.0" issueNumber="MDL-79843" />
 
@@ -147,13 +147,13 @@ In the case of subplugins, the subplugin owner (the component which the subplugi
 
 Class autoloading and string resolution is still supported during the deprecation window, to assist with any plugin migration scripts that may be required.
 
-:::info limitations
+:::info[limitations]
 
 Whilst both plugin and subplugin types can be deprecated, only those plugin types which do _not_ support subplugins can be deprecated.
 
 :::
 
-### Deprecation process
+### Deprecation process {/* #deprecation-process */}
 
 Deprecation follows a 3 stage process:
 
@@ -161,13 +161,13 @@ Deprecation follows a 3 stage process:
 2. The plugin/subplugin type is marked as deleted (a core version bump is also required).
 3. Final removal of the plugin/subplugin type from the respective config file.
 
-#### First stage deprecation
+#### First stage deprecation {/* #first-stage-deprecation */}
 
 During first stage deprecation, plugins of the respective type may remain installed, but are deemed end-of-life.
 
 This stage gives administrators time to remove the affected plugins from the site, or migrate them to their replacement plugins.
 
-#### Second stage deprecation
+#### Second stage deprecation {/* #second-stage-deprecation */}
 
 The second stage deprecation is the deletion phase.
 
@@ -175,23 +175,23 @@ If any affected plugins are still present (that is any which have not been unins
 
 These plugins **must** be removed before continuing with site upgrade.
 
-#### Final deprecation
+#### Final deprecation {/* #final-deprecation */}
 
 In the final deprecation stage the relevant configuration changes supporting first and second stage deprecation can be removed from the respective config files. This removes the last reference to these plugin/subplugin types.
 
-### Deprecating a plugin type
+### Deprecating a plugin type {/* #deprecating-a-plugin-type */}
 
 The first phase of plugin type deprecation involves describing the plugin in the `deprecatedplugintypes` configuration in `lib/components.json`. The plugin type must also be removed from the `plugintypes` object.
 
 The second phase of plugin type deprecation involves moving the entry from  the `deprecatedplugintypes` object to the `deletedplugintypes` object.
 
-:::info Remember
+:::info[Remember]
 
 Don't forget to increment the core version number when marking a plugin/subplugin type for either deprecation or deletion. A version bump isn't needed for final removal.
 
 :::
 
-:::tip Example of plugin type deprecation config values
+:::tip[Example of plugin type deprecation config values]
 
 To mark a plugin type as deprecated in `components.json`, the plugin type should be removed from the `plugintypes` object, and added to a new `deprecatedplugintypes` object.
 
@@ -240,19 +240,19 @@ Third stage deprecation just removes the plugin type from the `deletedplugintype
 
 :::
 
-### Deprecating a subplugin type
+### Deprecating a subplugin type {/* #deprecating-a-subplugin-type */}
 
 To mark a subplugin type as deprecated, edit the component's `subplugins.json` file, remove the subplugin type from the `subplugintypes` object and add it to the `deprecatedsubplugintypes` object. The mark a subplugin type for stage 2 deprecation (deletion), edit the same file and move the subplugin type from the `deprecatedsubplugintypes` object to the `deletedsubplugintypes` object.
 
 Following deletion, the plugin/subplugin type can be removed from the respective JSON entirely.
 
-:::info Remember
+:::info[Remember]
 
 Don't forget to increment the core version number when marking a plugin/subplugin type for either deprecation or deletion. A version bump isn't needed for final removal.
 
 :::
 
-:::tip Example of subplugin type deprecation config values
+:::tip[Example of subplugin type deprecation config values]
 
 To mark a subplugin type as deprecated in a component's `subplugins.json`, the subplugin type should be removed from the `subplugintypes` object, and added to a new `deprecatedsubplugintypes` object.
 
@@ -292,7 +292,7 @@ Third stage deprecation just removes the subplugin type from the `deletedsubplug
 
 :::
 
-## See also
+## See also {/* #see-also */}
 
 - [Guidelines for contributing code](https://docs.moodle.org/dev/Guidelines_for_contributed_code)
 - [Core APIs](../../apis.md)

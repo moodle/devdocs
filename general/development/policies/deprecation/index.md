@@ -6,17 +6,17 @@ tags:
   - Deprecation
 ---
 
-:::info What is deprecation?
+:::info[What is deprecation?]
 
 [Deprecation](http://en.wikipedia.org/wiki/Deprecation), in its programming sense, is the process of taking older code and marking it as no longer being useful within the codebase, usually because it has been superseded by newer code. The deprecated code is not immediately removed from the codebase because doing so may cause regression errors.
 
 :::
 
-## Why is deprecation needed?
+## Why is deprecation needed? {/* #why-is-deprecation-needed */}
 
 In an open source project, the end use of the codebase varies. People may have customisations and plugins that depend on a function that has been targeted for deprecation. Rather than simply removing a function, we must gracefully deprecate the function over a period covered by a number of released versions.
 
-## What is Moodle's deprecation policy?
+## What is Moodle's deprecation policy? {/* #what-is-moodles-deprecation-policy */}
 
 - Deprecations should only be on the `main` branch, not on stables. Exceptions to this may be made in certain conditions, including:
   - for some external service integrations
@@ -30,18 +30,22 @@ In an open source project, the end use of the codebase varies. People may have c
   3. Removal
 - All deprecations should emit debugging notices where possible
 
-:::danger What does it mean for an API to be considered "Public"
+:::danger[What does it mean for an API to be considered "Public"]
 
 When we talk about Public APIs in Moodle, we are not referring to the `public` keyword in the method definition.
 
-Instead we are considering how that API feature is used. Is that API feature intended to be, or is there a reasonable expectation that it  may be, consumed in some reasonable way including:
+Instead we are considering how that API feature is used. Is that API feature intended to be, or is there a reasonable expectation that it may be, consumed in some reasonable way including:
 
 - being called or accessed externally; or
 - being overridden in a class OOP sense.
 
 :::
 
-## Moodle Core deprecation process
+Deprecation applies to all Moodle code, including PHP, JavaScript, templates, React components, web services, and so on.
+
+The Deprecation policy also applies when code is _changed_ in a way that may break other code. This includes the impact it may have upon areas such as themes, hook subscribers, callbacks, and child templates.
+
+## Moodle Core deprecation process {/* #moodle-core-deprecation-process */}
 
 Once it is decided that a function should be deprecated, a multi-step process should be followed.
 
@@ -51,7 +55,7 @@ These steps should always happen as early as possible in the 6-months period bet
 
 :::
 
-### Step 1. Immediate action - Initial deprecation
+### Step 1. Immediate action - Initial deprecation {/* #step-1-immediate-action---initial-deprecation */}
 
 Deprecation affects only the current `main` version, in other words, the deprecation only becomes effective after the next [major release](../../../releases.md).
 
@@ -95,10 +99,10 @@ debugging('foobar() is deprecated. Please use foobar::blah() instead.', DEBUG_DE
 - Unit tests that call the function should have `assertDebuggingCalled()` added to allow them to continue running.
 - If the deprecated function has been replaced with a new function, ideally the new function should be called from the deprecated function, so that the new functionality is used. This will make maintenance easier moving forward.
 - A `@deprecated` tag should be added to the PHPDoc for the function description so that IDEs describing the function will note that it is deprecated, documenting which version it was deprecated in and the MDL issue associated with it. See the guidelines in [Coding style](../codingstyle/index.md#deprecated-and-todo).
-- If the function is an external function, then an additional deprecation-specific method needs to be created and set to return true. See the [adding a web service to a plugin](/docs/apis/subsystems/external/writing-a-service#deprecation) docs on that process. You should continue to add the `@deprecated since x.x` tag to the docs of all three of the relevant external methods (parameters, main method, returns) to make it clear to IDEs that the function is deprecated.
+- If the function is an external function, the process is different from the one described above. Follow the [external functions deprecation](/docs/apis/subsystems/external/writing-a-service#deprecation) docs instead.
 - There will need to be an issue associated with the initial part of the deprecation. A second issue needs to be created to finish the job. The first issue will be linked to second issue. The second issue needs to be a sub-task of an appropriate [deprecation META](https://moodle.atlassian.net/issues/?jql=%28summary%20~%20%22meta%22%20or%20type%20%3D%20Epic%29%20AND%20summary%20~%20%22together%20deprecated%22%20order%20by%20created&runQuery=true&clear=true).
 
-:::note Example
+:::note[Example]
 
 If the current version is 3.1.2, the function will be marked as deprecated in 3.2 and should normally be removed for 3.6, so the second issue should be an issue in a deprecation epic for the 3.6 version ([MDL-54740](https://moodle.atlassian.net/browse/MDL-54740)). This second issue should include instructions on how to remove the function so that when it comes time to do so, the task is trivial for any developer.
 
@@ -118,9 +122,9 @@ Longer deprecation periods can be considered for functions that are widely used.
 
 :::
 
-### Step 2. Final deprecation
+### Step 2. Final deprecation {/* #step-2-final-deprecation */}
 
-#### Policy
+#### Policy {/* #policy */}
 
 The final deprecation policy for Moodle LMS has been updated to align more closely with the LTS (long-term support) release cycle starting from Moodle 4.5 (LTS).
 
@@ -134,9 +138,9 @@ The final deprecation policy for Moodle LMS has been updated to align more close
     - Functions deprecated in Moodle 4.5 (LTS) will be up for final deprecation in Moodle 6.0 (the first release for Series 6 right after the Moodle 5.3 (LTS) release).
 </ValidExample>
 
-#### Procedure
+#### Procedure {/* #procedure */}
 
-- When a function undergoes final deprecation, all content of the function should be removed. In the skeleton that remains, an error statement should be included that indicates that the function cannot be used anymore. You should also direct developers to the new function(s) in this message.
+- When a function undergoes final deprecation, all content of the function should be removed. In the skeleton that remains, an error statement should be included that indicates that the function cannot be used anymore. You should also direct developers to the new function(s) in this message, if the deprecated function has been replaced with a new function.
 
 <Tabs>
 
@@ -175,13 +179,14 @@ throw new coding_exception(
 - Function signatures _may_ be removed, that is:
   - all parameters may be removed; and
   - and return type declaration may be removed.
+- If the method or function has a typed return, it needs to return accordingly, otherwise no return is required.
 - The deprecation 'since' tag should remain as the version where the _initial_ deprecation happened.
 - Deprecated classes must be completely removed.
 - The content of the PHPDoc should be removed, leaving only the `@deprecated` tag with the notice and, optionally, the replacement information. This includes all `@param`, `@return`, and other tags, as well as the description.
 - External functions deprecation process is different from the standard deprecation and functions should be completely removed.
 - Last but not least, every deprecation should be documented in an [upgrade note](../../upgradenotes.md) **at least** once but, **ideally**, both on the initial/immediate deprecation and also on this final deprecation/removal.
 
-:::info Changes to Method Signatures
+:::info[Changes to Method Signatures]
 
 Previously, this policy required removing all parameter and return type declarations from method signatures. However, this caused issues with child classes due to PHP's covariance and contravariance rules.
 
@@ -191,9 +196,9 @@ The policy no longer permits modifying method signatures.
 
 :::
 
-### Step 3. Removal
+### Step 3. Removal {/* #step-3-removal */}
 
-#### Policy
+#### Policy {/* #policy-1 */}
 
 A code removal step was added to the deprecation process in Moodle 5.0 and is aligned with the LTS release cycle.
 
@@ -205,7 +210,109 @@ A code removal step was added to the deprecation process in Moodle 5.0 and is al
     - Functions deprecated in Moodle 4.5 (LTS) will be up for final deprecation in Moodle 6.0 (the first release for Series 6 right after the Moodle 5.3 (LTS) release), and for removal in Moodle 7.0 (the first Series 7 Moodle version).
 </ValidExample>
 
-## Parameters deprecation
+## Class properties deprecation {/* #class-properties-deprecation */}
+
+Deprecating class properties presents unique challenges compared to methods, as PHP versions before 8.4 do not provide a native mechanism to emit warnings when properties are accessed or modified.
+
+### When can a property be deprecated? {/* #when-can-a-property-be-deprecated */}
+
+The approach to deprecating a property depends on its visibility and usage:
+
+1. **Private properties**: Can be removed immediately as they are not part of the public API.
+
+2. **Protected properties in non-extensible classes**: Can be removed if there is no reasonable expectation that external code extends the class. This applies to classes where:
+   - The API is not designed to be extended
+   - It would be extremely difficult for developers to correctly extend and consume the class
+   - The protected property is not considered part of the 'public' API
+
+3. **Public properties, or protected properties in extensible classes**: Cannot be safely removed using the standard deprecation process, as there is no way to alert developers when the property is accessed in PHP versions before 8.4.
+
+### Deprecation process for properties that cannot be removed {/* #deprecation-process-for-properties-that-cannot-be-removed */}
+
+For public properties and protected properties in extensible classes, follow these steps:
+
+1. **Add the `@deprecated` PHPDoc tag** to the property documentation, including:
+   - The version it was deprecated in.
+   - The reason for deprecation.
+   - Alternative approaches or replacement properties.
+
+    ```php
+    /**
+     * @var string
+     * @deprecated since 4.4 Use get_summary() method instead
+     */
+    public string $summary;
+    ```
+
+2. **Document in upgrade notes**: Ensure the deprecation is clearly documented in the [upgrade notes](../../upgradenotes.md) for the release.
+
+3. **Add the `\core\attribute\deprecated` attribute**:
+
+    ```php
+    #[\core\attribute\deprecated(
+        since: '4.4',
+        reason: 'Direct property access is deprecated. Use get_summary() and set_summary() methods instead.',
+        mdl: 'MDL-XXXXX',
+    )]
+    public string $summary;
+    ```
+
+4. **Ensure there are no internal uses**: Remove all usage of the property within Moodle core code, replacing it with the recommended alternative (such as getter/setter methods).
+
+5. **Provide getter/setter methods as migration path**: If the property previously had direct access, create getter and setter methods that provide the same functionality and serve as the migration path for developers.
+
+   **Important**: In PHP versions before 8.4, there is no way to intercept direct property access for public properties without breaking backward compatibility. The getter/setter methods cannot emit warnings when users access the property directly (e.g., `$obj->property`). They only provide a migration path for developers who follow the deprecation guidance.
+
+    ```php
+    /**
+     * Get the summary text.
+     *
+     * @return string
+     */
+    public function get_summary(): string {
+        return $this->summary;
+    }
+
+    /**
+     * Set the summary text.
+     *
+     * @param string $summary The summary text
+     */
+    public function set_summary(string $summary): void {
+        $this->summary = $summary;
+    }
+
+    ```
+
+   Developers must rely on IDE hints from `@deprecated` tags, documentation, and upgrade notes to know they should migrate from direct property access to these methods.
+
+### Property deprecation from Moodle 6.0 onwards {/* #property-deprecation-from-moodle-60-onwards */}
+
+From Moodle 6.0, the minimum supported PHP version will be 8.4. PHP 8.4 introduces [Property Hooks](https://wiki.php.net/rfc/property-hooks), which allow proper deprecation warnings to be emitted when properties are accessed or modified.
+
+**Example using PHP 8.4 property hooks:**
+
+```php
+#[\core\attribute\deprecated(
+    since: '4.4',
+    reason: 'Direct property access to $summary is deprecated. Use get_summary() and set_summary() methods instead.',
+    mdl: 'MDL-XXXXX',
+)]
+public ?string $summary {
+    get {
+        \core\deprecation::emit_deprecation([self::class, __PROPERTY__]);
+        return $this->summary;
+    }
+    set {
+        \core\deprecation::emit_deprecation([self::class, __PROPERTY__]);
+        $this->summary = $value;
+    }
+}
+```
+
+This allows Moodle to emit proper runtime deprecation warnings when properties are read from or written to, providing the feedback mechanism that is currently unavailable in earlier PHP versions.
+
+## Parameters deprecation {/* #parameters-deprecation */}
 
 Whilst it is possible to deprecate individual method parameters, care must be taken in doing so.
 
@@ -230,7 +337,7 @@ It is strongly advised to deprecate an entire method, rather than deprecating a 
   - If the default value was not already `null`, and a non-null value is provided, a debugging notice should be emitted
 - Where it is not possible to make the the type nullable, consider deprecating the method and creating a new one with the updated parameters
 
-:::caution Changes to default values and types
+:::caution[Changes to default values and types]
 
 The [Covariance and Contravariance rules for PHP](https://www.php.net/manual/en/language.oop5.variance.php) prevent changes to argument types and defaults when a class is extended and that method overridden.
 
@@ -329,7 +436,7 @@ public function greet_person(
   </Tabs>
 </ValidExample>
 
-:::note Deprecations for core methods in Moodle 4.1 and earlier
+:::note[Deprecations for core methods in Moodle 4.1 and earlier]
 
 Prior to support for PHP 8.0 in Moodle 4.2, the policy for parameter argument deprecation stated that deprecated parameters must be renamed to `$unused` or a similar name.
 
@@ -339,7 +446,7 @@ Named parameter arguments are available from PHP 8.0 onwards.
 
 :::
 
-## See also
+## See also {/* #see-also */}
 
 - [String deprecation](../../../projects/api/string-deprecation.md)
 - [Deprecation attributes](/docs/apis/core/deprecation/)

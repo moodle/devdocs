@@ -23,7 +23,7 @@ The file converter API allows for conversion via multiple plugins and will autom
 
 The API is designed to be called asynchronously as many cloud services offering document conversion offer an asynchronous API themselves.
 
-## Using the file converter API
+## Using the file converter API {/* #using-the-file-converter-api */}
 
 A file conversion is performed by the `core_files\converter` API and a single conversion is represented by the `core\files\conversion` class.
 
@@ -45,7 +45,7 @@ $converter = new \core_files\converter();
 $conversion = $converter->start_conversion($file, 'pdf', true);
 ```
 
-### Polling for updates on an existing conversion
+### Polling for updates on an existing conversion {/* #polling-for-updates-on-an-existing-conversion */}
 
 When the `start_conversion` function is called, it automatically polls for any update on the conversion so it should not normally be necessary to poll the status separately.
 
@@ -57,7 +57,7 @@ $conversion = $converter->start_conversion($file, 'pdf');
 $converter->poll_conversion($conversion);
 ```
 
-### Checking status of a conversion
+### Checking status of a conversion {/* #checking-status-of-a-conversion */}
 
 File conversions can have one of four states:
 
@@ -83,7 +83,7 @@ switch ($conversion->get_status()) {
 }
 ```
 
-### Fetching the target file
+### Fetching the target file {/* #fetching-the-target-file */}
 
 Following a conversion, the target file is stored as a `stored_file` record and can be fetched for consumption elsewhere in your API:
 
@@ -93,6 +93,6 @@ if ($conversion->get_status() === \core_files\conversion::STATUS_COMPLETE) {
 }
 ```
 
-## See also
+## See also {/* #see-also */}
 
 - Creating a new [file converter plugin](../../plugintypes/fileconverter/index.md)

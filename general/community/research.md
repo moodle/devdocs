@@ -6,7 +6,7 @@ sidebar_position: 7
 
 This page describes why Moodle is used for educational research and what research activities take place in the Moodle community.
 
-## How Moodle Supports Research
+## How Moodle Supports Research {/* #how-moodle-supports-research */}
 
 There are a number of reasons Moodle is chosen as a platform for educational research.
 
@@ -14,11 +14,11 @@ There are a number of reasons Moodle is chosen as a platform for educational res
 - **Extensible for research**<br/>Because Moodle can be customised, it can be used for experiments and data gathering, which would not be as easily conducted in other systems. A plugin created for research on one instance can be shared and used on another system easily.
 - **Common framework**<br/> Because Moodle is freely available and more featured than other Learning Management Systems, it is often chosen as a framework for collaborative research across institutions/organisations. Research conducted on one instance of Moodle, with or without customisations, can be easily replicated on another instance.
 
-## Discussing Moodle research
+## Discussing Moodle research {/* #discussing-moodle-research */}
 
 - [Moodle Research Lab](https://moodle.me/research)
 
-## Moodle research publications
+## Moodle research publications {/* #moodle-research-publications */}
 
 The [Moodle Research Library](http://research.moodle.net) exists as a repository for published research related to Moodle. The repository contains research outputs relevant to the Moodle project and the works of Moodle's community of users.
 
@@ -28,7 +28,7 @@ The [Moodle Research Library](http://research.moodle.net) exists as a repository
 - Theses
 - Other works of research
 
-## Research activities related Moodle
+## Research activities related Moodle {/* #research-activities-related-moodle */}
 
 Moodle community members come together to share research activities in a person in a number of ways.
 
@@ -40,7 +40,7 @@ Moodle community members come together to share research activities in a person 
 - [Moodle Accessibility Collaboration Group](http://collaborate.athenpro.org/group/moodle/)
 - [Moodle Inspire](https://moodle.org/project_inspire) provides a framework to conduct academic research within Moodle
 
-## See also
+## See also {/* #see-also */}
 
 - [Learning analytics](https://docs.moodle.org/dev/:en:Learning_analytics)
 - [Logging](https://docs.moodle.org/dev/:en:Logging)

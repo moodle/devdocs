@@ -11,9 +11,9 @@ tags:
 
 New LTS NodeJS versions are [released every 12 months](https://github.com/nodejs/release#release-schedule) and supported for three years. Moodle tries to ensure a compromise between support and churn by ensuring that the version of NodeJS in use is supported at all times.
 
-## Policy statement
+## Policy statement {/* #policy-statement */}
 
-### NodeJS
+### NodeJS {/* #nodejs */}
 
 <Since versions={["3.1"]} issueNumber="MDL-63346" />
 
@@ -23,16 +23,16 @@ New LTS NodeJS versions are [released every 12 months](https://github.com/nodejs
 1. Normally, only changes to `.nvmrc` and `package.json` will happen.
 1. Changes to project dependencies should be handled in a separate issue.
 
-### Project Dependencies
+### Project Dependencies {/* #project-dependencies */}
 
 <Since versions={["5.0"]} issueNumber="IDEA-168" />
 
   1. To avoid impact to the community, dependency updates which impact built output should be kept to a minimum.
   1. Dependency updates should be backported to the first Major release in a Series, for example Moodle 5.0.
 
-## Upgrade guidelines
+## Upgrade guidelines {/* #upgrade-guidelines */}
 
-### NodeJS
+### NodeJS {/* #nodejs-1 */}
 
 To update the NodeJS version required, the following approach is typically recommended:
 
@@ -67,11 +67,11 @@ To update the NodeJS version required, the following approach is typically recom
 
 In most situations there will be no issues here and changes can be committed and backported to all stable and security-supported branches.
 
-#### Troubleshooting
+#### Troubleshooting {/* #troubleshooting */}
 
 Where a project dependency is no longer supported due to the new version of NodeJS, it may be necessary to upgrade the dependency.
 
-### Project dependencies
+### Project dependencies {/* #project-dependencies-1 */}
 
 The following tooling may be useful for the purposes of updating the project dependencies:
 

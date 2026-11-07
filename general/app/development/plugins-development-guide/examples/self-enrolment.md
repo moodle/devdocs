@@ -53,6 +53,6 @@ var result = {
 result;
 ```
 
-## Other examples
+## Other examples {/* #other-examples */}
 
 You can find more examples about this type of plugins in [MOBILE-4323](https://moodle.atlassian.net/browse/MOBILE-4323).

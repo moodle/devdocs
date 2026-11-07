@@ -8,9 +8,9 @@ tags:
   - Plugin documentation
 ---
 
-## 13 December 2023
+## 13 December 2023 {/* #13-december-2023 */}
 
-### Clear filters and more
+### Clear filters and more {/* #clear-filters-and-more */}
 
 After performing a search with specific criteria, a link will appear under the search bar to clear all filters at once.
 
@@ -24,16 +24,16 @@ The plugin preview has been enhanced:
 - The "Recently updated" text at the footer of the card has been replaced with a rocket icon.
 - The awards text with the icon showcasing the most recent awards has been added.
 
-## 22 November 2023
+## 22 November 2023 {/* #22-november-2023 */}
 
-### Pagination in Plugins Directory
+### Pagination in Plugins Directory {/* #pagination-in-plugins-directory */}
 
 Instead of the previous infinite scroll, this update introduces pagination to the plugins directory, making it easier to navigate through a large number of plugins:
 
 - The plugins are displayed in pages of 30 plugins each.
 - The total number of plugins and a pagination bar are shown at the bottom of the page.
 
-## 07 November 2023
+## 07 November 2023 {/* #07-november-2023 */}
 
 Different improvements in the main page:
 

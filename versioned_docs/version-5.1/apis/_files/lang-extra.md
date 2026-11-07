@@ -1,6 +1,6 @@
-<!-- markdownlint-disable MD041 -->
+{/* <!-- markdownlint-disable MD041 --> */}
 
-:::caution Activity modules are different
+:::caution[Activity modules are different]
 
 Activity modules do not use the __frankenstyle__ name as a filename, they use the plugin name. For example the forum activity plugin:
 

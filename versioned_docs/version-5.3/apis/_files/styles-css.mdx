@@ -1,0 +1,17 @@
+{/* <!-- markdownlint-disable first-line-heading --> */}
+Plugins may define a '/styles.css' to provide plugin-specific styling. See the following for further documentation:
+
+- [Plugin contribution checklist#CSS styles](/general/community/plugincontribution/checklist#css-styles)
+- [CSS Coding Style](/general/development/policies/codingstyle/css)
+
+:::tip[Avoid custom styles where possible]
+
+Rather than writing custom CSS for your plugin, where possible apply Bootstrap classes to the DOM elements in your output. These will be easier to maintain and will adopt most colour, branding, and other customisations applied to a theme.
+
+:::
+
+:::warning[Check both colour modes]
+
+Boost can render a site in a light or a dark colour mode, and a stylesheet which hardcodes a colour will keep that colour in both. See [Colour modes](../../guides/colourmodes/index.md) for how to take your colours from the theme instead.
+
+:::

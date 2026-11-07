@@ -6,7 +6,7 @@ tags:
 
 The Comment API provides a standardized way to manage comments within Moodle. It allows developers to create, retrieve, update, and delete comments associated with various Moodle entities, such as courses, activities, and user submissions.
 
-## Usage
+## Usage {/* #usage */}
 
 The `\core_comment\manager` is responsible for handling all comment-related operations within Moodle. This includes rendering and managing comment data.
 
@@ -32,7 +32,7 @@ Optional attributes related to the comment area rendering:
 
 Once instantiated, the class provides simple methods to handle comment-related operations.
 
-## Rendering a comment area
+## Rendering a comment area {/* #rendering-a-comment-area */}
 
 The manager class has an `output` method to get the comment area HTML. Here is a simple example of how to use it:
 
@@ -57,7 +57,7 @@ Additionally, the manager class offers methods to customize the default options 
 - `set_displaycancel(bool $newvalue)`: Set the display cancel option for the comment area.
 - `set_displaytotalcount(bool $newvalue)`: Set the display total count option for the comment area.
 
-## Retrieving comments
+## Retrieving comments {/* #retrieving-comments */}
 
 You can use the `get_comments()` method to fetch all comments associated with the defined context. The method has the following parameters:
 
@@ -80,7 +80,7 @@ foreach ($comments as $comment) {
 }
 ```
 
-## Add plugin control
+## Add plugin control {/* #add-plugin-control */}
 
 Similar to files, when a plugin wants to use comments it must provide a callback method to validate the comment area is correct. To do so, they must implement a callback in their `lib.php` file, specifically in the `PLUGINNAME_comment_display` function.
 
@@ -105,7 +105,7 @@ function mod_myplugin_comment_display(stdClass $comments, stdClass $args): stdCl
 }
 ```
 
-## Add and remove comments
+## Add and remove comments {/* #add-and-remove-comments */}
 
 The manager class provides several methods to add and remove comments:
 

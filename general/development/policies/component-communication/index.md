@@ -6,41 +6,41 @@ tags:
   - Coding guidelines
 ---
 
-## Components
+## Components {/* #components */}
 
 ![Components in Moodle](./componentsinmoodle.png)
 
 Moodle is code is split into different sections called `components`.
 
-### Core
+### Core {/* #core */}
 
 The core libraries provide the base functionality that all other parts of moodle rely on. The component for core libraries is just referred to as `core`. Core code is not optional and cannot be safely removed without breaking Moodle. This means that it is always available and can be safely called from anywhere. Core code sits directly in the `/lib/` folder, or in the `/lib/classes/` folder for autoloaded core classes.
 
-### Subsystems
+### Subsystems {/* #subsystems */}
 
 Subsystems are groups of related functions and classes that are part of core, but are logically grouped together. Often they are tied to a particular feature in Moodle, and sometimes can be disabled/enabled via a single config setting - but the code is never removed. It is safe to call core subsystems from anywhere in Moodle - but the functions may return an error to indicate that a feature has been disabled. Each core subsystem has a defined location where its code is grouped together. As of Moodle 3.1 there are 66 subsystems in core and the comprehensive list can be found here:
 
 core_component::get_core_subsystems()
 
-### Plugins
+### Plugins {/* #plugins */}
 
 Plugins are optional components in Moodle that extend its functionality. M in Moodle stands for `Modular` and most of the code in Moodle belongs to plugins. There are many different types of plugins, and each plugin type supports a different way to extend core functionality. Information on the available plugins types in Moodle can be found here:
 
-### Plugin Types
+### Plugin Types {/* #plugin-types */}
 
 Vanilla Moodle package contains over 370 plugins. Additional plugins can be downloaded from the Plugins directory, or installed manually - and all plugins in Moodle are considered `optional`, even the ones included in vanilla package. This means that you can never assume a particular plugin will always exist on every Moodle site.
 
-### Sub-plugins
+### Sub-plugins {/* #sub-plugins */}
 
 Some plugin types in Moodle support sub-plugins. This means that they can use other plugins to extend their own functionality. The only plugin types in Moodle that allow this are activity modules, editors, administration tools and local plugins. A sub-plugin can assume that its parent plugin is installed and does exist in Moodle - and can call its code directly, but it cannot assume anything about any other plugin or sub-plugin in Moodle.
 
-### Dependencies
+### Dependencies {/* #dependencies */}
 
 Some plugins in Moodle depend on other plugins. An example of a dependency relationship is a plugin that `hosts` sub-plugins - each of the sub-plugins depends on the parent. Another example is where the dependency is explicitly defined in the version.php of the plugin.
 
 ![Component dependencies](./componentdependencies.png)
 
-## Communication Channels
+## Communication Channels {/* #communication-channels */}
 
 There are different ways to call code in Moodle. Most of them are listed here and described in detail later on:
 
@@ -52,7 +52,7 @@ There are different ways to call code in Moodle. Most of them are listed here an
 - Event observers
 - Component callbacks
 
-## General rules for inter-component communications
+## General rules for inter-component communications {/* #general-rules-for-inter-component-communications */}
 
 Because all plugins are optional, we can never rely on a plugin being installed in Moodle, unless there is a dependency relationship between the current component and the plugin. Core components and subsystems are always installed.
 This means there are some strict rules about which types of communication are allowed in Moodle.
@@ -65,11 +65,11 @@ This means there are some strict rules about which types of communication are al
 
 ![Allowed communication](./allowedcommunication.png)
 
-### Direct php function calls
+### Direct php function calls {/* #direct-php-function-calls */}
 
 This is the simplest type of communication - you know the name of a function so you just call it. Sometimes the name of the function is generated from the component name to allow different plugins to implement the same function with a different prefix or namespace.
 
-### External functions
+### External functions {/* #external-functions */}
 
 External functions are functions defined in Moodle using the External API. These are functions suitable to call from webservices, or call directly from other parts of Moodle. Each external function follows a similar pattern:
 
@@ -96,19 +96,19 @@ Please note that if you are writing a non-core plugin which is available in olde
 
 :::
 
-### JavaScript Modules (AMD)
+### JavaScript Modules (AMD) {/* #JavaScript-modules-amd */}
 
 It is possible through the JavaScript loader to load an AMD module from any component and call its functions. This is a form of inter-component communication and must obey the strict rules for which components AMD modules can be loaded from.
 
-### get_string
+### get_string {/* #get_string */}
 
 It is possible to fetch strings from any component in Moodle. This is a form of inter-component communication and and must obey the strict rules for which components strings can be fetched from.
 
-### Templates (Mustache)
+### Templates (Mustache) {/* #templates-mustache */}
 
 It is possible to fetch templates from any component in Moodle. This is a form of inter-component communication and and must obey the strict rules for which components templates can be fetched from.
 
-### Event observers
+### Event observers {/* #event-observers */}
 
 Any action in Moodle can trigger one or more `events`.
 
@@ -120,13 +120,13 @@ Additional rules for event observers:
 
 - Events are not allowed to be observed by core or a core subsystem (there are some currently wrong observers in core that should be removed).
 
-### Callback methods (component_callback, get_plugins_with_function…)
+### Callback methods (component_callback, get_plugins_with_function…) {/* #callback-methods-component_callback-get_plugins_with_function */}
 
 The most common way (but not the only way) to implement a callback is using the `component_callback()` function. This function works by looping over the installed plugins and calling a function from each plugin based on appending the component name to the supplied function name. It then expects the function to be defined either in the plugins lib.php file, or in an autoloaded location (but not in a class!).
 
 [List of callbacks in Moodle](https://docs.moodle.org/dev/Callbacks)
 
-## FAQ
+## FAQ {/* #faq */}
 
 **Q: So how does plugin X call a function from plugin Y if they don't depend on each other?**
 
@@ -186,28 +186,28 @@ A: Not easily. You must create a separate callback for each stage and hope that 
 
 A: No. Sorry.
 
-## Ideal plugin design
+## Ideal plugin design {/* #ideal-plugin-design */}
 
 ![Ideal plugin design](./idealplugindesign.png)
 
 When building a new plugin for Moodle - it is good to think about how to best structure the code so that we separate our code into layers of functionality. This way we can provide a secure and comprehensive API that can be called from inside, or outside of our component, or from web-services (like the Mobile App or AJAX).
 
-### Low Level API
+### Low Level API {/* #low-level-api */}
 
 In this model, the DB tables are accessed through a low level API that knows about all the types, relationships and validation rules for the data in the tables. No permission checking is done at this level for performance and complexity reasons.
 
-### Component API
+### Component API {/* #component-api */}
 
 The component API defines all the things this plugin can do. Every function in the API should perform permission checks and validation on the parameters and return types and be covered by unit tests. This is the useful API that can be used by pages in your plugin, or called directly by another component in Moodle (only if it depends on this plugin).
 
-### External API
+### External API {/* #external-api */}
 
 The external API is a single class that wraps each function in the Component API. By exposing all the functions in the Component API we allow people to build new interfaces and apps that we have never even thought about without requiring changes to our plugin. Covering each external function with a unit test ensures that all our parameters and return types are correctly specified. Note: External API functions can be called directly from other dependant plugins or sub-plugins in Moodle - but you must use the `\core_external\external_api::call_external_function` to do so or you will introduce problems with theme, language and context.
 
-### Webservice API
+### Webservice API {/* #webservice-api */}
 
 This is not really an API, it is just a listing of all the functions in the external API in our plugins db/services.php file. This allows all these functions to be called from AJAX or webservices clients like the Mobile App.
 
-## Editing images in this doc page
+## Editing images in this doc page {/* #editing-images-in-this-doc-page */}
 
 This page was created from a google doc. To edit the images in this page - re-export them from the original document here: https://docs.google.com/document/d/1Z-vRWztT05bsb9b5KbBpLRP26oa3KTx3thB52_BW5VY/edit#heading=h.ardt51j6brj1

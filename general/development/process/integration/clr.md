@@ -6,13 +6,13 @@ tags:
 ---
 This document summarises the intent, purpose, and process surrounding component lead reviews (CLR).
 
-:::warning Please note:
+:::warning[Please note:]
 
 The component lead review process (CLR) is new and currently open by invitation only.
 
 :::
 
-## Purpose
+## Purpose {/* #purpose */}
 
 The purpose of the component lead review is to:
 
@@ -29,9 +29,9 @@ The purpose of the component lead review is to:
 
 The component lead review process must consider the [Integration principles](./index.md#integration-principles) at all times.
 
-## Issues appropriate for CLR
+## Issues appropriate for CLR {/* #issues-appropriate-for-clr */}
 
-:::caution Attention
+:::caution[Attention]
 
 You should only consider issues which belong to your own component for CLR.
 
@@ -48,7 +48,7 @@ Not all changes are suited to the component lead review process. Whilst most of 
 
 If you are uncertain about a change, and do not feel confident in landing it, please pass it to the **Integration Review** queue instead.
 
-## Considerations
+## Considerations {/* #considerations */}
 
 The Component lead review process requires you to:
 
@@ -65,6 +65,7 @@ The Component lead review process requires you to:
 1. Ensure backwards compatibility is maintained. As a starting point backwards compatibility must always be maintained. Where backwards compatibility is affected it should be:
    1. Well discussed with evidence of justification
    1. Documented and communicated to the community
+   1. Changes which may alter existing grades must follow the [gradebook calculation changes](../gradebook-calculation-changes.md) process
 1. Ensure backwards compatibility with the Moodle mobile app. Especially in areas where the Moodle app uses pre-rendered content from the site (like Quiz or Lesson)
 1. Verify that components are correct and check the right people have been involved (for example, component maintainers)
 1. Tests - must be written to guide tester to verify the fix is working.
@@ -73,7 +74,7 @@ The Component lead review process requires you to:
    1. Behat tests - preferred if relevant
 1. Check performance - we have to look at maintaining optimum code here, as far as simple patches that can affect performance. (simple optimisations)
 
-## Process
+## Process {/* #process */}
 
 The process of component lead review is summarised in the following process workflow:
 
@@ -94,11 +95,11 @@ To summarise:
 
 :::
 
-## Schedule
+## Schedule {/* #schedule */}
 
 Component lead reviews may take place at any time, however, the push queue is progressed according to the standard [integration review schedule](./index.md#schedule).
 
-## Becoming a component lead reviewer
+## Becoming a component lead reviewer {/* #becoming-a-component-lead-reviewer */}
 
 :::info
 

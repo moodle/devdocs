@@ -13,7 +13,7 @@ Before operating on any data in an external function, you must ensure that the u
 - has access to context that the data is located in
 - has permission to perform the relevant action
 
-## Validating function parameters
+## Validating function parameters {/* #validating-function-parameters */}
 
 Before working with any data provided by a user you **must** validate the parameters against the definitions you have defined.
 
@@ -32,7 +32,7 @@ public static function execute(array $groups): array {
 }
 ```
 
-## Validating access to the Moodle context
+## Validating access to the Moodle context {/* #validating-access-to-the-moodle-context */}
 
 Whenever fetching or updating any data within Moodle using an External function definition, you **must** validate the context that the data exists within.
 
@@ -72,7 +72,7 @@ The `validate_context()` function is the only correct way to write external func
 
 :::
 
-## Ensuring that a user has the appropriate rights
+## Ensuring that a user has the appropriate rights {/* #ensuring-that-a-user-has-the-appropriate-rights */}
 
 Once you have confirmed that the provided data is of the correct type, and configured Moodle for the specific context, you should also ensure that all capabilities are checked correctly.
 

@@ -5,7 +5,7 @@ tags:
   - core_xapi
 ---
 
-## Overview
+## Overview {/* #overview */}
 
 This document contains a technical explanation on how the xAPI Moodle integration library works.
 
@@ -39,13 +39,13 @@ The typical statement object is a JSON element containing:
   - The `Activity Profile` allows the storage and return of universal data about a particular activity (for instance, minimum required score, time limit, what happens if the time limit is exceeded).
   - The `State Endpoint` allows the storage and return of data about the current state of an activity for a particular learner (for instance, bookmark, state of play of the simulation, other state variables). In other words, the State Endpoint stores data about an activity/agent combination.
 
-:::tip xAPI specification
+:::tip[xAPI specification]
 
 The xAPI specification can be consulted in the xAPI specs page: https://github.com/adlnet/xAPI-Spec.
 
 :::
 
-## Moodle xAPI functionalities
+## Moodle xAPI functionalities {/* #moodle-xapi-functionalities */}
 
 The final objective of Moodle xAPI library is NOT to implement a full LRS inside Moodle but to provide an easy way to handle xAPI statements and xAPI states within any plugin that needs it.
 
@@ -67,9 +67,9 @@ The current library implements:
 - A class **\core_xapi\local\state** to create and extract information from state data.
 - A bunch of predefined classes in **\core_xapi\local\statement\item_XXX** to generate xAPI statement items from the plugins (example provided in [Generating statements in PHP](#generating-statements-in-php)).
 
-## Statement API
+## Statement API {/* #statement-api */}
 
-### Statement processing
+### Statement processing {/* #statement-processing */}
 
 The `core_xapi_statement_post` webservice receives a JSON encoded statement (could be an array or a single one) and a component frankenstyle name.
 
@@ -97,7 +97,7 @@ The function `statement_to_event()` is responsible for:
 
 :::
 
-### Statement data validation
+### Statement data validation {/* #statement-data-validation */}
 
 The `core_xapi_statement_post` webservice will reject any statements batch that does not comply with the below xAPI data validation:
 
@@ -116,7 +116,7 @@ The `core_xapi_statement_post` webservice will reject any statements batch that 
 - **authority**: must be a valid xAPI actor.
 - **timestamp**, **stored** and **version**: those optional fields are just strings with no particular validation or usage for now.
 
-### Generating statements in PHP
+### Generating statements in PHP {/* #generating-statements-in-php */}
 
 The xAPI library provides classes to translate Moodle elements into xAPI structures. Those statements could be sent to JS via the `$PAGE->requires->data_for_js` method.
 
@@ -235,7 +235,7 @@ The result will be:
  }
 ```
 
-### xAPI statements attributes implementation
+### xAPI statements attributes implementation {/* #xapi-statements-attributes-implementation */}
 
 All xAPI statement attributes have its own implementation in case any plugin needs them. All classes are implemented in the namespace `core_xapi\local\statement`, Those are the classes implemented:
 
@@ -253,22 +253,22 @@ All xAPI statement attributes have its own implementation in case any plugin nee
   - **Item_context**: the class representing the xAPI context data. It has no validation and no specific methods.
   - **Item_attachment**: validate the xAPI attachment structure
 
-### Adapting a plugin to use xAPI statement functions
+### Adapting a plugin to use xAPI statement functions {/* #adapting-a-plugin-to-use-xapi-statement-functions */}
 
 All the plugins could use the new xAPI functionalities to send xAPI statements, interact with them, trigger events and generate log store entries.
 
-#### Step 1. Implement a xAPI handle class
+#### Step 1. Implement a xAPI handle class {/* #step-1-implement-a-xapi-handle-class */}
 
 Implement a class `\PLUGINNAME\classes\xapi\handler` which extends `\core_xapi\handler` and override these methods:
 
 - `statement_to_event(statement $statement): core\event\base`: to convert a statement into a valid Moodle event
 - `supports_group_actors(): bool`: in case that the plugin wants to accept also Group statements (by default any Group statement will be rejected) it can override this method.
 
-#### Step 2. Implement events
+#### Step 2. Implement events {/* #step-2-implement-events */}
 
 All xAPI statements MUST be converted into a valid Moodle event. So the plugin needs to **code all the necessary events** for this.
 
-### Useful methods to handle xAPI statements inside plugins
+### Useful methods to handle xAPI statements inside plugins {/* #useful-methods-to-handle-xapi-statements-inside-plugins */}
 
 The `core_xapi\local\statement` provides several methods to extract information from a statement object.
 
@@ -321,7 +321,7 @@ The `core_xapi\local\statement` provides several methods to extract information 
 
    Return the statement attachments attribute.
 
-### Using Ajax lib to send a statement to Moodle
+### Using Ajax lib to send a statement to Moodle {/* #using-ajax-lib-to-send-a-statement-to-moodle */}
 
 The webservices have a different behaviour depending if it is processing a single statement or an array of them.
 
@@ -378,9 +378,9 @@ This could be an example of sending more than one statement to Moodle:
  });
 ```
 
-## State API
+## State API {/* #state-api */}
 
-### State processing
+### State processing {/* #state-processing */}
 
 There are three webservices to process xAPI states:
 
@@ -401,7 +401,7 @@ The function `validate_state()` is responsible for asserting that the specified 
 
 :::
 
-### Generating states in PHP
+### Generating states in PHP {/* #generating-states-in-php */}
 
 The xAPI library provides classes to translate Moodle elements into xAPI states. They could be sent to JS via the `$PAGE->requires->data_for_js` method.
 
@@ -423,11 +423,11 @@ The next example shows how to generate a basic state:
 );
 ```
 
-### Adapting a plugin to use xAPI state functions
+### Adapting a plugin to use xAPI state functions {/* #adapting-a-plugin-to-use-xapi-state-functions */}
 
 All the plugins could use the new xAPI functionalities to send/get/remove xAPI states.
 
-#### Implement a xAPI handle class
+#### Implement a xAPI handle class {/* #implement-a-xapi-handle-class */}
 
 Implement a class `\PLUGINNAME\classes\xapi\handler` which extends `\core_xapi\handler` and override this method:
 
@@ -435,7 +435,7 @@ Implement a class `\PLUGINNAME\classes\xapi\handler` which extends `\core_xapi\h
 
 Apart from this, a `core_xapi\state_store` class has been added to let plugins override where the states are saved. By default, they are stored in the `xapi_states` table.
 
-### Useful methods to handle xAPI states inside plugins
+### Useful methods to handle xAPI states inside plugins {/* #useful-methods-to-handle-xapi-states-inside-plugins */}
 
 The `core_xapi\local\state` provides several methods to extract information from a state object.
 
@@ -444,7 +444,7 @@ Apart from this, `core_xapi\api` also implements several helper methods to be ca
 - `remove_states_from_component(string $component): void`, to delete all states associated with a component.
 - `execute_state_cleanup(): void`, to remove all the states for all the compatible components.
 
-### Using Ajax lib to send a state to Moodle
+### Using Ajax lib to send a state to Moodle {/* #using-ajax-lib-to-send-a-state-to-moodle */}
 
 This code could be an example of a single xAPI state post JavaScript code:
 

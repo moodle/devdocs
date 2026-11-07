@@ -25,7 +25,7 @@ Routes may optionally describe additional metadata including:
 
 When invoked, any parameter to the route method will be resolved using a combination of [Dependency Injection](../../core/di/index.md) and resolution of path, query, and header parameters.
 
-## Using the `route` attribute
+## Using the `route` attribute {/* #using-the-route-attribute */}
 
 When applied to a method, the `\core\router\route` attribute will create a route. Class-level attributes can also be defined and are used to define a route prefix, and some defaults, but cannot handle a route directly.
 

@@ -4,11 +4,11 @@ tags:
   - Access
 ---
 
-<!-- cspell:ignore NEWMODULE -->
+{/* <!-- cspell:ignore NEWMODULE --> */}
 
 The Access API gives you functions so you can determine what the current user is allowed to do. It also allows plugins to extend Moodle with new capabilities.
 
-## Overview
+## Overview {/* #overview */}
 
 Moodle uses a role-based access control model. Entities are represented by contexts which are arranged into a tree-like hierarchy known as the context tree.
 
@@ -37,7 +37,7 @@ All users that did not log-in yet automatically get the default role defined in 
   courseName="securityEssentials"
 />
 
-## How to define new capabilities in plugins
+## How to define new capabilities in plugins {/* #how-to-define-new-capabilities-in-plugins */}
 
 Capabilities are defined by `$capabilities` array defined in `db/access.php` files. The name of the capability consists of `plugintype/pluginname:capabilityname`.
 
@@ -74,7 +74,7 @@ The capability names are defined in plugin language files, the name of the strin
 $string['folder:managefiles'] = 'Manage files in folder module';
 ```
 
-### Deprecating a capability
+### Deprecating a capability {/* #deprecating-a-capability */}
 
 When a capability is no longer needed or is replaced by another, it should be deprecated. The timeline for deprecation should follow the normal [Deprecation](/general/development/policies/deprecation) process.
 
@@ -106,9 +106,9 @@ $deprecatedcapabilities = [
 ];
 ```
 
-## Useful functions and classes
+## Useful functions and classes {/* #useful-functions-and-classes */}
 
-### Context fetching
+### Context fetching {/* #context-fetching */}
 
 In plugins context instances are usually only instantiated because they are instantiated and deleted automatically by the system.
 
@@ -134,11 +134,11 @@ Notes:
 - by default exception is thrown if context can not be created
 - deleted users do not have contexts any more
 
-### Determining that a user has a given capability
+### Determining that a user has a given capability {/* #determining-that-a-user-has-a-given-capability */}
 
 When implementing access control always ask "Does the user have capability to do something?". It is incorrect to ask "Does the user have a role somewhere?".
 
-#### has_capability()
+#### has_capability() {/* #has_capability */}
 
 `has_capability()` is the most important function:
 
@@ -162,7 +162,7 @@ if (has_capability('mod/folder:managefiles', $context)) {
 
 By default checks the capabilities of the current user, but you can pass a different user id. By default will return true for admin users, it is not recommended to use false here.
 
-#### require_capability()
+#### require_capability() {/* #require_capability */}
 
 Function require_capability() is very similar, it is throwing access control exception if user does not have the capability.
 
@@ -170,11 +170,11 @@ Function require_capability() is very similar, it is throwing access control exc
 function require_capability($capability, context $context, $userid = null, $doanything = true, $errormessage = 'nopermissions', $stringfile = _) {
 ```
 
-### Enrolment functions
+### Enrolment functions {/* #enrolment-functions */}
 
 See [Enrolment API](./enrol.md).
 
-### Other related functions
+### Other related functions {/* #other-related-functions */}
 
 ```php
 function require_login($courseorid = null, $autologinguest = true, $cm = null, $setwantsurltome = true, $preventredirect = false)
@@ -188,7 +188,7 @@ function is_guest(context $context, $user = null)
 function is_viewing(context $context, $user = null, $withcapability = _)
 ```
 
-#### `require_login()`
+#### `require_login()` {/* #require_login */}
 
 Each plugin script should include require_login() or require_course_login() after setting up PAGE->url.
 
@@ -201,17 +201,17 @@ This function does following:
 - verify that user is either enrolled or has capability 'moodle/course:view' or some enrol plugin gives them temporary guest access
 - logs access to courses
 
-#### `require_course_login()`
+#### `require_course_login()` {/* #require_course_login */}
 
 This function is supposed to be used only in activities that want to allow read access to content on the frontpage without logging-in. For example view resource files, reading of glossary  entries, etc.
 
-#### `isguestuser()`, `isloggedin()` and `is_siteadmin()`
+#### `isguestuser()`, `isloggedin()` and `is_siteadmin()` {/* #isguestuser-isloggedin-and-is_siteadmin */}
 
 These function were previously needed for limiting of access of special accounts. It is usually not necessary any more, because any *write* or *risky* capabilities are now automatically prevented in has_capability().
 
 It is strongly discouraged to use is_siteadmin() in activity modules, please use standard capabilities and enrolment status instead.
 
-#### `is_guest()`, `is_viewing()` and `is_enrolled()`
+#### `is_guest()`, `is_viewing()` and `is_enrolled()` {/* #is_guest-is_viewing-and-is_enrolled */}
 
 In order to access course data one of these functions must return true for user:
 
@@ -219,11 +219,11 @@ In order to access course data one of these functions must return true for user:
 - `is_viewing()` - user has 'moodle/course:view' capability (may access course, but is not considered to be participant)
 - `is_guest()` - user was given temporary guest access by some enrolment plugin
 
-#### `get_users_by_capability()`
+#### `get_users_by_capability()` {/* #get_users_by_capability */}
 
 This method returns list of users with given capability, it ignores enrolment status and should be used only above the course context.
 
-## See also
+## See also {/* #see-also */}
 
 - [API guides](../../apis.md)
 - [Roles](./roles.md)

@@ -1,5 +1,5 @@
-<!-- markdownlint-disable first-line-heading -->
-<!-- cspell:ignore choosereadme, configtitle -->
+{/* <!-- markdownlint-disable first-line-heading --> */}
+{/* <!-- cspell:ignore choosereadme, configtitle --> */}
 
 Each plugin must define a set of language strings with, at a minimum, an English translation. These are specified in the plugin's lang/en directory in a file named after the plugin.
 

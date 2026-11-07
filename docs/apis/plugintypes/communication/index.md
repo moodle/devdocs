@@ -19,7 +19,7 @@ import {
 Lang,
 } from '../../_files';
 
-## File structure
+## File structure {/* #file-structure */}
 
 Communication plugins are located in the /communication/provider directory. A plugin should not include any custom files outside its own
 plugin folder.
@@ -58,11 +58,11 @@ you like. These are feature classes which will be defined from the communication
 
 :::
 
-## Key files
+## Key files {/* #key-files */}
 
 There are a number of key files within the plugin, described below.
 
-### communication_feature.php
+### communication_feature.php {/* #communication_featurephp */}
 
 Each plugin must implement this class and should have the exact class name. The core communication api will pick the features and actions from this class. There is no strict rule
 on which interfaces should be implemented, plugins can choose which features they support and implement accordingly. Exception is the `communication_provider` interface which
@@ -80,74 +80,74 @@ class communication_feature implements
 }
 ```
 
-## Interfaces
+## Interfaces {/* #interfaces */}
 
-### communication_provider
+### communication_provider {/* #communication_provider */}
 
 This is the base communication provider interface. This interface should be used to declare the support for the instantiation method for communication providers.
 Every provider plugin must implement this interface as a bare minimum. This interface will have the following methods.
 
-#### load_for_instance()
+#### load_for_instance() {/* #load_for_instance */}
 
 This method will have the base communication processor(core_communication\processor) object which will allow loading the communication provider for the communication api.
 
-### user_provider
+### user_provider {/* #user_provider */}
 
 This is the user provider interface. This interface should be used to declare the support for the for user creation for a provider. For example, Matrix allows creation of users
 via API and the `communication_matrix` plugin can support the creation of users in Matrix, in that case, `communication_matrix` plugin should implement this interface. Some APIs might
 not need to create user as they might have been created in a different way, in that case this interface can be excluded. This interface will have the following methods.
 
-#### create_members()
+#### create_members() {/* #create_members */}
 
 All the necessary code and API calls to create members for the communication room should live here.
 
-### room_chat_provider
+### room_chat_provider {/* #room_chat_provider */}
 
 This interface will define the features for creating a room. For example, if a communication provider allows creating a room via API, this interface should be implemented.
 Let's look at the methods of this interface to get a better idea.
 
-#### create_chat_room()
+#### create_chat_room() {/* #create_chat_room */}
 
-#### update_chat_room()
+#### update_chat_room() {/* #update_chat_room */}
 
 All the necessary actions to create/update a provider room should live here. It is highly recommended to add necessary checking to compare the
 data passed and previous data to ensure something is changed and an update is required to make sure no unnecessary api calls are made. A bool
 value should be returned to indicate if the room is created or updated or something went wrong.
 
-#### delete_chat_room()
+#### delete_chat_room() {/* #delete_chat_room */}
 
 !!Danger zone!! Any deletion or related action for the communication room should live here. Please be-careful with your actions here. A bool
 value should be returned to indicate if the room is deleted or something went wrong.
 
-#### generate_room_url()
+#### generate_room_url() {/* #generate_room_url */}
 
 Generate a room url according to the room information, web client url or any other required information. This is an important one to allow users access the room from the UI.
 Course has an icon to access the room if a room is created for the course, this method will be used to generate the url for the room.
 
-### room_user_provider
+### room_user_provider {/* #room_user_provider */}
 
 This interface will define the features for adding/removing/updating members to the room. Room members should be added when a user is enrolled or a role changes. If a provider
 allows addition of users to a room via API, this interface should be implemented. Let's look at the methods of this class to get a better idea.
 
-#### add_members_to_room()
+#### add_members_to_room() {/* #add_members_to_room */}
 
 All the necessary actions to add members to a room should live here. The array of user ids must be passed here.
 
-#### update_room_membership()
+#### update_room_membership() {/* #update_room_membership */}
 
 Updating the membership might be necessary in some cases where a user is capability changed, this method will come into play in those cases.
 
-#### remove_members_from_room()
+#### remove_members_from_room() {/* #remove_members_from_room */}
 
 All the necessary actions to remove members from a room should live here. The array of user ids must be passed here.
 
-### synchronise_provider
+### synchronise_provider {/* #synchronise_provider */}
 
 Communication API has a scheduled task `core_communication\task\synchronise_providers_task` which will synchronise the data from the communication provider to the current Moodle
 instance. For example, it can compare the users in the communication room and users enrolled in a course and add/remove users accordingly. The scheduled task runs and adds an
 ad-hoc task for each instance where the provider implements this interface. This feature will help keep the data on-sync between the provider and Moodle.
 
-#### synchronise_room_members()
+#### synchronise_room_members() {/* #synchronise_room_members */}
 
 All the necessary code to synchronise the room members should live here.
 

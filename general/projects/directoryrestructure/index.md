@@ -11,7 +11,7 @@ import { ProjectSummary } from '@site/src';
     projectName="directoryrestructure/index"
 />
 
-<!-- cspell:ignore directoryrestructure -->
+{/* <!-- cspell:ignore directoryrestructure --> */}
 
 Like many applications of its time, Moodle currently places all of its source in a web-accessible root directory.
 
@@ -21,21 +21,21 @@ In modern web development this is recognised as a poor practice, and its continu
 
 Whilst Moodle currently implements a number of internal checks to try and alert administrators of misconfiguration, this is still not an ideal situation.
 
-## Project statement
+## Project statement {/* #project-statement */}
 
 This project aims to restructure the Moodle source code to move all current content into a sub-directory of the main repository. This allows for code to be restructured in the future outside of the web root.
 
-## Target versions
+## Target versions {/* #target-versions */}
 
 This work is targeted at Moodle 5.1 as the first issue to land after the on-sync period.
 
 Some other related issues, such as changes to the deployment of Moodle to add Composer and Node, may be included at the same time.
 
-## Benefits
+## Benefits {/* #benefits */}
 
 A restructure of the code itself has few _immediate_ benefits itself, but it allows for greater change and flexibility in the future as a direct result.
 
-### Immediate benefits
+### Immediate benefits {/* #immediate-benefits */}
 
 Restructuring the Moodle codebase allows for the migration of a number of key files out of the web root, in particular:
 
@@ -47,15 +47,15 @@ Restructuring the Moodle codebase allows for the migration of a number of key fi
 
 By moving these files out of the public web root, a number of possible attack vectors are entirely removed, and the risk of information leak as a result of server misconfiguration is heavily reduced. NodeJS and Composer dependencies are no longer web-accessible.
 
-### Future benefits
+### Future benefits {/* #future-benefits */}
 
 A change in the directory structure which moves the `node_modules`, and `vendor` directories out of the web root makes it possible to use NodeJS and Composer as part of a production deployment without risk of any accidental exposure of their content and, as a result, it becomes possible to make greater changes to support installation of libraries and plugins through these mechanisms.
 
 Other future benefits are discussed below.
 
-## Approach
+## Approach {/* #approach */}
 
-### Initial change
+### Initial change {/* #initial-change */}
 
 The initial change for this issue is simply to move all current code into a new `public` directory.
 
@@ -69,7 +69,7 @@ for f in *; do
 done
 ```
 
-### Immediate follow-up
+### Immediate follow-up {/* #immediate-follow-up */}
 
 Following this initial change, some of the non-public content would be moved back into the root of the project. This includes:
 
@@ -82,25 +82,25 @@ Following this initial change, some of the non-public content would be moved bac
 - PHPUnit configuration
 - Coding Style and related configuration
 
-### Future
+### Future {/* #future */}
 
 In the future new code should make use of modern best-practice coding techniques. Existing code should be progressively updated to gradually move out of the web root.
 
-## Risks and Weaknesses
+## Risks and Weaknesses {/* #risks-and-weaknesses */}
 
 Whilst this change does offer a number of benefits, it is not without some risk. For the most part these risks are well-defined, and superficial, but they do cross a number of areas.
 
-### The introduction of new bugs
+### The introduction of new bugs {/* #the-introduction-of-new-bugs */}
 
 Any new feature, no matter the size, risks introducing regressions and bugs. In this case there is a higher chance that bugs may be introduced due to the nature of the change, but in most instances these bugs will be spotted quickly and easily and, often, the solutions will be similar.
 
-### Introducing incompatible plugins
+### Introducing incompatible plugins {/* #introducing-incompatible-plugins */}
 
 Due to the change of directory structure, there may be a risk of community plugins unable to share a codebase between existing Moodle versions and the release introducing this directory structure change. At this time I believe that this is not the case, and steps have been taken to avoid this scenario, but there may be situations where this is not true.
 
 In cases where this does occur it is likely that these situations are a result of incorrect assumptions made by the plugin, and hard-coded path resolution, rather than bugs.
 
-### Reconfiguration of Production Systems
+### Reconfiguration of Production Systems {/* #reconfiguration-of-production-systems */}
 
 In order for this change to be effective, it will require some reconfiguration of production systems.
 
@@ -112,7 +112,7 @@ For those hosting Moodle in a sub-directory of their website it should be possib
 
 For those who are unable to directly configure their web server they may need to contact their hosting provider or seek additional help. At this time the impact for this smaller group of users is unknown.
 
-### Increased difficulty during backport
+### Increased difficulty during backport {/* #increased-difficulty-during-backport */}
 
 Due to the change in directory structure, there may be some increased difficulty during some backports.
 
@@ -120,7 +120,7 @@ Where existing files are modified, the Git Version Control System will transpose
 
 This only impacts Moodle core, and does not impact plugins. It is not expected to cause significant issues.
 
-## Future, and Related Scope
+## Future, and Related Scope {/* #future-and-related-scope */}
 
 Whilst the initial benefit of this migration is to move some of our configuration, development dependencies, and library code out of the web root, the real goal of this change is the subsequent changes that become possible.
 
@@ -132,7 +132,7 @@ The following sections suggest _possible_ future benefits. These are not current
 
 :::
 
-### Additional deployment steps
+### Additional deployment steps {/* #additional-deployment-steps */}
 
 Moodle is currently deployed by simply unzipping the codebase into a web-accessible directory with no additional steps being required. The same is usually true for plugins – users can install Moodle plugins by placing them into the relevant directory and they only need to run run a standard Moodle web upgrade with no additional deployment process.
 
@@ -145,7 +145,7 @@ There are two main build processes that we may wish to consider adding:
 - Installation of some code using the Composer tooling; and
 - Requiring some form of JavaScript build process.
 
-#### Build step: Composer
+#### Build step: Composer {/* #build-step-composer */}
 
 A new Composer build step would require that a command such as the following be run:
 
@@ -153,7 +153,7 @@ A new Composer build step would require that a command such as the following be 
 composer install --no-dev -o
 ```
 
-:::tip Current approach to PHP dependencies
+:::tip[Current approach to PHP dependencies]
 
 In Moodle 5.0 and earlier all PHP userland dependencies are managed manually without the use of Composer, or similar.
 
@@ -178,7 +178,7 @@ The addition of a Composer build step also opens up possibilities for plugin ins
 
 I would recommend that this change to the deployment be completed as part of the initial restructure.
 
-#### Build step: NodeJS {#build-step-nodejs}
+#### Build step: NodeJS {/* #build-step-nodejs */}
 
 A new NodeJS build step would require that a command such as the following be run during the build:
 
@@ -189,7 +189,7 @@ npm run build
 
 This change allows for future greater change in our JavaScript build process away from including transpiled JavaScript in the Moodle source.
 
-:::tip Current approach to building JavaScript in Moodle
+:::tip[Current approach to building JavaScript in Moodle]
 
 In Moodle 5.0 and earlier the transpilation of JavaScript is considered a development-time task, performed by core and plugin developers.
 
@@ -212,7 +212,7 @@ The addition of a JS build step may allow for future expansion in the form of a 
 
 At this point it is not known whether the addition of a build step for NodeJS could extend to Moodle plugin support.
 
-### Plugin installation via Composer
+### Plugin installation via Composer {/* #plugin-installation-via-composer */}
 
 If a Composer build step is created, it would be much easier to support the installation of Moodle plugins using Composer.
 
@@ -220,7 +220,7 @@ Composer already has support for Custom installers, which allows Moodle to insta
 
 This technically is possible already without the addition of a build step, and migration of the directory structure, however, moving out of the web root and combining with the Composer build step requirement allows this to be standardised as the primary installation method. It also allows Moodle to formalise a standard way of doing this for all Moodle plugins.
 
-### Tooling systems
+### Tooling systems {/* #tooling-systems */}
 
 Whilst Web and Mobile are the standard ways to interact with Moodle, many tasks are best performed on the command line. At present Moodle administrators and developers have two options available to them:
 
@@ -239,7 +239,7 @@ This functionality should really be built into Moodle, and allow for different p
 
 The introduction of these types of tooling is currently blocked by the inability for Moodle to use well-defined CLI libraries.
 
-### Plugins behind the web root
+### Plugins behind the web root {/* #plugins-behind-the-web-root */}
 
 As part of the introduction of a new Web Service framework, Moodle 4.5 introduced a Routing Engine based on the [Slim Framework](https://www.slimframework.com/). One of the intended targets of this routing engine is to support the handling of standard Moodle pages, allowing them to have 'pretty' URLs which are more user and SEO friendly. Code already exists for this functionality and is expected to land in Moodle 5.0 (See MDL-82565 for more information).
 
@@ -251,17 +251,17 @@ An additional benefit of moving new plugin types to be outside of the web root i
 
 Whilst the use of page-level routing is available without placing plugins behind the web root, doing so allows Moodle to force a single approach for new code, encourage best practices, and further reduce the potential for security breaches.
 
-## FAQ
+## FAQ {/* #faq */}
 
-### How does this impact me as a plugin developer?
+### How does this impact me as a plugin developer? {/* #how-does-this-impact-me-as-a-plugin-developer */}
 
 For the most part there should be no impact to plugin development, but there will be an impact on testing systems due to the change in installation location.
 
-### What about Backporting changes across the point of change
+### What about Backporting changes across the point of change {/* #what-about-backporting-changes-across-the-point-of-change */}
 
 For the most part, Git is able to handle the file renames very easily. Where a new file is backported, then a conflict will arise, but in most cases this is just to confirm that the file name guessed by Git is correct. The same is true where a file is deleted.
 
-### What does this mean for our Moodle Downloads?
+### What does this mean for our Moodle Downloads? {/* #what-does-this-mean-for-our-moodle-downloads */}
 
 Moodle provides a number of standard zip downloads. These are intended as drop-and-go solutions.
 
@@ -269,7 +269,7 @@ The change of restructuring directories will not have any immediate impact on th
 
 In the future, any change to the build process will require changes to the download server to ensure that when the zip files are generated these build steps are also run and the generated files included with Moodle.
 
-### How does this change impact Git history?
+### How does this change impact Git history? {/* #how-does-this-change-impact-git-history */}
 
 Git is a very mature tool and is capable of understanding moves and renames.
 
@@ -279,11 +279,11 @@ When a file is moved the move forms a part of the file history, but individual l
 - A `git log` will only show the history since the file was placed in its current location. To view the full history including file moves, you can use `git log --follow`. The follow option can be set by default using the [`log.follow`](https://git-scm.com/docs/git-log#Documentation/git-log.txt-logfollow) configuration option.
 - The `git merge` and `git cherry-pick` commands are aware of renames and work well for existing files.
 
-## Future possibilities
+## Future possibilities {/* #future-possibilities */}
 
 In addition to the initial and near-future benefits of this change, several other possibilities are opened by this change. Some of these are described in more detail below.
 
-### Adoption of a Frontend Framework {#frontend-framework}
+### Adoption of a Frontend Framework {/* #frontend-framework */}
 
 The addition of a [NodeJS installation and build phase](#build-step-nodejs) to the deployment system opens up the possibility for Moodle to formally adopt a new Frontend web framework such as React, Angular, Vite, and others.
 
@@ -292,7 +292,7 @@ At the moment this is not possible because:
 - there is no current build phase; and
 - it is generally advised not to place source files and the `node_modules` directory in a web-accessible location.
 
-### Design System
+### Design System {/* #design-system */}
 
 Adoption of a new [Frontend framework](#frontend-framework) opens up the possibility of a tightly coupled integration with a Design System from the outset.
 
@@ -300,7 +300,7 @@ Systems such as [Storybook](https://storybook.js.org/) allow components to be de
 
 Ideally a design system would be incorporated with any new frontend system from day zero to realise the most from it.
 
-### A simplified plugintype system
+### A simplified plugintype system {/* #a-simplified-plugintype-system */}
 
 Moodle currently has a number of plugin types whose directories are spread across the Moodle codebase. Some are in top-level directories, others are nested.
 
@@ -322,7 +322,7 @@ Each of these classes would extend the relevant _feature_ class, containing full
 
 Whilst a migration to a single simplified plugin type does not specifically require a move to a location outside of the web root, it again allows for the promotion of best practices.
 
-### Moodle Framework
+### Moodle Framework {/* #moodle-framework */}
 
 With the combination of several of the above changes, it would be possible to support the concept of Moodle-as-a-framework.
 

@@ -11,7 +11,7 @@ This page describes the correct way to include third party libraries with your p
 
 A third party library refers to any library where the latest version of the code is not maintained and hosted by Moodle. An example is "Mustache.php". Following this process means that all third party libraries are correctly listed in the page *Site administration > Development > Third party libraries*, they can be tracked and kept up to date - and we will not introduce conflicting versions of the same library in different places.
 
-## Instructions
+## Instructions {/* #instructions */}
 
 The process for including a third-party library is the same for both core code and plugins, except for the location of the `thirdpartylibs.xml` file. For core code, this file is located in the lib folder, while for plugins, it is found in the root of the plugins folder. There are several steps to follow.
 
@@ -25,12 +25,12 @@ The process for including a third-party library is the same for both core code a
 1. Note any creation, update or deletion of third party libraries in your plugins `upgrade.txt` or [CHANGES](/docs/apis/commonfiles#changes).
 1. Run `grunt ignorefiles` to regenerate ignored files path
 
-## Exceptions:
+## Exceptions: {/* #exceptions */}
 
-### JavaScript AMD modules
+### JavaScript AMD modules {/* #JavaScript-amd-modules */}
 
 JavaScript AMD modules cannot exist in a sub-folder - they must exist in a single .js file in the amd/src folder for your plugin. So - the process for AMD files is the same as above, except that the license and readme_moodle.txt file contents must be added as a JavaScript comment to the top of the libraries .js file.
 
-## See also
+## See also {/* #see-also */}
 
 - [Grunt](../../development/tools/nodejs.md#grunt) - Information for installing and using Grunt

@@ -62,6 +62,7 @@ Anders
 Anderson
 Andi
 Andolo
+Andre
 Andrea
 Andreas
 Andres
@@ -390,6 +391,7 @@ Garske
 Gary
 Gasper
 Gasset
+Gattinger
 Gaudreau
 Gauk
 Gaur
@@ -431,6 +433,7 @@ Grigory
 Groshek
 Grzegorz
 Grähn
+Guest
 Guillaume
 Guillermo
 Guinoiseau
@@ -481,6 +484,7 @@ Holland
 Holliday
 Holman
 Hoobin
+Hoogeveen
 Howard
 Hugh
 Hughes
@@ -601,8 +605,10 @@ Kathrin
 Katie
 Katrib
 Kavalerchik
+Keel
 KeenRivals
 Kelada
+Kelly
 Kelsh
 Kelty
 Kenneth
@@ -637,6 +643,7 @@ Krista
 Krister
 Kristian
 Kristiina.Bax
+Krueger
 Kucherov
 Kudelis
 Kudriavtsev
@@ -693,6 +700,7 @@ Lundberg
 Luuk
 Lyons
 Lévesque
+Löwis
 Macgirvin
 Madden
 Mady
@@ -845,6 +853,7 @@ Nießen
 Nigel
 Nikhil
 Nikita
+Niko
 Nikolai
 Nikoloutsopoulos
 Nils
@@ -872,6 +881,7 @@ Oosthuizen
 Opitz
 Oquist
 Ordóñez
+Ortega
 Orzu
 Osanda
 Osswald
@@ -886,6 +896,7 @@ Panchal
 Panning
 Paola
 Parry
+Parzer
 Pascal
 Pataleta
 Patrick
@@ -926,6 +937,7 @@ Pinheiro
 Pinto
 Pisarev
 Piton
+Plasger
 Platts
 Poder
 Poggenpohl
@@ -958,6 +970,7 @@ Ramindu
 Ramiro
 Ransom
 Raphaël
+Raquel
 Rasmussen
 Rawson
 Raymond
@@ -1083,6 +1096,7 @@ Skandalis
 Skoda
 Skylar
 Smith
+Smucker
 Sokolov
 Soler
 Solomon
@@ -1246,6 +1260,7 @@ Wesley
 Wharton
 Wheeler
 Whelpton
+Wibisono
 Wiese
 Wijaya
 Wijesooriya
@@ -1283,6 +1298,7 @@ Yolanda
 Yoshida
 Yuliya
 Yuriy
+Yusuf
 Zachary
 Zanatta
 Zane
@@ -1371,6 +1387,7 @@ dovix
 dpalou
 drabureesh
 dragos5436
+dustinhuynh
 dwoolhead
 eWallah
 ecastrolt
@@ -1479,6 +1496,7 @@ mikewaters
 miksik
 mindforge
 minkowski
+mioyu-ubiq
 mits
 mjollnir_
 mkassaei
@@ -1495,6 +1513,7 @@ nicolasconnault
 nlnrose
 nobelium
 nread
+nvhai248
 oliviervalentin
 paca70
 palojacko
@@ -1527,6 +1546,7 @@ robertall
 roelmann
 rtcn2
 rwijaya
+rxdelacruz
 safatshahin
 sam_marshall
 samhemelryk

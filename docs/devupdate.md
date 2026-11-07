@@ -1,10 +1,10 @@
 ---
-title: Moodle 5.2 developer update
+title: Moodle 6.0 developer update
 tags:
 - Core development
-- Moodle 5.2
+- Moodle 6.0
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
-This page highlights the important changes that are coming in Moodle 5.2 for developers.
+This page highlights the important changes that are coming in Moodle 6.0 for developers.

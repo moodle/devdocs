@@ -8,13 +8,13 @@ sidebar_position: 8
 ---
 In the Moodle software, security issues are treated very seriously. Even though a lot of time is dedicated designing the code to avoid such problems, it is inevitable in a project of this size that new vulnerabilities will occasionally be discovered.
 
-## Disclosure policy
+## Disclosure policy {/* #disclosure-policy */}
 
 In Moodle, *responsible disclosure* is practised, which means there is a policy of disclosing all security issues that come to our attention, but only after we have solved the issue and given registered Moodle sites time to upgrade or patch their installations.
 
 When reporting a security issue, you are asked to observe these same guidelines too. Beyond communicating with the security team, **do not share your knowledge of security issues with the public at large**.
 
-## How can I report a  security issue?
+## How can I report a  security issue? {/* #how-can-i-report-a--security-issue */}
 
 Please submit your findings via our **[security issue submission form](https://moodle.org/security/report)**, providing step by step instructions if possible. The form is broken down into sections to help you provide all of the necessary details to help us assess the issue.
 
@@ -28,7 +28,7 @@ In line with the responsible disclosure philosophy, please do *not* post about s
 
 :::
 
-## How we deal with a reported security issue
+## How we deal with a reported security issue {/* #how-we-deal-with-a-reported-security-issue */}
 
 1. Issues submitted via the submission form are received by Bugcrowd's triage team, who perform initial triage on the report.
 1. If the issue is confirmed valid and not a duplicate by the Bugcrowd team, the Moodle security team reviews the issue and evaluates its potential impact on all supported versions of Moodle. If the issue was submitted directly into Tracker rather than via the form, this will be the first step in the process.
@@ -42,7 +42,7 @@ In line with the responsible disclosure philosophy, please do *not* post about s
 1. [Open Source Software Security](http://oss-security.openwall.org/wiki/) is notified about it.
 1. Issues submitted via the submission form are marked fixed in the Bugcrowd platform, which will notify the reporter.
 
-## Rewards
+## Rewards {/* #rewards */}
 
 When a patched Moodle LMS security vulnerability is announced via [CVE](http://cve.mitre.org/) and in the [Moodle security news forum](http://moodle.org/mod/forum/view.php?id=7128), credits are always given by naming the first reporter of the issue (regardless of submission method).
 
@@ -50,14 +50,14 @@ In addition to this, if an email address is provided with submissions made via t
 
 At this time, no paid public bug bounty program is offered.
 
-## See also
+## See also {/* #see-also */}
 
 - [Security issue development process](../../process.md#security-issues)
 - [Moodle Penetration Testing](./penetration-testing.md)
 
-## Translations
+## Translations {/* #translations */}
 
-<!-- cspell:disable -->
+{/* <!-- cspell:disable --> */}
 
 - [Sicherheitsprozeduren](https://docs.moodle.org/de/Sicherheitsprozeduren)
 - [Procedimientos de seguridad en Moodle](https://docs.moodle.org/es/Procedimientos_de_seguridad_en_Moodle)

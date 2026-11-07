@@ -27,7 +27,7 @@ From Moodle versions 2.9 to 3.8, Moodle supported JavaScript modules written usi
 
 For information on the development toolchain, see our [documentation on how to install and use NodeJS and Grunt](/general/development/tools/nodejs#grunt).
 
-### Development mode
+### Development mode {/* #development-mode */}
 
 <Since version="3.8" />
 
@@ -48,7 +48,7 @@ If you use `mdk`, this is also applied from the `mdk run dev` script.
 
 :::
 
-### Transpiling Modules
+### Transpiling Modules {/* #transpiling-modules */}
 
 Since all JavaScript must now be transpiled you must use the [Grunt](/general/development/tools/nodejs#grunt) in order for you changes to appear in the browser.
 
@@ -64,7 +64,7 @@ This can be very slow, and therefore during development we recommend having `gru
 npx grunt watch
 ```
 
-## ES Modules
+## ES Modules {/* #es-modules */}
 
 <Since version="3.8" />
 
@@ -86,7 +86,7 @@ export const init = () => {
 };
 ```
 
-### Export default
+### Export default {/* #export-default */}
 
 There is one slight difference between the ESM definition for exporting modules and the RequireJS (AMD) definition.
 
@@ -110,13 +110,13 @@ export default () => {
 
 If both are used, then the _default_ export will override all _named_ exports.
 
-### Inline JavaScript
+### Inline JavaScript {/* #inline-JavaScript */}
 
 Moodle's minimum browser version requirements means that ESM usage is now supported in all supported browsers. Whilst this is true, we do recommend that inline code be kept to a minimum and that inline code should call code in a module instead.
 
 This has benefits including being easier to maintain, and debug, and the availability of linting and performance tooling.
 
-## First module for your plugin
+## First module for your plugin {/* #first-module-for-your-plugin */}
 
 This shows the absolute minimum module you need to get started adding modules to your plugins.
 
@@ -159,7 +159,7 @@ export const init = (first, last) {
 };
 ```
 
-## "Hello World" I am a JavaScript Module
+## "Hello World" I am a JavaScript Module {/* #hello-world-i-am-a-JavaScript-module */}
 
 Each JavaScript module is contained in a single source file in the `<componentdir>/amd/src` folder. The final name of the module is taken from the file name and the component name - for example, `block_overview/amd/src/helloworld.js` would create a module named `block_overview/helloworld`. the name of the module is important when you want to call it from somewhere else in the code.
 
@@ -214,9 +214,9 @@ export const informal = (name) => {
 
 It's important to note that only functions which are exported will be callable from outside the module. These are part of the public API.
 
-## Advanced examples
+## Advanced examples {/* #advanced-examples */}
 
-### Loading modules dynamically
+### Loading modules dynamically {/* #loading-modules-dynamically */}
 
 In some cases you may not know which modules you need to load in advance. In these situations you can make use of dynamic imports to import them when you know what they are.
 
@@ -238,7 +238,7 @@ export const showTheThing = (thingToShow) => {
 };
 ```
 
-## Calling modules from a page
+## Calling modules from a page {/* #calling-modules-from-a-page */}
 
 After you have created your JavaScript modules, then next area to consider is how you should call them.
 
@@ -257,9 +257,9 @@ Please note that:
 AMD / JS code can also be embedded on a page via mustache templates
 see here: https://docs.moodle.org/dev/Templates#What_if_a_template_contains_JavaScript.3F
 
-## Troubleshooting
+## Troubleshooting {/* #troubleshooting */}
 
-### npm-shrinkwrap.json sha1 / sha512 changes
+### npm-shrinkwrap.json sha1 / sha512 changes {/* #npm-shrinkwrapjson-sha1--sha512-changes */}
 
 If you have installed additional dependencies at some point into your `node_modules` folder then you may find that this can cause changes to the `npm-shrinkwrap.json` file. The easiest way to rectify this is:
 
@@ -268,6 +268,6 @@ git checkout npm-shrinkwrap.json
 npm ci
 ```
 
-## But I have a mega JS file I don't want loaded on every page?
+## But I have a mega JS file I don't want loaded on every page? {/* #but-i-have-a-mega-js-file-i-dont-want-loaded-on-every-page */}
 
 Loading all JS files at once and stuffing them in the browser cache is the right choice for MOST js files, there are probably some exceptions. For these files, you can rename the JavaScript file to end with the suffix "-lazy.js" which indicates that the module will not be loaded by default, it will be requested the first time it is used. There is no difference in usage for lazy loaded modules, the require() call looks exactly the same, it's just that the module name will also have the "-lazy" suffix.

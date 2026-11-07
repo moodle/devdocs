@@ -5,11 +5,11 @@ tags:
 - Moodle 5.1
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 This page highlights the important changes that are coming in Moodle 5.1 for developers.
 
-## Activity modules: now activities can define a secondary purpose
+## Activity modules: now activities can define a secondary purpose {/* #activity-modules-now-activities-can-define-a-secondary-purpose */}
 
 <Since version="5.1" issueNumber="MDL-85598" />
 
@@ -20,7 +20,7 @@ From now on, activity modules can define two different features in their `PLUGIN
 
 See the [Activity module support functions](./apis/plugintypes/mod#activity-module-support-functions) for further information.
 
-## Code Structure
+## Code Structure {/* #code-structure */}
 
 <Since version="5.1" issueNumber="MDL-83424" />
 
@@ -30,7 +30,7 @@ Most Moodle tooling has already been updated to support this, but minor web serv
 
 See the [Restructure documentation](./guides/restructure/index.md) for further information on some of the changes required.
 
-## Course format: activity chooser is now in core_courseformat
+## Course format: activity chooser is now in core_courseformat {/* #course-format-activity-chooser-is-now-in-core_courseformat */}
 
 <Since version="5.1" issueNumber="MDL-85597" />
 The activity chooser logic and templates have been relocated from `core_course` to `core_courseformat`. This change may impact themes that override the activity chooser rendering, but it also enables format plugins to provide custom outputs and templates for activity chooser elements, similar to other course content components. For details on how format can override outputs, see the [overriding output classes from course format plugin page](http://localhost:3000/docs/5.1/apis/plugintypes/format#override-output-classes).s
@@ -52,7 +52,7 @@ Additionally, renderer methods for loading the activity chooser have changed. Ch
 - Move any overridden templates or AMD modules to their new locations in `core_courseformat`.
 - Follow any deprecation notices for the activity chooser.
 
-## Course format: activity chooser footer has been changed
+## Course format: activity chooser footer has been changed {/* #course-format-activity-chooser-footer-has-been-changed */}
 
 <Since version="5.1" issueNumber="MDL-85597" />
 
@@ -68,7 +68,7 @@ The activity chooser UI now features a dedicated footer button for adding the se
 - In most cases, simply remove the `modal.setFooter(...)` call from your AMD module, as the new activity chooser footer now manages this logic for you.
 - For more advanced customizations, ensure you use the `course/templates/local/activitychooser/footer.mustache` template to render your custom footer content.
 
-## Course format: max sections setting is now deprecated
+## Course format: max sections setting is now deprecated {/* #course-format-max-sections-setting-is-now-deprecated */}
 
 <Since version="5.1" issueNumber="MDL-84291" />
 
@@ -78,7 +78,7 @@ Although the `maxsections` setting remains available for now, it is marked as de
 
 If your format plugin relies on `maxsections`, you should add a custom setting in your plugin to control section limits. For reference, see the week format plugin, which now uses its own setting for this functionality.
 
-## Course format: new activity chooser rendering
+## Course format: new activity chooser rendering {/* #course-format-new-activity-chooser-rendering */}
 
 <Since version="5.1" issueNumber="MDL-80295" />
 

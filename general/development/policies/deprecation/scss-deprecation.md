@@ -13,13 +13,13 @@ Since Moodle 4.4, it's possible to deprecate SCSS styles and classes. This allow
 
 The most common scenarios where this functionality can be used is when specific SCSS code is not being used anywhere, when the name of a class is changed or a class should not be used in the future.
 
-:::info When should SCSS be removed?
+:::info[When should SCSS be removed?]
 
 There are situations where deprecation does not make sense. For example when a whole functionality is being removed, or a very specific SCSS class is no longer used by the code. If it is very unlikely that the SCSS class is used by any other code, it can simply be removed without the full deprecation process.
 
 :::
 
-## How it works
+## How it works {/* #how-it-works */}
 
 A new SCSS file called `deprecated.scss` has been added to the `theme/boost/scss/moodle` folder. All the deprecated SCSS code should be added to this file.
 
@@ -31,7 +31,7 @@ If all the styles depending on the same parent are deprecated, is strongly recom
 
 :::
 
-## How to deprecate SCSS code
+## How to deprecate SCSS code {/* #how-to-deprecate-scss-code */}
 
 To deprecate SCSS code, follow these steps:
 
@@ -82,7 +82,7 @@ If there is no section for the current version in the `deprecated.scss` file, it
 }
 ```
 
-## Final deprecation
+## Final deprecation {/* #final-deprecation */}
 
 When adding SCSS code to the `deprecated.scss` file, it is important to add it under the comment with the version when the code was deprecated. If that comment still doesn't exist, it should be added:
 
@@ -96,7 +96,7 @@ And alongside with that, a new issue should be created in the tracker to remove 
 
 After 4 major versions, the deprecated SCSS code will be removed from the `deprecated.scss` file.
 
-## Check deprecated styles in Behat tests
+## Check deprecated styles in Behat tests {/* #check-deprecated-styles-in-behat-tests */}
 
 Is is possible to check if deprecated styles are being used while running Behat tests. To do so, add the `--scss-deprecations` flag to the Behat init command.
 

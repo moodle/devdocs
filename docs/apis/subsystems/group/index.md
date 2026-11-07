@@ -40,7 +40,7 @@ Some other core subsystems also need to be group-aware.
 
 :::
 
-## Group modes
+## Group modes {/* #group-modes */}
 
 There are three different group modes, these modes allow for restrictions to be put in place for access and visibility.
 
@@ -58,7 +58,7 @@ Only groups with `participation` enabled are available for use in Separate and V
 
 Calling `groups_get_all_groups()` with the `$participationonly` argument set to `true` will only return groups with `participation` enabled. If you are calling this function within an activity plugin, you will usually want to do this unless you have a good reason not to.
 
-## Group visibility
+## Group visibility {/* #group-visibility */}
 
 To help protect user privacy, each group has a `visibility` setting, which controls who can see the group and its members. The possible values are defined as `GROUPS_VISIBILITY_*` constants in grouplib.
 
@@ -72,13 +72,13 @@ Otherwise, the following restrictions apply:
 
 The core API functions in `groupslib` such as `groups_get_all_groups()` and `groups_get_members()` will respect the group visibility and the current user's permissions, so use these as far as possible when fetching data about groups and their members. The `\core_group\visibility` class also has helper functions to determine whether a user is allowed to see a group, or its members.
 
-## File locations
+## File locations {/* #file-locations */}
 
 The Groups API is currently defined in [lib/grouplib.php](https://github.com/moodle/moodle/blob/main/lib/grouplib.php). This contains global functions which have the `groups_` prefix, for example: `groups_get_group()`.
 
-## Examples
+## Examples {/* #examples */}
 
-### How to find and use the "current" group
+### How to find and use the "current" group {/* #how-to-find-and-use-the-current-group */}
 
 This is using an example from the module forums.
 
@@ -97,7 +97,7 @@ $currentgroupname = groups_get_group_name($currentgroupid);
 // Do as you please with your newly obtained group information.
 ```
 
-### How to make sure that the current user can see a given item in your activity
+### How to make sure that the current user can see a given item in your activity {/* #how-to-make-sure-that-the-current-user-can-see-a-given-item-in-your-activity */}
 
 The following example:
 
@@ -132,7 +132,7 @@ if (!in_array($discussiongroup->groupid, array_keys($groups))) {
 // Continue on with group specific discussion
 ```
 
-### How to display a group menu
+### How to display a group menu {/* #how-to-display-a-group-menu */}
 
 The following example will display the group selection dropdown using the `groups_print_activity_menu()` function.
 
@@ -156,7 +156,7 @@ $url = new moodle_url('/mod/forum/view.php', ['id' => $cm->id]);
 groups_print_activity_menu($cm, $url);
 ```
 
-### How to get just the groups that the current user can see
+### How to get just the groups that the current user can see {/* #how-to-get-just-the-groups-that-the-current-user-can-see */}
 
 The following example will check whether the current user has permission to see hidden groups on a course, and **if they do not**, will apply additional conditions to a query to restrict the results to just those groups they should see.
 
@@ -191,7 +191,7 @@ A query like this must join on `group_members` as group visibility is dependant 
 
 <Since versions={[ 4.3 ]} />
 
-### Group GeoPattern images
+### Group GeoPattern images {/* #group-geopattern-images */}
 
 Moodle now allows groups to generate GeoPattern images. This is intended to improve the overall user experience by allowing users to differentiate groups easier in their Moodle activities and resources.
 
@@ -210,7 +210,7 @@ $group_svg_image = moodle_url::make_pluginfile_url(
 
 This will create an SVG image for the specified group, which can then be used in Moodle activities and resources. Make sure to customize the code to fit your specific use case.
 
-## Further reading
+## Further reading {/* #further-reading */}
 
 - [Groups FAQ](https://docs.moodle.org/en/Groups_FAQ)
 - [Groupings FAQ](https://docs.moodle.org/en/Groupings_FAQ)

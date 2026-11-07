@@ -1,4 +1,4 @@
-<!-- markdownlint-disable first-line-heading -->
+{/* <!-- markdownlint-disable first-line-heading --> */}
 Moodle requires that you create a table for your plugin whose name exactly matches the plugin name. For example, the `certificate` activity module _must_ have a database table named `certificate`. Certain fields within this table are
 also _required_:
 

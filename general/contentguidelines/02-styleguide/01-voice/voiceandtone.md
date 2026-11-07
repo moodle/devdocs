@@ -16,34 +16,34 @@ For example, our friendly voice may have a reassuring tone when a user is doing 
 
 Below are some examples of how our tone flexes in different situations:
 
-#### Press release
+#### Press release {/* #press-release */}
 
 Audience: Public, external stakeholders, staff, media
 Tone: Direct and impartial
 > Today, Moodle announced the release of Moodle LMS 4.0 and a radically improved user experience for Moodle's 300 million learners worldwide. Informed by an extensive discovery and consultation process…
 
-#### Social post
+#### Social post {/* #social-post */}
 
 Audience: Team members, partners, community, potential users
 Tone: Warm, friendly, engaging, conversational and informative
 > Meet Moodle HQ in Brisbane! Will you join us at MoodleMoot Australia to improve your skills, meet the community and learn from experts?
 
-#### Blog post / Newsletter
+#### Blog post / Newsletter {/* #blog-post--newsletter */}
 
 Audience: Team members, partners, community, potential users
 Tone: Informative, helpful, conversational, educational
 > Moodle HQ will be at ALTC to meet members of the education community face-to-face and share ideas about how our open source platform can help you achieve your goals.
 
-#### Success stories
+#### Success stories {/* #success-stories */}
 
 Audience: Team members, partners, community, potential users
 Tone: Engaging, inspiring, emotive
 > The school district is part of a growing, vibrant area that traces its history back to the 1800s when the first school in Dearborn was just a simple, one-room log cabin.
 
-#### In-product copy
+#### In-product copy {/* #in-product-copy */}
 
 Audience: Users
 Tone: Helpful, informative and conversational
 > Looks like you typed the wrong site address. Check for typos and try again.
 
-<!-- cspell:ignore ALTC -->
+{/* <!-- cspell:ignore ALTC --> */}

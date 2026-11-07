@@ -6,11 +6,11 @@ tags:
  - Moodle App
 ---
 
-## Plugin changes are not picked up in the app
+## Plugin changes are not picked up in the app {/* #plugin-changes-are-not-picked-up-in-the-app */}
 
 Remember to go through the list of tips in the [Seeing plugin changes in the app](./index.md#seeing-plugin-changes-in-the-app) section.
 
-## Invalid response received
+## Invalid response received {/* #invalid-response-received */}
 
 You might get this error when using the [core-site-plugins-call-ws](./api-reference.md#core-site-plugins-call-ws) directive or similar.
 
@@ -32,7 +32,7 @@ Similarly, if the Web Service returns `null` you need to tell the app not to exp
 </ion-button>
 ```
 
-## I can't return an object or array in `otherdata`
+## I can't return an object or array in `otherdata` {/* #i-cant-return-an-object-or-array-in-otherdata */}
 
 If you try to return an object or an array in any field inside `otherdata` in [content responses](./api-reference.md#content-responses), the Web Service call will fail with the following error:
 
@@ -47,3 +47,17 @@ Each field in `otherdata` must be a string, number or boolean; it cannot be an o
 ```
 
 The app will parse the string and it will be available as an array or object.
+
+## I want to display embedded content that requires the Moodle site as referer {/* #i-want-to-display-embedded-content-that-requires-the-moodle-site-as-referer */}
+
+In Moodle 5.2 ([MDL-87082](https://moodle.atlassian.net/browse/MDL-87082)), a new script was added to support embedding content in the app using the Moodle site as the referer. Moodle App 5.2 and later support this script.
+
+To use it in your plugin, there are two different approaches:
+
+1. If you're rendering HTML content using `core-format-text`, the iframe elements that need a referer should have `data-app-site-referer="true"`.
+
+2. If your plugin renders the iframe directly, use `core-iframe` with `addSiteReferer` set to true:
+
+```html ng2
+<core-iframe src="<% src %>" [addSiteReferer]="true"></core-iframe>
+```

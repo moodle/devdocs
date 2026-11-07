@@ -5,17 +5,17 @@ tags:
   - core_favourites
 ---
 
-## Overview
+## Overview {/* #overview */}
 
-### What is a favourite?
+### What is a favourite? {/* #what-is-a-favourite */}
 
 The favourites API allows you to mark items as favourites for a given user. Marking an item as a favourite is akin to adding a web page to your browser favourites (or bookmarks), or marking someone in your contacts as a favourite. The API provides a means to create, read and delete favourite items, allowing any component to favourite arbitrary items as they see fit.
 
-### What can be marked as a favourite?
+### What can be marked as a favourite? {/* #what-can-be-marked-as-a-favourite */}
 
 Almost any 'item' can be marked as a favourite, provided it is something which can be identified by a unique integer id.
 
-### Identifying items
+### Identifying items {/* #identifying-items */}
 
 In order to store a favourite, and be able to uniquely identify it for later retrieval, 4 fields are required. These are: **component**, **itemtype**, **itemid** and **contextid**. You will see these in a range of API calls.
 
@@ -25,9 +25,9 @@ The two fields **component** and **itemtype** make up a pairing representing the
 
 The **contextid** is the id of the context in which the item is being marked as a favourite. For example, a user's course might be marked as a favourite at the course context, whereas a user's conversation with another user might be marked as a favourite at the user context. It's also possible that items of a certain *type* (remember, this is the `{component, itemtype}` pairing) will be marked as favourites in different contexts, based on the context of the item itself. For example, consider the case in messaging, in which we have a group conversation (one which is linked to a course group), and an individual conversation between two users. Setting the group conversation as a favourite would require the course context to be used, whereas doing the same for the individual conversation would require a user context. Which contextid to use is a decision that must be made by the component creating the favourite.
 
-## Using the API
+## Using the API {/* #using-the-api */}
 
-### Getting a service object
+### Getting a service object {/* #getting-a-service-object */}
 
 Favourites relies on a service layer to provide functionality to consumers. Getting a service object is as simple as using the service factory methods.
 
@@ -39,7 +39,7 @@ $ufservice = \core_favourites\service_factory::get_service_for_user_context($use
 
 The returned `$ufservice` is an object of type \core_favourites\local\service\user_favourite_service.
 
-### Creating a favourite
+### Creating a favourite {/* #creating-a-favourite */}
 
 Let's say we want to set a course as a favourite. Note: In core, this is done by using the favourite *type* {'core_course', 'courses'}.
 
@@ -63,7 +63,7 @@ $favourite = $ufservice->create_favourite('core_course', 'courses', $course->id,
 
 The returned $favourite is an object of type \core_favourites\local\entity\favourite.
 
-### Reading favourites
+### Reading favourites {/* #reading-favourites */}
 
 There are several read actions supported by the service object.
 
@@ -74,7 +74,7 @@ public function favourite_exists(string $component, string $itemtype, int $itemi
 public function get_favourite(string $component, string $itemtype, int $itemid, \context $context) : favourite;
 ```
 
-### Deleting a favourite
+### Deleting a favourite {/* #deleting-a-favourite */}
 
 The service provides the method:
 
@@ -89,7 +89,7 @@ $ufservice = \core_favourites\service_factory::get_service_for_user_context($use
 $ufservice->delete_favourite('core_course', 'courses', $course->id, $coursecontext);
 ```
 
-### Including favourites in external queries
+### Including favourites in external queries {/* #including-favourites-in-external-queries */}
 
 Most of the time, you should ask the service to find favourite items for you. Sometimes, however, rather than fetching the favourites from the service, you'll just want to include the relevant information in those records from an existing query. You might want to do this if dealing with performance sensitive code where additional queries are undesirable.
 

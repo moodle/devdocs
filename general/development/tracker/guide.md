@@ -14,7 +14,7 @@ For an intro guide to the tracker, see [Tracker introduction](./).
 
 To do anything more than browsing and searching in the tracker, you'll need to [create an account](http://moodle.atlassian.net/secure/Signup%21default.jspa) and then login.
 
-## Tracker groups and permissions
+## Tracker groups and permissions {/* #tracker-groups-and-permissions */}
 
 There are a number of groups used to define the potential of users in Tracker. Here are some important ones.
 
@@ -32,9 +32,9 @@ You can browse a project without being logged in to Tracker, however you will be
 
 :::
 
-## Tracker fields
+## Tracker fields {/* #tracker-fields */}
 
-### When creating an issue
+### When creating an issue {/* #when-creating-an-issue */}
 
 | Field  | Values  | Notes  |
 |---|---|---|
@@ -46,7 +46,7 @@ You can browse a project without being logged in to Tracker, however you will be
 | **Component/s** | The area(s) in Moodle which is affected by the issue. | Select `Unknown` if you are unsure. |
 | **Security Level** | <ul><li>**None**<br/>Viewable by everyone, including non-logged-in users</li><li>**Could be a security issue**<br/>Viewable by members of the jira-developers group</li><li>**Minor security issue**<br/>Viewable by members of the security team only</li><li>**Serious security issue**<br/>Viewable by members of the security team only</li></ul> | <ul><li>The reporter can view the issue they reported, regardless of the security level set.</li><li>The higher the security level, the fewer people who can view the issue.</li><li>The `Could be a security issue` should only be used temporarily when the issue is reported. A decision should be made as soon as possible to set another level.</li></ul> |
 
-### When editing an issue
+### When editing an issue {/* #when-editing-an-issue */}
 
 Once an issue has been created, the following additional fields are able to be changed/set by editing the issue. Not all users can edit all fields.
 
@@ -72,13 +72,13 @@ Once an issue has been created, the following additional fields are able to be c
 | **Documentation link**  | URL of related documentation.  | When changes require documentation to be updated, this field should be filled.  |
 | **Comment**  | <ul><li>Notes made by all interested parties.</li><li>A detailed register of all changes that relate to this bug.</li></ul>  |   |
 
-### When closing an issue
+### When closing an issue {/* #when-closing-an-issue */}
 
 | Field  | Values  | Notes  |
 |---|---|---|
 | **Resolution**  | Issues that may/must have the **Fixed versions** field filled:<ul><li>**Fixed**<br/>Issue has been fixed; a code change has been integrated into Moodle code. It's **mandatory** to set the *Fixed versions* field for these issues.</li><li>**Done**<br/>Normally used for tasks, epics... issues that don't "own" code changes in Moodle, but still have required actions (planning, review, adjust some related system...). When relevant or clearly related with any release it's **recommended** to set the *Fixed versions* to them.</li></ul>Issues that must not have the **Fixed versions** field filled:<ul><li>**Won't Fix**<br/>The problem described is an issue which will never be fixed. Specific reasons should be given.</li><li>**Not a bug**<br/>This issue is not a bug. The issue may have been logged in error. Use this code if the bug was fixed by another bug report or in some earlier Moodle version.</li><li>**Duplicate**<br/>The problem is a duplicate of an existing issue</li><li>**Incomplete**<br/>More information was needed to understand this bug, but it was not provided.</li><li>**Can't Reproduce**<br/>Attempts at reproduce the issue failed. If more information appears later, please open a new issue.</li><li>**Deferred**<br/>The resolution to this bug will be deferred to a later release or to a fix in a third-party plugin used in Moodle.</li></ul>  | This field is only displayed when resolving or closing a bug.  |
 
-## See also
+## See also {/* #see-also */}
 
 - [Tracker introduction](./) - less scary version of this page for new users.
 - [Process](../process)

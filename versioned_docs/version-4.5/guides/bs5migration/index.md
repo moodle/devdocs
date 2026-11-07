@@ -4,7 +4,7 @@ tags:
 - Bootstrap
 ---
 
-<!-- markdownlint-disable no-inline-html -->
+{/* <!-- markdownlint-disable no-inline-html --> */}
 
 Bootstrap 5 has evolved with new features, improvements, and changes in its latest version, and along with this some breaking changes also come, which need to be addressed in the migration process.
 
@@ -30,13 +30,13 @@ The migration process will be done in a gradual way, and the steps will be execu
 
 :::
 
-## Refactoring BS4 features dropped in BS5
+## Refactoring BS4 features dropped in BS5 {/* #refactoring-bs4-features-dropped-in-bs5 */}
 
 <Since version="4.4" issueNumber="MDL-79914" />
 
 Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. To prepare for this, some of the current Bootstrap 4 classes usages have been replaced with version 5 compatible classes. Doing these refactors in advance, will help us to upgrade to Bootstrap 5 in the future.
 
-### Badges
+### Badges {/* #badges */}
 
 - Badge colour class helpers `.badge-*` have been replaced with background utilities (use `.bg-primary` instead of `.badge-primary`) combined with the corresponding text colour classes (`.text-dark` or `.text-white`) to meet accessibility contrast.
 - The `.badge-pill` class has been replaced with `.rounded-pill`
@@ -57,7 +57,7 @@ Some of the Bootstrap 4 classes will be deprecated or dropped in its version 5. 
 
 </ValidExample>
 
-### Media
+### Media {/* #media */}
 
 The `.media` component has been replaced with utility classes.
 
@@ -91,7 +91,7 @@ The `.media` component has been replaced with utility classes.
 
 </ValidExample>
 
-### Mixins
+### Mixins {/* #mixins */}
 
 The following previously deprecated mixins will be dropped in BS5, so they can be refactored:
 
@@ -136,7 +136,7 @@ The following previously deprecated mixins will be dropped in BS5, so they can b
 
 </ValidExample>
 
-### Forms
+### Forms {/* #forms */}
 
 - The `.form-group` helper class has been replaced with margins.
 - The `.form-inline` helper class has been replaced with utility classes.
@@ -165,7 +165,7 @@ The following previously deprecated mixins will be dropped in BS5, so they can b
 
 </ValidExample>
 
-### Card decks
+### Card decks {/* #card-decks */}
 
 The `.card-deck` helper class has been replaced with utility classes.
 
@@ -203,7 +203,7 @@ The `.card-deck` helper class has been replaced with utility classes.
 
 </ValidExample>
 
-## Create a BS5 "bridge"
+## Create a BS5 "bridge" {/* #create-a-bs5-bridge */}
 
 <Since version="4.5" issueNumber="MDL-79917" />
 
@@ -211,7 +211,7 @@ Some simple breaking changes could be also addressed in advance creating a BS5 "
 
 A new SCSS file `bs5-bridge.scss` has been created in the `theme/boost/scss/moodle` folder. This file will contain the necessary changes to make the codebase compatible with Bootstrap 5.
 
-:::info Example of a bridge in `bs5-bridge.scss`
+:::info[Example of a bridge in `bs5-bridge.scss`]
 
 ```css
 /* In Bootstrap 5 the .no-gutters class has been replaced with .g-0, so we can
@@ -223,7 +223,7 @@ add a new class in the bridge file to make the codebase compatible with BS5. */
 
 :::
 
-### No gutters
+### No gutters {/* #no-gutters */}
 
 The `.no-gutters` grid class has been replaced with `.g-0`.
 
@@ -249,7 +249,7 @@ The `.no-gutters` grid class has been replaced with `.g-0`.
 
 </ValidExample>
 
-### Close button
+### Close button {/* #close-button */}
 
 The `.close` class has been replaced with `.btn-close`.
 
@@ -279,7 +279,7 @@ The `.close` class has been replaced with `.btn-close`.
 
 </ValidExample>
 
-### Directional utilities
+### Directional utilities {/* #directional-utilities */}
 
 Several utilities have been renamed to use logical property names instead of directional ones.
 
@@ -312,11 +312,11 @@ Several utilities have been renamed to use logical property names instead of dir
 
 </ValidExample>
 
-### Theme color level
+### Theme color level {/* #theme-color-level */}
 
 In Bootstrap 4.x we used a function called `theme-color-level()` which was removed in Bootstrap 5. The prototype of the function was:
 
-:::info Previous version using `theme-color-level()`
+:::info[Previous version using `theme-color-level()`]
 
 ```css
 @function theme-color-level($colorname, $level) {
@@ -334,7 +334,7 @@ So, two major difference in the new version:
 - we use the color definition instead of the color name
 - we use percentages instead of levels.
 
-:::info Current version using `shift-color()`
+:::info[Current version using `shift-color()`]
 
 ```css
 @function shift-color($color, $weight) {
@@ -351,7 +351,7 @@ So instead of working with numbers (1 to 11), we now use percentages.
 To simplify this transition, Bootstrap 5 has established a new equivalency: each level increment from 1
 now corresponds to a 10% shift.
 
-:::info From absolute levels to percentages
+:::info[From absolute levels to percentages]
 
 For example, if a theme-color-level was previously set to a value of 1, it will now be set to 10%.
 A level of two will be adjusted by 20% and so on.
