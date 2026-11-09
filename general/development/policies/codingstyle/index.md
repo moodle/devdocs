@@ -404,7 +404,49 @@ Core global variables in Moodle are identified using uppercase variables (that i
 
 ### Constants
 
-Constants should always be in upper case, and always start with [Frankenstyle](./frankenstyle.md) prefix and plugin name (in case of activities the module name only for legacy reasons). They should have words separated by underscores.
+New code should declare constants as **class constants**. The use of global constants and namespaced constants is discouraged.
+
+#### Class constants {/* #class-constants */}
+
+Class constants should always be in upper case, with words separated by underscores. This is consistent with [PSR-1](https://www.php-fig.org/psr/psr-1/#41-constants).
+
+Class constants do not need a [Frankenstyle](./frankenstyle.md) prefix, because the class namespace already identifies the component they belong to.
+
+<ValidExample>
+
+```php
+namespace mod_forum\local;
+
+class discussion_display {
+    /** @var int Display replies flat, with the oldest first. */
+    public const MODE_FLAT_OLDEST = 1;
+
+    /** @var int Display replies in nested form. */
+    public const MODE_NESTED = 3;
+}
+```
+
+</ValidExample>
+
+<InvalidExample>
+
+```php
+namespace mod_forum\local;
+
+class discussion_display {
+    // Class constants should not be in camelCase or PascalCase.
+    public const modeFlatOldest = 1;
+    public const ModeNested = 3;
+}
+```
+
+</InvalidExample>
+
+#### Global constants {/* #global-constants */}
+
+Global constants, declared using `define()` or `const` outside of a namespace, should be avoided in new code. Use a class constant instead.
+
+Where a global constant is used, it should always be in upper case, and always start with [Frankenstyle](./frankenstyle.md) prefix and plugin name (in case of activities the module name only for legacy reasons). It should have words separated by underscores.
 
 <ValidExample>
 
@@ -414,6 +456,35 @@ define('FORUM_MODE_FLATOLDEST', 1);
 ```
 
 </ValidExample>
+
+<InvalidExample>
+
+```php
+define('SHOWCATEGORIES_NONE', '0'); // Global constants must start with the Frankenstyle prefix.
+define('forum_mode_flatoldest', 1); // Global constants must be in upper case.
+```
+
+</InvalidExample>
+
+#### Namespaced constants {/* #namespaced-constants */}
+
+Namespaced constants, declared using `const` at the namespace level, should be avoided. They are not supported by class autoloading, so the file declaring them must be included manually before they can be used. Use a class constant instead.
+
+:::note
+
+Some examples in [PSR-12](https://www.php-fig.org/psr/psr-12/) use PascalCase names for namespaced constants. These examples do not apply to class constants, which must be in upper case as described above.
+
+:::
+
+<InvalidExample>
+
+```php
+namespace mod_forum;
+
+const MODE_FLAT_OLDEST = 1;
+```
+
+</InvalidExample>
 
 ### Booleans and the null value
 
@@ -1849,7 +1920,7 @@ class example implements templatable {
 
 ### Defines
 
-All defines should be documented in the following way:
+New code should use [class constants](#class-constants) rather than defines. Where a define is used, it should be documented in the following way:
 
 <ValidExample>
 
