@@ -1,0 +1,1889 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Moodle LMS",
+        "description": "User REST API planning contract. List and retrieve users are aligned with MDL-90234-main; other operations remain proposals.",
+        "summary": "Moodle LMS REST API",
+        "license": {
+            "name": "GNU GPL v3 or later",
+            "url": "https://www.gnu.org/licenses/gpl-3.0.html"
+        },
+        "version": "2026111100"
+    },
+    "paths": {
+        "/user/password-reset": {
+            "post": {
+                "summary": "Request a password-reset email",
+                "x-implementation-status": "proposed",
+                "description": "Request a time-limited password-reset link for an account identified by **either username or email**, not both. This is public account recovery, not an administrative password operation.\n\n### Privacy and delivery\n\n- Return the same `202` response for known, unknown, ambiguous and ineligible accounts, including account-specific delivery failures.\n- Do not expose account IDs, tokens, delivery status or a result lookup URL. Use a common response path and deferred delivery to avoid account-dependent response timing.\n- Log delivery failures privately, regardless of the site's username-disclosure setting.\n- Reuse Moodle's existing recovery eligibility, token expiry, single-use and redemption rules. The email links to Moodle's existing password-reset page.\n- **Requesting a link does not change the password or force a logout.** Ambiguous email matches must not select an arbitrary account.\n\n### Abuse and retries\n\n- Apply account-independent request throttling and per-identifier delivery limits.\n- Apply the same identifier-limit behaviour whether or not an account exists. Suppress repeated emails without changing the generic acceptance response.\n- Request-level throttling may return `429` with `Retry-After`. Service-wide failures may return a generic `503`; account-specific outcomes remain private.\n\n### Permissions\n\nNo API authentication or OAuth scope is required.",
+                "tags": [
+                    "core_user"
+                ],
+                "security": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PasswordResetEmailRequest"
+                            },
+                            "examples": {
+                                "byEmail": {
+                                    "summary": "Request a reset link by email",
+                                    "description": "Request recovery for an email address. The response does not reveal whether a matching, eligible account exists.",
+                                    "value": {
+                                        "email": "student@example.invalid"
+                                    }
+                                },
+                                "byUsername": {
+                                    "summary": "Request a reset link by username",
+                                    "description": "Use a username instead of an email address, for example when multiple accounts share an email address.",
+                                    "value": {
+                                        "username": "new.student"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "202": {
+                        "description": "Request accepted for consideration. This does not confirm account existence, eligibility or email delivery. No `Location` or delivery receipt is returned.",
+                        "headers": {
+                            "Cache-Control": {
+                                "$ref": "#/components/headers/NoStore"
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PasswordResetEmailResponse"
+                                },
+                                "examples": {
+                                    "accepted": {
+                                        "summary": "Generic recovery response",
+                                        "description": "Identical for matching, missing, ambiguous and ineligible accounts.",
+                                        "value": {
+                                            "message": "If an eligible account matches, password-reset instructions will be sent."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/core--router--response--invalid_parameter_response"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/ValidationFailure"
+                    },
+                    "429": {
+                        "$ref": "#/components/responses/PasswordRequestThrottled"
+                    },
+                    "503": {
+                        "description": "Recovery is temporarily unavailable for all callers. Never use this response to reveal an account-specific delivery failure.",
+                        "content": {
+                            "application/problem+json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/core--router--schema--objects--problem_response_schema"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/users/{userId}/password": {
+            "patch": {
+                "summary": "Set a user's password",
+                "x-implementation-status": "proposed",
+                "description": "Set an explicit password through a supported authentication plugin. The password must meet site policy and is **never returned**. This operation is for administrators; users change their own passwords through Moodle's web UI, where plugin-specific change flows and platform security controls are applied. A self-service password API is not provided.\n\n### Required OAuth scopes\n\nSatisfy one set:\n\n- all of:\n  - core_user:user:update\n\nAll callers also need the system-level `moodle/user:update` capability. `update:self` alone is insufficient. Guest or deleted accounts and authentication mechanisms without supported password management are rejected. Only site administrators may change another administrator's credentials.\n\n### Behaviour\n\nSet `requirePasswordChange` only when you also want to change that persistent account requirement; omission preserves it. Use Moodle's password lifecycle and session-invalidation policy. No credential email is sent. Repeating the same desired state does not intentionally generate another password, but history or policy checks may reject a repeat. Do not retry blindly after an uncertain result.\n\nTo generate a temporary password instead, use POST `/user/users/{userId}/password-reset`. This write-only resource has no readable password representation or ETag; conditional writes are not offered.",
+                "tags": [
+                    "core_user"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/core--router--parameters--path_user"
+                    }
+                ],
+                "security": [
+                    {
+                        "oauth2": [
+                            "core_user:user:update"
+                        ]
+                    },
+                    {
+                        "api_key": []
+                    },
+                    {
+                        "cookie": []
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PasswordUpdate"
+                            },
+                            "examples": {
+                                "setExplicitPassword": {
+                                    "summary": "Set a password and require a change at next login",
+                                    "description": "Administrative credential update using a password that must satisfy site policy. This illustrative password must not be reused.",
+                                    "value": {
+                                        "password": "Example-Only-Do-Not-Reuse-47!",
+                                        "requirePasswordChange": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "Password updated. No response body or password is returned.",
+                        "headers": {
+                            "Cache-Control": {
+                                "$ref": "#/components/headers/NoStore"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/core--router--response--invalid_parameter_response"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthenticated"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/core--router--response--not_found_response"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/ValidationFailure"
+                    }
+                }
+            }
+        },
+        "/user/users/{userId}/password-reset": {
+            "post": {
+                "summary": "Generate a temporary password",
+                "x-implementation-status": "proposed",
+                "description": "Generate a temporary password by submitting to the user's password-reset resource. **The existing password changes immediately**, and a password change is required at next login. No password or recovery token is returned.\n\n### Required OAuth scopes\n\nSatisfy one set:\n\n\n\n- all of:\n  - core_user:user:update\n\nAll callers also need the system-level `moodle/user:update` capability. `update:self` alone is insufficient. Guest or deleted accounts and authentication mechanisms without supported password management are rejected. Only site administrators may reset another administrator's credentials.\n\n### Delivery and result\n\nEmail the new password after successful credential replacement unless `sendPasswordEmail` is false. A delivery failure is logged and reported as `failed`; it does not undo the reset. If email is suppressed, arrange access separately. Use Moodle's password lifecycle and session-invalidation policy.\n\nReturn `200` with the immediate, non-secret outcome. No individually addressable reset record, result GET, retention period or `Location` header is introduced.\n\n### Retries\n\nEach accepted POST replaces the password again. **Do not repeat POST to retry email delivery or resolve an uncertain result.** This operation offers no duplicate-request protection. For a public reset link instead, use POST `/user/password-reset`.",
+                "tags": [
+                    "core_user"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/core--router--parameters--path_user"
+                    }
+                ],
+                "security": [
+                    {
+                        "oauth2": [
+                            "core_user:user:update"
+                        ]
+                    },
+                    {
+                        "api_key": []
+                    },
+                    {
+                        "cookie": []
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PasswordGeneration"
+                            },
+                            "examples": {
+                                "emailTemporaryPassword": {
+                                    "summary": "Generate and email a temporary password",
+                                    "description": "Replace the existing password, send the new password by email and require a password change at next login.",
+                                    "value": {
+                                        "sendPasswordEmail": true
+                                    }
+                                },
+                                "suppressEmail": {
+                                    "summary": "Generate a temporary password without email",
+                                    "description": "Replace the existing password without emailing or returning it. Arrange access separately before using this option.",
+                                    "value": {
+                                        "sendPasswordEmail": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Password replaced. The immediate outcome reports email failure separately; it does not undo the reset. No reset record or result URL is created.",
+                        "headers": {
+                            "Cache-Control": {
+                                "$ref": "#/components/headers/NoStore"
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PasswordResetResult"
+                                },
+                                "examples": {
+                                    "emailAccepted": {
+                                        "summary": "Password reset and email accepted",
+                                        "description": "The password was replaced. Mail-transport acceptance does not guarantee inbox delivery.",
+                                        "value": {
+                                            "status": "completed",
+                                            "credentialEmailStatus": "sent"
+                                        }
+                                    },
+                                    "emailFailed": {
+                                        "summary": "Password reset but email failed",
+                                        "description": "The password was still replaced and the mail failure was logged. Do not repeat the reset POST to resend the email.",
+                                        "value": {
+                                            "status": "completed",
+                                            "credentialEmailStatus": "failed"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/core--router--response--invalid_parameter_response"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthenticated"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/core--router--response--not_found_response"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/ValidationFailure"
+                    }
+                }
+            }
+        },
+        "/user/users": {
+            "post": {
+                "summary": "Create a user",
+                "description": "Create a Moodle account with the required identity fields and optional standard profile fields. Custom profile fields will be supported in a future revision. This is **not self-registration** and does not create an account in an external identity provider.\n\n### Required OAuth scopes\n\nSatisfy one set:\n\n\n\nRequired OAuth scopes:\n- all of:\n  - core_user:user:create\n\nRequired Moodle capabilities:\n- all of:\n  - moodle/user:create\n\nPopulating initial fields requires no additional read or update permission.\n\n### Passwords\n\n- Password requirements depend on the selected authentication plugin and site configuration. If it uses a Moodle-managed password, supply `password` **or** `generatePassword: true`, never both; otherwise, omit both. This is validated at runtime against the configured plugin.\n- Generated passwords require a change at first login. Email is sent after creation unless `sendPasswordEmail` is `false`.\n- If email is suppressed, arrange access separately through password reset or credential provisioning.\n- Explicit passwords must meet site policy. They are not emailed and do not require a forced password change.\n- **Passwords are never returned.**\n\n### Creation and result\n\nThe account and standard profile fields are validated and saved atomically, applying defaults and required or unique field rules. Initial provisioning is distinct from later authentication-plugin field locks. Moodle's creation lifecycle is followed, and `user_created` is emitted after the supplied data is saved.\n\nUse `language` for the stored language preference and `timeZonePreference` for the stored IANA timezone preference (`null` selects the server default). The computed `id`, `fullName`, `profileImageUrl`, `profileImageUrlSmall` and effective `timeZone` are not inputs; `deleted` is also excluded.\n\nReturn `201` with an `{id, username}` receipt and a numeric-ID resource URL in `Location`. No ETag is returned; an authorised GET retrieves the representation and ETag. See the `201` response for email delivery outcomes.",
+                "tags": [
+                    "core_user"
+                ],
+                "x-implementation-status": "proposed",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserCreation"
+                            },
+                            "examples": {
+                                "explicitPassword": {
+                                    "summary": "Create an account with an explicit password",
+                                    "description": "Create a manual-authentication account using an initial password that must satisfy the site's password policy. No credential email is sent, and the password is never included in the response. This illustrative password must not be reused.",
+                                    "value": {
+                                        "username": "new.student",
+                                        "firstName": "New",
+                                        "lastName": "Student",
+                                        "email": "new.student@example.invalid",
+                                        "password": "Example-Only-Do-Not-Reuse-47!"
+                                    }
+                                },
+                                "externalAuthentication": {
+                                    "summary": "Provision an externally authenticated account",
+                                    "description": "Create the Moodle record for a user authenticated by LDAP, without supplying or generating a Moodle-managed password. The ldap authentication plugin must be supported by the site; this request does not create an account in the external directory.",
+                                    "value": {
+                                        "username": "directory.student",
+                                        "firstName": "Directory",
+                                        "lastName": "Student",
+                                        "email": "directory.student@example.invalid",
+                                        "authenticationMethod": "ldap"
+                                    }
+                                },
+                                "generatedPassword": {
+                                    "summary": "Create an account and email a generated password",
+                                    "description": "Create a manual-authentication account with initial standard profile values. Generate an initial password and email it to the user, who must change it on first login. Email delivery is enabled by default.",
+                                    "value": {
+                                        "username": "new.student",
+                                        "firstName": "New",
+                                        "lastName": "Student",
+                                        "email": "new.student@example.invalid",
+                                        "idnumber": "STUDENT-001",
+                                        "language": "en",
+                                        "calendarType": "gregorian",
+                                        "firstNamePhonetic": "Nyoo",
+                                        "lastNamePhonetic": "Stoo-dent",
+                                        "middleName": "Alex",
+                                        "alternateName": "New",
+                                        "profileImageAlt": "Student portrait",
+                                        "confirmed": true,
+                                        "suspended": false,
+                                        "timeZonePreference": null,
+                                        "generatePassword": true,
+                                        "profile": {
+                                            "city": "Perth",
+                                            "country": "AU",
+                                            "description": "<p>New student</p>",
+                                            "descriptionFormat": 1
+                                        }
+                                    }
+                                },
+                                "bulkProvisioningWithoutEmail": {
+                                    "summary": "Create an account without sending a credential email",
+                                    "description": "Create an account as part of bulk provisioning, generating an initial password without emailing or returning it. Arrange access separately through password reset or credential provisioning. The creation receipt reports credentialEmailStatus as notRequested.",
+                                    "value": {
+                                        "username": "bulk.student",
+                                        "firstName": "Bulk",
+                                        "lastName": "Student",
+                                        "email": "bulk.student@example.invalid",
+                                        "generatePassword": true,
+                                        "sendPasswordEmail": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Account and supplied fields created. For generated passwords, `credentialEmailStatus` is:\n\n- `sent`: accepted by the mail transport, not guaranteed inbox delivery.\n- `failed`: delivery failed and was logged; the account still exists.\n- `notRequested`: email was suppressed.\n\n**Do not repeat POST to retry email delivery.** Passwords are never returned.",
+                        "headers": {
+                            "Location": {
+                                "description": "URL of the created user resource, with its numeric id.",
+                                "required": true,
+                                "schema": {
+                                    "type": "string",
+                                    "format": "uri-reference"
+                                }
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserCreationReceipt"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/core--router--response--invalid_parameter_response"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthenticated"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "409": {
+                        "$ref": "#/components/responses/UniquenessConflict"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/ValidationFailure"
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2": [
+                            "core_user:user:create"
+                        ]
+                    },
+                    {
+                        "api_key": []
+                    },
+                    {
+                        "cookie": []
+                    }
+                ]
+            },
+            "get": {
+                "description": "List the user accounts visible to the current caller. An OAuth token with only `core_user:user:read:self` can list only the current user's account.\n\n### Required OAuth scopes\n\nSatisfy one set:\n\n- all of:\n  - core_user:user:read:self\n- all of:\n  - core_user:user:read",
+                "summary": "List users",
+                "tags": [
+                    "core_user"
+                ],
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Only return users whose name, or any visible identity field, contains this value.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "$ref": "#/components/parameters/core--router--parameters--query_page"
+                    },
+                    {
+                        "$ref": "#/components/parameters/core--router--parameters--query_pagesize"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "A comma-separated list of fields to sort by. Prefix a field with `-` for descending order. Sortable fields: firstName, lastName.",
+                        "schema": {
+                            "type": "string",
+                            "pattern": "^-?(firstName|lastName)(,-?(firstName|lastName))*$"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserCollection"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/core--router--response--invalid_parameter_response"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/core--router--response--not_found_response"
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2": [
+                            "core_user:user:read:self"
+                        ]
+                    },
+                    {
+                        "oauth2": [
+                            "core_user:user:read"
+                        ]
+                    },
+                    {
+                        "api_key": []
+                    },
+                    {
+                        "cookie": []
+                    }
+                ],
+                "x-implementation-status": "implemented-in-MDL-90234-main"
+            }
+        },
+        "/user/users/{userId}": {
+            "delete": {
+                "summary": "Delete a user",
+                "description": "Delete a Moodle account through the normal account-deletion lifecycle, including enrolment and role cleanup, session invalidation, event emission and authentication-plugin notification. **This does not completely erase personal data.**\n\n### Required OAuth scopes\n\nSatisfy one set:\n\n\n\n- all of:\n  - core_user:user:delete\n\nAll callers also need the system-level `moodle/user:delete` capability.\n\n### Restrictions\n\n- Guest accounts, site administrators and your own account cannot be deleted (`403`).\n- Missing or already-deleted users return `404`.\n\n### Concurrency and result\n\n`If-Match` is optional and uses the ETag from GET `/user/users/{userId}`. A mismatch returns `412` without deletion; without `If-Match`, deletion is unconditional.\n\nSuccess returns `204` with no body. Repeating the request may return `404`; the account remains deleted.",
+                "tags": [
+                    "core_user"
+                ],
+                "x-implementation-status": "proposed",
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/core--router--parameters--path_user"
+                    },
+                    {
+                        "name": "If-Match",
+                        "in": "header",
+                        "description": "Optional ETag of the core user representation. A mismatch returns 412; omitting the header permits unconditional deletion.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "The user account was deleted. No response body."
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/core--router--response--invalid_parameter_response"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthenticated"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/core--router--response--not_found_response"
+                    },
+                    "412": {
+                        "$ref": "#/components/responses/core--router--response--precondition_failed_response"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/ValidationFailure"
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2": [
+                            "core_user:user:delete"
+                        ]
+                    },
+                    {
+                        "api_key": []
+                    },
+                    {
+                        "cookie": []
+                    }
+                ]
+            },
+            "get": {
+                "description": "Fetch the account representation for one user.\n\n### Required OAuth scopes\n\nSatisfy one set:\n\n- all of:\n  - core_user:user:read:self\n- all of:\n  - core_user:user:read",
+                "summary": "Fetch a user",
+                "tags": [
+                    "core_user"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/core--router--parameters--path_user"
+                    },
+                    {
+                        "$ref": "#/components/parameters/core--router--schema--parameters--if_none_match"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                            "ETag": {
+                                "$ref": "#/components/headers/core--router--schema--parameters--etag"
+                            }
+                        },
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "$ref": "#/components/responses/core--router--response--not_modified_response"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/core--router--response--invalid_parameter_response"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/core--router--response--not_found_response"
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2": [
+                            "core_user:user:read:self"
+                        ]
+                    },
+                    {
+                        "oauth2": [
+                            "core_user:user:read"
+                        ]
+                    },
+                    {
+                        "api_key": []
+                    },
+                    {
+                        "cookie": []
+
+                    }
+                ],
+                "x-implementation-status": "implemented-in-MDL-90234-main"
+            },
+            "patch": {
+                "description": "Update the supplied account and standard profile fields. **Omitted fields remain unchanged.** Support for Custom profile fields will be added in a later revision.\n\n### Required OAuth scopes\n\nSatisfy one set:\n\n- all of:\n  - core_user:user:update:self\n- all of:\n  - core_user:user:update\n\nMoodle capabilities also apply. The self scope grants no administrative permission.\n\n### Field rules\n\n- Email, suspension and administrative changes to `username`, `idnumber`, `authenticationMethod` or `confirmed` require applicable account-edit capabilities, including `moodle/user:update`, even when updating yourself.\n- Suspending an account invalidates its active sessions.\n- Field-level and self-edit permissions, validation, and source/target authentication-plugin locks apply. Changing `authenticationMethod` cannot provision an external identity or implicitly set or reset a password.\n- Use `language` for the stored language preference and `timeZonePreference` for a supported IANA timezone or `null` for the server default. The effective `timeZone` is read-only, including under forced site policy; the internal `99` sentinel is not accepted.\n- `id`, `fullName` and picture URLs are read-only; `deleted` is excluded from inputs. Clear optional text with an empty string; `null` is otherwise rejected.\n\n### Concurrency\n\n`If-Match` is optional and uses the same caller-visible representation as GET. A stale ETag returns `412`; without `If-Match`, the update is unconditional.",
+                "summary": "Update a user",
+                "x-implementation-status": "proposed",
+                "tags": [
+                    "core_user"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/core--router--parameters--path_user"
+                    },
+                    {
+                        "name": "If-Match",
+                        "in": "header",
+                        "description": "An optional ETag, as previously returned by this resource. If supplied, the change is only applied if it matches the current ETag of the resource, otherwise the request fails with a 412 Precondition Failed response. If omitted, the change is applied unconditionally.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        },
+                        "headers": {
+                            "ETag": {
+                                "$ref": "#/components/headers/core--router--schema--parameters--etag"
+                            }
+                        }
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/core--router--response--invalid_parameter_response"
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthenticated"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/Forbidden"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/core--router--response--not_found_response"
+                    },
+                    "409": {
+                        "$ref": "#/components/responses/UniquenessConflict"
+                    },
+                    "412": {
+                        "$ref": "#/components/responses/core--router--response--precondition_failed_response"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/ValidationFailure"
+                    }
+                },
+                "requestBody": {
+                    "description": "Supply at least one writable account or standard profile field. Omitted fields are unchanged. Only timeZonePreference accepts null (server default); other null, unknown, read-only and customFields inputs are rejected with `422`. descriptionFormat specifies the Moodle content format when writing description.",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserUpdate"
+                            },
+                            "examples": {
+                                "updateNameAndTimeZone": {
+                                    "summary": "Update a user's name and time zone",
+                                    "description": "Change only the supplied core fields. Other values remain unchanged. The caller must have permission to edit this user, and authentication-plugin field locks still apply.",
+                                    "value": {
+                                        "firstName": "Alex",
+                                        "lastName": "Student",
+                                        "timeZonePreference": "Australia/Perth"
+                                    }
+                                },
+                                "updateAccountDetails": {
+                                    "summary": "Update account identifiers, language and additional names",
+                                    "description": "Administrative fields require applicable account-edit permissions; self scope alone is insufficient.",
+                                    "value": {
+                                        "username": "alex.student",
+                                        "idnumber": "STUDENT-001",
+                                        "language": "en",
+                                        "calendarType": "gregorian",
+                                        "authenticationMethod": "manual",
+                                        "confirmed": true,
+                                        "firstNamePhonetic": "Al-ex",
+                                        "lastNamePhonetic": "Stoo-dent",
+                                        "middleName": "Morgan",
+                                        "alternateName": "Alex",
+                                        "profileImageAlt": "Alex smiling"
+                                    }
+                                },
+                                "followServerTimeZone": {
+                                    "summary": "Follow the server default timezone",
+                                    "value": {
+                                        "timeZonePreference": null
+                                    }
+                                },
+                                "updateDescription": {
+                                    "summary": "Update a formatted profile description",
+                                    "value": {
+                                        "description": "<p>A <strong>formatted</strong> profile.</p>",
+                                        "descriptionFormat": 1
+                                    }
+                                },
+                                "updateEmail": {
+                                    "summary": "Change a user's email address",
+                                    "description": "Set a new email address. This administrative field requires moodle/user:update, even when changing the caller's own account. Site email uniqueness rules apply.",
+                                    "value": {
+                                        "email": "alex.student@example.invalid"
+                                    }
+                                },
+                                "suspendAccount": {
+                                    "summary": "Suspend a user account",
+                                    "description": "Suspend the account and invalidate its active sessions. Requires moodle/user:update. Other core fields remain unchanged.",
+                                    "value": {
+                                        "suspended": true
+                                    }
+                                },
+                                "updateLocation": {
+                                    "summary": "Update profile location",
+                                    "description": "Change the user's city and country, leaving all other profile fields unchanged. The country is an ISO 3166-1 alpha-2 code.",
+                                    "value": {
+                                        "city": "Perth",
+                                        "country": "AU"
+                                    }
+                                },
+                                "updateOrganisation": {
+                                    "summary": "Update organisation details",
+                                    "description": "Change the institution and department without modifying other profile fields. Authentication-plugin field locks still apply.",
+                                    "value": {
+                                        "institution": "Example University",
+                                        "department": "Computer Science"
+                                    }
+                                },
+                                "clearOptionalProfileField": {
+                                    "summary": "Clear an optional profile field",
+                                    "description": "Remove the current city value by sending an empty string. Omitted profile fields remain unchanged.",
+                                    "value": {
+                                        "city": ""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2": [
+                            "core_user:user:update:self"
+                        ]
+                    },
+                    {
+                        "oauth2": [
+                            "core_user:user:update"
+                        ]
+                    },
+                    {
+                        "api_key": []
+                    },
+                    {
+                        "cookie": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "PasswordUpdate": {
+                "description": "A new password, which describes whether a password reset is required at next login",
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "password"
+                ],
+                "properties": {
+                    "password": {
+                        "type": "string",
+                        "minLength": 1,
+                        "writeOnly": true,
+                        "description": "Explicit new password satisfying site policy. Never returned."
+                    },
+                    "requirePasswordChange": {
+                        "type": "boolean",
+                        "description": "Desired password-change requirement at next login. Omission preserves the current setting."
+                    }
+                }
+            },
+            "PasswordGeneration": {
+                "description": "Options for generating a new password for a user.",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "sendPasswordEmail": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "Email the generated temporary password. Set false to suppress delivery; the password is never returned."
+                    }
+                }
+            },
+            "PasswordResetResult": {
+                "description": "The result of a password reset operation.",
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "status",
+                    "credentialEmailStatus"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "const": "completed",
+                        "description": "The credential replacement succeeded. Email delivery is reported independently."
+                    },
+                    "credentialEmailStatus": {
+                        "type": "string",
+                        "enum": [
+                            "sent",
+                            "failed",
+                            "notRequested"
+                        ],
+                        "description": "`sent`: accepted by the mail transport, not guaranteed inbox delivery. `failed`: delivery failed and was logged. `notRequested`: email was suppressed."
+                    }
+                }
+            },
+            "PasswordResetEmailRequest": {
+                "description": "Request to send a password reset email to a user.",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Nonblank account username. Do not send an email address in this field unless it is the actual username."
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "minLength": 1,
+                        "description": "Email address used to identify an account. Ambiguous matches receive the same generic acceptance response."
+                    }
+                },
+                "oneOf": [
+                    {
+                        "required": [
+                            "username"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "email"
+                        ]
+                    }
+                ]
+            },
+            "UserCreation": {
+                "description": "Request to create a new user account.",
+                "type": "object",
+                "x-implementation-status": "proposed",
+                "additionalProperties": false,
+                "required": [
+                    "username",
+                    "firstName",
+                    "lastName",
+                    "email"
+                ],
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Nonblank, lowercase username satisfying the site's username policy and local-host uniqueness rules."
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Must not consist only of whitespace."
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Must not consist only of whitespace."
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "description": "Must be unique where required by site policy."
+                    },
+                    "idnumber": {
+                        "type": "string",
+                        "description": "Account identifier, following existing validation without a new uniqueness guarantee."
+                    },
+                    "firstNamePhonetic": {
+                        "type": "string"
+                    },
+                    "lastNamePhonetic": {
+                        "type": "string"
+                    },
+                    "middleName": {
+                        "type": "string"
+                    },
+                    "alternateName": {
+                        "type": "string"
+                    },
+                    "confirmed": {
+                        "type": "boolean",
+                        "description": "Account confirmation, not universal email verification. Omission uses normal provisioning defaults."
+                    },
+                    "suspended": {
+                        "type": "boolean",
+                        "description": "Initial suspension state. Omission uses normal provisioning defaults."
+                    },
+                    "profileImageAlt": {
+                        "type": "string",
+                        "description": "Profile image alternative text, not an image upload."
+                    },
+                    "authenticationMethod": {
+                        "type": "string",
+                        "default": "manual",
+                        "description": "A supported authentication plugin installed on the site. External authentication provisions the Moodle record only. Whether the plugin uses Moodle-managed passwords depends on the plugin and site configuration; credential requirements are validated at runtime."
+                    },
+                    "password": {
+                        "type": "string",
+                        "minLength": 1,
+                        "writeOnly": true,
+                        "description": "Explicit initial password satisfying site policy. Only permitted for a mechanism using a Moodle-managed password. Mutually exclusive with generatePassword: true."
+                    },
+                    "generatePassword": {
+                        "type": "boolean",
+                        "default": false,
+                        "description": "When true, omit password. Generate an initial password and force a password change at first login. Email the password unless sendPasswordEmail is false. Only permitted for a mechanism using a Moodle-managed password. When a password is required, omitting both password and this option is an error."
+                    },
+                    "sendPasswordEmail": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "Controls email delivery when `generatePassword` is true; otherwise this property must be omitted. Defaults to true for generated passwords. Set false for bulk provisioning without credential emails. The generated password is never returned; arrange access separately."
+                    },
+                    "timeZonePreference": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Supported IANA timezone preference, or null for server default. Omission follows server default. Do not send the internal 99 sentinel. Forced site timezone does not overwrite this preference."
+                    },
+                    "language": {
+                        "type": "string",
+                        "description": "Installed language code. Defaults to the site's default when omitted."
+                    },
+                    "calendarType": {
+                        "type": "string",
+                        "description": "Installed calendar type plugin name, such as gregorian. Omission uses normal site defaults; an empty preference follows the site calendar."
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "country": {
+                        "type": "string",
+                        "description": "ISO 3166-1 alpha-2 country code, or empty."
+                    },
+                    "institution": {
+                        "type": "string"
+                    },
+                    "department": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "mobilePhone": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "descriptionFormat": {
+                        "type": "integer",
+                        "description": "Moodle content format for the supplied description; validated against supported FORMAT_* values."
+                    }
+                },
+                "allOf": [
+                    {
+                        "if": {
+                            "required": [
+                                "sendPasswordEmail"
+                            ]
+                        },
+                        "then": {
+                            "required": [
+                                "generatePassword"
+                            ],
+                            "properties": {
+                                "generatePassword": {
+                                    "const": true
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "not": {
+                            "required": [
+                                "password",
+                                "generatePassword"
+                            ],
+                            "properties": {
+                                "generatePassword": {
+                                    "const": true
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "if": {
+                            "properties": {
+                                "authenticationMethod": {
+                                    "const": "manual"
+                                }
+                            }
+                        },
+                        "then": {
+                            "anyOf": [
+                                {
+                                    "required": [
+                                        "password"
+                                    ]
+                                },
+                                {
+                                    "required": [
+                                        "generatePassword"
+                                    ],
+                                    "properties": {
+                                        "generatePassword": {
+                                            "const": true
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "UserCreationReceipt": {
+                "description": "The receipt returned after successfully creating a new user account.",
+                "type": "object",
+                "x-implementation-status": "proposed",
+                "additionalProperties": false,
+                "required": [
+                    "id",
+                    "username"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "credentialEmailStatus": {
+                        "type": "string",
+                        "enum": [
+                            "sent",
+                            "failed",
+                            "notRequested"
+                        ],
+                        "description": "Present only when `generatePassword` is true.\n\n- `sent`: accepted by the mail transport.\n- `failed`: email failed and was logged; the account exists.\n- `notRequested`: `sendPasswordEmail` was false.\n\n**Do not retry account creation to resend credentials.**"
+                    }
+                }
+            },
+            "User": {
+                "description": "A user account in the system.",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "idnumber": {
+                        "type": "string"
+                    },
+                    "fullName": {
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "firstNamePhonetic": {
+                        "type": "string"
+                    },
+                    "lastNamePhonetic": {
+                        "type": "string"
+                    },
+                    "middleName": {
+                        "type": "string"
+                    },
+                    "alternateName": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "country": {
+                        "type": "string",
+                        "description": "ISO 3166-1 alpha-2 country code."
+                    },
+                    "institution": {
+                        "type": "string"
+                    },
+                    "department": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "The visible phone1 value."
+                    },
+                    "mobilePhone": {
+                        "type": "string",
+                        "description": "The visible phone2 value."
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Profile description formatted by the user-details API, with its format given by descriptionFormat."
+                    },
+                    "descriptionFormat": {
+                        "type": "integer",
+                        "description": "Moodle content format of the returned description."
+                    },
+                    "language": {
+                        "type": "string"
+                    },
+                    "calendarType": {
+                        "type": "string",
+                        "description": "Stored calendar type preference (calendartype), subject to user-field visibility. An empty preference follows the site calendar. This is not the effective page calendar."
+                    },
+                    "confirmed": {
+                        "type": "boolean"
+                    },
+                    "authenticationMethod": {
+                        "type": "string"
+                    },
+                    "profileImageUrl": {
+                        "type": "string"
+                    },
+                    "profileImageUrlSmall": {
+                        "type": "string"
+                    },
+                    "profileImageAlt": {
+                        "type": "string"
+                    },
+                    "timeZone": {
+                        "type": "string"
+                    },
+                    "timeZonePreference": {
+                        "type": "string"
+                    },
+                    "suspended": {
+                        "type": "boolean"
+                    },
+                    "deleted": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "Pagination": {
+                "description": "A representation of the pagination",
+                "type": "object",
+                "properties": {
+                    "page": {
+                        "type": "integer"
+                    },
+                    "pageSize": {
+                        "type": "integer"
+                    },
+                    "totalItems": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ],
+                        "description": "Exact collection size, or null when not calculated."
+                    },
+                    "hasMore": {
+                        "type": "boolean",
+                        "description": "Whether another page is available."
+                    }
+                },
+                "required": [
+                    "page",
+                    "pageSize",
+                    "totalItems",
+                    "hasMore"
+                ]
+            },
+            "UserCollection": {
+                "description": "A collection of user accounts, including pagination information.",
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/User"
+                        }
+                    },
+                    "pagination": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Pagination"
+                    }
+                }
+            },
+            "UserUpdate": {
+                "description": "Request to update an existing user account.",
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string",
+                        "minLength": 1,
+                        "description": "Nonblank username following site policy and uniqueness rules. Requires administrative account-edit permission."
+                    },
+                    "idnumber": {
+                        "type": "string",
+                        "description": "Account identifier. Requires administrative account-edit permission; no new uniqueness guarantee."
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "firstNamePhonetic": {
+                        "type": "string"
+                    },
+                    "lastNamePhonetic": {
+                        "type": "string"
+                    },
+                    "middleName": {
+                        "type": "string"
+                    },
+                    "alternateName": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "language": {
+                        "type": "string",
+                        "description": "Stored Moodle language preference, following installed-language validation."
+                    },
+                    "calendarType": {
+                        "type": "string",
+                        "description": "Installed calendar type plugin name, such as gregorian. Omission leaves it unchanged; an empty string clears the preference to follow the site calendar. Null is rejected."
+                    },
+                    "authenticationMethod": {
+                        "type": "string",
+                        "description": "Supported account authentication plugin. Requires administrative account-edit permission and source/target plugin constraints."
+                    },
+                    "confirmed": {
+                        "type": "boolean",
+                        "description": "Account confirmation, not universal email verification. Requires administrative account-edit permission and normal confirmation lifecycle."
+                    },
+                    "profileImageAlt": {
+                        "type": "string",
+                        "description": "Profile image alternative text, not an image upload."
+                    },
+                    "timeZonePreference": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Supported IANA timezone preference, or null for server default. Omission leaves it unchanged. The internal 99 sentinel is not accepted; effective timeZone is read-only."
+                    },
+                    "suspended": {
+                        "type": "boolean"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "country": {
+                        "type": "string"
+                    },
+                    "institution": {
+                        "type": "string"
+                    },
+                    "department": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "mobilePhone": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "descriptionFormat": {
+                        "type": "integer",
+                        "description": "Moodle content format for the supplied description; validated against supported FORMAT_* values."
+                    }
+                },
+                "additionalProperties": false,
+                "minProperties": 1
+            },
+            "PasswordResetEmailResponse": {
+                "description": "The response from a password reset request where the new password is emailed to the user, indicating whether the request was successfully processed.",
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "message"
+                ],
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "const": "If an eligible account matches, password-reset instructions will be sent."
+                    }
+                }
+            },
+            "core--router--schema--objects--problem_response_schema": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "A URI reference that identifies the problem type."
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "A short, human-readable summary of the problem type."
+                    },
+                    "status": {
+                        "type": "integer",
+                        "description": "The HTTP status code generated by the origin server for this occurrence of the problem."
+                    },
+                    "detail": {
+                        "type": "string",
+                        "description": "A human-readable explanation specific to this occurrence of the problem."
+                    },
+                    "instance": {
+                        "type": "string",
+                        "description": " URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if dereferenced."
+                    },
+                    "errorcode": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9_\\-]*$",
+                        "description": "The message of the exception."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A human-readable explanation specific to this occurrence of the problem."
+                    },
+                    "stacktrace": {
+                        "$ref": "#/components/schemas/core--router--schema--objects--stacktrace"
+                    }
+                }
+            },
+            "Problem": {
+                "type": "object",
+                "x-implementation-status": "proposed",
+                "description": "RFC 9457 problem details with Moodle extensions. Generic HTTP failures may omit `code`. Application-specific codes are stable, non-localised lowercase identifiers; they must not reveal information hidden by an endpoint's public error contract.",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "format": "uri-reference"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "integer"
+                    },
+                    "detail": {
+                        "type": "string"
+                    },
+                    "instance": {
+                        "type": "string",
+                        "format": "uri-reference"
+                    },
+                    "code": {
+                        "type": "string",
+                        "pattern": "^[a-z][a-z0-9]*$",
+                        "description": "Documented application-specific identifier, independent of the HTTP status and translated message."
+                    },
+                    "errorcode": {
+                        "type": "integer",
+                        "deprecated": true,
+                        "description": "Legacy numeric compatibility member. Its existing meaning is unchanged; use `code` for new application-specific identifiers."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "Legacy Moodle message, where supplied."
+                    },
+                    "stacktrace": {
+                        "$ref": "#/components/schemas/core--router--schema--objects--stacktrace"
+                    }
+                }
+            },
+            "core--router--schema--objects--stacktrace": {
+                "description": "A stack trace providing details about the sequence of function calls leading to an error.",
+                "examples": [
+                    {
+                        "value": [
+                            {
+                                "file": "/Users/example/Sites/moodle/lib/classes/router/schema/objects/array_of_strings.php",
+                                "line": 48,
+                                "function": "validate_param",
+                                "args": [
+                                    "string",
+                                    "int",
+                                    false,
+                                    "The value 'string' was not of type string."
+                                ]
+                            },
+                            {
+                                "file": "/Users/example/Sites/moodle/lib/classes/router/schema/objects/schema_object.php",
+                                "line": 85,
+                                "function": "validate_data",
+                                "class": "core\\router\\schema\\objects\\array_of_strings",
+                                "type": "->",
+                                "args": [
+                                    {
+                                        "additionalProp1": "string",
+                                        "additionalProp2": "string",
+                                        "additionalProp3": "string"
+                                    }
+                                ]
+                            },
+                            {
+                                "file": "/Users/example/Sites/moodle/lib/classes/router/route.php",
+                                "line": 264,
+                                "function": "validate_data",
+                                "class": "core\\router\\schema\\objects\\schema_object",
+                                "type": "->",
+                                "args": [
+                                    {
+                                        "preferences": {
+                                            "additionalProp1": "string",
+                                            "additionalProp2": "string",
+                                            "additionalProp3": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "file": {
+                            "type": "string"
+                        },
+                        "line": {
+                            "type": "integer"
+                        },
+                        "function": {
+                            "type": "string"
+                        },
+                        "args": {
+                            "type": "object",
+                            "additionalProperties": true
+                        },
+                        "class": {
+                            "type": "string"
+                        },
+                        "type": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "ValidationProblem": {
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/core--router--schema--objects--problem_response_schema"
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "status",
+                            "code",
+                            "details"
+                        ],
+                        "properties": {
+                            "status": {
+                                "type": "integer",
+                                "const": 422
+                            },
+                            "code": {
+                                "type": "string",
+                                "const": "validationerror"
+                            },
+                            "details": {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "field",
+                                        "code",
+                                        "message"
+                                    ],
+                                    "properties": {
+                                        "field": {
+                                            "type": "string",
+                                            "description": "Request-field path using camelCase API names and dotted nesting, for example `profile.country` or `customFields.fields.studentcode`. Custom field shortnames retain their configured spelling."
+                                        },
+                                        "code": {
+                                            "type": "string",
+                                            "pattern": "^[a-z][a-z0-9]*$",
+                                            "description": "Stable, non-localised validation identifier, for example `invalidemail`, `required`, `unknownfield`, `readonlyfield`, `passwordpolicy` or `incompatibleoptions`."
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Human-readable explanation, which may be translated. Do not echo secrets."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "description": "Well-formed input failed validation. Collect independent errors where practical, without guaranteeing an exhaustive list. Never echo passwords or recovery tokens."
+            },
+            "UniquenessProblem": {
+                "description": "Indicates a uniqueness constraint violation, such as a username, email, or custom field that must be unique.",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/core--router--schema--objects--problem_response_schema"
+                    },
+                    {
+                        "type": "object",
+                        "required": [
+                            "status",
+                            "code"
+                        ],
+                        "properties": {
+                            "status": {
+                                "type": "integer",
+                                "const": 409
+                            },
+                            "code": {
+                                "type": "string",
+                                "enum": [
+                                    "usernameexists",
+                                    "emailexists",
+                                    "customfieldnotunique"
+                                ],
+                                "description": "`usernameexists`: username conflicts with an existing account. `emailexists`: email conflicts where the site requires unique email addresses. `customfieldnotunique`: a supplied custom field violates its configured uniqueness rule."
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "responses": {
+            "PasswordRequestThrottled": {
+                "description": "Request-level rate limit exceeded, independently of whether the submitted account exists.",
+                "headers": {
+                    "Retry-After": {
+                        "required": true,
+                        "description": "Seconds before another request should be attempted.",
+                        "schema": {
+                            "type": "integer",
+                            "minimum": 1
+                        }
+                    }
+                },
+                "content": {
+                    "application/problem+json": {
+                        "schema": {
+                        "$ref": "#/components/schemas/core--router--schema--objects--problem_response_schema"
+                        }
+                    }
+                }
+            },
+            "Unauthenticated": {
+                "description": "Authentication is required.",
+                "content": {
+                    "application/problem+json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/core--router--schema--objects--problem_response_schema"
+                        }
+                    }
+                }
+            },
+            "Forbidden": {
+                "description": "The caller lacks the required token scope or Moodle capability, or the operation targets a protected account, an authentication-plugin-locked field or another non-editable field.",
+                "content": {
+                    "application/problem+json": {
+                        "schema": {
+                        "$ref": "#/components/schemas/core--router--schema--objects--problem_response_schema"
+                        }
+                    }
+                }
+            },
+            "core--router--response--invalid_parameter_response": {
+                "description": "Bad Request",
+                "content": {
+                    "application/problem+json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "integer"
+                                },
+                                "detail": {
+                                    "type": "string"
+                                },
+                                "instance": {
+                                    "type": "string"
+                                },
+                                "errorcode": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "stacktrace": {
+                                    "$ref": "#/components/schemas/core--router--schema--objects--stacktrace"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "core--router--response--not_found_response": {
+                "description": "Not Found",
+                "content": {
+                    "application/problem+json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "integer"
+                                },
+                                "detail": {
+                                    "type": "string"
+                                },
+                                "instance": {
+                                    "type": "string"
+                                },
+                                "errorcode": {
+                                    "type": "integer"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "stacktrace": {
+                                    "$ref": "#/components/schemas/core--router--schema--objects--stacktrace"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "core--router--response--not_modified_response": {
+                "description": "Not Modified"
+            },
+            "core--router--response--precondition_failed_response": {
+                "description": "Precondition Failed",
+                "content": {
+                    "application/problem+json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/core--router--schema--objects--problem_response_schema"
+                        }
+                    }
+                }
+            },
+            "ValidationFailure": {
+                "description": "Well-formed input failed field validation: missing required, unknown or read-only fields, invalid values, policy failures or incompatible options. Permission or locked-field failures use `403`; uniqueness conflicts use `409`. Public recovery errors describe input only, never account existence, eligibility or delivery outcomes. Passwords and recovery tokens must not appear in errors.",
+                "content": {
+                    "application/problem+json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/ValidationProblem"
+                        },
+                        "examples": {
+                            "invalidEmail": {
+                                "summary": "Invalid email address",
+                                "description": "A field-level code remains stable even when the human-readable message is translated.",
+                                "value": {
+                                    "type": "about:blank",
+                                    "title": "Unprocessable Content",
+                                    "status": 422,
+                                    "code": "validationerror",
+                                    "detail": "Some fields are invalid.",
+                                    "details": [
+                                        {
+                                            "field": "email",
+                                            "code": "invalidemail",
+                                            "message": "Enter a valid email address."
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "UniquenessConflict": {
+                "description": "A username, email (where site policy requires unique addresses) or custom field violates a uniqueness rule. No creation or update is committed.",
+                "content": {
+                    "application/problem+json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/UniquenessProblem"
+                        },
+                        "examples": {
+                            "usernameExists": {
+                                "summary": "Username already exists",
+                                "description": "Creation was rejected without creating an account.",
+                                "value": {
+                                    "type": "about:blank",
+                                    "title": "Conflict",
+                                    "status": 409,
+                                    "code": "usernameexists",
+                                    "detail": "The username is already in use."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "core--router--parameters--path_user": {
+                "name": "userId",
+                "in": "path",
+                "description": "The user identifier.\n\nThis can be the magic string 'current', or the user's id, idnumber, or username.\n\nIf specifying an id, the value should be in the format `[id]`, for example `123`.\n\nIf specifying an idnumber, the value should be in the format `idnumber:[idnumber]`.\n\nIf specifying a username, the value should be in the format `username:[username]`.",
+                "schema": {
+                    "type": "string",
+                    "pattern": "^(current|\\d+|idnumber:.+|username:.+)$"
+                },
+                "examples": {
+                    "The current user": {
+                        "value": "current"
+                    },
+                    "A user specified by their user id": {
+                        "value": "94853"
+                    },
+                    "A user specified by their idnumber": {
+                        "value": "idnumber:some-student-idnumber               "
+                    },
+                    "A user specified by their username": {
+                        "value": "username:lyona1"
+                    }
+                },
+                "required": true
+            },
+            "core--router--parameters--query_pagesize": {
+                "name": "pageSize",
+                "in": "query",
+                "description": "The number of results per page. Maximum 100.",
+                "schema": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "default": 25
+                }
+            },
+            "core--router--parameters--query_page": {
+                "name": "page",
+                "in": "query",
+                "description": "The page of results to return, starting at 1.",
+                "schema": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "default": 1
+                }
+            },
+            "core--router--schema--parameters--if_none_match": {
+                "description": "An optional ETag, as previously returned by this resource. Include the literal double quotes, for example `\"abc123\"`. If it matches the current ETag, an empty 304 Not Modified response is returned.",
+                "name": "If-None-Match",
+                "in": "header",
+                "schema": {
+                    "type": "string"
+                }
+            }
+        },
+        "examples": {},
+        "requestBodies": {},
+        "headers": {
+            "NoStore": {
+                "description": "Prevent storage of password-management and recovery responses.",
+                "required": true,
+                "schema": {
+                    "type": "string",
+                    "const": "no-store"
+                }
+            },
+            "core--router--schema--parameters--etag": {
+                "description": "The entity-tag of this representation. Preserve the double quotes when sending it in an If-Match or If-None-Match request header.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "\"0123456789abcdef0123456789abcdef01234567\""
+            }
+        },
+        "securitySchemes": {
+            "oauth2": {
+                "type": "oauth2",
+                "flows": {
+                    "authorizationCode": {
+                        "scopes": {
+                            "core_admin:config:read": "Allows reading and viewing of site-wide configuration settings without modifying them.",
+                            "core_admin:config:write": "Allows modification of site configuration settings.",
+                            "core_course:course:backup": "Allows creation of course backups for backup and restore purposes.",
+                            "core_course:course:content:delete": "Allows permanent deletion of content within course activities and resources.",
+                            "core_course:course:content:read": "Allows access to view content within course activities and resources.",
+                            "core_course:course:content:write": "Allows access to create and modify content within course activities and resources.",
+                            "core_course:course:delete": "Allows permanent deletion of courses and course categories.",
+                            "core_course:course:read": "Allows read-only access to the course and course category catalog across the site including related metadata.",
+                            "core_course:course:restore": "Allows access to restore courses from backups.",
+                            "core_course:course:structure:delete": "Allows access to delete course structure entities like course sections, activities, and resources.",
+                            "core_course:course:structure:read": "Allows read-only access to course structure (sections, activities, and resources)",
+                            "core_course:course:structure:write": "Allows access to create and modify course structure entities like sections, activities, and resources.",
+                            "core_course:course:write": "Allows creation of courses and course categories, as well as updating existing course and category metadata and related settings.",
+                            "core_enrol:enrolment:delete": "Allows unenrolment of users from the course, removal of enrolment methods, and removal of role assignments.",
+                            "core_enrol:enrolment:read": "Allows read-only access to retrieve lists of enrolled users, active enrolment methods, role assignments, and enrolment statuses.",
+                            "core_enrol:enrolment:write": "Allows access to enrol users to courses, change enrolment methods, and change role assignments.",
+                            "core_grades:grade:read": "Allows read-only access to the gradebook including grades, grade items, grade categories and feedback comments.",
+                            "core_grades:grade:read:self": "Allows read-only access to the current user's own gradebook including grades, grade items, grade categories and feedback comments.",
+                            "core_grades:grade:write": "Allows access to create and update grade items, categories, and feedback comments, as well as override student grades.",
+                            "core_user:user:create": "Allows access to create user accounts and related data.",
+                            "core_user:user:delete": "Allows the site-wide deletion of user accounts and related data.",
+                            "core_user:user:read": "Allows site-wide read-only access to any user account and related data, including user profile information and user preferences.",
+                            "core_user:user:read:self": "Allows read-only access to the current user's own account and related data, including user profile and user preferences.",
+                            "core_user:user:update": "Allows site-wide updates to user accounts and related data, including user profile and user preferences.",
+                            "core_user:user:update:self": "Allows update to the current user's own account and related data, including user profile and user preferences."
+                        }
+                    }
+                }
+            },
+            "api_key": {
+                "type": "apiKey",
+                "name": "api_key",
+                "in": "header"
+            },
+            "cookie": {
+                "type": "apiKey",
+                "name": "MoodleSession",
+                "in": "cookie"
+            }
+        }
+    },
+    "security": [
+        {
+            "oauth2": []
+        },
+        {
+            "api_key": []
+        },
+        {
+            "cookie": []
+        }
+    ],
+    "externalDocs": {
+        "description": "Moodle Developer Docs",
+        "url": "https://moodledev.io"
+    },
+    "tags": [
+        {
+            "name": "core_user",
+            "description": "Operations related to core user management."
+        }
+    ]
+}

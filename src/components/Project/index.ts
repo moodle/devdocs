@@ -17,6 +17,7 @@
 
 import Person, { type PersonProps } from '../Person';
 import ProjectData from '@site/data/projects.json';
+import type { Project as ProjectSchema } from '@site/schema/projects.d.ts';
 
 export declare interface Link {
     title: string,
@@ -34,12 +35,31 @@ export declare interface ProjectSummaryData {
     discussionLinks?: Array<Link>,
 }
 
-export const getProject = (projectName: string): ProjectSummaryData => {
-    if (!ProjectData.projects[projectName]) {
+export const getProject = (
+    projectName: string|string[],
+    projectData: { [key: string]: ProjectSchema } = ProjectData.projects,
+): ProjectSummaryData => {
+    if (!projectData) {
+        projectData = ProjectData.projects;
+    }
+
+    if (Array.isArray(projectName)) {
+        if (projectName.length > 1) {
+            if (!projectData[projectName[0]]) {
+                throw new Error(`Unknown project ${projectName[0]}`);
+            }
+
+            const thisProject = projectData[projectName[0]];
+            return getProject(projectName.slice(1), thisProject.children);
+        }
+        projectName = projectName[0];
+    }
+
+    if (!projectData[projectName]) {
         throw new Error(`Unknown project ${projectName}`);
     }
 
-    const project = ProjectData.projects[projectName];
+    const project = projectData[projectName];
 
     return {
         projectName,
