@@ -7,6 +7,8 @@ tags:
 
 {/* <!-- markdownlint-disable no-inline-html --> */}
 
+{/* <!-- cspell:ignore httpswwwroot --> */}
+
 This page highlights the important changes that are coming in Moodle 6.0 for developers.
 
 ## $CFG->httpswwwroot property removal
