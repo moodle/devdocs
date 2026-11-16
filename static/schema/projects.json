@@ -52,6 +52,20 @@
         "project": {
             "type": "object",
             "properties": {
+                "children": {
+                    "type": "object",
+                    "patternProperties": {
+                        ".*": {
+                            "$ref": "#/$defs/project"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "unevaluatedProperties": false
+                },
+                "parentProject": {
+                    "type": "string",
+                    "description": "The parent project that this project relates to"
+                },
                 "title": {
                     "type": "string"
                 },
@@ -82,6 +96,16 @@
                     "items": {
                         "$ref": "#/$defs/link"
                     }
+                },
+                "isCollection": {
+                    "type": "boolean",
+                    "description": "Indicates if the project is a collection of sub-projects",
+                    "default": false
+                },
+                "hasOpenApi": {
+                    "type": "boolean",
+                    "description": "Indicates if the project has an OpenAPI specification",
+                    "default": false
                 }
             },
             "required": [

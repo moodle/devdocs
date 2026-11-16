@@ -1,6 +1,39 @@
 {
     "$schema": "../static/schema/projects.json",
     "projects": {
+        "restapi": {
+            "title": "REST API Conversion",
+            "status": "In Progress",
+            "owners": [
+                {
+                    "name": "Andrew Lyons",
+                    "githubUsername": "andrewnicols"
+                }
+            ],
+            "discussionLinks": [],
+            "issueLinks": [],
+            "children": {
+                "users": {
+                    "title": "User Endpoints",
+                    "status": "Pending",
+                    "owners": [
+                        {
+                            "name": "Andrew Lyons",
+                            "githubUsername": "andrewnicols"
+                        }
+                    ],
+                    "discussionLinks": [],
+                    "issueLinks": [
+                        {
+                            "link": "https://moodle.atlassian.net/browse/MDL-90030",
+                            "title": "MDL-90030"
+                        }
+                    ],
+                    "isCollection": true,
+                    "hasOpenApi": true
+                }
+            }
+        },
         "directoryrestructure/index": {
             "title": "Directory Restructure",
             "status": "Complete",

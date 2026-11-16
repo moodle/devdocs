@@ -205,7 +205,7 @@ const config = {
         [
             'docusaurus-plugin-openapi-docs',
             {
-                id: 'openapi',
+                id: 'marketplace-openapi',
                 docsPluginId: 'general',
                 config: {
                     marketplace: {
@@ -217,6 +217,23 @@ const config = {
                         sidebarOptions: {
                             groupPathsBy: 'tag',
                         },
+                    },
+                },
+            },
+        ],
+        [
+            'docusaurus-plugin-openapi-docs',
+            {
+                id: 'restapi-users-openapi',
+                docsPluginId: 'general',
+                config: {
+                    marketplace: {
+                        specPath: 'static/projects/restapi/users/openapi.json',
+                        outputDir: 'general/projects/restapi/users/openapi',
+                        // The reference is read-only: this hides the send button, and
+                        // src/theme/ApiExplorer/Request blocks the form submission.
+                        hideSendButton: true,
+                        showInfoPage: false,
                     },
                 },
             },

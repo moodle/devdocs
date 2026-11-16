@@ -24,7 +24,7 @@ import {
 import Link from '@docusaurus/Link';
 
 export declare type ProjectSummaryProps = {
-  projectName: string,
+  projectName: string|string[],
 } & PropsWithRef<'ProjectSummary'>;
 
 export default function ProjectSummary(props: ProjectSummaryProps): ReactNode {

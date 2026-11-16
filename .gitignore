@@ -13,6 +13,8 @@
 /general/community/plugincontribution/marketplace-api/*
 !/general/community/plugincontribution/marketplace-api/_category_.yml
 
+/general/projects/restapi/*/openapi/*.mdx
+
 # Misc
 .DS_Store
 .env.local
