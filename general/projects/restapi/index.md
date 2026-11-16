@@ -20,4 +20,10 @@ The foundations to deliver a new REST API have been underway for some time with 
 
 The new REST API is intended to replace the legacy Web Service system gradually, with endpoints added over time rather than promising one-to-one parity.
 
-User management is the first reference implementation ([MDL-90030](https://tracker.moodle.org/browse/MDL-90030)), with other core services expected to follow including Course, Cohort, Calendar, Messaging, and other core systems, before expanding out to include all Moodle plugins.
+User management is the first reference implementation ([MDL-90030](https://tracker.moodle.org/browse/MDL-90030)), with other core services expected to follow including:
+
+- Course;
+- Cohort;
+- Calendar;
+- Messaging;
+- and other core systems.
