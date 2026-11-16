@@ -73,6 +73,14 @@ Starting from 4.1 release, we package two Workplace versions in every release:
 {/* <!-- START RELEASES --> */}
 
 <br />
+## Moodle Workplace 5.3 Rolling {/* #moodle-workplace-53-rolling */}
+<ReleaseTable releaseName="5.3" isRolling/>
+
+<br />
+## Moodle Workplace 5.3 {/* #moodle-workplace-53 */}
+<ReleaseTable releaseName="5.3" />
+
+<br />
 ## Moodle Workplace 5.2 Rolling {/* #moodle-workplace-52-rolling */}
 <ReleaseTable releaseName="5.2" isRolling/>
 
