@@ -22,7 +22,7 @@ Moodle ships with several standard modal types for you to re-use including a sim
 
 Modals can be created by calling the static `create` method on the modal type you wish to create, for example:
 
-```javascript title="Creating a stadard modal"
+```javascript title="Creating a standard modal"
 import Modal from 'core/modal';
 
 export const init = async () => {
