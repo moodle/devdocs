@@ -236,7 +236,7 @@ Appending the resource path after the component keeps a consistent, predictable 
 
 Resource names MUST:
 
-- use plural nouns
+- use plural nouns for collections
 - use lowercase
 - use kebab-case
 - avoid verbs
@@ -261,9 +261,22 @@ Resource names MUST:
 
 Resource path segments MUST use kebab-case even when equivalent JSON fields use concatenated lowercase words.
 
+Genuine singleton sub-resources MAY use singular nouns. A singleton MUST identify one subordinate resource within its parent rather than a collection whose members have separate identifiers.
+
+#### SINGLETON EXAMPLES
+
+```http
+/user/users/{userId}/profile
+/user/users/{userId}/password
+```
+
+Collections such as `/user/users` and `/user/users/{userId}/custom-fields` MUST retain plural nouns. Singleton names MUST remain nouns, not action commands.
+
 #### RATIONALE
 
 Plural nouns describe collections consistently regardless of operation, and kebab-case is the de facto web convention for URL path segments because it's case-insensitive-safe, readable, and avoids URL-encoding issues that spaces or underscores can cause in some contexts. Path casing is deliberately decoupled from JSON body casing (see section 9.1) because URIs and JSON serialization follow different ecosystem conventions, and mixing them would force clients to guess which convention applies where.
+
+A user's profile and managed password are single subordinate resources, not artificial collections of profiles or passwords. Singular singleton names express that distinction without weakening plural collection naming or permitting action-based paths.
 
 ---
 
@@ -463,9 +476,24 @@ camelCase is the prevailing convention in modern JSON APIs and matches JavaScrip
 - Arrays SHOULD NOT contain null values
 - Nullable fields SHOULD only exist when semantically required
 
+Response fields MAY use `null` for values that are unavailable or hidden from the caller, preserving a stable response shape without distinguishing those reasons. This meaning MUST be documented, and OpenAPI response schemas MUST explicitly include `null` in the permitted types.
+
+Readable empty strings MUST remain distinct from `null`. Response nullability MUST NOT implicitly permit `null` in mutation requests; request schemas MUST define their own nullability.
+
+#### EXAMPLE
+
+```json
+{
+  "type": ["string", "null"],
+  "description": "The email address, or null if unavailable to this caller."
+}
+```
+
 #### RATIONALE
 
 Explicitly declaring which fields are nullable, rather than leaving it ambiguous, lets OpenAPI schemas and generated client types be accurate, so consumers can rely on strict typing instead of defensive null checks everywhere. Avoiding null inside arrays and only allowing nullable fields where a genuine "no value" state exists in the data model keeps payloads predictable and avoids nulls being used as a stand-in for missing or not-yet-implemented data.
+
+A user response can expose an email address only to authorised callers, or have no recorded last-access time. Declaring these response fields nullable represents the actual contract without revealing why a value is unavailable. It does not imply that sending `null` in a user update clears the field.
 
 ---
 
@@ -638,11 +666,25 @@ GET /api/rest/v{version}/<component>/<resource>/<identifier>
 - authorization validation
 - 404 handling
 - capability enforcement
-- expansion support
+
+#### OPTIONAL Expansion
+
+Single-resource endpoints MAY support expansion of related resources where there is a clear use case. Expansion MUST NOT be required solely to satisfy this endpoint pattern.
+
+Endpoints offering expansion MUST document:
+
+- parameter syntax and allowed relationships
+- response shape
+- permission and field-visibility filtering
+- cost and depth limits
+
+Expansion MUST NOT bypass scopes, capabilities, or field-visibility rules. Related resources MAY remain independently addressable without an expansion mechanism.
 
 #### RATIONALE
 
 Retrieving a single resource by identifier still requires the same authorization and capability checks as a collection, just scoped to one record; making this explicit prevents implementers from assuming that fetching one thing is lower risk than listing many and skipping checks. Standardizing 404 handling also ensures a consistently shaped error response, per section 12, rather than each endpoint inventing its own not-found behaviour.
+
+Separate user profile and custom-field resources already allow clients to retrieve those representations without requiring every user read to support embedding them. Making expansion optional avoids an unnecessary response and authorisation contract while requiring explicit limits and permission filtering wherever embedding is useful.
 
 ---
 
@@ -669,6 +711,10 @@ The response MUST include:
 
 - Location header
 - created resource representation
+
+The created representation MAY be limited to fields the caller is authorised to receive, including identifiers and values supplied by the caller. Creation MUST NOT require an additional read scope solely to return this representation. Credentials and other write-only fields MUST NOT be returned.
+
+Documented processing-result metadata MAY accompany the representation. Such metadata MUST be distinguished from persistent resource attributes, and partial side-effect failures MUST NOT be reported as though resource creation was rolled back.
 
 #### RATIONALE
 
@@ -731,7 +777,7 @@ Checking for updates or computing a state delta is a read-only query, not a muta
 
 ### 11.6 Declarative Property Representation Pattern
 
-Payload objects for mutation requests using `POST`, `PUT`, and `PATCH` MUST pass exclusively state attributes that describe the final structural configuration of the target resource data model at rest rather than execution routines, transition directions, or step calculations.
+Payload objects for mutation requests using `POST`, `PUT`, and `PATCH` MUST describe the intended state of the target resource rather than relative transitions or step calculations. Documented processing controls MAY accompany resource attributes under section 11.8. Distinct workflows SHOULD be modelled as resources under section 11.9.
 
 #### REQUIRED Declarative Architecture
 
@@ -761,7 +807,7 @@ Declarative payloads describe what the resource should look like afterwards, whi
 
 ### 11.7 Declarative Resource Modification Pattern
 
-State alterations, resource updates, lifecycle suspensions, and value updates MUST target the resource noun directly using standard mutation verbs without appending procedural execution flags or custom action sub-resource extensions to path strings.
+State alterations, resource updates, lifecycle suspensions, and value updates MUST target the resource noun directly using standard mutation verbs without appending procedural execution flags or custom action sub-resource extensions to path strings. Processing controls permitted by section 11.8 MUST NOT substitute for directly expressible resource-state changes.
 
 #### REQUIRED Mutation Architecture
 
@@ -784,6 +830,140 @@ PATCH /api/rest/v{version}/course/activities/40
 #### RATIONALE
 
 This reinforces section 11.6 specifically for lifecycle state changes such as visibility or suspension: an "action": "hide" flag is really just an RPC verb smuggled into the request body, violating the resource-oriented principle in section 3.1 just as surely as putting a verb in the URI would. Setting the actual field value directly, such as "visible": false, keeps the operation declarative, idempotent, and self-documenting from the payload alone.
+
+---
+
+### 11.8 Mutation Processing Controls
+
+Mutation requests MAY include processing controls for ancillary behaviour, such as notification delivery. Creation requests MAY additionally specify one-time initialisation policy, such as generation of initial credentials.
+
+Processing controls:
+
+- MUST be documented separately from persistent resource attributes, including their applicability, defaults, validation, side effects, and failure behaviour.
+- MUST have the same meaning wherever they are reused.
+- MUST NOT be silently ignored when unsupported or incompatible with other supplied values.
+- MUST NOT replace a directly expressible state change with an execution command.
+- MUST NOT imply that external side effects, such as email delivery, are atomic with a database transaction.
+- MUST have documented duplicate-request behaviour, including whether a retry repeats notifications or generates new credentials.
+
+Domain-specific processing controls SHOULD be explicit properties of the JSON request body. DELETE requests SHOULD NOT require a body; controls for such requests MAY use documented query parameters or request headers. Changing a control's location MUST NOT change its semantics or bypass these requirements.
+
+Ignorable HTTP preferences, such as those expressed with `Prefer`, MUST NOT be used for requirements whose omission would violate the requested behaviour, such as suppressing a credential email.
+
+#### EXAMPLE
+
+```http
+POST /api/rest/v2/user/users
+Content-Type: application/json
+
+{
+  "username": "new.student",
+  "firstName": "New",
+  "lastName": "Student",
+  "email": "new.student@example.invalid",
+  "generatePassword": true,
+  "sendPasswordEmail": false
+}
+```
+
+Here, `generatePassword` and `sendPasswordEmail` are creation-time controls, not readable user attributes. Suppressing email does not imply that the generated password is returned.
+
+#### RATIONALE
+
+Notification delivery and initial credential generation are legitimate provisioning concerns, but do not describe persistent user attributes. Explicitly distinguishing these controls avoids pretending that they are resource state or hiding them in transport metadata to evade the declarative rules. The same distinction applies to notifications accompanying updates or deletions.
+
+---
+
+### 11.9 Workflow Resources
+
+Mutations that initiate a distinct workflow or repeat-sensitive operation SHOULD use `POST` to an appropriate resource, rather than encode an execution command in `PATCH`. Setting an explicit password MAY use a credential-resource mutation; generating a new password for an existing account SHOULD submit to a password-reset resource.
+
+A workflow MAY be represented by a singleton processing resource with a singular noun, such as `/user/users/{userId}/password-reset` or the public `/user/password-reset`. A completed synchronous submission that creates no separately addressable resource MUST return `200` with its outcome or `204` without a body, rather than imply resource creation with `201` and `Location`. Accepted asynchronous processing MAY return `202`.
+
+Workflow submissions MUST NOT require historical result records, identifiers, retention periods, or result GET endpoints solely to justify collection naming. Workflows that create independently addressable resources MUST follow section 11.3 and use plural collection names.
+
+Workflow resources:
+
+- MUST define the target resource, processing behaviour, and outcome.
+- MUST document result retention and access permissions if the result is retrievable.
+- MUST distinguish workflow success from ancillary delivery success.
+- MUST NOT expose credentials in their result representations.
+- MUST document duplicate-request behaviour under section 15.2.
+- MAY complete synchronously; creating a workflow resource does not require a background job.
+
+Public account-recovery requests MUST follow section 11.10 instead of exposing an account-specific workflow receipt.
+
+#### EXAMPLE
+
+```http
+POST /api/rest/v2/user/users/42/password-reset
+Content-Type: application/json
+
+{
+  "sendPasswordEmail": true
+}
+```
+
+```http
+200 OK
+Cache-Control: no-store
+Content-Type: application/json
+
+{
+  "status": "completed",
+  "credentialEmailStatus": "sent"
+}
+```
+
+#### RATIONALE
+
+Retrying a password-generation command can replace credentials again and send another email. A singleton reset resource makes that processing and its immediate non-secret outcome explicit without promising that POST is safe to retry or inventing a historical reset collection. Ordinary state updates remain declarative; independently addressable workflow results still receive an appropriate collection model.
+
+---
+
+### 11.10 Public Account Recovery
+
+An API MAY accept an unauthenticated request to initiate account recovery under the public-endpoint rules in section 14.2. Public recovery requests MUST NOT change credentials before the recipient proves control through the recovery mechanism.
+
+Public recovery endpoints:
+
+- MUST use `POST` to accept a recovery request.
+- MUST return the same generic `202 Accepted` representation for matching, missing, ambiguous and ineligible accounts, including account-specific delivery failures.
+- MUST NOT expose account identifiers, recovery secrets, delivery status or account-specific result lookup URLs.
+- MUST use a common response path and deferred delivery, or equivalent timing protection, to avoid disclosing account-dependent outcomes through response timing.
+- MUST apply abuse controls, including request throttling and per-identifier delivery limits, without revealing whether an identifier belongs to an account.
+- MUST log account-specific delivery failures privately rather than include them in the public response.
+- MUST use time-limited, single-use recovery credentials and the site's supported recovery eligibility and password-policy rules.
+- MUST NOT return a password.
+- SHOULD reuse the existing recovery and token-redemption lifecycle rather than introduce a second token system.
+- MAY return account-independent request-validation errors, throttling responses or service-wide availability errors.
+
+Public recovery requests MAY return `202` without a `Location` header or retrievable request resource. Acceptance MUST NOT be described as confirmation of account existence or email delivery.
+
+#### EXAMPLE
+
+```http
+POST /api/rest/v2/user/password-reset
+Content-Type: application/json
+
+{
+  "email": "student@example.invalid"
+}
+```
+
+```http
+202 Accepted
+Cache-Control: no-store
+Content-Type: application/json
+
+{
+  "message": "If an eligible account matches, password-reset instructions will be sent."
+}
+```
+
+#### RATIONALE
+
+People recovering an account may have no usable authentication credential. Requiring an API scope would make the recovery path inaccessible, while reporting ordinary account-specific success or failure would allow account enumeration. A generic acceptance response and protected reset-link redemption preserve recovery access without exposing account details. This is distinct from an authorised administrative operation that immediately replaces credentials and can return a private result.
 
 ---
 
@@ -810,22 +990,29 @@ A single, predictable error envelope across every endpoint means client code and
 
 ### 12.2 Validation Errors
 
-Validation errors MUST include field-level details.
+Validation errors MUST retain the RFC 9457 problem object and include a top-level `details` array of field errors. Each field error MUST contain:
+
+- `field`: the request-field path, using the request's camelCase property names, such as `profile.country` or `customFields.fields.studentcode`.
+- `code`: a stable, non-localised lowercase identifier under section 12.3.
+- `message`: a human-readable explanation that MAY be translated.
+
+Validation errors MUST NOT introduce a separate nested `error` envelope or echo passwords, recovery tokens, or other secrets. Independent field failures SHOULD be collected where practical; responses MUST NOT imply that every possible error has been found.
 
 #### REQUIRED
 
 ```json
 {
-  "error": {
-    "code": "validationerror",
-    "message": "Invalid input",
-    "details": [
-      {
-        "field": "shortname",
-        "message": "Must be unique"
-      }
-    ]
-  }
+  "type": "about:blank",
+  "title": "Unprocessable Content",
+  "status": 422,
+  "detail": "Some fields are invalid.",
+  "details": [
+    {
+      "field": "email",
+      "code": "invalidemail",
+      "message": "Enter a valid email address."
+    }
+  ]
 }
 ```
 
@@ -833,9 +1020,17 @@ Validation errors MUST include field-level details.
 
 A generic "invalid input" message forces the client, or a human filling out a form, to guess which field failed and why. Field-level details let clients map errors directly back to the offending form field, which is essential for building usable client UIs on top of the API, especially for Moodle's own forms and mobile app.
 
+User creation and profile updates can fail on several independent fields. Keeping their details inside the standard problem object gives clients one error envelope, while stable field codes and request-field paths support both automated handling and translated form messages without exposing credentials.
+
 ---
 
 ### 12.3 Error Code Rules
+
+Documented application-specific problems that clients need to distinguish MUST include a top-level `code` extension in the RFC 9457 problem object. Generic HTTP or framework failures MAY rely on `status` and `type` without a code.
+
+The `type` member MUST retain its RFC 9457 meaning and MAY identify a documented problem-type URI. Application codes MUST NOT be copies of HTTP status numbers or disclose information deliberately hidden by an endpoint's error contract.
+
+Existing deprecated numeric `errorcode` members MAY remain until their normal removal. Their meaning MUST NOT be changed in place to introduce the application-code convention.
 
 Error codes MUST:
 
@@ -854,6 +1049,18 @@ Error codes MUST NOT:
 
 - "coursenotfound"
 
+#### EXAMPLE
+
+```json
+{
+  "type": "about:blank",
+  "title": "Conflict",
+  "status": 409,
+  "code": "usernameexists",
+  "detail": "The username is already in use."
+}
+```
+
 #### PROHIBITED
 
 - "course_not_found"
@@ -863,6 +1070,8 @@ Error codes MUST NOT:
 #### RATIONALE
 
 Error codes are meant to be matched programmatically by client logic, so they must stay stable across releases and be casing-convention-free to avoid clients hardcoding fragile casing assumptions; this also matches Moodle's existing legacy convention of lowercase exception and string identifiers, such as coursenotfound in language files. Avoiding localization in the code itself keeps it a stable identifier, while the separate message field, see section 12.1, carries the human-readable, localizable text.
+
+A user-creation client needs to distinguish a duplicate username from other conflicts without parsing translated text. A top-level application code provides that distinction without repurposing the problem-type URI or changing an existing numeric compatibility field. Public recovery still conceals account-specific outcomes rather than exposing them through codes.
 
 ---
 
@@ -874,7 +1083,7 @@ Error codes are meant to be matched programmatically by client logic, so they mu
 | 201  | Created  |
 | 202  | Accepted  |
 | 204  | No Content  |
-| 400  | Invalid request  |
+| 400  | Malformed request  |
 | 401  | Unauthenticated  |
 | 403  | Unauthorized  |
 | 404  | Resource not found  |
@@ -884,9 +1093,17 @@ Error codes are meant to be matched programmatically by client logic, so they mu
 | 429  | Rate limited  |
 | 500  | Internal error  |
 
+Requests that cannot be parsed or structurally interpreted, such as malformed JSON, MUST return `400 Bad Request`.
+
+Well-formed input that fails field validation MUST return `422 Unprocessable Content`. This includes missing required fields, invalid email addresses or time zones, unknown or read-only fields, password-policy failures, and incompatible processing options. Router and handler validation MUST apply the same distinction.
+
+Permission failures and locked-field restrictions MUST return `403 Forbidden`. Uniqueness conflicts MUST return `409 Conflict`. Failed ETag preconditions MUST return `412 Precondition Failed`.
+
 ### RATIONALE
 
 Using standard HTTP status codes for their documented meaning, rather than always returning 200 with an error object in the body as much legacy Moodle web service code does, lets generic HTTP infrastructure, such as proxies, monitoring, and client libraries, correctly interpret success and failure without inspecting the response body first.
+
+For example, a user update containing malformed JSON cannot be interpreted, whereas a valid JSON object containing an invalid email address can be understood but fails validation. A duplicate username conflicts with existing state, and an authentication-plugin field lock is an authorisation restriction, not invalid field syntax. Keeping these outcomes distinct lets clients choose the appropriate recovery.
 
 ---
 
@@ -909,7 +1126,7 @@ OAuth2 and service tokens are stateless credentials that travel with each reques
 
 ### 14.2 Authorization
 
-Authorization MUST be scope-based.
+Authorization MUST be scope-based for scoped endpoints. Public endpoints, such as fetching templates, fetching language strings, or requesting a password-reset email, MAY omit authentication and required scopes where their access policy permits.
 
 #### REQUIRED
 
@@ -918,15 +1135,32 @@ core_course:course:content:read
 core_course:course:content:write
 ```
 
-All endpoints MUST define:
+All scoped endpoints MUST define:
 
 - sets of required scopes
+
+Endpoints that do not require scopes MUST explicitly declare `#[\core\router\scope\unscoped_resource]` on the route handler method in their PHP definition. Omitting scope attributes MUST NOT be treated as an implicit declaration of unscoped access.
+
+An unscoped declaration MUST NOT implicitly disable authentication, capability checks, or other access restrictions. These requirements MUST be defined separately.
+
+Public endpoints MUST explicitly document their access policy and applicable abuse protections. Public account recovery MUST additionally follow section 11.10.
+
+#### EXAMPLE
+
+```php
+#[\core\router\scope\unscoped_resource]
+public function fetch_public_resource(): ResponseInterface {
+    // Return a resource permitted by the endpoint's access policy.
+}
+```
 
 #### RATIONALE
 
 Scope-based authorization decouples "who the caller is", established by authentication in section 14.1, from "what the caller is allowed to do", letting a single OAuth2 or personal access token be issued with only the narrow set of permissions an integration actually needs, following the principle of least privilege.
 
 Naming scopes after their component and resource, for example `core_course:course:content:read`, keeps them self-describing and consistent with the component-namespacing rules in section 8, and lets tooling and documentation enumerate exactly which endpoints a given scope unlocks. Declaring required scopes per endpoint also allows authorization to be checked and audited consistently, independent of a caller's individual Moodle capabilities, which may change over time.
+
+Explicitly marking unscoped handlers distinguishes intentional public or otherwise unscoped access from accidentally missing scope definitions. Authentication and scope requirements are separate: an unscoped resource is not necessarily anonymous.
 
 ---
 
@@ -965,7 +1199,7 @@ Optimistic concurrency lets Moodle avoid locking rows for the duration of an edi
 | POST  | No  |
 | PATCH  | No  |
 
-Retryable POST operations SHOULD support:
+POST operations intended to support retries SHOULD support:
 
 ```http
 Idempotency-Key
