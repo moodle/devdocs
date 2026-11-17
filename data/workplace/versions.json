@@ -11,6 +11,12 @@
             "isRolling": true,
             "releases": [
                 {
+                    "name": "5.3.0",
+                    "releaseDate": "16 November 2026",
+                    "version": 2026111000,
+                    "releaseNoteUrl": "https://docs.moodle.org/503/en/Moodle_Workplace_rolling_release_notes#5.3.0_rolling"
+                },
+                {
                     "name": "5.3.1",
                     "releaseDate": "16 November 2026",
                     "version": 2026111600,
@@ -27,6 +33,12 @@
             "isLTS": true,
             "isRolling": false,
             "releases": [
+                {
+                    "name": "5.3.0",
+                    "releaseDate": "16 November 2026",
+                    "version": 2026111000,
+                    "releaseNoteUrl": "https://docs.moodle.org/503/en/Moodle_Workplace_release_notes#5.3.0"
+                },
                 {
                     "name": "5.3.1",
                     "releaseDate": "16 November 2026",
