@@ -67,6 +67,11 @@
 # Redirect the old hand-written Moodle Marketplace API page to the generated API reference
 /general/community/plugincontribution/moodlemarketplaceapi /general/community/plugincontribution/marketplace-api/moodle-marketplace-api
 
+# Retired Plugins Directory documentation
+/general/community/plugincontribution/pluginsdirectory https://marketplace.moodle.com/ 301
+/general/community/plugincontribution/pluginsdirectory/api /general/community/plugincontribution/marketplace-api/moodle-marketplace-api 301
+/general/community/plugincontribution/pluginsdirectory/updates https://marketplace.moodle.com/ 301
+
 ############################################################################
 # Splats should go later for performance
 ############################################################################
