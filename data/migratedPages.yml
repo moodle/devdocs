@@ -1618,12 +1618,6 @@ Plugin_with_third_party_libraries:
 Plugins_adoption_programme:
 - filePath: "/general/community/plugincontribution/adoption.md"
   slug: "/general/community/plugincontribution/adoption"
-Plugins_directory:
-- filePath: "/general/community/plugincontribution/pluginsdirectory/index.md"
-  slug: "/general/community/plugincontribution/pluginsdirectory"
-Plugins_directory_API:
-- filePath: "/general/community/plugincontribution/pluginsdirectory/api.md"
-  slug: "/general/community/plugincontribution/pluginsdirectory/api"
 Plugins_guardians:
 - filePath: "/general/community/plugincontribution/guardians/index.md"
   slug: "/general/community/plugincontribution/guardians"

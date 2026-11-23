@@ -269,6 +269,7 @@ module.exports = {
     // Generated from the Marketplace OpenAPI spec at build time; not hand-written Markdown.
     ignores: [
         'general/community/plugincontribution/marketplace-api/**',
+        'general/projects/restapi/*/openapi/**',
     ],
     customRules: [
         path.join(__dirname, '.markdownlint/no-directional-quotation-marks'),
