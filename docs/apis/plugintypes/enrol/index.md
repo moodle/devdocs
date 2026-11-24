@@ -444,7 +444,6 @@ import UiLib from '!!raw-loader!./_examples/ui_lib.php';
 
 Some enrolment methods support sending welcome messages to users. To keep welcome messages consistent across enrolment methods, the enrol API provides the `enrol_send_welcome_email_options` function. This function returns all available options for sending a welcome email when a user enrols in a course; each option has a corresponding constant defined in **enrollib.php**:
 
-
 ```php
 define('ENROL_DO_NOT_SEND_EMAIL', 0); // Do not send the welcome email.
 define('ENROL_SEND_EMAIL_FROM_COURSE_CONTACT', 1); // Send welcome email from course contact.
