@@ -27,6 +27,8 @@ When invoked, any parameter to the route method will be resolved using a combina
 
 ## Using the `route` attribute {/* #using-the-route-attribute */}
 
+For shared endpoint behaviour, see [Collections and pagination](collections.md) and [ETags and conditional requests](conditional-requests.md).
+
 When applied to a method, the `\core\router\route` attribute will create a route. Class-level attributes can also be defined and are used to define a route prefix, and some defaults, but cannot handle a route directly.
 
 The path will be combined with the URI prefix described by the route _group_ (for example `api` has a prefix of `/api/rest/v2`), and the component (for example `mod_example`) to create a fully-qualified path.

@@ -16,6 +16,8 @@ Where possible, tricks and examples will be documented here in order to make dev
 
 ### DB object {/* #db-object */}
 
+For injectable classes, see [Injecting the database](database-proxy.md) for the live database proxy.
+
 - The data manipulation API is exposed via public methods of the <tt>$DB</tt> object.
 - Moodle core takes care of setting up the connection to the database according to values specified in the main config.php file.
 - The $DB global object is an instance of the <tt>moodle_database</tt> class. It is instantiated automatically during the bootstrap setup, i.e. as a part of including the main config.php file.
